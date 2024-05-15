@@ -35,7 +35,7 @@ File storage system
 |   the specified local file directory.                         |                                                                          |
 | - **amazons3**: Files and images are stored on Amazon S3      |                                                                          |
 |   based on the access key, bucket, and region fields          |                                                                          |
-|   provided. The driver is compatible with MinIO (beta)        |                                                                          |
+|   provided. The driver is compatible with MinIO (Beta)        |                                                                          |
 |   and Digital Ocean Spaces.                                   |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -70,7 +70,7 @@ Local storage directory
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.MaxFileSize
   :environment: MM_FILESETTINGS_MAXFILESIZE
-  :description: The maximum file size, in bytes, for message attachments and plugin uploads. Default value is **104857600** bytes (1 megabyte).
+  :description: The maximum file size, in bytes, for message attachments and plugin uploads. Default value is **104857600** bytes (100 mebibytes).
 
 Maximum file size
 ~~~~~~~~~~~~~~~~~
@@ -79,26 +79,26 @@ Maximum file size
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The maximum file size for message attachments and plugin      | - System Config path: **Environment > File Storage**                     |
-| uploads. This value must be specified in megabytes in the     | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
-| System Console, and in bytes in the ``config.json`` file.     | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                  |
-|                                                               |                                                                          |
-| The default is ``104857600`` bytes (**1** megabyte).          |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Warning**: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed       |
-| uploads due to network disruptions.                                                                                                      |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Notes**:                                                                                                                               |
-|                                                                                                                                          |
-| - When `uploading plugin files </configure/plugins-configuration-settings.html#upload-plugin>`__, a ``Received invlaid response from     |
-|   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy    |
-|   settings may not be sufficient.                                                                                                        |
-| - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                 |
-|                                                                                                                                          |
-|  - For NGINX, use ``client_max_body_size``.                                                                                              |
-|  - For Apache use ``LimitRequestBody``.                                                                                                  |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++-------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The maximum file size for message attachments and plugin          | - System Config path: **Environment > File Storage**                     |
+| uploads. This value must be specified in mebibytes in the         | - ``config.json`` setting: ``".FileSettings.MaxFileSize: 104857600",``   |
+| System Console, and in bytes in the ``config.json`` file.         | - Environment variable: ``MM_FILESETTINGS_MAXFILESIZE``                  |
+|                                                                   |                                                                          |
+| The default is ``104857600`` bytes (**100** mebibytes).           |                                                                          |
++-------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Warning**: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed           |
+| uploads due to network disruptions.                                                                                                          |
++-------------------------------------------------------------------+--------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                   |
+|                                                                                                                                              |
+| - When `uploading plugin files </configure/plugins-configuration-settings.html#upload-plugin>`__, a ``Received invlaid response from         |
+|   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy        |
+|   settings may not be sufficient.                                                                                                            |
+| - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                     |
+|                                                                                                                                              |
+|  - For NGINX, use ``client_max_body_size``.                                                                                                  |
+|  - For Apache use ``LimitRequestBody``.                                                                                                      |
++-------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: file-enabledocsearchbycontent
   :displayname: Enable document search by content (File Storage)
@@ -418,6 +418,62 @@ Enable Amazon S3 debugging
 | Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
+.. config:setting:: file-amazons3requesttimeoutmilliseconds
+  :displayname: Amazon S3 request timeout (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
+
+Amazon S3 request timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
+| Default is 30000 (30 seconds).                                |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: file-amazons3uploadpartsizebytes
+  :displayname: Amazon S3 upload part size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3UploadPartSizeBytes
+  :environment: MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES
+  :description: The size, in bytes, of each part in a multi-part upload to Amazon S3. Default value is 5242880 (5MB).
+
+Amazon S3 upload part size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                             |
+| upload to Amazon S3.                                          | - ``config.json`` setting: ``".FileSettings.AmazonS3UploadPartSizeBytes: 5242880``    |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``               |
+| Numeric value. Default is 5242880 (5MB).                      |                                                                                       |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+| **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory              |
+| being allocated.                                                                                                                                      |
++---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+
+.. config:setting:: file-exportamazons3uploadpartsizebytes
+  :displayname: Export Amazon S3 upload part size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.ExportAmazonS3UploadPartSizeBytes
+  :environment: MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES
+  :description: The size, in bytes, of each part in a multi-part exported to Amazon S3. Default value is 104857600 (100MB).
+
+Amazon S3 exported upload part size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| The size, in bytes, of each part in a multi-part              | - System Config path: N/A                                                                  |
+| exported to Amazon S3.                                        | - ``config.json`` setting: ``".FileSettings.ExportAmazonS3UploadPartSizeBytes: 104857600`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``              |
+| Numeric value. Default is 104857600 (100MB).                  |                                                                                            |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+| **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
++---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
 .. config:setting:: file-initialfont
   :displayname: Initial font (File Storage)
   :systemconsole: N/A
@@ -456,3 +512,24 @@ Amazon S3 request timeout
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: file-maxpayloadsize
+  :displayname: Maximum payload size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.MaximumPayloadSizeBytes
+  :environment: MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES
+  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input. For example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
+
+Maximum payload size
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                        |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".FileSettings.MaximumPayloadSizeBytes: 300000",``  |
+|                                                           | - Environment variable: ``MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
+| For example, the upload attachment API or the API to      |                                                                                  |
+| upload a custom emoji.                                    |                                                                                  |
+|                                                           |                                                                                  |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                  |
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+

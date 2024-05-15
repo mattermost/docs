@@ -1,4 +1,4 @@
-SSL client certificate setup (beta)
+SSL client certificate setup (Beta)
 ===================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
