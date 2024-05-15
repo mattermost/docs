@@ -2499,6 +2499,8 @@ redirects = {
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-outgoing",
 "manage/command-line-tools.html#mattermost-webhook-show":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-show",
+"manage/cloud-billing.html":
+        "https://docs.mattermost.com/about/cloud-subscriptions.html",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
