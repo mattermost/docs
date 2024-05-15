@@ -18,7 +18,7 @@ Mattermost Enterprise Edition
 
 Mattermost Enterprise Edition v9.7.4 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-7-feature-release>`__ - `Download <https://releases.mattermost.com/9.7.4/mattermost-9.7.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.7.4/mattermost-9.7.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``8a927d53783c53f7fa8ce7e99c18abe33167abe079dd2397429754e190d09583``
+  - SHA-256 Checksum: ``b8f374b2e2f08e9fec644c0dd27a8d63e0786043b0e5bfea6a11a0cf6f2f71f1``
   - GPG Signature: https://releases.mattermost.com/9.7.4/mattermost-9.7.4-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.6.2 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.2/mattermost-9.6.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.2/mattermost-9.6.2-linux-amd64.tar.gz``
@@ -371,7 +371,7 @@ We generally recommend installing Enterprise Edition, even if you don't currentl
 
 Mattermost Team Edition v9.7.4 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-7-feature-release>`__ - `Download <https://releases.mattermost.com/9.7.4/mattermost-team-9.7.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.7.4/mattermost-team-9.7.4-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``3394fe08d929bed44f4c73363e58daca3fdec094a809c2bfbbd357a86df574ac``
+  - SHA-256 Checksum: ``a506864bb95db3c598de6dc6210647babb5e84c1b2b04d944b8cbb887595b8bc``
   - GPG Signature: https://releases.mattermost.com/9.7.4/mattermost-team-9.7.4-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.6.2 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.2/mattermost-team-9.6.2-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.2/mattermost-team-9.6.2-linux-amd64.tar.gz``
