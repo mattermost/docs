@@ -275,7 +275,7 @@ For our case, we can simply run the following command:
 
 .. code:: sh
 
-   dbcmp --source "${MYSQL_DSN}" --target "postgres://${POSTGRES_DSN} " --exclude="db_migrations,ir_,focalboard,systems"
+   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN} " --exclude="db_migrations,ir_,focalboard,systems"
 
 An example command would look like: ``dbcmp --source "user:password@tcp(address:3306)/db_name --target "postgres://user:password@address:5432/db_name``
 
