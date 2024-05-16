@@ -3,12 +3,80 @@ Desktop application changelog
 
 This changelog summarizes updates to Mattermost desktop app releases for `Mattermost <https://mattermost.com>`__.
 
+Release v5.8
+--------------
+
+**Release Date: May 16, 2024**
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+
+.. note::
+
+   Mattermost v5.8.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`__ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report//>`__.
+
+Compatibility
+~~~~~~~~~~~~~~~
+
+- Desktop App is supported on any currently `supported Mattermost server version <https://docs.mattermost.com/upgrade/release-lifecycle.html>`__.
+- Updated Chromium minimum supported version to 122+.
+
+Improvements
+~~~~~~~~~~~~~~~
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Moved the **Settings** window into a new modal.
+- Disabled the ``--inspect`` tag.
+
+Architectural Changes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Minor version upgrade of Electron to 29.3.0. Electron is the underlying technology used to build the Desktop App.
+
+Bug Fixes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+macOS
+^^^^^^^^^^^^^
+
+- Fixed an issue for macOS 13+ users on the Mac App Store build where the OS-level **Do Not Disturb** user status was not respected.
+- Fixed the settings window disappearing on macOS when dragged to another monitor.
+
+All Platforms
+^^^^^^^^^^^^^
+
+- Fixed an issue where removing a server did not clear mentions.
+- Fixed an issue where right-clicking on **Save Image** crashed the app.
+- Fixed an issue where typing in the local server followed by a port would trip up the URL validation.
+- Fixed an issue where restoring the window from the tray icon could cause a strange state if the window was previously maximized.
+- Fixed the permission prompt to **Deny** on closing the dialog.
+
+Open Source Components
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Added and removed several open source components at https://github.com/mattermost/desktop.
+
+Known Issues
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Desktop App Windows 10: The taskbar might not flash on receipt of a new message when the setting is enabled `MM-58087 <https://mattermost.atlassian.net/browse/MM-58087>`_.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For MacOS it is located in ``/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost``, for Windows in ``Users/<username>/AppData/Roaming/Mattermost`` and for Linux in ``~/config/Mattermost`` (where ``~`` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the ``libnotifyapp`` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+Contributors
+~~~~~~~~~~~~~~
+
+- `devinbinnie <https://github.com/devinbinnie>`_, `toninis <https://github.com/toninis>`_, `yasserfaraazkhan <https://github.com/yasserfaraazkhan>`_.
+
 Release v5.7
 --------------
 
 **Release Date: March 15, 2024**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`__
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/v5.7.0>`_
 
 Compatibility
 ~~~~~~~~~~~~~~~
