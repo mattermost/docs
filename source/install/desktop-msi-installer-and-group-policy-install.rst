@@ -1,4 +1,4 @@
-Desktop MSI installer and group policy installation guides (beta) 
+Desktop MSI installer and group policy installation guides (Beta) 
 ==================================================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst

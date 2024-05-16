@@ -48,26 +48,36 @@ You can configure Mattermost to receive increase or decrease the number of notif
 In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
 
 On mobile, select the **Settings** |gear| icon and tap **Notifications**.
+
+.. note::
+
+  From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
     
-.. tab:: Web/Desktop
+.. tab:: Web/Desktop/Mobile
 
-    By default, you're notified of all Mattermost activity in both a web browser and the desktop app with badges, banner alerts, and sounds. In supported web browsers, the tab's favicon also notifies you of unread messages with an asterisk (*) and a count.
+    By default, you're notified of all Mattermost activity in Mattermost with badges, banner alerts, and sounds, regardless of how you access Mattermost, and your current :ref:`Mattermost availability <preferences/set-your-status-availability:set your availability>`.
     
-    **Too many notifications!**
+    In supported web browsers, the tab's favicon also notifies you of unread messages with an asterisk (*) and a message count.
 
-    If that's too many notifications, you can configure Mattermost to notify you for only mentions and direct messages. Select **Desktop Notifications > Only for mentions and direct messages**. 
+    **Want different notifications on mobile?**
+    
+    To personalize your notification preferences for the mobile app, select **Desktop and mobile notifications**, and then select **Use different settings for my mobile devices** to define how mobile notifications are triggered, when they're triggered based on you being online, away, or offline, and whether they include replies to threads you're following.
 
-    Disable web and desktop notifications altogether by selecting **Desktop Notifications > Never**.
+    **Getting too many notifications?**
 
-    **Too loud**
+    If that's too many notifications, configure Mattermost to notify you for select messages only. Select **Desktop and mobile notifications > Mentions, direct messages, and group messages** to receive notifications for mentions, direct messages, and group messages only. This option also enables you to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
 
-    You can change or disable the audible sound for notifications. Go to **Desktop notifications > Notification sound**, and choose a different sound or turn the sound off.
+    Disable web, desktop, and mobile notifications altogether by selecting **Desktop and mobile notifications > Nothing**.
 
-    **Incoming call sounds**
+.. tab:: Desktop notification sounds
 
-    Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+    By default, desktop message notifications include audible sounds. You can change or disable these sounds if preferred. Go to **Desktop notification sounds > Message notification sound** to choose a different sound, or disable this option to turn off desktop notification sounds, if preferred.
 
-    You can disable incoming call sounds altogether if preferred.
+    Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+
+    **Do you want incoming call sounds?**
+
+    Want to hear a sound when a Mattermost call starts? When your Mattermost admin :ref:`enables this beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you'll hear a sound when a call is starting within a direct or group message you're a member of. Go to **Desktop notification sounds > Incoming call sound** to choose a different sound, or disable this option to turn off incoming call sounds, if preferred.
 
 .. tab:: Email 
 
@@ -80,24 +90,6 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
     **Group email notifications in batches**
 
     Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:enable email batching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
-
-.. tab:: Mobile
-
-    By default, you're notified of all Mattermost activity in the mobile app when you're away or offline for more than 5 minutes.
-
-    **Too many notifications!**
-
-    If that's too many notifications, you can configure Mattermost to notify you for only mentions and direct messages. Select **Mobile Push Notifications > For mentions and direct messages**.
-
-    **Only notify me when I'm offline**
-
-    If you prefer to be notified of all activity, but only when you're offline, select **For all activity** and then select **Offline**.
-
-    Turn off all mobile notifications by selecting **Mobile Push Notifications > Never**.
-
-    **Not enough notifications**
-
-    If you prefer to always be notified, regardless of your user status, select **Mobile Push Notifications > Trigger push notifications when > Online, away or offline**.
 
 .. tab:: @mentions & keywords
 

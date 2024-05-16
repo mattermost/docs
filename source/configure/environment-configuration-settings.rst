@@ -9,23 +9,6 @@ Environment configuration settings
 
 Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Environment**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
-- `Web server <#web-server>`__
-- `Database <#database>`__
-- `Elasticsearch <#elasticsearch>`__
-- `File Storage <#file-storage>`__
-- `Image Proxy <#image-proxy>`__
-- `SMTP <#smtp>`__
-- `Push Notification Server <#push-notification-server>`__
-- `High Availability <#high-availability>`__
-- `Rate Limiting <#rate-limiting>`__
-- `Logging <#logging>`__
-- `Session Lengths <#session-lengths>`__
-- `Performance Monitoring <#performance-monitoring>`__
-- `Developer <#developer>`__
-- `config. json-only settings <#config-json-only-settings>`__
-
-----
-
 Web server
 ----------
 
