@@ -2,6 +2,43 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
+## 2.17.0 Release
+ - Release Date: June 14, 2024
+ - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v8.1.0 has ended and upgrading to server ESR v9.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 13.4+ is required.
+
+### Breaking Changes
+ - **IMPORTANT:** The IPhone Deployment Target was updated to 13.4. Old devices may not be able to update the app (<1GB RAM and <iPhone6s).
+
+### Improvements
+ - Calls: Added a **Participants** list to the call screen.
+ - Calls: Added the host controls menu, allowing the current host (or admin) to transfer host duties to another.
+ - Calls: Added remove participant & view profile commands.
+ - Calls: Host controls - **Mute all** option was added to participants list.
+ - Calls: Host controls - added stop screenshare, mute and lower hand functionalities.
+ - Changed the prioritized user autocomplete results based on recency and thread activity.
+ - Updated the default themes to reduce eye strain (particularly on the dark themes).
+ - Improved status management to avoid missing notifications.
+
+### Bug Fixes
+ - Fixed an issue where channels from other servers could get read on startup.
+ - Fixed an issue where the clipboard did not receive the markdown as was entered into the original post instead of one that included a proxy link when tapping on the "Copy Text" list item in a channel post dot menu (accessed by clicking the three dots) for a post that includes embedded images using markdown.
+ - Fixed an erratic behavior with pull up to refresh on a thread.
+ - Fixed gallery footer not showing an old profile picture.
+ - Fixed server option text on Quartz theme.
+ - Fixed an issue on iOS where the badge number was not correct sometimes.
+
+### Open Source Components
+ - Removed ``@formatjs/intl-relativetimeformat``, ``@tsconfig/react-native``, ``react-native-android-open-settings``, ``readable-stream``, ``serialize-error``, and ``shallow-equals`` from https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 ## 2.16.0 Release
  - Release Date: May 16, 2024
  - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
