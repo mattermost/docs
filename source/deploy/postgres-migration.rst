@@ -459,7 +459,7 @@ Compare the plugin data
 
 .. code:: sh
 
-   dbcmp --source "${MYSQL_DSN}" --target "postgres://${POSTGRES_DSN}" --exclude="db_migrations,systems"
+   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
 
 Iterative migrations
 --------------------
