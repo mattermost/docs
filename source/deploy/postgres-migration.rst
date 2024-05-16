@@ -161,18 +161,18 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
          FROM information_schema.COLUMNS
          WHERE data_type = 'json'
          AND table_schema = DATABASE();
-	   DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+      DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
 
    OPEN cursors;
 
-	WHILE NOT DONE DO
-		FETCH cursors INTO curTableName, curColumnName;
+   WHILE NOT DONE DO
+      FETCH cursors INTO curTableName, curColumnName;
       SET @query_string = CONCAT('UPDATE ', curTableName, ' SET ', curColumnName, ' = REPLACE(', curColumnName, ', \'\\\\u0000\', \'\') WHERE ', curColumnName, ' LIKE \'%\\u0000%\';');
 
       PREPARE dynamic_query FROM @query_string;
-    	EXECUTE dynamic_query;
-    	DEALLOCATE PREPARE dynamic_query;
-	END WHILE;
+      EXECUTE dynamic_query;
+      DEALLOCATE PREPARE dynamic_query;
+   END WHILE;
 
    CLOSE cursors;
    END;
