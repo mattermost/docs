@@ -1,10 +1,8 @@
 # Mattermost v9 changelog
 
-[Mattermost](https://mattermost.com) is an open source platform designed for the way mission-critical technical and operational teams work.
-
 ```{Important}
 **Support for Mattermost Server v8.1 Extended Support Release is coming to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is recommended.**
-- See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading.
+- See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 

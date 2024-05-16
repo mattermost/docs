@@ -1,4 +1,4 @@
-# Mattermost release policy
+# Release policy
 
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```
@@ -10,14 +10,14 @@ To ensure a secure, functional, performant, and efficient Mattermost deployment,
 - considering the use of [extended support releases](#extended-support-releases) for longer-term stability, and
 - keeping both server and client applications updated.
 
-(release-life-cycles)=
-## Release life cycles
+(release-types)=
+## Release types
 
 Mattermost releases include feature, extended support, and major releases. Each release has a specified life cycle start and end date, and life cycles depend on the release type. 
 
-- **Feature release**: Feature releases contain new features and include high severity and high impact security backported to the previous 3 monthly releases. This is to ensure your organization's Mattermost deployment remains secure and stable. It's crucial to apply feature updates to maintain the security of your Mattermost deployment.
-- **Extended Support release (ESR)**: Releases maintained for a longer period of time that receive backports for security fixes and major bug fixes for the length of their life cycle. Learn more about [Mattermost extended support releases](#extended-support-releases) below.
-- **Major release**: Annual mid-year releases that follow a release theme, and include multiple new features.
+- **Feature**: Feature releases contain new features and include high severity and high impact security backported to the previous 3 monthly releases. This is to ensure your organization's Mattermost deployment remains secure and stable. It's crucial to apply feature updates to maintain the security of your Mattermost deployment.
+- **Extended**: Releases maintained for a longer period of time that receive backports for security fixes and major bug fixes for the length of their life cycle. Learn more about [Mattermost extended support releases](#extended-support-releases) below.
+- **Major**: Annual mid-year releases that follow a release theme, and include multiple new features.
 
 With multiple release types, you can plan the upgrade path that best suits your organization's needs and compliance requirements. Align your plan with your organization's IT strategy and risk management policies to ensure continuous operation without exposure to security vulnerabilities.
 
@@ -29,7 +29,7 @@ See the full list of all Mattermost Server and desktop app releases and life cyc
 ```{include} ../_static/badges/ent-only.md
 ```
 
-Mattermost Extended Support Releases (ESR) are a strategic choice for organizations looking for stability and reduced frequency of updates. Using ESRs can minimize disruptions associated with frequent upgrades, making them an attractive option for environments where stability is paramount. New ESRs are released twice a year, every February and August release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
+Mattermost Extended Support Releases (ESRs) are a strategic choice for organizations looking for stability and reduced frequency of updates. Using ESRs can minimize disruptions associated with frequent upgrades, making them an attractive option for environments where stability is paramount. New ESRs are released twice a year, every February and August release. An ESR is supported for nine months to provide customers with enough time to test and upgrade to the next ESR.
 
 We strongly recommend planning ahead for upgrades before the end of an ESR's life cycle to ensure continuity in receiving security updates.
 
@@ -44,7 +44,7 @@ We strongly recommend reviewing [upgrade best practices](https://docs.mattermost
 ![Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.](../images/ESR_graphic2.png)
 
 (esr-notifications)=
-## ESR Notifications
+### ESR Notifications
 
 ```{include} ../_static/badges/ent-only.md
 ```

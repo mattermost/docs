@@ -1,5 +1,5 @@
-Desktop application changelog
-==============================
+Desktop app changelog
+=====================
 
 This changelog summarizes updates to Mattermost desktop app releases for `Mattermost <https://mattermost.com>`__.
 

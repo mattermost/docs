@@ -1,4 +1,4 @@
-# Mattermost unsupported legacy releases
+# Unsupported legacy releases
 
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 

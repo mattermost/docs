@@ -11,7 +11,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   :hidden:
   :titlesonly:
 
-    Mattermost release lifecycle </guides/release-lifecycle>
+    Release life cycle </guides/release-lifecycle>
     Prepare your Mattermost database </install/prepare-mattermost-database>
     Deploy on Ubuntu </install/install-ubuntu>
     Deploy using Docker </install/install-docker>
