@@ -6,14 +6,6 @@ Plugins configuration settings
 
 Self-hosted can manage the following configuration settings in **System Console > Plugins** or by editing the ``config.json`` file as described in the following tables. 
 
-- `Plugin Management <#plugin-management>`__
-- `Apps <#apps>`__
-- `Calls <#calls>`__
-- `MS Teams <#ms-teams>`__
-- `Playbooks <#playbooks>`__
-- `User Satisfaction surveys <#user-satisfaction-surveys>`__
-- `Zoom <#zoom>`__
-
 ----
 
 Plugin management
@@ -536,9 +528,9 @@ ICE servers configurations
 .. |rtcd_service| replace:: :ref:`rtcd service <configure/calls-deployment:the rtcd service>`
 
 **Example**
- 
+
  .. code-block:: json
- 
+
    [
     {
        "urls":[
@@ -553,8 +545,7 @@ ICE servers configurations
        "credentials":"turnpassword"
     }
    ]
- 
- 
+
 **Example (Using generated TURN credentials)**
 
   .. code-block:: json
@@ -563,10 +554,9 @@ ICE servers configurations
 	    "urls": ["turn:turn.example.com:443"]
     }]
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**:                                                                                                                                                                     |
-| - To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.                                                    |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.    |
++---------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
@@ -584,8 +574,7 @@ TURN static auth secret
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls**                                                                      |
 |                                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.turnstaticauthsecret``                |
-|                                                                            | - Environment variable: N/A                                                                                    |
-| This is an optional field.                                                 |                                                                                                                |
+| This is an optional field.                                                 | - Environment variable: N/A                                                                                    |
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsturncredentialsexpiration
@@ -671,9 +660,7 @@ Enable simulcast for screen sharing (Experimental)
 |                                                                                                                        | - Environment variable: N/A                                                                              |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | **Note**: This functionality has the following requirements:                                                                                                                                                                      |
-|                                                                                                                                                                                                                                   |
 | - Calls plugin version >= v0.16.0                                                                                                                                                                                                 |
-|                                                                                                                                                                                                                                   |
 | - ``rtcd`` version >= v0.10.0 (if in use)                                                                                                                                                                                         |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
@@ -764,7 +751,7 @@ Call recording quality
 |                                                                                                                             | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.recordingquality``                                                                    |
 | The default is **Medium**. This is a required value.                                                                        |                                                                                                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording and transcriptions>` for more information.                                               |
+| **Note**: The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.                               |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablecalltranscriptions
@@ -802,13 +789,143 @@ Transcriber model size
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| The speech-to-text model size to use. Heavier models will produce more accurate results at the expense of processing time and resources usage. Available options are: *Tiny*, *Base* and *Small*.                                                                                                            | - System Config path: **Plugins > Calls**                                                                                                                      |
-|                                                                                                                                                                                                                                                                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize``                                                                |
-| The default is **Base**. This is a required value.                                                                                                                                                                                                                                                           |                                                                                                                                                                |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings and transcriptions <configure/calls-deployment:configure recording and transcriptions>` documentation for more information. This setting is available starting in plugin version 0.22.                                                                                                                                                          |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| The speech-to-text model size to use. Heavier models will produce more accurate results at the expense of processing time and resources usage. Available options are: *Tiny*, *Base* and *Small*.                                                                                  | - System Config path: **Plugins > Calls**                                                           |
+|                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize``     |
+| The default is **Base**. This is a required value.                                                                                                                                                                                                                                 |                                                                                                     |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+| **Note**: The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.                                                                                                |
+| This setting is available starting in plugin version 0.22.                                                                                                                                                                                                                                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-transcribernumthreads
+  :displayname: Call transcriber threads (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribernumthreads
+  :environment: N/A
+  :description: The number of threads used by the post-call transcriber. This must be in the range [1, numCPUs].
+
+Call transcriber threads
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| The number of threads used by the post-call transcriber. This must be in the range [1, numCPUs].                                                                                                                                                                                                                                     | - System Config path: **Plugins > Calls**                                                                                                                      |
+|                                                                                                                                                                                                                                                                                                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.transcribernumthread``                                                                |
+| The default is 2. This is a required value.                                                                                                                                                                                                                                                                                          |                                                                                                                                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.                                                                                                                                  |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-enablelivecaptions
+  :displayname: Enable live captions (Experimental) (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
+  :environment: N/A
+  :description: Enables live captioning of calls.
+
+Enable live captions (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| - **true**: Enables live captioning of calls.                             | - System Config path: **Plugins > Calls**                                                      |
+| - **false**: **(Default)** Live captions functionality is disabled.       | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions``  |
+|                                                                           |                                                                                                |
+| Live captions are generated from the call participants' audio tracks      |                                                                                                |
+| and the resulting captions can be optionally displayed on the call        |                                                                                                |
+| clients by clicking the `[cc]` button.                                    |                                                                                                |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| **Note**: Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` and                                        |
+| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` to be enabled.                                             |
+| This setting is available starting in plugin version 0.26.2.                                                                                                               |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-livecaptionsmodelsize
+  :displayname: Live captions: Model size (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsmodelsize
+  :environment: N/A
+  :description: The speech-to-text model size to use for live captions. Heavier models will produce more accurate results at the expense of processing time and resources usage.
+
+Live captions: Model size
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| The speech-to-text model size to use for live captions. While heavier models can produce more accurate results, live captioning requires the transcriber to process up to ten seconds of audio within two seconds. Therefore a maximum of size `base` is recommended. Available options are: *Tiny*, *Base* and *Small*. | - System Config path: **Plugins > Calls**                                                         |
+|                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.livecaptionsmodelsize``  |
+| The default is **Tiny**. This is a required value.                                                                                                                                                                                                                                                                       |                                                                                                   |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+| **Note**: The model size setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information. This setting is available starting in plugin version 0.26.2.                                                                                                |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-livecaptionsnumtranscribers
+  :displayname: Live captions: Number of transcribers used per call (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumtranscribers
+  :environment: N/A
+  :description: The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
+
+Live captions: Number of transcribers used per call
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].                                                                                       | - System Config path: **Plugins > Calls**                                                              |
+|                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumtranscribers`` |
+| The default is 1. This is a required value.                                                                                                                                                                                                                                                                              |                                                                                                        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| **Note**: The live captions number of transcribers setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information. This setting is available starting in plugin version 0.26.2.                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-livecaptionsnumthreadspertranscriber
+  :displayname: Live captions: Number of threads per transcriber (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumthreadspertranscriber
+  :environment: N/A
+  :description: The number of threads per live captions transcriber. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
+
+Live captions: Number of threads per transcriber
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| The number of threads per live-captions transcriber. The product of ``LiveCaptionsNumTranscribers`` * ``LiveCaptionsNumThreadsPerTranscriber`` must be in the range [1, numCPUs].                                                                                                                                        | - System Config path: **Plugins > Calls**                                                                       |
+|                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumthreadspertranscriber`` |
+| The default is 2. This is a required value.                                                                                                                                                                                                                                                                              |                                                                                                                 |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| **Note**: The live captions number of threads per transcriber setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information. This setting is available starting in plugin version 0.26.2.                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-livecaptionslanguage
+  :displayname: Live captions language (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionslanguage
+  :environment: N/A
+  :description: The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'.
+
+Live captions language
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'.  | - System Config path: **Plugins > Calls**                                                                       |
+|                                                                                                                     | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.livecaptionslanguage``                 |
+| If blank, the lange will be set to 'en' (English) as default.                                                       |                                                                                                                 |
++---------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsenableipv6
   :displayname: (Experimental) Enable IPv6 (Plugins - Calls)
@@ -834,11 +951,10 @@ Transcriber model size
 | Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | **Note**:                                                                                                                                                                                                                                               |
+|                                                                                                                                                                                                                                                         |
 | - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                                       |
 | - This setting is available starting in plugin version 0.17.                                                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
-
-.. |note| replace:: .
 
 Enable call ringing (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

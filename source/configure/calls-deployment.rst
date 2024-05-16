@@ -4,19 +4,7 @@ Calls self-hosted deployment
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording and transcription service.
-
-- `Terminology <#terminology>`__
-- `Plugin components <#plugin-components>`__
-- `Requirements <#requirements>`__
-- `Limitations <#limitations>`__
-- `Configuration <#configuration>`__
-- `Performance <#performance>`__
-- `RTCD Service <#the-rtcd-service>`__
-- `Configure recording and transcriptions <#configure-recording-and-transcriptions>`__
-- `Kubernetes deployments <#kubernetes-deployments>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
+This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
 
 Terminology
 -----------
@@ -329,28 +317,29 @@ In order for this to work, the :ref:`RTCD Service URL <configure/plugins-configu
 The expected requirements are the following:
 
 - When a new ``rtcd`` instance is deployed, it should be added to the DNS record. The plugin side will then be able to pick it up and start assigning calls to the new host.
-
 - If a ``rtcd`` instance goes down, it should be removed from the DNS record. The plugin side can then detect the change and stop assigning new calls to that host.
 
 .. note::
-   Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
-   There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
+   - Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
+   - There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
 
-Configure recording and transcriptions
---------------------------------------
+Configure recording, transcriptions, and live captions
+------------------------------------------------------
 
-Before you can start recording and transcribing calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
+Before you can start recording, transcribing, and live captioning calls, you need to configure the ``calls-offloader`` job service. See the `calls-offloader <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`_ documentation on GitHub for details on deploying and running this service. `Performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ related to this service are also available on GitHub. 
 
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
 Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` configuration setting.
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` config setting.
+Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (experimental)>` configuration setting.
 
 .. note::
-  The call transcriptions functionality is available starting in Calls version v0.22.0
+  - The call transcriptions functionality is available starting in Calls version v0.22.0.
+  - The live captions functionality is available starting in Calls version v0.26.2.
 
 Kubernetes deployments
 ----------------------
@@ -426,7 +415,6 @@ Connectivity issues
 If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
 
 For example, the :ref:`RTC Server Port (UDP) <configure/plugins-configuration-settings:rtc server port (udp)>` or the :ref:`RTC Server Port (TCP) <configure/plugins-configuration-settings:rtc server port (tcp)>` may not be open or forwarded correctly.
-
 
 Connectivity checks
 ^^^^^^^^^^^^^^^^^^^

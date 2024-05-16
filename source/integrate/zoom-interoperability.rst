@@ -38,8 +38,8 @@ Zoom supports OAuth authentication, and there are 2 types of OAuth Zoom Apps you
   7. Enter a valid **OAuth Redirect URL**, ``https://SITEURL/plugins/zoom/oauth2/complete``, and add the same URL under **Add Allow List**. ``SITEURL`` should be your Mattermost server URL (defined as ``Site URL``).
   8. To add user scopes to the app, select **Scopes**, and add the following scopes: ``meeting:read:meeting:admin``, ``meeting:write:meeting:admin``,and ``user:read:user:admin``.
   9. To set up a deauthorization URL to deauthorize users directly from Zoom, go to the **App Listing** tab, and then select **Link & Support**. Under **Deauthorization Notification**, enter a valid **Endpoint URL** ``https://YOUR-MATTERMOST-URL.COM/plugins/zoom/deauthorization?secret=WEBHOOKSECRET``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. ``WEBHOOKSECRET`` is generated during `Mattermost configuration <#mattermost-configuration>`__.
-  6. Choose whether to publish this app on Zoom Marketplace. In most cases you'll want this disabled. See notes below for details on publishing the app on the Zoom Marketplace.
-  7. Select **Create**.
+  10. Choose whether to publish this app on Zoom Marketplace. In most cases you'll want this disabled. See notes below for details on publishing the app on the Zoom Marketplace.
+  11. Select **Create**.
 
   .. note::
 

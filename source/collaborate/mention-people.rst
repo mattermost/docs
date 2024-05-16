@@ -35,7 +35,7 @@ The following example sends a special mention notification to Alice, whose usern
 
   @alice how did your interview go with the new candidate?
 
-If the person you mentioned doesn't belong to the channel, a system message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
+If the person you mentioned doesn't belong to the channel or the team, a system message is posted to let you know, and you're given the option to add the person to the channel. You are the only one who can see this message.
 
 @channel and @all
 -----------------

@@ -11,11 +11,13 @@ During each monthly release, Mattermost backports high severity or high impact s
 
 .. important::
 
-  Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is recommended.
+  Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 
 +-------------+--------------------------+--------------------------+--------------------------+
 | Version     | Release Type             | Lifecyle Start Date      | Lifecycle End Date       |
 +=============+==========================+==========================+==========================+
+| 9.9         | Feature                  | 2024-06-16               | 2024-09-15               |
++-------------+--------------------------+--------------------------+--------------------------+
 | 9.8         | Feature                  | 2024-05-16               | 2024-08-15               |
 +-------------+--------------------------+--------------------------+--------------------------+
 | 9.7         | Feature                  | 2024-04-16               | 2024-07-15               |
