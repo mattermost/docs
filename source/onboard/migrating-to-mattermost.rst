@@ -63,8 +63,8 @@ Sometimes systems running in parallel turn into a hard switch migration when a b
 
 ----
 
-Migrate Mattermost server
--------------------------
+Migrate Mattermost from one server to another
+---------------------------------------------
 
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions SOURCE refers to the Mattermost server *from which* your system will be migrated and DESTINATION refers to the Mattermost server *to which* your system will be migrated.
 

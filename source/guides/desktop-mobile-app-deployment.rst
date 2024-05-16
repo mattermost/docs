@@ -7,7 +7,7 @@ Desktop and mobile app deployment
   :titlesonly:
 
   Desktop app deployment guide </deploy/desktop-app>
-  Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>
+  Desktop MSI installer and group policy installation guides (Beta) </install/desktop-msi-installer-and-group-policy-install>
   Desktop App custom dictionaries </install/desktop-custom-dictionaries>
   Desktop managed resources </install/desktop-app-managed-resources>
   Using Mattermost’s pre-built mobile apps </deploy/use-prebuilt-mobile-apps>
@@ -27,7 +27,7 @@ Desktop app
 ------------
 
 * :doc:`Desktop app deployment guide </deploy/desktop-app>` - Customize and distribute the Mattermost desktop app with pre-configured settings.
-* :doc:`Desktop MSI installer and group policy installation guides (beta) </install/desktop-msi-installer-and-group-policy-install>` - Use the Mattermost MSI installer and Group Policy definitions for Windows deployment.
+* :doc:`Desktop MSI installer and group policy installation guides (Beta) </install/desktop-msi-installer-and-group-policy-install>` - Use the Mattermost MSI installer and Group Policy definitions for Windows deployment.
 * :doc:`Desktop app custom dictionaries </install/desktop-custom-dictionaries>` - Create custom dictionaries for Mattermost spellcheck.
 * :doc:`Desktop managed resources </install/desktop-app-managed-resources>` - Configure resource management for services running on the same domain as your Mattermost instance.
 
