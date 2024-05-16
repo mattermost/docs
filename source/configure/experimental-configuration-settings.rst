@@ -619,7 +619,7 @@ Shared channels enables the ability to establish secure connections between Matt
   :environment: ExperimentalSettings.DisableAppBar
   :description: This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
 
-  - **true**: All integration icons in the channel header move to the Apps Bar with the exception of the calls beta feature.
+  - **true**: All integration icons in the channel header move to the Apps Bar with the exception of the calls feature.
   - **false**: **(Default)** All integration icons in the channel header display in the channel header.
 
 Disable Apps Bar

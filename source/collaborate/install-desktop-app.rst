@@ -32,7 +32,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
     1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.8.0/mattermost-desktop-setup-5.8.0-win.exe>`_
     2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.8.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
-  **MSI Installer and group policies (beta)**
+  **MSI Installer and group policies (Beta)**
 
   You can download the latest version of the Mattermost desktop app MSI installer (Beta):
 
@@ -83,7 +83,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
 .. tab:: Ubuntu/Debian
 
-  Both a beta ``.deb`` package and an official APT repository is available for Debian 9 and for Ubuntu releases 20.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
+  Both a ``.deb`` package (Beta), and an official APT repository is available for Debian 9 and for Ubuntu releases 20.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
 
   1. At the command line, set up the Mattermost repository on your system: 
 
@@ -164,7 +164,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
 .. tab:: Generic Linux
 
-  A beta AppImage distribution of a compressed tarball is available. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically. 
+  A AppImage distribution (Beta) of a compressed tarball is available. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically. 
 
   1. Download the latest version of the Mattermost desktop app:
 

@@ -47,58 +47,58 @@ Define logging output in JSON format in the System Console by going to **Environ
 
     {
         "console1": {
-            "Type": "console",
-            "Format": "json",
-            "Levels": [
-                {"ID": 5, "Name": "debug", "Stacktrace": false},
-                {"ID": 4, "Name": "info", "Stacktrace": false, "color": 36},
-                {"ID": 3, "Name": "warn", "Stacktrace": false},
-                {"ID": 2, "Name": "error", "Stacktrace": true, "color": 31},
-                {"ID": 1, "Name": "fatal", "Stacktrace": true, "color": 31},
-                {"ID": 0, "Name": "panic", "Stacktrace": true, "color": 31},
-                {"ID": 10, "Name": "stdlog", "Stacktrace": false}
+            "type": "console",
+            "format": "json",
+            "levels": [
+                {"id": 5, "name": "debug", "stacktrace": false},
+                {"id": 4, "name": "info", "stacktrace": false, "color": 36},
+                {"id": 3, "name": "warn", "stacktrace": false},
+                {"id": 2, "name": "error", "stacktrace": true, "color": 31},
+                {"id": 1, "name": "fatal", "stacktrace": true, "color": 31},
+                {"id": 0, "name": "panic", "stacktrace": true, "color": 31},
+                {"id": 10, "name": "stdlog", "stacktrace": false}
             ],
-            "Options": {
-                "Out": "stdout"
+            "options": {
+                "out": "stdout"
             },
-            "MaxQueueSize": 1000
+            "maxqueuesize": 1000
         },
         "file1": {
-            "Type": "file",
-            "Format": "json",
-            "Levels": [
-                {"ID": 5, "Name": "debug", "Stacktrace": false},
-                {"ID": 4, "Name": "info", "Stacktrace": false},
-                {"ID": 3, "Name": "warn", "Stacktrace": false},
-                {"ID": 2, "Name": "error", "Stacktrace": true},
-                {"ID": 1, "Name": "fatal", "Stacktrace": true},
-                {"ID": 0, "Name": "panic", "Stacktrace": true}
+            "type": "file",
+            "format": "json",
+            "levels": [
+                {"id": 5, "name": "debug", "stacktrace": false},
+                {"id": 4, "name": "info", "stacktrace": false},
+                {"id": 3, "name": "warn", "stacktrace": false},
+                {"id": 2, "name": "error", "stacktrace": true},
+                {"id": 1, "name": "fatal", "stacktrace": true},
+                {"id": 0, "name": "panic", "stacktrace": true}
             ],
-            "Options": {
-                "Compress": true,
-                "Filename": "mattermost_logging.log",
-                "MaxAgeDays": 1,
-                "MaxBackups": 10,
-                "MaxSizeMB": 100 
+            "options": {
+                "filename": "mattermost_logging.log",
+                "max_size": 100,
+                "max_age": 1,
+                "max_backups": 10,
+                "compress": true,
             },
-            "MaxQueueSize": 1000
+            "maxqueuesize": 1000
         },
         "file2": {
-            "Type": "file",
-            "Format": "json",
-            "Levels": [
-                {"ID": 2, "Name": "error", "Stacktrace": true},
-                {"ID": 1, "Name": "fatal", "Stacktrace": true},
-                {"ID": 0, "Name": "panic", "Stacktrace": true}
+            "type": "file",
+            "format": "json",
+            "levels": [
+                {"id": 2, "name": "error", "stacktrace": true},
+                {"id": 1, "name": "fatal", "stacktrace": true},
+                {"id": 0, "name": "panic", "stacktrace": true}
             ],
-            "Options": {
-                "Compress": true,
-                "Filename": "mattermost_logging_errors.log", 
-                "MaxAgeDays": 30,
-                "MaxBackups": 10,
-                "MaxSizeMB": 100
+            "options": {
+                "filename": "mattermost_logging_errors.log", 
+                "max_size": 100,
+                "max_age": 30,
+                "max_backups": 10,
+                "compress": true
             },
-            "MaxQueueSize": 1000
+            "maxqueuesize": 1000
         }
     }
 
@@ -124,7 +124,7 @@ In addition, you can output audit log records to any combination of `console <#c
 
 .. warning::
     
-    - From Mattermost v7.2, experimental audit logging beta is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
+    - From Mattermost v7.2, experimental audit logging (Beta) is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
     - The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </comply/embedded-json-audit-log-schema>`.
     - Existing tools which ingest or parse audit log records may need to be modified.
 
@@ -170,22 +170,22 @@ Define advanced log output
 
         "AdvancedLoggingJSON": {
             "file_1": {
-                "Type": "file",
-                "Format": "plain",
-                "Levels": [
+                "type": "file",
+                "format": "plain",
+                "levels": [
                     { "id": 100, "name": "audit-api" },
                     { "id": 101, "name": "audit-content" },
                     { "id": 102, "name": "audit-permissions" },
                     { "id": 103, "name": "audit-cli" }
                 ],
-                "Options": {
-                    "Compress": true,
-                    "Filename": "./logs/audit.log",
-                    "MaxAgeDays": 1,
-                    "MaxBackups": 10,
-                    "MaxSizeMB": 500
+                "options": {
+                    "compress": true,
+                    "filename": "./logs/audit.log",
+                    "max_age": 1,
+                    "max_backups": 10,
+                    "max_size": 500
                 },
-                "MaxQueueSize": 1000
+                "maxqueuesize": 1000
             }
         }
 
@@ -235,11 +235,11 @@ Define advanced log output
                     {"id": 103, "name": "audit-cli"}
                 ],
                 "options": {
-                    "compress": true,
                     "filename": "./logs/audit.log",
+                    "max_size": 500,
                     "max_age": 1,
                     "max_backups": 10,
-                    "max_size": 500
+                    "compress": true
                 },
                 "maxqueuesize": 1000
             }
@@ -277,6 +277,8 @@ Plain log format configuration options
 +---------------------+----------+------------------------------------------------------------------------------------------------------------------------------+
 | disables_stacktrace | bool     | Disables output of stack traces. Default is ``false``.                                                                       |
 +---------------------+----------+------------------------------------------------------------------------------------------------------------------------------+
+| enable_caller       | string   | Enables output of the file and line number that emitted a log record.  Default is ``false``.                                 |
++---------------------+----------+------------------------------------------------------------------------------------------------------------------------------+
 | delim               | string   | Delimiter placed between fields. Default is single space.                                                                    |
 +---------------------+----------+------------------------------------------------------------------------------------------------------------------------------+
 | min_level_len       | number   | Minimum level name length. When level names are less than the minimum, level names are padded with spaces. Default is ``0``. |
@@ -293,83 +295,95 @@ Plain log format configuration options
 JSON log format configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| **Key**             | **Type** | **Description**                                                                         |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| disable_timestamp   | bool     | Disables output of the timestamp. Default is ``false``.                                 |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| disable_level       | bool     | Disables output of the log level display name. Default is ``false``.                    |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| disable_msg         | bool     | Disables output of the message text. Default is ``false``.                              |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| disable_fields      | bool     | Disables output of all fields. Default is ``false``.                                    |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| disables_stacktrace | bool     | Disables output of stack traces. Default is ``false``.                                  |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
-| timestamp_format    | string   | Format for timestamps. Default is `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__. |
-+---------------------+----------+-----------------------------------------------------------------------------------------+
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| **Key**             | **Type** | **Description**                                                                              |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| disable_timestamp   | bool     | Disables output of the timestamp. Default is ``false``.                                      |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| disable_level       | bool     | Disables output of the log level display name. Default is ``false``.                         |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| disable_msg         | bool     | Disables output of the message text. Default is ``false``.                                   |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| disable_fields      | bool     | Disables output of all fields. Default is ``false``.                                         |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| disables_stacktrace | bool     | Disables output of stack traces. Default is ``false``.                                       |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| enable_caller       | string   | Enables output of the file and line number that emitted a log record.  Default is ``false``. |
++---------------------+----------+----------------------------------------------------------------------------------------------+
+| timestamp_format    | string   | Format for timestamps. Default is `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__.      |
++---------------------+----------+----------------------------------------------------------------------------------------------+
 
 GELF log format configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-+----------+----------+----------------------------------------------------------+
-| **Key**  | **Type** | **Description**                                          |
-+----------+----------+----------------------------------------------------------+
-| hostname | string   | Outputs a custom hostname in log records.                |
-|          |          | If omitted, hostname is taken from the operating system. |
-+----------+----------+----------------------------------------------------------+
++---------------+----------+----------------------------------------------------------------------------------------------+
+| **Key**       | **Type** | **Description**                                                                              |
++---------------+----------+----------------------------------------------------------------------------------------------+
+| hostname      | string   | Outputs a custom hostname in log records.                                                    |
+|               |          | If omitted, hostname is taken from the operating system.                                     |
++---------------+----------+----------------------------------------------------------------------------------------------+
+| enable_caller | string   | Enables output of the file and line number that emitted a log record.  Default is ``false``. |
++---------------+----------+----------------------------------------------------------------------------------------------+
 
 Configure log levels and events
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------+----------+--------------------------------------------------------------+
-| **Key**    | **Type** | **Description**                                              |
-+------------+----------+--------------------------------------------------------------+
-| id         | number   | Unique identifier of the log level.                          |
-+------------+----------+--------------------------------------------------------------+
-| name       | string   | Name of the log level.                                       |
-+------------+----------+--------------------------------------------------------------+
-| stacktrace | bool     | Outputs a stack trace. Default is ``false``.                 |
-+------------+----------+--------------------------------------------------------------+
-| color      | number   | The ANSI color code used to output parts of the log record.  |
-|            |          | Supported values include:                                    |
-|            |          |                                                              |
-|            |          | - Black: ``30``                                              |
-|            |          | - Red: ``31``                                                |
-|            |          | - Green: ``32``                                              |
-|            |          | - Yellow: ``33``                                             |
-|            |          | - Blue: ``34``                                               |
-|            |          | - Magenta: ``35``                                            |
-|            |          | - Cyan: ``36``                                               |
-|            |          | - White: ``37``                                              |
-+------------+----------+--------------------------------------------------------------+
++------------+----------+-------------------------------------------------------------+
+| **Key**    | **Type** | **Description**                                             |
++------------+----------+-------------------------------------------------------------+
+| id         | number   | Unique identifier of the log level.                         |
++------------+----------+-------------------------------------------------------------+
+| name       | string   | Name of the log level.                                      |
++------------+----------+-------------------------------------------------------------+
+| stacktrace | bool     | Outputs a stack trace. Default is ``false``.                |
++------------+----------+-------------------------------------------------------------+
+| color      | number   | The ANSI color code used to output parts of the log record. |
+|            |          | Supported values include:                                   |
+|            |          |                                                             |
+|            |          | - Black: ``30``                                             |
+|            |          | - Red: ``31``                                               |
+|            |          | - Green: ``32``                                             |
+|            |          | - Yellow: ``33``                                            |
+|            |          | - Blue: ``34``                                              |
+|            |          | - Magenta: ``35``                                           |
+|            |          | - Cyan: ``36``                                              |
+|            |          | - White: ``37``                                             |
++------------+----------+-------------------------------------------------------------+
 
 Log levels
 ^^^^^^^^^^
 
-+--------+-----------------------+--------------------------------------------------------------------------+
-| **ID** | **Name**              | **Description**                                                          |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 100    | ``audit-api``         | API events                                                               |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 101    | ``audit-content``     | Content changes. This log level can generate considerably more records   |
-|        |                       | than the other audit log levels.                                         |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 102    | ``audit-permissions`` | Permission changes                                                       |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 103    | ``audit-cli``         | CLI operations                                                           |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 140    | ``LDAPError``         | AD/LDAP authentication errors                                            |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 141    | ``LDAPWarn``          | AD/LDAP authentication warnings                                          |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 142    | ``LDAPInfo``          | AD/LDAP authentication information logs                                  |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 143    | ``LDAPDebug``         | AD/LDAP authentication debug logs                                        |
-+--------+-----------------------+--------------------------------------------------------------------------+
-| 144    | ``LDAPTrace``         | AD/LDAP authentication trace logs. Replaces ``LdapSetings.trace`` from   |
-|        |                       | Mattermost v9.3.                                                         |
-+--------+-----------------------+--------------------------------------------------------------------------+
+The following log levels support audit logs:
+
++--------+-----------------------+------------------------------------------------------------------------+
+| **ID** | **Name**              | **Description**                                                        |
++--------+-----------------------+------------------------------------------------------------------------+
+| 100    | ``audit-api``         | API events                                                             |
++--------+-----------------------+------------------------------------------------------------------------+
+| 101    | ``audit-content``     | Content changes. This log level can generate considerably more records |
+|        |                       | than the other audit log levels.                                       |
++--------+-----------------------+------------------------------------------------------------------------+
+| 102    | ``audit-permissions`` | Permission changes                                                     |
++--------+-----------------------+------------------------------------------------------------------------+
+| 103    | ``audit-cli``         | CLI operations                                                         |
++--------+-----------------------+------------------------------------------------------------------------+
+
+The following log levels support application logs: 
+
++--------+-----------------------+------------------------------------------------------------------------+
+| **ID** | **Name**              | **Description**                                                        |
++--------+-----------------------+------------------------------------------------------------------------+
+| 140    | ``LDAPError``         | AD/LDAP authentication errors                                          |
++--------+-----------------------+------------------------------------------------------------------------+
+| 141    | ``LDAPWarn``          | AD/LDAP authentication warnings                                        |
++--------+-----------------------+------------------------------------------------------------------------+
+| 142    | ``LDAPInfo``          | AD/LDAP authentication information logs                                |
++--------+-----------------------+------------------------------------------------------------------------+
+| 143    | ``LDAPDebug``         | AD/LDAP authentication debug logs                                      |
++--------+-----------------------+------------------------------------------------------------------------+
+| 144    | ``LDAPTrace``         | AD/LDAP authentication trace logs. Replaces ``LdapSetings.trace`` from |
+|        |                       | Mattermost v9.3.                                                       |
++--------+-----------------------+------------------------------------------------------------------------+
 
 Configure target-specific settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -411,20 +425,22 @@ Syslog target configuration options
 
 Syslog targets support local and remote syslog servers, with or without TLS transport. Syslog target support requires Mattermost Enterprise.
 
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| **Key**  | **Type** | **Description**                                                                                                                 |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| host     | string   | IP or domain name of the server receiving the log records.                                                                      |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| port     | number   | Port number for the server receiving the log records.                                                                           |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                          |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                         |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``.        |
-|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                        |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| **Key**  | **Type** | **Description**                                                                                                          |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| host     | string   | IP or domain name of the server receiving the log records.                                                               |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| port     | number   | Port number for the server receiving the log records.                                                                    |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                   |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                  |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``. |
+|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                 |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| tag      | string   | Syslog tag field.                                                                                                        |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 TCP target configuration options
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -434,22 +450,20 @@ TCP target configuration options
 
 The TCP socket targets can be configured with an IP address or domain name, port, and optional TLS certificate. TCP socket target support requires Mattermost Enterprise.
 
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| **Key**  | **Type** | **Description**                                                                                                                 |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| host     | string   | IP or domain name of the server receiving the log records.                                                                      |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| port     | number   | Port number for the server receiving the log records.                                                                           |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                          |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                         |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``.        |
-|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                        |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
-| tag      | string   | Syslog tag field.                                                                                                               |
-+----------+----------+---------------------------------------------------------------------------------------------------------------------------------+
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| **Key**  | **Type** | **Description**                                                                                                          |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| host     | string   | IP or domain name of the server receiving the log records.                                                               |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| port     | number   | Port number for the server receiving the log records.                                                                    |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| tls      | bool     | Create a TLS connection to the server receiving the log records. Default is ``false``.                                   |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| cert     | string   | Path to a cert file (.pem) to be used when establishing a TLS connection to the server.                                  |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
+| insecure | bool     | Mattermost accepts any certificate presented by the server, and any host name in that certificate. Default is ``false``. |
+|          |          | **Note**: Should only be used in testing environments, and shouldn’t be used in production environments.                 |
++----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 
 ---- 
 
@@ -485,3 +499,30 @@ How do I adjust the maximum log field size?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 See :ref:`maximum-field-size <configure/environment-configuration-settings:maximum field size>`
+
+How can I configure Advanced logging via environment variables?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to configure Advanced logging . You can use ``jq`` to generate the JSON payload, e.g.
+
+.. code-block:: shell
+
+    export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
+        "console1": {
+            "Type": "console",
+            "Format": "json",
+            "Levels": [
+                {"ID": 5, "Name": "debug", "Stacktrace": false},
+                {"ID": 4, "Name": "info", "Stacktrace": false, "color": 36},
+                {"ID": 3, "Name": "warn", "Stacktrace": false},
+                {"ID": 2, "Name": "error", "Stacktrace": true, "color": 31},
+                {"ID": 1, "Name": "fatal", "Stacktrace": true, "color": 31},
+                {"ID": 0, "Name": "panic", "Stacktrace": true, "color": 31},
+                {"ID": 10, "Name": "stdlog", "Stacktrace": false}
+            ],
+            "Options": {
+                "Out": "stdout"
+            },
+            "MaxQueueSize": 1000
+        }
+    }')

@@ -3464,7 +3464,11 @@ Start an import job.
 
 .. code-block:: sh
 
-   -h, --help   help for status
+   -h, --help          help for status
+   --bypass-upload     File is read directly from the filesystem, instead of being processed from the server. Supported in --local mode only.
+   --extract-content   Document attachments will be extracted and indexed during the import process. We recommend disabling this to improve performance.
+
+
 
 **Options inherited from parent commands**
 

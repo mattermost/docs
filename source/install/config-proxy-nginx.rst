@@ -81,11 +81,11 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
            proxy_set_header X-Frame-Options SAMEORIGIN;
            proxy_buffers 256 16k;
            proxy_buffer_size 16k;
-           client_body_timeout 60;
-           send_timeout 300;
-           lingering_timeout 5;
-           proxy_connect_timeout 90;
-           proxy_send_timeout 300;
+           client_body_timeout 60s;
+           send_timeout 300s;
+           lingering_timeout 5s;
+           proxy_connect_timeout 90s;
+           proxy_send_timeout 300s;
            proxy_read_timeout 90s;
            proxy_http_version 1.1;
            proxy_pass http://backend;

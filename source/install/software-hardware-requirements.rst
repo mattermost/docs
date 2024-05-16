@@ -45,10 +45,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v120+", "v120+"
+    "Chrome", "v122+", "v122+"
     "Firefox", "v115+", "v115+"
     "Safari", "v16.2+", "v16.2+"
-    "Edge", "v120+", "v120+"
+    "Edge", "v122+", "v122+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -72,8 +72,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12.4+ with Safari 16.2+ or Chrome 112+"
-    "Android", "Android 7+ with Chrome 112+"
+    "iOS", "iOS 12.4+ with Safari 16.2+ or Chrome 122+"
+    "Android", "Android 7+ with Chrome 122+"
 
 Email client
 ^^^^^^^^^^^^
@@ -170,14 +170,14 @@ For Enterprise Edition deployments with a multi-server setup, see :doc:`our scal
 
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test-ng <https://github.com/mattermost/mattermost-load-test-ng>`__.
 
-Mattermost's :doc:`performance monitoring </scale/performance-monitoring>` tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
+Mattermost's :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 
 System requirements
 ^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-- Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </scale/performance-monitoring>` available in Mattermost Enterprise.
-- Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </scale/performance-monitoring>`. Grafana 5.0.0 and later is recommended.
+- Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
+- Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
 - Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported. :doc:`Learn more here </scale/elasticsearch>`.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <configure/environment-configuration-settings:file storage>`.
