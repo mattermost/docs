@@ -434,6 +434,9 @@ Websocket URL
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: We strongly recommend configuring a single websocket URL that matches the `Site URL <#site-url>`_ configuration    |
+| setting.                                                                                                                     |
++--------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: web-licensefilelocation
   :displayname: License file location (Web Server)
@@ -680,5 +683,5 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the :doc:`performance monitoring </scale/performance-monitoring>` documentation for details.                                                 |
+| See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+

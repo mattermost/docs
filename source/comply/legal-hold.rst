@@ -115,7 +115,7 @@ Frequently asked questions
 Who can implement legal hold?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only the System Administrator in Mattermost has the ability to implement legal hold.
+Only Mattermost system administrators can implement a legal hold.
 
 Does a user know if they're placed under a legal hold in Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

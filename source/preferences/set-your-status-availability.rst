@@ -89,9 +89,9 @@ Other members can see your availability anywhere they can see your name, such as
 Set your availability as Do Not Disturb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Set your availability to **Do Not Disturb** to disable all desktop, email, and push notifications when you are unavailable or need to concentrate. 
+Set your availability to **Do Not Disturb** to disable all desktop, email, and push notifications when you are unavailable or need to concentrate.
 
-You can specify how long to disable notifications by selecting a preset expiration or setting a custom expiration. Your availability setting automatically reverts to its previous setting once the expiration is reached (this may take up to five minutes).
+You can specify how long to disable notifications by selecting a preset expiration, by setting a custom expiration, or by setting your status as **Don't clear**. Your availability automatically reverts to its previous setting once the expiration is reached (this may take up to five minutes).
 
-.. image:: ../images/set-your-availability.png
+.. image:: ../images/set-your-availability-dnd.png
   :alt: Example of setting your Mattermost availability as Do Not Disturb.
