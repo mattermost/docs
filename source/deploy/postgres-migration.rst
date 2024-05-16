@@ -142,7 +142,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
    CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
 
 .. note::
-   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes.
+   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``truncate()`` function on the content while creating the indexes.
 
 Unsupported unicode sequences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
