@@ -148,27 +148,6 @@ Data source
 | `high availablility database configuration </scale/high-availability-cluster.html#database-configuration>`__ documentation for details.  |
 +------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: database-maxidleconnections
-  :displayname: Maximum idle database connections (Database)
-  :systemconsole: Environment > Database
-  :configjson: SqlSettings.MaxIdleConns
-  :environment: MM_SQLSETTINGS_MAXIDLECONNS
-  :description: The maximum number of idle connections held open to the database. Default is **20**.
-
-Maximum idle database connections
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 20,``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **20**.                    |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
-
 .. config:setting:: database-maxopenconnections
   :displayname: Maximum open connections (Database)
   :systemconsole: Environment > Database
@@ -506,7 +485,8 @@ Replica lag settings
 | **Notes**:                                                                                                                                |
 |                                                                                                                                           |
 | - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.                                                         |
-| - To properly monitor this you must setup :doc:`performance monitoring </scale/performance-monitoring>` for Mattermost.                   |
+| - To properly monitor this, you must setup :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`    |
+|   for Mattermost.                                                                                                                         |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
 1. Configure the replica lag metric based on your database type. See the following tabs for details on configuring this for each database type.
