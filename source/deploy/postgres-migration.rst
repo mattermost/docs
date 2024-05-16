@@ -151,17 +151,17 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
 
 .. code:: sql
 
-CREATE PROCEDURE SanitizeUnsupportedUnicode()
-BEGIN
-    DECLARE done INT DEFAULT FALSE;
-    DECLARE curTableName text;
-    DECLARE curColumnName text;
-    DECLARE cursors CURSOR FOR
-            SELECT table_name, column_name
-            FROM information_schema.COLUMNS
-            WHERE data_type = 'json'
-            AND table_schema = DATABASE();
-	DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
+   CREATE PROCEDURE SanitizeUnsupportedUnicode()
+   BEGIN
+      DECLARE done INT DEFAULT FALSE;
+      DECLARE curTableName text;
+      DECLARE curColumnName text;
+      DECLARE cursors CURSOR FOR
+         SELECT table_name, column_name
+         FROM information_schema.COLUMNS
+         WHERE data_type = 'json'
+         AND table_schema = DATABASE();
+	   DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
 
    OPEN cursors;
 
@@ -175,11 +175,11 @@ BEGIN
 	END WHILE;
 
    CLOSE cursors;
-END;
+   END;
 
-CALL SanitizeUnsupportedUnicode();
+   CALL SanitizeUnsupportedUnicode();
 
-DROP PROCEDURE IF EXISTS SanitizeUnsupportedUnicode;
+   DROP PROCEDURE IF EXISTS SanitizeUnsupportedUnicode;
 
 Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
