@@ -275,9 +275,13 @@ For our case, we can simply run the following command:
 
 .. code:: sh
 
-   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,ir_,focalboard,systems"
+   dbcmp --source "${MYSQL_DSN}" --target "postgres://${POSTGRES_DSN} " --exclude="db_migrations,ir_,focalboard,systems"
 
-Note that this migration guide only covers the tables for Mattermost products.
+For example: ``dbcmp --source "user:password@tcp(address:3306)/db_name --target "postgres://user:password@address:5432/db_name``
+
+.. note::
+   
+   This migration guide only covers the tables for Mattermost products.
 
 Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) and creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
 
@@ -455,7 +459,7 @@ Compare the plugin data
 
 .. code:: sh
 
-   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
+   dbcmp --source "${MYSQL_DSN}" --target "postgres://${POSTGRES_DSN}" --exclude="db_migrations,systems"
 
 Iterative migrations
 --------------------
