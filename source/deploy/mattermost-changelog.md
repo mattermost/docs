@@ -25,6 +25,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Calls plugin version [v0.27.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.27.0).
  - Pre-packaged Jira plugin version [v4.1.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.1).
  - Pre-packaged GitLab plugin version [v1.9.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.9.0).
  - Pre-packaged Zoom plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.8.0).
