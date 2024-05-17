@@ -205,7 +205,7 @@ A sample configuration for NGINX is provided below. It assumes that you have two
       location ~ /api/v[0-9]+/(users/)?websocket$ {
             proxy_set_header Upgrade $http_upgrade;
             proxy_set_header Connection "upgrade";
-            client_max_body_size 50M;
+            client_max_body_size 100M;
             proxy_set_header Host $http_host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -225,7 +225,7 @@ A sample configuration for NGINX is provided below. It assumes that you have two
 
       location ~ /api/v[0-9]+/users/[a-z0-9]+/image$ {
             proxy_set_header Connection "";
-            client_max_body_size 50M;
+            client_max_body_size 100M;
             proxy_set_header Host $http_host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
@@ -252,7 +252,7 @@ A sample configuration for NGINX is provided below. It assumes that you have two
 
       location / {
             proxy_set_header Connection "";
-            client_max_body_size 50M;
+            client_max_body_size 100M;
             proxy_set_header Host $http_host;
             proxy_set_header X-Real-IP $remote_addr;
             proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
