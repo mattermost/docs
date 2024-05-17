@@ -35,10 +35,10 @@ System requirements and configurations
 
 Before starting the migration process, it's essential to ensure that your system meets the necessary requirements for a smooth and efficient migration. We strongly recommend the following system specifications and adjustments:
 
-- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgLoader settings, such as the number of workers, prefetch rows, and rows per range. These adjustments can help optimize resource utilization based on available system resources.
+- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgLoader settings, such as the ``number of workers``, ``prefetch rows``, and especially ``rows per range`` if ``concurrency`` is set above ``1``. These adjustments can help optimize resource utilization based on available system resources. For further detail see `pgloader documentation <https://pgloader.readthedocs.io/en/latest/batches.html>`__.
 - A multi-core processor with sufficient processing power is recommended for the migration process, especially when dealing with large datasets.
 - Ensure that there is enough disk space available for storing both the MySQL and PostgreSQL databases, as well as any temporary files generated during the migration process. The amount of required disk space depends on the size of the databases being migrated.
-- To improve performance further, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
+- To reduce migration time further, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
 
 Before the migration
 --------------------
@@ -133,20 +133,6 @@ To prevent errors during the migration, we have included following queries:
 
    DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt;
    DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt;
-
-To avoid performance regression on ``Posts`` and ``FileInfo`` table access, following queries should be executed once the migration finishes:
-
-.. code:: sql
-
-   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message));
-   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
-
-.. note::
-   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below:
-
-.. code::
-
-   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000))); 
 
 Unsupported unicode sequences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,13 +230,13 @@ Once we set the schema to a desired state, we can start migrating the **data** b
 .. code::
 
    LOAD DATABASE
-        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
-        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_schema }}
 
    WITH data only,
         workers = 8, concurrency = 1,
         multiple readers per thread, rows per range = 10000,
-        prefetch rows = 10000,
+        prefetch rows = 10000, batch rows = 2500,
         create no tables, create no indexes,
         preserve index names
 
@@ -259,8 +245,8 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         work_mem to '12MB'
 
    SET MySQL PARAMETERS
-         net_read_timeout  = '120',
-         net_write_timeout = '120'
+        net_read_timeout  = '120',
+        net_write_timeout = '120'
 
    CAST column Channels.Type to "channel_type" drop typemod,
         column Teams.Type to "team_type" drop typemod,
@@ -274,7 +260,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type json to jsonb drop typemod
 
    EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations', 'db_lock',
-        'configurations', 'configurationfiles', 'db_config_migrations'
+        'Configurations', 'ConfigurationFiles', 'db_config_migrations'
 
    BEFORE LOAD DO
         $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
@@ -296,8 +282,28 @@ Once you save this configuration file, e.g. ``migration.load``, you can run the 
 
 Feel free to contribute to and/or report your findings through your migration to us.
 
+After the migration
+-------------------
+
+Restore full-text indexes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To avoid performance regression on ``Posts`` and ``FileInfo`` table access, following queries should be executed once the migration finishes:
+
+.. code:: sql
+
+   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message));
+   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
+
+.. note::
+   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below:
+
+.. code:: sql
+
+   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000))); 
+
 Compare the data
-----------------
+~~~~~~~~~~~~~~~~
 
 We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas.
 
@@ -342,8 +348,8 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 .. code::
 
    LOAD DATABASE
-        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
-        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_schema }}
 
    WITH include drop, create tables, create indexes, no foreign keys,
        workers = 8, concurrency = 1,
@@ -449,8 +455,8 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 .. code::
 
    LOAD DATABASE
-        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
-        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_schema }}
 
    WITH include drop, create tables, create indexes, reset sequences,
        workers = 8, concurrency = 1,
@@ -493,13 +499,6 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 .. code:: bash
 
    pgLoader focalboard.load > focalboard_migration.log
-
-Compare the plugin data
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: sh
-
-   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
 
 Troubleshooting
 -----------------
