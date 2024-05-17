@@ -19,7 +19,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Calls: Added the host controls menu, allowing the current host (or admin) to transfer host duties to another.
  - Calls: Added remove participant & view profile commands.
  - Calls: Host controls - **Mute all** option was added to participants list.
- - Calls: Host controls - added stop screenshare, mute and lower hand functionalities.
+ - Calls: Host controls - added stop screenshare, mute, and lower hand functionalities.
  - Changed the prioritized user autocomplete results based on recency and thread activity.
  - Updated the default themes to reduce eye strain (particularly on the dark themes).
  - Improved status management to avoid missing notifications.
@@ -27,9 +27,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue where channels from other servers could get read on startup.
  - Fixed an issue where the clipboard did not receive the markdown as was entered into the original post instead of one that included a proxy link when tapping on the "Copy Text" list item in a channel post dot menu (accessed by clicking the three dots) for a post that includes embedded images using markdown.
- - Fixed an erratic behavior with pull up to refresh on a thread.
+ - Fixed erratic behavior when pulling up to refresh a thread.
  - Fixed gallery footer not showing an old profile picture.
- - Fixed server option text on Quartz theme.
+ - Fixed server option text in the Quartz theme.
  - Fixed an issue on iOS where the badge number was not correct sometimes.
 
 ### Open Source Components
