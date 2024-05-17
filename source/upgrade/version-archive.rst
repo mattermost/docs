@@ -11,11 +11,15 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. important::
 
-   Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is recommended.
+   Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
 
 Mattermost Enterprise Edition
 ------------------------------
 
+Mattermost Enterprise Edition v9.8.0 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-8-feature-release>`__ - `Download <https://releases.mattermost.com/9.8.0/mattermost-9.8.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/9.8.0/mattermost-9.8.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``2fd7a3e9177374e852d3f9307fc32b6548b9f099ad2a8341213abf237c616bd9``
+  - GPG Signature: https://releases.mattermost.com/9.8.0/mattermost-9.8.0-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.7.4 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-7-feature-release>`__ - `Download <https://releases.mattermost.com/9.7.4/mattermost-9.7.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.7.4/mattermost-9.7.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``b8f374b2e2f08e9fec644c0dd27a8d63e0786043b0e5bfea6a11a0cf6f2f71f1``
@@ -369,6 +373,10 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+Mattermost Team Edition v9.8.0 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-8-feature-release>`__ - `Download <https://releases.mattermost.com/9.8.0/mattermost-team-9.8.0-linux-amd64.tar.gz?src=arc>`__
+  - ``https://releases.mattermost.com/9.8.0/mattermost-team-9.8.0-linux-amd64.tar.gz``
+  - SHA-256 Checksum: ``186753af3b64311a8f766e31313e90d14c03478a543e45fb80cc7688bd086f37``
+  - GPG Signature: https://releases.mattermost.com/9.8.0/mattermost-team-9.8.0-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.7.4 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-7-feature-release>`__ - `Download <https://releases.mattermost.com/9.7.4/mattermost-team-9.7.4-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.7.4/mattermost-team-9.7.4-linux-amd64.tar.gz``
   - SHA-256 Checksum: ``a506864bb95db3c598de6dc6210647babb5e84c1b2b04d944b8cbb887595b8bc``

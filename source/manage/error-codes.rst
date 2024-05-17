@@ -15,12 +15,11 @@ In advanced deployments, error codes can be overwritten by administrators to ref
 ERROR_SAFETY_LIMITS_EXCEEDED
 ----------------------------
 
-This error happens in the free version of Mattermost when more than 10,000 users are registered on the server.
+A safety limits exceeded error (``ERROR_SAFETY_LIMITS_EXCEEDED``) displays in the :ref:`free version of Mattermost <about/editions-and-offerings:mattermost team edition>`, and certain functionality may be limited, when usage grossly exceeds the recommended limit for users in a safe deployment, including:
 
-The free version of Mattermost is intended for approximately 50 users, and should a deployment materially exceed this recommended size, administrators should seek to either `purchase a commercial license <https://mattermost.com/pricing/>`_ or apply for a :ref:`nonprofit license <about/subscription:mattermost nonprofit license program>`.
+- more than 10,000 users are registered on the server, and/or
+- more than 5 million messages have been sent on the server.
 
-When usage grossly exceeds the recommended limit for users in a safe deployment, an error message is displayed and certain functionality may be limited.
+10,000 users and 5 million messages represents a “high upper limit” for deployments that are approximately 200 times the recommended size, which is far beyond the intended design of the product. 
 
-10,000 users represents a “high upper limit” for deployments that are approximately 200 times the recommended size, which is far beyond the intended design of the product. 
-
-To remove the error message, deactivate users until your user count is below the high upper limit.
+The free version of Mattermost is intended for approximately 50 users. If your Mattermost materially exceeds this recommended size, system admins should seek to either `purchase a commercial license <https://mattermost.com/pricing/>`_ or apply for a :ref:`nonprofit license <about/subscription:mattermost nonprofit license program>`. Alternatively, admins can deactivate users until the user count falls below the high upper limit.
