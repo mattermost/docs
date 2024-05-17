@@ -56,10 +56,6 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Added a metric to track time it takes for the right-hand side to load.
  - Improved js memory profile of status’s reducers.
 
-### Websocket Event Changes
- - Changed the semantics of the ``mattermost_http_websockets_total`` metric to track all open WebSocket connections, regardless of whether they are authenticated.
- - Added a ``origin_client`` label to the ``mattermost_http_websockets_total`` Prometheus metric.
-
 ### Bug Fixes
  - Fixed an issue with ``aria-label`` for sidebar channel buttons.
  - Fixed an issue where any remaining unclosed database RPC connections were not closed after a plugin shut down.
@@ -87,7 +83,13 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Under ``ExperimentalSettings`` in ``config.json``:
     - Added ``DisableWakeUpReconnectHandler`` to disable the wake up on reconnect handler.
  - Removed ``SelfHostedPurchase`` setting.
- - Self Hosted system administrators can now configure all ``ExperimentalAuditSettings`` through the user interface in the ``System Console``. Cloud Administrators can now change the ``AdvancedLoggingJSON`` value for the ``ExperimentalAuditSettings``. This is the only configuration that Cloud administrators are able to adjust. Feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` must be enabled in order to leverage this new user interface.
+
+#### Changes to the Enterprise plan: 
+ - Self-hosted system administrators can now configure all ``ExperimentalAuditSettings`` through the user interface in the ``System Console``. Cloud administrators can now change the ``AdvancedLoggingJSON`` value for the ``ExperimentalAuditSettings``. This is the only configuration that Cloud administrators are able to adjust. Feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` must be enabled in order to leverage this new user interface.
+
+### Websocket Event Changes
+ - Changed the semantics of the ``mattermost_http_websockets_total`` metric to track all open WebSocket connections, regardless of whether they are authenticated.
+ - Added a ``origin_client`` label to the ``mattermost_http_websockets_total`` Prometheus metric.
 
 ### Go Version
  - v9.9 is built with Go ``v1.21.8``.
