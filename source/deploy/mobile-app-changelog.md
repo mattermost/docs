@@ -26,7 +26,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue where channels from other servers could get read on startup.
- - Fixed an issue where the clipboard did not receive the markdown as was entered into the original post instead of one that included a proxy link when tapping on the "Copy Text" list item in a channel post dot menu (accessed by clicking the three dots) for a post that includes embedded images using markdown.
+ - Fixed an issue where a proxy link was copied instead of the original image link when copying a post that included an embedded image.
  - Fixed erratic behavior when pulling up to refresh a thread.
  - Fixed an issue with the gallery footer showing an old profile picture.
  - Fixed server option text in the Quartz theme.
