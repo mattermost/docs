@@ -49,6 +49,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Added support for post priority to incoming webhooks and outgoing webhook responses.
  - Added a validation that the payload for an open Interactive Dialog request is valid according to the rules at https://docs.mattermost.com/developer/interactive-dialogs.html.
  - Unblocked notification calls by using usernames instead of full names in case of a missing user profile.
+ - Increased the maximum password limit from 64 to 72 characters (``PasswordMaximumLength``).
 
 #### Performance
  - Added the initial version of new client-side performance metrics.
@@ -80,15 +81,13 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
 New setting option were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Added a feature flag and a setting ``EnableClientMetrics`` to control new client performance metrics.
- - Added ``DisableWakeUpReconnectHandler`` to disable the wake up on reconnect handler.
- - Added a setting for Notification Metrics ``MetricsSettings.EnableNotificationMetrics``.
- - Increased the maximum password limit from 64 to 72 characters.(``PasswordMaximumLength``).
- - Removed ``SelfHostedPurchase``.
- - Self Hosted System administrators can now configure all ``ExperimentalAuditSettings`` through the user interface in the ``System Console``. Cloud Administrators can now change the ``AdvancedLoggingJSON`` value for the ``ExperimentalAuditSettings``. This is the only configuration that Cloud administrators are able to adjust. Feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` must be enabled in order to leverage this new UI.
-
- #### Changes to Professional and Enterprise plans:
- - 
+ - Under ``MetricsSettings`` in ``config.json``:
+    - Added a feature flag and a setting ``EnableClientMetrics`` to control new client performance metrics.
+    - Added a setting for notification metrics ``EnableNotificationMetrics``.
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``DisableWakeUpReconnectHandler`` to disable the wake up on reconnect handler.
+ - Removed ``SelfHostedPurchase`` setting.
+ - Self Hosted system administrators can now configure all ``ExperimentalAuditSettings`` through the user interface in the ``System Console``. Cloud Administrators can now change the ``AdvancedLoggingJSON`` value for the ``ExperimentalAuditSettings``. This is the only configuration that Cloud administrators are able to adjust. Feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` must be enabled in order to leverage this new user interface.
 
 ### Go Version
  - v9.9 is built with Go ``v1.21.8``.
