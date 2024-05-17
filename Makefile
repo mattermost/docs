@@ -1,5 +1,8 @@
 # Minimal makefile for Sphinx documentation
-#
+.PHONY: html
+html:
+	@echo "foobar"
+
 .PHONY: Makefile help python-deps linkcheck livehtml python-deps test compass-icons
 #
 # You can set these variables from the command line, and also

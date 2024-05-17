@@ -15,7 +15,7 @@ jobs:
       env:
         PR_NUMBER: ${{ github.event.pull_request.number }}
       run: |
-        echo "$PR_NUMBER" > pr.txt
+        echo "7095" > pr.txt
     - name: Save PR
       uses: actions/upload-artifact@65d862660abb392b8c4a3d1195a2108db131dd05 # v3.1.2
       with:
