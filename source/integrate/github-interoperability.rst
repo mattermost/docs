@@ -31,8 +31,8 @@ A Mattermost system admin must perform the following steps in GitHub.
   - **Authorization callback URL**: ``https://YOUR-MATTERMOST-URL.COM/plugins/github/oauth/complete``, replacing ``https://YOUR-MATTERMOST-URL.COM`` with your Mattermost URL. This value must match the Mattermost server URL you use to log in.
 
 3. Save your changes.
-4. Select **Generate a new client secret**, and enter your GitHub password to continue. 
-5. Copy the **Client ID** and **Client Secret** in the resulting screen. 
+4. Select **Generate a new client secret**, and enter your GitHub password to continue.
+5. Copy the **Client ID** and **Client Secret** in the resulting screen.
 6. Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
 
 Create a webhook in GitHub
@@ -49,10 +49,11 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
   - **Secret**: The **Webhook Secret** value you copied earlier.
 
 4. Under **Which events would you like to trigger this webhook?**, select **Let me select individual events**.
-5. Select the following events: 
+5. Select the following events:
 
   - Branch or Tag creation
   - Branch or Tag deletion
+  - Releases
   - Issue comments
   - Issues
   - Pull requests
@@ -108,10 +109,10 @@ We recommend updating this integration as new versions are released. Generally, 
 Usage
 -----
 
-Users who want to use GitHub interconnectivity must register an OAuth app in GitHub for Mattermost, and then connect a GitHub account to Mattermost. 
+Users who want to use GitHub interconnectivity must register an OAuth app in GitHub for Mattermost, and then connect a GitHub account to Mattermost.
 
 Once connected, you'll receive direct messages from the GitHub bot in Mattermost when someone mentions you, requests a review, comments on, or modifies one of your pull requests/issues, or assigns you to an issue on GitHub.
- 
+
 Register an OAuth app in GitHub for Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -131,7 +132,7 @@ Connect a GitHub account to Mattermost
 
 2. Once connected, run the ``/github help`` slash command to see what you can do.
 
-Get started 
+Get started
 ~~~~~~~~~~~
 
 Here are some common slash commands you can get started with:
@@ -140,7 +141,7 @@ Run the ``/github subscriptions add`` slash command to subscribe a Mattermost ch
 
 For example, to post notifications for issues, issue comments, and pull requests matching the label **Help Wanted** from the ``mattermost/mattermost-server`` GitHub repository, use: ``/github subscriptions add mattermost/mattermost-server --features issues,pulls,issue_comments,label:"Help Wanted"``. The following flags are supported:
 
-- ``--features``: A comma-delimited list of one or more of: issues, pulls, pulls_merged, pulls_created, pushes, creates, deletes, issue_creations, issue_comments, pull_reviews, label:"labelname". Defaults to ``pulls,issues,creates,deletes``.
+- ``--features``: A comma-delimited list of one or more of: issues, pulls, pulls_merged, pulls_created, pushes, creates, deletes, issue_creations, issue_comments, pull_reviews, releases, label:"labelname". Defaults to ``pulls,issues,creates,deletes``.
 - ``--exclude-org-member``: The events triggered by organization members that won't be delivered. It will be locked to the organization configured and only works for users whose membership is public. Organization members and collaborators are not the same.
 - ``--render-style``: Notifications are delivered in the specified style (for example, the body of a pull request will not be displayed). Supported values are ``collapsed``, ``skip-body``, or ``default`` (which is the same as omitting the flag).
 - ``--exclude``: A comma-separated list of the repositories to exclude from getting the subscription notifications like ``mattermost/mattermost-server``. Only supported for subscriptions to an organization.
