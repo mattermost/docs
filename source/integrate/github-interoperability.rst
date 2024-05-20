@@ -74,10 +74,6 @@ A Mattermost system admin must perform the following steps in Mattermost.
  - Convert the user account to a bot using :ref:`mmctl user convert <manage/mmctl-command-line-tool:mmctl user convert>`.
  - Change the existing ``github`` username to something else. A new bot account called ``github`` is created the Mattermost server is restarted when the :ref:`enable bot account creation <configure/integrations-configuration-settings:enable bot account creation>` configuration setting is enabled.
 
-.. note::
-
-    If you're using an older version of the GitHub integration (v0.9.0 and earlier), configure the username by going to **System Console > Plugins > GitHub**.
-
 2. Install the GitHub integration from the in-product App Marketplace:
 
   a. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
@@ -150,7 +146,7 @@ Run the ``/github todo`` slash command to get a message with items to do in GitH
 
 Run the ``/github settings`` slash command to update your settings for notifications and daily reminders.
 
-Run the ``/github setup`` slash command to configure the integration between GitHub and Mattermost. This command has the following subcommands:
+Run the ``/github setup`` slash command to configure the integration between GitHub and Mattermost. You can run this command to run the entire setup process, or run one of the following subcommands to revisit a particular setup step:
 
 - ``/github setup oauth``: Sets up the OAuth2 application in GitHub, establishing the necessary authorization connection between GitHub and Mattermost.
 - ``/github setup webhook``: Creates a webhook from GitHub to Mattermost, allowing real-time notifications and updates from GitHub to be sent to Mattermost channels.
