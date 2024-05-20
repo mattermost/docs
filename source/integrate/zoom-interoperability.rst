@@ -99,7 +99,6 @@ You need a paid Zoom account to start a Zoom call within Mattermost. The first t
 Start a call by selecting the Zoom icon in the right pane, or by running the ``/zoom start`` slash command in any channel or thread. All channel members can then join the meeting. The meeting host is the person who started the call.
 
 Join the meeting by selecting the call invitation in the channel.
-(TODO: screenshot for this. Probably want this at the top of the docs page)
 
 Run the ``/zoom settings`` slash command to set your preference for using your Zoom personal meeting ID as a meeting host. You can choose to always use your personal meeting ID, always use a new unique meeting id, or set Mattermost to prompt you for your preference each time you start a call.
 
