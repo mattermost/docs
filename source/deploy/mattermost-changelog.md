@@ -79,14 +79,14 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
 New setting option were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Under ``MetricsSettings`` in ``config.json``:
-    - Added a feature flag and a setting ``EnableClientMetrics`` to control new client performance metrics.
-    - Added a setting for notification metrics ``EnableNotificationMetrics``.
  - Under ``ExperimentalSettings`` in ``config.json``:
     - Added ``DisableWakeUpReconnectHandler`` to disable the wake up on reconnect handler.
  - Removed ``SelfHostedPurchase`` setting.
 
 #### Changes to the Enterprise plan: 
+ - Under ``MetricsSettings`` in ``config.json``:
+    - Added a feature flag and a setting ``EnableClientMetrics`` to control new client performance metrics.
+    - Added a setting for notification metrics ``EnableNotificationMetrics``.
  - Self-hosted system administrators can now configure all ``ExperimentalAuditSettings`` through the user interface in the ``System Console``. Cloud administrators can now change the ``AdvancedLoggingJSON`` value for the ``ExperimentalAuditSettings``. This is the only configuration that Cloud administrators are able to adjust. Feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` must be enabled in order to leverage this new user interface.
 
 ### Websocket Event Changes
@@ -100,7 +100,6 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - Status may sometimes get stuck as **Away** or **Offline** with IP Hash turned off.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
