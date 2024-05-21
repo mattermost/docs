@@ -63,7 +63,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Fixed an issue with ``aria-label`` for sidebar channel buttons.
  - Fixed an issue where any remaining unclosed database RPC connections were not closed after a plugin shut down.
  - Fixed an issue where the right-hand side stole the focus when coming back from threads or drafts.
- - Fixed an issue where the clipboard did not receive the markdown as was entered into the original post instead of one that included a proxy link when clicking on the "Copy Text" list item in a channel post dot menu (accessed by clicking the three dots) for a post that includes embedded images using markdown.
+ - Fixed an issue where a proxy link was copied instead of the original image link when copying a post that included an embedded image.
  - Fixed an issue where the user status would incorrectly get stuck to online after the user closed the tab.
  - Fixed an issue where on some servers the user could not see the member count in the **Browse Channels** dialog.
  - Fixed an issue with inline display of WebP images accessed through the public-link feature.
