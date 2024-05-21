@@ -24,6 +24,8 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
 
 ### Improvements
 
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-8-changelog/) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
  - Pre-packaged GitLab plugin version [v1.8.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.1).
@@ -37,13 +39,12 @@ If you upgrade from a release earlier than v9.7, please read the other [Importan
  - Updated theme colors for onboarding tour points.
  - Updated the right-hand side Thread view to use relative timestamps to be more consistent with the global Threads view.
  - Added a total reply count to the right-hand side thread view.
- - Added Channel Bookmarks (disabled by default).
 
 #### Administration
  - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable, and message count exceeds 5 million posts. ERROR_SAFE_LIMITS_EXCEEDED.
  - Downloading a support packet is now extensible with plugins. If a plugin can add content to the support packet, it will be displayed in the commercial support modal. Administrators will have the option to include/exclude that from the support package.
  - Upgraded Nodejs to v20.11.
- - Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
+ - Added the backend for Channel Bookmarks (disabled by default). Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
  - Added progress logs for attachments in bulk exports.
  - Added a **System Console** option to rebuild Elasticsearch channels indexes.
  - Obfuscated ``ReplicaLagSettings`` in the Support Packet.
