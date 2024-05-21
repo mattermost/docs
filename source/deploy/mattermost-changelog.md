@@ -77,7 +77,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Fixed some plugin settings with defaults not changing value.
 
 ### config.json
-New setting option were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
  - Under ``ExperimentalSettings`` in ``config.json``:
