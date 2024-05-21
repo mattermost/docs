@@ -39,6 +39,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
 
 #### Administration
  - Removed safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
+ - Adjusted safety limit error message to show when users exceed 5,000 in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable. ``ERROR_SAFE_LIMITS_EXCEEDED``.
  - Improved the message length validation step in the ``mmctl import validate`` command.
  - Added shell completion to ``mmctl user active`` and ``mmctl user deactivate``.
  - Removed support for self-serve purchases of Mattermost Subscriptions in various flows, throughout Cloud and Self Hosted environments.
