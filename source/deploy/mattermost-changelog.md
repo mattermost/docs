@@ -38,6 +38,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Fetching of complete root posts and threads of incoming thread messages are no longer allowed if they are from another channel.
 
 #### Administration
+ - Removed safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
  - Improved the message length validation step in the ``mmctl import validate`` command.
  - Added shell completion to ``mmctl user active`` and ``mmctl user deactivate``.
  - Removed support for self-serve purchases of Mattermost Subscriptions in various flows, throughout Cloud and Self Hosted environments.
