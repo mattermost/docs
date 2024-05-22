@@ -223,7 +223,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
 
 .. note::
 
-   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines.
+   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines. Also you can test the ``.load`` file by simply running ``pgloader`` with ``--dry-run`` flag. For instance ``pgloader --dry-run migration.load`` command.
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -305,7 +305,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 Compare the data
 ~~~~~~~~~~~~~~~~
 
-We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas.
+We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas. Note that ``dbcmp`` does not compare individual rows, instead, it calculates the checksum value of given ``page-size`` and compares those values. This means it cannot calculate or provide diffs on individual rows.
 
 The tool includes a few flags to run a comparison:
 
