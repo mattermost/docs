@@ -33,6 +33,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Added UI improvements to the core layout.
  - Improved error text when inviting guests to a team.
  - Increased the visibility of the used edition of Mattermost in the interface when you are using Free edition.
+ - Added an **Unsupported** label to the Team/E0 editions in the product menu.
  - Improved the look and feel of the **True/False** selector in the System Console.
  - Updated the channel header layout to reduce height and simplify the UI.
  - Fetching of complete root posts and threads of incoming thread messages are no longer allowed if they are from another channel.
