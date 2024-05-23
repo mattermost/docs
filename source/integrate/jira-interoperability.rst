@@ -44,14 +44,15 @@ A Mattermost system admin must perform the following steps in Mattermost.
     - **Enable slash command**: Enable or disable slash command autocompletion to guide users through available ``/jira`` slash commands.
     - **Display Subscription name in notifications**: Show or hide subscription name in notification messages posted to a channel.
 
+2. Run ``/jira setup`` to start the wizard for configuring the plugin. If you wish to setup the plugin manually then please follow the steps below.     
+
 Install Jira integration in your Jira instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To enable your users to create and manage Jira issues across Mattermost channels, you must install this Jira integration, as an application, in your Jira instance. 
 
-- For Jira Server or Data Center instances, run the ``/jira instance install server <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the steps posted to the channel, replacing ``YOUR-JIRA-URL`` with your Jira URL. This value must match the Jira server URL you use to log in. Run the ``/jira instance uninstall server <YOUR-JIRA-URL>`` slash command to disconnect Mattermost from your Jira Server or Data Center instance.
-- For Jira Cloud, run the  ``/jira instance install cloud <YOUR-JIRA-URL>`` slash command. Run the ``/jira instance uninstall cloud <YOUR-JIRA-URL>`` slash command to disconnect Mattermost from your Jira Cloud instance.
-- You must explicitly share the integration in your Jira instance by going to https://developer.atlassian.com/console/myapps, selecting **Distribution**, and sharing it with the organization.
+- For Jira Server or Data Center instances, run the ``/jira instance install server <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the steps posted to the channel, replacing ``YOUR-JIRA-URL`` with your Jira URL. This value must match the Jira server URL you use to log in. Run the ``/jira instance uninstall server <YOUR-JIRA-URL>`` slash command to uninstall your Jira Server or Data Center instance from your Mattermost.
+- For Jira Cloud, run the  ``/jira instance install cloud-oauth <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the wizard to complete the setup. Run the ``/jira instance uninstall cloud-oauth <YOUR-JIRA-URL>`` slash command to uninstall your Jira Cloud instance from your Mattermost.
 
 Configure webhooks in Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,7 +73,7 @@ A Mattermost system admin and a Jira system admin must perform the following ste
 Manage channel subscriptions in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``jira /subscribe`` slash command, and configure the following options:
+The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``/jira subscribe`` slash command, and configure the following options:
 
 - Configure what Jira notifications are sent to the current channel.
 - Specify filters including: affects versions, epic link, fix versions, labels, and priority.
@@ -172,6 +173,10 @@ Connect a Jira account to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In Mattermost, run the ``/jira connect`` slash command in any Mattermost channel to link your Mattermost account with your Jira account. Follow the link into your Jira instance, and select **Allow**. 
+
+.. note::
+
+  Please use ``/jira instance connect <YOUR-JIRA-URL>`` if there are multiple jira instances are installed. 
 
 2. Once connected, run the ``/jira help`` slash command to see what you can do.
 
