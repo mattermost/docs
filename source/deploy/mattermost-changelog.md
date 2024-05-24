@@ -14,6 +14,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 ## Release v9.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.8.1, released **
+  -
   - Removed a safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
   - Fixed an issue with some plugin settings with defaults not changing value.
   - Mattermost v9.8.1 contains no database or functional changes.
