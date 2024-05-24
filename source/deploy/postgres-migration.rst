@@ -26,7 +26,7 @@ Required tools
 
  - ``go install github.com/mattermost/morph/cmd/morph@v1``
 
-- Optionally install ``dbcmp`` to compare the data after a migration:
+- Optionally install `dbcmp <https://github.com/mattermost/dbcmp>`__ to compare the data after a migration:
 
  - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
@@ -305,7 +305,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 Compare the data
 ~~~~~~~~~~~~~~~~
 
-We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas.
+We internally developed a tool to simplify the process of comparing the contents of two databases. The `dbcmp <https://github.com/mattermost/dbcmp>`__ tool compares every table and reports whether there is a diversion between two schemas.
 
 The tool includes a few flags to run a comparison:
 
