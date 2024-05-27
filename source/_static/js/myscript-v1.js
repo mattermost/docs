@@ -85,7 +85,7 @@ $(document).ready(function () {
     // So it will show up for new announcements
     // Keep "mm_notification_banner__" at the beginning of the key
     // Add system to clean out storage items that are no longer needed
-    let notification_banner_key = 'mm_notification_banner__webinar-june-ai';
+    let notification_banner_key = 'mm_notification_banner__webinar-june-2024-ai';
     if (!dateInFuture(expiryDate)) {
         notification_banner_key = 'mm_notification_banner__fallback-mst';
     }
