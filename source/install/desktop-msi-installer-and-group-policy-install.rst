@@ -127,30 +127,33 @@ Verify group policy settings in the installed desktop app
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00018.png
       :alt: Verify group policy settings in the Mattermost Desktop App by opening the app from the Start menu, and verifying that the app loads the first server you defined in the Edit group policy. 
 
-Advanced installation settings
-------------------------------
+Silent MSI installation
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Perform a silent installation of the MSI by running the following command:
 
 ``msiexec /i mattermost-desktop-v5.8.0-x64.msi /qn``
 
 .. note::
-   You'll need to change this command as new versions of the Mattermost Desktop App are released.
+   - You'll need to update the version details in this command as new versions of the Mattermost desktop app are released.
+   - You must be an administrator to run these commands, or you must run them from an admin command prompt or powershell.
 
-You can specify that you want to install the MSI for all users by running:
+From version v5.9.0 of the Mattermost desktop app, the following silent MSI installation options are also available.
+
+Install the MSI for all users
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
 ``msiexec /i mattermost-desktop-v5.8.0-x64.msi ALLUSERS=1``
 
 .. note::
-   This will also disable automatic updates for the installed application.
+   - Installing the MSI for all users :ref:`disables automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` for the desktop app on Windows.
+   - To :ref:`disable automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.8.0-x64.msi DISABLEAUTOUPDATE=1``
 
-.. note::
-   These and most of the following commands will need to be run by an administrator, or in an administrator Command Prompt/PowerShell.
+Specify an installation directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can specify an installation directory by running:
+Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory:
 
 ``msiexec /i mattermost-desktop-v5.8.0-x64.msi APPLICATIONFOLDER=<install directory>``
-
-You can disable automatic updates for a per-user installation by running:
-
-``msiexec /i mattermost-desktop-v5.8.0-x64.msi DISABLEAUTOUPDATE=1``
