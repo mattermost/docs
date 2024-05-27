@@ -103,11 +103,47 @@ Configuration settings
 
   .. code-block:: none
 
+    # Extending default port range to handle lots of concurrent connections.
     net.ipv4.ip_local_port_range = 1025 65000
+
+    # Lowering the timeout to faster recycle connections in the FIN-WAIT-2 state.
     net.ipv4.tcp_fin_timeout = 30
+
+    # Reuse TIME-WAIT sockets for new outgoing connections.
     net.ipv4.tcp_tw_reuse = 1
+
+    # Bumping the limit of a listen() backlog.
+    # This is maximum number of established sockets (with an ACK)
+    # waiting to be accepted by the listening process.
     net.core.somaxconn = 4096
+
+    # Increasing the maximum number of connection requests which have
+    # not received an acknowledgment from the client.
+    # This is helpful to handle sudden bursts of new incoming connections.
     net.ipv4.tcp_max_syn_backlog = 8192
+
+    # This is tuned to be 2% of the available memory.
+    vm.min_free_kbytes = 167772
+
+    # Disabling slow start helps increasing overall throughput
+    # and performance of persistent single connections.
+    net.ipv4.tcp_slow_start_after_idle = 0
+
+    # These show a good performance improvement over defaults.
+    # More info at https://blog.cloudflare.com/http-2-prioritization-with-nginx/
+    net.ipv4.tcp_congestion_control = bbr
+    net.core.default_qdisc = fq
+    net.ipv4.tcp_notsent_lowat = 16384
+
+    # TCP buffer sizes are tuned for 10Gbit/s bandwidth and 0.5ms RTT (as measured intra EC2 cluster).
+    # This gives a BDP (bandwidth-delay-product) of 625000 bytes.
+    net.ipv4.tcp_rmem = 4096 156250 625000
+    net.ipv4.tcp_wmem = 4096 156250 625000
+    net.core.rmem_max = 312500
+    net.core.wmem_max = 312500
+    net.core.rmem_default = 312500
+    net.core.wmem_default = 312500
+    net.ipv4.tcp_mem = 1638400 1638400 1638400
 
 You can do the same for the proxy server.
 
@@ -155,40 +191,62 @@ A sample configuration for NGINX is provided below. It assumes that you have two
 .. code-block:: none
 
     upstream backend {
-            server 10.10.10.2:8065;
-            server 10.10.10.4:8065;
+          server 10.10.10.2:8065;
+          server 10.10.10.4:8065;
+          keepalive 256;
+    }
+
+    proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:50m max_size=16g inactive=60m use_temp_path=off;
+
+    server {
+      listen 80 reuseport;
+      server_name mattermost.example.com;
+
+      location ~ /api/v[0-9]+/(users/)?websocket$ {
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            client_max_body_size 100M;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Frame-Options SAMEORIGIN;
+            proxy_buffers 256 16k;
+            proxy_buffer_size 16k;
+            client_body_timeout 60s;
+            send_timeout        300s;
+            lingering_timeout   5s;
+            proxy_connect_timeout   30s;
+            proxy_send_timeout      90s;
+            proxy_read_timeout      90s;
+            proxy_http_version 1.1;
+            proxy_pass http://backend;
       }
 
-      server {
-          server_name mattermost.example.com;
-
-          location ~ /api/v[0-9]+/(users/)?websocket$ {
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_set_header Connection "upgrade";
-                client_max_body_size 50M;
-                proxy_set_header Host $http_host;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto $scheme;
-                proxy_set_header X-Frame-Options SAMEORIGIN;
-                proxy_buffers 256 16k;
-                proxy_buffer_size 16k;
-                proxy_read_timeout 600s;
-                proxy_http_version 1.1;
-                proxy_pass http://backend;
-          }
-
-          location / {
-                client_max_body_size 50M;
-                proxy_set_header Upgrade $http_upgrade;
-                proxy_set_header Connection "upgrade";
-                proxy_set_header Host $http_host;
-                proxy_set_header X-Real-IP $remote_addr;
-                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header X-Forwarded-Proto $scheme;
-                proxy_set_header X-Frame-Options SAMEORIGIN;
-                proxy_pass http://backend;
-          }
+      location / {
+            proxy_set_header Connection "";
+            client_max_body_size 100M;
+            proxy_set_header Host $http_host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+            proxy_set_header X-Frame-Options SAMEORIGIN;
+            proxy_buffers 256 16k;
+            proxy_buffer_size 16k;
+            client_body_timeout 60s;
+            send_timeout        300s;
+            lingering_timeout   5s;
+            proxy_connect_timeout   30s;
+            proxy_send_timeout      90s;
+            proxy_read_timeout      90s;
+            proxy_http_version 1.1;
+            proxy_pass http://backend;
+            proxy_cache mattermost_cache;
+            proxy_cache_revalidate on;
+            proxy_cache_min_uses 2;
+            proxy_cache_use_stale timeout;
+            proxy_cache_lock on;
+      }
     }
 
 You can use multiple proxy servers to limit a single point of failure, but that is beyond the scope of this documentation.
