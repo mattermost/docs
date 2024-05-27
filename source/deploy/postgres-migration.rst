@@ -26,7 +26,7 @@ Required tools
 
  - ``go install github.com/mattermost/morph/cmd/morph@v1``
 
-- Optionally install ``dbcmp`` to compare the data after a migration:
+- Optionally install `dbcmp <https://github.com/mattermost/dbcmp>`__ to compare the data after a migration:
 
  - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
