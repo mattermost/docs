@@ -127,8 +127,11 @@ Verify group policy settings in the installed desktop app
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00018.png
       :alt: Verify group policy settings in the Mattermost Desktop App by opening the app from the Start menu, and verifying that the app loads the first server you defined in the Edit group policy. 
 
-Silent MSI installation
-~~~~~~~~~~~~~~~~~~~~~~~~
+Advanced MSI options
+--------------------
+
+Silent installation
+~~~~~~~~~~~~~~~~~~~~
 
 Perform a silent installation of the MSI by running the following command:
 
@@ -140,8 +143,8 @@ Perform a silent installation of the MSI by running the following command:
 
 From version v5.9.0 of the Mattermost desktop app, the following silent MSI installation options are also available.
 
-Install the MSI for all users
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Install for all users
+~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
@@ -151,9 +154,9 @@ Use the ``ALLUSERS`` parameter to install the MSI for all users:
    - Installing the MSI for all users :ref:`disables automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` for the desktop app on Windows.
    - To :ref:`disable automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.8.0-x64.msi DISABLEAUTOUPDATE=1``
 
-Specify an installation directory
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Specify an install directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory:
+Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
 
 ``msiexec /i mattermost-desktop-v5.8.0-x64.msi APPLICATIONFOLDER=<install directory>``
