@@ -31,7 +31,7 @@ For a self-hosted Mattermost deployment, a Mattermost system admin must perform 
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
 5. Specify the path of the time-series database, and select **Save**.
-6. Go to **System Console > Plugins > Performance Monitoring**, to set **Enable Performance Monitoring** to **true**, and to specify a **Listen Address**. Select **Save**.
+6. Go to **System Console > Plugins > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
 
 Upgrade
 -------
