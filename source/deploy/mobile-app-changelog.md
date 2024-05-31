@@ -36,6 +36,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Removed ``@formatjs/intl-relativetimeformat``, ``@tsconfig/react-native``, ``react-native-android-open-settings``, ``readable-stream``, ``serialize-error``, and ``shallow-equals`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
+ - "Not in channel" section was unexpectedly removed from the user autocomplete results [MM-58508](https://mattermost.atlassian.net/browse/MM-58508).
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
