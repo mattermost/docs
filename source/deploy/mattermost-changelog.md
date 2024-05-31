@@ -225,6 +225,7 @@ A new setting option was added to ``config.json``. Below is a list of the additi
 
 - **9.6.3, released **
   - Mattermost v9.6.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with some plugin settings with defaults not changing value.
   - Mattermost v9.6.3 contains no database or functional changes.
 - **9.6.2, released 2024-04-25**
   - Mattermost v9.6.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
