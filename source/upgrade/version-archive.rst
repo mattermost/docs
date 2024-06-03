@@ -26,7 +26,7 @@ Mattermost Enterprise Edition v9.7.5 - `View Changelog <https://docs.mattermost.
   - GPG Signature: https://releases.mattermost.com/9.7.5/mattermost-9.7.5-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.6.3 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.3/mattermost-9.6.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.3/mattermost-9.6.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``de6f4dddc0696d292f41306ad10d5c4801bf1b018684ca73fe475831bafa4b14``
+  - SHA-256 Checksum: ``a636fbfb994dc4d4a5debd775149e17ae08d5af159c39d458facb7d8188ba4e4``
   - GPG Signature: https://releases.mattermost.com/9.6.3/mattermost-9.6.3-linux-amd64.tar.gz.sig
 Mattermost Enterprise Edition v9.5.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.6/mattermost-9.5.6-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.5.6/mattermost-9.5.6-linux-amd64.tar.gz``
@@ -383,7 +383,7 @@ Mattermost Team Edition v9.7.5 - `View Changelog <https://docs.mattermost.com/de
   - GPG Signature: https://releases.mattermost.com/9.7.5/mattermost-team-9.7.5-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.6.3 - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-6-feature-release>`__ - `Download <https://releases.mattermost.com/9.6.3/mattermost-team-9.6.3-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.6.3/mattermost-team-9.6.3-linux-amd64.tar.gz``
-  - SHA-256 Checksum: ``f1369c05227c931df6b21afd67d7878a41fb9dadcce7bdf5103d9d5c39985db2``
+  - SHA-256 Checksum: ``630a51a8c3228465914b318fd0caa634f1a0a39010482aa478f090efee4ca566``
   - GPG Signature: https://releases.mattermost.com/9.6.3/mattermost-team-9.6.3-linux-amd64.tar.gz.sig
 Mattermost Team Edition v9.5.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.6/mattermost-team-9.5.6-linux-amd64.tar.gz?src=arc>`__
   - ``https://releases.mattermost.com/9.5.6/mattermost-team-9.5.6-linux-amd64.tar.gz``
