@@ -21,7 +21,7 @@ Install Mattermost Server on Ubuntu
       <ul>
         <li>Operating System: 20.04 LTS, 22.04 LTS
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: PostgreSQL v11+</li>
+        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v11+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
