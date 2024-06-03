@@ -32,7 +32,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Updated the default themes to reduce eye strain (particularly on the dark themes).
  - Added UI improvements to the core layout.
  - Improved error text when inviting guests to a team.
- - Increased the visibility of the used edition of Mattermost in the interface when you are using Free edition.
+ - Increased the visibility Mattermost edition in-product when using the free edition.
  - Added an **Unsupported** label to the Team/E0 editions in the product menu.
  - Improved the look and feel of the **True/False** selector in the System Console.
  - Updated the channel header layout to reduce height and simplify the UI.
@@ -51,7 +51,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Removed the ``PostPriority`` feature flag.
  - Improved the error message of ``NotFound`` errors in store.
  - Added support for post priority to incoming webhooks and outgoing webhook responses.
- - Added a validation that the payload for an open Interactive Dialog request is valid according to the rules at https://docs.mattermost.com/developer/interactive-dialogs.html.
+ - Added a validation that the payload for an open Interactive Dialog request is valid according to the rules at https://developers.mattermost.com/integrate/plugins/interactive-dialogs/.
  - Unblocked notification calls by using usernames instead of full names in case of a missing user profile.
  - Increased the maximum password limit from 64 to 72 characters (``PasswordMaximumLength``).
 
@@ -70,8 +70,8 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Fixed an issue with inline display of WebP images accessed through the public-link feature.
  - Fixed an issue where it wasn’t clear that the ``mmctl import process --bypass-upload --local`` doesn't work if the server is in High Availability.
  - Fixed an issue where the user status would incorrectly be set to offline without checking for connections in other nodes in an High Availability cluster.
- - Fixed a longstanding issue where the at-mention autocomplete could erase post text following the auto-completed at-mention.
- - Fixed an issue with the status management to avoid missing notifications.
+ - Fixed a longstanding issue where the @mention auto-complete could erase post text following the auto-completed @mention.
+ - Fixed an issue with status management to avoid missing notifications.
  - Fixed an issue where audit events were not added for OAuth logins.
  - Fixed an issue with the error check in the message export process.
  - Fixed an issue where pasting in the post text box could not always paste without formatting.
