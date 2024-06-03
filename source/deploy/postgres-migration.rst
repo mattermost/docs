@@ -26,7 +26,7 @@ Required tools
 
  - ``go install github.com/mattermost/morph/cmd/morph@v1``
 
-- Optionally install ``dbcmp`` to compare the data after a migration:
+- Optionally install `dbcmp <https://github.com/mattermost/dbcmp>`__ to compare the data after a migration:
 
  - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
@@ -35,10 +35,10 @@ System requirements and configurations
 
 Before starting the migration process, it's essential to ensure that your system meets the necessary requirements for a smooth and efficient migration. We strongly recommend the following system specifications and adjustments:
 
-- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgloader settings, such as the number of workers, prefetch rows, and rows per range. These adjustments can help optimize resource utilization based on available system resources.
+- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgLoader settings, such as the ``number of workers``, ``prefetch rows``, and especially ``rows per range`` if ``concurrency`` is set above ``1``. These adjustments can help optimize resource utilization based on available system resources. For further detail see `pgloader documentation <https://pgloader.readthedocs.io/en/latest/batches.html>`__.
 - A multi-core processor with sufficient processing power is recommended for the migration process, especially when dealing with large datasets.
 - Ensure that there is enough disk space available for storing both the MySQL and PostgreSQL databases, as well as any temporary files generated during the migration process. The amount of required disk space depends on the size of the databases being migrated.
-- To improve performance further, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
+- To reduce migration time further, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
 
 Before the migration
 --------------------
@@ -52,7 +52,6 @@ Before the migration
    - Determine the migration window needed. This process requires you to stop the Mattermost Server during the migration.
    - See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
    - Prepare your PostgreSQL environment by creating a database and user. See the `database </install/prepare-mattermost-database.html>`__ documentation for details.
-   - If you are planning to run an iterative migration (running the pgloader several times), please see the `iterative-migrations <#iterative-migrations>`_ section.
    - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser``.
 
 Prepare target database
@@ -128,22 +127,49 @@ Full-text indexes
 
 It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full-text search indexing. In these cases, we are dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
 
-Although these statements are included in the script, we recommend running these manually to prevent errors:
+To prevent errors during the migration, we have included following queries:
 
 .. code:: sql
 
    DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt;
    DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt;
 
-The following queries are added to the script to re-create these indexes after migration finishes:
+Unsupported unicode sequences
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+There is a specific unicode sequence that is `disallowed <https://www.postgresql.org/docs/16/datatype-json.html#DATATYPE-JSON>`__ in PostgreSQL which is ``\u0000``. There is a chance that this sequence may appear in several rows across a bunch of tables in your MySQL database. If it is the case, during the migration you will likely receive an error as following: ``unsupported Unicode escape sequence: \u0000 cannot be converted to text.``. To prevent this from happening, we advise to sanitize your data before starting to the migration. You can use the following query to replace ``\u0000`` sequence with empty string.
 
 .. code:: sql
 
-   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message));
-   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
+   CREATE PROCEDURE SanitizeUnsupportedUnicode()
+   BEGIN
+      DECLARE done INT DEFAULT FALSE;
+      DECLARE curTableName text;
+      DECLARE curColumnName text;
+      DECLARE cursors CURSOR FOR
+         SELECT table_name, column_name
+         FROM information_schema.COLUMNS
+         WHERE data_type = 'json'
+         AND table_schema = DATABASE();
+      DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = TRUE;
 
-.. note::
-   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit, ``pgloader`` will fail with the ``ERROR:  string is too long for tsvector`` error while trying to create these indexes. You should manually remove these indexes.
+   OPEN cursors;
+
+   WHILE NOT DONE DO
+      FETCH cursors INTO curTableName, curColumnName;
+      SET @query_string = CONCAT('UPDATE ', curTableName, ' SET ', curColumnName, ' = REPLACE(', curColumnName, ', \'\\\\u0000\', \'\') WHERE ', curColumnName, ' LIKE \'%\\u0000%\';');
+
+      PREPARE dynamic_query FROM @query_string;
+      EXECUTE dynamic_query;
+      DEALLOCATE PREPARE dynamic_query;
+   END WHILE;
+
+   CLOSE cursors;
+   END;
+
+   CALL SanitizeUnsupportedUnicode();
+
+   DROP PROCEDURE IF EXISTS SanitizeUnsupportedUnicode;
 
 Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -153,14 +179,6 @@ Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/gola
 .. code:: sql
 
    DROP TABLE mattermost.schema_migrations;
-
-Also, if you were previously utilizing a database for handling the `Mattermost configuration <https://docs.mattermost.com/configure/configuration-in-your-database.html>`__, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. Please use ``mmctl config migrate`` tooling to `migrate your config <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ to the target database. After migrating the config, we should also update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
-
-.. code:: sql
-
-   SELECT * FROM Configurations WHERE Active = 't';
-
-You should update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields accordingly. Also, note that the ``MM_CONFIG`` environment variable should point to the new DSN after the migration is completed.
 
 Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the table. Consider running the following DDL to drop the columns. (This migration will be added to future versions of Mattermost).
 
@@ -187,6 +205,17 @@ An error has been identified in the 96th migration that was previously released.
    EXECUTE alterIfExists;
    DEALLOCATE PREPARE alterIfExists;
 
+Configuration in database
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you were previously utilizing a database for handling the `Mattermost configuration <https://docs.mattermost.com/configure/configuration-in-your-database.html>`__, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. Please use ``mmctl config migrate`` tooling to `migrate your config <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ to the target database. After migrating the config, we should also update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
+
+.. code:: sql
+
+   SELECT * FROM Configurations WHERE Active = 't';
+
+You should update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields accordingly. Also, note that the ``MM_CONFIG`` environment variable should point to the new DSN after the migration is completed.
+
 Migrate the data
 ----------------
 
@@ -194,19 +223,20 @@ Once we set the schema to a desired state, we can start migrating the **data** b
 
 .. note::
 
-   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines.
+   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines. Also you can test the ``.load`` file by simply running ``pgloader`` with ``--dry-run`` flag. For instance ``pgloader --dry-run migration.load`` command.
 
 \*\* Use the following configuration for the baseline of the data migration:
 
 .. code::
 
    LOAD DATABASE
-        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
-        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_schema }}
 
    WITH data only,
         workers = 8, concurrency = 1,
-        multiple readers per thread, rows per range = 50000,
+        multiple readers per thread, rows per range = 10000,
+        prefetch rows = 10000, batch rows = 2500,
         create no tables, create no indexes,
         preserve index names
 
@@ -215,8 +245,8 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         work_mem to '12MB'
 
    SET MySQL PARAMETERS
-         net_read_timeout  = '120',
-         net_write_timeout = '120'
+        net_read_timeout  = '120',
+        net_write_timeout = '120'
 
    CAST column Channels.Type to "channel_type" drop typemod,
         column Teams.Type to "team_type" drop typemod,
@@ -229,17 +259,17 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
         type json to jsonb drop typemod
 
-   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations'
+   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations', 'db_lock',
+        'Configurations', 'ConfigurationFiles', 'db_config_migrations'
 
    BEFORE LOAD DO
         $$ ALTER SCHEMA public RENAME TO {{ .source_schema }}; $$,
+        $$ TRUNCATE TABLE {{ .source_schema }}.systems; $$,
         $$ DROP INDEX IF EXISTS {{ .source_schema }}.idx_posts_message_txt; $$,
         $$ DROP INDEX IF EXISTS {{ .source_schema }}.idx_fileinfo_content_txt; $$
 
    AFTER LOAD DO
         $$ UPDATE {{ .source_schema }}.db_migrations set name='add_createat_to_teamembers' where version=92; $$,
-        $$ CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message)); $$,
-        $$ CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content)); $$,
         $$ ALTER SCHEMA {{ .source_schema }} RENAME TO public; $$,
         $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
         $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
@@ -252,10 +282,30 @@ Once you save this configuration file, e.g. ``migration.load``, you can run the 
 
 Feel free to contribute to and/or report your findings through your migration to us.
 
-Compare the data
-----------------
+After the migration
+-------------------
 
-We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas.
+Restore full-text indexes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+To avoid performance regression on ``Posts`` and ``FileInfo`` table access, following queries should be executed once the migration finishes:
+
+.. code:: sql
+
+   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON {{ .source_schema }}.posts USING gin(to_tsvector('english', message));
+   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', content));
+
+.. note::
+   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below:
+
+.. code:: sql
+
+   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON {{ .source_schema }}.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000))); 
+
+Compare the data
+~~~~~~~~~~~~~~~~
+
+We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas. Note that ``dbcmp`` does not compare individual rows, instead, it calculates the checksum value of given ``page-size`` and compares those values. This means it cannot calculate or provide diffs on individual rows.
 
 The tool includes a few flags to run a comparison:
 
@@ -302,8 +352,8 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 .. code::
 
    LOAD DATABASE
-        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
-        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_schema }}
 
    WITH include drop, create tables, create indexes, no foreign keys,
        workers = 8, concurrency = 1,
@@ -409,8 +459,8 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 .. code::
 
    LOAD DATABASE
-        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@mysql:3306/{{ .source_schema }}
-        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@postgres:5432/{{ .target_schema }}
+        FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_schema }}
+        INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_schema }}
 
    WITH include drop, create tables, create indexes, reset sequences,
        workers = 8, concurrency = 1,
@@ -453,22 +503,6 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 .. code:: bash
 
    pgloader focalboard.load > focalboard_migration.log
-
-Compare the plugin data
-~~~~~~~~~~~~~~~~~~~~~~~
-
-.. code:: sh
-
-   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN}" --exclude="db_migrations,systems"
-
-Iterative migrations
---------------------
-
-Several steps in the pgloader configuration file assume migration will take place in one go. If you are planning to run the migration over and over again, please complete the changes defined below:
-
--  Discard all of the statements defined in the ``BEFORE LOAD DO`` and ``AFTER LOAD DO`` sections.
--  Run the statements defined in ``BEFORE LOAD DO`` section only once before the migration.
--  Once the migration is completed, run the statements defined in the ``AFTER LOAD DO`` section manually.
 
 Troubleshooting
 -----------------
