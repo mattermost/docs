@@ -11,6 +11,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
+Note: Mattermost Mobile App v2.17.0 contains low to medium level security fixes. Updating is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
 ### Breaking Changes
  - **IMPORTANT:** The IPhone Deployment Target was updated to 13.4. Old devices may not be able to update the app (<1GB RAM and <iPhone6s).
 
