@@ -36,7 +36,6 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Added an **Unsupported** label to the Team/E0 editions in the product menu.
  - Improved the look and feel of the **True/False** selector in the System Console.
  - Updated the channel header layout to reduce height and simplify the UI.
- - Fetching of complete root posts and threads of incoming thread messages are no longer allowed if they are from another channel.
 
 #### Administration
  - Removed safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
@@ -59,6 +58,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Added the initial version of new client-side performance metrics.
  - Added a metric to track time it takes for the right-hand side to load.
  - Improved js memory profile of status’s reducers.
+ - When a user receives a new post that is part of a thread from a root post in a channel they are not currently viewing, we do not fetch the complete root post and its thread posts immediately. However, we still store the newly received post. The root post and its thread posts are only fetched when the user navigates to that specific channel.
 
 ### Bug Fixes
  - Fixed an issue with ``aria-label`` for sidebar channel buttons.
