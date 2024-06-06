@@ -6,7 +6,13 @@ This changelog summarizes updates to Mattermost desktop app releases for `Matter
 Release v5.8
 --------------
 
-**Release Date: May 16, 2024**
+- **v5.8.1, released **
+
+ - Fixed an issue where notifications would not show on macOS in certain cases.
+
+- **v5.8.0, released 2024-05-16**
+
+ - Original v5.8.0 release
 
 **Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
 
