@@ -1,3 +1,4 @@
+(mattermost-server-releases)=
 # Mattermost Server releases
 
 ```{include} ../_static/badges/allplans-selfhosted.md

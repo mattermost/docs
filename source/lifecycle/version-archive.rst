@@ -1,5 +1,5 @@
-Version Archive
-================
+Server Version Archive
+======================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
