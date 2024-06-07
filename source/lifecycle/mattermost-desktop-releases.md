@@ -31,25 +31,4 @@ Mattermost releases a new desktop app version every 4 months, in February, May, 
 | v5.2 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.2.0) \| {ref}`Changelog <release-v5-2>` | 2022-10-31 | 2023-03-15 |
 | v5.1 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.1.0) \| {ref}`Changelog <release-v5-1>` | 2022-05-16 | 2022-10-30 |
 | v5.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.0.0) \| {ref}`Changelog <release-v5-0>` | 2021-10-13 | 2022-05-15 |
-| v4.7 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.7.0) \| {ref}`Changelog <release-v4-7>` | 2024-05-16 | 2024-08-12 |
-| v4.6 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.6.0) \| {ref}`Changelog <release-v4-6>` | 2024-05-16 | 2024-08-15 |
-| v4.5 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.5.0) \| {ref}`Changelog <release-v4-5>` | 2024-05-16 | 2024-08-15 |
-| v4.4 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.4.0) \| {ref}`Changelog <release-v4-4>` | 2024-05-16 | 2024-08-15 |
-| v4.3 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.3.0) \| {ref}`Changelog <release-v4-3>` | 2024-05-16 | 2024-08-15 |
-| v4.2.3 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.2.3) \| {ref}`Changelog <release-v4-2-3>` | 2024-05-16 | 2024-08-15 |
-| v4.2.2 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.2.2) \| {ref}`Changelog <release-v4-2-2>` | 2024-05-16 | 2024-08-15 |
-| v4.2.1 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.2.1) \| {ref}`Changelog <release-v4-2-1>` | 2024-05-16 | 2024-08-15 |
-| v4.1.2 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.1.2) \| {ref}`Changelog <release-v4-1-2>` | 2024-05-16 | 2024-08-15 |
-| v4.1.1 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.1.1) \| {ref}`Changelog <release-v4-1-1>` | 2024-05-16 | 2024-08-15 |
-| v4.1.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.1.0) \| {ref}`Changelog <release-v4-1-0>` | 2024-05-16 | 2024-08-15 |
-| v4.0.1 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.0.1) \| {ref}`Changelog <release-v4-0-1>` | 2024-05-16 | 2024-08-15 |
-| v4.0.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v4.0.0) \| {ref}`Changelog <release-v4-0-0>` | 2024-05-16 | 2024-08-15 |
-| v3.7.1 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v3.7.1) \| {ref}`Changelog <release-v3-7-1>` | 2024-05-16 | 2024-08-15 |
-| v3.7.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v3.7.0) \| {ref}`Changelog <release-v3-7-0>` | 2024-05-16 | 2024-08-15 |
-| v3.6.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v3.6.0) \| {ref}`Changelog <release-v3-6-0>` | 2024-05-16 | 2024-08-15 |
-| v3.5.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v3.5.0) \| {ref}`Changelog <release-v3-5-0>` | 2024-05-16 | 2024-08-15 |
-| v3.4.1 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v3.4.1) \| {ref}`Changelog <release-v3-4-1>` | 2024-05-16 | 2024-08-15 |
-| v1.3.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v1.3.0) \| {ref}`Changelog <release-v1-3-0>` | 2024-05-16 | 2024-08-15 |
-| v1.2.1 {ref}`BETA <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v1.2.1) \| {ref}`Changelog <release-v1-2-1-beta>` | 2024-05-16 | 2024-08-15 |
-| v1.1.1 {ref}`BETA <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v1.1.1) \| {ref}`Changelog <release-v1-1-1-beta>` | 2024-05-16 | 2024-08-15 |
 |  |  |  |
