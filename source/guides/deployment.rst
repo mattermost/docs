@@ -37,6 +37,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   * Encountering issues with your deployment? See the :ref:`Deployment Troubleshooting <install/troubleshooting:deployment troubleshooting>` or :doc:`high scale troubleshooting </deploy/high-scale-troubleshoot>` documentation for details.
 
 * :doc:`Matermost release lifecycle </guides/release-lifecycle>` - Learn about Mattermost releases, and our recommended practices around deployment updates and ESRs.
+* :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL. 
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
 * :ref:`Deploy using Docker <install/install-docker:deploy mattermost on docker for production use>` - The fastest way to try Mattermost and a great single server installation option.
