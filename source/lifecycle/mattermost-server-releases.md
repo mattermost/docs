@@ -18,7 +18,7 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Life cycle start** | **Life cycle end** |
 |:---|:---|:---|
-| v9.9 {ref}`FEATURE <release-types>` \| [Download](https://releases.mattermost.com/9.9.0/mattermost-9.9.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-9-feature-release>` | 2024-06-16 | 2024-07-15 |
+| v9.9 {ref}`FEATURE <release-types>` \| [Download](https://releases.mattermost.com/9.9.0/mattermost-9.9.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-9-feature-release>` | 2024-06-14 | 2024-09-15 |
 | v9.8 {ref}`FEATURE <release-types>` \| [Download](https://releases.mattermost.com/9.8.0/mattermost-9.8.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-8-feature-release>` | 2024-05-16 | 2024-08-15 |
 | v9.7 {ref}`FEATURE <release-types>` \| [Download](https://releases.mattermost.com/9.7.3/mattermost-9.7.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-7-feature-release>` | 2024-04-16 | 2024-07-15 |
 | v9.6 {ref}`FEATURE <release-types>` \| [Download](https://releases.mattermost.com/9.6.2/mattermost-9.6.2-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-6-feature-release>` | 2024-03-16 | 2024-06-15 |
