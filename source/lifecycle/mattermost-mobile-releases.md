@@ -34,3 +34,4 @@ See the [Mobile app changelog](/lifecycle/mobile-app-changelog) for release deta
 | v2.2.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.2.0) \| {ref}`Changelog <release-v2-2-0>` | 2023-03-17 | 2023-04-15 |
 | v2.1.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.1.0) \| {ref}`Changelog <release-v2-1-0>` | 2023-02-16 | 2023-03-15 |
 | v2.0.0 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.0.0) \| {ref}`Changelog <release-v2-0-0>` | 2023-01-16 | 2023-02-15 |
+|  |  |  |
