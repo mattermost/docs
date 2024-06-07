@@ -4,7 +4,7 @@ Downgrade Mattermost Server
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. The binaries can be found in the :doc:`version-archive`. We do not recommend downgrading more than one version back from your current installation.
+In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. Server binaries can be found in the :doc:`Mattermost server version archive </lifecycle/version-archive>` documentation. We do not recommend downgrading more than one version back from your current installation.
 
 Downgrade Mattermost v6.0 to v5.38
 -----------------------------------
@@ -49,4 +49,4 @@ Run the following set of queries, specific to your database, to downgrade the sc
 
 .. note:: 
         
-  The inverse of `the final v6.0 upgrade query <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`__ is intentionally omitted from these downgrade queries because its result is backwards compatible, and running the query would unnecessarily delay the downgrade process.
+  The inverse of `the final v6.0 upgrade query <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`_ is intentionally omitted from these downgrade queries because its result is backwards compatible, and running the query would unnecessarily delay the downgrade process.

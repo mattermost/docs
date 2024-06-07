@@ -4488,7 +4488,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ### Compatibility
  - PostgreSQL ended long-term support for [version 9.4 in February 2020](https://www.postgresql.org/support/versioning). Mattermost is officially supporting PostgreSQL version 10 with v5.26 release as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our current ESR, will continue to be compatible with PostgreSQL 9.4. We plan on fully deprecating PostgreSQL 9.4 and all 9.x versions in our v5.30 release (December 16, 2020). Please follow the instructions under the Upgrading Section within [the PostgreSQL documentation](https://www.postgresql.org/support/versioning/).
- - Support for Mattermost Server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its lifecycle. Upgrading to Mattermost Server v5.25 or later is required.
+ - Support for Mattermost Server [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html) (ESR) 5.19 has come to the end of its life cycle. Upgrading to Mattermost Server v5.25 or later is required.
  - TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in v5.31 (January 16, 2021) mmctl will return an error when connected to Mattermost servers deployed with these TLS versions and System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend upgrading to TLS version 1.2 or higher.
 
 ### Breaking Changes
@@ -5251,7 +5251,7 @@ Mattermost v5.22.0 contains a low level security fix. [Upgrading](https://docs.m
 
 ### Compatibility
 
- - v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
+ - v5.9.0 as our Extended Support Release (ESR) is coming to the end of its life cycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.org/t/upcoming-extended-support-release-updates/8526).
 
 ### Breaking Changes
 
@@ -6348,7 +6348,7 @@ Mattermost v5.13.0 contains low level security fixes. [Upgrading](https://docs.m
 #### Removed and Deprecated Features
 
  - We are removing support for Internet Explorer (IE11) in Mattermost v5.16.0, which releases on October 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575).
- - v4.10.0 as our current Extended Support Release (ESR) is coming to the end of its lifecycle. We will be implementing version v5.9.0 as a new ESR starting July 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/extended-support-release-update/7099).
+ - v4.10.0 as our current Extended Support Release (ESR) is coming to the end of its life cycle. We will be implementing version v5.9.0 as a new ESR starting July 16, 2019. Learn more in our [forum post](https://forum.mattermost.org/t/extended-support-release-update/7099).
 
 ### Bug Fixes
  - Fixed an issue where changing the timezone setting to "Set automatically" did not work on the mobile app.

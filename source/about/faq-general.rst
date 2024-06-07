@@ -32,7 +32,7 @@ The open source Mattermost Team Edition is functionally identical to the commerc
 
 We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to unlock Enterprise features seamlessly should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-To deploy the Team Edition, download the :ref:`Mattermost Team Edition binary <upgrade/version-archive:mattermost team edition>`, and follow our standard install guides. The same applies to server upgrades.
+To deploy the Team Edition, download the :doc:`Mattermost Team Edition binary </lifecycle/version-archive>`, and follow our standard install guides. The same applies to server upgrades.
 
 What are the limitations for embargoed countries?
 -------------------------------------------------

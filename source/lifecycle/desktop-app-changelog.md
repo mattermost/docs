@@ -1,5 +1,8 @@
 # Desktop app changelog
 
+```{include} ../_static/badges/allplans-cloud-selfhosted.md
+```
+
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
 (release-v5-8)=
@@ -1682,7 +1685,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
 
 ----
 
-(release-v3-3-1)=
+(release-v3-4-1)=
 ## Release v3.4.1
 
 Release date: September 30, 2016

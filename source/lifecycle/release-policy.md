@@ -1,4 +1,4 @@
-# Release policy
+# Mattermost release policy
 
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```
@@ -31,13 +31,13 @@ See the full list of all Mattermost Server and desktop app releases and life cyc
 
 Mattermost Extended Support Releases (ESRs) are a strategic choice for organizations looking for stability and reduced frequency of updates. Using ESRs can minimize disruptions associated with frequent upgrades, making them an attractive option for environments where stability is paramount. 
 
-Mattermost [server](https://docs.mattermost.com/lifecycle/mattermost-server-releases.html) and [desktop app](https://docs.mattermost.com/lifecycle/mattermost-desktop-releases.html) ESRs are released twice a year, every February and August release. Extended releases are supported for 9 months to provide customers with enough time to test and upgrade to the next ESR.
+Mattermost [server](/lifecycle/mattermost-server-releases) and [desktop app](/lifecycle/mattermost-desktop-releases) ESRs are released twice a year, every February and August release. Extended releases are supported for 9 months to provide customers with enough time to test and upgrade to the next ESR.
 
 We strongly recommend planning ahead for upgrades before the end of an ESR's life cycle to ensure continuity in receiving security updates.
 
 ESRs don’t include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
 
-To install extended support releases, follow our [install](https://docs.mattermost.com/guides/deployment.html) or [upgrade](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) documentation. 
+To install extended support releases, follow our [install](/guides/deployment) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. 
 
 ```{Important}
 We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](/deploy/mattermost-v9-changelog) for a list of database, API, and `config.json` updates for all v9.x releases.

@@ -5,7 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
+   - Support for Mattermost Server v8.1 :doc:`Extended Support Release </lifecycle/mattermost-server-releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
@@ -625,7 +625,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | Then try to start Mattermost again.                                                                                                                              |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Please see :doc:`the changelog </deploy/legacy-self-hosted-changelog>` for a list deprecations in this release.                                                  |
+|                                                    | Please see :doc:`unsupported legacy releases </lifecycle/unsupported-legacy-releases>` documentation for a list of deprecations in this release.                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) is now enabled by default.                                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -733,7 +733,7 @@ Important Upgrade Notes
 |                                                    | upgrading to TLS version 1.2 or higher.                                                                                                                          |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.31.0                                            | For Mobile Apps v1.42.0+, the minimum server version is set to 5.31.3 as                                                                                         |
-|                                                    | :ref:`5.31.3 fixed an issue <deploy/legacy-self-hosted-changelog:release v5.31-esr>` where the server version was reported as v5.30.0.                           |
+|                                                    | `5.31.3 fixed an issue <https://docs.mattermost.com/lifecycle/unsupported-legacy-releases.html#release-v5-31-esr>`_ where server version reported was v5.30.0.   |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.29.0                                            | A new configuration setting ``ThreadAutoFollow`` has been added to support `Collapsed Reply Threads                                                              |
 |                                                    | <https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245>`__ releasing in beta in Q1 2021. This      |

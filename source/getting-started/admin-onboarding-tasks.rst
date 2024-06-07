@@ -77,7 +77,7 @@ We highly recommend the following best practices, configuration options, and fea
 
 When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, security fixes, and mobile app compatibility.
 
-Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. The :doc:`Mattermost Changelog </deploy/legacy-self-hosted-changelog>` provides all information about changes in each version.
+Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. See the :doc:`release life cycle </guides/release-lifecycle>` documentation for component life cycle details details. 
 
 Upgrading your Mattermost server only takes a few minutes. See the :doc:`Upgrade Guide </upgrade/upgrading-mattermost-server>` for step-by-step instructions.
 
