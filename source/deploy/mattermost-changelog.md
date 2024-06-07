@@ -13,7 +13,13 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: 2024-05-16**
+- **9.8.1, released 2024-06-03**
+  - Mattermost v9.8.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Removed a safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
+  - Fixed an issue with some plugin settings with defaults not changing value.
+  - Mattermost v9.8.1 contains no database or functional changes.
+- **9.8.0, released 2024-05-16**
+  - Original 9.8.0 release.
 
 ### Compatibility
  - Updated minimum required Edge and Chrome versions to 122+.
@@ -118,6 +124,9 @@ New setting option were added to ``config.json``. Below is a list of the additio
 
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.7.5, released 2024-06-03**
+  - Mattermost v9.7.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.7.5 contains no database or functional changes.
 - **9.7.4, released 2024-05-15**
   - Fixed an issue with context cancellation for integration requests [MM-58019](https://mattermost.atlassian.net/browse/MM-58019).
   - Fixed some plugin settings with defaults not changing value [MM-58102](https://mattermost.atlassian.net/browse/MM-58102).
@@ -214,6 +223,10 @@ A new setting option was added to ``config.json``. Below is a list of the additi
 
 ## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.6.3, released 2024-06-03**
+  - Mattermost v9.6.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with some plugin settings with defaults not changing value.
+  - Mattermost v9.6.3 contains no database or functional changes.
 - **9.6.2, released 2024-04-25**
   - Mattermost v9.6.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.6.2 contains no database or functional changes.
@@ -295,6 +308,9 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.6, released 2024-06-03**
+  - Mattermost v9.5.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.6 contains no database or functional changes.
 - **9.5.5, released 2024-05-15**
   - Fixed an issue where the user status would incorrectly get stuck to online after the user closed their tab [MM-57885](https://mattermost.atlassian.net/browse/MM-57885).
   - Mattermost v9.5.5 contains no database or functional changes.
