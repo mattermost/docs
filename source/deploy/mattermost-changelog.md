@@ -55,7 +55,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Increased the maximum password limit from 64 to 72 characters (``PasswordMaximumLength``).
 
 #### Performance
- - Added the initial version of new client-side performance metrics.
+ - Added the initial version of new client-side performance metrics to track web app performance and can be monitored in new Grafana board.
  - Added a metric to track time it takes for the right-hand side to load.
  - Improved js memory profile of status’s reducers.
  - When a user receives a new post that is part of a thread from a root post in a channel they are not currently viewing, we do not fetch the complete root post and its thread posts immediately. However, we still store the newly received post. The root post and its thread posts are only fetched when the user navigates to that specific channel.
