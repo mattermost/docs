@@ -102,6 +102,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
 
 ### Known Issues
+ - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the Notifications Health dashboard [MM-58500](https://mattermost.atlassian.net/browse/MM-58500). 
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
