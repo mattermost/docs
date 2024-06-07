@@ -37,10 +37,12 @@ We strongly recommend planning ahead for upgrades before the end of an ESR's lif
 
 ESRs don’t include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
 
-To install extended support releases, follow our [install](/guides/deployment) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. 
+To install extended support releases, follow our [install](/guides/deployment) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/lifecycle/mattermost-server-releases).
 
 ```{Important}
-We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](/deploy/mattermost-v9-changelog) for a list of database, API, and `config.json` updates for all v9.x releases.
+- We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](/deploy/mattermost-v9-changelog) for a list of database, API, and `config.json` updates for all v9.x releases.
+- Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy E10/E20 license.
+We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
 ```
 
 ![Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.](../images/ESR_graphic2.png)
