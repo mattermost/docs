@@ -1,7 +1,7 @@
 # Mattermost v10 changelog
 
 ```{Important}
-Support for Mattermost Server v8.1 :doc:`Extended Support Release </lifecycle/mattermost-server-releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+Support for Mattermost Server v8.1 :doc:`Extended Support Release </lifecycle/release-policy.html#extended-support-releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
