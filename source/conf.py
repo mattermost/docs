@@ -830,6 +830,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "collaborate/use-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
+"collaborate/chat-with-ai-copilot.html":
+        "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -844,6 +846,8 @@ redirects = {
 	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
+"configure/enable-ai-copilot.html":
+        "https://docs.mattermost.com/enable-copilot.html",
 
 # Configuration settings redirects
 "configure/configuration-in-mattermost-database.html":
