@@ -9,6 +9,8 @@ Release v5.8
 - **v5.8.1, released **
 
  - Fixed an issue where notifications would not show on macOS in certain cases.
+ - Fixed an issue where clicking a notification would clear unreads for the wrong channel.
+ - Fixed an issue where scaled monitors in multi-monitor setups may have caused the window to be opened across two screens.
 
 - **v5.8.0, released 2024-05-16**
 
