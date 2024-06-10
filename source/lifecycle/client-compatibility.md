@@ -16,7 +16,7 @@ Caveats to note:
 - System admins may also want to consider disabling automatic client updates to avoid users from upgrading to non-ESR releases.
 
 ```{Note}
-Earlier 4.x versions of Mattermost Desktop App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading both your Mattermost Desktop and Mobile Apps to the latest version.
+Earlier 4.x versions of Mattermost Desktop App are backwards compatible and are supported with our supported Extended Support Releases. However, for an optimal user experience and for latest security fixes, we strongly recommend upgrading your Mattermost Desktop to the latest version.
 ```
 
 ## Mobile app
