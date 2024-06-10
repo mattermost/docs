@@ -4,6 +4,10 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
+  :alt: Select the Gear icon to access more options.
+  :class: theme-icon
+
 You can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost while on a call. 
 
 Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `transcribe recorded calls <#transcribe-recorded-calls>`__.
@@ -85,11 +89,11 @@ A chat thread is created automatically for every new call.
 
 .. tab:: Web/Desktop
 
-  To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+  Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
 .. tab:: Mobile
   
-  To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+  Expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
 
 Record a call
 -------------
@@ -99,7 +103,9 @@ Record a call
 
 From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings (beta)>`.
 
-Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
+Call recordings include audio, any screen sharing during the call, and text transcriptions, when :ref:`enabled <configure/plugins-configuration-settings:enable call transcriptions (experimental)>`. 
+
+The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 
 When you stop recording, the recording file is posted in the call thread as an MP4 file attachment. It's available to all users in the channel both during the call, and after the call has ended.
 
@@ -115,6 +121,20 @@ To record a call:
 .. tab:: Mobile
   
   To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+
+Live captions during calls
+---------------------------
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v9.7, when recording calls, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (experimental)>`, all call participants can display real-time text captions by selecting the **Gear** |gear-icon| icon and **Show live captions**. Live captions can be helpful in cases where noise is preventing you from hearing other participants clearly.
+
+By default, live captions display in English. Your Mattermost system admin can :ref:`specify a different language for live captions <configure/plugins-configuration-settings:live captions language>` in the System Console.
+
+.. note::
+
+  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings (beta)>` to enable live captions.
 
 Transcribe recorded calls
 --------------------------
