@@ -21,7 +21,7 @@ It is configured using :doc:`config/config.json </configure/configuration-settin
 - **Notification service:** Sends notifications via SMTP or a Push Notification Service for mobile applications.
 - **Data management service:** Connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data between them.
 
-The binary talks to a database, typically PostgreSQL, and a filestore.
+The binary talks to a database, typically PostgreSQL, and a filestore. See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation for details on migrating from MySQL to PostgreSQL. 
 
 .. image:: ../images/architecture_basics.png
 
