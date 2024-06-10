@@ -23,7 +23,7 @@ Mattermost releases a new desktop app version every 4 months, in February, May, 
 |:---|:---|:---|
 | v5.9 {ref}`EXTENDED <release-types>` \| [Download]() \| {ref}`Changelog <release-v5-9>` | 2024-08-16 | 2025-05-15 |
 | v5.8 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.8.0) \| {ref}`Changelog <release-v5-8>` | 2024-05-16 | 2024-09-15 |
-| v5.7 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.7.0) \| {ref}`Changelog <release-v5-7>` | 2024-03-15 | 2024-08-15 |
+| v5.7 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.7.0) \| {ref}`Changelog <release-v5-7>` | 2024-03-15 | 2024-05-15 |
 | v5.6 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.6.0) \| {ref}`Changelog <release-v5-6>` | 2023-12-15 | 2024-03-15 |
 | v5.5 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.5.0) \| {ref}`Changelog <release-v5-5>` | 2023-09-15 | 2023-12-15 |
 | v5.4 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v5.4.0) \| {ref}`Changelog <release-v5-4>` | 2023-06-19 | 2023-09-15 |
