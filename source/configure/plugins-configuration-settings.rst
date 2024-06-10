@@ -51,7 +51,10 @@ Require plugin signature
 | - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``.PluginSettings.RequirePluginSignature: true`` |
 |                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| **Note**: Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.                                                                                |
+| **Notes**:                                                                                                                                                                                                                                                           |
+|                                                                                                                                                                                                                                                                      |
+| - Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.                                                                                        |
+| - Enabling this configuration will result in `plugin file uploads <#upload-plugin>`__ being disabled in the System Console.                                                                                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-automaticprepackagedplugins
@@ -78,6 +81,9 @@ Automatic prepackaged plugins
   :configjson: EnableUploads
   :environment: MM_PLUGINSETTINGS_ENABLEUPLOADS
 
+  - **true**: Enables system admins to upload plugins from the local computer to the Mattermost server.
+  - **false**: **(Default)** Disables uploading of plugins from the local computer to the Mattermost server.
+
 Upload Plugin
 ~~~~~~~~~~~~~
 
@@ -85,13 +91,16 @@ Upload Plugin
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**:  Enables you to upload plugins from your local computer to your Mattermost server for all system admins.               | - System Config path: **Plugins > Plugin Management**                  |
-| - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all system admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
+| - **true**:  Enables you to upload plugins from the local computer to the Mattermost server.                                       | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: **(Default)** Disables uploading of plugins from the local computer to the Mattermost server.                         | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
 |                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEUPLOADS``            |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| **Note**: When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the                                                |
-| `MaxFileSize </configure/environment-configuration-settings.html#maximum-file-size>`__ configuration setting isn't large enough to support the plugin file upload.                                          |
-| Additional proxy setting updateds may also be required.                                                                                                                                                     |
+| **Notes**:                                                                                                                                                                                                  |
+|                                                                                                                                                                                                             |
+| - When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the                                                        |
+|   :ref:`MaxFileSize <configure/environment-configuration-settings:maximum file size>` configuration setting isn't large enough to support the plugin file upload. Additional proxy setting updateds         |
+|   may also be required.                                                                                                                                                                                     |
+| - The ability to upload plugin files is disabled when the `Require plugin signature <#require-plugin-signature>`__ configuration setting is enabled.                                                        |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablemarketplace
