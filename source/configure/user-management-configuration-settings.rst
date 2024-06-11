@@ -105,10 +105,23 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 .. image:: ../images/deactivate-user.png
   :alt: Deactivate a user in Mattermost using the System Console.
 
-5. If the user is deactivated, select **Activate** to re-activate the user.
+You can re-activate a deactivated user by selecting **Activate**.
 
 .. image:: ../images/activate-user.png
   :alt: Activate a user in Mattermost using the System Console.
+
+What happens to deactivated user integrations?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. important::
+
+  If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
+
+  - **Slash commands** will continue to work after user deactivation. You may want to consider deleting the existing slash command token and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account.
+  - **Outgoing webhooks** will continue to work after user deactivation; however, access to webhook tokens is limited to team admins and system admins only, so the risk of exposing sensitive token data is lower. You may want to consider deleting the existing outgoing webhook token and creating a new outgoing webhook associated with a different user account.
+  - **Incoming webhooks** will continue to work after user deactivation. Sensitive token data risks are low risk because incoming webhooks don't include a token returned to a user. 
+  - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
+  - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
