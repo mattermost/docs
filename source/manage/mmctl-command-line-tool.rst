@@ -3758,7 +3758,7 @@ Show LDAP synchronization jobs.
    --suppress-warnings            disables printing warning messages
 
 mmctl ldap sync
-~~~~~~~~~~~~~~~
+---------------
 
 **Description**
 
