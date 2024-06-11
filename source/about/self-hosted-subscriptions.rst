@@ -45,23 +45,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 
 If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`_.
 
-From Mattermost v7.9
-~~~~~~~~~~~~~~~~~~~~
-
-From Mattermost v7.9, we've introduced a process that no longer requires you to take screenshots. To send Mattermost the report, a system admin must go to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
-
-When the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics with Mattermost directly.
-
-If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Mattermost Customer Success Manager from a device that's not air-gapped.
-
-.. tip::
-   
-   Not sure where to find the site statistics or team statistics? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
-
-Prior to Mattermost v7.9
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have a Mattermost deployment prior to v7.9, a system admin needs to take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
+A system admin must take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
 
 - Please ensure your screenshot is taken from the top of the page and includes both **Total Activated Users** and the **Monthly Active Users** metrics. 
 - Please include the date of the screenshot in the file name.
@@ -69,7 +53,7 @@ If you have a Mattermost deployment prior to v7.9, a system admin needs to take 
 
 .. tip:: 
 
-   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for assistance.
    
 Renew your subscription
 -----------------------
