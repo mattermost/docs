@@ -105,6 +105,11 @@ Verify group policy settings have been applied
 Install the Mattermost Desktop App using the MSI installer
 ------------------------------------------------------------
 
+.. important::
+
+   - If the desktop app is running when you install via the MSI, Mattermost prompts you to close the app manually. After acknkowledging the prompt, select **Retry** to continue the MSI installation. 
+   - Avoid selecting **Ignore**. If you do, force close the desktop app using Task Manager, ensure the ``Mattermost.exe`` process is stopped, and then restart the MSI installation.
+
 1. Within the folder the MSI installer was downloaded to, double-click on the MSI installer to begin the Mattermost Desktop installation process.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00015.png
@@ -133,9 +138,13 @@ Verify group policy settings in the installed desktop app
 Silent installation guide
 -------------------------
 
+.. important::
+
+  Ensure the desktop app is closed before proceeding with a silent installation. Because it's a silent installation, Mattermost won't prompt you to close the desktop app.
+
 Perform a silent installation of MSI by running the following command:
 
 ``msiexec /i mattermost-desktop-v5.8.0-x64.msi /qn``
 
 .. note::
-   You'll need to change this command as new versions of the Mattermost Desktop App are released.
+   Change this command as new versions of the Mattermost Desktop App are released.
