@@ -228,9 +228,13 @@ Teams
 | teams.                                                        | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-| See the :ref:`using AD/LDAP synchronized groups to manage team or private channel membership                                |
-| <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details.               |
+|                                 |
+|                |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+
+See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
+
+See the :ref:`archive a team <collaborate/organize-using-teams:archive a team>` documentation for details on archiving teams that are no longer needed.
 
 ----
 
