@@ -4,7 +4,7 @@ Prepare your Mattermost database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
   
-You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support.
+You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
 
 .. tip::
 

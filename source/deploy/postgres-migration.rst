@@ -26,7 +26,7 @@ Required tools
 
  - ``go install github.com/mattermost/morph/cmd/morph@v1``
 
-- Optionally install ``dbcmp`` to compare the data after a migration:
+- Optionally install `dbcmp <https://github.com/mattermost/dbcmp>`__ to compare the data after a migration:
 
  - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
 
@@ -171,6 +171,10 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
 
    DROP PROCEDURE IF EXISTS SanitizeUnsupportedUnicode;
 
+.. note::
+
+     There is also a specific byte sequence value that is not allowed and will cause an ``invalid byte sequence for encoding 'UTF8': 0x00"`` error during the migration. To prevent this error, you can add the ``remove-null-characters`` clause to the text casting rules. However, since pgloader will modify the data on the fly, there may be differences between the tables (if any are affected) during the comparison phase.
+
 Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -223,7 +227,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
 
 .. note::
 
-   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines.
+   In the example below, the hosts for both databases are assumed to be in the same instance. Please update addresses accordingly if they are on different machines. Also you can test the ``.load`` file by simply running ``pgloader`` with ``--dry-run`` flag. For instance ``pgloader --dry-run migration.load`` command.
 
 \*\* Use the following configuration for the baseline of the data migration:
 
@@ -255,9 +259,9 @@ Once we set the schema to a desired state, we can start migrating the **data** b
         column Drafts.Priority to text,
         type int when (= precision 11) to integer drop typemod,
         type bigint when (= precision 20) to bigint drop typemod,
-        type text to varchar drop typemod,
+        type text to varchar drop typemod using remove-null-characters,
         type tinyint when (<= precision 4) to boolean using tinyint-to-boolean,
-        type json to jsonb drop typemod
+        type json to jsonb drop typemod using remove-null-characters
 
    EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations', 'db_lock',
         'Configurations', 'ConfigurationFiles', 'db_config_migrations'
@@ -305,7 +309,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 Compare the data
 ~~~~~~~~~~~~~~~~
 
-We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas.
+We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas. Note that ``dbcmp`` does not compare individual rows, instead, it calculates the checksum value of given ``page-size`` and compares those values. This means it cannot calculate or provide diffs on individual rows.
 
 The tool includes a few flags to run a comparison:
 
@@ -334,6 +338,10 @@ An example command would look like: ``dbcmp --source "user:password@tcp(address:
    ``POSTGRES_DSN`` should start with a ``postgres://`` prefix. This way ``dbcmp`` decides which driver to use while connecting to a database.
 
 Another exclusion we are making is in the ``db_migrations`` table which has a small difference (a typo in a single migration name) and creates a diff. Since we created the PostgreSQL schema with morph, and the official ``mattermost`` source, we can skip it safely without concerns. On the other hand, ``systems`` table may contain additional diffs if there were extra keys added during some of the migrations. Consider excluding the ``systems`` table if you run into issues, and perform a manual comparison as the data in the ``systems`` table is relatively smaller in size.
+
+.. note::
+
+   If the ``remove-null-characters`` transform function is utilized during the migration and there were ``0x00`` byte sequences in the MySQL database, those tables will have differences during the comparison phase.
 
 Plugin migrations
 -----------------
