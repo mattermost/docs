@@ -13,6 +13,10 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.8.2, released **
+  - Mattermost v9.8.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Mattermost v9.8.2 contains no database or functional changes.
 - **9.8.1, released 2024-06-03**
   - Mattermost v9.8.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Removed a safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
@@ -124,6 +128,10 @@ New setting option were added to ``config.json``. Below is a list of the additio
 
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.7.6, released **
+  - Mattermost v9.7.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Mattermost v9.7.6 contains no database or functional changes.
 - **9.7.5, released 2024-06-03**
   - Mattermost v9.7.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.7.5 contains no database or functional changes.
@@ -308,6 +316,11 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.7, released **
+  - Mattermost v9.5.7 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Added a new configuration setting ``CloudSettings.Disable`` (via config.json, or environment variable), default ``false``. When set to ``true``, all requests to the Mattermost Customer Portal from a workspace will be disabled.
+  - Mattermost v9.5.7 contains no database or functional changes.
 - **9.5.6, released 2024-06-03**
   - Mattermost v9.5.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.6 contains no database or functional changes.
