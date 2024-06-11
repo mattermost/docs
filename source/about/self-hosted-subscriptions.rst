@@ -4,7 +4,7 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise, please visit our pricing page online: https://mattermost.com/pricing/
+To purchase a commercial subscription for Mattermost Enterprise or Mattermost Professional, please visit our pricing page online: https://mattermost.com/pricing/
 
 Apply your license
 ------------------
@@ -106,7 +106,7 @@ What happens to my subscription if I don't renew in time?
 
 If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
 
-When the grace period expires, your Professional or Enterprise plan is downgraded to the Free plan and other plan features are disabled.
+When the grace period expires, your Mattermost Enterprise or Professional plan is downgraded to the Free plan and other plan features are disabled.
  
 What happens when my subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -127,4 +127,4 @@ If you don't plan to renew your subscription, revoke the expired license in **Sy
 Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Professional and Enterprise editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.
+Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Enterprise and Professional editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.

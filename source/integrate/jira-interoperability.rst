@@ -15,7 +15,7 @@ Minimize distractions, reduce context switching between your project management 
   - You can control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments.
   - Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms are supported, and tested with versions 7 and 8.
   - Jira Service Management (formally known as Jira Service Desk) isn't supported.
-  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Professional and Enterprise plans, configured using Administrator Slash Commands.
+  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Enterprise and Professional plans, configured using Administrator Slash Commands.
 
 Setup
 ------

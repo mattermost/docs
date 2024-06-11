@@ -104,7 +104,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Under ``ClusterSettings`` in ``config.json``:
    - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
 
- #### Changes to Professional and Enterprise plans:
+ #### Changes to Enterprise and Professional plans:
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Removed the ``UseNewSAMLLibrary`` experimental setting.
 
@@ -254,7 +254,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
  - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
- - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Professional and Enterprise plans). On MySQL, users cannot view live results of the batch export in the user interface.
+ - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Enterprise and Professional plans). On MySQL, users cannot view live results of the batch export in the user interface.
  - Improved the appearance of profile/account menus.
  - Added support for checkbox types in the **System Console** settings.
  - Added support for WebP image previews in the web app similar to PNG and other image formats.
@@ -395,7 +395,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=b1M2BGGF578&feature
      - Added ``MaximumPayloadSizeBytes`` to add a limit to the payload size of API endpoints passing in arrays.
  - Added a configuration setting ``OutgoingIntegrationRequestsDefaultTimeout`` for integration requests.
 
-#### Changes to the Professional and Enterprise plans:
+#### Changes to the Enterprise and Professional plans:
  - Under ``WranglerSettings`` in ``config.json``:
     - Added ``AllowedEmailDomain`` - a CSV list of strings, where each is an email domain that is allowed to use the feature (e.g. - on community.mattermost.com, ``mattermost.com`` would allow staff to move a thread, while non-staff cannot).
     - ``MoveThreadMaxCount`` - a number representing the maximum number of posts that can be in a thread for it to be moveable.
@@ -561,7 +561,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=eXA8emM97Bo) on som
  - Updated pre-packaged Calls version to [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
  - Updated pre-packaged Jira plugin version to [v4.0.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.1). Also see [v4.0.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.0) for recent breaking changes.
  - Added Vietnamese (Beta) as a new language.
- - Added the ability to passively track keywords with highlights without triggering a notification (Professional and Enterprise plans).
+ - Added the ability to passively track keywords with highlights without triggering a notification (Enterprise and Professional plans).
  - Updated the **Settings** modal with an improved user interface.
  - Added a new **Jump to recents** banner when a channel is scrolled up.
  - Modified the behavior of the code button (Ctrl+Alt+C) to create inline codes or code blocks.
