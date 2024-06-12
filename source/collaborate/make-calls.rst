@@ -4,6 +4,10 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+    :class: theme-icon
+
 You can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost while on a call. 
 
 Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `transcribe recorded calls <#transcribe-recorded-calls>`__.
@@ -35,10 +39,12 @@ Start a call
 
 .. tab:: Web/Desktop
 
-  To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+  To start a call, select **Start call** in the channel header. When you start a call, you become the call host by default. See the `host controls <#host-controls>`__ section below for details on host controls available to ensure calls run smoothly.
+  
     
   .. tip::
       
+    - When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     - You can move the call widget to a different area of your screen.
     - Alternatively, you can start a call using the ``/call start`` slash command.
 
@@ -50,10 +56,47 @@ Start a call
 
   On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
 
+Host controls
+-------------
+
+From Mattermost v9.9, call host controls are available when using Mattermost in a web browser, the desktop app, or the mobile apps, and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, and `lower raised hands <#lower-raised-hands>`__. 
+
+Access host controls
+~~~~~~~~~~~~~~~~~~~~
+
+Host controls are available to call hosts in both the call widget by selecting the **More** |more-icon| icon next to a participant's name, and in the expanded the call window as hosts hover over a call participant in the list.
+
+Transfer host duties
+~~~~~~~~~~~~~~~~~~~~
+
+Transfer host duties to another call particpant by accessing the host controls and selecting **Make host**. Once host duties are transfered to someone else, you can't access host controls unless they're transferred back to you.
+
+Remove call participants
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Remove a call participant from an active call by accessing the host controls and selecting **Remove from call**, then confirm by selecting **Yes, remove**. The call participant is notified that they've been removed from the call by the host.
+
+Stop a screen share
+~~~~~~~~~~~~~~~~~~~~
+
+Stop a call participant's screen share by accessing the host controls and selecting **Stop screen share**.
+
+Mute or unmute participants
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Invite muted participants to unmute their microphone by accessing the host controls and selecting **Ask to unmute**.  The call particpant is prompted to decide whether unmute or stay muted.
+
+You can mute or unmute the microphone of specific particpants by accessing the host controls and toggling the particpant's mute icon. Mute all call particpants by selecting **Mute all**, and unmute all participants by selecting **Unmute all**.
+
+Lower raised hands
+~~~~~~~~~~~~~~~~~~~
+
+Lower a raised hand by accessing the host controls and selecting **Lower hand**.
+
 Share your screen
 -----------------
 
-During a call, you can share your screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
+During a call, all call participants can share your screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
 
 .. note::
   
@@ -68,7 +111,7 @@ To share your screen:
 React using emojis
 ------------------
 
-You can use emojis to react during a call.
+All call participants can use emojis to react during a call.
 
 .. tab:: Web/Desktop
 
