@@ -235,7 +235,7 @@ Access the following configuration settings in the System Console by going to **
   :configjson: PluginSettings.PluginStates.com.mattermost.calls.Enable
   :environment: MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS
 
-  - **true**: (Default) Enables the calls plugin on your Mattermost workspace.
+  - **true**: **(Default)** Enables the calls plugin on your Mattermost workspace.
   - **false**: Disables the calls plugin on your Mattermost workspace.
 
 Enable plugin
@@ -646,7 +646,9 @@ Allow screen sharing
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
   :environment: N/A
-  :description: When set to true it enables simulcast for screen sharing. This can help to improve screen sharing quality.
+  
+  - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.
+  - **false**: (Default) Disables simulcast for screen sharing.
 
 Enable simulcast for screen sharing (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -669,7 +671,9 @@ Enable simulcast for screen sharing (Experimental)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablerecordings
   :environment: N/A
-  :description: Allow call hosts to record meeting video and audio. 
+
+  - **true**: Allows call hosts to record meeting video and audio.
+  - **false**: (Default) Call recording functionality is not available to hosts.
 
 Enable call recordings (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -691,7 +695,7 @@ Enable call recordings (Beta)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.jobserviceurl
   :environment: MM_CALLS_JOB_SERVICE_URL
-  :description: The URL to a running job service where all the processing related to recordings happens.
+  :description: The URL to a running job service where all the processing related to recordings happens. This is a required field. Changing this setting requires a plugin restart to take effect.
   
 Job service URL
 ~~~~~~~~~~~~~~~
@@ -759,7 +763,9 @@ Call recording quality
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enabletranscriptions
   :environment: N/A
-  :description: Enables automatic transcriptions of calls.
+  
+  - **true**: Enables automatic transcriptions of calls.
+  - **false**: (Default) Call transcriptions functionality is disabled.
 
 Enable call transcriptions (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -803,7 +809,7 @@ Transcriber model size
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribernumthreads
   :environment: N/A
-  :description: The number of threads used by the post-call transcriber. This must be in the range [1, numCPUs].
+  :description: The number of threads used by the post-call transcriber. Default is 2. This is a required value that must be in the range [1, numCPUs].
 
 Call transcriber threads
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -825,6 +831,9 @@ Call transcriber threads
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
   :environment: N/A
   :description: Enables live captioning of calls.
+
+  - **true**: Enables live captioning of calls.
+  - **false**: **(Default)** Live captions functionality is disabled.
 
 Enable live captions (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -850,7 +859,7 @@ Enable live captions (Experimental)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsmodelsize
   :environment: N/A
-  :description: The speech-to-text model size to use for live captions. Heavier models will produce more accurate results at the expense of processing time and resources usage.
+  :description: The speech-to-text model size to use for live captions. Heavier models will produce more accurate results at the expense of processing time and resources usage. Default is **Tiny**. This is a required value. 
 
 Live captions: Model size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -871,7 +880,7 @@ Live captions: Model size
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumtranscribers
   :environment: N/A
-  :description: The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
+  :description: The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. Default is 1. This is a required value. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
 
 Live captions: Number of transcribers used per call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -892,7 +901,7 @@ Live captions: Number of transcribers used per call
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumthreadspertranscriber
   :environment: N/A
-  :description: The number of threads per live captions transcriber. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
+  :description: The number of threads per live captions transcriber. Default is 2. This is a required value. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
 
 Live captions: Number of threads per transcriber
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -913,7 +922,7 @@ Live captions: Number of threads per transcriber
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionslanguage
   :environment: N/A
-  :description: The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'.
+  :description: The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'. If blank, the lange will be set to 'en' (English) as default. 
 
 Live captions language
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -934,7 +943,7 @@ Live captions language
   :environment: N/A
 
   - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones.
-  - **false**: The RTC service will only listen for IPv4 connections.
+  - **false**: (False) The RTC service will only listen for IPv4 connections.
 
 (Experimental) Enable IPv6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -944,10 +953,8 @@ Live captions language
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones. | - System Config path: **Plugins > Calls**                                                                |
-| - **false**: The RTC service will only listen for IPv4 connections.                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableipv6``                    |
+| - **false**: **(Default)** The RTC service will only listen for IPv4 connections.                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableipv6``                    |
 |                                                                                                                                              | - Environment variable: N/A                                                                              |
-| Default value is **false**.                                                                                                                  |                                                                                                          |
-|                                                                                                                                              |                                                                                                          |
 | Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | **Note**:                                                                                                                                                                                                                                               |
@@ -964,7 +971,9 @@ Enable call ringing (Beta)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls. enableringing
   :environment: N/A
-  :description: Enable or disable incoming call desktop alerts and ringing notifications
+
+  - **true**: Ringing functionality is enabled. Direct and group message participants receive a desktop app alert and a ringing notification when a call starts.
+  - **false**: **(False)** Ringing functionality is disabled.
 
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                   |
