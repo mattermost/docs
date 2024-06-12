@@ -69,7 +69,7 @@ Host controls are available to call hosts and admins in both the call widget by 
 Transfer host duties
 ~~~~~~~~~~~~~~~~~~~~
 
-Transfer host duties to another call particpant by accessing the host controls and selecting **Make host**. Once host duties are transfered to someone else, you can't access host controls unless they're transferred back to you.
+Transfer host duties to another call participant by accessing the host controls and selecting **Make host**. Once host duties are transferred to someone else, you can't access host controls unless they're transferred back to you. System admins can change the host at any time.
 
 Remove call participants
 ~~~~~~~~~~~~~~~~~~~~~~~~
