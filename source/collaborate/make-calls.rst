@@ -91,7 +91,7 @@ You can mute or unmute the microphone of specific particpants by accessing the h
 Lower raised hands
 ~~~~~~~~~~~~~~~~~~~
 
-Lower a raised hand by accessing the host controls and selecting **Lower hand**.
+Lower a raised hand by accessing the host controls and selecting **Lower hand**. The participant will be notified that their hand was lowered by the host.
 
 Share your screen
 -----------------
