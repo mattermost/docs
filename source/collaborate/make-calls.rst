@@ -4,9 +4,9 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Select the Gear icon to access more options.
-  :class: theme-icon
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional options.
+    :class: theme-icon
 
 You can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost while on a call. 
 
@@ -128,7 +128,7 @@ Live captions during calls
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.7, when recording calls, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (experimental)>`, all call participants can display real-time text captions by selecting the **Gear** |gear-icon| icon and **Show live captions**. Live captions can be helpful in cases where noise is preventing you from hearing other participants clearly.
+From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (experimental)>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
 
 By default, live captions display in English. Your Mattermost system admin can :ref:`specify a different language for live captions <configure/plugins-configuration-settings:live captions language>` in the System Console.
 
