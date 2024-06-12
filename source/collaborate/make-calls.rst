@@ -81,7 +81,7 @@ Stop a screen share
 
 Stop a call participant's screen share by accessing the host controls and selecting **Stop screen share**.
 
-Mute or unmute participants
+Mute participants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Invite muted participants to unmute their microphone by accessing the host controls and selecting **Ask to unmute**.  The call particpant is prompted to decide whether unmute or stay muted.
