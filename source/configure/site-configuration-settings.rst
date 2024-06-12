@@ -1176,7 +1176,7 @@ Message priority
 | - **false**: Disables the ability to set message priority and request       |                                                                        |
 |   acknowledgements.                                                         |                                                                        |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
-| **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
+| **Note**: `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
 | track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
 | :doc:`message priority </collaborate/message-priority>` documentation to learn more.                                                                 |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
