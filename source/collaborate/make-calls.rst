@@ -82,21 +82,21 @@ Stop a screen share
 Stop a call participant's screen share by accessing the host controls and selecting **Stop screen share**.
 
 Mute participants
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 Invite muted participants to unmute their microphone by accessing the host controls and selecting **Ask to unmute**.  The call particpant is prompted to decide whether unmute or stay muted.
 
-You can mute or unmute the microphone of specific particpants by accessing the host controls and toggling the particpant's mute icon. Mute all call particpants by selecting **Mute all**, and unmute all participants by selecting **Unmute all**.
+You can mute the microphone of specific particpants by accessing the host controls and toggling the particpant's mute icon. Mute all call particpants by selecting **Mute all**.
 
 Lower raised hands
 ~~~~~~~~~~~~~~~~~~~
 
-Lower a raised hand by accessing the host controls and selecting **Lower hand**. The participant will be notified that their hand was lowered by the host.
+Lower a raised hand by accessing the host controls and selecting **Lower hand**. The participant is notified that their hand was lowered by the host.
 
 Share your screen
 -----------------
 
-During a call, all call participants can share your screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
+During a call, call participants can share their screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
 
 .. note::
   
