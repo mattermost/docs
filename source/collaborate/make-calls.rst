@@ -64,7 +64,7 @@ From Mattermost v9.9, call host controls are available when using Mattermost in 
 Access host controls
 ~~~~~~~~~~~~~~~~~~~~
 
-Host controls are available to call hosts in both the call widget by selecting the **More** |more-icon| icon next to a participant's name, and in the expanded the call window as hosts hover over a call participant in the list.
+Host controls are available to call hosts and admins in both the call widget by selecting the **More** |more-icon| icon next to a participant's name, and in the expanded the call window as hosts hover over a call participant in the list.
 
 Transfer host duties
 ~~~~~~~~~~~~~~~~~~~~
