@@ -73,7 +73,7 @@ HTTP metrics
 Login and session metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``mattermost_http_websockets_total`` The total number of WebSocket connections to the server.
+- ``mattermost_http_websockets_total`` The total number of all open WebSocket connections, regardless of whether they are authenticated.
 - ``mattermost_login_logins_fail_total``: The total number of failed logins.
 - ``mattermost_login_logins_total``: The total number of successful logins.
 
