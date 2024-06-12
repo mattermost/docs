@@ -141,7 +141,7 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
 
 .. note::
 
-      You can use this query as is in a script, or you may need to set the delimiter to something else (e.g., ``DELIMITER //``) when defining it in the MySQL console. Once you are done defining the procedure, please set the delimiter back to the original (i.e., ``DELIMITER ;``).
+      You can use this query as-is in a script, or you may need to set the delimiter to something else (e.g., ``DELIMITER //``) when defining it in the MySQL console. Once you are done defining the procedure, please set the delimiter back to the original (i.e., ``DELIMITER ;``).
 
 .. code:: sql
 
