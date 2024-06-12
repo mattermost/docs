@@ -55,7 +55,7 @@ If you upgrade from a release earlier than v9.8, please read the other [Importan
  - Increased the maximum password limit from 64 to 72 characters (``PasswordMaximumLength``).
 
 #### Performance
- - Added the initial version of new client-side performance metrics to track web app performance and can be monitored in new Grafana board.
+ - Added the initial version of new client-side performance metrics to track web app performance and can be monitored in new [Grafana board](https://grafana.com/grafana/dashboards/21305).
  - Added a metric to track time it takes for the right-hand side to load.
  - Improved js memory profile of status’s reducers.
  - When a user receives a new post that is part of a thread from a root post in a channel they are not currently viewing, we do not fetch the complete root post and its thread posts immediately. However, we still store the newly received post. The root post and its thread posts are only fetched when the user navigates to that specific channel.
@@ -102,7 +102,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the Notifications Health dashboard [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
+ - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the [Notifications Health dashboard](https://grafana.com/grafana/dashboards/21305) [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
  - Some Cloud workspaces unexpectedly received emails about license expiration.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
