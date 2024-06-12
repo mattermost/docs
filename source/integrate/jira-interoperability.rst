@@ -52,7 +52,7 @@ Install Jira integration in your Jira instance
 To enable your users to create and manage Jira issues across Mattermost channels, you must install this Jira integration, as an application, in your Jira instance. 
 
 - For Jira Server or Data Center instances, run the ``/jira instance install server <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the steps posted to the channel, replacing ``YOUR-JIRA-URL`` with your Jira URL. This value must match the Jira server URL you use to log in. Run the ``/jira instance uninstall server <YOUR-JIRA-URL>`` slash command to uninstall your Jira Server or Data Center instance from your Mattermost.
-- For Jira Cloud, run the  ``/jira instance install cloud-oauth <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the wizard to complete the setup. Run the ``/jira instance uninstall cloud-oauth <YOUR-JIRA-URL>`` slash command to uninstall your Jira Cloud instance from your Mattermost.
+- For Jira Cloud, run the ``/jira instance install cloud-oauth <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the wizard to complete the setup. Run the ``/jira instance uninstall cloud-oauth <YOUR-JIRA-URL>`` slash command to uninstall your Jira Cloud instance from your Mattermost.
 
 Configure webhooks in Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
