@@ -11,7 +11,7 @@ Connect GitLab to Mattermost
 Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
 
 .. note::
-  - You can also control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews and many more.
+  - You can also control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews, and many more.
   - Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
 
 .. image:: ../images/gitlab_mattermost.png
@@ -110,7 +110,7 @@ For each project you want to receive notifications for or subscribe to, create a
 Update settings
 ~~~~~~~~~~~~~~~
 
-Run the  ``/gitlab settings [setting] [value]`` slash command to update your preferences for the integration:
+Run the ``/gitlab settings [setting] [value]`` slash command to update your preferences for the integration:
 
 - Turn personal notifications on or off.
 - Turn reminders on or off when you connect initially each day.
