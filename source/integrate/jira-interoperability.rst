@@ -205,8 +205,8 @@ Create a Jira issue
 
 Use the ``/jira issue create`` slash command to create a Jira issue without leaving Mattermost. You can prepopulate the issue's summary by running ``/jira issue create This is my issue's summary``. You're prompted to fill out the issue details.
 
-.. image:: ../images/github_mattermost.png
-  :alt: An example of the GitHub integration for Mattermost.
+.. image:: ../images/create-jira-issue.png
+  :alt: An example of the create Jira issue workflow.
 
 Transition Jira issues
 ^^^^^^^^^^^^^^^^^^^^^^^
