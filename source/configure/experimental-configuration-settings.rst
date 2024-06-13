@@ -5,7 +5,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
-- `Beta Audit logging configuration settings <#beta-audit-logging-configuration-options>`__
+- `Experimental audit logging configuration settings (Beta) <#experimental-audit-logging-configuration-settings-beta>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
@@ -816,130 +816,182 @@ Enable Bleve for autocomplete queries
 
 ----
 
-Beta audit logging configuration settings
------------------------------------------
+Experimental audit logging configuration settings (Beta)
+--------------------------------------------------------
 
-Enable the following settings to output audit events. You can specify these settings independently for audit events and AD/LDAP events. 
-When audit logging is enabled, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging.
+Enable the following settings to output audit events in the System Console by going to **Experimental > Features**, or in the ``config.json`` file. 
 
 .. note::
   
-  These settings aren't available in the System Console and can only be set in ``config.json``.
+  The ability to configure audit logging in the System Console requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
 
-.. config:setting:: exp-wroteauditfileslocally
-  :displayname: File name (Beta Audit Logging)
-  :systemconsole: N/A
-  :configjson: FileName
+.. config:setting:: exp-advlogging
+  :displayname: Advanced Logging (Audit Logging > Cloud)
+  :systemconsole: Experimental > Features
+  :configjson: AdvancedLoggingJSON
   :environment: N/A
-  :description: Write audit files locally.
+  :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment.
 
-Write audit files locally
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Advanced logging
+~~~~~~~~~~~~~~~~
 
-**True**: Audit files are written locally to a file.
+.. include:: ../_static/badges/ent-cloud-only.rst
+   :start-after: :nosearch:
 
-**False**: Audit logs aren't written locally to a file.
+Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment. See the :ref:`advanced logging <manage/logging:advanced logging>` documentation for details about logging options.
+
+.. config:setting:: exp-enableauditlogging
+  :displayname: Enable audit logging (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
+  :configjson: FileEnabled
+  :environment: N/A
+  :description: Write audit files locally for a self-hosted deployment.
+
+Enable audit logging
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
+
+**True**: Audit logging files are enabled, and audit files are written locally to a file for a self-hosted deployment.
+
+**False**: Audit logging files aren't enabled, and audit logs aren't written locally to a file for a self-hosted deployment.
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileEnabled": false",`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-auditfilename
-  :displayname: File name (Beta Audit Logging)
-  :systemconsole: N/A
+.. config:setting:: exp-auditlogfilename
+  :displayname: File name (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileName
   :environment: N/A
-  :description: Specify the path to the audit file.
+  :description: Specify the path to the audit file for a self-hosted deployment.
 
 File name
 ~~~~~~~~~
 
-Specify the path to the audit file.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+Specify the path to the audit file for a self-hosted deployment.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxsize
-  :displayname: File max size MB (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max size MB (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxSizeMB
   :environment: N/A
-  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. Default is **100** MB.
+  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation for a self-hosted deployment.. Default is **100** MB.
 
-File max size MB
-~~~~~~~~~~~~~~~~
+Max file size
+~~~~~~~~~~~~~
 
-This is the maximum size (in megabytes) that the file can grow before triggering rotation. The default setting is ``100``.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. The default setting is ``100``.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
 +---------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxage
-  :displayname: File max age days (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max age days (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxAgeDays
   :environment: N/A
-  :description: This is the maximum age in days a file can reach before triggering rotation. The default value is **0**, indicating no limit on the age.
+  :description: This is the maximum age in days a file can reach before triggering rotation for a self-hosted deployment.. The default value is **0**, indicating no limit on the age.
 
-File max age days
-~~~~~~~~~~~~~~~~~
+Max file age
+~~~~~~~~~~~~~
 
-This is the maximum age in days a file can reach before triggering rotation. The default value is ``0``, indicating no limit on the age.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment. The default value is ``0``, indicating no limit on the age.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxbackups
-  :displayname: File max backups (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max backups (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxBackups
   :environment: N/A
-  :description: This is the maximum number of rotated files kept; the oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
+  :description: This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
 
-File max backups
-~~~~~~~~~~~~~~~~
+Maximum file backups
+~~~~~~~~~~~~~~~~~~~~
 
-This is the maximum number of rotated files kept; the oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filecompress
-  :displayname: File compress (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File compress (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileCompress
   :environment: N/A
-  :description: When ``true``, rotated files are compressed using ``gzip``. Default value is **false**.
+  :description: When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment. Default value is **false**.
 
-File compress
-~~~~~~~~~~~~~
+File compression
+~~~~~~~~~~~~~~~~
 
-When ``true``, rotated files are compressed using ``gzip``.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxqueuesize
-  :displayname: File max queue size (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max queue size (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxQueueSize
   :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. Default is **1000** records.
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. Default is **1000** records.
 
-File max queue size
+Maximum file queue 
 ~~~~~~~~~~~~~~~~~~~
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is ``1000`` records.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. The default is ``1000`` records.
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
 +-------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-advlogging
+  :displayname: Advanced Logging (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
+  :configjson: AdvancedLoggingJSON
+  :environment: N/A
+  :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment.
+
+Advanced logging
+~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment. See the :ref:`advanced logging <manage/logging:advanced logging>` documentation for details about logging options.
 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
