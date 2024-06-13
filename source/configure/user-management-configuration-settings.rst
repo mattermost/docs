@@ -105,10 +105,23 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 .. image:: ../images/deactivate-user.png
   :alt: Deactivate a user in Mattermost using the System Console.
 
-5. If the user is deactivated, select **Activate** to re-activate the user.
+You can re-activate a deactivated user by selecting **Activate**.
 
 .. image:: ../images/activate-user.png
   :alt: Activate a user in Mattermost using the System Console.
+
+What happens to deactivated user integrations?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. important::
+
+  If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
+
+  - **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
+  - **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
+  - **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
+  - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
+  - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
