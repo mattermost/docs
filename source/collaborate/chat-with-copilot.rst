@@ -22,8 +22,13 @@ Get started
 
 Select the **Copilot** icon in the apps bar located to the far right of the Mattermost screen to open the Copilot tab in the right pane.
 
+<<<<<<< copilot-screenshot
 .. image:: ../images/copilot-AI-RHS.png
   :alt: Privately chat with your AI Copilot inside Mattermost via the right-hand sidebar.
+=======
+.. image:: ../images/copilot-AI-RHS.webp
+  :alt: Privately chat with Copilot inside Mattermost via the right-hand sidebar.
+>>>>>>> v9.9-documentation
   :scale: 50
 
 Begin with suggested prompts, or engage in a private thread with the Copilot bot for a tailored experience. If you have follow-up questions or need further insights, simply ask! Copilot is designed to provide deeper understanding based on your inquiries. 
