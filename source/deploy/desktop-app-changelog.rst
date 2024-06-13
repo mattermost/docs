@@ -6,7 +6,7 @@ This changelog summarizes updates to Mattermost desktop app releases for `Matter
 Release v5.8
 --------------
 
-- **v5.8.1, released **
+- **v5.8.1, released 2024-06-13**
 
  - Fixed an issue where notifications would not show on macOS in certain cases.
  - Fixed an issue where clicking a notification would clear unreads for the wrong channel.
