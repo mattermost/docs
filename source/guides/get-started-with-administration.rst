@@ -18,6 +18,7 @@ Get started with administration
     Authentication configuration settings </configure/authentication-configuration-settings>
     Plugins configuration settings </configure/plugins-configuration-settings>
     Enable Copilot </configure/enable-copilot>
+    Manage user surveys </configure/manage-user-surveys>
     Integrations configuration settings </configure/integrations-configuration-settings>
     Compliance configuration settings </configure/compliance-configuration-settings>
     Experimental configuration settings </configure/experimental-configuration-settings>
@@ -49,6 +50,7 @@ These resources will help you get started with your Mattermost self-hosted or Cl
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
 * **Configure your workspace** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Enable Copilot** - Learn how to :doc:`enable Copilot in Mattermost </configure/enable-copilot>`
+* **Manage user surveys** - Learn how to :doc:`create, manage, and export data from user surveys </configure/manage-user-surveys>` in your self-hosted Mattermost deployment.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Enterprise and Professional versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
