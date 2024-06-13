@@ -15,11 +15,8 @@ You must be a Mattermost system admin to `upload the plugin <#upload>`__ to your
 
 The User Survey integration is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
 
-  - v9.6 or later
+  - v9.8 or later
   - v9.5.2+ (Extended Support Release - ESR)
-  - v9.4.4+
-  - v9.3.3+
-  - v8.1.11+ (Extended Support Release - ESR)
 
 Upload
 ------
@@ -56,6 +53,9 @@ Create surveys
 
 Under **Survey setup**, specify the date, time, and details for a new survey:
 
+.. image:: ../images/survey-setup.png
+  :alt: An example of the System Console configuration screen for creating and managing user surveys.
+
 1. **Send next survey at**: Specify the date and time when the survey will begin rolling out to users.
 
   .. note::
@@ -71,11 +71,17 @@ Under **Survey setup**, specify the date, time, and details for a new survey:
 Active surveys
 --------------
 
-When a survey starts, all users recieve a direct message from a feedback bot containing the active survey. The survey includes one mandatory scale-based question, a mandatory text-based question, and 1 optional, customized text-based question. 
+When a survey starts, all users recieve a direct message from a feedback bot containing the active survey. The survey includes one mandatory scale-based question, and optional text-based questions. 
 
-Users must answer at least 1 question. When a user selects **Submit**, their responses are recorded.
+.. image:: ../images/user-feedback.png
+  :alt: An example of the user survey provided to users.
+
+Users must answer the scale-based question in order to submit their response. When a user selects **Submit**, their responses are recorded.
 
 Export survey responses
 -----------------------
 
-Once a survey ends, select **Export responses** to download a CSV file containing NPS scores and user responses gatherered through the survey.
+Select **Export** to download a CSV file containing NPS scores and user responses gatherered through the survey. You can export data from active surveys which will contain data collected so far.
+
+.. image:: ../images/active-past-surveys.png
+  :alt: An example of the System Console configuration page where all active and past surveys are available for export.
