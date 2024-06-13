@@ -1,20 +1,20 @@
-Enable AI Copilot (Beta)
-========================
+Enable Copilot (Beta)
+=======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Signficantly increase team productivity and decision-making speed by enhancing your real-time collaboration capabilities with instant access to AI-generated information, discussion summaries, and contextually-aware action recommendations with Mattermost's AI Copilot. Your users can interact with AI capabilities directly within their daily communication channels without needing to switch between multiple tools or platforms
+Signficantly increase team productivity and decision-making speed by enhancing your real-time collaboration capabilities with instant access to AI-generated information, discussion summaries, and contextually-aware action recommendations with Mattermost's Copilot. Your users can interact with AI capabilities directly within their daily communication channels without needing to switch between multiple tools or platforms
 
 Setup
 ------
 
-Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. You need to be a Mattermost system admin to `enable it <#enable>`__ and `configure it <#mattermost-configuration>`__ using the System Console.
+Mattermost Copilot comes preinstalled from Mattermost Server v9.7 or later. You need to be a Mattermost system admin to `enable it <#enable>`__ and `configure it <#mattermost-configuration>`__ using the System Console.
 
 .. note::
-  If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_ . For an optimized user experience and compatibility, we recommend using AI Copilot with Mattermost v9.7 and later.
+  If you're running Mattermost Server v9.6 or earlier, Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_ . For an optimized user experience and compatibility, we recommend using Copilot with Mattermost v9.7 and later.
   
-  The AI Copilot integration is compatible with the following :doc:`Mattermost Server versions </lifecycle/mattermost-server-releases>`:
+  The Copilot integration is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
 
   - v9.6 or later
   - v9.5.2+ (Extended Support Release - ESR)
@@ -25,16 +25,16 @@ Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. Y
 Enable
 ------
 
-Go to **System Console > Plugins > AI Copilot** to enable this feature.
+Go to **System Console > Plugins > Copilot** to enable this feature.
 
-Once the integration is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the AI Copilot in any Mattermost team or channel.
+Once the integration is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the Copilot in any Mattermost team or channel.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-With extensive customization and extensibility options, you can tailor your AI Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
+With extensive customization and extensibility options, you can tailor Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
 
-Configure a large language model (LLM) for your AI Copilot integration by going to **System Console > Plugins > AI Copilot**. Mattermost supports the following LLMs:
+Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot**. Mattermost supports the following LLMs:
 
 - `OpenAI <https://platform.openai.com/account/api-keys>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
@@ -88,4 +88,4 @@ Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-ai/rel
 Usage
 -----
 
-See the :doc:`chat with AI Copilot </collaborate/chat-with-ai-copilot>` documentation for details on using AI Copilot to Overcome information overload and streamline communication and collaboration.
+See the :doc:`chat with Copilot </collaborate/chat-with-copilot>` documentation for details on using Copilot to overcome information overload and streamline communication and collaboration.
