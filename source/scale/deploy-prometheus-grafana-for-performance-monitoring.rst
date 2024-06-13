@@ -8,7 +8,7 @@ Deploy Prometheus and Grafana for performance monitoring
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.org/>`_. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </scale/high-availability-cluster>`. Once you're tracking system health, you can :doc:`set up performance alerts </scale/performance-alerting>` on your Grafana dashboard.
+Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </scale/high-availability-cluster>`. Once you're tracking system health, you can :doc:`set up performance alerts </scale/performance-alerting>` on your Grafana dashboard.
 
 Admins can collect and store various data points from the Mattermost application in an `OpenMetrics <https://openmetrics.io>`_ format by `deploying Prometheus <#install-prometheus>`_ and `Grafana <#install-grafana>`_.
 
@@ -89,7 +89,7 @@ Install Grafana
 
 1. `Download a precompiled binary for Grafana <https://grafana.com/docs/grafana/latest/installation/debian/>`_ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`_
 
-2. The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`__ to learn more.
+2. The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <https://grafana.com/docs/grafana/latest/installation/debian/>`_ to learn more.
 
 3. The default HTTP port is ``3000`` and default username and password are ``admin``.
 
