@@ -101,6 +101,8 @@ Database software
 
 Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
+See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation for details on migrating from MySQL to PostgreSQL.
+
 MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
 
 Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost/issues/2033#issuecomment-183872616>`__ for details.
