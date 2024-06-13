@@ -379,18 +379,19 @@ Enable on specific channels
 Test mode
 ~~~~~~~~~
 
-*This setting was called Enable on all channels up until Mattermost v7.7*
+*This setting was called Enable on all channels until Mattermost v7.7. It was renamed to defaultenabled in code and Test Mode in-product.*
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| - **false**: Only System Admins can start calls in channels (`On` in the UI).                                                              | - System Config path: **Plugins > Calls**                                                                                                          |
-| - **true**: All team members can start calls in channels (`Off` in the UI).                                                                | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.defaultenabled``                                                          |
-|                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
-+--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: Use this setting to confirm calls work as expected. When **false**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                    |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **false**: Test mode is enabled and only system admins can start calls in channels.                           | - System Config path: **Plugins > Calls**                                                   |
+| - **true**: Live mode is enabled and all team members can start calls in channels.                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.defaultenabled``   |
+|                                                                                                                 | - Environment variable: N/A                                                                 |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. note::
+  Use this setting as a system admin to confirm calls work as expected. When **false**, users attempting to start calls are prompted to contact a system admin, and system admins are prompted to confirm that calls are working as expected before switching to live mode.
 
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
