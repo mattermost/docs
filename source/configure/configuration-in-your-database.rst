@@ -24,7 +24,6 @@ Benefits to using this option:
 
    * Use the System Console to make changes to the configuration.
    * Use ``mmctl`` to make changes to the configuration.
-   * Stop any of the running mattermost-server instances and edit the active configuration row directly in the ``Configurations`` table.
 
    The Mattermost server keeps active configuration in memory and writes new ones to the database only when there is a change. This way we avoid polling the database to process changes to the configuration. Publishing the changes to the cluster are handled by the application itself.
 
@@ -43,7 +42,7 @@ The first step is to get your master database connection string. We recommend ac
 
 .. important::
    
-   - If ``SqlSettings.DataSource`` doesn't start with ``postgres://``, you have to add it to the beginning based on the database in use. For example: ``postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10``
+   - ``SqlSettings.DataSource`` must start with ``postgres://`` or ``mysql://``. If it doesn't, add it to the beginning based on the database in use. For example: ``postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10``
    - If you see ``\u0026``, replace it with ``&``. For example: ``mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s``
 
 Create an environment file
@@ -126,7 +125,7 @@ You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl
    - If you're using a High Availability cluster, you only need to run this command on 1 server in the cluster.
    - When migrating configuration, Mattermost incorporates configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>` documentation for details.
    - As with the environment file, you'll have to escape any single quotes in the database connection string. 
-   - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to repull the certificates.
+   - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to re-pull the certificates. Configuration files are stored in the ``configurationfiles`` table in the database.
 
 When configuration in the database is enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 
