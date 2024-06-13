@@ -17,7 +17,9 @@ Scale Mattermost
     Scale up to 88000 users </scale/scale-to-88000-users>
     High availability cluster </scale/high-availability-cluster>
     Elasticsearch </scale/elasticsearch>
-    Performance monitoring </scale/performance-monitoring>
+    Collect performance metrics </scale/collect-performance-metrics>
+    Deploy Prometheus and Grafana for performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>
+    Performance monitoring metrics </scale/performance-monitoring-metrics>
     Mattermost performance alerting guide </scale/performance-alerting>
 
 Scale and monitor your Mattermost deployment.
@@ -33,7 +35,9 @@ Scale and monitor your Mattermost deployment.
  * :doc:`Scale up to 79000 users </scale/scale-to-79000-users>` - Learn how to scale Mattermost to up to 79000 users.
  * :doc:`Scale up to 88000 users </scale/scale-to-88000-users>` - Learn how to scale Mattermost to up to 88000 users.
 
-* :doc:`High availability cluster </scale/high-availability-cluster>` - Maintain Mattermost service during outages and hardware failures with redundant infrastructure.
+* :doc:`High availability cluster </scale/high-availability-cluster>` - Learn how to run Mattermost at scale with all the config tweaks needed.
 * :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
-* :doc:`Performance monitoring </scale/performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
-* :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster. 
+* :doc:`Collect performance metrics </scale/collect-performance-metrics>` - Learn how to collect performance metrics without deploying Prometheus.
+* :doc:`Deploy Prometheus and Grafana for performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
+* :doc:`Performance monitoring metrics </scale/performance-monitoring-metrics>` - The custom and standard Go metrics available for monitoring system performance.
+* :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster.

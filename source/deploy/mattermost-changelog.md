@@ -11,8 +11,126 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 - **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog.html) for details.
 ```
 
+## Release v9.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+- **9.8.1, released 2024-06-03**
+  - Mattermost v9.8.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Removed a safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
+  - Fixed an issue with some plugin settings with defaults not changing value.
+  - Mattermost v9.8.1 contains no database or functional changes.
+- **9.8.0, released 2024-05-16**
+  - Original 9.8.0 release.
+
+### Compatibility
+ - Updated minimum required Edge and Chrome versions to 122+.
+
+```{Important}
+If you upgrade from a release earlier than v9.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-8-changelog/) on some of the improvements in our latest release below.
+
+#### User Interface (UI)
+ - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
+ - Pre-packaged GitLab plugin version [v1.8.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.1).
+ - Pre-packaged Calls version [v0.26.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.26.2).
+ - Combined Desktop and Mobile notifications in the user settings modal.
+ - Added a **Don't Clear** option for Do Not Disturb.
+ - Enhanced the user interface for channel introductions.
+ - Added an ephemeral message for non-team member mentions in channels.
+ - Added emoji tooltips on hover in post message.
+ - Made the appearance of several tooltips more consistent.
+ - Updated theme colors for onboarding tour points.
+ - Updated the right-hand side Thread view to use relative timestamps to be more consistent with the global Threads view.
+ - Added a total reply count to the right-hand side thread view.
+
+#### Administration
+ - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable, and message count exceeds 5 million posts. ERROR_SAFE_LIMITS_EXCEEDED.
+ - Downloading a support packet is now extensible with plugins. If a plugin can add content to the support packet, it will be displayed in the commercial support modal. Administrators will have the option to include/exclude that from the support package.
+ - Upgraded Nodejs to v20.11.
+ - Added the backend for Channel Bookmarks (disabled by default). Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
+ - Added progress logs for attachments in bulk exports.
+ - Added a **System Console** option to rebuild Elasticsearch channels indexes.
+ - Obfuscated ``ReplicaLagSettings`` in the Support Packet.
+ - Improved license loading errors.
+ - Updated the keycloak docker configs and added a ``make`` command.
+ - Removed unused ``IsOAuth`` field from ``AppError``.
+ - ``bool`` is now used for ``license_is_trial`` in the Support Packet.
+ - Bulk export: added functionality to export roles and permissions schemes.
+ - A new flag (``extract-content``) was added to the mmctl import process that allows the server to skip content extraction during the import phase.
+
+### API Changes
+ - Added a create channel bookmark endpoint at ``/api/v4/channels/{channel_id}/bookmarks``.
+ - Added additional query params to channel endpoints to include channel bookmarks.
+ - Added update channel bookmark endpoint at ``/api/v4/channels/{channel_id}/bookmarks/{bookmark_id}``.
+ - Added list channel bookmarks endpoint at ``/api/v4/channels/{channel_id}/bookmarks``.
+ - Added delete channel bookmark endpoint at ``/api/v4/channels/{channel_id}/bookmarks/{bookmark_id}``.
+ - Added update channel bookmark sort order endpoint at ``/api/v4/channels/{channel_id}/bookmarks/{bookmark_id}/sort_order``.
+ - Exposed a local-mode only API for reattaching plugins, primarily to facilitate mock-free unit testing.
+ - Exposed ``UpdateUserRoles`` in ``pluginapi``.
+ - Exposed ``pluginapi.ProfileImageBytes`` to simplify bot setup from a plugin.
+ - For ``POST /channels``, added a validation for ``display_name`` to not pass validation if the display name is empty.
+
+### Bug Fixes
+ - Fixed an issue with context cancellation for integration requests.
+ - Fixed an issue preventing the retrieval of SAML metadata.
+ - Fixed an issue causing an empty channel switcher after converting a group message to a private channel.
+ - Fixed an issue where System Admins were not allowed to LDAP sync SAML users when ``SamlSettings.EnableSyncWithLdap`` was set to **true**.
+ - Fixed an issue with markdown in the AD job status table.
+ - Fixed an issue with a control character in the group list modal.
+ - Fixed an issue where the auto-complete channels API returned archived channels in response.
+ - Fixed a crash issue in the **System Console**.
+ - Fixed an issue where links included in notifications were truncated and not clickable.
+ - Fixed using local requests instead of HTTP requests in the flow library.
+ - Fixed an issue where ``support_packet.yaml`` wasn’t generated even if an error occurred.
+ - Fixed an issue where outgoing webhooks did not trigger when using multiple callback URLs.
+ - Fixed an issue where it was not possible to clear plugin settings with a default value in the **System Console**.
+ - Fixed an issue where ``MaxUsersForStatistics`` wasn’t ignored when generating a Support Packet.
+ - Fixed an issue where the ``EnsureBot`` function did not recreate the bot if it had been manually deleted.
+ - Fixed an issue where users couldn't look up a user by their ID in the **System Console** anymore.
+ - Fixed an accessibility issue where the focus didn’t go back to the originating button when a modal was closed.
+ - Fixed an issue where end users were not allowed to fetch the group members list of groups that allow ``@-mentions``.
+
+### config.json
+New setting option were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``FileSettings`` in ``config.json``:
+   - Added ``AmazonS3UploadPartSizeBytes`` and ``ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+ - Under ``ClusterSettings`` in ``config.json``:
+   - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
+
+ #### Changes to Professional and Enterprise plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+   - Removed the ``UseNewSAMLLibrary`` experimental setting.
+
+### Go Version
+ - v9.8 is built with Go ``v1.21.8``.
+
+### Known Issues
+ - Status may sometimes get stuck as **Away** or **Offline** with IP Hash turned off.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [Amir-Helali](https://github.com/Amir-Helali), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [annaos](https://github.com/annaos), [apshada](https://github.com/apshada), [Aryakoste](https://github.com/Aryakoste), [asaadmahmood](https://github.com/asaadmahmood), [aszakacs](https://github.com/aszakacs), [BarbUk](https://github.com/BarbUk), [BenCookie95](https://github.com/BenCookie95), [Blaieet](https://github.com/Blaieet), [calebroseland](https://github.com/calebroseland), [coltoneshaw](https://github.com/coltoneshaw), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cyrusjc](https://github.com/cyrusjc), [daran9](https://github.com/daran9), [devharipragaz007](https://github.com/devharipragaz007), [devinbinnie](https://github.com/devinbinnie), [dsspence](https://github.com/dsspence), [Eleferen](https://translate.mattermost.com/user/Eleferen), [EltonGohJH](https://github.com/EltonGohJH), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [ezekielchow](https://github.com/ezekielchow), [fmartingr](https://github.com/fmartingr), [gabrieljackson](https://github.com/gabrieljackson), [gitairman](https://github.com/gitairman), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [hossain-sazzad](https://github.com/hossain-sazzad), [ifoukarakis](https://github.com/ifoukarakis), [inconnu1](https://github.com/inconnu1), [isacikgoz](https://github.com/isacikgoz), [jasonblais](https://github.com/jasonblais), [jespino](https://github.com/jespino), [johnsonbrothers](https://github.com/johnsonbrothers), [jones](https://translate.mattermost.com/user/jones), [josephjose](https://github.com/josephjose), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jupenur](https://github.com/jupenur), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kaoski](https://github.com/kaoski), [Karimaljandali](https://github.com/Karimaljandali), [kayazeren](https://github.com/kayazeren), [KrisSiegel](https://github.com/KrisSiegel), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lbr88](https://github.com/lbr88), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [mahdiirar](https://github.com/mahdiirar), [majo](https://translate.mattermost.com/user/majo), [manojmalik20](https://github.com/manojmalik20), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [MeHow25](https://github.com/MeHow25), [mentz](https://translate.mattermost.com/user/mentz), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [milotype](https://github.com/milotype), [movion](https://github.com/movion), [mvitale1989](https://github.com/mvitale1989), [nickmisasi](https://github.com/nickmisasi), [Nityanand13](https://github.com/Nityanand13), [nmnj](https://translate.mattermost.com/user/nmnj), [Obbi89](https://github.com/Obbi89), [pacop](https://github.com/pacop), [phoinixgrr](https://github.com/phoinixgrr), [Pkarle](https://github.com/Pkarle), [poppfredslund](https://translate.mattermost.com/user/poppfredslund), [potatogim](https://github.com/potatogim), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [RS-labhub](https://github.com/RS-labhub), [Rutam21](https://github.com/Rutam21), [s-krishnaraju](https://github.com/s-krishnaraju), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://github.com/Sharuru), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [Syed-Ali-Abbas-Zaidi](https://github.com/Syed-Ali-Abbas-Zaidi), [tanmaythole](https://github.com/tanmaythole), [ThrRip](https://github.com/ThrRip), [tnir](https://github.com/tnir), [toninis](https://github.com/toninis), [topolovac](https://github.com/topolovac), [varghesejose2020](https://github.com/varghesejose2020), [wetneb](https://github.com/wetneb), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yomiadetutu1](https://github.com/yomiadetutu1), [zsrv](https://github.com/zsrv)
+
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.7.5, released 2024-06-03**
+  - Mattermost v9.7.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.7.5 contains no database or functional changes.
+- **9.7.4, released 2024-05-15**
+  - Fixed an issue with context cancellation for integration requests [MM-58019](https://mattermost.atlassian.net/browse/MM-58019).
+  - Fixed some plugin settings with defaults not changing value [MM-58102](https://mattermost.atlassian.net/browse/MM-58102).
+  - Mattermost v9.7.4 contains no database or functional changes.
 - **9.7.3, released 2024-04-30**
   - Fixed an issue where creating a Direct Message channel with synthetic users failed [MM-58019](https://mattermost.atlassian.net/browse/MM-58019).
   - Mattermost v9.7.3 contains no database or functional changes.
@@ -105,6 +223,10 @@ A new setting option was added to ``config.json``. Below is a list of the additi
 
 ## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.6.3, released 2024-06-03**
+  - Mattermost v9.6.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with some plugin settings with defaults not changing value.
+  - Mattermost v9.6.3 contains no database or functional changes.
 - **9.6.2, released 2024-04-25**
   - Mattermost v9.6.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.6.2 contains no database or functional changes.
@@ -186,6 +308,12 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.6, released 2024-06-03**
+  - Mattermost v9.5.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.6 contains no database or functional changes.
+- **9.5.5, released 2024-05-15**
+  - Fixed an issue where the user status would incorrectly get stuck to online after the user closed their tab [MM-57885](https://mattermost.atlassian.net/browse/MM-57885).
+  - Mattermost v9.5.5 contains no database or functional changes.
 - **9.5.4, released 2024-04-25**
   - Mattermost v9.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.4 contains no database or functional changes.

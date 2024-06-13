@@ -1,0 +1,54 @@
+name: preview-env-setup-template
+
+on:
+  workflow_call:
+    inputs:
+      PR_NUMBER:
+        type: number
+        required: true
+      TRIGGERING_ACTOR:
+        type: string
+        required: true
+      COMMIT_SHA:
+        type: string
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c # v3.3.0
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@db9987b4c1f10f0404fa60ee629f675fafbd6763 # v4.6.0
+        with:
+          python-version: "3.9"
+
+      - name: Install pipenv
+        run: pip install pipenv
+
+      - name: Install dependencies
+        run: pipenv install --dev
+
+      - name: Build
+        run: make SPHINXOPTS="-j auto -D html_baseurl=http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ inputs.PR_NUMBER }}" html
+
+      - uses: shallwefootball/s3-upload-action@4350529f410221787ccf424e50133cbc1b52704e # v1.3.3
+        name: Upload Preview Env
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: ./build/html
+          destination_dir: ${{ inputs.PR_NUMBER }}
+
+      - name: Add comment to PR
+        uses: peter-evans/create-or-update-comment@7dfe4b0aa0c4bbd06d172692ff8a9e18381d6979 # v3.0.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ inputs.PR_NUMBER }}
+          body: |
+            Newest code from ${{ inputs.TRIGGERING_ACTOR }} has been published to [preview environment](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ inputs.PR_NUMBER }}) for Git SHA ${{ inputs.COMMIT_SHA }}

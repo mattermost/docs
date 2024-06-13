@@ -154,14 +154,14 @@ MySQL 해결 방법
 
 4. 일부 테이블의 전문 검색 색인을 다음과 같이 재구성합니다.
 
-- 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`_ )
+- 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`__ )
 
 .. code:: sql
 
     DROP INDEX idx_posts_message_txt ON Posts;
     CREATE FULLTEXT INDEX idx_posts_message_txt ON Posts (Message) WITH PARSER ngram;
 
-- 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`_ )
+- 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`__ )
 
 .. code:: sql
 
