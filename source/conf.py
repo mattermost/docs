@@ -3616,11 +3616,16 @@ linkcheck_timeout = 5
 linkcheck_rate_limit_timeout = 1.0
 linkcheck_anchors = False
 
-# Variables
-# rst_prolog = """
-# .. |plans-image| image:: ../_static/images/badges/flag_icon.svg
-# .. |deployment-image| image:: ../_static/images/badges/deployment_icon.svg
-# """
+rst_prolog = """
+.. |plans-img| image:: /_static/images/badges/flag_icon.svg
+    :class: mm-badge-flag
+.. |deployment-img| image:: /_static/images/badges/deployment_icon.svg
+    :class: mm-badge-flag
+.. |plans-img-yellow| image:: /_static/images/badges/flag_icon_yellow.svg
+    :class: mm-badge-flag
+.. |deployment-img-yellow| image:: /_static/images/badges/deployment_icon_yellow.svg
+    :class: mm-badge-deployment
+"""
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
 # .. _mm_badge_version: https://mattermost.com/blog/mattermost-v7-2-is-now-available/

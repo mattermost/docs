@@ -8,7 +8,7 @@ Release v5.8
 
 **Release Date: May 16, 2024**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`__
 
 .. note::
 
@@ -76,7 +76,7 @@ Release v5.7
 
 **Release Date: March 15, 2024**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/v5.7.0>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/v5.7.0>`__
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -208,7 +208,7 @@ Release v5.5
 
  - Original v5.5.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.5.1>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.5.1>`__
 
 .. note::
 
@@ -1033,7 +1033,7 @@ Release v4.4
 
 .. note::
 
-   Mattermost v4.4.0 contains low to medium level security fixes. :doc:`Upgrading </upgrade/upgrade-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+   Mattermost v4.4.0 contains low to medium level security fixes. :doc:`Upgrading </upgrade/upgrading-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Changes** 
 

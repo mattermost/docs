@@ -241,9 +241,6 @@ Teams
 | teams.                                                        | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-|                                 |
-|                |
-+---------------------------------------------------------------+-------------------------------------------------------------+
 
 See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
 

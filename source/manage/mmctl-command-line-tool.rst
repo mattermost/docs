@@ -3468,8 +3468,6 @@ Start an import job.
    --bypass-upload     File is read directly from the filesystem, instead of being processed from the server. Supported in --local mode only.
    --extract-content   Document attachments will be extracted and indexed during the import process. We recommend disabling this to improve performance.
 
-
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3548,9 +3546,11 @@ Validate an import file.
 
 .. code-block:: sh
 
-   -h, --help              help for validate
-   --ignore-attachments    Don't check if the attached files are present in the archive
-   --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
+   --check-missing-teams       Check for teams that are not defined but referenced in the archive
+   --check-server-duplicates   Set to false to ignore teams, channels, and users already present on the server (Default true)
+   -h, --help                  help for validate
+   --ignore-attachments        Do not check if the attached files are present in the archive
+   --team stringarray          Predefined teams to assume as already present on the destination server. Implies --check-missing-teams. The flag can be repeated
 
 **Options inherited from parent commands**
 
