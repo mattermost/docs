@@ -64,7 +64,7 @@ Under **Survey setup**, specify the date, time, and details for a new survey:
 
 2. **Survey expiry**: Specify how long the survey will be open to responses in days.
 3. **Exclude specific teams**: Specify teams that shouldn't receive the survey. The survey is sent to all teams if left blank.
-4. **Survey message text** Customize the introductory message text users see when prompted to complete the survey.
+4. **Survey message text**: Customize the introductory message text users see when prompted to complete the survey.
 5. **Textual question**: (Optional) Specify a text-based question for the survey.
 6. Select **Save**. Your new survey is scheduled, and displays under **Active and past surveys** when the survey is shared with users.
 
