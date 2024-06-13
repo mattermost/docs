@@ -59,7 +59,7 @@ Start a call
 Host controls
 -------------
 
-From Mattermost v9.9, call host controls are available when using Mattermost in a web browser, the desktop app, or the mobile apps, and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, and `lower raised hands <#lower-raised-hands>`__. 
+From Mattermost v9.9, and Mattermost mobile v2.17, call host controls are available and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, and `lower raised hands <#lower-raised-hands>`__. 
 
 Access host controls
 ~~~~~~~~~~~~~~~~~~~~
