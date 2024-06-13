@@ -15,20 +15,61 @@ To streamline the migration process and alleviate any potential challenges, we h
 Required tools
 --------------
 
-- Install ``pgloader``. See the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`__.
+Several tools are utilized throughout the migration process. Please refer to this section for detailed instructions on how to install each of these tools.
+
+pgloader
+~~~~~~~~
+
+We are utilizing ``pgloader`` tool to migrate your data from MySQL to Postgres. To install ``pgloader``. See the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`__. 
 
 .. note::
 
-   - If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgloader-compiled binaries, you need to compile pgloader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
-   - We have received reports that the pgloader Docker image can be limited in terms of memory resources. Please use pgloader directly instead of a Docker container. 
+   If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgloader-compiled binaries, you need to compile pgloader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
 
-- Install morph CLI by running the following command:
+Alternatively, you may want to use our ``mattermost-pgloader`` Docker image to avoid installing or building ``pgloader``. If this is the case:
 
- - ``go install github.com/mattermost/morph/cmd/morph@v1``
+Pull the Docker image and verify pgloader
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Optionally install `dbcmp <https://github.com/mattermost/dbcmp>`__ to compare the data after a migration:
+Run the following command to pull the mattermost-pgloader image and verify that pgloader is working correctly:
 
- - ``go install github.com/mattermost/dbcmp/cmd/dbcmp@latest``
+.. code:: bash
+
+   docker run -it --rm -v $(pwd):/home/migration mattermost/mattermost-pgloader:latest pgloader --version
+
+This command pulls the ``mattermost/mattermost-pgloader:latest`` image and runs ``pgloader`` to check its version and ensure it works as expected.
+
+Map local directory
+^^^^^^^^^^^^^^^^^^^
+
+Use the ``-v $(pwd):/home/migration`` flag to map your current working directory to the Docker container. This allows you to use your local directory for storing logs and other files.
+
+Set network configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Depending on your network requirements, set the ``--network`` flag accordingly. For example, to access localhost, you need to set the network to ``host``.
+
+morph
+~~~~~
+
+.. note::
+
+   Both ``morph`` and ``dbcmp`` requires Go toolchain. To install Go compiler, follow the documentation provided `here <https://go.dev/doc/install>`__.
+
+You can Install morph CLI by running the following command:
+
+.. code:: bash
+
+   go install github.com/mattermost/morph/cmd/morph@v1
+
+dbcmp (Optional)
+~~~~~~~~~~~~~~~~
+
+You can install `dbcmp <https://github.com/mattermost/dbcmp>`__ to compare the data after a migration:
+
+.. code:: bash
+
+   go install github.com/mattermost/dbcmp/cmd/dbcmp@latest
 
 System requirements and configurations
 --------------------------------------
@@ -57,16 +98,21 @@ Before the migration
 Prepare target database
 -----------------------
 
+It is essential to create tables and indexes to ensure that the PostgreSQL database schema is properly structured according to the required specifications. Since Mattermost repository contains all of the required SQL queries to achieve that, we can leverage this by running the following steps:
+
 - Clone the ``mattermost`` repository for your specific version:
-   ``git clone -b <your current version (eg. release-7.8)> git@github.com:mattermost/mattermost.git --depth=1``
-- ``cd`` into ``mattermost`` project*.
-- Create a PostgreSQL database using morph CLI with the following command:
 
 .. code:: bash
 
-   morph apply up --driver postgres --dsn "postgres://user:pass@localhost:5432/<target_db_mame>?sslmode=disable" --path ./db/migrations/postgres --number -1
+   git clone -b <your current version (eg. release-7.8)> git@github.com:mattermost/mattermost.git --depth=1
 
-\* After ``v8``, due to project re-organization, the migrations directory has been changed to ``./server/channels/db/migrations/postgres/`` relative to the project root. Therefore ``cd`` into ``mattermost/server/channels``.
+- Run all schema migrations* on your PostgreSQL database using morph CLI with the following command:
+
+.. code:: bash
+
+   morph apply up --driver postgres --dsn "postgres://user:pass@localhost:5432/<target_db_mame>?sslmode=disable" --path ./mattermost/db/migrations/postgres --number -1
+
+\* After ``v8``, due to project re-organization, the migrations directory has been changed to ``./mattermost/server/channels/db/migrations/postgres/`` relative to where you cloned Mattermost repository. Please set ``--path`` flag accordingly.
 
 Schema diffs
 ------------
