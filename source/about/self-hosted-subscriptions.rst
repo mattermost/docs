@@ -53,12 +53,12 @@ A system admin must take a screenshot of the **System Console > Site Statistics*
 
 .. tip:: 
 
-   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for assistance.
+   Not sure where to take the screenshot? Please reach out to your account executive, your Customer Success Manager, orders@mattermost.com, or `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ for assistance.
    
 Renew your subscription
 -----------------------
 
-System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, please `contact sales <https://mattermost.com/contact-sales/>`_
+System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, please `contact sales <https://mattermost.com/contact-sales/>`_.
 
 Frequently asked questions
 --------------------------
@@ -75,7 +75,7 @@ When you receive the quarterly true-up notice from Mattermost, please share your
 How do I renew my subscription if I don't have internet access?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't have access to the internet, please email support@mattermost.com for assistance.
+If you don't have access to the internet, please `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ for assistance.
 
 Can I use the same license key on multiple self-hosted servers?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
