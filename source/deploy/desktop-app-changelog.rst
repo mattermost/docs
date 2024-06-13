@@ -1042,7 +1042,7 @@ Release v4.4
 
 .. note::
 
-   Mattermost v4.4.0 contains low to medium level security fixes. :doc:`Upgrading </upgrading/upgrade-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+   Mattermost v4.4.0 contains low to medium level security fixes. :doc:`Upgrading </upgrade/upgrade-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Changes** 
 
@@ -1136,7 +1136,7 @@ Release v4.3
 
 .. note::
 
-   Mattermost v4.3.0 contains medium level security fixes. :doc:`Upgrading </upgrade/upgrading-mattermost-server.html>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+   Mattermost v4.3.0 contains medium level security fixes. :doc:`Upgrading </upgrade/upgrading-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Change** 
 
