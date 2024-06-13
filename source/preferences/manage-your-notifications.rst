@@ -136,13 +136,12 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
   You can set notification preferences at the channel level, including group messages, for every channel you're a member of. You have 2 ways to access channel preferences: 
        
-  - Select the channel name, then select **Notification Preferences**. 
-  - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
+  Select the channel name, then select **Notification Preferences**.
 
-  You can set notification preferences at the channel level for every channel you're a member of. You have 2 ways to access  channel preferences: 
+  .. image:: ../images/channel-notification-settings.gif
+    :alt: Select the channel name dropdown to access channel-specific notification preferences.
 
-  - Select the channel name, then select **Notification Preferences**. 
-  - Or select the **View Info** |channel-info| icon, and select **Notification Preferences** in the right pane.
+  Alternatively, select the channel's **View Info** |channel-info| icon, and then select **Notification Preferences** in the right pane.
 
   **Mute channel**
 
