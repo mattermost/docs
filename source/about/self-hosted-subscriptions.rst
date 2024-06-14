@@ -4,7 +4,7 @@ Self-hosted subscriptions
 Buy a subscription
 ------------------
 
-To purchase a commercial subscription for Mattermost Professional or Mattermost Enterprise, please visit our pricing page online: https://mattermost.com/pricing/
+To purchase a commercial subscription for Mattermost Enterprise or Mattermost Professional, please visit our pricing page online: https://mattermost.com/pricing/
 
 Apply your license
 ------------------
@@ -45,23 +45,7 @@ We'll send you an email notice around the end of the quarter reminding you to se
 
 If you have more total activated users than you purchased in your annual subscription, your Customer Success Manager will provide you with a true-up quote for the new users added. The additional invoice will be pro-rated based on the number of months left in your subscription term, including the months for the calendar quarter for the time you pull the report. Mattermost won't provide downward adjustments. Mattermost will invoice based on Mattermost’s `current list prices <https://mattermost.com/pricing/>`_.
 
-From Mattermost v7.9
-~~~~~~~~~~~~~~~~~~~~
-
-From Mattermost v7.9, we've introduced a process that no longer requires you to take screenshots. To send Mattermost the report, a system admin must go to the **System Console** and open either the **Site Statistics** or **Team Statistics** pages.
-
-When the current date is within the true-up reporting period, a panel will be visible at the top of the page with a button to share your system's statistics with Mattermost directly.
-
-If your system is air-gapped (meaning it doesn't have access to the internet), the system admin can download the system statistcs which can then be shared with your Mattermost Customer Success Manager from a device that's not air-gapped.
-
-.. tip::
-   
-   Not sure where to find the site statistics or team statistics? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
-
-Prior to Mattermost v7.9
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you have a Mattermost deployment prior to v7.9, a system admin needs to take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
+A system admin must take a screenshot of the **System Console > Site Statistics** page and send it to Mattermost in an email.
 
 - Please ensure your screenshot is taken from the top of the page and includes both **Total Activated Users** and the **Monthly Active Users** metrics. 
 - Please include the date of the screenshot in the file name.
@@ -69,12 +53,12 @@ If you have a Mattermost deployment prior to v7.9, a system admin needs to take 
 
 .. tip:: 
 
-   Not sure where to take the screenshot? Please reach out to your account executive, Customer Success Manager, orders@mattermost.com, or support@mattermost.com for help.
+   Not sure where to take the screenshot? Please reach out to your account executive, your Customer Success Manager, orders@mattermost.com, or `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ for assistance.
    
 Renew your subscription
 -----------------------
 
-System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, please `contact sales <https://mattermost.com/contact-sales/>`_
+System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, please `contact sales <https://mattermost.com/contact-sales/>`_.
 
 Frequently asked questions
 --------------------------
@@ -91,7 +75,7 @@ When you receive the quarterly true-up notice from Mattermost, please share your
 How do I renew my subscription if I don't have internet access?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you don't have access to the internet, please email support@mattermost.com for assistance.
+If you don't have access to the internet, please `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ for assistance.
 
 Can I use the same license key on multiple self-hosted servers?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,7 +106,7 @@ What happens to my subscription if I don't renew in time?
 
 If you don't renew within the 60-day renewal period, a 10-day grace period is provided. During this period your Mattermost installation runs as normal, with full access to commercial features. During the grace period, the notification banner is not dismissable.
 
-When the grace period expires, your Professional or Enterprise plan is downgraded to the Free plan and other plan features are disabled.
+When the grace period expires, your Mattermost Enterprise or Professional plan is downgraded to the Free plan and other plan features are disabled.
  
 What happens when my subscription expires?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -143,4 +127,4 @@ If you don't plan to renew your subscription, revoke the expired license in **Sy
 Where can I find the license agreement for Mattermost Enterprise Edition?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Professional and Enterprise editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.
+Mattermost Enterprise Edition is the name for the binary of the Mattermost self-hosted Enterprise and Professional editions. This edition can be used for free without a license key as commercial software functionally equivalent to the open source Mattermost Team Edition licensed under MIT. When a license key is purchased and applied to Mattermost Enterprise Edition, additional features unlock. The license agreement for Mattermost Enterprise Edition is included in the software and also available `here <https://mattermost.com/enterprise-edition-license/>`_.

@@ -14,6 +14,110 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 - **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog.html) for details.
 ```
 
+## Release v9.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: 2024-06-14**
+
+### Compatibility
+ - Updated minimum macOS version to 12+ and minimum Safari version to 17+.
+
+```{Important}
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-9-changelog/) on some of the improvements in our latest release below.
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin version [v0.27.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.27.0).
+ - Pre-packaged Jira plugin version [v4.1.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.1.1).
+ - Pre-packaged GitLab plugin version [v1.9.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.9.0).
+ - Pre-packaged Zoom plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-zoom/releases/tag/v1.8.0).
+ - Updated the default themes to reduce eye strain (particularly on the dark themes).
+ - Added UI improvements to the core layout.
+ - Improved error text when inviting guests to a team.
+ - Increased the visibility Mattermost edition in-product when using the free edition.
+ - Added an **Unsupported** label to the Team/E0 editions in the product menu.
+ - Improved the look and feel of the **True/False** selector in the System Console.
+ - Updated the channel header layout to reduce height and simplify the UI.
+
+#### Administration
+ - Removed safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
+ - Adjusted safety limit error message to show when users exceed 5,000 in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable. ``ERROR_SAFE_LIMITS_EXCEEDED``.
+ - Improved the message length validation step in the ``mmctl import validate`` command.
+ - Added shell completion to ``mmctl user active`` and ``mmctl user deactivate``.
+ - Removed support for self-serve purchases of Mattermost Subscriptions in various flows, throughout Cloud and Self Hosted environments.
+ - Removed support for self-serve true up review submission in the **System Console**. 
+ - Added streaming support to the file attachments import process.
+ - Added LDAP job command to mmctl.
+ - Made LDAP sync jobs more resilient against errors.
+ - Removed the ``PostPriority`` feature flag.
+ - Improved the error message of ``NotFound`` errors in store.
+ - Added support for post priority to incoming webhooks and outgoing webhook responses.
+ - Added a validation that the payload for an open Interactive Dialog request is valid according to the rules at https://developers.mattermost.com/integrate/plugins/interactive-dialogs/.
+ - Unblocked notification calls by using usernames instead of full names in case of a missing user profile.
+ - Increased the maximum password limit from 64 to 72 characters (``PasswordMaximumLength``).
+
+#### Performance
+ - Added the initial version of new client-side performance metrics to track web app performance and can be monitored in new Grafana board.
+ - Added a metric to track time it takes for the right-hand side to load.
+ - Improved js memory profile of status’s reducers.
+ - When a user receives a new post that is part of a thread from a root post in a channel they are not currently viewing, we do not fetch the complete root post and its thread posts immediately. However, we still store the newly received post. The root post and its thread posts are only fetched when the user navigates to that specific channel.
+
+### Bug Fixes
+ - Fixed an issue with ``aria-label`` for sidebar channel buttons.
+ - Fixed an issue where any remaining unclosed database RPC connections were not closed after a plugin shut down.
+ - Fixed an issue where the right-hand side stole the focus when coming back from threads or drafts.
+ - Fixed an issue where a proxy link was copied instead of the original image link when copying a post that included an embedded image.
+ - Fixed an issue where the user status would incorrectly get stuck to online after the user closed the tab.
+ - Fixed an issue where on some servers the user could not see the member count in the **Browse Channels** dialog.
+ - Fixed an issue with inline display of WebP images accessed through the public-link feature.
+ - Fixed an issue where it wasn’t clear that the ``mmctl import process --bypass-upload --local`` doesn't work if the server is in High Availability.
+ - Fixed an issue where the user status would incorrectly be set to offline without checking for connections in other nodes in an High Availability cluster.
+ - Fixed a longstanding issue where the @mention auto-complete could erase post text following the auto-completed @mention.
+ - Fixed an issue with status management to avoid missing notifications.
+ - Fixed an issue where audit events were not added for OAuth logins.
+ - Fixed an issue with the error check in the message export process.
+ - Fixed an issue where pasting in the post text box could not always paste without formatting.
+ - Fixed some plugin settings with defaults not changing value.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``DisableWakeUpReconnectHandler`` to disable the wake up on reconnect handler.
+ - Removed ``SelfHostedPurchase`` setting.
+
+#### Changes to the Enterprise plan: 
+ - Under ``MetricsSettings`` in ``config.json``:
+    - Added a feature flag and a setting ``EnableClientMetrics`` to control new client performance metrics.
+    - Added a setting for notification metrics ``EnableNotificationMetrics``.
+ - Self-hosted system administrators can now configure all ``ExperimentalAuditSettings`` through the user interface in the ``System Console``. Cloud administrators can now change the ``AdvancedLoggingJSON`` value for the ``ExperimentalAuditSettings``. This is the only configuration that Cloud administrators are able to adjust. Feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` must be enabled in order to leverage this new user interface.
+
+### Websocket Event Changes
+ - Changed the semantics of the ``mattermost_http_websockets_total`` metric to track all open WebSocket connections, regardless of whether they are authenticated.
+ - Added a ``origin_client`` label to the ``mattermost_http_websockets_total`` Prometheus metric.
+
+### Go Version
+ - v9.9 is built with Go ``v1.21.8``.
+
+### Open Source Components
+ - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
+
+### Known Issues
+ - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the [Notifications Health dashboard](https://grafana.com/grafana/dashboards/21305) [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
+ - Some Cloud workspaces unexpectedly received emails about license expiration.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [arush-vashishtha](https://github.com/arush-vashishtha), [asaadmahmood](https://github.com/asaadmahmood), [ayusht2810](https://github.com/ayusht2810), [azigler](https://github.com/azigler), [BenCookie95](https://github.com/BenCookie95), [bndn](https://translate.mattermost.com/user/bndn), [calebroseland](https://github.com/calebroseland), [coltoneshaw](https://github.com/coltoneshaw), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [Eleferen](https://translate.mattermost.com/user/Eleferen), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [fasal26](https://github.com/fasal26), [fmartingr](https://github.com/fmartingr), [gabrieljackson](https://github.com/gabrieljackson), [grundleborg](https://github.com/grundleborg), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [jespino](https://github.com/jespino), [joakim.rivera](https://translate.mattermost.com/user/joakim.rivera), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [kaakaa](https://github.com/kaakaa), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [marlenekoh](https://github.com/marlenekoh), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [MeHow25](https://github.com/MeHow25), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [mojahani](https://translate.mattermost.com/user/mojahani), [morgancz](https://github.com/morgancz), [mvitale1989](https://github.com/mvitale1989), [nickmisasi](https://github.com/nickmisasi), [nixusUM](https://github.com/nixusUM), [orimaimon](https://github.com/orimaimon), [phoinixgrr](https://github.com/phoinixgrr), [piotr-lasota](https://github.com/piotr-lasota), [pjenicot](https://translate.mattermost.com/user/pjenicot), [pmokeev](https://github.com/pmokeev), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [spirosoik](https://github.com/spirosoik), [sri-byte](https://github.com/sri-byte), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [tarrow](https://github.com/tarrow), [ThrRip](https://github.com/ThrRip), [tnir](https://github.com/tnir), [toninis](https://github.com/toninis), [umrkhn](https://github.com/umrkhn), [varghesejose2020](https://github.com/varghesejose2020), [vish9812](https://github.com/vish9812), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yomiadetutu1](https://github.com/yomiadetutu1), [zsrv](https://github.com/zsrv)
+
 ## Release v9.8 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **9.8.1, released 2024-06-03**
@@ -107,7 +211,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Under ``ClusterSettings`` in ``config.json``:
    - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
 
- #### Changes to Professional and Enterprise plans:
+ #### Changes to Enterprise and Professional plans:
  - Under ``ExperimentalSettings`` in ``config.json``:
    - Removed the ``UseNewSAMLLibrary`` experimental setting.
 
@@ -257,7 +361,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
  - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
- - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Professional and Enterprise plans). On MySQL, users cannot view live results of the batch export in the user interface.
+ - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Enterprise and Professional plans). On MySQL, users cannot view live results of the batch export in the user interface.
  - Improved the appearance of profile/account menus.
  - Added support for checkbox types in the **System Console** settings.
  - Added support for WebP image previews in the web app similar to PNG and other image formats.
@@ -398,7 +502,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=b1M2BGGF578&feature
      - Added ``MaximumPayloadSizeBytes`` to add a limit to the payload size of API endpoints passing in arrays.
  - Added a configuration setting ``OutgoingIntegrationRequestsDefaultTimeout`` for integration requests.
 
-#### Changes to the Professional and Enterprise plans:
+#### Changes to the Enterprise and Professional plans:
  - Under ``WranglerSettings`` in ``config.json``:
     - Added ``AllowedEmailDomain`` - a CSV list of strings, where each is an email domain that is allowed to use the feature (e.g. - on community.mattermost.com, ``mattermost.com`` would allow staff to move a thread, while non-staff cannot).
     - ``MoveThreadMaxCount`` - a number representing the maximum number of posts that can be in a thread for it to be moveable.
@@ -564,7 +668,7 @@ See [this walkthrough video](https://www.youtube.com/watch?v=eXA8emM97Bo) on som
  - Updated pre-packaged Calls version to [v0.21.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.21.1).
  - Updated pre-packaged Jira plugin version to [v4.0.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.1). Also see [v4.0.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.0.0) for recent breaking changes.
  - Added Vietnamese (Beta) as a new language.
- - Added the ability to passively track keywords with highlights without triggering a notification (Professional and Enterprise plans).
+ - Added the ability to passively track keywords with highlights without triggering a notification (Enterprise and Professional plans).
  - Updated the **Settings** modal with an improved user interface.
  - Added a new **Jump to recents** banner when a channel is scrolled up.
  - Modified the behavior of the code button (Ctrl+Alt+C) to create inline codes or code blocks.

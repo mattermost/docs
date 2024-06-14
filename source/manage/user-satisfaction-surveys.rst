@@ -6,6 +6,10 @@ User satisfaction surveys
 
 Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for more information on the collection and use of information received through our services.
 
+.. tip::
+
+   If you're looking for survey functionality for your self-hosted Mattermost instance that offers more customization options, stores results data locally on your Mattermost server, and doesn't send telemetry data back to Mattermost, we recommend using the :doc:`User Survey integration </configure/manage-user-surveys>` instead, and `disabling the user satisfaction survey <#how-can-surveys-be-disabled>`__
+
 Administration
 --------------
 
@@ -17,9 +21,12 @@ The user satisfaction survey is a pre-packaged plugin, and surveys are enabled b
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins > Plugin Management** will disable surveys and all data collection by the plugin. If surveys have been disabled from the plugin configuration in **System Console > Plugins > User Satisfaction Surveys** but the plugin itself is still enabled, surveys will not be scheduled but users can still send written feedback by messaging Surveybot.
+Disabling the **User Satisfaction Surveys** plugin from **System Console > Plugins > Plugin Management** will disable surveys and all data collection by the plugin. 
 
-If the plugin or surveys in the plugin configuration are disabled, they will remain disabled for subsequent server upgrades.
+.. note::
+   
+   - If surveys have been disabled from the plugin configuration in **System Console > Plugins > User Satisfaction Surveys**, but the plugin itself is still enabled, surveys won't be scheduled but users can still send written feedback by messaging Surveybot.
+   - When the plugin or surveys in the plugin configuration are disabled, they remain disabled for subsequent server upgrades.
 
 When is the survey scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
