@@ -4,7 +4,7 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v8.1 :ref:`Extended Support Release <lifecycle/release-policy:extended support releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/lifecycle/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 ```
 
 ## Frequency
@@ -17,6 +17,7 @@ See the [Mobile app changelog](/lifecycle/mobile-app-changelog) for release deta
 
 | **Release** | **Life cycle start** | **Life cycle end** |
 |:---|:---|:---|
+| v2.17 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.17.0) \| {ref}`Changelog <release-v2-17-0>` | 2024-06-16 | 2024-07-15 |
 | v2.16 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.16.0) \| {ref}`Changelog <release-v2-16-0>` | 2024-05-16 | 2024-06-15 |
 | v2.15 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.15.0) \| {ref}`Changelog <release-v2-15-0>` | 2024-04-16 | 2024-05-15 |
 | v2.14 {ref}`FEATURE <release-types>` \| [Download](https://github.com/mattermost/desktop/releases/tag/v2.14.0) \| {ref}`Changelog <release-v2-14-0>` | 2024-03-15 | 2024-04-15 |
