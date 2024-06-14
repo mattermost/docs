@@ -227,7 +227,7 @@ Access the following configuration settings in the System Console by going to **
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.MinimumLength
   :environment: MM_PASSWORDSETTINGS_MINIMUMLENGTH
-  :description: This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. Default is **5**.
+  :description: This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 72. Default is **5**.
 
 Minimum password length
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -237,7 +237,7 @@ Minimum password length
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 64. | - System Config path: **Authentication > Password**            |
+| This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 72. | - System Config path: **Authentication > Password**            |
 |                                                                                                                                                           | - ``config.json`` setting: ``.PasswordSettings.MinimumLength`` |
 | Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+

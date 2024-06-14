@@ -4,9 +4,13 @@ Store configuration in your database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-You can use your database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database.
+You can use your database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
 
-Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
+.. tip::
+
+   The Mattermost configuration database and Mattermost application database are 2 different entities. It's possible to store Mattermost configuration in one database and Mattermost data in another database. 
+
+   To do so, you must update the :ref:`Datasource <configure/environment-configuration-settings:data source>` configuration setting to a new data source name, which can be done while the application is running. Explicitly setting the ``MM_SQLSETTINGS_DATASOURCE`` environment variable to override what has been defined in the configuration, whether it's in a database, or in a file, allows the correct data source name to be passed to the Mattermost application.
 
 Benefits to using this option:
 
@@ -14,13 +18,14 @@ Benefits to using this option:
 * Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
 * Automatically deploy SAML certificates and keys to all servers in the cluster.
 
-Note that once you start using configuration in the database, you shouldn't manually edit the active configuration row. You should edit or update the configuration in one of the following ways:
+.. important::
+   
+   Once you start using configuration in the database, you shouldn't manually edit the active configuration row. You should edit or update the configuration in one of the following ways:
 
-* Use the System Console to make changes to the configuration.
-* Use ``mmctl`` to make changes to the configuration.
-* Stop any of the running mattermost-server instances and edit the active configuration row directly in the ``Configurations`` table.
+   * Use the System Console to make changes to the configuration.
+   * Use ``mmctl`` to make changes to the configuration.
 
-The Mattermost server keeps active configuration in memory and writes new ones to the database only when there is a change. This way we avoid polling the database to process changes to the configuration. Publishing the changes to the cluster are handled by the application itself.
+   The Mattermost server keeps active configuration in memory and writes new ones to the database only when there is a change. This way we avoid polling the database to process changes to the configuration. Publishing the changes to the cluster are handled by the application itself.
 
 How to migrate configuration to the database
 --------------------------------------------
@@ -33,27 +38,17 @@ These instructions cover migrating the Mattermost configuration to the database 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The first step is to get your master database connection string. We recommend accessing  your ``config.json`` file to make a copy of the value in ``SqlSettings.DataSource`` or your equivalent environment variable, ``MM_SQLSETTINGS_DATASOURCE``.
+The first step is to get your master database connection string. We recommend accessing  your ``config.json`` file to make a copy of the value in ``SqlSettings.DataSource``, or your equivalent environment variable, ``MM_SQLSETTINGS_DATASOURCE``.
 
-If ``SqlSettings.DataSource`` does not start with ``postgres://``, then you have to add this line to the beginning based on the database in use. Also, if you see ``\u0026``, replace it with ``&``.
-
-Here is an example connection string:
-
-.. code-block:: text
-
-   postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10
+.. important::
    
-**MySQL**
-
-.. code-block:: text
-
-   mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s
-
+   - ``SqlSettings.DataSource`` must start with ``postgres://`` or ``mysql://``. If it doesn't, add it to the beginning based on the database in use. For example: ``postgres://mmuser:really_secure_password@localhost:5432/mattermost?sslmode=disable&connect_timeout=10``
+   - If you see ``\u0026``, replace it with ``&``. For example: ``mysql://mmuser:really_secure_password@tcp(127.0.0.1:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s``
 
 Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
+.. important::
    
    If you're running Mattermost in a High Availability cluster, this step must be done on all servers in the cluster.
 
@@ -119,17 +114,18 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration.
+You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running command:
 
-.. note::
+.. code-block: none
+
+   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
+
+.. important::
  
-   If you're using a High Availability cluster, you only need to run this on a single server in the cluster.
-
-.. warning::
-   
-   When migrating config, Mattermost will incorporate configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>`
-   
-As with the environment file, you'll have to escape any single quotes in the database connection string. Also, any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster.
+   - If you're using a High Availability cluster, you only need to run this command on 1 server in the cluster.
+   - When migrating configuration, Mattermost incorporates configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>` documentation for details.
+   - As with the environment file, you'll have to escape any single quotes in the database connection string. 
+   - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to re-pull the certificates. Configuration files are stored in the ``configurationfiles`` table in the database.
 
 When configuration in the database is enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
 

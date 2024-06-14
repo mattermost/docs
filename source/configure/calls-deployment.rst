@@ -406,6 +406,23 @@ Can the traffic between Mattermost and ``rtcd``  be kept internal or should it b
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
 
+Can Calls be rolled out on a per-channel basis?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+Yes. Mattermost system admins running self-hosted deployments can enable or disable call functionality per channel. Once :ref:`test mode <configure/plugins-configuration-settings:test mode>` is enabled for Mattermost Calls:
+
+- Select **Enable calls** for each channel where you want Calls enabled
+- Select **Disable calls** for all channels where you want Calls disabled. 
+
+Once Calls is enabled for specific channels, users can start making calls in those channels.
+
+.. note::
+
+  When :ref:`test mode <configure/plugins-configuration-settings:test mode>` is disabled for Mattermost Calls, users in any Mattermost channel can make a call.
+
 Troubleshooting
 ---------------
 

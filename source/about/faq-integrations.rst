@@ -61,3 +61,8 @@ Where can I get more information about integrations?
 Come `join our Contributors community channel <https://community.mattermost.com/core/channels/tickets>`_ on our daily build server, where you can discuss questions with community members and the Mattermost core team. 
 
 Join our `Developers channel <https://community.mattermost.com/core/channels/developers>`_ for technical discussions, and visit our `Integrations channel <https://community.mattermost.com/core/channels/integrations>`_ for all integrations and plugins discussions.
+
+Can I use webhooks to be notified when new integrations are available on the Mattermost Marketplace?
+----------------------------------------------------------------------------------------------------
+
+Yes! A `bash script <https://gist.github.com/mickmister/543a49584146af18ba5e5f82dd86ea93>`_ is available that checks for new integrations in the Mattermost Marketplace, and triggers a post through a Mattermost `incoming webhook <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ request. The script downloads the latest listing, compares it with a locally stored version of the listing, and, if a new plugin is identified, a notification is pushed to a Mattermost channel.
