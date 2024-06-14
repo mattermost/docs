@@ -11,6 +11,71 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 - **Cloud Releases Prior to v9.2**: See the [Mattermost Legacy Cloud Changelog](https://docs.mattermost.com/deploy/legacy-cloud-changelog.html) for details.
 ```
 
+## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
+
+**Release day: 2024-07-16**
+
+```{Important}
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged GitLab plugin version [v1.9.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.9.1).
+ - Pre-packaged Mattermost Copilot plugin version [v0.8.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.1).
+ - Re-designed the user profile popover improved its performance.
+ - Added banner to prompt users to give desktop notification permissions when opening the app.
+ - Increased the width of the profile picture setting to match other user settings.
+ - Improved screen reader support for emoji picker.
+ - Improved the accessibility of plugin buttons in the channel header.
+
+#### Administration
+ - Extended ``PluginSiteStatsHandler`` to support more advanced visualization types.
+ - Stopped broadcasting ``channel_deleted/channel_restored`` messages from private channels to non-members.
+
+#### Performance
+ - Added page load time to client performance metrics.
+ - Added a metric to track time it takes for the Threads view to load.
+ - Added support for mobile client metrics.
+ - Increased the range of LCP metrics that can be measured.
+ - Added polling of ``getStatusesByIds`` and ``getProfilesByIds`` network calls. The interval of which is configurable with the ``UsersStatusAndProfileFetchingPollIntervalMilliseconds`` configuration variable.
+ - Added defer loading plugins scripts.
+
+### Bug Fixes
+ - Fixed an issue where the ``RefreshPostStats`` job could fail.
+ - Fixed an issue where attempting to create a team with the URL of an existing team showed the wrong error message.
+ - Fixed an issue where ``visibilitychange`` js browser event had not been added for updating the user's current timezone.
+ - Fixed an issue where the last admin could no longer be demoted.
+ - Fixed an issue where banners set by system administrators did not stack below system banners, and rather appeared underneath them. Existing system banners have remained unchanged.
+ - Fixed an issue with an incorrect wrapping of long words in numbered lists.
+ - Fixed an incorrect behavior of image proxy when site URL is changed.
+ - Fixed an issue where cache invalidation messages for websocket connections were not being sent across the cluster, causing missed websocket events.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``UsersStatusAndProfileFetchingPollIntervalMilliseconds`` to configure the interval of ``getStatusesByIds`` and ``getProfilesByIds`` network calls.
+
+### API Changes
+ - Added a new plugin API endpoint ``GetUsersByIds`` to retrieve a list of users by their ids.
+
+### Go Version
+ - v9.10 is built with Go ``v1.21.8``.
+
+### Known Issues
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+ 
+### Contributors
+ - 
+
+
 ## Release v9.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 **Release day: 2024-06-14**
