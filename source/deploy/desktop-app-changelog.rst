@@ -6,9 +6,18 @@ This changelog summarizes updates to Mattermost desktop app releases for `Matter
 Release v5.8
 --------------
 
-**Release Date: May 16, 2024**
+- **v5.8.1, released 2024-06-13**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`_
+ - Fixed an issue where notifications would not show on macOS in certain cases.
+ - Fixed an issue where clicking a notification would clear unreads for the wrong channel.
+ - Fixed an issue where scaled monitors in multi-monitor setups may have caused the window to be opened across two screens.
+ - Fixed an issue with Do Not Disturb mode on Windows.
+
+- **v5.8.0, released 2024-05-16**
+
+ - Original v5.8.0 release
+
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/latest>`__
 
 .. note::
 
@@ -76,7 +85,7 @@ Release v5.7
 
 **Release Date: March 15, 2024**
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/v5.7.0>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/v5.7.0>`__
 
 Compatibility
 ~~~~~~~~~~~~~~~
@@ -208,7 +217,7 @@ Release v5.5
 
  - Original v5.5.0 release
 
-**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.5.1>`_
+**Download Binaries:** `Mattermost Desktop on GitHub <https://github.com/mattermost/desktop/releases/tag/v5.5.1>`__
 
 .. note::
 
@@ -1033,7 +1042,7 @@ Release v4.4
 
 .. note::
 
-   Mattermost v4.4.0 contains low to medium level security fixes. :doc:`Upgrading </upgrading/upgrade-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+   Mattermost v4.4.0 contains low to medium level security fixes. :doc:`Upgrading </upgrade/upgrading-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Changes** 
 
@@ -1127,7 +1136,7 @@ Release v4.3
 
 .. note::
 
-   Mattermost v4.3.0 contains medium level security fixes. :doc:`Upgrading </upgrade/upgrading-mattermost-server.html>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
+   Mattermost v4.3.0 contains medium level security fixes. :doc:`Upgrading </upgrade/upgrading-mattermost-server>` is highly recommended. Details will be posted on our `security updates page <https://mattermost.com/security-updates/>`_ 30 days after release as per the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__.
 
 **Breaking Change** 
 

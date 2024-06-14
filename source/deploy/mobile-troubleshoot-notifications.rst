@@ -19,7 +19,7 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 ``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
 
-  - If the log message displays, it means a message was sent to the HPNS server and was not received by your mobile app. Please contact support@mattermost.com with the subject "HPNS issue" for help from Mattermost's Support team.
+  - If the log message displays, it means a message was sent to the HPNS server and was not received by your mobile app. Please `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`_ with the subject "HPNS issue" for help from Mattermost's Support team.
   - If the log message does not display, it means no mobile push notification was sent to “Account A”. Please repeat the process starting at step 2 and double-check each step.
 
 .. important::

@@ -9,10 +9,6 @@
 
 |deployment-img| Available only for `Cloud Dedicated <https://mattermost.com/sign-up/>`__ deployments
 
-.. |plans-img| image:: ../_static/images/badges/flag_icon.svg
-
-.. |deployment-img| image:: ../_static/images/badges/deployment_icon.svg
-
 .. raw:: html
 
   </div>

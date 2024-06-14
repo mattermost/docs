@@ -28,7 +28,7 @@ App deployment
 
     If you have a self-hosted Mattermost instance running on AWS EC2, the default Golang version is 1.13.8. Because of this, the Golang install command will give an error stating:
 
-    .. code-block:: shell
+    .. code-block:: none
 
         can't load package: package github.com/mattermost/mattermost-plugin-apps/cmd/appsctl@latest: cannot use path@version syntax in GOPATH mode
 

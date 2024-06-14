@@ -45,12 +45,16 @@ Install PostgreSQL database
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
-  .. note::
+  .. important::
     Use a password that is more secure than 'mmuser-password'.
 
 12.  Grant the user access to the Mattermost database.
 
   ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
+
+  .. important::
+
+    If you’re configuring a PostgreSQL v15.x or later database, you need to grant the user access to the Mattermost database. See the :doc:`Mattermost database preparation </install/prepare-mattermost-database>` for details.
 
 13. Exit the PostgreSQL interactive terminal.
 

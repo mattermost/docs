@@ -1152,7 +1152,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com
  - View the runs you're participating in or following in the **Runs** sidebar category, and view the playbooks you're a member of in the **Playbooks** sidebar category.
  - Favorite runs or playbooks to prioritize them in the **Favorites** category.
  - Participants now have access to every run feature on the new run details page.
- - In Cloud Professional and Enterprise plans, stakeholders can request status updates from runs.
+ - In Cloud Enterprise and Professional plans, stakeholders can request status updates from runs.
 
 ### Boards
  - All the boards you’re currently a member of from your current team will appear on the sidebar without needing to switch workspaces.
@@ -2028,7 +2028,7 @@ From Mattermost v9.2, see the [Mattermost Changelog](https://docs.mattermost.com
  - Added a global header for product navigation for Channels, Playbooks, and Boards. This is disabled on the mobile web view and mobile apps.
 
 #### Packaging Changes
- - Introducing [updated packaging](https://mattermost.com/pricing) with new Starter, Professional and Enterprise plans to better serve our customers.
+ - Introducing [updated packaging](https://mattermost.com/pricing) with new Starter, Enterprise and Professional plans to better serve our customers.
  - Existing paying Cloud Professional customers will automatically be upgraded to Cloud Enterprise with no change to pricing or feature set for the next 12 months. More information will be shared to the workspace owner's email address shortly after the release.
  - Existing free Cloud customers will be asked to enter their credit card by January 15th, 2022 to continue using Mattermost Cloud. More information will be shared to the workspace owner's email address shortly after the release.
 

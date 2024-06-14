@@ -392,7 +392,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
  - Under ``FileSettings`` 
     - Added various export store settings to add support for a new Export storage.
 
-#### Changes to Professional and Enterprise plans:
+#### Changes to Enterprise and Professional plans:
  - Under ``GuestAccountsSettings`` in ``config.json``:
     - Added ``HideTags`` to add the ability to remove the **Guest** badges from within the product.
 
@@ -500,7 +500,7 @@ If you upgrade from a release earlier than v7.10, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Persistent notifications (Professional and Enterprise Plans) allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
+ - Persistent notifications (Enterprise and Professional lans) allow users to notify recipients repeatedly until action is taken on an urgent message. Check out [our documentation](https://docs.mattermost.com/channels/message-priority.html#send-persistent-notifications) for more details.
  - The apps bar is now enabled by default for on-prem servers. ``ExperimentalSettings.EnableAppBar`` was also renamed to ``ExperimentalSettings.DisableAppBar``. See more details at:
    - https://docs.mattermost.com/configure/experimental-configuration-settings.html#disable-app-bar 
    - https://forum.mattermost.com/t/channel-header-plugin-changes/13551
@@ -608,7 +608,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
    - Added ``DisableAppBar`` to enable apps bar by default.
  - Three configuration fields have been added, ``LogSettings.AdvancedLoggingJSON``, ``ExperimentalAuditSettings.AdvancedLoggingJSON``, and ``NotificationLogSettings.AdvancedLoggingJSON`` which support multi-line JSON, escaped JSON as a string, or a filename that points to a file containing JSON.  The ``AdvancedLoggingConfig`` fields have been deprecated.
 
-#### Changes to Professional and Enterprise plans:
+#### Changes to Enterprise and Professional plans:
  - Under ``ServiceSettings`` in ``config.json``:
    - Added new configuration settings ``AllowPersistentNotifications``, ``PersistentNotificationIntervalMinutes``, ``PersistentNotificationMaxCount``, ``PersistentNotificationMaxRecipients``, to add a persistent notification option when sending urgent priority posts.
 
@@ -2065,7 +2065,7 @@ If you upgrade from a release earlier than v6.6, please read the other [Importan
 ### Highlights
 
 #### Playbooks Updates
- - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Professional and Enterprise subscriptions).
+ - To keep procedures on track while reducing noise, task due dates can now be added to playbook runs (Enterprise and Professional subscriptions).
 
 ### Improvements
 
@@ -2332,7 +2332,7 @@ If you upgrade from a release earlier than v6.4, please read the other [Importan
 
 ### Highlights
 
-#### Custom User Groups (Beta; Professional and Enterprise Plans)
+#### Custom User Groups (Beta; Enterprise and Professional Plans)
  - Added the ability to mention a group of members at a time in a workspace. Users can create groups, edit group details, join groups, archive groups, and add group members.
 
 #### Cross-team Channel Navigation

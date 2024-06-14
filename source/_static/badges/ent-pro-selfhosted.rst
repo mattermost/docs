@@ -9,10 +9,6 @@
 
 |deployment-img| `self-hosted <https://mattermost.com/deploy/>`__ deployments
 
-.. |plans-img| image:: ../_static/images/badges/flag_icon.svg
-
-.. |deployment-img| image:: ../_static/images/badges/deployment_icon.svg
-
 .. raw:: html
 
   </div>
