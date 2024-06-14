@@ -1,3 +1,4 @@
+:orphan:
 :nosearch:
 
 .. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
@@ -5,13 +6,13 @@
 Preview Mattermost using Docker
 -------------------------------
 
-You can install Mattermost server in **Preview Mode** using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ image to explore Mattermost product functionality on a single local machine.
+Using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`__ is the fastest way to trial Mattermost in **Preview Mode**, and explore product functionality on a single local machine.
 
 .. important::
 
-    This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your preview deployment.
+    This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your trial deployment.
     
-    However, **Preview Mode** shouldn't be used in a production environment, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. 
+    **Preview Mode** shouldn't be used in a production environment, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. 
 
 1. Install `Docker <https://www.docker.com/get-started/>`__.
 
