@@ -65,6 +65,6 @@ source/developer/localization.md
 # IDEs
 .idea/
 
-#
+# Generated PKI files
 *.key
 *.crt
