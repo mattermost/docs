@@ -51,7 +51,7 @@ Common tasks
   
 **Migrating to AD/LDAP or SAML from email-based authentication**
 
-- If you have Professional or Enterprise plans, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :doc:`Active Directory/LDAP Setup </onboard/ad-ldap>`. To set up SAML Single Sign-on, see :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
+- If you have a Mattermost Enterprise or Professional plan, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :doc:`Active Directory/LDAP Setup </onboard/ad-ldap>`. To set up SAML Single Sign-on, see :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
 - After the new authentication method is enabled, existing users cannot use the new method until they go to **Settings > Security > Sign-in method** and select **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to log in.  
   
 **Deactivating a user**

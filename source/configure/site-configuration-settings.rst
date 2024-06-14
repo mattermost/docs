@@ -355,7 +355,7 @@ Default server language
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE``   |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
 | ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"uk"``, ``"vi"``,       |                                                                           |
-| ``"zh_CN"``, and ``"zh_TW"``.                                                  |                                                                           |
+| ``"zh-Hans"``, and ``"zh-Hant"``.                                              |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -379,7 +379,7 @@ Default client language
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        | - Environment variable: ``MM_LOCALIZATIONSETTINGS_DEFAULTCLIENTLOCALE``   |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
 | ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"uk"``, ``"vi"``,       |                                                                           |
-| ``"zh_CN"``, and ``"zh_TW"``.                                                  |                                                                           |
+| ``"zh-Hans"``, and ``"zh-Hant"``.                                              |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -408,7 +408,7 @@ Available languages
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        |                                                                           |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
 | ``"pt-br"``, ``"ro"``, ``"ru"``, ``"sv"``, ``"tr"``, ``"uk"``, ``"vi"``,       |                                                                           |
-| ``"zh_CN"``, and ``"zh_TW"``.                                                  |                                                                           |
+| ``"zh-Hans"``, and ``"zh-Hant"``.                                              |                                                                           |
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -1176,7 +1176,7 @@ Message priority
 | - **false**: Disables the ability to set message priority and request       |                                                                        |
 |   acknowledgements.                                                         |                                                                        |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
-| **Note**: `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
+| **Note**: `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to  |
 | track that specific, time-sensitive messages have been seen and actioned. See the                                                                    |
 | :doc:`message priority </collaborate/message-priority>` documentation to learn more.                                                                 |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
