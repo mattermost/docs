@@ -163,7 +163,7 @@ The following options are available for securing your push notification service:
 
 4. Securing the Mattermost Apple App Store and Google Play apps:
 
-  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Professional or Enterprise to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <deploy/mobile-hpns:hosted push notifications service (hpns)>`.
+  - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise or Professional to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <deploy/mobile-hpns:hosted push notifications service (hpns)>`.
 
 .. note:: 
 

@@ -10,6 +10,12 @@ Removed features in upcoming versions
 Removed features by Mattermost version
 ----------------------------------------
 
+Mattermost Server v9.9.0
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Removed support for self-serve purchases of Mattermost Subscriptions in various flows, throughout Cloud and Self Hosted environments.
+- Removed support for self-serve true up review submission in the **System Console**. 
+
 Mattermost Server v9.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
