@@ -1,9 +1,3 @@
----
-nosearch: true
----
-
-<!---This documentation page is intentionally missing from the LHS. You can safely ignore related build warnings.--->
-
 # gencert.sh for Mattermost
 
 Generate a self-signed x509v3 certificate for use with multiple URLs / IPs.
