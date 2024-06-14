@@ -14,7 +14,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 Note: Mattermost Mobile App v2.17.0 contains low to medium level security fixes. Updating is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the Mattermost Responsible Disclosure Policy.
 
 ### Breaking Changes
- - **IMPORTANT:** The IPhone Deployment Target was updated to 13.4. Old devices may not be able to update the app (<1GB RAM and <iPhone6s).
+ - **IMPORTANT:** The iPhone Deployment Target was updated to 13.4. Old devices may not be able to update the app (<1GB RAM and <iPhone6s).
 
 ### Improvements
  - Calls: Added a **Participants** list to the call screen.
