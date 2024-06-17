@@ -181,7 +181,10 @@ Both the plugin and the external ``rtcd`` service expose some Prometheus metrics
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint.
+
+.. note::
+   On Mattermost versions prior to 9.5 plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
 
 **Process**
 
@@ -209,14 +212,47 @@ Metrics for the calls plugin are exposed through the public ``/plugins/com.matte
 
 - ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
 
+**Application**
+
+- ``mattermost_plugin_calls_app_handlers_time_bucket``: Time taken to execute app handlers.
+
+  - ``mattermost_plugin_calls_app_handlers_time_sum``
+
+  - ``mattermost_plugin_calls_app_handlers_time_count``
+
 **Database**
 
 - ``mattermost_plugin_calls_store_ops_total``: Total number of db store operations.
+- ``mattermost_plugin_calls_store_methods_time_bucket``: Time taken to execute store methods.
+
+  - ``mattermost_plugin_calls_store_methods_time_sum``
+
+  - ``mattermost_plugin_calls_store_methods_time_count``
+- ``mattermost_plugin_calls_cluster_mutex_grab_time_bucket``: Time taken to grab global mutexes.
+
+  - ``mattermost_plugin_calls_cluster_mutex_grab_time_sum``
+
+  - ``mattermost_plugin_calls_cluster_mutex_grab_time_count``
+- ``mattermost_plugin_calls_cluster_mutex_locked_time_bucket``: Time spent locked in global mutexes.
+
+  - ``mattermost_plugin_calls_cluster_mutex_locked_time_sum``
+  
+  - ``mattermost_plugin_calls_cluster_mutex_locked_time_count``
 
 **WebSocket**
 
 - ``mattermost_plugin_calls_websocket_connections_total``: Total number of active WebSocket connections.
 - ``mattermost_plugin_calls_websocket_events_total``: Total number of WebSocket events.
+
+**Jobs**
+
+- ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_bucket``: Duration (in ms) of new audio transcribed for live captions.
+
+  - ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_sum``
+
+  - ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_count``
+- ``mattermost_plugin_calls_jobs_live_captions_pktPayloadCh_buf_full``: Total packets of audio data dropped due to full channel.
+- ``mattermost_plugin_calls_jobs_live_captions_window_dropped``: Total windows of audio data dropped due to pressure on the transcriber.
 
 WebRTC service metrics
 ^^^^^^^^^^^^^^^^^^^^^^
@@ -236,23 +272,38 @@ Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoi
 - ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
 - ``rtcd_rtc_errors_total``: Total number of RTC errors.
 - ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
-
-  - Note: removed as of v0.10.0
-
 - ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
-
-  - Note: removed as of v0.10.0
-
 - ``rtcd_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
-
-  - Note: added as of v0.10.0
-
 - ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
+- ``rtcd_rtc_rtp_tracks_writes_time_bucket``: Time taken to write to outgoing RTP tracks.
+
+  - ``rtcd_rtc_rtp_tracks_writes_time_sum``
+
+  - ``rtcd_rtc_rtp_tracks_writes_time_count``
 
 **WebSocket**
 
 - ``rtcd_ws_connections_total``: Total number of active WebSocket connections.
 - ``rtcd_ws_messages_total``: Total number of received/sent WebSocket messages.
+
+Configuration
+^^^^^^^^^^^^^
+
+A sample Prometheus configuration to scrape both plugin and ``rtcd`` metrics could look like this:
+
+.. code::
+
+   scrape_configs:
+   - job_name: node
+     static_configs:
+       - targets: ['rtcd-0:9100','rtcd-1:9100', 'calls-offloader-1:9100', 'calls-offloader-2:9100']
+   - job_name: calls
+      metrics_path: /plugins/com.mattermost.calls/metrics
+      static_configs:
+        - targets: ['app-0:8067','app-1:8067','app-2:8067']
+   - job_name: rtcd
+      static_configs:
+        - targets: ['rtcd-0:8045', 'rtcd-1:8045']
 
 System tunings
 ~~~~~~~~~~~~~~
