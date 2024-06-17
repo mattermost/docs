@@ -184,7 +184,7 @@ Calls plugin metrics
 Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint.
 
 .. note::
-   On Mattermost versions prior to 9.5 plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+   On Mattermost versions prior to v9.5, plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
 
 **Process**
 
