@@ -68,7 +68,7 @@ Migrate Mattermost from one server to another
 
 The following instructions migrate Mattermost from one server to another by backing up and restoring the Mattermost database and ``config.json`` file. For these instructions SOURCE refers to the Mattermost server *from which* your system will be migrated and DESTINATION refers to the Mattermost server *to which* your system will be migrated.
 
-1. Back up your SOURCE Mattermost server. See :doc:`Backup and Disaster Recovery documentation </deploy/backup-disaster-recovery>`.
+1. Back up your SOURCE Mattermost server. See :doc:`back up Mattermost server </deploy/back-up-mattermost-server>` documentation.
 2. Upgrade your SOURCE Mattermost server to the latest major build version. See :doc:`Upgrading Mattermost Server documentation </upgrade/upgrading-mattermost-server>`.
 3. Install the latest major build of Mattermost server as your DESTINATION. 
 
