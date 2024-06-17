@@ -24,7 +24,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 
 ### Improvements
 
-See [this walkthrough video](https://mattermost.com/video/mattermost-v9-9-changelog/) on some of the improvements in our latest release below.
+See [this walkthrough video](https://mattermost.com/video/video-mattermost-v9-9-changelog/) on some of the improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin version [v0.27.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.27.0).
