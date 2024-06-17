@@ -362,6 +362,34 @@ The recommended way to deploy Calls related components and services in a Kuberne
 
 - `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
 
+Limitations
+~~~~~~~~~~~
+
+Due to the inherent complexities of hosting a WebRTC service, some limitations apply when deploying Calls in a Kubernetes environment.
+
+One key requirement is that each ``rtcd`` process live in a dedicated Kubernetes node. This is necessary to forward the data correctly while allowing for horizontal scaling. Data should generally not go through a standard ingress but directly to the pod running the ``rtcd`` process.
+
+The general recommendation is to expose one external IP address per ``rtcd`` instance (Kubernetes node). This makes it simpler to scale as the application is able to detect its own external address (through STUN) and advertise it to clients to achieve connectivity with minimal configuration.
+
+If, for some reason, exposing multiple IP addresses is not possible in your environment, port mapping (NAT) can be used. In this scenario different ports are used to map the respective ``rtcd`` nodes behind the single external IP. Example:
+
+.. code-block:: bash
+
+  EXT_IP:8443 -> rtcdA:8443
+  EXT_IP:8444 -> rtcdB:8443
+  EXT_IP:8445 -> rtcdC:8443
+
+This case requires a couple of extra configurations:
+
+- NAT mappings need to be in place for every ``rtcd`` node. This is usually done at the ingress point (e.g., ELB, NLB, etc).
+- The ``RTCD_RTC_ICEHOSTPORTOVERRIDE`` config should be used to pass a full mapping of node IPs and their respective port.
+    - Example: ``RTCD_RTC_ICEHOSTPORTOVERRIDE=rtcdA_IP/8443,rtcdB_IP/8444,rtcdC_IP/8445``
+- The ``RTCD_RTC_ICEHOSTOVERRIDE`` should be used to set the external IP address.
+
+.. note::
+
+  One option to limit these static mappings is to reduce the size of the local subnet (e.g., to ``/29``).
+
 Frequently asked questions
 --------------------------
 
