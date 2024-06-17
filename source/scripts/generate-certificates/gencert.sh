@@ -44,3 +44,5 @@ fi
 
 rm $CSR
 chmod 600 $CERT
+
+echo -e "\nSuccess! $KEY and $CERT generated."
