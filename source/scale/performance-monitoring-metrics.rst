@@ -77,8 +77,9 @@ Login and session metrics
 
 .. note::
   From Mattermost version v9.9, this value includes any potentially unauthenticated connections. Furthermore, this metric comes with an ``origin_client`` label that can be used to see the distribution of connections from different client types (i.e. web, mobile, and desktop).
-- ``mattermost_login_logins_fail_total``: The total number of failed logins.
-- ``mattermost_login_logins_total``: The total number of successful logins.
+
+  - ``mattermost_login_logins_fail_total``: The total number of failed logins.
+  - ``mattermost_login_logins_total``: The total number of successful logins.
 
 Mattermost channels metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
