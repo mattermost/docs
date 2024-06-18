@@ -13,6 +13,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - The app will now send performance metrics to servers that have them enabled.
+ - Improved websocket behavior.
  - Calls: Updated call post user interface.
  - Calls: Added channel name to the call header.
  - Calls: Feedback is now provided after user taps **Start call**.
