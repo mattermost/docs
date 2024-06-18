@@ -114,9 +114,9 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running command:
+You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running the following command:
 
-.. code-block: none
+.. code-block:: text
 
    mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
 

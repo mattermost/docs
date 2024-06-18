@@ -1,9 +1,3 @@
----
-nosearch: true
----
-
-<!---This documentation page is intentionally missing from the LHS. You can safely ignore related build warnings.--->
-
 # gencert.sh for Mattermost
 
 Generate a self-signed x509v3 certificate for use with multiple URLs / IPs.
@@ -21,6 +15,7 @@ CRT_CN="client.com" CRT_SAN="DNS.1:www.client.com,DNS.2:admin.client.com,IP.1:19
 You may change the `CRT_CN` and `CRT_SAN` values of the above command based on your needs.
 
 Additionally you may use any of the following environment variables :
+- `CRT_FILENAME`: the name of the cert and key files i.e. `<CRT_FILENAME>.key` and `<CRT_FILENAME>.crt`
 - `CRT_C` : Country value
 - `CRT_L` : Locality value
 - `CRT_O` : Organization value
@@ -31,8 +26,8 @@ Additionally you may use any of the following environment variables :
 ### Result
 
 The command will generate two files:
-- pkcs#8 private key : `mattermost-x509.key`
-- x509v3 certificate : `mattermost-x509.crt`
+- pkcs#8 private key : `mattermost-x509.key` (unless you set `CRT_FILENAME`)
+- x509v3 certificate : `mattermost-x509.crt` (unless you set `CRT_FILENAME`)
 
 You can confirm the certificate content by using the following standard `x509` command:
 
