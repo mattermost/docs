@@ -25,7 +25,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Pre-packaged GitLab plugin version [v1.9.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.9.1).
  - Pre-packaged Mattermost Copilot plugin version [v0.8.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.1).
  - Pre-packaged Calls plugin version [v0.28.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.28.1).
- - Re-designed the user profile popover improved its performance.
+ - Re-designed the user profile popover and improved its performance.
  - Added banner to prompt users to give desktop notification permissions when opening the app.
  - Increased the width of the profile picture setting to match other user settings.
  - Improved screen reader support for emoji picker.
