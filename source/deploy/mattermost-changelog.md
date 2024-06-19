@@ -47,7 +47,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Fixed an issue where the ``RefreshPostStats`` job could fail.
  - Fixed an issue where attempting to create a team with the URL of an existing team showed the wrong error message.
  - Fixed an issue where ``visibilitychange`` JavaScript browser event had not been added for updating the user's current timezone.
- - Fixed an issue where the last admin could no longer be demoted.
+ - Fixed an issue where the last admin in the system was allowed to be demoted.
  - Fixed an issue where banners set by system administrators did not stack below system banners, and appeared underneath them instead. Existing system banners have remained unchanged.
  - Fixed an issue with an incorrect wrapping of long words in numbered lists.
  - Fixed an incorrect behavior of the image proxy when site URL is changed.
