@@ -13,7 +13,13 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 
 ## Release v9.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: 2024-06-14**
+- **9.9.1, released **
+  - Mattermost v9.9.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Removed feature flag which prevented enabling ``MetricsSettings.EnableClientMetrics``.
+  - Mattermost v9.9.1 contains no database or functional changes.
+- **9.9.0, released 2024-06-14**
+  - Original 9.9.0 release.
 
 ### Compatibility
  - Updated minimum macOS version to 12+ and minimum Safari version to 17+.
@@ -104,7 +110,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the [Notifications Health dashboard](https://grafana.com/grafana/dashboards/21305) [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
  - Some Cloud workspaces unexpectedly received emails about license expiration.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
