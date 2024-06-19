@@ -19,7 +19,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Calls: Feedback is now provided after user taps **Start call**.
 
 ### Bug Fixes
- - Fixed a crash when receiving a push notification on Android when the app was not running.
  - Fixed an issue with the apply button not appearing on iPads when trying to set the post priority.
 
 ### Open Source Components
