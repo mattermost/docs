@@ -19,7 +19,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Calls: Feedback is now provided after user taps **Start call**.
 
 ### Bug Fixes
- - Fixed an issue with the apply button not appearing on iPads when trying to set the post priority.
+ - Fixed an issue with the apply button not appearing on iPads when trying to set post priority.
 
 ### Open Source Components
  - Added ``react-native-performance`` to https://github.com/mattermost/mattermost-mobile.
