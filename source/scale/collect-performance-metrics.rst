@@ -43,7 +43,7 @@ Usage
 
 You need to be a Mattermost system admin to collect performance metrics. Select **Create Dump** to generate dump files. 
 
-To use the generated dump file, you can simply clone the `Dockprom <https://github.com/stefanprodan/dockpromo>`__ repository. Change the Prometheus data volume to point to the dump that you just downloaded. The downloaded file is compressed, so to be able to use it, you need to decompress it first.
+To use the generated dump file, you can simply clone the `Dockprom <https://github.com/stefanprodan/dockprom>`__ repository. Change the Prometheus data volume to point to the dump that you just downloaded. The downloaded file is compressed, so to be able to use it, you need to decompress it first.
 
 The volume configuration for Prometheus should look like the code below in the ``docker-compose.yml`` file:
 
