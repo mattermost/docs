@@ -28,7 +28,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Re-designed the user profile popover and improved its performance.
  - Added banner to prompt users to give desktop notification permissions when opening the app.
  - Increased the width of the profile picture setting to match other user settings.
- - Improved screen reader support for emoji picker.
+ - Improved screen reader support for the emoji picker.
  - Improved the accessibility of plugin buttons in the channel header.
 
 #### Administration
@@ -48,9 +48,9 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Fixed an issue where attempting to create a team with the URL of an existing team showed the wrong error message.
  - Fixed an issue where ``visibilitychange`` js browser event had not been added for updating the user's current timezone.
  - Fixed an issue where the last admin could no longer be demoted.
- - Fixed an issue where banners set by system administrators did not stack below system banners, and rather appeared underneath them. Existing system banners have remained unchanged.
+ - Fixed an issue where banners set by system administrators did not stack below system banners, and appeared underneath them instead. Existing system banners have remained unchanged.
  - Fixed an issue with an incorrect wrapping of long words in numbered lists.
- - Fixed an incorrect behavior of image proxy when site URL is changed.
+ - Fixed an incorrect behavior of the image proxy when site URL is changed.
  - Fixed an issue where cache invalidation messages for websocket connections were not being sent across the cluster, causing missed websocket events.
 
 ### config.json
