@@ -181,10 +181,10 @@ Both the plugin and the external ``rtcd`` service expose some Prometheus metrics
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint.
+Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
 
 .. note::
-   On Mattermost versions prior to v9.5, plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+   On Mattermost versions prior to v9.5, plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` configuration setting. This defaults to port ``8065``.
 
 **Process**
 
@@ -257,7 +257,7 @@ Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.c
 WebRTC service metrics
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
+Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint under the ``rtcd`` API listener controlled by the ``api.http.listen_address`` configuration setting. It defaults to port ``8045``.
 
 **Process**
 
