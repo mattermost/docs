@@ -19,6 +19,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
   - Removed feature flag which prevented enabling ``MetricsSettings.EnableClientMetrics`` [MM-58823](https://mattermost.atlassian.net/browse/MM-58823).
   - Added a page load time to the client performance metrics [MM-58359](https://mattermost.atlassian.net/browse/MM-58359).
   - Fixed web app performance reports being marked as outdated after the user's computer woke up from sleep [MM-58772](https://mattermost.atlassian.net/browse/MM-58772).
+  - Increased range of LCP metrics and Load Event End metrics that can be measured [MM-59033](https://mattermost.atlassian.net/browse/MM-59033).
   - Mattermost v9.9.1 contains no database or functional changes.
 - **9.9.0, released 2024-06-14**
   - Original 9.9.0 release.
