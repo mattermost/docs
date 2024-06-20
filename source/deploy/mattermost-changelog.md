@@ -16,9 +16,9 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
 - **9.9.1, released **
   - Mattermost v9.9.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
-  - Removed feature flag which prevented enabling ``MetricsSettings.EnableClientMetrics``.
-  - Added a page load time to the client performance metrics.
-  - Fixed web app performance reports being marked as outdated after the user's computer woke up from sleep.
+  - Removed feature flag which prevented enabling ``MetricsSettings.EnableClientMetrics`` [MM-58823](https://mattermost.atlassian.net/browse/MM-58823).
+  - Added a page load time to the client performance metrics [MM-58359](https://mattermost.atlassian.net/browse/MM-58359).
+  - Fixed web app performance reports being marked as outdated after the user's computer woke up from sleep [MM-58772](https://mattermost.atlassian.net/browse/MM-58772).
   - Mattermost v9.9.1 contains no database or functional changes.
 - **9.9.0, released 2024-06-14**
   - Original 9.9.0 release.
@@ -431,8 +431,8 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
   - Mattermost v9.5.7 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
   - Added a new configuration setting ``CloudSettings.Disable`` (via config.json, or environment variable), default ``false``. When set to ``true``, all requests to the Mattermost Customer Portal from a workspace will be disabled.
-  - Fixed an issue where the user status would incorrectly be set to offline without checking for connections in other nodes in an High Availability cluster.
-  - Fixed an issue where users could not see the member count in the **Browse Channels** dialog on some servers.
+  - Fixed an issue where the user status would incorrectly be set to offline without checking for connections in other nodes in an High Availability cluster [MM-57153](https://mattermost.atlassian.net/browse/MM-57153).
+  - Fixed an issue where users could not see the member count in the **Browse Channels** dialog on some servers [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
   - Mattermost v9.5.7 contains no database or functional changes.
 - **9.5.6, released 2024-06-03**
   - Mattermost v9.5.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
