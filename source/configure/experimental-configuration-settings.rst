@@ -1931,11 +1931,14 @@ Websocket secure port
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-(Optional) This setting defines the port on which the secured WebSocket will listen using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the secured WebSocket is listening using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WebsocketSecurePort": 443`` with numerical input. |
 +------------------------------------------------------------------------------------------------+
+
+.. note::
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-websocketport
   :displayname: Websocket port (Experimental)
@@ -1949,11 +1952,14 @@ Websocket port
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-(Optional) This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the unsecured WebSocket is listening using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``WebsocketPort": 80`` with numerical input. |
 +----------------------------------------------------------------------------------------+
+
+.. note::
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-enableapiteamdeletion
   :displayname: Enable API team deletion (Experimental)
