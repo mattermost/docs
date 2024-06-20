@@ -6,6 +6,10 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v10.3.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- As part of our continuous efforts to enhance your user experience, we will be phasing out the Classic Mobile App. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ to continue enjoying our services without interruption. See more details in `this forum post <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_.
 
 Removed features by Mattermost version
 ----------------------------------------
