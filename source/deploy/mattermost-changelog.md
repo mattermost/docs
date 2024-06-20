@@ -17,6 +17,8 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
   - Mattermost v9.9.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
   - Removed feature flag which prevented enabling ``MetricsSettings.EnableClientMetrics``.
+  - Added a page load time to the client performance metrics.
+  - Fixed web app performance reports being marked as outdated after the user's computer woke up from sleep.
   - Mattermost v9.9.1 contains no database or functional changes.
 - **9.9.0, released 2024-06-14**
   - Original 9.9.0 release.
