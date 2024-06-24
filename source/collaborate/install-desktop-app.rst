@@ -175,7 +175,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
       - 64-bit systems: `mattermost-desktop-5.8.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.8.1/mattermost-desktop-5.8.1-linux-x64.tar.gz>`_
       - 32-bit systems: `mattermost-desktop-5.8.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.8.1/mattermost-desktop-5.8.1-linux-ia32.tar.gz>`_
 
-  2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4700 chrome-sandbox``
+  2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4755 chrome-sandbox``
 
   3. Execute ``mattermost-desktop`` located inside the extracted directory.
 
