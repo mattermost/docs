@@ -434,6 +434,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
   - Added a new configuration setting ``CloudSettings.Disable`` (via config.json, or environment variable), default ``false``. When set to ``true``, all requests to the Mattermost Customer Portal from a workspace will be disabled.
   - Fixed an issue where the user status would incorrectly be set to offline without checking for connections in other nodes in an High Availability cluster [MM-57153](https://mattermost.atlassian.net/browse/MM-57153).
   - Fixed an issue where users could not see the member count in the **Browse Channels** dialog on some servers [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
+  - Increased the maximum length of the ``Value`` column of the ``Preferences`` table [MM-57913](https://mattermost.atlassian.net/browse/MM-57913).
   - Mattermost v9.5.7 contains no database or functional changes.
 - **9.5.6, released 2024-06-03**
   - Mattermost v9.5.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
