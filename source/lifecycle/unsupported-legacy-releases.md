@@ -1,5 +1,6 @@
 # Unsupported legacy releases
 
+(release-v8-1-extended-support-release)=
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **8.1.13, released 2024-04-25**
@@ -151,6 +152,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
+(release-v8-0-major-release)=
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
 
 - **8.0.4, released 2023-10-06**
@@ -376,6 +378,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
   - The Mattermost v7.11 release has been canceled as we are working on architectural changes for the Mattermost platform. The next scheduled release is v8.0 this summer.
 
+(release-v7-10-feature-release)=
 ## Release v7.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.10.5, released 2023-07-26**
@@ -487,6 +490,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
+(release-v7-9-feature-release)=
 ## Release v7.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.9.6, released 2023-07-12**
@@ -619,6 +623,7 @@ If you upgrade from a release earlier than v7.8, please read the other [Importan
 
 ----
 
+(release-v7-8-extended-support-release)=
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 - **7.8.15 released 2023-11-13**
@@ -825,6 +830,7 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
 
 ----
 
+(release-v7-7-feature-release)=
 ## Release v7.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.7.4, released 2023-04-12**
@@ -1166,6 +1172,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
+(release-v7-4-feature-release)=
 ## Release v7.4 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v7.4.1, released 2022-12-21**
@@ -1764,6 +1771,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
+(release-v6-7-feature-release)=
 ## Release v6.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
 - **v6.7.2, released 2022-06-15**
@@ -2703,6 +2711,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
+(release-v6-0-feature-release)=
 ## Release v6.0 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html)
 
 - **v6.0.4, released 2021-12-17**

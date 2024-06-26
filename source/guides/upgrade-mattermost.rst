@@ -15,7 +15,6 @@ Upgrade Mattermost
     Enterprise install and upgrade </install/enterprise-install-upgrade>
     Install a license key </upgrade/installing-license-key>
     Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>
-    Version archive </lifecycle/version-archive>
 
 Stay up to date with the latest features and improvements.
 
@@ -25,4 +24,3 @@ Stay up to date with the latest features and improvements.
 * :doc:`Install a license key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.
 * :doc:`Important upgrade notes </upgrade/important-upgrade-notes>` - Find version-specific upgrade considerations.
 * :doc:`Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>` - Find out how to roll back to older versions of Mattermost.
-* :doc:`Server version archive </lifecycle/version-archive>` - Download binaries for every server release.
