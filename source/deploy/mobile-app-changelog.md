@@ -20,6 +20,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue with the apply button not appearing on iPads when trying to set post priority.
+ - Fixed a crash that occured when sharing a file.
 
 ### Open Source Components
  - Added ``react-native-performance`` to https://github.com/mattermost/mattermost-mobile.
