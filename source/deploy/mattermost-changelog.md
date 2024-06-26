@@ -20,6 +20,7 @@ From Mattermost v9.2, this changelog summarizes updates for the latest cloud and
   - Added a page load time to the client performance metrics [MM-58359](https://mattermost.atlassian.net/browse/MM-58359).
   - Fixed web app performance reports being marked as outdated after the user's computer woke up from sleep [MM-58772](https://mattermost.atlassian.net/browse/MM-58772).
   - Increased range of LCP metrics and Load Event End metrics that can be measured [MM-59033](https://mattermost.atlassian.net/browse/MM-59033).
+  - Fixed an error caused by performance telemetry when using Firefox with ``beacon.enabled`` set to ``false`` [MM-58777](https://mattermost.atlassian.net/browse/MM-58777).
   - Mattermost v9.9.1 contains no database or functional changes.
 - **9.9.0, released 2024-06-14**
   - Original 9.9.0 release.
