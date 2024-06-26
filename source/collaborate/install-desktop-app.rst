@@ -85,6 +85,10 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   Both a ``.deb`` package (Beta), and an official APT repository is available for Debian 9 and for Ubuntu releases 20.04 LTS or later. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
 
+  .. important::
+
+    The GPG public key has changed. If you had previously set up the repository on your system, you'll need to download the new key. You can set the ``UPDATE_GPG_KEY=yes`` environment variable when running the setup script to configure it to overwrite the previous key on your system with the new one. The first step of installation then becomes: ``curl -fsS -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo UPDATE_GPG_KEY=yes bash``. Depending on your setup, additional steps may also be required, particularly for installations that don't rely on the repository setup script.
+
   1. At the command line, set up the Mattermost repository on your system: 
 
     .. code-block:: none
@@ -171,9 +175,11 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
       - 64-bit systems: `mattermost-desktop-5.8.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.8.1/mattermost-desktop-5.8.1-linux-x64.tar.gz>`_
       - 32-bit systems: `mattermost-desktop-5.8.1-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.8.1/mattermost-desktop-5.8.1-linux-ia32.tar.gz>`_
 
-  2. Extract the archive to a convenient location, then execute ``mattermost-desktop`` located inside the extracted directory.
+  2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4755 chrome-sandbox``
 
-  3. To create a Desktop launcher, open the file ``README.md``, and follow the instructions in the **Desktop launcher** section.
+  3. Execute ``mattermost-desktop`` located inside the extracted directory.
+
+  4. To create a Desktop launcher, open the file ``README.md``, and follow the instructions in the **Desktop launcher** section.
 
 Log in using the desktop app
 -----------------------------
