@@ -10,7 +10,7 @@ Install the Microsoft Teams integration in Mattermost
   These installation instructions assume you already have a Mattermost instance running PostgreSQL. Note that this Mattermost integration doesn't support MySQL databases.
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
+2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v9.8.0 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v9.8.0 or later.
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams**, and select **Enable Plugin**.
 
@@ -79,22 +79,11 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
  - ``Group.Read.All``
  - ``Team.ReadBasic.All``
  - ``User.Read.All``
+ - ``Application.ReadWrite.OwnedBy`` (or ``Application.Read.All``)
 
 13. Select **Add permissions** to submit the form.
 
 14. Select **Grant admin consent for...** to grant the permissions for the application.
-
-Create a user account to act as a bot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Create a regular user account. We will connect this account later from the Mattermost side.
-2. This account is needed for creating messages on Microsoft Teams on behalf of users who are present in Mattermost but not on Microsoft Teams.
-3. This account is also needed when users on Mattermost have not connected their accounts and some messages need to be posted on their behalf. See the screenshot below:
-
-   .. image:: ../images/teams-user-as-bot.png
-    :alt: In Microsoft Teams, create a user account to act as a bot.
-
-Run the ``/msteams connect-bot`` slash command to connect the bot account. Once connected to the account on Microsoft Teams, all the messages that are posted from the account on Microsoft Teams won't be synchronized back to Mattermost since it's a "bot", and messages from bots are ignored.
 
 Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -107,19 +96,23 @@ Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
 
 You're all set for configuration inside Azure.
 
-Configure how users connect accounts
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost admins can configure Mattermost to automatically prompt users to connect their Mattermost user account to their Microsoft Teams user account on login.
-
-1. Go to **System Console > Plugins > MS Teams**.
-2. Enable **Enforce connected accounts** to prompt users to connect if they haven't done so.
-3. (Optional) Enable **Allow to temporarily skip connect user** to allow users to skip the connection prompt temporarily. Users are prompted on refresh and login.
-
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Additional configuration settings are available for this plugin. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for details.
+With the Tenant ID, Client ID, and Client secret noted above, the Mattermost plugin is ready for configuration. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for support in completing the base configuration.
+
+Create a user account to act as a bot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A connected bot is required to sync linked channels.
+
+1. Create a regular user account. We will connect this account later from the Mattermost side.
+2. This account is needed for proxying messages from Mattermost to Microsoft Teams.
+
+   .. image:: ../images/teams-user-as-bot.png
+    :alt: In Microsoft Teams, create a user account to act as a bot.
+
+3. As a system administrator, run the ``/msteams connect-bot`` slash command to connect the bot account, authenticating with the Teams account created above.
 
 Monitor performance
 ~~~~~~~~~~~~~~~~~~~~
@@ -146,4 +139,3 @@ Once Microsoft Teams interoperability is enabled, the following slash commands a
 - ``/msteams connect-bot``: Connect the bot account in Mattermost to an account in Microsoft Teams.
 - ``/msteams disconnect-bot``: Disconnect the bot account in Mattermost from the Microsoft Teams account.
 - ``/msteams show-links``: Show all the currently active links including the Mattermost team, Mattermost channel, Microsoft Teams team, and Microsoft Teams channel.
-- ``/msteams promote``: Promote a synthetic user to a normal user. This command takes two parameters i.e. ``current_username`` and the ``new_username``. The promoted user must reset their password or request assistance from the admin in order to log in to Mattermost. After promoting the user, the user will be counted under the Mattermost license.

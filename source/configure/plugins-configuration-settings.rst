@@ -1068,7 +1068,7 @@ MS Teams
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost for Microsoft Teams enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
 
@@ -1183,40 +1183,6 @@ Webhook secret
 | **Note**: Select **Regenerate** to generate a new key.                                                                     |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamscertificatepublic
-  :displayname: Certificate public (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: This configuration is for setting the public certificate for enabling certificate-based subscriptions on MS Graph.
-
-Certificate public
-~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| This configuration is for setting the public certificate for enabling  | - System Config path: **Plugins > MS Teams**      |
-| certificate-based subscriptions on MS Graph.                           | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamscertificatekey
-  :displayname: Certificate key (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: This configuration is for setting the private key of the certificate for enabling certificate-based subscriptions. Enter both the public part and private key of the certificate.
-
-Certificate key
-~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| This configuration is for setting the private key of the certificate   | - System Config path: **Plugins > MS Teams**      |
-| for enabling certificate-based subscriptions.                          | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
-| **Note**: For enabling certificate-based subscriptions, enter both the public part and private key of the certificate.     |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
 .. config:setting:: plugins-msteamsuseevaluationapipaymodel
   :displayname: Use the evaluation API pay model (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
@@ -1238,149 +1204,47 @@ Use the evaluation API pay model
 | - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamsenforceconnectedaccounts
-  :displayname: Enforce connected accounts (Plugins - MS Teams)
+.. config:setting:: plugins-msteamssyncnotifications
+  :displayname: Sync Notifications
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-
+  :description: Notify connected users in Mattermost on receipt of a chat or group chat from Microsoft Teams.
   - **true**: Users are required to connect their Mattermost and Microsoft Teams accounts.
   - **false**: Users aren't required to connect their Mattermost and Microsoft Teams accounts.
 
-Enforce connected accounts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Requires all users to connect their Mattermost account to their        | - System Config path: **Plugins > MS Teams**      |
-| Microsoft Teams account, if the accounts aren't already connected.     | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-| - **true**: Users are required to connect their Mattermost and         |                                                   |
-|   Microsoft Teams accounts each time they refresh the Mattermost       |                                                   |
-|   browser, refresh the desktop app, or log in to Mattermost.           |                                                   |
-| - **false**: **(Default)** Users aren't required to connect their      |                                                   |
-|   Mattermost and Microsoft Teams accounts.                             |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamsallowtempskipconnectuser
-  :displayname: Allow to temporarily skip connect user (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Enables users to skip the current prompt to connect their Mattermost and Microsoft Teams user accounts.
-  - **false**: Prevents users from skipping the prompt to connect their Mattermost and Microsoft Teams user accounts.
-
-Allow to temporarily skip connect user
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Allow users to temporarily dismiss the prompt to connect their         | - System Config path: **Plugins > MS Teams**      |
-| Mattermost account to their Microsoft Teams account. Users will        | - ``config.json`` setting: N/A                    |
-| continue to be prompted when they refresh the browser, refresh the     | - Environment variable: N/A                       |
-| desktop app, or log in to Mattermost.                                  |                                                   |
-|                                                                        |                                                   |
-| - **true**: Enables users to skip the current prompt to connect their  |                                                   |
-|   Mattermost and Microsoft Teams user accounts.                        |                                                   |
-| - **false**: **(Default)** Prevents users from skipping the prompt to  |                                                   |
-|   connect their Mattermost and Microsoft Teams accounts.               |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncusers
-  :displayname: Skip users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users. Leave blank to disable user synchronization.
-
-Sync users
-~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify how often, in minutes, to synchronize direct messages,         | - System Config path: **Plugins > MS Teams**      |
-| group messages, and chats, between Mattermost and Microsoft Teams      | - ``config.json`` setting: N/A                    |
-| users.                                                                 | - Environment variable: N/A                       |
-|                                                                        |                                                   |
-| Leave this value blank to disble user synchronization.                 |                                                   |
-| Numerical value.                                                       |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncguestusers
-  :displayname: Synchronize users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Mattermost includes Microsoft Teams guest users when synchronizing.
-  - **false**: Mattermost doesn't include Microsoft Teams guest users when synchronizing.
-
-Sync guest users
-~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+------------------------------------------------------+
-| Synchronize Microsoft Teams guest users and Mattermost users.          | - System Config path: **Plugins > MS Teams**         |
-|                                                                        | - ``config.json`` setting: N/A                       |
-| - **true**: Mattermost includes Microsoft Teams guest users when       | - Environment variable: N/A                          |
-|   synchronizing.                                                       |                                                      |
-| - **false**: **(Default)** Mattermost doesn't include Microsoft Teams  |                                                      |
-|   guest users when synchronizing.                                      |                                                      |
-+------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncdirectgroupmessages
-  :displayname: Synchronize guest users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Mattermost synchronizes direct messages, group messages, and chats between Mattermost and Microsoft Teams.
-  - **false**: Mattermost doesn't synchronize messages and chats.
-
-Sync direct and group messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sync notifications
+~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+----------------------------------------------------+
-| Synchronize direct messages, group messages, and chats between         | - System Config path: **Plugins > MS Teams**       |
-| Mattermost and Microsoft Teams users.                                  | - ``config.json`` setting: N/A                     |
+| Notify connected users in Mattermost on receipt of a chat or group     | - System Config path: **Plugins > MS Teams**       |
+| chat from Microsoft Teams.                                             | - ``config.json`` setting: N/A                     |
 |                                                                        | - Environment variable: N/A                        |
-| - **true**: **(Default)** Mattermost synchronizes direct messages,     |                                                    |
-|   group messages, and chats between Mattermost and Microsoft Teams.    |                                                    |
-| - **false**: Mattermost doesn't synchronize messages and chats.        |                                                    |
+| - **true**: Sync notifications of chat messages for any connected user |                                                    |
+|   that enables the feature.                                            |                                                    |
+| - **false**: **(Default)** Do not sync notifications.                  |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
 
-.. config:setting:: plugins-msteamsenabledteams
-  :displayname: Enabled teams (Plugins - MS Teams)
+.. config:setting:: plugins-msteamssynclinkedchannels
+  :displayname: Sync linked channels
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
-  :description: Specify which Mattermost teams synchronize direct messages, group messages, and chats with Microsoft Teams.
+  :description: Sync messages from channels linked between Mattermost and MS Teams.
 
-Enabled teams
-~~~~~~~~~~~~~
+Sync linked channels
+~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+----------------------------------------------------+
-| Specify which Mattermost teams synchronize direct messages, group      | - System Config path: **Plugins > MS Teams**       |
-| messages, and chats with Microsoft Teams.                              | - ``config.json`` setting: N/A                     |
+| Sync messages from channels linked between Mattermost and MS Teams.    | - System Config path: **Plugins > MS Teams**       |
+|                                                                        | - ``config.json`` setting: N/A                     |
 |                                                                        | - Environment variable: N/A                        |
-| Separate multiple team names with commas. Leave this value blank to    |                                                    |
-| synchronize all Mattermost teams.                                      |                                                    |
+| - **true**: Messages from linked channels are synced, and new channels |                                                    |
+|   can be setup for syncing.                                            |                                                    |
+| - **false**: **(Default)** Messages are not synced and new channels    |                                                    |
+|   cannot be setup for syncing.                                         |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
 
-.. config:setting:: plugins-msteamspromptinterval
-  :displayname: Prompt interval for DMs and GMs (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify how often, in hours, to prompt users to connect their Microsoft Teams user account to their Mattermost user account.
-
-Prompt interval for DMs and GMs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+------------------------------------------------------+
-| Specify how often, in hours, to prompt users to connect their          | - System Config path: **Plugins > MS Teams**         |
-| Microsoft Teams user account to their Mattermost user account.         | - ``config.json`` setting: N/A                       |
-|                                                                        | - Environment variable: N/A                          |
-| Leave this value blank to disble the prompt.                           |                                                      |
-| Numerical value.                                                       |                                                      |
-+------------------------------------------------------------------------+------------------------------------------------------+
 
 .. config:setting:: plugins-msteamsmaxsizeattachments
   :displayname: Maximum size of attachments to support complete one time download (Plugins - MS Teams)
@@ -1417,104 +1281,6 @@ Buffer size for streaming files
 | Numerical value. Default is **20** MiB.                             |                                                          |
 +---------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: plugins-msteamsmaxconnectedusers
-  :displayname: Max connected users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the maximum number of users that can connect to their Microsoft Teams account.
-
-Max connected users
-~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the maximum number of users that can connect to their       | - System Config path: **Plugins > MS Teams**             |
-| Microsoft Teams account. Once connected, the user is added to a     | - ``config.json`` setting: N/A                           |
-| whitelist and may disconnect and reconnect at any time.             | - Environment variable: N/A                              |
-|                                                                     |                                                          |
-| Numerical value. Default is **100**.                                |                                                          |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncautopromotesyntheticusers
-  :displayname: Automatically promote synthentic users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: **(Default)** Synthetic users are automatically promoted.
-  - **false**: Synthetic users aren't automatically promoted.
-
-Automatically promote synthetic users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------+----------------------------------------------------------+
-| Automatically promote synthetic users when they log in for the        | - System Config path: **Plugins > MS Teams**             |
-| first time.                                                           | - ``config.json`` setting: N/A                           |
-|                                                                       | - Environment variable: N/A                              |
-| - **true**: **(Default)** Synthetic users are automatically promoted. |                                                          |
-| - **false**: Synthetic users aren't automatically promoted.           |                                                          |
-+-----------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncdisablesyncmsginfra
-  :displayname: Disable using the sync msg infrastructure for tracking message changes (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: **(Default)** Synchronized message infrastructure is disabled.
-  - **false**: Synchronized message infrastructure is enabled.
-
-Disable using the sync msg infrastructure for tracking message changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Disables synchronized message infrastructure.                       | - System Config path: **Plugins > MS Teams**             |
-|                                                                     | - ``config.json`` setting: N/A                           |
-| - **true**: Synchronized message infrastructure is disabled.        | - Environment variable: N/A                              |
-| - **false**: **(Default)** Synchronized message infrastructure      |                                                          |
-|   is enabled.                                                       |                                                          |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyntheticuserauthservice
-  :displayname: Synthetic user auth service (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the authentication service to be used when creating or updating synthetic users. This value should match the service used for member user access to Mattermost.
-
-Synthentic user auth service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the authentication service to be used when creating or      | - System Config path: **Plugins > MS Teams**             |
-| updating synthetic users. This value should match the service used  | - ``config.json`` setting: N/A                           |
-| for member user access to Mattermost.                               | - Environment variable: N/A                              |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyntheticuserauthdata
-  :displayname: Synthetic user auth data (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the Microsoft Teams user property to use as the authentication identifier. For AD/LDAP and SAML, the identifier's value should match the value provided by the ID attribute.
-
-Synthetic user auth data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the Microsoft Teams user property to use as the             | - System Config path: **Plugins > MS Teams**             |
-| authentication identifier. For AD/LDAP and SAML, the identifier's   | - ``config.json`` setting: N/A                           |
-| value should match the value provided by the ID attribute.          | - Environment variable: N/A                              |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-----
-
-.. config:setting:: integrations-performance-metrics
-  :displayname: Monitor performance metrics (Plugins)
-  :systemconsole: Plugins > Mattermost Performance Metrics
-  :configjson: performance-metrics
-  :environment: N/A
-  :description: Monitor Mattermost performance metrics
 
 Performance metrics
 -------------------
