@@ -4,15 +4,15 @@
 ```
 
 ```{Important}
-- Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/lifecycle/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+- Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 - We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
 ```
 
 ## Frequency
 
-Mattermost releases a new mobile app version every month. Mattermost tests the latest mobile app release against the [latest server version](/lifecycle/mattermost-server-releases).
+Mattermost releases a new mobile app version every month. Mattermost tests the latest mobile app release against the [latest server version](/about/mattermost-server-releases).
 
-See the [Mobile app changelog](/lifecycle/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
+See the [Mobile app changelog](/about/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
 
 ## Latest releases
 

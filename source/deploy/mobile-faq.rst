@@ -4,9 +4,9 @@ Mobile apps FAQ
 What versions of Mattermost support the mobile v2 app?
 ------------------------------------------------------
 
-We strongly recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. If this isn’t possible, we encourage you to be on the most recent :ref:`Extended Support Release version <lifecycle/release-policy:release types>` of Mattermost Server. The extended support releases contain critical feature updates that will ensure compatibility in a number of areas, including, but not limited to, the Mattermost Push Notification Service (MPNS).
+We strongly recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. If this isn’t possible, we encourage you to be on the most recent :ref:`Extended Support Release version <about/release-policy:release types>` of Mattermost Server. The extended support releases contain critical feature updates that will ensure compatibility in a number of areas, including, but not limited to, the Mattermost Push Notification Service (MPNS).
 
-See our :ref:`Supported Devices/Mobile Device Requirements <install/software-hardware-requirements:mobile apps>` documentation for basic mobile device requirements, and our :doc:`Supported Mattermost Server Versions </lifecycle/mobile-app-changelog>` documentation for details on Mattermost Server minimum requirements.
+See our :ref:`Supported Devices/Mobile Device Requirements <install/software-hardware-requirements:mobile apps>` documentation for basic mobile device requirements, and our :doc:`Supported Mattermost Server Versions </about/mobile-app-changelog>` documentation for details on Mattermost Server minimum requirements.
 
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------

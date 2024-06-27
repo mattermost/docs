@@ -127,7 +127,7 @@ redirects = {
 "administration/bulk-export.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
 "administration/changelog.html":
-        "https://docs.mattermost.com/lifecycle/mattermost-server-releases.html",
+        "https://docs.mattermost.com/about/mattermost-server-releases.html",
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
 "administration/command-line-tools.html#mattermost-user-delete":
@@ -181,7 +181,7 @@ redirects = {
 "administration/encryption.html":
         "https://docs.mattermost.com/deploy/encryption-options.html",
 "administration/extended-support-release.html":
-        "https://docs.mattermost.com/lifecycle/release-policy.html#extended-support-releases",
+        "https://docs.mattermost.com/about/release-policy.html#extended-support-releases",
 "administration/generating-support-packet.html":
         "https://docs.mattermost.com/manage/generating-support-packet.html",
 "administration/health-check.html":
@@ -213,7 +213,7 @@ redirects = {
 "administration/mmctl-cli-tool.html#mmctl-user-reset-password":
 	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
 "administration/mobile-changelog.html":
-        "https://docs.mattermost.com/lifecycle/mobile-app-changelog.html",
+        "https://docs.mattermost.com/about/mobile-app-changelog.html",
 "administration/notices.html":
         "https://docs.mattermost.com/manage/in-product-notices.html",
 "administration/open-source-components.html":
@@ -228,8 +228,8 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "administration/release-definitions.html":
         "https://docs.mattermost.com/guides/release-definitions.html",
-"administration/release-lifecycle.html":
-        "https://docs.mattermost.com/guides/release-lifecycle.html",
+"administration/releases-lifecycle.html":
+        "https://docs.mattermost.com/guides/releases-lifecycle.html",
 "administration/scripts.html":
         "https://docs.mattermost.com/manage/scripts.html",
 "administration/statistics.html":
@@ -365,7 +365,7 @@ redirects = {
 "administration/mmctl-cli-tool.html#mmctl-channel-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete",
 "administration/version-archive.html":
-	"https://docs.mattermost.com/lifecycle/version-archive.html",
+	"https://docs.mattermost.com/about/version-archive.html",
 "administration/mmctl-cli-tool.html#local-mode":
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
 
@@ -787,7 +787,7 @@ redirects = {
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
-	"https://docs.mattermost.com/lifecycle/mattermost-server-releases.html",
+	"https://docs.mattermost.com/about/mattermost-server-releases.html",
 "cloud/cloud-administration/cloud-compliance.html":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
 "cloud/cloud-integrations/cloud-slash-commands.html":
@@ -1813,13 +1813,13 @@ redirects = {
 "deploy/mobile-apps-faq.html":
         "https://docs.mattermost.com/deploy/mobile-faq.html",
 "deploy/deprecated-features.html":
-        "https://docs.mattermost.com/lifecycle/deprecated-features.html",
+        "https://docs.mattermost.com/about/deprecated-features.html",
 "deploy/desktop-app-changelog.html":
-        "https://docs.mattermost.com/lifecycle/desktop-app-changelog.html",
+        "https://docs.mattermost.com/about/desktop-app-changelog.html",
 "deploy/legacy-self-hosted-changelog.html":
-        "https://docs.mattermost.com/lifecycle/unsupported-legacy-releases",
+        "https://docs.mattermost.com/about/unsupported-legacy-releases",
 "deploy/mobile-app-changelog.html":
-        "https://docs.mattermost.com/lifecycle/mobile-app-changelog.html",
+        "https://docs.mattermost.com/about/mobile-app-changelog.html",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
@@ -2108,11 +2108,11 @@ redirects = {
 "guides/deploy-openfaas.html":
         "https://docs.mattermost.com/deploy/deploy-openfaas",
 "guides/changelogs.html":
-        "https://docs.mattermost.com/guides/release-lifecycle.html",
+        "https://docs.mattermost.com/guides/releases-lifecycle.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
-	"https://docs.mattermost.com/lifecycle/desktop-app-changelog.html",
+	"https://docs.mattermost.com/about/desktop-app-changelog.html",
 "help/apps/desktop-guide.html":
 	"https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
 "help/apps/desktop-mvp.html":
@@ -2286,11 +2286,11 @@ redirects = {
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 "install/self-managed-changelog.html":
-        "https://docs.mattermost.com/lifecycle/legacy-self-hosted-changelog.html",
+        "https://docs.mattermost.com/about/legacy-self-hosted-changelog.html",
 "install/legacy-self-hosted-changelog.html":
         "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
 "install/cloud-changelog.html":
-        "https://docs.mattermost.com/lifecycle/mattermost-server-releases.html",
+        "https://docs.mattermost.com/about/mattermost-server-releases.html",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "install/desktop-app-install.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
@@ -2299,11 +2299,11 @@ redirects = {
 "install/install-android-app.html":
         "https://docs.mattermost.com/collaborate/install-android-app.html",
 "install/legacy-self-hosted-changelog.html":
-	"https://docs.mattermost.com/lifecycle/unsupported-legacy-releases.html",
+	"https://docs.mattermost.com/about/unsupported-legacy-releases.html",
 "install/desktop-app-changelog.html":
-	"https://docs.mattermost.com/lifecycle/desktop-app-changelog.html",
+	"https://docs.mattermost.com/about/desktop-app-changelog.html",
 "install/deprecated-features.html":
-	"https://docs.mattermost.com/lifecycle/deprecated-features.html",
+	"https://docs.mattermost.com/about/deprecated-features.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -3274,19 +3274,19 @@ redirects = {
 "upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments",
 "upgrade/extended-support-release.html":
-        "https://docs.mattermost.com/lifecycle/release-policy.html#extended-support-releases",
-"upgrade/release-lifecycle.html":
-        "https://docs.mattermost.com/guides/release-lifecycle.html",
+        "https://docs.mattermost.com/about/release-policy.html#extended-support-releases",
+"upgrade/releases-lifecycle.html":
+        "https://docs.mattermost.com/guides/releases-lifecycle.html",
 "upgrade/release-definitions.html":
-        "https://docs.mattermost.com/lifecycle/release-policy.html#release-types",
+        "https://docs.mattermost.com/about/release-policy.html#release-types",
 "upgrade/version-archive.html":
-        "https://docs.mattermost.com/lifecycle/version-archive.html",
+        "https://docs.mattermost.com/about/version-archive.html",
 
 # Welcome redirects
 "welcome/manage-desktop-app-server-connections.html":
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
 "welcome/insights.html":
-        "https://docs.mattermost.com/lifecycle/deprecated-features.html#mattermost-server-v9-0-0",
+        "https://docs.mattermost.com/about/deprecated-features.html#mattermost-server-v9-0-0",
 "welcome/log-in.html":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
 "welcome/keyboard-shortcuts.html":

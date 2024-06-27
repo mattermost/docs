@@ -47,4 +47,4 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
 .. tab:: Older releases
 
-  If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </lifecycle/version-archive>` documentation.
+  If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </about/version-archive>` documentation.

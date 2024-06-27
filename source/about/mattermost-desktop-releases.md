@@ -4,20 +4,18 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/lifecycle/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 ```
 
 ## Frequency
 
-Mattermost releases a new desktop app version every 4 months, in February, May, August, and November in [binary form](https://docs.mattermost.com/collaborate/install-desktop-app.html#install-and-update-the-mattermost-desktop-app). See the [Desktop app changelog](/lifecycle/desktop-app-changelog) for release details.
+Mattermost releases a new desktop app version every 4 months, in February, May, August, and November in [binary form](https://docs.mattermost.com/collaborate/install-desktop-app.html#install-and-update-the-mattermost-desktop-app). See the [Desktop app changelog](/about/desktop-app-changelog) for release details.
 
 
 ```{Important}
 - From Mattermost v9.11, Mattermost server extended releases are now paired with Mattermost desktop app extended releases. For an optimal user experience and for the latest security fixes, we strongly recommend updating desktop clients to the latest version your Mattermost server supports. See the table below for server compatibility, and see the [Mattermost extended support releases](#extended-support-releases) documentation to learn more about extended releases.
-- Automatic desktop app updates are supported and enabled on Windows, MacOS (via the Apple App Store), Ubuntu, Debian, and generic Linux platforms. To maintain and control mobile app compatibility with your Matterst server, we recommend disabling automatic client updates to prevent users from upgrading their desktop client to a version your server doesn't support. See the [install Mattermost desktop app](/collaborate/install-desktop-app.html) documentation for platform-specific details on automatic app updates.
+- If you prefer to control the server and client releases, we recommend disabling automatic client updates to prevent users from upgrading their desktop client to a version your server doesn't support. See the [install Mattermost desktop app](/collaborate/install-desktop-app) documentation for platform-specific details on automatic app updates.
 ```
-
-{ref}`Changelog <release-v9-8-feature-release>`
 
 ## Latest releases
 

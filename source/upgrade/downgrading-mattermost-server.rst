@@ -4,7 +4,7 @@ Downgrade Mattermost Server
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. Server binaries can be found in the :doc:`Mattermost server version archive </lifecycle/version-archive>` documentation. We do not recommend downgrading more than one version back from your current installation.
+In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. Server binaries can be found in the :doc:`Mattermost server version archive </about/version-archive>` documentation. We do not recommend downgrading more than one version back from your current installation.
 
 Downgrade Mattermost v6.0 to v5.38
 -----------------------------------

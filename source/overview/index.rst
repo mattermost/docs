@@ -16,6 +16,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/self-hosted-subscriptions.rst
    /about/cloud-subscriptions.rst
    /about/editions-and-offerings.rst
+   /about/releases-lifecycle.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
@@ -36,6 +37,7 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` - Learn more about Mattermost self-hosted subscriptions.
 * :doc:`Cloud subscriptions </about/cloud-subscriptions>` - Learn more about Mattermost Cloud subscriptions.
 * :doc:`Mattermost editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost editions and product offerings.
+* :doc:`Mattermost releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
 * :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
 * :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.

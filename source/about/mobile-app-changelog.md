@@ -1,4 +1,4 @@
-# Mattermost mobile apps changelog
+# Mobile apps changelog
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```

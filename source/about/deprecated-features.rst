@@ -116,7 +116,7 @@ Mattermost Server v5.0.0
 Mattermost Server v4.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- A number of permissions configuration settings will be migrated to roles in the database, and changing their config.json values will no longer take effect. These permissions can still be modified by their respective System Console settings. See :doc:`changelog </lifecycle/unsupported-legacy-releases>` for more details.
+- A number of permissions configuration settings will be migrated to roles in the database, and changing their config.json values will no longer take effect. These permissions can still be modified by their respective System Console settings. See :doc:`changelog </about/unsupported-legacy-releases>` for more details.
 
 Mattermost Server v4.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
