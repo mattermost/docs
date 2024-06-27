@@ -15,10 +15,12 @@ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.matte
  - Updated minimum macOS version to 12+ and minimum Safari version to 17+.
 
 ```{Important}
-If you upgrade from a release earlier than v9.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
 ### Improvements
+
+See [this walkthrough video](https://mattermost.com/video/video-mattermost-v9-9-changelog/) on some of the improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin version [v0.27.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.27.0).
@@ -98,7 +100,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the Notifications Health dashboard [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
+ - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the [Notifications Health dashboard](https://grafana.com/grafana/dashboards/21305) [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
  - Some Cloud workspaces unexpectedly received emails about license expiration.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
