@@ -10,7 +10,7 @@ To streamline the migration process and alleviate any potential challenges, we h
 
 .. note::
 
-   These guidelines are in development and we are working to streamline the migration process. We plan to improve this guide by updating it as new information becomes available. Please use this guide as a starting point and always backup your database before starting a migration.
+   We have developed a tool called ``migration-assist`` in order to automate the tasks needs to be executed in this guide. To perform the migration with the assistant tool, please follow the steps in the `migration-assist <#migration-assist>`__ section.
 
 Required tools
 --------------
@@ -578,4 +578,117 @@ If you are facing an error due to authentication with MySQL v8, it may be relate
 
 .. code:: sql
 
-  ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';
+   ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';
+
+migration-assist
+----------------
+
+Migrating databases can be a daunting task, and some steps stated above could be overlooked or misinterpreted by inexperienced users. ``migration-assist`` is here to alleviate these concerns, providing an error-free and efficient migration experience. Our tool offers three core utility commands:
+
+1. ``migration-assist mysql``
+
+   Checks the MySQL database schema to ensure readiness for migration, and offers fixes for common issues.
+
+2. ``migration-assist postgres``
+
+   Creates the Postgres database schema and prepares it for Mattermost deployment, by downloading the necessary migrations and applying them.
+
+3. ``migration-assist pgloader``
+
+   Generates a pgLoader configuration from DSN values, ensuring accurate data transfer.
+
+Install
+~~~~~~~
+
+The tool can be downloaded and compiled with the `Go <https://go.dev/>`__ toolchain. The tool requires at least ``v1.22`` of the Go compiler. You can use ``go install`` to install the tool.
+
+.. code-block:: shell
+
+   go install github.com/mattermost/migration-assist/cmd/migration-assist@latest
+
+Usage
+~~~~~
+
+.. note::
+
+   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and Postgres databases are running and accessible. To setup a PostgreSQL instance, see the `database </install/prepare-mattermost-database.html>`__ documentation for details.
+
+Step 1 - Check the MySQL database schema
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run the following command to check the MySQL database schema:
+
+.. code-block:: shell
+
+   migration-assist mysql "<MYSQL_DSN>"
+
+This command will output the readiness status and will print required fixes for common issues. The flags for fixes are as follow (all fixes could be used at once):
+
+.. code-block:: shell
+
+   --fix-artifacts               Removes the artifacts from older versions of Mattermost
+   --fix-unicode                 Removes the unsupported unicode characters from MySQL tables
+   --fix-varchar                 Removes the rows with varchar overflow
+
+Step 2 - Create the Postgres database schema
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run the following command to create the Postgres database schema:
+
+.. code-block:: shell
+
+   migration-assist postgres "<POSTGRES_DSN>" --run-migrations --mattermost-version="<MATTERMOST_VERSION>"
+
+This command will download the necessary migrations and apply them to the Postgres database. The ``--mattermost-version`` flag is required to specify the Mattermost version you are migrating from.
+
+Step 3 - Generate a pgLoader configuration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run the following command to generate a pgLoader configuration:
+
+.. code-block:: shell
+
+   migration-assist pgloader --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > migration.load
+
+This command will generate a pgLoader configuration file that can be used to migrate the data from MySQL to Postgres.
+
+Step 4 - Run pgloader
+^^^^^^^^^^^^^^^^^^^^^
+
+Run pgloader with the generated configuration file (see the `pgloader <#pgloader>`__ section to install the tool):
+
+.. code-block:: shell
+
+   pgloader migration.load > migration.log
+
+Carefully read the log file to analyze if there were any errors during the migration process. If there were any errors, please contact with out team for further guidance.
+
+Step 5 - Restore full-text indexes
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Create the full-text indexes for the ``Posts`` and ``FileInfo`` tables:
+
+.. code-block:: shell
+
+   migration-assist postgres post-migrate "<POSTGRES_DSN>"
+
+This command will create the full-text indexes for the ``Posts`` and ``FileInfo`` tables. Please refer to the `Restore full-text indexes <#restore-full-text-indexes>`__ section for more information.
+
+Step 6 - Complete plugin migrations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Genreate migration configuration for Boards and Playbooks:
+
+.. code-block:: shell
+
+   migration-assist pgloader boards --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > boards.load
+   migration-assist pgloader playbooks --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > playbooks.load
+
+Then run pgloader with the generated configuration files:
+
+.. code-block:: shell
+
+   pgloader boards.load > boards_migration.log
+   pgloader playbooks.load > playbooks_migration.log
+
+Please refer to the `Plugin migrations <#plugin-migrations>`__ section for more information.
