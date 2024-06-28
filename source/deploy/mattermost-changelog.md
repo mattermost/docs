@@ -52,6 +52,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Fixed an issue with an incorrect wrapping of long words in numbered lists.
  - Fixed an incorrect behavior of the image proxy when site URL is changed.
  - Fixed an issue where cache invalidation messages for websocket connections were not being sent across the cluster, causing missed websocket events.
+ - Fixed ``EnableClientMetrics`` setting not being available in the System Console.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
