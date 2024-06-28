@@ -1,5 +1,5 @@
-Mattermost editions and offerings 
-=================================
+Editions and offerings 
+======================
 
 Mattermost is an open core platform. 
 

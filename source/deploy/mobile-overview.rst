@@ -56,7 +56,7 @@ The following table summarizes the key differences between these two approaches:
 Technical and Security Requirements
 -----------------------------------
 
-See our :ref:`Supported Devices/Mobile Device Requirements <install/software-hardware-requirements:mobile apps>` documentation for basic mobile device requirements, and our :doc:`Supported Mattermost Server Versions </deploy/mobile-app-changelog>` documentation for details on Mattermost Server minimum requirements. 
+See our :ref:`Supported Devices/Mobile Device Requirements <install/software-hardware-requirements:mobile apps>` documentation for basic mobile device requirements, and our :doc:`Supported Mattermost Server Versions </about/mobile-app-changelog>` documentation for details on Mattermost Server minimum requirements. 
 
 We recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. 
 

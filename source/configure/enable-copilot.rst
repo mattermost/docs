@@ -14,7 +14,7 @@ Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. Y
 .. note::
   If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using AI Copilot with Mattermost v9.7 and later.
   
-  The Copilot integration is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
+  The Copilot integration is compatible with the following Mattermost Server versions:
 
   - v9.6 or later
   - v9.5.2+ (Extended Support Release - ESR)

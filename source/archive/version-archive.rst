@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 Version Archive
 ================
 
