@@ -1,5 +1,5 @@
-Mattermost releases and life cycle
-===================================
+Releases and life cycle
+=======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

@@ -1,4 +1,4 @@
-# Mattermost mobile app releases
+# Mobile releases
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```

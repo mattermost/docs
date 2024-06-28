@@ -1817,8 +1817,40 @@ redirects = {
 "deploy/desktop-app-changelog.html":
         "https://docs.mattermost.com/about/desktop-app-changelog.html",
 "deploy/legacy-self-hosted-changelog.html":
-        "https://docs.mattermost.com/about/unsupported-legacy-releases",
+        "https://docs.mattermost.com/about/unsupported-legacy-releases.html",
 "deploy/mobile-app-changelog.html":
+        "https://docs.mattermost.com/about/mobile-app-changelog.html",
+"deploy/mattermost-changelog.html":
+        "https://docs.mattermost.com/about/server.html",
+"deploy/mattermost-changelog.html#release-v9-9-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html",
+"deploy/mattermost-changelog.html#release-v9-8-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-8-feature-release",
+"deploy/mattermost-changelog.html#release-v9-7-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-7-feature-release",
+"deploy/mattermost-changelog.html#release-v9-6-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-6-feature-release",
+"deploy/mattermost-changelog.html#release-v9-5-extended-support-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release",
+"deploy/mattermost-changelog.html#release-v9-4-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-4-feature-release",
+"deploy/mattermost-changelog.html#release-v9-3-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-3-feature-release",
+"deploy/mattermost-changelog.html#release-v9-2-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-2-feature-release",
+"deploy/legacy-self-hosted-changelog.html#release-v9-1-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-1-feature-release",
+"deploy/legacy-self-hosted-changelog.html#release-v9-0-major-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-0-major-release",
+"deploy/legacy-self-hosted-changelog.html#release-v8-1-extended-support-release":
+        "https://docs.mattermost.com/about/unsupported-legacy-releases.html#release-v8-1-extended-support-release",
+"deploy/legacy-cloud-changelog.html":
+        "https://docs.mattermost.com/about/mattermost-server-releases.html",
+"deploy/desktop-app-changelog.html#release-v5-8":
+        "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-8",
+"deploy/desktop-app-changelog.html#release-v5-7":
+        "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-7",
+"deploy/mobile-app-changelog.html#release":
         "https://docs.mattermost.com/about/mobile-app-changelog.html",
 
 # Deployment redirects
@@ -2108,7 +2140,7 @@ redirects = {
 "guides/deploy-openfaas.html":
         "https://docs.mattermost.com/deploy/deploy-openfaas",
 "guides/changelogs.html":
-        "https://docs.mattermost.com/guides/releases-lifecycle.html",
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":

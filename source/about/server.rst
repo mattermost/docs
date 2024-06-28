@@ -19,8 +19,8 @@ Mattermost Server installs as a single compiled binary file that includes the RE
 
 Learn more about:
 
-* :doc:`Mattermost Server releases </about/mattermost-server-releases>`
-* :doc:`Mattermost v10 changelog </about/mattermost-v10-changelog>`
-* :doc:`Mattermost v9 changelog </about/mattermost-v9-changelog>`
+* :doc:`Server releases </about/mattermost-server-releases>`
+* :doc:`v10 changelog </about/mattermost-v10-changelog>`
+* :doc:`v9 changelog </about/mattermost-v9-changelog>`
 * :doc:`Unsupported legacy releases </about/unsupported-legacy-releases>`
 * :doc:`Version archive </about/version-archive>`

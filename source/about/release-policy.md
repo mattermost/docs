@@ -1,4 +1,4 @@
-# Mattermost release policy
+# Release policy
 
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```

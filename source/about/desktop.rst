@@ -16,7 +16,7 @@ The Mattermost desktop app is available for Linux, Mac, and Windows operating sy
 
 Learn more about:
 
-* :doc:`Mattermost desktop app releases </about/mattermost-desktop-releases>`
-* :doc:`Desktop App changelog </about/desktop-app-changelog>`
+* :doc:`Desktop releases </about/mattermost-desktop-releases>`
+* :doc:`Desktop changelog </about/desktop-app-changelog>`
 
 See the :ref:`desktop app software requirements <install/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.

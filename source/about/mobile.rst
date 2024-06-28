@@ -18,7 +18,7 @@ Mattermost users can take Mattermost wherever they go by installing the Mattermo
 
 Learn more about:
 
-* :doc:`Mattermost mobile app releases </about/mattermost-mobile-releases>`
-* :doc:`Mattermost mobile app changelog </about/mobile-app-changelog>`
+* :doc:`Mobile releases </about/mattermost-mobile-releases>`
+* :doc:`Mobile changelog </about/mobile-app-changelog>`
 
 See the :ref:`mobile apps software requirements <install/software-hardware-requirements:mobile apps>` for details on supported operating systems and releases.
