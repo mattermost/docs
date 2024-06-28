@@ -1,3 +1,4 @@
+:orphan:
 :nosearch:
 
 Setup starts in Mattermost, moves to Microsoft Teams, and ends in Mattermost.
@@ -18,7 +19,7 @@ Set up an OAuth application in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Sign into `portal.azure.com <https://portal.azure.com>`_ using an admin Azure account.
-2. Navigate to `App Registrations <https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps>`__.
+2. Navigate to `App Registrations <https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps>`_.
 3. Select **New registration** at the top of the page.
 
   .. image:: ../images/new-azure-registration.png

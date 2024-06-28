@@ -1206,10 +1206,11 @@ Use the evaluation API pay model
 
 .. config:setting:: plugins-msteamssyncnotifications
   :displayname: Sync Notifications
-  :systemconsole: Plugins > MS Teams
+  :systemconsole: Plugins > MS Teams (Plugins - MS Teams)
   :configjson: N/A
   :environment: N/A
   :description: Notify connected users in Mattermost on receipt of a chat or group chat from Microsoft Teams.
+
   - **true**: Users are required to connect their Mattermost and Microsoft Teams accounts.
   - **false**: Users aren't required to connect their Mattermost and Microsoft Teams accounts.
 
@@ -1226,7 +1227,7 @@ Sync notifications
 +------------------------------------------------------------------------+----------------------------------------------------+
 
 .. config:setting:: plugins-msteamssynclinkedchannels
-  :displayname: Sync linked channels
+  :displayname: Sync linked channels (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
   :environment: N/A
@@ -1240,9 +1241,9 @@ Sync linked channels
 |                                                                        | - ``config.json`` setting: N/A                     |
 |                                                                        | - Environment variable: N/A                        |
 | - **true**: Messages from linked channels are synced, and new channels |                                                    |
-|   can be setup for syncing.                                            |                                                    |
+|   can be setup for synchronization.                                    |                                                    |
 | - **false**: **(Default)** Messages are not synced and new channels    |                                                    |
-|   cannot be setup for syncing.                                         |                                                    |
+|   cannot be setup for synchronization.                                 |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
 
 
@@ -1281,6 +1282,7 @@ Buffer size for streaming files
 | Numerical value. Default is **20** MiB.                             |                                                          |
 +---------------------------------------------------------------------+----------------------------------------------------------+
 
+----
 
 Performance metrics
 -------------------
@@ -1289,6 +1291,8 @@ Performance metrics
   :start-after: :nosearch:
 
 See the :doc:`Monitor performance metrics </scale/collect-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <scale/collect-performance-metrics:mattermost configuration>`.
+
+----
 
 Playbooks
 ----------
@@ -1351,6 +1355,8 @@ Enable experimental features
 | - **false**: Disables experimental Playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                    |
 |                                                                                            | - Environment variable:                       |
 +--------------------------------------------------------------------------------------------+-----------------------------------------------+
+
+----
 
 User satisfaction surveys
 -------------------------

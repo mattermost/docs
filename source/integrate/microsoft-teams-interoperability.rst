@@ -13,7 +13,7 @@ Break through siloes in a mixed Mattermost and Microsoft Teams environment by fo
 Setup
 -----
 
-.. include:: /about/install-mattermost-for-microsoft-teams-plugin.rst
+.. include:: /configure/install-mattermost-for-microsoft-teams-plugin.rst
     :start-after: :nosearch:
 
 Usage

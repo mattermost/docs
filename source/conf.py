@@ -109,11 +109,13 @@ redirects = {
 "about/mattermost-customizable-ai-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
 "about/install-mattermost-app-in-microsoft-teams.html":
-        "https://docs.mattermost.com/about/embed-mattermost-within-microsoft-teams",
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 "about/mattermost-google-calendar-integration.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/setup-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
+"about/embed-mattermost-app-within-microsoft-teams.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -769,9 +771,9 @@ redirects = {
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages",
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels":
-        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels",
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html#link-one-or-more-channels-beta",
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
-        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams",
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
@@ -832,6 +834,8 @@ redirects = {
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "collaborate/chat-with-ai-copilot.html":
         "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
+"collaborate-within-embedded-microsoft-teams.html":
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -2010,7 +2014,7 @@ redirects = {
 
 # Microsoft Teams redirects
 "about/embed-mattermost-within-microsoft-teams.html":
-        "about/embed-mattermost-app-within-microsoft-teams.html",
+        "https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html",
 
 # Focalboard redirects
 "focalboard/installing-boards":
@@ -2296,6 +2300,9 @@ redirects = {
 	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
 "install/deprecated-features.html":
 	"https://docs.mattermost.com/deploy/deprecated-features.html",
+
+"integrate/ms-teams-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.

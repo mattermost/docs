@@ -1,6 +1,3 @@
-:orphan:
-:nosearch:
-
 Collaborate within Microsoft Teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -19,7 +16,7 @@ Connect your Mattermost account to your Microsoft Teams account
 To use the Microsoft Teams plugin, you must connect your Mattermost user account to your Microsoft Teams account. You only need to complete this step once.
 
 1. Log into Mattermost using your credentials. 
-2. In any channel, run the ``/msteams connect`` slash command, and click on the resulting link.
+2. In any channel, run the ``/msteams connect`` slash command, and select the resulting link.
 3. Authenticate with Microsoft Teams using the email address matching your account in Mattermost.
 
 Mattermost will confirm when your account is connected, and prompt you to enable notifications.
@@ -27,15 +24,15 @@ Mattermost will confirm when your account is connected, and prompt you to enable
 Enable notifications
 ^^^^^^^^^^^^^^^^^^^^
 
-Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled, any messages you receive in a chat or group chat in Microsoft Teams will be appear in Mattermost as a notification, with a link to open the chat in Teams and continue the conversation.
+Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled, any messages you receive in a chat or group chat in Microsoft Teams will be appear in Mattermost as a notification, with a link to open the chat in Microsoft Teams and continue the conversation.
 
 .. note::
-  - Your system administrator must :ref:`enable support for notifications <configure/plugins-configuration-settings:sync notifications>`. 
+  Your system administrator must :ref:`enable support for notifications <configure/plugins-configuration-settings:sync notifications>`. 
 
 .. image:: ../images/microsoft-teams-chat-notifications.png
    :alt: An example of a chat message notification.
 
-Link one or more channels (beta)
+Link one or more channels (Beta)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to receiving notifications for chats and group chats, you can also link a channel in Mattermost to a channel in Microsoft Teams. Messages sent from one platform will be sent to the other using the connected bot account.
