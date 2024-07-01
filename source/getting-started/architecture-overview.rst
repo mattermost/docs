@@ -4,7 +4,7 @@ Architecture overview
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-This page provides an overview of the Mattermost architecture with reference architecture. For a more detailed deployment overview, :doc:`check out our deployment wiki </deploy/deployment-overview>`.
+This page provides an overview of the Mattermost architecture. For details on recommended reference architectures, see the :ref:`scaling for enterprise <scale/scaling-for-enterprise:available reference architectures>` documentation. For a more detailed deployment overview, :doc:`see the deployment overview </deploy/deployment-overview>`. 
 
 .. toctree::
     :maxdepth: 2
@@ -12,9 +12,9 @@ This page provides an overview of the Mattermost architecture with reference arc
 Basics
 ------
 
-At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. See the Restful API docs `here <https://api.mattermost.com>`__.
+At its core, Mattermost is a single-compiled Go binary that is exposed as a Restful JSON web server with Javascript and Go clients. Visit the `Restful API documentation <https://api.mattermost.com>`_ for details.
 
-It is configured using :doc:`config/config.json </configure/configuration-settings>` and provides the following:
+Mattermost is configured through :doc:`configuration settings </configure/configuration-settings>` that provides the following:
 
 - **Authentication client:** The functionality for users to log into Mattermost via email address and password in Team Edition. Mattermost Professional adds the ability for users to authenticate using Active Directory or LDAP, and Mattermost Enterprise adds the ability to authenticate using SAML SSO providers like ADFS, OneLogin, and Okta.
 - **Authentication provider:** Enables the Mattermost server to authenticate to other services like GitLab and Zapier using OAuth 2.0.
@@ -124,59 +124,6 @@ Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../images/architecture_high_availability.png
 
-Reference architectures
------------------------
-
-The following diagrams show the suggested architecture configurations enterprise deployments of Mattermost at different scales. These diagrams are meant as guidelines for typical Mattermost deployments. Hardware and infrastructure requirements can vary significantly based on usage and policies.
-
-There are two versions of each diagram. One is generalized while the other focuses on AWS.
-
-Each generalized diagram represents a full High Availability deployment across all critical components. The proxy, database, file storage, and Elasticsearch layers can be replaced by cloud services. Push proxy can be replaced by the Mattermost :doc:`HPNS </deploy/mobile-hpns>`.
-
-Each AWS diagram represents a full High Availability deployment on Amazon Web Services making full use of the available services. Push proxy can optionally be deployed manually in place of HPNS.
-
-5,000 users on Enterprise - General
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment5kUsers.png
-  :class: bg-white
-
-5,000 users on Enterprise - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment5kaws.png
-  :class: bg-white
-
-10,000 users on Enterprise - General
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment10kUsers.png
-  :class: bg-white
-
-10,000 users on Enterprise - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment10kaws.png
-  :class: bg-white
-
-25,000 users on Enterprise - General
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment25kUsers.png
-  :class: bg-white
-
-25,000 users on Enterprise - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment25kaws.png
-  :class: bg-white
-
-50,000 users on Enterprise - AWS
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. image:: ../images/MattermostDeployment50kaws.png
-  :class: bg-white
-
 Database with VIPs
 ~~~~~~~~~~~~~~~~~~
 
@@ -184,13 +131,3 @@ The following diagram is a suggested configuration for Highly-Available database
 
 .. image:: ../images/DatabasewithVIPs.png
   :class: bg-white
-
-Load testing
-~~~~~~~~~~~~
-
-Mattermost Enterprise Edition was `load tested <https://github.com/mattermost/mattermost-load-test>`__ with 60,000 concurrent active users with:
-
-- Six Mattermost servers: m4.2xlarge (8 vCPU, 32 GB RAM)
-- One MySQL database server with five read replicas: db.r4.2xlarge (8 vCPU, 61 GB RAM)
-- Three load test runners (for running the loadtest)
-- Three NGINX proxies
