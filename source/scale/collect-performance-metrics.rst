@@ -7,9 +7,7 @@ Collect performance metrics
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-System admins can collect application metrics from Mattermost that doesn't require you the installation and integration `Prometheus <https://prometheus.io/>`__ with Mattermost.
-
-Collect and store the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
+System admins can collect and store the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
 Download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
 
@@ -43,7 +41,7 @@ Usage
 
 You need to be a Mattermost system admin to collect performance metrics. Select **Create Dump** to generate dump files. 
 
-To use the generated dump file, you can simply clone the `Dockprom <https://github.com/stefanprodan/dockpromo>`__ repository. Change the Prometheus data volume to point to the dump that you just downloaded. The downloaded file is compressed, so to be able to use it, you need to decompress it first.
+To use the generated dump file, you can simply clone the `Dockprom <https://github.com/stefanprodan/dockprom>`__ repository. Change the Prometheus data volume to point to the dump that you just downloaded. The downloaded file is compressed, so to be able to use it, you need to decompress it first.
 
 The volume configuration for Prometheus should look like the code below in the ``docker-compose.yml`` file:
 
