@@ -9,7 +9,17 @@ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.matte
 (release-v9-9-feature-release)=
 ## Release v9.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: 2024-06-14**
+- **9.9.1, released 2024-07-02**
+  - Mattermost v9.9.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Removed feature flag which prevented enabling ``MetricsSettings.EnableClientMetrics`` [MM-58823](https://mattermost.atlassian.net/browse/MM-58823).
+  - Added a page load time to the client performance metrics [MM-58359](https://mattermost.atlassian.net/browse/MM-58359).
+  - Fixed web app performance reports being marked as outdated after the user's computer woke up from sleep [MM-58772](https://mattermost.atlassian.net/browse/MM-58772).
+  - Increased range of LCP metrics and Load Event End metrics that can be measured [MM-59033](https://mattermost.atlassian.net/browse/MM-59033).
+  - Fixed an error caused by performance telemetry when using Firefox with ``beacon.enabled`` set to ``false`` [MM-58777](https://mattermost.atlassian.net/browse/MM-58777).
+  - Mattermost v9.9.1 contains no database or functional changes.
+- **9.9.0, released 2024-06-14**
+  - Original 9.9.0 release.
 
 ### Compatibility
  - Updated minimum macOS version to 12+ and minimum Safari version to 17+.
@@ -100,7 +110,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed ``@stripe/react-stripe-js`` and ``@stripe/stripe-js``, and added ``web-vitals`` at https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - Inactive websockets are counted as part of notifications delivery rate for web and desktop that cause an incorrect decrease in that metric in the [Notifications Health dashboard](https://grafana.com/grafana/dashboards/21305) [MM-58500](https://mattermost.atlassian.net/browse/MM-58500).
  - Some Cloud workspaces unexpectedly received emails about license expiration.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
@@ -114,7 +123,17 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-8-feature-release)=
 ## Release v9.8 - Feature Release
 
-**Release day: 2024-05-16**
+- **9.8.2, released 2024-07-02**
+  - Mattermost v9.8.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Mattermost v9.8.2 contains no database or functional changes.
+- **9.8.1, released 2024-06-03**
+  - Mattermost v9.8.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Removed a safety limit error message in compiled Team Edition and unlicensed Enterprise Edition deployments when message count exceeds 5 million posts.
+  - Fixed an issue with some plugin settings with defaults not changing value.
+  - Mattermost v9.8.1 contains no database or functional changes.
+- **9.8.0, released 2024-05-16**
+  - Original 9.8.0 release.
 
 ### Compatibility
  - Updated minimum required Edge and Chrome versions to 122+.
@@ -140,12 +159,12 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v9-8-change
  - Updated theme colors for onboarding tour points.
  - Updated the right-hand side Thread view to use relative timestamps to be more consistent with the global Threads view.
  - Added a total reply count to the right-hand side thread view.
- - Added Channel Bookmarks (disabled by default).
 
 #### Administration
  - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable, and message count exceeds 5 million posts. ERROR_SAFE_LIMITS_EXCEEDED.
  - Downloading a support packet is now extensible with plugins. If a plugin can add content to the support packet, it will be displayed in the commercial support modal. Administrators will have the option to include/exclude that from the support package.
  - Upgraded Nodejs to v20.11.
+ - Added the backend for Channel Bookmarks (disabled by default). Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
  - Added Channel Bookmarks permissions to the channel user role and to the channel moderation system.
  - Added progress logs for attachments in bulk exports.
  - Added a **System Console** option to rebuild Elasticsearch channels indexes.
@@ -223,6 +242,13 @@ New setting option were added to ``config.json``. Below is a list of the additio
 (release-v9-7-feature-release)=
 ## Release v9.7 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.7.6, released 2024-07-02**
+  - Mattermost v9.7.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Mattermost v9.7.6 contains no database or functional changes.
+- **9.7.5, released 2024-06-03**
+  - Mattermost v9.7.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.7.5 contains no database or functional changes.
 - **9.7.4, released 2024-05-15**
   - Fixed an issue with context cancellation for integration requests [MM-58019](https://mattermost.atlassian.net/browse/MM-58019).
   - Fixed some plugin settings with defaults not changing value [MM-58102](https://mattermost.atlassian.net/browse/MM-58102).
@@ -322,6 +348,10 @@ A new setting option was added to ``config.json``. Below is a list of the additi
 (release-v9-6-feature-release)=
 ## Release v9.6 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.6.3, released 2024-06-03**
+  - Mattermost v9.6.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with some plugin settings with defaults not changing value.
+  - Mattermost v9.6.3 contains no database or functional changes.
 - **9.6.2, released 2024-04-25**
   - Mattermost v9.6.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.6.2 contains no database or functional changes.
@@ -406,6 +436,17 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.7, released 2024-07-02**
+  - Mattermost v9.5.7 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
+  - Added a new configuration setting ``CloudSettings.Disable`` (via config.json, or environment variable), default ``false``. When set to ``true``, all requests to the Mattermost Customer Portal from a workspace will be disabled.
+  - Fixed an issue where the user status would incorrectly be set to offline without checking for connections in other nodes in an High Availability cluster [MM-57153](https://mattermost.atlassian.net/browse/MM-57153).
+  - Fixed an issue where users could not see the member count in the **Browse Channels** dialog on some servers [MM-56266](https://mattermost.atlassian.net/browse/MM-56266).
+  - Increased the maximum length of the ``Value`` column of the ``Preferences`` table [MM-57913](https://mattermost.atlassian.net/browse/MM-57913).
+  - Mattermost v9.5.7 contains no database or functional changes.
+- **9.5.6, released 2024-06-03**
+  - Mattermost v9.5.6 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.6 contains no database or functional changes.
 - **9.5.5, released 2024-05-15**
   - Fixed an issue where the user status would incorrectly get stuck to online after the user closed their tab [MM-57885](https://mattermost.atlassian.net/browse/MM-57885).
   - Mattermost v9.5.5 contains no database or functional changes.
