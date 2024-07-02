@@ -170,7 +170,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   The Desktop app is available in two formats which are usable on most Linux distributions: a compressed tarball, and an AppImage binary. Both can be downloaded from the `Desktop App's Github releases page <https://github.com/mattermost/desktop/releases>`_. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
 
-  For instructions on how to use the AppImage binary, please refer to the  `AppImage Quickstart documentation page <https://docs.appimage.org/introduction/quickstart.html>`.
+  For instructions on how to use the AppImage binary, please refer to the  `AppImage Quickstart documentation page <https://docs.appimage.org/introduction/quickstart.html>`_.
 
   **Install the Desktop App's compressed tarball**
 
