@@ -13,10 +13,11 @@ Setup
 
 You must be a Mattermost system admin to `upload the plugin <#upload>`__ to your Mattermost self-hosted deployment `enable it <#enable>`__,  `create surveys <#create-surveys>`__, and `export survey responses <#export-survey-responses>`__ using the System Console.
 
-The User Survey integration is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
+The User Survey integration is compatible with the following Mattermost Server versions:
 
   - v9.8 or later
-  - v9.5.2+ (Extended Support Release - ESR)
+  - v9.5.2+ (Extended Support Release)
+  - v8.1 (Extended Support Release)
 
 Upload
 ------

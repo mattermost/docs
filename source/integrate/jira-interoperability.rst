@@ -116,7 +116,7 @@ By default, the legacy webhook integration publishes notifications for issue cre
 - ``updated_comments=1``: all comment events
 - ``updated_description=1``: updated issue description
 - ``updated_labels=1``: updated issue labels
-- ``updated_prioity=1``: updated issue priority
+- ``updated_priority=1``: updated issue priority
 - ``updated_rank=1``: ranked issue higher or lower
 - ``updated_sprint=1``: assigned issue to a different sprint
 - ``updated_status=1``: transitioned issed to a different status, such as Done or In Progress
