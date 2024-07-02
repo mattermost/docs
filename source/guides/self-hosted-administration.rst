@@ -23,7 +23,6 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Use an outbound proxy </configure/using-outbound-proxy>
     Migration guide </onboard/migrating-to-mattermost>
     Migrate from Slack </onboard/migrate-from-slack>
-    Migration from MySQL to PostgreSQL </deploy/postgres-migration>
     Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
     Customize Mattermost </configure/customizing-mattermost>
     Mattermost logging </manage/logging>
@@ -43,7 +42,6 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Use an outbound proxy </configure/using-outbound-proxy>` - Monitor outbound traffic and control the websites that can appear in embedded content.
 * :doc:`Migration guide </onboard/migrating-to-mattermost>` - Learn how to migrate from other chat services to Mattermost.
 * :doc:`Migrate from Slack </onboard/migrate-from-slack>` - Learn how to migrate from Slack to Mattermost.
-* :doc:`Migration guidelines from MySQL to PostgreSQL </deploy/postgres-migration>` - Learn how to migrate the Mattermost database from MySQL to PostgreSQL.
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
 * :doc:`Whitelabel Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
 * :doc:`Mattermost logging </manage/logging>` - Learn how Mattermost records activities and events performed within a Mattermost workspace.

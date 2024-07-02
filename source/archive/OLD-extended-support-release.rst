@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 Extended Support Release
 ========================
 

@@ -1,4 +1,7 @@
-# Mattermost mobile apps changelog
+# Mobile apps changelog
+
+```{include} ../_static/badges/allplans-cloud-selfhosted.md
+```
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
@@ -81,6 +84,7 @@ Note: Mattermost Mobile App v2.17.0 contains low to medium level security fixes.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+(release-v2-16-0)=
 ## 2.16.0 Release
  - Release Date: May 16, 2024
  - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -101,6 +105,9 @@ Note: Mattermost Mobile App v2.17.0 contains low to medium level security fixes.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
+(release-v2-15-0)=
 ## 2.15.0 Release
  - Release Date: April 16, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -121,6 +128,7 @@ Note: Mattermost Mobile App v2.17.0 contains low to medium level security fixes.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+(release-v2-14-0)=
 ## 2.14.0 Release
  - Release Date: March 15, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -140,6 +148,9 @@ Note: Mattermost Mobile App v2.14.0 contains a low level security fix. Updating 
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
+(release-v2-13-0)=
 ## 2.13.0 Release
  - Release Date: February 16, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -166,6 +177,9 @@ Note: Mattermost Mobile App v2.13.0 contains low level security fixes. Updating 
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
+(release-v2-12-2)=
 ## 2.12.2 Release
  - Release Date: February 5, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -179,6 +193,9 @@ Note: Mattermost Mobile App v2.13.0 contains low level security fixes. Updating 
  - Fixed an issue with HTTP connections on iOS that were previously removed.
  - Updated the purpose message for permissions on iOS.
 
+----
+
+(release-v2-12-1)=
 ## 2.12.1 Release
  - Release Date: January 30, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -193,6 +210,7 @@ Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updati
 ### Bug Fixes
  - Fixed an issue where various menus and popovers were non-functional when the phone had accessibility settings related to removing animations enabled.
 
+(release-v2-12-0)=
 ## 2.12.0 Release
  - Release Date: January 16, 2024
  - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -228,6 +246,9 @@ Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updati
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
+(release-v2-11-0)=
 ## 2.11.0 Release
 - Release Date: December 15, 2023
 - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -254,6 +275,9 @@ Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updati
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
+(release-v2-10-1)=
 ## 2.10.1 Release
 - Release Date: November 29, 2023
 - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -265,6 +289,9 @@ Note: Mattermost Mobile App v2.12.1 contains a medium level security fix. Updati
 
 Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the Mattermost Responsible Disclosure Policy.
 
+----
+
+(release-v2-10-0)=
 ## 2.10.0 Release
 - Release Date: November 16, 2023
 - Server Versions Supported: Server v8.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -290,6 +317,9 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+----
+
+(release-v2-9-1)=
 ## 2.9.1 Release
 - Release Date: November 1, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -304,6 +334,7 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
 
 ----
 
+(release-v2-9-0)=
 ## 2.9.0 Release
 - Release Date: October 16, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -333,6 +364,7 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
 
 ----
 
+(release-v2-8-2)=
 ## 2.8.2 Release
 - Release Date: Oct 10, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -345,6 +377,7 @@ Note: Mattermost Mobile App v2.10.1 contains a high level security fix. Updating
 
 ----
 
+(release-v2-8-1)=
 ## 2.8.1 Release
 - Release Date: October 2, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -369,6 +402,7 @@ Mattermost Mobile App v2.8.1 contains a high level security fix. Updating is rec
 
 ----
 
+(release-v2-8-0)=
 ## 2.8.0 Release
 - Release Date: September 15, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -381,7 +415,6 @@ Mattermost Mobile App v2.8.1 contains a high level security fix. Updating is rec
 ```{Note} 
 Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is recommended. Details will be posted on our security updates page 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 ```
-
 
 ### Improvements
  - Calls: Added incoming call notifications for Direct Message and Group Message calls.
@@ -405,6 +438,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-7-0)=
 ## 2.7.0 Release
 - Release Date: August 16, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -437,6 +471,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-6-0)=
 ## 2.6.0 Release
 - Release Date: July 14, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -469,6 +504,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-5-1)=
 ## 2.5.1 Release
 - Release Date: June 23, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -487,6 +523,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-5-0)=
 ## 2.5.0 Release
 - Release Date: June 16, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -521,6 +558,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-4-0)=
 ## 2.4.0 Release
 - Release Date: May 17, 2023
 - Server Versions Supported: Server v7.8.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -561,6 +599,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-3-0)=
 ## 2.3.0 Release
 - Release Date: April 14, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -598,6 +637,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-2-0)=
 ## 2.2.0 Release
 - Release Date: March 17, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -640,6 +680,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-1-0)=
 ## 2.1.0 Release
 - Release Date: February 16, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -678,6 +719,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-0-1)=
 ## 2.0.1 Release
 - Release Date: February 7, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -721,6 +763,7 @@ Mattermost Mobile App v2.8.0 contains a medium level security fix. Updating is r
 
 ----
 
+(release-v2-0-0)=
 ## 2.0.0 Release
 - Release Date: January 16, 2023
 - Server Versions Supported: Server v7.1.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -754,6 +797,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-55-1)=
 ## 1.55.1 Release
 - Release Date: September 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -774,6 +818,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-55-0)=
 ## 1.55.0 Release
 - Release Date: August 16, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -798,6 +843,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-54-0)=
 ## 1.54.0 Release
 - Release Date: July 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -822,6 +868,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-53-0)=
 ## 1.53.0 Release
 - Release Date: June 15, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -842,6 +889,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-52-0)=
 ## 1.52.0 Release
 - Release Date: May 16, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -861,6 +909,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-51-2)=
 ## 1.51.2 Release
 - Release Date: May 5, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -877,6 +926,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-51-1)=
 ## 1.51.1 Release
 - Release Date: April 22, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -893,6 +943,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-51-0)=
 ## 1.51.0 Release
 - Release Date: April 16, 2022
 - Server Versions Supported: Server v6.3.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -931,6 +982,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-50-1)=
 ## 1.50.1 Release
 - Release Date: March 21, 2022
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -947,6 +999,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-50-0)=
 ## 1.50.0 Release
 - Release Date: March 16, 2022
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -973,6 +1026,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-49-1)=
 ## 1.49.1 Release
 - Release Date: February 23, 2022.
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -989,6 +1043,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-49-0)=
 ## 1.49.0 Release
 - Release Date: February 16, 2022
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1019,6 +1074,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-48-2)=
 ## 1.48.2 Release
 - Release Date: January 6, 2022
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1043,6 +1099,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-48-1)=
 ## 1.48.1 Release
 - Release Date: December 15, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1069,6 +1126,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-48-0)=
 ## 1.48.0 Release
 - Release Date: November 16, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1110,6 +1168,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-47-2)=
 ## 1.47.2 Release
 - Release Date: October 25, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1130,6 +1189,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-47-1)=
 ## 1.47.1 Release
 - Release Date: October 19, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1151,6 +1211,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-47-0)=
 ## 1.47.0 Release
 - Release Date: October 13, 2021
 - Server Versions Supported: Server v5.37.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1219,6 +1280,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-46-0)=
 ## 1.46.0 Release
 - Release Date: August 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1280,6 +1342,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-45-1)=
 ## 1.45.1 Release
 - Release Date: July 20, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1299,6 +1362,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
 
 ----
 
+(release-v1-45-0)=
 ## 1.45.0 Release
 - Release Date: July 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -1348,6 +1412,7 @@ Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older th
 
 ----
 
+(release-v1-44-1)=
 ## 1.44.1 Release
 - Release Date: June 28, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1372,6 +1437,7 @@ Due to the upgrade to Emoji 13.0, some emojis may be missing on Android older th
 
 ----
 
+(release-v1-44-0)=
 ## 1.44.0 Release
 - Release Date: June 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1412,6 +1478,7 @@ Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgradi
 
 ----
 
+(release-v1-43-0)=
 ## 1.43.0 Release
 - Release Date: May 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1454,6 +1521,7 @@ Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgradi
 
 ----
 
+(release-v1-42-1)=
 ## 1.42.1 Release
 - Release Date: April 19, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1473,6 +1541,7 @@ Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgradi
 
 ----
 
+(release-v1-42-0)=
 ## 1.42.0 Release
 - Release Date: April 16, 2021
 - Server Versions Supported: Server v5.31.3+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1510,6 +1579,7 @@ Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgradi
 
 ----
 
+(release-v1-41-1)=
 ## 1.41.1 Release
 - Release Date: April 7, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1524,6 +1594,7 @@ Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgradi
 
 ----
 
+(release-v1-41-0)=
 ## 1.41.0 Release
 - Release Date: March 16, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1556,6 +1627,7 @@ Mattermost Mobile App v1.41.0 contains a high level security fix. Upgrading is r
 
 ----
 
+(release-v1-40-0)=
 ## 1.40.0 Release
 - Release Date: February 25, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1596,6 +1668,7 @@ Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is re
 
 ----
 
+(release-v1-39-0)=
 ## 1.39.0 Release
 - Release Date: January 16, 2021
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1630,6 +1703,7 @@ Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is re
 
 ----
 
+(release-v1-38-1)=
 ## 1.38.1 Release
 - Release Date: December 18, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1643,6 +1717,9 @@ Mattermost Mobile App v1.40.0 contains a low level security fix. Upgrading is re
  - Fixed an issue where the v1.38.0 app crashed on iPadOS 14 when reopened from the app switcher.
  - Fixed an issue where the at-mention and slash command suggestion autocomplete modals blocked the post draft.
 
+----
+
+(release-v1-38-0)=
 ## 1.38.0 Release
 - Release Date: December 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1681,6 +1758,7 @@ Support for landscape orientation was removed for non-tablet devices.
 
 ----
 
+(release-v1-37-0)=
 ## 1.37.0 Release
 - Release Date: November 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1711,6 +1789,7 @@ Support for landscape orientation was removed for non-tablet devices.
 
 ----
 
+(release-v1-36-0)=
 ## 1.36.0 Release
 - Release Date: October 16, 2020
 - Server Versions Supported: Server v5.25+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1747,6 +1826,7 @@ Support for landscape orientation was removed for non-tablet devices.
 
 ----
 
+(release-v1-35-1)=
 ## 1.35.1 Release
 - Release Date: September 21, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1759,6 +1839,9 @@ Support for landscape orientation was removed for non-tablet devices.
 ### Bug Fixes
  - Fixed an issue where the app crashed when tapping on "Show More" on a long post and then tapping on the post to go to the thread.
 
+----
+
+(release-v1-35-0)=
 ## 1.35.0 Release
 - Release Date: September 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1801,6 +1884,7 @@ Support for landscape orientation was removed for non-tablet devices.
 
 ----
 
+(release-v1-34-1)=
 ## 1.34.1 Release
 - Release Date: August 27, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1815,6 +1899,9 @@ Support for landscape orientation was removed for non-tablet devices.
  - Fixed an issue where an "Hair on fire" emoji caused the app to crash.
  - Fixed an issue where the app crashed when receiving a push notification when having special characters in the Nickname field.
 
+----
+
+(release-v1-34-0)=
 ## 1.34.0 Release
 - Release Date: August 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1856,6 +1943,7 @@ Support for landscape orientation was removed for non-tablet devices.
 
 ----
 
+(release-v1-33-1)=
 ## 1.33.1 Release
 - Release Date: July 15, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1870,6 +1958,7 @@ Support for landscape orientation was removed for non-tablet devices.
 
 ----
 
+(release-v1-33-0)=
 ## 1.33.0 Release
 - Release Date: July 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1923,6 +2012,7 @@ Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is re
 
 ----
 
+(release-v1-32-2)=
 ## 1.32.2 Release
 - Release Date: June 26, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1938,6 +2028,7 @@ Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is re
 
 ----
 
+(release-v1-32-1)=
 ## 1.32.1 Release
 - Release Date: June 25, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -1952,6 +2043,7 @@ Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is re
 
 ----
 
+(release-v1-32-0)=
 ## 1.32.0 Release
 - Release Date: June 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2001,6 +2093,7 @@ Mattermost Mobile App v1.33.0 contains a low level security fix. Upgrading is re
 
 ----
 
+(release-v1-31-2)=
 ## 1.31.2 Release
 - Release Date: May 27, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2017,6 +2110,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-31-1)=
 ## 1.31.1 Release
 - Release Date: May 22, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2029,6 +2123,9 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 ### Bug Fixes
  - Fixed a crash issue on Android when preloading images.
 
+----
+
+(release-v1-31-0)=
 ## 1.31.0 Release
 - Release Date: May 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2062,6 +2159,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-30-1)=
 ## 1.30.1 Release
 - Release Date: April 24, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2088,6 +2186,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-30-0)=
 ## 1.30.0 Release
 - Release Date: April 16, 2020
 - Server Versions Supported: Server v5.19+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2099,7 +2198,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  
 ``` {Note} 
-- v5.9.0 as our Extended Support Release (ESR) is coming to the end of its lifecycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
+- v5.9.0 as our Extended Support Release (ESR) is coming to the end of its life cycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
 - [The Channel Moderation Settings feature](/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
 ```
  
@@ -2133,6 +2232,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-29-0)=
 ## 1.29.0 Release
 - Release Date: March 16, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2172,6 +2272,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-28-0)=
 ## 1.28.0 Release
 - Release Date: February 16, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2214,6 +2315,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-27-1)=
 ## 1.27.1 Release
 - Release Date: January 21, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2228,6 +2330,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-27-0)=
 ## 1.27.0 Release
 - Release Date: January 16, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2254,6 +2357,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-26-2)=
 ## 1.26.2 Release
 - Release Date: January 7, 2020
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2267,6 +2371,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-26-1)=
 ## 1.26.1 Release
 - Release Date: December 20, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2281,6 +2386,7 @@ Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](ht
 
 ----
 
+(release-v1-26-0)=
 ## 1.26.0 Release
 - Release Date: December 16, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2336,6 +2442,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-25-1)=
 ## 1.25.1 Release
 - Release Date: November 22, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2352,6 +2459,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-25-0)=
 ## 1.25.0 Release
 - Release Date: November 16, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2386,6 +2494,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-24-0)=
 ## 1.24.0 Release
 - Release Date: October 16, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2441,6 +2550,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-23-1)=
 ## 1.23.1 Release
 - Release Date: September 27, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2454,6 +2564,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-23-0)=
 ## 1.23.0 Release
 - Release Date: September 16, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2487,6 +2598,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-22-1)=
 ## 1.22.1 Release
 - Release Date: August 23, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2503,6 +2615,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-22-0)=
 ## 1.22.0 Release
 - Release Date: August 16, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2546,6 +2659,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-21-2)=
 ## 1.21.2 Release
 - Release Date: August 1, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2559,6 +2673,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-21-1)=
 ## 1.21.1 Release
 - Release Date: July 22, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2572,6 +2687,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-21-0)=
 ## 1.21.0 Release
 - Release Date: July 16, 2019
 - Server Versions Supported: Server v5.9+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2603,6 +2719,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-20-2)=
 ## 1.20.2 Release
 - Release Date: July 10, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2618,6 +2735,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-20-1)=
 ## 1.20.1 Release
 - Release Date: June 21, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2633,6 +2751,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-20-0)=
 ## 1.20.0 Release
 - Release Date: June 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2680,6 +2799,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  
  ----
 
+(release-v1-19-0)=
 ## 1.19.0 Release
 - Release Date: May 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2705,6 +2825,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-18-1)=
 ## 1.18.1 Release
 - Release Date: April 18, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2720,6 +2841,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-18-0)=
 ## 1.18.0 Release
 - Release Date: April 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2759,6 +2881,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-17-0)=
 ## 1.17.0 Release
 - Release Date: March 20, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2789,6 +2912,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-16-1)=
 ## 1.16.1 Release
 - Release Date: February 21, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2803,6 +2927,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-16-0)=
 ## 1.16.0 Release
 - Release Date: February 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2832,6 +2957,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-15-2)=
 ## 1.15.2 Release
 - Release Date: January 16, 2019
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2854,6 +2980,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-15-1)=
 ## 1.15.1 Release
 - Release Date: December 28, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2868,6 +2995,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-15-0)=
 ## 1.15.0 Release
 - Release Date: December 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2905,6 +3033,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-14-0)=
 ## 1.14.0 Release
 - Release Date: November 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device
@@ -2928,6 +3057,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-13-1)=
 ## 1.13.1 Release
 - Release Date: October 18, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported
@@ -2939,6 +3069,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-13-0)=
 ## v1.13.0 Release
 - Release Date: October 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported
@@ -2979,6 +3110,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-12-0)=
 ## v1.12.0 Release
 - Release Date: September 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported
@@ -3005,6 +3137,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-11-0)=
 ## v1.11.0 Release
 - Release Date: August 16, 2018
 - Server Versions Supported: Server v4.10+ is required, Self-Signed SSL Certificates are not supported
@@ -3042,6 +3175,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-10-0)=
 ## v1.10.0 Release
 - Release Date: July 16, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3085,6 +3219,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-9-3)=
 ## 1.9.3 Release
 - Release Date: July 04, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3096,6 +3231,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-9-2)=
 ## 1.9.2 Release
 - Release Date: June 27, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3114,6 +3250,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-9-1)=
 ## 1.9.1 Release
 - Release Date: June 23, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3125,6 +3262,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-9-0)=
 ## v1.9.0 Release
 - Release Date: June 16, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3164,6 +3302,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-8-0)=
 ## v1.8.0 Release
 - Release Date: April 27, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3198,6 +3337,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-7-1)=
 ## v1.7.1 Release
 - Release Date: April 3, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3208,6 +3348,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-7-0)=
 ## v1.7.0 Release
 - Release Date: March 26, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3247,6 +3388,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-6-1)=
 ## v1.6.1 Release
 - Release Date: February 13, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3258,6 +3400,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-6-0)=
 ## v1.6.0 Release
 - Release Date: February 6, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3285,6 +3428,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-5-3)=
 ## v1.5.3 Release
 - Release Date: February 1, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3292,6 +3436,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-5-2)=
 ## v1.5.2 Release
 - Release Date: January 12, 2018
 - Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificates are not supported
@@ -3309,6 +3454,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-5-1)=
 ## v1.5.1 Release
 
 - Release Date: December 7, 2017
@@ -3321,6 +3467,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-5)=
 ## v1.5 Release 
 
 - Release Date: December 6, 2017
@@ -3355,6 +3502,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ----
 
+(release-v1-4-1)=
 ## v1.4.1 Release
 
 Release Date: Nov 15, 2017
@@ -3369,6 +3517,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ----
 
+(release-v1-4)=
 ## v1.4 Release 
 
 - Release Date: November 6, 2017
@@ -3385,6 +3534,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ----
 
+(release-v1-3)=
 ## v1.3 Release 
 
 - Release Date: October 5, 2017
@@ -3421,6 +3571,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ----
 
+(release-v1-2)=
 ## v1.2 Release
 
 - Release Date: September 5, 2017 
@@ -3450,6 +3601,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ----
 
+(release-v1-1)=
 ## v1.1 Release
 
 - Release Date: August 2017 
@@ -3496,6 +3648,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ----
 
+(release-v1-0-1)=
 ## v1.0.1 Release 
 
 - Release Date: July 20, 2017 
@@ -3508,6 +3661,7 @@ Server Versions Supported: Server v4.0+ is required, Self-Signed SSL Certificate
 
 ----
 
+(release-v1-0)=
 ## v1.0 Release 
 
 - Release Date: July 10, 2017 
@@ -3552,6 +3706,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 ----
 
+(mobile-beta-release)=
 ## Beta Release
 
 - Release Date: March 29, 2017

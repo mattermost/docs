@@ -11,6 +11,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   :hidden:
   :titlesonly:
 
+    Migrate from MySQL to PostgreSQL </deploy/postgres-migration>
     Prepare your Mattermost database </install/prepare-mattermost-database>
     Deploy on Ubuntu </install/install-ubuntu>
     Deploy using Docker </install/install-docker>
@@ -26,7 +27,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Upgrade Mattermost </guides/upgrade-mattermost>
     Scale Mattermost </guides/scale-mattermost>
     Deployment troubleshooting </guides/deployment-troubleshooting>
-    Changelogs </guides/changelogs>
     Additional server installation guides </guides/additional-server-installation-guides>
 
 .. tip::
@@ -51,5 +51,4 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Upgrade Mattermost </guides/upgrade-mattermost>` - Learn how to stay up to date with the latest features and improvements.
 * :doc:`Scale Mattermost </guides/scale-mattermost>` - Learn how to scale and monitor your Mattermost deployment.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Having trouble with your deployment?
-* :doc:`Changelogs </guides/changelogs>` - Learn what's new, changed, and deprecated in every Mattermost release.
 * :doc:`Additional server installation guides </guides/additional-server-installation-guides>` - Additional deployment guides and an open source component list you can reference for every release.
