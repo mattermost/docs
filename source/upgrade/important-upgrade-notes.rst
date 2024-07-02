@@ -12,7 +12,7 @@ Important Upgrade Notes
    - Disable global drafts. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L74>`__.
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
-   - Mattermost v10.0 is planned for September, 2024. See a list of planned breaking changes for this release `in the changelog <https://docs.mattermost.com/deploy/mattermost-changelog.html#upcoming-breaking-changes-in-mattermost-v10-0-release>`__.
+   - Mattermost v10.0 is planned for September, 2024. See a list of planned breaking changes for this release `in the changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html>`__.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
