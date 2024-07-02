@@ -23,7 +23,7 @@ During the import process, we advise to create a new team for importing the Slac
 
 Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
-Make sure you are running on a supported version of :doc:`Mattermost </upgrade/release-lifecycle/>` to benefit from the most up-to-date functionality and fixes.
+Make sure you are running on a supported version of :doc:`Mattermost </about/mattermost-server-releases/>` to benefit from the most up-to-date functionality and fixes.
 
 2. Generate a Slack import
 --------------------------
