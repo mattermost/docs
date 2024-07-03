@@ -8,14 +8,14 @@ Elasticsearch
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster>`. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster>`. 
 
 .. important::
   
-  - The default Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. We recommend using Elasticsearch for optimum search performance. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling Elasticsearch for optimum search performance before you reach 3 million posts. 
+  - The default Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling Elasticsearch for optimum search performance **before** reaching 3 million posts. 
   - For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
-  - We highly recommend that you install Elasticsearch on a different machine than the Mattermost Server. 
-    
+  - We highly recommend that you `set up Elasticsearch <#set-up-an-elasticsearch-server>`__ on a different machine than the Mattermost Server.
+
 Deployment guide
 ----------------
 

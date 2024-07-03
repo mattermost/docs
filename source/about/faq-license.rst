@@ -240,7 +240,7 @@ Open source derivative work of Mattermost
 How do I fork Mattermost?
 -------------------------
 
-If you wish to create a forked version of the Mattermost source code, you must comply with the applicable licenses under which the source code is made available. Historically, this was made clear via this link: https://docs.mattermost.com/about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code.
+If you wish to create a forked version of the Mattermost source code, you must comply with the applicable licenses under which the source code is made available. Historically, this was made clear via this link: https://docs.mattermost.com/about/faq-business.html#copyright-and-licensing-of-mattermost-open-source-code.
 
 For example, the Mattermost server source code is and always has been made available under the AGPLv2 license. Therefore, all third-party open source forks of the Mattermost server source code must comply with the AGPLv2 license in both source code and compiled versions. If you encounter a third-party fork of the publicly available source code of Mattermost server that claims to be licensed under an alternate license, it is incorrect.
 
@@ -253,7 +253,7 @@ How can I create an open source derivative work of Mattermost?
 
 If you're looking to customize the look and feel of Mattermost, see `documentation on customization <https://github.com/mattermost/docs/issues/1006>`_. For advanced customization, the system's user experience is available in different repositories for web, mobile apps, and desktop apps and custom experiences can be developed and integrated with either Mattermost Team Edition or Mattermost Enterprise Edition via the system APIs and drivers.
 
-If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost-server``, there are a number of factors to consider:
+If, instead of using Mattermost Team Edition or Mattermost Enterprise Edition, you choose to compile your own version of the system using the open source code from ``/mattermost``, there are a number of factors to consider:
 
 Security
 ^^^^^^^^
@@ -267,10 +267,10 @@ Rebranding
 - You can rebrand your system using convenience tools for :doc:`custom branding </configure/custom-branding-tools>`.
 - For advanced whitelabelling, and to whitelabel in Team Edition under MIT license without Enterprise Edition branding tools, you can manually update files on the Mattermost server `per product documentation. <https://github.com/mattermost/docs/issues/1006>`_ This can also be done without forking.
 
-Copyright and Licensing of ``/mattermost-server`` open source code
+Copyright and Licensing of ``/mattermost`` open source code
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Compiling and distributing your own version of the open source Mattermost ``/mattermost-server`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost/blob/master/NOTICE.txt>`_, and b) the compiled version of the ``/mattermost-server`` source code should have the same open source license as the source code, `per our licensing policy <about/faq-license.html/>`_.
+- Compiling and distributing your own version of the open source Mattermost ``/mattermost`` repo requires a) compliance with licenses in the repo, including `NOTICE.txt <https://github.com/mattermost/mattermost/blob/master/NOTICE.txt>`_, and b) the compiled version of the ``/mattermost`` source code should have the same open source license as the source code, `per our licensing policy <about/faq-license.html/>`_.
 
 Other considerations
 ^^^^^^^^^^^^^^^^^^^^
@@ -292,14 +292,14 @@ While we welcome anyone to use the open source version of Mattermost Team Editio
 
 See our :ref:`License and Subscription <about/subscription:mattermost nonprofit license program>` documentation for details.
 
-Can I create a derivative work of the Mattermost /mattermost-server repository that is not open source?
+Can I create a derivative work of the Mattermost /mattermost repository that is not open source?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The Mattermost open source project was created by `a group of developers who had their data paywalled by a proprietary online messaging service <https://mattermost.com/about-us/>`_ and felt it was unfair.
 
-Because of this, the Mattermost /mattermost-server repository uses an open source license that requires derivative works to use the same open source license. This prevents the creation of derivative works that are not open source, and the situation where end users would not have access to the source code of the systems they use, and hence be at risk of "lock in".
+Because of this, the Mattermost /mattermost repository uses an open source license that requires derivative works to use the same open source license. This prevents the creation of derivative works that are not open source, and the situation where end users would not have access to the source code of the systems they use, and hence be at risk of "lock in".
 
-For companies purchasing Enterprise Edition subscriptions for use by internal staff, who need to modify /mattermost-server, and who also have legal departments that won't allow their staff to work under an open source software license, a special "Advanced Licensing Option" can be purchased to modify /mattermost-server for internal use under a commercial software license. This option is not available for companies that would offer a modified, non-open source version of Mattermost to external parties.
+For companies purchasing Enterprise Edition subscriptions for use by internal staff, who need to modify /mattermost, and who also have legal departments that won't allow their staff to work under an open source software license, a special "Advanced Licensing Option" can be purchased to modify /mattermost for internal use under a commercial software license. This option is not available for companies that would offer a modified, non-open source version of Mattermost to external parties.
 
 Will Mattermost, Inc. offer the ability to resell Mattermost software without a reseller agreement?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

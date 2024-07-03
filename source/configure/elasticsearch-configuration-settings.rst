@@ -13,7 +13,7 @@ You can configure the Elasticsearch environment in which Mattermost is deployed 
   :description: Configure Mattermost to index new posts automatically.
 
   - **true**: Indexing of new posts occurs automatically.
-  - **false**: **(Default)** Elasticsearch indexing is disabled and new posts are not indexed.
+  - **false**: **(Default)** Elasticsearch indexing is disabled and new messages aren't indexed.
 
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,16 +25,20 @@ Enable Elasticsearch indexing
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
-| - **true**: Indexing of new posts occurs automatically.       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
+| - **true**: Indexing of new messages occurs automatically.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
 | - **false**: **(Default)** Elasticsearch indexing is disabled |                                                                                |
-|   and new posts are not indexed.                              |                                                                                |
+|   and new messages aren't indexed.                            |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                     |
 |                                                                                                                                                |
-| - If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete            |
-|   search results.                                                                                                                              |
-| - Search queries will use database search until Elasticsearch for search queries is enabled.                                                   |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------+
+| - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that     |
+|   scale, `enabling Elasticsearch for search queries <#enable-elasticsearch-for-search-queries>`__ is highly recommended                        |
+| - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for      |
+|   optimum search performance **before** reaching 3 million posts.                                                                              |
+| - For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues, such as timeouts, with         |
+|   :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.                               |
+| - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.        |
++---------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-serverconnectionaddress
   :displayname: Server connection address (Elasticsearch)
@@ -299,8 +303,8 @@ Indexes to skip while purging
   :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING
   :description: Configure Mattermost to use Elasticsearch for all search queries using the latest index.
 
-  - **true**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
-  - **false**: **(Default)** Database search is used for search queries.
+  - **true**: Elasticsearch is used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing message database is completed.
+  - **false**: **(Default)** Relational database search is used for search queries.
 
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -313,12 +317,20 @@ Enable Elasticsearch for search queries
 | Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |
 | queries using the latest index                                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            |
-| - **true**: Elasticsearch will be used for all search         |                                                                                 |
-|   queries using the latest index. Search results may be       |                                                                                 |
-|   incomplete until a bulk index of the existing post database |                                                                                 |
-|   is finished.                                                |                                                                                 |
+| - **true**: Elasticsearch is used for all search queries      |                                                                                 |
+|   using the latest index. Search results may be incomplete    |                                                                                 |
+|   until a bulk index of the existing message database is      |                                                                                 |
+|   completed.                                                  |                                                                                 |
 | - **false**: **(Default)** Database search is used for        |                                                                                 |
 |   search queries.                                             |                                                                                 |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that      |
+|   scale, enabling Elasticsearch for search queries is highly recommended.                                                                       |
+| - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for       |
+|   optimum search performance **before** reaching 3 million posts.                                                                               |
+| - For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues, such as timeouts, with          |
+|   :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.                                |
+| - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.         |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-enableautocomplete
