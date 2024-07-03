@@ -1,5 +1,5 @@
-Removed and deprecated features for Mattermost
-==============================================
+Removed and deprecated features
+===============================
 
 This page describes features that are removed from support for Mattermost, or will be removed in a future update (deprecated), and provides early notice about future changes that might affect your use of Mattermost. This information is subject to change with future releases, and might not include each deprecated feature.
 
@@ -116,7 +116,7 @@ Mattermost Server v5.0.0
 Mattermost Server v4.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- A number of permissions configuration settings will be migrated to roles in the database, and changing their config.json values will no longer take effect. These permissions can still be modified by their respective System Console settings. See :doc:`changelog </deploy/legacy-self-hosted-changelog>` for more details.
+- A number of permissions configuration settings will be migrated to roles in the database, and changing their config.json values will no longer take effect. These permissions can still be modified by their respective System Console settings. See :doc:`changelog </about/unsupported-legacy-releases>` for more details.
 
 Mattermost Server v4.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

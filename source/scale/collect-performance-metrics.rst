@@ -7,9 +7,7 @@ Collect performance metrics
 .. |plus-icon| image:: ../images/plus_F0415.svg
   :alt: Open menus using the plus icon.
 
-System admins can collect application metrics from Mattermost that doesn't require you the installation and integration `Prometheus <https://prometheus.io/>`__ with Mattermost.
-
-Collect and store the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
+System admins can collect and store the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
 Download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
 
@@ -31,7 +29,7 @@ For a self-hosted Mattermost deployment, a Mattermost system admin must perform 
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
 5. Specify the path of the time-series database, and select **Save**.
-6. Go to **System Console > Plugins > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+6. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
 
 Upgrade
 -------

@@ -22,7 +22,7 @@ Mattermost interoperability
 - :ref:`GitHub <integrate/github-interoperability:usage>`
 - :ref:`GitLab <integrate/gitlab-interoperability:usage>`
 - :ref:`Jira <integrate/jira-interoperability:usage>`
-- :ref:`Microsoft Teams <integrate/ms-teams-interoperability:usage>`
+- :ref:`Microsoft Teams <integrate/microsoft-teams-interoperability:usage>`
 - :ref:`ServiceNow <integrate/servicenow-interoperability:usage>`
 - :ref:`Zoom <integrate/zoom-interoperability:usage>`
 
