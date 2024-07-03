@@ -15,7 +15,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
 ### Improvements
- - The app will now send performance metrics to servers that have them enabled.
+ - The app will now send performance metrics to servers v9.10+ that have metrics enabled.
  - Improved websocket behavior.
  - Calls: Updated call post user interface.
  - Calls: Added channel name to the call header.
