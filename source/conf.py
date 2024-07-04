@@ -952,6 +952,8 @@ redirects = {
     "configure/configuration-in-mattermost-database.html": "https://docs.mattermost.com/configure/configuration-in-your-database.html",
     "configure/configuration-in-your-database.html": "https://docs.mattermost.com/configure/store-configuration-in-your-database.html",
     "configure/environment-configuration-settings.html#database-maxidleconnections": "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#database-maxidleconnections",
+    "configure/plugins-configuration-settings.html#apps": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
+    "configure/plugins-configuration-settings.html#enable-plugin": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
     # Deploy redirects
     "deploy/mobile-apps-faq.html": "https://docs.mattermost.com/deploy/mobile-faq.html",
     "deploy/deprecated-features.html": "https://docs.mattermost.com/about/deprecated-features.html",
@@ -974,6 +976,11 @@ redirects = {
     "deploy/desktop-app-changelog.html#release-v5-8": "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-8",
     "deploy/desktop-app-changelog.html#release-v5-7": "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-7",
     "deploy/mobile-app-changelog.html#release": "https://docs.mattermost.com/about/mobile-app-changelog.html",
+    "deploy/configure-app-framework.html": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
+    "deploy/deploy-aws.html": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
+    "deploy/deploy-http.html": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
+    "deploy/deploy-mattermost-apps.html": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
+    "deploy/package-aws.html": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
     # Deployment redirects
     "deployment/advanced-permissions.html": "https://docs.mattermost.com/onboard/advanced-permissions.html",
     "deployment/auth.html": "https://docs.mattermost.com/onboard/multi-factor-authentication.html",
@@ -1114,7 +1121,7 @@ redirects = {
     "guides/welcome-to-mattermost.html#mattermost-basics": "https://docs.mattermost.com/guides/use-mattermost.html",
     "guides/welcome-to-mattermost.html#customize-your-mattermost-experience": "https://docs.mattermost.com/guides/preferences.html",
     "guides/welcome-to-mattermost.html#mattermost-interface-changes": "https://docs.mattermost.com/guides/deployment.html#changelogs",
-    "guides/deploy-openfaas.html": "https://docs.mattermost.com/deploy/deploy-openfaas",
+    "guides/deploy-openfaas.html": "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
     "guides/changelogs.html": "https://docs.mattermost.com/about/releases-lifecycle.html",
     # Help redirects resulting from the June 2021 docs reorganization project.
     "help/apps/desktop-changelog.html": "https://docs.mattermost.com/about/desktop-app-changelog.html",
