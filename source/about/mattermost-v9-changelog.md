@@ -215,7 +215,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Under ``FileSettings`` in ``config.json``:
    - Added ``AmazonS3UploadPartSizeBytes`` and ``ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
  - Under ``ServiceSettings`` in ``config.json``:
-   - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+   - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB. Existing servers need to manually update this value.
  - Under ``ClusterSettings`` in ``config.json``:
    - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
 
@@ -260,7 +260,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
   - Mattermost v9.7.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.7.2 contains no database or functional changes.
   - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
-  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB. Existing servers need to manually update this value.
   - Fixed an issue where it was not possible to clear the plugin settings with a default value in the System Console.
 - **9.7.1, released 2024-04-16**
   - Fixed an issue with a noisy log entry for permalink post notifications.
@@ -454,7 +454,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
   - Mattermost v9.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.4 contains no database or functional changes.
   - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
-  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB. Existing servers need to manually update this value.
   - Fixed an issue with context cancellation for integration requests.
   - Fixed an issue where end users were not allowed to fetch the group members list of groups that allow ``@-mentions``.
 - **9.5.3, released 2024-03-26**
