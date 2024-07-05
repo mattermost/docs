@@ -71,6 +71,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v9.10 is built with Go ``v1.21.8``.
 
 ### Known Issues
+ - The web browser may not open on iOS Safari [MM-59296](https://mattermost.atlassian.net/browse/MM-59296).
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
