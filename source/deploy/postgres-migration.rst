@@ -38,6 +38,10 @@ Use ``go install`` to install the tool:
 
    go install github.com/mattermost/migration-assist/cmd/migration-assist@latest
 
+.. note::
+
+   To download pre-compiled versions of migration-assist, visit the `releases page <https://github.com/mattermost/migration-assist/releases>`__ for further guidance.
+
 Usage
 ~~~~~~
 
@@ -52,7 +56,7 @@ Run the following command to check the MySQL database schema:
 
 .. code-block:: shell
 
-   migration-assist mysql "<MYSQL_DSN>"
+   migration-assist mysql "<MYSQL_DSN>" # example DSN: "user:password@tcp(address:3306)/db_name"
 
 This command outputs the readiness status and prints required fixes for common issues. The flags for fixes are as follows (where all fixes can be used together at the same time):
 
@@ -69,7 +73,7 @@ Run the following command to create the Postgres database schema:
 
 .. code-block:: shell
 
-   migration-assist postgres "<POSTGRES_DSN>" --run-migrations --mattermost-version="<MATTERMOST_VERSION>"
+   migration-assist postgres "<POSTGRES_DSN>" --run-migrations --mattermost-version="<MATTERMOST_VERSION>" # example DSN: "postgres://user:password@address:5432/db_name", example Mattermost version: "v9.4.0"
 
 This command downloads the necessary migrations and applies them to the Postgres database. The ``--mattermost-version`` flag is required to specify the Mattermost version you are migrating from.
 
@@ -125,7 +129,13 @@ Then run pgloader with the generated configuration files:
    pgloader boards.load > boards_migration.log
    pgloader playbooks.load > playbooks_migration.log
 
-Please refer to the `Plugin migrations <#plugin-migrations>`__ section for information on migrating Playbooks and Focalboard.
+Carefully read the log file to analyze whether there were any errors during the migration process. Please refer to the `Plugin migrations <#plugin-migrations>`__ section for further information on migrating Playbooks and Focalboard.
+
+Step 7 - Configure Mattermost to utilize the new PostgreSQL database
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the final step of the migration process, where we need to update the Mattermost configuration to point to the new PostgreSQL database. To do so, locate the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields in the ``config.json`` then modify these fields to reflect the new PostgreSQL database connection details. If your configuration was stored in the database, please follow the detailed steps provided `<here <#configuration-in-database>`__. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
+
 
 Manual migration tool recommendations
 -------------------------------------
@@ -503,7 +513,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON public.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000))); 
 
 Compare the data
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 
 We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas. Note that ``dbcmp`` does not compare individual rows, instead, it calculates the checksum value of given ``page-size`` and compares those values. This means it cannot calculate or provide diffs on individual rows.
 
