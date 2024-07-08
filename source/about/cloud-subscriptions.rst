@@ -39,7 +39,7 @@ Yes. Mattermost reserves the right to assess applicable taxes as required by loc
 Where does instance and data reside?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Dedicated instance and data, including logs and backups, resides in the **aws-us-east-1 region**, located in Virginia, United States.
+Dedicated instance and data, including logs and backups, resides in the **AWS us-east-1 region**, located in Virginia, United States.
 
 For data residency options outside of the US, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_, or work with a `Mattermost partner <https://mattermost.com/partners/>`_.
 
