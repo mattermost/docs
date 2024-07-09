@@ -8,7 +8,16 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-8)=
 ## Release v5.8
 
-**Release Date: May 16, 2024**
+- **v5.8.1, released 2024-06-13**
+
+  - Fixed an issue where notifications would not show on macOS in certain cases.
+  - Fixed an issue where clicking a notification would clear unreads for the wrong channel.
+  - Fixed an issue where scaled monitors in multi-monitor setups may have caused the window to be opened across two screens.
+  - Fixed an issue with Do Not Disturb mode on Windows.
+
+- **v5.8.0, released 2024-05-16**
+
+  - Original v5.8.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
