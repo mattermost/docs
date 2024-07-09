@@ -3,6 +3,10 @@
 (release-v8-1-extended-support-release)=
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+```{Important}
+Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+```
+
 - **8.1.13, released 2024-04-25**
   - Mattermost v8.1.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v8.1.13 contains no database or functional changes.
@@ -154,6 +158,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 (release-v8-0-major-release)=
 ## Release v8.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
+
+```{Important}
+Support for Mattermost Server v8.0 [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types) has come to the end of its life cycle on October 15, 2023. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+```
 
 - **8.0.4, released 2023-10-06**
   - Mattermost v8.0.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -625,6 +633,10 @@ If you upgrade from a release earlier than v7.8, please read the other [Importan
 
 (release-v7-8-extended-support-release)=
 ## Release v7.8 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
+
+```{Important}
+Support for Mattermost Server v7.8 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2023. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+```
 
 - **7.8.15 released 2023-11-13**
   - Mattermost v7.8.15 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -1505,6 +1517,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ## Release v7.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+```{Important}
+Support for Mattermost Server v7.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2023. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+```
+
 - **v7.1.9, released 2023-04-27**
   - Mattermost v7.1.9 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - **v7.1.8, released 2023-04-12**
@@ -1648,6 +1664,10 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 ----
 
 ## Release v7.0 - [Major Release](https://docs.mattermost.com/upgrade/release-definitions.html#major-release)
+
+```{Important}
+Support for Mattermost Server v7.0 [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types) has come to the end of its life cycle on September 15, 2022. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+```
 
 - **v7.0.2, released 2022-08-23**
   - Mattermost v7.0.2 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
