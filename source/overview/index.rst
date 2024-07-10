@@ -13,9 +13,6 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/security.rst
    /about/integrations.rst
    /about/subscription.rst
-   /about/self-hosted-subscriptions.rst
-   /about/cloud-subscriptions.rst
-   /about/editions-and-offerings.rst
    /about/releases-lifecycle.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
@@ -33,10 +30,7 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Use cases </about/use-cases>` - Learn about product use cases.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
-* :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions.
-* :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` - Learn more about Mattermost self-hosted subscriptions.
-* :doc:`Cloud subscriptions </about/cloud-subscriptions>` - Learn more about Mattermost Cloud subscriptions.
-* :doc:`Mattermost editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost editions and product offerings.
+* :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions, plans, and licenses for both Cloud and self-hosted deployments..
 * :doc:`Mattermost releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
 * :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.

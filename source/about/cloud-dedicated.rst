@@ -8,6 +8,12 @@ Mattermost Cloud Dedicated is designed for larger organizations with higher dema
 
 Your own private Mattermost instance running :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` is a Kubernetes cluster hosted and managed by Mattermost that runs on dedicated cloud infrastructure, where resources are exclusively available for your organization.
 
+Reference architecture
+----------------------
+
+.. image:: ../images/mattermost-cloud-dedicated-reference-architecture.png
+  :alt: An architecture diagram showing the components of the Mattermost Cloud Dedicated solution.
+
 Available features
 ------------------
 
@@ -27,7 +33,7 @@ Mattermost supports a **multi-AZ (availability zones)** strategy in the same sit
 
 Daily backups of the database, object storage, and high availability clusters are captured and retained for 30 days.
 
-In addition, highly available observability tools with automated alerting, long term metrics, and logs retention are retained for a duration of 1 year.
+In addition, highly available observability tools with automated alerting, long-term metrics, and logs retention are retained for a duration of 1 year, or longer, if requred.
 
 Security
 ~~~~~~~~
@@ -67,21 +73,6 @@ Gossip encryption (experimental)
 Mattermost supports encryption of cluster data in-transit when using the gossip protocol. See our :ref:`gossip encryption <deploy/encryption-options:gossip encryption (experimental)>` documentation for details.
 
 The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the ``Systems`` table for the ``ClusterEncryptionKey`` row. A key is a byte array converted to ``base64``. It can be set to a length of 16, 24, or 32 bytes to select ``AES-128``, ``AES-192``, or ``AES-256`` respectively.
-
-Bring your own key encryption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Cloud Dedicated customers can ensure autonomy over their encryption key life cycle with :doc:`Bring Your Own Key (BYOK) encryption </manage/cloud-byok>`. BYOK supports encryption at rest with custom KMS keys that the enterprise provides and maintains. 
-
-You can use KMS keys in 2 ways:
-
-- One KMS key for all services; or,
-- Per-service KMS keys (EBS, RDS, S3)
-
-  - Keys do not need to be unique to each service.
-  - All services must be encrypted at rest.
-  - Selective enablement of this feature can be supported.
-  - In cases where a global database is needed, we recommend providing 2 KMS keys (1 per region).
 
 SMTP
 ~~~~

@@ -1,6 +1,9 @@
 Self-hosted subscriptions
 =========================
 
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
+
 Buy a subscription
 ------------------
 

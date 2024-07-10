@@ -1,17 +1,42 @@
 Subscription overview
 =====================
 
-Mattermost Professional and Mattermost Enterprise licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated. 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :titlesonly:
 
-Administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved. 
+   Cloud subscriptions </about/cloud-subscriptions>
+   Self-hosted subscriptions </about/self-hosted-subscriptions>
+   Editions and offerings </about/editions-and-offerings>
+
+Mattermost offers 2 types of subscription:
+
+* :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
+* :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for secure enterprise collaboration with full control over your data.
+* :doc:`Editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost's commercial edition, available plans, other plans, and product decisions.
+
+Mattermost Cloud  
+----------------
+
+Enterprises can inquire about Mattermost Cloud -- a secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc.
+
+Enterprises can choose between :doc:`dedicated </about/cloud-dedicated>` and :doc:`shared </about/cloud-shared>` infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed.
+
+Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
 Purchase Mattermost Licenses 
 ----------------------------
 
-Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription:
+Mattermost offers self-hosted capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. 
 
-- Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Mattermost Enterprise or Professional plans via purchase options at https://mattermost.com/pricing/. 
+Mattermost self-hosted deployments require a license subscription key to be applied to access features. Your plan subscription determines what features you have access to. Talk to a `Mattermost expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
+:ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` and :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated.
+
+System administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved.
+
+Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
 Mattermost Nonprofit License program
 --------------------------------------
@@ -48,20 +73,15 @@ How to apply?
 ~~~~~~~~~~~~~
 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`_.
-Please note that it may take up to six weeks for us to respond to your request.
+
+.. note::
+  
+  Please note that it may take up to six weeks for us to respond to your request.
 
 Mattermost educational license program
 ---------------------------------------
 
-For academic licensing, please see: https://mattermost.com/education/
-
-Mattermost Enterprise Cloud  
----------------------------
-
-Enterprises can inquire about Mattermost Cloud Enterprise, a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc. 
-
-For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
-
+For academic licensing, please visit us online: https://mattermost.com/education/
 
 Frequently asked questions
 --------------------------

@@ -1,6 +1,9 @@
 Cloud subscriptions
 ===================
 
+.. include:: ../_static/badges/ent-cloud-only.rst
+  :start-after: :nosearch:
+
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -15,11 +18,6 @@ Enterprises can choose between dedicated and shared infrastructure based on your
 
 - :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>`: Better suited for larger organizations or those with specific needs around security, compliance, and customization, who are willing to pay a premium for dedicated resources and enhanced support.
 - :doc:`Mattermost Cloud Shared </about/cloud-shared>`: A cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
-
-Feature summary
----------------
-
-table here
 
 Frequently asked questions about Mattermost Cloud
 -------------------------------------------------
