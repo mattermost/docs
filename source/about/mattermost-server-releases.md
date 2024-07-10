@@ -5,14 +5,14 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 ```
 
 ## Frequency
-Mattermost releases a new server version on the 16th of each month in [binary form](/upgrade/upgrading-mattermost-server). 
-- See the [v10 changelog](/about/mattermost-v10-changelog) for details on what's coming and changing in the next major release. 
-- See the [v9 changelog](/about/mattermost-v9-changelog) for details on v9.x server releases.
-- See the [unsupported Mattermost legacy releases](/about/unsupported-legacy-releases) documentation for details on older, unsupported  Mattermost releases.
+Mattermost releases a new server version on the 16th of each month in [binary form](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html). 
+- See the [v10 changelog](https://docs.mattermost.com/about/mattermost-v10-changelog.html) for details on what's coming and changing in the next major release. 
+- See the [v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for details on v9.x server releases.
+- See the [unsupported Mattermost legacy releases](https://docs.mattermost.com/about/unsupported-legacy-releases.html) documentation for details on older, unsupported  Mattermost releases.
 
 ## Latest releases
 

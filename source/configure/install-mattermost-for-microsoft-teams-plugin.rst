@@ -1,5 +1,4 @@
-:orphan:
-:nosearch:
+:orphan: :nosearch:
 
 Setup starts in Mattermost, moves to Microsoft Teams, and ends in Mattermost.
 

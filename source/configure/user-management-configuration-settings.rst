@@ -262,8 +262,8 @@ Channels
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 | **Notes**:                                                                                                                            |
 |                                                                                                                                       |
-| - Channels can be deleted with all content, including posts in the database, using the `mmctl channel delete </manage/mmctl-command-  |
-|   line-tool.html#mmctl-channel-delete>`__ tool.                                                                                       |
+| - Channels can be deleted with all content, including posts in the database, using the                                                |
+|   :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` tool.                                             |
 | - You can search for channels by channel name or by channel ID.                                                                       |
 +-------------------------------------------------------------------------+-------------------------------------------------------------+
 
