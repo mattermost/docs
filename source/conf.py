@@ -231,7 +231,7 @@ redirects = {
 "administration/release-definitions.html":
         "https://docs.mattermost.com/guides/release-definitions.html",
 "administration/releases-lifecycle.html":
-        "https://docs.mattermost.com/guides/releases-lifecycle.html",
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 "administration/scripts.html":
         "https://docs.mattermost.com/manage/scripts.html",
 "administration/statistics.html":
@@ -3315,7 +3315,7 @@ redirects = {
 "upgrade/extended-support-release.html":
         "https://docs.mattermost.com/about/release-policy.html#extended-support-releases",
 "upgrade/releases-lifecycle.html":
-        "https://docs.mattermost.com/guides/releases-lifecycle.html",
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 "upgrade/release-definitions.html":
         "https://docs.mattermost.com/about/release-policy.html#release-types",
 "upgrade/version-archive.html":
