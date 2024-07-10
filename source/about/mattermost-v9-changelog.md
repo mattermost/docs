@@ -1,7 +1,7 @@
 # v9 changelog
 
 ```{Important}
-Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/deploy/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
@@ -1057,7 +1057,7 @@ If you upgrade from a release earlier than v8.1, please read the other [Importan
  - Accelerate mission-critical workflows that keep your team aligned and your data secure on [the Mattermost and Atlassian platforms](https://mattermost.com/atlassian/).
 
 #### Air-Gapped, Edge-Ready Generative AI with Defense Unicorn's LeapfrogAI
- - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://leapfrog.ai/).
+ - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://www.defenseunicorns.com/leapfrogai).
 
 #### AI-Accelerated Collaboration
  - Mattermost partner Mobius Logic has enhanced the MS Teams Connector for the Microsoft 365 platform by embedding Mattermost directly inside [Microsoft Teams](https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html).

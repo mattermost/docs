@@ -2036,7 +2036,7 @@ redirects = {
 "developer/slash-commands.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
 "developer/toolkit.html":
-        "https://developers.mattermost.com/integrate/apps/",
+        "https://developers.mattermost.com/",
 "developer/web-service.html":
         "https://api.mattermost.com/",
 "developer/webapp-component.html":

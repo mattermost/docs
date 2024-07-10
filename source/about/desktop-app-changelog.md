@@ -938,7 +938,7 @@ Many thanks to all our contributors. In alphabetical order:
   - Original v4.4.0 release
 
 ```{Note}
-Mattermost v4.4.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrading/upgrade-mattermost-server) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost v4.4.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 ```
 
 ### Breaking Changes
@@ -1007,7 +1007,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 - **v4.3.2, released 2019-11-29**
 
-- Mattermost v4.3.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+- Mattermost v4.3.0 contains a low level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 - Fixed an issue where the app started into white screen after a system reboot on Windows. [MM-19649](https://mattermost.atlassian.net/browse/MM-19649)
 - Fixed an issue where `CMD+Z` didn't undo on the Mac desktop app. [MM-19198](https://mattermost.atlassian.net/browse/MM-19198)
 - Fixed an issue where users were unable to zoom in/out except on the first server tab. [MM-19032](https://mattermost.atlassian.net/browse/MM-19032)
@@ -1156,7 +1156,7 @@ This release contains a bug fix for all platforms.
 - **View Source Code:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v4.2.0)
 
 ```{Note}
-Mattermost v4.2.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost v4.2.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 ```
 
 ### Improvements
@@ -1805,7 +1805,7 @@ Many thanks to all our contributors. In alphabetical order:
 
 Release date: 2016-07-18
 
-[Download the latest version here](https://mattermost.com/apps>)
+[Download the latest version here](https://mattermost.com/apps)
 
 ### Improvements
 
