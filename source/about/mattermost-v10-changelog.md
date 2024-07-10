@@ -18,5 +18,5 @@ More information on this Mattermost major release coming soon. See the {doc}`Mat
 Mattermost v10.0 is planned for September, 2024. Below is a list of planned breaking changes for this release:
 
 1. **MySQL Databases** - We will no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
-2. **Apps Framework** - Apps framework will be deprecated in a future upcoming release. Please utilize the plugin framework for developing integrations with the core Mattermost platform.
+2. **Apps Framework** - Apps framework will be deprecated in the Mattermost v10 release. Please extend Mattermost using webhooks, slash commands, oAuth2 apps, and plugins.
 3. **Playbooks for Enterprise** - An Enterprise license will be required to use v2.0+ Playbooks functionality starting in v10. Team Edition and Professional deployments can continue to use Playbooks v1.x. Security and feature updates will only be added to Playbooks v2.0+.
