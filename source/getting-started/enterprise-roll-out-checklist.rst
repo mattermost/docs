@@ -405,6 +405,6 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
 - Determine upgrade schedule based on Mattermost release schedules and life cycle
 
- - Resource: https://docs.mattermost.com/guides/releases-lifecycle.html
+ - Resource: https://docs.mattermost.com/about/releases-lifecycle.html
 
 - Run System checks and either address or set address-by date	
