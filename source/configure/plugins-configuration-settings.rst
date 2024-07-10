@@ -196,40 +196,6 @@ Plugin settings
 
 ----
 
-Apps
-----
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-.. note::
-  
-  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
-
-Access the following configuration settings in the System Console by going to **Plugins > Apps**.
-
-To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
-
-.. config:setting:: plugins-appsenable
-  :displayname: Enable plugin (Plugins - Apps)
-  :systemconsole: Plugins > Apps
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Enables the Apps plugin on your Mattermost server.
-  - **false**: (Default) Disables the Apps plugin on your Mattermost server.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
-| - **true**: Enables the Apps plugin on your Mattermost server.             | - System Config path: **Plugins > Apps**                    |
-| - **false**: (Default) Disables the Apps plugin on your Mattermost server. |                                                             |
-|                                                                            |                                                             |
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
-
-----
-
 Calls
 -----
 

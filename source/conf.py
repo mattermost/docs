@@ -2133,16 +2133,6 @@ redirects = {
         "https://docs.mattermost.com/guides/preferences.html",
 "guides/welcome-to-mattermost.html#mattermost-interface-changes":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
-"guides/configure-app-framework.html":
-        "https://docs.mattermost.com/deploy/configure-app-framework",
-"guides/deploy-http.html":
-        "https://docs.mattermost.com//deploy/deploy-http",
-"guides/deploy-aws.html":
-        "https://docs.mattermost.com//deploy/deploy-aws",
-"guides/package-aws.html":
-        "https://docs.mattermost.com//deploy/package-aws",
-"guides/deploy-openfaas.html":
-        "https://docs.mattermost.com/deploy/deploy-openfaas",
 "guides/changelogs.html":
         "https://docs.mattermost.com/about/releases-lifecycle.html",
 
