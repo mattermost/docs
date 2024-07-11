@@ -14,7 +14,7 @@ Custom Apps
 
 Apps are lightweight, interactive add-ons that can be written in any language and run on any HTTP-compatible hosting service. They enable you to connect with external services and build interactions that users can easily follow and work across the Mattermost web app, desktop app, and mobile app.   
 
-Prebuilt apps are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `build your own custom app <https://developers.mattermost.com/integrate/apps/>`__.
+Prebuilt apps are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__.
 
 API 
 ----

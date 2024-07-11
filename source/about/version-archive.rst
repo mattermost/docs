@@ -239,7 +239,7 @@ Version archive
     - ``https://releases.mattermost.com/5.13.3/mattermost-5.13.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``41f40fb7397309aeecdd9c8670e8f137a4892093ec658fc0346c732bca54e8f9``
     - GPG Signature: https://releases.mattermost.com/5.13.3/mattermost-5.13.3-linux-amd64.tar.gz.sig
-  Mattermost Enterprise Edition v5.12.6 - `View Changelog </about/unsupported-legacy-releases.html#release-v5-12-feature-release>`__ - `Download <https://releases.mattermost.com/5.12.6/mattermost-5.12.6-linux-amd64.tar.gz?src=arc>`__
+  Mattermost Enterprise Edition v5.12.6 - `View Changelog <https://docs.mattermost.com/about/unsupported-legacy-releases.html#release-v5-12-feature-release>`__ - `Download <https://releases.mattermost.com/5.12.6/mattermost-5.12.6-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/5.12.6/mattermost-5.12.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``1464e3f970c3b55c9b3ce94925b8d6e4b3b291c05f181498e8ae23822cf1ade4``
     - GPG Signature: https://releases.mattermost.com/5.12.6/mattermost-5.12.6-linux-amd64.tar.gz.sig
