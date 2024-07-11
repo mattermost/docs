@@ -145,7 +145,7 @@ Data source
 | For an AWS High Availability RDS cluster deployment, point this configuration setting to the write/read endpoint at the **cluster**      |
 | level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node.             |
 | Mattermost doesn't need to manage this. See the                                                                                          |
-| `high availablility database configuration </scale/high-availability-cluster.html#database-configuration>`__ documentation for details.  |
+| :ref:`high availablility database configuration <scale/high-availability-cluster:database configuration>` documentation for details.     |
 +------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: database-maxopenconnections
@@ -399,7 +399,7 @@ Read replicas
 | node endpoint within the RDS cluster to circumvent the failover/load balancing that AWS/RDS takes care of (except for the      |
 | write traffic). Mattermost has its own method of balancing the read-only connections, and can also balance those queries to    |
 | the data source/write+read connection should those nodes fail. See the                                                         |
-| `high availablility database configuration </scale/high-availability-cluster.html#database-configuration>`__ documentation     |
+| :ref:`high availablility database configuration <scale/high-availability-cluster:database configuration>` documentation        |
 | for details.                                                                                                                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 
@@ -437,8 +437,7 @@ Search replicas
 | node endpoint within the RDS cluster to circumvent the failover/load balancing that AWS/RDS takes care of (except for the            |
 | write traffic). Mattermost has its own method of balancing the read-only connections, and can also balance those queries to          |
 | the data source/write+read connection should those nodes fail. See the                                                               |
-| `high availablility database configuration </scale/high-availability-cluster.html#database-configuration>`__ documentation for       |
-| details.                                                                                                                             |
+| :ref:`high availablility database configuration <scale/high-availability-cluster:database configuration>` documentation for details. |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: database-replicalagsettings
