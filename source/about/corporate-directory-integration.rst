@@ -61,4 +61,4 @@ Generic OAuth is not currently supported.
 Future authentication methods
 -----------------------------
 
-Mattermost releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to discuss further.
+Mattermost releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to discuss further.

@@ -136,7 +136,7 @@ See a complete list of features `here <https://mattermost.com/pricing>`_.
 Other Mattermost plans
 ----------------------
 
-Mattermost introduced a new pricing and packaging structure on October 13, 2021. The plans listed below reached end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new plans. We honored existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ with questions.
+Mattermost introduced a new pricing and packaging structure on October 13, 2021. The plans listed below reached end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new plans. We honored existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ with questions.
 
 Mattermost Enterprise Edition E10
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

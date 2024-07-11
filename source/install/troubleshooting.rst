@@ -428,7 +428,7 @@ Appendix
 
 **A note on mobile issues**
 
-Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for help setting these up.
+Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for help setting these up.
 
 **SAML login issues**
 
