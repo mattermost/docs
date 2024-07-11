@@ -17,4 +17,4 @@ Features include:
 
 For an example case study, learn why `The U.S. Department of Defense relies on Mattermost for Secure Command and Control across devices <https://mattermost.com/customers/us-department-of-defense/>`__, including flight crews who can now securely access documents from mobile devices anywhere in the world. 
 
-`Contact us <https://mattermost.com/contact-sales/>`__ to learn more about this solution and to discuss whether it’s the right one for you.
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more about this solution and to discuss whether it’s the right one for you.

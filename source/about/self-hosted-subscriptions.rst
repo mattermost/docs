@@ -31,7 +31,7 @@ If you haven't yet installed and deployed a Mattermost instance, visit the :doc:
 Add more users to your subscription
 -----------------------------------
 
-If at any time you'd like to add more users to your Mattermost subscription, `contact us <https://mattermost.com/contact-us/>`_.
+If at any time you'd like to add more users to your Mattermost subscription, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
 
 Quarterly true-up reports
 -------------------------
@@ -58,7 +58,7 @@ A system admin must take a screenshot of the **System Console > Site Statistics*
 Renew your subscription
 -----------------------
 
-System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, please `contact sales <https://mattermost.com/contact-sales/>`_.
+System admins will be alerted 60 days prior to license expiry via a banner in Mattermost. You can also dismiss the banner and renew your license at a later date via **System Console > Edition and License**. To renew your license, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
 
 Frequently asked questions
 --------------------------

@@ -9,4 +9,4 @@ Go to **System Console > Billing and Account** to manage the following aspects o
 - Access billing history
 - Manage the :doc:`product subscription </about/cloud-subscriptions>` and account details for your Mattermost Cloud deployment.
 - Review trial details.
-- Contact the `Mattermost Sales team <https://mattermost.com/contact-sales/>`_ for assistance.
+- Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for assistance.

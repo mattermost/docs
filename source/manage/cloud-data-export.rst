@@ -227,7 +227,7 @@ The completed file will be downloaded to your desktop as a ``.zip`` file.
    
    Do not rename the file as the file name is referenced in log files, which are used by the Support team to validate the exported file.
 
-The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please contact the Support team and let them know.
+The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please `contact our support team <https://mattermost.com/support/>`_ and let them know.
 
 Create a new workspace on the Mattermost Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

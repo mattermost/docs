@@ -65,7 +65,7 @@ Mattermost Cloud Enterprise is available to be deployed in a private environment
 Is Mattermost Cloud Enterprise a dedicated instance run on AWS systems?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud Enterprise can be deployed as a dedicated Mattermost environment running with separate infrastructure for your requirements (e.g., separate database, separate VMs, separate Kubernetes cluster). Please contact Mattermost Sales for more information on this option.
+Mattermost Cloud Enterprise can be deployed as a dedicated Mattermost environment running with separate infrastructure for your requirements (e.g., separate database, separate VMs, separate Kubernetes cluster). Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for more information on this option.
 
 How is customer data in Mattermost Cloud Enterprise encrypted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
