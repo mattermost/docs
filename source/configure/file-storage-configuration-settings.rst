@@ -91,7 +91,7 @@ Maximum file size
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                   |
 |                                                                                                                                              |
-| - When `uploading plugin files </configure/plugins-configuration-settings.html#upload-plugin>`__, a ``Received invlaid response from         |
+| - When :ref: `uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invlaid response from           |
 |   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy        |
 |   settings may not be sufficient.                                                                                                            |
 | - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                     |
@@ -128,7 +128,7 @@ Enable document search by content
 |   for files by file name only.                                |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | **Note**: Document content search results for files shared before upgrading to Mattermost Server v5.35 may be incomplete until an                   |
-| extraction command is executed using the `mmctl </manage/mmctl-command-line-tool.html?highlight=mmctl#mmctl-extract>`__.                            |
+| extraction command is executed using the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl extract>`.                                               |
 | If this command is not run, users can search older files based on file name only.                                                                   |
 |                                                                                                                                                     |
 | You can optionally install the following `dependencies <https://github.com/sajari/docconv#dependencies>`__ to extend content searching support in   |

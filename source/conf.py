@@ -239,7 +239,7 @@ redirects = {
 "administration/release-definitions.html":
         "https://docs.mattermost.com/guides/release-definitions.html",
 "administration/releases-lifecycle.html":
-        "https://docs.mattermost.com/guides/releases-lifecycle.html",
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 "administration/scripts.html":
         "https://docs.mattermost.com/manage/scripts.html",
 "administration/statistics.html":
@@ -2044,7 +2044,7 @@ redirects = {
 "developer/slash-commands.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
 "developer/toolkit.html":
-        "https://developers.mattermost.com/integrate/apps/",
+        "https://developers.mattermost.com/",
 "developer/web-service.html":
         "https://api.mattermost.com/",
 "developer/webapp-component.html":
@@ -2141,16 +2141,6 @@ redirects = {
         "https://docs.mattermost.com/guides/preferences.html",
 "guides/welcome-to-mattermost.html#mattermost-interface-changes":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
-"guides/configure-app-framework.html":
-        "https://docs.mattermost.com/deploy/configure-app-framework",
-"guides/deploy-http.html":
-        "https://docs.mattermost.com//deploy/deploy-http",
-"guides/deploy-aws.html":
-        "https://docs.mattermost.com//deploy/deploy-aws",
-"guides/package-aws.html":
-        "https://docs.mattermost.com//deploy/package-aws",
-"guides/deploy-openfaas.html":
-        "https://docs.mattermost.com/deploy/deploy-openfaas",
 "guides/changelogs.html":
         "https://docs.mattermost.com/about/releases-lifecycle.html",
 
@@ -3323,7 +3313,7 @@ redirects = {
 "upgrade/extended-support-release.html":
         "https://docs.mattermost.com/about/release-policy.html#extended-support-releases",
 "upgrade/releases-lifecycle.html":
-        "https://docs.mattermost.com/guides/releases-lifecycle.html",
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 "upgrade/release-definitions.html":
         "https://docs.mattermost.com/about/release-policy.html#release-types",
 "upgrade/version-archive.html":
