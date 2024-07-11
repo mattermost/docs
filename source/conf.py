@@ -834,6 +834,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
 "collaborate-within-embedded-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
+"collaborate/send-messages.html#edit-or-delete-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#edit-messages",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
