@@ -116,6 +116,14 @@ redirects = {
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/embed-mattermost-app-within-microsoft-teams.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+"about/cloud-subscriptions.html#buy-a-cloud-subscription":
+        "https://docs.mattermost.com/about/cloud-subscriptions.html",
+"about/cloud-subscriptions.html#view-subscription-information":
+        "https://docs.mattermost.com/about/cloud-subscriptions.html",
+"about/cloud-subscriptions.html#renew-your-subscription":
+        "https://docs.mattermost.com/about/cloud-subscriptions.html",
+"about/subscription.html#mattermost-enterprise-cloud":
+        "https://docs.mattermost.com/about/cloud-subscriptions.html",
 
 # Administration redirects
 "administration/announcement-banner.html":

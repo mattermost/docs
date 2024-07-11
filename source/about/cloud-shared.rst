@@ -47,7 +47,7 @@ Mattermost maintains control over network and security policies, including `encr
 Authentication and authorization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost offers advanced security and authentication options for integrating with corporate directories, including :doc:`Active Directory/LDAP </onboard/ad-ldap>`, Okta, OneLogin, :doc:`SAML </onboard/sso-saml>`, :doc:`Google </onboard/sso-google>`, :doc:`EntraID </onboard/sso-office>`, and :doc:`OpenID </onboard/sso-openidconnect>`.
+Mattermost offers advanced security and authentication options for integrating with corporate directories, including :doc:`Active Directory/LDAP </onboard/ad-ldap>`, :doc:`Okta </onboard/sso-saml-okta>`, :doc:`OneLogin </onboard/sso-saml-onelogin>`, :doc:`SAML </onboard/sso-saml>`, :doc:`Google </onboard/sso-google>`, :doc:`EntraID </onboard/sso-office>`, and :doc:`OpenID </onboard/sso-openidconnect>`.
 
 Secure networking
 ~~~~~~~~~~~~~~~~~~
@@ -67,12 +67,15 @@ Connections to calls are secured with a combination of:
 - DTLS v1.2 (mandatory): Used for initial key exchange. Supports ``TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256`` and ``TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA`` algorithms.
 - SRTP (mandatory): Used to encrypt all media packets (i.e. those containing voice or screen share). Supports ``AEAD_AES_128_GCM`` and ``AES128_CM_HMAC_SHA1_80`` algorithms.
 
-Gossip encryption (experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cloud native exports
+~~~~~~~~~~~~~~~~~~~~
 
-Mattermost supports encryption of cluster data in-transit when using the gossip protocol. See our :ref:`gossip encryption <deploy/encryption-options:gossip encryption (experimental)>` documentation for details.
+Mattermost supports optional :ref:`filestore configuration settings <configure/experimental-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as the workspace admins who manage a given installation. The exports can also be accessed by generating unique download links as needed.
 
-The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the ``Systems`` table for the ``ClusterEncryptionKey`` row. A key is a byte array converted to ``base64``. It can be set to a length of 16, 24, or 32 bytes to select ``AES-128``, ``AES-192``, or ``AES-256`` respectively.
+The following diagram provides a high-level view of how this functionality works:
+
+.. image:: ../images/mattermost-cloud-native-export-architecture-diagram.png
+  :alt: An architecture diagram showing a high-level view of how Mattermost Cloud Native exports works.
 
 SMTP
 ~~~~
