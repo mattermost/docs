@@ -1,5 +1,5 @@
-Automate PostgreSQL migration
-=============================
+Automated PostgreSQL migration
+===============================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
