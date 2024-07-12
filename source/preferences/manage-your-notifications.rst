@@ -50,10 +50,11 @@ In a web browser or the desktop app, select the **Settings** |gear| icon located
 
 On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
-.. note::
+.. tip::
 
-  From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
-    
+  - From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
+  - Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for additional troubleshooting tips and tricks.
+
 .. tab:: Web/Desktop/Mobile
 
   By default, you're notified of all Mattermost activity in Mattermost with badges, banner alerts, and sounds, regardless of how you access Mattermost, and your current :ref:`Mattermost availability <preferences/set-your-status-availability:set your availability>`.
@@ -182,6 +183,3 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
   You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can access all threads in the **Threads** view, and unfollow individual threads as you prefer.
 
-.. tip:: 
-
-  Missing notifications? Visit our `notifications knowledge base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for additional troubleshooting tips and tricks.
