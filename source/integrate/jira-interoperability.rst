@@ -15,7 +15,7 @@ Minimize distractions, reduce context switching between your project management 
   - You can control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments.
   - Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms are supported, and tested with versions 7 and 8.
   - Jira Service Management (formally known as Jira Service Desk) isn't supported.
-  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Professional and Enterprise plans, configured using Administrator Slash Commands.
+  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Enterprise and Professional plans, configured using Administrator Slash Commands.
 
 Setup
 ------
@@ -44,14 +44,15 @@ A Mattermost system admin must perform the following steps in Mattermost.
     - **Enable slash command**: Enable or disable slash command autocompletion to guide users through available ``/jira`` slash commands.
     - **Display Subscription name in notifications**: Show or hide subscription name in notification messages posted to a channel.
 
+2. Run ``/jira setup`` to start the wizard to configure the plugin. If you wish to set up the plugin manually, then please follow the steps below.     
+
 Install Jira integration in your Jira instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To enable your users to create and manage Jira issues across Mattermost channels, you must install this Jira integration, as an application, in your Jira instance. 
 
-- For Jira Server or Data Center instances, run the ``/jira instance install server <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the steps posted to the channel, replacing ``YOUR-JIRA-URL`` with your Jira URL. This value must match the Jira server URL you use to log in. Run the ``/jira instance uninstall server <YOUR-JIRA-URL>`` slash command to disconnect Mattermost from your Jira Server or Data Center instance.
-- For Jira Cloud, run the  ``/jira instance install cloud <YOUR-JIRA-URL>`` slash command. Run the ``/jira instance uninstall cloud <YOUR-JIRA-URL>`` slash command to disconnect Mattermost from your Jira Cloud instance.
-- You must explicitly share the integration in your Jira instance by going to https://developer.atlassian.com/console/myapps, selecting **Distribution**, and sharing it with the organization.
+- For Jira Server or Data Center instances, run the ``/jira instance install server <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the steps posted to the channel, replacing ``YOUR-JIRA-URL`` with your Jira URL. This value must match the Jira server URL you use to log in. Run the ``/jira instance uninstall server <YOUR-JIRA-URL>`` slash command to uninstall your Jira Server or Data Center instance from your Mattermost instance.
+- For Jira Cloud, run the ``/jira instance install cloud-oauth <YOUR-JIRA-URL>`` slash command in a Mattermost channel as a Mattermost system admin, then follow the wizard to complete the setup. Run the ``/jira instance uninstall cloud-oauth <YOUR-JIRA-URL>`` slash command to uninstall your Jira Cloud instance from your Mattermost.
 
 Configure webhooks in Jira
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -72,7 +73,7 @@ A Mattermost system admin and a Jira system admin must perform the following ste
 Manage channel subscriptions in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``jira /subscribe`` slash command, and configure the following options:
+The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``/jira subscribe`` slash command, and configure the following options:
 
 - Configure what Jira notifications are sent to the current channel.
 - Specify filters including: affects versions, epic link, fix versions, labels, and priority.
@@ -115,7 +116,7 @@ By default, the legacy webhook integration publishes notifications for issue cre
 - ``updated_comments=1``: all comment events
 - ``updated_description=1``: updated issue description
 - ``updated_labels=1``: updated issue labels
-- ``updated_prioity=1``: updated issue priority
+- ``updated_priority=1``: updated issue priority
 - ``updated_rank=1``: ranked issue higher or lower
 - ``updated_sprint=1``: assigned issue to a different sprint
 - ``updated_status=1``: transitioned issed to a different status, such as Done or In Progress
@@ -173,6 +174,10 @@ Connect a Jira account to Mattermost
 
 1. In Mattermost, run the ``/jira connect`` slash command in any Mattermost channel to link your Mattermost account with your Jira account. Follow the link into your Jira instance, and select **Allow**. 
 
+.. note::
+
+  Please use ``/jira instance connect <YOUR-JIRA-URL>`` if you have multiple Jira instances installed. 
+
 2. Once connected, run the ``/jira help`` slash command to see what you can do.
 
 .. tip::
@@ -200,8 +205,8 @@ Create a Jira issue
 
 Use the ``/jira issue create`` slash command to create a Jira issue without leaving Mattermost. You can prepopulate the issue's summary by running ``/jira issue create This is my issue's summary``. You're prompted to fill out the issue details.
 
-.. image:: ../images/github_mattermost.png
-  :alt: An example of the GitHub integration for Mattermost.
+.. image:: ../images/create-jira-issue.png
+  :alt: An example of the create Jira issue workflow.
 
 Transition Jira issues
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -292,7 +297,7 @@ Get help
 
 Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance, or join us on the  `Mattermost Discussion Forum <https://forum.mattermost.org/c/plugins>`_.
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Customize
 ---------

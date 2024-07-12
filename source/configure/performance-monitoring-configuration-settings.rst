@@ -52,3 +52,29 @@ Listen address for performance
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
 | Numerical input. Default is **8067**.                         |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: perf-enablenotificationmetrics
+  :displayname: Enable notification metrics (Performance Monitoring)
+  :systemconsole: Environment > Performance Monitoring
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+
+  - **true**: **(Default)** Mattermost notification data collection is enabled for client-side web and desktop app users.
+  - **false**: Mattermost notification data collection is disabled.
+
+Enable notification metrics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Environment > Performance Monitoring**                        |
+| collection.                                   | - ``config.json setting``: ``".MetricsSettings.EnableNotificationMetrics": true",``   |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``              |
+| - **true**: **(Default)** Mattermost          |                                                                                       |
+|   notification data collection is enabled for |                                                                                       |
+|   client-side web and desktop app users.      |                                                                                       |
+| - **false**: Mattermost notification          |                                                                                       |
+|   data collection is disabled.                |                                                                                       |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| See the :ref:`performance monitoring <scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation      |
+| to learn more about Mattermost Notification Health metrics.                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------------------+

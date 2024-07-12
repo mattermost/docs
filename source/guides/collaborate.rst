@@ -23,7 +23,7 @@ This Mattermost end user documentation is designed for anyone who wants guidance
    Learn about Mattermost roles </collaborate/learn-about-roles>
    Collaborate within channels </collaborate/collaborate-within-channels>
    Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>
-   Chat with AI Copilot </collaborate/chat-with-ai-copilot>
+   Chat with Copilot </collaborate/chat-with-copilot>
    Communicate with messages and threads </collaborate/communicate-with-messages>
    Keyboard shortcuts </collaborate/keyboard-shortcuts>
    Extend Mattermost with integrations </collaborate/extend-mattermost-with-integrations>
@@ -34,8 +34,8 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 * :doc:`Invite people to your workspace </collaborate/invite-people>` - Learn how to add new users to Mattermost and add users to existing teams and channels.
 * :doc:`Learn about Mattermost user roles </collaborate/learn-about-roles>` - Learn about the 6 user roles in Mattermost and what they can do.
 * :doc:`Collaborate within channels </collaborate/collaborate-within-channels>` - Learn how to get started collaborating within Mattermost channels.
-* :doc:`Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to get started collaborating within Mircosoft Teams.
-* :doc:`Chat with AI Copilot </collaborate/chat-with-ai-copilot>` - Overcome information overload and streamline communication and collaboration by chatting with the Mattermost AI Copilot in your Mattermost instance.
+* :doc:`Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to get started collaborating within Microsoft Teams.
+* :doc:`Chat with Copilot </collaborate/chat-with-copilot>` - Overcome information overload and streamline communication and collaboration by chatting with Copilot in your Mattermost instance.
 * :doc:`Communicate with messages and threads </collaborate/communicate-with-messages>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Keyboard shortcuts </collaborate/keyboard-shortcuts>` - Make a more efficient use of your keyboard with keyboard shortcuts.
 * :doc:`Extend Mattermost with integrations </collaborate/extend-mattermost-with-integrations>` - Find open source integrations to common tools in the Mattermost Marketplace.

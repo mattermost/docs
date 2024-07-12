@@ -28,6 +28,7 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
   :titlesonly:
 
   Okta SAML Configuration <sso-saml-okta>
+  Generate self-signed certificates </scripts/generate-certificates/gencert>
   OneLogin SAML Configuration <sso-saml-onelogin.rst>
   Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>

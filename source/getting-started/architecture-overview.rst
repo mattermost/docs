@@ -21,7 +21,7 @@ It is configured using :doc:`config/config.json </configure/configuration-settin
 - **Notification service:** Sends notifications via SMTP or a Push Notification Service for mobile applications.
 - **Data management service:** Connects to supported databases and file storage solutions (local, network-attached storage, Amazon S3, etc), and manages the reading and writing of data between them.
 
-The binary talks to a database, typically PostgreSQL, and a filestore.
+The binary talks to a database, typically PostgreSQL, and a filestore. See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation for details on migrating from MySQL to PostgreSQL. 
 
 .. image:: ../images/architecture_basics.png
 
@@ -39,7 +39,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance:** In a High Availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see :doc:`our deployment guides </guides/deployment>`. Mattermost also unofficially supports other proxies including `Apache 2 <https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938/3>`__.
+Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see :doc:`our deployment guides </guides/deployment>`. Mattermost also unofficially supports other proxies including Apache 2.
 
 .. image:: ../images/architecture_with_proxy.png
 

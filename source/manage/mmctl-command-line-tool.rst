@@ -483,7 +483,7 @@ Set credentials to use in the following commands.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then enter your username and password (and MFA token if MFA is enabled on the account).
+Authenticate to a server (e.g. >mmctl auth login ``https://test.mattermost.com)``, then enter your username and password (and MFA token if MFA is enabled on the account).
 
 **Password**
 
@@ -3468,8 +3468,6 @@ Start an import job.
    --bypass-upload     File is read directly from the filesystem, instead of being processed from the server. Supported in --local mode only.
    --extract-content   Document attachments will be extracted and indexed during the import process. We recommend disabling this to improve performance.
 
-
-
 **Options inherited from parent commands**
 
 .. code-block:: sh
@@ -3548,9 +3546,11 @@ Validate an import file.
 
 .. code-block:: sh
 
-   -h, --help              help for validate
-   --ignore-attachments    Don't check if the attached files are present in the archive
-   --team stringArray      Predefined team[s] to assume as already present on the destination server. Implies ``--check-missing-teams``. The flag can be repeated.
+   --check-missing-teams       Check for teams that are not defined but referenced in the archive
+   --check-server-duplicates   Set to false to ignore teams, channels, and users already present on the server (Default true)
+   -h, --help                  help for validate
+   --ignore-attachments        Do not check if the attached files are present in the archive
+   --team stringarray          Predefined teams to assume as already present on the destination server. Implies --check-missing-teams. The flag can be repeated
 
 **Options inherited from parent commands**
 
@@ -3608,6 +3608,7 @@ LDAP-related utilities.
 
    Child Commands
       -  `mmctl ldap idmigrate`_ - Migrate LDAP IdAttribute to a new value
+      -  `mmctl ldap job`_ - List and show LDAP synchronization jobs
       -  `mmctl ldap sync`_ - Sync all LDAP users and groups
 
 **Options**
@@ -3660,8 +3661,104 @@ Migrate LDAP ``IdAttribute`` to a new value. Run this utility to change the valu
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl ldap job
+--------------
+
+List and show LDAP synchronization jobs.
+
+Child Commands
+      -  `mmctl ldap job list`_ - LIst LDAP synchronization jobs
+      -  `mmctl ldap job show`_ - Show LDAP synchronization jobs
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for ldap
+
+mmctl ldap job list
+~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List LDAP synchronization jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl ldap job list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl ldap job list
+
+**Options**
+
+.. code-block:: sh
+
+   --all            Fetch all import jobs. The ``--page`` flag will be ignored if provided.
+   -h, --help       help for list
+   --page int       Page number to fetch for the list of import jobs
+   --per-page int   Number of import jobs to be fetched (default 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl ldap job show
+~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Show LDAP synchronization jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl ldap job show [ldapJobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl ldap show f3d68qkkm7n8xgsfxwuo498rah
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for list
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl ldap sync
-~~~~~~~~~~~~~~~
+---------------
 
 **Description**
 

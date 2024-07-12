@@ -49,7 +49,7 @@ Step 3: Enable legal hold in Mattermost
 
 1. In Mattermost, go to **System Console > Environment > File Storage**.
 2. Set the **File Storage System** to **Amazon S3**.
-3. Connect the Amazon S3 storage with Mattermost by specifying the S3 bucket name, prefix, AWS region, and hostname. You may optionally specify the access keys if using IAM roles.
+3. Connect the Amazon S3 storage with Mattermost by specifying the S3 bucket name, prefix, AWS region, and hostname. You may optionally specify the access keys if using IAM roles, and you can optionally specify a separate S3 Bucket than the one configured for your Mattermost server.
 4. Learn more about file storage configuration options in our :ref:`product documentation <configure/environment-configuration-settings:file storage>`.
 
 .. note::

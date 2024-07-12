@@ -10,7 +10,7 @@ Configuring CloudFront to host Mattermost's static assets allows for improved ca
 
 1. Create an S3 bucket using your desired domain. In our example it will be ``mattermost.example.com``.
 2. Enable static hosting for your S3 bucket.
-3. If your SiteURL is configured with a subpath (such as https://example.com/company/mattermost), your static assets must be rewritten before uploading. You can use the command below to rewrite the assets for the given subpath:
+3. If your SiteURL is configured with a subpath (such as ``https://example.com/company/mattermost``), your static assets must be rewritten before uploading. You can use the command below to rewrite the assets for the given subpath:
 
     ``mattermost config subpath --path /company/mattermost``
 
