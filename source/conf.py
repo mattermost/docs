@@ -1864,6 +1864,24 @@ redirects = {
         "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-7",
 "deploy/mobile-app-changelog.html#release":
         "https://docs.mattermost.com/about/mobile-app-changelog.html",
+"deploy/postgres-migration.html#required-tools":
+        "deploy/manual-postgres-migration.html#tool-recommendations",
+"deploy/postgres-migration.html#system-requirements-and-configurations":
+        "deploy/manual-postgres-migration.html#system-requirements-and-configurations-for-manual-migrations",
+"deploy/postgres-migration.html#before-the-migration":
+        "deploy/manual-postgres-migration.html#before-a-manual-migration",
+"deploy/postgres-migration.html#prepare-target-database":
+        "deploy/manual-postgres-migration.html#prepare-target-database",
+"deploy/postgres-migration.html#schema-diffs":
+        "deploy/manual-postgres-migration.html#schema-diffs",
+"deploy/postgres-migration.html#migrate-the-data":
+        "deploy/manual-postgres-migration.html#migrate-the-data",
+"deploy/postgres-migration.html#after-the-migration":
+        "deploy/manual-postgres-migration.html#after-the-migration",
+"deploy/postgres-migration.html#plugin-migrations":
+        "deploy/manual-postgres-migration.html#plugin-migrations",
+"deploy/postgres-migration.html#troubleshooting":
+        "deploy/manual-postgres-migration.html#troubleshooting",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
