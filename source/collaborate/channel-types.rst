@@ -12,7 +12,7 @@ Channel types
    :alt: A lock icon indicates a private channel.
    :class: theme-icon
 
-Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. 
+Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read only channels>`.
 
 Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
 
