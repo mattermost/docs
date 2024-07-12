@@ -28,7 +28,7 @@ Desktop apps
     :header: "Operating System", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Windows", "Windows 10+", "Windows 10+"
-    "Mac", "macOS 11+", "macOS 11+"
+    "Mac", "macOS 12+", "macOS 12+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
 Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
@@ -47,7 +47,7 @@ PC web
 
     "Chrome", "v122+", "v122+"
     "Firefox", "v115+", "v115+"
-    "Safari", "v16.2+", "v16.2+"
+    "Safari", "v17+", "v17+"
     "Edge", "v122+", "v122+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
@@ -58,7 +58,7 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 5s devices and later with iOS 12.4+"
+    "iOS", "iPhone 6s devices and later with iOS 13.4+"
     "Android", "Android devices with Android 7+"
 
 .. note::
@@ -72,7 +72,7 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 12.4+ with Safari 16.2+ or Chrome 122+"
+    "iOS", "iOS 13.4+ with Safari 17+ or Chrome 122+"
     "Android", "Android 7+ with Chrome 122+"
 
 Email client
@@ -100,6 +100,8 @@ Database software
 -  MySQL 8.0.12+ (see note below on MySQL 8 support)
 
 Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
+
+See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation for details on migrating from MySQL to PostgreSQL.
 
 MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
 

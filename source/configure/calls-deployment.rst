@@ -231,7 +231,10 @@ Both the plugin and the external ``rtcd`` service expose some Prometheus metrics
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
+
+.. note::
+   On Mattermost versions prior to v9.5, plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` configuration setting. This defaults to port ``8065``.
 
 **Process**
 
@@ -259,19 +262,52 @@ Metrics for the calls plugin are exposed through the public ``/plugins/com.matte
 
 - ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
 
+**Application**
+
+- ``mattermost_plugin_calls_app_handlers_time_bucket``: Time taken to execute app handlers.
+
+  - ``mattermost_plugin_calls_app_handlers_time_sum``
+
+  - ``mattermost_plugin_calls_app_handlers_time_count``
+
 **Database**
 
 - ``mattermost_plugin_calls_store_ops_total``: Total number of db store operations.
+- ``mattermost_plugin_calls_store_methods_time_bucket``: Time taken to execute store methods.
+
+  - ``mattermost_plugin_calls_store_methods_time_sum``
+
+  - ``mattermost_plugin_calls_store_methods_time_count``
+- ``mattermost_plugin_calls_cluster_mutex_grab_time_bucket``: Time taken to grab global mutexes.
+
+  - ``mattermost_plugin_calls_cluster_mutex_grab_time_sum``
+
+  - ``mattermost_plugin_calls_cluster_mutex_grab_time_count``
+- ``mattermost_plugin_calls_cluster_mutex_locked_time_bucket``: Time spent locked in global mutexes.
+
+  - ``mattermost_plugin_calls_cluster_mutex_locked_time_sum``
+  
+  - ``mattermost_plugin_calls_cluster_mutex_locked_time_count``
 
 **WebSocket**
 
 - ``mattermost_plugin_calls_websocket_connections_total``: Total number of active WebSocket connections.
 - ``mattermost_plugin_calls_websocket_events_total``: Total number of WebSocket events.
 
+**Jobs**
+
+- ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_bucket``: Duration (in ms) of new audio transcribed for live captions.
+
+  - ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_sum``
+
+  - ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_count``
+- ``mattermost_plugin_calls_jobs_live_captions_pktPayloadCh_buf_full``: Total packets of audio data dropped due to full channel.
+- ``mattermost_plugin_calls_jobs_live_captions_window_dropped``: Total windows of audio data dropped due to pressure on the transcriber.
+
 WebRTC service metrics
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
+Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint under the ``rtcd`` API listener controlled by the ``api.http.listen_address`` configuration setting. It defaults to port ``8045``.
 
 **Process**
 
@@ -286,23 +322,38 @@ Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoi
 - ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
 - ``rtcd_rtc_errors_total``: Total number of RTC errors.
 - ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
-
-  - Note: removed as of v0.10.0
-
 - ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
-
-  - Note: removed as of v0.10.0
-
 - ``rtcd_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
-
-  - Note: added as of v0.10.0
-
 - ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
+- ``rtcd_rtc_rtp_tracks_writes_time_bucket``: Time taken to write to outgoing RTP tracks.
+
+  - ``rtcd_rtc_rtp_tracks_writes_time_sum``
+
+  - ``rtcd_rtc_rtp_tracks_writes_time_count``
 
 **WebSocket**
 
 - ``rtcd_ws_connections_total``: Total number of active WebSocket connections.
 - ``rtcd_ws_messages_total``: Total number of received/sent WebSocket messages.
+
+Configuration
+^^^^^^^^^^^^^
+
+A sample Prometheus configuration to scrape both plugin and ``rtcd`` metrics could look like this:
+
+.. code::
+
+   scrape_configs:
+   - job_name: node
+     static_configs:
+       - targets: ['rtcd-0:9100','rtcd-1:9100', 'calls-offloader-1:9100', 'calls-offloader-2:9100']
+   - job_name: calls
+      metrics_path: /plugins/com.mattermost.calls/metrics
+      static_configs:
+        - targets: ['app-0:8067','app-1:8067','app-2:8067']
+   - job_name: rtcd
+      static_configs:
+        - targets: ['rtcd-0:8045', 'rtcd-1:8045']
 
 System tunings
 ~~~~~~~~~~~~~~
@@ -412,6 +463,34 @@ The recommended way to deploy Calls related components and services in a Kuberne
 
 - `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
 
+Limitations
+~~~~~~~~~~~
+
+Due to the inherent complexities of hosting a WebRTC service, some limitations apply when deploying Calls in a Kubernetes environment.
+
+One key requirement is that each ``rtcd`` process live in a dedicated Kubernetes node. This is necessary to forward the data correctly while allowing for horizontal scaling. Data should generally not go through a standard ingress but directly to the pod running the ``rtcd`` process.
+
+The general recommendation is to expose one external IP address per ``rtcd`` instance (Kubernetes node). This makes it simpler to scale as the application is able to detect its own external address (through STUN) and advertise it to clients to achieve connectivity with minimal configuration.
+
+If, for some reason, exposing multiple IP addresses is not possible in your environment, port mapping (NAT) can be used. In this scenario different ports are used to map the respective ``rtcd`` nodes behind the single external IP. Example:
+
+.. code-block:: bash
+
+  EXT_IP:8443 -> rtcdA:8443
+  EXT_IP:8444 -> rtcdB:8443
+  EXT_IP:8445 -> rtcdC:8443
+
+This case requires a couple of extra configurations:
+
+- NAT mappings need to be in place for every ``rtcd`` node. This is usually done at the ingress point (e.g., ELB, NLB, etc).
+- The ``RTCD_RTC_ICEHOSTPORTOVERRIDE`` config should be used to pass a full mapping of node IPs and their respective port.
+    - Example: ``RTCD_RTC_ICEHOSTPORTOVERRIDE=rtcdA_IP/8443,rtcdB_IP/8444,rtcdC_IP/8445``
+- The ``RTCD_RTC_ICEHOSTOVERRIDE`` should be used to set the external IP address.
+
+.. note::
+
+  One option to limit these static mappings is to reduce the size of the local subnet (e.g., to ``/29``).
+
 Frequently asked questions
 --------------------------
 
@@ -455,6 +534,23 @@ Can the traffic between Mattermost and ``rtcd``  be kept internal or should it b
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
+
+Can Calls be rolled out on a per-channel basis?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+Yes. Mattermost system admins running self-hosted deployments can enable or disable call functionality per channel. Once :ref:`test mode <configure/plugins-configuration-settings:test mode>` is enabled for Mattermost Calls:
+
+- Select **Enable calls** for each channel where you want Calls enabled
+- Select **Disable calls** for all channels where you want Calls disabled. 
+
+Once Calls is enabled for specific channels, users can start making calls in those channels.
+
+.. note::
+
+  When :ref:`test mode <configure/plugins-configuration-settings:test mode>` is disabled for Mattermost Calls, users in any Mattermost channel can make a call.
 
 Troubleshooting
 ---------------

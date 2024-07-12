@@ -4,7 +4,7 @@ Prepare your Mattermost database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
   
-You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support.
+You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
 
 .. tip::
 
@@ -207,3 +207,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac.
 
 When the PostgreSQL database is installed, and the initial setup is complete, you can install the Mattermost server.
+
+### Important note while upgrading a Postgres instance
+
+If you are upgrading a major version of Postgres, it is essential that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is necessary to re-populate the ``pg_statistics`` table used to generate optimal query plans. The database performance might suffer if this step is not done.

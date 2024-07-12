@@ -36,7 +36,7 @@ Feedback
 - `Report a bug <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`__ - Report bugs or other issues you encounter when using Mattermost to our development team.
 - `Propose a feature <https://mattermost.com/suggestions/>`__ - Vote for feature proposals or submit your own.
 
-Professional and enterprise support
------------------------------------
+Mattermost Enterprise and Professional support
+-----------------------------------------------
 
-- `Mattermost Support <https://mattermost.com/support/>`__ - Submit a `support request <https://support.mattermost.com/hc/en-us/requests/new>`__ to get help from our team. Available to enrolled Professional and Enterprise customers.
+- `Mattermost Support <https://mattermost.com/support/>`__ - Submit a `support request <https://support.mattermost.com/hc/en-us/requests/new>`__ to get help from our team. Available for Mattermost Enterprise and Professional subscription plans.

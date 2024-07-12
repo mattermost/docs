@@ -27,7 +27,7 @@ Site URL
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Notes**:                                                                                                                    |
 |                                                                                                                               |
-| - The URL may contain a subpath, such as "https://example.com/company/mattermost".                                            |
+| - The URL may contain a subpath, such as ``https://example.com/company/mattermost``.                                          |
 | - If you change the Site URL value, log out of the Desktop App, and sign back in using the new domain.                        |
 | - If Site URL is not set:                                                                                                     |
 |                                                                                                                               |
