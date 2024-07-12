@@ -112,4 +112,4 @@ Granting a system permission sets it to **Accept**, and revoking it sets it to *
 
   - The ability to manage system permissions isn't available on the Mattermost mobile app.
   - You'll be prompted to accept or deny notifications after adding a new server connection, and any time you open the desktop app if you haven't explicitly accepted or denied permission.
-  - You may also need to enable notifications for Mattermost within your operating system preferences.
+  - You may also need to enable notifications for Mattermost within your operating system preferences. 
