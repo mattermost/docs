@@ -6,7 +6,7 @@ Enterprise install and upgrade
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Professional and Enterprise. You can `compare their features online <https://mattermost.com/pricing/>`_.
+Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Enterprise and Professional. You can `compare their features online <https://mattermost.com/pricing/>`_.
 
 Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. View pricing and feature information online, and `contact sales <https://mattermost.com/contact-sales/>`_ to purchase a `license key <https://mattermost.com/contact-sales/>`_.
 

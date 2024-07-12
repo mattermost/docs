@@ -27,7 +27,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
 
-This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, authentication, and compliance support.
+This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, releases, authentication, and compliance support.
 
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Use Cases overview </about/use-cases>` - Learn about product use cases.
