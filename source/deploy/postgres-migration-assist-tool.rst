@@ -10,7 +10,7 @@ Our ``migration-assist`` tool provides an efficient, error-free migration experi
 
 1. ``migration-assist mysql``
 
-   Checks the MySQL database schema to ensure readiness for migration, and offers fixes for common issues.
+   Checks the MySQL database schema to ensure readiness for migration, and offers fixes for common issues. See the `install <#install>`__ section below for details on installing the ``migration-assist`` tool.
 
 2. ``migration-assist postgres``
 
@@ -18,7 +18,7 @@ Our ``migration-assist`` tool provides an efficient, error-free migration experi
 
 3. ``migration-assist pgloader``
 
-   Generates a pgloader configuration from DSN values, ensuring accurate data transfer.
+   Generates a pgloader configuration from DSN values, ensuring accurate data transfer. See the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation for details on installing the pgloader tool.
 
 Install
 -------
@@ -33,14 +33,14 @@ Use ``go install`` to install the tool:
 
 .. note::
 
-   To download pre-compiled versions of migration-assist, visit the `releases page <https://github.com/mattermost/migration-assist/releases>`__ for further guidance.
+   To download pre-compiled versions of ``migration-assist``, visit the `releases page <https://github.com/mattermost/migration-assist/releases>`__ for further guidance.
 
 Usage
 -----
 
 .. important::
 
-   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To setup a PostgreSQL instance, see the :doc:`database </install/prepare-mattermost-database>` documentation for details.
+   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </install/prepare-mattermost-database>` documentation for details.
 
 Step 1 - Check the MySQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -84,9 +84,7 @@ This command will generate a pgloader configuration file that can be used to mig
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
 
-See the `install pgloader <#install-pgloader>`__ section for installation details.
-
-Run pgloader with the generated configuration file:
+:ref:`Run pgloader <deploy/manual-postgres-migration:pgloader>` with the generated configuration file:
 
 .. code-block:: shell
 
@@ -103,7 +101,7 @@ Run the following command to create the full-text indexes for the ``Posts`` and 
 
    migration-assist postgres post-migrate "<POSTGRES_DSN>"
 
-This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` tables. Please refer to the `Restore full-text indexes <#restore-full-text-indexes>`__ section for more information.
+This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` tables. See the :ref:`Restore full-text indexes <deploy/manual-postgres-migration:restore full-text indexes>` documentation for more information.
 
 Step 6 - Complete plugin migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -122,9 +120,11 @@ Then run pgloader with the generated configuration files:
    pgloader boards.load > boards_migration.log
    pgloader playbooks.load > playbooks_migration.log
 
-Carefully read the log file to analyze whether there were any errors during the migration process. Please refer to the `Plugin migrations <#plugin-migrations>`__ section for further information on migrating Playbooks and Focalboard.
+Carefully read the log file to analyze whether there were any errors during the migration process. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` documentation for information on migrating Playbooks and Boards.
 
 Step 7 - Configure Mattermost to utilize the new PostgreSQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the final step of the migration process, where we need to update the Mattermost configuration to point to the new PostgreSQL database. To do so, locate the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields in the ``config.json`` then modify these fields to reflect the new PostgreSQL database connection details. If your configuration was stored in the database, please follow the detailed steps provided `<here <#configuration-in-database>`__. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
+This is the final step of the migration process, where we need to update the Mattermost configuration to point to the new PostgreSQL database. To do so, locate the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields in the ``config.json`` then modify these fields to reflect the new PostgreSQL database connection details. 
+
+If your configuration was stored in the database, see the :ref:`configuration in database <deploy/manual-postgres-migration:configuration in database>` documentation for migration details. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
