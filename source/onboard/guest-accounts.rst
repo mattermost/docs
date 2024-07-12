@@ -70,7 +70,7 @@ When enabled, the **Guest Filter** in Mattermost identifies external users whose
 
 If a Mattermost guest user has the ``guest`` role removed in the AD/LDAP system, the synchronization process will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
-When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost system admin. 
+When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost system admin. 
 
 Configure SAML 2.0 authentication
 ----------------------------------
@@ -84,7 +84,7 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 3. Complete the **Guest Attribute** field.
 4. Select **Save**.
 
-When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost System Admin.
+When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost System Admin.
 
 Guest permission settings
 -------------------------

@@ -259,7 +259,7 @@ How to access logs
 
 **Mattermost**
 
-Make sure debug logging is enabled so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set console and file log level to **DEBUG**.
+Make sure :ref:`debug logging is enabled <manage/logging:how do i enable debug logging?>` so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set both **Console File Level** and **File Log Level** to **DEBUG**. Remember to save your changes.
 
 If the behavior started at a known time or date, use ``journalctl`` to get the logs like this:
 
@@ -428,7 +428,7 @@ Appendix
 
 **A note on mobile issues**
 
-Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact your Customer Engineer for help setting these up.
+Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for help setting these up.
 
 **SAML login issues**
 
