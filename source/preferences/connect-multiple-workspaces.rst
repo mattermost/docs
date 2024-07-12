@@ -8,7 +8,7 @@ Connect to multiple Mattermost workspaces
   :alt: Access server connection options using the Servers icon.
   :class: theme-icon
 
-Using the Mattermost desktop or mobile app, you can connect to multiple Mattermost servers from a single interface. Using the desktop app, you can also manage system permissions.
+Using the Mattermost desktop or mobile app, you can connect to multiple Mattermost servers from a single interface. 
 
 .. note::
 
@@ -97,19 +97,3 @@ Removing a server from your desktop app doesn't delete its data. You can add the
   .. image:: ../images/swipe-left-to-remove.png
     :width: 400px
     :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to delete the connection.
-
-Manage system permissions
--------------------------
-
-From Mattermost desktop app v5.9, you can manage system permissions when creating or managing existing Mattermost server connections, including: microphone access, camera access, notifications, and location.
-
-Granting a system permission sets it to **Accept**, and revoking it sets it to **Always Deny**.
-
-.. image:: ../images/desktop-system-permissions.png
-  :alt: A screenshot of the system permissions that Mattermost users can manage when creating new server connections or editing existing connections.
-
-.. note::
-
-  - The ability to manage system permissions isn't available on the Mattermost mobile app.
-  - You'll be prompted to accept or deny notifications after adding a new server connection, and any time you open the desktop app if you haven't explicitly accepted or denied permission.
-  - You may also need to enable notifications for Mattermost within your operating system preferences. 
