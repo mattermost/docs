@@ -48,7 +48,7 @@ Create the export
 
 .. important::
 
-   If your Mattermost Cloud deployment includes plugins that aren't listed on the Cloud Marketplace, those plugins won't be included in the export, and you won't have access to those plugins going forward. See the :doc:`integrations </about/integrations.html#plugins>` documentation for a list of Cloud-supported integrations.
+   If your Mattermost Cloud deployment includes plugins that aren't listed on the Cloud Marketplace, those plugins won't be included in the export, and you won't have access to those plugins going forward. See the :ref:`integrations <about/integrations:plugins>` documentation for a list of Cloud-supported integrations.
 
 
 Once you're logged in, run the following ``mmctl`` command:
