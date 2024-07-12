@@ -470,6 +470,16 @@ The TCP socket targets can be configured with an IP address or domain name, port
 Frequently asked questions
 --------------------------
 
+How do I enable debug logging?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As a Mattermost system admin, go to **System Console > Environment > Logging > File Log Level**, and set it to **DEBUG**. Then save your changes.
+
+.. image:: ../images/enable-debug-logging.png
+  :alt: A screenshot of the System Console page where Mattermost system admins can enable and disable debug logging.
+
+Debug logging can cause log files to expand substantially, and may adversely impact server performance. Keep an eye on your server logs, or only enable it temporarily, or in development environments, but not production enviornments.
+
 Does Mattermost have an audit log besides the system ``auditd``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
