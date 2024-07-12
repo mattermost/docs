@@ -11,7 +11,7 @@ Connect GitLab to Mattermost
 Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
 
 .. note::
-  - You can also control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, and pull reviews.
+  - You can also control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews, and many more.
   - Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
 
 .. image:: ../images/gitlab_mattermost.png
@@ -27,7 +27,7 @@ Register an OAuth app in GitLab
 
 A Mattermost system admin must perform the following steps in GitLab.
 
-1. Go to https://gitlab.com/-/profile/applications or https://gitlab.YOURDOMAIN.com/-/profile/applications, replacing ``YOURDOMAIN.COM`` with your GitHub URL, to register an OAuth app with GitLab.
+1. Go to ``https://gitlab.com/-/profile/applications`` or ``https://gitlab.YOURDOMAIN.com/-/profile/applications``, replacing ``YOURDOMAIN.COM`` with your GitHub URL, to register an OAuth app with GitLab.
 2. Set the following values:
 
   - **Name**: ``Mattermost GitLab Plugin - <YOUR COMPANY NAME>``
@@ -35,13 +35,6 @@ A Mattermost system admin must perform the following steps in GitLab.
 
 3. Select ``api`` and ``read_user`` in **Scopes**.
 4. Save your changes. Copy the **Application ID** and **Secret** fields in the resulting screen.
-
-Create a webhook in GitLab
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Don't forget to add a webhook in GitLab!
-
-.. this process is missing from the README
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,9 +91,9 @@ Channel subscriptions
 
 Run the ``/gitlab subscriptions list`` to review all of your subscriptions.
 
-Run the ``/gitlab subscriptions add owner[/repo] [features]`` slash command to subscribe a Mattermost channel and receive posts for new merge requests, issues, or other features, from a GitLab repository. To unsubscribe and stop receiving posts, run the ``/gitlab subscriptions delete owner/repo`` slash command.
+Run the ``/gitlab subscriptions add group[/project] [features]`` slash command to subscribe a Mattermost channel and receive posts for new merge requests, issues, or other features, from a GitLab project. To unsubscribe and stop receiving posts, run the ``/gitlab subscriptions delete group[/project]`` slash command.
 
-For each project you want to receive notifications for or subscribe to, create a webhook in a channel where you want to watch events sent from GitLab by running the ``/gitlab subscribe`` slash command. For example: ``/gitlab subscriptions add group[/project]``
+For each project you want to receive notifications for or subscribe to, create a webhook in a channel where you want to watch events sent from GitLab by running the ``/gitlab webhook`` slash command. For example: ``/gitlab webhook add group[/project]``
 
 .. note::
 
@@ -114,8 +107,10 @@ For each project you want to receive notifications for or subscribe to, create a
     - Select all the events in **Triggers**.
     - Add the webhook.
 
+Update settings
+~~~~~~~~~~~~~~~
 
-Run the  ``/gitlab settings [setting] [value]`` slash command to update your preferences for the integration:
+Run the ``/gitlab settings [setting] [value]`` slash command to update your preferences for the integration:
 
 - Turn personal notifications on or off.
 - Turn reminders on or off when you connect initially each day.
@@ -125,7 +120,7 @@ Get help
 
 Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost GitLab plugin repository <https://github.com/mattermost/mattermost-plugin-gitlab>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance, or join us on the  `Mattermost Discussion Forum <https://forum.mattermost.org/c/plugins>`_.
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Customize
 ---------

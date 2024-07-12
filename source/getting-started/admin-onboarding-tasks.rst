@@ -51,7 +51,7 @@ Common tasks
   
 **Migrating to AD/LDAP or SAML from email-based authentication**
 
-- If you have Professional or Enterprise plans, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :doc:`Active Directory/LDAP Setup </onboard/ad-ldap>`. To set up SAML Single Sign-on, see :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
+- If you have a Mattermost Enterprise or Professional plan, you can migrate from email authentication to Active Directory/LDAP or to SAML Single Sign-on. To set up Active Directory/LDAP, see :doc:`Active Directory/LDAP Setup </onboard/ad-ldap>`. To set up SAML Single Sign-on, see :doc:`SAML Single-Sign-On </onboard/sso-saml>`.
 - After the new authentication method is enabled, existing users cannot use the new method until they go to **Settings > Security > Sign-in method** and select **Switch to using AD/LDAP** or **Switch to using SAML Single Sign-on**. After they have switched, they can no longer use their email and password to log in.  
   
 **Deactivating a user**
@@ -77,7 +77,7 @@ We highly recommend the following best practices, configuration options, and fea
 
 When you upgrade your Mattermost server frequently, your users can access new features, improved user experiences, bug fixes, security fixes, and mobile app compatibility.
 
-Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. The :doc:`Mattermost Changelog </deploy/legacy-self-hosted-changelog>` provides all information about changes in each version.
+Mattermost releases regular updates to `Mattermost Team Edition <https://mattermost.com/>`_ and `Mattermost Enterprise Edition <https://mattermost.com/pricing-self-managed/>`_. See the :doc:`release life cycle </about/releases-lifecycle>` documentation for component life cycle details details. 
 
 Upgrading your Mattermost server only takes a few minutes. See the :doc:`Upgrade Guide </upgrade/upgrading-mattermost-server>` for step-by-step instructions.
 

@@ -178,8 +178,21 @@ section[id] {
     align-items: center;
 }
 
+.notification-bar__wrapper a {
+    display: flex;
+    align-items: center;
+}
+
 .notification-bar__content>div img {
     display: none;
+}
+
+@media (min-width:992px) {
+    .notification-bar__content>div img {
+        display: block;
+        max-height: 25px;
+        width: auto;
+    }
 }
 
 .notification-bar a {
