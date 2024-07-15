@@ -65,8 +65,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### Known Issues
  - The web browser does not open on iOS Safari in v9.10.0 [MM-59296](https://mattermost.atlassian.net/browse/MM-59296).
- - Notifications do not work on the web client on Mac in v9.10.0 [MM-593150](https://mattermost.atlassian.net/browse/MM-59315).
- - Desktop notifications do not work on Safari in v9.10.0 [MM-59315](https://mattermost.atlassian.net/browse/MM-59315).
+ - Desktop notifications do not work on Safari in v9.10.0 [MM-59416](https://mattermost.atlassian.net/browse/MM-59416).
  - The screen crashes when clicking on SAML 2.0 option in the System Console on Free instances in v9.10.0 [MM-59406](https://mattermost.atlassian.net/browse/MM-59406).
  - The AI Copilot is missing from the Cloud Marketplace in v9.10.0.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
