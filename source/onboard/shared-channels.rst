@@ -158,7 +158,7 @@ Frequently Asked Questions
 ---------------------------
 
 Why is this feature in experimental?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature is considered experimental while we recruit customer testing partners. Mattermost QA has tested this feature, but as we build the interface for managing shared channels, we want to work with system admins to build the most optimal experience.
 

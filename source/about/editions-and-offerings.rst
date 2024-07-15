@@ -59,7 +59,7 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 This offering includes all the features of `Mattermost Professional <#mattermost-professional>`__, plus: 
 
 - :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </scale/elasticsearch>`.
-- :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </onboard/ad-ldap-groups-synchronization>`.
+- :doc:`Sychronization of access controls, channels, and teams with Entra ID Groups </onboard/ad-ldap-groups-synchronization>`.
 - :doc:`eDiscovery and compliance export automation </comply/compliance-export>`.
 - :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile-appconfig>`.
 - :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service>`.
@@ -75,6 +75,9 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
+- Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
+- Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
+- PQ&A with :doc:`access-controlled backend systems </about/security>`
 - 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
 Mattermost Professional 
@@ -98,6 +101,8 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - :doc:`System-wide announcement banners </manage/announcement-banner>`.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
+- :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
+- Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`
 
 See a `complete list of Mattermost features <https://mattermost.com/pricing>`_.
 

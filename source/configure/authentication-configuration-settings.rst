@@ -172,7 +172,7 @@ Require email verification
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: email-enablesigninwithemail
-  :displayname: Enable sign-in with email (Signup)
+  :displayname: Enable sign-in with email (Signu
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignInWithEmail
   :environment: MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL
@@ -199,7 +199,7 @@ Enable sign-in with email
   :configjson: .EmailSettings.EnableSignInWithUsername
   :environment: MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME
 
-  - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect AD/LDAP sign-in.
+  - **true**: **(Default)** Allows authentication with a username and password for accounts created with an email address. This setting does not affect Entra ID (formally known as AD/LDAP) sign-in.
   - **false**: Disables authenticaton with a username and removes the option from the login screen.
 
 Enable sign-in with username
@@ -207,8 +207,9 @@ Enable sign-in with username
 
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows authentication with a username and password for         | - System Config path: **Authentication > Email**                       |
-|   accounts created with an email address. This setting does not affect AD/LDAP sign-in.  | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
-| - **false**: Disables authenticaton with a username and removes the option               | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
+|   accounts created with an email address. This setting does not affect Entra ID          | - ``config.json`` setting: ``.EmailSettings.EnableSignInWithUsername`` |
+|   (formally known as AD/LDAP) sign-in.                                                   | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
+| - **false**: Disables authenticaton with a username and removes the sign in option from. |                                                                        |
 |   from the login screen.                                                                 |                                                                        |
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
@@ -346,17 +347,17 @@ We recommend deploying Mattermost within your own private network, and using VPN
   :configjson: .ServiceSettings.EnableMultifactorAuthentication
   :environment: MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION
 
-  - **true**: Users who sign-in with AD/LDAP or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts.
+  - **true**: Users who sign-in with Entra ID (formally known as AD/LDAP) or an email address have the option to add `multi-factor authentication <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ to their accounts.
   - **false**: **(Default)** Disables multi-factor authentication.
 
 Enable multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| - **true**: Users who sign-in with AD/LDAP or an email address have the option to add :doc:`multi-factor authentication </onboard/multi-factor-authentication>` to their accounts.                              | - System Config path: **Authentication > MFA**                                         |
-| - **false**: **(Default)** Disables multi-factor authentication.                                                                                                                                                | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
-|                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
+| - **true**: Users who sign-in with Entra ID (formally known as AD/LDAP) or an email address                            | - System Config path: **Authentication > MFA**                                         |
+|   have the option to add :doc:`multi-factor authentication </onboard/multi-factor-authentication>` to their accounts.  | - ``config.json`` setting: ``.ServiceSettings.EnableMultifactorAuthentication: false`` |
+| - **false**: **(Default)** Disables multi-factor authentication.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``         |
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: mfa-enforcemfa
   :displayname: Enforce multi-factor authentication (MFA)
@@ -364,7 +365,7 @@ Enable multi-factor authentication
   :configjson: .ServiceSettings.EnforceMultifactorAuthentication
   :environment: MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION
 
-  - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with AD/LDAP or an email address.
+  - **true**: Requires `multi-factor authentication (MFA) <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__ for users who sign-in with Entra ID (formally known as AD/LDAP) or an email address.
     New users must configure MFA. Logged in users are redirected to the MFA setup page until configuration is complete.
   - **false**: MFA is optional.
 
@@ -381,58 +382,58 @@ Enforce multi-factor authentication
 +----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | - **true**: Requires `multi-factor authentication (MFA)                          | - System Config path: **Authentication > MFA**                                          |
 |   <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__      | - ``config.json`` setting: ``.ServiceSettings.EnforceMultifactorAuthentication: false`` |
-|   for users who sign-in with AD/LDAP or an email address. New users must         | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
-|   configure MFA. Logged in users are redirected to the MFA setup page            |                                                                                         |
-|   until configuration is complete.                                               |                                                                                         |
+|   for users who sign-in with Entra ID (formally known as AD/LDAP) or an email    | - Environment variable: ``MM_SERVICESETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``         |
+|   address. New users must set up MFA. Logged in users are redirected to the MFA  |                                                                                         |
+|   setup page until configuration is complete.                                    |                                                                                         |
 | - **false**: **(Default)** MFA is optional.                                      |                                                                                         |
 +----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| **Note**: If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider                       |
+| **Note**: If your system has users who authenticate with methods other than Entra ID and email, MFA must be enforced with the authentication provider                      |
 | outside of Mattermost.                                                                                                                                                     |
 +----------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ----
 
-AD/LDAP
--------
+Entra ID/AD/LDAP
+----------------
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
+Access the following configuration settings in the System Console by going to **Authentication > Entra ID/AD/LDAP**.
 
 .. config:setting:: ldap-enablesignin
-  :displayname: Enable sign-in with AD/LDAP (AD/LDAP)
-  :systemconsole: Authentication > AD/LDAP
+  :displayname: Enable sign-in with Entra ID (Entra ID/AD/LDAP)
+  :systemconsole: Authentication > Entra ID/AD/LDAP
   :configjson: .LdapSettings.Enable
   :environment: MM_LDAPSETTINGS_ENABLE
 
-  - **true**: Allows sign-in with AD/LDAP or Active Directory.
-  - **false**: **(Default)** Disables sign-in with AD/LDAP or Active Directory.
+  - **true**: Allows sign-in with Entra ID (formally known as AD/LDAP) or Active Directory.
+  - **false**: **(Default)** Disables sign-in with Entrai ID.
 
-Enable sign-in with AD/LDAP
+Enable sign-in with Entra ID/AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+-------------------------------------------------------------------------------+------------------------------------------------------------+
-| - **true**: Allows sign-in with AD/LDAP or Active Directory.                  | - System Config path: **Authentication > AD/LDAP**         |
-| - **false**: **(Default)** Disables sign-in with AD/LDAP or Active Directory. | - ``config.json`` setting: ``.LdapSettings.Enable: false`` |
-|                                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLE``         |
-+-------------------------------------------------------------------------------+------------------------------------------------------------+
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| - **true**: Allows sign-in with Entra ID (formally known as AD/LDAP).         | - System Config path: **Authentication > Entra ID/AD/LDAP**     |
+| - **false**: **(Default)** Disables sign-in with Entra ID.                    | - ``config.json`` setting: ``.LdapSettings.Enable: false``      |
+|                                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLE``              |
++-------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: ldap-enablesync
-  :displayname: Enable synchronization with AD/LDAP (AD/LDAP)
-  :systemconsole: Authentication > AD/LDAP
+  :displayname: Enable synchronization with Entra ID (Entra ID/AD/LDAP)
+  :systemconsole: Authentication > Entra ID/AD/LDAP
   :configjson: .LdapSettings.EnableSync
   :environment: MM_LDAPSETTINGS_ENABLESYNC
 
-  - **true**: Mattermost periodically syncs users from AD/LDAP.
-  - **false**: **(Default)** Disables AD/LDAP synchronization.
+  - **true**: Mattermost periodically syncs users from Entra ID (formally known as AD/LDAP).
+  - **false**: **(Default)** Disables Entra ID synchronization.
 
-Enable synchronization with AD/LDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable synchronization with Entra ID/AD/LDAP
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. raw:: html
 
