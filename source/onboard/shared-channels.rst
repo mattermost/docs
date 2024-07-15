@@ -1,5 +1,5 @@
-Shared channels (Beta)
-=======================
+Shared channels (Experimental)
+==============================
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -157,10 +157,10 @@ Status details include:
 Frequently Asked Questions
 ---------------------------
 
-Why is this feature in beta?
+Why is this feature in experimental?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This feature is considered beta while we recruit customer testing partners. Mattermost QA has tested this feature, but as we build the interface for managing shared channels, we want to work with system admins to build the most optimal experience.
+This feature is considered experimental while we recruit customer testing partners. Mattermost QA has tested this feature, but as we build the interface for managing shared channels, we want to work with system admins to build the most optimal experience.
 
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
