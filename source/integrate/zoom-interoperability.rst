@@ -105,7 +105,7 @@ Join the meeting by selecting the call invitation in the channel.
 
 Run the ``/zoom settings`` slash command to set your preference for using your Zoom personal meeting ID as a meeting host. You can choose to always use your personal meeting ID, always use a new unique meeting id, or set Mattermost to prompt you for your preference each time you start a call.
 
-Cloud recordings and transcripts must be enabled in your paid Zoom account in order to receive them in Mattermost. Once enabled, you'll receive a notification in Mattermost when the recording and transcript are available.
+Subscribe a Mattermost channel to a recurring Zoom meeting with ``/zoom subscribe [meeting ID]``. Cloud recordings and transcripts must be enabled in your paid Zoom account in order to receive them in Mattermost. Once enabled, you'll receive a notification in Mattermost when the recording and transcript are available for recorded meetings.
 
 Get help
 --------
