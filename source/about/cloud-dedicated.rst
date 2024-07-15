@@ -80,7 +80,7 @@ The following diagram provides a high-level view of how this functionality works
 SMTP
 ~~~~
 
-Email sent from Mattermost Cloud Dedicated uses XXX, and the connection to XXX is encrypted. See our :doc:`SMTP </configure/smtp-email>` documentation for setup details.
+Email sent from Mattermost Cloud Dedicated uses SendGrid, and the connection to SendGrid is encrypted.
 
 Audit and observability
 ~~~~~~~~~~~~~~~~~~~~~~~
