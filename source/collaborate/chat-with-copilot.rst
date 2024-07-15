@@ -84,6 +84,35 @@ To summarize unread Mattermost channels:
 .. image:: ../images/Unread-Channel-Messages-Summarization-Updated-4-3.gif
   :alt: Quickly summarize new messages, find action opens, and seek out unanswered questions with your Copilot.
 
+Summarize Zoom meetings in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+.. note::
+
+  The Zoom plugin must be :doc:`enabled and configured </integration/zoom-interoperability>` by a Mattermost system admin and Zoom cloud recordings and transcripts must be enabled before you can summarize Zoom meetings.
+
+If the Zoom plugin is enabled and configured, subscribe a Mattermost channel to a Zoom meeting (``/zoom subscribe [meeting ID]``) and record the meeting. Once the recording and transcription are available, they are automatically shared back to the channel.
+
+Use Mattermost to turn Zoom meeting recordings into actionable AI-generated summaries with any model of your choosing, including your own. By summarizing your Zoom meeting recordings in Mattermost, you can easily share the insights with your team and the broader organization, enhancing communication and productivity without sacrificing data privacy and control. 
+
+To summarize a Zoom meeting in Mattermost:
+
+1. Subscribe a Mattermost channel to a Zoom meeting with ``/zoom subscribe [meeting ID]``
+2. Record the Zoom meeting.
+3. Once the meeting ends and the transcript file is posted to Mattermost, select  the **Create meeting summary** option located directly below the file.
+
+.. image:: ../images/create-meeting-summary-zoom.png
+  :alt: Select the Create meeting summary option to summarize your Zoom meeting in Mattermost.
+
+4. The meeting summary is generated and shared as a direct message with the person who requested the meeting summary.
+
+.. image:: ../images/copilot-Zoom-Meeting-Summary.png
+  :alt: Easily share the updates from your Zoom meetings with your team and broader organization by turning recordings into detailed summaries at the click of a button.
+  :scale: 50
+
 Chat privately with Copilot
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
