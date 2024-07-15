@@ -23,7 +23,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Set up TLS </install/setup-tls>
     Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>
     Deployment guides </guides/deployment-guides>
-    Deploy Mattermost Apps </deploy/deploy-mattermost-apps>
     Upgrade Mattermost </guides/upgrade-mattermost>
     Scale Mattermost </guides/scale-mattermost>
     Deployment troubleshooting </guides/deployment-troubleshooting>
@@ -46,7 +45,6 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Set up NGINX proxy </install/setup-nginx-proxy>` - Learn how to configure Mattermost for HTTPS for deployments of more than 200 users.
 * :doc:`Set up TLS </install/setup-tls>` - Learn how to configure Mattermost for HTTPS for deployments of fewer than 200 concurrent users.
 * :doc:`Deployment guides </guides/deployment-guides>` - for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.
-* :doc:`Deploy Mattermost Apps </deploy/deploy-mattermost-apps>` - Learn how to deploy Mattermost Apps to your server.
 * :doc:`Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>` - Review software and hardware requirements for Mattermost server, and plan out your Mattermost rollout.
 * :doc:`Upgrade Mattermost </guides/upgrade-mattermost>` - Learn how to stay up to date with the latest features and improvements.
 * :doc:`Scale Mattermost </guides/scale-mattermost>` - Learn how to scale and monitor your Mattermost deployment.

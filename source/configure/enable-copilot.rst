@@ -36,7 +36,7 @@ With extensive customization and extensibility options, you can tailor Copilot t
 
 Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot**. Mattermost supports the following LLMs:
 
-- `OpenAI <https://platform.openai.com/account/api-keys>`_
+- `OpenAI <https://openai.com/index/openai-api/>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
 - `OpenAI Compatible <https://github.com/go-skynet/LocalAI>`_
