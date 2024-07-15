@@ -446,8 +446,8 @@ Enable synchronization with Entra ID/AD/LDAP
 +---------------------------------------------------------------+----------------------------------------------------------------+
 | **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and            |
 | availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to              |
-| modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-             |
-| admin-roles-advanced>`__ documentation for details.                                                                            |
+| modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system               |
+| admin roles (advanced)>` documentation for details.                                                                            |
 +---------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-loginfieldname
@@ -491,8 +491,8 @@ AD/LDAP server
 +--------------------------------------------------------------+---------------------------------------------------------+
 | **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and    |
 | availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to      |
-| modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-system-     |
-| admin-roles-advanced>`__ documentation for details.                                                                    |
+| modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system       |
+| admin roles (advanced)>` documentation for details.                                                                    |
 +--------------------------------------------------------------+---------------------------------------------------------+
 
 .. config:setting:: ldap-port
@@ -2816,8 +2816,8 @@ OpenID Connect (other) Discovery endpoint
 | String input.                                                                                          |                                                                  |
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | **Note**: The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use    |
-| custom admin roles to limit access to modifying these settings. See the `system admin roles </onboard/system-admin-roles.html#edit-privileges-of-                         |
-| system-admin-roles-advanced>`__ documentation for details.                                                                                                                |
+| custom admin roles to limit access to modifying these settings. See the                                                                                                   |
+| :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system admin roles (advanced)>` documentation for details.                                        |
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 OpenID Connect (other) Client ID
