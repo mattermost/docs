@@ -33,7 +33,7 @@ Prebuilt plugins are available on the `Mattermost Marketplace <https://mattermos
 .. note::
 
     - :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>` customers supports custom Mattermost plugin uploads.
-    - Custom Mattermost plugins aren't available in :doc:`Mattermost Cloud Shared </about/cloud-shared>` deployments. You're limited to the plugins available in the Cloud Marketplace, including: :ref:`Mattermost Calls <configure/plugins-configuration-settings:calls>`, :doc:`GitHub </integrate/github-interoperability>` interoperability, :doc:`GitLab </integrate/gitlab-interoperability>` interoperability, :doc:`Jira </integrate/jira-interoperability>` interoperability, :doc:`ServiceNow </integrate/servicenow-interoperability>` interoperability, and :doc:`Zoom </integrate/zoom-interoperability>`.
+    - Custom Mattermost plugins aren't available in :doc:`Mattermost Cloud Shared </about/cloud-shared>` deployments. You're limited to the plugins available in the Cloud Marketplace, including: :ref:`Mattermost Calls <configure/plugins-configuration-settings:calls>`, :doc:`Mattermost Copilot </configure/enable-copilot>`, :doc:`GitHub </integrate/github-interoperability>` interoperability, :doc:`GitLab </integrate/gitlab-interoperability>` interoperability, :doc:`Jira </integrate/jira-interoperability>` interoperability, :doc:`Playbooks </guides/repeatable-processes>`, :doc:`ServiceNow </integrate/servicenow-interoperability>` interoperability, :doc:`user satisfaction surveys </manage/user-satisfaction-surveys>`, and :doc:`Zoom </integrate/zoom-interoperability>`.
 
 Bots
 -----
