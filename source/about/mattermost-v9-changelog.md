@@ -1,7 +1,7 @@
 # v9 changelog
 
 ```{Important}
-Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/deploy/about/release-policy.html#extended-support-releases) has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
@@ -63,7 +63,7 @@ See [this walkthrough video](https://mattermost.com/video/video-mattermost-v9-9-
  - Increased the maximum password limit from 64 to 72 characters (``PasswordMaximumLength``).
 
 #### Performance
- - Added the initial version of new client-side performance metrics to track web app performance and can be monitored in new Grafana board.
+ - Added the initial version of new client-side performance metrics to track web app performance and can be monitored in new [Grafana board](https://grafana.com/grafana/dashboards/21460-web-app-metrics/).
  - Added a metric to track time it takes for the right-hand side to load.
  - Improved js memory profile of status’s reducers.
  - When a user receives a new post that is part of a thread from a root post in a channel they are not currently viewing, we do not fetch the complete root post and its thread posts immediately. However, we still store the newly received post. The root post and its thread posts are only fetched when the user navigates to that specific channel.
@@ -215,7 +215,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
  - Under ``FileSettings`` in ``config.json``:
    - Added ``AmazonS3UploadPartSizeBytes`` and ``ExportAmazonS3UploadPartSizeBytes`` to control the part size used to upload files to an S3 store.
  - Under ``ServiceSettings`` in ``config.json``:
-   - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+   - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB. Existing servers need to manually update this value.
  - Under ``ClusterSettings`` in ``config.json``:
    - Removed unused settings ``StreamingPort``, ``MaxIdleConns``, ``MaxIdleConnsPerHost`` and ``IdleConnTimeoutMilliseconds``.
 
@@ -260,7 +260,7 @@ New setting option were added to ``config.json``. Below is a list of the additio
   - Mattermost v9.7.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.7.2 contains no database or functional changes.
   - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
-  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB. Existing servers need to manually update this value.
   - Fixed an issue where it was not possible to clear the plugin settings with a default value in the System Console.
 - **9.7.1, released 2024-04-16**
   - Fixed an issue with a noisy log entry for permalink post notifications.
@@ -454,7 +454,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
   - Mattermost v9.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.4 contains no database or functional changes.
   - Pre-packaged Playbooks version [v1.39.3](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.39.3).
-  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB.
+  - Increased the default payload size limit (``MaximumPayloadSizeBytes``) from 100 kB to 300 kB. Existing servers need to manually update this value.
   - Fixed an issue with context cancellation for integration requests.
   - Fixed an issue where end users were not allowed to fetch the group members list of groups that allow ``@-mentions``.
 - **9.5.3, released 2024-03-26**
@@ -1057,7 +1057,7 @@ If you upgrade from a release earlier than v8.1, please read the other [Importan
  - Accelerate mission-critical workflows that keep your team aligned and your data secure on [the Mattermost and Atlassian platforms](https://mattermost.com/atlassian/).
 
 #### Air-Gapped, Edge-Ready Generative AI with Defense Unicorn's LeapfrogAI
- - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://leapfrog.ai/).
+ - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://www.defenseunicorns.com/leapfrogai).
 
 #### AI-Accelerated Collaboration
  - Mattermost partner Mobius Logic has enhanced the MS Teams Connector for the Microsoft 365 platform by embedding Mattermost directly inside [Microsoft Teams](https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html).
