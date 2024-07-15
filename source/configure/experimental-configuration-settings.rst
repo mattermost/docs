@@ -469,7 +469,7 @@ This setting defines how frequently "user is typing..." messages are updated, me
 User's status and profile fetching poll interval
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting configures the number of milliseconds to wait between fetching user statuses and profiles periodically.
+This setting configures the number of milliseconds to wait between fetching user statuses and profiles periodically. Set to ``0`` to disable.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
