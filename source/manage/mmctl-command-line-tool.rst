@@ -483,7 +483,7 @@ Set credentials to use in the following commands.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-Authenticate to a server (e.g. >mmctl auth login https://test.mattermost.com), then enter your username and password (and MFA token if MFA is enabled on the account).
+Authenticate to a server (e.g. >mmctl auth login ``https://test.mattermost.com)``, then enter your username and password (and MFA token if MFA is enabled on the account).
 
 **Password**
 

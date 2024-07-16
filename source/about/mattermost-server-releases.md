@@ -9,15 +9,16 @@
 ```
 
 ## Frequency
-Mattermost releases a new server version on the 16th of each month in [binary form](/upgrade/upgrading-mattermost-server). 
-- See the [v10 changelog](/about/mattermost-v10-changelog) for details on what's coming and changing in the next major release. 
-- See the [v9 changelog](/about/mattermost-v9-changelog) for details on v9.x server releases.
-- See the [unsupported Mattermost legacy releases](/about/unsupported-legacy-releases) documentation for details on older, unsupported  Mattermost releases.
+Mattermost releases a new server version on the 16th of each month in [binary form](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html). 
+- See the [v10 changelog](https://docs.mattermost.com/about/mattermost-v10-changelog.html) for details on what's coming and changing in the next major release. 
+- See the [v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for details on v9.x server releases.
+- See the [unsupported Mattermost legacy releases](https://docs.mattermost.com/about/unsupported-legacy-releases.html) documentation for details on older, unsupported  Mattermost releases.
 
 ## Latest releases
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
+| v9.10 [Download](https://releases.mattermost.com/9.10.0/mattermost-9.10.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-10-feature-release>` | 2024-07-16 | 2024-10-15 |
 | v9.9 [Download](https://releases.mattermost.com/9.9.2/mattermost-9.9.2-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-9-feature-release>` | 2024-06-14 | 2024-09-15 |
 | v9.8 [Download](https://releases.mattermost.com/9.8.3/mattermost-9.8.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-8-feature-release>` | 2024-05-16 | 2024-08-15 |
 | v9.7 [Download](https://releases.mattermost.com/9.7.6/mattermost-9.7.6-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-7-feature-release>` | 2024-04-16 | 2024-07-15 |

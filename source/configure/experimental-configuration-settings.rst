@@ -459,6 +459,22 @@ This setting defines how frequently "user is typing..." messages are updated, me
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-user-status-profile-fetching-poll-interval
+  :displayname: User's status and profile fetching poll interval (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: UsersStatusAndProfileFetchingPollIntervalMilliseconds
+  :environment: N/A
+  :description: The number of milliseconds to wait between fetching user statuses and profiles periodically.
+
+User's status and profile fetching poll interval
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting configures the number of milliseconds to wait between fetching user statuses and profiles periodically. Set to ``0`` to disable.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: exp-primaryteam
   :displayname: Primary team (Experimental)
   :systemconsole: Experimental > Features
@@ -471,7 +487,7 @@ Primary team
 
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
-If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
+If the team URL of the primary team is ``https://example.mattermost.com/myteam/``, then set the value to ``myteam`` in ``config.json``.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |

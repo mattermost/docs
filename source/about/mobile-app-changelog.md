@@ -5,7 +5,33 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
-(release-v2-17-1)=
+## 2.18.0 Release
+ - Release Date: July 16, 2024
+ - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v8.1.0 has ended and upgrading to server ESR v9.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 13.4+ is required.
+
+### Improvements
+ - The app will now send performance metrics to servers v9.10+ that have metrics enabled.
+ - Improved websocket behavior.
+ - Calls: Updated call post user interface.
+ - Calls: Added channel name to the call header.
+ - Calls: Feedback is now provided after user taps **Start call**.
+
+### Bug Fixes
+ - Fixed an issue with the apply button not appearing on iPads when trying to set post priority.
+ - Fixed a crash that occured when sharing a file.
+
+### Open Source Components
+ - Added ``react-native-performance`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 ## 2.17.1 Release
  - Release Date: June 25, 2024
  - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
@@ -928,7 +954,7 @@ Users now gain a more reliable and feature-rich application, improving their exp
  - iPhone 5s devices and later with iOS 12.1+ is required.
 
 ### Breaking Changes
- - The [Apps Framework protocol](https://developers.mattermost.com/integrate/apps/) for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup` calls. If any users have created their own Apps, they have to be updated to the new system.
+ - The Apps Framework protocol for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup` calls. If any users have created their own Apps, they have to be updated to the new system.
 
 ### Improvements
  - Users are now taken directly to the SSO login if only one SSO login method is enabled.
@@ -1465,7 +1491,7 @@ Mattermost Mobile App v1.44.0 contains low to high level security fixes. Upgradi
 ### Highlights
 
 #### Support for Apps Framework (Developer Preview)
- - Apps Framework is now supported on the mobile client and allows developers to create Apps which have interactivity and buttons on mobile. You can learn more at https://developers.mattermost.com/integrate/apps/.
+ - Apps Framework is now supported on the mobile client and allows developers to create Apps which have interactivity and buttons on mobile.
 
 ### Improvements
  - Added avatars to the sidebar Direct Messages and channel info.
@@ -2172,7 +2198,7 @@ Mattermost Mobile App v1.31.2 contains a high level security fix. [Upgrading](ht
 Mattermost Mobile App v1.30.0 contains a high level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
  
 ``` {Note} 
-- v5.9.0 as our Extended Support Release (ESR) is coming to the end of its life cycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020. [Learn more in our forum post](https://forum.mattermost.com/t/upcoming-extended-support-release-updates/8526>).
+- v5.9.0 as our Extended Support Release (ESR) is coming to the end of its life cycle and upgrading to 5.19.0 ESR or a later version is highly recommended. v5.19.0 will continue to be our current ESR until October 15, 2020.
 - [The Channel Moderation Settings feature](/manage/team-channel-members.html#channel-moderation-e20) released in v5.22.0 is supported on mobile app versions v1.30 and later. In earlier versions of the mobile app, users who attempt to post or react to posts without proper permissions will see an error.
 ```
  
@@ -3690,7 +3716,7 @@ Note: If you need an SSL certificate, consider using [Let's Encrypt](https://doc
 
 ### Highlights
 
-The Beta apps are a work in progress, supported features are listed below. You can become a beta tester by [downloading the Android app](https://play.google.com/store/apps/details?id=com.mattermost.react.native&hl=en) or [signing up to test iOS](https://mattermost-fastlane.herokuapp.com/). 
+The Beta apps are a work in progress, supported features are listed below. 
 
 #### Authentication
 - Email login

@@ -46,6 +46,11 @@ You'll be prompted for a username (use your admin user), password, and for a con
 Create the export
 -----------------
 
+.. important::
+
+   If your Mattermost Cloud deployment includes plugins that aren't listed on the Cloud Marketplace, those plugins won't be included in the export, and you won't have access to those plugins going forward. See the :ref:`integrations <about/integrations:plugins>` documentation for a list of Cloud-supported integrations.
+
+
 Once you're logged in, run the following ``mmctl`` command:
 
 .. code::
@@ -227,7 +232,7 @@ The completed file will be downloaded to your desktop as a ``.zip`` file.
    
    Do not rename the file as the file name is referenced in log files, which are used by the Support team to validate the exported file.
 
-The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please contact the Support team and let them know.
+The Support team will provide you with S3 credentials so you can upload the exported file. Once you’ve uploaded the file, please `contact our support team <https://mattermost.com/support/>`_ and let them know.
 
 Create a new workspace on the Mattermost Cloud
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

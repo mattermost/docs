@@ -27,7 +27,7 @@ Register an OAuth app in GitLab
 
 A Mattermost system admin must perform the following steps in GitLab.
 
-1. Go to https://gitlab.com/-/profile/applications or https://gitlab.YOURDOMAIN.com/-/profile/applications, replacing ``YOURDOMAIN.COM`` with your GitHub URL, to register an OAuth app with GitLab.
+1. Go to ``https://gitlab.com/-/profile/applications`` or ``https://gitlab.YOURDOMAIN.com/-/profile/applications``, replacing ``YOURDOMAIN.COM`` with your GitHub URL, to register an OAuth app with GitLab.
 2. Set the following values:
 
   - **Name**: ``Mattermost GitLab Plugin - <YOUR COMPANY NAME>``
@@ -120,7 +120,7 @@ Get help
 
 Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost GitLab plugin repository <https://github.com/mattermost/mattermost-plugin-gitlab>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance, or join us on the  `Mattermost Discussion Forum <https://forum.mattermost.org/c/plugins>`_.
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Customize
 ---------
