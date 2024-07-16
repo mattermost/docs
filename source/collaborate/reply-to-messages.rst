@@ -19,7 +19,7 @@ Reply to messages
 
   Tap on a message to reply to it, or long press and select **Reply**.
 
-Depending on how the system admin has configured Mattermost, you may also be able to :ref:`edit and delete messages <collaborate/send-messages:edit or delete messages>` after you've sent them. Your system admin may also restrict messaging actions, such as editing or deleting messages, by configuring :doc:`advanced permissions </onboard/advanced-permissions>`, available in `Mattermost Enterprise and Professional subscription plans <https://mattermost.com/pricing>`__.
+Depending on how your system admin has configured Mattermost, you may be able to :ref:`edit <collaborate/send-messages:edit messages>`, :ref:`restore <collaborate/send-messages:restore a previous version of an edited message>`, and :ref:`delete <collaborate/send-messages:delete messages>` messages after you've sent them.
 
 .. tip::
 

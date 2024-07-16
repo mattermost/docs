@@ -63,7 +63,7 @@ When these notices are triggered, System Admins receive a bot message notificati
 .. image:: ../images/mattermost_admin_advisor_bot.png
    :alt: An example of an Admin Advisor notice that includes an option for System Admins to contact Mattermost Support. Admin Advisor notices are disabled.
 
-System Admins can optionally contact support for additional assistance. There are also links to useful resources for user management and provisioning to support large systems.
+Commercial customers can `contact our support team <https://mattermost.com/support/>`_ for additional assistance. There are also links on the Support site to useful resources for user management and provisioning to support large systems.
 
 Managing Admin Advisor notices
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

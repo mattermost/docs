@@ -97,5 +97,5 @@ Maximum notifications per channel
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | **Note**: We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics             |
 | </scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions           |
-| controlling who can post to the channel, such as a read-only Town Square channel.                                                                      |
+| controlling who can post to the channel, such as a :ref:`read-only channel <onboard/advanced-permissions:read only channels>`.                         |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------------+
