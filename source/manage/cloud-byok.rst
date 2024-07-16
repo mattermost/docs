@@ -78,4 +78,4 @@ Conclusion
 
 If you are a large enterprise with compliance requirements, or are working in highly-regulated industries, using Mattermost Cloud Dedicated with BYOK ensures full data control.
 
-For any further assistance or queries, `contact our support team <https://mattermost.com/support/>`_.
+For any further assistance or queries, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_

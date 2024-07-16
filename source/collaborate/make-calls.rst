@@ -59,10 +59,7 @@ Start a call
 Host controls
 -------------
 
-From Mattermost v9.9, and Mattermost mobile v2.17, call host controls are available and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, and `lower raised hands <#lower-raised-hands>`__. 
-
-Access host controls
-~~~~~~~~~~~~~~~~~~~~
+From Mattermost v9.9, and Mattermost mobile v2.17, call host controls are available and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, `lower raised hands <#lower-raised-hands>`__, and `end the call for everyone <#end-the-call-for-everyone>`__.
 
 Host controls are available to call hosts and admins in both the call widget by selecting the **More** |more-icon| icon next to a participant's name, and in the expanded the call window as hosts hover over a call participant in the list.
 
@@ -92,6 +89,11 @@ Lower raised hands
 ~~~~~~~~~~~~~~~~~~~
 
 Lower a raised hand by accessing the host controls and selecting **Lower hand**. The participant is notified that their hand was lowered by the host.
+
+End the call for everyone
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v9.10, call hosts who choose to leave a call are prompted to confirm whether they want to leave or end the call for all participants.
 
 Share your screen
 -----------------
