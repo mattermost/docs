@@ -79,7 +79,6 @@ Depending on how the Mattermost server is running, there are several modes under
  Single instance             integrated
  Single instance             rtcd
  High availability cluster   integrated      clustered
- High availability cluster   integrated      single handler
  High availability cluster   rtcd
 ============================ =============== =================
 
@@ -109,14 +108,6 @@ Clustered
 ^^^^^^^^^
 
 This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
-
-.. image:: ../images/calls-deployment-image4.png
-  :alt: A diagram of a single handler deployment.
-
-Single handler
-^^^^^^^^^^^^^^
-
-This is a fallback mode to only let one node in the cluster to host calls. While the plugin would still run on all nodes, all calls will be routed through the handler node. This mode must be enabled by running the instance with a special environment variable set (MM_CALLS_IS_HANDLER=true).
 
 .. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
