@@ -42,7 +42,7 @@ Set up an OAuth application in Azure
  - **Name**: ``Mattermost MS Teams``
  - **Supported account types**: ``Default value (Single tenant)``
  - **Platform**: ``Web``
- - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams/oauth-redirect``
+ - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams-sync/oauth-redirect``
 
 Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Register** to submit the form.
 
