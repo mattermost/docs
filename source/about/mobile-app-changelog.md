@@ -5,6 +5,7 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
+(release-v2-19-0)=
 ## 2.19.0 Release
  - Release Date: August 16, 2024
  - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
