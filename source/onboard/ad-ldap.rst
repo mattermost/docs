@@ -160,7 +160,7 @@ Check that your Entra ID connection settings are correct by running an Entra ID 
 - Check your **Entra ID/AD/LDAP Port** and **Connection Security** settings in the System Console. (**Entra ID/AD/LDAP Port** set to 389 typically uses **Connection Security** set to ``None``. **Entra ID/AD/LDAP Port** set to 636 typically ties to **Connection Security** set to **TLS**).
 - If you're seeing ``x509: certificate signed by unknown authority`` in your logs, try installing an intermediate SSL certificate or have your LDAP server send the complete certificate chain.
 
-If these options don't work, please `contact Mattermost Support <https://mattermost.com/support/>`__.
+If these options don't work, please `contact our support team <https://mattermost.com/support/>`_.
 
 When I first set up and synchronize Entra ID, are the users automatically created in Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -229,7 +229,7 @@ This means the query sent back to the Entra ID server returned no results. We re
 2. Check that the user account exists in the Entra ID server.
 3. Check the Entra ID configuration settings are correct.
 
-If you're still having issues, you can `contact Mattermost Support <https://mattermost.com/support/>`__  for additional troubleshooting.
+If you're still having issues, you can `contact Mattermost Support <https://mattermost.com/support/>`__ for additional troubleshooting.
 
 I updated a user account in Entra ID, and they can no longer log in to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

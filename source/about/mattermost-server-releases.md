@@ -18,6 +18,7 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
+| v9.10 [Download](https://releases.mattermost.com/9.10.0/mattermost-9.10.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-10-feature-release>` | 2024-07-16 | 2024-10-15 |
 | v9.9 [Download](https://releases.mattermost.com/9.9.1/mattermost-9.9.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-9-feature-release>` | 2024-06-14 | 2024-09-15 |
 | v9.8 [Download](https://releases.mattermost.com/9.8.2/mattermost-9.8.2-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-8-feature-release>` | 2024-05-16 | 2024-08-15 |
 | v9.7 [Download](https://releases.mattermost.com/9.7.6/mattermost-9.7.6-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-7-feature-release>` | 2024-04-16 | 2024-07-15 |
