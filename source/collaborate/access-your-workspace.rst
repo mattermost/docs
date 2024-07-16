@@ -71,7 +71,7 @@ When enabled by your system admin, you can log in with the username or email add
 Single Sign-On (SSO)
 --------------------
 
-When enabled by your system admin, you may log in using your GitLab, Google, Office 365, Entra ID (formally known as AD/LDAP), or SAML credentials.
+When enabled by your system admin, you may log in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
 
 .. tab:: GitLab
 
@@ -94,12 +94,12 @@ When enabled by your system admin, you may log in using your GitLab, Google, Off
   .. image:: ../images/sign-in-office365.png
     :alt: Log in to Mattermost with your Office 365 credentials.
 
-.. tab:: Entra ID
+.. tab:: AD/LDAP
 
-  When enabled by your system admin, you can log in with your Entra ID (formally known as AD/LDAP) credentials. This lets you use the same username and password for Mattermost that you use for various other company services.
+  When enabled by your system admin, you can log in with your AD/LDAP credentials. This lets you use the same username and password for Mattermost that you use for various other company services.
 
   .. image:: ../images/sign-in_with_ldap.png
-    :alt: Log in to Mattermost with your Entra ID credentials.
+    :alt: Log in to Mattermost with your AD/LDAP credentials.
 
 .. tab:: SAML
 

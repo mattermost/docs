@@ -74,7 +74,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Right-hand sidebar", "X", "X"
     **AUTHENTICATION**
     "Email-password login", "X", "X", "X"
-    "Entra ID (formally known as AD/LDAP)", "X", "X", "X"
+    "AD/LDAP", "X", "X", "X"
     "SAML SSO", "X", "X", "X"
     "GitLab SSO", "X", "X", "X"
     "Office 365 SSO", "X", "X", "X"

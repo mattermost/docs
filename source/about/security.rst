@@ -23,8 +23,8 @@ Centralized security and administration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Manage users, teams, access control, and system settings in a web-based :doc:`System Console user interface </configure/configuration-settings>`.
-- Centralized authentication through Entra ID and SAML (Mattermost Enterprise and Mattermost Professional).
-- Synchronize users and groups through the built-in :doc:`Entra ID integration </onboard/ad-ldap>` (Mattermost Enterprise).
+- Centralized authentication through AD/LDAP and SAML (Mattermost Enterprise and Mattermost Professional).
+- Synchronize users and groups through the built-in :doc:`AD/LDAP integration </onboard/ad-ldap>` (Mattermost Enterprise).
 
 Transmission security
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +61,7 @@ Authentication safeguards
 - Remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
 - Session fixation, where an attacker can trick the user to authenticate with a known session cookie, does not affect Mattermost users as a new session cookie is set at each login.
 - Remotely reset user passwords via the System Console or via the :ref:`mmctl user reset-password <manage/mmctl-command-line-tool:mmctl user reset-password>` command.
-- Mattermost supports integrated authentication with :doc:`Active Directory and LDAP </onboard/ad-ldap>` (Mattermost Enterprise and Mattermost Professional) as well as :doc:`SAML 2.0 SSO integration </onboard/sso-saml>` with providers including :ref:`Active Directory Federation Services <onboard/ad-ldap:configure Entra ID deployments with multiple domains>`,  :doc:`Okta </onboard/sso-saml-okta>`, among others (Mattermost Enterprise and Mattermost Professional).
+- Mattermost supports integrated authentication with :doc:`Active Directory and LDAP </onboard/ad-ldap>` (Mattermost Enterprise and Mattermost Professional) as well as :doc:`SAML 2.0 SSO integration </onboard/sso-saml>` with providers including :ref:`Active Directory Federation Services <onboard/ad-ldap:configure AD/LDAP deployments with multiple domains>`,  :doc:`Okta </onboard/sso-saml-okta>`, among others (Mattermost Enterprise and Mattermost Professional).
 - The ability to require :doc:`multi-factor authentication </onboard/multi-factor-authentication>` is also available (Mattermost Enterprise and Mattermost Professional).
 
 Access control policy

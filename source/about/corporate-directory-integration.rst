@@ -25,23 +25,23 @@ A core set of features is available with all authentication options to help incr
 - Ability to require multi-factor authentication on log in.
 - For advanced deployments, password requirements for length and special characters can be added.
 
-Entra ID authentication
+AD/LDAP authentication
 ------------------------
 
-:doc:`Entra ID (formally known as AD/LDAP) </onboard/ad-ldap>` is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
+:doc:`AD/LDAP </onboard/ad-ldap>` is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
 
-- Account creation using Entra ID credentials.
-- Entra ID user filters to define which users get access to Mattermost in the form of a query.
-- Ability to use a low-privileged Entra ID account to run queries over a secure TLS or STARTTLS connection.
-- Attribute mapping to place First Name, Last Name, Nickname, and other attributes from Entra ID into Mattermost.
+- Account creation using AD/LDAP credentials.
+- AD/LDAP user filters to define which users get access to Mattermost in the form of a query.
+- Ability to use a low-privileged AD/LDAP account to run queries over a secure TLS or STARTTLS connection.
+- Attribute mapping to place First Name, Last Name, Nickname, and other attributes from AD/LDAP into Mattermost.
 - Customization of login screen to specify whether users are logging in with email, username, or other attribute.
-- Synchronization with Entra ID to disable, enable, and update Mattermost users based on Entra ID.
+- Synchronization with AD/LDAP to disable, enable, and update Mattermost users based on AD/LDAP.
 
 .. note:: 
-   - New user accounts are created when new users log in with their Entra ID credentials. You can optionally pre-create user accounts using the :doc:`bulk loading </onboard/bulk-loading-data>` tool.
-   - If you're using email or username and password authentication :ref:`users can switch to Entra ID manually <onboard/ad-ldap:getting started>`, and the conversion to Entra ID can also be done using the :ref:`mmctl user migrate auth <manage/mmctl-command-line-tool:mmctl user migrate-auth>` command by an IT admin.
+   - New user accounts are created when new users log in with their AD/LDAP credentials. You can optionally pre-create user accounts using the :doc:`bulk loading </onboard/bulk-loading-data>` tool.
+   - If you're using email or username and password authentication :ref:`users can switch to AD/LDAP manually <onboard/ad-ldap:getting started>`, and the conversion to AD/LDAP can also be done using the :ref:`mmctl user migrate auth <manage/mmctl-command-line-tool:mmctl user migrate-auth>` command by an IT admin.
 
-For very large Entra ID instances you can also configure max page size to divide a Mattermost Entra ID query into several pieces to not overtax the authentication server when synchronizing.
+For very large AD/LDAP instances you can also configure max page size to divide a Mattermost AD/LDAP query into several pieces to not overtax the authentication server when synchronizing.
 
 Authentication options outside of a private network
 ---------------------------------------------------
