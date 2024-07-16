@@ -101,19 +101,6 @@ Mattermost configuration
 
 With the Tenant ID, Client ID, and Client secret noted above, the Mattermost plugin is ready for configuration. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for support in completing the base configuration.
 
-Create a user account to act as a bot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-A connected bot is required to sync linked channels.
-
-1. Create a regular user account. We will connect this account later from the Mattermost side.
-2. This account is needed for proxying messages from Mattermost to Microsoft Teams.
-
-   .. image:: ../images/teams-user-as-bot.png
-    :alt: In Microsoft Teams, create a user account to act as a bot.
-
-3. As a system administrator, run the ``/msteams connect-bot`` slash command to connect the bot account, authenticating with the Teams account created above.
-
 Monitor performance
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -130,12 +117,3 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 .. note:: 
   
   Modifications will be necessary for self-hosted Mattermost deployments. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for assistance.
-
-System admin slash commands
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Once Microsoft Teams interoperability is enabled, the following slash commands are available for Mattermost system admins by typing the commands into the Mattermost message text box, and selecting **Send**:
-
-- ``/msteams connect-bot``: Connect the bot account in Mattermost to an account in Microsoft Teams.
-- ``/msteams disconnect-bot``: Disconnect the bot account in Mattermost from the Microsoft Teams account.
-- ``/msteams show-links``: Show all the currently active links including the Mattermost team, Mattermost channel, Microsoft Teams team, and Microsoft Teams channel.
