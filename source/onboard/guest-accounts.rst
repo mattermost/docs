@@ -15,7 +15,9 @@ Guest accounts are a way to collaborate with individuals, such as vendors and co
 .. include:: /onboard/guest-account-access.rst
   :start-after: :nosearch:
 
-Additionally, guest accounts count as a paid user in your Mattermost workspace, but guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
+.. important::
+
+  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.This means that guest accounts count as a paid user in your Mattermost workspace. However, guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
 
 Enable guest accounts
 ----------------------

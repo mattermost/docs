@@ -25,9 +25,13 @@ Site statistics
 | sessions, commands, webhooks, daily and monthly active users,  | - Environment variable: N/A                                 |
 | websocket and database connections, playbooks, and calls.      |                                                             |
 +----------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: Bots, deactivated users, and synthetic users in                                                                    |
-| :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                              |
-| and :doc:`shared channels users </onboard/shared-channels>` aren't counted towards the total number of activated users.      |
+| **Notes**:                                                                                                                   |
+|                                                                                                                              |
+| - Bots, deactivated users, and synthetic users in                                                                            |
+|   :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                            |
+|   and :doc:`shared channels users </onboard/shared-channels>` aren't counted towards the total number of activated users.    |
+| - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is     |
+|   deactivated.This means that guest accounts count as a paid user in your Mattermost workspace.                              |
 +---------------------------------------------------------------+--------------------------------------------------------------+
 
 ----

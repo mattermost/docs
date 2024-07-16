@@ -8,12 +8,14 @@ Data retention policy
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-By default, Mattermost stores all message history providing an unlimited search history to System Admins and end users.
+Mattermost stores all message history providing an unlimited search history to System Admins and end users. 
 
-In Mattermost Enterprise, you can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages.
+Mattermost Enterprise customers can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages in order to meet data retention compliance requirements. 
 
 .. warning:: 
-  Once a message or a file is deleted, the action is irreversible. Please use caution when setting up global or custom data retention policies.
+
+  - By default, Mattermost uses a “soft delete” system where messages and files deleted based on user actions are removed from the user interface, but persist in the Mattermost database.
+  - Once a message or a file is permanently deleted, the action is irreversible. We recommend using caution when setting up global or custom data retention policies to avoid data loss.
 
 Configure a global data retention policy
 -----------------------------------------

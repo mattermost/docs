@@ -15,6 +15,8 @@ Primary use cases include:
 
 Mattermost is used as a secure collaboration hub by technical and operational teams, with critical documents and data shared on a daily basis. Thus, legal hold is a key requirement for Enterprises and public sector organizations who have deployed Mattermost for their teams, to meet compliance & auditory requirements while minimizing risk.
 
+Mattermost legal hold can be combined with :doc:`eDiscovery </comply/electronic-discovery>` integration and :doc;`data retention policies <comply/data-retention-policy>` to customize the data retained and deleted to comply with compliance requirements.
+
 Legal hold demo (Sneak Peek)
 ----------------------------
 

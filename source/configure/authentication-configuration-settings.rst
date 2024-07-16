@@ -172,7 +172,7 @@ Require email verification
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: email-enablesigninwithemail
-  :displayname: Enable sign-in with email (Signu
+  :displayname: Enable sign-in with email (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignInWithEmail
   :environment: MM_EMAILSETTINGS_ENABLESIGNINWITHEMAIL
@@ -211,6 +211,8 @@ Enable sign-in with username
 |   sign-in.                                                                               | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNINWITHUSERNAME``  |
 | - **false**: Disables authenticaton with a username and removes the sign in option from. |                                                                        |
 |   from the login screen.                                                                 |                                                                        |
++------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: We highly recommended that email-based authentication is only used in small teams on private networks.                                                  |
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 ----
@@ -2895,7 +2897,8 @@ Enable guest access
 | - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``.GuestAccountsSettings.Enable: false`` |
 |                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
-| **Note**: See the :doc:`Guest Accounts </onboard/guest-accounts>` documentation for details.                                         |
+| **Note**: For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is     |
+| deactivated.This means that guest accounts count as a paid user in your Mattermost workspace.                                        |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains
