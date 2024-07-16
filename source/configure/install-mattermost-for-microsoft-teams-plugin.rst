@@ -129,7 +129,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 
 .. note:: 
   
-  Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
+  Modifications will be necessary for self-hosted Mattermost deployments. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for assistance.
 
 System admin slash commands
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
