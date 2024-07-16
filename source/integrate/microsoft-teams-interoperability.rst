@@ -65,18 +65,10 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 
 9. Select **Delegated permissions**, and scroll down to select the following permissions:
 
- - ``Channel.ReadBasic.All``
- - ``ChannelMessage.Read.All``
- - ``ChannelMessage.ReadWrite``
- - ``ChannelMessage.Send``
- - ``Chat.Create``
- - ``Chat.ReadWrite``
+ - ``Chat.Read``
  - ``ChatMessage.Read``
- - ``Directory.Read.All``
  - ``Files.Read.All``
- - ``Files.ReadWrite.All``
  - ``offline_access``
- - ``Team.ReadBasic.All``
  - ``User.Read``
 
 10. Select **Add permissions** to submit the form.
@@ -85,14 +77,7 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 
 12. Select the following permissions:
 
- - ``Channel.ReadBasic.All``
- - ``ChannelMessage.Read.All``
  - ``Chat.Read.All``
- - ``Files.Read.All``
- - ``Group.Read.All``
- - ``Team.ReadBasic.All``
- - ``User.Read.All``
- - ``Application.ReadWrite.OwnedBy`` (or ``Application.Read.All``)
 
 13. Select **Add permissions** to submit the form.
 
