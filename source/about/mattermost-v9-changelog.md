@@ -1,10 +1,112 @@
 # v9 changelog
 
 ```{Important}
-Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
+
+(release-v9-11-feature-release)=
+## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2024-08-16**
+
+### Important Upgrade Notes
+
+ - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10. The official v8 client only works from Elasticsearch v7.10+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
+     - Note: The value cannot be dynamically changed from the system console while the server is running. One needs to restart the server if you are switching from one backend to another. And either use mmctl or manually edit the config. 
+     - If you are using Opensearch, you _must_ set the backend to opensearch. Otherwise MM will not work. 
+     - If you are using ES v8, be sure to set `action.destructive_requires_name` to false in elasticsearch.yml to allow for wildcard operations to work.
+
+```{Important}
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged GitHub plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.3.0).
+ - Pre-packaged Calls version [v0.29.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.0).
+ - Added user interface improvements to the keyboard shortcuts modal.
+ - Added a message "Editing this message with an “@mention'’ will not notify the recipient" in the post edit dialog.
+ - Made the appearance of several tooltips more consistent.
+ - Updated the help text in the **Direct Messages** modal.
+ - User interface: Emojis are now placed at cursor position while editing messages.
+ - Made keyboard shortcuts modal content div accessible via the keyboard.
+ - Added Channel Bookmarks user interface (disabled and behind a feature flag).
+
+#### Administration
+ - Added a new feature where an admin with user management permission can edit a user's settings.
+ - Added download functionality for admins to download server logs from **Server Logs** page in the **System Console**.
+ - LDAP vendor errors are now included in the Support Packet.
+ - Added metadata to the Support Packet.
+ - We are now adding the user's ID and session ID to the audit log's Actor field for the login event, to match what we provide for the logout event.
+ - Added support for custom status in bulk export/import.
+ - Marked the ``RemoteTeamId`` field of the ``RemoteCluster`` entity as deprecated.
+ - Added log ``Name`` and ``DisplayName`` of groups.
+ - Logged fields of users are now updated.
+
+#### Performance
+ - Added platform related information to the notification metrics.
+ - Added additional information to INP and LCP client metrics.
+ - Added minor performance improvements to webapp initialization.
+
+#### mmctl
+ - Added two new commands to mmctl, ``mmctl job list`` and ``mmctl job update``.
+ - Panic message is now printed when mmctl panics.
+ - Setting ``AdvancedLoggingJSON`` via mmctl is now allowed.
+
+### Bug Fixes
+ - Fixed an issue that displayed a wrong count for custom group members on the notification warning.
+ - Fixed a panic when the password was too long.
+ - Fixed an issue where configuration patches through mmctl did not correctly merge plugin configuration values.
+ - Fixed issues with the OpenID local development.
+ - Fixed an issue where Latex was not rendered in a code block as code when Latex rendering was disabled.
+ - Fixed an issue with saving custom roles.
+ - Fixed an issue with the left-hand side scrollbar auto-hide functionality for Chrome and Safari.
+ - Fixed Group Message to private channel conversion edge cases.
+ - Fixed an issue where users with the user management permission were unable to view the list of users in the **System Console > Users** page.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``TerminateSessionsOnPasswordChange`` to configure the sessions revocation during password resets.
+
+#### Changes to the Enterprise plan:
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+    - Added ``Backend`` to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch.
+
+### API Changes
+ - Added a new plugin API to create a common support packet.
+ - Added new API endpoints to manage remote clusters.
+ - Added two new query parameters to ``GET /api/v4/jobs, job_type`` and status.
+ - Added a new endpoint ``PATCH /api/v4/jobs/{job_id}/status``.
+ - Updated ``AddChannelMember`` to accept a list of userIds.
+ - Added six new permissions to manage the status of particular jobs:
+     - ``PermissionManagePostBleveIndexesJob``
+     - ``PermissionManageDataRetentionJob``
+     - ``PermissionManageComplianceExportJob``
+     - ``PermissionManageElasticsearchPostIndexingJob``
+     - ``PermissionManageElasticsearchPostAggregationJob``
+     - ``PermissionManageLdapSyncJob``
+
+### Go Version
+ - v9.11 is built with Go ``v1.21.8``.
+
+### Open Source Components
+ - Removed ``stylelint`` and added ``elastic/go-elasticsearch`` to https://github.com/mattermost/mattermost/.
+
+### Known Issues
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - 
 
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
