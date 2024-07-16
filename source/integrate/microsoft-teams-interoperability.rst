@@ -86,7 +86,7 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
+Follow the steps here to associate your application with a paid subscription: https://learn.microsoft.com/en-us/graph/metered-api-setup
 
 .. important::
 
