@@ -9,7 +9,13 @@ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.matte
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: 2024-07-16**
+- **9.10.1, released **
+  - Mattermost v9.10.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Mattermost Copilot plugin version [v0.8.3](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.3).
+  - Ensured that the web app only requests notification permissions when needed. Fixed an issue with desktop notifications not being sent on Safari [MM-59416](https://mattermost.atlassian.net/browse/MM-59416).
+  - Mattermost v9.10.1 contains no database or functional changes.
+- **9.10.0, released 2024-07-16**
+  - Original 9.10.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
