@@ -278,7 +278,7 @@ Users will need to temporarily enable third-party cookies in their browser durin
 What does the error message ``'/(name)' not found`` mean?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider setting Mattermost log settings to DEBUG to enable debug logging and give more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
+If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider :ref:`enabling debug logging <manage/logging:how do i enable debug logging?>` to log more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
 
 Debug logging can cause log files to expand substantially, and may adversely impact the server performance. Keep an eye on your server logs, or only enable it temporarily or in development environments, and not production enviornments.
 
