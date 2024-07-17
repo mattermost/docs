@@ -12,9 +12,9 @@ Installing PostgreSQL database
 
   ``sudo yum install postgresql-server postgresql-contrib``
   
-Confirm this version is PostgreSQL version 10 or higher. You can do this by running ``psql -V``. If this isn't version 10 or higher you can reference the PostgreSQL documentation [here](https://www.postgresql.org/download/linux/redhat/) to install an updated version of PostgreSQL.
+Confirm this version is PostgreSQL 11 or higher. You can do this by running ``psql -V``. If this isn't version 11 or higher you can reference the PostgreSQL documentation [here](https://www.postgresql.org/download/linux/redhat/) to install an updated version of PostgreSQL.
 
-3. Initialize the database.
+1. Initialize the database.
 
   ``sudo postgresql-setup initdb``
 
