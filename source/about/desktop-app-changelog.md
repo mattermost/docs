@@ -17,7 +17,7 @@ Mattermost v5.9.0 contains a medium severity level security fix. Upgrading is hi
 ```
 
 ```{Note}
-Mattermost v5.9.0 is the first Extended Support Release for the Desktop App. See more details in [this documentation](https://docs.mattermost.com/about/release-policy.html#extended-support-releases).
+v5.9.0 is the first Extended Support Release for the Desktop App. See more details in [this documentation](https://docs.mattermost.com/about/release-policy.html#extended-support-releases).
 ```
 
 ### Compatibility
@@ -51,7 +51,7 @@ Mattermost v5.9.0 is the first Extended Support Release for the Desktop App. See
 ### Known Issues
 
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
-- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set.``. This message can be safely ignored.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
 - On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
 - Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
