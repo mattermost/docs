@@ -23,6 +23,7 @@ v5.9.0 is the first Extended Support Release for the Desktop App. See more detai
 ### Compatibility
 
 - Desktop App is supported on any currently {ref}`supported Mattermost server version <mattermost-server-releases>`.
+- Updated Chromium minimum supported version to 126+.
 
 ### Improvements
 
@@ -31,6 +32,10 @@ v5.9.0 is the first Extended Support Release for the Desktop App. See more detai
 - Dropped support for 32-bit Windows and added support for ARM64 (beta).
 - Dropped support for the EXE/NSIS installer, shipping only the MSI.
 - Added a permissions manager user interface in the **Edit Server** modal, and improved permission checks to be less missable.
+
+### Architectural Changes
+
+- Minor version upgrade of Electron to 31.2.1. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
