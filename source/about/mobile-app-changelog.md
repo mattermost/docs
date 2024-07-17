@@ -16,14 +16,14 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
 ### Improvements
- - Calls: Incoming calls on DMs and GMs ring; ringtone is selectable in the settings menu.
+ - Calls: Incoming calls on Direct Messages and Group Messages ring; ringtone is selectable in the settings menu.
  - Calls: Added stop recording confirmation; redesigned the header of the call screen to better display recording badge. 
  - Calls: Added an end call confirmation and an “End call for everyone” option for the call host.
  - Improved how UUIDs are generated.
  - Restored "Out of Channel" section in the user autocomplete.
 
 ### Open Source Components
- - Added ``@rneui/base, expo``, ``expo-application``, ``expo-crypto``, ``expo-device``, ``expo-image``, ``expo-linear-gradient``, ``expo-store-review`` and ``expo-video-thumbnails``, ``expo-web-browser``; removed ``react-native-create-thumbnail``, ``react-native-fast-image``, ``react-native-hw-keyboard-event`` from https://github.com/mattermost/mattermost-mobile.
+ - Added ``@rneui/base, expo``, ``expo-application``, ``expo-crypto``, ``expo-device``, ``expo-image``, ``expo-linear-gradient``, ``expo-store-review`` and ``expo-video-thumbnails``, ``expo-web-browser``, and removed ``react-native-create-thumbnail``, ``react-native-fast-image`` and ``react-native-hw-keyboard-event`` from https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
