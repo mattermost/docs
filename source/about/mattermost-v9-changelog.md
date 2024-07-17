@@ -14,9 +14,9 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 ### Important Upgrade Notes
 
  - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10. The official v8 client only works from Elasticsearch v7.10+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
-     - Note: The value cannot be dynamically changed from the system console while the server is running. One needs to restart the server if you are switching from one backend to another. And either use mmctl or manually edit the config. 
-     - If you are using Opensearch, you _must_ set the backend to opensearch. Otherwise MM will not work. 
-     - If you are using ES v8, be sure to set `action.destructive_requires_name` to false in elasticsearch.yml to allow for wildcard operations to work.
+     - Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to restart the server if you are switching from one backend to another, and either use mmctl or edit the config manually. 
+     - If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work. 
+     - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in elasticsearch.yml to allow for wildcard operations to work.
 
 ```{Important}
 If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -25,18 +25,18 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged GitHub plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.3.0).
  - Pre-packaged Calls version [v0.29.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.0).
+ - Pre-packaged GitHub plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.3.0).
  - Added user interface improvements to the keyboard shortcuts modal.
  - Added a message "Editing this message with an “@mention'’ will not notify the recipient" in the post edit dialog.
  - Made the appearance of several tooltips more consistent.
  - Updated the help text in the **Direct Messages** modal.
- - User interface: Emojis are now placed at cursor position while editing messages.
- - Made keyboard shortcuts modal content div accessible via the keyboard.
- - Added Channel Bookmarks user interface (disabled and behind a feature flag).
+ - Emojis are now placed at cursor position while editing messages.
+ - Made keyboard shortcuts modal content DIV-accessible via the keyboard.
+ - Added Channel Bookmarks user interface (disabled by default and behind a feature flag).
 
 #### Administration
- - Added a new feature where an admin with user management permission can edit a user's settings.
+ - Added a new feature where an admin with user management permission can now edit a user's settings.
  - Added download functionality for admins to download server logs from **Server Logs** page in the **System Console**.
  - LDAP vendor errors are now included in the Support Packet.
  - Added metadata to the Support Packet.
@@ -96,7 +96,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v9.11 is built with Go ``v1.21.8``.
 
 ### Open Source Components
- - Removed ``stylelint`` and added ``elastic/go-elasticsearch`` to https://github.com/mattermost/mattermost/.
+ - Removed ``stylelint``, and added ``elastic/go-elasticsearch`` to https://github.com/mattermost/mattermost/.
 
 ### Known Issues
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
