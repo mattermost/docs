@@ -45,7 +45,7 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v122+", "v122+"
+    "Chrome", "v126+", "v126+"
     "Firefox", "v115+", "v115+"
     "Safari", "v17+", "v17+"
     "Edge", "v122+", "v122+"
