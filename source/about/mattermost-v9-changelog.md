@@ -13,6 +13,7 @@ Support for Mattermost Server v8.1 [Extended Support Release](https://docs.matte
   - Mattermost v9.10.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Mattermost Copilot plugin version [v0.8.3](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.3).
   - Ensured that the web app only requests notification permissions when needed. Fixed an issue with desktop notifications not being sent on Safari [MM-59416](https://mattermost.atlassian.net/browse/MM-59416).
+  - Fixed an issue where the app crashed on iOS Safari [MM-59296](https://mattermost.atlassian.net/browse/MM-59296).
   - Mattermost v9.10.1 contains no database or functional changes.
 - **9.10.0, released 2024-07-16**
   - Original 9.10.0 release.
@@ -72,10 +73,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v9.10 is built with Go ``v1.21.8``.
 
 ### Known Issues
- - The web browser does not open on iOS Safari in v9.10.0 [MM-59296](https://mattermost.atlassian.net/browse/MM-59296).
- - Desktop notifications do not work on Safari in v9.10.0 [MM-59416](https://mattermost.atlassian.net/browse/MM-59416).
- - The screen crashes when clicking on SAML 2.0 option in the System Console on Free instances in v9.10.0 [MM-59406](https://mattermost.atlassian.net/browse/MM-59406).
- - The AI Copilot is missing from the Cloud Marketplace in v9.10.0.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
