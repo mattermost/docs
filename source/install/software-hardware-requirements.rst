@@ -72,8 +72,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 13.4+ with Safari 17+ or Chrome 122+"
-    "Android", "Android 7+ with Chrome 122+"
+    "iOS", "iOS 13.4+ with Safari 17+ or Chrome 126+"
+    "Android", "Android 7+ with Chrome 126+"
 
 Email client
 ^^^^^^^^^^^^
