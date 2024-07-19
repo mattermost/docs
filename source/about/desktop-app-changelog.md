@@ -42,6 +42,7 @@ v5.9.0 is the first Extended Support Release for the Desktop App. See more detai
 #### Windows
 
 - Fixed an issue where the window size would get smaller on Windows after a restart if the primary monitor was used and was scaled.
+- Fixed an issue where snapping the window on Windows would sometimes cause the inner ``BrowserView`` not to resize.
 
 #### All Platforms
 
