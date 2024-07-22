@@ -21,6 +21,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 126+.
+ - Added Ubuntu Noble support.
 
 ```{Important}
 If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
