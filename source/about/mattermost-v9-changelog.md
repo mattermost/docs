@@ -71,6 +71,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Fixed an issue with the left-hand side scrollbar auto-hide functionality for Chrome and Safari.
  - Fixed Group Message to private channel conversion edge cases.
  - Fixed an issue where users with the user management permission were unable to view the list of users in the **System Console > Users** page.
+ - Fixed more web app performance reports being marked as outdated after a user's computer woke up from sleep.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
