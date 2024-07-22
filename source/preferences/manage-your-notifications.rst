@@ -121,7 +121,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
 .. tab:: Replies
 
-  If :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
+  If :doc:`Threaded discussions </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Threaded discussions is enabled.
 
   **Automatic replies**
 

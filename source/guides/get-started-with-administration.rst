@@ -91,7 +91,7 @@ Advanced workspace management
     In-product notices </manage/in-product-notices>
     User satisfaction surveys </manage/user-satisfaction-surveys>
     Health check </manage/health-checks>
-    Announcement banner </manage/announcement-banner>
+    System-wide notifications </manage/system-wide-notifications>
     Bulk export tool </manage/bulk-export-tool>
 
 * :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
@@ -99,5 +99,5 @@ Advanced workspace management
 * :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
 * :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
 * :doc:`Health check </manage/health-checks>` - Configure health probes for your Mattermost server.
-* :doc:`Announcement banner </manage/announcement-banner>` - Display notices to your users via an announcement banner.
+* :doc:`System-wide notifications </manage/system-wide-notifications>` - Display system-wide notifications to all users across all teams.
 * :doc:`Bulk export tool </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.

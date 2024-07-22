@@ -77,14 +77,14 @@ Modes of operation
 
 Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
-============================ =============== =================
- Mattermost deployment       SFU             SFU deployment
-============================ =============== =================
- Single instance             integrated
- Single instance             rtcd
- High availability cluster   integrated      clustered
- High availability cluster   rtcd
-============================ =============== =================
+============================       =============== =================
+ Mattermost deployment             SFU             SFU deployment
+============================       =============== =================
+ Single instance                   integrated
+ Single instance                   rtcd
+ High availability cluster-based   integrated      clustered
+ High availability cluster-based   rtcd
+================================   =============== =================
 
 Single instance
 ~~~~~~~~~~~~~~~
@@ -105,19 +105,19 @@ An external, dedicated and scalable WebRTC service (``rtcd``) is used to handle 
 .. image:: ../images/calls-deployment-image7.png
   :alt: A diagram of a Web RTC deployment configuration.
 
-High availability cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
+High availability cluster-based
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clustered
 ^^^^^^^^^
 
-This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
+This is the default mode when running the plugin in a high availability cluster-based deployment. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
 .. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
 
-rtcd (HA)
-^^^^^^^^^^
+rtcd (High Availability)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/calls-deployment-image2.png
   :alt: A diagram of an rtcd deployment.

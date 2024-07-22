@@ -61,15 +61,15 @@ Channel permissions
 
 The channel permissions interface is accessed in **System Console > User Management > Channels**.
 
-Channel moderation
-~~~~~~~~~~~~~~~~~~~
+Advanced access controls
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This content has moved to :doc:`team and channel management </manage/team-channel-members>`.
+See the :ref:`team and channel management <manage/team-channel-members:advanced access controls>` documentation for details.
 
 Supplementary roles
 ~~~~~~~~~~~~~~~~~~~~
 
-*Available in a future release of Mattermost Enterprise*
+*Being considered for a future release of Mattermost Enterprise*
 
 Allows admins to grant additional permissions to specific users or to a group of users based on AD/LDAP group membership. Permissions can be granted within the scope of channels, teams, or system level.
 

@@ -1,5 +1,5 @@
-High availability cluster
-=========================
+High availability cluster-based deployment
+===========================================
 
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
@@ -8,7 +8,7 @@ High availability cluster
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-A High availability cluster enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
+A High availability cluster-based deployment enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
@@ -28,19 +28,16 @@ Update sequence for continuous operation
 Deployment guide
 ----------------
 
-Deployment guide to set up and maintain high availability on your Mattermost servers. This document doesn't cover the configuration of databases in terms of disaster recovery, however, you can refer to the `frequently asked questions (FAQ)`_ section for our recommendations.
+Set up and maintain a high availability cluster-based deployment on your Mattermost servers. This document doesn't cover the configuration of databases in terms of disaster recovery, however, you can refer to the `frequently asked questions (FAQ)`_ section for our recommendations.
 
-Initial setup guide for high availability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To ensure your instance and configuration are compatible with high availability, please review the `configuration and compatibility`_ section.
+To ensure your instance and configuration are compatible with a high availability cluster-based deployment, please review the `configuration and compatibility`_ section.
 
 .. note::
   
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
 1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability configuration settings <configure/environment-configuration-settings:high availability>` documentation for details.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based  deployment configuration settings <configure/environment-configuration-settings:high availability cluster-based deployment>` documentation for details.
 3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
 5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -469,11 +466,11 @@ An update is an incremental change to Mattermost server that fixes bugs or perfo
 Update configuration changes while operating continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A service interruption is not required for most configuration updates. See the section below for details on upgrades requiring service interruption. You can apply updates during a period of low load, but if your high availability cluster is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
+A service interruption is not required for most configuration updates. See the section below for details on upgrades requiring service interruption. You can apply updates during a period of low load, but if your high availability cluster-based deployment is sized correctly, you can do it at any time. The system downtime is brief, and depends on the number of Mattermost servers in your cluster. Note that you are not restarting the machines, only the Mattermost server applications. A Mattermost server restart generally takes about five seconds.
 
 .. note::
 
-  Don't modify configuration settings through the System Console, otherwise you'll have two servers with different ``config.json`` files in a high availability cluster causing a refresh every time a user connects to a different app server.
+  Don't modify configuration settings through the System Console, otherwise you'll have two servers with different ``config.json`` files in a high availability cluster-based deployment causing a refresh every time a user connects to a different app server.
 
 1. Make a backup of your existing ``config.json`` file.
 2. For one of the Mattermost servers, make the configuration changes to ``config.json`` and save the file. Do not reload the file yet.
@@ -560,13 +557,13 @@ All cluster nodes must use a single protocol
 
 All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no longer be disabled <configure/deprecated-configuration-settings:use gossip>`.
 
-When upgrading a high availability cluster, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete a high availability upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
+When upgrading a high availability cluster-based deployment, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete this type of upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
 Frequently asked questions (FAQ)
 ---------------------------------
 
-Does Mattermost support multi-region high availability deployment?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Does Mattermost support multi-region high availability cluster-based deployment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. Although not officially tested, you can set up a cluster across AWS regions, for example, and it should work without issues.
 
@@ -591,17 +588,17 @@ You may be asked to provide this data to Mattermost for analysis and troubleshoo
 
   - Ensure that server log files are being created. You can find more on working with Mattermost logs :ref:`here <install/troubleshooting:review mattermost logs>`.
   - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
-  - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster.
+  - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster-based deployment.
 
 Red server status
 ~~~~~~~~~~~~~~~~~
 
-When high availability is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
+When high availability mode is enabled, the System Console displays the server status as red or green, indicating if the servers are communicating correctly with the cluster. The servers use inter-node communication to ping the other machines in the cluster, and once a ping is established the servers exchange information, such as server version and configuration files.
 
 A server status of red can occur for the following reasons:
 
-- **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same configuration file to function properly.
-- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.com/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server` for any server that needs to be upgraded.
+- **Configuration file mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability mode feature assumes the same configuration file to function properly.
+- **Server version mismatch:** Mattermost will still attempt the inter-node communication, but the System Console will show a red status for the server since the high availability mode feature assumes the same version of Mattermost is installed on each server in the cluster. It is recommended to use the `latest version of Mattermost <https://mattermost.com/download/>`__ on all servers. Follow the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server` for any server that needs to be upgraded.
 - **Server is down:** If an inter-node communication fails to send a message it makes another attempt in 15 seconds. If the second attempt fails, the server is assumed to be down. An error message is written to the logs and the System Console shows a status of red for that server. The inter-node communication continues to ping the down server in 15 second intervals. When the server comes back up, any new messages are sent to it.
 
 WebSocket disconnect
@@ -612,7 +609,7 @@ When a client WebSocket receives a disconnect it will automatically attempt to r
 App refreshes continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster.
+When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster-based deployment.
 
 Modify configuration settings directly through ``config.json`` :ref:`following these steps <scale/high-availability-cluster:update configuration changes while operating continuously>`.
 

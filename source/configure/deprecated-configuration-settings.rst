@@ -298,7 +298,7 @@ Deprecated. Not used in Mattermost v6.0 and later.
 Town Square is read-only
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v.6.0, this feature has been deprecated in favor of :ref:`channel moderation <manage/team-channel-members:channel moderation>` which allows you to set any channel as read-only, including Town Square.
+From Mattermost v.6.0, this feature has been deprecated in favor of :ref:`advanced access controls <manage/team-channel-members:advanced access controls>` which allows you to set any channel as read-only, including Town Square.
 
 ----
 

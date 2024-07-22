@@ -102,7 +102,7 @@ Server Configuration Settings
 Commercial License Information (Enterprise Edition only)
   Information about commercial license key purchased or trial license key used for Enterprise Edition servers: Company ID, license ID, license issue date, license start date, license expiry date, number of licensed users, license name, list of unlocked subscription features.
 
-Channel Moderation Configuration Information (Enterprise Edition only)
+Advanced Access Controls Configuration Information (Enterprise Edition only)
   Information related to channel moderation, including number of channel schemes, number of channels with posting messages disabled for users or guests, number of channels with emoji reactions disabled for users or guests, number of channels with managing members disabled, number of channels with channel mentions disabled for users or guests.
   
 Channel Member Management Information (Enterprise Edition only)
@@ -160,7 +160,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Group Discovery Diagnostics:* Provides information related to AD/LDAP (Enterprise Edition only) and custom groups (Enterprise and Professional Edition only), including number of unique users in groups, number of groups synchronized to Mattermost, teams and channels associated to groups, teams and channels synchronized with groups, and number of group members.
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
-  - *Collapsed Reply Threads:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
+  - *Threaded discussions:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
 
 Playbooks telemetry
 --------------------

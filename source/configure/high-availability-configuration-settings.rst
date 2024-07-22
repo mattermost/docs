@@ -3,9 +3,9 @@
 :orphan:
 :nosearch:
 
-You can configure Mattermost as a :doc:`high availability environment </scale/high-availability-cluster>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure Mattermost as a :doc:`high availability cluster-based deployment </scale/high-availability-cluster-cluster-based-deployment>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-In a Mattermost high availability cluster deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
+In a Mattermost high availability cluster-based deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability cluster-based environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
 .. config:setting:: ha-enable
   :displayname: Enable high availability mode (High Availability)
@@ -40,7 +40,7 @@ Enable high availability mode
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.ClusterName
   :environment: MM_CLUSTERSETTINGS_CLUSTERNAME
-  :description: The cluster to join by name in a high availability environment.
+  :description: The cluster to join by name in a high availability cluster-based deployment.
 
 Cluster name
 ~~~~~~~~~~~~
@@ -49,13 +49,13 @@ Cluster name
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
-| The cluster to join by name in a high availability environment. | - System Config path: **Environment > High Availability**       |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
-| Only nodes with the same cluster name will join together.       | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``      |
-| This is to support blue-green deployments or staging pointing   |                                                                 |
-| to the same database.                                           |                                                                 |
-+-----------------------------------------------------------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------+-----------------------------------------------------------------+
+| The cluster to join by name in a high availability cluster-based deployment. | - System Config path: **Environment > High Availability**       |
+|                                                                              | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
+| Only nodes with the same cluster name will join together.                    | - Environment variable: ``MM_CLUSTERSETTINGS_CLUSTERNAME``      |
+| This is to support blue-green deployments or staging pointing                |                                                                 |
+| to the same database.                                                        |                                                                 |
++------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: ha-overridehostname
   :displayname: Override hostname (High Availability)
@@ -71,17 +71,17 @@ Override hostname
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-+-----------------------------------------------------------------+----------------------------------------------------------------------+
-| You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**            |
-|                                                                 | - ``config.json`` setting: ``".ClusterSettings.OverrideHostname",``  |
-| - This property can be set to a specific IP address if needed;  | - Environment variable: ``MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME``      |
-|   however, we don’t recommend overriding the hostname unless    |                                                                      |
-|   it's necessary.                                               |                                                                      |
-| - If left blank, Mattermost attempts to get the hostname from   |                                                                      |
-|   the operating system or uses the IP address.                  |                                                                      |
-+-----------------------------------------------------------------+----------------------------------------------------------------------+
-| See the :doc:`high availability cluster </scale/high-availability-cluster>` documentation for details.                                 |
-+-----------------------------------------------------------------+----------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------+
+| You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**              |
+|                                                                 | - ``config.json`` setting: ``".ClusterSettings.OverrideHostname",``    |
+| - This property can be set to a specific IP address if needed;  | - Environment variable: ``MM_CLUSTERSETTINGS_OVERRIDEHOSTNAME``        |
+|   however, we don’t recommend overriding the hostname unless    |                                                                        |
+|   it's necessary.                                               |                                                                        |
+| - If left blank, Mattermost attempts to get the hostname from   |                                                                        |
+|   the operating system or uses the IP address.                  |                                                                        |
++-----------------------------------------------------------------+------------------------------------------------------------------------+
+| See the :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` documentation for details. |
++-----------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: ha-useipaddress
   :displayname: Use IP address (High Availability)
@@ -99,15 +99,15 @@ Use IP address
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
-| You can configure your high availability environment to         | - System Config path: **Environment > High Availability**              |
-| communicate using the hostname instead of the IP address.       | - ``config.json`` setting: ``".ClusterSettings.UseIPAddress: true",``  |
-|                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_USEIPADDRESS``            |
-| - **true**: **(Default)** The cluster attempts to communicate   |                                                                        |
-|   using the IP address specified.                               |                                                                        |
-| - **false**: The cluster attempts to communicate using the      |                                                                        |
-|   hostname.                                                     |                                                                        |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
++------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| You can configure your high availability cluster-based deployment to         | - System Config path: **Environment > High Availability**              |
+| communicate using the hostname instead of the IP address.                    | - ``config.json`` setting: ``".ClusterSettings.UseIPAddress: true",``  |
+|                                                                              | - Environment variable: ``MM_CLUSTERSETTINGS_USEIPADDRESS``            |
+| - **true**: **(Default)** The cluster attempts to communicate                |                                                                        |
+|   using the IP address specified.                                            |                                                                        |
+| - **false**: The cluster attempts to communicate using the                   |                                                                        |
+|   hostname.                                                                  |                                                                        |
++------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: ha-usegossip
   :displayname: Use gossip (High Availability)
@@ -217,7 +217,7 @@ Read only config
   :systemconsole: N/A
   :configjson: .ClusterSettings.NetworkInterface
   :environment: MM_CLUSTERSETTINGS_NETWORKINTERFACE
-  :description: An IP address used to identify the device that does automatic IP detection in high availability clusters.
+  :description: An IP address used to identify the device that does automatic IP detection in high availability cluster-based deployments.
 
 Network interface
 ~~~~~~~~~~~~~~~~~
@@ -228,7 +228,7 @@ Network interface
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | An IP address used to identify the device that does automatic   | - System Config path: N/A                                              |
-| IP detection in high availability clusters.                     | - ``config.json`` setting: ``".ClusterSettings.NetworkInterface: "",`` |
+| IP detection in high availability cluster-based deployments.    | - ``config.json`` setting: ``".ClusterSettings.NetworkInterface: "",`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_NETWORKINTERFACE``        |
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+

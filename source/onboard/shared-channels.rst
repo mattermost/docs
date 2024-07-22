@@ -8,7 +8,7 @@ Communicate across organizations, as well as external partners and vendors using
 
 Shared channels in Mattermost behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can :doc:`send and receive messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`. Content is synchronized in real-time across all participating Mattermost instances.
 
-A channel’s permissions and access continues to be governed by each server separately. Channel moderation permissions can be applied to a shared channel and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
+A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Set up shared channels
 ----------------------

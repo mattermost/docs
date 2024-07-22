@@ -119,7 +119,7 @@ redirects = {
 
 # Administration redirects
 "administration/announcement-banner.html":
-        "https://docs.mattermost.com/manage/announcement-banner.html",
+        "https://docs.mattermost.com/manage/system-wide-notifications.html",
 "administration/audit-log.html":
         "https://docs.mattermost.com/comply/audit-log.html",
 "administration/backup.html":
@@ -512,7 +512,7 @@ redirects = {
 "channels/sign-in.html":
         "https://docs.mattermost.com/welcome/log-in.html",
 "channels/organize-conversations.html#enable-collapsed-reply-threads-beta":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-collapsed-reply-threads",
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "channels/channel-types.html":
         "https://docs.mattermost.com/collaborate/channel-types.html",
@@ -687,7 +687,7 @@ redirects = {
 "channels/reply-to-messages.html#organize-conversations-into-threads":
         "https://docs.mattermost.com/collaborate/reply-to-messages.html#organize-conversations-into-threads",
 "channels/reply-to-messages.html#work-with-collapsed-reply-threads":
-        "https://docs.mattermost.com/collaborate/reply-to-messages.html#work-with-collapsed-reply-threads",
+        "https://docs.mattermost.com/collaborate/reply-to-messages.html#work-with-threaded-discussions",
 "channels/organize-conversations.html#start-or-reply-to-threads":
         "https://docs.mattermost.com/collaborate/organize-conversations.html#start-or-reply-to-threads",
 "channels/organize-conversations.html#follow-threads-and-messages":
@@ -695,7 +695,7 @@ redirects = {
 "channels/organize-conversations.html#view-all-threads":
         "https://docs.mattermost.com/collaborate/organize-conversations.html#view-all-threads",
 "channels/organize-conversations.html#enable-collapsed-reply-threads":
-        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-collapsed-reply-threads",
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions",
 "channels/organize-conversations.html#tutorial-video":
         "https://docs.mattermost.com/collaborate/organize-conversations.html#tutorial-video",
 "channels/organize-conversations.html#known-issues":
@@ -836,6 +836,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "collaborate/send-messages.html#edit-or-delete-messages":
         "https://docs.mattermost.com/collaborate/send-messages.html#edit-messages",
+"collaborate/organize-conversations.html#enable-collapsed-reply-threads":
+        "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -975,7 +977,7 @@ redirects = {
 "configure/configuration-settings.html#write-timeout":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#write-timeout",
 "configure/configuration-settings.html#collapsed-reply-threads-beta":
-        "https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads",
+        "https://docs.mattermost.com/configure/configuration-settings.html#threaded-discussions",
 "configure/configuration-settings.html#elasticsearch":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
 "configure/configuration-settings.html#elasticsearch-settings":
@@ -1721,7 +1723,7 @@ redirects = {
 "configure/configuration-settings.html#push-notification-contents":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#push-notification-contents",
 "configure/configuration-settings.html#enable-announcement-banner":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-announcement-banner",
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-system-wide-notifications",
 "configure/configuration-settings.html#banner-text":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#banner-text",
 "configure/configuration-settings.html#banner-color":
@@ -1737,7 +1739,7 @@ redirects = {
 "configure/configuration-settings.html#automatically-follow-threads":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#automatically-follow-threads",
 "configure/configuration-settings.html#collapsed-reply-threads":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#collapsed-reply-threads",
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#threaded-discussions",
 "configure/configuration-settings.html#enable-link-previews":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-link-previews",
 "configure/configuration-settings.html#disable-link-previews-for-specific-domains":
@@ -1814,6 +1816,12 @@ redirects = {
         "https://docs.mattermost.com/configure/store-configuration-in-your-database.html",
 "configure/environment-configuration-settings.html#database-maxidleconnections":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#database-maxidleconnections",
+"configure/site-configuration-settings.html#posts-collapsedreplythreads":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#threaded-discussions",
+"configure/site-configuration-settings.html#announcement-banner":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#system-wide-notifications",
+"configure/site-configuration-settings.html#enable-announcement-banner":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-system-wide-notifications",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2562,6 +2570,12 @@ redirects = {
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-show",
 "manage/cloud-billing.html":
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
+"manage/team-channel-members.html#channel-moderation":
+        "https://docs.mattermost.com/manage/team-channel-members.html#advanced-access-controls.html",
+"manage/announcement-banner.html#configure-an-announcement-banner":
+        "https://docs.mattermost.com/manage/system-wide-notifications.html#configure-system-wide-notifications",
+"manage/announcement-banner.html#announcement-banner":
+        "https://docs.mattermost.com/manage/system-wide-notifications.html",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
@@ -2813,7 +2827,7 @@ redirects = {
 "messaging/organizing-conversations.html":
         "https://docs.mattermost.com/channels/organize-conversations.html",
 "messaging/organizing-conversations.html#enable-collapsed-reply-threads-beta":
-        "https://docs.mattermost.com/channels/organize-conversations.html#enable-collapsed-reply-threads",
+        "https://docs.mattermost.com/channels/organize-conversations.html#enable-threaded-discussions",
 "messaging/organizing-conversations.html#known-issues":
         "https://docs.mattermost.com/channels/organize-conversations.html#known-issues",
 "messaging/organizing-conversations.html#start-or-reply-to-threads":

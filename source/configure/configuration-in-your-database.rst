@@ -50,7 +50,7 @@ Create an environment file
 
 .. important::
    
-   If you're running Mattermost in a High Availability cluster, this step must be done on all servers in the cluster.
+   If you're running Mattermost in a High Availability cluster-based deployment, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
@@ -122,7 +122,7 @@ You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl
 
 .. important::
  
-   - If you're using a High Availability cluster, you only need to run this command on 1 server in the cluster.
+   - If you're using a High Availability cluster-based deployment, you only need to run this command on 1 server in the cluster.
    - When migrating configuration, Mattermost incorporates configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>` documentation for details.
    - As with the environment file, you'll have to escape any single quotes in the database connection string. 
    - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to re-pull the certificates. Configuration files are stored in the ``configurationfiles`` table in the database.

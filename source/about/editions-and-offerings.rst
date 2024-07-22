@@ -97,8 +97,8 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - Single Sign-on with :doc:`GitLab </onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </onboard/sso-google>`, :doc:`OpenID Connect </onboard/sso-openidconnect>`, :doc:`SAML </onboard/sso-saml>` or :doc:`Office365 </onboard/sso-office>`.
 - :ref:`MFA enforcement <onboard/multi-factor-authentication:enforcing mfa>`.
 - :ref:`Advanced team permissions <onboard/advanced-permissions:team override scheme>`.
-- :ref:`Read-only announcement channels <manage/team-channel-members:channel moderation>`.
-- :doc:`System-wide announcement banners </manage/announcement-banner>`.
+- :ref:`Read-only announcement channels <manage/team-channel-members:advanced access controls>`.
+- :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
 - :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`

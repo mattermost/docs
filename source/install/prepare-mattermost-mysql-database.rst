@@ -160,7 +160,7 @@ Create an environment file
 
 .. note::
 
-   If you're running Mattermost in a High Availability cluster, this step must be done on all servers in the cluster.
+   If you're running Mattermost in a High Availability cluster-based deployment, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
