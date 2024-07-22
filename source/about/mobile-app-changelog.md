@@ -15,6 +15,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
+**Note:** Mattermost Mobile App v2.19.0 contains a medium level security fix. Updating is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
 ### Improvements
  - Calls: Incoming calls on Direct Messages and Group Messages ring; ringtone is selectable in the settings menu.
  - Calls: Added stop recording confirmation; redesigned the header of the call screen to better display recording badge. 
