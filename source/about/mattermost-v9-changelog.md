@@ -17,6 +17,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
      - Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to restart the server if you are switching from one backend to another, and either use mmctl or edit the config manually. 
      - If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work. 
      - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in elasticsearch.yml to allow for wildcard operations to work.
+     - For AWS customers on Opensearch, do not enable "compatibility mode".
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 126+.
