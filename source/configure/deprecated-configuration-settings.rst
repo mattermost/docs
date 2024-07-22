@@ -853,3 +853,8 @@ This configuration setting disables the ability to send inactivity email notific
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableInactivityEmail": true`` with options ``true`` and ``false``.  |
 +-------------------------------------------------------------------------------------------------------------------+
+
+Disable Apps Bar
+~~~~~~~~~~~~~~~~
+
+This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. This setting is enabled for all customers by default from Mattermost v8.0.

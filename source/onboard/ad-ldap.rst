@@ -60,7 +60,7 @@ Configure AD/LDAP login
 
 .. note::
 
-   If you've made a mistake and lock yourself out of the system somehow, you can set an existing account to System Administrator using the :ref:`mmctl roles <manage/mmctl-command-line-tool:mmctlroles>` command.
+   If you've made a mistake and lock yourself out of the system somehow, you can set an existing account to System Administrator using the :ref:`mmctl roles <manage/mmctl-command-line-tool:mmctl roles>` command.
 
 Configure AD/LDAP synchronization
 ----------------------------------

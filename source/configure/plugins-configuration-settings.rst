@@ -318,10 +318,8 @@ RTC server port (TCP)
 | **Note**:                                                                                                                                                                                                                              |
 |                                                                                                                                                                                                                                        |
 | - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                      |
-|                                                                                                                                                                                                                                        |
 | - This setting is available starting in plugin version 0.17.                                                                                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -429,7 +427,7 @@ ICE host port override
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
   :environment: MM_CALLS_RTCD_URL
-  :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
+  :description: The URL to a running rtcd service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
 ~~~~~~~~~~~~~~~~
@@ -456,7 +454,7 @@ RTCD service URL
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
   :environment: MM_CALLS_MAX_PARTICIPANTS
-  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
+  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 50.
 
 Max call participants
 ~~~~~~~~~~~~~~~~~~~~~
@@ -470,7 +468,8 @@ Max call participants
 |                                                                             | - Environment variable: ``MM_CALLS_MAX_PARTICIPANTS``                                                         |
 | Default is **0** (no limit).                                                |                                                                                                               |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
+| **Note**: This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources.                            | 
+| See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.                                                                                        |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsiceservers
@@ -618,7 +617,7 @@ Allow screen sharing
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsenablesimulcast
-  :displayname: Enable simulcast for screen sharing (Experimental) (Plugins - Calls)
+  :displayname: (Experimental) Enable simulcast for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
   :environment: N/A
@@ -651,8 +650,8 @@ Enable simulcast for screen sharing (Experimental)
   - **true**: Allows call hosts to record meeting video and audio.
   - **false**: (Default) Call recording functionality is not available to hosts.
 
-Enable call recordings (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call recordings
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -743,8 +742,8 @@ Call recording quality
   - **true**: Enables automatic transcriptions of calls.
   - **false**: (Default) Call transcriptions functionality is disabled.
 
-Enable call transcriptions (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call transcriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -755,7 +754,7 @@ Enable call transcriptions (Experimental)
 |                                                                                                                                                                                                                                                                    |                                                                                                            |
 | Transcriptions are generated from the call participants' audio tracks and the resulting files are attached to the call thread when the recording ends. Captions will be optionally rendered on top of the recording file video player.                             |                                                                                                            |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| **Note**: Call transcriptions require call recordings to be enabled. This setting is available starting in plugin version 0.22.                                                                                                                                                                                                                                                 |
+| **Note**: Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. This setting is available starting in plugin version 0.22.                                                                                                                                                                        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-transcribermodelsize
@@ -802,7 +801,7 @@ Call transcriber threads
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablelivecaptions
-  :displayname: Enable live captions (Experimental) (Plugins - Calls)
+  :displayname: (Experimental) Enable live captions (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
   :environment: N/A
@@ -825,8 +824,8 @@ Enable live captions (Experimental)
 | and the resulting captions can be optionally displayed on the call        |                                                                                                |
 | clients by clicking the `[cc]` button.                                    |                                                                                                |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| **Note**: Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` and                                        |
-| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` to be enabled.                                             |
+| **Note**: Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and                                               |
+| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions>` to be enabled.                                                            |
 | This setting is available starting in plugin version 0.26.2.                                                                                                               |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 

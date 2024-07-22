@@ -671,8 +671,8 @@ Enable last active time
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
   - **false**: Users cannot set custom statuses.
 
-Enable custom user groups (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable custom user groups
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:

@@ -628,33 +628,6 @@ Shared channels enables the ability to establish secure connections between Matt
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
    - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
-.. config:setting:: exp-enableappbar
-  :displayname: Disable Apps Bar (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: DisableAppBar
-  :environment: ExperimentalSettings.DisableAppBar
-  :description: This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
-
-  - **true**: All integration icons in the channel header move to the Apps Bar with the exception of the calls feature.
-  - **false**: **(Default)** All integration icons in the channel header display in the channel header.
-
-Disable Apps Bar
-~~~~~~~~~~~~~~~~
-
-This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
-
-.. note::
-
-  We strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
-
-**True**:  All integration icons in the channel header display in the channel header.
-
-**False**: **(Default)** All integration icons, except the Calls icon, are available in the vertical Apps Bar pane on the right side of the screen. 
-
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableAppBar": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------+
-
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

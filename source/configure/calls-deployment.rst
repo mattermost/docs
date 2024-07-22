@@ -60,8 +60,12 @@ Network
 Limitations
 -----------
 
-- In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
+- In Mattermost Cloud, up to 50 participants per channel can join a call.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
+
+.. note::
+
+  We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the external, dedicated, and scalable rtcd service. See the :doc:`self-hosted calls deployment </configure/calls-deployment>` documentation for details.
 
 Configuration
 -------------
@@ -423,9 +427,9 @@ Before you can start recording, transcribing, and live captioning calls, you nee
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` configuration setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions>` configuration setting.
 
 Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (experimental)>` configuration setting.
 
