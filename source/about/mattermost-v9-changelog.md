@@ -114,13 +114,22 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
-**Release day: 2024-07-16**
+- **9.10.1, released 2024-07-22**
+  - Mattermost v9.10.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Mattermost Copilot plugin version [v0.8.3](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.3).
+  - Ensured that the web app only requests notification permissions when needed. Fixed an issue with desktop notifications not being sent on Safari [MM-59416](https://mattermost.atlassian.net/browse/MM-59416).
+  - Fixed an issue where the app crashed on iOS Safari [MM-59296](https://mattermost.atlassian.net/browse/MM-59296).
+  - Mattermost v9.10.1 contains no database or functional changes.
+- **9.10.0, released 2024-07-16**
+  - Original 9.10.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
 ### Improvements
+
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-10-changelog/) on some of the improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged GitLab plugin version [v1.9.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.9.1).
@@ -169,10 +178,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v9.10 is built with Go ``v1.21.8``.
 
 ### Known Issues
- - The web browser does not open on iOS Safari in v9.10.0 [MM-59296](https://mattermost.atlassian.net/browse/MM-59296).
- - Desktop notifications do not work on Safari in v9.10.0 [MM-59416](https://mattermost.atlassian.net/browse/MM-59416).
- - The screen crashes when clicking on SAML 2.0 option in the System Console on Free instances in v9.10.0 [MM-59406](https://mattermost.atlassian.net/browse/MM-59406).
- - The AI Copilot is missing from the Cloud Marketplace in v9.10.0.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - Push notifications don't always clear on iOS when running Mattermost in High Availability mode.
@@ -185,6 +190,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-9-feature-release)=
 ## Release v9.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.9.2, released 2024-07-22**
+  - Mattermost v9.9.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.9.2 contains no database or functional changes.
 - **9.9.1, released 2024-07-02**
   - Mattermost v9.9.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
@@ -299,6 +307,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-8-feature-release)=
 ## Release v9.8 - Feature Release
 
+- **9.8.3, released 2024-07-22**
+  - Mattermost v9.8.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.8.3 contains no database or functional changes.
 - **9.8.2, released 2024-07-02**
   - Mattermost v9.8.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
@@ -612,6 +623,9 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.8, released 2024-07-22**
+  - Mattermost v9.5.8 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.8 contains no database or functional changes.
 - **9.5.7, released 2024-07-02**
   - Mattermost v9.5.7 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where banners set by system administrators did not stack below system banners, but rather appeared underneath them. Existing system banners have remained unchanged.
