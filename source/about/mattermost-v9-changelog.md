@@ -17,6 +17,8 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 
 ### Improvements
 
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-10-changelog/) on some of the improvements in our latest release below.
+
 #### User Interface (UI)
  - Pre-packaged GitLab plugin version [v1.9.1](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.9.1).
  - Pre-packaged Mattermost Copilot plugin version [v0.8.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.1).
