@@ -17,7 +17,7 @@ Version archive
     - GPG Signature: https://releases.mattermost.com/9.10.1/mattermost-9.10.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.9.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-9-feature-release>`__ - `Download <https://releases.mattermost.com/9.9.2/mattermost-9.9.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.9.2/mattermost-9.9.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``d2303a5e54eb7308081022f72c9c15c2e8206966c7c9048d2911dc71a3972493``
+    - SHA-256 Checksum: ``2b62f249e1cebac67db0805d8943c09d048257514b88302178599369298f4234``
     - GPG Signature: https://releases.mattermost.com/9.9.2/mattermost-9.9.2-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.8.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-8-feature-release>`__ - `Download <https://releases.mattermost.com/9.8.3/mattermost-9.8.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.8.3/mattermost-9.8.3-linux-amd64.tar.gz``
@@ -381,7 +381,7 @@ Version archive
     - GPG Signature: https://releases.mattermost.com/9.10.1/mattermost-team-9.10.1-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.9.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-9-feature-release>`__ - `Download <https://releases.mattermost.com/9.9.2/mattermost-team-9.9.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.9.2/mattermost-team-9.9.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``24e862acf3a46ad52db7f24581357c4623faa391c1148d5ca7ed17c1228d081c``
+    - SHA-256 Checksum: ``bd2d59239f455cf72a78f0a38e5689770d83786e0daadb27adecd91c48c788be``
     - GPG Signature: https://releases.mattermost.com/9.9.2/mattermost-team-9.9.2-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.8.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-8-feature-release>`__ - `Download <https://releases.mattermost.com/9.8.3/mattermost-team-9.8.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.8.3/mattermost-team-9.8.3-linux-amd64.tar.gz``
