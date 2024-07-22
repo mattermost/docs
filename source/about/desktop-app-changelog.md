@@ -35,7 +35,7 @@ v5.9.0 is the first Extended Support Release for the Desktop App. See more detai
 
 ### Architectural Changes
 
-- Minor version upgrade of Electron to 31.2.1. Electron is the underlying technology used to build the Desktop App.
+- Major version upgrade of Electron to 31.2.1. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
