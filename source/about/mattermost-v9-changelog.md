@@ -28,10 +28,10 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls version [v0.29.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.0).
+ - Pre-packaged Calls version [v0.29.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.1).
  - Pre-packaged GitHub plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.3.0).
  - Added user interface improvements to the keyboard shortcuts modal.
- - Added a message "Editing this message with an “@mention'’ will not notify the recipient" in the post edit dialog.
+ - Added a message "Editing this message with an ``@mention`` will not notify the recipient" in the post edit dialog.
  - Made the appearance of several tooltips more consistent.
  - Updated the help text in the **Direct Messages** modal.
  - Emojis are now placed at cursor position while editing messages.
@@ -57,7 +57,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 #### mmctl
  - Added two new commands to mmctl, ``mmctl job list`` and ``mmctl job update``.
  - Panic message is now printed when mmctl panics.
- - Setting ``AdvancedLoggingJSON`` via mmctl is now allowed.
+ - Setting ``AdvancedLoggingJSON`` via mmctl is now supported.
 
 ### Bug Fixes
  - Fixed an issue that displayed a wrong count for custom group members on the notification warning.
@@ -82,7 +82,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - Added ``Backend`` to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch.
 
 ### API Changes
- - Added a new plugin API to create a common support packet.
  - Added new API endpoints to manage remote clusters.
  - Added two new query parameters to ``GET /api/v4/jobs, job_type`` and status.
  - Added a new endpoint ``PATCH /api/v4/jobs/{job_id}/status``.
