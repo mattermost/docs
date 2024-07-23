@@ -27,6 +27,10 @@ v5.9.0 is the first Extended Support Release for the Desktop App. See more detai
 
 ### Improvements
 
+#### Linux
+
+- Changed the window buttons on the Linux client to use the native ones provided by Electron, removed the frame.
+
 #### All Platforms
 
 - Dropped support for 32-bit Windows and added support for ARM64 (beta).
