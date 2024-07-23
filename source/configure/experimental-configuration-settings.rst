@@ -5,7 +5,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
-- `Beta Audit logging configuration settings <#beta-audit-logging-configuration-options>`__
+- `Experimental audit logging configuration settings (Beta) <#experimental-audit-logging-configuration-settings-beta>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
@@ -459,6 +459,22 @@ This setting defines how frequently "user is typing..." messages are updated, me
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-user-status-profile-fetching-poll-interval
+  :displayname: User's status and profile fetching poll interval (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: UsersStatusAndProfileFetchingPollIntervalMilliseconds
+  :environment: N/A
+  :description: The number of milliseconds to wait between fetching user statuses and profiles periodically.
+
+User's status and profile fetching poll interval
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting configures the number of milliseconds to wait between fetching user statuses and profiles periodically. Set to ``0`` to disable.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: exp-primaryteam
   :displayname: Primary team (Experimental)
   :systemconsole: Experimental > Features
@@ -471,7 +487,7 @@ Primary team
 
 The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
 
-If the team URL of the primary team is https://example.mattermost.com/myteam/, then set the value to ``myteam`` in ``config.json``.
+If the team URL of the primary team is ``https://example.mattermost.com/myteam/``, then set the value to ``myteam`` in ``config.json``.
 
 +-----------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
@@ -639,19 +655,6 @@ This setting disables the Apps Bar and moves all Mattermost integration icons fr
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableAppBar": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-Delay channel autocomplete
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
-
-**True**: The autocomplete appears after the user types a tilde followed by two or more characters. For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not. 
-
-**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -664,6 +667,32 @@ This setting disables re-fetching of channel and channel members on browser focu
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Disable wake up reconnect handler
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting disables attempts to detect when the computer has woken up and refetch data.
+
+**True**: Mattermost won't attempt to detect when the computer has woken up and refetch data. This might reduce the amount of regular network traffic the app is sending.
+
+**False**: (Default) Mattermost attempts to detect when the computer has woken up and refreshes data.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` with options ``true`` and ``false``.   |
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Delay channel autocomplete
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
+
+**True**: The autocomplete appears after the user types a tilde followed by two or more characters. For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not. 
+
+**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------------------------------+
 
 Enable dedicated export filestore target
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -803,130 +832,182 @@ Enable Bleve for autocomplete queries
 
 ----
 
-Beta audit logging configuration settings
------------------------------------------
+Experimental audit logging configuration settings (Beta)
+--------------------------------------------------------
 
-Enable the following settings to output audit events. You can specify these settings independently for audit events and AD/LDAP events. 
-When audit logging is enabled, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging.
+Enable the following settings to output audit events in the System Console by going to **Experimental > Features**, or in the ``config.json`` file. 
 
 .. note::
   
-  These settings aren't available in the System Console and can only be set in ``config.json``.
+  The ability to configure audit logging in the System Console requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
 
-.. config:setting:: exp-wroteauditfileslocally
-  :displayname: File name (Beta Audit Logging)
-  :systemconsole: N/A
-  :configjson: FileName
+.. config:setting:: exp-advlogging
+  :displayname: Advanced Logging (Audit Logging > Cloud)
+  :systemconsole: Experimental > Features
+  :configjson: AdvancedLoggingJSON
   :environment: N/A
-  :description: Write audit files locally.
+  :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment.
 
-Write audit files locally
-~~~~~~~~~~~~~~~~~~~~~~~~~
+Advanced logging
+~~~~~~~~~~~~~~~~
 
-**True**: Audit files are written locally to a file.
+.. include:: ../_static/badges/ent-cloud-only.rst
+   :start-after: :nosearch:
 
-**False**: Audit logs aren't written locally to a file.
+Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment. See the :ref:`advanced logging <manage/logging:advanced logging>` documentation for details about logging options.
+
+.. config:setting:: exp-enableauditlogging
+  :displayname: Enable audit logging (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
+  :configjson: FileEnabled
+  :environment: N/A
+  :description: Write audit files locally for a self-hosted deployment.
+
+Enable audit logging
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
+
+**True**: Audit logging files are enabled, and audit files are written locally to a file for a self-hosted deployment.
+
+**False**: Audit logging files aren't enabled, and audit logs aren't written locally to a file for a self-hosted deployment.
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileEnabled": false",`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-auditfilename
-  :displayname: File name (Beta Audit Logging)
-  :systemconsole: N/A
+.. config:setting:: exp-auditlogfilename
+  :displayname: File name (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileName
   :environment: N/A
-  :description: Specify the path to the audit file.
+  :description: Specify the path to the audit file for a self-hosted deployment.
 
 File name
 ~~~~~~~~~
 
-Specify the path to the audit file.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+Specify the path to the audit file for a self-hosted deployment.
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxsize
-  :displayname: File max size MB (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max size MB (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxSizeMB
   :environment: N/A
-  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation. Default is **100** MB.
+  :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation for a self-hosted deployment.. Default is **100** MB.
 
-File max size MB
-~~~~~~~~~~~~~~~~
+Max file size
+~~~~~~~~~~~~~
 
-This is the maximum size (in megabytes) that the file can grow before triggering rotation. The default setting is ``100``.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. The default setting is ``100``.
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
 +---------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxage
-  :displayname: File max age days (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max age days (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxAgeDays
   :environment: N/A
-  :description: This is the maximum age in days a file can reach before triggering rotation. The default value is **0**, indicating no limit on the age.
+  :description: This is the maximum age in days a file can reach before triggering rotation for a self-hosted deployment.. The default value is **0**, indicating no limit on the age.
 
-File max age days
-~~~~~~~~~~~~~~~~~
+Max file age
+~~~~~~~~~~~~~
 
-This is the maximum age in days a file can reach before triggering rotation. The default value is ``0``, indicating no limit on the age.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment. The default value is ``0``, indicating no limit on the age.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxbackups
-  :displayname: File max backups (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max backups (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxBackups
   :environment: N/A
-  :description: This is the maximum number of rotated files kept; the oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
+  :description: This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is **0**, indicating no limit on the number of backups.
 
-File max backups
-~~~~~~~~~~~~~~~~
+Maximum file backups
+~~~~~~~~~~~~~~~~~~~~
 
-This is the maximum number of rotated files kept; the oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
 
 +--------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filecompress
-  :displayname: File compress (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File compress (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileCompress
   :environment: N/A
-  :description: When ``true``, rotated files are compressed using ``gzip``. Default value is **false**.
+  :description: When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment. Default value is **false**.
 
-File compress
-~~~~~~~~~~~~~
+File compression
+~~~~~~~~~~~~~~~~
 
-When ``true``, rotated files are compressed using ``gzip``.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.
 
 +-------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-filemaxqueuesize
-  :displayname: File max queue size (Beta Audit Logging)
-  :systemconsole: N/A
+  :displayname: File max queue size (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
   :configjson: FileMaxQueueSize
   :environment: N/A
-  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. Default is **1000** records.
+  :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. Default is **1000** records.
 
-File max queue size
+Maximum file queue 
 ~~~~~~~~~~~~~~~~~~~
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file. The default is ``1000`` records.
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. The default is ``1000`` records.
 This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
 
 +-------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
 +-------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-advlogging
+  :displayname: Advanced Logging (Audit Logging > Self-Hosted)
+  :systemconsole: Experimental > Features
+  :configjson: AdvancedLoggingJSON
+  :environment: N/A
+  :description: Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment.
+
+Advanced logging
+~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost self-hosted deployment. See the :ref:`advanced logging <manage/logging:advanced logging>` documentation for details about logging options.
 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
@@ -1866,11 +1947,14 @@ Websocket secure port
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-(Optional) This setting defines the port on which the secured WebSocket will listen using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the secured WebSocket is listening using the ``wss`` protocol. Defaults to ``443``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
 +------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"WebsocketSecurePort": 443`` with numerical input. |
 +------------------------------------------------------------------------------------------------+
+
+.. note::
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-websocketport
   :displayname: Websocket port (Experimental)
@@ -1884,11 +1968,14 @@ Websocket port
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-(Optional) This setting defines the port on which the unsecured WebSocket will listen using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
+(Optional) This setting defines the port on which the unsecured WebSocket is listening using the ``ws`` protocol. Defaults to ``80``. When the client attempts to make a WebSocket connection it first checks to see if the page is loaded with HTTPS. If so, it will use the secure WebSocket connection. If not, it will use the unsecure WebSocket connection. IT IS HIGHLY RECOMMENDED PRODUCTION DEPLOYMENTS ONLY OPERATE UNDER HTTPS AND WSS.
 
 +----------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``WebsocketPort": 80`` with numerical input. |
 +----------------------------------------------------------------------------------------+
+
+.. note::
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-enableapiteamdeletion
   :displayname: Enable API team deletion (Experimental)

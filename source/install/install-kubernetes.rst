@@ -10,7 +10,7 @@ You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running
 
 .. tip::
     
-    - If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/services/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
+    - If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
     - Looking for a quick way to evaluate Mattermost or to try out the latest Mattermost deployment? See this article for details on creating your own Mattermost instance on Kubernetes using Minicube: https://medium.com/@Erez.Tamam/create-your-own-mattermost-instance-on-kubernetes-in-10-minutes-d13f576ed794.
 
 Install the operators
@@ -135,7 +135,7 @@ Deploy Mattermost
     "metadata.name", "The name of your Mattermost as it will be shown in Kubernetes. The shorter the better."
     "spec.size", "The size of your installation. This can be '100users', '1000users, '5000users', '10000users', or '25000users'."
     "spec.ingress.host", "The DNS for your Mattermost installation."
-    "spec.version", "The Mattermost version. Refer to :doc:`the version archive page </upgrade/version-archive>` when selecting a Mattermost version."
+    "spec.version", "The Mattermost version. Refer to :doc:`the server version archive page </about/version-archive>` when selecting a Mattermost version."
     "spec.licenseSecret", "The name of the Kubernetes secret containing your license (e.g., mattermost-license). Required for Enterprise deployments."
     "spec.mattermostEnv", "List of custom environment variables for the Mattermost instance. Only required when tweaking Mattermost configuration is required."
     "spec.image", "Docker image for the Mattermost app servers."

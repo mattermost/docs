@@ -9,7 +9,7 @@ Install PostgreSQL database
 
   ``sudo yum install -y https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm``
 
-3. Install PostgreSQL version 10 or higher. Replace the contents of the ``{version}`` with the version you wish to install.
+3. Install PostgreSQL version 11 or higher. Replace the contents of the ``{version}`` with the version you wish to install.
 
   ``sudo yum install -y postgresql{version}-server``
 
@@ -45,12 +45,16 @@ Install PostgreSQL database
 
   ``postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';``
 
-  .. note::
+  .. important::
     Use a password that is more secure than 'mmuser-password'.
 
 12.  Grant the user access to the Mattermost database.
 
   ``postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;``
+
+  .. important::
+
+    If you’re configuring a PostgreSQL v15.x or later database, you need to grant the user access to the Mattermost database. See the :doc:`Mattermost database preparation </install/prepare-mattermost-database>` for details.
 
 13. Exit the PostgreSQL interactive terminal.
 

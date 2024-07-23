@@ -12,7 +12,7 @@ Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SS
 .. important::  
   - Only the default GitLab SSO is officially supported. 
   - "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required, they're not officially supported, and they're known not to work in some cases. 
-  - :ref:`Mattermost Free (self-hosted only) <about/editions-and-offerings:mattermost free (self-hosted only)>` supports the OAuth 2.0 standard.
+  - :ref:`Mattermost Free (self-hosted only) <about/editions-and-offerings:mattermost free>` supports the OAuth 2.0 standard.
   - :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` and :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` support the OpenID Connect standard.
 
 Step 1: Add a Mattermost application to your GitLab account
@@ -50,7 +50,7 @@ Step 2: Configure Mattermost for GitLab SSO
 4. The **Discovery Endpoint** for OpenID Connect with GitLab is prepopulated with ``https://gitlab.com/.well-known/openid-configuration``.
 5. Paste the **Application ID** from GitLab as the **Client ID** in Mattermost.
 6. Paste the **Application Secret Key** from GitLab as the **Client Secret** in Mattermost. 
-7. Update the ``config.json`` file and specify the scopes you selected in GitLab under the ``GitLabSettings`` property. At a minimum, ``openid`` is a required scope for Mattermost Professional and Enterprise, and ``read_user`` is a required scope for Mattermost Team Edition. Mattermost Team Edition does not work with scopes other than ``read_user``. Changes to this setting require a server restart before taking effect. 
+7. Update the ``config.json`` file and specify the scopes you selected in GitLab under the ``GitLabSettings`` property. At a minimum, ``openid`` is a required scope for Mattermost Enterprise and Professional, and ``read_user`` is a required scope for Mattermost Team Edition. Mattermost Team Edition does not work with scopes other than ``read_user``. Changes to this setting require a server restart before taking effect. 
 8. Select **Save**.
 
 .. note::

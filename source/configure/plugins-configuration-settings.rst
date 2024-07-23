@@ -51,7 +51,10 @@ Require plugin signature
 | - **false**: Disables plugin signature validation for managed and unmanaged plugins.                                                                                                  | -  ``config.json`` setting: ``.PluginSettings.RequirePluginSignature: true`` |
 |                                                                                                                                                                                       | - Environment variable: ``MM_PLUGINSETTINGS_REQUIREPLUGINSIGNATURE``         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
-| **Note**: Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.                                                                                |
+| **Notes**:                                                                                                                                                                                                                                                           |
+|                                                                                                                                                                                                                                                                      |
+| - Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.                                                                                        |
+| - Enabling this configuration will result in `plugin file uploads <#upload-plugin>`__ being disabled in the System Console.                                                                                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-automaticprepackagedplugins
@@ -78,6 +81,9 @@ Automatic prepackaged plugins
   :configjson: EnableUploads
   :environment: MM_PLUGINSETTINGS_ENABLEUPLOADS
 
+  - **true**: Enables system admins to upload plugins from the local computer to the Mattermost server.
+  - **false**: **(Default)** Disables uploading of plugins from the local computer to the Mattermost server.
+
 Upload Plugin
 ~~~~~~~~~~~~~
 
@@ -85,13 +91,16 @@ Upload Plugin
   :start-after: :nosearch:
 
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**:  Enables you to upload plugins from your local computer to your Mattermost server for all system admins.               | - System Config path: **Plugins > Plugin Management**                  |
-| - **false**: **(Default)** Disables uploading of plugins from your local computer to your Mattermost server for all system admins. | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
+| - **true**:  Enables you to upload plugins from the local computer to the Mattermost server.                                       | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: **(Default)** Disables uploading of plugins from the local computer to the Mattermost server.                         | - ``config.json`` setting: ``.PluginSettings.EnableUploads: false``    |
 |                                                                                                                                    | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEUPLOADS``            |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| **Note**: When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the                                                |
-| `MaxFileSize </configure/environment-configuration-settings.html#maximum-file-size>`__ configuration setting isn't large enough to support the plugin file upload.                                          |
-| Additional proxy setting updateds may also be required.                                                                                                                                                     |
+| **Notes**:                                                                                                                                                                                                  |
+|                                                                                                                                                                                                             |
+| - When plugin uploads are enabled, the error ``Received invlaid response from the server`` when uploading a plugin file typically indicates that the                                                        |
+|   :ref:`MaxFileSize <configure/environment-configuration-settings:maximum file size>` configuration setting isn't large enough to support the plugin file upload. Additional proxy setting updateds         |
+|   may also be required.                                                                                                                                                                                     |
+| - The ability to upload plugin files is disabled when the `Require plugin signature <#require-plugin-signature>`__ configuration setting is enabled.                                                        |
 +------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablemarketplace
@@ -187,40 +196,6 @@ Plugin settings
 
 ----
 
-Apps
-----
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-.. note::
-  
-  From Mattermost v8.1, this third-party plugin is managed by the Mattermost Community.
-
-Access the following configuration settings in the System Console by going to **Plugins > Apps**.
-
-To create your own Mattermost App, see the `Mattermost Apps <https://developers.mattermost.com/integrate/apps/>`__ developer documentation.
-
-.. config:setting:: plugins-appsenable
-  :displayname: Enable plugin (Plugins - Apps)
-  :systemconsole: Plugins > Apps
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Enables the Apps plugin on your Mattermost server.
-  - **false**: (Default) Disables the Apps plugin on your Mattermost server.
-
-Enable plugin
-~~~~~~~~~~~~~
-
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
-| - **true**: Enables the Apps plugin on your Mattermost server.             | - System Config path: **Plugins > Apps**                    |
-| - **false**: (Default) Disables the Apps plugin on your Mattermost server. |                                                             |
-|                                                                            |                                                             |
-+----------------------------------------------------------------------------+-------------------------------------------------------------+
-
-----
-
 Calls
 -----
 
@@ -235,7 +210,7 @@ Access the following configuration settings in the System Console by going to **
   :configjson: PluginSettings.PluginStates.com.mattermost.calls.Enable
   :environment: MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS
 
-  - **true**: (Default) Enables the calls plugin on your Mattermost workspace.
+  - **true**: **(Default)** Enables the calls plugin on your Mattermost workspace.
   - **false**: Disables the calls plugin on your Mattermost workspace.
 
 Enable plugin
@@ -379,18 +354,19 @@ Enable on specific channels
 Test mode
 ~~~~~~~~~
 
-*This setting was called Enable on all channels up until Mattermost v7.7*
+*This setting was called Enable on all channels until Mattermost v7.7. It was renamed to defaultenabled in code and Test Mode in-product.*
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+--------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| - **true**: Only System Admins can start calls in channels.                                                                                | - System Config path: **Plugins > Calls**                                                                                                          |
-| - **false**: All team members can start calls in channels.                                                                                 | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.defaultenabled``                                                          |
-|                                                                                                                                            | - Environment variable: N/A                                                                                                                        |
-+--------------------------------------------------------------+-----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: Use this setting to confirm calls work as expected. When **true**, users attempting to start calls are prompted to contact System Admins. System Admins are prompted to confirm that calls are working as expected before switching to live mode.                                     |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **false**: Test mode is enabled and only system admins can start calls in channels.                           | - System Config path: **Plugins > Calls**                                                   |
+| - **true**: Live mode is enabled and all team members can start calls in channels.                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.defaultenabled``   |
+|                                                                                                                 | - Environment variable: N/A                                                                 |
++-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. note::
+  Use this setting as a system admin to confirm calls work as expected. When **false**, users attempting to start calls are prompted to contact a system admin, and system admins are prompted to confirm that calls are working as expected before switching to live mode.
 
 .. config:setting:: plugins-callsicehost
   :displayname: ICE host override (Plugins - Calls)
@@ -646,7 +622,9 @@ Allow screen sharing
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
   :environment: N/A
-  :description: When set to true it enables simulcast for screen sharing. This can help to improve screen sharing quality.
+  
+  - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.
+  - **false**: (Default) Disables simulcast for screen sharing.
 
 Enable simulcast for screen sharing (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -669,7 +647,9 @@ Enable simulcast for screen sharing (Experimental)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablerecordings
   :environment: N/A
-  :description: Allow call hosts to record meeting video and audio. 
+
+  - **true**: Allows call hosts to record meeting video and audio.
+  - **false**: (Default) Call recording functionality is not available to hosts.
 
 Enable call recordings (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -691,7 +671,7 @@ Enable call recordings (Beta)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.jobserviceurl
   :environment: MM_CALLS_JOB_SERVICE_URL
-  :description: The URL to a running job service where all the processing related to recordings happens.
+  :description: The URL to a running job service where all the processing related to recordings happens. This is a required field. Changing this setting requires a plugin restart to take effect.
   
 Job service URL
 ~~~~~~~~~~~~~~~
@@ -759,7 +739,9 @@ Call recording quality
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enabletranscriptions
   :environment: N/A
-  :description: Enables automatic transcriptions of calls.
+  
+  - **true**: Enables automatic transcriptions of calls.
+  - **false**: (Default) Call transcriptions functionality is disabled.
 
 Enable call transcriptions (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -803,7 +785,7 @@ Transcriber model size
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribernumthreads
   :environment: N/A
-  :description: The number of threads used by the post-call transcriber. This must be in the range [1, numCPUs].
+  :description: The number of threads used by the post-call transcriber. Default is 2. This is a required value that must be in the range [1, numCPUs].
 
 Call transcriber threads
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -825,6 +807,9 @@ Call transcriber threads
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
   :environment: N/A
   :description: Enables live captioning of calls.
+
+  - **true**: Enables live captioning of calls.
+  - **false**: **(Default)** Live captions functionality is disabled.
 
 Enable live captions (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -850,7 +835,7 @@ Enable live captions (Experimental)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsmodelsize
   :environment: N/A
-  :description: The speech-to-text model size to use for live captions. Heavier models will produce more accurate results at the expense of processing time and resources usage.
+  :description: The speech-to-text model size to use for live captions. Heavier models will produce more accurate results at the expense of processing time and resources usage. Default is **Tiny**. This is a required value. 
 
 Live captions: Model size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -871,7 +856,7 @@ Live captions: Model size
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumtranscribers
   :environment: N/A
-  :description: The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
+  :description: The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. Default is 1. This is a required value. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
 
 Live captions: Number of transcribers used per call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -892,7 +877,7 @@ Live captions: Number of transcribers used per call
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumthreadspertranscriber
   :environment: N/A
-  :description: The number of threads per live captions transcriber. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
+  :description: The number of threads per live captions transcriber. Default is 2. This is a required value. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
 
 Live captions: Number of threads per transcriber
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -913,7 +898,7 @@ Live captions: Number of threads per transcriber
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionslanguage
   :environment: N/A
-  :description: The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'.
+  :description: The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'. If blank, the lange will be set to 'en' (English) as default. 
 
 Live captions language
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -934,7 +919,7 @@ Live captions language
   :environment: N/A
 
   - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones.
-  - **false**: The RTC service will only listen for IPv4 connections.
+  - **false**: (False) The RTC service will only listen for IPv4 connections.
 
 (Experimental) Enable IPv6
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -944,10 +929,8 @@ Live captions language
 
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones. | - System Config path: **Plugins > Calls**                                                                |
-| - **false**: The RTC service will only listen for IPv4 connections.                                                                          | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableipv6``                    |
+| - **false**: **(Default)** The RTC service will only listen for IPv4 connections.                                                            | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableipv6``                    |
 |                                                                                                                                              | - Environment variable: N/A                                                                              |
-| Default value is **false**.                                                                                                                  |                                                                                                          |
-|                                                                                                                                              |                                                                                                          |
 | Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | **Note**:                                                                                                                                                                                                                                               |
@@ -964,7 +947,9 @@ Enable call ringing (Beta)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls. enableringing
   :environment: N/A
-  :description: Enable or disable incoming call desktop alerts and ringing notifications
+
+  - **true**: Ringing functionality is enabled. Direct and group message participants receive a desktop app alert and a ringing notification when a call starts.
+  - **false**: **(False)** Ringing functionality is disabled.
 
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                   |
@@ -1049,7 +1034,7 @@ MS Teams
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost for Microsoft Teams enables you to collaborate with technical & operations teams seamlessly through the Mattermost app, without leaving Microsoft Teams.
+Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
 
@@ -1164,40 +1149,6 @@ Webhook secret
 | **Note**: Select **Regenerate** to generate a new key.                                                                     |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamscertificatepublic
-  :displayname: Certificate public (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: This configuration is for setting the public certificate for enabling certificate-based subscriptions on MS Graph.
-
-Certificate public
-~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| This configuration is for setting the public certificate for enabling  | - System Config path: **Plugins > MS Teams**      |
-| certificate-based subscriptions on MS Graph.                           | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamscertificatekey
-  :displayname: Certificate key (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: This configuration is for setting the private key of the certificate for enabling certificate-based subscriptions. Enter both the public part and private key of the certificate.
-
-Certificate key
-~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| This configuration is for setting the private key of the certificate   | - System Config path: **Plugins > MS Teams**      |
-| for enabling certificate-based subscriptions.                          | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-+------------------------------------------------------------------------+---------------------------------------------------+
-| **Note**: For enabling certificate-based subscriptions, enter both the public part and private key of the certificate.     |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
 .. config:setting:: plugins-msteamsuseevaluationapipaymodel
   :displayname: Use the evaluation API pay model (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
@@ -1219,149 +1170,27 @@ Use the evaluation API pay model
 | - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamsenforceconnectedaccounts
-  :displayname: Enforce connected accounts (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
+.. config:setting:: plugins-msteamssyncnotifications
+  :displayname: Sync Notifications
+  :systemconsole: Plugins > MS Teams (Plugins - MS Teams)
   :configjson: N/A
   :environment: N/A
+  :description: Notify connected users in Mattermost on receipt of a chat or group chat from Microsoft Teams.
 
   - **true**: Users are required to connect their Mattermost and Microsoft Teams accounts.
   - **false**: Users aren't required to connect their Mattermost and Microsoft Teams accounts.
 
-Enforce connected accounts
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Requires all users to connect their Mattermost account to their        | - System Config path: **Plugins > MS Teams**      |
-| Microsoft Teams account, if the accounts aren't already connected.     | - ``config.json`` setting: N/A                    |
-|                                                                        | - Environment variable: N/A                       |
-| - **true**: Users are required to connect their Mattermost and         |                                                   |
-|   Microsoft Teams accounts each time they refresh the Mattermost       |                                                   |
-|   browser, refresh the desktop app, or log in to Mattermost.           |                                                   |
-| - **false**: **(Default)** Users aren't required to connect their      |                                                   |
-|   Mattermost and Microsoft Teams accounts.                             |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamsallowtempskipconnectuser
-  :displayname: Allow to temporarily skip connect user (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Enables users to skip the current prompt to connect their Mattermost and Microsoft Teams user accounts.
-  - **false**: Prevents users from skipping the prompt to connect their Mattermost and Microsoft Teams user accounts.
-
-Allow to temporarily skip connect user
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Allow users to temporarily dismiss the prompt to connect their         | - System Config path: **Plugins > MS Teams**      |
-| Mattermost account to their Microsoft Teams account. Users will        | - ``config.json`` setting: N/A                    |
-| continue to be prompted when they refresh the browser, refresh the     | - Environment variable: N/A                       |
-| desktop app, or log in to Mattermost.                                  |                                                   |
-|                                                                        |                                                   |
-| - **true**: Enables users to skip the current prompt to connect their  |                                                   |
-|   Mattermost and Microsoft Teams user accounts.                        |                                                   |
-| - **false**: **(Default)** Prevents users from skipping the prompt to  |                                                   |
-|   connect their Mattermost and Microsoft Teams accounts.               |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncusers
-  :displayname: Skip users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify how often, in minutes, to synchronize direct messages, group messages, and chats, between Mattermost and Microsoft Teams users. Leave blank to disable user synchronization.
-
-Sync users
-~~~~~~~~~~
-
-+------------------------------------------------------------------------+---------------------------------------------------+
-| Specify how often, in minutes, to synchronize direct messages,         | - System Config path: **Plugins > MS Teams**      |
-| group messages, and chats, between Mattermost and Microsoft Teams      | - ``config.json`` setting: N/A                    |
-| users.                                                                 | - Environment variable: N/A                       |
-|                                                                        |                                                   |
-| Leave this value blank to disble user synchronization.                 |                                                   |
-| Numerical value.                                                       |                                                   |
-+------------------------------------------------------------------------+---------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncguestusers
-  :displayname: Synchronize users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Mattermost includes Microsoft Teams guest users when synchronizing.
-  - **false**: Mattermost doesn't include Microsoft Teams guest users when synchronizing.
-
-Sync guest users
-~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+------------------------------------------------------+
-| Synchronize Microsoft Teams guest users and Mattermost users.          | - System Config path: **Plugins > MS Teams**         |
-|                                                                        | - ``config.json`` setting: N/A                       |
-| - **true**: Mattermost includes Microsoft Teams guest users when       | - Environment variable: N/A                          |
-|   synchronizing.                                                       |                                                      |
-| - **false**: **(Default)** Mattermost doesn't include Microsoft Teams  |                                                      |
-|   guest users when synchronizing.                                      |                                                      |
-+------------------------------------------------------------------------+------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncdirectgroupmessages
-  :displayname: Synchronize guest users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: Mattermost synchronizes direct messages, group messages, and chats between Mattermost and Microsoft Teams.
-  - **false**: Mattermost doesn't synchronize messages and chats.
-
-Sync direct and group messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sync notifications
+~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+----------------------------------------------------+
-| Synchronize direct messages, group messages, and chats between         | - System Config path: **Plugins > MS Teams**       |
-| Mattermost and Microsoft Teams users.                                  | - ``config.json`` setting: N/A                     |
+| Notify connected users in Mattermost on receipt of a chat or group     | - System Config path: **Plugins > MS Teams**       |
+| chat from Microsoft Teams.                                             | - ``config.json`` setting: N/A                     |
 |                                                                        | - Environment variable: N/A                        |
-| - **true**: **(Default)** Mattermost synchronizes direct messages,     |                                                    |
-|   group messages, and chats between Mattermost and Microsoft Teams.    |                                                    |
-| - **false**: Mattermost doesn't synchronize messages and chats.        |                                                    |
+| - **true**: **(Default)** Sync notifications of chat messages for any  |                                                    |
+|   connected user that enables the feature.                             |                                                    |
+| - **false**: Do not sync notifications.                                |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
-
-.. config:setting:: plugins-msteamsenabledteams
-  :displayname: Enabled teams (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify which Mattermost teams synchronize direct messages, group messages, and chats with Microsoft Teams.
-
-Enabled teams
-~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+----------------------------------------------------+
-| Specify which Mattermost teams synchronize direct messages, group      | - System Config path: **Plugins > MS Teams**       |
-| messages, and chats with Microsoft Teams.                              | - ``config.json`` setting: N/A                     |
-|                                                                        | - Environment variable: N/A                        |
-| Separate multiple team names with commas. Leave this value blank to    |                                                    |
-| synchronize all Mattermost teams.                                      |                                                    |
-+------------------------------------------------------------------------+----------------------------------------------------+
-
-.. config:setting:: plugins-msteamspromptinterval
-  :displayname: Prompt interval for DMs and GMs (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify how often, in hours, to prompt users to connect their Microsoft Teams user account to their Mattermost user account.
-
-Prompt interval for DMs and GMs
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+------------------------------------------------------+
-| Specify how often, in hours, to prompt users to connect their          | - System Config path: **Plugins > MS Teams**         |
-| Microsoft Teams user account to their Mattermost user account.         | - ``config.json`` setting: N/A                       |
-|                                                                        | - Environment variable: N/A                          |
-| Leave this value blank to disble the prompt.                           |                                                      |
-| Numerical value.                                                       |                                                      |
-+------------------------------------------------------------------------+------------------------------------------------------+
 
 .. config:setting:: plugins-msteamsmaxsizeattachments
   :displayname: Maximum size of attachments to support complete one time download (Plugins - MS Teams)
@@ -1398,104 +1227,7 @@ Buffer size for streaming files
 | Numerical value. Default is **20** MiB.                             |                                                          |
 +---------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: plugins-msteamsmaxconnectedusers
-  :displayname: Max connected users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the maximum number of users that can connect to their Microsoft Teams account.
-
-Max connected users
-~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the maximum number of users that can connect to their       | - System Config path: **Plugins > MS Teams**             |
-| Microsoft Teams account. Once connected, the user is added to a     | - ``config.json`` setting: N/A                           |
-| whitelist and may disconnect and reconnect at any time.             | - Environment variable: N/A                              |
-|                                                                     |                                                          |
-| Numerical value. Default is **100**.                                |                                                          |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncautopromotesyntheticusers
-  :displayname: Automatically promote synthentic users (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: **(Default)** Synthetic users are automatically promoted.
-  - **false**: Synthetic users aren't automatically promoted.
-
-Automatically promote synthetic users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------------------+----------------------------------------------------------+
-| Automatically promote synthetic users when they log in for the        | - System Config path: **Plugins > MS Teams**             |
-| first time.                                                           | - ``config.json`` setting: N/A                           |
-|                                                                       | - Environment variable: N/A                              |
-| - **true**: **(Default)** Synthetic users are automatically promoted. |                                                          |
-| - **false**: Synthetic users aren't automatically promoted.           |                                                          |
-+-----------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyncdisablesyncmsginfra
-  :displayname: Disable using the sync msg infrastructure for tracking message changes (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-
-  - **true**: **(Default)** Synchronized message infrastructure is disabled.
-  - **false**: Synchronized message infrastructure is enabled.
-
-Disable using the sync msg infrastructure for tracking message changes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Disables synchronized message infrastructure.                       | - System Config path: **Plugins > MS Teams**             |
-|                                                                     | - ``config.json`` setting: N/A                           |
-| - **true**: Synchronized message infrastructure is disabled.        | - Environment variable: N/A                              |
-| - **false**: **(Default)** Synchronized message infrastructure      |                                                          |
-|   is enabled.                                                       |                                                          |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyntheticuserauthservice
-  :displayname: Synthetic user auth service (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the authentication service to be used when creating or updating synthetic users. This value should match the service used for member user access to Mattermost.
-
-Synthentic user auth service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the authentication service to be used when creating or      | - System Config path: **Plugins > MS Teams**             |
-| updating synthetic users. This value should match the service used  | - ``config.json`` setting: N/A                           |
-| for member user access to Mattermost.                               | - Environment variable: N/A                              |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
-.. config:setting:: plugins-msteamssyntheticuserauthdata
-  :displayname: Synthetic user auth data (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Specify the Microsoft Teams user property to use as the authentication identifier. For AD/LDAP and SAML, the identifier's value should match the value provided by the ID attribute.
-
-Synthetic user auth data
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+----------------------------------------------------------+
-| Specify the Microsoft Teams user property to use as the             | - System Config path: **Plugins > MS Teams**             |
-| authentication identifier. For AD/LDAP and SAML, the identifier's   | - ``config.json`` setting: N/A                           |
-| value should match the value provided by the ID attribute.          | - Environment variable: N/A                              |
-+---------------------------------------------------------------------+----------------------------------------------------------+
-
 ----
-
-.. config:setting:: integrations-performance-metrics
-  :displayname: Monitor performance metrics (Plugins)
-  :systemconsole: Plugins > Mattermost Performance Metrics
-  :configjson: performance-metrics
-  :environment: N/A
-  :description: Monitor Mattermost performance metrics
 
 Performance metrics
 -------------------
@@ -1504,6 +1236,8 @@ Performance metrics
   :start-after: :nosearch:
 
 See the :doc:`Monitor performance metrics </scale/collect-performance-metrics>` product documentation for available :ref:`Mattermost configuration options <scale/collect-performance-metrics:mattermost configuration>`.
+
+----
 
 Playbooks
 ----------
@@ -1566,6 +1300,8 @@ Enable experimental features
 | - **false**: Disables experimental Playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                    |
 |                                                                                            | - Environment variable:                       |
 +--------------------------------------------------------------------------------------------+-----------------------------------------------+
+
+----
 
 User satisfaction surveys
 -------------------------
