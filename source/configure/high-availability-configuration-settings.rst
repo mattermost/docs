@@ -3,7 +3,7 @@
 :orphan:
 :nosearch:
 
-You can configure Mattermost as a :doc:`high availability cluster-based deployment </scale/high-availability-cluster-cluster-based-deployment>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+You can configure Mattermost as a :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` by going to **System Console > Environment > High Availability**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 In a Mattermost high availability cluster-based deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability cluster-based environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 

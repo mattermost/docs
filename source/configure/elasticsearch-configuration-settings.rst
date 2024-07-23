@@ -317,7 +317,7 @@ Enable Elasticsearch for search queries
 
   - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that scale, enabling Elasticsearch for search queries is highly recommended.
   - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for optimum search performance **before** reaching 3 million posts.
-  - For deployments with over 3 million posts, Elasticsearch with :ref:`dedicated indexing <configure/environment-configuration-settings:enable elasticsearch indexing>` and scaled usage resourcing through :doc:`cluster support </scale/high-availability-cluster>` is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
+  - For deployments with over 3 million posts, Elasticsearch with :ref:`dedicated indexing <configure/environment-configuration-settings:enable elasticsearch indexing>` and scaled usage resourcing through :doc:`cluster support </scale/high-availability-cluster-based-deployment>` is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |

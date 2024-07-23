@@ -448,8 +448,9 @@ Enable synchronization with AD/LDAP
 +---------------------------------------------------------------+----------------------------------------------------------------+
 | **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and            |
 | availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to              |
-| modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system               |
-| admin roles (advanced)>` documentation for details.                                                                            |
+| modifying these settings. See the                                                                                              |
+| :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` |
+| documentation for details.                                                                                                     |
 +---------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: ldap-loginfieldname
@@ -486,16 +487,17 @@ AD/LDAP server
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+--------------------------------------------------------------+---------------------------------------------------------+
-| This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**      |
-|                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer`` |
-| String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``  |
-+--------------------------------------------------------------+---------------------------------------------------------+
-| **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and    |
-| availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to      |
-| modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system       |
-| admin roles (advanced)>` documentation for details.                                                                    |
-+--------------------------------------------------------------+---------------------------------------------------------+
++--------------------------------------------------------------+------------------------------------------------------------------+
+| This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**               |
+|                                                              | - ``config.json`` setting: ``.LdapSettings.LdapServer``          |
+| String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``           |
++--------------------------------------------------------------+------------------------------------------------------------------+
+| **Note**: Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and             |
+| availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to               |
+| modifying these settings. See the                                                                                               |
+| :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>`  |
+| documentation for details.                                                                                                      |
++--------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: ldap-port
   :displayname: AD/LDAP port (AD/LDAP)
@@ -2819,7 +2821,7 @@ OpenID Connect (other) Discovery endpoint
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | **Note**: The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use    |
 | custom admin roles to limit access to modifying these settings. See the                                                                                                   |
-| :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system admin roles (advanced)>` documentation for details.                                        |
+| :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.                 |
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 OpenID Connect (other) Client ID

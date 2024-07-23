@@ -1106,7 +1106,6 @@ Important Upgrade Notes
 | v4.0.0                                             | (High Availability only)                                                                                                                                         |
 |                                                    |                                                                                                                                                                  |
 |                                                    | You must manually add new items to the ``ClusterSettings`` section of your existing ``config.json``.                                                             |
-|                                                    | See the *Upgrading to Version 4.0 and Later* section of :doc:`../scale/high-availability-cluster` for details.                                                   |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v3.9.0                                             | Old email invitation links, password reset links, and email verification links will no longer work due to a security change.                                     |
 |                                                    | Team invite links copied from the Team Invite Link dialog are not affected and are still valid.                                                                  |

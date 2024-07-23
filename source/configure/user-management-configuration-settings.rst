@@ -301,5 +301,5 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-| See :doc:`additional system admin roles </onboard/system-admin-roles>` documentation for details                                  |
+| See the :doc:`delegated granular administration </onboard/delegated-granular-administration>` documentation for details           |
 +----------------------------------------------------------------------+------------------------------------------------------------+

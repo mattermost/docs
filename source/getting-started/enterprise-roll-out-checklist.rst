@@ -119,7 +119,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Resource: https://docs.mattermost.com/getting-started/architecture-overview.html
  - Resource: https://docs.mattermost.com/deploy/deployment-overview.html 
  - Resource: https://docs.mattermost.com/scale/scaling-for-enterprise.html 
- - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html
+ - Resource: https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html
 
 - Create development and staging environments
 
@@ -155,7 +155,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
   - Add SSL Cert
 
    - Resource: https://docs.mattermost.com/onboard/ssl-client-certificate.html
-   - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html#proxy-server-configuration
+   - Resource: https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html#proxy-server-configuration
 
   - (Optional) Set up certificate-based authentication (CBA) for user or device-based authentication with a digital certificate
 
@@ -204,7 +204,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Define and test disaster recovery policy and processes
 
  - Resource: https://docs.mattermost.com/install/install-kubernetes.html#using-mattermost-operator-functionality
- - Resource: https://docs.mattermost.com/scale/high-availability-cluster.html#upgrade-guide 
+ - Resource: https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html#upgrade-guide 
 
 - Performance test production environment
 

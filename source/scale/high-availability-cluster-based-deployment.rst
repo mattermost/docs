@@ -37,7 +37,7 @@ To ensure your instance and configuration are compatible with a high availabilit
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
 1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based  deployment configuration settings <configure/environment-configuration-settings:high availability cluster-based deployment>` documentation for details.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :doc:`high availability cluster-based  deployment configuration settings </configure/high-availability-configuration-settings>` documentation for details.
 3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
 5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -454,7 +454,7 @@ When you reinstall a plugin in v5.14, the previous **Enabled** or **Disabled** s
 CLI and High Availability
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The CLI is run in a single node which bypasses the mechanisms that a :doc:`high availability environment </scale/high-availability-cluster>` uses to perform actions across all nodes in the cluster. As a result, when running :doc:`CLI commands </manage/command-line-tools>` in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
+The CLI is run in a single node which bypasses the mechanisms that a :doc:`high availability environment </scale/high-availability-cluster-based-deployment>` uses to perform actions across all nodes in the cluster. As a result, when running :doc:`CLI commands </manage/command-line-tools>` in a High Availability environment, tasks such as updating and deleting users or changing configuration settings require a server restart.
 
 We recommend using :doc:`mmctl </manage/mmctl-command-line-tool>` in a high availability environment instead since a server restart is not required. These changes are made through the API layer, so the node receiving the change request notifies all other nodes in the cluster.
 
@@ -523,35 +523,6 @@ Apply upgrades during a period of low load. The system downtime is brief, and de
 7. When the server is running, start the other servers.
 8. Restart NGINX.
 
-Upgrade to version 4.0 and later
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When a server starts up, it can automatically discover other servers in the same cluster. You can add and remove servers without the need to make changes to the configuration file, ``config.json``. To support this capability, new items were added to the ``ClusterSettings`` section of ``config.json``. 
-
-1. Review the upgrade procedure in :doc:`../upgrade/upgrading-mattermost-server`.
-2. Make a backup of your existing ``config.json`` file.
-3. Revise your existing ``config.json`` to update the ``ClusterSettings`` section. The following settings should work in most cases:
-
-  .. code-block:: none
-
-    "ClusterSettings": {
-        "Enable": true,
-        "ClusterName": "production",
-        "OverrideHostname": "",
-        "UseIpAddress": true,
-        "ReadOnlyConfig": true,
-        "GossipPort": 8074
-    },
-
-  For more information about these settings, see the :ref:`high availability configuration settings <configure/environment-configuration-settings:high availability>` documentation.
-
-4. Stop NGINX.
-5. Upgrade each Mattermost instance.
-6. On each server, replace the new ``config.json`` file with your modified version.
-7. Start one of the Mattermost servers.
-8. When the server is running, start the other servers.
-9. Restart NGINX.
-
 All cluster nodes must use a single protocol
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -611,7 +582,7 @@ App refreshes continuously
 
 When configuration settings are modified through the System Console, the client refreshes every time a user connects to a different app server. This occurs because the servers have different ``config.json`` files in a high availability cluster-based deployment.
 
-Modify configuration settings directly through ``config.json`` :ref:`following these steps <scale/high-availability-cluster:update configuration changes while operating continuously>`.
+Modify configuration settings directly through ``config.json`` :ref:`following these steps <scale/high-availability-cluster-based-deployment:update configuration changes while operating continuously>`.
 
 Messages do not post until after reloading
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

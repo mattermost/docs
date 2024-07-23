@@ -4,7 +4,7 @@ Work with playbooks
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A playbook is a checklist of the tasks that make up your processes. Playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
+A collaborative playbook is a checklist of the tasks that make up your processes. Playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
 
 Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
 

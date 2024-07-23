@@ -7,7 +7,7 @@ Interact with playbooks
 Slash commands
 --------------
 
-Slash commands are available for playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook run`` slash command from any channel.
+Slash commands are available for collaborative playbooks. The ``/playbook`` slash command allows interaction with incidents via the post textbox on desktop, browser, and mobile. To run a playbook use the ``/playbook run`` slash command from any channel.
 
 Available slash commands include:
 

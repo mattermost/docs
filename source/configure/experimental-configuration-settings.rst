@@ -2138,7 +2138,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Set whether or not this Mattermost server will handle tasks created by the Scheduler. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster>`, one or more servers should have this setting enabled. We recommend that your High Availability cluster-based deployment has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster-based-deployment>`, one or more servers should have this setting enabled. We recommend that your High Availability cluster-based deployment has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -2158,7 +2158,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster>`, this setting should always be enabled. In a High Availability cluster-based deployment, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See :doc:`High Availability documentation </scale/high-availability-cluster>` for more details.
+When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster-based-deployment>`, this setting should always be enabled. In a High Availability cluster-based deployment, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See :doc:`High Availability documentation </scale/high-availability-cluster-based-deployment>` for more details.
 
 .. warning::
 

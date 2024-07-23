@@ -411,8 +411,8 @@ Purge all caches
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Purging the caches may adversely impact performance.                                                           |
-| :doc:`high availability cluster-based deployments </scale/high-availability-cluster>` will attempt to purge all the      |
-| servers in the cluster                                   |                                                               |
+| :doc:`high availability cluster-based deployments </scale/high-availability-cluster-based-deployment>` will attempt      |
+| to purge all the servers in the cluster                                                                                  |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: web-websocketurl

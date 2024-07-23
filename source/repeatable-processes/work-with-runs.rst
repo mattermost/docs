@@ -4,7 +4,7 @@ Work with runs
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A run is the execution of a playbook. You can start each run in a new channel or you can elect to use the same channel for multiple runs.
+A run is the execution of a collaborative playbook. You can start each run in a new channel or you can elect to use the same channel for multiple runs.
 
 To access runs, select the product menu in the top-left corner of Mattermost, then select **Playbooks**. In the runs list, you can select a run to view more details, such as the overview and retrospective. This is an easy way to assess all the active runs to which you have access.
 

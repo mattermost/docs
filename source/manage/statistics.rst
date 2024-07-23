@@ -71,7 +71,7 @@ Master DB Conns
     The number of active connections currently on your master database.
 
 Replica DB Conns
-    The number of active connections currently on one or more of :ref:`your read replica databases <scale/high-availability-cluster:database configuration>`.
+    The number of active connections currently on one or more of :ref:`your read replica databases <scale/high-availability-cluster-based-deployment:database configuration>`.
 
 Total Playbooks
     The total number of playbooks on this server.
@@ -128,7 +128,7 @@ Can Team Admins review their own team's statistics?
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-Yes. In Mattermost Enterprise, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the :doc:`Additional System Admin Roles </onboard/system-admin-roles>` documentation.
+Yes. In Mattermost Enterprise, you can enable Team Admins to see their team's statistics by modifying available delegated granular administration system roles. See the :doc:`delegated granular administration </onboard/delegated-granular-administration>` documentation to learn more about these admin roles, including how to manage privileges and assign roles.
 
 To enable Team Admins to access their team's statistics:
 

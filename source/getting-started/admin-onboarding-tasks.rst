@@ -139,7 +139,7 @@ Email notifications can be batched together so users don’t get overwhelmed wit
 
 Enable email notifications first by setting **System Console > Notifications > Enable Email Notifications** to **true**. See the :ref:`Enable email notifications <configure/site-configuration-settings:enable email notifications>` configuration settings documentation for details. Note that email notifications require an :ref:`SMTP email server <configure/environment-configuration-settings:smtp server>` to be configured.
 
-Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the :ref:`Enable email batching <configure/site-configuration-settings:enable email batching>` configuration settings documentation for details. Note that email batching is not available if you are running your deployment in :doc:`High Availability </scale/high-availability-cluster>`.
+Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the :ref:`Enable email batching <configure/site-configuration-settings:enable email batching>` configuration settings documentation for details. Note that email batching is not available if you are running your deployment in :doc:`High Availability </scale/high-availability-cluster-based-deployment>`.
 
 **9. Enable Elasticsearch**
 

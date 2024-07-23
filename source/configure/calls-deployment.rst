@@ -77,13 +77,13 @@ Modes of operation
 
 Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
-============================       =============== =================
- Mattermost deployment             SFU             SFU deployment
-============================       =============== =================
- Single instance                   integrated
- Single instance                   rtcd
- High availability cluster-based   integrated      clustered
- High availability cluster-based   rtcd
+================================   =============== =================
+ Mattermost deployment              SFU             SFU deployment
+================================   =============== =================
+ Single instance                    integrated
+ Single instance                    rtcd
+ High availability cluster-based    integrated      clustered
+ High availability cluster-based    rtcd
 ================================   =============== =================
 
 Single instance

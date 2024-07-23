@@ -116,7 +116,7 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate releas
 Upgrade high availability cluster-based deployments
 ---------------------------------------------------
 
-In :doc:`high availability cluster-based </scale/high-availability-cluster>` environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
+In :doc:`high availability cluster-based </scale/high-availability-cluster-based-deployment>` environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
 
 Ensure you review the :ref:`high availability cluster-based deployment upgrade guide <scale/high-availability-cluster-based-deployment:upgrade guide>`, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 

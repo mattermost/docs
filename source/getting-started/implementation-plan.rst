@@ -159,7 +159,7 @@ Install and configure Mattermost and its component software (PostgreSQL, NGINX, 
 
 **Reference**: https://docs.mattermost.com/guides/deployment.html#install-guides
 
-Install in High Availability (Available in Mattermost Enterprise): https://docs.mattermost.com/scale/high-availability-cluster.html 
+Install in High Availability (Available in Mattermost Enterprise): https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html 
 
 3.3.5 Test deployment
 ^^^^^^^^^^^^^^^^^^^^^

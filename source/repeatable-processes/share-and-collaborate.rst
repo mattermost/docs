@@ -5,7 +5,7 @@ Share and collaborate
   :start-after: :nosearch:
 
 
-There are different ways for teams to access and interact with playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
+There are different ways for teams to access and interact with collaborative playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
 
 Permissions are provided using:
 
@@ -18,7 +18,7 @@ For more information about System and Team Override Schemes, refer to the :doc:`
 
    Some permissions functionality is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`__.
    
-In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
+In the context of collaborative playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
 Permissions are applied only to playbooks - there are no permissions that are specific to runs.
 

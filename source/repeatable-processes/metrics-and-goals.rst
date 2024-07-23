@@ -4,16 +4,14 @@ Metrics and goals
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Retrospectives help teams identify areas of improvement in workflows. Each time a playbook is run you can create and publish a retrospective for the team and stakeholders to review. Retrospective components are customized per playbook.
+Workflow dashboards unlock insights about the performance of workflows across organizations. They compare the output metrics from different runs of collaborative playbooks, against targets and historical performance. Each time a collaborative playbook is run, you can update the workflow dashboard for the team and stakeholders to review, where dashboard components are customized per playbook.
 
-.. note::
-
-   Some metrics and goals functionality (such as timeline and retrospectives) is only available on a paid plan. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`_.
+Examples of metrics-based workflow dashboards that can be set up to monitor and inform performance include: time to detect, time to resolve in incident response workflows, work plan completion percentage for monthly software releases management workflows, and launch success rate for logistical workflows involving launch operations.
 
 Configure retrospectives before a run
 -------------------------------------
 
-Open Playbooks and select the **Playbooks** tab. Locate the playbook you want to modify, select the **...** icon under **Actions** and then select **Edit**. In the next screen, select **Retrospective**. Move the toggle to **Enable Retrospective**.
+Access the **Playbooks** tab in Mattermost. Locate the playbook you want to modify, select the **...** icon under **Actions** and then select **Edit**. In the next screen, select **Retrospective**. Move the toggle to **Enable Retrospective**.
 
 You can set a reminder to fill out the retrospective after a run is finished. The configured template is pre-populated in the run's retrospective.
 

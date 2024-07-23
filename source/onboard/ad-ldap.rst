@@ -81,7 +81,7 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
 .. note::
    - Make sure that at least one AD/LDAP user is in Mattermost or the sync will not complete.
-   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`system admin roles <onboard/system-admin-roles:edit privileges of system admin roles (advanced)>` documentation for details. 
+   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details. 
 
 Configure AD/LDAP sign-in using filters
 ----------------------------------------

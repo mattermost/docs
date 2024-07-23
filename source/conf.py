@@ -3038,6 +3038,8 @@ redirects = {
         "https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import",
 "onboard/migrating-to-mattermost.html#migrate-mattermost-server":
         "https://docs.mattermost.com/onboard/migrate-mattermost-from-one-server-to-another",
+"onboard/system-admin-roles.html":
+        "https://docs.mattermost.com/onboard/delegated-granular-administration.html",
 
 # Overview redirects
 "overview/architecture.html":
@@ -3320,6 +3322,8 @@ redirects = {
         "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#frequently-asked-questions",
 "scale/performance-monitoring.html#why-are-chart-labels-difficult-to-distinguish":
         "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#why-are-chart-labels-difficult-to-distinguish",
+"scale/high-availability-cluster.html":
+        "https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
