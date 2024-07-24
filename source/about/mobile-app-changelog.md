@@ -23,6 +23,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Calls: Added an end call confirmation and an “End call for everyone” option for the call host.
  - Improved how UUIDs are generated.
  - Restored "Out of Channel" section in the user autocomplete.
+ - Improved load time performance metrics.
 
 ### Open Source Components
  - Added ``@rneui/base, expo``, ``expo-application``, ``expo-crypto``, ``expo-device``, ``expo-image``, ``expo-linear-gradient``, ``expo-store-review`` and ``expo-video-thumbnails``, ``expo-web-browser``, and removed ``react-native-create-thumbnail``, ``react-native-fast-image`` and ``react-native-hw-keyboard-event`` from https://github.com/mattermost/mattermost-mobile.
