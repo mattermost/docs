@@ -88,7 +88,7 @@ Run the following command to generate a pgloader configuration:
 
 This command will generate a pgloader configuration file that can be used to migrate the data from MySQL to Postgres.
 
-The genrated configuration has the setting to remove the null character from the text type data, this is to ensure the migration won't error while inserting data into Postgres. However, if you want to disable this behavior, you can set the ``--remove-null-chars`` to ``false``.
+The generated configuration has the setting to remove the null character from the text type data, this is to ensure the migration won't error while inserting data into Postgres. However, if you want to disable this behavior, you can set the ``--remove-null-chars`` to ``false``.
 
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
