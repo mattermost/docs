@@ -13,7 +13,7 @@ Important Upgrade Notes
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
    - Mattermost v10.0 is planned for September, 2024. See a list of planned breaking changes for this release `in the changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html>`__.
-   - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore CoSign in our upcoming release, v10.2 (November, 2024). Please see details `here <https://docs.sigstore.dev/system_config/installation/>`_ on installing CoSign.
+   - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). Please see details `here <https://docs.sigstore.dev/system_config/installation/>`_ on installing Cosign.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
