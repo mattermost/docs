@@ -14,7 +14,7 @@ Mattermost Server v10.3.0
 Mattermost Server v10.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). Please see details `here <https://docs.sigstore.dev/system_config/installation/>`_ on installing Cosign.
+- Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please transition to using Cosign.
 
 Removed features by Mattermost version
 ----------------------------------------
