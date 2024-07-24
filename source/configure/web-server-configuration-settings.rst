@@ -685,3 +685,24 @@ Cluster log timeout
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: web-maxpayloadsize
+  :displayname: Maximum payload size (Web Server)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.MaximumPayloadSizeBytes
+  :environment: MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES
+  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input. For example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
+
+Maximum payload size
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                        |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".ServiceSettings.MaximumPayloadSizeBytes: 300000",``  |
+|                                                           | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
+| For example, the upload attachment API or the API to      |                                                                                  |
+| upload a custom emoji.                                    |                                                                                  |
+|                                                           |                                                                                  |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                  |
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+
