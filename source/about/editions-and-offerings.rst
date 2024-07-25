@@ -78,7 +78,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
 - Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
 - PQ&A with :doc:`access-controlled backend systems </about/security>`
-- 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
+- 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
 Mattermost Professional 
 ~~~~~~~~~~~~~~~~~~~~~~~
