@@ -119,13 +119,6 @@ How are repositories changing?
 
 As we add enterprise-only functionality, we will update the license on affected Mattermost-authored plugin repositories. The intent is to work alongside the existing, open source functionality in our plugins while reserving certain enterprise functionality to customers who pay us for enterprise licenses.
 
-To which repositories does this apply?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The Mattermost :doc:`Playbooks </guides/repeatable-processes>` and `Channel Export <https://github.com/mattermost/mattermost-plugin-channel-export>`_ plugins are available under the Mattermost Source Available License as well as the enterprise directories of our `Jira <https://github.com/mattermost/mattermost-plugin-jira>`_, `Microsoft Calendar <https://github.com/mattermost/mattermost-plugin-mscalendar>`_, and `Microsoft Teams Meetings <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_ plugins.  New, Mattermost-authored plugins will generally be released under the Mattermost Source Available License. When we update the licenses, we will release a new version and note the change in the ``README.md`` file of the GitHub repository and any release notes.
-
-We expect to keep plugins without an enterprise component under our open source license. No licensing changes are planned to non-plugin repositories, such as `mattermost <https://github.com/mattermost/mattermost>`_ or `mattermost webapp <https://github.com/mattermost/mattermost/tree/master/webapp>`_.
-
 Will the repositories be public?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
