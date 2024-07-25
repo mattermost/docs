@@ -17,7 +17,7 @@ System admins can make system-wide notifications visible to all users across all
 
 .. note::
 
-   The announcement banner displays in Mattermost Channels, but isn't visible in Playbooks, Boards, or other Mattermost integrations.
+   The announcement banner displays in Mattermost Channels, but isn't visible in collaborative playbooks, boards, or Mattermost integrations.
 
 .. image:: ../images/announcement-banner.png
   :alt: System admins can display an announcement banner at the top of the user's screen.

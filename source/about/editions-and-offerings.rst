@@ -65,7 +65,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service>`.
 - :ref:`Private mobility with ID-only push notifications <configure/site-configuration-settings:push notification contents>`.
 - :doc:`Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy>`.
-- :doc:`Playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </repeatable-processes/learn-about-playbooks>`.
+- :doc:`Collaborative playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </repeatable-processes/learn-about-playbooks>`.
 - :doc:`Deleted granular administrative control </onboard/delegated-granular-administration>`.
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </repeatable-processes/share-and-collaborate>`
 - :doc:`Channel export </comply/export-mattermost-channel-data>`
@@ -94,7 +94,7 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 
 - :doc:`Guest access </onboard/guest-accounts>` and :doc:`custom user groups </collaborate/organize-using-custom-user-groups>`.
 - :doc:`Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap>`.
-- Single Sign-on with :doc:`GitLab </onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </onboard/sso-google>`, :doc:`OpenID Connect </onboard/sso-openidconnect>`, :doc:`SAML </onboard/sso-saml>` or :doc:`Office365 </onboard/sso-office>`.
+- Single Sign-on with :doc:`GitLab </onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </onboard/sso-google>`, :doc:`OpenID Connect </onboard/sso-openidconnect>`, :doc:`SAML </onboard/sso-saml>` or :doc:`Entra ID </onboard/sso-entraid>`.
 - :ref:`MFA enforcement <onboard/multi-factor-authentication:enforcing mfa>`.
 - :ref:`Advanced team permissions <onboard/advanced-permissions:team override scheme>`.
 - :ref:`Read-only announcement channels <manage/team-channel-members:advanced access controls>`.

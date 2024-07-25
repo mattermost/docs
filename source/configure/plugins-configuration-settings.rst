@@ -1238,67 +1238,67 @@ See the :doc:`Monitor performance metrics </scale/collect-performance-metrics>` 
 
 ----
 
-Playbooks
-----------
+Collaborative playbooks
+------------------------
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the :doc:`Mattermost Playbooks plugin </guides/repeatable-processes>` documentation for details.
+Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform.
 
-Access the following configuration settings in the System Console by going to **Plugins > Playbooks**.
+Access the following configuration settings in the System Console by going to **Plugins > Collaborative playbooks**.
 
 .. config:setting:: plugins-playbooksenable
-  :displayname: Enable plugin (Plugins - Playbooks)
-  :systemconsole: Plugins > Playbooks
+  :displayname: Enable plugin (Plugins - Collaborative playbooks)
+  :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
   :environment: 
 
-  - **true**: **(Default)** Enables Mattermost Playbooks on your Mattermost workspace.
-  - **false**: Disables Mattermost Playbooks on your Mattermost workspace.
+  - **true**: **(Default)** Enables collaborative playbooks on your Mattermost workspace.
+  - **false**: Disables collaborative playbooks on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: **(Default)** Enables Mattermost Playbooks on your Mattermost workspace.              | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables Mattermost Playbooks on your Mattermost workspace.                          | - ``config.json`` setting:                    |
-|                                                                                                   | - Environment variable:                       |
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: **(Default)** Enables collaborative Playbooks on your Mattermost workspace.           | - System Config path: **Plugins > Collaborative playbooks** |
+| - **false**: Disables collaborative Playbooks on your Mattermost workspace.                       | - ``config.json`` setting:                                  |
+|                                                                                                   | - Environment variable:                                     |
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-playbooksenabledteams
-  :displayname: Enabled teams (Plugins - Playbooks)
-  :systemconsole: Plugins > Playbooks
+  :displayname: Enabled teams (Plugins - Collaborative playbooks)
+  :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
   :environment: 
-  :description: Enable Playbooks for all Mattermost teams, or for only selected teams.
+  :description: Enable collaborative playbooks for all Mattermost teams, or for only selected teams.
 
 Enabled teams
 ~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------+-----------------------------------------------+
-| Enable Playbooks for all Mattermost teams, or for only selected teams.            | - System Config path: **Plugins > Playbooks** |
-|                                                                                   | - ``config.json`` setting:                    |
-|                                                                                   | - Environment variable:                       |
-+-----------------------------------------------------------------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| Enable collaborative playbooks for all Mattermost teams, or for only selected teams.       | - System Config path: **Plugins > Collaborative playbooks** |
+|                                                                                            | - ``config.json`` setting:                                  |
+|                                                                                            | - Environment variable:                                     |
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-playbooksexperimentalfeatures
-  :displayname: Enable experimental features (Plugins - Playbooks)
-  :systemconsole: Plugins > Playbooks
+  :displayname: Enable experimental features (Plugins - Collaborative playbooks)
+  :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
   :environment: 
 
-  - **true**: Enables experimental Playbooks features on your Mattermost workspace.
-  - **false**: Disables experimental Playbooks features on your Mattermost workspace.
+  - **true**: Enables experimental playbooks features on your Mattermost workspace.
+  - **false**: Disables experimental playbooks features on your Mattermost workspace.
 
 Enable experimental features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables experimental Playbooks features on your Mattermost workspace.          | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables experimental Playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                    |
-|                                                                                            | - Environment variable:                       |
-+--------------------------------------------------------------------------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: Enables experimental playbooks features on your Mattermost workspace.          | - System Config path: **Plugins > Collaborative playbooks** |
+| - **false**: Disables experimental playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                                  |
+|                                                                                            | - Environment variable:                                     |
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 

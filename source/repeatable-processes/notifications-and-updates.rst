@@ -1,7 +1,7 @@
 Notifications and updates
 =========================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
   
 .. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg

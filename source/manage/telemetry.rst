@@ -165,7 +165,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
 Playbooks telemetry
 --------------------
 
-Playbooks metadata is collected and sent every 24 hours. Visit the `playbooks telemetry file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/telemetry/rudder.go>`_ for details about the types of metadata collected.
+Collaborative playbooks metadata is collected and sent every 24 hours. Visit the `playbooks telemetry file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/telemetry/rudder.go>`_ for details about the types of metadata collected.
 
 Android Mobile App performance monitoring
 -----------------------------------------

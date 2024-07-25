@@ -1,10 +1,10 @@
-Work with playbooks
-===================
+Work with collaborative playbooks
+==================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A collaborative playbook is a checklist of the tasks that make up your processes. Playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
+A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
 
 Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
 
@@ -88,7 +88,7 @@ When you're configuring your playbook:
 - You can link it to an existing channel so that each run starts in that channel.
 - You can choose that each time the playbook is run, it creates a new channel.
 
-To access this setting, open the playbooks tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
+To access this setting, open the **Playbooks** tab. Select the playbook you want to edit, then select the **Outline** tab. Select **Actions** in the left-hand menu and make your selection under the **When a run starts** heading.
 
 When you start a run, your selection is the default but can be changed for each run. Additionally, it's also possible to move a started run to another channel, so you're not locked into whichever option you select.
 
@@ -127,7 +127,7 @@ If you want to change the behavior of all future runs associated with the playbo
 Run metrics
 -----------
 
-The **Usage** tab in the playbooks dashboard provides run metrics for that playbook. These metrics are available to all viewers. It's not possible to edit or add to these metrics.
+The **Usage** tab in the workflow dashboard provides run metrics for that playbook. These metrics are available to all viewers. It's not possible to edit or add to these metrics.
 
 Webhooks
 --------

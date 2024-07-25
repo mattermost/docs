@@ -1822,6 +1822,8 @@ redirects = {
         "https://docs.mattermost.com/configure/site-configuration-settings.html#system-wide-notifications",
 "configure/site-configuration-settings.html#enable-announcement-banner":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-system-wide-notifications",
+"configure/plugins-configuration-settings.html#playbooks":
+        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#collaborative-playbooks",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -1975,7 +1977,7 @@ redirects = {
 "deployment/sso-google.html":
 	"https://docs.mattermost.com/onboard/sso-google.html",
 "deployment/sso-office.html":
-	"https://docs.mattermost.com/onboard/sso-office.html",
+	"https://docs.mattermost.com/onboard/sso-entraid.html",
 "deployment/sso-saml.html":
 	"https://docs.mattermost.com/onboard/sso-saml.html",
 "deployment/sso-saml-technical.html":
@@ -3040,6 +3042,8 @@ redirects = {
         "https://docs.mattermost.com/onboard/migrate-mattermost-from-one-server-to-another",
 "onboard/system-admin-roles.html":
         "https://docs.mattermost.com/onboard/delegated-granular-administration.html",
+"onboard/sso-office.html":
+        "https://docs.mattermost.com/onboard/sso-entraid.html",
 
 # Overview redirects
 "overview/architecture.html":

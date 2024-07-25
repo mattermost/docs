@@ -30,7 +30,7 @@ Get started with administration
     GitLab SSO </onboard/sso-gitlab>
     OpenID SSO </onboard/sso-openidconnect>
     Google SSO </onboard/sso-google>
-    Office 365 SSO </onboard/sso-office>
+    Entra ID SSO </onboard/sso-entraid>
     Advanced permissions </onboard/advanced-permissions>
     Delegated granular administration </onboard/delegated-granular-administration>
     Manage team and channel members </manage/team-channel-members>
@@ -53,7 +53,7 @@ These resources will help you get started with your Mattermost self-hosted or Cl
 * **Manage user surveys** - Learn how to :doc:`create, manage, and export data from user surveys </configure/manage-user-surveys>` in your self-hosted Mattermost deployment.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
-* **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Enterprise and Professional versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-office>`.
+* **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Enterprise and Professional versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Entra ID </onboard/sso-entraid>`.
 * **User permissions** - All versions of Mattermost offer standard user permissions control. Enterprise and Professional versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`Delegated granular administration </onboard/delegated-granular-administration>` to grant admins from your organization access to specific areas of the Mattermost System Console.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
 * **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.

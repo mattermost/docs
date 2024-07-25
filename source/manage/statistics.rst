@@ -74,7 +74,7 @@ Replica DB Conns
     The number of active connections currently on one or more of :ref:`your read replica databases <scale/high-availability-cluster-based-deployment:database configuration>`.
 
 Total Playbooks
-    The total number of playbooks on this server.
+    The total number of collaborative playbooks on this server.
 
 Total Playbook Runs
     The total number of runs (active and complete) on this server.

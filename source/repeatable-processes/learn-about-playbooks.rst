@@ -1,10 +1,10 @@
-Learn about playbooks
-=====================
+Learn about collaborative playbooks
+====================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. Using  playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
+A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. Using collaborative playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Collaborative playbooks are made up of:
 

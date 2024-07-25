@@ -1,6 +1,6 @@
 :nosearch:
 
-Mattermost provides OpenID Connect support for :doc:`GitLab </onboard/sso-gitlab>`, :doc:`Google Apps </onboard/sso-google>`, and :doc:`Office 365 </onboard/sso-office>`. With OpenID Connect, users can also use their login to Keycloak, Atlassian Crowd, Apple, Microsoft, Salesforce, Auth0, Ory.sh, Facebook, Okta, OneLogin, and Azure AD, as well as others, as a Single Sign-on (SSO) service for team creation, account creation, and user login.
+Mattermost provides OpenID Connect support for :doc:`GitLab </onboard/sso-gitlab>`, :doc:`Google Apps </onboard/sso-google>`, and :doc:`Entra ID </onboard/sso-entraid>`. With OpenID Connect, users can also use their login to Keycloak, Atlassian Crowd, Apple, Microsoft, Salesforce, Auth0, Ory.sh, Facebook, Okta, OneLogin, and Azure AD, as well as others, as a Single Sign-on (SSO) service for team creation, account creation, and user login.
 
 Follow these steps to configure a service provider using OpenID Connect.
 

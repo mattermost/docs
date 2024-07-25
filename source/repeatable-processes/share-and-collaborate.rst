@@ -1,7 +1,7 @@
 Share and collaborate
 =====================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 
@@ -27,11 +27,11 @@ Playbook roles
 
 **Member**
 
-In the context of Playbooks, members are users of Mattermost who are added to a playbook.
+In the context of collaborative playbooks, members are users of Mattermost who are added to a playbook.
 
 **Playbook Admin**
 
-In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the System Admin. Members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook.
+Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the System Admin. Members need to be promoted to the role from within playbooks. The Playbook Admin role is applied per playbook.
 
 .. note::
 
@@ -40,7 +40,7 @@ In the context of Playbooks, Playbook Admins are also members, and may have elev
 Playbooks permissions
 ---------------------
 
-The default Playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management. Note that even with the default settings, private playbooks restrict these actions to members of the playbook.
+Default playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management. Note that even with the default settings, private playbooks restrict these actions to members of the playbook.
 
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -2203,16 +2203,7 @@ Google OAuth 2.0 Token endpoint
 | String input.                                                                                                                                                                             | - Environment variable: ``MM_GOOGLESETTINGS_TOKENENDPOINT``  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-.. config:setting:: oauth-o365enable
-  :displayname: Enable (OAuth - Office 365)
-  :systemconsole: Authentication > OAuth 2.0
-  :configjson: .Office365Settings.Enable
-  :environment: MM_OFFICE365SETTINGS_ENABLE
-
-  - **true**: Allow team creation and account signup using Office 365 OAuth.
-  - **false**: **(Default)** Office 365 OAuth cannot be used for team creation or account signup.
-
-Office 365 OAuth 2.0 settings
+Entra ID OAuth 2.0 settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
@@ -2221,70 +2212,79 @@ Office 365 OAuth 2.0 settings
 .. note::
    In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
-Enable OAuth 2.0 Authentication with Office 365
+.. config:setting:: oauth-entra-id-enable
+  :displayname: Enable (OAuth - Entra ID)
+  :systemconsole: Authentication > OAuth 2.0
+  :configjson: .Office365Settings.Enable
+  :environment: MM_OFFICE365SETTINGS_ENABLE
+
+  - **true**: Allow team creation and account signup using Entra ID OAuth.
+  - **false**: **(Default)** Entra ID OAuth cannot be used for team creation or account signup.
+
+Enable OAuth 2.0 Authentication with Entra ID
 '''''''''''''''''''''''''''''''''''''''''''''''
 
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| - **true**: Allows team and account creation using Office 365 OAuth authentication. | - System Config path: **Authentication > OAuth 2.0**           |
-| - **false**: **(Default)** Disables Office 365 OAuth authentication.                | - ``config.json`` setting: ``.Office365Settings.Enable: false``|
+| - **true**: Allows team and account creation using Entra ID OAuth authentication.   | - System Config path: **Authentication > OAuth 2.0**           |
+| - **false**: **(Default)** Disables Entra ID OAuth authentication.                  | - ``config.json`` setting: ``.Office365Settings.Enable: false``|
 |                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``        |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                  |
-+------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Note**: See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.                                                   |
++-------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-Office 365 OAuth 2.0 Application ID
-'''''''''''''''''''''''''''''''''''
-
-.. config:setting:: oauth-o365appid
-  :displayname: Application ID (OAuth - Office 365)
+.. config:setting:: oauth-entra-id-appid
+  :displayname: Application ID (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.Id
   :environment: MM_OFFICE365SETTINGS_ID
-  :description: This setting holds the Application ID generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
+  :description: This setting holds the Application ID generated when configuring Entra ID as a Single Sign-On service through the Microsoft Azure Portal.
+
+Entra ID OAuth 2.0 Application ID
+'''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
-| This setting holds the **Application ID** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. | - System Config path: **Authentication > OAuth 2.0** |
+| This setting holds the **Application ID** generated when configuring Entra ID as a Single Sign-On service through the Microsoft Azure Portal.   | - System Config path: **Authentication > OAuth 2.0** |
 |                                                                                                                                                 | - ``config.json`` setting: ``.Office365Settings.Id`` |
 | String input.                                                                                                                                   | - Environment variable: ``MM_OFFICE365SETTINGS_ID``  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                                                                    |
+| **Note**: See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.                                                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-Office 365 OAuth 2.0 Application secret password
-''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. config:setting:: oauth-o365appsecret
-  :displayname: Application secret password (OAuth - Office 365)
+.. config:setting:: oauth-entra-id-appsecret
+  :displayname: Application secret password (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.Secret
   :environment: MM_OFFICE365SETTINGS_SECRET
-  :description: This setting holds the Application Secret Password generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal.
+  :description: This setting holds the Application Secret Password generated when configuring Entra ID as a Single Sign-On service through the Microsoft Azure Portal.
+
+Entra ID OAuth 2.0 Application secret password
+''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| This setting holds the **Application Secret Password** generated when configuring Office 365 as a Single Sign-On service through the Microsoft Azure Portal. | - System Config path: **Authentication > OAuth 2.0**     |
+| This setting holds the **Application Secret Password** generated when configuring Entra ID as a Single Sign-On service through the Microsoft Azure Portal.   | - System Config path: **Authentication > OAuth 2.0**     |
 |                                                                                                                                                              | - ``config.json`` setting: ``.Office365Settings.Secret`` |
 | String input.                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                                                                                     |
+| **Note**: See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.                                                                                                                      |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-Office 365 OAuth 2.0 Directory (tenant) ID
-''''''''''''''''''''''''''''''''''''''''''
-
-.. config:setting:: oauth-o365directoryid
-  :displayname: Directory ID (OAuth - Office 365)
+.. config:setting:: oauth-entra-id-directoryid
+  :displayname: Directory ID (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.DirectoryId
   :environment: MM_OFFICE365SETTINGS_DIRECTORYID
   :description: This setting holds the Directory (tenant) ID set for Mattermost through the Azure Portal.
+
+Entra ID OAuth 2.0 Directory (tenant) ID
+''''''''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2295,19 +2295,18 @@ Office 365 OAuth 2.0 Directory (tenant) ID
 |                                                                                               | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
 | String input.                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
 +-----------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: See the :doc:`Office 365 Single Sign-On </onboard/sso-office>` documentation for details.                                                           |
+| **Note**: See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.                                                            |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-
-Office 365 OAuth 2.0 User API endpoint
-''''''''''''''''''''''''''''''''''''''
-
-.. config:setting:: oauth-o365userapiendpoint
-  :displayname: User API endpoint (OAuth - Office 365)
+.. config:setting:: oauth-entra-id-userapiendpoint
+  :displayname: User API endpoint (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.UserAPIEndpoint
   :environment: MM_OFFICE365SETTINGS_USERAPIENDPOINT
   :description: We recommend using ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. It is the default value.
+
+Entra ID OAuth 2.0 User API endpoint
+''''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2319,15 +2318,15 @@ Office 365 OAuth 2.0 User API endpoint
 | String input.                                                                                                                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_USERAPIENDPOINT``  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-Office 365 OAuth 2.0 Auth endpoint
-''''''''''''''''''''''''''''''''''
-
-.. config:setting:: oauth-o365authendpoint
-  :displayname: Auth endpoint (OAuth - Office 365)
+.. config:setting:: oauth-entra-id-authendpoint
+  :displayname: Auth endpoint (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.AuthEndpoint
   :environment: MM_OFFICE365SETTINGS_AUTHENDPOINT
   :description: We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint.
+
+Entra ID OAuth 2.0 Auth endpoint
+''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2339,15 +2338,15 @@ Office 365 OAuth 2.0 Auth endpoint
 | String input.                                                                                                                                                                                                        | - Environment variable: ``MM_OFFICE365SETTINGS_AUTHENDPOINT``  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-Office 365 OAuth 2.0 Token endpoint
-'''''''''''''''''''''''''''''''''''
-
-.. config:setting:: oauth-o365tokenendpoint
-  :displayname: Token endpoint (OAuth - Office 365)
+.. config:setting:: oauth-entra-id-tokenendpoint
+  :displayname: Token endpoint (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.TokenEndpoint
   :environment: MM_OFFICE365SETTINGS_TOKENENDPOINT
   :description: We recommend that you use ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. It is the default value.
+
+Entra ID OAuth 2.0 Token endpoint
+'''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2389,7 +2388,7 @@ Select OpenID Connect service provider
 | - **Do not allow login via an OpenID provider**                                  | - Environment variable: N/A                               |
 | - **GitLab** (`see settings <#gitlab-openid-settings>`__)                        |                                                           |
 | - **Google Apps** (`see settings <#google-openid-settings>`__)                   |                                                           |
-| - **Office 365** (`see settings <#office-365-openid-settings>`__)                |                                                           |
+| - **Entra ID** (`see settings <#entra-id-openid-settings>`__)                    |                                                           |
 | - **OpenID Connect (Other)** (`see settings <#openid-connect-other-settings>`__) |                                                           |
 +----------------------------------------------------------------------------------+-----------------------------------------------------------+
 | **Note**: **GitLab** OpenID is available in all plans. All other providers require Mattermost Enterprise or Professional.                    |
@@ -2400,6 +2399,15 @@ GitLab OpenID settings
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
+
+.. config:setting:: oidc-gitlab-enable
+  :displayname: Enable (OpenID Connect - GitLab)
+  :systemconsole: Authentication > OpenID Connect
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Allow team creation and account signup using Gitlab OpenID Connect authentication.
+  - **false**: **(Default)** Disables GitLab OpenID Connect authentication.
 
 Enable OpenID Connect authentication with GitLab
 ''''''''''''''''''''''''''''''''''''''''''''''''
@@ -2416,15 +2424,15 @@ Enable OpenID Connect authentication with GitLab
 | **Note**: See the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-GitLab OpenID site URL
-''''''''''''''''''''''
-
 .. config:setting:: oidc-gitlabsiteurl
   :displayname: GitLab site URL (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
   :environment: N/A
   :description: Specify the URL of your GitLab instance (example ``https://example.com:3000``).
+
+GitLab OpenID site URL
+''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2439,15 +2447,15 @@ GitLab OpenID site URL
 | **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-GitLab OpenID Discovery endpoint
-''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-gitlabdiscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GitLabSettings.DiscoveryEndpoint
   :environment: MM_GITLABSETTINGS_DISCOVERYENDPOINT
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
+
+GitLab OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2462,15 +2470,15 @@ GitLab OpenID Discovery endpoint
 | **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                                         |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-GitLab OpenID Client ID
-'''''''''''''''''''''''
-
 .. config:setting:: oidc-gitlabclientid
   :displayname: Client ID (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GitLabSettings.Id
   :environment: MM_GITLABSETTINGS_ID
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
+
+GitLab OpenID Client ID
+'''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2485,15 +2493,15 @@ GitLab OpenID Client ID
 | **Note**: See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-GitLab OpenID Client secret
-'''''''''''''''''''''''''''
-
 .. config:setting:: oidc-gitlabclientsecret
   :displayname: Client secret (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GitLabSettings.Secret
   :environment: MM_GITLABSETTINGS_SECRET
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
+
+GitLab OpenID Client secret
+'''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2514,14 +2522,15 @@ Google OpenID settings
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enable OpenID Connect authentication with Google
-''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. config:setting:: oidc-googleenable
   :displayname: Enable Google Settings (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GoogleSettings.Enable
   :environment: MM_GOOGLESETTINGS_ENABLE
+
+Enable OpenID Connect authentication with Google
+''''''''''''''''''''''''''''''''''''''''''''''''
 
   - **true**: Allow team creation and account signup using Google OpenID Connect.
   - **false**: **(Default)** Google OpenID Connect cannot be used for team creation or account signup.
@@ -2537,15 +2546,15 @@ Enable OpenID Connect authentication with Google
 | See :doc:`Google Single Sign-On </onboard/sso-google>` implementation instructions.                              |                                                              |
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-Google OpenID Discovery endpoint
-''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-googlediscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GoogleSettings.DiscoveryEndpoint
   :environment: MM_GOOGLESETTINGS_DISCOVERYENDPOINT
   :description: This value is prepopulated with ``https://accounts.google.com/.well-known/openid-configuration``.
+
+Google OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2559,15 +2568,15 @@ Google OpenID Discovery endpoint
 | String input. Default is ``https://accounts.google.com/.well-known/openid-configuration``                                                               |                                                                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-Google OpenID Client ID
-'''''''''''''''''''''''
-
 .. config:setting:: oidc-googleclientid
   :displayname: Client ID (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GoogleSettings.Id
   :environment: MM_GOOGLESETTINGS_ID
   :description: Obtain this value by registering Mattermost as an application in your Google account.
+
+Google OpenID Client ID
+'''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2581,15 +2590,15 @@ Google OpenID Client ID
 | String input.                                                                                                    |                                                           |
 +------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-Google OpenID Client secret
-'''''''''''''''''''''''''''
-
 .. config:setting:: oidc-googleclientsecret
   :displayname: Client secret (OpenID Connect - Google)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GoogleSettings.Secret
   :environment: MM_GOOGLESETTINGS_SECRET
   :description: Obtain this value by registering Mattermost as an application in your Google account.
+
+Google OpenID Client secret
+'''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2603,7 +2612,7 @@ Google OpenID Client secret
 | String input.                                                                                                     |                                                           |
 +-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-Office 365 OpenID settings
+Entra ID OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
@@ -2612,38 +2621,38 @@ Office 365 OpenID settings
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-Enable OpenID Connect authentication with Office 365
-''''''''''''''''''''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-o365enable
-  :displayname: Enable Office 365 Settings (OpenID Connect - Office 365)
+  :displayname: Enable Entra ID Settings (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.Enable
   :environment: MM_OFFICE365SETTINGS_ENABLE
 
-  - **true**: Allow team creation and account signup using Office 365 OpenID Connect.
-  - **false**: **(Default)** Office 365 OpenID Connect cannot be used for team creation or account signup.
+  - **true**: Allow team creation and account signup using Entra ID OpenID Connect.
+  - **false**: **(Default)** Entra ID OpenID Connect cannot be used for team creation or account signup.
+
+Enable OpenID Connect authentication with Entra ID
+''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| - **true**: Allows team and account creation using Office 365 OpenID Connect authentication.                         | - System Config path: **Authentication > OpenID Connect**       |
+| - **true**: Allows team and account creation using Entra ID OpenID Connect authentication.                           | - System Config path: **Authentication > OpenID Connect**       |
 | - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``.Office365Settings.Enable: false`` |
 |                                                                                                                      | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``         |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              |                                                                 |
+| See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               |                                                                 |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-Office 365 OpenID Directory (tenant) ID
-'''''''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-o365directoryid
-  :displayname: Directory ID (OpenID Connect - Office 365)
+  :displayname: Directory ID (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.DirectoryId
   :environment: MM_OFFICE365SETTINGS_DIRECTORYID
   :description: This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.
+
+Entra ID OpenID Directory (tenant) ID
+'''''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2652,35 +2661,32 @@ Office 365 OpenID Directory (tenant) ID
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.                  | - System Config path: **Authentication > OpenID Connect**     |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DirectoryId`` |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
+| See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``  |
 |                                                                                                                      |                                                               |
 | String input.                                                                                                        |                                                               |
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-Office 365 OpenID Discovery endpoint
-''''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-o365discoveryendpoint
-  :displayname: Discovery endpoint (OpenID Connect - Office 365)
+  :displayname: Discovery endpoint (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.DiscoveryEndpoint
   :environment: MM_OFFICE365SETTINGS_DISCOVERYENDPOINT
   :description: This value is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
+
+Entra ID OpenID Discovery endpoint
+''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-| This setting is prepopulated with the Discovery Endpoint for Office 365 OpenID Connect.                              | - System Config path: **Authentication > OpenID Connect**           |
+| This setting is prepopulated with the Discovery Endpoint for Entra ID OpenID Connect.                                | - System Config path: **Authentication > OpenID Connect**           |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.DiscoveryEndpoint`` |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
+| See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               | - Environment variable: ``MM_OFFICE365SETTINGS_DISCOVERYENDPOINT``  |
 |                                                                                                                      |                                                                     |
 | String input. Default is ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``          |                                                                     |
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
-
-Office 365 Client ID
-''''''''''''''''''''
 
 .. config:setting:: oidc-o365clientid
   :displayname: Client ID (OpenID Connect - Office 365)
@@ -2689,6 +2695,9 @@ Office 365 Client ID
   :environment: MM_OFFICE365SETTINGS_ID
   :description: This setting stores the Application (client) ID  generated through the Microsoft Azure Portal.
 
+Entra ID Client ID
+''''''''''''''''''''
+
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
@@ -2696,20 +2705,20 @@ Office 365 Client ID
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the **Application (client) ID** generated through the Microsoft Azure Portal.                    | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Id``      |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
+| See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
 |                                                                                                                      |                                                           |
 | String input.                                                                                                        |                                                           |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-Office 365 Client secret
-''''''''''''''''''''''''
-
-.. config:setting:: oidc-o365clientsecret
-  :displayname: Client secret (OpenID Connect - Office 365)
+.. config:setting:: oidc-entra-id-clientsecret
+  :displayname: Client secret (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.Secret
   :environment: MM_OFFICE365SETTINGS_SECRET
   :description: This setting stores the Client Secret generated through the Microsoft Azure Portal.
+
+Entra ID Client secret
+''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2718,19 +2727,13 @@ Office 365 Client secret
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the **Client Secret** generated through the Microsoft Azure Portal.                              | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``.Office365Settings.Secret``  |
-| See :doc:`Office 365 Single Sign-On </onboard/sso-office>` implementation instructions.                              | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
+| See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``   |
 |                                                                                                                      |                                                           |
 | String input.                                                                                                        |                                                           |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
 OpenID Connect (other) settings
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Enable OpenID Connect authentication with other service providers
-'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -2744,6 +2747,12 @@ Enable OpenID Connect authentication with other service providers
   - **True**: Allow team creation and account signup using OpenID Connect.
   - **False**: **(Default)** OpenID Connect cannot be used for team creation or account signup.
 
+Enable OpenID Connect authentication with other service providers
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 .. raw:: html
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
@@ -2755,15 +2764,15 @@ Enable OpenID Connect authentication with other service providers
 | See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions.                              |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-OpenID Connect (other) Button name
-''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-buttonname
   :displayname: Button name (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.ButtonText
   :environment: MM_OPENIDSETTINGS_BUTTONTEXT
   :description: Specify the text that displays on the OpenID login button.
+
+OpenID Connect (other) Button name
+''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2775,15 +2784,15 @@ OpenID Connect (other) Button name
 | String input.                                         | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONTEXT``  |
 +-------------------------------------------------------+-----------------------------------------------------------+
 
-OpenID Connect (other) Button color
-'''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-buttoncolor
   :displayname: Button color
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.ButtonColor
   :environment: MM_OPENIDSETTINGS_BUTTONCOLOR
   :description: Specify the color of the OpenID login button for white labeling purposes. Use a hex code with a #-sign before the code, for example ``#145DBF``.
+
+OpenID Connect (other) Button color
+'''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2795,15 +2804,15 @@ OpenID Connect (other) Button color
 | String input.                                                                                                                | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONCOLOR``  |
 +------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 
-OpenID Connect (other) Discovery endpoint
-'''''''''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-discoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.DiscoveryEndpoint
   :environment: MM_OPENIDSETTINGS_DISCOVERYENDPOINT
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
+
+OpenID Connect (other) Discovery endpoint
+'''''''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2824,15 +2833,15 @@ OpenID Connect (other) Discovery endpoint
 | :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.                 |
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-OpenID Connect (other) Client ID
-''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-clientid
   :displayname: Client ID (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Id
   :environment: MM_OPENIDSETTINGS_ID
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
+
+OpenID Connect (other) Client ID
+''''''''''''''''''''''''''''''''
 
 .. raw:: html
 
@@ -2846,15 +2855,15 @@ OpenID Connect (other) Client ID
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-OpenID Connect (other) Client secret
-''''''''''''''''''''''''''''''''''''
-
 .. config:setting:: oidc-clientsecret
   :displayname: Client secret (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Secret
   :environment: MM_OPENIDSETTINGS_SECRET
   :description: Obtain this value by registering Mattermost as an application in your service provider account.
+
+OpenID Connect (other) Client secret
+''''''''''''''''''''''''''''''''''''
 
 .. raw:: html
 

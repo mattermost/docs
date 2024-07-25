@@ -52,7 +52,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Add members to team", "X", "X", "X"
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
-    **PLAYBOOKS**
+    **COLLABORATIVE PLAYBOOKS**
     "Templates and checklists", "X", "X"
     **CALLS**
     "Join call", "X", "X", "X"

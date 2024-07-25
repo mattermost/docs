@@ -5,11 +5,11 @@ Search for messages
   :start-after: :nosearch:
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between Channels and Playbooks using the product menu icon.
+  :alt: Navigate between Channels and collaborative playbooks using the product menu icon.
   :class: theme-icon
 
 .. |search-icon| image:: ../images/magnify_F0349.svg
-  :alt: Navigate between Channels and Playbooks using the product menu icon.
+  :alt: Search for messages and files in Mattermost.
   :class: theme-icon
   
 .. |channel-info| image:: ../images/information-outline_F02FD.svg
