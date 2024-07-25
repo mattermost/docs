@@ -1187,31 +1187,10 @@ Sync notifications
 | Notify connected users in Mattermost on receipt of a chat or group     | - System Config path: **Plugins > MS Teams**       |
 | chat from Microsoft Teams.                                             | - ``config.json`` setting: N/A                     |
 |                                                                        | - Environment variable: N/A                        |
-| - **true**: Sync notifications of chat messages for any connected user |                                                    |
-|   that enables the feature.                                            |                                                    |
-| - **false**: **(Default)** Do not sync notifications.                  |                                                    |
+| - **true**: **(Default)** Sync notifications of chat messages for any  |                                                    |
+|   connected user that enables the feature.                             |                                                    |
+| - **false**: Do not sync notifications.                                |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
-
-.. config:setting:: plugins-msteamssynclinkedchannels
-  :displayname: Sync linked channels (Plugins - MS Teams)
-  :systemconsole: Plugins > MS Teams
-  :configjson: N/A
-  :environment: N/A
-  :description: Sync messages from channels linked between Mattermost and MS Teams.
-
-Sync linked channels
-~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------+----------------------------------------------------+
-| Sync messages from channels linked between Mattermost and MS Teams.    | - System Config path: **Plugins > MS Teams**       |
-|                                                                        | - ``config.json`` setting: N/A                     |
-|                                                                        | - Environment variable: N/A                        |
-| - **true**: Messages from linked channels are synced, and new channels |                                                    |
-|   can be setup for synchronization.                                    |                                                    |
-| - **false**: **(Default)** Messages are not synced and new channels    |                                                    |
-|   cannot be setup for synchronization.                                 |                                                    |
-+------------------------------------------------------------------------+----------------------------------------------------+
-
 
 .. config:setting:: plugins-msteamsmaxsizeattachments
   :displayname: Maximum size of attachments to support complete one time download (Plugins - MS Teams)

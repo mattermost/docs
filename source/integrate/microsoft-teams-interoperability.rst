@@ -42,7 +42,7 @@ Set up an OAuth application in Azure
  - **Name**: ``Mattermost MS Teams``
  - **Supported account types**: ``Default value (Single tenant)``
  - **Platform**: ``Web``
- - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams/oauth-redirect``
+ - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams-sync/oauth-redirect``
 
 Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Register** to submit the form.
 
@@ -65,18 +65,10 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 
 9. Select **Delegated permissions**, and scroll down to select the following permissions:
 
- - ``Channel.ReadBasic.All``
- - ``ChannelMessage.Read.All``
- - ``ChannelMessage.ReadWrite``
- - ``ChannelMessage.Send``
- - ``Chat.Create``
- - ``Chat.ReadWrite``
+ - ``Chat.Read``
  - ``ChatMessage.Read``
- - ``Directory.Read.All``
  - ``Files.Read.All``
- - ``Files.ReadWrite.All``
  - ``offline_access``
- - ``Team.ReadBasic.All``
  - ``User.Read``
 
 10. Select **Add permissions** to submit the form.
@@ -85,14 +77,7 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 
 12. Select the following permissions:
 
- - ``Channel.ReadBasic.All``
- - ``ChannelMessage.Read.All``
  - ``Chat.Read.All``
- - ``Files.Read.All``
- - ``Group.Read.All``
- - ``Team.ReadBasic.All``
- - ``User.Read.All``
- - ``Application.ReadWrite.OwnedBy`` (or ``Application.Read.All``)
 
 13. Select **Add permissions** to submit the form.
 
@@ -101,7 +86,7 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
+Follow the steps here to associate your application with a paid subscription: https://learn.microsoft.com/en-us/graph/metered-api-setup
 
 .. important::
 
@@ -113,19 +98,6 @@ Mattermost configuration
 ------------------------
 
 With the Tenant ID, Client ID, and Client secret noted above, the Mattermost plugin is ready for configuration. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for support in completing the base configuration.
-
-Create a user account to act as a bot
---------------------------------------
-
-A connected bot is required to sync linked channels.
-
-1. Create a regular user account. We will connect this account later from the Mattermost side.
-2. This account is needed for proxying messages from Mattermost to Microsoft Teams.
-
-   .. image:: ../images/teams-user-as-bot.png
-    :alt: In Microsoft Teams, create a user account to act as a bot.
-
-3. As a system administrator, run the ``/msteams connect-bot`` slash command to connect the bot account, authenticating with the Teams account created above.
 
 Monitor performance
 --------------------
@@ -143,16 +115,6 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 .. note:: 
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
-
-System admin slash commands
-----------------------------
-
-Once Microsoft Teams interoperability is enabled, the following slash commands are available for Mattermost system admins by typing the commands into the Mattermost message text box, and selecting **Send**:
-
-- ``/msteams connect-bot``: Connect the bot account in Mattermost to an account in Microsoft Teams.
-- ``/msteams disconnect-bot``: Disconnect the bot account in Mattermost from the Microsoft Teams account.
-- ``/msteams show-links``: Show all the currently active links including the Mattermost team, Mattermost channel, Microsoft Teams team, and Microsoft Teams channel.
-
 
 Usage
 -----
@@ -174,7 +136,7 @@ How is encryption handled at rest and in motion?
 
 The configured client secret, stored in the Mattermost configuration, is used for app-only access to the the Microsoft Graph API. As users connect to Microsoft Teams using the integration, the resulting access tokens are encrypted and stored in the Mattermost database to be used for access on behalf of the connected user. All communication between the integration and the Microsoft Graph API is conducted via TLS.
 
-When notifications are enabled, chats and file attachments received by connected users will be stored as posts in the direct message channel between that user and the bot account created by the integration. When linked channels are enabled, messages and file attachments sent in Microsoft Teams will be stored as posts in the linked Mattermost channel. Similarly, messages and file attachments sent in a linked Mattermost channel will be sent to Microsoft Teams using the Microsoft Graph API.
+When notifications are enabled, chats and file attachments received by connected users will be stored as posts in the direct message channel between that user and the bot account created by the integration.
 
 Are there any database or network security considerations?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,7 +151,7 @@ There is nothing specific to the integration that is beyond what would apply to 
 How is this integration architectured?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The integration subscribes to change notifications from the Microsoft Graph API. These change notifications inform Mattermost about new or updated chats and channel messages within Microsoft Teams. Upon receipt of the change notification, the integration use a combination of its app-only access (via the client secret) and delegated acess (via connected users) to fetch the contents of these chats and channel messages and represent them appropriately within Mattermost.
+The integration subscribes to change notifications from the Microsoft Graph API. These change notifications inform Mattermost about new or updated chats within Microsoft Teams. Upon receipt of the change notification, the integration uses a combination of its app-only access (via the client secret) and delegated acess (via connected users) to fetch the contents of these chats and represent them appropriately within Mattermost.
 
 Get help
 --------
