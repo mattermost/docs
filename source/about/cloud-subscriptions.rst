@@ -19,6 +19,36 @@ Enterprises can choose between dedicated and shared infrastructure based on your
 - :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>`: Better suited for larger organizations or those with specific needs around security, compliance, and customization, who are willing to pay a premium for dedicated resources and enhanced support.
 - :doc:`Mattermost Cloud Shared </about/cloud-shared>`: A cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
 
+Compare offerings
+-----------------
+
++-------------------------------+---------------+------------+
+| **Resource**                  | **Dedicated** | **Shared** |
++===============================+===============+============+
+| Mattermost High Availability  |      YES      |     YES    |
+| cluster-based deployment      |               |            |
++-------------------------------+---------------+------------+
+| Network policy                |      YES      |     YES    |
++-------------------------------+---------------+------------+
+| Namespace                     |      YES      |     YES    |
++-------------------------------+---------------+------------+
+| Network                       |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Kubernetes High Availability  |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Database High Availability    |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Object storage                |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Encryption keys               |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Custom backup schedule        |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| IP Filtering                  |      YES      |     YES    |
++-------------------------------+---------------+------------+
+| Bring your own key            |      YES      |     NO     |
++-------------------------------+---------------+------------+
+
 Frequently asked questions about Mattermost Cloud
 -------------------------------------------------
 
