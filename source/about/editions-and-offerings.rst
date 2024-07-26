@@ -75,7 +75,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
-- 99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
+- 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
 Mattermost Professional 
 ~~~~~~~~~~~~~~~~~~~~~~~
