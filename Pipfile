@@ -58,4 +58,4 @@ sphinx-copybutton = "==0.5.2"
 importlib-metadata = "==4.12.0"
 #
 # Tabbed views for Sphinx (https://github.com/pradyunsg/sphinx-inline-tabs)
-sphinx-inline-tabs = "==2023.04.21"
+sphinx-inline-tabs = "*"
