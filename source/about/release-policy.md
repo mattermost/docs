@@ -47,6 +47,26 @@ We highly recommend working with your Mattermost Account Team to plan for a migr
 
 ![Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.](../images/ESR_graphic2.png)
 
+```{mermaid}
+
+gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b
+    
+    section 2024
+    v9.4                   :done,    2024-01-01, 2024-04-30
+    v9.5 Extended Support  :crit,    2024-04-01, 2024-12-31
+    v9.6                   :active,  2024-04-01, 2024-06-30
+    v9.7                   :active,  2024-05-01, 2024-08-31
+    v9.8                   :active,  2024-06-01, 2024-09-30
+    v9.9                   :active,  2024-07-01, 2024-10-31
+    v9.10                  :active,  2024-08-01, 2024-11-30
+    v9.11 Extended Support :crit,    2024-09-01, 2025-04-30
+
+    section 2025
+    v9.11 Extended Support :crit,    2024-09-01, 2025-04-30
+```
+
 (esr-notifications)=
 ### ESR Notifications
 
