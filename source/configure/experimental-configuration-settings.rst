@@ -839,7 +839,7 @@ Output log and audit records to any combination of console, local file, syslog, 
 Enable audit logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 

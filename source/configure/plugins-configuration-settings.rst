@@ -969,7 +969,7 @@ Enable call ringing (Beta)
 GitLab
 ------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/gitlab-interoperability:mattermost configuration>`.
@@ -986,7 +986,7 @@ See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>`
 GitHub
 ------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/github-interoperability:mattermost configuration>`.
@@ -1003,7 +1003,7 @@ See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>`
 Jira
 ----
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/jira-interoperability:mattermost configuration>`.
@@ -1360,7 +1360,7 @@ Enable user satisfaction survey
 ServiceNow
 ----------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/servicenow-interoperability:mattermost configuration>`.
@@ -1378,7 +1378,7 @@ See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interopera
 Zoom
 ----
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Zoom to Mattermost </integrate/zoom-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/zoom-interoperability:mattermost configuration>`.
