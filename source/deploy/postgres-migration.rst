@@ -18,7 +18,7 @@ From Mattermost v8.0, PostgreSQL is our database of choice for Mattermost to enh
 * :doc:`Manually migrate from MySQL to PostgreSQL </deploy/manual-postgres-migration>` - A good option if your organization has database administrators to own the migration process, or if you want to learn what the ``migration-assist`` tool automates for you.
 
 FAQ
-===
+----
 
 1. Can the migration-assist be run on the mattermost server?
 
