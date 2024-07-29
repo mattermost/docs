@@ -77,7 +77,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "AD/LDAP", "X", "X", "X"
     "SAML SSO", "X", "X", "X"
     "GitLab SSO", "X", "X", "X"
-    "Office 365 SSO", "X", "X", "X"
+    "Entra ID SSO", "X", "X", "X"
     "Google SSO", "X", "X",
     **OTHER**
     "Localization for 20 languages", "X", "X", "X"

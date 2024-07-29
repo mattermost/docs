@@ -429,9 +429,9 @@ Before you can start recording, transcribing, and live captioning calls, you nee
 
 Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions>` configuration setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` configuration setting.
 
-Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (experimental)>` configuration setting.
+Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (beta)>` configuration setting.
 
 .. note::
   - The call transcriptions functionality is available starting in Calls version v0.22.0.

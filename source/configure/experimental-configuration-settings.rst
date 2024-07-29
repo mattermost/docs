@@ -1603,13 +1603,13 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-o365scope
-  :displayname: Office 365 scope (Experimental)
+  :displayname: Entra ID scope (Experimental)
   :systemconsole: N/A
   :configjson: Scope
   :environment: N/A
   :description: Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
-Office 365 Scope
+Entra ID Scope
 ~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst

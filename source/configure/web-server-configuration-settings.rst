@@ -32,7 +32,7 @@ Site URL
 | - If Site URL is not set:                                                                                                     |
 |                                                                                                                               |
 |   - Email notifications will contain broken links, and email batching will not work.                                          |
-|   - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.                                        |
+|   - Authentication via OAuth 2.0, including GitLab, Google, and Entra ID, will fail.                                          |
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 

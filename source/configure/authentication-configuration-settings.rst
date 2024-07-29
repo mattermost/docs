@@ -1935,7 +1935,7 @@ Select OAuth 2.0 service provider
 | - **Do not allow login via an OAuth 2.0 provider**                                                                                             | - Environment variable: N/A                          |
 | - **GitLab** (Available in all plans; see `GitLab 2.0 OAuth settings <#gitlab-oauth-2-0-settings>`__)                                          |                                                      |
 | - **Google Apps** (Available in Mattermost Enterprise and Professional; see `Google OAuth 2.0 settings <#google-oauth-2-0-settings>`__)        |                                                      |
-| - **Office 365** (Available in Mattermost Enterprise and Professional; see `Office 365 OAuth 2.0 settings <#office-365-oauth-2-0-settings>`__) |                                                      |
+| - **Entra ID** (Available in Mattermost Enterprise and Professional; see `Entra ID OAuth 2.0 settings <#entraid-oauth-2-0-settings>`__)        |                                                      |
 +------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 
 GitLab OAuth 2.0 settings
@@ -2639,7 +2639,7 @@ Enable OpenID Connect authentication with Entra ID
 
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | - **true**: Allows team and account creation using Entra ID OpenID Connect authentication.                           | - System Config path: **Authentication > OpenID Connect**       |
-| - **false**: **(Default)** Disables Office 365 OpenID Connect authentication.                                        | - ``config.json`` setting: ``.Office365Settings.Enable: false`` |
+| - **false**: **(Default)** Disables Entra ID OpenID Connect authentication.                                          | - ``config.json`` setting: ``.Office365Settings.Enable: false`` |
 |                                                                                                                      | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``         |
 | See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               |                                                                 |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -2689,7 +2689,7 @@ Entra ID OpenID Discovery endpoint
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: oidc-o365clientid
-  :displayname: Client ID (OpenID Connect - Office 365)
+  :displayname: Client ID (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.Id
   :environment: MM_OFFICE365SETTINGS_ID

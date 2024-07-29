@@ -3352,6 +3352,8 @@ redirects = {
         "https://docs.mattermost.com/about/release-policy.html#release-types",
 "upgrade/version-archive.html":
         "https://docs.mattermost.com/about/version-archive.html",
+"upgrade/release-lifecycle.html":
+        "https://docs.mattermost.com/about/release-policy.html",
 
 # Welcome redirects
 "welcome/manage-desktop-app-server-connections.html":

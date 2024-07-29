@@ -249,7 +249,7 @@ User object
         <kbd>"ldap"</kbd> - LDAP authentication (Enterprise and Professional)<br>
         <kbd>"saml"</kbd> - Generic SAML based authentication (Enterprise)<br>
         <kbd>"google"</kbd> - Google OAuth authentication (Enterprise)<br>
-        <kbd>"office365"</kbd> - Microsoft Office 365 OAuth Authentication (Enterprise)</td>
+        <kbd>"entra id"</kbd> - Microsoft Entra ID OAuth Authentication (Enterprise)</td>
     </tr>
     <tr class="row-odd">
       <td valign="middle">auth_data</td>

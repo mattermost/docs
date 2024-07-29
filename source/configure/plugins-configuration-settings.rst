@@ -651,7 +651,7 @@ Enable simulcast for screen sharing (Experimental)
   - **false**: (Default) Call recording functionality is not available to hosts.
 
 Enable call recordings
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -742,8 +742,8 @@ Call recording quality
   - **true**: Enables automatic transcriptions of calls.
   - **false**: (Default) Call transcriptions functionality is disabled.
 
-Enable call transcriptions
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call transcriptions (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -810,8 +810,8 @@ Call transcriber threads
   - **true**: Enables live captioning of calls.
   - **false**: **(Default)** Live captions functionality is disabled.
 
-Enable live captions (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable live captions (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -825,7 +825,7 @@ Enable live captions (Experimental)
 | clients by clicking the `[cc]` button.                                    |                                                                                                |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | **Note**: Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and                                               |
-| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions>` to be enabled.                                                            |
+| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` to be enabled.                                                     |
 | This setting is available starting in plugin version 0.26.2.                                                                                                               |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
@@ -938,8 +938,8 @@ Live captions language
 | - This setting is available starting in plugin version 0.17.                                                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
-Enable call ringing (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call ringing
+~~~~~~~~~~~~~~~~~~~
 
 .. config:setting:: plugins-enablecallringing
   :displayname: Enable call ringing (Plugins - Calls)
