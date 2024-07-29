@@ -6,7 +6,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
-(release-v9-11-feature-release)=
+(release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 **Release day: 2024-08-16**
