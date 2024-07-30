@@ -4,7 +4,7 @@ Store configuration in your database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-You can use your database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments <../scale/high-availability-cluster>`.
+You can use your database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments </scale/high-availability-cluster>`.
 
 .. tip::
 
@@ -114,9 +114,9 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
 Migrate configuration from ``config.json``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running command:
+You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running the following command:
 
-.. code-block: none
+.. code-block:: text
 
    mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
 

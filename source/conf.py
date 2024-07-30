@@ -109,11 +109,13 @@ redirects = {
 "about/mattermost-customizable-ai-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
 "about/install-mattermost-app-in-microsoft-teams.html":
-        "https://docs.mattermost.com/about/embed-mattermost-within-microsoft-teams",
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 "about/mattermost-google-calendar-integration.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/setup-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
+"about/embed-mattermost-app-within-microsoft-teams.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -127,7 +129,7 @@ redirects = {
 "administration/bulk-export.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
 "administration/changelog.html":
-        "https://docs.mattermost.com/deploy/mattermost-changelog.html",
+        "https://docs.mattermost.com/about/mattermost-server-releases.html",
 "administration/command-line-tools.html":
         "https://docs.mattermost.com/manage/command-line-tools.html",
 "administration/command-line-tools.html#mattermost-user-delete":
@@ -181,9 +183,7 @@ redirects = {
 "administration/encryption.html":
         "https://docs.mattermost.com/deploy/encryption-options.html",
 "administration/extended-support-release.html":
-        "https://docs.mattermost.com/upgrade/extended-support-release.html",
-"administration/extended-support-release.html":
-        "https://docs.mattermost.com/upgrade/extended-support-release.html",
+        "https://docs.mattermost.com/about/release-policy.html#extended-support-releases",
 "administration/generating-support-packet.html":
         "https://docs.mattermost.com/manage/generating-support-packet.html",
 "administration/health-check.html":
@@ -215,7 +215,7 @@ redirects = {
 "administration/mmctl-cli-tool.html#mmctl-user-reset-password":
 	"https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password",
 "administration/mobile-changelog.html":
-        "https://docs.mattermost.com/deploy/mobile-app-changelog.html",
+        "https://docs.mattermost.com/about/mobile-app-changelog.html",
 "administration/notices.html":
         "https://docs.mattermost.com/manage/in-product-notices.html",
 "administration/open-source-components.html":
@@ -229,9 +229,9 @@ redirects = {
 "administration/prev-config-settings.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "administration/release-definitions.html":
-        "https://docs.mattermost.com/upgrade/release-definitions.html",
-"administration/release-lifecycle.html":
-        "https://docs.mattermost.com/upgrade/release-lifecycle.html",
+        "https://docs.mattermost.com/guides/release-definitions.html",
+"administration/releases-lifecycle.html":
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 "administration/scripts.html":
         "https://docs.mattermost.com/manage/scripts.html",
 "administration/statistics.html":
@@ -367,7 +367,7 @@ redirects = {
 "administration/mmctl-cli-tool.html#mmctl-channel-delete":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete",
 "administration/version-archive.html":
-	"https://docs.mattermost.com/upgrade/version-archive.html",
+	"https://docs.mattermost.com/about/version-archive.html",
 "administration/mmctl-cli-tool.html#local-mode":
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
 
@@ -769,9 +769,9 @@ redirects = {
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages":
         "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-messages",
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels":
-        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#collaborate-through-linked-channels",
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html#link-one-or-more-channels-beta",
 "channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams":
-        "https://docs.mattermost.com/collaborate/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams",
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin":
@@ -789,7 +789,7 @@ redirects = {
 
 # Cloud redirects
 "cloud/cloud-administration/cloud-changelog.html":
-	"https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
+	"https://docs.mattermost.com/about/mattermost-server-releases.html",
 "cloud/cloud-administration/cloud-compliance.html":
         "https://docs.mattermost.com/comply/cloud-compliance-and-oversight.html",
 "cloud/cloud-integrations/cloud-slash-commands.html":
@@ -832,6 +832,10 @@ redirects = {
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "collaborate/chat-with-ai-copilot.html":
         "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
+"collaborate-within-embedded-microsoft-teams.html":
+        "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
+"collaborate/send-messages.html#edit-or-delete-messages":
+        "https://docs.mattermost.com/collaborate/send-messages.html#edit-messages",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1816,6 +1820,64 @@ redirects = {
         "https://docs.mattermost.com/deploy/mobile-faq.html",
 "deploy/backup-disaster-recovery.html":
         "https://docs.mattermost.com/deploy/back-up-mattermost-server.html",
+"deploy/deprecated-features.html":
+        "https://docs.mattermost.com/about/deprecated-features.html",
+"deploy/desktop-app-changelog.html":
+        "https://docs.mattermost.com/about/desktop-app-changelog.html",
+"deploy/legacy-self-hosted-changelog.html":
+        "https://docs.mattermost.com/about/unsupported-legacy-releases.html",
+"deploy/mobile-app-changelog.html":
+        "https://docs.mattermost.com/about/mobile-app-changelog.html",
+"deploy/mattermost-changelog.html":
+        "https://docs.mattermost.com/about/server.html",
+"deploy/mattermost-changelog.html#release-v9-9-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html",
+"deploy/mattermost-changelog.html#release-v9-8-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-8-feature-release",
+"deploy/mattermost-changelog.html#release-v9-7-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-7-feature-release",
+"deploy/mattermost-changelog.html#release-v9-6-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-6-feature-release",
+"deploy/mattermost-changelog.html#release-v9-5-extended-support-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release",
+"deploy/mattermost-changelog.html#release-v9-4-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-4-feature-release",
+"deploy/mattermost-changelog.html#release-v9-3-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-3-feature-release",
+"deploy/mattermost-changelog.html#release-v9-2-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-2-feature-release",
+"deploy/legacy-self-hosted-changelog.html#release-v9-1-feature-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-1-feature-release",
+"deploy/legacy-self-hosted-changelog.html#release-v9-0-major-release":
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-0-major-release",
+"deploy/legacy-self-hosted-changelog.html#release-v8-1-extended-support-release":
+        "https://docs.mattermost.com/about/unsupported-legacy-releases.html#release-v8-1-extended-support-release",
+"deploy/legacy-cloud-changelog.html":
+        "https://docs.mattermost.com/about/mattermost-server-releases.html",
+"deploy/desktop-app-changelog.html#release-v5-8":
+        "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-8",
+"deploy/desktop-app-changelog.html#release-v5-7":
+        "https://docs.mattermost.com/about/desktop-app-changelog.html#release-v5-7",
+"deploy/mobile-app-changelog.html#release":
+        "https://docs.mattermost.com/about/mobile-app-changelog.html",
+"deploy/postgres-migration.html#required-tools":
+        "deploy/manual-postgres-migration.html#tool-recommendations",
+"deploy/postgres-migration.html#system-requirements-and-configurations":
+        "deploy/manual-postgres-migration.html#system-requirements-and-configurations-for-manual-migrations",
+"deploy/postgres-migration.html#before-the-migration":
+        "deploy/manual-postgres-migration.html#before-a-manual-migration",
+"deploy/postgres-migration.html#prepare-target-database":
+        "deploy/manual-postgres-migration.html#prepare-target-database",
+"deploy/postgres-migration.html#schema-diffs":
+        "deploy/manual-postgres-migration.html#schema-diffs",
+"deploy/postgres-migration.html#migrate-the-data":
+        "deploy/manual-postgres-migration.html#migrate-the-data",
+"deploy/postgres-migration.html#after-the-migration":
+        "deploy/manual-postgres-migration.html#after-the-migration",
+"deploy/postgres-migration.html#plugin-migrations":
+        "deploy/manual-postgres-migration.html#plugin-migrations",
+"deploy/postgres-migration.html#troubleshooting":
+        "deploy/manual-postgres-migration.html#troubleshooting",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
@@ -1996,7 +2058,7 @@ redirects = {
 "developer/slash-commands.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-slash-commands/",
 "developer/toolkit.html":
-        "https://developers.mattermost.com/integrate/apps/",
+        "https://developers.mattermost.com/",
 "developer/web-service.html":
         "https://api.mattermost.com/",
 "developer/webapp-component.html":
@@ -2012,7 +2074,7 @@ redirects = {
 
 # Microsoft Teams redirects
 "about/embed-mattermost-within-microsoft-teams.html":
-        "about/embed-mattermost-app-within-microsoft-teams.html",
+        "https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html",
 
 # Focalboard redirects
 "focalboard/installing-boards":
@@ -2093,20 +2155,12 @@ redirects = {
         "https://docs.mattermost.com/guides/preferences.html",
 "guides/welcome-to-mattermost.html#mattermost-interface-changes":
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
-"guides/configure-app-framework.html":
-        "https://docs.mattermost.com/deploy/configure-app-framework",
-"guides/deploy-http.html":
-        "https://docs.mattermost.com//deploy/deploy-http",
-"guides/deploy-aws.html":
-        "https://docs.mattermost.com//deploy/deploy-aws",
-"guides/package-aws.html":
-        "https://docs.mattermost.com//deploy/package-aws",
-"guides/deploy-openfaas.html":
-        "https://docs.mattermost.com/deploy/deploy-openfaas",
+"guides/changelogs.html":
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
-	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
+	"https://docs.mattermost.com/about/desktop-app-changelog.html",
 "help/apps/desktop-guide.html":
 	"https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html",
 "help/apps/desktop-mvp.html":
@@ -2280,11 +2334,11 @@ redirects = {
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
         "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 "install/self-managed-changelog.html":
-        "https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
+        "https://docs.mattermost.com/about/legacy-self-hosted-changelog.html",
 "install/legacy-self-hosted-changelog.html":
         "https://docs.mattermost.com/deploy/legacy-mattermost-changelog.html",
 "install/cloud-changelog.html":
-        "https://docs.mattermost.com/deploy/legacy-cloud-changelog.html",
+        "https://docs.mattermost.com/about/mattermost-server-releases.html",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "install/desktop-app-install.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
@@ -2293,11 +2347,14 @@ redirects = {
 "install/install-android-app.html":
         "https://docs.mattermost.com/collaborate/install-android-app.html",
 "install/legacy-self-hosted-changelog.html":
-	"https://docs.mattermost.com/deploy/legacy-self-hosted-changelog.html",
+	"https://docs.mattermost.com/about/unsupported-legacy-releases.html",
 "install/desktop-app-changelog.html":
-	"https://docs.mattermost.com/deploy/desktop-app-changelog.html",
+	"https://docs.mattermost.com/about/desktop-app-changelog.html",
 "install/deprecated-features.html":
-	"https://docs.mattermost.com/deploy/deprecated-features.html",
+	"https://docs.mattermost.com/about/deprecated-features.html",
+
+"integrate/ms-teams-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -3267,12 +3324,20 @@ redirects = {
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-from-releases-older-than-v5-35",
 "upgrade/upgrading-mattermost-server.html#upgrade-high-availability-deployments":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-high-availability-deployments",
+"upgrade/extended-support-release.html":
+        "https://docs.mattermost.com/about/release-policy.html#extended-support-releases",
+"upgrade/releases-lifecycle.html":
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
+"upgrade/release-definitions.html":
+        "https://docs.mattermost.com/about/release-policy.html#release-types",
+"upgrade/version-archive.html":
+        "https://docs.mattermost.com/about/version-archive.html",
 
 # Welcome redirects
 "welcome/manage-desktop-app-server-connections.html":
         "https://docs.mattermost.com/welcome/manage-multiple-server-connections.html",
 "welcome/insights.html":
-        "https://docs.mattermost.com/deploy/deprecated-features.html#mattermost-server-v9-0-0",
+        "https://docs.mattermost.com/about/deprecated-features.html#mattermost-server-v9-0-0",
 "welcome/log-in.html":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
 "welcome/keyboard-shortcuts.html":
@@ -3424,9 +3489,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '9.9'
+# version = '9.10'
 # The full version, including alpha/beta/rc tags.
-# release = '9.9'
+# release = '9.10'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.

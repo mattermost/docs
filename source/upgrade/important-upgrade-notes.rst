@@ -5,13 +5,14 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 :doc:`Extended Support Release </upgrade/extended-support-release>` or later is required.
+   - Support for Mattermost Server v8.1 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Disable global drafts. Admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost-server/blob/master/server/public/model/feature_flags.go#L74>`__.
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
+   - Mattermost v10.0 is planned for September, 2024. See a list of planned breaking changes for this release `in the changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html>`__.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
@@ -532,8 +533,8 @@ Important Upgrade Notes
 |                                                    | conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details                                 |
 |                                                    | :ref:`here <configure/environment-configuration-settings:trusted proxy ip header>`.                                                                              |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v6.6                                               | The `Apps Framework protocol <https://developers.mattermost.com/integrate/apps/>`_ for binding/form submissions has changed, by separating the single `call`     |
-|                                                    | into separate `submit`, `form`, `refresh` and `lookup` calls. If any users have created their own Apps, they have to be updated to the new system.               |
+| v6.6                                               | The Apps Framework protocol  for binding/form submissions has changed, by separating the single `call` into separate `submit`, `form`, `refresh` and `lookup`    |
+|                                                    | calls. If any users have created their own Apps, they have to be updated to the new system.                                                                      |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Channel admins can now configure :doc:`certain actions </collaborate/create-channels>` to be executed automatically based on trigger                             |
 |                                                    | conditions without writing any code. Users running an older Playbooks release need to upgrade their Playbooks instance to at least v1.26 to take advantage of    |
@@ -651,7 +652,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | Then try to start Mattermost again.                                                                                                                              |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Please see :doc:`the changelog </deploy/legacy-self-hosted-changelog>` for a list deprecations in this release.                                                  |
+|                                                    | Please see :doc:`unsupported legacy releases </about/unsupported-legacy-releases>` documentation for a list of deprecations in this release.                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Focalboard plugin has been renamed to Mattermost Boards, and v0.9.1 (released with Mattermost v6.0) is now enabled by default.                                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -798,8 +799,7 @@ Important Upgrade Notes
 |                                                    | For any change in this config setting to take effect, the whole cluster must be shut down first. Then the config change made, and then restarted. In a cluster,  |
 |                                                    | all servers either will completely use encryption or not. There cannot be any partial usage.                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled. Follow instructions at                                                                  |
-|                                                    | https://docs.mattermost.com/deployment/sso-saml-before-you-begin.html for enabling SAML using the feature-equivalent ``xmlsec1`` utility.                        |
+|                                                    | SAML Setting "Use Improved SAML Library (Beta)" was forcefully disabled.                                                                                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | PostgreSQL ended long-term support for `version 9.4 in February 2020 <https://www.postgresql.org/support/versioning>`_. From v5.26 Mattermost officially         |
 |                                                    | supports PostgreSQL version 10 as PostgreSQL 9.4 is no longer supported. New installs will require PostgreSQL 10+. Previous Mattermost versions, including our   |
@@ -898,8 +898,8 @@ Important Upgrade Notes
 |                                                    | `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.                      |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The `Mattermost Desktop v4.3.0 <https://github.com/mattermost/desktop/blob/master/CHANGELOG.md>`_ release includes a change to how desktop notifications are sent|
-|                                                    | from non-secure URLs (http://). Organizations using non-secure Mattermost Servers (http://) will need to update to Mattermost Server versions 5.16.0+, 5.15.1,   |
-|                                                    | 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.                                                 |
+|                                                    | sent from non-secure URLs ``http://``. Organizations using non-secure Mattermost Servers ``http://`` will need to update to Mattermost Server versions 5.16.0+,  |
+|                                                    | 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.                                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | When enabling :doc:`Guest Accounts </onboard/guest-accounts>`, all users who have the ability to invite users will be able to                                    |
 |                                                    | invite guests by default. System Admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server     |
@@ -1127,7 +1127,7 @@ Important Upgrade Notes
 |                                                    | 3. Make sure that the **File Log Directory** field is either empty or has a directory path only. It must not have a filename as part of the path.                |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Backwards compatibility with the old CLI tool was removed. If you have any scripts that rely on the old CLI, they must be revised to use the                     |
-|                                                    | `new CLI  <../administration/command-line-tools.html>`__.                                                                                                        |
+|                                                    | :doc:`new CLI  </manage/command-line-tools>`.                                                                                                                    |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v3.6.0                                             | Update the maximum number of files that can be open.                                                                                                             |
 |                                                    |                                                                                                                                                                  |

@@ -14,7 +14,7 @@ This approach is recommended for:
 .. note::
    
    - A Mattermost Enterprise subscription plan (or a legacy Enterprise Edition license) is required to request assistance or troubleshooting help from `Mattermost Customer Support <https://mattermost.com/support/>`__ when building and deploying custom mobile apps. Customers on other Mattermost subscription plans can develop and deploy custom mobile apps, but can't request technical support assistance through Mattermost Customer Support.
-   - With the release of Mattermost mobile app v2.0, mobile app v1.55 becomes the official :doc:`extended support mobile release </upgrade/extended-support-release>`, and will be supported for an extended timeframe.
+   - With the release of Mattermost mobile app v2.0, mobile app v1.55 becomes the official :doc:`extended support mobile release </about/mattermost-mobile-releases>`, and will be supported for an extended timeframe.
 
 Deployment options
 ------------------
@@ -88,7 +88,7 @@ This update strategy should include:
 - Updating Mattermost Server.
 - Updating Mattermost mobile apps.
 
-We highly recommend you update your custom Mattermost mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. Consult the :doc:`Mattermost mobile app changelog </deploy/mobile-app-changelog>` and the :doc:`Mattermost server changelog </deploy/legacy-self-hosted-changelog>` for details.
+We highly recommend you update your custom Mattermost mobile apps to incorporate any security or service releases. Prior to distribution, check any compatibility requirements for the mobile apps and the Mattermost server. Consult the :doc:`Mattermost mobile app changelog </about/mobile-app-changelog>` and the :doc:`Mattermost server releases </about/mattermost-server-releases>` documentation for details.
 
 .. important::
 

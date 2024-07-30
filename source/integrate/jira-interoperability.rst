@@ -116,7 +116,7 @@ By default, the legacy webhook integration publishes notifications for issue cre
 - ``updated_comments=1``: all comment events
 - ``updated_description=1``: updated issue description
 - ``updated_labels=1``: updated issue labels
-- ``updated_prioity=1``: updated issue priority
+- ``updated_priority=1``: updated issue priority
 - ``updated_rank=1``: ranked issue higher or lower
 - ``updated_sprint=1``: assigned issue to a different sprint
 - ``updated_status=1``: transitioned issed to a different status, such as Done or In Progress
@@ -278,7 +278,7 @@ Users will need to temporarily enable third-party cookies in their browser durin
 What does the error message ``'/(name)' not found`` mean?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider setting Mattermost log settings to DEBUG to enable debug logging and give more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
+If you see the error ``'/(name)' not found`` in Mattermost, disable the Jira integration, check the log file looking for messages that refer to plugins and health check fail, such as ``ExecuteCommand``, etc. And consider :ref:`enabling debug logging <manage/logging:how do i enable debug logging?>` to log more verbose error events in the Mattermost system log. Then try re-enabling Jira interoperability and review the log file for clues.
 
 Debug logging can cause log files to expand substantially, and may adversely impact the server performance. Keep an eye on your server logs, or only enable it temporarily or in development environments, and not production enviornments.
 
@@ -297,7 +297,7 @@ Get help
 
 Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance, or join us on the  `Mattermost Discussion Forum <https://forum.mattermost.org/c/plugins>`_.
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Customize
 ---------

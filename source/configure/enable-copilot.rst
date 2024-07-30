@@ -14,7 +14,7 @@ Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. Y
 .. note::
   If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using AI Copilot with Mattermost v9.7 and later.
   
-  The Copilot integration is compatible with the following :doc:`Mattermost Server versions </deploy/mattermost-changelog>`:
+  The Copilot integration is compatible with the following Mattermost Server versions:
 
   - v9.6 or later
   - v9.5.2+ (Extended Support Release - ESR)
@@ -36,7 +36,7 @@ With extensive customization and extensibility options, you can tailor Copilot t
 
 Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot**. Mattermost supports the following LLMs:
 
-- `OpenAI <https://platform.openai.com/account/api-keys>`_
+- `OpenAI <https://openai.com/index/openai-api/>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
 - `OpenAI Compatible <https://github.com/go-skynet/LocalAI>`_

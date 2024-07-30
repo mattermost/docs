@@ -23,6 +23,10 @@ A Mattermost Support Packet can contain the following files:
 Generate the support packet
 ---------------------------
 
+.. important::
+   
+   Before generating a support packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
+
 .. tab:: Web/Desktop
 
    1. Go to the System Console, and select **Commercial Support** from the System Console menu. 
@@ -53,6 +57,10 @@ Share the packet with Mattermost
 --------------------------------
 
 Add the generated support packet to a Mattermost Support ticket, or share with with the Mattermost team you're working with.
+
+.. important::
+
+   Disable debug logging once you've generated the support packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
 
 Go performance metrics
 ----------------------

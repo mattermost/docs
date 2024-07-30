@@ -8,7 +8,7 @@ Create channels
   :alt: Open menus using the plus icon.
   :class: theme-icon
 
-Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`.
+Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read only channels>`.
 
 .. tab:: Web/Desktop
 
