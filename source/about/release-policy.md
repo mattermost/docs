@@ -74,13 +74,13 @@ The following table lists all releases across Mattermost v7.0 and v8.0, includin
 |:---|:---|:---|
 | v8.1 | Extended | 2024-05-15 |
 | v8.0 | Major | 2023-10-15 |
-| v7.10 | Feature | 2023-08-15 |
-| v7.9 | Feature | 2023-07-15 |
+| v7.10 | Feature | 2023-07-15 |
+| v7.9 | Feature | 2023-06-15 |
 | v7.8 | Extended | 2023-11-15 |
 | v7.7 | Feature | 2023-04-15 |
 | v7.5 | Feature | 2023-02-15 |
 | v7.4 | Feature | 2023-01-15 |
 | v7.3 | Feature | 2022-12-15 |
 | v7.2 | Feature | 2022-11-15 |
-| v7.1 | Extended | 2023-05-15 |
+| v7.1 | Extended | 2023-04-15 |
 | v7.0 | Major | 2022-09-15 |
