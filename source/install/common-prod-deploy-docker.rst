@@ -108,4 +108,4 @@ You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Doc
   
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
-7. Create your first Mattermost System Admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
+7. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 

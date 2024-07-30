@@ -21,9 +21,9 @@ Supported devices include iOS, Android, or other devices that are able to instal
 Enabling MFA
 ------------
 
-System Admins can enable this option by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
+System admins can enable this option by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
 
-Once enabled, users can opt to :doc:`set up multi-factor authentication </preferences/manage-your-security-preferences>` on their account by selecting **Profile > Security > Multi-factor Authentication** from their profile picture.
+Once enabled, users can choose to :doc:`set up multi-factor authentication </preferences/manage-your-security-preferences>` on their account by selecting **Profile > Security > Multi-factor Authentication** from their profile picture.
 
 .. include:: common-disable-mfa.rst
   :start-after: :nosearch:
@@ -38,7 +38,7 @@ Enforcing MFA
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-This option can be enabled by the System Admin by going to **System Console > Authentication > MFA**, then setting **Enforce Multi-factor Authentication** to **true**.
+Admins can fulfill Multi-Factor Authentication (MFA) compliance requirements by enforcing an MFA requirement for login with email and LDAP accounts. Go to **System Console > Authentication > MFA**, then set **Enforce Multi-factor Authentication** to **true**.
 
 When MFA enforcement is set to **true**, users with email or LDAP authentication who don't have MFA set up will be directed to the MFA setup page when they log in to Mattermost. They will not be able to access the site until MFA setup is complete. Any new users will be required to set up MFA during the sign up process.
 

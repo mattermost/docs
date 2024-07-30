@@ -195,7 +195,7 @@ If you’re using plugins that aren’t listed on the Marketplace, they won’t 
 
 **Data**
 
-The migration only includes data from Channels. No Playbooks data is exported.
+The migration only includes channel data. No collaborative playbooks data is exported.
 
 Migration process
 ~~~~~~~~~~~~~~~~~

@@ -42,7 +42,7 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
   .. note::
 
-    When you log into Mattermost using external user credentials, such as Google or Office 365, you'll temporarily leave the desktop app during login while authenticating your credentials. Once you're successfully logged in to Mattermost, you'll be returned to the desktop app. See the `Single Sign-On (SSO) <#single-sign-on-sso>`__ section below for details on the external providers that Mattermosts supports.
+    When you log into Mattermost using external user credentials, such as Google or Entra ID, you'll temporarily leave the desktop app during login while authenticating your credentials. Once you're successfully logged in to Mattermost, you'll be returned to the desktop app. See the `Single Sign-On (SSO) <#single-sign-on-sso>`__ section below for details on the external providers that Mattermosts supports.
 
 .. tab:: Mobile
 
@@ -71,7 +71,7 @@ When enabled by your system admin, you can log in with the username or email add
 Single Sign-On (SSO)
 --------------------
 
-When enabled by your system admin, you may log in using your GitLab, Google, Office 365, AD/LDAP, or SAML credentials.
+When enabled by your system admin, you may log in using your GitLab, Google, Entra ID, AD/LDAP, or SAML credentials.
 
 .. tab:: GitLab
 
@@ -87,12 +87,12 @@ When enabled by your system admin, you may log in using your GitLab, Google, Off
   .. image:: ../images/sign-in-google-apps.png
     :alt: Log in to Mattermost using your Google Apps credentials.
 
-.. tab:: Office 365
+.. tab:: Entra ID
 
-  When enabled by your system admin, you can log in with your Office 365 account using a one-click login option.
+  When enabled by your system admin, you can log in with your Entra ID account using a one-click login option.
 
   .. image:: ../images/sign-in-office365.png
-    :alt: Log in to Mattermost with your Office 365 credentials.
+    :alt: Log in to Mattermost with your Entra ID credentials.
 
 .. tab:: AD/LDAP
 

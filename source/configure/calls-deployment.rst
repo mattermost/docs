@@ -41,6 +41,10 @@ Client
 Network
 ~~~~~~~
 
+.. note::
+
+  Scroll horizontally to see additional columns in the table below.
+
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Service                         | Ports  | Protocols       | Source                                                     | Target                                   | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,8 +64,12 @@ Network
 Limitations
 -----------
 
-- In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
+- In Mattermost Cloud, up to 50 participants per channel can join a call.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
+
+.. note::
+
+  We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the external, dedicated, and scalable rtcd service. See the :doc:`self-hosted calls deployment </configure/calls-deployment>` documentation for details.
 
 Configuration
 -------------
@@ -73,14 +81,14 @@ Modes of operation
 
 Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
-============================ =============== =================
- Mattermost deployment       SFU             SFU deployment
-============================ =============== =================
- Single instance             integrated
- Single instance             rtcd
- High availability cluster   integrated      clustered
- High availability cluster   rtcd
-============================ =============== =================
+================================   =============== =================
+ Mattermost deployment              SFU             SFU deployment
+================================   =============== =================
+ Single instance                    integrated
+ Single instance                    rtcd
+ High availability cluster-based    integrated      clustered
+ High availability cluster-based    rtcd
+================================   =============== =================
 
 Single instance
 ~~~~~~~~~~~~~~~
@@ -101,19 +109,19 @@ An external, dedicated and scalable WebRTC service (``rtcd``) is used to handle 
 .. image:: ../images/calls-deployment-image7.png
   :alt: A diagram of a Web RTC deployment configuration.
 
-High availability cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
+High availability cluster-based
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clustered
 ^^^^^^^^^
 
-This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
+This is the default mode when running the plugin in a high availability cluster-based deployment. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
 .. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
 
-rtcd (HA)
-^^^^^^^^^^
+rtcd (High Availability)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/calls-deployment-image2.png
   :alt: A diagram of an rtcd deployment.
@@ -423,11 +431,11 @@ Before you can start recording, transcribing, and live captioning calls, you nee
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` configuration setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` configuration setting.
 
-Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (experimental)>` configuration setting.
+Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (beta)>` configuration setting.
 
 .. note::
   - The call transcriptions functionality is available starting in Calls version v0.22.0.

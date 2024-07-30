@@ -4,7 +4,7 @@ Communicate with messages and threads
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-:doc:`Sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.
+:doc:`Sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in discussion threads <collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.
 
 Work with messages and threads
 -------------------------------
@@ -29,7 +29,7 @@ Learn more about messages and threads:
 * :doc:`Send messages </collaborate/send-messages>` - Send messages to other Mattermost users.
 * :doc:`Reply to messages </collaborate/reply-to-messages>` - Communicate with your team in Mattermost.
 * :doc:`React with emojis and GIFs</collaborate/react-with-emojis-gifs>` - Use emojis and GIFs to react to messages and to express concepts, humor, emotions, and physical gestures in your own messages.
-* :doc:`Organize conversations with Collapsed Reply Threads </collaborate/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
+* :doc:`Organize conversations with threaded discussions </collaborate/organize-conversations>` - An enhanced communication thread experience is available in Mattermost.
 * :doc:`Mark messages as unread </collaborate/mark-messages-unread>` - Change messages to an unread state for easy follow-up.
 * :doc:`Forward messages </collaborate/forward-messages>` - Quickly and easily forward messages with previews.
 * :doc:`Share links to messages </collaborate/share-links>` - Share links to messages across channels.
