@@ -54,17 +54,17 @@ gantt
     axisFormat  %b
     
     section 2024
-    v9.4                   :done,    2024-01-01, 2024-04-30
-    v9.5 Extended Support  :crit,    2024-04-01, 2024-12-31
-    v9.6                   :active,  2024-04-01, 2024-06-30
-    v9.7                   :active,  2024-05-01, 2024-08-31
-    v9.8                   :active,  2024-06-01, 2024-09-30
-    v9.9                   :active,  2024-07-01, 2024-10-31
-    v9.10                  :active,  2024-08-01, 2024-11-30
-    v9.11 Extended Support :crit,    2024-09-01, 2025-04-30
+    v9.4                   :done,    2024-01-16, 2024-04-15
+    v9.5 Extended Support  :crit,    2024-02-16, 2024-11-15
+    v9.6                   :done,  2024-03-16, 2024-06-15
+    v9.7                   :done,  2024-04-16, 2024-07-15
+    v9.8                   :active,  2024-05-15, 2024-08-15
+    v9.9                   :active,  2024-06-16, 2024-09-15
+    v9.10                  :active,  2024-07-16, 2024-10-15
+    v9.11 Extended Support :crit,    2024-08-16, 2025-05-15
 
     section 2025
-    v9.11 Extended Support :crit,    2024-09-01, 2025-04-30
+    v9.11 Extended Support :crit,    2024-08-16, 2025-05-15
 ```
 
 (esr-notifications)=
