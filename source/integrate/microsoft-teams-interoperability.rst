@@ -13,19 +13,7 @@ Break through siloes in a mixed Mattermost and Microsoft Teams environment by fo
 Setup
 -----
 
-Setup starts in Mattermost, moves to Microsoft Teams, and ends in Mattermost.
-
-Install the Microsoft Teams integration in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
-
-  These installation instructions assume you already have a Mattermost instance running PostgreSQL. Note that this Mattermost integration doesn't support MySQL databases.
-
-1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v9.8.0 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v9.8.0 or later.
-3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams**, and select **Enable Plugin**.
+Setup starts in Microsoft Teams and ends in Mattermost.
 
 Set up an OAuth application in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,21 +37,26 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
   .. image:: ../images/register-azure-app.png
     :alt: In Azure, register the new Mattermost app.
 
-5. Navigate to **Certificates & secrets** in the left pane.
+5. From this screen, make note of the **Application (client) ID** and **Directory (tenant) ID**, needed later to configure the plugin in Mattermost.
 
-6. Select **New client secret**. Enter the description and select **Add**. After the creation of the client secret, copy the new secret value, not the secret ID. We'll use this value later in the Mattermost System Console.
+  .. image:: ../images/note-client-and-tenant-id.png
+    :alt: Note important IDs to use later.
+
+6. Navigate to **Certificates & secrets** in the left pane.
+
+7. Select **New client secret**. Enter the description and select **Add**. After the creation of the client secret, copy the new secret value, not the secret ID. We'll use this value later in the Mattermost System Console.
 
   .. image:: ../images/azure-certs-secrets.png
     :alt: In Azure, enter client secret details.
 
-7. Navigate to **API permissions** in the left pane.
+8. Navigate to **API permissions** in the left pane.
 
-8. Select **Add a permission**, then **Microsoft Graph** in the right pane.
+9. Select **Add a permission**, then **Microsoft Graph** in the right pane.
 
   .. image:: ../images/azure-configured-permissions.png
     :alt: In Azure, manage API permissions for the Mattermost app.
 
-9. Select **Delegated permissions**, and scroll down to select the following permissions:
+10. Select **Delegated permissions**, and scroll down to select the following permissions:
 
  - ``Chat.Read``
  - ``ChatMessage.Read``
@@ -71,22 +64,22 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
  - ``offline_access``
  - ``User.Read``
 
-10. Select **Add permissions** to submit the form.
+11. Select **Add permissions** to submit the form.
 
-11. Next, add application permissions via **Add a permission > Microsoft Graph > Application permissions**.
+12. Next, add application permissions via **Add a permission > Microsoft Graph > Application permissions**.
 
-12. Select the following permissions:
+13. Select the following permissions:
 
  - ``Chat.Read.All``
 
-13. Select **Add permissions** to submit the form.
+14. Select **Add permissions** to submit the form.
 
-14. Select **Grant admin consent for...** to grant the permissions for the application.
+15. Select **Grant admin consent for...** to grant the permissions for the application.
 
 Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the steps here to associate your application with a paid subscription: https://learn.microsoft.com/en-us/graph/metered-api-setup
+Subscribing to chat notifications requires assocating the OAuth App with a paid Azure subscription. To complete this setup, follow the instructions at https://learn.microsoft.com/en-us/graph/metered-api-setup.
 
 .. important::
 
@@ -94,10 +87,20 @@ Follow the steps here to associate your application with a paid subscription: ht
 
 You're all set for configuration inside Azure.
 
-Mattermost configuration
-------------------------
+Install and configure the Microsoft Teams integration in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With the Tenant ID, Client ID, and Client secret noted above, the Mattermost plugin is ready for configuration. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for support in completing the base configuration.
+.. important::
+
+These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
+
+1. Log in to your Mattermost workspace as a system administrator.
+2. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+3. Search for or scroll to MS Teams, and select **Install**.
+4. Once installed, select **Configure**. You're taken to the System Console.
+5. Configure the **Tenant ID**, **Client ID**, and **Client Secret** with the values obtained from setting up the OAuth App in Azure above.
+
+See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
 
 Monitor performance
 --------------------
