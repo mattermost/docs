@@ -41,7 +41,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Added Channel Bookmarks user interface (disabled by default and behind a feature flag).
 
 #### Administration
- - Added a new feature where an admin with user management permission can now edit a user's settings.
+ - Added a new feature where an admin with user management permission can now edit a user's settings in **System Console > Users**. 
  - Added download functionality for admins to download server logs from **Server Logs** page in the **System Console**.
  - LDAP vendor errors are now included in the Support Packet.
  - Added metadata to the Support Packet.
