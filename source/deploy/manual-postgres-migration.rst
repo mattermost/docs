@@ -16,7 +16,7 @@ Migrating a MySQL database to PostgreSQL manually involves the following steps:
 
 .. tip::
 
-    See the `plugin migrations <#plugin-migrations>`__ section for details on migrating Mattermost Playbooks and Boards.
+    See the `plugin migrations <#plugin-migrations>`__ section for details on migrating collaborative playbooks and Boards.
 
 Tool recommendations
 --------------------
@@ -33,7 +33,7 @@ Once you've installed the necessary tools, review the `system requirements and c
 
 Start your migration by `preparing your target database <#prepare-target-database>`__, then `migrate the data <#migrate-the-data>`__, and complete all `post-migration steps <#after-the-migration>`__. 
 
-See the `plugin migrations <#plugin-migrations>`__ documentation for details on migrating Playbooks and Focalboard.
+See the `plugin migrations <#plugin-migrations>`__ documentation for details on migrating collaborative playbooks and boards.
 
 pgloader
 --------
@@ -438,12 +438,12 @@ If you closely examine the ``pgloader`` configuration file (e.g., ``migration.lo
 Plugin migrations
 -----------------
 
-On the plugin side, we are going to take a different approach from what we have done above. We are not going to use ``morph`` tool to create tables and indexes this time. We are going to utilize ``pgloader`` to create the tables on behalf of us. The reason for doing so is Boards and Playbooks are leveraging application logic to facilitate SQL queries. But we don't want to use any level of application at this point.
+On the plugin side, we are going to take a different approach from what we have done above. We are not going to use ``morph`` tool to create tables and indexes this time. We are going to utilize ``pgloader`` to create the tables on behalf of us. The reason for doing so is that collaborative playbooks and boards leverage application logic to facilitate SQL queries. But we don't want to use any level of application at this point.
 
-Playbooks
-~~~~~~~~~
+Collaborative playbooks
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``pgloader`` configuration provided for Playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform the migration.
+The ``pgloader`` configuration provided for playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform the migration.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader``
 

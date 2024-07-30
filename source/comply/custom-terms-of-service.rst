@@ -10,7 +10,7 @@ Custom terms of service
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-System Admins can outline custom Terms of Service for their team members to accept before they can access Mattermost on web, desktop, or mobile.
+Increase clarity on legal Mattermost expectations for internal employees and guests with the ability to set custom Terms of Service (“ToS”) agreements and re-acceptable periods.
 
 Configuring terms of service
 ----------------------------

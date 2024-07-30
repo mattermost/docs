@@ -111,7 +111,7 @@ Allow untrusted internal connections
 | This setting is a whitelist of local network addresses that can be requested by the Mattermost server. It’s configured as a                   |
 | whitespace-separated list of hostnames, IP addresses, and CIDR ranges that can be accessed.                                                   |
 |                                                                                                                                               |
-| Requests that can only be configured by System Admins are considered trusted and won't be affected by this setting. Trusted URLs include      |
+| Requests that can only be configured by system admins are considered trusted and won't be affected by this setting. Trusted URLs include      |
 | ones used for OAuth login or for sending push notifications.                                                                                  |
 |                                                                                                                                               |
 | The following features make untrusted requests and are affected by this setting:                                                              |

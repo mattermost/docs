@@ -100,7 +100,7 @@ Set up a connection app for Mattermost SSO
 Configure SAML for Mattermost
 -----------------------------
 
-1. Start the Mattermost server and log in to Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
+1. Start the Mattermost server and log in to Mattermost as a system admin. Go to **System Console > Authentication > SAML**.
 
 2. Set the **Identity Provider Metadata URL** to the value you copied from the step above and select **Get SAML Metadata from IdP**. The metadata import will populate fields related to your Keycloak configuration.
 
@@ -156,7 +156,7 @@ Configure SAML for Mattermost
 
 7. Select **Save**.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication via **Profile > Security > Sign-in Method > Switch to SAML SSO** and log in with your SAML credentials to complete the switch.
+You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your system admin account from email to SAML-based authentication via **Profile > Security > Sign-in Method > Switch to SAML SSO** and log in with your SAML credentials to complete the switch.
 
 It's also recommended to post an announcement about how the migration will work for users.
 

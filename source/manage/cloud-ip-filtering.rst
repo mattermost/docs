@@ -9,7 +9,7 @@ IP filtering is a powerful security feature that allows system admins to control
 Configure IP filtering
 ------------------------
 
-1. **Log in as System Admin**: Access the System Console of your workspace, ensuring your user is a system admin.
+1. **Log in as system admin**: Access the System Console of your workspace, ensuring your user is a system admin.
 2. **Go to Site Configuration**: Once logged in, go to the **Site Configuration** section.
 3. **Access IP Filtering Settings**: Under **Site Configuration**, select **IP Filtering** to access the IP Filtering settings.
 

@@ -4,12 +4,12 @@ General Mattermost questions
 Why was Mattermost created?
 ---------------------------
 
-Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we built Mattermost <https://mattermost.com/about-us/>`__.
+Mattermost was created to offer an alternative to proprietary SaaS services. For more information, please see the article `Why we built Mattermost <https://mattermost.com/about-us/>`_.
 
 Why does the open source repository contain code specific to the commercial version of Mattermost?
 ---------------------------------------------------------------------------------------------------
 
-The commercial version of Mattermost is designed to never lock-in your data. Portions of the commercial version are shared with the open source version to ensure upgrade and downgrade across editions happens without data loss.
+The :ref:`commercial version of Mattermost <about/editions-and-offerings:mattermost enterprise edition>` is designed to never lock-in your data. Portions of the commercial version are shared with the :ref:`open source version <about/editions-and-offerings:mattermost team edition>` to ensure upgrade and downgrade across editions happens without data loss.
 
 Does Mattermost support 508 Compliance?
 ---------------------------------------

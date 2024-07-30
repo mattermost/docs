@@ -91,7 +91,7 @@ It’s best to set the alert threshold based on your average CPU utilization and
 For example, on our community server, we have the threshold set to 15%:
 
 .. image:: ../images/perf-5.png
-   :alt: Example CPU utilization rate metrics for the Mattermost Community Server, where the threshold is set to 15%. System Admins should set the threshold between the maximum CPU usage and the CPU usage observed in metrics.
+   :alt: Example CPU utilization rate metrics for the Mattermost Community Server, where the threshold is set to 15%. System admins should set the threshold between the maximum CPU usage and the CPU usage observed in metrics.
 
 This value is below our maximum CPU usage and above our average usage at peak times. Therefore, we will get alerts if we begin experiencing unusually high CPU usage.
 
