@@ -8,7 +8,7 @@ Rename channels
     :alt: Use the More icon to access additional message options.
     :class: theme-icon
 
-Anyone can rename the channels they belong to, unless the System Admin has :doc:`restricted the permissions to do so using advanced permissions </onboard/advanced-permissions>`.
+Anyone can rename the channels they belong to, unless the system admin has :doc:`restricted the permissions to do so using advanced permissions </onboard/advanced-permissions>`.
 
 .. tab:: Web/Desktop
 

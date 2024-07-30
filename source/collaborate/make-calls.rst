@@ -8,16 +8,17 @@ Make calls
     :alt: Use the More icon to access additional message options.
     :class: theme-icon
 
-You can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost while on a call. 
-
-Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `transcribe recorded calls <#transcribe-recorded-calls>`__.
-
-.. include:: ../_static/badges/academy-calls.rst
-  :start-after: :nosearch:
+Using a web browser, the desktop app, or the mobile app, you can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost during a call.
 
 .. note::
 
-  Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <configure/plugins-configuration-settings:calls>`.
+  - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
+  - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
+  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <collaborate/make-calls:live captions during calls (beta)>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <configure/calls-deployment:rtcd>`.
+  - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <configure/plugins-configuration-settings:calls>`.
+
+.. include:: ../_static/badges/academy-calls.rst
+  :start-after: :nosearch:
 
 Join a call
 -----------
@@ -58,6 +59,9 @@ Start a call
 
 Host controls
 -------------
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
 
 From Mattermost v9.9, and Mattermost mobile v2.17, call host controls are available and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, `lower raised hands <#lower-raised-hands>`__, and `end the call for everyone <#end-the-call-for-everyone>`__.
 
@@ -142,9 +146,9 @@ Record a call
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings (beta)>`.
+From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings>`.
 
-Call recordings include audio, any screen sharing during the call, and text transcriptions, when :ref:`enabled <configure/plugins-configuration-settings:enable call transcriptions (experimental)>`. 
+Call recordings include audio, any screen sharing during the call, and text transcriptions, when :ref:`enabled <configure/plugins-configuration-settings:enable call transcriptions (beta)>`. 
 
 The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 
@@ -163,31 +167,31 @@ To record a call:
   
   To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
 
-Live captions during calls
----------------------------
+Live captions during calls (Beta)
+---------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (experimental)>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
+From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (beta)>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
 
 By default, live captions display in English. Your Mattermost system admin can :ref:`specify a different language for live captions <configure/plugins-configuration-settings:live captions language>` in the System Console.
 
 .. note::
 
-  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings (beta)>` to enable live captions.
+  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings>` to enable live captions.
 
-Transcribe recorded calls
---------------------------
+Transcribe recorded calls (Beta)
+--------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions (experimental)>`.
+From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions (beta)>`.
 
 .. note::
 
-  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings (beta)>` to enable recorded call transcriptions.
+  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings>` to enable recorded call transcriptions.
 
 When call recording stops, the transcription file is posted in the call thread as a TXT file attachment. It's available to all users in the channel both during the call, and after the call has ended. Additionally, users viewing the call recording can show or hide text captions using the Closed Captioning option in the video player.
 
@@ -197,7 +201,7 @@ Frequently asked questions
 Can I set a ring tone for incoming calls?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:enable call ringing (beta)>`.
+Yes! From Mattermost v8.0 and Calls v0.17.0, desktop app and web users can go to **Settings > Notifications > Desktop Notifications** to enable Mattermost to alert you to incoming calls through direct or group messages with a specific ring tone and a desktop notification, unless the system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:enable call ringing>`.
 
 Is video supported?
 ~~~~~~~~~~~~~~~~~~~

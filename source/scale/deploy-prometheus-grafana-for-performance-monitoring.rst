@@ -8,7 +8,7 @@ Deploy Prometheus and Grafana for performance monitoring
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </scale/high-availability-cluster>`. Once you're tracking system health, you can :doc:`set up performance alerts </scale/performance-alerting>` on your Grafana dashboard.
+Performance monitoring support enables admins to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.org/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you're running Mattermost :doc:`in high availability mode </scale/high-availability-cluster-based-deployment>`. Once you're tracking system health, you can :doc:`set up performance alerts </scale/performance-alerting>` on your Grafana dashboard.
 
 Admins can collect and store various data points from the Mattermost application in an `OpenMetrics <https://openmetrics.io>`_ format by `deploying Prometheus <#install-prometheus>`_ and `Grafana <#install-grafana>`_.
 
@@ -115,7 +115,7 @@ To help you get started, you can download three sample dashboards shared in Graf
 - `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`_, which contains detailed charts for performance monitoring including application, cluster, job server, and system metrics.
 - `Mattermost Notification Health metrics <https://grafana.com/grafana/dashboards/21305-mattermost-notification-health>`_, which can be used to track different types of notifications sent from Mattermost. Accessing Mattermost Notification Health requires the feature flag ``NotificationMetrics`` to be set to ``true``. System admins can :ref:`disable notification metrics data collection <configure/environment-configuration-settings:enable notification metrics>` through the System Console.
 - `Mattermost Web App Performance Metrics <https://grafana.com/grafana/dashboards/21460-web-app-metrics/>`_, which contains detailed metrics for client-side performance, including web vitals and Mattermost-specifc metrics.
-- `Mattermost Collapsed Reply Threads Metrics <https://grafana.com/grafana/dashboards/15581>`_, which contains detailed metrics on the queries involved in our Collapsed Reply Threads feature.
+- `Mattermost Threaded Discussion Metrics <https://grafana.com/grafana/dashboards/15581>`_, which contains detailed metrics on the queries involved in our threaded discussions feature.
 - `Mattermost Performance KPI Metrics <https://grafana.com/grafana/dashboards/2539>`_, which contains key metrics for monitoring performance and system health.
 - `Mattermost Performance Monitoring (Bonus Metrics) <https://grafana.com/grafana/dashboards/2545>`_, which contains additional metrics such as emails sent or files uploaded, which may be important to monitor in some deployments.
 

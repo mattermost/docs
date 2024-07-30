@@ -222,7 +222,7 @@ These can be provided as a text file or as screenshots from the LDAP server.
 
 **Other configurations**
 
-If you're experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A System Administrator for the external system should be able to provide you with the configuration.
+If you're experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A system admin for the external system should be able to provide you with the configuration.
 
 Logs
 ~~~~
@@ -252,7 +252,7 @@ PostgreSQL and MySQL have different logs, and their location varies based on you
 
 **SAML, LDAP, and other systems**
 
-Your organization's System Administrator should be able to find these for you.
+Your organization's system admin should be able to find these for you.
 
 How to access logs
 ^^^^^^^^^^^^^^^^^^

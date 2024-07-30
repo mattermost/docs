@@ -2,7 +2,7 @@
 About Mattermost
 ================
 
-Mattermost’s mission is to make the world safer and more productive by developing and delivering secure, open source collaboration software that is trusted, flexible, and workflow-centric. You'll find an overview of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support below.
+Mattermost’s purpose is to accelerate the world’s mission critical work by developing and delivering secure, open core collaboration software providing unrivaled focus, adaptability and resilience to our customers. You’ll find an overview of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support below.
 
 .. toctree::
    :maxdepth: 2
@@ -18,7 +18,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/certifications-and-compliance.rst
    /about/frequently-asked-questions.rst
 
-Mattermost is an open source platform that provides secure collaboration for technical and operational teams that work in environments with complex nation-state level security and trust requirements. With Mattermost you can:
+With Mattermost you can:
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
