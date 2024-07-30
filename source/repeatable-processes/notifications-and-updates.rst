@@ -1,14 +1,14 @@
 Notifications and updates
 =========================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
   
 .. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
   :alt: Select the More icon to access additional channel management options.
   :class: theme-icon
 
-There are multiple ways to receive updates and notifications.
+There are multiple ways to receive collaborative playbook updates and notifications.
 
 Status updates
 --------------
@@ -17,7 +17,7 @@ Status updates ensure that stakeholders remain informed about the playbook runâ€
 
 You can post a status update from the run channel and you can also configure the playbook to send a reminder to post a status update.
 
-To post a status update, open the playbooks tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
+To post a status update, access the **Playbooks** tab in Mattermost. Select the run you want to post the update for. In the run details page, select **Post update**.
 
    - If this is the first status update and the playbook has a defined template, that template will be pre-populated here.
    - If this is a subsequent status update, the message from the last status update will be pre-populated here.
@@ -36,7 +36,7 @@ The most recent status post will also appear in the right-hand sidebar of the ru
 Request an update
 -----------------
 
-To request a status update, open the playbooks tab in Mattermost. Select the run you want an update for. In the run details page, select the |vertical-3-dots| menu next to **Post update** and select **Request update**.
+To request a status update, access the **Playbooks** tab in Mattermost. Select the run you want an update for. In the run details page, select the |vertical-3-dots| menu next to **Post update** and select **Request update**.
 
 Follow runs and playbooks
 -------------------------

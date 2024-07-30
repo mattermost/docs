@@ -115,7 +115,7 @@ This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` ta
 Step 6 - Complete plugin migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generate migration configuration for Boards and Playbooks:
+Generate migration configuration for collaborative playbooks and boards:
 
 .. code-block:: shell
 

@@ -82,9 +82,14 @@ ID-only push notifications
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Enterprise and Cloud customers can limit the data sent to Apple and Google through a configuration setting. 
+Admins can enable mobile notifications to be fully private to protect a Mattermost customer against breaches in iOS and Android notification infrastructure by limiting the data sent to Apple and Google through a Mattermost configuration setting.
 
-When enabled, a message containing only an ID is transmitted. Once the mobile client receives this ID, the message contents are loaded from the server, and are never transmitted through the Apple Push Notification Service (APNS) or Firebase Cloud Messaging (FCM). The contents of the message also won't reach the :ref:`Mattermost Push Notification Service (MPNS) <deploy/deployment-overview:push notification service>`.
+The standard way to send notifications to iOS and Android applications requires sending clear text messages to Apple or Google so they can be forwarded to a user’s phone and displayed on iOS or Android. While Apple or Google assure the data is not collected or stored, should the organizations be breached or coerced, all standard mobile notifications on the platform could be compromised.
+
+To avoid this risk, Mattermost can be configured to replace mobile notification text with message ID numbers that pass no information to Apple of Google. When received by the Mattermost mobile application on a user’s phone, the message IDs are used to privately communicate with their Mattermost server and to retrieve mobile notification messages over an encrypted channel. This means that, at no time, is the message text visible to Apple or Google’s message relay system. The contents of the message also won't reach the :ref:`Mattermost Push Notification Service (MPNS) <deploy/deployment-overview:push notification service>`.
+
+.. note::
+  Because of the extra steps to retrieve the notifications messages under Mattermost’s private mobility capability with ID-only push notifications, end users may experience a slight delay before the mobile notification is fully displayed compared to sending clear text through Apple and Google’s platform.
 
 See our :ref:`configuration settings <configure/site-configuration-settings:push notification contents>` documentation to learn more about the ID-only push notifications configuration setting. See our :ref:`Mobile Apps FAQ documentation <deploy/mobile-faq:how can i use id-only push notifications to protect notification content from being exposed to third-party services?>` for details on using ID-only push notifications for data privacy.
 

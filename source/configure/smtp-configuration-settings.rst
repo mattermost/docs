@@ -167,7 +167,7 @@ Skip server certificate verification
   :configjson: .ServiceSettings.EnableSecurityFixAlert
   :environment: MM_SERVICESETTINGS_ENABLESECURITYFIXALERT
 
-  - **true**: **(Default)** System Admins are notified by email if a relevant security fix alert is announced. Requires email to be enabled.
+  - **true**: **(Default)** System admins are notified by email if a relevant security fix alert is announced. Requires email to be enabled.
   - **false**: Security alerts are disabled.
 
 Enable security alerts
@@ -180,7 +180,7 @@ Enable security alerts
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                       |
 |                                                                 | - ``config.json setting``: ``".ServiceSettings.EnableSecurityFixAlert": true",``   |
-| - **true**: **(Default)** System Admins are notified by email   | - Environment variable: ``MM_SERVICESETTINGS_ENABLESECURITYFIXALERT``              |
+| - **true**: **(Default)** System admins are notified by email   | - Environment variable: ``MM_SERVICESETTINGS_ENABLESECURITYFIXALERT``              |
 |   if a relevant security fix alert is announced. Requires email |                                                                                    |
 |   to be enabled.                                                |                                                                                    |
 | - **false**: Security alerts are disabled.                      |                                                                                    |

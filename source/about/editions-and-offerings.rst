@@ -65,16 +65,19 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service>`.
 - :ref:`Private mobility with ID-only push notifications <configure/site-configuration-settings:push notification contents>`.
 - :doc:`Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy>`.
-- :doc:`Playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </repeatable-processes/learn-about-playbooks>`.
-- :doc:`Granular administrative control with custom system admin roles </onboard/system-admin-roles>`.
+- :doc:`Collaborative playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </repeatable-processes/learn-about-playbooks>`.
+- :doc:`Deleted granular administrative control </onboard/delegated-granular-administration>`.
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </repeatable-processes/share-and-collaborate>`
 - :doc:`Channel export </comply/export-mattermost-channel-data>`
 - :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging (beta)>`.
 - :doc:`Advanced collaboration with shared channels across Mattermost instances </onboard/shared-channels>`.
-- :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster>`.
+- :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster-based-deployment>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
+- Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
+- Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
+- PQ&A with :doc:`access-controlled backend systems </about/security>`
 - 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
 Mattermost Professional 
@@ -91,13 +94,15 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 
 - :doc:`Guest access </onboard/guest-accounts>` and :doc:`custom user groups </collaborate/organize-using-custom-user-groups>`.
 - :doc:`Active Directory/LDAP Single Sign-on and user synchronization </onboard/ad-ldap>`.
-- Single Sign-on with :doc:`GitLab </onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </onboard/sso-google>`, :doc:`OpenID Connect </onboard/sso-openidconnect>`, :doc:`SAML </onboard/sso-saml>` or :doc:`Office365 </onboard/sso-office>`.
+- Single Sign-on with :doc:`GitLab </onboard/sso-gitlab>` using the OpenID Connect standard, :doc:`Google </onboard/sso-google>`, :doc:`OpenID Connect </onboard/sso-openidconnect>`, :doc:`SAML </onboard/sso-saml>` or :doc:`Entra ID </onboard/sso-entraid>`.
 - :ref:`MFA enforcement <onboard/multi-factor-authentication:enforcing mfa>`.
 - :ref:`Advanced team permissions <onboard/advanced-permissions:team override scheme>`.
-- :ref:`Read-only announcement channels <manage/team-channel-members:channel moderation>`.
-- :doc:`System-wide announcement banners </manage/announcement-banner>`.
+- :ref:`Read-only announcement channels <manage/team-channel-members:advanced access controls>`.
+- :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
 - O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
+- :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
+- Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`
 
 See a `complete list of Mattermost features <https://mattermost.com/pricing>`_.
 

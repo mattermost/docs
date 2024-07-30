@@ -109,15 +109,15 @@ Upload Plugin
   :configjson: .PluginSettings.EnableMarketplace
   :environment: MM_PLUGINSETTINGS_ENABLEMARKETPLACE
 
-  - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins.
-  - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.
+  - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all system admins.
+  - **false**: Disables the plugin Marketplace on your Mattermost server for all system admins.
 
 Enable Marketplace
 ~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins. | - System Config path: **Plugins > Plugin Management**                  |
-| - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.             | - ``config.json`` setting: ``.PluginSettings.EnableMarketplace: true`` |
+| - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all system admins. | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: Disables the plugin Marketplace on your Mattermost server for all system admins.             | - ``config.json`` setting: ``.PluginSettings.EnableMarketplace: true`` |
 |                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEMARKETPLACE``        |
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
@@ -318,10 +318,8 @@ RTC server port (TCP)
 | **Note**:                                                                                                                                                                                                                              |
 |                                                                                                                                                                                                                                        |
 | - This setting is only applicable when not running calls through the standalone ``rtcd`` service.                                                                                                                                      |
-|                                                                                                                                                                                                                                        |
 | - This setting is available starting in plugin version 0.17.                                                                                                                                                                           |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -340,7 +338,7 @@ Enable on specific channels
 
 +----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                  |
-| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowenablecalls``                |
+| - **false**: Only system admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowenablecalls``                |
 |                                                                                                                                        | - Environment variable: N/A                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
@@ -429,7 +427,7 @@ ICE host port override
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
   :environment: MM_CALLS_RTCD_URL
-  :description: The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
+  :description: The URL to a running rtcd service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
 ~~~~~~~~~~~~~~~~
@@ -456,7 +454,7 @@ RTCD service URL
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
   :environment: MM_CALLS_MAX_PARTICIPANTS
-  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 200.
+  :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 50.
 
 Max call participants
 ~~~~~~~~~~~~~~~~~~~~~
@@ -470,7 +468,8 @@ Max call participants
 |                                                                             | - Environment variable: ``MM_CALLS_MAX_PARTICIPANTS``                                                         |
 | Default is **0** (no limit).                                                |                                                                                                               |
 +-----------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| **Note**: This setting is optional, but the recommended maximum number of participants is **200**.                                                                                          |
+| **Note**: This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources.                            | 
+| See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.                                                                                        |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsiceservers
@@ -618,7 +617,7 @@ Allow screen sharing
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-callsenablesimulcast
-  :displayname: Enable simulcast for screen sharing (Experimental) (Plugins - Calls)
+  :displayname: (Experimental) Enable simulcast for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
   :environment: N/A
@@ -651,8 +650,8 @@ Enable simulcast for screen sharing (Experimental)
   - **true**: Allows call hosts to record meeting video and audio.
   - **false**: (Default) Call recording functionality is not available to hosts.
 
-Enable call recordings (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call recordings
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -743,8 +742,8 @@ Call recording quality
   - **true**: Enables automatic transcriptions of calls.
   - **false**: (Default) Call transcriptions functionality is disabled.
 
-Enable call transcriptions (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call transcriptions (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -755,7 +754,7 @@ Enable call transcriptions (Experimental)
 |                                                                                                                                                                                                                                                                    |                                                                                                            |
 | Transcriptions are generated from the call participants' audio tracks and the resulting files are attached to the call thread when the recording ends. Captions will be optionally rendered on top of the recording file video player.                             |                                                                                                            |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| **Note**: Call transcriptions require call recordings to be enabled. This setting is available starting in plugin version 0.22.                                                                                                                                                                                                                                                 |
+| **Note**: Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. This setting is available starting in plugin version 0.22.                                                                                                                                                                        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-transcribermodelsize
@@ -802,7 +801,7 @@ Call transcriber threads
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-enablelivecaptions
-  :displayname: Enable live captions (Experimental) (Plugins - Calls)
+  :displayname: (Experimental) Enable live captions (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
   :environment: N/A
@@ -811,8 +810,8 @@ Call transcriber threads
   - **true**: Enables live captioning of calls.
   - **false**: **(Default)** Live captions functionality is disabled.
 
-Enable live captions (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable live captions (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -825,8 +824,8 @@ Enable live captions (Experimental)
 | and the resulting captions can be optionally displayed on the call        |                                                                                                |
 | clients by clicking the `[cc]` button.                                    |                                                                                                |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| **Note**: Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` and                                        |
-| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` to be enabled.                                             |
+| **Note**: Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and                                               |
+| :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` to be enabled.                                                     |
 | This setting is available starting in plugin version 0.26.2.                                                                                                               |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
@@ -939,8 +938,8 @@ Live captions language
 | - This setting is available starting in plugin version 0.17.                                                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
-Enable call ringing (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call ringing
+~~~~~~~~~~~~~~~~~~~
 
 .. config:setting:: plugins-enablecallringing
   :displayname: Enable call ringing (Plugins - Calls)
@@ -970,7 +969,7 @@ Enable call ringing (Beta)
 GitLab
 ------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/gitlab-interoperability:mattermost configuration>`.
@@ -987,7 +986,7 @@ See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>`
 GitHub
 ------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/github-interoperability:mattermost configuration>`.
@@ -1004,7 +1003,7 @@ See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>`
 Jira
 ----
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/jira-interoperability:mattermost configuration>`.
@@ -1239,67 +1238,67 @@ See the :doc:`Monitor performance metrics </scale/collect-performance-metrics>` 
 
 ----
 
-Playbooks
-----------
+Collaborative playbooks
+------------------------
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks is an open source, self-hosted collaboration tool for teams. Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. Playbooks also allow teams to incorporate learnings from the retrospective to tweak and improve the playbook with every iteration. See the :doc:`Mattermost Playbooks plugin </guides/repeatable-processes>` documentation for details.
+Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform.
 
-Access the following configuration settings in the System Console by going to **Plugins > Playbooks**.
+Access the following configuration settings in the System Console by going to **Plugins > Collaborative playbooks**.
 
 .. config:setting:: plugins-playbooksenable
-  :displayname: Enable plugin (Plugins - Playbooks)
-  :systemconsole: Plugins > Playbooks
+  :displayname: Enable plugin (Plugins - Collaborative playbooks)
+  :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
   :environment: 
 
-  - **true**: **(Default)** Enables Mattermost Playbooks on your Mattermost workspace.
-  - **false**: Disables Mattermost Playbooks on your Mattermost workspace.
+  - **true**: **(Default)** Enables collaborative playbooks on your Mattermost workspace.
+  - **false**: Disables collaborative playbooks on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: **(Default)** Enables Mattermost Playbooks on your Mattermost workspace.              | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables Mattermost Playbooks on your Mattermost workspace.                          | - ``config.json`` setting:                    |
-|                                                                                                   | - Environment variable:                       |
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------+
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: **(Default)** Enables collaborative Playbooks on your Mattermost workspace.           | - System Config path: **Plugins > Collaborative playbooks** |
+| - **false**: Disables collaborative Playbooks on your Mattermost workspace.                       | - ``config.json`` setting:                                  |
+|                                                                                                   | - Environment variable:                                     |
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-playbooksenabledteams
-  :displayname: Enabled teams (Plugins - Playbooks)
-  :systemconsole: Plugins > Playbooks
+  :displayname: Enabled teams (Plugins - Collaborative playbooks)
+  :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
   :environment: 
-  :description: Enable Playbooks for all Mattermost teams, or for only selected teams.
+  :description: Enable collaborative playbooks for all Mattermost teams, or for only selected teams.
 
 Enabled teams
 ~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------+-----------------------------------------------+
-| Enable Playbooks for all Mattermost teams, or for only selected teams.            | - System Config path: **Plugins > Playbooks** |
-|                                                                                   | - ``config.json`` setting:                    |
-|                                                                                   | - Environment variable:                       |
-+-----------------------------------------------------------------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| Enable collaborative playbooks for all Mattermost teams, or for only selected teams.       | - System Config path: **Plugins > Collaborative playbooks** |
+|                                                                                            | - ``config.json`` setting:                                  |
+|                                                                                            | - Environment variable:                                     |
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: plugins-playbooksexperimentalfeatures
-  :displayname: Enable experimental features (Plugins - Playbooks)
-  :systemconsole: Plugins > Playbooks
+  :displayname: Enable experimental features (Plugins - Collaborative playbooks)
+  :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
   :environment: 
 
-  - **true**: Enables experimental Playbooks features on your Mattermost workspace.
-  - **false**: Disables experimental Playbooks features on your Mattermost workspace.
+  - **true**: Enables experimental playbooks features on your Mattermost workspace.
+  - **false**: Disables experimental playbooks features on your Mattermost workspace.
 
 Enable experimental features
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+--------------------------------------------------------------------------------------------+-----------------------------------------------+
-| - **true**: Enables experimental Playbooks features on your Mattermost workspace.          | - System Config path: **Plugins > Playbooks** |
-| - **false**: Disables experimental Playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                    |
-|                                                                                            | - Environment variable:                       |
-+--------------------------------------------------------------------------------------------+-----------------------------------------------+
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+| - **true**: Enables experimental playbooks features on your Mattermost workspace.          | - System Config path: **Plugins > Collaborative playbooks** |
+| - **false**: Disables experimental playbooks features on your Mattermost workspace.        | - ``config.json`` setting:                                  |
+|                                                                                            | - Environment variable:                                     |
++--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -1361,7 +1360,7 @@ Enable user satisfaction survey
 ServiceNow
 ----------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/servicenow-interoperability:mattermost configuration>`.
@@ -1379,7 +1378,7 @@ See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interopera
 Zoom
 ----
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 See the :doc:`Connect Zoom to Mattermost </integrate/zoom-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/zoom-interoperability:mattermost configuration>`.

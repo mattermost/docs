@@ -168,7 +168,7 @@ High Availability
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Large organizations needing sophisticated, large scale, High Availability configurations can set up a :doc:`highly available, horizontally scalable </scale/high-availability-cluster>` deployment. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance on configuring and sizing Mattermost to support your specific needs.
+Large organizations needing sophisticated, large scale, High Availability configurations can set up a :doc:`highly available, horizontally scalable </scale/high-availability-cluster-based-deployment>` deployment. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance on configuring and sizing Mattermost to support your specific needs.
 
 Data stores
 ------------
