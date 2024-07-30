@@ -1818,6 +1818,8 @@ redirects = {
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
         "https://docs.mattermost.com/deploy/mobile-faq.html",
+"deploy/backup-disaster-recovery.html":
+        "https://docs.mattermost.com/deploy/back-up-mattermost-server.html",
 "deploy/deprecated-features.html":
         "https://docs.mattermost.com/about/deprecated-features.html",
 "deploy/desktop-app-changelog.html":
