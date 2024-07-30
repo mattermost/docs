@@ -626,7 +626,7 @@ Shared channels enables the ability to establish secure connections between Matt
 .. note::
 
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
-   - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
+   - System admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1197,9 +1197,9 @@ Restrict system admin
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: **(Default for Cloud deployments)** Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Admins.
+**True**: **(Default for Cloud deployments)** Restricts the system admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the system admin role to users but restricting certain actions only for Cloud Admins.
 
-**False**: **(Default for self-host deployments)** No restrictions are applied to the System Admin role.
+**False**: **(Default for self-host deployments)** No restrictions are applied to the system admin role.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
@@ -1211,7 +1211,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: RemoteClusters
   :environment: N/A
 
-  - **true**: System Admins can manage remote clusters using the System Console.
+  - **true**: System admins can manage remote clusters using the System Console.
   - **false**: **(Default)** Remote cluster management is disabled.
 
 Remote clusters
@@ -1228,7 +1228,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Enable this setting to add, remove, and view remote clusters for shared channels.
 
-**True**: System Admins can manage remote clusters using the System Console.
+**True**: System admins can manage remote clusters using the System Console.
 
 **False**: Remote cluster management is disabled.
 
@@ -1633,7 +1633,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
   :configjson: EnableUploads
   :environment: N/A
 
-  - **true**: Enables plugin uploads by System Admins at **Plugins > Management**.
+  - **true**: Enables plugin uploads by system admins at **Plugins > Management**.
   - **false**: **(Default)** Disables plugin uploads on your Mattermost server.
 
 Enable plugin uploads
@@ -1641,7 +1641,7 @@ Enable plugin uploads
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
+**True**: Enables plugin uploads by system admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
 **False**: Disables plugin uploads on your Mattermost server.
 
@@ -1956,7 +1956,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: EnableAPITeamDeletion
   :environment: N/A
 
-  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
+  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
   - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API team deletion
@@ -1964,7 +1964,7 @@ Enable API team deletion
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
+**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
 
@@ -1978,7 +1978,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: EnableAPIUserDeletion
   :environment: N/A
 
-  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
+  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
   - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API user deletion
@@ -1986,7 +1986,7 @@ Enable API user deletion
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
+**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
 
@@ -2000,7 +2000,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: EnableAPIChannelDeletion
   :environment: N/A
 
-  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
+  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
   - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API channel deletion
@@ -2008,7 +2008,7 @@ Enable API channel deletion
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
+**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
 

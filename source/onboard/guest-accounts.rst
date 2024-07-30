@@ -86,12 +86,12 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 3. Complete the **Guest Attribute** field.
 4. Select **Save**.
 
-When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost System Admin.
+When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost system admin.
 
 Guest permission settings
 -------------------------
 
-In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the System Admins can invite guests.
+In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the system admins can invite guests.
 
 There are :doc:`additional permissions </onboard/advanced-permissions>` in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 

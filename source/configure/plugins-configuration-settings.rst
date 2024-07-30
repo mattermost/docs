@@ -109,15 +109,15 @@ Upload Plugin
   :configjson: .PluginSettings.EnableMarketplace
   :environment: MM_PLUGINSETTINGS_ENABLEMARKETPLACE
 
-  - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins.
-  - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.
+  - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all system admins.
+  - **false**: Disables the plugin Marketplace on your Mattermost server for all system admins.
 
 Enable Marketplace
 ~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all System Admins. | - System Config path: **Plugins > Plugin Management**                  |
-| - **false**: Disables the plugin Marketplace on your Mattermost server for all System Admins.             | - ``config.json`` setting: ``.PluginSettings.EnableMarketplace: true`` |
+| - **true**: **(Default)** Enables the plugin Marketplace on your Mattermost server for all system admins. | - System Config path: **Plugins > Plugin Management**                  |
+| - **false**: Disables the plugin Marketplace on your Mattermost server for all system admins.             | - ``config.json`` setting: ``.PluginSettings.EnableMarketplace: true`` |
 |                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEMARKETPLACE``        |
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
@@ -338,7 +338,7 @@ Enable on specific channels
 
 +----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                  |
-| - **false**: Only System Admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowenablecalls``                |
+| - **false**: Only system admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.allowenablecalls``                |
 |                                                                                                                                        | - Environment variable: N/A                                                                                |
 +----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 

@@ -8,7 +8,7 @@ Data retention policy
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Mattermost stores all message history providing an unlimited search history to System Admins and end users. 
+Mattermost stores all message history providing an unlimited search history to system admins and end users. 
 
 Mattermost Enterprise customers can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages in order to meet data retention compliance requirements. 
 
@@ -113,10 +113,10 @@ What happens when the data retention period is changed?
 
 Data retention runs once a day at the time specified in the ``config.json`` file. Changing the retention period does not automatically schedule any additional run of the data retention job - it only updates how long data is kept in Mattermost.
 
-Does the System Administrator get any notification when the data retention period is changed?
+Does the system administrator get any notification when the data retention period is changed?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, the new config is updated, but the System Admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
+No, the new config is updated, but the system admin does not receive any feedback on what the effects will be (e.g. reporting of how many messages are to be deleted).
 
 Does the data retention job affect the audits table? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

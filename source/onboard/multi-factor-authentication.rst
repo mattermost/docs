@@ -21,7 +21,7 @@ Supported devices include iOS, Android, or other devices that are able to instal
 Enabling MFA
 ------------
 
-System Admins can enable this option by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
+System admins can enable this option by going to **System Console > Authentication > MFA**, then setting **Enable Multi-factor Authentication** to **true**.
 
 Once enabled, users can choose to :doc:`set up multi-factor authentication </preferences/manage-your-security-preferences>` on their account by selecting **Profile > Security > Multi-factor Authentication** from their profile picture.
 

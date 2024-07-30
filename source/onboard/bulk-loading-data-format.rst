@@ -213,7 +213,7 @@ Fields of the Scheme object
     <tr class="row-odd">
       <td valign="middle">default_team_admin_role</td>
       <td valign="middle"><b>Role</b> object</td>
-      <td>The default role applied to Team Admins in teams using this scheme. This field is mandatory if the scheme scope is set to "team", otherwise must <b>not</b> be present.</td>
+      <td>The default role applied to team admins in teams using this scheme. This field is mandatory if the scheme scope is set to "team", otherwise must <b>not</b> be present.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">No</td>
     </tr>
@@ -227,7 +227,7 @@ Fields of the Scheme object
     <tr class="row-odd">
       <td valign="middle">default_channel_admin_role</td>
       <td valign="middle"><b>Role</b> object</td>
-      <td>The default role applied to Channel Admins in channels using this scheme. This field is mandatory for both "team" and "channel" scope schemes.</td>
+      <td>The default role applied to channel admins in channels using this scheme. This field is mandatory for both "team" and "channel" scope schemes.</td>
       <td align="center" valign="middle">Yes</td>
       <td align="center" valign="middle">Yes</td>
     </tr>

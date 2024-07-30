@@ -126,11 +126,11 @@ What happens to deactivated user integrations?
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
 
-Apply roles to users using the System Console. The current available roles are **System Admin** and **Member**.
+Apply roles to users using the System Console. The current available roles are **System admin** and **Member**.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Under **Actions**, select **Manage roles**.
-3. Specify whether the user has the role of **System Admin** or **Member**, and then select **Save**.
+3. Specify whether the user has the role of **System admin** or **Member**, and then select **Save**.
 
 .. image:: ../images/manage-roles.png
   :alt: Manage a user's Mattermost role using the System Console.

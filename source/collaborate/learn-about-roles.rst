@@ -8,12 +8,12 @@ There are 6 types of user roles with different permission levels in Mattermost: 
 
 .. tip::
   
-  To view a list of users on the team and what their roles are, you need to be A Team Admin using Mattermost in a web browser or the desktop app. Open the Team menu and select **Manage Members**.
+  To view a list of users on the team and what their roles are, you need to be A team admin using Mattermost in a web browser or the desktop app. Open the Team menu and select **Manage Members**.
 
 System admin
 ------------
 
-The first user added to a newly-installed Mattermost system is assigned the system admin role. The system admin is typically a member of the IT staff and has all the privileges of a Team Admin, along with the following additional privileges:
+The first user added to a newly-installed Mattermost system is assigned the system admin role. The system admin is typically a member of the IT staff and has all the privileges of a team admin, along with the following additional privileges:
 
 - Access to the System Console in any team site.
 - Ability to change any setting on the Mattermost server available in the System Console.
@@ -37,7 +37,7 @@ In addition, a system admin can optionally set the following permissions for the
 Team admin
 ----------
 
-When a team is first created, the person who set it up is made a Team Admin. It is a team-specific role, meaning that someone can be a Team Admin for one team but only a member on another team. Team Admins have the following privileges:
+When a team is first created, the person who set it up is made a team admin. It is a team-specific role, meaning that someone can be a team admin for one team but only a member on another team. Team admins have the following privileges:
 
 - Access to the **Team Settings** menu.
 - Ability to change the team name and import data from Slack export files.
@@ -51,10 +51,10 @@ Channel admin
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-The person who creates a channel is assigned the Channel Admin role for that channel. People with the Channel Admin role have the following privileges:
+The person who creates a channel is assigned the channel admin role for that channel. People with the channel admin role have the following privileges:
 
-- Ability to assign the Channel Admin role to other members of the channel.
-- Ability to remove the Channel Admin role from other holders of the Channel Admin role.
+- Ability to assign the channel admin role to other members of the channel.
+- Ability to remove the channel admin role from other holders of the channel admin role.
 - Ability to remove members from the channel.
 - Ability to configure channel actions that automate tasks based on trigger conditions, such as :ref:`joining a channel <collaborate/join-leave-channels:join a channel>` or :doc:`sending a message </collaborate/send-messages>` in a channel.
 

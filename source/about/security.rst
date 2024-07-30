@@ -58,7 +58,7 @@ Authentication safeguards
 
 - To protect against brute force attacks, you can set :doc:`rate limiting on APIs </configure/environment-configuration-settings>`, varied by query frequency, memory store size, remote address, and headers.
 - Session length, session cache, and idle timeout can be :ref:`configured according to your internal policies <configure/environment-configuration-settings:session lengths>`, automatically forcing a user to re-login after a specified period of time.
-- Remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a System Admin in **System Console > Users**.
+- Remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and native desktop apps. User sessions can also be revoked remotely by a system admin in **System Console > Users**.
 - Session fixation, where an attacker can trick the user to authenticate with a known session cookie, does not affect Mattermost users as a new session cookie is set at each login.
 - Remotely reset user passwords via the System Console or via the :ref:`mmctl user reset-password <manage/mmctl-command-line-tool:mmctl user reset-password>` command.
 - Mattermost supports integrated authentication with :doc:`Active Directory and LDAP </onboard/ad-ldap>` (Mattermost Enterprise and Mattermost Professional) as well as :doc:`SAML 2.0 SSO integration </onboard/sso-saml>` with providers including :ref:`Active Directory Federation Services <onboard/ad-ldap:configure AD/LDAP deployments with multiple domains>`,  :doc:`Okta </onboard/sso-saml-okta>`, among others (Mattermost Enterprise and Mattermost Professional).
@@ -82,7 +82,7 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
 - Choose whether to restrict or enable :ref:`cross-origin requests <configure/integrations-configuration-settings:enable cross-origin requests from>`.
 - If sharing of public links for account creation or sharing of files and images are enabled, links can be invalidated via the System Console by :ref:`regenerating salts <configure/site-configuration-settings:public link salt>`.
 - Optionally add :ref:`advanced passwords requirements <configure/authentication-configuration-settings:password requirements>` with minimum numbers of symbols, numbers, lower, and uppercase letters.
-- Optionally restrict :doc:`creation, renaming, archiving of channels, Private channels, and integrations to Team Admins, System Admins, or end users </onboard/advanced-permissions>` (Mattermost Enterprise and Mattermost Professional).
+- Optionally restrict :doc:`creation, renaming, archiving of channels, Private channels, and integrations to team admins, system admins, or end users </onboard/advanced-permissions>` (Mattermost Enterprise and Mattermost Professional).
 
 Security updates
 -----------------

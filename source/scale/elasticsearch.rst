@@ -155,7 +155,7 @@ Mattermost creates three types of indexes: users, channels, and posts. Users and
 Can I pause an Elasticsearch indexing job?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System Admins can cancel an indexing job through the System Console.
+Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System admins can cancel an indexing job through the System Console.
 
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

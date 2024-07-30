@@ -85,7 +85,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Resource: https://docs.mattermost.com/deploy/encryption-options.html
  - Resource: https://docs.mattermost.com/install/transport-encryption.html
 
-- Determine System Administration access policies
+- Determine system administration access policies
 
  - Identify the list of users or groups who need administrative access for Mattermost System Console, Command Line Tools, and API privileges
 

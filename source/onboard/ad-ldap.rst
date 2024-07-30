@@ -30,17 +30,17 @@ Getting started
 There are two ways to set up AD/LDAP:
 
 1. **Configure AD/LDAP using the System Console user interface**
-     - Log in to your workspace and create a new account using email and password. This is assigned the System Admin role as the first user created.
-     - Next, configure AD/LDAP and then convert your System Admin account to use the AD/LDAP login method.
+     - Log in to your workspace and create a new account using email and password. This is assigned the system admin role as the first user created.
+     - Next, configure AD/LDAP and then convert your system admin account to use the AD/LDAP login method.
 
 2. **Configure AD/LDAP by editing ``config.json``**
-     - Edit ``config.json`` to enable AD/LDAP based on the :ref:`AD/LDAP settings documentation <configure/authentication-configuration-settings:ad/ldap>`. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the System Admin role.
+     - Edit ``config.json`` to enable AD/LDAP based on the :ref:`AD/LDAP settings documentation <configure/authentication-configuration-settings:ad/ldap>`. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the system admin role.
 
 Configure AD/LDAP login
 --------------------------
 
-1. **Create a System Admin account using email authentication.**
-     - Create a new workspace and create an account using email and password, which is automatically assigned the **System Administrator** role since it is the first account created. You may also assign the role to another account.
+1. **Create a system admin account using email authentication.**
+     - Create a new workspace and create an account using email and password, which is automatically assigned the **system admin** role since it is the first account created. You may also assign the role to another account.
 
 2. **Configure AD/LDAP.**
      - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap>`.
@@ -48,7 +48,7 @@ Configure AD/LDAP login
 3. **Confirm that AD/LDAP sign-on is enabled.**
      - After AD/LDAP has been enabled, confirm that users can log in using AD/LDAP credentials.
 
-4. **Switch your System Admin account from email to AD/LDAP authentication.**
+4. **Switch your system admin account from email to AD/LDAP authentication.**
      - Navigate to your profile, and select **Security > Sign-in Method > Switch to AD/LDAP** and log in with your AD/LDAP credentials to complete the switch.
 
 5. **(Optional) Restrict authentication to AD/LDAP.**
@@ -60,7 +60,7 @@ Configure AD/LDAP login
 
 .. note::
 
-   If you've made a mistake and lock yourself out of the system somehow, you can set an existing account to System Administrator using the :ref:`mmctl roles <manage/mmctl-command-line-tool:mmctl roles>` command.
+   If you've made a mistake and lock yourself out of the system somehow, you can set an existing account to system admin using the :ref:`mmctl roles <manage/mmctl-command-line-tool:mmctl roles>` command.
 
 Configure AD/LDAP synchronization
 ----------------------------------
@@ -120,7 +120,7 @@ See the :doc:`Guest Accounts documentation </onboard/guest-accounts>` for more i
 Admin filter
 ~~~~~~~~~~~~
 
-(Optional) Enter an AD/LDAP filter to use for designating System Admins. The users selected by the query will have access to your Mattermost workspace as System Admins. By default, System Admins have complete access to the Mattermost System Console. Existing members that are identified by this attribute will be promoted from member to System Admin upon next login.
+(Optional) Enter an AD/LDAP filter to use for designating system admins. The users selected by the query will have access to your Mattermost workspace as system admins. By default, system admins have complete access to the Mattermost System Console. Existing members that are identified by this attribute will be promoted from member to system admin upon next login.
 
 The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are demoted to members manually in **System Console > User Management** to ensure access is restricted immediately.
 
@@ -130,7 +130,7 @@ The next login is based upon Session lengths set in **System Console > Session L
 4. Choose **Save**.
 
 .. note::
-     If the Admin Filter is set to ``false``, the member's role as System Admin is retained. However if this filter is removed/changed, System Admins that were promoted via this filter will be demoted to members and won't retain access to the System Console.
+     If the Admin Filter is set to ``false``, the member's role as system admin is retained. However if this filter is removed/changed, system admins that were promoted via this filter will be demoted to members and won't retain access to the System Console.
 
 When this filter isn't in use, members can be manually promoted/demoted via **System Console > User Management**.
 

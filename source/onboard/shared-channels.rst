@@ -17,9 +17,9 @@ The process of sharing channels involves the following 3 steps:
 
 1. A system admin must enable shared channels functionality for their Mattermost instance. See our :ref:`Experimental Configuration Settings <configure/experimental-configuration-settings:enable shared channels>` documentation for details.
 
-2. A system admin :doc:`uses a slash command </collaborate/run-slash-commands>` to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the System Admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
+2. A system admin :doc:`uses a slash command </collaborate/run-slash-commands>` to establish a secure and trusted relationship between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance. We strongly recommend that you share an invitation separately from its password to ensure that someone doesn't have all of the data necessary to take action if the message were compromised.
 
-3. The remote System Admin receiving the invitation uses a slash command to `accept the invitation <#accept-a-secure-connection-invitation>`_.
+3. The remote system admin receiving the invitation uses a slash command to `accept the invitation <#accept-a-secure-connection-invitation>`_.
 
 Once a trusted relationship is established between Mattermost servers, system admins can `share specific public or private channels <#share-channels-with-secure-connections>`_ with secure connections.
 
@@ -40,12 +40,12 @@ For example:
 
 ``/secure-connection create --name AcmeUS --displayname “AcmeUSA” --password examplepassword``
 
-This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local System Admin based on the ``name`` and ``displayname`` provided.
+This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local system admin based on the ``name`` and ``displayname`` provided.
 
 Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-1. Copy the invitation code blob in the System message, then send the code blob and the decryption password to the remote Mattermost System Admin you want to securely connect with.
+1. Copy the invitation code blob in the System message, then send the code blob and the decryption password to the remote Mattermost aystem admin you want to securely connect with.
 2. Ensure that the remote Mattermost instance can access your workspace URL listed in the System message.
 
 Remove a secure connection

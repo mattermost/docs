@@ -497,9 +497,9 @@ Set policy on who can invite others to a team using the **Send Email Invite**, *
 
 **All team members**: Allows any team member to invite others using an email invitation, team invite link, or by adding members to the team directly.
 
-**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the product menu from users who are not Team Admins or System Admins.
+**Team and System Admins**: Hides the email invitation, team invite link, and the add members to team buttons in the product menu from users who are not team admins or system admins.
 
-**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the product menu from users who are not System Admins.
+**System Admins**: Hides the email invitation, team invite link, and add members to team buttons in the product menu from users who are not system admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictTeamInvite": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -518,9 +518,9 @@ Restrict the permission level required to create public channels.
 
 **All team members**: Allow all team members to create public channels.
 
-**Team Admins and System Admins**: Restrict creating public channels to Team Admins and System Admins.
+**Team Admins and System Admins**: Restrict creating public channels to team admins and system admins.
 
-**System Admins**: Restrict creating public channels to System Admins.
+**System Admins**: Restrict creating public channels to system admins.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelCreation": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -539,11 +539,11 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all channel members to rename Public channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming public channels to channel admins, team admins, and system admins who are members of the channel.
 
-**Team Admins and System Admins**: Restrict renaming public channels to Team Admins and System Admins who are members of the channel.
+**Team Admins and System Admins**: Restrict renaming public channels to Team Admins and system admins who are members of the channel.
 
-**System Admins**: Restrict renaming public channels to System Admins who are members of the channel.
+**System Admins**: Restrict renaming public channels to system admins who are members of the channel.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelManagement": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -562,11 +562,11 @@ Restrict the permission level required to delete Public channels. Deleted channe
 
 **All channel members**: Allow all channel members to delete public channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting public channels to Channel Admins, Team Admins, and System Admins who are members of the channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting public channels to channel admins, team admins, and system admins who are members of the channel.
 
-**Team Admins and System Admins**: Restrict deleting public channels to Team Admins and System Admins who are members of the channel.
+**Team Admins and System Admins**: Restrict deleting public channels to team admins and system admins who are members of the channel.
 
-**System Admins**: Restrict deleting public channels to System Admins who are members of the channel.
+**System Admins**: Restrict deleting public channels to system admins who are members of the channel.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPublicChannelDeletion": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -585,9 +585,9 @@ Restrict the permission level required to create private channels.
 
 **All team members**: Allow all team members to create private channels.
 
-**Team Admins and System Admins**: Restrict creating private channels to Team Admins and System Admins.
+**Team Admins and System Admins**: Restrict creating private channels to team admins and system admins.
 
-**System Admins**: Restrict creating private channels to System Admins.
+**System Admins**: Restrict creating private channels to system admins.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelCreation": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -606,11 +606,11 @@ Restrict the permission level required to rename and set the header or purpose f
 
 **All channel members**: Allow all channel members to rename private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to Channel Admins, Team Admins, and System Admins who are members of the private channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict renaming private channels to channel admins, team admins, and system admins who are members of the private channel.
 
-**Team Admins and System Admins**: Restrict renaming private channels to Team Admins and System Admins who are members of the private channel.
+**Team Admins and System Admins**: Restrict renaming private channels to team admins and system admins who are members of the private channel.
 
-**System Admins**: Restrict renaming private channels to System Admins who are members of the private channel.
+**System Admins**: Restrict renaming private channels to system admins who are members of the private channel.
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManagement": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -629,11 +629,11 @@ Set policy on who can add and remove members from Private channels.
 
 **All team members**: Allow all team members to add and remove members.
 
-**Team Admins, Channel Admins, and System Admins**: Allow only Team Admins, Channel Admins, and System Admins to add and remove members.
+**Team Admins, Channel Admins, and System Admins**: Allow only team admins, channel admins, and system admins to add and remove members.
 
-**Team Admins, and System Admins**: Allow only Team Admins and System Admins to add and remove members.
+**Team Admins, and System Admins**: Allow only team admins and system admins to add and remove members.
 
-**System Admins**: Allow only System Admins to add and remove members.
+**System Admins**: Allow only system admins to add and remove members.
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelManageMembers": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -652,11 +652,11 @@ Restrict the permission level required to delete Private channels. Deleted chann
 
 **All channel members**: Allow all channel members to delete private channels.
 
-**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to Channel Admins, Team Admins, and System Admins who are members of the Private channel.
+**Channel Admins, Team Admins, and System Admins**: Restrict deleting private channels to channel admins, team admins, and system admins who are members of the Private channel.
 
-**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and System Admins who are members of the Private channel.
+**Team Admins and System Admins**: Restrict deleting private channels to Team Admins and system admins who are members of the Private channel.
 
-**System Admins**: Restrict deleting private channels to System Admins who are members of the private channel.
+**System Admins**: Restrict deleting private channels to system admins who are members of the private channel.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPrivateChannelDeletion": "all"`` with options ``"all"``, ``"channel_admin"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |
@@ -671,13 +671,13 @@ Allow which users to delete messages
 
    From v5.0 this has been replaced by advanced permissions which offers Admins a way to restrict actions in Mattermost to authorized users only. See the :doc:`Advanced Permissions documentation </onboard/advanced-permissions>` for more details.
 
-Restrict the permission level required to delete messages. Team Admins, Channel Admins, and System Admins can delete messages only in channels where they are members. Messages can be deleted any time.
+Restrict the permission level required to delete messages. Team admins, channel admins, and system admins can delete messages only in channels where they are members. Messages can be deleted any time.
 
-**Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow Team Admins, Channel Admins, and System Admins to delete any message.
+**Message authors can delete their own messages, and Administrators can delete any message**: Allow authors to delete their own messages, and allow team admins, channel admins, and system admins to delete any message.
 
-**Team Admins and System Admins**: Allow only Team Admins and System Admins to delete messages.
+**Team Admins and System Admins**: Allow only team admins and system admins to delete messages.
 
-**System Admins**: Allow only System Admins to delete messages.
+**System Admins**: Allow only system admins to delete messages.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictPostDelete": "all"`` with options ``"all"``, ``"team_admin"``, and ``"system_admin"`` for the above settings, respectively. |

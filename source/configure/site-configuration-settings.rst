@@ -530,7 +530,7 @@ Teammate name display
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 | This setting determines how names appear in posts and under the **Direct Messages** list.       | - System Config path: **Site Configuration > Users and Teams**             |
 | Users can change this setting in their interface under **Settings > Display >                   | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay: username`` |
-| Teammate Name Display**, unless this setting is locked by a System Admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
+| Teammate Name Display**, unless this setting is locked by a system admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
 | via the **Lock teammate name display for all users** configuration setting.                     |                                                                            |
 |                                                                                                 |                                                                            |
 | - **Show username**: **(Default for self-hosted deployments)** Displays usernames.              |                                                                            |
@@ -596,14 +596,14 @@ Allow users to view archived channels
   :environment: MM_PRIVACYSETTINGS_SHOWEMAILADDRESS
 
   - **true**: **(Default)** All users can see the email addresses of every other user.
-  - **false**: Hides email addresses in the client user interface, except for System Admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
+  - **false**: Hides email addresses in the client user interface, except for system admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
 
 Show email address
 ~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** All users can see the email addresses of every other user.        | - System Config path: **Site Configuration > Users and teams**         |
-| - **false**: Hides email addresses in the client user interface, except from System Admins  | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
+| - **false**: Hides email addresses in the client user interface, except from system admins  | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
 |   and the System Roles with read/write access to Compliance, Billing, or User Management    | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
 |   (users/teams/channels/groups etc).                                                        |                                                                        |
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -615,14 +615,14 @@ Show email address
   :environment: MM_PRIVACYSETTINGS_SHOWFULLNAME
 
   - **true**: **(Default)** Full names are visible to all users in the client user interface.
-  - **false**: Hides full names from all users, except System Admins.
+  - **false**: Hides full names from all users, except system admins.
 
 Show full name
 ~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | - **true**: **(Default)** Full names are visible to all users in the client user interface.                      | - System Config path: **Site Configuration > Users and Teams**     |
-| - **false**: Hides full names from all users, except System Admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
+| - **false**: Hides full names from all users, except system admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``        |
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
@@ -852,7 +852,7 @@ Notification from address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| Email address for notification emails from the Mattermost system. This address should be monitored by a System Admin. | - System Config path: **Site Configuration > Notifications**  |
+| Email address for notification emails from the Mattermost system. This address should be monitored by a system admin. | - System Config path: **Site Configuration > Notifications**  |
 |                                                                                                                       | - ``config.json`` setting: ``.EmailSettings.FeedbackEmail``   |
 | String input. Default is ``test@example.com``. This field is required when changing settings in the System Console.   | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKEMAIL``    |
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -868,7 +868,7 @@ Support email address
 ~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. This address should be monitored by a System Admin. If no value is set, email notifications will not contain a way for users to request assistance. | - System Config path: **Site Configuration > Notifications** |
+| Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. This address should be monitored by a system admin. If no value is set, email notifications will not contain a way for users to request assistance. | - System Config path: **Site Configuration > Notifications** |
 |                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.SupportSettings.SupportEmail`` |
 | String input. Default is ``feedback@mattermost.com``. This field is required when changing settings in the System Console.                                                                                                                                                            | - Environment variable: ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -884,7 +884,7 @@ Notification reply-to address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| Email address used in the reply-to header when sending notification emails from the Mattermost system. This address should be monitored by a System Admin. | - System Config path: **Site Configuration > Notifications**   |
+| Email address used in the reply-to header when sending notification emails from the Mattermost system. This address should be monitored by a system admin. | - System Config path: **Site Configuration > Notifications**   |
 |                                                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.ReplyToAddress``   |
 | String input. Default is ``test@example.com``.                                                                                                             | - Environment variable: ``MM_EMAILSETTINGS_REPLYTOADDRESS``    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
@@ -1615,16 +1615,16 @@ Access the following configuration settings in the System Console by going to **
   :configjson: .AnnouncementSettings.AdminNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED
 
-  - **true**: **(Default)** System Admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about server upgrades and administration features.
-  - **false**: System Admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
+  - **true**: **(Default)** System admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about server upgrades and administration features.
+  - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
 
 Enable admin notices
 ~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| - **true**: **(Default)** System Admins will receive :doc:`in-product notices </manage/in-product-notices>` about server upgrades and administration features.                              | - System Config path: **Site Configuration > Notices** -                         |
+| - **true**: **(Default)** System admins will receive :doc:`in-product notices </manage/in-product-notices>` about server upgrades and administration features.                              | - System Config path: **Site Configuration > Notices** -                         |
 |                                                                                                                                                                                             | - ``config.json`` setting: ``.AnnouncementSettings.AdminNoticesEnabled: true``   |
-| - **false**: System Admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**)                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
+| - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**)                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: notices-enableendusernotices

@@ -740,7 +740,7 @@ Group filter
   :configjson: .LdapSettings.EnableAdminFilter
   :environment: MM_LDAPSETTINGS_ENABLEADMINFILTER
 
-  - **true**: Enables the **Admin Filter** setting that designates System Admins using an AD/LDAP filter.
+  - **true**: Enables the **Admin Filter** setting that designates system admins using an AD/LDAP filter.
   - **false**: **(Default)** Disables the **Admin Filter** setting.
 
 Enable admin filter
@@ -751,11 +751,11 @@ Enable admin filter
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| - **true**: Enables the **Admin Filter** setting that designates System Admins using an AD/LDAP filter.                                                                                                                     | - System Config path: **Authentication > AD/LDAP**                    |
+| - **true**: Enables the **Admin Filter** setting that designates system admins using an AD/LDAP filter.                                                                                                                     | - System Config path: **Authentication > AD/LDAP**                    |
 | - **false**: **(Default)** Disables the **Admin Filter** setting.                                                                                                                                                           | - ``config.json`` setting: ``.LdapSettings.EnableAdminFilter: false`` |
 |                                                                                                                                                                                                                             | - Environment variable: ``MM_LDAPSETTINGS_ENABLEADMINFILTER``         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
-| **Note**: If this setting is ``false``, no additional users are designated as System Admins by the filter. Users that were previously designated as System Admins retain this role unless the filter is changed or removed.                                                                         |
+| **Note**: If this setting is ``false``, no additional users are designated as system admins by the filter. Users that were previously designated as system admins retain this role unless the filter is changed or removed.                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: ldap-adminfilter
@@ -763,7 +763,7 @@ Enable admin filter
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.AdminFilter
   :environment: MM_LDAPSETTINGS_ADMINFILTER
-  :description: This setting accepts an AD/LDAP filter that designates the selected users as System Admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync.
+  :description: This setting accepts an AD/LDAP filter that designates the selected users as system admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync.
 
 Admin filter
 ~~~~~~~~~~~~
@@ -773,7 +773,7 @@ Admin filter
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
-| This setting accepts an AD/LDAP filter that designates the selected users as System Admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync. | - System Config path: **Authentication > AD/LDAP**       |
+| This setting accepts an AD/LDAP filter that designates the selected users as system admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync. | - System Config path: **Authentication > AD/LDAP**       |
 |                                                                                                                                                                                          | - ``config.json`` setting: ``.LdapSettings.AdminFilter`` |
 | If the Admin Filter is removed, users who are currently logged in retain their Admin role until their next sign-in.                                                                      | - Environment variable: ``MM_LDAPSETTINGS_ADMINFILTER``  |
 |                                                                                                                                                                                          |                                                          |
@@ -1630,7 +1630,7 @@ Email attribute
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**             |
 |                                                                                                                                                            | - ``config.json`` setting: ``.SamlSettings.EmailAttribute``     |
-| Notifications are sent to this email address. This email address may be visible to other users, depending on how the System Admin has set-up user privacy. | - Environment variable: ``MM_SAMLSETTINGS_EMAILATTRIBUTE``      |
+| Notifications are sent to this email address. This email address may be visible to other users, depending on how the system admin has set-up user privacy. | - Environment variable: ``MM_SAMLSETTINGS_EMAILATTRIBUTE``      |
 |                                                                                                                                                            |                                                                 |
 | String input.                                                                                                                                              |                                                                 |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
@@ -1714,8 +1714,8 @@ Guest attribute
   :configjson: .SamlSettings.EnableAdminAttribute
   :environment: MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE
 
-  - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**.
-  - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute
+  - **true**: System admin status is determined by the SAML Assertion attribute set in **Admin attribute**.
+  - **false**: **(Default)** System admin status is **not** determined by the SAML Assertion attribute
 
 Enable admin attribute
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -1728,8 +1728,8 @@ Enable admin attribute
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: System Admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                      |
-| - **false**: **(Default)** System Admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
+| - **true**: System admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                      |
+| - **false**: **(Default)** System admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``.SamlSettings.EnableAdminAttribute: false`` |
 |                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``         |
 +-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1738,7 +1738,7 @@ Enable admin attribute
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.AdminAttribute
   :environment: MM_SAMLSETTINGS_ADMINATTRIBUTE
-  :description: (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.
+  :description: (Optional) This setting determines the attribute in the SAML Assertion for designating system admins.
 
 Admin attribute
 ~~~~~~~~~~~~~~~
@@ -1751,7 +1751,7 @@ Admin attribute
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
-| (Optional) This setting determines the attribute in the SAML Assertion for designating System Admins.                         | - System Config path: **Authentication > SAML 2.0**             |
+| (Optional) This setting determines the attribute in the SAML Assertion for designating system admins.                         | - System Config path: **Authentication > SAML 2.0**             |
 |                                                                                                                               | - ``config.json`` setting: ``.SamlSettings.AdminAttribute``     |
 | Users are automatically promoted to this role when logging in to Mattermost.                                                  | - Environment variable: ``MM_SAMLSETTINGS_ADMINATTRIBUTE``      |
 |                                                                                                                               |                                                                 |

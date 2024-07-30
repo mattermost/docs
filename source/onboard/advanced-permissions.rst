@@ -92,7 +92,7 @@ Example: In Team A, only allow system and team admins to add new team members. A
 5. Select the back arrow to return to the **Permission Schemes** menu.
 6. Select **New Team Override Scheme**.
 
-  a. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to Team and System Admins.``
+  a. Name and describe the scheme. For example, ``Authorized Personnel Only`` with description ``Restrict adding team members to eam and System Admins.``
   b. Select **Add Teams** to add Team B to the **Select teams to override permissions** list, locate Team B, then select **Add**.
   c. In the **All Members** panel, uncheck the box for **Add Team Members**.
   d. In the **Team Administrators** panel, check the box for **Add Team Members**.
@@ -111,7 +111,7 @@ Example: As the default for the entire system, restrict renaming channels and ed
 2. Select **Edit Scheme**.
 3. In the **All Members** panel, uncheck the box for **Manage Public Channels > Manage Channel Settings**.
 
-The **Manage Channel Settings** option is now only available to **Channel Administrators**, **Team Administrators**, and **System Administrators**.
+The **Manage Channel Settings** option is now only available to channel admins, team admins, and system admins.
 
 .. note::
 

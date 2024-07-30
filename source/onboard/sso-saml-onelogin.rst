@@ -115,7 +115,7 @@ Create a OneLogin connection app for Mattermost SSO
 Configure SAML Sign-On for Mattermost
 --------------------------------------
 
-1. Start the Mattermost server, then log in to Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**.
+1. Start the Mattermost server, then log in to Mattermost as a system admin. Go to **System Console > Authentication > SAML**.
 
   a. Enter the **OneLogin Issuer URL** into the **Identity Provider Metadata URL** field.
   b. Select **Get SAML Metadata from IdP** to download the metadata.
@@ -152,7 +152,7 @@ Configure SAML Sign-On for Mattermost
 
 8. (Optional) If you configured ``First Name`` Attribute and ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-To confirm that SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your profile picture via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
+To confirm that SAML SSO is successfully enabled, switch your system admin account from email to SAML-based authentication from your profile picture via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement to your users detailing how the migration will work.
 
