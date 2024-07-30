@@ -24,7 +24,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "@ mentions", "X", "X", "X"
     "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X"
+    "Search highlighting", "X", "X", "X"
     "View/marking pinned or saved posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
@@ -85,34 +85,11 @@ The following chart highlights the end user features of Mattermost and their sup
     "User profile settings", "X", "X", "X"
     "Channel settings", "X", "X", "X"
 
-..  _feature-quality-levels:
-
 What feature quality levels does Mattermost have?
 --------------------------------------------------
 
 We strive to release viable features. This means that we put in a significant amount of effort to ensure we solve a use case with a high bar for quality. A feature that's viable and meets our criteria for our production quality levels will be released to production.
 
-However, when working on large and complex features or new products, we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as experimental or beta and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release.
+However, when working on large and complex features or new products, we may need to test them with a high volume of customers and users. For these scenarios, we'll release them as :ref:`Experimental <getting-started/feature-labels:experimental>` or :ref:`Beta <getting-started/feature-labels:beta>`, and implement feature flags and/or A/B testing to validate the effectiveness of features prior to production-level release. Additionally, we `dogfood our features <https://en.wikipedia.org/wiki/Eating_your_own_dog_food>`_ on our community server, and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
 
-We dogfood our features on our community server and provide many configuration options that ensure customers can opt-in when trying experimental or beta features.
-
-This list describes the quality levels of Mattermost features, and what can be expected at each level.
-
-Production Level Quality
-- Recommended for use in production environments
-- Eligible for commercial support by `Mattermost, Inc. <https://mattermost.com/support/>`__
-- Detailed documentation is available
-- Tested on several platforms
-
-Beta Level Quality
-- Support best-effort only. `Premier Support <https://mattermost.com/support/>`__ is recommended for use in production environments
-- Core functionality is stable, but iteration based on feedback is ongoing
-- Detailed documentation may not be available yet
-- Data schema may not be complete, and may require manual migrations to future versions
-
-Experimental Level Quality
-- Not recommended for use in production
-- Unknown level of stability
-- Feature set covers a small or specific set of use cases. Additional use and edge cases will be added over time
-- Data loss can occur as data schemas and configurations may change
-- Minimal documentation is available
+See the :doc:`Mattermost feature labels </getting-started/feature-labels>` documentation for details on the status, maturity, and support level of each feature, and what you can expect at each level.

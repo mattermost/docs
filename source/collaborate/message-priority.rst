@@ -1,4 +1,4 @@
-Set message priority (beta)
+Set message priority (Beta)
 ===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
@@ -36,7 +36,7 @@ Send persistent notifications
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can enable persistent notifications which notify recipients at regular intervals and for a set amount of time until the recipient acknowledges, reacts, or replies to the message.
+From Mattermost v8.0, when you add an urgent priority label, and your message @mentions at least one other user, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can enable persistent notifications which notify recipients at regular intervals and for a set amount of time until the recipient acknowledges, reacts, or replies to the message.
 
 To enable persistent notifications for a message:
 
@@ -69,7 +69,7 @@ Request acknowledgements
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-`Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can additionally request that recipients actively acknowledge the message to track that messages have been seen and actioned. By default, marking a message as Urgent priority automatically requests an acknowledgement. 
+`Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request that recipients actively acknowledge the message to track that messages have been seen and actioned. By default, marking a message as Urgent priority automatically requests an acknowledgement. 
 
 When you request acknowlegement of a message, an **Acknowledge** |acknowledge-button| button is added below the sent message. You can mark message as acknowledged by selecting the button, and you can hover over the **Acknowledged** |acknowledged-icon| icon to review who has acknowledged the message.
 

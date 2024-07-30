@@ -13,7 +13,7 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
       <div class="mm-code-copy__wrapper">
         <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        wget https://releases.mattermost.com/9.7.2/mattermost-9.7.2-linux-amd64.tar.gz
+        wget https://releases.mattermost.com/9.10.1/mattermost-9.10.1-linux-amd64.tar.gz
         </code>
         <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
       </div>
@@ -33,7 +33,7 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
       <div class="mm-code-copy__wrapper">
         <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        wget https://releases.mattermost.com/9.5.4/mattermost-9.5.4-linux-amd64.tar.gz
+        wget https://releases.mattermost.com/9.5.8/mattermost-9.5.8-linux-amd64.tar.gz
         </code>
         <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
       </div>
@@ -47,7 +47,4 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
 .. tab:: Older releases
 
-  If you are looking for an older release, these can be found in our :doc:`version archive </upgrade/version-archive>` documentation.
-
-  - :ref:`Enterprise Edition releases <upgrade/version-archive:mattermost enterprise edition>`
-  - :ref:`Team Edition releases <upgrade/version-archive:mattermost team edition>`
+  If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </about/version-archive>` documentation.

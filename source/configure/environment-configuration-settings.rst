@@ -9,23 +9,6 @@ Environment configuration settings
 
 Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Environment**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
 
-- `Web server <#web-server>`__
-- `Database <#database>`__
-- `Elasticsearch <#elasticsearch>`__
-- `File Storage <#file-storage>`__
-- `Image Proxy <#image-proxy>`__
-- `SMTP <#smtp>`__
-- `Push Notification Server <#push-notification-server>`__
-- `High Availability <#high-availability>`__
-- `Rate Limiting <#rate-limiting>`__
-- `Logging <#logging>`__
-- `Session Lengths <#session-lengths>`__
-- `Performance Monitoring <#performance-monitoring>`__
-- `Developer <#developer>`__
-- `config. json-only settings <#config-json-only-settings>`__
-
-----
-
 Web server
 ----------
 
@@ -180,8 +163,8 @@ config.json-only settings
   :environment: MM_CLOUDSETTINGS_DISABLE
   :description: Enable or disable server requests to the Mattermost Customer Portal.
 
-  - **true**: Server-side requests made to the customer portal are enabled, but will always fail in air-gapped and restricted environments.
-  - **false**: **(Default)** Server-side requests made to the customer portal are disabled.
+    - **true**: **(Default)** Server-side requests made to the customer portal are disabled.
+    - **false**: Server-side requests made to the customer portal are enabled, but will always fail in air-gapped and restricted environments.
 
 Disable Customer Portal requests
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,13 +172,14 @@ Disable Customer Portal requests
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable customer portal requests.   | - System Config path: **N/A**                                             |
 |                                               | - ``config.json setting``: ``".CloudSettings.Disable": false",``          |
-| - **true**: Server-side requests made to the  | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
+|                                               | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
+| - **true**: **(Default)** Server-side         |                                                                           |
+|   requests made to the customer portal are    |                                                                           |
+|   disabled.                                   |                                                                           |
+| - **false**: Server-side requests made to the |                                                                           |
 |   Mattermost Customer Portal are enabled,     |                                                                           |
 |   but will always fail in air-gapped and      |                                                                           |
 |   restricted deployment environments.         |                                                                           |
-| - **false**: **(Default)** Server-side        |                                                                           |
-|   requests made to the customer portal are    |                                                                           |
-|   disabled.                                   |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | **Note**: Cloud admins can’t modify this configuration setting.                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+

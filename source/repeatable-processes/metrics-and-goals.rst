@@ -53,7 +53,10 @@ The lower half of the page shows a list of finished runs with metrics values. Yo
 .. image:: ../images/playbook-metrics.png
    :alt: View and assess metrics for your playbook.
 
-Channel export
-~~~~~~~~~~~~~~
+Export channel data
+~~~~~~~~~~~~~~~~~~~
 
-Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`_ for more information.
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+See the :doc:`export channel data </comply/export-mattermost-channel-data>` documentation for details on working with channel export functionality.

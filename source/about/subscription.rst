@@ -10,7 +10,7 @@ Purchase Mattermost Licenses
 
 Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription:
 
-- Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Professional or Enterprise plans via purchase options at https://mattermost.com/pricing/. 
+- Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Mattermost Enterprise or Professional plans via purchase options at https://mattermost.com/pricing/. 
 
 
 Mattermost Nonprofit License program
@@ -60,7 +60,7 @@ Mattermost Enterprise Cloud
 
 Enterprises can inquire about Mattermost Cloud Enterprise, a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc. 
 
-For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
+For more information, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
 
 
 Frequently asked questions
@@ -71,7 +71,7 @@ Are my credit card details safe?
 
 We use `Solupay <https://www.versapay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`_, which is PCI-DSS compliant.
 
-Should you wish to make payment using another method, please contact our `Billing team <mailto:AR@mattermost.com>`_.
+Should you wish to make payment using another method, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
 
 Why do I need to provide my name and physical address when purchasing a subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

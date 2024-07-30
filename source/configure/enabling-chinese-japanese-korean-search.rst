@@ -98,7 +98,7 @@ Below is additional information on how to configure the database for different l
 
     未尽事宜，可以参考以下链接：
 
-    - `SCWS 官方文档 <http://www.xunsearch.com/scws/docs.php>`_
+    - `SCWS 官方文档 <www.xunsearch.com/scws/docs.php>`_
     - `Zhparser 官方文档 <https://github.com/amutu/zhparser/blob/master/README.md>`_
     - `Mattermost 建表语句 <https://github.com/mattermost/mattermost/tree/master/server/channels/db/migrations/postgres>`_
 
@@ -154,14 +154,14 @@ MySQL 해결 방법
 
 4. 일부 테이블의 전문 검색 색인을 다음과 같이 재구성합니다.
 
-- 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`_ )
+- 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`__ )
 
 .. code:: sql
 
     DROP INDEX idx_posts_message_txt ON Posts;
     CREATE FULLTEXT INDEX idx_posts_message_txt ON Posts (Message) WITH PARSER ngram;
 
-- 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`_ )
+- 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`__ )
 
 .. code:: sql
 

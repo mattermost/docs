@@ -223,31 +223,33 @@ Bulk indexing
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Configure Mattermost to start a bulk index of all existing    | - System Config path: **Environment > Elasticsearch**                    |
-| posts in the database.                                        | - ``config.json`` setting: N/A                                           |
+| posts in the database, from oldest to newest.                 | - ``config.json`` setting: N/A                                           |
 |                                                               | - Environment variable: N/A                                              |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Select the **Index Now** button in the System Console to start a bulk index of all posts. If the indexing process is canceled, the       |
-| index and search results will be incomplete.                                                                                             |
+| Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.         |
+| Elasticsearch is available during indexing but search results may be incomplete until the indexing job is complete.                      |
+| If an in-progress indexing job is canceled, the index and search results will be incomplete.                                             |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-indexestoskipwhilepurging
-  :displayname: Indexes to skip while purging (Elasticsearch)
+.. config:setting:: elastic-rebuildchannelsindex
+  :displayname: Rebuild channels index (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
-  :configjson: .Elasticsearchsettings.IgnoredPurgeIndexes
-  :environment: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES
-  :description: Specify index names to ignore while purging indexes, separated by commas.
+  :configjson: N/A
+  :environment: N/A
+  :description: Purge the channels index adn re-index all channels in the database, from oldest to newest.
 
+Rebuild channels index
+~~~~~~~~~~~~~~~~~~~~~~
 
-Indexes to skip while purging
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                    |
-| Separate multiple index names with commas.                    | - ``config.json`` setting: ElasticsearchSettings.IgnoredPurgeIndexes     |
-|                                                               | - Environment variable: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES     |
-| Use an asterisk (*) to match a sequence of index name         |                                                                          |
-| characters.                                                   |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------+---------------------------------------------------------------+
+| Purge the channels index adn re-index all channels in the     | - System Config path: **Environment > Elasticsearch**         |
+| database, from oldest to newest.                              | - ``config.json`` setting: N/A                                |
+|                                                               | - Environment variable: N/A                                   |
++---------------------------------------------------------------+---------------------------------------------------------------+
+| Select the **Rebuild Channels Index** button in the System Console to purge the channels index.                               |
+| Ensure no other indexing jobs are in progress via the **Bulk Indexing** table before starting this process.                   |
+| During indexing, channel auto-complete is available, but search results may be incomplete until the indexing job is complete. |
++---------------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: elastic-purgeindexes
   :displayname: Purge indexes (Elasticsearch)
@@ -271,6 +273,24 @@ Purge indexes
 | Select the **Purge Indexes** button in the System Console to purge the index.                                               |
 | After purging the index, create a new index by selecting the **Index Now** button.                                          |
 +---------------------------------------------------------------+-------------------------------------------------------------+
+
+.. config:setting:: elastic-indexestoskipwhilepurging
+  :displayname: Indexes to skip while purging (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.IgnoredPurgeIndexes
+  :environment: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES
+  :description: Specify index names to ignore while purging indexes, separated by commas.
+
+Indexes to skip while purging
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify index names to ignore while purging indexes.          | - System Config path: **Environment > Elasticsearch**                    |
+| Separate multiple index names with commas.                    | - ``config.json`` setting: ElasticsearchSettings.IgnoredPurgeIndexes     |
+|                                                               | - Environment variable: MM_ELASTICSEARCHSETTINGS_IGNOREDPURGEINDEXES     |
+| Use an asterisk (*) to match a sequence of index name         |                                                                          |
+| characters.                                                   |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: elastic-enablesearch
   :displayname: Enable Elasticsearch for search queries (Elasticsearch)
@@ -603,13 +623,13 @@ Live indexing batch size
 
     **Via mmctl**
 
-    .. code-block:: JSON
+    .. code-block:: none
 
       mmctl config set ElasticsearchSettings.LiveIndexingBatchSize 200
 
     **Via an environment variable**
 
-    .. code-block:: JSON
+    .. code-block:: none
 
       MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE = 200
 

@@ -10,7 +10,7 @@ There are different ways for teams to access and interact with playbooks. This i
 Permissions are provided using:
 
 * **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
-* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Professional and Enterprise).
+* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
 
 For more information about System and Team Override Schemes, refer to the :doc:`Advanced Permissions </onboard/advanced-permissions>` documentation.
 
@@ -99,10 +99,10 @@ You can do this by duplicating a playbook in the Playbooks screen. Select the **
 
 To import a playbook, go to the Playbooks screen, and select **Import**. Choose the team you’re importing to, then select the JSON file. You can also export any playbook to JSON to easily share with other Mattermost servers.
 
-Channel export
---------------
+Export channel data
+--------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Exporting the contents of a channel requires the channel export plugin. See the `Channel Export plugin documentation <https://github.com/mattermost/mattermost-plugin-channel-export#readme>`__ for more information.
+See the :doc:`export channel data </comply/export-mattermost-channel-data>` documentation for details on working with channel export functionality.

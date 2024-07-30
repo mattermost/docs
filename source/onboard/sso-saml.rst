@@ -18,7 +18,8 @@ Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Sin
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
 - **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
 
-SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
+.. warning::
+  SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
 
 For more information about SAML, see `this article from Varonis <https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-saml>`_.
 
@@ -28,6 +29,7 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
   :titlesonly:
 
   Okta SAML Configuration <sso-saml-okta>
+  Generate self-signed certificates </scripts/generate-certificates/gencert>
   OneLogin SAML Configuration <sso-saml-onelogin.rst>
   Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>

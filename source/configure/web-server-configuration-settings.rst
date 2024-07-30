@@ -27,7 +27,7 @@ Site URL
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Notes**:                                                                                                                    |
 |                                                                                                                               |
-| - The URL may contain a subpath, such as "https://example.com/company/mattermost".                                            |
+| - The URL may contain a subpath, such as ``https://example.com/company/mattermost``.                                          |
 | - If you change the Site URL value, log out of the Desktop App, and sign back in using the new domain.                        |
 | - If Site URL is not set:                                                                                                     |
 |                                                                                                                               |
@@ -434,6 +434,9 @@ Websocket URL
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: We strongly recommend configuring a single websocket URL that matches the `Site URL <#site-url>`_ configuration    |
+| setting.                                                                                                                     |
++--------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: web-licensefilelocation
   :displayname: License file location (Web Server)
@@ -680,5 +683,5 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the :doc:`performance monitoring </scale/performance-monitoring>` documentation for details.                                                 |
+| See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+

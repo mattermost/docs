@@ -4,6 +4,10 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+    :class: theme-icon
+
 You can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost while on a call. 
 
 Mattermost Enterprise customers can also `record calls <#record-a-call>`__ and `transcribe recorded calls <#transcribe-recorded-calls>`__.
@@ -35,10 +39,12 @@ Start a call
 
 .. tab:: Web/Desktop
 
-  To start a call, select **Start call** in the channel header. When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
+  To start a call, select **Start call** in the channel header. When you start a call, you become the call host by default. See the `host controls <#host-controls>`__ section below for details on host controls available to ensure calls run smoothly.
+  
     
   .. tip::
       
+    - When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     - You can move the call widget to a different area of your screen.
     - Alternatively, you can start a call using the ``/call start`` slash command.
 
@@ -50,10 +56,49 @@ Start a call
 
   On iOS, audio will automatically come through a connected device. You can override this behavior by tapping the **Speaker** button. Audio will then come through the speaker. However, you cannot manually select an output device on iOS at this time.
 
+Host controls
+-------------
+
+From Mattermost v9.9, and Mattermost mobile v2.17, call host controls are available and include the ability to `transfer host duties <#transfer-host-duties>`__, `remove call participants <#remove-call-participants>`__, `stop a screen share <#stop-a-screen-share>`__, `mute or unmute participants <#mute-or-nmute-participants>`__, `lower raised hands <#lower-raised-hands>`__, and `end the call for everyone <#end-the-call-for-everyone>`__.
+
+Host controls are available to call hosts and admins in both the call widget by selecting the **More** |more-icon| icon next to a participant's name, and in the expanded the call window as hosts hover over a call participant in the list.
+
+Transfer host duties
+~~~~~~~~~~~~~~~~~~~~
+
+Transfer host duties to another call participant by accessing the host controls and selecting **Make host**. Once host duties are transferred to someone else, you can't access host controls unless they're transferred back to you. System admins can change the host at any time.
+
+Remove call participants
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Remove a call participant from an active call by accessing the host controls and selecting **Remove from call**, then confirm by selecting **Yes, remove**. The call participant is notified that they've been removed from the call by the host.
+
+Stop a screen share
+~~~~~~~~~~~~~~~~~~~~
+
+Stop a call participant's screen share by accessing the host controls and selecting **Stop screen share**.
+
+Mute participants
+~~~~~~~~~~~~~~~~~~
+
+Invite muted participants to unmute their microphone by accessing the host controls and selecting **Ask to unmute**.  The call particpant is prompted to decide whether unmute or stay muted.
+
+You can mute the microphone of specific particpants by accessing the host controls and toggling the particpant's mute icon. Mute all call particpants by selecting **Mute all**.
+
+Lower raised hands
+~~~~~~~~~~~~~~~~~~~
+
+Lower a raised hand by accessing the host controls and selecting **Lower hand**. The participant is notified that their hand was lowered by the host.
+
+End the call for everyone
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v9.10, call hosts who choose to leave a call are prompted to confirm whether they want to leave or end the call for all participants.
+
 Share your screen
 -----------------
 
-During a call, you can share your screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
+During a call, call participants can share their screen with other call participants, unless your system admin has :ref:`disabled your ability to do so <configure/plugins-configuration-settings:allow screen sharing>`. 
 
 .. note::
   
@@ -68,7 +113,7 @@ To share your screen:
 React using emojis
 ------------------
 
-You can use emojis to react during a call.
+All call participants can use emojis to react during a call.
 
 .. tab:: Web/Desktop
 
@@ -85,11 +130,11 @@ A chat thread is created automatically for every new call.
 
 .. tab:: Web/Desktop
 
-  To do this, expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+  Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
 
 .. tab:: Mobile
   
-  To do this, expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+  Expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
 
 Record a call
 -------------
@@ -99,7 +144,9 @@ Record a call
 
 From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings (beta)>`.
 
-Call recordings include audio, any screen sharing during the call, and `text captions <#add-captions-to-recorded-calls>`__, when enabled. The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
+Call recordings include audio, any screen sharing during the call, and text transcriptions, when :ref:`enabled <configure/plugins-configuration-settings:enable call transcriptions (experimental)>`. 
+
+The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 
 When you stop recording, the recording file is posted in the call thread as an MP4 file attachment. It's available to all users in the channel both during the call, and after the call has ended.
 
@@ -115,6 +162,20 @@ To record a call:
 .. tab:: Mobile
   
   To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+
+Live captions during calls
+---------------------------
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (experimental)>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
+
+By default, live captions display in English. Your Mattermost system admin can :ref:`specify a different language for live captions <configure/plugins-configuration-settings:live captions language>` in the System Console.
+
+.. note::
+
+  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings (beta)>` to enable live captions.
 
 Transcribe recorded calls
 --------------------------

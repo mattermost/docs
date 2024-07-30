@@ -20,6 +20,11 @@ Send messages
   :alt: Use the Smile icon to add emojis to your message.
   :class: theme-icon
 
+.. |restore-edit| image:: ../images/restore_F099B.svg
+  :alt: Use the Restore icon to restore a previous version of an edited message.
+  :class: theme-icon
+  :width: 25
+
 Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
 
 - copying and pasting images.
@@ -48,10 +53,10 @@ Compose a message by typing into the text box at the bottom of the Mattermost sc
   Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
 
 .. tip::
-  
+
   - When you send messages in a channel, depending on the :doc:`channel actions configured </collaborate/create-channels>`, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
   - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
-  - `Mattermost Professional or Enterprise <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using :doc:`advanced permissions </onboard/advanced-permissions>`.
+  - `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using :doc:`advanced permissions </onboard/advanced-permissions>`.
   
 Draft messages
 --------------
@@ -72,22 +77,38 @@ By default, message drafts are synchronized on the Mattermost server and are acc
 
   To disable global drafts, system admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable it server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost/blob/master/server/public/model/feature_flags.go#L11>`_.
 
-Edit or delete messages
------------------------
+Edit messages
+--------------
 
-Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you've sent.
+All users can edit their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
 
-.. image:: ../images/more-actions.png
-   :alt: Select the More option to edit or delete a sent message.
+1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you've sent.
 
-Select **Edit** to edit your own messages. Editing a message won't trigger new @mention notifications, desktop notifications, or notification sounds.
+  .. image:: ../images/more-actions.png
+     :alt: Select the More option to edit or delete a sent message.
 
-Select **Delete** to delete your own messages. Select **Delete** again to confirm.
+2. Select **Edit** to edit your own messages. Editing a message won't trigger new :doc:`@mention notifications </collaborate/mention-people>`, or :doc:`desktop notifications </preferences/manage-your-notifications>`.
 
-From Mattermost v7.9, you can view the edit history of an edited message and restore a previous version of an edited message.
+Restore a previous version of an edited message
+-----------------------------------------------
 
-- **To view edit history:** Hover over the word *Edited* next to your edited message. In the right-hand sidebar, you'll see all previous versions of the message.
-- **To restore a message:** Select the icon in the top-right corner of the message you want to restore and confirm the action.
+From Mattermost v7.9, you can view the edit history of your edited messages, and restore a previous version of an edited message. Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </collaborate/mention-people>`.
+
+1. Select the word *Edited* next to your message. 
+2. In the right pane, you'll see all previous versions of the message.
+3. Select the **Restore** |restore-edit| icon next to the version you want to restore.
+4. Select **Confirm**.
+
+.. image:: ../images/restore-previous-edited-message.gif
+  :alt: Select Edited next to an edited message, and then select the version you want to restore.
+
+Delete messages
+----------------
+
+All users can delete their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
+
+1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you want to delete.
+2. Select **Delete** to delete your own messages. Select **Delete** again to confirm.
 
 Do more with your messages
 --------------------------

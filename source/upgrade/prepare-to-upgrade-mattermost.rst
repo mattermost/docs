@@ -55,11 +55,11 @@ We strongly recommend that you:
 
 - Set up a maintenance window outside of working hours to mitigate the migration impact. 
 - Keep a backup of your database to ensure you can load a previous database snapshot if necessary.
-- Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </upgrade/extended-support-release>` first before attempting to run the Mattermost v6.0 upgrade.
+- Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </about/mattermost-server-releases>` first before attempting to run the Mattermost v6.0 upgrade.
 
 .. important::
 
-  Support for Mattermost Server v8.1 :doc:`Extended Support Release </upgrade/extended-support-release>` is coming to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 Extended Support Release or later is recommended. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+  Support for Mattermost Server v8.1 :doc:`Extended Support Release </about/mattermost-server-releases>` has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 Extended Support Release or later is required. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,7 +75,7 @@ For a complete breakdown of PostgreSQL queries, as well as their impact and dura
 Upgrade from releases older than v5.35
 ----------------------------------------
 
-Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0 due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. We recommend upgrading to the latest :doc:`Extended Support Release (ESR) </upgrade/extended-support-release>` first before upgrading to Mattermost v6.0. See the :doc:`Mattermost changelog </deploy/legacy-self-hosted-changelog>` documentation for additional details.
+Customers upgrading from a release older than Mattermost v5.35 should expect extended downtime when upgrading to v6.0 due to the introduction of backend database architecture introduced in v5.35. This upgrade path isn't recommended for large installations. We recommend upgrading to the latest :doc:`Extended Support Release (ESR) </about/mattermost-server-releases>` first before upgrading to Mattermost v6.0. See the :doc:`unsupported legacy releases </about/unsupported-legacy-releases>` documentation for additional details.
 
 If you're upgrading from a version prior to Mattermost v5.0, you can't upgrade directly to v6.0. Instead, we strongly recommend approaching the upgrade in phases, starting with an upgrade to the latest ESR first, followed by the upgrade to v6.0. During the first phase of updates, you must also modify your service file to work with the binary changes introduced with the v5.0 release. Your execution directory should point to the Mattermost base directory (i.e. ``/opt/mattermost``), and your binary should point to the ``mattermost`` binary (i.e. ``/opt/mattermost/bin/mattermost``). 
 

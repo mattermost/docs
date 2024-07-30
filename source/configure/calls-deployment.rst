@@ -4,19 +4,7 @@ Calls self-hosted deployment
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording and transcription service.
-
-- `Terminology <#terminology>`__
-- `Plugin components <#plugin-components>`__
-- `Requirements <#requirements>`__
-- `Limitations <#limitations>`__
-- `Configuration <#configuration>`__
-- `Performance <#performance>`__
-- `RTCD Service <#the-rtcd-service>`__
-- `Configure recording and transcriptions <#configure-recording-and-transcriptions>`__
-- `Kubernetes deployments <#kubernetes-deployments>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
+This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
 
 Terminology
 -----------
@@ -91,7 +79,6 @@ Depending on how the Mattermost server is running, there are several modes under
  Single instance             integrated
  Single instance             rtcd
  High availability cluster   integrated      clustered
- High availability cluster   integrated      single handler
  High availability cluster   rtcd
 ============================ =============== =================
 
@@ -122,14 +109,6 @@ Clustered
 
 This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
-.. image:: ../images/calls-deployment-image4.png
-  :alt: A diagram of a single handler deployment.
-
-Single handler
-^^^^^^^^^^^^^^
-
-This is a fallback mode to only let one node in the cluster to host calls. While the plugin would still run on all nodes, all calls will be routed through the handler node. This mode must be enabled by running the instance with a special environment variable set (MM_CALLS_IS_HANDLER=true).
-
 .. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
 
@@ -149,31 +128,81 @@ As an example, a single call with 10 participants of which two are unmuted (tran
 Benchmarks
 ~~~~~~~~~~
 
-Here are some results from internally conducted performance tests on a dedicated ``rtcd`` instance:
+Here are the results from internally conducted performance and ceiling tests on a dedicated ``rtcd`` instance:
 
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| Calls | Users/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out) | Instance (EC2) |
-+=======+============+==============+================+===========+==============+====================+================+
-| 100   | 8          | 2            | no             | 60%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 100   | 8          | 2            | no             | 30%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 100   | 8          | 2            | yes            | 86%       | 0.7GB        | 280Mbps / 2.2Gbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | no             | 35%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | no             | 16%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | yes            | 90%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | yes            | 45%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | no             | 65%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | no             | 30%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+Deployment specifications
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- 1x r6i.large nginx proxy
+- 3x c5.large MM app nodes (HA)
+- 2x db.x2g.xlarge RDS Aurora MySQL v8 (one writer, one reader)
+- 1x (c7i.xlarge, c7i.2xlarge, c7i.4xlarge) RTCD
+- 2x c7i.2xlarge load-test agents
+
+
+App specifications
+^^^^^^^^^^^^^^^^^^
+
+- Mattermost v9.6
+- Mattermost Calls v0.28.0
+- RTCD v0.16.0
+- load-test agent v0.28.0
+
+Media specifications
+^^^^^^^^^^^^^^^^^^^^
+
+- Speech sample bitrate: 80Kbps
+- Screen sharing sample bitrate: 1.6Mbps
+
+Results
+^^^^^^^
+
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| Calls | Participants/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out)  | Instance type (RTCD) |
++=======+===================+==============+================+===========+==============+=====================+======================+
+| 1     | 1000              | 2            | no             | 47%       | 1.46GB       | 1Mbps / 194Mbps     | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 800               | 1            | yes            | 64%       | 1.43GB       | 2.7Mbps / 1.36Gbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 1000              | 1            | yes            | 79%       | 1.54GB       | 2.9Mbps / 1.68Gbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 10    | 100               | 1            | yes            | 74%       | 1.56GB       | 18.2Mbps / 1.68Gbps | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 100   | 10                | 2            | no             | 49%       | 1.46GB       | 18.7Mbps / 175Mbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 100   | 10                | 1            | yes            | 84%       | 1.73GB       | 171Mbps / 1.53Gbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 1000              | 2            | no             | 20%       | 1.44GB       | 1.4Mbps / 194Mbps   | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 1000              | 2            | yes            | 49%       | 1.53GB       | 3.6Mbps / 1.79Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 2     | 1000              | 1            | yes            | 73%       | 2.38GB       | 5.7Mbps / 3.06Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 100   | 10                | 2            | yes            | 60%       | 1.74GB       | 181Mbps / 1.62Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 150   | 10                | 1            | yes            | 72%       | 2.26GB       | 257Mbps / 2.30Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 150   | 10                | 2            | yes            | 79%       | 2.34GB       | 271Mbps / 2.41Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 250   | 10                | 2            | no             | 58%       | 2.66GB       | 47Mbps / 439Mbps    | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1000  | 2                 | 2            | no             | 78%       | 2.31GB       | 178Mbps / 195Mbps   | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 2     | 1000              | 2            | yes            | 41%       | 2.6GB        | 7.23Mbps / 3.60Gbps | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 3     | 1000              | 2            | yes            | 63%       | 3.53GB       | 10.9Mbps / 5.38Gbps | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 4     | 1000              | 2            | yes            | 83%       | 4.40GB       | 14.5Mbps / 7.17Gbps | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 250   | 10                | 2            | yes            | 79%       | 3.49GB       | 431Mbps / 3.73Gbps  | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 500   | 2                 | 2            | yes            | 71%       | 2.54GB       | 896Mbps / 919Mbps   | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+
+.. note::
+   - The tests focused on a single, vertically scaled RTCD instance to understand the processing limits within a single node. Scaling the RTCD service horizontally should be sufficient to support a higher number of calls.
+   - RTCD processes were executed with all performance profiling enabled (including block and mutex). This resulted in some computational overhead.
+   - Both speech and screen samples have slightly higher bitrates than the average produced by a real client (e.g., a browser). This gives us some safety margin over real-world deployments.
 
 Dedicated service
 ~~~~~~~~~~~~~~~~~
@@ -188,12 +217,15 @@ We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-ca
 Monitoring
 ~~~~~~~~~~
 
-Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to :doc:`Performance monitoring </scale/performance-monitoring>` for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to :doc:`Performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
+Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
+
+.. note::
+   On Mattermost versions prior to v9.5, plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` configuration setting. This defaults to port ``8065``.
 
 **Process**
 
@@ -221,19 +253,52 @@ Metrics for the calls plugin are exposed through the public ``/plugins/com.matte
 
 - ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
 
+**Application**
+
+- ``mattermost_plugin_calls_app_handlers_time_bucket``: Time taken to execute app handlers.
+
+  - ``mattermost_plugin_calls_app_handlers_time_sum``
+
+  - ``mattermost_plugin_calls_app_handlers_time_count``
+
 **Database**
 
 - ``mattermost_plugin_calls_store_ops_total``: Total number of db store operations.
+- ``mattermost_plugin_calls_store_methods_time_bucket``: Time taken to execute store methods.
+
+  - ``mattermost_plugin_calls_store_methods_time_sum``
+
+  - ``mattermost_plugin_calls_store_methods_time_count``
+- ``mattermost_plugin_calls_cluster_mutex_grab_time_bucket``: Time taken to grab global mutexes.
+
+  - ``mattermost_plugin_calls_cluster_mutex_grab_time_sum``
+
+  - ``mattermost_plugin_calls_cluster_mutex_grab_time_count``
+- ``mattermost_plugin_calls_cluster_mutex_locked_time_bucket``: Time spent locked in global mutexes.
+
+  - ``mattermost_plugin_calls_cluster_mutex_locked_time_sum``
+  
+  - ``mattermost_plugin_calls_cluster_mutex_locked_time_count``
 
 **WebSocket**
 
 - ``mattermost_plugin_calls_websocket_connections_total``: Total number of active WebSocket connections.
 - ``mattermost_plugin_calls_websocket_events_total``: Total number of WebSocket events.
 
+**Jobs**
+
+- ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_bucket``: Duration (in ms) of new audio transcribed for live captions.
+
+  - ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_sum``
+
+  - ``mattermost_plugin_calls_jobs_live_captions_new_audio_len_ms_count``
+- ``mattermost_plugin_calls_jobs_live_captions_pktPayloadCh_buf_full``: Total packets of audio data dropped due to full channel.
+- ``mattermost_plugin_calls_jobs_live_captions_window_dropped``: Total windows of audio data dropped due to pressure on the transcriber.
+
 WebRTC service metrics
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
+Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint under the ``rtcd`` API listener controlled by the ``api.http.listen_address`` configuration setting. It defaults to port ``8045``.
 
 **Process**
 
@@ -248,23 +313,38 @@ Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoi
 - ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
 - ``rtcd_rtc_errors_total``: Total number of RTC errors.
 - ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
-
-  - Note: removed as of v0.10.0
-
 - ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
-
-  - Note: removed as of v0.10.0
-
 - ``rtcd_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
-
-  - Note: added as of v0.10.0
-
 - ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
+- ``rtcd_rtc_rtp_tracks_writes_time_bucket``: Time taken to write to outgoing RTP tracks.
+
+  - ``rtcd_rtc_rtp_tracks_writes_time_sum``
+
+  - ``rtcd_rtc_rtp_tracks_writes_time_count``
 
 **WebSocket**
 
 - ``rtcd_ws_connections_total``: Total number of active WebSocket connections.
 - ``rtcd_ws_messages_total``: Total number of received/sent WebSocket messages.
+
+Configuration
+^^^^^^^^^^^^^
+
+A sample Prometheus configuration to scrape both plugin and ``rtcd`` metrics could look like this:
+
+.. code::
+
+   scrape_configs:
+   - job_name: node
+     static_configs:
+       - targets: ['rtcd-0:9100','rtcd-1:9100', 'calls-offloader-1:9100', 'calls-offloader-2:9100']
+   - job_name: calls
+      metrics_path: /plugins/com.mattermost.calls/metrics
+      static_configs:
+        - targets: ['app-0:8067','app-1:8067','app-2:8067']
+   - job_name: rtcd
+      static_configs:
+        - targets: ['rtcd-0:8045', 'rtcd-1:8045']
 
 System tunings
 ~~~~~~~~~~~~~~
@@ -329,28 +409,29 @@ In order for this to work, the :ref:`RTCD Service URL <configure/plugins-configu
 The expected requirements are the following:
 
 - When a new ``rtcd`` instance is deployed, it should be added to the DNS record. The plugin side will then be able to pick it up and start assigning calls to the new host.
-
 - If a ``rtcd`` instance goes down, it should be removed from the DNS record. The plugin side can then detect the change and stop assigning new calls to that host.
 
 .. note::
-   Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
-   There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
+   - Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
+   - There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
 
-Configure recording and transcriptions
---------------------------------------
+Configure recording, transcriptions, and live captions
+------------------------------------------------------
 
-Before you can start recording and transcribing calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
+Before you can start recording, transcribing, and live captioning calls, you need to configure the ``calls-offloader`` job service. See the `calls-offloader <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`_ documentation on GitHub for details on deploying and running this service. `Performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ related to this service are also available on GitHub. 
 
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
 Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` configuration setting.
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` config setting.
+Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (experimental)>` configuration setting.
 
 .. note::
-  The call transcriptions functionality is available starting in Calls version v0.22.0
+  - The call transcriptions functionality is available starting in Calls version v0.22.0.
+  - The live captions functionality is available starting in Calls version v0.26.2.
 
 Kubernetes deployments
 ----------------------
@@ -372,6 +453,34 @@ The recommended way to deploy Calls related components and services in a Kuberne
 - `rtcd Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__
 
 - `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
+
+Limitations
+~~~~~~~~~~~
+
+Due to the inherent complexities of hosting a WebRTC service, some limitations apply when deploying Calls in a Kubernetes environment.
+
+One key requirement is that each ``rtcd`` process live in a dedicated Kubernetes node. This is necessary to forward the data correctly while allowing for horizontal scaling. Data should generally not go through a standard ingress but directly to the pod running the ``rtcd`` process.
+
+The general recommendation is to expose one external IP address per ``rtcd`` instance (Kubernetes node). This makes it simpler to scale as the application is able to detect its own external address (through STUN) and advertise it to clients to achieve connectivity with minimal configuration.
+
+If, for some reason, exposing multiple IP addresses is not possible in your environment, port mapping (NAT) can be used. In this scenario different ports are used to map the respective ``rtcd`` nodes behind the single external IP. Example:
+
+.. code-block:: bash
+
+  EXT_IP:8443 -> rtcdA:8443
+  EXT_IP:8444 -> rtcdB:8443
+  EXT_IP:8445 -> rtcdC:8443
+
+This case requires a couple of extra configurations:
+
+- NAT mappings need to be in place for every ``rtcd`` node. This is usually done at the ingress point (e.g., ELB, NLB, etc).
+- The ``RTCD_RTC_ICEHOSTPORTOVERRIDE`` config should be used to pass a full mapping of node IPs and their respective port.
+    - Example: ``RTCD_RTC_ICEHOSTPORTOVERRIDE=rtcdA_IP/8443,rtcdB_IP/8444,rtcdC_IP/8445``
+- The ``RTCD_RTC_ICEHOSTOVERRIDE`` should be used to set the external IP address.
+
+.. note::
+
+  One option to limit these static mappings is to reduce the size of the local subnet (e.g., to ``/29``).
 
 Frequently asked questions
 --------------------------
@@ -417,6 +526,23 @@ Can the traffic between Mattermost and ``rtcd``  be kept internal or should it b
 
 When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
 
+Can Calls be rolled out on a per-channel basis?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+Yes. Mattermost system admins running self-hosted deployments can enable or disable call functionality per channel. Once :ref:`test mode <configure/plugins-configuration-settings:test mode>` is enabled for Mattermost Calls:
+
+- Select **Enable calls** for each channel where you want Calls enabled
+- Select **Disable calls** for all channels where you want Calls disabled. 
+
+Once Calls is enabled for specific channels, users can start making calls in those channels.
+
+.. note::
+
+  When :ref:`test mode <configure/plugins-configuration-settings:test mode>` is disabled for Mattermost Calls, users in any Mattermost channel can make a call.
+
 Troubleshooting
 ---------------
 
@@ -426,7 +552,6 @@ Connectivity issues
 If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
 
 For example, the :ref:`RTC Server Port (UDP) <configure/plugins-configuration-settings:rtc server port (udp)>` or the :ref:`RTC Server Port (TCP) <configure/plugins-configuration-settings:rtc server port (tcp)>` may not be open or forwarded correctly.
-
 
 Connectivity checks
 ^^^^^^^^^^^^^^^^^^^

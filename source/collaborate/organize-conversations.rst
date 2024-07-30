@@ -92,7 +92,7 @@ Known issues
 
 Collapsed Reply Threads was released as generally available in Mattermost v7.0, including significant server performance improvements and more flexible configuration options for system admins to enable the feature by default. We highly recommended :doc:`upgrading to Mattermost v7.0 </upgrade/upgrading-mattermost-server>` to take advantage of these configuration and performance enhancements.
 
-Customers running Collapsed Reply Threads in beta on Mattermost v6.7 or earlier will likely experience bugs and unoptimized server performance. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments.
+Customers running Collapsed Reply Threads in Beta running Mattermost v6.7 or earlier will likely experience bugs and unoptimized server performance. Learn more about the `beta release performance considerations <https://support.mattermost.com/hc/en-us/articles/4413183568276>`__ applicable only to Mattermost v5.37 through v6.7 deployments.
 
 In particular, please be aware of these important known issues and risks:
 

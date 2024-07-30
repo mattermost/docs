@@ -105,10 +105,21 @@ They will only be able to rejoin the team if it's open, or if they receive a new
 Remove people from teams
 ------------------------
 
-A Team Admin can remove a user from a team via **Team menu > Manage Members > Remove From Team** in the dropdown menu beside a user entry.
+Team admins can remove users from a team via **Team menu > Manage Members > Remove From Team** in the dropdown menu beside a user entry.
 
-When a user is removed from a team, the team will no longer show up in their team sidebar. If they currently have the team open, they are redirected to the first team that appears on their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
+When a user is removed from a team, the team will no longer be visible or accessible in their team sidebar. If they currently have the team open, they are redirected to the first team that appears in their team sidebar. If they didn't belong to any other teams, the user is sent to the team selection page.
 
-Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to :ref:`"Allow anyone with an account on this server to join this team" <collaborate/team-settings:allow anyone to join this team>`. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
+Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to :ref:`"Allow anyone with an account on this server to join this team" <collaborate/team-settings:users on this server>`. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
 A System Admin can also remove users from teams via **System Console > Users**, and selecting the dropdown beside a user entry and selecting **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
+
+Archive a team
+--------------
+
+A Mattermost system admin can archive teams they no longer need by going to **System Console > Teams**, selecting a team, and selecting **Archive Team**. Archived teams can be unarchived if needed.
+
+When a team is archived, the team will no longer be visible or accessible in the team sidebar for any user. If users currently have the team open when it's being archived, users are redirected to the first time that appears in their team sidebar.  If users didn't belong to any other teams, users are sent to the team selection page.
+
+.. note::
+
+  Archiving a team doesn't remove the team data from the Mattermost database. Teams may still be accessible by using the Mattermost API. 

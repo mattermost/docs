@@ -6,7 +6,7 @@ Migrate from Slack
 
 .. note::
 
-  `Slack's data control policies may change at any time <https://twitter.com/Austen/status/1752064934970896626>`_. Also, Slack may choose to change its export capabilities, and/or charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by `contacting Mattermost sales team <https://mattermost.com/contact-sales/>`_.
+  `Slack's data control policies may change at any time <https://twitter.com/Austen/status/1752064934970896626>`_. Also, Slack may choose to change its export capabilities, and/or charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 Migrating from Slack to Mattermost involves the following steps:
 
@@ -23,7 +23,7 @@ During the import process, we advise to create a new team for importing the Slac
 
 Also, system administrator roles will be overwritten if the usernames match and the user isn't an admin on the Slack workspace.
 
-Make sure you are running on a supported version of :doc:`Mattermost </upgrade/release-lifecycle/>` to benefit from the most up-to-date functionality and fixes.
+Make sure you are running on a supported version of :doc:`Mattermost </about/mattermost-server-releases/>` to benefit from the most up-to-date functionality and fixes.
 
 2. Generate a Slack import
 --------------------------

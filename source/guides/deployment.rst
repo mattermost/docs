@@ -11,6 +11,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   :hidden:
   :titlesonly:
 
+    Migrate from MySQL to PostgreSQL </deploy/postgres-migration>
     Prepare your Mattermost database </install/prepare-mattermost-database>
     Deploy on Ubuntu </install/install-ubuntu>
     Deploy using Docker </install/install-docker>
@@ -22,11 +23,9 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Set up TLS </install/setup-tls>
     Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>
     Deployment guides </guides/deployment-guides>
-    Deploy Mattermost Apps </deploy/deploy-mattermost-apps>
     Upgrade Mattermost </guides/upgrade-mattermost>
     Scale Mattermost </guides/scale-mattermost>
     Deployment troubleshooting </guides/deployment-troubleshooting>
-    Changelogs </guides/changelogs>
     Additional server installation guides </guides/additional-server-installation-guides>
 
 .. tip::
@@ -35,6 +34,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
   
   * Encountering issues with your deployment? See the :ref:`Deployment Troubleshooting <install/troubleshooting:deployment troubleshooting>` or :doc:`high scale troubleshooting </deploy/high-scale-troubleshoot>` documentation for details.
 
+* :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL. 
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
 * :ref:`Deploy using Docker <install/install-docker:deploy mattermost on docker for production use>` - The fastest way to try Mattermost and a great single server installation option.
@@ -45,10 +45,8 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Set up NGINX proxy </install/setup-nginx-proxy>` - Learn how to configure Mattermost for HTTPS for deployments of more than 200 users.
 * :doc:`Set up TLS </install/setup-tls>` - Learn how to configure Mattermost for HTTPS for deployments of fewer than 200 concurrent users.
 * :doc:`Deployment guides </guides/deployment-guides>` - for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.
-* :doc:`Deploy Mattermost Apps </deploy/deploy-mattermost-apps>` - Learn how to deploy Mattermost Apps to your server.
 * :doc:`Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>` - Review software and hardware requirements for Mattermost server, and plan out your Mattermost rollout.
 * :doc:`Upgrade Mattermost </guides/upgrade-mattermost>` - Learn how to stay up to date with the latest features and improvements.
 * :doc:`Scale Mattermost </guides/scale-mattermost>` - Learn how to scale and monitor your Mattermost deployment.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Having trouble with your deployment?
-* :doc:`Changelogs </guides/changelogs>` - Learn what's new, changed, and deprecated in every Mattermost release.
 * :doc:`Additional server installation guides </guides/additional-server-installation-guides>` - Additional deployment guides and an open source component list you can reference for every release.

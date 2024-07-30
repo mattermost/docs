@@ -214,11 +214,11 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Set up Prometheus and Grafana to monitor performance
 
-  - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
+  - Resource: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html 
 
  - Set up alerts in Grafana
 
-  - Resource: https://docs.mattermost.com/scale/performance-monitoring.html 
+  - Resource: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html
 
 Roll out Mattermost
 ~~~~~~~~~~~~~~~~~~~
@@ -403,8 +403,8 @@ We recommend that you review your rollout on a cadence that matches your iterati
 
  - Resource: https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html
 
-- Determine upgrade schedule based on Mattermost release schedules and lifecycle
+- Determine upgrade schedule based on Mattermost release schedules and life cycle
 
- - Resource: https://docs.mattermost.com/upgrade/release-lifecycle.html
+ - Resource: https://docs.mattermost.com/about/releases-lifecycle.html
 
 - Run System checks and either address or set address-by date	
