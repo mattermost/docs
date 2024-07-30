@@ -45,8 +45,6 @@ To install extended support releases, follow our [install](/guides/deployment) o
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
 ```
 
-![Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.](../images/ESR_graphic2.png)
-
 ```{mermaid}
 
 gantt
