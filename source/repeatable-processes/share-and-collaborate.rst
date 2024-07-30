@@ -1,11 +1,11 @@
 Share and collaborate
 =====================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 
-There are different ways for teams to access and interact with playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
+There are different ways for teams to access and interact with collaborative playbooks. This is managed in the System Console using permissions. Permissions can be granted in a variety of ways, to allow for different combinations of access and visibility.
 
 Permissions are provided using:
 
@@ -18,7 +18,7 @@ For more information about System and Team Override Schemes, refer to the :doc:`
 
    Some permissions functionality is only available to Mattermost Enterprise customers. For more information, visit `https://mattermost.com/pricing <https://mattermost.com/pricing>`__.
    
-In the context of Playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
+In the context of collaborative playbooks, members are assigned a role and based on the selected permissions, this determines how they interact with playbooks. A member can be a member of one playbook, and an admin of another. This allows for granular permissions across teams and departments. For example, setting playbook visibility so only certain teams can view it, or setting permissions to allow an organization to view a playbook but only designated team members can make edits.
 
 Permissions are applied only to playbooks - there are no permissions that are specific to runs.
 
@@ -27,11 +27,11 @@ Playbook roles
 
 **Member**
 
-In the context of Playbooks, members are users of Mattermost who are added to a playbook.
+In the context of collaborative playbooks, members are users of Mattermost who are added to a playbook.
 
 **Playbook Admin**
 
-In the context of Playbooks, Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the System Admin. Members need to be promoted to the role from within Playbooks. The Playbook Admin role is applied per playbook.
+Playbook Admins are also members, and may have elevated permissions to change playbook and run visibility as well as functional settings. They do not have access to the System Console and their privileges are managed by the system admin. Members need to be promoted to the role from within playbooks. The Playbook Admin role is applied per playbook.
 
 .. note::
 
@@ -40,7 +40,7 @@ In the context of Playbooks, Playbook Admins are also members, and may have elev
 Playbooks permissions
 ---------------------
 
-The default Playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management. Note that even with the default settings, private playbooks restrict these actions to members of the playbook.
+Default playbooks settings are completely open which enable all members to participate in runs, edit playbooks, view runs and playbooks, remove other members from runs, edit actions, and make other changes. Permissions provide better control over confidential runs and playbooks, as well as member management. Note that even with the default settings, private playbooks restrict these actions to members of the playbook.
 
 Create read-only playbooks
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

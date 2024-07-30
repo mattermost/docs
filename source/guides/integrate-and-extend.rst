@@ -13,7 +13,7 @@ Integrate and extend Mattermost
     ServiceNow interoperability </integrate/servicenow-interoperability>
     Zoom interoperability </integrate/zoom-interoperability>
 
-Connect Mattermost to your mission-critical tools. 
+Accelerate operational and technical workflows by connecting Mattermost operational and DevOps integrations to your mission-critical tools.
 
 Interoperability with pre-packaged integrations
 -----------------------------------------------

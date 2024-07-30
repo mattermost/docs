@@ -84,7 +84,7 @@ Use the CLI
   The Docker Install tab details and command references below also apply to the `Mattermost docker preview image <https://github.com/mattermost/mattermost-docker-preview>`_.
 
 .. note::
-  - The CLI is run in a single node which bypasses the mechanisms that a :doc:`High Availability environment </scale/high-availability-cluster>` uses to perform actions across all nodes in the cluster. As a result, when running :doc:`CLI commands </manage/command-line-tools>` in a High Availability environment, tasks that change configuration settings require a server restart.
+  - The CLI is run in a single node which bypasses the mechanisms that a :doc:`High Availability environment </scale/high-availability-cluster-based-deployment>` uses to perform actions across all nodes in the cluster. As a result, when running :doc:`CLI commands </manage/command-line-tools>` in a High Availability environment, tasks that change configuration settings require a server restart.
   -  Parameters in CLI commands are order-specific.
   -  If special characters (``!``, ``|``, ``(``, ``)``, ``\``, ``'``, or ``"``) are used, the entire argument needs to be surrounded by single quotes, or the individual characters need to be escaped out.
 

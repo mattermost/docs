@@ -90,7 +90,7 @@ This section provides a bibliography of key project references and deliverables 
 - Mattermost Software/Hardware Requirements: https://docs.mattermost.com/install/software-hardware-requirements.html 
 - Mattermost Security Features: https://docs.mattermost.com/about/security.html 
 - Mattermost: https://docs.mattermost.com/guides/collaborate.html
-- Mattermost Playbooks plugin: https://docs.mattermost.com/guides/repeatable-processes.html
+- Collaborative playbooks: https://docs.mattermost.com/guides/repeatable-processes.html
 
 2.4 Glossary
 ~~~~~~~~~~~~
@@ -159,7 +159,7 @@ Install and configure Mattermost and its component software (PostgreSQL, NGINX, 
 
 **Reference**: https://docs.mattermost.com/guides/deployment.html#install-guides
 
-Install in High Availability (Available in Mattermost Enterprise): https://docs.mattermost.com/scale/high-availability-cluster.html 
+Install in High Availability (Available in Mattermost Enterprise): https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html 
 
 3.3.5 Test deployment
 ^^^^^^^^^^^^^^^^^^^^^
