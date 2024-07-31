@@ -46,7 +46,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   1. Obtain an `OpenAI API key <https://platform.openai.com/account/api-keys>`_.
   2. Select **OpenAI** in the **AI Service** dropdown.
   3. Enter your OpenAI API key in the **API Key** field.
-  4. Enter a model name in the **Default Model** field, such as `gpt-4` or `gpt-3.5-turbo`.
+  4. Enter a model name in the **Default Model** field, such as `gpt-4o` or `gpt-3.5-turbo`.
   5. (Optional) If using multiple organizations on OpenAI, specify your **Organization ID** to direct API usage and billing accordingly.
 
 .. tab:: Anthropic (Claude)
@@ -54,7 +54,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   1. Obtain an `Anthropic API key <https://console.anthropic.com/account/keys>`_.
   2. Select **Anthropic** in the **AI Service** dropdown.
   3. Enter your Anthropic API key in the **API Key** field.
-  4. Specify a model name in the **Default Model** field, like `claude-v1`.
+  4. Specify a model name in the **Default Model** field, like `claude-3-5-sonnet-20240620`.
 
 .. tab:: Azure OpenAI
 
@@ -66,7 +66,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   4. In Mattermost, choose **OpenAI Compatible** in the **AI Service** dropdown.
   5. Enter your Azure resource's URL in the **API URL** field.
   6. Input your Azure resource API key in the **API Key** field.
-  7. Specify your model name in the **Default Model** field, for example, `gpt-3.5-turbo`.
+  7. Specify your model name in the **Default Model** field, for example, `gpt-4o`.
 
 .. tab:: OpenAI Compatible
 
@@ -77,6 +77,43 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   3. Enter the URL to your AI service in the **API URL** field.
   4. Enter your API key in the **API Key** field.
   5. Specify your model name in the **Default Model** field.
+
+Custom instructions
+====================
+
+Text input here is included in the prompt for every request. Use this to give your bots extra context or instructions. For example you could list all of your organization's specific acronyms so the bot knows what you are talking about and users can ask for definitions. Or you can give it instructions like telling it to adopt a specific personality.
+
+Enable Vision (Beta)
+=====================
+
+Enabling vision enables images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM support this features. Only available with OpenAI and OpenAI Compatable services.
+
+Copilot plugin metrics
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Metrics for the copilot plugin are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
+
+- ``copilot_system_plugin_start_timestamp_seconds``: The time the plugin started.
+- ``copilot_system_plugin_info``: The plugin version and installation ID.
+- ``copilot_api_time_seconds``: How long to execute API.
+- ``copilot_http_requests_total``: The total number of API requests.
+- ``copilot_http_errors_total``: The total number of http API errors.
+- ``copilot_llm_requests_total``: The total number of requests to upstream LLMs.
+
+Integrations
+~~~~~~~~~~~~
+
+Currently integrations are limited to DMs with the bots. The integrations will not operate from within a regular channel.
+
+Jira
+====
+
+Issues with public JIRA instances can be fetched. No configuration is required for this integration.
+
+Github
+======
+
+If you have the Github integration enabled, you can use the Github integration to fetch issues and PRs from your public and private Github repositories. The user is required to have Github connected though the Github plugin.
 
 Upgrade
 ~~~~~~~
