@@ -18,7 +18,7 @@ See the [Mobile app changelog](/about/mobile-app-changelog) for release details,
 
 | **Release** | **Released on** | **Support ends** | **Compatible with** |
 |:---|:---|:---|:---|
-| v2.19 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/desktop/releases/tag/v2.19.0) \| {ref}`Changelog <release-v2-19-0>` | 2024-08-16 | 2024-09-15 |  |
+| v2.19 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/desktop/releases/tag/v2.19.0) \| {ref}`Changelog <release-v2-19-0>` | 2024-08-16 | 2024-09-15 | {ref}`v9.11 <release-v9-11-feature-release>`, {ref}`v9.10 <release-v9-10-feature-release>`, {ref}`v9.9 <release-v9-9-feature-release>`, {ref}`v9.8 <release-v9-8-feature-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
 | v2.18 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/desktop/releases/tag/v2.18.1) \| {ref}`Changelog <release-v2-18-1>` | 2024-07-16 | 2024-08-15 | {ref}`v9.10 <release-v9-10-feature-release>` |
 | v2.17 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/desktop/releases/tag/v2.17.1) \| {ref}`Changelog <release-v2-17-1>` | 2024-06-16 | 2024-07-15 | {ref}`v9.9 <release-v9-9-feature-release>` |
 | v2.16 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/desktop/releases/tag/v2.16.0) \| {ref}`Changelog <release-v2-16-0>` | 2024-05-16 | 2024-06-15 | {ref}`v9.8 <release-v9-8-feature-release>` |
