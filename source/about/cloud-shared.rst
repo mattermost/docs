@@ -47,7 +47,7 @@ Mattermost maintains control over network and security policies, including `encr
 Authentication and authorization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost offers advanced security and authentication options for integrating with corporate directories, including :doc:`Active Directory/LDAP </onboard/ad-ldap>`, :doc:`Okta </onboard/sso-saml-okta>`, :doc:`OneLogin </onboard/sso-saml-onelogin>`, :doc:`SAML </onboard/sso-saml>`, :doc:`Google </onboard/sso-google>`, :doc:`EntraID </onboard/sso-office>`, and :doc:`OpenID </onboard/sso-openidconnect>`.
+Mattermost offers advanced security and authentication options for integrating with corporate directories, including :doc:`Active Directory/LDAP </onboard/ad-ldap>`, :doc:`Okta </onboard/sso-saml-okta>`, :doc:`OneLogin </onboard/sso-saml-onelogin>`, :doc:`SAML </onboard/sso-saml>`, :doc:`Google </onboard/sso-google>`, :doc:`EntraID </onboard/sso-entraid>`, and :doc:`OpenID </onboard/sso-openidconnect>`.
 
 Secure networking
 ~~~~~~~~~~~~~~~~~~
@@ -90,7 +90,7 @@ Mattermost Cloud Dedicated provides access to :doc:`audit and system logs </mana
 Customization
 ~~~~~~~~~~~~~~
 
-Approved plugins developed and/or tested by Mattermost are supported and available in the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. Custom plugins and integrations outside of Mattermost Marketplace aren’t currently supported.
+Approved plugins developed and/or tested by Mattermost are supported and available in the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. Custom plugins and integrations outside of Mattermost Marketplace aren’t currently supported. See the :ref:`plugins <about/integrations:plugins>` documentation for details on supported plugins in Mattermost Cloud deployments.
 
 Migrate from a self-hosted instance
 ------------------------------------

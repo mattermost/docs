@@ -86,13 +86,6 @@ For academic licensing, please visit us online: https://mattermost.com/education
 Frequently asked questions
 --------------------------
 
-Are my credit card details safe?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We use `Solupay <https://www.versapay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`_, which is PCI-DSS compliant.
-
-Should you wish to make payment using another method, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
-
 Why do I need to provide my name and physical address when purchasing a subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
