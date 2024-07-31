@@ -49,15 +49,15 @@ If you belong to more than one team, a team sidebar displays to the left of the 
 Create a team
 --------------
 
-If team creation is enabled by the system admin, teams can be created from the team sidebar or the channel sidebar using a web browser or the desktop app. The person who creates a team is automatically  assigned the Team Admin role for that team.
+If team creation is enabled by the system admin, teams can be created from the team sidebar or the channel sidebar using a web browser or the desktop app. The person who creates a team is automatically  assigned the team admin role for that team.
 
-If you have appropriate permissions, select the |plus| icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the System Admin has disabled team creation.
+If you have appropriate permissions, select the |plus| icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the system admin has disabled team creation.
 
 If you have no other teams to join, selecting the |plus| icon takes you directly to the team creation page if team creation is enabled.
 
 .. tip::
 
-  From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the System Admin has disabled team creation.
+  From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the system admin has disabled team creation.
 
 Team name and URL selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,7 +81,7 @@ The team URL is part of the web address that navigates to your team on the syste
 - Teams may contain only lowercase letters, numbers, and dashes.
 - Teams must start with a letter and cannot end in a dash.
 - Teams must be 2 - 64 characters in length.
-- Team names cannot start with the following restricted words: admin, api, channel, claim, error, files, help, landing, login, mfa, oauth, plug, plugins, post, signup, or playbooks.
+- Team names cannot start with the following restricted words: ``admin``, ``api``,``channel``, ``claim``, ``error``, ``files``, ``help``, ``landing``, ``login``, ``mfa``, ``oauth``, ``plug``, ``plugins``, ``post``, ``signup``, or ``playbooks``.
 
 Join a team
 -----------
@@ -111,7 +111,7 @@ When a user is removed from a team, the team will no longer be visible or access
 
 Removing a user from the team does not deactivate the account. The user will still be able to log in to the site, and join other teams. They will also be able to rejoin the team they were removed from if they receive another invite, or if the team is set to :ref:`"Allow anyone with an account on this server to join this team" <collaborate/team-settings:users on this server>`. If the user does rejoin the team, they will no longer belong to the channels they were previously a part of, and they will lose all Admin privileges if they had them previously.
 
-A System Admin can also remove users from teams via **System Console > Users**, and selecting the dropdown beside a user entry and selecting **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
+A system admin can also remove users from teams via **System Console > Users**, and selecting the dropdown beside a user entry and selecting **Manage Teams**. The list of teams an individual user belongs to can be viewed on the user's profile page via **System Console > Users** and selecting the member's name from the list provided in the **User Configuration** screen.
 
 Archive a team
 --------------

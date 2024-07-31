@@ -1,12 +1,12 @@
-Learn about playbooks
-=====================
+Learn about collaborative playbooks
+====================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. Using Mattermost Playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
+A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. Using collaborative playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
-Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Playbooks are made up of:
+Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Collaborative playbooks are made up of:
 
 - :ref:`Checklists <repeatable-processes/work-with-playbooks:make checklists>`: The list of tasks to be completed for the run. Can be edited ad-hoc during a run.
 - :ref:`Templates <repeatable-processes/work-with-playbooks:templates>`: Used for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.

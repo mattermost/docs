@@ -44,9 +44,9 @@ Important administration notes
 Common tasks
 ------------
 
-**Creating System Admin account from the command line**
+**Creating System admin account from the command line**
 
-- If the System Admin leaves the organization or is otherwise unavailable, you can use the :ref:`mmctl roles <manage/mmctl-command-line-tool:mmctl roles>` commands to assign the *system_admin* role to an existing user. 
+- If the System admin leaves the organization or is otherwise unavailable, you can use the :ref:`mmctl roles <manage/mmctl-command-line-tool:mmctl roles>` commands to assign the *system_admin* role to an existing user. 
 - The user needs to log out and log back in before the *system_admin* role is applied.
   
 **Migrating to AD/LDAP or SAML from email-based authentication**
@@ -56,7 +56,7 @@ Common tasks
   
 **Deactivating a user**
 
-- System Admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
+- System admins can go to **System Console > Users** for a list of all users on the server. The list can be searched and filtered to make finding the user easier. Click the user's role and in the menu that opens, click **Deactivate**.
 - To preserve audit history, users are typically never deleted from the system. If permanently deleting a user is necessary (e.g. for the purposes of `GDPR <https://gdpr-info.eu/>`__), an :doc:`mmctl command </manage/mmctl-command-line-tool>` can be used to do so.
 - Note that AD/LDAP user accounts cannot be deactivated from Mattermost; they must be deactivated from your Active Directory.
 
@@ -139,7 +139,7 @@ Email notifications can be batched together so users don’t get overwhelmed wit
 
 Enable email notifications first by setting **System Console > Notifications > Enable Email Notifications** to **true**. See the :ref:`Enable email notifications <configure/site-configuration-settings:enable email notifications>` configuration settings documentation for details. Note that email notifications require an :ref:`SMTP email server <configure/environment-configuration-settings:smtp server>` to be configured.
 
-Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the :ref:`Enable email batching <configure/site-configuration-settings:enable email batching>` configuration settings documentation for details. Note that email batching is not available if you are running your deployment in :doc:`High Availability </scale/high-availability-cluster>`.
+Then, enable batched email notifications by setting **System Console > Notifications > Enable Email Batching** to **true**. See the :ref:`Enable email batching <configure/site-configuration-settings:enable email batching>` configuration settings documentation for details. Note that email batching is not available if you are running your deployment in :doc:`High Availability </scale/high-availability-cluster-based-deployment>`.
 
 **9. Enable Elasticsearch**
 

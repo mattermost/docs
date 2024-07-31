@@ -45,10 +45,10 @@ The above conditions mean that at maximum frequency a user will receive a survey
 How will I be notified when a survey is scheduled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-System Admins will receive an email notification and in-product direct message from "Surveybot" mentioning the scheduled date the survey will be triggered.
+System admins will receive an email notification and in-product direct message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
 .. image:: ../images/nps-admin.png
-   :alt: When user satisfaction surveys are enabled in the System Console, Mattermost sends out user satisfaction surveys following every server upgrade. System Admins are notified about upcoming surveys by email notification and through an in-product message from a system bot.
+   :alt: When user satisfaction surveys are enabled in the System Console, Mattermost sends out user satisfaction surveys following every server upgrade. System admins are notified about upcoming surveys by email notification and through an in-product message from a system bot.
 
 Survey Data
 -----------
@@ -79,7 +79,7 @@ Data is only collected when a user selects a score or provides written feedback 
    - License ID used for error and diagnostics reporting (if applicable)
    - Enterprise or Professional (if applicable)
 - User information:
-   - User role (System Admin, Team Admin, or member)
+   - User role (system admin, team admin, or member)
    - Account creation timestamp
    - User ID of the surveyed user
 

@@ -235,12 +235,12 @@ Assign roles to group members
 Group members can be assigned predefined roles by system admins, which are applied across the group during the scheduled sychronization. The roles are:
 
 - Member (default)
-- Team Admin (in teams)
-- Channel Admin (in channels)
+- Team admin (in teams)
+- Channel admin (in channels)
 
 The permissions for each role can be viewed and modified in **System Console > Permissions**.
 
-**To set the Team Admin role in a synced group**
+**To set the Team admin role in a synced group**
 
 1. Go to **System Console > User Management > Teams**.
 2. Select **Edit** next to the team you want to configure.
@@ -270,7 +270,7 @@ Roles are updated on the next scheduled AD/LDAP synchronization.
 Add or remove groups from teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once team management is converted to use synchronized groups, team admins and system admins can add additional groups from **Main Menu > Add Groups to Team**. This will add users to the next AD/LDAP synchronization, and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from converting the team to a public space by enabling **Team Settings > Allow any user with an account on this server to join this team**.
+Once team management is converted to use synchronized groups, team admins and system admins can add additional groups from **Main Menu > Add Groups to Team**. This will add users to the next AD/LDAP synchronization, and any new users to the group will be added to the team on subsequent synchronizations. Team admins will be prevented from converting the team to a public space by enabling **Team Settings > Allow any user with an account on this server to join this team**.
 
 Team admins and system admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
