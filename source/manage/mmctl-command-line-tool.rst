@@ -6,14 +6,14 @@ mmctl command line tool
 
 The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the :doc:`CLI </manage/command-line-tools>`. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
-Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
+Being installed locally enables system admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the `installation instructions <#install-mmctl>`__, or by building it directly, for which you can check the `build instructions <#build-mmctl>`__ below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- System admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the `installation instructions <#install-mmctl>`__, or by building it directly, for which you can check the `build instructions <#build-mmctl>`__ below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
 - ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
@@ -1925,7 +1925,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` :ref:`environment variable <configure/configuration-in-your-database:create an environment file>` and restart the Mattermost server.
+   - To change the store type to use the database, a system admin needs to set a ``MM_CONFIG`` :ref:`environment variable <configure/configuration-in-your-database:create an environment file>` and restart the Mattermost server.
    - The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
 
       .. code-block:: sh
@@ -4789,17 +4789,17 @@ mmctl roles
 
 **Description**
 
-Promote users to the System Admin role, or remove System Admin privileges from users.
+Promote users to the system admin role, or remove system admin privileges from users.
 
 **Format**
 
-Promote users to the System Admin role:
+Promote users to the system admin role:
 
 .. code-block:: sh
 
    mmctl roles system_admin [users] [flags]
 
-Remove System Admin privileges:
+Remove system admin privileges:
 
 .. code-block:: sh
 
@@ -4807,25 +4807,25 @@ Remove System Admin privileges:
 
 **Examples**
 
-Promote a user to the System Admin role:
+Promote a user to the system admin role:
 
 .. code-block:: sh
 
    mmctl roles system_admin john_doe
 
-Promote multiple users to the System Admin role:
+Promote multiple users to the system admin role:
 
 .. code-block:: sh
 
    mmctl roles system_admin john_doe jane_doe
 
-Remove System Admin privileges from a user:
+Remove system admin privileges from a user:
 
 .. code-block:: sh
 
    mmctl roles member john_doe
 
-Remove System Admin privileges from multiple users:
+Remove system admin privileges from multiple users:
 
 .. code-block:: sh
 
@@ -5984,7 +5984,7 @@ Convert user accounts to bots, or convert bots to user accounts.
    --locale string      The locale (e.g., EN, FR) for the converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
-   --system_admin       If supplied, the converted user will be a System Admin. Defaults to false. Required when the "bot" flag is set
+   --system_admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
@@ -6025,7 +6025,7 @@ Create a user.
    # You can define optional fields like first name, last name, and nickname
    $ mmctl user create --email user@example.com --username userexample --password Password1 --firstname User --lastname Example --nickname userex
 
-   # You can also create the user as a System Admin
+   # You can also create the user as a system sdmin
    $ mmctl user create --email user@example.com --username userexample --password Password1 --system-admin
 
    # You can verify user on creation if you have the correct permissions

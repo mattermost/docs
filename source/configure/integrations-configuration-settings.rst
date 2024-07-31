@@ -8,7 +8,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__
-- `GIF (beta) <#gif-beta>`__
+- `GIF <#gif>`__
 - `CORS <#cors>`__
 
 ----
@@ -247,17 +247,17 @@ Disable bot accounts when owner is deactivated
 
 ----
 
-GIF (Beta)
-----------
+GIF
+----
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Integrations > GIF (Beta)**.
+Access the following configuration settings in the System Console by going to **Integrations > GIF**.
 
 .. config:setting:: integrate-enablegifpicker
   :displayname: Enable GIF picker (Integrations)
-  :systemconsole: Integrations > GIF (Beta)
+  :systemconsole: Integrations > GIF
   :configjson: .ServiceSettings.EnableGifPicker
   :environment: MM_SERVICESETTINGS_ENABLEGIFPICKER
 

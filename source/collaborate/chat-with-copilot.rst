@@ -88,15 +88,18 @@ You can switch between multiple bots if configured by selecting it in the top of
 .. image:: ../images/Unread-Channel-Messages-Summarization-Updated-4-3.gif
   :alt: Quickly summarize new messages, find action opens, and seek out unanswered questions with your Copilot.
 
-Chat privately with Copilot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can also chat privately with your Copilot in direct message threads like you would any other Mattermost user.
-
 Bring Copilot into any conversation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Invoke the power of AI by @mentioning the Copilot bot with ``@copilot`` in any thread to bring AI's capabilities to your conversation, allowing for quick extraction of information or transformation of discussions into charts, resources, documentation, articles, and more. With the power of Mattermost integrations and interoperability, the potential to enhance your workflow is limitless.
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+Invoke the power of AI by @mentioning the Copilot bot with ``@copilot`` in any thread to bring AI's capabilities to your conversation, allowing for quick extraction of information or transformation of discussions into charts, resources, documentation, articles, and more. Copilot will find action items and open questions in new messages. With the power of Mattermost integrations and interoperability, the potential to enhance your workflow is limitless.
 
 .. image:: ../images/Contextual-Interrogation-Updated-4-3.gif
   :alt: Bring your AI into the conversation. @mention your Copilot directly within any thread and use the context to work faster and smarter.
+
+Chat privately with Copilot
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In addition to chatting with Copilot in the right pane, you can also chat privately with Copilot in direct message threads like you would any other Mattermost user.

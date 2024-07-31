@@ -2837,7 +2837,7 @@ If you upgrade from a release earlier than v5.39, please read the other [Importa
       - Existing permissions/policies in TE/E0 for "Enable Team Creation" and "Allow Team Administrators to edit others’ posts" are properly handled. 
    - Team and Channel management pages (but without channel moderation, e.g. read-only channels).
  - Features moved from legacy E20 to Professional plan:
-   - SSO with OpenID Connect, SAML, Google and O365
+   - SSO with OpenID Connect, SAML, Google and Entra ID
    - O365 integrations including MS Teams Calling and MS Calendar
    - Jira multi-server support
    - Advanced team permissions

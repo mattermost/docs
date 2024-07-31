@@ -64,20 +64,20 @@ Alternatively you can use the mmctl tool to set a private channel to be managed 
 Add or remove groups from teams
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the management of the team is converted to be managed by synchronized groups, a Team or System Admin can add additional groups from **Main Menu > Add Groups to Team**. This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. Team Admins will be prevented from changing the team to public by enabling **Team Settings > Allow any user with an account on this server to join this team**.
+Once the management of the team is converted to be managed by synchronized groups, a team admin or system admin can add additional groups from **Main Menu > Add Groups to Team**. This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the team on subsequent synchronizations. Team admins will be prevented from changing the team to public by enabling **Team Settings > Allow any user with an account on this server to join this team**.
 
-Team or System Admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
+Team admins or system admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
-The System Admin can also remove groups from  **System Console > User Management > Teams > Team Configuration > Synced Groups**.
+The system admin can also remove groups from  **System Console > User Management > Teams > Team Configuration > Synced Groups**.
 
 Add or remove groups from private channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the management of the channel is converted to be managed by synchronized groups, a Team or System Admin can add additional groups from **Channel Menu > Add Groups to Channel**. This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the channel on subsequent synchronizations.
+Once the management of the channel is converted to be managed by synchronized groups, a team admin or system admin can add additional groups from **Channel Menu > Add Groups to Channel**. This will add users on the next AD/LDAP synchronization and any new users to the group will be added to the channel on subsequent synchronizations.
 
-Team or System Admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
+Team admins and system admins can also remove groups from a team from **Main Menu > Manage Groups**. This will disassociate the group from the team. Users are removed on the next AD/LDAP synchronization.
 
-The System Admin can also remove groups from  **System Console > User Management > Channels > Channel Configuration > Synced Groups**.
+The system admin can also remove groups from  **System Console > User Management > Channels > Channel Configuration > Synced Groups**.
 
 Managing members
 ^^^^^^^^^^^^^^^^
