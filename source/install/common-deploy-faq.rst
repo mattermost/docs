@@ -7,7 +7,6 @@ Why doesn't Mattermost start at system boot?
 To have the Mattermost Server start at system boot, the systemd until file needs to be enabled. Run the following command:
 
 .. code-block:: none
-  :class: mm-code-block 
 
     sudo systemctl enable mattermost.service
 
@@ -22,7 +21,6 @@ Can I run Mattermost without a proxy?
 Yes. Mattermost binds to 443 instead of 8065. The Mattermost binary requires the correct permissions to do that binding. You must activate the ``CAP_NET_BIND_SERVICE`` capability to allow the new Mattermost binary to bind to ports lower than 1024 by running the following command:
 
 .. code-block:: none
-  :class: mm-code-block 
 
     sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 

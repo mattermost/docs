@@ -178,14 +178,12 @@ The Mattermost Omnibus CLI tool ``mmomni`` is used for both backups and restores
 To back up the contents of your Mattermost server, run the following command:
 
 .. code-block:: sh
-  :class: mm-code-block
 
   mmomni backup -o /tmp/mm_backup_datetime.tgz
 
 To restore the contents of your Mattermost server, run the following two commands:
 
 .. code-block:: sh
-  :class: mm-code-block
 
   mmomni restore /tmp/mm_backup_datetime.tgz
   mmomni reconfigure
@@ -196,7 +194,6 @@ Remove Mattermost Omnibus
 If you want to remove Mattermost and Mattermost Omnibus completely for any reason, you can run the following command:
 
 .. code-block:: sh
-  :class: mm-code-block
 
   sudo apt remove --purge mattermost mattermost-omnibus
 
@@ -224,7 +221,6 @@ How do I fix an EXPKEYSIG error on upgrades?
 In the rare case that you encounter an ``EXPKEYSIG`` error when upgrading, this indicates that your certificate is expired. To obtain a new certificate, run the following commands:
 
 .. code-block:: sh
-  :class: mm-code-block
 
   sudo apt-key remove 44774B28
   sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
