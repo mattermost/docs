@@ -25,7 +25,7 @@ Below is additional information on how to configure the database for different l
 配置 SCWS
 ~~~~~~~~~~
 
-.. code-block:: bash
+.. code-block:: sh
 
     # 取得 SCWS 代码
     wget http://www.xunsearch.com/scws/down/scws-1.2.3.tar.bz2
@@ -49,7 +49,7 @@ Below is additional information on how to configure the database for different l
 配置 Zhparser
 ~~~~~~~~~~~~~~
 
-.. code-block:: bash
+.. code-block:: sh
 
     # 下载 Zhparser 源代码
     git clone https://github.com/amutu/zhparser.git
@@ -64,7 +64,7 @@ Below is additional information on how to configure the database for different l
 
     如果使用 Docker 镜像作为数据库，可以预先执行以下命令，安装依赖（请根据实际的 PostgreSQL 版本选择）。
 
-    .. code-block:: bash
+    .. code-block:: sh
 
         # 更新本地缓存
         apt update

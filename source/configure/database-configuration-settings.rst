@@ -565,7 +565,7 @@ Replica lag settings
 
       For more information on roles, see the `PostgreSQL documentation <https://www.postgresql.org/docs/10/default-roles.html>`__.
 
-      .. code-block:: bash
+      .. code-block:: sh
 
         sudo -u postgres psql
         postgres=# GRANT pg_monitor TO mmuser;

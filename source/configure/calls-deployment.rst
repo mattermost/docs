@@ -473,7 +473,7 @@ The general recommendation is to expose one external IP address per ``rtcd`` ins
 
 If, for some reason, exposing multiple IP addresses is not possible in your environment, port mapping (NAT) can be used. In this scenario different ports are used to map the respective ``rtcd`` nodes behind the single external IP. Example:
 
-.. code-block:: bash
+.. code-block:: sh
 
   EXT_IP:8443 -> rtcdA:8443
   EXT_IP:8444 -> rtcdB:8443
@@ -568,13 +568,13 @@ An easy way to check whether data can go through is to perform some tests using 
 
 On the host running Calls (could be the Mattermost instance itself or the one running ``rtcd`` depending on the chosen setup), run the following:
 
-.. code-block:: bash
+.. code-block:: sh
 
    nc -l -u -p 8443
 
 On the client side (i.e., the machine you would normally use to run the Mattermost desktop app or browser), run the following:
 
-.. code-block:: bash
+.. code-block:: sh
 
    nc -v -u HOST_IP 8443
 
@@ -596,7 +596,7 @@ A more advanced way to debug networking issues is to use the ``tcpdump`` command
 
 On the server side, run the following:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo tcpdump -n port 8443
 

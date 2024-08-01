@@ -357,7 +357,7 @@ If you're using PostgreSQL as the choice of database, we recommend the following
 
 **Config for Postgres Primary or Writer node**
 
-.. code-block:: bash
+.. code-block:: sh
 
   # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
   # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 
@@ -401,7 +401,7 @@ If you're using PostgreSQL as the choice of database, we recommend the following
 
 Copy all the above settings to the read replica, and modify or add only the below. 
 
-.. code-block:: bash
+.. code-block:: sh
   
   # If the instance is lower capacity than r5.xlarge, then set it to a lower number. 
   # Also tune the "MaxOpenConns" setting under the "SqlSettings" of the Mattermost app accordingly. 

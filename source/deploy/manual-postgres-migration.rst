@@ -59,7 +59,7 @@ Pull the Docker image and verify pgloader
 
 For a manual migration, run the following command to pull the ``mattermost-pgloader`` image and verify that pgloader is working correctly:
 
-.. code-block:: bash
+.. code-block:: sh
 
   docker run -it --rm -v $(pwd):/home/migration mattermost/mattermost-pgloader:latest pgloader --version
 
@@ -89,7 +89,7 @@ Install morph
 
 You can install morph CLI by running the following command:
 
-.. code-block:: bash
+.. code-block:: sh
 
   go install github.com/mattermost/morph/cmd/morph@v1
 
@@ -103,7 +103,7 @@ Install dbcmp
 
 You can install `dbcmp <https://github.com/mattermost/dbcmp>`__ by running the following command:
 
-.. code-block:: bash
+.. code-block:: sh
 
   go install github.com/mattermost/dbcmp/cmd/dbcmp@latest
 
@@ -294,13 +294,13 @@ It is essential to create tables and indexes to ensure that the PostgreSQL datab
 
 - Clone the ``mattermost`` repository for your specific version:
 
-.. code-block:: bash
+.. code-block:: sh
 
   git clone -b <your current version (eg. release-7.8)> git@github.com:mattermost/mattermost.git --depth=1
 
 - Run all schema migrations* on your PostgreSQL database using morph CLI with the following command:
 
-.. code-block:: bash
+.. code-block:: sh
 
   morph apply up --driver postgres --dsn "postgres://user:pass@localhost:5432/<target_db_mame>?sslmode=disable" --path ./mattermost/db/migrations/postgres --number -1
 
@@ -366,7 +366,7 @@ Use the following configuration for the baseline of the data migration:
 
 Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgloader`` with the following command:
 
-.. code-block:: bash
+.. code-block:: sh
 
   pgloader migration.load > migration.log
 
@@ -543,7 +543,7 @@ Use the following configuration for the baseline of the data migration:
    $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
    $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-.. code-block:: bash
+.. code-block:: sh
 
   pgloader playbooks.load > playbooks_migration.log
 
@@ -600,7 +600,7 @@ Use the following configuration for the baseline of the data migration:
    $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
    $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-.. code-block:: bash
+.. code-block:: sh
 
   pgloader focalboard.load > focalboard_migration.log
 
@@ -645,7 +645,7 @@ Use the following configuration for the baseline of the data migration:
    $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
    $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-.. code-block:: bash
+.. code-block:: sh
 
   pgloader calls.load > calls_migration.log
 

@@ -60,7 +60,7 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
 
 Run this command to verify the permissions on your Mattermost directory:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo chown -R mattermost:mattermost /opt/mattermost
 
@@ -69,7 +69,7 @@ Modify the Mattermost ``systemd`` file
 
 First, find the ``mattermost.service`` file using:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo systemctl status mattermost.service
 

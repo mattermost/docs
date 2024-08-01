@@ -27,7 +27,7 @@ Docker deployments
 
 If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <install/install-docker:deploy mattermost on docker for production use>`, then skip the following command:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo chown -R 2000:2000 ./volumes/app/mattermost
 
@@ -35,13 +35,13 @@ On M1 systems, this permission change causes the deploy to stop working, so we r
 
 If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
-.. code-block:: bash
+.. code-block:: sh
   
    sudo systemctl enable --now docker
 
 To remove all data and settings for your Mattermost deployment:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo rm -rf ./volumes
 

@@ -77,7 +77,7 @@ We'll now use **Bot User OAuth Token** with the ``slack-advanced-exporter`` tool
 
 Once you have the program downloaded locally, run the commands below to fetch the emails, and then fetch file attachments. Replace ``<SLACK TOKEN>`` with the Slack token you generated earlier and ``<SLACK EXPORT FILE>`` with the `path <https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/>`__ to your export file.
 
-.. code-block:: bash
+.. code-block:: sh
 
   ./slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
   ./slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments --api-token <SLACK TOKEN>
@@ -102,7 +102,7 @@ Now that you have a Slack export file with emails and attachments, let's convert
 
 Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word like "my-team".
 
-.. code-block:: bash
+.. code-block:: sh
 
     ./mmetl transform slack --team <TEAM-NAME> --file export-with-emails-and-attachments.zip --output mattermost_import.jsonl
 
@@ -123,31 +123,31 @@ Ensure you have the Mattermost command line tool ``mmctl`` installed. This allow
 
 To prepare our files to be uploaded to the server, we need to put both the ``.jsonl`` file and ``data`` folder together into a zip file.
 
-.. code-block:: bash
+.. code-block:: sh
 
   zip -r mattermost-bulk-import.zip data mattermost_import.jsonl
 
 Then we can upload the zip file to our Mattermost server:
 
-.. code-block:: bash
+.. code-block:: sh
 
   mmctl import upload ./mattermost-bulk-import.zip
 
 Run this command to list the available imports:
 
-.. code-block:: bash
+.. code-block:: sh
 
   mmctl import list available
 
 Run this command to process the import. Replace ``<IMPORT FILE NAME>`` with the name you got from the ``mmctl import list available`` command:
 
-.. code-block:: bash
+.. code-block:: sh
 
   mmctl import process <IMPORT FILE NAME>
 
 Finally, run this command to view the status of the import process job. If the job status shows as ``pending``, then wait before running the command again. The ``--json`` flag is required to view the possible error message. Replace ``<JOB ID>`` with the id you got from the ``mmctl import list process`` command:
 
-.. code-block:: bash
+.. code-block:: sh
 
   mmctl import job show <JOB ID> --json
 
