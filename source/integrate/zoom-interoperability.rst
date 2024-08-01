@@ -87,7 +87,7 @@ Enable
 
 Notify your teams that they can `connect their Zoom accounts to Mattermost <#usage>`__.
 
-To subscribe a channel to a recurring Zoom meeting, use the following slash command: ``/zoom subscribe [meeting ID]``. The channel will receive a notification when the meeting starts, along with an access link. If cloud recordings are enabled and the meeting is recorded, the recording and transcript are posted as replies to the initial message once they are available.
+To subscribe a channel to a recurring Zoom meeting, use the following slash command: ``/zoom subscribe [meeting ID]``. The channel will receive a notification when the meeting starts, along with an access link. If cloud recordings are enabled and the meeting was recorded, the recording and transcript are posted as replies to the initial message once they are available.
 
 Upgrade
 -------
@@ -106,6 +106,8 @@ Join the meeting by selecting the call invitation in the channel.
 Run the ``/zoom settings`` slash command to set your preference for using your Zoom personal meeting ID as a meeting host. You can choose to always use your personal meeting ID, always use a new unique meeting id, or set Mattermost to prompt you for your preference each time you start a call.
 
 Subscribe a Mattermost channel to a recurring Zoom meeting with ``/zoom subscribe [meeting ID]``. Cloud recordings and transcripts must be enabled in your paid Zoom account in order to receive them in Mattermost. Once enabled, you'll receive a notification in Mattermost when the recording and transcript are available for recorded meetings.
+
+If you create a new meeting using the Zoom button in the Mattermost RHS, then the recording and transcript are similarly posted as replies to the initial message once they are available, if cloud recordings are enabled and the meeting was recorded.
 
 Get help
 --------
