@@ -15,6 +15,8 @@ Primary use cases include:
 
 Mattermost is used as a secure collaboration hub by technical and operational teams, with critical documents and data shared on a daily basis. Thus, legal hold is a key requirement for Enterprises and public sector organizations who have deployed Mattermost for their teams, to meet compliance & auditory requirements while minimizing risk.
 
+Mattermost legal hold can be combined with :doc:`eDiscovery </comply/electronic-discovery>` integration and :doc;`data retention policies <comply/data-retention-policy>` to customize the data retained and deleted to comply with compliance requirements.
+
 Legal hold demo (Sneak Peek)
 ----------------------------
 
@@ -127,7 +129,7 @@ What types of content does legal hold cover?
 
 The legal hold covers all messages and file uploads shared in conversations where the legal hold is active, including messages posted by plugins, bots or webhooks. This includes messages or files shared in public channels, private channels, direct messages and group messages.
 
-However, legal hold does not apply to reactions, playbooks, or audio calls.
+However, legal hold does not apply to reactions, collaborative playbooks, or audio calls.
 
 Can users delete their messages while on a legal hold?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

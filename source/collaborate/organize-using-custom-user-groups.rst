@@ -1,5 +1,5 @@
-Manage custom groups (Beta)
-===========================
+Manage custom groups
+====================
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -16,7 +16,7 @@ Manage custom groups (Beta)
 
  <p class="mm-label-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-Custom groups (Beta) reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually.
+Custom groups reduce noise and improve focus by notifying the right people in a channel at the right time, while maintaining transparency for all members in that channel. Custom user groups let you notify up to 256 users at a time rather than notifying users individually.
 
 For example, perhaps you want to @mention a cross-functional team about a bug fixes needed for an upcoming feature release, without notifying everyone else in the channel. Using a custom group notifies the cross-functional team immediately, while keeping important stakeholders in the loop on the status of the feature release.
 
@@ -26,8 +26,8 @@ Once a custom user group has been created, you can mention that group the same w
 
 .. note::
 
-  - System admins need to enable this feature. See our :ref:`Mattermost Configuration Settings <configure/site-configuration-settings:enable custom user groups (beta)>` documentation for details.
-  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the :doc:`system roles </onboard/system-admin-roles>` documentation for details.
+  - System admins need to enable this feature. See our :ref:`Mattermost Configuration Settings <configure/site-configuration-settings:enable custom user groups>` documentation for details.
+  - From Mattermost v7.2, system admins can limit who can manage custom user groups through the Custom Group Manager system admin role. See the :doc:`delegated granular administration </onboard/delegated-granular-administration>` documentation for details.
   - The ability to create custom user groups on mobile will be available in a future release. @mentions for custom user groups on mobile work the same as :ref:`LDAP-synced groups <collaborate/mention-people:@groupname>`.
 
 Create a custom group
