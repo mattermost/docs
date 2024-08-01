@@ -8,7 +8,7 @@ Chat with Copilot
   :alt: Select the AI Actions icon to access AI options.
   :class: theme-icon
 
-Overcome information overload and streamline communication and collaboration by chatting with the Mattermost Copilot in your Mattermost instance. Copilot is an LLM-powered assistant with a flexable backend that can be configured to meet your organization's needs. Copilot can help you summarize call recordings, threads, and unread channel messages, and provide insights on any topic you're curious about.
+Overcome information overload and streamline team communication and collaboration with Mattermost Copilot in your Mattermost instance. Copilot is a generative AI assistant with a flexible LLM backend that can be configured to meet your organization's needs. Copilot can summarize call recordings, threads, unread channel messages, and provide insights on any topic you're curious about.
 
 .. note::
 
@@ -20,25 +20,25 @@ Overcome information overload and streamline communication and collaboration by 
 Get started
 ~~~~~~~~~~~
 
-Select the **Copilot** icon in the apps bar located to the far right of the Mattermost screen to open the Copilot tab in the right pane.
+Select the **Copilot** icon in Mattermost RHS (right-hand sidebar) to open the Copilot panel.
 
 .. image:: ../images/copilot-AI-RHS.webp
   :alt: Privately chat with Copilot inside Mattermost via the right-hand sidebar.
   :scale: 50
 
-Begin with suggested prompts, or engage in a private thread with the Copilot bot for a tailored experience. If you have follow-up questions or need further insights, simply ask! Copilot is designed to provide deeper understanding based on your inquiries. 
+Begin with suggested prompts, or engage in a private thread with Copilot for a tailored experience. If you have follow-up questions or need further insights, simply ask! Copilot is designed to provide deeper understanding based on your inquiries. 
 
-Copilot remembers the context for follow-on questions and requests. Access all previous AI conversations by selecting **View chat history**. from the Copilot pane.
+Copilot remembers the context for follow-up questions and requests. Access all previous AI conversations by selecting **View chat history** from the Copilot panel.
 
-If your administrator has configured multiple bots you can switch between them by selecting the bot name in the top right corner of the Copilot pane.
+If your administrator has configured multiple bots, you can switch between them by selecting the bot name in the top right corner of the Copilot panel.
 
 With Copilot you can perform the following tasks:
 
-- Summarize your call recordings
-- Turn long threads & unread channel messages into concise summarizes
-- Stay on top of all of your commucations by identifying next steps, decisions made, and pinpointing unanswered questions
+- Summarize your call and meeting recordings
+- Turn long threads & unread channel messages into concise summaries
+- Stay on top of your messages by identifying next steps, decisions, and unanswered questions
 - Extract learnings and transform content into charts, resources, documentation, articles, and more
-- Dig further into any topic that's on your mind
+- Dig further into any topic by asking for insights
 
 Summarize Mattermost call recordings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +83,7 @@ To summarize unread Mattermost channels:
 1. In a channel with unread messages, scroll to the **New Messages** cutoff, select **Ask AI**, and then select **Summarize new messages**.
 2. The channel summary is generated in the Copilot pane, and only you can view the summary.
 
-You can switch between multiple bots if configured by selecting it in the top of the dropdown menu.
+You can switch between multiple bots (if configured) by selecting them in the dropdown menu.
 
 .. image:: ../images/Unread-Channel-Messages-Summarization-Updated-4-3.gif
   :alt: Quickly summarize new messages, find action opens, and seek out unanswered questions with your Copilot.
