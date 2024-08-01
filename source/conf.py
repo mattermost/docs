@@ -3621,7 +3621,6 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/copybuttons.css",
     "css/compass-icons.css"
 ]
 
@@ -3630,7 +3629,6 @@ html_css_files = [
 # https://example.org/script.js. The attributes is used for attributes of <script> tag. It defaults to an empty list.
 html_js_files = [
     "js/jquery.js",
-    "js/copybuttons.js",
     "js/thermometer.js",
     "js/myscript-v1.js",
 ]
