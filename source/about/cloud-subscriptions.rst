@@ -1,96 +1,117 @@
 Cloud subscriptions
 ===================
 
-Mattermost Cloud Subscriptions are offered as an annual subscription.
+.. include:: ../_static/badges/ent-cloud-only.rst
+  :start-after: :nosearch:
 
-Buy a Cloud subscription
-------------------------
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :titlesonly:
 
-To upgrade to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`_.
+   Cloud Dedicated </about/cloud-dedicated>
+   Cloud Shared </about/cloud-shared>
 
-View subscription information
------------------------------
+Mattermost offers secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance. Cloud-native architecture supports organizations of any size for a workspace that scales with your team, without any resource planning.
 
-When you've purchased a subscription, you can view the details of your Mattermost Cloud account, including the annual cost per user and the number of users currently registered in your workspace.
+Enterprises can choose between dedicated and shared infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed:
 
-Sales tax and VAT
-~~~~~~~~~~~~~~~~~
+- :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>`: Better suited for larger organizations or those with specific needs around security, compliance, and customization, who are willing to pay a premium for dedicated resources and enhanced support.
+- :doc:`Mattermost Cloud Shared </about/cloud-shared>`: A cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
 
-Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. Prices on our website are exclusive of sales tax or VAT.
+Compare offerings
+-----------------
 
-Renew your subscription
------------------------
++-------------------------------+---------------+------------+
+| **Resource**                  | **Dedicated** | **Shared** |
++===============================+===============+============+
+| Mattermost High Availability  |      YES      |     YES    |
+| cluster-based deployment      |               |            |
++-------------------------------+---------------+------------+
+| Network policy                |      YES      |     YES    |
++-------------------------------+---------------+------------+
+| Namespace                     |      YES      |     YES    |
++-------------------------------+---------------+------------+
+| Network                       |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Kubernetes High Availability  |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Database High Availability    |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Object storage                |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Encryption keys               |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| Custom backup schedule        |      YES      |     NO     |
++-------------------------------+---------------+------------+
+| IP Filtering                  |      YES      |     YES    |
++-------------------------------+---------------+------------+
+| Bring your own key            |      YES      |     NO     |
++-------------------------------+---------------+------------+
 
-To renew your subscription to Mattermost Enterprise, `contact sales <https://mattermost.com/contact-sales/>`_.
+Frequently asked questions about Mattermost Cloud
+-------------------------------------------------
 
-Frequently asked questions
----------------------------
+How do I buy a Mattermost Cloud subscription?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-How am I billed for my annual Cloud subscription?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost Cloud subscriptions are offered as an annual subscription. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to buy a new subscription, or to renew, change, or cancel your existing subscription.
 
-When you purchase your subscription, your credit card is charged immediately.
+If you’re currently using a Mattermost Cloud trial, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to upgrade to Mattermost Enterprise. Your plan immediately changes to your upgraded plan. You will be invoiced as specified in your sales agreement.
 
-What happens if I want to buy Mattermost Enterprise during my trial?
+Is Mattermost Cloud subject to taxes?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. Mattermost reserves the right to assess applicable taxes as required by local law. Depending on location, you may be charged transaction taxes when purchasing our product. `Prices <https://mattermost.com/pricing/>`_ on our website are exclusive of sales tax or VAT.
+
+Where does instance and data reside?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Dedicated instance and data, including logs and backups, resides in the **AWS us-east-1 region**, located in Virginia, United States.
+
+For data residency options outside of the US, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_, or work with a `Mattermost partner <https://mattermost.com/partners/>`_.
+
+When will more region support be available?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>` will support data residency based on feedback from our customers.
+
+If you require your data to reside in an area outside of the United States, please contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ or consider deploying one of our `self-hosted options <https://mattermost.com/download/>`_ that provides you with full control of your data. 
+
+Do you provide cross-region failover in the event of an outage in AWS us-east-1 region?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You will have to contact our sales team to upgrade to Mattermost Enterprise. Your plan immediately changes to the plan you've upgraded to. You will be invoiced as per your agreement with our sales team.
+Mattermost Cloud is hosted in AWS us-east-1 region. Cross-region failover is planned, but not yet in the roadmap. If you have feedback or require cross-region failover, please reach out to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
-How do I cancel my subscription? 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Is Mattermost Cloud a dedicated instance running on AWS systems?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you have an annual subscription to Mattermost Professional or Cloud Enterprise and you wish to cancel, please `contact sales <https://mattermost.com/contact-sales/>`_.
+Mattermost Cloud Dedicated can be deployed as a dedicated Mattermost environment running with separate infrastructure for your requirements (e.g., separate database, separate VMs, separate Kubernetes cluster).
 
-When will support for other regions be available?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Cloud Enterprise will support data residency based on feedback from our customers.
-
-If you require your data to reside in an area outside of the United States, please contact the product team via `feedback-cloud@mattermost.com <feedback-cloud@mattermost.com>`_, or consider `deploying one of our Self-Hosted options <https://mattermost.com/deploy>`_ that provides full control of your data. You may also work with `one of our European partners <https://mattermost.com/partners>`_ for deploying and hosting your Mattermost server.
-
-How is Mattermost Cloud secured?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Cloud has encryption at-rest and in-transit. We're SOC2 Type 1 certified and working towards SOC2 Type 2.
-
-Mattermost Cloud Enterprise is available to be deployed in a secure, private environment within a dedicated cloud offering to a single customer. This architecture provides the isolation and security of an on-premises deployment while ensuring consistent performance and uptime of your Mattermost workspace. Contact `Mattermost Sales <https://mattermost.com/contact-sales/>`_ for more information on this option.
-
-What are the alternatives, and why should I choose Mattermost Cloud?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Other SaaS offerings are closed-source and focus on a very broad use case. Mattermost Cloud is built on our open source core offering, allowing customers to view our source code and have a high degree of transparency into Mattermost development processes. Mattermost provides a DevOps-centric offering and has deep integrations and workflows that help builders and operators be more effective.
-
-Mattermost Cloud Enterprise is available to be deployed in a private environment within an AWS VPC dedicated to a single customer. Other SaaS offerings are multi-tenant, meaning customers share resources. Please contact sales for more inforamtion on this option.
-
-Is Mattermost Cloud Enterprise a dedicated instance run on AWS systems?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Cloud Enterprise can be deployed as a dedicated Mattermost environment running with separate infrastructure for your requirements (e.g., separate database, separate VMs, separate Kubernetes cluster). Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for more information on this option.
-
-How is customer data in Mattermost Cloud Enterprise encrypted?
+How is customer data in Mattermost Cloud Dedicated encrypted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost uses AWS-provided functionality to enable encryption-at-rest for both databases and file stores. See `Encrypting Amazon RDS resources - Amazon Relational Database Service <https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.Encryption.html>`_ and `Protecting data using server-side encryption - Amazon Simple Storage Service <https://docs.aws.amazon.com/AmazonS3/latest/userguide/serv-side-encryption.html>`_ for details.
 
 Whether customer data should be stored in Mattermost Cloud depends heavily on the nature of the data and compliance requirements. We recommend that customers set up their own internal policies or controls around what can and cannot be put into Mattermost.
 
-Are S3-managed keys used for server-side encryption? 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Are S3-managed keys used for server-side encryption?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. Customer-provided keys may be considered for a future release. 
+Yes, with Mattermost Cloud Dedicated.
 
-Do you provide cross-region failover in the event of an outage in AWS us-east-1 region?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Are you SOC2 Type 2 certified?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud is hosted in AWS `us-east-1` region. Cross-region failover is planned, but not yet in the roadmap. If you have feedback or require cross-region failover, please reach out to our product team via feedback-cloud[at]mattermost.com.
+Yes.
 
-What environments and rings are Cloud offerings deployed with?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Who is responsible for server maintenance and upgrades?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud provides `two offerings <https://mattermost.com/pricing/>`_: Professional, Enterprise, with a virtual private Cloud add-on available for Enterprise.
+For Mattermost Cloud deployments, Mattermost is responsible for regular security patches, software updates/releases, performance tuning, and ensuring uptime commitments.
 
-These offerings are deployed in the following ways:
+Mattermost performs monthly upgrades to your instance with the latest patch release during your preferred maintenance window.
 
- - **Professional**: Single application layer, shared infrastructure, shared network, professional group ring.
- - **Enterprise**: Single application layer, shared infrastructure, shared network, enterprise group ring.
- - **Enterprise plus dedicated add-on**: Single application layer, dedicated network via VPC (Virtual Private Cloud), dedicated infrastructure, enterprise group ring.
+Mattermost may conduct unscheduled maintenance to address high-severity issues affecting the security, availability, or reliability of your instance. Maintenance windows are announced in advance on https://status.mattermost.com/
+
+Mattermost Cloud uses a Cloud-First Release Strategy with Ring-Based staged releases aligned to Mattermost licenses with a 24 hour soak time for :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>` and for Enterprise customers using :doc:`Mattermost Cloud Shared </about/cloud-shared>`.
