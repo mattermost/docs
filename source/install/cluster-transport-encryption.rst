@@ -46,7 +46,7 @@ SSH authentication
 
 On each node, generate a SSH key-pair for the service account. In our scenario this is called ``mattermost``:
 
-.. code-block:: text
+.. code-block:: sh
 
   $ sudo -u mattermost ssh-keygen -t rsa
     Generating public/private rsa key pair.
@@ -80,7 +80,7 @@ As a next step, allow SSH access from each of the other member nodes, e.g.:
 
 To do so, we add an exception in the firewall. The commands for ``mattermost1`` look as follows:
 
-.. code-block:: text
+.. code-block:: sh
 
   $ sudo ufw allow from 10.10.250.231/32 to any port ssh
   Rule added
@@ -130,13 +130,13 @@ Please be aware that the ports on the right side must be unique, so if you have 
 
 Ensure that your operating system has IP forwarding enabled using the following command:
 
-.. code-block:: text
+.. code-block:: sh
 
   $ sysctl -w net.ipv4.ip_forward=1
 
 After that, reload the ufw rules and confirm that the iptable rules were successfully created:
 
-.. code-block:: text
+.. code-block:: sh
 
   $ iptables -t nat -L
   Chain PREROUTING (policy ACCEPT)
@@ -163,7 +163,7 @@ SSH configuration
 
 As a next step, ensure that the SSH tunnels are created as part of the Mattermost service start. To do so, create a file called ``pre_start.sh`` in ``/opt/mattermost/bin`` on ``mattermost1``:
 
-.. code-block:: text
+.. code-block:: sh
 
   #!/bin/bash
   ssh -N -f -o ServerAliveInterval=60 -o ExitOnForwardFailure=yes -L 18075:10.10.250.231:8075 10.10.250.231 || true
@@ -178,7 +178,7 @@ As a next step, ensure that the SSH tunnels are created as part of the Mattermos
 
 Afterwards, set the executable bit on the shell script:
 
-.. code-block:: text
+.. code-block:: sh
 
   $ chmod +x /opt/mattermost/bin/pre_start.sh
 
@@ -192,7 +192,7 @@ Open the systemd unit file of Mattermost and search for ``Type=Notify``. After t
 
 Reload the systemd daemon afterwards:
 
-.. code-block:: text
+.. code-block:: sh
 
   $ systemctl daemon-reload
 
@@ -203,7 +203,7 @@ Cluster start
 
 Once each node is configured, restart the service on each cluster and confirm that it's running using the command below:
 
-.. code-block:: text
+.. code-block:: sh
 
   root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl start mattermost
   root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl status mattermost.service

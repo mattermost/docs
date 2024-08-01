@@ -76,7 +76,7 @@ Install
 
 Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages by running the following command:
 
-.. code-block:: text
+.. code-block:: sh
 
     sudo apt update
 
@@ -101,7 +101,7 @@ Before you start the Mattermost Server, you need to edit the configuration file.
 
 Rename this configuration file with correct permissions:
 
-.. code-block:: text
+.. code-block:: sh
 
   sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 
@@ -113,7 +113,7 @@ Configure the following properties in this file:
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
 
-.. code-block:: text
+.. code-block:: sh
 
   sudo systemctl start mattermost
 
@@ -135,7 +135,7 @@ Remove Mattermost
 
 If you wish to remove the Mattermost Server for any reason, you can run this command:
 
-.. code-block:: text
+.. code-block:: sh
 
     sudo apt remove --purge mattermost
 

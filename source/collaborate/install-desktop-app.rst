@@ -97,13 +97,13 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   2. Install the Mattermost desktop app: 
   
-    .. code-block:: text
+    .. code-block:: sh
 
       sudo apt install mattermost-desktop
 
   3. Update the Mattermost desktop app: 
   
-    .. code-block:: text
+    .. code-block:: sh
 
       sudo apt upgrade mattermost-desktop
 
@@ -113,7 +113,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   1. At the command line, execute the following command: 
   
-    .. code-block:: text
+    .. code-block:: sh
 
       sudo snap install mattermost-desktop --beta
 
@@ -137,13 +137,13 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
     - 64-bit systems:
     
-      .. code-block:: text
+      .. code-block:: sh
 
           sudo rpm -i mattermost-desktop-5.8.1-linux-x86_64.rpm
 
     - 32-bit systems:
     
-      .. code-block:: text
+      .. code-block:: sh
       
           sudo rpm -i mattermost-desktop-5.8.1-linux-i686.rpm
 
@@ -153,13 +153,13 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   - 64-bit systems:
   
-    .. code-block:: text
+    .. code-block:: sh
 
         sudo rpm -u mattermost-desktop-5.8.1-linux-x86_64.rpm
 
   - 32-bit systems:
 
-      .. code-block:: text
+      .. code-block:: sh
  
         sudo rpm -u mattermost-desktop-5.8.1-linux-i686.rpm
 

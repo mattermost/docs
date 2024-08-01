@@ -61,7 +61,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 1. Find the name of the Mattermost network and connect it to the NGINX proxy.
 
-.. code-block:: text
+.. code-block:: sh
 
   docker network ls
   # Grep the name of your Mattermost network like "mymattermost_default".
@@ -69,7 +69,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 2. Restart the Mattermost Docker containers.
 
-.. code-block:: text
+.. code-block:: sh
 
   docker-compose stop app
   docker-compose start app

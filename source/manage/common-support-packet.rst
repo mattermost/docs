@@ -40,7 +40,7 @@ Generate the support packet
 
    Run the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate and download a Support Packet to share with Mattermost Support.
 
-   .. code-block:: text
+   .. code-block:: sh
 
       go run ./cmd/mmctl system supportpacket
       Downloading Support Packet

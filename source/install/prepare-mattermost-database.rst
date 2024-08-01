@@ -16,7 +16,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 2. Access PostgreSQL by running:
 
-  .. code-block:: text
+  .. code-block:: sh
 
       sudo -u postgres psql
 
@@ -81,7 +81,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
     c. Restart PostgreSQL for the change to take effect by running:
 
-      .. code-block:: text
+      .. code-block:: sh
 
           sudo systemctl restart postgresql-{version}
 
@@ -97,7 +97,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
     c. Restart PostgreSQL for the change to take effect by running:
 
-      .. code-block:: text
+      .. code-block:: sh
 
           sudo systemctl restart postgresql-{version}
 
@@ -165,7 +165,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 9. Reload PostgreSQL by running:
 
-  .. code-block:: text
+  .. code-block:: sh
 
       sudo systemctl reload postgresql-{version}
 
@@ -175,7 +175,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
   If the Mattermost server and the database are on the same machine, use the following command: 
 
-    .. code-block:: text
+    .. code-block:: sh
 
         psql --dbname=mattermost --username=mmuser --password
 
@@ -183,7 +183,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
   If the Mattermost server is on a different machine, log into that machine and use the following command: 
 
-    .. code-block:: text
+    .. code-block:: sh
 
         psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password
 

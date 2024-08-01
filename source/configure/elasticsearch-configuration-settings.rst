@@ -635,7 +635,7 @@ Live indexing batch size
 
     **Via mmctl**
 
-    .. code-block:: text
+    .. code-block:: sh
 
       mmctl config set ElasticsearchSettings.LiveIndexingBatchSize 200
 
