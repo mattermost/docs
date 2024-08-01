@@ -193,7 +193,7 @@ Define advanced log output
 
     Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
 
-    .. code:: JSON
+    .. code-block:: JSON
 
         "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
 

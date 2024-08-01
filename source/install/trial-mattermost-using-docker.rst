@@ -20,7 +20,7 @@ The **Preview Mode** Docker instance for Mattermost is designed for product eval
 
 To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
 
-.. code:: bash
+.. code-block:: bash
 
   docker pull mattermost/mattermost-preview
   docker stop mattermost-preview
@@ -33,6 +33,6 @@ Once the new image is pulled and the container is stopped and deleted you need t
 
 To access a shell inside the container, run the following command:
 
-.. code:: bash
+.. code-block:: bash
 
    docker exec -ti mattermost-preview /bin/bash

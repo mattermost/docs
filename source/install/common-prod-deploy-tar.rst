@@ -29,7 +29,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 3. Download :doc:`the latest version of the Mattermost Server </about/version-archive>`. In the following command, replace ``X.X.X`` with the version that you want to download:
   
-   .. code:: bash
+   .. code-block:: bash
 
     # Enterprise Edition
     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
@@ -39,19 +39,19 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 
 4. Extract the Mattermost Server files.
   
-   .. code:: bash
+   .. code-block:: bash
             
     tar -xvzf mattermost*.gz
 
 5. Move the extracted file to the ``/opt`` directory.
   
-   .. code:: bash
+   .. code-block:: bash
             
     sudo mv mattermost /opt
 
 6. Create the storage directory for files.
 
-   .. code:: bash
+   .. code-block:: bash
             
     sudo mkdir /opt/mattermost/data
   
@@ -63,19 +63,19 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   
   a. Create the Mattermost user and group.
         
-     .. code:: bash
+     .. code-block:: bash
 
         sudo useradd --system --user-group mattermost
   
   b. Set the user and group *mattermost* as the owner of the Mattermost files.
     
-     .. code:: bash
+     .. code-block:: bash
             
         sudo chown -R mattermost:mattermost /opt/mattermost
   
   c. Give write permissions to the *mattermost* group.
         
-     .. code:: bash
+     .. code-block:: bash
             
         sudo chmod -R g+w /opt/mattermost
 
@@ -95,13 +95,13 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
     
   a. Change to the Mattermost directory.
             
-     .. code:: bash
+     .. code-block:: bash
             
       cd /opt/mattermost
             
   b. Start the Mattermost server as the user mattermost.
             
-     .. code:: bash
+     .. code-block:: bash
             
       sudo -u mattermost bin/mattermost
   
@@ -111,7 +111,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   
   a. Create a *systemd* unit file.
     
-     .. code:: bash
+     .. code-block:: bash
             
       sudo touch /lib/systemd/system/mattermost.service
   
@@ -145,13 +145,13 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
     
   c. Make systemd load the new unit.
     
-     .. code:: bash
+     .. code-block:: bash
             
       sudo systemctl daemon-reload
   
   d. Check to make sure that the unit was loaded.
     
-     .. code:: bash
+     .. code-block:: bash
             
       sudo systemctl status mattermost.service
     
@@ -165,13 +165,13 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   
   e. Start the service.
     
-     .. code:: bash
+     .. code-block:: bash
             
       sudo systemctl start mattermost.service
   
   f. Verify that Mattermost is running.
     
-     .. code:: bash
+     .. code-block:: bash
             
       curl http://localhost:8065
     
@@ -179,7 +179,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   
   g. Set Mattermost to start on machine start up.
 
-     .. code:: bash
+     .. code-block:: bash
             
       sudo systemctl enable mattermost.service
 

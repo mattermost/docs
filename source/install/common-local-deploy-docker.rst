@@ -20,7 +20,7 @@ Using the `Mattermost Docker Preview Image <https://github.com/mattermost/matter
 
 2. Once you have Docker, run the following command in a terminal window:
 
-  .. code:: bash
+  .. code-block:: bash
 
     docker run --name mattermost-preview -d --publish 8065:8065 --publish 8443:8443 mattermost/mattermost-preview
 

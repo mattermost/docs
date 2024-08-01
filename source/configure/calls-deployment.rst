@@ -340,7 +340,7 @@ Configuration
 
 A sample Prometheus configuration to scrape both plugin and ``rtcd`` metrics could look like this:
 
-.. code::
+.. code-block::
 
    scrape_configs:
    - job_name: node
@@ -359,7 +359,7 @@ System tunings
 
 If you want to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
 
-.. code::
+.. code-block::
 
   # Setting the maximum buffer size of the receiving UDP buffer to 16MB
   net.core.rmem_max = 16777216

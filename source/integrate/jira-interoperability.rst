@@ -250,7 +250,7 @@ If you're using legacy webhooks:
 - Only events described in the Legacy Webhook documentation are supported.
 - Use a curl command to make a POST request to the webhook URL. If curl command completes with a ``200 OK`` response, the integration is configured correctly. For instance, you can run the following command:
 
-.. code:: none
+.. code-block:: none
   
   curl -X POST -v "https://<YOUR-MATTERMOST-URL>/plugins/jira/webhook?secret=<YOUR-SECRET>&team=<YOUR-TEAM>&channel=<YOUR-CHANNEL>&user_id=admin&user_key=admin" --data '{"event":"some_jira_event"}'
 
