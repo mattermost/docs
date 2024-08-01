@@ -21,7 +21,7 @@ Why am I seeing the error "Too many redirects?"
 
 You may see this error if you're setting Mattermost in a sub-path. To resolve this error, add the following block to the HEAD request:
 
-.. code-block:: none
+.. code-block:: text
 
   location ~* ^/sub-path {
       client_max_body_size 250M;
@@ -37,7 +37,7 @@ Why are Websocket connections returning a 403 error?
 
 This is likely due to a failing cross-origin check. A check is applied for WebSocket code to see if the ``Origin`` header is the same as the host header. If it's not, a 403 error is returned. Open the file ``/etc/nginx/sites-available/mattermost`` as *root* in a text editor and make sure that the host header being set in the proxy is dynamic:
 
-.. code-block:: none
+.. code-block:: text
   :emphasize-lines: 4
 
   location ~ /api/v[0-9]+/(users/)?websocket$ {
@@ -49,7 +49,7 @@ This is likely due to a failing cross-origin check. A check is applied for WebSo
 
 Then in ``config.json`` set the ``AllowCorsFrom`` setting to match the domain being used by clients. You may need to add variations of the host name that clients may send. Your NGINX log will be helpful in diagnosing the problem.
 
-.. code-block:: none
+.. code-block:: text
   :emphasize-lines: 2
 
   "EnableUserAccessTokens": false,
@@ -61,7 +61,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 1. Find the name of the Mattermost network and connect it to the NGINX proxy.
 
-.. code-block:: none
+.. code-block:: text
 
   docker network ls
   # Grep the name of your Mattermost network like "mymattermost_default".
@@ -69,7 +69,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 2. Restart the Mattermost Docker containers.
 
-.. code-block:: none
+.. code-block:: text
 
   docker-compose stop app
   docker-compose start app
@@ -80,7 +80,7 @@ How do I setup an NGINX proxy with the Mattermost Docker installation?
 
 3. Update your ``docker-compose.yml`` file to include a new environment variable ``VIRTUAL_HOST`` and an ``expose`` directive.
 
-.. code-block:: none
+.. code-block:: text
 
   environment:
     # set same as db credentials and dbname
@@ -107,7 +107,7 @@ You may need to update the Callback URLs for the Application entry of Mattermost
 Why does Certbot fail the http-01 challenge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: none
+.. code-block:: text
 
   Requesting a certificate for yourdomain.com
   Performing the following challenges:
@@ -128,7 +128,7 @@ Certbot rate limiting
 
 If you're running certbot as stand-alone you'll see this error:
 
-.. code-block:: none
+.. code-block:: text
 
       Error: Could not issue a Let's Encrypt SSL/TLS certificate for example.com.
       One of the Let's Encrypt rate limits has been exceeded for example.com.
@@ -142,7 +142,7 @@ If you're running certbot as stand-alone you'll see this error:
 
 If you're running Let's Encrypt within Mattermost you'll see this error:
 
-.. code-block:: none
+.. code-block:: text
 
     {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
 

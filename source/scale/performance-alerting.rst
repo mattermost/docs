@@ -146,27 +146,27 @@ Plugin hooks
 
 You can trace hooks and plugin API calls with Prometheus. Below are some examples of hooks and API Prometheus metrics that you may want to be aware of when troubleshooting or monitoring your server's performance.
 
-.. code-block:: none
+.. code-block:: text
 
   # HELP mattermost_plugin_hook_time Time to execute plugin hook handler in seconds.
   # TYPE mattermost_plugin_hook_time histogram
   mattermost_plugin_hook_time_bucket{hook_name="ChannelHasBeenCreated",plugin_id="com.mattermost.demo-plugin",success="true",le="0.005"} 0
   mattermost_plugin_hook_time_bucket{hook_name="ChannelHasBeenCreated",plugin_id="com.mattermost.demo-plugin",success="true",le="0.01"} 0
 
-.. code-block:: none
+.. code-block:: text
 
   # HELP mattermost_plugin_multi_hook_time Time to execute multiple plugin hook handler in seconds.
   # TYPE mattermost_plugin_multi_hook_time histogram
   mattermost_plugin_multi_hook_time_bucket{plugin_id="com.mattermost.custom-attributes",le="0.005"} 100
   mattermost_plugin_multi_hook_time_bucket{plugin_id="com.mattermost.custom-attributes",le="0.01"} 100
 
-.. code-block:: none
+.. code-block:: text
 
   # HELP mattermost_plugin_multi_hook_server_time Time for the server to execute multiple plugin hook handlers in seconds.
   # TYPE mattermost_plugin_multi_hook_server_time histogram
   mattermost_plugin_multi_hook_server_time_bucket{le="0.005"} 1043
   
-.. code-block:: none
+.. code-block:: text
 
   # HELP mattermost_plugin_api_time Time to execute plugin API handlers in seconds.
   # TYPE mattermost_plugin_api_time histogram

@@ -61,7 +61,7 @@ Install Mattermost Server on a 64-bit machine. Assume that the IP address of thi
   
  b. Open the unit file as root in a text editor, and copy the following lines into the file:
   
-  .. code-block:: none
+  .. code-block:: text
   
     [Unit]
     Description=Mattermost
@@ -98,7 +98,7 @@ c. Make systemd load the new unit by running ``sudo systemctl daemon-reload``.
   
 d. Check to make sure that the unit was loaded by running ``sudo systemctl status mattermost.service``. You should see an output similar to the following:
 
-  .. code-block:: none
+  .. code-block:: text
 
     ● mattermost.service - Mattermost
     Loaded: loaded (/lib/systemd/system/mattermost.service; disabled; vendor preset: enabled)

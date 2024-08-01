@@ -117,7 +117,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
   
   b. Open the unit file as *root* in a text editor, and copy the following lines into the file.
   
-     .. code-block:: none
+     .. code-block:: text
 
       [Unit]
       Description=Mattermost
@@ -157,7 +157,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
     
   You should see an output similar to the following:
     
-  .. code-block:: none
+  .. code-block:: text
                 
     mattermost.service - Mattermost
     Loaded: loaded (/lib/systemd/system/mattermost.service; disabled; vendor preset: enabled)

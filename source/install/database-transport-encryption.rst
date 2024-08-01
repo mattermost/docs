@@ -45,7 +45,7 @@ Any connection to the MySQL server must now be made with secure transport enable
 
 Last but not least, restart the server and confirm it is up and running:
 
-  .. code-block:: none
+  .. code-block:: text
 
     root@transport-encryption-mysql1:~# systemctl restart mysql
     root@transport-encryption-mysql1:~# systemctl status mysql
@@ -85,7 +85,7 @@ If you're running Mattermost in a cluster, be sure to update the value on each n
 
 Once complete, restart the Mattermost server and ensure the system is operational:
 
-.. code-block:: none
+.. code-block:: text
 
   ubuntu@transport-encryption-mattermost1:~$ sudo systemctl restart mattermost
   ubuntu@transport-encryption-mattermost1:~$ systemctl status mattermost

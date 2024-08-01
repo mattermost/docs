@@ -70,7 +70,7 @@ Configuration settings
 
 1. High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are always identical. However, for testing and validating a high availability setup, you can set ``ReadOnlyConfig`` to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
 
-  .. code-block:: none
+  .. code-block:: text
 
     "ClusterSettings": {
             "Enable": false,
@@ -87,7 +87,7 @@ Configuration settings
 
   Modify ``/etc/security/limits.conf`` on each machine that hosts a Mattermost server by adding the following lines:
 
-  .. code-block:: none
+  .. code-block:: text
 
     * soft nofile 65536
     * hard nofile 65536
@@ -98,7 +98,7 @@ Configuration settings
 
   Modify ``/etc/sysctl.conf`` on each machine that hosts a Mattermost server by adding the following lines:
 
-  .. code-block:: none
+  .. code-block:: text
 
     # Extending default port range to handle lots of concurrent connections.
     net.ipv4.ip_local_port_range = 1025 65000
@@ -185,7 +185,7 @@ If you want to monitor the server with a health check you can use ``http://10.10
 
 A sample configuration for NGINX is provided below. It assumes that you have two Mattermost servers running on private IP addresses of ``10.10.10.2`` and ``10.10.10.4``.
 
-.. code-block:: none
+.. code-block:: text
 
     upstream backend {
           server 10.10.10.2:8065;
@@ -305,7 +305,7 @@ To configure a multi-database Mattermost server:
 
 Here's an example ``SqlSettings`` block for one master and two read replicas:
 
-.. code-block:: none
+.. code-block:: text
 
   "SqlSettings": {
         "DriverName": "mysql",

@@ -37,7 +37,7 @@ To set these environment variables while running the Mattermost server via ``sys
   .. note::
     Be sure to replace ``127.0.0.1:3128`` with the correct values for your proxy servers.
 
-  .. code-block:: none
+  .. code-block:: text
 
     [Unit]
     Description=Mattermost

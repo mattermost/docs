@@ -78,7 +78,7 @@ Install Mattermost Server on a 64-bit machine. Assume that the IP address of thi
 
   b. Open the configuration file in a text editor, and copy the following lines into the file:
 
-    .. code-block:: none
+    .. code-block:: text
 
       [Unit]
       Description=Mattermost

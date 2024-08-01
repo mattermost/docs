@@ -192,7 +192,7 @@ It's possible that some words in the ``Posts`` and ``FileInfo`` tables can excee
 
 To prevent errors during the migration, we have included following queries:
 
-.. code-block:: none
+.. code-block:: text
 
   DROP INDEX IF EXISTS {{ .source_db }}.idx_posts_message_txt;
   DROP INDEX IF EXISTS {{ .source_db }}.idx_fileinfo_content_txt;
@@ -206,7 +206,7 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
 
   You can use this query as-is in a script, or you may need to set the delimiter to something else (e.g., ``DELIMITER //``) when defining it in the MySQL console. Once you are done defining the procedure, please set the delimiter back to the original (i.e., ``DELIMITER ;``).
 
-.. code-block:: none
+.. code-block:: text
 
   CREATE PROCEDURE SanitizeUnsupportedUnicode()
   BEGIN
@@ -317,7 +317,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
 
 Use the following configuration for the baseline of the data migration:
 
-.. code-block:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -449,7 +449,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 Use the following configuration for the baseline of the data migration:
 
-.. code-block:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -556,7 +556,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 Use the following configuration for the baseline of the data migration:
 
-.. code-block:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -613,7 +613,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 Use the following configuration for the baseline of the data migration:
 
-.. code-block:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}

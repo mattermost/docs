@@ -16,7 +16,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 2. Access PostgreSQL by running:
 
-  .. code-block:: none
+  .. code-block:: text
 
       sudo -u postgres psql
 
@@ -24,19 +24,19 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
   .. tab:: Ubuntu
 
-    .. code-block:: none
+    .. code-block:: text
 
       postgres=# CREATE DATABASE mattermost;
 
   .. tab:: Red Hat
 
-    .. code-block:: none
+    .. code-block:: text
 
       postgres=# CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
 
 4. Create the Mattermost user *mmuser* by running the following command. Ensure you use a password that's more secure than ``mmuser-password``.
 
-  .. code-block:: none
+  .. code-block:: text
 
       postgres=# CREATE USER mmuser WITH PASSWORD 'mmuser-password';
 
@@ -44,26 +44,26 @@ To set up a PostgreSQL database for use by the Mattermost server:
     
   a. Grant the user access to the Mattermost database by running:
 
-    .. code-block:: none
+    .. code-block:: text
 
         postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
                   
 
   b. Grant the user to change the owner of a database to a user ``mmuser`` by running:
 
-     .. code-block:: none
+     .. code-block:: text
 
         ALTER DATABASE mattermost OWNER TO mmuser;
 
   c. Grant access to objects contained in the specified schema by running: 
 
-    .. code-block:: none
+    .. code-block:: text
 
         GRANT USAGE, CREATE ON SCHEMA PUBLIC TO mmuser;
 
 6. Exit the PostgreSQL interactive terminal by running:
 
-  .. code-block:: none
+  .. code-block:: text
 
       postgres=# \q
 
@@ -81,7 +81,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
     c. Restart PostgreSQL for the change to take effect by running:
 
-      .. code-block:: none
+      .. code-block:: text
 
           sudo systemctl restart postgresql-{version}
 
@@ -97,7 +97,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
     c. Restart PostgreSQL for the change to take effect by running:
 
-      .. code-block:: none
+      .. code-block:: text
 
           sudo systemctl restart postgresql-{version}
 
@@ -165,7 +165,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 9. Reload PostgreSQL by running:
 
-  .. code-block:: none
+  .. code-block:: text
 
       sudo systemctl reload postgresql-{version}
 
@@ -175,7 +175,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
   If the Mattermost server and the database are on the same machine, use the following command: 
 
-    .. code-block:: none
+    .. code-block:: text
 
         psql --dbname=mattermost --username=mmuser --password
 
@@ -183,7 +183,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
   If the Mattermost server is on a different machine, log into that machine and use the following command: 
 
-    .. code-block:: none
+    .. code-block:: text
 
         psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password
 

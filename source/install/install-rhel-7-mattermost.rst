@@ -75,7 +75,7 @@ Install Mattermost Server on RHEL 7
 
   b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
 
-    .. code-block:: none
+    .. code-block:: text
 
       [Unit]
       Description=Mattermost

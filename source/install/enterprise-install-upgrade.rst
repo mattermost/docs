@@ -92,14 +92,14 @@ Changing the permissions in this way doesn't affect your Mattermost deployment o
 To change the permissions using the command line on the Mattermost server, you need access to the command line tool as *mattermost* user. 
 Open the command line tool on the Mattermost server and ``cd`` to the Mattermost installation directory. Run the following commands (replacing ``<PathToBinaryFile>`` with the appropriate path - typically ``/opt/mattermost/bin/mattermost``) to change the ownership of the binary file to *mattermost* user and grant write access:
 
-.. code-block:: none
+.. code-block:: text
 
   chown mattermost <PathToBinaryFile>
   chmod +w <PathToBinaryFile>
 
 In the Mattermost System Console, retry the upgrade. When the upgrade is complete, return to the command prompt on the Mattermost server and run the following command to restore the file permissions, replacing ``<OriginalFileOwner>`` with the appropriate value:
 
-.. code-block:: none
+.. code-block:: text
 
   chown <OriginalFileOwner> <PathToBinaryFile>
   chmod -w <PathToBinaryFile>
@@ -125,7 +125,7 @@ If you manually changed your file permissions, you can change them back.
 2. ``cd`` to the Mattermost installation directory (typically ``/opt/mattermost/bin/mattermost``).
 3. Enter: 
 
-.. code-block:: none
+.. code-block:: text
   
   chown <OriginalFileOwner> <PathToBinaryFile>
   chmod -w <PathToBinaryFile>
@@ -139,7 +139,7 @@ If your Mattermost deployment is part of a managed package you may receive file 
 2. ``cd`` to the Mattermost installation directory (typically ``/opt/mattermost/bin/mattermost``).
 3. Enter: 
 
-.. code-block:: none
+.. code-block:: text
 
   chown <OriginalFileOwner> <PathToBinaryFile>
   chmod -w <PathToBinaryFile>

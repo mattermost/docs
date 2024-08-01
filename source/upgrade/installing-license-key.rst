@@ -17,7 +17,7 @@ You can use the System Console or the mmctl tools to add or change a Mattermost 
 
     Use the :ref:`mmctl license upload <manage/mmctl-command-line-tool:mmctl license upload>` command to upload a new license or replace an existing license file with a new one. When complete, restart the Mattermost server. If you're running in a :doc:`High Availability </scale/high-availability-cluster-based-deployment>` environment, the new license file must be updated to every node.
 
-    .. code-block:: none
+    .. code-block:: text
 
         mmctl license upload [license] [flags]
 

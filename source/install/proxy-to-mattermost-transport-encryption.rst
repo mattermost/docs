@@ -29,13 +29,13 @@ Configuring NGINX
 
 On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration and search for the following line twice:
 
-.. code-block:: none
+.. code-block:: text
 
   proxy_pass http://backend;
 
 Change the protocol from ``http`` to ``https``:
 
-.. code-block:: none
+.. code-block:: text
 
   proxy_pass https://backend;
 
@@ -48,7 +48,7 @@ On the Mattermost server, change to the config directory of Mattermost and gener
 
 **Note:** Alternatively you can sign a certificate from your company's CA.
 
-.. code-block:: none
+.. code-block:: text
 
   $ cd /opt/mattermost/config
   $ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
@@ -98,7 +98,7 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
 
 Restart the Mattermost server and ensure it's up and running:
 
-.. code-block:: none
+.. code-block:: text
 
   $ sudo systemctl restart mattermost
   $ systemctl status mattermost
@@ -109,6 +109,6 @@ Restart the Mattermost server and ensure it's up and running:
 
 Finally, on the **NGINX server**, reload the configuration to ensure that requests are sent on HTTPS:
 
-.. code-block:: none
+.. code-block:: text
 
   $ sudo systemctl reload nginx
