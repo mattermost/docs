@@ -12,7 +12,7 @@ Overcome information overload and streamline team communication and collaboratio
 
 .. note::
 
-  Copilot must be :doc:`enabled and configured </configure/enable-ai-copilot>` by a Mattermost system admin in the System Console before you can start using it.
+  Copilot must be :doc:`enabled and configured </configure/enable-copilot>` by a Mattermost system admin in the System Console before you can start using it.
 
 .. include:: ../_static/badges/academy-copilot-calls.rst
   :start-after: :nosearch:
@@ -94,7 +94,7 @@ Bring Copilot into any conversation
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Invoke the power of AI by @mentioning the Copilot bot with ``@copilot`` in any thread to bring AI's capabilities to your conversation, allowing for quick extraction of information or transformation of discussions into charts, resources, documentation, articles, and more. Copilot will find action items and open questions in new messages. With the power of Mattermost integrations and interoperability, the potential to enhance your workflow is limitless.
+Invoke the power of AI by @mentioning Copilot bots by their username such as ``@copilot`` in any thread to bring AI's capabilities to your conversation, allowing for quick extraction of information or transformation of discussions into charts, resources, documentation, articles, and more. Copilot will find action items and open questions in new messages. With the power of Mattermost integrations and interoperability, the potential to enhance your workflow is limitless.
 
 .. image:: ../images/Contextual-Interrogation-Updated-4-3.gif
   :alt: Bring your AI into the conversation. @mention your Copilot directly within any thread and use the context to work faster and smarter.
