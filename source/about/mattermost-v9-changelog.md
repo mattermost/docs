@@ -104,6 +104,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed ``stylelint``, and added ``elastic/go-elasticsearch`` to https://github.com/mattermost/mattermost/.
 
 ### Known Issues
+ - Unable to list user preferences with ``mm_ctl --local`` [MM-60024](https://mattermost.atlassian.net/browse/MM-60024).
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
