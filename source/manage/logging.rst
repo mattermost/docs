@@ -515,7 +515,7 @@ How can I configure Advanced logging via environment variables?
 
 The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to configure Advanced logging . You can use ``jq`` to generate the JSON payload, e.g.
 
-.. code-block:: shell
+.. code-block:: sh
 
     export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
         "console1": {

@@ -27,7 +27,7 @@ The ``migration-assist`` tool can be downloaded and compiled with the `Go <https
 
 Use ``go install`` to install the tool:
 
-.. code-block:: shell
+.. code-block:: sh
 
    go install github.com/mattermost/migration-assist/cmd/migration-assist@latest
 
@@ -47,13 +47,13 @@ Step 1 - Check the MySQL database schema
 
 Run the following command to check the MySQL database schema:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist mysql "<MYSQL_DSN>" # example DSN: "user:password@tcp(address:3306)/db_name"
 
 This command outputs the readiness status and prints required fixes for common issues. The flags for fixes are as follows (where all fixes can be used together at the same time):
 
-.. code-block:: shell
+.. code-block:: sh
 
    --fix-artifacts               Removes the artifacts from older versions of Mattermost
    --fix-unicode                 Removes the unsupported unicode characters from MySQL tables
@@ -64,7 +64,7 @@ Step 2 - Create the PostgreSQL database schema
 
 Run the following command to create the Postgres database schema:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist postgres "<POSTGRES_DSN>" --run-migrations --mattermost-version="<MATTERMOST_VERSION>" # example DSN: "postgres://user:password@address:5432/db_name", example Mattermost version: "v9.4.0"
 
@@ -75,7 +75,7 @@ Step 3 - Generate a pgloader configuration
 
 Run the following command to generate a pgloader configuration:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist pgloader --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > migration.load
 
@@ -86,7 +86,7 @@ Step 4 - Run pgloader
 
 :ref:`Run pgloader <deploy/manual-postgres-migration:pgloader>` with the generated configuration file:
 
-.. code-block:: shell
+.. code-block:: sh
 
    pgloader migration.load > migration.log
 
@@ -97,7 +97,7 @@ Step 5 - Restore full-text indexes
 
 Run the following command to create the full-text indexes for the ``Posts`` and ``FileInfo`` tables:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist postgres post-migrate "<POSTGRES_DSN>"
 
@@ -108,7 +108,7 @@ Step 6 - Complete plugin migrations
 
 Generate migration configuration for collaborative playbooks, boards and calls:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist pgloader boards --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > boards.load
    migration-assist pgloader playbooks --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > playbooks.load
@@ -116,7 +116,7 @@ Generate migration configuration for collaborative playbooks, boards and calls:
 
 Then run pgloader with the generated configuration files:
 
-.. code-block:: shell
+.. code-block:: sh
 
    pgloader boards.load > boards_migration.log
    pgloader playbooks.load > playbooks_migration.log
