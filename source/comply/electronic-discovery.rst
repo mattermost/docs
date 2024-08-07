@@ -58,7 +58,7 @@ Include the ``token`` value sent in the response as part of the Authorization he
 
 .. code-block:: sh
 
-  curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me
+  curl -i -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe http://yourmattermosturl/api/v4/users/me'
 
 Once you're authenticated into Mattermost, you can use the `Compliance API to create a new compliance report <https://api.mattermost.com/#tag/compliance%2Fpaths%2F~1compliance~1reports%2Fpost>`__. The curl based example below demonstrates how to send a request that bases the authentication token and asks Mattermost to create a report that spans posts from Dec 31, 2017 - 8:15 PM to Dec 31, 2018 - 8:15 PM for a user with the email address craig@mattermost.com:
 
@@ -70,7 +70,7 @@ Once you're authenticated into Mattermost, you can use the `Compliance API to cr
 
   curl --header "Content-Type: application/json" \
   --request POST \
-  -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe \
+  -H 'Authorization: Bearer yi94pwci6ibjfc9phbikhqutbe' \
   --data '{"id":"","create_at":0,"user_id":"craig","status":"","count":0,"desc":" ","type":"","start_at":1514769359000,"end_at": 1546305359000,"keywords":"","emails":"craig@mattermost.com"}' \
   https://yourmattermosturl/api/v4/compliance/reports
 
