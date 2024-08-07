@@ -91,7 +91,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   1. At the command line, set up the Mattermost repository on your system: 
 
-    .. code-block:: text
+    .. code-block:: sh
 
       curl -fsS -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo bash
 

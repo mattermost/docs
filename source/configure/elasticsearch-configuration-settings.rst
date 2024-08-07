@@ -641,7 +641,7 @@ Live indexing batch size
 
     **Via an environment variable**
 
-    .. code-block:: text
+    .. code-block:: sh
 
       MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE = 200
 
