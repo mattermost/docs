@@ -323,4 +323,6 @@ To access the Developer Tools Console:
 
 You can open an additional set of developer tools for each server you have added to the desktop app. The tools can be opened by pasting this command in the Developer Tools Console you opened with the steps described above:
 
-``document.getElementsByTagName("webview")[0].openDevTools();`` 
+    .. code-block:: javascript
+
+       document.getElementsByTagName("webview")[0].openDevTools();

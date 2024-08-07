@@ -48,15 +48,18 @@ On each node, generate a SSH key-pair for the service account. In our scenario t
 
 .. code-block:: sh
 
-  $ sudo -u mattermost ssh-keygen -t rsa
-    Generating public/private rsa key pair.
-    Enter file in which to save the key (/home/mattermost/.ssh/id_rsa):
-    Enter passphrase (empty for no passphrase):
-    Enter same passphrase again:
-    Your identification has been saved in /home/mattermost/.ssh/id_rsa.
-    Your public key has been saved in /home/mattermost/.ssh/id_rsa.pub.
-    The key fingerprint is:
-    SHA256:redacted mattermost@transport-encryption-mattermost1
+  sudo -u mattermost ssh-keygen -t rsa
+
+.. code-block:: text
+
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/home/mattermost/.ssh/id_rsa):
+  Enter passphrase (empty for no passphrase):
+  Enter same passphrase again:
+  Your identification has been saved in /home/mattermost/.ssh/id_rsa.
+  Your public key has been saved in /home/mattermost/.ssh/id_rsa.pub.
+  The key fingerprint is:
+  SHA256:redacted mattermost@transport-encryption-mattermost1
 
 
 The location of the SSH key itself is irrelevant if company policies require the usage of another storage location.
@@ -82,11 +85,14 @@ To do so, we add an exception in the firewall. The commands for ``mattermost1`` 
 
 .. code-block:: sh
 
-  $ sudo ufw allow from 10.10.250.231/32 to any port ssh
+  sudo ufw allow from 10.10.250.231/32 to any port ssh
+  sudo ufw allow from 10.10.250.165/32 to any port ssh
+  sudo ufw status
+
+.. code-block:: text
+
   Rule added
-  $ sudo ufw allow from 10.10.250.165/32 to any port ssh
   Rule added
-  $ sudo ufw status
   Status: active
 
   To                         Action      From
@@ -132,13 +138,16 @@ Ensure that your operating system has IP forwarding enabled using the following 
 
 .. code-block:: sh
 
-  $ sysctl -w net.ipv4.ip_forward=1
+  sysctl -w net.ipv4.ip_forward=1
 
 After that, reload the ufw rules and confirm that the iptable rules were successfully created:
 
 .. code-block:: sh
 
-  $ iptables -t nat -L
+  iptables -t nat -L
+
+.. code-block:: text
+
   Chain PREROUTING (policy ACCEPT)
   target     prot opt source               destination
 
@@ -180,7 +189,7 @@ Afterwards, set the executable bit on the shell script:
 
 .. code-block:: sh
 
-  $ chmod +x /opt/mattermost/bin/pre_start.sh
+  chmod +x /opt/mattermost/bin/pre_start.sh
 
 Open the systemd unit file of Mattermost and search for ``Type=Notify``. After this, enter a ``ExecStartPre`` script that will be executed before Mattermost itself is started:
 
@@ -194,7 +203,7 @@ Reload the systemd daemon afterwards:
 
 .. code-block:: sh
 
-  $ systemctl daemon-reload
+  systemctl daemon-reload
 
 Repeat the same steps on each of the member nodes and adapt the node IPs and amount of entries for your environment.
 
@@ -205,8 +214,11 @@ Once each node is configured, restart the service on each cluster and confirm th
 
 .. code-block:: sh
 
-  root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl start mattermost
-  root@transport-encryption-mattermost1:/opt/mattermost/bin# systemctl status mattermost.service
+  systemctl start mattermost
+  systemctl status mattermost.service
+
+.. code-block:: text
+
   ● mattermost.service - Mattermost
      Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Fri 2019-10-04 19:44:20 UTC; 5min ago

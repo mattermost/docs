@@ -42,9 +42,12 @@ Generate the support packet
 
    .. code-block:: sh
 
-      go run ./cmd/mmctl system supportpacket
-      Downloading Support Packet
-      Downloaded Support Packet to mattermost_support_packet_.zip
+    go run ./cmd/mmctl system supportpacket
+
+   .. code-block:: text
+
+    Downloading Support Packet
+    Downloaded Support Packet to mattermost_support_packet_.zip
 
 Santitize confidential data
 ---------------------------

@@ -196,9 +196,9 @@ How to access your configuration data
 
 The Mattermost configuration is usually stored at ``/opt/mattermost/config/config.json``. If you've migrated the Mattermost configuration to the database, you can get the configuration using ``mmctl`` or by running this database query:
 
-.. code-block:: text
+.. code-block:: SQL
     
-   SELECT Value FROM Configurations WHERE Active = 1;
+  SELECT Value FROM Configurations WHERE Active = 1;
 
 **Reverse Proxy configuration**
 

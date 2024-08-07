@@ -45,7 +45,7 @@ With TCP socket
 
   .. code-block:: sh
 
-     $ psql --host=ip_address --dbname=mattermostdb --username=mmuser --password
+    psql --host=ip_address --dbname=mattermostdb --username=mmuser --password
 
 With Unix socket
 ----------------

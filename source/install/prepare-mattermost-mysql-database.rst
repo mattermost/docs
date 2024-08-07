@@ -136,10 +136,13 @@ Use sockets for the database
 
 .. code-block:: sh
 
-    $ mysql -u root -p
-    CREATE DATABASE mattermostdb;
-    CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
-    GRANT ALL ON mattermostdb.* TO mmuser;
+  mysql -u root -p
+
+.. code-block:: sql
+
+  CREATE DATABASE mattermostdb;
+  CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
+  GRANT ALL ON mattermostdb.* TO mmuser;
 
 Mattermost is configured in ``/etc/webapps/mattermost/config.json``, and strings need to be quoted.
 

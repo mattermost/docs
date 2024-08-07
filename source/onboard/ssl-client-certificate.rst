@@ -22,13 +22,16 @@ Set up mutual TLS authentication for the web app
 .. code-block:: sh
 
   openssl genrsa -des3 -out ca.mattermost.key 4096
+
+.. code-block:: text
   
   pass phrase: capassword
-
     
 .. code-block:: sh
 
   openssl req -new -x509 -days 365 -key ca.mattermost.key -out ca.mattermost.crt
+
+.. code-block:: text
 
   Country Name: US
   State: Maryland
@@ -44,11 +47,15 @@ Set up mutual TLS authentication for the web app
 
   openssl genrsa -des3 -out mmuser-mattermost.key 1024
 
+.. code-block:: text
+
   passphrase: mmuser-passphrase
 
 .. code-block:: sh
 
   openssl req -new -key mmuser-mattermost.key -out mmuser-mattermost.csr
+
+.. code-block:: text
 
   Country Name: US
   State: Maryland
@@ -113,6 +120,8 @@ You should see the Mattermost login page. If you see:
 .. code-block:: sh
 
   openssl pkcs12 -export -out mmuser-mattermost.p12 -inkey mmuser-mattermost.key -in mmuser-mattermost.crt -certfile ca.mattermost.crt
+
+.. code-block:: text
 
   Enter Export Password: mmuser-passphrase
 

@@ -50,10 +50,10 @@ On the Mattermost server, change to the config directory of Mattermost and gener
 
 .. code-block:: sh
 
-  $ cd /opt/mattermost/config
-  $ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
-  $ chown root:mattermost *.pem
-  $ chmod 640 *.pem
+  cd /opt/mattermost/config
+  openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+  chown root:mattermost *.pem
+  chmod 640 *.pem
 
 
 Once complete, open the file ``config.json`` and modify the values ``ConnectionSecurity``, ``TLSCertFile`` and ``TLSKeyFile`` in the ``ServiceSettings`` section.
@@ -100,8 +100,11 @@ Restart the Mattermost server and ensure it's up and running:
 
 .. code-block:: sh
 
-  $ sudo systemctl restart mattermost
-  $ systemctl status mattermost
+  sudo systemctl restart mattermost
+  systemctl status mattermost
+
+.. code-block:: text
+
   ● mattermost.service - Mattermost
      Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Mon 2019-10-28 16:45:29 UTC; 1h 15min ago
@@ -111,4 +114,4 @@ Finally, on the **NGINX server**, reload the configuration to ensure that reques
 
 .. code-block:: sh
 
-  $ sudo systemctl reload nginx
+  sudo systemctl reload nginx

@@ -54,9 +54,6 @@ Ahead of installing the Mattermost Server, it’s good practice to update all yo
 .. code-block:: sh
 
     sudo dnf update
-
-.. code-block:: sh
-
     sudo dnf upgrade
 
 After any updates, and any system reboots, are complete, install the Mattermost Server.

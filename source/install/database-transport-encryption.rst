@@ -33,13 +33,17 @@ As a first step, connect to both servers with a sudo or root user.
 
 Execute the following command to prepare the server for SSL connections:
 
-``sudo mysql_ssl_rsa_setup --uid=mysql``
+.. code-block:: sh
+
+  sudo mysql_ssl_rsa_setup --uid=mysql
 
 This generates self-signed certificates in ``/var/lib/mysql/`` that the MySQL server uses to encrypt the connection. If you would like to use certificates from your company CA, please follow the MySQL documentation for configuration steps.
 
 **Note:** Optionally, it can be enforced that all connections must be made via a local socket connection or TLS. To do this, open ``/etc/mysql/mysql.conf.d/mysqld.cnf`` and append the following line to the file:
 
-``require_secure_transport = ON``
+.. code-block:: text
+
+  require_secure_transport = ON
 
 Any connection to the MySQL server must now be made with secure transport enabled.
 
@@ -47,28 +51,33 @@ Last but not least, restart the server and confirm it is up and running:
 
   .. code-block:: sh
 
-    root@transport-encryption-mysql1:~# systemctl restart mysql
-    root@transport-encryption-mysql1:~# systemctl status mysql
-    ● mysql.service - MySQL Community Server
-       Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
-       Active: active (running) since Fri 2019-10-18 16:41:25 UTC; 2s ago
-      Process: 8380 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid (code=exited, status=0/SUCCESS)
-      Process: 8360 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
-     Main PID: 8382 (mysqld)
-        Tasks: 27 (limit: 2361)
-       CGroup: /system.slice/mysql.service
-               └─8382 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+  systemctl restart mysql
+  systemctl status mysql
 
-    Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Stopped MySQL Community Server.
-    Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Starting MySQL Community Server...
-    Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Started MySQL Community Server.
+.. code-block:: text
+
+  ● mysql.service - MySQL Community Server
+     Loaded: loaded (/lib/systemd/system/mysql.service; enabled; vendor preset: enabled)
+     Active: active (running) since Fri 2019-10-18 16:41:25 UTC; 2s ago
+    Process: 8380 ExecStart=/usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid (code=exited, status=0/SUCCESS)
+    Process: 8360 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+   Main PID: 8382 (mysqld)
+      Tasks: 27 (limit: 2361)
+     CGroup: /system.slice/mysql.service
+             └─8382 /usr/sbin/mysqld --daemonize --pid-file=/run/mysqld/mysqld.pid
+
+  Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Stopped MySQL Community Server.
+  Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Starting MySQL Community Server...
+  Oct 18 16:41:25 transport-encryption-mysql1 systemd[1]: Started MySQL Community Server.
 
 Configuring Mattermost
 ----------------------
 
 On the Mattermost server, open the file ``config.json`` and look for the ``DataSource`` value in the ``SqlSettings`` section. It should look similar to this:
 
-``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s",``
+.. code-block:: text
+
+  "DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s",
 
 At the end of the line, we can configure that TLS must be turned on with the ``tls`` flag which supports the following values:
 
@@ -79,7 +88,9 @@ At the end of the line, we can configure that TLS must be turned on with the ``t
 
 In our case we need to use ``skip-verify`` since we use a self-signed certificate. The configuration setting will now look like this:
 
-``"DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s&tls=skip-verify",``
+.. code-block:: text
+
+  "DataSource": "mmuser:sad09zusaopdhsad123@tcp(10.10.250.148:3306)/mattermost?charset=utf8mb4,utf8\u0026writeTimeout=30s&tls=skip-verify",
 
 If you're running Mattermost in a cluster, be sure to update the value on each node of the cluster. If you are using configuration in the database, be sure to update the ``systemd`` unit file and enable TLS for the configuration store.
 
@@ -87,8 +98,11 @@ Once complete, restart the Mattermost server and ensure the system is operationa
 
 .. code-block:: sh
 
-  ubuntu@transport-encryption-mattermost1:~$ sudo systemctl restart mattermost
-  ubuntu@transport-encryption-mattermost1:~$ systemctl status mattermost
+  sudo systemctl restart mattermost
+  systemctl status mattermost
+
+.. code-block:: text
+
   ● mattermost.service - Mattermost
      Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Fri 2019-10-18 16:47:08 UTC; 3s ago

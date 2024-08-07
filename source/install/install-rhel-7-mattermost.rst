@@ -14,28 +14,38 @@ Install Mattermost Server on RHEL 7
 
 2. Download `the latest version of the Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
 
-  ``wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz``
+  .. code-block:: sh
+  
+    wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
 
 3. Extract the Mattermost Server files.
 
-  ``tar -xvzf *.gz``
+  .. code-block:: sh
+  
+    tar -xvzf *.gz
 
 4. Move the extracted file to the ``/opt`` directory.
 
-  ``sudo mv mattermost /opt``
+  .. code-block:: sh
+  
+    sudo mv mattermost /opt
 
 5. Create the storage directory for files.
 
-  ``sudo mkdir /opt/mattermost/data``
+  .. code-block:: sh
+  
+    sudo mkdir /opt/mattermost/data
 
   .. note::
     The storage directory will contain all the files and images that your users post to Mattermost, so you need to make sure that the drive is large enough to hold the anticipated number of uploaded files and images.
 
 6. Set up a system user and group called ``mattermost`` that will run this service, and set the ownership and permissions.
 
-  a. ``sudo useradd --system --user-group mattermost``
-  b. ``sudo chown -R mattermost:mattermost /opt/mattermost``
-  c. ``sudo chmod -R g+w /opt/mattermost``
+  .. code-block:: sh
+  
+    sudo useradd --system --user-group mattermost
+    sudo chown -R mattermost:mattermost /opt/mattermost
+    sudo chmod -R g+w /opt/mattermost
 
 7. Set up the database driver in the file ``/opt/mattermost/config/config.json``. Open the file as root in a text editor and make the following changes:
 
@@ -44,14 +54,18 @@ Install Mattermost Server on RHEL 7
     1.  Set ``"DriverName"`` to ``"postgres"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values:
 
-     ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
+  .. code-block:: text
+
+    "postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"``.
 
   -  If you are using MySQL:
 
     1.  Set ``"DriverName"`` to ``"mysql"``
     2.  Set ``"DataSource"`` to the following value, replacing ``<mmuser-password>`` and ``<host-name-or-IP>`` with the appropriate values. Also make sure that the database name is ``mattermost`` instead of ``mattermost_test``:
 
-      ``"mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"``
+      .. code-block:: text
+
+        "mmuser:<mmuser-password>@tcp(<host-name-or-IP>:3306)/mattermost?charset=utf8mb4,utf8&writeTimeout=30s"
 
 8. Also set ``"SiteURL"`` to the full base URL of the site (e.g. ``"https://mattermost.example.com"``).
 
@@ -59,11 +73,15 @@ Install Mattermost Server on RHEL 7
 
     a. Change to the ``mattermost`` directory:
 
-      ``cd /opt/mattermost``
+      .. code-block:: sh
+
+        cd /opt/mattermost
 
     b. Start the Mattermost server as the user mattermost:
 
-      ``sudo -u mattermost ./bin/mattermost``
+      .. code-block:: sh
+
+        sudo -u mattermost ./bin/mattermost
 
   When the server starts, it shows some log information and the text ``Server is listening on :8065``. You can stop the server by pressing pressing :kbd:`Ctrl` :kbd:`C` on Windows or Linux, or :kbd:`⌘` :kbd:`C` on Mac, in the terminal window.
 
@@ -71,7 +89,9 @@ Install Mattermost Server on RHEL 7
 
   a. Create the Mattermost configuration file:
 
-    ``sudo touch /etc/systemd/system/mattermost.service``
+    .. code-block:: sh
+
+      sudo touch /etc/systemd/system/mattermost.service
 
   b. Open the configuration file in your favorite text editor, and copy the following lines into the file:
 
@@ -99,23 +119,33 @@ Install Mattermost Server on RHEL 7
 
   c. Set the service file permissions.
 
-    ``sudo chmod 644 /etc/systemd/system/mattermost.service``
+    .. code-block:: sh
+
+      sudo chmod 644 /etc/systemd/system/mattermost.service
 
   d. Reload the systemd services.
 
-    ``sudo systemctl daemon-reload``
+    .. code-block:: sh
+
+      sudo systemctl daemon-reload
 
   e. Set Mattermost to start on boot.
 
-    ``sudo systemctl enable mattermost``
+    .. code-block:: sh
+
+      sudo systemctl enable mattermost
 
 11. Start the Mattermost server.
 
-  ``sudo systemctl start mattermost``
+  .. code-block:: sh
+
+    sudo systemctl start mattermost
 
 12. Verify that Mattermost is running.
 
-  ``curl http://localhost:8065``
+  .. code-block:: sh
+
+    curl http://localhost:8065
 
   You should see the HTML that's returned by the Mattermost server.
 

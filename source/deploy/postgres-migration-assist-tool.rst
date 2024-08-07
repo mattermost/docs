@@ -53,7 +53,7 @@ Run the following command to check the MySQL database schema:
 
 This command outputs the readiness status and prints required fixes for common issues. The flags for fixes are as follows (where all fixes can be used together at the same time):
 
-.. code-block:: sh
+.. code-block:: text
 
    --fix-artifacts               Removes the artifacts from older versions of Mattermost
    --fix-unicode                 Removes the unsupported unicode characters from MySQL tables
