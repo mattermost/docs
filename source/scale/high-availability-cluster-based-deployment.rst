@@ -70,7 +70,7 @@ Configuration settings
 
 1. High availability is configured in the ``ClusterSettings`` section of ``config.json`` and the settings are viewable in the System Console. When high availability is enabled, the System Console is set to read-only mode to ensure all the ``config.json`` files on the Mattermost servers are always identical. However, for testing and validating a high availability setup, you can set ``ReadOnlyConfig`` to ``false``, which allows changes made in the System Console to be saved back to the configuration file.
 
-  .. code-block:: text
+  .. code-block:: json
 
     "ClusterSettings": {
             "Enable": false,
@@ -305,7 +305,7 @@ To configure a multi-database Mattermost server:
 
 Here's an example ``SqlSettings`` block for one master and two read replicas:
 
-.. code-block:: text
+.. code-block:: json
 
   "SqlSettings": {
         "DriverName": "mysql",

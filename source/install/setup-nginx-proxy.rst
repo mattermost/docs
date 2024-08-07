@@ -142,7 +142,7 @@ If you're running certbot as stand-alone you'll see this error:
 
 If you're running Let's Encrypt within Mattermost you'll see this error:
 
-.. code-block:: text
+.. code-block:: json
 
     {"level":"error","ts":1609092001.752515,"caller":"http/server.go:3088","msg":"http: TLS handshake error from ip:port: 429 urn:ietf:params:acme:error:rateLimited: Error creating new order :: too many failed authorizations recently: see https://letsencrypt.org/docs/rate-limits/","source":"httpserver"}
 
