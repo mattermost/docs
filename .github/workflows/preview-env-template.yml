@@ -45,10 +45,38 @@ jobs:
           source_dir: ./build/html
           destination_dir: ${{ inputs.PR_NUMBER }}
 
+      - name: Get changed files
+        id: changed-files
+        uses: tj-actions/changed-files@v44
+        with: 
+          files: '**/*.rst'
+
+      - name: Split file names
+        id: split-file-names
+        run: |
+          file_count=$(echo "${{ steps.changed-files.outputs.all_changed_and_modified_files }}" | wc -w)
+          echo "file_count=$file_count" >> $GITHUB_OUTPUT
+
+      - name: Extract path
+        id: extract-path
+        run: |
+          changed_files="${{ steps.changed-files.outputs.all_changed_and_modified_files }}"
+          processed_files=""
+          for file in ${changed_files}; do
+            file_paths=$(echo "$file" | sed 's|^[^/]*/||; s|\.[^.]*$||')
+            processed_files+="$file_paths "
+          done
+          if [ "${{ steps.split-file-names.outputs.file_count }}" -le 10 ]; then
+            echo "file_paths=$processed_files" >> $GITHUB_OUTPUT
+          fi
+
       - name: Add comment to PR
         uses: peter-evans/create-or-update-comment@7dfe4b0aa0c4bbd06d172692ff8a9e18381d6979 # v3.0.1
+        env: 
+          file_paths: ${{ steps.extract-path.outputs.file_paths }}
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ inputs.PR_NUMBER }}
           body: |
             Newest code from ${{ inputs.TRIGGERING_ACTOR }} has been published to [preview environment](http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ inputs.PR_NUMBER }}) for Git SHA ${{ inputs.COMMIT_SHA }}
+            Links: ${{ env.file_paths }}
