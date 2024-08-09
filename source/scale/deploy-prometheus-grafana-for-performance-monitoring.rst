@@ -27,7 +27,7 @@ Install Prometheus
 
 2. The following settings are recommended in the Prometheus configuration file named ``prometheus.yml``:
 
-   .. code:: yaml
+   .. code-block:: yaml
 
       # my global config
       global:

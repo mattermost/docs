@@ -162,7 +162,7 @@ Headings
 
 Make a heading by typing ``#`` and a space before your title. For smaller headings, use more ``#``'s.
 
-.. code-block:: none
+.. code-block:: text
 
   ## Large Heading
   ### Smaller Heading
@@ -175,7 +175,7 @@ Renders as:
 
 Alternatively, you can underline the text using equal signs ``===`` or hyphens ``---`` to create headings.
 
-.. code-block:: none
+.. code-block:: text
 
   Large Heading
   -------------
@@ -190,7 +190,7 @@ Lists
 
 Create a list by using asterisks ``*``, hyphens ``-``, and/or plus signs ``+`` interchangeably as bullets. Indent bullet points by adding two spaces in front each one.
 
-.. code-block:: none
+.. code-block:: text
 
   * item one
   - item two
@@ -205,7 +205,7 @@ Renders as:
 
 Make an ordered list by using numbers instead:
 
-.. code-block:: none
+.. code-block:: text
 
   1. Item one
   1. Item two
@@ -219,7 +219,7 @@ Renders as:
 
 You can also start a list at any number:
 
-.. code-block:: none
+.. code-block:: text
 
   4. The first list number is 4.
   1. The second list number is 5.
@@ -233,7 +233,7 @@ Renders as:
 
 Make a task list by including square brackets ``[ ]``. Mark a task as complete by adding an ``x``.
 
-.. code-block:: none
+.. code-block:: text
 
   - [ ] Item one
   - [ ] Item two
@@ -251,7 +251,7 @@ Creating a fixed-width code block is recommended for pasting multi-line blocks o
 
 This can be accomplished by placing three backticks ``````` on the line directly above and directly below your code:
 
-.. code-block:: none
+.. code-block:: text
 
   ```
   this is my
@@ -265,7 +265,7 @@ This can be accomplished by placing three backticks ``````` on the line directly
 
 Or by indenting each line by four spaces:
 
-.. code-block:: none
+.. code-block:: text
 
       this is my
       code block
@@ -283,7 +283,7 @@ Supported languages and their aliases include:
 
 Example:
 
-.. code-block:: none
+.. code-block:: text
 
   ``` go
   package main
@@ -320,7 +320,7 @@ In-line code
 
 Create in-line monospaced code text by surrounding it with backticks `````. Don't use single quotes ``'``.
 
-.. code-block:: none
+.. code-block:: text
 
   `monospace`
 
@@ -335,7 +335,7 @@ To add in-line images to text, use an exclamation mark ``!`` followed by the ``a
 
 Example:
 
-.. code-block:: none
+.. code-block:: text
 
   ![alt text](URL of image "Hover text")
 
@@ -348,7 +348,7 @@ You can set the width and height of the displayed image after the URL of the ima
 
 Examples:
 
-.. code-block:: none
+.. code-block:: text
 
   .. |mattermost-icon-76x76| image:: ../images/icon-76x76.png
   .. |mattermost-icon-50x76| image:: ../images/icon-50x76.png
@@ -356,7 +356,7 @@ Examples:
 In-line image with hover text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: none
+.. code-block:: text
 
   ![Mattermost](../images/icon-76x76.png "Mattermost Icon")
 
@@ -371,7 +371,7 @@ In-line image with link
 .. note::
   An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
 
-.. code-block:: none
+.. code-block:: text
 
   [![Mattermost](../images/icon-76x76.png)](https://github.com/mattermost/mattermost)
 
@@ -385,7 +385,7 @@ In-line image displayed with fixed width and height
 
 Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
-.. code-block:: none
+.. code-block:: text
 
   ![Mattermost](../images/icon-76x76.png =50x76 "Mattermost Icon")
 
@@ -400,7 +400,7 @@ In-line image displayed with fixed width
 
 Example: An in-line image that's 50 pixels wide where the system adjusts the height to maintain the original aspect ratio.
 
-.. code-block:: none
+.. code-block:: text
 
   ![Mattermost](../images/icon-76x76.png =50 "Mattermost Icon")
 
@@ -435,7 +435,7 @@ Tables
 
 Create a table by placing a dashed line ``---`` under the header row, then separating each column with using pipes ``|``. The columns don’t need to line up exactly. Choose how to align table columns by including colons ``:`` within the header row.
 
-.. code-block:: none
+.. code-block:: text
 
   | Left-Aligned  | Center Aligned  | Right Aligned |
   | :------------ |:---------------:| -----:|
@@ -459,7 +459,7 @@ Math Formulas
 
     This feature is :ref:`disabled by default <configure/site-configuration-settings:enable inline latex rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-  .. code-block:: none
+  .. code-block:: text
 
     $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
 
@@ -476,7 +476,7 @@ Math Formulas
 
     This feature is :ref:`disabled by default <configure/site-configuration-settings:enable latex code block rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-  .. code-block:: none
+  .. code-block:: text
 
     ```latex
     X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]

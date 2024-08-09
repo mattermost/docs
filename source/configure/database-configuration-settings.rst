@@ -90,7 +90,7 @@ Data source
 |                                                                                                                                          |
 | To specify collation:                                                                                                                    |
 |                                                                                                                                          |
-| .. code-block:: none                                                                                                                     |
+| .. code-block:: text                                                                                                                     |
 |                                                                                                                                          |
 |   "SqlSettings": {                                                                                                                       |
 |       "DataSource":                                                                                                                      |
@@ -100,7 +100,7 @@ Data source
 |                                                                                                                                          |
 | If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:                                                          |
 |                                                                                                                                          |
-| .. code-block:: none                                                                                                                     |
+| .. code-block:: text                                                                                                                     |
 |                                                                                                                                          |
 |   "SqlSettings": {                                                                                                                       |
 |       "DataSource": "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8",                                        |
@@ -565,7 +565,7 @@ Replica lag settings
 
       For more information on roles, see the `PostgreSQL documentation <https://www.postgresql.org/docs/10/default-roles.html>`__.
 
-      .. code-block:: bash
+      .. code-block:: sh
 
         sudo -u postgres psql
         postgres=# GRANT pg_monitor TO mmuser;
@@ -574,7 +574,7 @@ Replica lag settings
 3. Navigate to your Grafana instance monitoring Mattermost and open the `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`__ dashboard.
 4. The ``QueryTimeLag`` chart is already setup for you utilizing the existing ``Replica Lag`` chart. If using ``QueryAbsoluteLag`` metric clone the ``Replica Lag`` chart and edit the query to use the below absolute lag metrics and modify the title to be ``Replica Lag Absolute``.
 
-  .. code-block:: none
+  .. code-block:: text
 
     mattermost_db_replica_lag_abs{instance=~"$server"}
 

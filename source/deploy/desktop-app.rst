@@ -27,7 +27,7 @@ You can customize and distribute your own Mattermost desktop application by conf
 
   Example
   
-.. code-block:: none
+.. code-block:: text
 
       defaultTeams: [
         {
@@ -50,7 +50,7 @@ You can customize and distribute your own Mattermost desktop application by conf
 
   Examples
 
-.. code-block:: none
+.. code-block:: text
 
       helpLink: 'https://docs.mattermost.com/messaging/managing-desktop-app-servers.html'
       helpLink: ''
@@ -65,7 +65,7 @@ You can customize and distribute your own Mattermost desktop application by conf
 
   Examples
 
-.. code-block:: none
+.. code-block:: text
 
       enableServerManagement: true
 
@@ -85,7 +85,7 @@ You can distribute the official Windows desktop app silently to end users, pre-c
   - Open a text editor of your choice, such as Notepad or Notepad++.
   - Copy and paste the following commands in the text file:
 
-.. code-block:: none
+.. code-block:: text
 
       rem "Step 1: Install Mattermost desktop app silently into user's local disk"
       start \\SERVER\shared_folder\mattermost-setup-4.6.2-win.exe --silent
@@ -134,7 +134,7 @@ Windows App: Silently removing the app
 
 To remove the app silently from a user's computer, you can run the following command:
 
-.. code-block:: none
+.. code-block:: text
   
   %userprofile%\AppData\local\Programs\mattermost-desktop\Uninstall Mattermost.exe /currentuser /S
     

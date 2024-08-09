@@ -46,13 +46,13 @@ Build gets stuck at ``bundleReleaseJsAndAssets``
 
 As a workaround, you can bundle the ``js`` manually first with
 
-.. code-block:: none
+.. code-block:: sh
 
   react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
 
 and then ignore the gradle task with
 
-.. code-block:: none
+.. code-block:: sh
 
   ./gradlew assembleRelease -x bundleReleaseJsAndAssets
 
@@ -71,7 +71,7 @@ This can occur if the server running Mattermost is configured with an incorrect 
 
 For example:
 
-.. code-block:: none
+.. code-block:: text
 
   "SqlSettings": {
       "DataSource": "<user:pass>@<servername>/mattermost?charset=utf8mb4,utf8",

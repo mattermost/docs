@@ -29,13 +29,13 @@ Configuring NGINX
 
 On the NGINX server, connect to both servers with a sudo or root user. Open the Mattermost proxy configuration and search for the following line twice:
 
-.. code-block:: none
+.. code-block:: text
 
   proxy_pass http://backend;
 
 Change the protocol from ``http`` to ``https``:
 
-.. code-block:: none
+.. code-block:: text
 
   proxy_pass https://backend;
 
@@ -48,12 +48,12 @@ On the Mattermost server, change to the config directory of Mattermost and gener
 
 **Note:** Alternatively you can sign a certificate from your company's CA.
 
-.. code-block:: none
+.. code-block:: sh
 
-  $ cd /opt/mattermost/config
-  $ openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
-  $ chown root:mattermost *.pem
-  $ chmod 640 *.pem
+  cd /opt/mattermost/config
+  openssl req -x509 -newkey rsa:4096 -keyout key.pem -out cert.pem -days 365 -nodes
+  chown root:mattermost *.pem
+  chmod 640 *.pem
 
 
 Once complete, open the file ``config.json`` and modify the values ``ConnectionSecurity``, ``TLSCertFile`` and ``TLSKeyFile`` in the ``ServiceSettings`` section.
@@ -98,10 +98,13 @@ Once complete, open the file ``config.json`` and modify the values ``ConnectionS
 
 Restart the Mattermost server and ensure it's up and running:
 
-.. code-block:: none
+.. code-block:: sh
 
-  $ sudo systemctl restart mattermost
-  $ systemctl status mattermost
+  sudo systemctl restart mattermost
+  systemctl status mattermost
+
+.. code-block:: text
+
   ● mattermost.service - Mattermost
      Loaded: loaded (/lib/systemd/system/mattermost.service; static; vendor preset: enabled)
      Active: active (running) since Mon 2019-10-28 16:45:29 UTC; 1h 15min ago
@@ -109,6 +112,6 @@ Restart the Mattermost server and ensure it's up and running:
 
 Finally, on the **NGINX server**, reload the configuration to ensure that requests are sent on HTTPS:
 
-.. code-block:: none
+.. code-block:: sh
 
-  $ sudo systemctl reload nginx
+  sudo systemctl reload nginx

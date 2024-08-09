@@ -35,9 +35,10 @@ Sample configuration
 To set these environment variables while running the Mattermost server via ``systemd``, modify the ``mattermost.service`` like this:
 
   .. note::
+
     Be sure to replace ``127.0.0.1:3128`` with the correct values for your proxy servers.
 
-  .. code-block:: none
+  .. code-block:: text
 
     [Unit]
     Description=Mattermost

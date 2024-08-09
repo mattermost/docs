@@ -20,7 +20,7 @@ In a production setting, use a proxy server for greater security and performance
 
 3. Open the file as *root* in a text editor and add the following contents, where *{version}* is **7** for RHEL 7:
 
-  .. code-block:: none
+  .. code-block:: text
   
     [nginx]
     name=nginx repo

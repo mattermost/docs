@@ -134,12 +134,15 @@ Encryption-at-rest is available for messages via hardware and software disk encr
 Use sockets for the database
 ----------------------------
 
-.. code-block:: bash
+.. code-block:: sh
 
-    $ mysql -u root -p
-    CREATE DATABASE mattermostdb;
-    CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
-    GRANT ALL ON mattermostdb.* TO mmuser;
+  mysql -u root -p
+
+.. code-block:: sql
+
+  CREATE DATABASE mattermostdb;
+  CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
+  GRANT ALL ON mattermostdb.* TO mmuser;
 
 Mattermost is configured in ``/etc/webapps/mattermost/config.json``, and strings need to be quoted.
 
@@ -178,7 +181,7 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
 
 Finally, run this command to verify the permissions on your Mattermost directory:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo chown -R mattermost:mattermost /opt/mattermost
 
@@ -187,7 +190,7 @@ Modify the Mattermost ``systemd`` file
 
 First, find the ``mattermost.service`` file using:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo systemctl status mattermost.service
 

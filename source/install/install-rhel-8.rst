@@ -51,14 +51,9 @@ Install
 
 Ahead of installing the Mattermost Server, it’s good practice to update all your repositories and, where required, update existing packages by running the following commands:
 
-.. code-block:: none
-  :class: mm-code-block
+.. code-block:: sh
 
     sudo dnf update
-
-.. code-block:: none
-  :class: mm-code-block
-
     sudo dnf upgrade
 
 After any updates, and any system reboots, are complete, install the Mattermost Server.
@@ -82,8 +77,7 @@ Remove Mattermost
 
 If you wish to remove the Mattermost Server for any reason, you must stop the Mattermost Server, back up all important files, and then run this command:
 
-.. code-block:: none
-  :class: mm-code-block
+.. code-block:: sh
 
    sudo rm /opt/mattermost
 

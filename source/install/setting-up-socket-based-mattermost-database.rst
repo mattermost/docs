@@ -25,7 +25,7 @@ With TCP socket
 - In the connections and authentications section, set the ``listen_address`` list
   line per your needs:
 
-   .. code-block:: bash
+   .. code-block:: sh
 
       /var/lib/postgres/data/postgresql.conf
       listen_address = 'localhost,my_local_ip_address'
@@ -34,7 +34,7 @@ With TCP socket
 
 - Then add a line like the following to the authentication config:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
      /var/lib/postgres/data/pg_hba.conf
      # TYPE  DATABASE        USER            ADDRESS                 METHOD
@@ -43,28 +43,28 @@ With TCP socket
 
 - Run the setup using:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
-     $ psql --host=ip_address --dbname=mattermostdb --username=mmuser --password
+    psql --host=ip_address --dbname=mattermostdb --username=mmuser --password
 
 With Unix socket
 ----------------
 
 - Create the new user while connecting to the server as ``postgres`` user:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
      sudo -u postgres createuser mattermost
 
 - Create the Mattermost database, owned by ``mattermost`` user:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
      sudo -u postgres createdb -O mattermost mattermostdb
 
 - Setup the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
      local    mattermostdb    mattermost    peer
 
@@ -72,7 +72,7 @@ With Unix socket
 
 - Run the setup using:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
      sudo -u mattermost psql --dbname=mattermostdb
 

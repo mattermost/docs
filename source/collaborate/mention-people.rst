@@ -31,7 +31,7 @@ Type *@* to bring up a list of team members who can be mentioned. To filter the 
 
 The following example sends a special mention notification to Alice, whose username is **alice**. The notification alerts her of the channel and message where she was mentioned. If Alice is away from Mattermost and has email notifications turned on, she'll receive an email alert of her mention along with the message text.
 
-.. code-block:: none
+.. code-block:: text
 
   @alice how did your interview go with the new candidate?
 
@@ -44,7 +44,7 @@ You can mention an entire channel by typing ``@channel`` or ``@all``. All member
 
 You can ignore channel-wide mentions in specific channels in the **Channel Menu > Notification Preferences > Ignore mentions for @channel, @here and @all**.
 
-.. code-block:: none
+.. code-block:: text
 
   @channel great work on interviews this week. I think we found some excellent potential candidates!
 
@@ -55,7 +55,7 @@ If a channel has five or more members, you may be prompted to confirm that you w
 
 You can mention everyone who is online in a channel by typing ``@here``. This sends a desktop notification and push notification to members of the channel who are online. It's counted as a mention in the sidebar. Members who are offline don't receive a notification. When they return to Mattermost they won't see a mention counted in the channel sidebar. Members who are away receive a desktop notification only if they have notifications set to **For all activity**, and they won't see a mention counted in the sidebar.
 
-.. code-block:: none
+.. code-block:: text
 
   @here can someone complete a quick review of this?
 
@@ -82,7 +82,7 @@ Group mention identifiers (slugs) use the LDAP group name by default. To customi
 
 As with ``@username`` mentions, use *@* to bring up a list of groups that can be mentioned. To filter the list, type the first few letters of any group. Press the :kbd:`↑` and :kbd:`↓` arrow keys to scroll through entries in the list, and then press :kbd:`Enter` on Windows or Linux, or pressing :kbd:`↵` on Mac to select the group you want to mention.
 
-.. code-block:: none
+.. code-block:: text
 
   @dev-managers great work hitting all of our code coverage goals this quarter!
 

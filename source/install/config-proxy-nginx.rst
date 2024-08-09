@@ -25,7 +25,7 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
     - Note that the IP address included in the examples in this documentation may not match your network configuration.
     - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
 
-  .. code-block:: none
+  .. code-block:: text
 
     upstream backend {
        server 10.10.10.2:8065;

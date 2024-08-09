@@ -5,8 +5,7 @@ Before you start the Mattermost Server, you need to edit the configuration file.
 
 We recommend taking a backup of this default config ahead of making changes:
 
-.. code-block:: none
-  :class: mm-code-block 
+.. code-block:: sh
         
     sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
 
@@ -18,8 +17,7 @@ Configure the following properties in this file:
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
 	
-.. code-block:: none
-  :class: mm-code-block 
+.. code-block:: sh
 
     sudo systemctl start mattermost
 

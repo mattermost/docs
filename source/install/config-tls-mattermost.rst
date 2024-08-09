@@ -27,7 +27,9 @@ Configure TLS on the Mattermost server
 
 2. Activate the ``CAP_NET_BIND_SERVICE`` capability to allow Mattermost to bind to low ports.
 
-  ``sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost``
+    .. code-block:: sh
+
+       sudo setcap cap_net_bind_service=+ep /opt/mattermost/bin/mattermost
 
 3. Install the security certificate. You can use `Let's Encrypt <https://letsencrypt.org/>`__ to automatically install and setup the certificate, or you can specify your own certificate.
 
