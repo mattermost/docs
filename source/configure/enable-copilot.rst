@@ -1,5 +1,5 @@
-Enable Copilot (Beta)
-=======================
+Enable Copilot
+==============
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -9,10 +9,10 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 Setup
 ------
 
-Mattermost AI Copilot comes preinstalled from Mattermost Server v9.7 or later. You must be a Mattermost system admin to `enable it <#enable>`__ and `configure it <#mattermost-configuration>`__ using the System Console.
+Mattermost AI Copilot comes pre-installed from Mattermost Server v9.7 or later. You must be a Mattermost system admin to `enable <#enable>`__ and `configure  <#mattermost-configuration>`__ it using the System Console.
 
 .. note::
-  If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using AI Copilot with Mattermost v9.7 and later.
+  If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using Mattermost Copilot with Mattermost v9.7 and later.
   
   The Copilot integration is compatible with the following Mattermost Server versions:
 
@@ -39,14 +39,14 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 - `OpenAI <https://openai.com/index/openai-api/>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
-- `OpenAI Compatible <https://github.com/go-skynet/LocalAI>`_
+- `OpenAI-compatible (e.g., LocalAI) <https://github.com/go-skynet/LocalAI>`_
 
 .. tab:: Open AI
 
   1. Obtain an `OpenAI API key <https://platform.openai.com/account/api-keys>`_.
   2. Select **OpenAI** in the **AI Service** dropdown.
   3. Enter your OpenAI API key in the **API Key** field.
-  4. Enter a model name in the **Default Model** field, such as `gpt-4` or `gpt-3.5-turbo`.
+  4. Enter a model name in the **Default Model** field, such as `gpt-4o` or `gpt-3.5-turbo`.
   5. (Optional) If using multiple organizations on OpenAI, specify your **Organization ID** to direct API usage and billing accordingly.
 
 .. tab:: Anthropic (Claude)
@@ -54,11 +54,11 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   1. Obtain an `Anthropic API key <https://console.anthropic.com/account/keys>`_.
   2. Select **Anthropic** in the **AI Service** dropdown.
   3. Enter your Anthropic API key in the **API Key** field.
-  4. Specify a model name in the **Default Model** field, like `claude-v1`.
+  4. Specify a model name in the **Default Model** field, like `claude-3-5-sonnet-20240620`.
 
 .. tab:: Azure OpenAI
 
-  For integrating with Microsoft Azure's OpenAI services, `see the official Azure Open AI documentation <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_.
+  For integrating with Microsoft Azure's OpenAI services, `see the official Azure OpenAI documentation <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_.
 
   1. Get `access to Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai>`_.
   2. Create a new OpenAI resource in Azure.
@@ -66,7 +66,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   4. In Mattermost, choose **OpenAI Compatible** in the **AI Service** dropdown.
   5. Enter your Azure resource's URL in the **API URL** field.
   6. Input your Azure resource API key in the **API Key** field.
-  7. Specify your model name in the **Default Model** field, for example, `gpt-3.5-turbo`.
+  7. Specify your model name in the **Default Model** field, for example, `gpt-4o`.
 
 .. tab:: OpenAI Compatible
 
@@ -77,6 +77,43 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   3. Enter the URL to your AI service in the **API URL** field.
   4. Enter your API key in the **API Key** field.
   5. Specify your model name in the **Default Model** field.
+
+Custom instructions
+====================
+
+Text input here is included in the prompt for every request. Use this to give your bots extra context or instructions. For example, you could list all of your organization's specific acronyms so the bot knows your vernacular and users can ask for definitions. Or you could give it specialized instructions such as adopting a specific personality or following a certain workflow. By customizing the instructions for each individual bot, you can create a more tailored AI experience for your specific needs.
+
+Enable Vision (Beta)
+=====================
+
+Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM support this features. Only available with OpenAI and OpenAI-compatable services.
+
+Copilot plugin metrics
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Metrics for the copilot plugin are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
+
+- ``copilot_system_plugin_start_timestamp_seconds``: The time the plugin started.
+- ``copilot_system_plugin_info``: The plugin version and installation ID.
+- ``copilot_api_time_seconds``: How long to execute API.
+- ``copilot_http_requests_total``: The total number of API requests.
+- ``copilot_http_errors_total``: The total number of http API errors.
+- ``copilot_llm_requests_total``: The total number of requests to upstream LLMs.
+
+Integrations
+~~~~~~~~~~~~
+
+Currently integrations are limited to DMs with the bots. The integrations will not operate from within a regular channel.
+
+Jira
+====
+
+Issues with public Jira instances can be fetched. No configuration is required for this integration.
+
+GitHub
+======
+
+If you have the GitHub plugin enabled, you can use the integration to fetch issues and PRs from your public and private Github repositories. The user is required to be logged in to GitHub though the plugin.
 
 Upgrade
 ~~~~~~~
