@@ -604,6 +604,51 @@ Use the following configuration for the baseline of the data migration:
 
   pgloader focalboard.load > focalboard_migration.log
 
+Calls
+~~~~~~~~~~
+
+If you are running a version of Mattermost that is greater than ``v9.9`` or the Calls plugin above ``v0.27``, you can opt to migrate the data for the plugin. We are going to take a similar approach with Boards and Playbooks migration and let pgloader create the tables.
+
+Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader``
+
+Use the following configuration for the baseline of the data migration:
+
+.. code:: none
+
+  LOAD DATABASE
+   FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
+   INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_db }}
+
+  WITH include drop, create tables, create indexes, reset sequences,
+   workers = 8, concurrency = 1,
+   multiple readers per thread, rows per range = 50000,
+   preserve index names
+
+  SET PostgreSQL PARAMETERS
+   maintenance_work_mem to '128MB',
+   work_mem to '12MB'
+
+  SET MySQL PARAMETERS
+   net_read_timeout  = '120',
+   net_write_timeout = '120'
+
+  CAST type json to jsonb drop typemod
+
+  INCLUDING ONLY TABLE NAMES MATCHING
+   ~/calls/
+
+  BEFORE LOAD DO
+   $$ ALTER SCHEMA public RENAME TO {{ .source_db }}; $$
+
+  AFTER LOAD DO
+   $$ ALTER SCHEMA {{ .source_db }} RENAME TO public; $$,
+   $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
+   $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
+
+.. code:: bash
+
+  pgloader calls.load > calls_migration.log
+
 Troubleshooting
 -----------------
 
