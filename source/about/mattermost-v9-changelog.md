@@ -44,7 +44,7 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
  - Added a new feature where an admin with user management permission can now edit a user's settings in **System Console > Users**. 
  - Added download functionality for admins to download server logs from **Server Logs** page in the **System Console**.
  - LDAP vendor errors are now included in the Support Packet.
- - Added metadata to the Support Packet.
+ - Added [metadata](https://docs.mattermost.com/manage/generating-support-packet.html#contents-of-a-support-packet) to the Support Packet.
  - We are now adding the user's ID and session ID to the audit log's Actor field for the login event, to match what we provide for the logout event.
  - Added support for custom status in bulk export/import.
  - Marked the ``RemoteTeamId`` field of the ``RemoteCluster`` entity as deprecated.
