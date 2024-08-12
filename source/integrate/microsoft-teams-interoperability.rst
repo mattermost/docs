@@ -71,6 +71,7 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 13. Select the following permissions:
 
  - ``Chat.Read.All``
+ - ``Presence.Read.All``
 
 14. Select **Add permissions** to submit the form.
 
