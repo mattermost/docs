@@ -5,15 +5,14 @@ Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-com
 Contents of a support packet
 ----------------------------
 
-A Mattermost Support Packet can contain the following files:
+A Mattermost support packet can contain the following files:
 
+- `metadata.yaml <#metadata>`__
 - ``mattermost.log``
 - ``plugins.json``
 - ``sanitized_config.json``
 - ``support_packet.yaml``
-- ``cpu.prof``
-- ``heap.prof``
-- ``goroutines``
+- `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
 - ``warning.txt`` (present when issues are encountered during packet generation)
 
 .. note:: 
@@ -61,6 +60,61 @@ Add the generated support packet to a Mattermost Support ticket, or share with w
 .. important::
 
    Disable debug logging once you've generated the support packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
+
+Metadata
+---------
+
+From Mattermost v9.11, generated support packets include a ``metadata.yaml`` file that contains the following information.
+
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| **Field name**        | **Required/Optional** | **Description**                                                                                                   |         **Example**        |
++=======================+=======================+===================================================================================================================+============================+
+| version               | Required              | Version of the schema that the current metadata file is compatible with.                                          | 1                          |
+|                       |                       | Current version is 1.                                                                                             |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| type                  | Required              | The type of the packet.                                                                                           | mattermost                 |
+|                       |                       | Each type of support packet can be mapped to a specific component generating the support packet.                  |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| generated_at          | Required              | The date and time the packet was created.                                                                         | 1707473288731              |
+|                       |                       | Value is in epoch (ms).                                                                                           |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| server_version        | Required              | Version of the server that the support packet was generated at.                                                   | 9.1.1                      |
+|                       |                       | Semver is expected.                                                                                               |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| server_id             | Required              | Unique identifier of the server.                                                                                  | 9qpiszyjr3g8bxda35abcd1234 |
+|                       |                       | Expected to be 26 characters or longer.                                                                           |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| license_id            | Optional              | Unique identifier of the current server's license.                                                                | abcdejisd67yigqhmkz4ho1234 |
+|                       |                       | Expected to be 26 characters or longer.                                                                           |                            |
+|                       |                       | This field is empty when there’s no license.                                                                      |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| customer_id           | Optional              | The id of the customer, as defined in the license file.                                                           | a1b2c3d4qbbr5cpkbpbmef123h |
+|                       |                       | Expected to be 26 characters or longer.                                                                           |                            |
+|                       |                       | Empty when there’s no license.                                                                                    |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| extras                | Optional              | Key/value of any additional information, specific to the plugin/component that generated the file.                |                            |
+|                       |                       | Can be useful for identifying the contents of the data.                                                           |                            |
+|                       |                       | Consider adding plugin (or component) versions in order to set expectation regarding the contents of this object. |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| extras.plugin_id      | Required for plugins  | The ID of the plugin.                                                                                             |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+| extras.plugin_version | Required for plugins  | The version of the plugin.                                                                                        |                            |
++-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
+
+For example:
+
+.. code-block:: yaml
+  :class: mm-code-block
+
+  version: 1
+  type: support-packet
+  generated_at: 1622569200
+  server_version: 9.1.1
+  server_id: 8fqk9rti13fmpxdd5934a3xsxh
+  license_id: 3g3pqn8in3brzjkozcn1kdidgr
+  customer_id: 74cmws7gf3ykpj31car7zahsny
+  extras:
+   plugin_version: 0.1.0
 
 Go performance metrics
 ----------------------
