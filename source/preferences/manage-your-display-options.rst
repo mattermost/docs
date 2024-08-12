@@ -40,20 +40,20 @@ Using Mattermost in a web browser or the desktop app, you can select **Import th
 
 In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the **Input Slack Theme** input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Sapphire” standard theme settings.
 
-Collapsed reply threads
------------------------
+Threaded discussions
+---------------------
 
-Collapsed Reply Threads offers an enhanced experience for users communicating in threads and replying to messages. Collapsed Reply Threads are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments. 
+Threaded discussions offers an enhanced experience for users communicating in threads and replying to messages. Threaded discussions are generally available in Mattermost Cloud and from self-hosted Mattermost v7.0, and are enabled by default for all new Mattermost deployments.
 
-Depending on how your system admin has :ref:`configured Collapsed Reply Threads <configure/site-configuration-settings:collapsed reply threads>` for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using Collapsed Reply Threads </collaborate/organize-conversations>` documentation to learn more about working with Collapsed Reply Threads.
+Depending on how your system admin has :ref:`configured threaded discussions <configure/site-configuration-settings:threaded discussions>` for your workspace, it may already be enabled for you, or you may be able to enable this feature for your account. See our :doc:`organize conversations using threaded discussions </collaborate/organize-conversations>` documentation to learn more about working with threaded discussions.
 
 .. tab:: Web/Desktop
 
-    Select **Collapsed Reply Threads > Edit** to manage this option.
+    Select **Threaded discussions > Edit** to manage this option.
 
 .. tab:: Mobile
 
-    Access **Settings** by tapping on your profile picture. Then, tap **Display** and **Collapsed Reply Threads**.
+    Access **Settings** by tapping on your profile picture. Then, tap **Display** and **Threaded discussions**.
 
 Clock display
 -------------

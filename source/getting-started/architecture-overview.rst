@@ -64,7 +64,7 @@ If a WSS connection is not available and HTTPS is substituted, the system will a
 Mattermost services ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The following table lists the Mattermost services ports for Mattermost Server, push proxy, and mobile app clients. System Admins with clients that need to speak to the Mattermost server without a proxy can open specific firewall ports as needed.
+The following table lists the Mattermost services ports for Mattermost Server, push proxy, and mobile app clients. System admins with clients that need to speak to the Mattermost server without a proxy can open specific firewall ports as needed.
 
 **Mattermost Server**
 

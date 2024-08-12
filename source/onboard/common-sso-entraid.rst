@@ -1,10 +1,10 @@
 :orphan:
 :nosearch:
 
-Configuring Office 365 as a Single Sign-On (SSO) service
+Configuring EntraID as a Single Sign-On (SSO) service
 --------------------------------------------------------
 
-Follow these steps to configure Mattermost to use your Office 365 logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
+Follow these steps to configure Mattermost to use your Entra ID logon credentials and Azure Active Directory account as a Single Sign-on (SSO) service for team creation, account creation, and sign-in.
 
 .. note::
 
@@ -42,16 +42,16 @@ Step 2: Generate a new client secret in Azure Portal
 
 .. image:: /images/AzureApp_App_Directory_IDsv2.png
 
-Step 3: Configure Mattermost for Office 365 SSO
+Step 3: Configure Mattermost for Entra ID SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to Mattermost, then go to **System Console > Authentication > OpenID Connect**.
 
-2. Select **Office 365** as the service provider.
+2. Select **Entra ID** as the service provider.
 
 3. Paste the **Directory (tenant) ID** from the Azure Portal as the **Directory (tenant) ID** in Mattermost.
 
-4. The **Discovery Endpoint** for OpenID Connect with Office 365 is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
+4. The **Discovery Endpoint** for OpenID Connect with Entra ID is prepopulated with ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``.
 
 5. Paste the **Application (client) ID** from the Azure Portal as the **Client ID** in Mattermost.
 
@@ -65,12 +65,12 @@ Step 3: Configure Mattermost for Office 365 SSO
 Note about Microsoft Active Directory Tenants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Office 365. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. You can learn more about `getting an Azure AD tenant here <https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`__.
+A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Entra ID. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. You can learn more about `getting an Azure AD tenant here <https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`__.
 
-To allow your Azure AD users to log in to Mattermost using Office 365 SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the `Microsoft Azure portal <https://portal.azure.com>`__. The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about `integrating apps with Azure AD here <https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`__.
+To allow your Azure AD users to log in to Mattermost using Entra ID SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the `Microsoft Azure portal <https://portal.azure.com>`__. The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about `integrating apps with Azure AD here <https://docs.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`__.
 
-If you don't register Mattermost in the Microsoft Azure AD tenant your organization uses, Office 365 SSO will likely fail for your users.
+If you don't register Mattermost in the Microsoft Azure AD tenant your organization uses, Entra ID SSO will likely fail for your users.
 
 .. note:: 
 
-  If you do not use Azure Active Directory, you may register Mattermost with your Office 365 or Azure account (a personal, work, or school account), then set up Office 365 SSO with Mattermost using the steps provided above.
+  If you do not use Azure Active Directory, you may register Mattermost with your Entra ID or Azure account (a personal, work, or school account), then set up Entra ID SSO with Mattermost using the steps provided above.

@@ -6,7 +6,7 @@
 Configure Mattermost server
 ----------------------------
 
-Create the System Admin user and set up Mattermost for general use.
+Create the system admin user and set up Mattermost for general use.
 
 1. Open a browser and navigate to your Mattermost instance. For example, if the IP address of the Mattermost server is ``10.10.10.2`` then go to ``http://10.10.10.2:8065``.
 

@@ -250,7 +250,7 @@ Specify destination targets
 
 Log records can be sent to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Log targets have been chosen based on support for the vast majority of log aggregators and other log analysis tools, without needing additional software installed.
 
-System Admins can define multiple log targets to:
+System admins can define multiple log targets to:
 
 - Mirror log output to files and log aggregators for redundancy.
 - Log certain entries to specific destinations. For example, all ``audit-content`` records can be routed to a different destination than the other levels.

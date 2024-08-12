@@ -24,7 +24,7 @@ Mattermost will confirm when your account is connected, and prompt you to enable
 Enable notifications
 ^^^^^^^^^^^^^^^^^^^^
 
-Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled, any messages you receive in a chat or group chat in Microsoft Teams will be appear in Mattermost as a notification, with a link to open the chat in Microsoft Teams and continue the conversation.
+Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled and you're away from Teams, any messages you receive in a chat or group chat in Microsoft Teams will be appear in Mattermost as a notification, with a link to open the chat in Microsoft Teams and continue the conversation. These notifications won't appear if you've been recently active in Teams.
 
 .. note::
   Your system administrator must :ref:`enable support for notifications <configure/plugins-configuration-settings:sync notifications>`. 

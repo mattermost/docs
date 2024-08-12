@@ -17,7 +17,7 @@ Manage channel members
 Add members to a channel
 ------------------------
 
-Using Mattermost in a web browser or the desktop app, any member of a channel can add other members to public or private channels, unless your System Admin has restricted access to do so.
+Using Mattermost in a web browser or the desktop app, any member of a channel can add other members to public or private channels, unless your system admin has restricted access to do so.
 
 .. tab:: Web/Desktop
 
