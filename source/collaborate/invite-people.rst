@@ -34,7 +34,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 
 .. note::
 
-  - A System Admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
+  - A system admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
   - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or :ref:`email invitations may not be enabled <configure/authentication-configuration-settings:enable email invitations>`.
 
 .. tab:: Web/Desktop

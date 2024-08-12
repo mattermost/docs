@@ -164,7 +164,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 
 .. tab:: Desktop app v5.0 onwards
 
-  Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, playbooks, and boards. 
+  Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, collaborative playbooks, and boards. 
   
   +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
   | On Windows & Linux                   | On macOS                      | Description                                                                                     |

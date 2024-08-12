@@ -1,17 +1,42 @@
 Subscription overview
 =====================
 
-Mattermost Professional and Mattermost Enterprise licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated. 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :titlesonly:
 
-Administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved. 
+   Cloud subscriptions </about/cloud-subscriptions>
+   Self-hosted subscriptions </about/self-hosted-subscriptions>
+   Editions and offerings </about/editions-and-offerings>
+
+Mattermost offers 2 types of subscription:
+
+* :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
+* :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for secure enterprise collaboration with full control over your data.
+* :doc:`Editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost's commercial edition, available plans, other plans, and product decisions.
+
+Mattermost Cloud  
+----------------
+
+Enterprises can inquire about Mattermost Cloud -- a secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc.
+
+Enterprises can choose between :doc:`dedicated </about/cloud-dedicated>` and :doc:`shared </about/cloud-shared>` infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed.
+
+Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
 Purchase Mattermost Licenses 
 ----------------------------
 
-Mattermost offers capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. Your plan subscription determines what features you have access to. When choosing a subscription:
+Mattermost offers self-hosted capabilities through **Mattermost Enterprise** and **Mattermost Professional** subscription plans. 
 
-- Mattermost self-hosted deployments require a license subscription key to be applied to access features in the Mattermost Enterprise or Professional plans via purchase options at https://mattermost.com/pricing/. 
+Mattermost self-hosted deployments require a license subscription key to be applied to access features. Your plan subscription determines what features you have access to. Talk to a `Mattermost expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
+:ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` and :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated.
+
+System administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved.
+
+Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
 Mattermost Nonprofit License program
 --------------------------------------
@@ -25,7 +50,7 @@ The Mattermost Nonprofit License enables nonprofit and open-source organizations
 What's included?
 ~~~~~~~~~~~~~~~~~
 
-A three-year subscription to our Mattermost Professional self-hosted offering for up to 1,000 users with a subscription fee of $250 USD. If the nonprofit has over 1,000 users, the application will undergo a review on a case-by-case basis. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit, open-source or charitable institution on our website and in our marketing materials.
+A three-year subscription to our Mattermost Professional Self-Hosted offering for up to 1,000 users with a subscription fee of $250 USD. If the nonprofit has over 1,000 users, the application will undergo a review on a case-by-case basis, both for Mattermost Professional Self-Hosted and Mattermost Professional Cloud offerings. Upon acceptance of these terms, Mattermost has the right to place the name and logo of the nonprofit, open-source or charitable institution on our website and in our marketing materials.
 
 Following the three-year subscription, the institution can renew the license every three years for an additional $250 USD subscription fee.
 
@@ -48,30 +73,18 @@ How to apply?
 ~~~~~~~~~~~~~
 
 To apply for the Mattermost Nonprofit License, `please complete this form <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=17664739497236>`_.
-Please note that it may take up to six weeks for us to respond to your request.
+
+.. note::
+  
+  Please note that it may take up to six weeks for us to respond to your request.
 
 Mattermost educational license program
 ---------------------------------------
 
-For academic licensing, please see: https://mattermost.com/education/
-
-Mattermost Enterprise Cloud  
----------------------------
-
-Enterprises can inquire about Mattermost Cloud Enterprise, a single-tenant cloud-managed service for Mattermost Enterprise hosted by Mattermost, Inc. The system is offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc. 
-
-For more information, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
-
+For academic licensing, please visit us online: https://mattermost.com/education/
 
 Frequently asked questions
 --------------------------
-
-Are my credit card details safe?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We use `Solupay <https://www.versapay.com/>`_ to process credit card transactions. We do not store any credit card details at any stage. Payments made by credit card are authenticated using `3D Secure <https://www.sc.com/bn/ways-to-bank/3d-secure-faq/>`_, which is PCI-DSS compliant.
-
-Should you wish to make payment using another method, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_
 
 Why do I need to provide my name and physical address when purchasing a subscription?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -132,7 +145,7 @@ The affected features include, but are not limited to, the following:
     :header: "Feature", "How it's affected", "What steps do I need to take?"
 
     "Elasticsearch", "Elasticsearch is automatically disabled and will start using the default database for indexing posts.", "None needed."
-    "AD/LDAP, SAML SSO, Office 365 SSO, and Google SSO", "Login options are no longer provided on the sign-in page. Users who previously signed in with one of these methods are no longer able to.
+    "AD/LDAP, SAML SSO, Entra ID SSO, and Google SSO", "Login options are no longer provided on the sign-in page. Users who previously signed in with one of these methods are no longer able to.
     
     Users who were already signed in can continue to use Mattermost until their session expires or until they log out.", "Users must be migrated to email authentication via **System Console > Users**. Select the drop-down menu for the relevant member, choose **Switch to Email/Password**, enter a new password, and choose **Reset**."
     "AD/LDAP", "Groups in the database are retained but cannot be used. Memberships are frozen in state for group synced teams/channels.

@@ -75,9 +75,9 @@ See the :doc:`Guest accounts documentation </onboard/guest-accounts>` for more i
 Admin attribute
 ~~~~~~~~~~~~~~~
 
-(Optional) The attribute in the SAML Assertion for designating System Admins. The users selected by the query will have access to your Mattermost server as System Admins. By default, System Admins have complete access to the Mattermost System Console.
+(Optional) The attribute in the SAML Assertion for designating system admins. The users selected by the query will have access to your Mattermost server as system admins. By default, system admins have complete access to the Mattermost System Console.
 
-Existing members that are identified by this attribute will be promoted from member to System Admin upon next login. The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are manually demoted to members in **System Console > User Management** to ensure access is restricted immediately.
+Existing members that are identified by this attribute will be promoted from member to system admin upon next login. The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are manually demoted to members in **System Console > User Management** to ensure access is restricted immediately.
 
 1. Navigate to **System Console > Authentication > SAML 2.0**.
 2. Set **Enable Admin Attribute** to ``true``.
@@ -85,7 +85,7 @@ Existing members that are identified by this attribute will be promoted from mem
 4. Choose **Save**.
 
 .. note:: 
-    If the ``admin`` attribute is set to ``false`` the member's role as System Admin is retained. However if the attribute is removed/changed, System Admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, System Admins can be manually promoted/demoted in **System Console > User Management**.
+    If the ``admin`` attribute is set to ``false`` the member's role as system admin is retained. However if the attribute is removed/changed, system admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, system admins can be manually promoted/demoted in **System Console > User Management**.
 
 
 Configuration assistance
