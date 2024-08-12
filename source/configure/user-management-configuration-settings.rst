@@ -138,7 +138,10 @@ Apply roles to users using the System Console. The current available roles are *
 Manage user's settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v9.11, system admins can edit user settings on behalf of individual users in the System Console. Users can view, modify, and override their own settings at any time.
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v9.11, system admins can help users customize their Mattermost experience by editing the user's settings within the System Console. Users can view, modify, and override their own settings at any time.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user you want to manage.
