@@ -536,3 +536,50 @@ The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to confi
             "MaxQueueSize": 1000
         }
     }')
+
+
+How can I turn on trace logging for LDAP?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please use the following JSON configuration as as starting point to enable trace logging for LDAP
+
+.. code-block:: JSON
+
+    {
+        "ldap-file": {
+            "type": "file",
+            "format": "plain",
+            "levels": [
+                {
+                    "id": 144,
+                    "name": "LDAPTrace"
+                },
+                {
+                    "id": 143,
+                    "name": "LDAPDebug"
+                },
+                {
+                    "id": 142,
+                    "name": "LDAPInfo"
+                },
+                {
+                    "id": 141,
+                    "name": "LDAPWarn",
+                    "stacktrace": true
+                },
+                {
+                    "id": 140,
+                    "name": "LDAPError",
+                    "stacktrace": true
+                }
+            ],
+            "options": {
+                "filen_name": "./logs/ldap",
+                "max_size": 100,
+                "max_age": 14,
+                "max_backups": 3,
+                "compress": false
+            },
+            "maxqueuesize": 1000
+        }
+    }
