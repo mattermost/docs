@@ -62,7 +62,7 @@ gantt
     v9.11 Extended Support :crit,    2024-08-16, 2025-05-15
 
     section 2025
-    v9.11 Extended Support :crit,    2024-08-16, 2025-05-15
+    v10.5 Extended Support :crit,    2025-02-16, 2025-11-15
 ```
 
 (esr-notifications)=
