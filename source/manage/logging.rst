@@ -541,7 +541,7 @@ The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to confi
 How can I turn on trace logging for LDAP?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Please use the following JSON configuration as as starting point to enable trace logging for LDAP
+Please use the following JSON configuration as as starting point to enable trace logging for LDAP:
 
 .. code-block:: JSON
 
