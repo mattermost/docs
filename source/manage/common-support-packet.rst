@@ -64,7 +64,7 @@ Add the generated support packet to a Mattermost Support ticket, or share with w
 Metadata
 ---------
 
-From Mattermost v9.11, generated support packets include a ``metadata.yaml`` file that contains the following information.
+From Mattermost v9.11, generated Support Packets include a ``metadata.yaml`` file that contains the following information.
 
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | **Field name**        | **Required/Optional** | **Description**                                                                                                   |         **Example**        |
