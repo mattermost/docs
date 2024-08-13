@@ -107,6 +107,10 @@ Deploy Mattermost
     stringData:
       license: <LICENSE_FILE_CONTENTS>
 
+  .. note::
+    An enterprise license is required for a seamless experience running a Mattermost installation with multiple server instances. If you will be deploying Mattermost without an enterprise license it is recommended to only use a single server instance. This can be done by adding ``Replicas:  1`` to the ``spec`` section in step 2.
+    For more information a running highly-available Mattermost deployment please refer to :doc:`this documentation </scale/high-availability-cluster-based-deployment>`.
+
 2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the YAML structure below, and make any necessary adjustments for your configuration and environment. 
 
   .. code-block:: yaml
