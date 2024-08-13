@@ -5,7 +5,7 @@ Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-com
 Contents of a support packet
 ----------------------------
 
-A Mattermost support packet can contain the following files:
+A Mattermost Support Packet can contain the following files:
 
 - `metadata.yaml <#metadata>`__
 - ``mattermost.log``
