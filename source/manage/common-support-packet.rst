@@ -59,7 +59,7 @@ Add the generated support packet to a Mattermost Support ticket, or share with w
 
 .. important::
 
-   Disable debug logging once you've generated the support packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
+   Disable debug logging once you've generated the Support Packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
 
 Metadata
 ---------
