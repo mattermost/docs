@@ -25,11 +25,13 @@ Install
 
 Download the Mattermost ``migration-assist`` tool from the GitHub repository `releases page <https://github.com/mattermost/migration-assist/releases>`_.
 
-While you can run the ``migration-assist`` tool on the same server as your Mattermost deployment, we recommend running the tool in a virtual machine on the same network as your Mattermost server instead. The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient. 
+While you can run the ``migration-assist`` tool on the same server as your Mattermost deployment, we recommend running the tool in a virtual machine on the same network as your Mattermost server instead. The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient.
 
 .. tip::
 
    If preferred, you can download and compile the ``migration-assist`` tool yourself. See the `compile <#compile-the-migration-assist-tool>`__ section below for details.
+
+You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We recommend running ``pgloader`` in a virtual machine on the same network as your Mattermost server. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
 
 Usage
 -----
