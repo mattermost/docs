@@ -41,6 +41,7 @@ mmctl commands
 - `mmctl group user`_ - Custom User Group Management
 - `mmctl import`_ - Import Management
 - `mmctl integrity`_ - (Deprecated) Database Record Integrity
+- `mmctl job`_ - Job Management
 - `mmctl ldap`_ - LDAP Management
 - `mmctl license`_ - License Management
 - `mmctl logs`_ - Log Management
@@ -3600,6 +3601,123 @@ This command is deprecated from Mattermost v9.3. Performs a relational integrity
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
+
+mmctl job
+---------
+
+Management of jobs.
+
+   Child Commands
+      - `mmctl job list`_ - List the latest jobs
+      - `mmctl job update`_ - Update the status of a job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for ldap
+
+mmctl job list
+~~~~~~~~~~~~~~
+
+**Description**
+
+List the latest jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl job list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   job list
+    job list --ids jobID1,jobID2
+    job list --type ldap_sync --status success
+    job list --type ldap_sync --status success --page 0 --per-page 10
+
+**Options**
+
+.. code-block:: sh
+
+   --all             Fetch all import jobs. --page flag will be ignored if provided
+   -h, --help        help for list
+   --ids strings     Comma-separated list of job IDs to which the operation will be applied. All other flags are ignored
+   --page int        Page number to fetch for the list of import jobs
+   --per-page int    Number of import jobs to be fetched (default 5)
+   --status string   Filter by job status
+   --type string     Filter by job type
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl job update
+~~~~~~~~~~~~~~~~
+
+**Description**
+
+Update the status of a job.
+
+.. important::
+   
+   The following status rules are permitted:
+
+   - ``in_progress`` can be changed to ``pending``
+   - ``in_progress`` or ``pending`` can be changed to ``cancel_requested``
+   - ``cancel_requested`` can be changed to ``canceled``
+   
+   These restrictions can be bypassed with ``--force=true``. Bypassing restrictions can have unexpected consequences on your Mattermost server and should be used with caution.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl job update [job] [status] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   job update myJobID pending
+    job update myJobID pending --force true
+    job update myJobID canceled --force true
+
+**Options**
+
+.. code-block:: sh
+
+   --force       Setting a job status is restricted to certain statuses. You can overwrite these restrictions by using ``--force`` Use this option with caution.
+   -h, --help    help for update
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+
 
 mmctl ldap
 ----------
