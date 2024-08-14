@@ -91,7 +91,7 @@ Enabling vision allows images that are attached to posts to be sent to the upstr
 Copilot plugin metrics
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
+Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``, and the following metrics are available:
 
 - ``copilot_system_plugin_start_timestamp_seconds``: The time the plugin started.
 - ``copilot_system_plugin_info``: The plugin version and installation ID.
