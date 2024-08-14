@@ -84,7 +84,7 @@ Custom instructions
 Text input here is included in the prompt for every request. Use this to give your bots extra context or instructions. For example, you could list all of your organization's specific acronyms so the bot knows your vernacular and users can ask for definitions. Or you could give it specialized instructions such as adopting a specific personality or following a certain workflow. By customizing the instructions for each individual bot, you can create a more tailored AI experience for your specific needs.
 
 Enable Vision (Beta)
--------------------
+---------------------
 
 Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM support this features. Only available with OpenAI and OpenAI-compatable services.
 
