@@ -3700,7 +3700,7 @@ Update the status of a job.
 
 .. code-block:: sh
 
-   --force       Setting a job status is restricted to certain statuses. You can overwrite these restrictions by using ``--force`` Use this option with caution.
+   --force       Setting a job status is restricted to certain statuses. You can overwrite these restrictions by using --force. Use this option with caution.
    -h, --help    help for update
 
 **Options inherited from parent commands**
@@ -3716,8 +3716,6 @@ Update the status of a job.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
-
-
 
 mmctl ldap
 ----------
