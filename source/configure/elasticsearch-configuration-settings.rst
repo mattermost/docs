@@ -647,36 +647,21 @@ Live indexing batch size
 
 4. Restart the Mattermost server.
 
-.. config:setting:: elastic-bulkindexingtimewindow
-  :displayname: Bulk indexing time window (Elasticsearch)
-  :systemconsole: Environment > Elasticsearch
-  :configjson: .Elasticsearchsettings.BulkIndexingTimeWindowSeconds
-  :environment: MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS
+.. config:setting:: elastic-batchsize
+  :displayname: Batch size (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.BatchSize
+  :environment: MM_ELASTICSEARCHSETTINGS_BATCHSIZE
+  :description: The Elasticsearch index batch size. Default is **10000**.
 
-  The maximum time window, in seconds, for a batch of posts being indexed by the Bulk Indexer.
-  This setting serves as a performance optimization for installs with over ~10 million posts in the database.
-  Default is **3600** seconds (1 hour).
+Batch size
+~~~~~~~~~~~
 
-Bulk indexing time window
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
-| being indexed by the Bulk Indexer. This setting serves as a   | - ``config.json`` setting: ``".Elasticsearchsettings.BulkIndexingTimeWindowSeconds: 3600",`` |
-| performance optimization for installs with over               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
-| ~10 million posts in the database.                            |                                                                                              |
-|                                                               |                                                                                              |
-| Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
-| (1 hour). Approximate this value based on the average number  |                                                                                              |
-| of seconds for 2,000 posts to be added to the database on a   |                                                                                              |
-| typical day in production.                                    |                                                                                              |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
++-------------------------------------------+---------------------------------------------------------------------------+
+| The Elasticsearch index batch size.       | - System Config path: N/A                                                 |
+|                                           | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
+| Numerical input. Default is **10000**.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
++-------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: elastic-requesttimeout
   :displayname: Request timeout (Elasticsearch)
