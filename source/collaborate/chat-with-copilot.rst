@@ -83,7 +83,7 @@ To summarize unread Mattermost channels:
 1. In a channel with unread messages, scroll to the **New Messages** cutoff, select **Ask AI**, and then select **Summarize new messages**.
 2. The channel summary is generated in the Copilot pane, and only you can view the summary.
 
-You can switch between multiple bots (if configured) by selecting them in the dropdown menu.
+When your system admin has :doc:`configured multiple bots </configure/enable-copilot>`, you can switch between them by selecting one from the drop-down menu.
 
 .. image:: ../images/Unread-Channel-Messages-Summarization-Updated-4-3.gif
   :alt: Quickly summarize new messages, find action opens, and seek out unanswered questions with your Copilot.
