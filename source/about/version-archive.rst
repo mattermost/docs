@@ -11,6 +11,10 @@ Version archive
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v9.11.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.0/mattermost-9.11.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/9.11.0/mattermost-9.11.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``293f2161586302f4a5baa9d9d88197f517426fc12a2ed23242e20a2647fef4da``
+    - GPG Signature: https://releases.mattermost.com/9.11.0/mattermost-9.11.0-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.10.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.1/mattermost-9.10.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.1/mattermost-9.10.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``837b583eb9322c2360f8654368bd7b2b724ab1fcb4f6d8258470e21993a40f3e``
@@ -375,6 +379,10 @@ Version archive
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v9.11.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.0/mattermost-team-9.11.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/9.11.0/mattermost-team-9.11.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``7de2e2f560f2986e3c855e24944f44fc9b95560f7d841072b41b64c0975fd73e``
+    - GPG Signature: https://releases.mattermost.com/9.11.0/mattermost-team-9.11.0-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.10.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.1/mattermost-team-9.10.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.1/mattermost-team-9.10.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``08e35dccba623e760b056784db6ee6fa300d72a45ec28bc9f189324818b8471f``
