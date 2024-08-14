@@ -8,7 +8,7 @@ Set a reminder
   :alt: Access additional message actions using the More actions icon.
   :class: theme-icon
 
-From Mattermost v7.10, using Mattermost in a web browser or the desktop app, you can set a timed reminder on posts made in channels, direct messages, and group messages.
+From Mattermost v7.10, using Mattermost in a web browser or the desktop app, you can set one timed reminder on posts made in channels, direct messages, and group messages. The ability to set up recurring reminders isn't supported.
 
 Hover over the message you want to remember, select the **More** |more-actions-icon| option, then select **Remind**. Select a time period or enter a custom date and time. You'll receive a direct message at the time you've chosen, with the body of the message you wanted to be reminded about.
 
