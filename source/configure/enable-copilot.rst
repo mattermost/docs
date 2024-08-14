@@ -86,7 +86,7 @@ Text input here is included in the prompt for every request. Use this to give yo
 Enable vision (Beta)
 ---------------------
 
-Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM support this features. Only available with OpenAI and OpenAI-compatable services.
+Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM supports these features. Only available with OpenAI and OpenAI-compatable services.
 
 Copilot plugin metrics
 ~~~~~~~~~~~~~~~~~~~~~~~
