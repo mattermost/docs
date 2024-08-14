@@ -103,7 +103,7 @@ Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` s
 Integrations
 ~~~~~~~~~~~~
 
-Currently integrations are limited to DMs with the bots. The integrations will not operate from within a regular channel.
+Currently integrations are limited to direct messages between users and the bots. The integrations won't operate from within public, private, or group message channels.
 
 Jira
 ====
