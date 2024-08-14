@@ -1898,6 +1898,18 @@ mark {
     fill: #c27ba0 !important;
 }
 
+.mermaid > svg > g:nth-child(6) > rect.task.crit1 {
+    fill: #c27ba0 !important;
+}
+
+.mermaid > svg > g:nth-child(6) > rect.task.crit2 {
+    fill: #c27ba0 !important;
+}
+
+.mermaid > svg > g:nth-child(6) > rect.task.crit3 {
+    fill: #c27ba0 !important;
+}
+
 .mermaid > svg > g:nth-child(6) > rect.task {
     stroke-width: 0 !important;
     fill: #8e7dc3 !important;
