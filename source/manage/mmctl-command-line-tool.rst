@@ -2099,15 +2099,14 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
    mmctl config set [flags]
 
-**Examples**
+**4 Examples**
 
 .. code-block:: sh
 
    mmctl config set SqlSettings.DriverName postgres
    mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
    mmctl config set PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl "http://mattermost-rtcd"
-
-
+   mmctl config set LogSettings.AdvancedLoggingJSON '{"console1":{"Type":"console","Format":"json","Levels":[{"ID":5,"Name":"debug","Stacktrace":false},{"ID":4,"Name":"info","Stacktrace":false,"color":36},{"ID":3,"Name":"warn","Stacktrace":false},{"ID":2,"Name":"error","Stacktrace":true,"color":31},{"ID":1,"Name":"fatal","Stacktrace":true,"color":31},{"ID":0,"Name":"panic","Stacktrace":true,"color":31},{"ID":10,"Name":"stdlog","Stacktrace":false}],"Options":{"Out":"stdout"},"MaxQueueSize":1000}}'
 
 **Options**
 
