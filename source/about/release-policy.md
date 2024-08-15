@@ -58,7 +58,7 @@ gantt
     v9.8                   :active,  2024-05-15, 2024-08-15
     v9.9                   :active,  2024-06-16, 2024-09-15
     v9.10                  :active,  2024-07-16, 2024-10-15
-    v9.11 Extended Support :crit,    2024-08-16, 2025-05-15
+    v9.11 & Desktop App v5.9 Extended Support :crit,    2024-08-16, 2025-05-15
     v10.0                  :upcoming,    2024-09-16, 2024-12-15
     v10.1                  :upcoming,    2024-10-16, 2025-01-15
     v10.2                  :upcoming,    2024-11-16, 2025-02-15
@@ -66,7 +66,7 @@ gantt
     v10.4                  :upcoming,    2025-01-16, 2025-04-15
 
     section 2025
-    v10.5 Extended Support :crit,    2025-02-16, 2025-11-15
+    v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
 ```
 
 (esr-notifications)=
