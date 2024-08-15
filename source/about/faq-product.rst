@@ -24,7 +24,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "@ mentions", "X", "X", "X"
     "Hashtags", "X", "X", "X"
     "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X"
+    "Search highlighting", "X", "X", "X"
     "View/marking pinned or saved posts", "X", "X", "X"
     "Image link previews", "X", "X", "X"
     "Website previews", "X", "X", "X"
@@ -52,7 +52,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "Add members to team", "X", "X", "X"
     "Manage team members", "X", "X",
     "Leave team", "X", "X"
-    **PLAYBOOKS**
+    **COLLABORATIVE PLAYBOOKS**
     "Templates and checklists", "X", "X"
     **CALLS**
     "Join call", "X", "X", "X"
@@ -77,7 +77,7 @@ The following chart highlights the end user features of Mattermost and their sup
     "AD/LDAP", "X", "X", "X"
     "SAML SSO", "X", "X", "X"
     "GitLab SSO", "X", "X", "X"
-    "Office 365 SSO", "X", "X", "X"
+    "Entra ID SSO", "X", "X", "X"
     "Google SSO", "X", "X",
     **OTHER**
     "Localization for 20 languages", "X", "X", "X"

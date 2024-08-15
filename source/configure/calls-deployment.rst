@@ -41,6 +41,10 @@ Client
 Network
 ~~~~~~~
 
+.. note::
+
+  Scroll horizontally to see additional columns in the table below.
+
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | Service                         | Ports  | Protocols       | Source                                                     | Target                                   | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 +---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -60,8 +64,12 @@ Network
 Limitations
 -----------
 
-- In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
+- In Mattermost Cloud, up to 50 participants per channel can join a call.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
+
+.. note::
+
+  We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the external, dedicated, and scalable rtcd service. See the :doc:`self-hosted calls deployment </configure/calls-deployment>` documentation for details.
 
 Configuration
 -------------
@@ -73,15 +81,14 @@ Modes of operation
 
 Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
 
-============================ =============== =================
- Mattermost deployment       SFU             SFU deployment
-============================ =============== =================
- Single instance             integrated
- Single instance             rtcd
- High availability cluster   integrated      clustered
- High availability cluster   integrated      single handler
- High availability cluster   rtcd
-============================ =============== =================
+================================   =============== =================
+ Mattermost deployment              SFU             SFU deployment
+================================   =============== =================
+ Single instance                    integrated
+ Single instance                    rtcd
+ High availability cluster-based    integrated      clustered
+ High availability cluster-based    rtcd
+================================   =============== =================
 
 Single instance
 ~~~~~~~~~~~~~~~
@@ -102,27 +109,19 @@ An external, dedicated and scalable WebRTC service (``rtcd``) is used to handle 
 .. image:: ../images/calls-deployment-image7.png
   :alt: A diagram of a Web RTC deployment configuration.
 
-High availability cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
+High availability cluster-based
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Clustered
 ^^^^^^^^^
 
-This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
-
-.. image:: ../images/calls-deployment-image4.png
-  :alt: A diagram of a single handler deployment.
-
-Single handler
-^^^^^^^^^^^^^^
-
-This is a fallback mode to only let one node in the cluster to host calls. While the plugin would still run on all nodes, all calls will be routed through the handler node. This mode must be enabled by running the instance with a special environment variable set (MM_CALLS_IS_HANDLER=true).
+This is the default mode when running the plugin in a high availability cluster-based deployment. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
 
 .. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
 
-rtcd (HA)
-^^^^^^^^^^
+rtcd (High Availability)
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/calls-deployment-image2.png
   :alt: A diagram of an rtcd deployment.
@@ -137,31 +136,81 @@ As an example, a single call with 10 participants of which two are unmuted (tran
 Benchmarks
 ~~~~~~~~~~
 
-Here are some results from internally conducted performance tests on a dedicated ``rtcd`` instance:
+Here are the results from internally conducted performance and ceiling tests on a dedicated ``rtcd`` instance:
 
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| Calls | Users/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out) | Instance (EC2) |
-+=======+============+==============+================+===========+==============+====================+================+
-| 100   | 8          | 2            | no             | 60%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 100   | 8          | 2            | no             | 30%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 100   | 8          | 2            | yes            | 86%       | 0.7GB        | 280Mbps / 2.2Gbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | no             | 35%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | no             | 16%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | yes            | 90%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | yes            | 45%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | no             | 65%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | no             | 30%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
+Deployment specifications
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+- 1x r6i.large nginx proxy
+- 3x c5.large MM app nodes (HA)
+- 2x db.x2g.xlarge RDS Aurora MySQL v8 (one writer, one reader)
+- 1x (c7i.xlarge, c7i.2xlarge, c7i.4xlarge) RTCD
+- 2x c7i.2xlarge load-test agents
+
+
+App specifications
+^^^^^^^^^^^^^^^^^^
+
+- Mattermost v9.6
+- Mattermost Calls v0.28.0
+- RTCD v0.16.0
+- load-test agent v0.28.0
+
+Media specifications
+^^^^^^^^^^^^^^^^^^^^
+
+- Speech sample bitrate: 80Kbps
+- Screen sharing sample bitrate: 1.6Mbps
+
+Results
+^^^^^^^
+
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| Calls | Participants/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out)  | Instance type (RTCD) |
++=======+===================+==============+================+===========+==============+=====================+======================+
+| 1     | 1000              | 2            | no             | 47%       | 1.46GB       | 1Mbps / 194Mbps     | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 800               | 1            | yes            | 64%       | 1.43GB       | 2.7Mbps / 1.36Gbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 1000              | 1            | yes            | 79%       | 1.54GB       | 2.9Mbps / 1.68Gbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 10    | 100               | 1            | yes            | 74%       | 1.56GB       | 18.2Mbps / 1.68Gbps | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 100   | 10                | 2            | no             | 49%       | 1.46GB       | 18.7Mbps / 175Mbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 100   | 10                | 1            | yes            | 84%       | 1.73GB       | 171Mbps / 1.53Gbps  | c7i.xlarge           |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 1000              | 2            | no             | 20%       | 1.44GB       | 1.4Mbps / 194Mbps   | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1     | 1000              | 2            | yes            | 49%       | 1.53GB       | 3.6Mbps / 1.79Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 2     | 1000              | 1            | yes            | 73%       | 2.38GB       | 5.7Mbps / 3.06Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 100   | 10                | 2            | yes            | 60%       | 1.74GB       | 181Mbps / 1.62Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 150   | 10                | 1            | yes            | 72%       | 2.26GB       | 257Mbps / 2.30Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 150   | 10                | 2            | yes            | 79%       | 2.34GB       | 271Mbps / 2.41Gbps  | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 250   | 10                | 2            | no             | 58%       | 2.66GB       | 47Mbps / 439Mbps    | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 1000  | 2                 | 2            | no             | 78%       | 2.31GB       | 178Mbps / 195Mbps   | c7i.2xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 2     | 1000              | 2            | yes            | 41%       | 2.6GB        | 7.23Mbps / 3.60Gbps | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 3     | 1000              | 2            | yes            | 63%       | 3.53GB       | 10.9Mbps / 5.38Gbps | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 4     | 1000              | 2            | yes            | 83%       | 4.40GB       | 14.5Mbps / 7.17Gbps | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 250   | 10                | 2            | yes            | 79%       | 3.49GB       | 431Mbps / 3.73Gbps  | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+| 500   | 2                 | 2            | yes            | 71%       | 2.54GB       | 896Mbps / 919Mbps   | c7i.4xlarge          |
++-------+-------------------+--------------+----------------+-----------+--------------+---------------------+----------------------+
+
+.. note::
+   - The tests focused on a single, vertically scaled RTCD instance to understand the processing limits within a single node. Scaling the RTCD service horizontally should be sufficient to support a higher number of calls.
+   - RTCD processes were executed with all performance profiling enabled (including block and mutex). This resulted in some computational overhead.
+   - Both speech and screen samples have slightly higher bitrates than the average produced by a real client (e.g., a browser). This gives us some safety margin over real-world deployments.
 
 Dedicated service
 ~~~~~~~~~~~~~~~~~
@@ -382,11 +431,11 @@ Before you can start recording, transcribing, and live captioning calls, you nee
 .. note::
   If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
 
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings (beta)>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
+Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the :ref:`Enable call recordings <configure/plugins-configuration-settings:enable call recordings>` config setting and the service's URL should be configured using :ref:`Job service URL <configure/plugins-configuration-settings:job service url>`.
 
-Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (experimental)>` configuration setting.
+Call transcriptions can be enabled through the :ref:`Enable call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` configuration setting.
 
-Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (experimental)>` configuration setting.
+Live captions can be enabled through the :ref:`Enable live captions <configure/plugins-configuration-settings:enable live captions (beta)>` configuration setting.
 
 .. note::
   - The call transcriptions functionality is available starting in Calls version v0.22.0.

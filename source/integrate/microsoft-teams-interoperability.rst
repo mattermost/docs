@@ -13,19 +13,7 @@ Break through siloes in a mixed Mattermost and Microsoft Teams environment by fo
 Setup
 -----
 
-Setup starts in Mattermost, moves to Microsoft Teams, and ends in Mattermost.
-
-Install the Microsoft Teams integration in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
-
-  These installation instructions assume you already have a Mattermost instance running PostgreSQL. Note that this Mattermost integration doesn't support MySQL databases.
-
-1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams/releases>`__, compatible with Mattermost v9.8.0 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v9.8.0 or later.
-3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MS Teams**, and select **Enable Plugin**.
+Setup starts in Microsoft Teams and ends in Mattermost.
 
 Set up an OAuth application in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -42,66 +30,57 @@ Set up an OAuth application in Azure
  - **Name**: ``Mattermost MS Teams``
  - **Supported account types**: ``Default value (Single tenant)``
  - **Platform**: ``Web``
- - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams/oauth-redirect``
+ - **Redirect URI**: ``https://(MM_SITE_URL)/plugins/com.mattermost.msteams-sync/oauth-redirect``
 
 Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Register** to submit the form.
 
   .. image:: ../images/register-azure-app.png
     :alt: In Azure, register the new Mattermost app.
 
-5. Navigate to **Certificates & secrets** in the left pane.
+5. From this screen, make note of the **Application (client) ID** and **Directory (tenant) ID**, needed later to configure the plugin in Mattermost.
 
-6. Select **New client secret**. Enter the description and select **Add**. After the creation of the client secret, copy the new secret value, not the secret ID. We'll use this value later in the Mattermost System Console.
+  .. image:: ../images/note-client-and-tenant-id.png
+    :alt: Note important IDs to use later.
+
+6. Navigate to **Certificates & secrets** in the left pane.
+
+7. Select **New client secret**. Enter the description and select **Add**. After the creation of the client secret, copy the new secret value, not the secret ID. We'll use this value later in the Mattermost System Console.
 
   .. image:: ../images/azure-certs-secrets.png
     :alt: In Azure, enter client secret details.
 
-7. Navigate to **API permissions** in the left pane.
+8. Navigate to **API permissions** in the left pane.
 
-8. Select **Add a permission**, then **Microsoft Graph** in the right pane.
+9. Select **Add a permission**, then **Microsoft Graph** in the right pane.
 
   .. image:: ../images/azure-configured-permissions.png
     :alt: In Azure, manage API permissions for the Mattermost app.
 
-9. Select **Delegated permissions**, and scroll down to select the following permissions:
+10. Select **Delegated permissions**, and scroll down to select the following permissions:
 
- - ``Channel.ReadBasic.All``
- - ``ChannelMessage.Read.All``
- - ``ChannelMessage.ReadWrite``
- - ``ChannelMessage.Send``
- - ``Chat.Create``
- - ``Chat.ReadWrite``
+ - ``Chat.Read``
  - ``ChatMessage.Read``
- - ``Directory.Read.All``
  - ``Files.Read.All``
- - ``Files.ReadWrite.All``
  - ``offline_access``
- - ``Team.ReadBasic.All``
  - ``User.Read``
 
-10. Select **Add permissions** to submit the form.
+11. Select **Add permissions** to submit the form.
 
-11. Next, add application permissions via **Add a permission > Microsoft Graph > Application permissions**.
+12. Next, add application permissions via **Add a permission > Microsoft Graph > Application permissions**.
 
-12. Select the following permissions:
+13. Select the following permissions:
 
- - ``Channel.ReadBasic.All``
- - ``ChannelMessage.Read.All``
  - ``Chat.Read.All``
- - ``Files.Read.All``
- - ``Group.Read.All``
- - ``Team.ReadBasic.All``
- - ``User.Read.All``
- - ``Application.ReadWrite.OwnedBy`` (or ``Application.Read.All``)
+ - ``Presence.Read.All``
 
-13. Select **Add permissions** to submit the form.
+14. Select **Add permissions** to submit the form.
 
-14. Select **Grant admin consent for...** to grant the permissions for the application.
+15. Select **Grant admin consent for...** to grant the permissions for the application.
 
 Ensure you have the metered APIs enabled (and the pay subscription associated to it)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
+Subscribing to chat notifications requires assocating the OAuth App with a paid Azure subscription. To complete this setup, follow the instructions at https://learn.microsoft.com/en-us/graph/metered-api-setup.
 
 .. important::
 
@@ -109,23 +88,20 @@ Follow the steps here: https://learn.microsoft.com/en-us/graph/metered-api-setup
 
 You're all set for configuration inside Azure.
 
-Mattermost configuration
-------------------------
+Install and configure the Microsoft Teams integration in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-With the Tenant ID, Client ID, and Client secret noted above, the Mattermost plugin is ready for configuration. See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for support in completing the base configuration.
+.. important::
 
-Create a user account to act as a bot
---------------------------------------
+  These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
 
-A connected bot is required to sync linked channels.
+1. Log in to your Mattermost workspace as a system administrator.
+2. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+3. Search for or scroll to MS Teams, and select **Install**.
+4. Once installed, select **Configure**. You're taken to the System Console.
+5. Configure the **Tenant ID**, **Client ID**, and **Client Secret** with the values obtained from setting up the OAuth App in Azure above.
 
-1. Create a regular user account. We will connect this account later from the Mattermost side.
-2. This account is needed for proxying messages from Mattermost to Microsoft Teams.
-
-   .. image:: ../images/teams-user-as-bot.png
-    :alt: In Microsoft Teams, create a user account to act as a bot.
-
-3. As a system administrator, run the ``/msteams connect-bot`` slash command to connect the bot account, authenticating with the Teams account created above.
+See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
 
 Monitor performance
 --------------------
@@ -143,16 +119,6 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 .. note:: 
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
-
-System admin slash commands
-----------------------------
-
-Once Microsoft Teams interoperability is enabled, the following slash commands are available for Mattermost system admins by typing the commands into the Mattermost message text box, and selecting **Send**:
-
-- ``/msteams connect-bot``: Connect the bot account in Mattermost to an account in Microsoft Teams.
-- ``/msteams disconnect-bot``: Disconnect the bot account in Mattermost from the Microsoft Teams account.
-- ``/msteams show-links``: Show all the currently active links including the Mattermost team, Mattermost channel, Microsoft Teams team, and Microsoft Teams channel.
-
 
 Usage
 -----
@@ -174,7 +140,7 @@ How is encryption handled at rest and in motion?
 
 The configured client secret, stored in the Mattermost configuration, is used for app-only access to the the Microsoft Graph API. As users connect to Microsoft Teams using the integration, the resulting access tokens are encrypted and stored in the Mattermost database to be used for access on behalf of the connected user. All communication between the integration and the Microsoft Graph API is conducted via TLS.
 
-When notifications are enabled, chats and file attachments received by connected users will be stored as posts in the direct message channel between that user and the bot account created by the integration. When linked channels are enabled, messages and file attachments sent in Microsoft Teams will be stored as posts in the linked Mattermost channel. Similarly, messages and file attachments sent in a linked Mattermost channel will be sent to Microsoft Teams using the Microsoft Graph API.
+When notifications are enabled, chats and file attachments received by connected users will be stored as posts in the direct message channel between that user and the bot account created by the integration.
 
 Are there any database or network security considerations?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -189,7 +155,7 @@ There is nothing specific to the integration that is beyond what would apply to 
 How is this integration architectured?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The integration subscribes to change notifications from the Microsoft Graph API. These change notifications inform Mattermost about new or updated chats and channel messages within Microsoft Teams. Upon receipt of the change notification, the integration use a combination of its app-only access (via the client secret) and delegated acess (via connected users) to fetch the contents of these chats and channel messages and represent them appropriately within Mattermost.
+The integration subscribes to change notifications from the Microsoft Graph API. These change notifications inform Mattermost about new or updated chats within Microsoft Teams. Upon receipt of the change notification, the integration uses a combination of its app-only access (via the client secret) and delegated acess (via connected users) to fetch the contents of these chats and represent them appropriately within Mattermost.
 
 Get help
 --------

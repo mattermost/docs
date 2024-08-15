@@ -16,7 +16,7 @@ Migrating a MySQL database to PostgreSQL manually involves the following steps:
 
 .. tip::
 
-    See the `plugin migrations <#plugin-migrations>`__ section for details on migrating Mattermost Playbooks and Boards.
+    See the `plugin migrations <#plugin-migrations>`__ section for details on migrating collaborative playbooks and Boards.
 
 Tool recommendations
 --------------------
@@ -33,7 +33,7 @@ Once you've installed the necessary tools, review the `system requirements and c
 
 Start your migration by `preparing your target database <#prepare-target-database>`__, then `migrate the data <#migrate-the-data>`__, and complete all `post-migration steps <#after-the-migration>`__. 
 
-See the `plugin migrations <#plugin-migrations>`__ documentation for details on migrating Playbooks and Focalboard.
+See the `plugin migrations <#plugin-migrations>`__ documentation for details on migrating collaborative playbooks and boards.
 
 pgloader
 --------
@@ -438,12 +438,12 @@ If you closely examine the ``pgloader`` configuration file (e.g., ``migration.lo
 Plugin migrations
 -----------------
 
-On the plugin side, we are going to take a different approach from what we have done above. We are not going to use ``morph`` tool to create tables and indexes this time. We are going to utilize ``pgloader`` to create the tables on behalf of us. The reason for doing so is Boards and Playbooks are leveraging application logic to facilitate SQL queries. But we don't want to use any level of application at this point.
+On the plugin side, we are going to take a different approach from what we have done above. We are not going to use ``morph`` tool to create tables and indexes this time. We are going to utilize ``pgloader`` to create the tables on behalf of us. The reason for doing so is that collaborative playbooks and boards leverage application logic to facilitate SQL queries. But we don't want to use any level of application at this point.
 
-Playbooks
-~~~~~~~~~
+Collaborative playbooks
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-The ``pgloader`` configuration provided for Playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform the migration.
+The ``pgloader`` configuration provided for playbooks is based on ``v1.38.1`` and the plugin should be at least ``v1.36.0`` to perform the migration.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader``
 
@@ -603,6 +603,51 @@ Use the following configuration for the baseline of the data migration:
 .. code:: bash
 
   pgloader focalboard.load > focalboard_migration.log
+
+Calls
+~~~~~~~~~~
+
+If you are running a version of Mattermost that is greater than ``v9.9`` or the Calls plugin above ``v0.27``, you can opt to migrate the data for the plugin. We are going to take a similar approach with Boards and Playbooks migration and let pgloader create the tables.
+
+Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader``
+
+Use the following configuration for the baseline of the data migration:
+
+.. code:: none
+
+  LOAD DATABASE
+   FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
+   INTO      pgsql://{{ .pg_user }}:{{ .pg_password }}@{{ .postgres_address }}/{{ .target_db }}
+
+  WITH include drop, create tables, create indexes, reset sequences,
+   workers = 8, concurrency = 1,
+   multiple readers per thread, rows per range = 50000,
+   preserve index names
+
+  SET PostgreSQL PARAMETERS
+   maintenance_work_mem to '128MB',
+   work_mem to '12MB'
+
+  SET MySQL PARAMETERS
+   net_read_timeout  = '120',
+   net_write_timeout = '120'
+
+  CAST type json to jsonb drop typemod
+
+  INCLUDING ONLY TABLE NAMES MATCHING
+   ~/calls/
+
+  BEFORE LOAD DO
+   $$ ALTER SCHEMA public RENAME TO {{ .source_db }}; $$
+
+  AFTER LOAD DO
+   $$ ALTER SCHEMA {{ .source_db }} RENAME TO public; $$,
+   $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
+   $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
+
+.. code:: bash
+
+  pgloader calls.load > calls_migration.log
 
 Troubleshooting
 -----------------

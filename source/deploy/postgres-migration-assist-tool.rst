@@ -40,7 +40,7 @@ Usage
 
 .. important::
 
-   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To setup a PostgreSQL instance, see the :doc:`prepare your Mattermost database </install/prepare-mattermost-database>` documentation for details.
+   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </install/prepare-mattermost-database>` documentation for details.
 
 Step 1 - Check the MySQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,12 +106,13 @@ This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` ta
 Step 6 - Complete plugin migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generate migration configuration for Boards and Playbooks:
+Generate migration configuration for collaborative playbooks, boards and calls:
 
 .. code-block:: shell
 
    migration-assist pgloader boards --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > boards.load
    migration-assist pgloader playbooks --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > playbooks.load
+   migration-assist pgloader calls --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > calls.load
 
 Then run pgloader with the generated configuration files:
 
@@ -119,8 +120,9 @@ Then run pgloader with the generated configuration files:
 
    pgloader boards.load > boards_migration.log
    pgloader playbooks.load > playbooks_migration.log
+   pgloader calls.load > calls.log
 
-Carefully read the log file to analyze whether there were any errors during the migration process. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` documentation for information on migrating Playbooks and Boards.
+Carefully read the log file to analyze whether there were any errors during the migration process. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` documentation for information on migrating Playbooks, Boards and Calls.
 
 Step 7 - Configure Mattermost to utilize the new PostgreSQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

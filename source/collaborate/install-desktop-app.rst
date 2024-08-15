@@ -167,7 +167,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
 .. tab:: Generic Linux
 
-  The Desktop app is available in two formats which are usable on most Linux distributions: a compressed tarball, and an AppImage binary. Both can be downloaded from the `Desktop App's Github releases page <https://github.com/mattermost/desktop/releases>`_. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
+  The Desktop app is available in two formats which are usable on most Linux distributions: a compressed tarball, and an AppImage binary. Both can be downloaded from the `Desktop App's Github releases page <https://github.com/mattermost/desktop/releases>`_. Automatic app updates are supported and enabled on AppImage binary builds. When a new version of the desktop app is released, your app updates automatically.
 
   For instructions on how to use the AppImage binary, please refer to the  `AppImage Quickstart documentation page <https://docs.appimage.org/introduction/quickstart.html>`_.
 
@@ -195,7 +195,7 @@ The first time you log in to Mattermost using the desktop app, you'll see a spla
 
 .. tip::
 
-  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost System Admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
 Additional documentation resources
 ----------------------------------

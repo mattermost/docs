@@ -8,7 +8,7 @@ Create channels
   :alt: Open menus using the plus icon.
   :class: theme-icon
 
-Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`.
+Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read only channels>`.
 
 .. tab:: Web/Desktop
 
@@ -61,4 +61,4 @@ Automatic actions include:
 - Automatically adding the channel to a :doc:`category in the user's channel sidebar </preferences/customize-your-channel-sidebar>`.
 - Prompting to run a playbook based on the contents of a message.
 
-The :ref:`playbooks must be enabled <configure/plugins-configuration-settings:playbooks>` for channel admins to use channel actions.
+The :ref:`collaborative playbooks must be enabled <configure/plugins-configuration-settings:collaborative playbooks>` for channel admins to use channel actions.

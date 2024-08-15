@@ -25,8 +25,8 @@ A core set of features is available with all authentication options to help incr
 - Ability to require multi-factor authentication on log in.
 - For advanced deployments, password requirements for length and special characters can be added.
 
-Active Directory/LDAP authentication
-------------------------------------
+AD/LDAP authentication
+------------------------
 
 :doc:`AD/LDAP </onboard/ad-ldap>` is the most popular corporate directory integration option for deploying Mattermost behind a corporate firewall. Features include:
 
@@ -53,7 +53,7 @@ When deploying Mattermost to a DMZ location outside the security of a private ne
 - :doc:`Active Directory Federation Services via SAML </onboard/sso-saml-adfs>`
 - :doc:`SAML 2.0 authentication </onboard/sso-saml>`
 - :doc:`Google Apps </onboard/sso-google>`
-- :doc:`Office 365 </onboard/sso-office>`
+- :doc:`Entra ID </onboard/sso-entraid>`
 - :doc:`OpenID Connect </onboard/sso-openidconnect>`
 
 Generic OAuth is not currently supported.
@@ -61,4 +61,4 @@ Generic OAuth is not currently supported.
 Future authentication methods
 -----------------------------
 
-Mattermost releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, please contact sales@mattermost.com to start a discussion.
+Mattermost releases new improvements monthly. Several additional authentication methods are planned, but not yet scheduled. If you're an enterprise interested in deploying with an option not yet provided in our documentation, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to discuss further.

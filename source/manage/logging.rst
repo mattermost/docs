@@ -250,7 +250,7 @@ Specify destination targets
 
 Log records can be sent to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Log targets have been chosen based on support for the vast majority of log aggregators and other log analysis tools, without needing additional software installed.
 
-System Admins can define multiple log targets to:
+System admins can define multiple log targets to:
 
 - Mirror log output to files and log aggregators for redundancy.
 - Log certain entries to specific destinations. For example, all ``audit-content`` records can be routed to a different destination than the other levels.
@@ -470,6 +470,16 @@ The TCP socket targets can be configured with an IP address or domain name, port
 Frequently asked questions
 --------------------------
 
+How do I enable debug logging?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+As a Mattermost system admin, go to **System Console > Environment > Logging > File Log Level**, and set it to **DEBUG**. Then save your changes.
+
+.. image:: ../images/enable-debug-logging.png
+  :alt: A screenshot of the System Console page where Mattermost system admins can enable and disable debug logging.
+
+Debug logging can cause log files to expand substantially, and may adversely impact server performance. Keep an eye on your server logs, or only enable it temporarily, or in development environments, but not production enviornments.
+
 Does Mattermost have an audit log besides the system ``auditd``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -526,3 +536,50 @@ The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to confi
             "MaxQueueSize": 1000
         }
     }')
+
+
+How can I turn on trace logging for LDAP?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Please use the following JSON configuration as as starting point to enable trace logging for LDAP:
+
+.. code-block:: JSON
+
+    {
+        "ldap-file": {
+            "type": "file",
+            "format": "plain",
+            "levels": [
+                {
+                    "id": 144,
+                    "name": "LDAPTrace"
+                },
+                {
+                    "id": 143,
+                    "name": "LDAPDebug"
+                },
+                {
+                    "id": 142,
+                    "name": "LDAPInfo"
+                },
+                {
+                    "id": 141,
+                    "name": "LDAPWarn",
+                    "stacktrace": true
+                },
+                {
+                    "id": 140,
+                    "name": "LDAPError",
+                    "stacktrace": true
+                }
+            ],
+            "options": {
+                "filen_name": "./logs/ldap.log",
+                "max_size": 100,
+                "max_age": 14,
+                "max_backups": 3,
+                "compress": false
+            },
+            "maxqueuesize": 1000
+        }
+    }

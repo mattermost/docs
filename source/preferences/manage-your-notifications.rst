@@ -59,40 +59,34 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
   By default, you're notified of all Mattermost activity in Mattermost with badges, banner alerts, and sounds, regardless of how you access Mattermost, and your current :ref:`Mattermost availability <preferences/set-your-status-availability:set your availability>`.
 
-  .. note::
+  When accessing Mattermost using a supported web browser, the browser tab's favicon notifies you of unread messages with an asterisk (*) and a message count. From Mattermost v9.9, you're prompted to give Mattermost permission to send you notifications in the announcement bar.
 
-      From Mattermost v9.9, in the announcement bar, you're prompted to give Mattermost permission to send desktop notifications to you in a web browser.
-
-      - When you select **Enable notifications**, you won't be asked again, and you'll start receiving Mattermost notifications in the browser. 
-      - If you dismiss the prompt, you won't receive notifications in the browser, and you'll prompted again the next time you open Mattermost in a browser.
-    
-  In supported web browsers, the tab's favicon notifies you of unread messages with an asterisk (*) and a message count.
+    - When you select **Enable notifications**, you won't be asked again, and you'll start receiving Mattermost notifications in the web browser. 
+    - If you dismiss the prompt, you won't receive notifications in the web browser, and you'll prompted again the next time you open Mattermost in a browser.
 
   **Want different notifications on mobile?**
-    
+
   To personalize your notification preferences for the mobile app, select **Desktop and mobile notifications**, and then select **Use different settings for my mobile devices** to define how mobile notifications are triggered, when they're triggered based on you being online, away, or offline, and whether they include replies to threads you're following.
 
   **Getting too many notifications?**
 
-  If that's too many notifications, configure Mattermost to notify you for select messages only. Select **Desktop and mobile notifications > Mentions, direct messages, and group messages** to receive notifications for mentions, direct messages, and group messages only. This option also enables you to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
+  If you're receiving too many notifications, you can configure Mattermost to notify you for select messages only. Select **Desktop and mobile notifications > Mentions, direct messages, and group messages** to receive notifications for mentions, direct messages, and group messages only. This option also enables you to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
 
   Disable web, desktop, and mobile notifications altogether by selecting **Desktop and mobile notifications > Nothing**.
 
-.. tab:: Desktop notification sounds
+.. tab:: Notification sounds
 
   By default, desktop message notifications include audible sounds. You can change or disable these sounds if preferred. Go to **Desktop notification sounds > Message notification sound** to choose a different sound, or disable this option to turn off desktop notification sounds, if preferred.
 
-  Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+  **Want incoming call sounds?**
 
-  **Do you want incoming call sounds?**
-
-  Want to hear a sound when a Mattermost call starts? When your Mattermost admin :ref:`enables this beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you'll hear a sound when a call is starting within a direct or group message you're a member of. Go to **Desktop notification sounds > Incoming call sound** to choose a different sound, or disable this option to turn off incoming call sounds, if preferred.
+  Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
 
 .. tab:: Email 
 
   By default, you're notified of all Mattermost activity by email right away when you're offline or away from Mattermost for more than 5 minutes.
 
-  **Too many notifications!**
+  **Too many notifications?**
 
   Turn off email notifications altogether by selecting **Email Notifications > Never**.
 
@@ -104,7 +98,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
   By default, you’re notified when you’re @mentioned in a message or a thread by your username or first name, or when a thread you’re following has a new response. For all other messages, the channel is highlighted to indicate unread messages.
 
-  You're also notified when someone uses channel-wide mentions including @channel, @all, and @here. 
+  You're also notified when someone uses channel-wide :doc:`mentions </collaborate/mention-people>` including @channel, @all, and @here. 
 
   **Customize notification keywords**
 
@@ -127,7 +121,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
 .. tab:: Replies
 
-  If :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
+  If :doc:`Threaded discussions </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Threaded discussions is enabled.
 
   **Automatic replies**
 
@@ -159,7 +153,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
   - Email, desktop, incoming call ring tones, and push notifications are disabled.
   - A mute icon displays next to the channel, direct message, or group message’s name.
-  - The channel is dimmed in the channel sidebar, and isn’t bolded to indicate unread messages unless you’re @ mentioned directly.
+  - The channel is dimmed in the channel sidebar, and isn’t bolded to indicate unread messages unless you’re :doc:`@mentioned </collaborate/mention-people>` directly.
 
   **Ignore channel-wide @mentions**
 

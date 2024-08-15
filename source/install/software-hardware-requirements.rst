@@ -79,7 +79,7 @@ Email client
 ^^^^^^^^^^^^
 
 -  *Desktop clients:* Outlook 2010+, Apple Mail version 7+, Thunderbird 38.2+
--  *Web based clients:* Office 365, Outlook, Gmail, Yahoo, AOL
+-  *Web based clients:* Entra ID, Outlook, Gmail, Yahoo, AOL
 -  *Mobile clients:* iOS Mail App (iOS 7+), Gmail Mobile App (Android, iOS)
 
 Server software

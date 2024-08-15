@@ -8,7 +8,7 @@ Enterprise install and upgrade
 
 Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Enterprise and Professional. You can `compare their features online <https://mattermost.com/pricing/>`_.
 
-Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. View pricing and feature information online, and `contact sales <https://mattermost.com/contact-sales/>`_ to purchase a `license key <https://mattermost.com/contact-sales/>`_.
+Once you've downloaded and installed Mattermost, start an Enterprise trial via **Product menu > System Console > Edition and License > Start trial**. View pricing and feature information online, and talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to purchase a license key.
 
 Installing Enterprise Edition
 -----------------------------
@@ -104,7 +104,7 @@ In the Mattermost System Console, retry the upgrade. When the upgrade is complet
   chown <OriginalFileOwner> <PathToBinaryFile>
   chmod -w <PathToBinaryFile>
 
-Note that automated updates or actions performed by other System Admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
+Note that automated updates or actions performed by other system admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~

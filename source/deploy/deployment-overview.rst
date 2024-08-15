@@ -168,7 +168,7 @@ High Availability
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Large organizations needing sophisticated, large scale, High Availability configurations can set up a :doc:`highly available, horizontally scalable </scale/high-availability-cluster>` deployment. `Contact us  <https://mattermost.com/contact-us/>`__ for guidance on configuring and sizing Mattermost to support your specific needs.
+Large organizations needing sophisticated, large scale, High Availability configurations can set up a :doc:`highly available, horizontally scalable </scale/high-availability-cluster-based-deployment>` deployment. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance on configuring and sizing Mattermost to support your specific needs.
 
 Data stores
 ------------
@@ -216,7 +216,7 @@ Global deployments
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Enterprise customers with deployments spanning many time zones can `contact us <https://mattermost.com/contact-us/>`__ for advanced configurations to minimize latency by:
+Enterprise customers with deployments spanning many time zones can talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance on advanced configurations to minimize latency by:
 
 1. Storing static assets over a global CDN.
 2. Deploying multiple Mattermost servers to host API communication closer to the location of end users.
@@ -234,7 +234,7 @@ Images and files shared by users are stored and retrieved in one of three option
 Deployment options
 -------------------
 
-Mattermost Enterprise Edition customers can contact Mattermost, Inc. for advice on deployment options for their specific environments. The following section describes common deployment configurations.
+Mattermost Enterprise Edition customers can talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for advice on deployment options for their specific environments. The following section describes common deployment configurations.
 
 Mobile devices with VPN clients (recommended)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -250,7 +250,7 @@ If Mattermost is available on the internet, we recommend using :doc:`SAML Single
 
 The :ref:`Mattermost Push Notification Service <deploy/deployment-overview:push notification service>` (MPNS) should be behind your firewall inside your private network. MPNS does not connect with mobile apps directly, it forwards push notifications from the Mattermost server to a relay service for App Store or Google Play, or directly to mobile apps within an Enterprise App Store behind your firewall.
 
-For support for certificate-based authentication for mobile devices, `contact us <https://mattermost.com/contact-us/>`__ for more information.
+For support for certificate-based authentication for mobile devices, talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for more information.
 
 Mobile devices with an EMM provider
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

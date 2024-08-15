@@ -459,6 +459,22 @@ This setting defines how frequently "user is typing..." messages are updated, me
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: exp-user-status-profile-fetching-poll-interval
+  :displayname: User's status and profile fetching poll interval (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: UsersStatusAndProfileFetchingPollIntervalMilliseconds
+  :environment: N/A
+  :description: The number of milliseconds to wait between fetching user statuses and profiles periodically.
+
+User's status and profile fetching poll interval
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting configures the number of milliseconds to wait between fetching user statuses and profiles periodically. Set to ``0`` to disable.
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
++--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: exp-primaryteam
   :displayname: Primary team (Experimental)
   :systemconsole: Experimental > Features
@@ -610,34 +626,7 @@ Shared channels enables the ability to establish secure connections between Matt
 .. note::
 
    - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
-   - System Admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
-
-.. config:setting:: exp-enableappbar
-  :displayname: Disable Apps Bar (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: DisableAppBar
-  :environment: ExperimentalSettings.DisableAppBar
-  :description: This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
-
-  - **true**: All integration icons in the channel header move to the Apps Bar with the exception of the calls feature.
-  - **false**: **(Default)** All integration icons in the channel header display in the channel header.
-
-Disable Apps Bar
-~~~~~~~~~~~~~~~~
-
-This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
-
-.. note::
-
-  We strongly encourage Mattermost integrators to update their integrations to provide the best user experience. See the `channel header plugin changes <https://forum.mattermost.com/t/channel-header-plugin-changes/13551>`__ user forum discussion for details on how to register integrations with the Apps Bar.
-
-**True**:  All integration icons in the channel header display in the channel header.
-
-**False**: **(Default)** All integration icons, except the Calls icon, are available in the vertical Apps Bar pane on the right side of the screen. 
-
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableAppBar": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------+
+   - System admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -850,7 +839,7 @@ Output log and audit records to any combination of console, local file, syslog, 
 Enable audit logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
@@ -1208,9 +1197,9 @@ Restrict system admin
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: **(Default for Cloud deployments)** Restricts the System Admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the System Admin role to users but restricting certain actions only for Cloud Admins.
+**True**: **(Default for Cloud deployments)** Restricts the system admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the system admin role to users but restricting certain actions only for Cloud Admins.
 
-**False**: **(Default for self-host deployments)** No restrictions are applied to the System Admin role.
+**False**: **(Default for self-host deployments)** No restrictions are applied to the system admin role.
 
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
@@ -1222,7 +1211,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: RemoteClusters
   :environment: N/A
 
-  - **true**: System Admins can manage remote clusters using the System Console.
+  - **true**: System admins can manage remote clusters using the System Console.
   - **false**: **(Default)** Remote cluster management is disabled.
 
 Remote clusters
@@ -1239,7 +1228,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Enable this setting to add, remove, and view remote clusters for shared channels.
 
-**True**: System Admins can manage remote clusters using the System Console.
+**True**: System admins can manage remote clusters using the System Console.
 
 **False**: Remote cluster management is disabled.
 
@@ -1614,13 +1603,13 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-o365scope
-  :displayname: Office 365 scope (Experimental)
+  :displayname: Entra ID scope (Experimental)
   :systemconsole: N/A
   :configjson: Scope
   :environment: N/A
   :description: Standard setting for OAuth to determine the scope of information shared with OAuth client. Recommended setting is ``User.Read``.
 
-Office 365 Scope
+Entra ID Scope
 ~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
@@ -1644,7 +1633,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
   :configjson: EnableUploads
   :environment: N/A
 
-  - **true**: Enables plugin uploads by System Admins at **Plugins > Management**.
+  - **true**: Enables plugin uploads by system admins at **Plugins > Management**.
   - **false**: **(Default)** Disables plugin uploads on your Mattermost server.
 
 Enable plugin uploads
@@ -1652,7 +1641,7 @@ Enable plugin uploads
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables plugin uploads by System Admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
+**True**: Enables plugin uploads by system admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
 
 **False**: Disables plugin uploads on your Mattermost server.
 
@@ -1967,7 +1956,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: EnableAPITeamDeletion
   :environment: N/A
 
-  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
+  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
   - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API team deletion
@@ -1975,7 +1964,7 @@ Enable API team deletion
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by Team and System Admins to permanently delete a team.
+**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
 
@@ -1989,7 +1978,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: EnableAPIUserDeletion
   :environment: N/A
 
-  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
+  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
   - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API user deletion
@@ -1997,7 +1986,7 @@ Enable API user deletion
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a user.
+**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
 
@@ -2011,7 +2000,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :configjson: EnableAPIChannelDeletion
   :environment: N/A
 
-  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
+  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
   - **false**: **(Default)** The API endpoint cannot be called.
 
 Enable API channel deletion
@@ -2019,7 +2008,7 @@ Enable API channel deletion
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by System Admins, or users with appropriate permissions, to permanently delete a channel.
+**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
 
 **False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
 
@@ -2133,7 +2122,7 @@ Settings to configure how Mattermost schedules and completes periodic tasks such
 
 When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler`` should be enabled. Without both of these enabled, Mattermost will not function properly.
 
-When running Mattermost in High Availability mode, ``RunJobs`` should be enabled on one or more servers while ``RunScheduler`` should be enabled on all servers under normal circumstances. A High Availability cluster will have one Scheduler and one or more Workers. See the below sections for more information.
+When running Mattermost in High Availability mode, ``RunJobs`` should be enabled on one or more servers while ``RunScheduler`` should be enabled on all servers under normal circumstances. A High Availability cluster-based deployment will have one Scheduler and one or more Workers. See the below sections for more information.
 
 .. config:setting:: exp-runjobs
   :displayname: Run jobs (Experimental)
@@ -2149,7 +2138,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Set whether or not this Mattermost server will handle tasks created by the Scheduler. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster>`, one or more servers should have this setting enabled. We recommend that your High Availability cluster has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
+When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster-based-deployment>`, one or more servers should have this setting enabled. We recommend that your High Availability cluster-based deployment has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
 +------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
@@ -2169,7 +2158,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Set whether or not this Mattermost server will schedule tasks that will be completed by a Worker. When running Mattermost on a single machine, this setting should always be enabled.
 
-When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster>`, this setting should always be enabled. In a High Availability cluster, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See :doc:`High Availability documentation </scale/high-availability-cluster>` for more details.
+When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster-based-deployment>`, this setting should always be enabled. In a High Availability cluster-based deployment, exactly one of the servers will be designated as the Scheduler at a time to ensure that duplicate tasks aren't created. See :doc:`High Availability documentation </scale/high-availability-cluster-based-deployment>` for more details.
 
 .. warning::
 

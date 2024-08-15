@@ -12,7 +12,7 @@ Channel types
    :alt: A lock icon indicates a private channel.
    :class: theme-icon
 
-Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. 
+Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read only channels>`.
 
 Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
 
@@ -26,7 +26,7 @@ See the :doc:`Join and leave channels </collaborate/join-leave-channels>` docume
 Private channels
 ----------------
 
-Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
+Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the channel admins and system admins.
 
 Channel members can choose to leave private channels at any time.
 

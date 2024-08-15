@@ -222,7 +222,7 @@ These can be provided as a text file or as screenshots from the LDAP server.
 
 **Other configurations**
 
-If you're experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A System Administrator for the external system should be able to provide you with the configuration.
+If you're experiencing an issue on mobile, and you're using an MDM or VPN to connect to the server, those configurations will be necessary to diagnose the problem. A system admin for the external system should be able to provide you with the configuration.
 
 Logs
 ~~~~
@@ -252,14 +252,14 @@ PostgreSQL and MySQL have different logs, and their location varies based on you
 
 **SAML, LDAP, and other systems**
 
-Your organization's System Administrator should be able to find these for you.
+Your organization's system admin should be able to find these for you.
 
 How to access logs
 ^^^^^^^^^^^^^^^^^^
 
 **Mattermost**
 
-Make sure debug logging is enabled so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set console and file log level to **DEBUG**.
+Make sure :ref:`debug logging is enabled <manage/logging:how do i enable debug logging?>` so that we can get the most information from the logs. To do this, go to **System Console > Environment > Logging**, then set both **Console File Level** and **File Log Level** to **DEBUG**. Remember to save your changes.
 
 If the behavior started at a known time or date, use ``journalctl`` to get the logs like this:
 
@@ -428,7 +428,7 @@ Appendix
 
 **A note on mobile issues**
 
-Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Contact your Customer Engineer for help setting these up.
+Because the mobile app doesn't have a debug mode, diagnosing issues stemming from user data requires a proxy like Charles or mitmproxy. These will intercept and record traffic from the client which can then be replayed to reproduce issues. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for help setting these up.
 
 **SAML login issues**
 

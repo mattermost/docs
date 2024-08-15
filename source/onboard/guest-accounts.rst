@@ -15,7 +15,9 @@ Guest accounts are a way to collaborate with individuals, such as vendors and co
 .. include:: /onboard/guest-account-access.rst
   :start-after: :nosearch:
 
-Additionally, guest accounts count as a paid user in your Mattermost workspace, but guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
+.. important::
+
+  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.This means that guest accounts count as a paid user in your Mattermost workspace. However, guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
 
 Enable guest accounts
 ----------------------
@@ -70,7 +72,7 @@ When enabled, the **Guest Filter** in Mattermost identifies external users whose
 
 If a Mattermost guest user has the ``guest`` role removed in the AD/LDAP system, the synchronization process will not automatically promote them to a member user role. This is done manually via **System Console > User Management**. If a member user has the **Guest Attribute** added, the synchronization processes will automatically demote the member user to the guest role.
 
-When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost system admin. 
+When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost system admin. 
 
 Configure SAML 2.0 authentication
 ----------------------------------
@@ -84,12 +86,12 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 3. Complete the **Guest Attribute** field.
 4. Select **Save**.
 
-When a guest logs in without having any channels assigned to their account, they're advised to contact a Mattermost System Admin.
+When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost system admin.
 
 Guest permission settings
 -------------------------
 
-In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the System Admins can invite guests.
+In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the system admins can invite guests.
 
 There are :doc:`additional permissions </onboard/advanced-permissions>` in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
 
