@@ -28,7 +28,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work.                                                     |
 |                                                    |                                                                                                                                                                  |
-|                                                    | If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in elasticsearch.yml to allow for wildcard operations to     |
+|                                                    | If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to |
 |                                                    | work.                                                                                                                                                            |
 |                                                    |                                                                                                                                                                  |
 |                                                    | For AWS customers on Opensearch, do not enable "compatibility mode".                                                                                             |
