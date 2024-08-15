@@ -17,33 +17,6 @@ In Mattermost Cloud Enterprise Dedicated, you can use KMS keys in 2 ways:
     - Selective enablement of this feature can be supported.
     - In cases where a global database is needed, we recommend providing 2 KMS keys (1 per region).
 
-Why use BYOC?
---------------
-
-Consider using BYOC with :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>` if you have specific business needs or project requirements. There are a few major reasons to use BYOC:
-
-- **Compliance**: If you have strict regulatory requirements or special compliance requirements, BYOC may will be the best option for you.
-- **Network auditing**: If you require the visibility of all traffic within any VPC you operate in, or need frequent auditing capabilities, BYOC is potentially a good fit.
-- **Fine-grained network control**: BYOC only requires specific network access (non-internet accessible) for Mattermost (for example, service management or troubleshooting) to deploy and manage the Mattermost instance, otherwise allowing you to customize your network to meet any internal requirements or requirements of your customers.
-- **Cost optimization**: Depending on your cloud provider, with BYOC you can use cost savings plans, committed use discounts, or other strategies to save on compute and storage infrastructure costs related to the Mattermost instance.
-
-Who is eligible for BYOC?
--------------------------
-
-To be eligible for BYOC, you must:
-
-- Use Amazon Web Service (AWS) or Azure
-- Have a committed deal with Mattermost
-- Have at least Mattermost Enterprise Support
-
-Standard BYOC architecture
---------------------------
-
-The standard BYOC deployment requires the organization to create a Virtual Private Cloud (BYOC VPC) dedicated to Mattermost-managed instances within a cloud region they want to operate in. Mattermost accesses this VPC through VPC PrivateLink for inbound and outbound traffic or VPC peering in order to manage the Mattermost instance. Organizations can integrate with their services using standard VPC peering techniques.
-
-.. image:: ../images/mattermost-cloud-dedicated-byok-architecture.png
-  :alt: An architecture diagram showing the components of the Mattermost Cloud Dedicated Bring Your Own Key solution.
-
 Configure BYOK
 ---------------
 
@@ -51,7 +24,6 @@ Configure BYOK
 2. Enterprise customer adds the following blocks to their KMS Policy for the AWS KMS ARN provided:
 
 .. code-block:: JSON
-
     {
         "Sid": "Allow use of the key",
         "Effect": "Allow",
@@ -82,7 +54,6 @@ Configure BYOK
         ],
         "Resource": "<CUSTOM_CUSTOMER_KMS_ID>"
     },
-
 3. The Mattermost Infrastructure SRE team updates the kops cluster and S3, RDS resources after the KMS policy is updated on the customer's end.
 
 Alternatively, the Enterprise customer can provide an external key (non-KMS) to the Mattermost Infrastructure SRE team that Mattermost maintains on behalf of the customer.

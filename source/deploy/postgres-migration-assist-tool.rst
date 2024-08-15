@@ -70,6 +70,13 @@ Run the following command to create the Postgres database schema:
 
 This command downloads the necessary migrations and applies them to the Postgres database. The ``--mattermost-version`` flag is required to specify the Mattermost version you are migrating from.
 
+There are two flags that can be used with the ``migration-assist postgres`` command to run a few checks before running the migrations. You can disable them by setting the following flags to false:
+
+.. code-block:: shell
+
+   --check-schema-owner          Check if the schema owner is the same as the user running the migration (default true)
+   --check-tables-empty          Check if tables are empty before running migrations (default true)
+
 Step 3 - Generate a pgloader configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -80,6 +87,8 @@ Run the following command to generate a pgloader configuration:
    migration-assist pgloader --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > migration.load
 
 This command will generate a pgloader configuration file that can be used to migrate the data from MySQL to Postgres.
+
+The generated configuration has the setting to remove the null character from the text type data. This is to ensure the migration won't return errors while inserting data into Postgres. However, if you want to disable this behavior, you can set the ``--remove-null-chars`` to ``false``.
 
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
@@ -106,12 +115,13 @@ This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` ta
 Step 6 - Complete plugin migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generate migration configuration for collaborative playbooks and boards:
+Generate migration configuration for collaborative playbooks, boards and calls:
 
 .. code-block:: shell
 
    migration-assist pgloader boards --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > boards.load
    migration-assist pgloader playbooks --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > playbooks.load
+   migration-assist pgloader calls --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > calls.load
 
 Then run pgloader with the generated configuration files:
 
@@ -119,8 +129,9 @@ Then run pgloader with the generated configuration files:
 
    pgloader boards.load > boards_migration.log
    pgloader playbooks.load > playbooks_migration.log
+   pgloader calls.load > calls.log
 
-Carefully read the log file to analyze whether there were any errors during the migration process. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` documentation for information on migrating Playbooks and Boards.
+Carefully read the log file to analyze whether there were any errors during the migration process. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` documentation for information on migrating Playbooks, Boards and Calls.
 
 Step 7 - Configure Mattermost to utilize the new PostgreSQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
