@@ -104,7 +104,7 @@ In the Mattermost System Console, retry the upgrade. When the upgrade is complet
   chown <OriginalFileOwner> <PathToBinaryFile>
   chmod -w <PathToBinaryFile>
 
-Note that automated updates or actions performed by other System Admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
+Note that automated updates or actions performed by other system admins after the conversion can overwrite the changes, possibly reverting the system to Team Edition. This includes the ``run gitlab-ctl configure`` command to update Mattermost within GitLab Omnibus. If this occurs, you won't be able to use Enterprise Edition features until converting the server back, but none of your data will be affected.
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~

@@ -132,6 +132,9 @@ Start a Data Retention deletion job immediately. You can monitor the status of t
 Compliance export
 -----------------
 
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
 .. config:setting:: compliance-exportenable
@@ -401,6 +404,9 @@ Set the size of the batches in which posts will be read from the database to gen
 
 Custom terms of service
 -----------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Compliance > Custom Terms of Service**.
 

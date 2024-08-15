@@ -1,5 +1,5 @@
-Additional System Admin roles
-==============================
+Delegated granular administration
+=================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -8,17 +8,19 @@ Additional System Admin roles
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-System Admins can assign system roles that permit granular user access to specific areas of the System Console and related API endpoints. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. System roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
+Mattermost supports the creation and customization of system administration roles with specific granular permissions and System Console access. This allows senior administrators in large organizations to delegate and de-centralize specialized administration and administrative tasks with specific admin roles.
+
+These admin roles permit granular access to specific areas of the System Console and related API endpoints. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. These system roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
 
 Available roles
 ----------------
 
-A System Admin can configure the following system roles:
+A system admin can set up the following delegated granular administration in the System Console:
 
-- **System Manager:** The System Manager role has read/write permissions for management areas, such as user management and integrations (excluding permissions). This role has read only access to authentication, reporting, and license interfaces.
-- **User Manager:** The User Manager role is able to read/write to all the user management areas (excluding permissions). The authentication interface is read-only.
-- **Custom Group Manager** The Custom Group Manager role has permissions to :doc:`create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups>`. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
-- **Viewer:** The Viewer role is able to view all areas of the System Console, but has no write access.
+- **System Manager:** This role has read/write permissions for management areas, such as user management and integrations, but not user permissions. This role has read only access to authentication, reporting, and licensing.
+- **User Manager:** This role is able to read/write to all the user management areas, but not user permissions, and read-only access to authentication.
+- **Custom Group Manager** This role has permissions to :doc:`create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups>`. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
+- **Viewer:** The Viewer role can view all areas of the System Console, but has no write access.
 
 When a user is assigned a system role, they have role-based access to the System Console and the API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
 
@@ -41,8 +43,8 @@ When a user is assigned a system role, they have role-based access to the System
 | Viewer               | N/A                   | - All pages within the System Console |
 +----------------------+-----------------------+---------------------------------------+
 
-Assign system admin roles
--------------------------
+Assign admin roles
+-------------------
 
 There are two ways to assign roles:
 
@@ -80,10 +82,10 @@ There are two ways to assign roles:
 |                                                   | 2. Under **Assigned People**, search for the user, then select **Remove**.                                    |                                                                                     |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-Edit privileges of System Admin roles (advanced)
-------------------------------------------------
+Edit privileges of admin roles (advanced)
+------------------------------------------
 
-System Admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager role. 
+System admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager role. 
 
 There are two ways to assign roles:
 
@@ -347,7 +349,7 @@ Frequently Asked Questions
 Can a User Manager or System Manager reset an administrator’s email or password without their knowledge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is not possible with the default privileges of these roles. The ability to reset passwords or email addresses of administrators is limited to System Admins.  
+This is not possible with the default privileges of these roles. The ability to reset passwords or email addresses of administrators is limited to system admins.  
 
 Can a User Manager or System Manager access the configuration file? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -367,7 +369,7 @@ No. System Managers can't elevate their role, and aren't able to elevate other m
 Can any of the new roles view API keys/passwords or other sensitive information within the System Console (such as SMTP, AWS, Elastic Search)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, password information is only visible to System Admins and is obfuscated for other roles.
+No, password information is only visible to system admins and is obfuscated for other roles.
 
 If download links for compliance exports are enabled in the System Console, can a Read Only Admin download the reports? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -397,9 +399,9 @@ This is being considered for future development.
 Can a System Manager or User Manager demote or deactivate another Admin or Manager?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A System or User Manager can demote or deactivate another System or User Manager, but can't demote or deactivate a System Admin.
+A System or User Manager can demote or deactivate another System or User Manager, but can't demote or deactivate a system admin.
 
 Can a System Manager or User Manager assign or unassign admin roles?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only the System Admin has access to edit system roles.
+Only the system admin has access to edit system roles.

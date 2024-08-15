@@ -1,5 +1,5 @@
-Set message priority (Beta)
-===========================
+Set message priority
+====================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -16,7 +16,7 @@ Set message priority (Beta)
   :alt: Hover over the Acknowledged icon to see who has read and actioned the message. Select the icon to remove your acknowledgement within five minutes.
   :class: theme-icon
 
-From Mattermost v7.7 and version v2.4 of the Mattermost mobile app, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
+From Mattermost v7.7 and mobile v2.4, you can add a message priority label to root messages to make important messages requiring timely action or response more visible and less likely to be overlooked.
 
 .. image:: ../images/MPA-Animated-GIF-Update-2023-08-15.gif
   :width: 700

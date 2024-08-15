@@ -196,7 +196,7 @@ The first time you log in to Mattermost using the desktop app, you'll see a spla
 
 .. tip::
 
-  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost System Admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
 Additional documentation resources
 ----------------------------------
