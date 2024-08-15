@@ -63,9 +63,9 @@ gantt
     v10.1                  :upcoming,    2024-10-16, 2025-01-15
     v10.2                  :upcoming,    2024-11-16, 2025-02-15
     v10.3                  :upcoming,    2024-12-16, 2025-03-15
-    v10.4                  :upcoming,    2025-01-16, 2025-04-15
 
     section 2025
+    v10.4                  :upcoming,    2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
 ```
 
