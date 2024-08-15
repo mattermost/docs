@@ -98,7 +98,7 @@ Whether customer data should be stored in Mattermost Cloud depends heavily on th
 Are S3-managed keys used for server-side encryption?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, with Mattermost Cloud Dedicated.
+Yes, with Mattermost Cloud Dedicated. You can also bring your own keys for database and Amazon S3.
 
 Are you SOC2 Type 2 certified?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
