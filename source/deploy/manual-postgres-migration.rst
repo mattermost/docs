@@ -122,7 +122,7 @@ Before a manual migration
 
 .. important::
 
-  This guide requires a schema of v6.4 or later. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v6.4 at a minimum.
+  This guide requires a schema of v7.1 ESR or later. So, if you have an earlier version and planning to migrate, please update your Mattermost Server to v7.1 at a minimum. See the :ref:`extended support releases <about/release-policy:extended support releases>` documentation for details.
 
   - Back up your MySQL data.
   - Confirm your Mattermost version. See the **About** modal for details. 
@@ -387,7 +387,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 
 .. note::
 
-  If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below:
+  If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below. If it continue to fail create the index with the substring of the content, consider decreasing the value gradually (Like to ``500000``) until the index is created successfully.
 
 .. code:: sql
 

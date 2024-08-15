@@ -68,6 +68,13 @@ Run the following command to create the Postgres database schema:
 
 This command downloads the necessary migrations and applies them to the Postgres database. The ``--mattermost-version`` flag is required to specify the Mattermost version you are migrating from.
 
+There are two flags that can be used with the ``migration-assist postgres`` command to run a few checks before running the migrations. You can disable them by setting the following flags to false:
+
+.. code-block:: shell
+
+   --check-schema-owner          Check if the schema owner is the same as the user running the migration (default true)
+   --check-tables-empty          Check if tables are empty before running migrations (default true)
+
 Step 3 - Generate a pgloader configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -78,6 +85,8 @@ Run the following command to generate a pgloader configuration:
    migration-assist pgloader --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > migration.load
 
 This command will generate a pgloader configuration file that can be used to migrate the data from MySQL to Postgres.
+
+The generated configuration has the setting to remove the null character from the text type data. This is to ensure the migration won't return errors while inserting data into Postgres. However, if you want to disable this behavior, you can set the ``--remove-null-chars`` to ``false``.
 
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
