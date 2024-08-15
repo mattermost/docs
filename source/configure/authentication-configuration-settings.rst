@@ -1185,9 +1185,8 @@ SAML 2.0
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
 
 .. important::
-  
-  - When setting up and using SAML 2.0, ``relaystate`` must be passed back to the client from the identify provider. If you're integrating Mattermost with a provider that doesn't already do so by default, ensure that ``relaystate`` is enabled. See the PingIdentity `SAML RelayState <https://support.pingidentity.com/s/article/SAML-RelayState-and-PingFederate#:~:text=RelayState%20is%20an%20optional%20parameter,the%20SAML%202.0%20bindings%20specification>`_ documentation for details.
-  - In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
+
+  In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
 
 .. config:setting:: saml-enablelogin
   :displayname: Enable login with SAML (SAML)
