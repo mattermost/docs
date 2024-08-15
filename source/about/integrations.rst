@@ -31,7 +31,9 @@ Plugins are the most comprehensive way to add new features and customization to 
 Prebuilt plugins are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`__, or you can `build your own plugin <https://developers.mattermost.com/integrate/plugins/>`__.
 
 .. note::
-    Custom Mattermost plugins aren't available in Mattermost Cloud deployments - you are limited to the plugins that are available in the Cloud Marketplace.
+
+    - :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>` customers supports custom Mattermost plugin uploads.
+    - Custom Mattermost plugins aren't available in :doc:`Mattermost Cloud Shared </about/cloud-shared>` deployments. You're limited to the plugins available in the Cloud Marketplace, including: :ref:`Mattermost Calls <configure/plugins-configuration-settings:calls>`, :doc:`Mattermost Copilot </configure/enable-copilot>`, :doc:`GitHub </integrate/github-interoperability>` interoperability, :doc:`GitLab </integrate/gitlab-interoperability>` interoperability, :doc:`Jira </integrate/jira-interoperability>` interoperability, :doc:`Playbooks </guides/repeatable-processes>`, :doc:`ServiceNow </integrate/servicenow-interoperability>` interoperability, :doc:`user satisfaction surveys </manage/user-satisfaction-surveys>`, and :doc:`Zoom </integrate/zoom-interoperability>`.
 
 Bots
 -----
