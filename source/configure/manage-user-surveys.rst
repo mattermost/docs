@@ -54,20 +54,26 @@ Create surveys
 
 Under **Survey setup**, specify the date, time, and details for a new survey:
 
-.. image:: ../images/survey-setup.png
-  :alt: An example of the System Console configuration screen for creating and managing user surveys.
-
 1. **Send next survey at**: Specify the date and time when the survey will begin rolling out to users.
 
   .. note::
 
-      A single survey can be active at a time. If you already have an active survey running, you'll need to reschedule your new survey to start on a date after the current survey expires. Alternatively, you can end the active survey early by selecting **End survey**.
+    A single survey can be active at a time. If you already have an active survey running, you'll need to reschedule your new survey to start on a date after the current survey expires. Alternatively, you can end the active survey early by selecting **End survey**.
 
-2. **Survey expiry**: Specify how long the survey will be open to responses in days.
+2. **Survey expiry (days)**: Specify how long the survey will be open to responses in days.
 3. **Exclude specific teams**: Specify who will receive the survey. You can send the survey to all users, to all users on specific teams, or omit all users from specific teams.
+
+.. image:: ../images/survey-schedule.png
+  :alt: An example of the System Console configuration screen for scheduling a new user survey.
+
 4. **Survey message text**: Customize the introductory message text users see when prompted to complete the survey.
-5. **Textual question**: (Optional) Specify a text-based question for the survey.
-6. Select **Save**. Your new survey is scheduled, and displays under **Active and past surveys** when the survey is shared with users.
+5. **Linear scale question (1-10)**: This question is required that helps calculate the NPS score.
+6. **Textual question**: This question is required that helps gather user feedback.
+7. **Textual question (Optional)**: You can optionally specify a text-based question for your survey.
+8. Select **Save**. Your new survey is scheduled, and displays under **Active and past surveys** once the survey is shared with users.
+
+.. image:: ../images/survey-contents.png
+  :alt: An example of the System Console configuration screen for defining the contents of a new user survey.
 
 Active surveys
 --------------
@@ -77,12 +83,12 @@ When a survey starts, all users recieve a direct message from a feedback bot con
 .. image:: ../images/user-feedback.png
   :alt: An example of the user survey provided to users.
 
-Users must answer the scale-based question in order to submit their response. When a user selects **Submit**, their responses are recorded.
+Users must answer all required questions in order to submit their response. When a user selects **Submit**, their responses are recorded.
 
 Export survey responses
 -----------------------
 
-Select **Export** to download a CSV file containing NPS scores and user responses gatherered through the survey. You can export data from active surveys which will contain data collected so far.
+Select **Export responses** to download a CSV file containing NPS scores and user responses gatherered through the survey. You can export data from active surveys which will contain data collected so far.
 
 .. image:: ../images/active-past-surveys.png
   :alt: An example of the System Console configuration page where all active and past surveys are available for export.
