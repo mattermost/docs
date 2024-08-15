@@ -26,7 +26,7 @@ See the :doc:`Join and leave channels </collaborate/join-leave-channels>` docume
 Private channels
 ----------------
 
-Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the Channel Admins and System Admins.
+Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock-icon| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the channel admins and system admins.
 
 Channel members can choose to leave private channels at any time.
 

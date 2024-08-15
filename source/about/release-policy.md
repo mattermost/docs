@@ -40,7 +40,7 @@ ESRs don’t include changes to product functionality or new features. ESRs are 
 To install extended support releases, follow our [install](/guides/deployment) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/about/mattermost-server-releases).
 
 ```{Important}
-- We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](/deploy/mattermost-v9-changelog) for a list of database, API, and `config.json` updates for all v9.x releases.
+- We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for a list of database, API, and `config.json` updates for all v9.x releases.
 - Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy E10/E20 license.
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
 ```
@@ -60,3 +60,27 @@ To receive updates about Extended Support Releases, sign up for [our mailing lis
 For a new upcoming ESR, an email is sent out 3 months before the end of support for an ESR version. This email includes a note about the new ESR that was just published. A second email is sent out during the month when an ESR version is reaching the end of support.
 
 For deprecated ESRs, an email announcement is sent 3 months in advance. We also add reminders on our release announcements, changelogs, important upgrade notes, and the [Mattermost Discussion Forums](https://forum.mattermost.com/) site.
+
+### Legacy Releases
+
+The following table lists all releases across Mattermost v7.0 and v8.0, including ESRs. See the [unsupported legacy releases](https://docs.mattermost.com/about/unsupported-legacy-releases.html) documentation for comprehensive changelog details for these legacy releases.
+
+```{Important}
+- If you're on a legacy Mattermost release prior to v7.1, in order to take advantage of newer Mattermost releases, you must upgrade to [v7.1 ESR](https://docs.mattermost.com/about/unsupported-legacy-releases.html#release-v7-1-extended-support-release) at a minimum.
+- Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from v7.1 ESR, upgrade to the [v7.8 ESR](https://docs.mattermost.com/about/unsupported-legacy-releases.html#release-v7-8-extended-support-release), or the [v8.1 ESR](https://docs.mattermost.com/about/unsupported-legacy-releases.html#release-v8-1-extended-support-release) before attempting to upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
+```
+
+| **Release** | **Release Type** | **Support ended** | 
+|:---|:---|:---|
+| v8.1 | Extended | 2024-05-15 |
+| v8.0 | Major | 2023-10-15 |
+| v7.10 | Feature | 2023-07-15 |
+| v7.9 | Feature | 2023-06-15 |
+| v7.8 | Extended | 2023-11-15 |
+| v7.7 | Feature | 2023-04-15 |
+| v7.5 | Feature | 2023-02-15 |
+| v7.4 | Feature | 2023-01-15 |
+| v7.3 | Feature | 2022-12-15 |
+| v7.2 | Feature | 2022-11-15 |
+| v7.1 | Extended | 2023-04-15 |
+| v7.0 | Major | 2022-09-15 |

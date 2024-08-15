@@ -71,6 +71,7 @@ Replace ``(MM_SITE_URL)`` with your Mattermost server's Site URL. Select **Regis
 13. Select the following permissions:
 
  - ``Chat.Read.All``
+ - ``Presence.Read.All``
 
 14. Select **Add permissions** to submit the form.
 
@@ -92,7 +93,7 @@ Install and configure the Microsoft Teams integration in Mattermost
 
 .. important::
 
-These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
+  These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
 
 1. Log in to your Mattermost workspace as a system administrator.
 2. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.

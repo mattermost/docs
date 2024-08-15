@@ -1,18 +1,18 @@
 Notify admin
 ============
 
-Some Mattermost features are limited to specific plans. Users who want to access these unavailable features can request access through their System Admin by sending a notification.
+Some Mattermost features are limited to specific plans. Users who want to access these unavailable features can request access through their system admin by sending a notification.
 
-If access to a feature requires a plan upgrade, System Admins receive notifications of these requests in order to collect data before upgrading. For example, if only one end-user requests access to AD/LDAP, it probably isn't necessary to upgrade. However, if 20 users, including Team and Channel Admins request it, you may want to consider upgrading to support this need.
+If access to a feature requires a plan upgrade, system admins receive notifications of these requests in order to collect data before upgrading. For example, if only one end-user requests access to AD/LDAP, it probably isn't necessary to upgrade. However, if 20 users, including team and channel admins request it, you may want to consider upgrading to support this need.
 
 This feature is designed for informational purposes only, and no action is required unless you want to take action. Your Mattermost instance's functionality is not affected if you choose not to upgrade.
 
 Notifications
 -------------
 
-Notifications are triggered by users. The very first time a user sends a request to upgrade or start a trial, a bot message is sent to all System Admins indicating the feature or functionality the user has requested that requires an upgrade or trial. This bot message is listed in the **Direct Messages** section of the channel sidebar.
+Notifications are triggered by users. The very first time a user sends a request to upgrade or start a trial, a bot message is sent to all system admins indicating the feature or functionality the user has requested that requires an upgrade or trial. This bot message is listed in the **Direct Messages** section of the channel sidebar.
 
-Subsequent request notifications are received by System Admins at most every 14 days. When a notification is received by a System Admin, a 14-day cool-off period begins. Any requests generated in the middle of the cool-off period will be held off until 14 days later, and then provided in a summarized format.
+Subsequent request notifications are received by system admins at most every 14 days. When a notification is received by a system admin, a 14-day cool-off period begins. Any requests generated in the middle of the cool-off period will be held off until 14 days later, and then provided in a summarized format.
 
 Take action
 -----------

@@ -102,7 +102,7 @@ Server Configuration Settings
 Commercial License Information (Enterprise Edition only)
   Information about commercial license key purchased or trial license key used for Enterprise Edition servers: Company ID, license ID, license issue date, license start date, license expiry date, number of licensed users, license name, list of unlocked subscription features.
 
-Channel Moderation Configuration Information (Enterprise Edition only)
+Advanced Access Controls Configuration Information (Enterprise Edition only)
   Information related to channel moderation, including number of channel schemes, number of channels with posting messages disabled for users or guests, number of channels with emoji reactions disabled for users or guests, number of channels with managing members disabled, number of channels with channel mentions disabled for users or guests.
   
 Channel Member Management Information (Enterprise Edition only)
@@ -115,7 +115,7 @@ Plugin Configuration Information
   Basic information including number of active and inactive plugins, which are using webapp or backend portions, which `Mattermost plugins <https://github.com/mattermost/mattermost-server/blob/master/services/telemetry/telemetry.go#L1406>`__ are enabled along with their versions, and core plugins disabled count. Some plugins may send summary data such as number of authenticated users of the plugin. The list of plugins is obtained from the Marketplace. If the Marketplace can't be reached, the list of known plugins is used instead.
 
 Permissions Configuration Information (Enterprise Edition only)
-  Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; team user permissions; Channel Admin permissions; channel user permissions; number of teams the scheme is associated with; number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.
+  Permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; team admin permissions; team user permissions; channel admin permissions; channel user permissions; number of teams the scheme is associated with; number of users assigned to each admin role; Number of admin roles not using default privileges; Changes to default privileges of each admin role.
 
 Aggregated Usage Statistics
   Non-personally identifiable summations of basic usage statistics: Number of enabled and disabled accounts, number of user logins in the last 24 hours and the last 30 days, number of users active in the last day/month, whether APIv3 endpoints were used in the last 24 hours, number of posts, channels, teams, guest accounts, bots, and file storage.
@@ -133,7 +133,7 @@ Reporting Frequency
 
   The majority of these events have been disabled. Refer to the source file for the `current list of events sent via telemetry <https://github.com/mattermost/mattermost-redux/blob/master/src/client/client4.ts#L3069>`__.
 
-Non-personally Identifiable Error Information, distinguished by end users and System Admins
+Non-personally Identifiable Error Information, distinguished by end users and system admins
   Boolean when the following events occur:
   
   - *Sign-in Error*: Email login error, AD/LDAP login error, SAML login error
@@ -142,7 +142,7 @@ Non-personally Identifiable Error Information, distinguished by end users and Sy
 
   - *Mobile App Errors*: App crashes caused by type errors, exceptions, and failed logins
 
-Non-personally Identifiable Diagnostic Information, distinguished by end users and System Admins
+Non-personally Identifiable Diagnostic Information, distinguished by end users and system admins
   Boolean when the following events occur:
 
   - *Team and Account Setup Diagnostics:* Account creation via email, invite or UI, account creation page view, account creation completion; tutorial step and tip completion or opt out, team creation page view, team name and URL entry, team creation completion, clicks on all form elements, buttons, textboxes and links on sign up page, team selection page, and team creation pages
@@ -156,16 +156,16 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Plugin telemetry:* Search terms used in Marketplace on cloud workspaces will be recorded
   - *Commercial License Diagnostics (Enterprise Edition only):* Uploaded an Enterprise license key to the server
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams
-  - *Permissions Discovery Diagnostics (Enterprise Edition only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; Team Admin permissions; Team user permissions; Channel Admin permissions; Channel user permissions; Number of teams the scheme is associated with
+  - *Permissions Discovery Diagnostics (Enterprise Edition only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; team admin permissions; Team user permissions; channel admin permissions; Channel user permissions; Number of teams the scheme is associated with
   - *Group Discovery Diagnostics:* Provides information related to AD/LDAP (Enterprise Edition only) and custom groups (Enterprise and Professional Edition only), including number of unique users in groups, number of groups synchronized to Mattermost, teams and channels associated to groups, teams and channels synchronized with groups, and number of group members.
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
-  - *Collapsed Reply Threads:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
+  - *Threaded discussions:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
 
 Playbooks telemetry
 --------------------
 
-Playbooks metadata is collected and sent every 24 hours. Visit the `playbooks telemetry file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/telemetry/rudder.go>`_ for details about the types of metadata collected.
+Collaborative playbooks metadata is collected and sent every 24 hours. Visit the `playbooks telemetry file <https://github.com/mattermost/mattermost-plugin-playbooks/blob/master/server/telemetry/rudder.go>`_ for details about the types of metadata collected.
 
 Android Mobile App performance monitoring
 -----------------------------------------

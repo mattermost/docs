@@ -6,6 +6,8 @@ Install Mattermost on Kubernetes
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
+Mattermost supports Kubernetes clusters running either self-hosted in data centers, or in managed services such as Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, DigitalOcean Kubernetes, and others.
+
 You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs). Running Mattermost in Kubernetes requires resources based on your total number of users. See the :ref:`Mattermost Kubernetes Operator <install/install-kubernetes:mattermost operator>` documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.
 
 .. tip::
@@ -104,6 +106,10 @@ Deploy Mattermost
     type: Opaque
     stringData:
       license: <LICENSE_FILE_CONTENTS>
+
+  .. note::
+    A Mattermost Enterprise license is required for a seamless experience deploying Mattermost with multiple server instances. If you plan to deploy Mattermost without an Enterprise license, we recommend a single server deployment by adding ``Replicas:  1`` to the ``spec`` section in step 2.
+    See the :doc:`high availability </scale/high-availability-cluster-based-deployment>` documentation for details on running a highly-available Mattermost deployment.
 
 2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the YAML structure below, and make any necessary adjustments for your configuration and environment. 
 
