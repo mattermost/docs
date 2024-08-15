@@ -1,13 +1,10 @@
-Desktop MSI installer and group policy installation guides (Beta) 
+Desktop MSI installer and group policy installation guides 
 ==================================================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 This guide provides steps to install the MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v5.9.0>`_. 
-
-.. note::
-    The Mattermost MSI installer and Group Policy (GPO) definitions are in Beta. If you are using this installer or GPOs and have feedback, particularly if you are an organization executing remote deployments, please contact us in the `MSI Installer channel on our Community server <https://community.mattermost.com/core/channels/msi-installer>`_ or on our `community forum <https://forum.mattermost.com/>`_. We hope to promote this installer out of Beta when the known issues are addressed and we are confident that the various deployment scenarios expected in production environments are tested sufficiently with the help of organizations using this Beta. Feedback is highly appreciated.
 
 Download group policy and MSI installer files
 ----------------------------------------------
@@ -135,8 +132,13 @@ Verify group policy settings in the installed desktop app
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00018.png
       :alt: Verify group policy settings in the Mattermost Desktop App by opening the app from the Start menu, and verifying that the app loads the first server you defined in the Edit group policy. 
 
-Silent installation guide
--------------------------
+Advanced MSI options
+--------------------
+
+Silent installation
+~~~~~~~~~~~~~~~~~~~~
+
+Perform a silent installation of the MSI by running the following command:
 
 .. important::
 
@@ -147,4 +149,27 @@ Perform a silent installation of MSI by running the following command:
 ``msiexec /i mattermost-desktop-v5.9.0-x64.msi /qn``
 
 .. note::
-   Change this command as new versions of the Mattermost Desktop App are released.
+   - You'll need to update the version details in this command as new versions of the Mattermost desktop app are released.
+   - You must be an administrator to run these commands, or you must run them from an admin command prompt or powershell.
+
+From version v5.9.0 of the Mattermost desktop app, the following silent MSI installation options are also available.
+
+Install for all users
+~~~~~~~~~~~~~~~~~~~~~
+
+Use the ``ALLUSERS`` parameter to install the MSI for all users:
+
+``msiexec /i mattermost-desktop-v5.9.0-x64.msi ALLUSERS=1``
+
+.. note::
+   - Installing the MSI for all users :ref:`disables automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` for the desktop app on Windows.
+   - To :ref:`disable automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.8.0-x64.msi DISABLEAUTOUPDATE=1``
+
+Specify an install directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
+
+``msiexec /i mattermost-desktop-v5.9.0-x64.msi APPLICATIONFOLDER=<install directory>``
+
+Change this command as new versions of the Mattermost Desktop App are released.
