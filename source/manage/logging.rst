@@ -21,7 +21,7 @@ Customize the following console logs by going to **System Console > Environment 
 
 - :ref:`Stop outputting console logs <configure/environment-configuration-settings:output logs to console>`
 - :ref:`Adjust console log level <configure/environment-configuration-settings:console log level>` 
-- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
+- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`Colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
 - :ref:`Omit webhook debug messages <configure/environment-configuration-settings:enable webhook debugging>`
 
 File logs
