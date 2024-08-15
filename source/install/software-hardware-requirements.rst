@@ -181,5 +181,5 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
-- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch 7.x is supported. :doc:`Learn more here </scale/elasticsearch>`.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or Opensource is recommended from Mattermost v9.11. :doc:`Learn more here </scale/elasticsearch>`.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <configure/environment-configuration-settings:file storage>`.
