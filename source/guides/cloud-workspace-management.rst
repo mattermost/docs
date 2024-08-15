@@ -12,13 +12,11 @@ This section of the guide is for system admins of Mattermost Cloud deployments.
     :hidden:
     :titlesonly:
 
-    Workspace usage </manage/workspace-usage>
     Workspace migration </manage/cloud-data-export>
     Cloud data residency </manage/cloud-data-residency>
     Cloud IP Filtering </manage/cloud-ip-filtering>
     Cloud Bring Your Own Key (BYOK) </manage/cloud-byok>
 
-* :doc:`Workspace usage </manage/workspace-usage>` - Keep your workspace active.
 * :doc:`Workspace migration </manage/cloud-data-export>` - Migrate your workspace using the mmctl tool.
 * :doc:`Cloud data residency </manage/cloud-data-residency>` - Find information about your data in the Cloud.
 * :doc:`Cloud IP Filtering </manage/cloud-ip-filtering>` - Restrict access to your Mattermost Cloud workspace to a specific IP address range.
