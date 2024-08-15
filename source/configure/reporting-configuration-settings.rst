@@ -69,5 +69,6 @@ Server logs
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View logging of server-side events.                           | - System Config path: **Reporting > Server Logs**             |
 |                                                               | - ``config.json`` setting: N/A                                |
-|                                                               | - Environment variable: N/A                                   |
+| Reload data, download the ``mattermost.log`` file locally,    | - Environment variable: N/A                                   |
+| and view full log event details for any log entry.            |                                                               |
 +---------------------------------------------------------------+---------------------------------------------------------------+

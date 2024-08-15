@@ -29,6 +29,10 @@ File logs
 
 File logs feature info level log messages including errors and information around startup and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory.
 
+.. tip::
+
+    You can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
+
 Customize the following file logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
 - :ref:`Stop outputting file logs <configure/environment-configuration-settings:output logs to file>`
@@ -139,10 +143,11 @@ Advanced logging
 System admins can output log and audit records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
 
 .. tip::
-    
-    - From Mattermost v9.3, system admins can configure advanced logging options in the System Console using multi-line JSON by going to **Environment > Logging**.
-    - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string.
-    - Mattermost Team Edition customers can output audit log records to the console or a file.
+
+  - From Mattermost v9.11, system admins can configure advanced logging JSON options using the ``mmctl config set`` command. See the :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>` documentation for an example slash command.
+  - From Mattermost v9.3, system admins can configure advanced logging options in the System Console using multi-line JSON by going to **Environment > Logging**.
+  - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string.
+  - Mattermost Team Edition customers can output audit log records to the console or a file.
 
 Advanced logging options can be configured to:
 
