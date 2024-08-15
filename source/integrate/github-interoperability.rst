@@ -33,7 +33,7 @@ A Mattermost system admin must perform the following steps in GitHub.
 3. Save your changes.
 4. Select **Generate a new client secret**, and enter your GitHub password to continue.
 5. Copy the **Client ID** and **Client Secret** in the resulting screen.
-6. Generate a **Webhook Secret** and **At Rest Encryption Key** by selecting **Generate**.
+6. In Mattermost, go to **System Console > Plugins > GitHub**, and regenerate both a **Webhook Secret** and **At Rest Encryption Key** by selecting **Regenerate** next to each field. You'll need a copy of the **Webhook Secret** value to create a webhook in GitHub.
 
 Create a webhook in GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -81,8 +81,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
   c. Once installed, select **Configure**. You're taken to the System Console.
   d. On the GitHub configuration page, enable and configure GitHub interoperability as follows, and then select **Save**:
 
-    - Enter the **GitHub OAuth Client ID** and **GitHub OAuth Client Secret** obtained during registration
-    - Regenerate the **At Rest Encryption Key** by selecting **Regenerate**.
+    - Enter the **GitHub OAuth Client ID** and **GitHub OAuth Client Secret** obtained during registration.
     - (Optional) **GitHub Organization**: Lock the integration to a single GitHub organization by specifying the name of your GitHub organization.
     - (GitHub Enterprise Only): Set **Enterprise Base URL** and **Enterprise Upload URL** values to your GitHub Enterprise URLs, e.g. ``https://github.example.com``. These values are often the same.
     - (Mattermost desktop app only) **Display Notification Counters in Left Sidebar**: Display or hide GitHub notification counters in the Mattermost sidebar.
@@ -168,7 +167,7 @@ If you want to send notifications to a Mattermost channel when **Severity/Critic
 How does the integration save user data for each connected GitHub user?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-GitHub user tokens are AES-encrypted with an **At Rest Encryption Key** configured in Mattermost. Once encrypted, the tokens are saved in the ``PluginKeyValueStore`` table in your Mattermost database.
+GitHub user tokens are AES-encrypted with an **At Rest Encryption Key** generated in Mattermost. Once encrypted, the tokens are saved in the ``PluginKeyValueStore`` table in your Mattermost database.
 
 Get help
 --------
