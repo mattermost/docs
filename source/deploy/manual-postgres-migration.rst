@@ -43,13 +43,13 @@ Use the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL.
 Install pgloader
 ~~~~~~~~~~~~~~~~
 
-To install ``pgloader``. See the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`__. 
+To install ``pgloader``, see the official `installation guide <https://pgloader.readthedocs.io/en/latest/install.html>`_. 
 
 .. note::
 
-   If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`__ in pgloader-compiled binaries, you need to compile pgloader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`__ to build from the source.
+   If you are using MySQL v8: Due to a `known bug <https://github.com/dimitri/pgloader/issues/1183>`_ in pgloader-compiled binaries, you need to compile pgloader from the source. Please follow the steps `here <https://pgloader.readthedocs.io/en/latest/install.html#build-from-sources>`_ to build from the source.
 
-Alternatively, you may want to use our ``mattermost-pgloader`` Docker image to avoid installing or building ``pgloader``. If this is the case:
+Alternatively, you may want to use our ``mattermost-pgloader`` Docker image to avoid installing or building ``pgloader``. See the documentation below for details.
 
 Use pgloader
 ~~~~~~~~~~~~
@@ -101,7 +101,7 @@ The ``dbcmp`` tool enables you to compare the data following the migration by co
 Install dbcmp
 ~~~~~~~~~~~~~
 
-You can install `dbcmp <https://github.com/mattermost/dbcmp>`__ by running the following command:
+You can install `dbcmp <https://github.com/mattermost/dbcmp>`_ by running the following command:
 
 .. code:: bash
 
@@ -112,7 +112,7 @@ System requirements and configurations for manual migrations
 
 Before starting a manual migration process, it's essential to ensure that your system meets the necessary requirements for a smooth and efficient migration. We strongly recommend the following system specifications and adjustments:
 
-- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgloader settings, such as the ``number of workers``, ``prefetch rows``, and especially ``rows per range`` if ``concurrency`` is set above ``1``. These adjustments can help optimize resource utilization based on available system resources. For further detail see `pgloader documentation <https://pgloader.readthedocs.io/en/latest/batches.html>`__.
+- Ensure you have enough system memory resources. 16GB of RAM is recommended as a default. In scenarios where system memory is insufficient, users can fine-tune pgloader settings, such as the ``number of workers``, ``prefetch rows``, and especially ``rows per range`` if ``concurrency`` is set above ``1``. These adjustments can help optimize resource utilization based on available system resources. For further detail see `pgloader documentation <https://pgloader.readthedocs.io/en/latest/batches.html>`_.
 - A multi-core processor with sufficient processing power is recommended for the migration process, especially when dealing with large datasets.
 - Ensure that there is enough disk space available for storing both the MySQL and PostgreSQL databases, as well as any temporary files generated during the migration process. The amount of required disk space depends on the size of the databases being migrated.
 - To reduce migration time further, users may choose to manually drop indexes on the target PostgreSQL database before initiating the migration process. This approach can potentially accelerate the migration by reducing overhead with index builds during data insertion.
@@ -129,7 +129,7 @@ Before a manual migration
   - Schedule the migration window. This process requires you to stop the Mattermost Server during the migration.
   - See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
   - Prepare your PostgreSQL environment by creating a database and user. See the :doc:`database </install/prepare-mattermost-database>` documentation for details.
-  - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`__ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser``.
+  - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`_ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser``.
 
 Schema diffs
 ------------
@@ -188,7 +188,7 @@ UploadSessions   Path             text -> varchar(512)  The upload session will 
 Full-text indexes
 ~~~~~~~~~~~~~~~~~~
 
-It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`__ for full-text search indexing. In these cases, we are dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
+It's possible that some words in the ``Posts`` and ``FileInfo`` tables can exceed the `limits of the maximum token length <https://www.postgresql.org/docs/11/textsearch-limitations.html>`_ for full-text search indexing. In these cases, we are dropping the ``idx_posts_message_txt`` and ``idx_fileinfo_content_txt`` indexes from the PostgreSQL schema, and creating these indexes after the migration by running the following queries:
 
 To prevent errors during the migration, we have included following queries:
 
@@ -200,7 +200,7 @@ To prevent errors during the migration, we have included following queries:
 Unsupported unicode sequences
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is a specific unicode sequence that is `disallowed <https://www.postgresql.org/docs/16/datatype-json.html#DATATYPE-JSON>`__ in PostgreSQL which is ``\u0000``. There is a chance that this sequence may appear in several rows across a bunch of tables in your MySQL database. If it is the case, during the migration you will likely receive an error as following: ``unsupported Unicode escape sequence: \u0000 cannot be converted to text.``. To prevent this from happening, we advise to sanitize your data before starting to the migration. You can use the following query to replace ``\u0000`` sequence with empty string.
+There is a specific unicode sequence that is `disallowed <https://www.postgresql.org/docs/16/datatype-json.html#DATATYPE-JSON>`_ in PostgreSQL which is ``\u0000``. There is a chance that this sequence may appear in several rows across a bunch of tables in your MySQL database. If it is the case, during the migration you will likely receive an error as following: ``unsupported Unicode escape sequence: \u0000 cannot be converted to text.``. To prevent this from happening, we advise to sanitize your data before starting to the migration. You can use the following query to replace ``\u0000`` sequence with empty string.
 
 .. note::
 
@@ -245,7 +245,7 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
 Artifacts may remain from previous configurations/versions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`__ to handle the schema migrations. Since we don't use it anymore, we exclude the table ``schema_migrations``. If you were using Mattermost before ``v6.4`` consider dropping this table and excluding it from comparison as well.
+Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`_ to handle the schema migrations. Since we don't use it anymore, we exclude the table ``schema_migrations``. If you were using Mattermost before ``v6.4`` consider dropping this table and excluding it from comparison as well.
 
 .. code:: sql
 
@@ -279,7 +279,7 @@ An error has been identified in the 96th migration that was previously released.
 Configuration in database
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you were previously utilizing a database for handling the `Mattermost configuration <https://docs.mattermost.com/configure/configuration-in-your-database.html>`__, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. Please use ``mmctl config migrate`` tooling to `migrate your config <https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-migrate>`__ to the target database. After migrating the config, we should also update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
+If you were previously utilizing a database for handling the :doc:`Mattermost configuration </configure/configuration-in-your-database>`, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. Please use ``mmctl config migrate`` tooling to :ref:`migrate your config <manage/mmctl-command-line-tool:mmctl config migrate>` to the target database. After migrating the config, we should also update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
 
 .. code:: sql
 
@@ -655,7 +655,7 @@ Troubleshooting
 Unsupported authentication for MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 
 .. code:: sql
 
