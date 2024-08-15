@@ -61,6 +61,7 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
   - Pull request review comments
   - Pushes
   - Stars
+  - Releases
 
 6. Select **Add Webhook** to save your changes.
 
@@ -106,7 +107,7 @@ Usage
 
 Users who want to use GitHub interconnectivity must register an OAuth app in GitHub for Mattermost, and then connect a GitHub account to Mattermost.
 
-Once connected, you'll receive direct messages from the GitHub bot in Mattermost when someone mentions you, requests a review, comments on, or modifies one of your pull requests/issues, or assigns you to an issue on GitHub.
+Once connected, you'll receive direct messages from the GitHub bot in Mattermost when someone mentions you, requests a review, comments on, modifies one of your pull requests/issues (includes adding labels or reopening the issue), or assigns you to an issue on GitHub.
 
 Register an OAuth app in GitHub for Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
