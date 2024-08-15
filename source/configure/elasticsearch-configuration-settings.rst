@@ -59,18 +59,17 @@ Backend type
 
 .. important::
 
-  Mattermost v9.11 introduces support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`_ and Beta support for `OpenSearch <https://opensearch.org/>`_.
+  Mattermost v9.11 introduces support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`_ and `OpenSearch <https://opensearch.org/>`_ (Beta).
 
   **Elasticsearch**
   
-  - The official Elasticsearch v8 client only works with Elasticsearch versions released later than v7.10. This is a breaking change for customers using AWS Elasticsearch v7.10.
-  - We recommend customers upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
-  - Customers using Elasticsearch v8 need to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to enable wildcard operations.
+  - The official Elasticsearch v8 client only works with Elasticsearch versions released later than v7.10. This is a breaking change for customers using AWS Elasticsearch v7.10. We recommend customers upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+  - Customers using Elasticsearch v8 must set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to enable wildcard operations.
 
-  **Opensearch** (Beta)
+  **Opensearch (Beta)**
 
   - Customers using OpenSearch as their search backend must change the default configuration value to ``opensearch`` using :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>`, or by editing the ``config.json`` file manually, and then restarting the Mattermost server. This configuration setting value can't be changed dynamically while the Mattermost server is running using the System Console.
-  - Additionally, we recommend that customers using Opensearch don't enable ``compatibility mode`` because it reports the incorrect version.
+  - Additionally, we recommend that ``compatibility mode`` isn't enabled because it reports the incorrect version.
 
 .. config:setting:: elastic-serverconnectionaddress
   :displayname: Server connection address (Elasticsearch)

@@ -5519,7 +5519,7 @@ If you upgrade from a release earlier than 5.19, please read the other [Importan
  - Bulk export now includes direct messages from a user to themselves.
 
 #### Administration
- - Added support for Elasticsearch 7.
+ - Added support for Elasticsearch v7.
  - Added ability to inform System Admins when a user who managed bot accounts is deactivated, and enable them to take ownership of the bot.
  - Added LDAP/Elasticsearch/SQL Trace to server logs to make it easier for admins to diagnose problems.
  - Added ``plugins`` to the list of words that a team URL cannot start with.
