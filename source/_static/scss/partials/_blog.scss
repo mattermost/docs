@@ -121,8 +121,7 @@ body:not([data-custom-theme="light"]) {
         color: var(--primary);
     }
 
-    .highlight,
-    .mm-code-copy code {
+    .highlight {
         background: rgba(255, 255, 255, 0.04) !important;
         color: rgba(255, 255, 255, 0.8) !important;
 

@@ -59,7 +59,7 @@ Pull the Docker image and verify pgloader
 
 For a manual migration, run the following command to pull the ``mattermost-pgloader`` image and verify that pgloader is working correctly:
 
-.. code:: bash
+.. code-block:: sh
 
   docker run -it --rm -v $(pwd):/home/migration mattermost/mattermost-pgloader:latest pgloader --version
 
@@ -89,7 +89,7 @@ Install morph
 
 You can install morph CLI by running the following command:
 
-.. code:: bash
+.. code-block:: sh
 
   go install github.com/mattermost/morph/cmd/morph@v1
 
@@ -103,7 +103,7 @@ Install dbcmp
 
 You can install `dbcmp <https://github.com/mattermost/dbcmp>`_ by running the following command:
 
-.. code:: bash
+.. code-block:: sh
 
   go install github.com/mattermost/dbcmp/cmd/dbcmp@latest
 
@@ -143,7 +143,7 @@ We encourage you to check if the sizes are consistent within the PostgreSQL sche
 
 You can check if there are any required deletions or updates. For example, to do so in the ``Audits`` table/``Action`` column; run:
 
-.. code:: sql
+.. code-block:: sql
 
   SELECT FROM mattermost.Audits where LENGTH(Action) > 512;
 
@@ -192,7 +192,7 @@ It's possible that some words in the ``Posts`` and ``FileInfo`` tables can excee
 
 To prevent errors during the migration, we have included following queries:
 
-.. code:: none
+.. code-block:: text
 
   DROP INDEX IF EXISTS {{ .source_db }}.idx_posts_message_txt;
   DROP INDEX IF EXISTS {{ .source_db }}.idx_fileinfo_content_txt;
@@ -206,7 +206,7 @@ There is a specific unicode sequence that is `disallowed <https://www.postgresql
 
   You can use this query as-is in a script, or you may need to set the delimiter to something else (e.g., ``DELIMITER //``) when defining it in the MySQL console. Once you are done defining the procedure, please set the delimiter back to the original (i.e., ``DELIMITER ;``).
 
-.. code:: none
+.. code-block:: text
 
   CREATE PROCEDURE SanitizeUnsupportedUnicode()
   BEGIN
@@ -247,19 +247,19 @@ Artifacts may remain from previous configurations/versions
 
 Prior to ``v6.4``, Mattermost was using `golang-migrate <https://github.com/golang-migrate/migrate>`_ to handle the schema migrations. Since we don't use it anymore, we exclude the table ``schema_migrations``. If you were using Mattermost before ``v6.4`` consider dropping this table and excluding it from comparison as well.
 
-.. code:: sql
+.. code-block:: sql
 
   DROP TABLE mattermost.schema_migrations;
 
 Some community members have reported that they had ``description`` and ``nextsyncat`` columns in their ``SharedChannelRemotes`` table. These columns should be removed from the table. Consider running the following DDL to drop the columns. (This migration will be added to future versions of Mattermost).
 
-.. code:: sql
+.. code-block:: sql
 
   ALTER TABLE SharedChannelRemotes DROP COLUMN description, DROP COLUMN nextsyncat;
 
 An error has been identified in the 96th migration that was previously released. Before proceeding with the migration, it is necessary to remove a specific column. To ensure the Threads table reaches the expected state, execute the following prepared statement:
 
-.. code:: sql
+.. code-block:: sql
 
   SET @preparedStatement = (SELECT IF(
    (
@@ -281,7 +281,7 @@ Configuration in database
 
 If you were previously utilizing a database for handling the :doc:`Mattermost configuration </configure/configuration-in-your-database>`, those tables will not be migrated from your MySQL database with the migration `script <#migrate-the-data>`__. Please use ``mmctl config migrate`` tooling to :ref:`migrate your config <manage/mmctl-command-line-tool:mmctl config migrate>` to the target database. After migrating the config, we should also update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
 
-.. code:: sql
+.. code-block:: sql
 
   SELECT * FROM Configurations WHERE Active = 't';
 
@@ -294,13 +294,13 @@ It is essential to create tables and indexes to ensure that the PostgreSQL datab
 
 - Clone the ``mattermost`` repository for your specific version:
 
-.. code:: bash
+.. code-block:: sh
 
   git clone -b <your current version (eg. release-7.8)> git@github.com:mattermost/mattermost.git --depth=1
 
 - Run all schema migrations* on your PostgreSQL database using morph CLI with the following command:
 
-.. code:: bash
+.. code-block:: sh
 
   morph apply up --driver postgres --dsn "postgres://user:pass@localhost:5432/<target_db_mame>?sslmode=disable" --path ./mattermost/db/migrations/postgres --number -1
 
@@ -317,7 +317,7 @@ Once we set the schema to a desired state, we can start migrating the **data** b
 
 Use the following configuration for the baseline of the data migration:
 
-.. code:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -366,7 +366,7 @@ Use the following configuration for the baseline of the data migration:
 
 Once you save this configuration file, e.g. ``migration.load``, you can run the ``pgloader`` with the following command:
 
-.. code:: bash
+.. code-block:: sh
 
   pgloader migration.load > migration.log
 
@@ -380,7 +380,7 @@ Restore full-text indexes
 
 To avoid performance regression on ``Posts`` and ``FileInfo`` table access, following queries should be executed once the migration finishes:
 
-.. code:: sql
+.. code-block:: sql
 
   CREATE INDEX IF NOT EXISTS idx_posts_message_txt ON public.posts USING gin(to_tsvector('english', message));
   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON public.fileinfo USING gin(to_tsvector('english', content));
@@ -389,7 +389,7 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 
   If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below. If it continue to fail create the index with the substring of the content, consider decreasing the value gradually (Like to ``500000``) until the index is created successfully.
 
-.. code:: sql
+.. code-block:: sql
 
   CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON public.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000))); 
 
@@ -400,7 +400,7 @@ We internally developed a tool to simplify the process of comparing the contents
 
 The tool includes a few flags to run a comparison:
 
-.. code:: sh
+.. code-block:: sh
 
    Usage:
      dbcmp [flags]
@@ -414,7 +414,7 @@ The tool includes a few flags to run a comparison:
 
 For our case, we can simply run the following command:
 
-.. code:: sh
+.. code-block:: sh
 
   dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN} " --exclude="db_migrations,ir_,focalboard,systems"
 
@@ -449,7 +449,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 Use the following configuration for the baseline of the data migration:
 
-.. code:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -543,7 +543,7 @@ Use the following configuration for the baseline of the data migration:
    $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
    $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-.. code:: bash
+.. code-block:: sh
 
   pgloader playbooks.load > playbooks_migration.log
 
@@ -556,7 +556,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 Use the following configuration for the baseline of the data migration:
 
-.. code:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -600,7 +600,7 @@ Use the following configuration for the baseline of the data migration:
    $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
    $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-.. code:: bash
+.. code-block:: sh
 
   pgloader focalboard.load > focalboard_migration.log
 
@@ -613,7 +613,7 @@ Once we are ready to migrate, we can start migrating the **schema** and the **da
 
 Use the following configuration for the baseline of the data migration:
 
-.. code:: none
+.. code-block:: text
 
   LOAD DATABASE
    FROM      mysql://{{ .mysql_user }}:{{ .mysql_password }}@{{ .mysql_address }}/{{ .source_db }}
@@ -645,7 +645,7 @@ Use the following configuration for the baseline of the data migration:
    $$ SELECT pg_catalog.set_config('search_path', '"$user", public', false); $$,
    $$ ALTER USER {{ .pg_user }} SET SEARCH_PATH TO 'public'; $$;
 
-.. code:: bash
+.. code-block:: sh
 
   pgloader calls.load > calls_migration.log
 
@@ -657,6 +657,6 @@ Unsupported authentication for MySQL
 
 If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 
-.. code:: sql
+.. code-block:: sql
 
    ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';

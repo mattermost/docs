@@ -40,7 +40,7 @@ Use the CLI
 
   For example, to get the Mattermost version on a default installation of Mattermost:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
     cd /opt/mattermost/
     sudo -u mattermost bin/mattermost version
@@ -50,7 +50,7 @@ Use the CLI
     - Ensure you run the Mattermost binary as the ``mattermost`` user. Running it as ``root`` user (for example) may cause complications with permissions as the binary initiates plugins and accesses various files when running CLI commands. Running the server as ``root`` may result in ownership of the plugins and files to be overwritten as well as other potential permissions errors.
     - When running CLI commands on a Mattermost installation that has the configuration stored in the database, you might need to pass the database connection string as: 
 
-      .. code-block:: bash
+      .. code-block:: sh
 
         bin/mattermost --config="postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable\u0026connect_timeout=10"
 
@@ -60,7 +60,7 @@ Use the CLI
 
   For example, to get the Mattermost version on GitLab Omnibus:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
     cd /opt/gitlab/embedded/service/mattermost
     sudo /opt/gitlab/embedded/bin/chpst -e /opt/gitlab/etc/mattermost/env -P -U mattermost:mattermost -u mattermost:mattermost /opt/gitlab/embedded/bin/mattermost version
@@ -75,7 +75,7 @@ Use the CLI
 
   For example, to get the Mattermost version on a Docker Install:
 
-  .. code-block:: bash
+  .. code-block:: sh
 
     docker exec -it <your-mattermost-container-name> mattermost version
 
@@ -95,7 +95,7 @@ Description
   Commands for configuring and managing your Mattermost instance and users.
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     -c, --config {string}           Configuration file to use. (default "config.json")
     --disableconfigwatch {boolean}  When true, the config.json file will not be reloaded automatically when another process changes it (default "false")
@@ -123,7 +123,7 @@ Child Commands
   -  `mattermost db version`_ - Return the most recently applied version number
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     -h, --help   help for db
     -c, --config string   Configuration file to use
@@ -135,17 +135,17 @@ Description
   Rolls back database migrations. Requires either an update plan to roll back to, or comma-separated version numbers to be rolled back.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db downgrade
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db downgrade 99,100,101
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --<plan-file> string      Runs the rollback migrations defined in the plan file.
 
@@ -156,26 +156,26 @@ Description
     Initializes the database for a given data source name (DSN), executes migrations, and loads custom defaults when specified.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db init
 
 Examples
   Use the ``config`` flag to pass the DSN:
     
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db init --config postgres://localhost/mattermost
        
   Run this command to use the ``MM_CONFIG`` environment variable:
     
-  .. code-block:: none
+  .. code-block:: sh
       
     MM_CONFIG=postgres://localhost/mattermost mattermost db init
     
   Run this command to set a custom defaults file to be loaded into the database: 
     
-  .. code-block:: none
+  .. code-block:: sh
     
     MM_CUSTOM_DEFAULTS_PATH=custom.json MM_CONFIG=postgres://localhost/mattermost mattermost db init
 
@@ -189,17 +189,17 @@ Child Commands
   -  `mattermost db downgrade`_ - Roll back database migrations.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db migrate
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db migrate
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --auto-recover bool     If the migration plan receives an error during migrations, this command will try to rollback migrations already applied within the plan. Not recommended without reviewing migration plan by combining --save-plan and --dry-run options.
     --save-plan bool        Saves the plan for the migration into the file store so that it can be used for reviewing the plan or for downgrading.
@@ -212,12 +212,12 @@ Description
   Resets the database to its initial state. Doesn't start the application server. Only starts the store layer and truncates the tables, excluding the ``migrations`` table.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db reset
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost db reset
 
@@ -228,17 +228,17 @@ Description
   Returns the most recently applied version number.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost db version
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost export actiance --exportFrom=1513102632
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
     --batchSize int         The number of posts to export. The default of -1 means no limit.
@@ -268,17 +268,17 @@ Description
     Export data from Mattermost in Actiance XML format.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost export actiance
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost export actiance --exportFrom=1513102632
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
     --batchSize int         The number of posts to export. The default of -1 means no limit.
@@ -295,17 +295,17 @@ Description
   Export data from Mattermost in CSV format.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost export csv
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost export csv --exportFrom=1513102632
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
     --batchSize int         The number of posts to export. The default of -1 means no limit.
@@ -317,17 +317,17 @@ Description
   Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost export global-relay-zip
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost export global-relay-zip --exportFrom=1513102632
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
     --batchSize int         The number of posts to export. The default of -1 means no limit.
@@ -339,17 +339,17 @@ Description
     Schedule an export job in a format suitable for importing into a third-party archive system.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost export schedule
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost export schedule --format=actiance --exportFrom=1513102632
 
 Options
-  .. code-block:: none
+  .. code-block:: text
 
     --format string         Output file format. Currently, only ``actiance`` is supported.
     --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
@@ -364,7 +364,7 @@ Description
   Generate full documentation in Markdown format for the Mattermost command line tools.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost help {outputdir}
 
@@ -396,12 +396,12 @@ Description
   Import a team from a Slack export zip file.
 
 Format
-    . code-block:: none
+    . code-block:: sh
 
     mattermost import slack {team} {file}
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost import slack myteam slack_export.zip
 
@@ -414,12 +414,12 @@ Description
   Start the Mattermost job server.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost jobserver
 
 Example
-  .. code-block:: none
+  .. code-block:: sh
 
     bin/mattermost jobserver
 
@@ -432,7 +432,7 @@ Description
   Runs the Mattermost server.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost server
 
@@ -449,7 +449,7 @@ Desription
     Displays Mattermost version information.
 
 Format
-  .. code-block:: none
+  .. code-block:: sh
 
     mattermost version
 

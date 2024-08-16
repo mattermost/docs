@@ -198,7 +198,7 @@ Define advanced log output
 
     Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
 
-    .. code:: JSON
+    .. code-block:: JSON
 
         "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
 
@@ -520,7 +520,7 @@ How can I configure Advanced logging via environment variables?
 
 The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to configure Advanced logging . You can use ``jq`` to generate the JSON payload, e.g.
 
-.. code-block:: shell
+.. code-block:: sh
 
     export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
         "console1": {

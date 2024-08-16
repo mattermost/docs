@@ -21,7 +21,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 
   Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
 
-  .. code:: bash
+  .. code-block:: sh
 
     sudo apt update
     sudo apt install docker.io
@@ -31,7 +31,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 
   Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
 
-  .. code:: bash
+  .. code-block:: sh
 
     sudo dnf install moby-engine
     sudo systemctl start docker
@@ -72,19 +72,19 @@ Docker
 
 If deploying on an M1 Mac and encountering permission issues in the Docker container, `redo the third step <#create-the-required-directores-and-set-their-permissions>`__ and skip this command:
 
-.. code:: bash
+.. code-block:: sh
 
   sudo chown -R 2000:2000 ./volumes/app/mattermost
 
 If having issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
-.. code:: bash
+.. code-block:: sh
 
   sudo systemctl enable --now docker
 
 To remove all data and settings for your Mattermost deployment:
 
-.. code:: bash
+.. code-block:: sh
 
   sudo rm -rf ./volumes
 

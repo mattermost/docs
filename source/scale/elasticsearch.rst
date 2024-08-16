@@ -37,7 +37,7 @@ Set up an Elasticsearch server
 
 2. Set up Elasticsearch with ``systemd`` by running the following commands:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     sudo /bin/systemctl daemon-reload
     sudo /bin/systemctl enable elasticsearch.service
@@ -45,19 +45,19 @@ Set up an Elasticsearch server
 
 3. Confirm Elasticsearch is working on the server by running the following command:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     curl localhost:9200
 
 4. Get your network interface name by running the following command:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     ip addr
 
 5. Edit the Elasticsearch configuration file in ``vi`` by running the following command:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     vi /etc/elasticsearch/elasticsearch.yml
 
@@ -65,14 +65,14 @@ Set up an Elasticsearch server
 
 7. Restart Elasticsearch by running the following commands:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     sudo systemctl stop elasticsearch
     sudo systemctl start elasticsearch
 
 8. Confirm the ports are listenings by running the following command:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     netstat -plnt
 
@@ -82,13 +82,13 @@ Set up an Elasticsearch server
 
 10. Install the `icu-analyzer plugin <https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html>`__ to the ``/usr/share/elasticsearch/plugins`` directory by running the following command:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     sudo /usr/share/elasticsearch/bin/elasticsearch-plugin install analysis-icu
 
 11. Test the connection from Mattermost to Elasticsearch by running the following command:
 
-  .. code-block:: none
+  .. code-block:: sh
 
     curl 172.31.80.220:9200
 
