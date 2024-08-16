@@ -756,8 +756,6 @@ Bulk index now
 
 Select **Index Now** to index all users, channels, and posts in the database from oldest to newest. Bleve is available during indexing, but search results may be incomplete until the indexing job is complete.
 
-You can configure the maximum time window used for a batch of posts being indexed. See the :ref:`Bulk Indexing Time Window Seconds <configure/environment-configuration-settings:bulk indexing time window>` documentation for details.
-
 Purge indexes
 ~~~~~~~~~~~~~
 

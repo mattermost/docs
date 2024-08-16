@@ -8,7 +8,7 @@ Elasticsearch
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster-based-deployment>`. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. Mattermost's implementation uses `Elasticsearch <https://www.elastic.co>`_ as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster-based-deployment>`.
 
 .. important::
   
@@ -26,9 +26,16 @@ Deploying Elasticsearch includes the following two steps: `setting up the Elasti
 Set up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download and install the latest release of Elasticsearch v7. See the `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`__ documentation for details. 
+1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.14+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
 
-2. Set up Elasticsearch with systemd by running the following commands:
+.. important::
+
+  - Mattermost v9.11 adds support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ as well as `Opensearch <https://opensearch.org/>`_ (Beta).
+  - Mattermost also supports Elasticsearch v7.17+. We recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
+  - AWS Elasticsearch v7.10 customers only: The official Elasticsearch v8 client only works with Elasticsearch versions released later than v7.10. We recommend that customers using AWS Elasticsearch v7.10 upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+  - Additionally, see the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` configuration setting documentation for additional requirements and recommendations.
+
+2. Set up Elasticsearch with ``systemd`` by running the following commands:
 
   .. code-block:: none
 
@@ -48,7 +55,7 @@ Set up an Elasticsearch server
 
     ip addr
 
-5. Edit the Elasticsearch configuration file in vi by running the following command:
+5. Edit the Elasticsearch configuration file in ``vi`` by running the following command:
 
   .. code-block:: none
 
