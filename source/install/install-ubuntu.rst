@@ -19,7 +19,7 @@ Install Mattermost Server on Ubuntu
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
-        <li>Operating System: 20.04 LTS, 22.04 LTS
+        <li>Operating System: 20.04 LTS, 22.04 LTS, 24.04 LTS
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
         <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v11+</a></li>
         <li>Network:
@@ -57,7 +57,7 @@ Add the Mattermost Server PPA repository
 
     ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo apt-key add``
 
-  - For Ubuntu Jammy - 22.04 LTS:
+  - For Ubuntu Jammy - 22.04 LTS and Ubuntu Noble - 24.04 LTS:
 
     ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
 
