@@ -150,7 +150,9 @@ Output logs to file
 | - **false**: Logged events aren’t written to  |                                                                     |
 |   a file.                                     |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| **Note**: Typically set to **true** in a production environment.                                                    |
+| **Note**: Typically set to **true** in a production environment. When enabled, you can download the                 |
+| ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download  |
+| Logs**.                                                                                                             |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: log-filelocation

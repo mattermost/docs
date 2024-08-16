@@ -16,6 +16,7 @@ You can export the following data types:
 - Users
 - Users' team memberships
 - Users' channel memberships
+- Users' custom status
 - Posts (messages in public or private channels and replies to those messages)
 
 .. include:: bulk-export-data.rst
