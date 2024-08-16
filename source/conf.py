@@ -378,6 +378,8 @@ redirects = {
 	"https://docs.mattermost.com/about/version-archive.html",
 "administration/mmctl-cli-tool.html#local-mode":
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
+"administration/upgrade.html#upgrade-guide":
+        "https://docs.mattermost.com/guides/upgrade-mattermost.html",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
