@@ -53,7 +53,7 @@ Add the Mattermost PPA repositories
 
     ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo apt-key add``
 
-  - For Ubuntu Jammy - 22.04 LTS:
+  - For Ubuntu Jammy - 22.04 LTS, Ubuntu Noble - 24.04 LTS:
 
     ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
 

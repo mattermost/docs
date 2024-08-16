@@ -23,7 +23,8 @@ Configure BYOK
 1. Enterprise customer provides their AWS KMS ARN to the Mattermost Infrastructure SRE team.
 2. Enterprise customer adds the following blocks to their KMS Policy for the AWS KMS ARN provided:
 
-.. code-block:: JSON
+.. code-block:: json
+
     {
         "Sid": "Allow use of the key",
         "Effect": "Allow",
@@ -54,6 +55,7 @@ Configure BYOK
         ],
         "Resource": "<CUSTOM_CUSTOMER_KMS_ID>"
     },
+
 3. The Mattermost Infrastructure SRE team updates the kops cluster and S3, RDS resources after the KMS policy is updated on the customer's end.
 
 Alternatively, the Enterprise customer can provide an external key (non-KMS) to the Mattermost Infrastructure SRE team that Mattermost maintains on behalf of the customer.
