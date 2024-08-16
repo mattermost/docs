@@ -17,7 +17,7 @@ Important Upgrade Notes
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
-| v10.0                                              | We will no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported  |
+| v10.0                                              | We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported       |
 |                                                    | version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, oAuth2 apps, and plugins.                                |
