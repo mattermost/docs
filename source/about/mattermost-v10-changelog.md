@@ -7,8 +7,8 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
-(release-v10.0-feature-release)=
-## Release v10.0 - Major Release[Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+(release-v10.0-major-release)=
+## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 **Release day: 2024-09-16**
 
@@ -51,6 +51,7 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
  - Remote clusters can now be created without explicitly providing a password.
  - Files are now fetched from all nodes in a cluster when generating a Support Packet.
  - CRT memberships are now importable for import.
+ - Docker images are now based on Ubuntu Noble.
 
 #### Performance
  - Removed a re-render on channel change.
@@ -70,10 +71,15 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - 
+ - Under ``ServiceSettings`` in ``config.json``:
+  - Added a new setting ``MaximumURLLength`` to remove the hardcoded URL length limit.
+ - Added new ``CacheSettings`` to add experimental support for Redis. This is not intended for production use yet.
+ - Removed deprecated ``Config.ProductSettings``.
+ - Removed ``EnablePreviewFeatures`` setting.
 
 #### Changes to the Enterprise plan:
- - 
+ - Removed deprecated ``LdapSettings.Trace`` setting.
+ - Removed deprecated ``AdvancedLoggingConfig`` setting.
 
 ### API Changes
  - Reduced the number of API requests made to fetch user information for Group Messages on page load.
