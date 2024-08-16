@@ -14,14 +14,14 @@ To deploy Mattermost on Docker:
 
 1. In a terminal window, clone the repository and enter the directory.
 
-   .. code:: bash
+   .. code-block:: sh
         
       git clone https://github.com/mattermost/docker
       cd docker
 
 2. Create your ``.env`` file by copying and adjusting the ``env.example`` file.
 
-   .. code:: bash
+   .. code-block:: sh
         
       cp env.example .env
 
@@ -31,7 +31,7 @@ To deploy Mattermost on Docker:
 
 3. Create the required directories and set their permissions.
 
-   .. code:: bash
+   .. code-block:: sh
         
       mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
       sudo chown -R 2000:2000 ./volumes/app/mattermost
@@ -40,20 +40,20 @@ To deploy Mattermost on Docker:
 
    **If creating a new certificate and key:**
 
-   .. code:: bash
+   .. code-block:: sh
   
       bash scripts/issue-certificate.sh -d <YOUR_MM_DOMAIN> -o ${PWD}/certs
 
    To include the certificate and key, uncomment the following lines in your ``.env`` file and ensure they point to the appropriate files.
 
-   .. code:: bash
+   .. code-block:: sh
   
       #CERT_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/fullchain.pem
       #KEY_PATH=./certs/etc/letsencrypt/live/${DOMAIN}/privkey.pem
 
    **If using a pre-existing certificate and key:**
 
-   .. code:: bash
+   .. code-block:: sh
   
             mkdir -p ./volumes/web/cert
             cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
@@ -61,7 +61,7 @@ To deploy Mattermost on Docker:
 
    To include the certificate and key, ensure the following lines in your ``.env`` file points to the appropriate files.
 
-   .. code:: bash
+   .. code-block:: sh
   
             CERT_PATH=./volumes/web/cert/cert.pem
             KEY_PATH=./volumes/web/cert/key-no-password.pem
@@ -70,13 +70,13 @@ To deploy Mattermost on Docker:
       
    To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
 
-   .. code:: bash
+   .. code-block:: sh
   
       #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
         
    Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
 
-   .. code:: bash
+   .. code-block:: sh
 
       # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
@@ -84,7 +84,7 @@ To deploy Mattermost on Docker:
 
    **Without using the included NGINX:**
 
-   .. code:: bash
+   .. code-block:: sh
   
       sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
 
@@ -92,13 +92,13 @@ To deploy Mattermost on Docker:
 
    To shut down your deployment:
 
-   .. code:: bash
+   .. code-block:: sh
   
       sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
 
    **Using the included NGINX:**
 
-   .. code:: bash
+   .. code-block:: sh
   
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 
@@ -106,7 +106,7 @@ To deploy Mattermost on Docker:
 
    To shut down your deployment:
 
-   .. code:: bash
+   .. code-block:: sh
   
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       

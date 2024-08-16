@@ -41,13 +41,13 @@ The ``config.json`` file should then have the following lines
 
 On Ubuntu 14.04 and RHEL 6:
 
-.. code-block:: text
+.. code-block:: sh
 
   sudo restart mattermost
 
 On Ubuntu 16.04, Debian Stretch, and RHEL 7:
 
-.. code-block:: text
+.. code-block:: sh
 
   sudo systemctl restart mattermost
 

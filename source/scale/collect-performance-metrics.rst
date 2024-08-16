@@ -45,7 +45,7 @@ To use the generated dump file, you can simply clone the `Dockprom <https://gith
 
 The volume configuration for Prometheus should look like the code below in the ``docker-compose.yml`` file:
 
-.. code:: yaml
+.. code-block:: yaml
 
     volumes:
       - ./prometheus:/etc/prometheus

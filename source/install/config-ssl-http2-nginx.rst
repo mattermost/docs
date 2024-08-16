@@ -29,7 +29,7 @@ You can use any certificate that you want, but these instructions show you how t
    - The IP address included in the examples in this documentation may not match your network configuration.
    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
 
-  .. code-block:: none
+  .. code-block:: text
 
    upstream backend {
        server {ip}:8065;
@@ -105,7 +105,7 @@ You can use any certificate that you want, but these instructions show you how t
 
 14. Finally, we suggest editing your config file again to increase your SSL security settings above the default Let's Encrypt. This is the same file from Step 2 above. Edit it to look like the below:
 
-  .. code-block:: none
+  .. code-block:: text
 
    upstream backend {
        server {ip}:8065;
