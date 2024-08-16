@@ -1,11 +1,118 @@
 # v9 changelog
 
 ```{Important}
-Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
 - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
+
+(release-v9-11-extended-support-release)=
+## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2024-08-16**
+
+### Important Upgrade Notes
+
+ - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10. The official v8 client only works from Elasticsearch v7.10+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
+     - Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config, and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.
+     - If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work. 
+     - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+     - For AWS customers on Opensearch, do not enable "compatibility mode".
+
+### Compatibility
+ - Updated minimum Edge and Chrome versions to 126+.
+ - Added Ubuntu Noble support.
+
+```{Important}
+If you upgrade from a release earlier than v9.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls version [v0.29.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.1).
+ - Pre-packaged GitHub plugin version [v2.3.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.3.0).
+ - Added user interface improvements to the keyboard shortcuts modal.
+ - Added a message "Editing this message with an ``@mention`` will not notify the recipient" in the post edit dialog.
+ - Made the appearance of several tooltips more consistent.
+ - Updated the help text in the **Direct Messages** modal.
+ - Emojis are now placed at cursor position while editing messages.
+ - Made keyboard shortcuts modal content DIV-accessible via the keyboard.
+ - Added Channel Bookmarks user interface (disabled by default and behind a feature flag).
+
+#### Administration
+ - Added a new feature where an admin with user management permission can now edit a user's settings in **System Console > Users**. 
+ - Added download functionality for admins to download server logs from **Server Logs** page in the **System Console**.
+ - LDAP vendor errors are now included in the Support Packet.
+ - Added [metadata](https://docs.mattermost.com/manage/generating-support-packet.html#contents-of-a-support-packet) to the Support Packet.
+ - We are now adding the user's ID and session ID to the audit log's Actor field for the login event, to match what we provide for the logout event.
+ - Added support for custom status in bulk export/import.
+ - Marked the ``RemoteTeamId`` field of the ``RemoteCluster`` entity as deprecated.
+ - Added log ``Name`` and ``DisplayName`` of groups.
+ - Logged fields of users are now updated.
+
+#### Performance
+ - Added platform related information to the notification metrics.
+ - Added additional information to INP and LCP client metrics.
+ - Added minor performance improvements to webapp initialization.
+
+#### mmctl
+ - Added two new commands to mmctl, ``mmctl job list`` and ``mmctl job update``.
+ - Panic message is now printed when mmctl panics.
+ - Setting ``AdvancedLoggingJSON`` via mmctl is now supported.
+
+### Bug Fixes
+ - Fixed an issue that displayed a wrong count for custom group members on the notification warning.
+ - Fixed a panic when the password was too long.
+ - Fixed an issue where configuration patches through mmctl did not correctly merge plugin configuration values.
+ - Fixed issues with the OpenID local development.
+ - Fixed an issue where Latex was not rendered in a code block as code when Latex rendering was disabled.
+ - Fixed an issue with saving custom roles.
+ - Fixed an issue with the left-hand side scrollbar auto-hide functionality for Chrome and Safari.
+ - Fixed Group Message to private channel conversion edge cases.
+ - Fixed an issue where users with the user management permission were unable to view the list of users in the **System Console > Users** page.
+ - Fixed more web app performance reports being marked as outdated after a user's computer woke up from sleep.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added ``TerminateSessionsOnPasswordChange`` to configure the sessions revocation during password resets.
+
+#### Changes to the Enterprise plan:
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+    - Added ``Backend`` to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch.
+
+### API Changes
+ - Added new API endpoints to manage remote clusters.
+ - Added two new query parameters to ``GET /api/v4/jobs, job_type`` and status.
+ - Added a new endpoint ``PATCH /api/v4/jobs/{job_id}/status``.
+ - Updated ``AddChannelMember`` to accept a list of userIds.
+ - Added six new permissions to manage the status of particular jobs:
+     - ``PermissionManagePostBleveIndexesJob``
+     - ``PermissionManageDataRetentionJob``
+     - ``PermissionManageComplianceExportJob``
+     - ``PermissionManageElasticsearchPostIndexingJob``
+     - ``PermissionManageElasticsearchPostAggregationJob``
+     - ``PermissionManageLdapSyncJob``
+
+### Go Version
+ - v9.11 is built with Go ``v1.21.8``.
+
+### Open Source Components
+ - Removed ``stylelint``, and added ``elastic/go-elasticsearch`` to https://github.com/mattermost/mattermost/.
+
+### Known Issues
+ - Unable to list user preferences with ``mm_ctl --local`` [MM-60024](https://mattermost.atlassian.net/browse/MM-60024).
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andreabia](https://translate.mattermost.com/user/andreabia), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Aryakoste](https://github.com/Aryakoste), [asaadmahmood](https://github.com/asaadmahmood), [AshishDhama](https://github.com/AshishDhama), [ayusht2810](https://github.com/ayusht2810), [bbodenmiller](https://github.com/bbodenmiller), [BenCookie95](https://github.com/BenCookie95), [BrandonS09](https://github.com/BrandonS09), [calebroseland](https://github.com/calebroseland), [Camillarhi](https://github.com/Camillarhi), [catalintomai](https://github.com/catalintomai), [Celeo](https://github.com/Celeo), [chessmadridista](https://github.com/chessmadridista), [ckaznable](https://github.com/ckaznable), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielsischy](https://github.com/danielsischy), [devinbinnie](https://github.com/devinbinnie), [Eleferen](https://translate.mattermost.com/user/Eleferen), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [ewwollesen](https://github.com/ewwollesen), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [gabrieljackson](https://github.com/gabrieljackson), [Gesare5](https://github.com/Gesare5), [grinapo](https://github.com/grinapo), [hanzei](https://github.com/hanzei), [harmeet01singh](https://github.com/harmeet01singh), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [imanmagomedov.said](https://translate.mattermost.com/user/imanmagomedov.said), [isacikgoz](https://github.com/isacikgoz), [jespino](https://github.com/jespino), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://translate.mattermost.com/user/kaakaa), [kalil0321](https://github.com/kalil0321), [KellieSue](https://github.com/KellieSue), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthewbirtch](https://github.com/matthewbirtch), [matthew-w](https://translate.mattermost.com/user/matthew-w), [MeHow25](https://github.com/MeHow25), [mgdelacroix](https://github.com/mgdelacroix), [mickmister](https://github.com/mickmister), [milotype](https://translate.mattermost.com/user/milotype), [Mohamed-sobhi95](https://translate.mattermost.com/user/Mohamed-sobhi95), [mvitale1989](https://github.com/mvitale1989), [natalie-hub](https://github.com/natalie-hub), [nickmisasi](https://github.com/nickmisasi), [ningthoujamSwamikumar](https://github.com/ningthoujamSwamikumar), [Pawel1894](https://github.com/Pawel1894), [phoinixgrr](https://github.com/phoinixgrr), [poppfredslund](https://translate.mattermost.com/user/poppfredslund), [pvev](https://github.com/pvev), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [recontech404](https://github.com/recontech404), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [shaon72](https://github.com/shaon72), [Sharuru](https://translate.mattermost.com/user/Sharuru), [shieldsjared](https://github.com/shieldsjared), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [suraj-anthwal](https://github.com/suraj-anthwal), [svelle](https://github.com/svelle), [ThrRip](https://translate.mattermost.com/user/ThrRip), [tnir](https://github.com/tnir), [toninis](https://github.com/toninis), [varghesejose2020](https://github.com/varghesejose2020), [vhaska](https://translate.mattermost.com/user/vhaska), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yomiadetutu1](https://github.com/yomiadetutu1), [ythosa](https://github.com/ythosa), [zenocode-org](https://translate.mattermost.com/user/zenocode-org), [ZubairImtiaz3](https://github.com/ZubairImtiaz3)
 
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
