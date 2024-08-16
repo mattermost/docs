@@ -7,7 +7,7 @@ Prepare your Mattermost MySQL database
   :start-after: :nosearch:
 
 .. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between Channels and Playbooks using the product menu icon.
+  :alt: Navigate between Channels and collaborative playbooks using the product menu icon.
   :class: theme-icon
 
 .. important::
@@ -160,7 +160,7 @@ Create an environment file
 
 .. note::
 
-   If you're running Mattermost in a High Availability cluster, this step must be done on all servers in the cluster.
+   If you're running Mattermost in a High Availability cluster-based deployment, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 

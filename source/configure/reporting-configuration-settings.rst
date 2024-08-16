@@ -23,11 +23,16 @@ Site statistics
 | View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > Site Statistics**       |
 | including: activated users, seats, teams, channels, posts,     | - ``config.json setting``: N/A                              |
 | sessions, commands, webhooks, daily and monthly active users,  | - Environment variable: N/A                                 |
-| websocket and database connections, playbooks, and calls.      |                                                             |
+| websocket and database connections, collaborative playbooks,   |                                                             |
+| and calls.                                                     |                                                             |
 +----------------------------------------------------------------+-------------------------------------------------------------+
-| **Note**: Bots, deactivated users, and synthetic users in                                                                    |
-| :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                              |
-| and :doc:`shared channels users </onboard/shared-channels>` aren't counted towards the total number of activated users.      |
+| **Notes**:                                                                                                                   |
+|                                                                                                                              |
+| - Bots, deactivated users, and synthetic users in                                                                            |
+|   :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                            |
+|   and :doc:`shared channels users </onboard/shared-channels>` aren't counted towards the total number of activated users.    |
+| - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is     |
+|   deactivated.This means that guest accounts count as a paid user in your Mattermost workspace.                              |
 +---------------------------------------------------------------+--------------------------------------------------------------+
 
 ----
@@ -64,5 +69,6 @@ Server logs
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | View logging of server-side events.                           | - System Config path: **Reporting > Server Logs**             |
 |                                                               | - ``config.json`` setting: N/A                                |
-|                                                               | - Environment variable: N/A                                   |
+| Reload data, download the ``mattermost.log`` file locally,    | - Environment variable: N/A                                   |
+| and view full log event details for any log entry.            |                                                               |
 +---------------------------------------------------------------+---------------------------------------------------------------+

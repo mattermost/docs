@@ -17,8 +17,11 @@ Mattermost keyboard shortcuts help you make a more efficient use of your keyboar
 
 .. tip::
 
+  - More keyboard shortcuts are available. See the :doc:`team keyboard shortcuts </collaborate/team-keyboard-shortcuts>` and :ref:`text style <collaborate/format-messages:text style>` documentation for details.
   - In Mattermost, display a list of available keyboard shortcuts by pressing :kbd:`Ctrl` :kbd:`/` on Windows or Linux, pressing :kbd:`⌘` :kbd:`/` on macOS, or using the ``/shortcuts`` slash command.
-  - Additional keyboard shortcuts are available. See the :doc:`team keyboard shortcuts </collaborate/team-keyboard-shortcuts>` documentation for details.
+
+  .. image:: ../images/keyboard-shortcuts.png
+    :alt: Review a list of available keyboard shortcuts by using the ``/shortcuts`` slash command.
 
 Channel navigation
 ------------------
@@ -164,7 +167,7 @@ The following navigation keyboard shortcuts are supported only in the Mattermost
 
 .. tab:: Desktop app v5.0 onwards
 
-  Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, playbooks, and boards. 
+  Mattermost desktop app v5.0 introduces additional ways to navigate your Mattermost interface, including server selections, as well as tabs for channels, collaborative playbooks, and boards. 
   
   +--------------------------------------+-------------------------------+-------------------------------------------------------------------------------------------------+
   | On Windows & Linux                   | On macOS                      | Description                                                                                     |

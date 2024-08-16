@@ -13,7 +13,7 @@ You can configure the Elasticsearch environment in which Mattermost is deployed 
   :description: Configure Mattermost to index new posts automatically.
 
   - **true**: Indexing of new posts occurs automatically.
-  - **false**: **(Default)** Elasticsearch indexing is disabled and new posts are not indexed.
+  - **false**: **(Default)** Elasticsearch indexing is disabled and new messages aren't indexed.
 
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -25,16 +25,51 @@ Enable Elasticsearch indexing
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
-| - **true**: Indexing of new posts occurs automatically.       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
+| - **true**: Indexing of new messages occurs automatically.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
 | - **false**: **(Default)** Elasticsearch indexing is disabled |                                                                                |
-|   and new posts are not indexed.                              |                                                                                |
+|   and new messages aren't indexed.                            |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                     |
 |                                                                                                                                                |
-| - If indexing is disabled and re-enabled after an index is created, we recommend you purge and rebuild the index to ensure complete            |
-|   search results.                                                                                                                              |
-| - Search queries will use database search until Elasticsearch for search queries is enabled.                                                   |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------+
+| - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that     |
+|   scale, `enabling Elasticsearch for search queries <#enable-elasticsearch-for-search-queries>`__ is highly recommended                        |
+| - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for      |
+|   optimum search performance **before** reaching 3 million posts.                                                                              |
+| - For deployments with over 3 million posts, Elasticsearch is required to avoid significant performance issues, such as timeouts, with         |
+|   :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.                               |
+| - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.        |
++---------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. config:setting:: elastic-backendtype
+  :displayname: Elasticsearch backend type (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.Backend
+  :environment: MM_ELASTICSEARCHSETTINGS_BACKEND
+  :description: Set the type of search backend as either Elasticsearch or Opensearch.
+
+Backend type
+~~~~~~~~~~~~~
+
++----------------------------------------------------+-----------------------------------------------------------------------------------+
+| The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                             |
+|                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.Backend: elasticsearch",``   |
+| - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                      |
+| - ``opensearch``                                   |                                                                                   |
++----------------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. important::
+
+  Mattermost v9.11 introduces support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`_ and `OpenSearch <https://opensearch.org/>`_ (Beta).
+
+  **Elasticsearch**
+  
+  - The official Elasticsearch v8 client only works with Elasticsearch versions released later than v7.10. This is a breaking change for customers using AWS Elasticsearch v7.10. We recommend customers upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+  - Customers using Elasticsearch v8 must set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to enable wildcard operations.
+
+  **Opensearch (Beta)**
+
+  - Customers using OpenSearch as their search backend must change the default configuration value to ``opensearch`` using :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>`, or by editing the ``config.json`` file manually, and then restarting the Mattermost server. This configuration setting value can't be changed dynamically while the Mattermost server is running using the System Console.
+  - Additionally, we recommend that ``compatibility mode`` isn't enabled because it reports the incorrect version.
 
 .. config:setting:: elastic-serverconnectionaddress
   :displayname: Server connection address (Elasticsearch)
@@ -299,8 +334,8 @@ Indexes to skip while purging
   :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING
   :description: Configure Mattermost to use Elasticsearch for all search queries using the latest index.
 
-  - **true**: Elasticsearch will be used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing post database is finished.
-  - **false**: **(Default)** Database search is used for search queries.
+  - **true**: Elasticsearch is used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing message database is completed.
+  - **false**: **(Default)** Relational database search is used for search queries.
 
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -309,16 +344,24 @@ Enable Elasticsearch for search queries
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
+.. important::
+
+  - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that scale, enabling Elasticsearch for search queries is highly recommended.
+  - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for optimum search performance **before** reaching 3 million posts.
+  - For deployments with over 3 million posts, Elasticsearch with :ref:`dedicated indexing <configure/environment-configuration-settings:enable elasticsearch indexing>` and scaled usage resourcing through :doc:`cluster support </scale/high-availability-cluster-based-deployment>` is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
+
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |
-| queries using the latest index                                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
+| queries using the latest index.                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            |
-| - **true**: Elasticsearch will be used for all search         |                                                                                 |
-|   queries using the latest index. Search results may be       |                                                                                 |
-|   incomplete until a bulk index of the existing post database |                                                                                 |
-|   is finished.                                                |                                                                                 |
+| - **true**: Elasticsearch is used for all search queries      |                                                                                 |
+|   using the latest index. Search results may be incomplete    |                                                                                 |
+|   until a bulk index of the existing message database is      |                                                                                 |
+|   completed.                                                  |                                                                                 |
 | - **false**: **(Default)** Database search is used for        |                                                                                 |
 |   search queries.                                             |                                                                                 |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| **Note**: If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results. |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-enableautocomplete
@@ -635,36 +678,21 @@ Live indexing batch size
 
 4. Restart the Mattermost server.
 
-.. config:setting:: elastic-bulkindexingtimewindow
-  :displayname: Bulk indexing time window (Elasticsearch)
-  :systemconsole: Environment > Elasticsearch
-  :configjson: .Elasticsearchsettings.BulkIndexingTimeWindowSeconds
-  :environment: MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS
+.. config:setting:: elastic-batchsize
+  :displayname: Batch size (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.BatchSize
+  :environment: MM_ELASTICSEARCHSETTINGS_BATCHSIZE
+  :description: The Elasticsearch index batch size. Default is **10000**.
 
-  The maximum time window, in seconds, for a batch of posts being indexed by the Bulk Indexer.
-  This setting serves as a performance optimization for installs with over ~10 million posts in the database.
-  Default is **3600** seconds (1 hour).
+Batch size
+~~~~~~~~~~~
 
-Bulk indexing time window
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
-| being indexed by the Bulk Indexer. This setting serves as a   | - ``config.json`` setting: ``".Elasticsearchsettings.BulkIndexingTimeWindowSeconds: 3600",`` |
-| performance optimization for installs with over               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
-| ~10 million posts in the database.                            |                                                                                              |
-|                                                               |                                                                                              |
-| Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
-| (1 hour). Approximate this value based on the average number  |                                                                                              |
-| of seconds for 2,000 posts to be added to the database on a   |                                                                                              |
-| typical day in production.                                    |                                                                                              |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
++-------------------------------------------+---------------------------------------------------------------------------+
+| The Elasticsearch index batch size.       | - System Config path: N/A                                                 |
+|                                           | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
+| Numerical input. Default is **10000**.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
++-------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: elastic-requesttimeout
   :displayname: Request timeout (Elasticsearch)

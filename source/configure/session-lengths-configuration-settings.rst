@@ -34,6 +34,35 @@ Extend session length with activity
 |   `session idle timeout <#session-idle-timeout>`__ configured. |                                                                                         |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
+.. config:setting:: sessionlength-TerminateSessionsOnPasswordChange
+  :displayname: Terminate sessions on password change (Session Lengths)
+  :systemconsole: Environment > Session Lengths
+  :configjson: .ServiceSettings.TerminateSessionsOnPasswordChange
+  :environment: MM_SERVICESETTINGS_TERMINATESESSIONSONPASSWORDCHANGE
+
+  - **true**: **(Default for new deployments)** Session revocation is enabled. All sessions of a user expire if their password is changed (by themselves or a system admin). If the password change is initiated by the user, their current session isn't terminated.
+  - **false**: **(Default for existing deployments)** Session revocation is disabled. When users change their password, only the user's current session is revoked. When a system admin changes the user's password, none of the user's sessions are revoked.
+
+Terminate sessions on password change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+| Enable or disable session revocation when a user's             | - System Config path: **Environment > Session Lengths**                                   |
+| password changes.                                              | - ``config.json`` setting: ``".ServiceSettings.TerminateSessionsOnPasswordChange: true,`` |
+|                                                                | - Environment variable: ``MM_SERVICESETTINGS_TERMINATESESSIONSONPASSWORDCHANGE``          |
+| - **true**: **(Default for new deployments)**                  |                                                                                           |
+|   Session revocation is enabled.                               |                                                                                           |
+|   All sessions of a user expire if their password is changed   |                                                                                           |
+|   (by themselves or by a system admin). If the password change |                                                                                           |
+|   is initiated by the user, their current session isn't        |                                                                                           |
+|   terminated.                                                  |                                                                                           |
+| - **false**: **(Default for existing deployments)**            |                                                                                           |
+|   Session revocation is disabled.                              |                                                                                           |
+|   When users change their password, only the user's current    |                                                                                           |
+|   session is revoked. When a system admin changes the user's   |                                                                                           |
+|   password, none of the user's sessions are revoked.           |                                                                                           |
++----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
+
 .. config:setting:: sessionlength-webinhours
   :displayname: Session length for AD/LDAP and email (Session Lengths)
   :systemconsole: Environment > Session Lengths
@@ -166,6 +195,6 @@ Session idle timeout
 | - This setting has no effect when `extend session length with activity <#extend-session-length-with-activity>`__ is set to **true**.                  |
 | - This setting applies to the webapp and the desktop app. For mobile apps, use an                                                                     |
 |   :doc:`EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` to lock the app when not in use.                                                |
-| - In :doc:`high availability mode </scale/high-availability-cluster>`, enable IP hash load balancing for reliable                                     |
+| - In :doc:`high availability mode </scale/high-availability-cluster-based-deployment>`, enable IP hash load balancing for reliable                    |
 |   timeout measurement.                                                                                                                                |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+

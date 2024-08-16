@@ -71,10 +71,10 @@ Master DB Conns
     The number of active connections currently on your master database.
 
 Replica DB Conns
-    The number of active connections currently on one or more of :ref:`your read replica databases <scale/high-availability-cluster:database configuration>`.
+    The number of active connections currently on one or more of :ref:`your read replica databases <scale/high-availability-cluster-based-deployment:database configuration>`.
 
 Total Playbooks
-    The total number of playbooks on this server.
+    The total number of collaborative playbooks on this server.
 
 Total Playbook Runs
     The total number of runs (active and complete) on this server.
@@ -122,20 +122,20 @@ I see an error: "Not enough data for a meaningful representation"
 
 If the statistics page is loading endlessly and you get an error message saying "Not enough data for a meaningful representation", check whether you're using an ad blocker. An ad blocker can prevent this page from loading data. To test this, temporarily disable your ad blocker, or view the page in a browser without an ad blocker installed.
 
-Can Team Admins review their own team's statistics?
+Can team admins review their own team's statistics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
 
-Yes. In Mattermost Enterprise, you can enable Team Admins to see their team's statistics by modifying available System Admin roles. Learn more about System Admin roles, including how to manage privileges and assign roles, in the :doc:`Additional System Admin Roles </onboard/system-admin-roles>` documentation.
+Yes. In Mattermost Enterprise, you can enable team admins to see their team's statistics by modifying available delegated granular administration system roles. See the :doc:`delegated granular administration </onboard/delegated-granular-administration>` documentation to learn more about these admin roles, including how to manage privileges and assign roles.
 
-To enable Team Admins to access their team's statistics:
+To enable team admins to access their team's statistics:
 
-1. Go to **System Console > User Management > System Roles**, then edit the **Viewer** System Admin role. 
+1. Go to **System Console > User Management > System Roles**, then edit the **Viewer** system admin role. 
 
 .. image:: ../images/edit-viewer-system-admin-role.png
-   :alt: Enable Team Admins to access their team's statistics in the System Console by going to User Management > System Roles, and making changes to the Viewer role.
+   :alt: Enable team admins to access their team's statistics in the System Console by going to User Management > System Roles, and making changes to the Viewer role.
 
 2. Under **Privileges**, expand the **Reporting** section, set **Team Statistics** to **Read only**, then set **Site Statistics** and **Server Logs** to **No access**.
 
@@ -144,7 +144,7 @@ To enable Team Admins to access their team's statistics:
 .. image:: ../images/restrict-role-access.png
    :alt: On the Viewer page, restrict user access to the Team Statistics page by expanding the Reporting section, setting Site Statistics and Server Logs to No Access, and setting all other privileges to No Access. 
 
-4. Under **Assigned People**, select **Add People** to assign Team Admins to the **Viewer** role, and enable them to access their team's statistics.
+4. Under **Assigned People**, select **Add People** to assign team admins to the **Viewer** role, and enable them to access their team's statistics.
 
 .. image:: ../images/assign-people-to-system-role.png
    :alt: On the Viewer page, specify which users can access the Team Statistics page by assigning specific users the Viewer admin role. 
@@ -153,4 +153,4 @@ To enable Team Admins to access their team's statistics:
 
 .. note::
 
-    System Admins must manually add people to or remove people from the **Viewer** System Admin role to address Team Admin changes, such as promotions or demotions.
+    System admins must manually add people to or remove people from the **Viewer** system admin role to address team admin changes, such as promotions or demotions.

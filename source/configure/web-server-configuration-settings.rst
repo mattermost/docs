@@ -32,7 +32,7 @@ Site URL
 | - If Site URL is not set:                                                                                                     |
 |                                                                                                                               |
 |   - Email notifications will contain broken links, and email batching will not work.                                          |
-|   - Authentication via OAuth 2.0, including GitLab, Google, and Office 365, will fail.                                        |
+|   - Authentication via OAuth 2.0, including GitLab, Google, and Entra ID, will fail.                                          |
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
@@ -410,8 +410,9 @@ Purge all caches
 | Select the **Purge All Caches** button in the System     |                                                               |
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: Purging the caches may adversely impact performance. Deployments using :doc:`high availability clusters        |
-| </scale/high-availability-cluster>` will attempt to purge all the servers in the cluster                                 |
+| **Note**: Purging the caches may adversely impact performance.                                                           |
+| :doc:`high availability cluster-based deployments </scale/high-availability-cluster-based-deployment>` will attempt      |
+| to purge all the servers in the cluster                                                                                  |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: web-websocketurl

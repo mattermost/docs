@@ -59,7 +59,7 @@ We strongly recommend that you:
 
 .. important::
 
-  Support for Mattermost Server v8.1 :doc:`Extended Support Release </about/mattermost-server-releases>` has come to the end of its life cycle on May 15, 2024. Upgrading to Mattermost Server v9.5 Extended Support Release or later is required. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+  Support for Mattermost Server v9.5 :doc:`Extended Support Release </about/mattermost-server-releases>` is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 Extended Support Release or later is recommended. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -113,12 +113,12 @@ Ensure you review the :doc:`important-upgrade-notes` for all intermediate releas
 
     UPDATE TableName SET ColumnName = regexp_replace(ColumnName, '\\u0000', '', 'g') WHERE ColumnName LIKE '%\u0000%';
 
-Upgrade high availability deployments
----------------------------------------
+Upgrade high availability cluster-based deployments
+---------------------------------------------------
 
-In :doc:`high availability </scale/high-availability-cluster>` environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
+In :doc:`high availability cluster-based </scale/high-availability-cluster-based-deployment>` environments, you should expect to schedule downtime for the upgrade to v6.0. Based on your database size and setup, the migration to v6.0 can take a significant amount of time, and may even lock the tables for posts which will prevent your users from posting or receiving messages until the migration is complete.
 
-Ensure you review the :ref:`high availability cluster upgrade guide <scale/high-availability-cluster:upgrade guide>`, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
+Ensure you review the :ref:`high availability cluster-based deployment upgrade guide <scale/high-availability-cluster-based-deployment:upgrade guide>`, as well as the :doc:`important-upgrade-notes` to make sure you're aware of any actions you need to take before or after upgrading from your particular version.
 
 .. important::
 

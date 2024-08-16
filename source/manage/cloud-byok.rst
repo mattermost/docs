@@ -18,11 +18,12 @@ In Mattermost Cloud Enterprise Dedicated, you can use KMS keys in 2 ways:
     - In cases where a global database is needed, we recommend providing 2 KMS keys (1 per region).
 
 Configure BYOK
-------------------------
+---------------
+
 1. Enterprise customer provides their AWS KMS ARN to the Mattermost Infrastructure SRE team.
 2. Enterprise customer adds the following blocks to their KMS Policy for the AWS KMS ARN provided:
 
-.. code-block:: JSON
+.. code-block:: json
 
     {
         "Sid": "Allow use of the key",
@@ -61,7 +62,7 @@ Alternatively, the Enterprise customer can provide an external key (non-KMS) to 
 This path offers less control to customers but simplifies the setup process.
 
 Requirements
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
 
 - Customers must own their AWS Account. (In the alternative path mentioned above this is delegated to Mattermost.)
 - Customers oversee the maintenance life cycle of their custom KMS key.
@@ -69,12 +70,13 @@ Requirements
 - The customer should incorporate the provided policy blocks from the Infrastructure SRE team into their KMS key policy.
 
 Considerations
-~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
+
 - Changing the AWS KMS key in the database necessitates downtime due to AWS Aurora's encryption `limitations. <https://repost.aws/knowledge-center/update-encryption-key-rds>`_
 - Proper communication is essential for setting expectations and scheduling changes.
 
 Conclusion
---------------
+-----------
 
 If you are a large enterprise with compliance requirements, or are working in highly-regulated industries, using Mattermost Cloud Dedicated with BYOK ensures full data control.
 

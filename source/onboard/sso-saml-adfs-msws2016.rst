@@ -158,7 +158,7 @@ Configure SAML Sign-On for Mattermost
 
 Create a metadata URL by appending "FederationMetadata/2007-06/FederationMetadata.xml" to the root URL of the ADFS server, for example: ``https://<adfs.domain.com>/federationmetadata/2007-06/FederationMetadata.xml>``.
 
-Next, start the Mattermost server, then log in to Mattermost as a System Administrator. Go to **System Console > Authentication > SAML**, paste the metadata URL in the **Identity Provider Metadata URL** field, then select **Get SAML Metadata from IdP**.
+Next, start the Mattermost server, then log in to Mattermost as a system admin. Go to **System Console > Authentication > SAML**, paste the metadata URL in the **Identity Provider Metadata URL** field, then select **Get SAML Metadata from IdP**.
 
 This populates the **SAML SSO URL** and the **Identity Provider Issuer URL** fields automatically. The Identity Provider Public Certificate is also downloaded from the server and set locally.
 
@@ -200,7 +200,7 @@ For Mattermost servers running 3.3 and earlier, the first name and last name att
 
 6. (Optional) If you configured ``First Name`` Attribute and the ``Last Name`` Attribute, go to **System Console > Site Configuration > Users and Teams**, then set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
-You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your System Administrator account from email to SAML-based authentication from your profile picture via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
+You’re done! If you’d like to confirm SAML SSO is successfully enabled, switch your system admin account from email to SAML-based authentication from your profile picture via **Profile > Security > Sign-in Method > Switch to SAML SSO**, then log in with your SAML credentials to complete the switch.
 
 We also recommend that you post an announcement about how the migration will work to your users.
 

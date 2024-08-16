@@ -15,7 +15,7 @@ Scale Mattermost
     Scale up to 70000 users </scale/scale-to-70000-users>
     Scale up to 79000 users </scale/scale-to-79000-users>
     Scale up to 88000 users </scale/scale-to-88000-users>
-    High availability cluster </scale/high-availability-cluster>
+    High availability cluster-based deployment </scale/high-availability-cluster-based-deployment>
     Elasticsearch </scale/elasticsearch>
     Collect performance metrics </scale/collect-performance-metrics>
     Deploy Prometheus and Grafana for performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>
@@ -35,7 +35,7 @@ Scale and monitor your Mattermost deployment.
  * :doc:`Scale up to 79000 users </scale/scale-to-79000-users>` - Learn how to scale Mattermost to up to 79000 users.
  * :doc:`Scale up to 88000 users </scale/scale-to-88000-users>` - Learn how to scale Mattermost to up to 88000 users.
 
-* :doc:`High availability cluster </scale/high-availability-cluster>` - Learn how to run Mattermost at scale with all the config tweaks needed.
+* :doc:`High availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` - Learn how to run Mattermost at scale with all the config tweaks needed.
 * :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
 * :doc:`Collect performance metrics </scale/collect-performance-metrics>` - Learn how to collect performance metrics without deploying Prometheus.
 * :doc:`Deploy Prometheus and Grafana for performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.

@@ -10,7 +10,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Localization <#localization>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
-- `Announcement Banner <#announcement-banner>`__
+- `System-wide notifications <#system-wide-notifications>`__
 - `Emoji <#emoji>`__
 - `Posts <#posts>`__
 - `File Sharing and Downloads <#file-sharing-and-downloads>`__
@@ -530,7 +530,7 @@ Teammate name display
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 | This setting determines how names appear in posts and under the **Direct Messages** list.       | - System Config path: **Site Configuration > Users and Teams**             |
 | Users can change this setting in their interface under **Settings > Display >                   | - ``config.json`` setting: ``.TeamSettings.TeammateNameDisplay: username`` |
-| Teammate Name Display**, unless this setting is locked by a System Admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
+| Teammate Name Display**, unless this setting is locked by a system admin                        | - Environment variable: ``MM_TEAMSETTINGS_TEAMMATENAMEDISPLAY``            |
 | via the **Lock teammate name display for all users** configuration setting.                     |                                                                            |
 |                                                                                                 |                                                                            |
 | - **Show username**: **(Default for self-hosted deployments)** Displays usernames.              |                                                                            |
@@ -596,14 +596,14 @@ Allow users to view archived channels
   :environment: MM_PRIVACYSETTINGS_SHOWEMAILADDRESS
 
   - **true**: **(Default)** All users can see the email addresses of every other user.
-  - **false**: Hides email addresses in the client user interface, except for System Admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
+  - **false**: Hides email addresses in the client user interface, except for system admins and the System Roles with read/write access to Compliance, Billing, or User Management (users/teams/channels/groups etc).
 
 Show email address
 ~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** All users can see the email addresses of every other user.        | - System Config path: **Site Configuration > Users and teams**         |
-| - **false**: Hides email addresses in the client user interface, except from System Admins  | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
+| - **false**: Hides email addresses in the client user interface, except from system admins  | - ``config.json`` setting: ``.PrivacySettings.ShowEmailAddress: true`` |
 |   and the System Roles with read/write access to Compliance, Billing, or User Management    | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWEMAILADDRESS``        |
 |   (users/teams/channels/groups etc).                                                        |                                                                        |
 +---------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
@@ -615,14 +615,14 @@ Show email address
   :environment: MM_PRIVACYSETTINGS_SHOWFULLNAME
 
   - **true**: **(Default)** Full names are visible to all users in the client user interface.
-  - **false**: Hides full names from all users, except System Admins.
+  - **false**: Hides full names from all users, except system admins.
 
 Show full name
 ~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | - **true**: **(Default)** Full names are visible to all users in the client user interface.                      | - System Config path: **Site Configuration > Users and Teams**     |
-| - **false**: Hides full names from all users, except System Admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
+| - **false**: Hides full names from all users, except system admins. Username is shown in place of the full name. | - ``config.json`` setting: ``.PrivacySettings.ShowFullName: true`` |
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``        |
 +------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
@@ -671,8 +671,8 @@ Enable last active time
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
   - **false**: Users cannot set custom statuses.
 
-Enable custom user groups (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable custom user groups
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
@@ -852,7 +852,7 @@ Notification from address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| Email address for notification emails from the Mattermost system. This address should be monitored by a System Admin. | - System Config path: **Site Configuration > Notifications**  |
+| Email address for notification emails from the Mattermost system. This address should be monitored by a system admin. | - System Config path: **Site Configuration > Notifications**  |
 |                                                                                                                       | - ``config.json`` setting: ``.EmailSettings.FeedbackEmail``   |
 | String input. Default is ``test@example.com``. This field is required when changing settings in the System Console.   | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKEMAIL``    |
 +-----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
@@ -868,7 +868,7 @@ Support email address
 ~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
-| Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. This address should be monitored by a System Admin. If no value is set, email notifications will not contain a way for users to request assistance. | - System Config path: **Site Configuration > Notifications** |
+| Sets a user support (or feedback) email address that is displayed on email notifications and during the Getting Started tutorial. This address should be monitored by a system admin. If no value is set, email notifications will not contain a way for users to request assistance. | - System Config path: **Site Configuration > Notifications** |
 |                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.SupportSettings.SupportEmail`` |
 | String input. Default is ``feedback@mattermost.com``. This field is required when changing settings in the System Console.                                                                                                                                                            | - Environment variable: ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -884,7 +884,7 @@ Notification reply-to address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| Email address used in the reply-to header when sending notification emails from the Mattermost system. This address should be monitored by a System Admin. | - System Config path: **Site Configuration > Notifications**   |
+| Email address used in the reply-to header when sending notification emails from the Mattermost system. This address should be monitored by a system admin. | - System Config path: **Site Configuration > Notifications**   |
 |                                                                                                                                                            | - ``config.json`` setting: ``.EmailSettings.ReplyToAddress``   |
 | String input. Default is ``test@example.com``.                                                                                                             | - Environment variable: ``MM_EMAILSETTINGS_REPLYTOADDRESS``    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
@@ -953,99 +953,127 @@ Push notification contents
 |   Google's notification service. ``config.json`` setting: ``"id_loaded"``                              |                                                                        |
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
+.. config:setting:: perf-enablenotificationmonitoring
+  :displayname: Enable notification monitoring (Notification Monitoring)
+  :systemconsole: Site Configuration > Notifications
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+
+  - **true**: **(Default)** Mattermost notification data collection is enabled for client-side web and desktop app users.
+  - **false**: Mattermost notification data collection is disabled.
+
+Enable notification monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Environment > Performance Monitoring**                        |
+| collection.                                   | - ``config.json setting``: ``".MetricsSettings.EnableNotificationMetrics": true",``   |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``              |
+| - **true**: **(Default)** Mattermost          |                                                                                       |
+|   notification data collection is enabled for |                                                                                       |
+|   client-side web and desktop app users.      |                                                                                       |
+| - **false**: Mattermost notification          |                                                                                       |
+|   data collection is disabled.                |                                                                                       |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| See the :ref:`performance monitoring <scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation      |
+| to learn more about Mattermost Notification Health metrics.                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+
 ----
 
-Announcement banner
--------------------
+System-wide notifications
+-------------------------
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Site Configuration > Announcement Banner**.
+Access the following configuration settings in the System Console by going to **Site Configuration > System-wide notifications**.
 
-.. config:setting:: banner-enable
-  :displayname: Enable announcement banner (Announcement banner)
-  :systemconsole: Site Configuration > Announcement banner
-  :configjson: .AnnouncementSettings.EnableBanner
-  :environment: MM_ANNOUNCEMENTSETTINGS_ENABLEBANNER
+.. config:setting:: systemwide-notifications-enable
+  :displayname: System-wide notifications
+  :systemconsole: Site Configuration > System-wide notifications
+  :configjson: .AnnouncementSettings.SystemWideNotifications
+  :environment: MM_ANNOUNCEMENTSETTINGS_SYSTEMWIDENOTIFICATIONS 
 
-  - **true**: Enable an announcement banner that is displayed across the top of the screen for all teams.
-  - **false**: **(Default)** Disable the announcement banner.
+  - **true**: Enable system-wide notifications that display at the top of the Mattermost interface for all users across all teams.
+  - **false**: **(Default)** Disable system-wide notifications.
 
-Enable announcement banner
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable system-wide notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: Enable an announcement banner that is displayed across the top of the screen for all teams.              | - System Config path: **Site Configuration > Announcement banner**       |
-|                                                                                                                      | - ``config.json`` setting: ``.AnnouncementSettings.EnableBanner: false`` |
-| - **false**: **(Default)** Disable the announcement banner.                                                          | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ENABLEBANNER``         |
-+----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
++-----------------------------------------------------------------------+---------------------------------+---------------------------------------------------+
+| - **true**: Enable system-wide notifications to display at the top    | - System Config path: **Site Configuration > System-wide notifications**            |
+|   of the Mattermost interface for all users across all teams.         | - ``config.json`` setting: ``.AnnouncementSettings.SystemWideNotifications: false`` |
+| - **false**: **(Default)** Disable system-wide notifications.         | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_SYSTEMWIDENOTIFICATIONS``         |
++-----------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: banner-text
-  :displayname: Banner text (Announcement banner)
-  :systemconsole: Site Configuration > Announcement banner
+.. config:setting:: system-wide-notification-text
+  :displayname: Banner text (System-wide notifications)
+  :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.BannerText
   :environment: MM_ANNOUNCEMENTSETTINGS_BANNERTEXT
-  :description: The text of the announcement banner.
+  :description: The text of the system-wide notification, when enabled.
 
 Banner text
 ~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| The text of the announcement banner. If no text is provided, the banner will not appear. | - System Config path: **Site Configuration > Announcement banner** |
-|                                                                                          | - ``config.json`` setting: ``.AnnouncementSettings.BannerText``    |
-| String input.                                                                            | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXT``     |
-+------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
++------------------------------------------------------------+----------------------------------+---------------------------------------+
+| The text of the system-wide notification, when enabled.    | - System Config path: **Site Configuration > System-wide notifications** |
+|                                                            | - ``config.json`` setting: ``.AnnouncementSettings.BannerText``          |
+| String input.                                              | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXT``           |
++------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: banner-color
-  :displayname: Banner color (Announcement banner)
-  :systemconsole: Site Configuration > Announcement banner
+  :displayname: Banner color (System-wide notifications)
+  :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.BannerColor
   :environment: MM_ANNOUNCEMENTSETTINGS_BANNERCOLOR
-  :description: The background color of the announcement banner. Default value is **#f2a93b**.
+  :description: The background color of system-wide notifications. Default value is **#f2a93b**.
 
 Banner color
 ~~~~~~~~~~~~
 
-+--------------------------------------------------+-----------------------------------------------------------------------------+
-| The background color of the announcement banner. | - System Config path: **Site Configuration > Announcement banner**          |
-|                                                  | - ``config.json`` setting: ``.AnnouncementSettings.BannerColor: "#f2a93b"`` |
-| String input of a CSS color value.               | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERCOLOR``             |
-+--------------------------------------------------+-----------------------------------------------------------------------------+
++-----------------------------------------------------+-----------------------------------------------------------------------------+
+| The background color of system-wide notifications.  | - System Config path: **Site Configuration > System-wide notifications**    |
+|                                                     | - ``config.json`` setting: ``.AnnouncementSettings.BannerColor: "#f2a93b"`` |
+| String input of a CSS color value.                  | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERCOLOR``             |
++-----------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: banner-textcolor
-  :displayname: Banner text color (Announcement banner)
-  :systemconsole: Site Configuration > Announcement banner
+  :displayname: Banner text color (System-wide notifications)
+  :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.BannerTextColor
   :environment: MM_ANNOUNCEMENTSETTINGS_BANNERTEXTCOLOR
-  :description: The color of the text in the announcement banner. Default value is **#333333**.
+  :description: The color of the text in system-wide notifications. Default value is **#333333**.
 
 Banner text color
 ~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------+---------------------------------------------------------------------------------+
-| The color of the text in the announcement banner. | - System Config path: **Site Configuration > Announcement banner**              |
-|                                                   | - ``config.json`` setting: ``.AnnouncementSettings.BannerTextColor: "#333333"`` |
-| String input of a CSS color value.                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXTCOLOR``             |
-+---------------------------------------------------+---------------------------------------------------------------------------------+
++------------------------------------------------------+---------------------------------------------------------------------------------+
+| The color of the text in system-wide notifications.  | - System Config path: **Site Configuration > System-wide notifications**        |
+|                                                      | - ``config.json`` setting: ``.AnnouncementSettings.BannerTextColor: "#333333"`` |
+| String input of a CSS color value.                   | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXTCOLOR``             |
++------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: banner-allowdismissal
-  :displayname: Allow banner dismissal (Announcement banner)
-  :systemconsole: Site Configuration > Announcement banner
+  :displayname: Allow banner dismissal (System-wide notifications)
+  :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.AllowBannerDismissal
   :environment: MM_ANNOUNCEMENTSETTINGS_ALLOWBANNERDISMISSAL
 
-  - **true**: **(Default)** Users can dismiss the banner. The banner will re-appear the next time the user logs in.
-  - **false**: Users cannot dismiss the banner.
+  - **true**: **(Default)** Users can dismiss the system-wide notification. It will re-appear the next time the user logs in, or when the text is updated by an admin.
+  - **false**: Users cannot dismiss the system-wide notification.
 
 Allow banner dismissal
 ~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
-| - **true**: **(Default)** Users can dismiss the banner. The banner will re-appear the next time the user logs in. The banner will also re-appear if the text is updated, or a System Admin disables the banner and re-enables it. | - System Config path: **Site Configuration > Announcement banner**              |
-|                                                                                                                                                                                                                                   | - ``config.json`` setting: ``.AnnouncementSettings.AllowBannerDismissal: true`` |
-| - **false**: Users cannot dismiss the banner.                                                                                                                                                                                     | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ALLOWBANNERDISMISSAL``        |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users can dismiss the system-wide notification.   | - System Config path: **Site Configuration > System-wide notifications**        |
+|   It will re-appear the next time the user logs in, and when the text is    | - ``config.json`` setting: ``.AnnouncementSettings.AllowBannerDismissal: true`` |
+|   updated by an admin, or when an admin disables system-wide notifications  | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ALLOWBANNERDISMISSAL``        |
+|   and reenables them.                                                       |                                                                                 |
+| - **false**: Users cannot dismiss the banner.                               |                                                                                 |
++-----------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 ----
 
@@ -1081,19 +1109,19 @@ Enable emoji picker
   :configjson: .ServiceSettings.EnableCustomEmoji
   :environment: MM_SERVICESETTINGS_ENABLECUSTOMEMOJI
 
-  - **true**: Allows users to add emojis through a **Custom Emoji** option in the emoji picker.
+  - **true**: Allows users to add up to 6000 emojis through a **Custom Emoji** option in the emoji picker.
   - **false**: **(Default)** Disables custom emojis.
 
 Enable custom emoji
 ~~~~~~~~~~~~~~~~~~~
 
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows users to add emojis through a                | - System Config path: **Site Configuration > Emoji**                     |
+| - **true**: **(Default)** Allows users to add up to 6000 emojis through a     | - System Config path: **Site Configuration > Emoji**                     |
 |   **Custom Emoji** option in the emoji picker. Emojis can be GIF, PNG, or     | - ``config.json`` setting: ``.ServiceSettings.EnableCustomEmoji: true``  |
 |   JPG files up to 512 KB in size.                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``         |
 | - **false**:  Disables custom emojis.                                         |                                                                          |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Too many custom emojis can slow your server’s performance.                                                                                     |
+| **Note**: While Mattermost supports up to 6000 custom emojis, an increase in custom emojis can slow your server’s performance.                           |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
@@ -1121,41 +1149,48 @@ Automatically follow threads
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** Enables automatic following for all threads that a user starts, or in which the user participates or is mentioned. A **Threads** table in the database tracks threads and thread participants. A **ThreadMembership** table tracks followed threads for each user and whether the thread is read or unread. | - System Config path: **Site Configuration > Posts**                   |
-|                                                                                                                                                                                                                                                                                                                                       | - ``config.json`` setting: ``.ServiceSettings.ThreadAutoFollow: true`` |
-| - **false**: Disables automatic following of threads.                                                                                                                                                                                                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_THREADAUTOFOLLOW``        |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                                                                                                                                                                                                                                                                                     |
-|                                                                                                                                                                                                                                                                                                                                                                                                                |
-| - This setting **must** be enabled for :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` to function. See the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ for details.                                                                                                                                   |
-| - Enabling this setting does not automatically follow threads based on previous user actions. For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned in the thread.                                                                                                                                    |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables automatic following for all threads that a user starts,       | - System Config path: **Site Configuration > Posts**                   |
+|   or in which the user participates or is mentioned. A **Threads** table in the database        | - ``config.json`` setting: ``.ServiceSettings.ThreadAutoFollow: true`` |
+|   tracks threads and thread participants. A **ThreadMembership** table tracks followed threads  | - Environment variable: ``MM_SERVICESETTINGS_THREADAUTOFOLLOW``        |
+|   for each user and whether the thread is read or unread.                                       |                                                                        |
+| - **false**: Disables automatic following of threads.                                           |                                                                        |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| **Notes**:                                                                                                                                                               |
+|                                                                                                                                                                          |
+| - This setting **must** be enabled for :doc:`threaded discussions </collaborate/organize-conversations>` to function.                                                    |
+| - Enabling this setting does not automatically follow threads based on previous user actions.                                                                            |
+|   For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned         |
+|   in the thread.                                                                                                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: posts-collapsedreplythreads
-  :displayname: Collapsed reply threads (Posts)
+.. config:setting:: posts-threadeddiscussions
+  :displayname: Threaded discussions (Posts)
   :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.CollapsedThreads
+  :configjson: .ServiceSettings.ThreadedDiscussions
   :environment: MM_SERVICESETTINGS_COLLAPSEDTHREADS
 
-  - **Always On**: **(Default)** Enables `Collapsed Reply Threads <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
-  - **Default On**: Enables Collapsed Reply Threads on the server and for all users. ``config.json`` setting: ``"default_on"``
-  - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. ``config.json`` setting: ``"default_off"``
-  - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``
+  - **Always On**: **(Default)** Enables `threaded discussions <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
+  - **Default On**: Enables threaded discussions on the server and for all users. ``config.json`` setting: ``"default_on"``
+  - **Default Off**: Enables threaded discussions on the server but **not** for users. ``config.json`` setting: ``"default_off"``
+  - **Disabled**: Users cannot enable threaded discussions. ``config.json`` setting: ``"disabled"``
 
-Collapsed reply threads
-~~~~~~~~~~~~~~~~~~~~~~~
+Threaded discussions
+~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
 
-  Customers upgrading to v7.0 or later must review the `administrator’s guide to enabling Collapsed Reply Threads <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ prior to enabling this functionality.
+  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator’s guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
-| - **Always On**: **(Default)** Enables :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` on the server and for all users. This is the recommended configuration for optimal user experience and to ensure consistency in how users read and respond to threaded conversations. ``config.json`` setting: ``"always_on"`` | - System Config path: **Site Configuration > Posts**                                            |
-| - **Default On**: Enables Collapsed Reply Threads on the server and for all users. Users can choose to :ref:`disable Collapsed Reply Threads <preferences/manage-your-display-options:collapsed reply threads>` for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_on"``                             | - ``config.json`` setting: ``.ServiceSettings.CollapsedThreads``   |
-| - **Default Off**: Enables Collapsed Reply Threads on the server but **not** for users. Users can choose to enable Collapsed Reply Threads for their Mattermost account in **Settings > Display > Collapsed Reply Threads**. ``config.json`` setting: ``"default_off"``                                                                                                 | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``    |
-| - **Disabled**: Users cannot enable Collapsed Reply Threads. ``config.json`` setting: ``"disabled"``                                                                                                                                                                                                                                                                    |                                                                    |
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+| - **Always On**: **(Default)** Enables :doc:`threaded discussions </collaborate/organize-conversations>`      | - System Config path: **Site Configuration > Posts**                 |
+|   on the server and for all users. This is the recommended configuration for optimal user experience          | - ``config.json`` setting: ``.ServiceSettings.ThreadedDiscussions``  |
+|   and to ensure consistency in how users read and respond to threaded conversations.                          | - Environment variable: ``MM_SERVICESETTINGS_THREADEDDISCUSSIONS``   |
+|   ``config.json`` setting: ``"always_on"``                                                                    |                                                                      |
+| - **Default On**: Enables threaded discussions on the server and for all users.                               |                                                                      |
+| - **Default Off**: Enables threaded discussions on the server but **not** for users.                          |                                                                      |
+| - **Disabled**: Users cannot enable threaded discussions. ``config.json`` setting: ``"disabled"``             |                                                                      |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: posts-messagepriority
   :displayname: Message priority (Posts)
@@ -1606,16 +1641,16 @@ Access the following configuration settings in the System Console by going to **
   :configjson: .AnnouncementSettings.AdminNoticesEnabled
   :environment: MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED
 
-  - **true**: **(Default)** System Admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about server upgrades and administration features.
-  - **false**: System Admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
+  - **true**: **(Default)** System admins will receive `in-product notices <https://docs.mattermost.com/manage/in-product-notices.html>`__ about server upgrades and administration features.
+  - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**).
 
 Enable admin notices
 ~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
-| - **true**: **(Default)** System Admins will receive :doc:`in-product notices </manage/in-product-notices>` about server upgrades and administration features.                              | - System Config path: **Site Configuration > Notices** -                         |
+| - **true**: **(Default)** System admins will receive :doc:`in-product notices </manage/in-product-notices>` about server upgrades and administration features.                              | - System Config path: **Site Configuration > Notices** -                         |
 |                                                                                                                                                                                             | - ``config.json`` setting: ``.AnnouncementSettings.AdminNoticesEnabled: true``   |
-| - **false**: System Admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**)                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
+| - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**)                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: notices-enableendusernotices

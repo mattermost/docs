@@ -5,7 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v8.1 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+   - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
@@ -13,10 +13,26 @@ Important Upgrade Notes
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
    - Mattermost v10.0 is planned for September, 2024. See a list of planned breaking changes for this release `in the changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html>`__.
+   - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v9.11                                              | Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to             |
+|                                                    | differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10. The       |
+|                                                    | official v8 client only works from Elasticsearch v7.10+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future        |
+|                                                    | compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config,  |
+|                                                    | and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.                                        |
+|                                                    |                                                                                                                                                                  |
+|                                                    | If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work.                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to |
+|                                                    | work.                                                                                                                                                            |
+|                                                    |                                                                                                                                                                  |
+|                                                    | For AWS customers on Opensearch, do not enable "compatibility mode".                                                                                             |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.5                                               | We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are    |
@@ -757,7 +773,7 @@ Important Upgrade Notes
 |                                                    | this.                                                                                                                                                            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | TLS versions 1.0 and 1.1 have been deprecated by browser vendors. Starting in Mattermost Server v5.32 (February 16), mmctl returns an error when connected to    |
-|                                                    | Mattermost servers deployed with these TLS versions. System Admins will need to explicitly add a flag in their commands to continue to use them. We recommend    |
+|                                                    | Mattermost servers deployed with these TLS versions. System admins will need to explicitly add a flag in their commands to continue to use them. We recommend    |
 |                                                    | upgrading to TLS version 1.2 or higher.                                                                                                                          |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.31.0                                            | For Mobile Apps v1.42.0+, the minimum server version is set to 5.31.3 as                                                                                         |
@@ -776,7 +792,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | For more information about coredumps, please see: https://man7.org/linux/man-pages/man5/core.5.html.                                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | In-product notices have been introduced to keep System Admins and end users informed of the latest product enhancements available in new server and desktop      |
+|                                                    | In-product notices have been introduced to keep system admins and end users informed of the latest product enhancements available in new server and desktop      |
 |                                                    | versions. :doc:`Learn more about in-product notices </manage/in-product-notices>` and how to disable them in our documentation.                                  |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.                                                                    |
@@ -902,11 +918,11 @@ Important Upgrade Notes
 |                                                    | 5.15.1, 5.14.4 or 5.9.5 (ESR) to continue receiving desktop notifications when using Mattermost Desktop v4.3.0 or later.                                         |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | When enabling :doc:`Guest Accounts </onboard/guest-accounts>`, all users who have the ability to invite users will be able to                                    |
-|                                                    | invite guests by default. System Admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server     |
-|                                                    | version 5.17, the System Admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to     |
+|                                                    | invite guests by default. System admins will need to remove this permission on each role via **System Console > Permissions Schemes**.  In Mattermost Server     |
+|                                                    | version 5.17, the system admin will be the only role to automatically get the invite guest permission, however the fix will not be applicable in 5.16 due to     |
 |                                                    | database migration processes.                                                                                                                                    |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v5.14.0                                            | Webhooks are now only displayed if the user is the creator of the webhook or a System Administrator.                                                             |
+| v5.14.0                                            | Webhooks are now only displayed if the user is the creator of the webhook or a system administrator.                                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | With the update from Google+ to Google People, system admins need to ensure the ``GoogleSettings.Scope`` config.json setting is set to ``profile email`` and     |
 |                                                    | ``UserAPIEndpoint`` setting should be set to ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` per             |
@@ -922,9 +938,9 @@ Important Upgrade Notes
 |                                                    | ``ExperimentalEnablePostMetadata`` setting was removed. Post metadata, including post dimensions, is now stored in the database to correct scroll position and   |
 |                                                    | eliminate scroll jumps as content loads in a channel.                                                                                                            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Added the ability to enforce the administration of teams/channels with Group Sync. If Group Sync is enabled, all Team and Channel Admin designations will be     |
-|                                                    | lost upon upgrade. It is highly recommended that prior to upgrading, Team and Channel Admins are added to admin-specific LDAP groups corresponding to their      |
-|                                                    | teams and channels. After upgrading, those groups will need to be role-synced to the Team or Channel Admin role.                                                 |
+|                                                    | Added the ability to enforce the administration of teams/channels with Group Sync. If Group Sync is enabled, all team and channel admin designations will be     |
+|                                                    | lost upon upgrade. It is highly recommended that prior to upgrading, Team and channel admins are added to admin-specific LDAP groups corresponding to their      |
+|                                                    | teams and channels. After upgrading, those groups will need to be role-synced to the Team or channel admin role.                                                 |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.11.0                                            | If your integration uses ``Update.Props == nil`` to clear ``Props``, this will no longer work in 5.11+. Instead, use ``Update.Props == {}`` to clear properties. |
 |                                                    |                                                                                                                                                                  |
@@ -1106,7 +1122,6 @@ Important Upgrade Notes
 | v4.0.0                                             | (High Availability only)                                                                                                                                         |
 |                                                    |                                                                                                                                                                  |
 |                                                    | You must manually add new items to the ``ClusterSettings`` section of your existing ``config.json``.                                                             |
-|                                                    | See the *Upgrading to Version 4.0 and Later* section of :doc:`../scale/high-availability-cluster` for details.                                                   |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v3.9.0                                             | Old email invitation links, password reset links, and email verification links will no longer work due to a security change.                                     |
 |                                                    | Team invite links copied from the Team Invite Link dialog are not affected and are still valid.                                                                  |

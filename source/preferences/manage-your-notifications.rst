@@ -80,7 +80,9 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
   **Want incoming call sounds?**
 
-  Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing (beta)>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+  Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+
+  From Mattermost mobile app v2.19, incoming call sounds on mobile include sounds and vibration, and vibration only when your device is in silent mode. You can set one **Incoming call sound** for web or desktop, and a different one for mobile. When you select an **Incoming call sound** on mobile, your changes apply only to mobile.
 
 .. tab:: Email 
 
@@ -121,7 +123,7 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
 
 .. tab:: Replies
 
-  If :doc:`Collapsed Reply Threads </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Collapsed Reply Threads is enabled.
+  If :doc:`Threaded discussions </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Threaded discussions is enabled.
 
   **Automatic replies**
 

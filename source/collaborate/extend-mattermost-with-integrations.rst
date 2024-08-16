@@ -1,12 +1,12 @@
 Extend Mattermost with integrations
 ===================================
 
-Ensure your teams are are always informed about important events, status changes, deadlines, or priorities with Mattermost integrations. Enhance communication, streamline Mattermost with external workflows, ensure security and compliance, and foster a more efficient and collaborative work environment with major communication tools and services featuring real-time alerts, updates, and notifications directly within channels. 
+Ensure your teams are are always informed about important events, status changes, deadlines, or priorities with Mattermost operational and DevOps integrations. Enhance communication, streamline Mattermost with external workflows, ensure security and compliance, and foster a more efficient and collaborative work environment with major communication tools and services featuring real-time alerts, updates, and notifications directly within channels. 
 
 Interoperability with pre-packaged integrations
 ------------------------------------------------
 
-The following pre-packaged feature & interoperability integrations are available for your Mattermost system admin to enable and configure for you to use:
+The following pre-packaged feature & interoperability integrations are available for your Mattermost system admin to enable and configure for you to use.
 
 Mattermost features
 ~~~~~~~~~~~~~~~~~~~~

@@ -22,4 +22,4 @@ For details on configuring Mattermost to use a service provider as a Single Sign
 - :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>`
 - :doc:`GitLab Single Sign-On </onboard/sso-gitlab>`
 - :doc:`Google Apps Single Sign-On </onboard/sso-google>`
-- :doc:`Office 365 Single Sign-On </onboard/sso-office>`
+- :doc:`Entra ID Single Sign-On </onboard/sso-entraid>`

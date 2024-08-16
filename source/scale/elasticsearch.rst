@@ -8,14 +8,14 @@ Elasticsearch
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. The implementation uses `Elasticsearch <https://www.elastic.co>`__ v7.x as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster>`. 
+Elasticsearch provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. Mattermost's implementation uses `Elasticsearch <https://www.elastic.co>`_ as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster-based-deployment>`.
 
 .. important::
   
-  - The default Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. We recommend using Elasticsearch for optimum search performance. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling Elasticsearch for optimum search performance before you reach 3 million posts. 
+  - The default Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling Elasticsearch for optimum search performance **before** reaching 3 million posts. 
   - For deployments with over 5 million posts, Elasticsearch is required to avoid significant performance issues (such as timeouts) with search and at-mentions.
-  - We highly recommend that you install Elasticsearch on a different machine than the Mattermost Server. 
-    
+  - We highly recommend that you `set up Elasticsearch <#set-up-an-elasticsearch-server>`__ on a different machine than the Mattermost Server.
+
 Deployment guide
 ----------------
 
@@ -26,9 +26,16 @@ Deploying Elasticsearch includes the following two steps: `setting up the Elasti
 Set up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download and install the latest release of Elasticsearch v7. See the `Elasticsearch <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`__ documentation for details. 
+1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.14+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
 
-2. Set up Elasticsearch with systemd by running the following commands:
+.. important::
+
+  - Mattermost v9.11 adds support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ as well as `Opensearch <https://opensearch.org/>`_ (Beta).
+  - Mattermost also supports Elasticsearch v7.17+. We recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
+  - AWS Elasticsearch v7.10 customers only: The official Elasticsearch v8 client only works with Elasticsearch versions released later than v7.10. We recommend that customers using AWS Elasticsearch v7.10 upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+  - Additionally, see the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` configuration setting documentation for additional requirements and recommendations.
+
+2. Set up Elasticsearch with ``systemd`` by running the following commands:
 
   .. code-block:: none
 
@@ -48,7 +55,7 @@ Set up an Elasticsearch server
 
     ip addr
 
-5. Edit the Elasticsearch configuration file in vi by running the following command:
+5. Edit the Elasticsearch configuration file in ``vi`` by running the following command:
 
   .. code-block:: none
 
@@ -155,7 +162,7 @@ Mattermost creates three types of indexes: users, channels, and posts. Users and
 Can I pause an Elasticsearch indexing job?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System Admins can cancel an indexing job through the System Console.
+Yes. From Mattermost v6.7, the Elasticsearch indexing job is resumable. Stopping a server while the Elasticsearch indexing job is running puts the job in pending status. The job resumes when the server restarts. System admins can cancel an indexing job through the System Console.
 
 Can an index rollover policy be defined?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

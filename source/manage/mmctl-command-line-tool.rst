@@ -6,14 +6,14 @@ mmctl command line tool
 
 The mmctl is a CLI tool for the Mattermost server which is installed locally and uses the Mattermost API, but may also be used remotely. Authentication is done with either login credentials or an authentication token. This mmctl tool is included and replaces the :doc:`CLI </manage/command-line-tools>`. The mmctl can currently be used alongside the Mattermost CLI tool. The Mattermost CLI tool will be deprecated in a future release.
 
-Being installed locally enables System Admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
+Being installed locally enables system admins for both self-hosted and Cloud Mattermost instances to run CLI commands even in instances where there's no access to the server (e.g., via SSH).
 
 This feature was developed to a large extent by community contributions and we'd like to extend our gratitude to the contributors who have worked on this project. We are currently accepting pull requests for Help Wanted issues in the `mattermost-server <https://github.com/mattermost/mattermost/issues?q=is%3Aissue+is%3Aopen+label%3A%22Help+Wanted%22+label%3AArea%2Fmmctl>`__ repo. You can learn more about the unit test coverage campaign for mmctl in the `Unit testing mmctl commands <https://mattermost.com/blog/unit-testing-mmctl-commands/>`__ blog post.
 
 mmctl usage notes
 -----------------
 
-- System Admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the `installation instructions <#install-mmctl>`__, or by building it directly, for which you can check the `build instructions <#build-mmctl>`__ below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
+- System admins have two ways to run ``mmctl`` commands: by downloading ``mmctl`` from the release URLs, which you can find in the `installation instructions <#install-mmctl>`__, or by building it directly, for which you can check the `build instructions <#build-mmctl>`__ below. The source code lives in the `server/cmd/mmctl directory within the mattermost repository <https://github.com/mattermost/mattermost/tree/master/server/cmd/mmctl>`__.
 - ``mmctl`` also comes bundled with the Mattermost distribution, and is located in the ``bin`` folder of the installation, next to the ``CLI``.
 
   - We recommend you add the path to the Mattermost ``bin`` folder into your ``$PATH`` environment variable. This ensures that you can run mmctl commands locally regardless of your current directory location.
@@ -41,6 +41,7 @@ mmctl commands
 - `mmctl group user`_ - Custom User Group Management
 - `mmctl import`_ - Import Management
 - `mmctl integrity`_ - (Deprecated) Database Record Integrity
+- `mmctl job`_ - Job Management
 - `mmctl ldap`_ - LDAP Management
 - `mmctl license`_ - License Management
 - `mmctl logs`_ - Log Management
@@ -1925,7 +1926,7 @@ Migrate a file-based configuration to (or from) a database-based configuration. 
 
 .. note::
 
-   - To change the store type to use the database, a System Admin needs to set a ``MM_CONFIG`` :ref:`environment variable <configure/configuration-in-your-database:create an environment file>` and restart the Mattermost server.
+   - To change the store type to use the database, a system admin needs to set a ``MM_CONFIG`` :ref:`environment variable <configure/configuration-in-your-database:create an environment file>` and restart the Mattermost server.
    - The ``migrate`` function requires local mode to be enabled.  To do this, add the following line to your Mattermost Environment file:
 
       .. code-block:: sh
@@ -2099,15 +2100,14 @@ Set the value of a config setting by its name in dot notation. Accepts multiple 
 
    mmctl config set [flags]
 
-**Examples**
+**4 Examples**
 
 .. code-block:: sh
 
    mmctl config set SqlSettings.DriverName postgres
    mmctl config set SqlSettings.DataSourceReplicas "replica1" "replica2"
    mmctl config set PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl "http://mattermost-rtcd"
-
-
+   mmctl config set LogSettings.AdvancedLoggingJSON '{"console1":{"Type":"console","Format":"json","Levels":[{"ID":5,"Name":"debug","Stacktrace":false},{"ID":4,"Name":"info","Stacktrace":false,"color":36},{"ID":3,"Name":"warn","Stacktrace":false},{"ID":2,"Name":"error","Stacktrace":true,"color":31},{"ID":1,"Name":"fatal","Stacktrace":true,"color":31},{"ID":0,"Name":"panic","Stacktrace":true,"color":31},{"ID":10,"Name":"stdlog","Stacktrace":false}],"Options":{"Out":"stdout"},"MaxQueueSize":1000}}'
 
 **Options**
 
@@ -3601,6 +3601,121 @@ This command is deprecated from Mattermost v9.3. Performs a relational integrity
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl job
+---------
+
+Management of jobs.
+
+   Child Commands
+      - `mmctl job list`_ - List the latest jobs
+      - `mmctl job update`_ - Update the status of a job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for ldap
+
+mmctl job list
+~~~~~~~~~~~~~~
+
+**Description**
+
+List the latest jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl job list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   job list
+    job list --ids jobID1,jobID2
+    job list --type ldap_sync --status success
+    job list --type ldap_sync --status success --page 0 --per-page 10
+
+**Options**
+
+.. code-block:: sh
+
+   --all             Fetch all import jobs. --page flag will be ignored if provided
+   -h, --help        help for list
+   --ids strings     Comma-separated list of job IDs to which the operation will be applied. All other flags are ignored
+   --page int        Page number to fetch for the list of import jobs
+   --per-page int    Number of import jobs to be fetched (default 5)
+   --status string   Filter by job status
+   --type string     Filter by job type
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl job update
+~~~~~~~~~~~~~~~~
+
+**Description**
+
+Update the status of a job.
+
+.. important::
+   
+   The following status rules are permitted:
+
+   - ``in_progress`` can be changed to ``pending``
+   - ``in_progress`` or ``pending`` can be changed to ``cancel_requested``
+   - ``cancel_requested`` can be changed to ``canceled``
+   
+   These restrictions can be bypassed with ``--force=true``. Bypassing restrictions can have unexpected consequences on your Mattermost server and should be used with caution.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl job update [job] [status] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   job update myJobID pending
+    job update myJobID pending --force true
+    job update myJobID canceled --force true
+
+**Options**
+
+.. code-block:: sh
+
+   --force       Setting a job status is restricted to certain statuses. You can overwrite these restrictions by using --force. Use this option with caution.
+   -h, --help    help for update
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl ldap
 ----------
 
@@ -4789,17 +4904,17 @@ mmctl roles
 
 **Description**
 
-Promote users to the System Admin role, or remove System Admin privileges from users.
+Promote users to the system admin role, or remove system admin privileges from users.
 
 **Format**
 
-Promote users to the System Admin role:
+Promote users to the system admin role:
 
 .. code-block:: sh
 
    mmctl roles system_admin [users] [flags]
 
-Remove System Admin privileges:
+Remove system admin privileges:
 
 .. code-block:: sh
 
@@ -4807,25 +4922,25 @@ Remove System Admin privileges:
 
 **Examples**
 
-Promote a user to the System Admin role:
+Promote a user to the system admin role:
 
 .. code-block:: sh
 
    mmctl roles system_admin john_doe
 
-Promote multiple users to the System Admin role:
+Promote multiple users to the system admin role:
 
 .. code-block:: sh
 
    mmctl roles system_admin john_doe jane_doe
 
-Remove System Admin privileges from a user:
+Remove system admin privileges from a user:
 
 .. code-block:: sh
 
    mmctl roles member john_doe
 
-Remove System Admin privileges from multiple users:
+Remove system admin privileges from multiple users:
 
 .. code-block:: sh
 
@@ -5984,7 +6099,7 @@ Convert user accounts to bots, or convert bots to user accounts.
    --locale string      The locale (e.g., EN, FR) for the converted new user account. Required when the "bot" flag is set
    --nickname string    The nickname for the converted user account. Required when the "bot" flag is set
    --password string    The password for converted new user account. Required when "user" flag is set
-   --system_admin       If supplied, the converted user will be a System Admin. Defaults to false. Required when the "bot" flag is set
+   --system_admin       If supplied, the converted user will be a system admin. Defaults to false. Required when the "bot" flag is set
    --user               If supplied, convert a bot to a user
    --username string    Username for the converted user account. Required when the "bot" flag is set
 
@@ -6025,7 +6140,7 @@ Create a user.
    # You can define optional fields like first name, last name, and nickname
    $ mmctl user create --email user@example.com --username userexample --password Password1 --firstname User --lastname Example --nickname userex
 
-   # You can also create the user as a System Admin
+   # You can also create the user as a system sdmin
    $ mmctl user create --email user@example.com --username userexample --password Password1 --system-admin
 
    # You can verify user on creation if you have the correct permissions
