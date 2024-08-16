@@ -107,7 +107,7 @@ If you have issues with your SMTP install, from your Mattermost team site go to 
 
 For example, if **System Console > Logs** displays the following error, search for ``554 5.7.1 error`` and ``Client host rejected: Access denied``.
 
-.. code-block:: none
+.. code-block:: text
 
   Connection unsuccessful: Failed to add to email address - 554 5.7.1 <unknown[IP-ADDRESS]>: Client host rejected: Access denied
 
@@ -118,7 +118,7 @@ Checking your SMTP server is reachable
 - You must run the following commands from the same machine or virtual instance where ``mattermost/bin/mattermost`` is located.
 - Telnet to the email server with ``telnet mail.example.com 25``. If the command works you should see something like:
 
-  .. code-block:: none
+  .. code-block:: text
 
     Trying 24.121.12.143...
     Connected to mail.example.com.
@@ -126,7 +126,7 @@ Checking your SMTP server is reachable
 
   Then type something like ``HELO <your mail server domain>``. If the command works you should see something like:
 
-  .. code-block:: none
+  .. code-block:: text
 
     250-mail.example.com NO UCE
     250-STARTTLS

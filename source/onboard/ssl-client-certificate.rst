@@ -19,16 +19,19 @@ Set up mutual TLS authentication for the web app
 
 1. Create a `certificate authority (CA) key <https://en.wikipedia.org/wiki/Certificate_authority>`__ and a certificate for signing the client certificate. When establishing a TLS connection, the NGINX proxy server requests and validates a client certificate provided by the web app.
 
-.. code-block:: none
+.. code-block:: sh
 
   openssl genrsa -des3 -out ca.mattermost.key 4096
+
+.. code-block:: text
   
   pass phrase: capassword
-
     
-.. code-block:: none
+.. code-block:: sh
 
   openssl req -new -x509 -days 365 -key ca.mattermost.key -out ca.mattermost.crt
+
+.. code-block:: text
 
   Country Name: US
   State: Maryland
@@ -40,15 +43,19 @@ Set up mutual TLS authentication for the web app
 
 2. Create the client side key for ``mmuser`` with a passphrase, and the certificate signing request:
 
-.. code-block:: none
+.. code-block:: sh
 
   openssl genrsa -des3 -out mmuser-mattermost.key 1024
 
+.. code-block:: text
+
   passphrase: mmuser-passphrase
 
-.. code-block:: none
+.. code-block:: sh
 
   openssl req -new -key mmuser-mattermost.key -out mmuser-mattermost.csr
+
+.. code-block:: text
 
   Country Name: US
   State: Maryland
@@ -62,19 +69,19 @@ Set up mutual TLS authentication for the web app
 
 3. Sign the user's client certificate with the previously created CA certificate:
 
-.. code-block:: none
+.. code-block:: sh
 
   openssl x509 -req -days 365 -in mmuser-mattermost.csr -CA ca.mattermost.crt -CAkey ca.mattermost.key -set_serial 01 -out mmuser-mattermost.crt
 
 4. Check the newly generated client certificate for ``mmuser``:
 
-.. code-block:: none
+.. code-block:: sh
 
   openssl x509 -in mmuser-mattermost.crt -text -noout
 
 5. Open the file ``/etc/nginx/sites-available/mattermost`` and modify the following lines, so that the NGINX proxy server requests and verifies the client certificate:
 
-.. code-block:: none
+.. code-block:: text
   :emphasize-lines: 4-5, 10-11, 16-17
 
   ssl on;
@@ -99,7 +106,7 @@ Set up mutual TLS authentication for the web app
 
 6. Confirm the CA key for ``mmuser`` works by the following curl command to the proxy:
 
-.. code-block:: none
+.. code-block:: sh
 
   curl -v -s -k --key mmuser-mattermost.key --cert mmuser-mattermost.crt:mmuser-passphrase https://example.mattermost.com
 
@@ -110,9 +117,11 @@ You should see the Mattermost login page. If you see:
 
 7. Generate a PKCS12 file from the CA key and certificate, to install the certificate into your client machine for your browser to use:
 
-.. code-block:: none
+.. code-block:: sh
 
   openssl pkcs12 -export -out mmuser-mattermost.p12 -inkey mmuser-mattermost.key -in mmuser-mattermost.crt -certfile ca.mattermost.crt
+
+.. code-block:: text
 
   Enter Export Password: mmuser-passphrase
 

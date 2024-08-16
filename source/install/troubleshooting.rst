@@ -27,7 +27,7 @@ Docker deployments
 
 If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <install/install-docker:deploy mattermost on docker for production use>`, then skip the following command:
 
-.. code:: bash
+.. code-block:: sh
 
    sudo chown -R 2000:2000 ./volumes/app/mattermost
 
@@ -35,13 +35,13 @@ On M1 systems, this permission change causes the deploy to stop working, so we r
 
 If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
-.. code:: bash
+.. code-block:: sh
   
    sudo systemctl enable --now docker
 
 To remove all data and settings for your Mattermost deployment:
 
-.. code:: bash
+.. code-block:: sh
 
    sudo rm -rf ./volumes
 
@@ -196,9 +196,9 @@ How to access your configuration data
 
 The Mattermost configuration is usually stored at ``/opt/mattermost/config/config.json``. If you've migrated the Mattermost configuration to the database, you can get the configuration using ``mmctl`` or by running this database query:
 
-.. code-block:: none
+.. code-block:: SQL
     
-   SELECT Value FROM Configurations WHERE Active = 1;
+  SELECT Value FROM Configurations WHERE Active = 1;
 
 **Reverse Proxy configuration**
 
@@ -263,13 +263,13 @@ Make sure :ref:`debug logging is enabled <manage/logging:how do i enable debug l
 
 If the behavior started at a known time or date, use ``journalctl`` to get the logs like this:
 
-.. code-block:: none
+.. code-block:: sh
 
    sudo journalctl -u mattermost --since "2020-08-23 17:15:00" > mattermost_journalctl.log
 
 Replace 2020-08-23 17:15:00 with the date and time (relative to the server) when the behavior started. To get the server time, use the ``date`` command. If the log files generated are too large to send, compress them with this command:
 
-.. code-block:: none
+.. code-block:: sh
    
    tar -czf /tmp/mattermost.log.tgz
 
@@ -277,7 +277,7 @@ The compressed logs will be located on the server at ``/tmp/mattermost.log.tgz``
 
 If the compressed file is still too big, use these commands to split the compressed file into two or more 20MB files:
 
-.. code-block:: none
+.. code-block:: sh
    
    mkdir -p /tmp/mattermost-logs
    cd /tmp/mattermost-logs
@@ -291,13 +291,13 @@ If you are experiencing issues with Elasticsearch, LDAP, or the database, you ca
 
 The location of log files for other systems varies, but a good way to get the logs for all processes on the Mattermost server is to use ``journalctl`` like this:
 
-.. code-block:: none
+.. code-block:: sh
   
    sudo journalctl --since "2020-08-23 17:15:00" > mattermost_journalctl.log
 
 Replace 2020-08-23 17:15:00` with the date and time (relative to the server) when the error occurred. You can use ``--until`` with the same timestamp format to get the logs between two times:
 
-.. code-block:: none
+.. code-block:: sh
   
    sudo journalctl --since "2020-08-23 17:15:00" --until "2020-08-23 16:30:00" > mattermost_journalctl.log
 
@@ -439,7 +439,7 @@ Checking keys and certificates
 
 Key and certificate files should never be shared, but if the error indicates a problem with the format of a key or certificate, then you should verify the format of the keys and certificates by running this command:
 
-.. code-block:: none
+.. code-block:: sh
 
   cat -A /path/to/key-or.cert
 

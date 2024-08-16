@@ -379,6 +379,8 @@ redirects = {
 	"https://docs.mattermost.com/about/version-archive.html",
 "administration/mmctl-cli-tool.html#local-mode":
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
+"administration/upgrade.html#upgrade-guide":
+        "https://docs.mattermost.com/guides/upgrade-mattermost.html",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -3622,7 +3624,6 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/copybuttons.css",
     "css/compass-icons.css"
 ]
 
@@ -3631,7 +3632,6 @@ html_css_files = [
 # https://example.org/script.js. The attributes is used for attributes of <script> tag. It defaults to an empty list.
 html_js_files = [
     "js/jquery.js",
-    "js/copybuttons.js",
     "js/thermometer.js",
     "js/myscript-v1.js",
 ]
