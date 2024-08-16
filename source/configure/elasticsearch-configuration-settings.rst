@@ -683,15 +683,16 @@ Live indexing batch size
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.BatchSize
   :environment: MM_ELASTICSEARCHSETTINGS_BATCHSIZE
-  :description: The Elasticsearch index batch size. Default is **10000**.
+  :description: The number of posts for a single batch during a bulk indexing job. Default is **10000**.
 
 Batch size
 ~~~~~~~~~~~
 
 +-------------------------------------------+---------------------------------------------------------------------------+
-| The Elasticsearch index batch size.       | - System Config path: N/A                                                 |
-|                                           | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
-| Numerical input. Default is **10000**.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
+| The number of posts for a single batch    | - System Config path: N/A                                                 |
+| during a bulk indexing job.               | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
+|                                           | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
+| Numerical input. Default is **10000**.    |                                                                           |
 +-------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: elastic-requesttimeout
