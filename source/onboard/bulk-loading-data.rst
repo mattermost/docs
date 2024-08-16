@@ -14,6 +14,7 @@ You can import the following data types:
 - Users' team memberships
 - Users' channel memberships
 - Users' notification preferences
+- Users' custom status
 - Posts (regular, non-reply posts)
 - Posts' replies
 - Posts' reactions

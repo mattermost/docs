@@ -391,7 +391,7 @@ Database servers
 Elasticsearch server
 
  - Hostname: elastic.local.lan
- - Elasticsearch 7.9 with these plugins
+ - Elasticsearch v7.9 with these plugins
  - analysis-icu
 
 Steps to reproduce
