@@ -25,7 +25,7 @@ Below is additional information on how to configure the database for different l
 配置 SCWS
 ~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: sh
 
     # 取得 SCWS 代码
     wget http://www.xunsearch.com/scws/down/scws-1.2.3.tar.bz2
@@ -49,7 +49,7 @@ Below is additional information on how to configure the database for different l
 配置 Zhparser
 ~~~~~~~~~~~~~~
 
-.. code:: bash
+.. code-block:: sh
 
     # 下载 Zhparser 源代码
     git clone https://github.com/amutu/zhparser.git
@@ -64,7 +64,7 @@ Below is additional information on how to configure the database for different l
 
     如果使用 Docker 镜像作为数据库，可以预先执行以下命令，安装依赖（请根据实际的 PostgreSQL 版本选择）。
 
-    .. code:: bash
+    .. code-block:: sh
 
         # 更新本地缓存
         apt update
@@ -76,7 +76,7 @@ Below is additional information on how to configure the database for different l
 创建 extension 并增加解析配置
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code:: sql
+.. code-block:: sql
 
     -- 创建 extension
     CREATE EXTENSION zhparser
@@ -144,7 +144,7 @@ MySQL 해결 방법
 
 2. MySQL의 구성 파일에서 n-gram의 최소 토큰 크기를 다음과 같이 설정합니다.
 
-.. code:: sql
+.. code-block:: sql
 
     [mysqld]
     ft_min_word_len = 2
@@ -156,14 +156,14 @@ MySQL 해결 방법
 
 - 게시물 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/issues/2033#issuecomment-182336690>`__ )
 
-.. code:: sql
+.. code-block:: sql
 
     DROP INDEX idx_posts_message_txt ON Posts;
     CREATE FULLTEXT INDEX idx_posts_message_txt ON Posts (Message) WITH PARSER ngram;
 
 - 해시 태그 검색을 위한 설정 ( `참조 <https://github.com/mattermost/mattermost/pull/4555>`__ )
 
-.. code:: sql
+.. code-block:: sql
 
     DROP INDEX idx_posts_hashtags_txt ON Posts;
     CREATE FULLTEXT INDEX idx_posts_hashtags_txt ON Posts (Hashtags) WITH PARSER ngram;

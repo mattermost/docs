@@ -60,7 +60,7 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
 
 Run this command to verify the permissions on your Mattermost directory:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo chown -R mattermost:mattermost /opt/mattermost
 
@@ -69,7 +69,7 @@ Modify the Mattermost ``systemd`` file
 
 First, find the ``mattermost.service`` file using:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo systemctl status mattermost.service
 
@@ -116,7 +116,7 @@ Migrate configuration from ``config.json``
 
 You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running the following command:
 
-.. code-block:: text
+.. code-block:: sh
 
    mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
 
@@ -150,7 +150,7 @@ Reload ``systemd`` files and restart Mattermost
 
 Finally, run these commands to reload the daemon and restart Mattermost using the new ``MM_CONFIG`` environment variable.
 
-.. code-block:: text
+.. code-block:: sh
 
    sudo systemctl daemon-reload
    sudo systemctl restart mattermost

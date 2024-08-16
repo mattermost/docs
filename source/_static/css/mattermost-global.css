@@ -1877,8 +1877,3 @@ mark {
 .sidebar-brand {
     display: none;
 }
-
-/* Tabs */
-.tab-content>.mm-code-copy:first-child {
-    margin-top: 30px;
-}

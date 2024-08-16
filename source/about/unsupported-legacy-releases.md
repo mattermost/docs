@@ -4,7 +4,8 @@
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 ```{Important}
-Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+- Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
+- Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 ```
 
 - **8.1.13, released 2024-04-25**
@@ -5519,7 +5520,7 @@ If you upgrade from a release earlier than 5.19, please read the other [Importan
  - Bulk export now includes direct messages from a user to themselves.
 
 #### Administration
- - Added support for Elasticsearch 7.
+ - Added support for Elasticsearch v7.
  - Added ability to inform System Admins when a user who managed bot accounts is deactivated, and enable them to take ownership of the bot.
  - Added LDAP/Elasticsearch/SQL Trace to server logs to make it easier for admins to diagnose problems.
  - Added ``plugins`` to the list of words that a team URL cannot start with.

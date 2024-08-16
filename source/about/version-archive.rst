@@ -5,12 +5,16 @@ Version archive
   :start-after: :nosearch:
 
 .. important::
-  - Support for Mattermost Server v8.1 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+  - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
   - Note that our package signing key has been moved away from Keybase. If you still reference Keybase in your deployment steps for retrieving the key, update them to the new key location: https://deb.packages.mattermost.com/pubkey.gpg.
   - If you want to check that the version of Mattermost you are installing is the official, unmodified version, compare the SHA-256 checksum or the file's GPG signature with the one published in this version archive. To verify the GPG signature of a Mattermost release, use the public key stored at the following URL: https://deb.packages.mattermost.com/pubkey.gpg.
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v9.11.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.0/mattermost-9.11.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/9.11.0/mattermost-9.11.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``293f2161586302f4a5baa9d9d88197f517426fc12a2ed23242e20a2647fef4da``
+    - GPG Signature: https://releases.mattermost.com/9.11.0/mattermost-9.11.0-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.10.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.1/mattermost-9.10.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.1/mattermost-9.10.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``837b583eb9322c2360f8654368bd7b2b724ab1fcb4f6d8258470e21993a40f3e``
@@ -375,6 +379,10 @@ Version archive
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v9.11.0 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.0/mattermost-team-9.11.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/9.11.0/mattermost-team-9.11.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``7de2e2f560f2986e3c855e24944f44fc9b95560f7d841072b41b64c0975fd73e``
+    - GPG Signature: https://releases.mattermost.com/9.11.0/mattermost-team-9.11.0-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.10.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.1/mattermost-team-9.10.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.1/mattermost-team-9.10.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``08e35dccba623e760b056784db6ee6fa300d72a45ec28bc9f189324818b8471f``

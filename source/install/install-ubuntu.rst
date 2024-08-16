@@ -19,7 +19,7 @@ Install Mattermost Server on Ubuntu
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
-        <li>Operating System: 20.04 LTS, 22.04 LTS
+        <li>Operating System: 20.04 LTS, 22.04 LTS, 24.04 LTS
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
         <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v11+</a></li>
         <li>Network:
@@ -57,7 +57,7 @@ Add the Mattermost Server PPA repository
 
     ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo apt-key add``
 
-  - For Ubuntu Jammy - 22.04 LTS:
+  - For Ubuntu Jammy - 22.04 LTS and Ubuntu Noble - 24.04 LTS:
 
     ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
 
@@ -65,23 +65,9 @@ Add the Mattermost Server PPA repository
 
 In a terminal window, run the following repository setup command to add the Mattermost Server repositories:
 
-.. raw:: html
+.. code-block:: sh
 
-  <div class="mm-code-copy mm-code-copy--long" data-click-method="Ubuntu" data-click-command="Add the Mattermost Server PPA repository">
-
-    <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
-      </code>
-      <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
-    </div>
-
-    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
-      <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard</span>
-    </button>
-
-  </div>
+  curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
 
 This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost Omnibus repository so that you can run the install command.
 
@@ -90,30 +76,15 @@ Install
 
 Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages by running the following command:
 
-.. code-block:: none
-  :class: mm-code-block
+.. code-block:: sh
 
     sudo apt update
 
 After any updates, and any system reboots, are complete, installing the Mattermost Server is now a single command:
 
-.. raw:: html
+.. code-block:: sh
 
-  <div class="mm-code-copy mm-code-copy--long" data-click-method="Ubuntu" data-click-command="Install - sudo apt install">
-
-    <div class="mm-code-copy__wrapper">
-      <code class="mm-code-copy__text mm-code-copy__trigger" data-click-el="Snippet">
-        sudo apt install mattermost -y
-      </code>
-      <span class="mm-code-copy__copied-notice">Copied to clipboard</span>
-    </div>
-
-    <button class="mm-button mm-code-copy__trigger" data-click-el="Button">
-      <svg aria-hidden="true" width="17" height="18" viewBox="0 0 17 18" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="10.2972" height="10.8284" rx="0.5" stroke="white"/><rect x="6.1489" y="6.41418" width="10.2972" height="10.8284" rx="0.5" stroke="white"/></svg>
-      <span>Copy to clipboard</span>
-    </button>
-
-  </div>
+  sudo apt install mattermost -y
 
 You now have the latest Mattermost Server version installed on your system.
 
@@ -130,8 +101,7 @@ Before you start the Mattermost Server, you need to edit the configuration file.
 
 Rename this configuration file with correct permissions:
 
-.. code-block:: none
-  :class: mm-code-block
+.. code-block:: sh
 
   sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 
@@ -143,8 +113,7 @@ Configure the following properties in this file:
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
 
-.. code-block:: none
-  :class: mm-code-block
+.. code-block:: sh
 
   sudo systemctl start mattermost
 
@@ -166,8 +135,7 @@ Remove Mattermost
 
 If you wish to remove the Mattermost Server for any reason, you can run this command:
 
-.. code-block:: none
-  :class: mm-code-block
+.. code-block:: sh
 
     sudo apt remove --purge mattermost
 
