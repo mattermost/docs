@@ -5,6 +5,72 @@
 
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
+(release-v5-9)=
+## Release v5.9 (Extended Support Release)
+
+**Release Date: 2024-08-16**
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+```{Note}
+Mattermost v5.9.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
+```{Note}
+v5.9.0 is the first Extended Support Release for the Desktop App. See more details in [this documentation](https://docs.mattermost.com/about/release-policy.html#extended-support-releases).
+```
+
+### Compatibility
+
+- Desktop App is supported on any currently {ref}`supported Mattermost server version <mattermost-server-releases>`.
+- Updated Chromium minimum supported version to 126+.
+
+### Improvements
+
+#### Linux
+
+- Changed the window buttons on the Linux client to use the native ones provided by Electron, removed the frame.
+
+#### All Platforms
+
+- Dropped support for 32-bit Windows and added support for ARM64 (beta).
+- Dropped support for the EXE/NSIS installer, shipping only the MSI.
+- Added a permissions manager user interface in the **Edit Server** modal, and improved permission checks to be less missable.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 31.2.1. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### Windows
+
+- Fixed an issue where the window size would get smaller on Windows after a restart if the primary monitor was used and was scaled.
+- Fixed an issue where snapping the window on Windows would sometimes cause the inner ``BrowserView`` not to resize.
+
+#### All Platforms
+
+- Fixed an issue where reloading the webapp would not always take the user back to the same URL.
+- Fixed an issue with a missing context menu upon right-clicking in the calls popout window.
+- Fixed an issue where the window could be rendered off-screen in multi-monitor setups.
+
+### Open Source Components
+
+- Removed ``@aws-sdk/client-s3``, ``@aws-sdk/lib-storage``, ``@electron/rebuild``, ``axios``, ``chai``, ``electron-mocha``, ``mochawesome``, ``nan``, ``node-abi``, ``node-gyp``, ``playwright``, ``ps-node``, ``recursive-readdir`` and ``robotjs`` from https://github.com/mattermost/desktop.
+
+### Known Issues
+
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+### Contributors
+
+- [enzowritescode](https://github.com/enzowritescode), [devinbinnie](https://github.com/devinbinnie), [mvitale1989](https://github.com/mvitale1989), [Rajat-Dabade](https://github.com/Rajat-Dabade), [streamer45](https://github.com/streamer45), [tnir](https://github.com/tnir), [toninis](https://github.com/toninis), [yasserfaraazkhan](https://github.com/yasserfaraazkhan).
+
 (release-v5-8)=
 ## Release v5.8
 
@@ -19,7 +85,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Original v5.8.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.8.1)
 
 ```{Note}
 Mattermost v5.8.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).

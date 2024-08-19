@@ -3,7 +3,7 @@
 
 .. This page is intentionally not accessible via the LHS navigation pane because it's being phased out in favor of a dedicated Tarball deploy page linked to the /download page of the website.
 
-Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``focal`` (20.04) and ``jammy`` (22.04) distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
+Mattermost bundles the components of a Mattermost deployment into a single installation, called **Omnibus**. Mattermost Omnibus currently supports Ubuntu's ``focal`` (20.04), ``jammy`` (22.04), and ``noble`` (24.04) distributions. The package bundles the free, unlicensed Mattermost Enterprise version of Mattermost, and leverages the `apt package manager <https://ubuntu.com/server/docs/package-management>`__ to install and update the platform components. A custom CLI and ansible recipes link the components together and configures them.
 
 **Minimum system requirements**
 
@@ -19,13 +19,13 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
 
 1. In a terminal window, run the following command to configure the repositories needed for a PostgreSQL database, configure an NGINX web server to act as a proxy, configure certbot to issue and renew the SSL certificate, and configure the Mattermost Omnibus repository so that you can run the install command.
 
-   .. code-block:: none
+   .. code-block:: sh
 
     curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
 
 2. Install the Omnibus package.
 
-   .. code-block:: none
+   .. code-block:: sh
 
     sudo apt install mattermost-omnibus -y
 
@@ -35,7 +35,7 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
 
       If you encounter ``EXPKEYSIG``, this indicates that the certificate is expired. To obtain a new certificate, run the following commands:
 
-       .. code-block:: none
+       .. code-block:: sh
 
         sudo apt-key remove 44774B28
         sudo curl -o- https://deb.packages.mattermost.com/pubkey.gpg | sudo apt-key add -
