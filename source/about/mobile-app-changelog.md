@@ -16,7 +16,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
 ### Bug Fixes
- - 
+ - Fixed an issue where the iPad hardware keyboard did not work as intended.
 
 (release-v2-19-0)=
 ## 2.19.0 Release
