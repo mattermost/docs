@@ -22,7 +22,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
  - Renamed “System Roles” to “Delegated Granular Administration” in the System Console.
  - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
  - Pre-packaged Calls plugin [v1.0.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.0). This includes breaking changes such as allowing calls in direct message channels only on unlicensed servers.
- - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, ``AdvancedLoggingConfig``, and ``pageSize`` query parameter.
+ - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, ``AdvancedLoggingConfig``, and ``pageSize`` configuration fields.
 
 ```{Important}
 If you upgrade from a release earlier than v9.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).

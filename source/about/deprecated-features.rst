@@ -26,7 +26,7 @@ Mattermost Server v10.0.0
 - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
 - ```
 - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
-- Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, ``AdvancedLoggingConfig``, and ``pageSize`` query parameter.
+- Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, ``AdvancedLoggingConfig``, and ``pageSize`` configuration fields.
 
 Mattermost Server v9.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
