@@ -38,7 +38,7 @@ Important Upgrade Notes
 |                                                    | Pre-packaged Calls plugin `v1.0.0 <https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.0>`__. This includes breaking changes such as allowing|
 |                                                    | calls in direct message channels only on unlicensed servers.                                                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, ``AdvancedLoggingConfig``, and ``pageSize`` configuration fields.                              |
+|                                                    | Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, ``AdvancedLoggingConfig``, and ``pageSize`` configuration fields.                         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.11                                              | Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to             |
 |                                                    | differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10. The       |
