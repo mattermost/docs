@@ -44,7 +44,6 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
  - Removed the **Pre-release features** section from **Settings > Advanced** due to lack of usage.
 
 #### Administration
- - Added experimental support for Redis. This is not intended for production use yet.
  - Made payload size limit error more clearly visible and recognisable in API responses and server error logs.
  - Extended the plugin schema to support defining sections for **System Console** settings.
  - Added support for a default team on secure connections for incoming channel invites.
@@ -73,7 +72,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
 #### Changes to all plans:
  - Under ``ServiceSettings`` in ``config.json``:
     - Added a new setting ``MaximumURLLength`` to remove the hardcoded URL length limit.
- - Added new ``CacheSettings`` to add experimental support for Redis. This is not intended for production use yet.
  - Removed deprecated ``Config.ProductSettings``.
  - Removed ``EnablePreviewFeatures`` setting.
 
