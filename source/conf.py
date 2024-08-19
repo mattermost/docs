@@ -28,6 +28,7 @@ needs_sphinx = "7.2"
 extensions = [
     "sphinx.ext.autosectionlabel",
     "myst_parser",
+    "sphinxcontrib.mermaid",
     # `reredirects` is a local clone of sphinx_reredirects with parallel
     # read and write support enabled.
     # The original sphinx_reredirects extension can be found at:
@@ -41,7 +42,7 @@ extensions = [
     "sphinx_copybutton",
     "compass-icons",
     "config-setting-v2",
-    "sphinx_inline_tabs",
+    "sphinx_inline_tabs"
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -378,6 +379,8 @@ redirects = {
 	"https://docs.mattermost.com/about/version-archive.html",
 "administration/mmctl-cli-tool.html#local-mode":
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
+"administration/upgrade.html#upgrade-guide":
+        "https://docs.mattermost.com/guides/upgrade-mattermost.html",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
