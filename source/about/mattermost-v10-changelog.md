@@ -14,7 +14,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Important Upgrade Notes
  - We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
- - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, oAuth2 apps, and plugins.
+ - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
  - An Enterprise license will be required to use v2.0+ Playbooks functionality starting in v10. Team Edition and Professional deployments can continue to use Playbooks v1.x. Feature updates will only be added to Playbooks v2.0+.
  - Renamed ``Channel Moderation`` to ``Advanced Access Control`` in the channel management section in the **System Console**.
  - Renamed announcement banner feature to “system-wide notifications”.
