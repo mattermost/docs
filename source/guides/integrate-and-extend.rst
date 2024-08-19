@@ -9,7 +9,9 @@ Integrate and extend Mattermost
     GitHub interoperability </integrate/github-interoperability>
     GitLab interoperability </integrate/gitlab-interoperability>
     Jira interoperability </integrate/jira-interoperability>
+    Microsoft Calendar </integrate/microsoft-calendar-interoperability>
     Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>
+    Microsoft Teams Meetings </integrate/microsoft-teams-meetings-interoperability>
     ServiceNow interoperability </integrate/servicenow-interoperability>
     Zoom interoperability </integrate/zoom-interoperability>
 
@@ -20,12 +22,14 @@ Interoperability with pre-packaged integrations
 
 Your Mattermost deployment comes with the following integrations you can configure and use:
 
-* :doc:`GitHub interoperability </integrate/github-interoperability>` - Connect your GitHub instance to your Mattermost instance.
-* :doc:`GitLab interoperability </integrate/gitlab-interoperability>` - Connect your GitLab instance to your Mattermost instance.
-* :doc:`Jira interoperability </integrate/jira-interoperability>` - Connect your Jira instance to your Mattermost instance.
-* :doc:`Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>` - Connect your Microsoft Teams instance to your Mattermost instance.
-* :doc:`ServiceNow interoperability </integrate/servicenow-interoperability>` - Connect your ServiceNow instance to your Mattermost instance.
-* :doc:`Zoom interoperability </integrate/zoom-interoperability>` - Connect your Zoom instance to your Mattermost instance.
+* :doc:`GitHub interoperability </integrate/github-interoperability>` - Connect your GitHub instance to your Mattermost instance to subscribe to repositiories, and to stay current with reviews, assignments, and more.
+* :doc:`GitLab interoperability </integrate/gitlab-interoperability>` - Connect your GitLab instance to your Mattermost instance to subscribe to repositories, use GitLab events as Mattermost action triggers, and more.
+* :doc:`Jira interoperability </integrate/jira-interoperability>` - Connect your Jira instance to your Mattermost instance to create Jira tickets from messages in Mattermost, and to get notified of important Jira updates in Mattermost.
+* :doc:`Microsoft Calendar interoperability </integrate/microsoft-calendar-interoperability>` - Connect your Microsoft O365 Calendar to your Mattermost instance to receive daily sumamryies of calendar events, synchronize your Microsoft O365 status in Mattermost, and accept or decline calendar invites without leaving Mattermost.
+* :doc:`Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>` - Connect your Microsoft Teams instance to your Mattermost instance to forward real-time chat notifications from Teams to Mattermost.
+* :doc:`Microsoft Teams Meetings interoperability </integrate/microsoft-teams-meetings-interoperability>` - Connect your Microsoft Teams Meetings instance to your Mattermost instance to start and join voice calls, video calls, and use screen sharing without leaving Mattermost.
+* :doc:`ServiceNow interoperability </integrate/servicenow-interoperability>` - Connect your ServiceNow instance to your Mattermost instance to subscribe to record changes in ServiceNow and manage them in Mattermost.
+* :doc:`Zoom interoperability </integrate/zoom-interoperability>` - Connect your Zoom instance to your Mattermost instance to start Zoom audio and video conferencing calls in Mattermost with a single click.
 
 .. tip::
 
