@@ -49,7 +49,8 @@ We highly recommend working with your Mattermost Account Team to plan for a migr
 
 gantt
     dateFormat  YYYY-MM-DD
-    axisFormat  %b
+    axisFormat  %b %y
+    tickInterval 2month
     
     section 2024
     v9.5 Extended Support  :crit,    2024-02-16, 2024-11-15
