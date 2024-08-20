@@ -49,7 +49,6 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
  - Added support for a default team on secure connections for incoming channel invites.
  - Remote clusters can now be created without explicitly providing a password.
  - Files are now fetched from all nodes in a cluster when generating a Support Packet.
- - CRT memberships are now importable for import.
  - Docker images are now based on Ubuntu Noble.
 
 #### Performance
