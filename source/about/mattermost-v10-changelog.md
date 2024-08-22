@@ -20,6 +20,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
  - Renamed announcement banner feature to “system-wide notifications”.
  - Renamed “Collapsed Reply Threads” to “Threaded Discussions” in the System Console.
  - Renamed “System Roles” to “Delegated Granular Administration” in the System Console.
+ - Renamed "Office 365" to "Entra ID" for SSO logins.
  - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
  - Pre-packaged Calls plugin [v1.0.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.0). This includes breaking changes such as allowing calls in direct message channels only on unlicensed servers.
  - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
