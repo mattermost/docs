@@ -27,7 +27,7 @@ Mattermost Server v10.0.0
 - ```
 - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
 - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
-- Removed deprecated ``pageSize`` from most API endpoints.
+- Removed deprecated ``pageSize`` query parameter from most API endpoints.
 
 Mattermost Server v9.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
