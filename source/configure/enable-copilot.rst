@@ -62,7 +62,6 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 
   1. Provision sufficient `access to Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai>`_ for your organization and access your `Azure portal <https://portal.azure.com/>`_.
   2. If you do not already have one, deploy an Azure AI Hub resource within Azure AI Studio
-  Deploy the resource in accordance with your organization’s policies and procedures.
   3. Once the deployment is complete, navigate to the resource and select **Launch Azure AI Studio**.
   4. In the side navigation pane, select **Deployments** under **Shared resources**.
   5. Select **Deploy model** then **Deploy base model**.
@@ -74,6 +73,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   10. In the **Deployment** panel for your new model deployment, copy the **Model name** and paste it in the **Default Model** field in Mattermost.
 
 .. tab:: OpenAI Compatible
+
 
   The OpenAI Compatible option allows integration with any OpenAI-compatible LLM provider, such as `Ollama <https://ollama.com/>`_:
 
