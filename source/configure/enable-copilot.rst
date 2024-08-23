@@ -34,7 +34,7 @@ Mattermost configuration
 
 With extensive customization and extensibility options, you can tailor Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
 
-Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot**. Mattermost supports the following LLMs:
+Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot** and selecting **Add an AI Bot**. Mattermost supports the following LLMs:
 
 - `OpenAI <https://openai.com/index/openai-api/>`_
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
@@ -44,38 +44,43 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 .. tab:: Open AI
 
   1. Obtain an `OpenAI API key <https://platform.openai.com/account/api-keys>`_.
-  2. Select **OpenAI** in the **AI Service** dropdown.
+  2. Select **OpenAI** in the **Service** dropdown.
   3. Enter your OpenAI API key in the **API Key** field.
-  4. Enter a model name in the **Default Model** field, such as `gpt-4o` or `gpt-3.5-turbo`.
-  5. (Optional) If using multiple organizations on OpenAI, specify your **Organization ID** to direct API usage and billing accordingly.
+  4. Enter a model name in the **Default Model** field corresponding with the model's label in the API, such as `gpt-4o` or `gpt-3.5-turbo`.
+  5. (Optional) If your API key belongs to an OpenAI organization, specify your **Organization ID**.
 
 .. tab:: Anthropic (Claude)
 
   1. Obtain an `Anthropic API key <https://console.anthropic.com/account/keys>`_.
-  2. Select **Anthropic** in the **AI Service** dropdown.
+  2. Select **Anthropic** in the **Service** dropdown.
   3. Enter your Anthropic API key in the **API Key** field.
-  4. Specify a model name in the **Default Model** field, like `claude-3-5-sonnet-20240620`.
+  4. Specify a model name in the **Default Model** field corresponding with the model's label in the API, such as `claude-3-5-sonnet-20240620`.
 
 .. tab:: Azure OpenAI
 
-  For integrating with Microsoft Azure's OpenAI services, `see the official Azure OpenAI documentation <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_.
+  For more details about integrating with Microsoft Azure's OpenAI services, `see the official Azure OpenAI documentation <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_.
 
-  1. Get `access to Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai>`_.
-  2. Create a new OpenAI resource in Azure.
-  3. Ensure your model resource on Azure does not auto-update.
-  4. In Mattermost, choose **OpenAI Compatible** in the **AI Service** dropdown.
-  5. Enter your Azure resource's URL in the **API URL** field.
-  6. Input your Azure resource API key in the **API Key** field.
-  7. Specify your model name in the **Default Model** field, for example, `gpt-4o`.
+  1. Provision sufficient `access to Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview#how-do-i-get-access-to-azure-openai>`_ for your organization and access your `Azure portal <https://portal.azure.com/>`_.
+  2. If you do not already have one, deploy an Azure AI Hub resource within Azure AI Studio
+  Deploy the resource in accordance with your organization’s policies and procedures.
+  3. Once the deployment is complete, navigate to the resource and select **Launch Azure AI Studio**.
+  4. In the side navigation pane, select **Deployments** under **Shared resources**.
+  5. Select **Deploy model** then **Deploy base model**.
+  6. Select your model, such as `gpt-4o` and select **Confirm**.
+  7. Select **Deploy** to start your model.
+  8. In Mattermost, select **OpenAI Compatible** in the **Service** dropdown.
+  8. In the **Endpoint** panel for your new model deployment, copy the base URI of the **Target URI** (everything up to and including `.com`) and paste it in the **API URL** field in Mattermost.
+  9. In the **Endpoint** panel for your new model deployment, copy the **Key** and paste it in the **API Key** field in Mattermost.
+  10. In the **Deployment** panel for your new model deployment, copy the **Model name** and paste it in the **Default Model** field in Mattermost.
 
 .. tab:: OpenAI Compatible
 
-  The OpenAI Compatible option allows integration with any OpenAI-compatible LLM provider:
+  The OpenAI Compatible option allows integration with any OpenAI-compatible LLM provider, such as `Ollama <https://ollama.com/>`_:
 
-  1. Deploy your model, for example, on LocalAI.
+  1. Deploy your model, for example, on `Ollama <https://ollama.com/>`_.
   2. Select **OpenAI Compatible** in the **AI Service** dropdown.
-  3. Enter the URL to your AI service in the **API URL** field.
-  4. Enter your API key in the **API Key** field.
+  3. Enter the URL to your AI service from your Mattermost deployment in the **API URL** field.
+  4. If using Ollama, leave the **API Key** field blank.
   5. Specify your model name in the **Default Model** field.
 
 Custom instructions
@@ -87,6 +92,11 @@ Enable vision (Beta)
 ---------------------
 
 Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM supports these features. Only available with OpenAI and OpenAI-compatable services.
+
+Disable tools (Beta)
+---------------------
+
+Disabling tools will prevent the LLM from making function calls. This is useful when a model technically supports tool usage but you want to prevent it from being used within Mattermost. Try toggling this feature if you encounter unpredictable tool-related behavior with your model.
 
 Copilot plugin metrics
 ~~~~~~~~~~~~~~~~~~~~~~~
