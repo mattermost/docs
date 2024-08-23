@@ -37,7 +37,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.                                                                                |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Pre-packaged Calls plugin `v1.0.0 <https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.0>`__. This includes breaking changes such as allowing|
+|                                                    | Pre-packaged Calls plugin `v1.0.1 <https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1>`__. This includes breaking changes such as allowing|
 |                                                    | calls in direct message channels only on unlicensed servers.                                                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.                                       |
