@@ -32,6 +32,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 **Note:** Mattermost Mobile App v2.19.0 contains a medium level security fix. Updating is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the Mattermost Responsible Disclosure Policy.
 
 ### Improvements
+ - Added significant dependency upgrades and replacements to the underlying project structure to support upgrading React version, and to establish a foundation for future architecture improvements ([pull request](https://github.com/mattermost/mattermost-mobile/pull/8011)).
  - Calls: Incoming calls on Direct Messages and Group Messages ring; ringtone is selectable in the settings menu.
  - Calls: Added stop recording confirmation; redesigned the header of the call screen to better display recording badge. 
  - Calls: Added an end call confirmation and an “End call for everyone” option for the call host.
