@@ -68,9 +68,9 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   6. Select your model, such as `gpt-4o` and select **Confirm**.
   7. Select **Deploy** to start your model.
   8. In Mattermost, select **OpenAI Compatible** in the **Service** dropdown.
-  8. In the **Endpoint** panel for your new model deployment, copy the base URI of the **Target URI** (everything up to and including `.com`) and paste it in the **API URL** field in Mattermost.
-  9. In the **Endpoint** panel for your new model deployment, copy the **Key** and paste it in the **API Key** field in Mattermost.
-  10. In the **Deployment** panel for your new model deployment, copy the **Model name** and paste it in the **Default Model** field in Mattermost.
+  9. In the **Endpoint** panel for your new model deployment, copy the base URI of the **Target URI** (everything up to and including `.com`) and paste it in the **API URL** field in Mattermost.
+  10. In the **Endpoint** panel for your new model deployment, copy the **Key** and paste it in the **API Key** field in Mattermost.
+  11. In the **Deployment** panel for your new model deployment, copy the **Model name** and paste it in the **Default Model** field in Mattermost.
 
 .. tab:: OpenAI Compatible
 
