@@ -8,7 +8,7 @@ Connect Microsoft Teams to Mattermost
   :alt: The Product menu is located in the top left corner of the Mattermost screen.
   :class: theme-icon
 
-Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
+Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Microsoft Teams to Mattermost.
 
 Setup
 -----

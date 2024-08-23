@@ -33,13 +33,16 @@ The above metrics can be used to calculate ETag and memory cache hit rates over 
 Cluster metrics
 ~~~~~~~~~~~~~~~
 
-- ``mattermost_cluster_cluster_request_duration_seconds``:  The total duration in seconds of the inter-node cluster requests.
+- ``mattermost_cluster_cluster_request_duration_seconds``: The total duration in seconds of the inter-node cluster requests.
+- ``mattermost_cluster_cluster_health_score``: A score that gives an idea of how well it is meeting the soft-real time requirements of the gossip protocol.
 - ``mattermost_cluster_cluster_requests_total``: The total number of inter-node requests.
-- ``mattermost_cluster_event_type_totals``: The total number of cluster requests sent for any type.
+- ``mattermost_cluster_cluster_event_type_totals``: The total number of cluster requests sent for any type.
 
 Database metrics
 ~~~~~~~~~~~~~~~~
 
+- ``mattermost_db_active_users``: The total number of active users.
+- ``mattermost_db_cache_time``: Time to execute the cache handler.
 - ``mattermost_db_master_connections_total``: The total number of connections to the master database.
 - ``mattermost_db_read_replica_connections_total``: The total number of connections to all the read replica databases.
 - ``mattermost_db_search_replica_connections_total``: The total number of connections to all the search replica databases.
@@ -50,46 +53,45 @@ Database metrics
 Database connection metrics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``max_open_connections``: The maximum number of open connections to the database.
-- ``open_connections``: The number of established connections both in use and idle.
-- ``in_use_connections``: The number of connections currently in use.
-- ``idle_connections``: The number of idle connections.
-- ``wait_count_total``: The total number of connections waited for.
-- ``wait_duration_seconds_total``: The total time blocked waiting for a new connection.
-- ``max_idle_closed_total``: The total number of connections closed due to the maximum idle connections being reached.
-- ``max_idle_time_closed_total``: The total number of connections closed due to the connection maximum idle time configured.
-- ``max_lifetime_closed_total``: The total number of connections closed due to the connection maximum lifetime configured.
+- ``go_sql_max_open_connections``: Maximum number of open connections to the database.
+- ``go_sql_open_connections``: The number of established connections both in use and idle.
+- ``go_sql_in_use_connections``: The number of connections currently in use.
+- ``go_sql_idle_connections``: The number of idle connections.
+- ``go_sql_wait_count_total``: The total number of connections waited for.
+- ``go_sql_wait_duration_seconds_total``: The total time blocked waiting for a new connection.
+- ``go_sql_max_idle_closed_total``: The total number of connections closed due to SetMaxIdleConns.
+- ``go_sql_max_idle_time_closed_total``: The total number of connections closed due to SetConnMaxIdleTime.
+- ``go_sql_max_lifetime_closed_total``: The total number of connections closed due to SetConnMaxLifetime.
 
 HTTP metrics
 ~~~~~~~~~~~~
 
 - ``mattermost_http_errors_total``: The total number of http API errors.
-- ``mattermost_http_request_duration_seconds``: The total duration in seconds of the http API requests.
 - ``mattermost_http_requests_total``: The total number of http API requests.
+- ``mattermost_http_websockets_total``: The total number of websocket connections to this server.
+
+.. note::
+  From Mattermost version v9.9, this value includes any potentially unauthenticated connections. Furthermore, this metric comes with an ``origin_client`` label that can be used to see the distribution of connections from different client types (i.e. web, mobile, and desktop).
+
 
 .. image:: ../images/perf_monitoring_http_metrics.png
    :alt: Example HTTP metrics, including number of API errors per minute, number of API requests per minute, and mean request time per minute, in a self-hosted Mattermost deployment.
 
 Login and session metrics
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``mattermost_http_websockets_total`` The total number of open WebSocket connections to the server.
-
-.. note::
-  From Mattermost version v9.9, this value includes any potentially unauthenticated connections. Furthermore, this metric comes with an ``origin_client`` label that can be used to see the distribution of connections from different client types (i.e. web, mobile, and desktop).
-
-  - ``mattermost_login_logins_fail_total``: The total number of failed logins.
-  - ``mattermost_login_logins_total``: The total number of successful logins.
+- ``mattermost_login_logins_fail_total``: The total number of failed logins.
+- ``mattermost_login_logins_total``: The total number of successful logins.
 
 Mattermost channels metrics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- ``mattermost_post_broadcasts_total``: The total number of WebSocket broadcasts sent because a post was created.
+- ``mattermost_post_broadcasts_total``: The total number of websocket broadcasts sent because a post was created.
 - ``mattermost_post_emails_sent_total``: The total number of emails sent because a post was created.
 - ``mattermost_post_file_attachments_total``: The total number of file attachments created because a post was created.
 - ``mattermost_post_pushes_sent_total``: The total number of mobile push notifications sent because a post was created.
 - ``mattermost_post_total``: The total number of posts created.
-- ``mattermost_post_webhooks_totals``: The total number of webhook posts created.
+- ``mattermost_post_webhooks_total``: Total number of webhook posts created.
 
 .. image:: ../images/perf_monitoring_messaging_metrics.png
    :alt: Example Mattermost channels metrics, including messages per minute, broadcasts per minute, emails sent per minute, mobile push notifications per minute, and number of file attachments per minute, in a self-hosted Mattermost deployment.
@@ -103,38 +105,53 @@ Process metrics
 - ``mattermost_process_resident_memory_bytes``: Resident memory size in bytes.
 - ``mattermost_process_start_time_seconds``: Start time of the process since unix epoch in seconds.
 - ``mattermost_process_virtual_memory_bytes``: Virtual memory size in bytes.
+- ``mattermost_process_virtual_memory_max_bytes``: Maximum amount of virtual memory available in bytes.
 
 Search metrics
 ~~~~~~~~~~~~~~
 
-- ``mattermost_search_posts_searches_duration_seconds_sum``: The total duration, in seconds, of search query requests.
-- ``mattermost_search_posts_searches_duration_seconds_count``: The total number of search query requests.
+- ``mattermost_search_posts_searches_duration_seconds``: The total duration in seconds of post searches.
+- ``mattermost_search_channel_index_total``: The total number of channel indexes carried out.
+- ``mattermost_search_file_index_total``: The total number of files indexes carried out.
+- ``mattermost_search_files_searches_duration_seconds``: The total duration in seconds of file searches.
+- ``mattermost_search_files_searches_total``: The total number of file searches carried out.
+- ``mattermost_search_post_index_total``: The total number of posts indexes carried out.
+- ``mattermost_search_posts_searches_total``: The total number of post searches carried out.
+- ``mattermost_search_user_index_total``: The total number of user indexes carried out.
 
 WebSocket metrics
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
-- ``mattermost_websocket_broadcasts_total``: The total number of WebSocket broadcasts sent by type.
-- ``mattermost_websocket_event_total``: The total number of WebSocket events sent by type.
-    
+- ``mattermost_websocket_broadcast_buffer_size``: Number of events in the websocket broadcasts buffer waiting to be processed.
+- ``mattermost_websocket_broadcast_buffer_users_registered``: Number of users registered in a broadcast buffer hub.
+- ``mattermost_websocket_broadcasts_total``: The total number of websocket broadcasts sent for any type.
+- ``mattermost_websocket_event_total``: Total number of websocket events.
+- ``mattermost_websocket_reconnects_total``: Total number of websocket reconnect attempts.
+
 Logging metrics
 ~~~~~~~~~~~~~~~
 
-- ``logger_queue_used``: Current logging queue level(s).
-- ``logger_logged_total``: The total number of logging records emitted.
-- ``logger_error_total``: The total number of logging errors.
-- ``logger_dropped_total``: The total number of logging records dropped.
-- ``logger_blocked_total``: The total number of logging records blocked.
-    
-Debugging metrics
-~~~~~~~~~~~~~~~~~~
+- ``mattermost_logging_logger_queue_used``: Number of records in log target queue.
+- ``mattermost_logging_logger_logged_total``: The total number of records logged.
+- ``mattermost_logging_logger_error_total``: The total number of logger errors.
+- ``mattermost_logging_logger_dropped_total``: The total number of dropped log records.
+- ``mattermost_logging_logger_blocked_total``: The total number of log records that were blocked/delayed.
 
-- ``mattermost_system_server_start_time``: Server start time. Set to the current time on server start. 
-- ``mattermost_jobs_active``: Increment when a job starts and decrement when the job ends. 
-    
+Debugging metrics - system
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``mattermost_system_server_start_time``: The time the server started.
+
 Use ``mattermost_system_server_start_time`` to dynamically add an annotation corresponding to the event.
 
 .. image:: ../images/mattermost_system_server_start_time.png
    :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
+
+
+Debugging metrics - jobs
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+- ``mattermost_jobs_active``: Number of active jobs.
 
 Use ``mattermost_jobs_active`` to display an active jobs chart.
 
@@ -146,10 +163,72 @@ Or, use ``mattermost_jobs_active`` to dynamically add a range annotation corresp
 .. image:: ../images/mattermost_dynamic_range_annotation.png
    :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
 
-Use annotations to streamline analysis when a job is long running, such as an LDAP synchronization job. 
+Use annotations to streamline analysis when a job is long running, such as an LDAP synchronization job.
 
-.. note:: 
+.. note::
   Jobs where the runtime is less than the Prometheus polling interval are unlikely to be visible because Grafana is performing range queries over the raw Prometheus timeseries data, and rendering an event each time the value changes.
+
+Plugin metrics
+~~~~~~~~~~~~~~
+
+- ``mattermost_plugin_api_time``: Time to execute plugin API handlers in seconds.
+- ``mattermost_plugin_hook_time``: Time to execute plugin hook handler in seconds.
+- ``mattermost_plugin_multi_hook_server_time``: Time for the server to execute multiple plugin hook handlers in seconds.
+- ``mattermost_plugin_multi_hook_time``: Time to execute multiple plugin hook handler in seconds.
+
+Shared metrics
+~~~~~~~~~~~~~~
+
+- ``mattermost_shared_channels_sync_collection_duration_seconds``: Duration tasks spend collecting sync data (seconds).
+- ``mattermost_shared_channels_sync_collection_step_duration_seconds``: Duration tasks spend in each step collecting data (seconds).
+- ``mattermost_shared_channels_sync_count``: Count of sync events processed for each remote.
+- ``mattermost_shared_channels_sync_send_duration_seconds``: Duration tasks spend sending sync data (seconds).
+- ``mattermost_shared_channels_sync_send_step_duration_seconds``: Duration tasks spend in each step sending data (seconds).
+- ``mattermost_shared_channels_task_in_queue_duration_seconds``: Duration tasks spend in queue (seconds).
+- ``mattermost_shared_channels_task_queue_size``: Current number of tasks in queue.
+
+Remote cluster metrics
+~~~~~~~~~~~~~~~~~~~~~~
+
+- ``mattermost_remote_cluster_clock_skew``: An approximated value for clock skew between clusters.
+- ``mattermost_remote_cluster_conn_state_change_total``: Total number of connection state changes.
+- ``mattermost_remote_cluster_msg_errors_total``: Total number of message errors.
+- ``mattermost_remote_cluster_msg_received_total``: Total number of messages received from the remote cluster.
+- ``mattermost_remote_cluster_msg_sent_total``: Total number of messages sent to the remote cluster.
+- ``mattermost_remote_cluster_ping_time``: The ping roundtrip times to the remote cluster.
+
+Notification metrics
+~~~~~~~~~~~~~~~~~~~~
+
+- ``mattermost_notifications_error``: Total number of errors that stop the notification flow.
+- ``mattermost_notifications_not_sent``: Total number of notifications the system deliberately did not send.
+- ``mattermost_notifications_success``: Total number of successfully sent notifications.
+- ``mattermost_notifications_total``: Total number of notification events.
+- ``mattermost_notifications_total_ack``: Total number of notification events acknowledged.
+- ``mattermost_notifications_unsupported``: Total number of untrackable notifications due to an unsupported app version.
+
+Mobile app metrics
+~~~~~~~~~~~~~~~~~~
+
+- ``mattermost_mobileapp_mobile_channel_switch``: Duration of the time taken from when a user clicks on a channel name, and the full channel sreen is loaded (seconds).
+- ``mattermost_mobileapp_mobile_load``: Duration of the time taken from when a user opens the app and the app finally loads all relevant information (seconds).
+- ``mattermost_mobileapp_mobile_team_switch``: Duration of the time taken from when a user clicks on a team, and the full categories screen is loaded (seconds).
+
+Web app metrics
+~~~~~~~~~~~~~~~
+
+- ``mattermost_webapp_channel_switch``: Duration of the time taken from when a user clicks on a channel in the LHS to when posts in that channel become visible (seconds).
+- ``mattermost_webapp_cumulative_layout_shift``: Measure of how much a page's content shifts unexpectedly.
+- ``mattermost_webapp_first_contentful_paint``: Duration of how long it takes for any content to be displayed on screen to a user (seconds).
+- ``mattermost_webapp_global_threads_load``: Duration of the time taken from when a user clicks to open Threads in the LHS until when the global threads view becomes visible (milliseconds).
+- ``mattermost_webapp_interaction_to_next_paint``: Measure of how long it takes for a user to see the effects of clicking with a mouse, tapping with a touchscreen, or pressing a key on the keyboard (seconds).
+- ``mattermost_webapp_largest_contentful_paint``: Duration of how long it takes for large content to be displayed on screen to a user (seconds).
+- ``mattermost_webapp_long_tasks``: Counter of the number of times that the browser's main UI thread is blocked for more than 50ms by a single task.
+- ``mattermost_webapp_page_load``: The amount of time from when the browser starts loading the web app until when the web app's load event has finished (seconds).
+- ``mattermost_webapp_rhs_load``: Duration of the time taken from when a user clicks to open a thread in the RHS until when posts in that thread become visible (seconds).
+- ``mattermost_webapp_team_switch``: Duration of the time taken from when a user clicks on a team in the LHS to when posts in that team become visible (seconds).
+- ``mattermost_webapp_time_to_first_byte``: Duration from when a browser starts to request a page from a server until when it starts to receive data in response (seconds).
+
 
 Standard Go metrics
 --------------------
