@@ -17,6 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue where the iPad hardware keyboard did not work as intended.
+ - Fixed an issue where the Android keyboard did not autocapitalize the first letter of a sentence by default when writing a post.
 
 (release-v2-19-0)=
 ## 2.19.0 Release
