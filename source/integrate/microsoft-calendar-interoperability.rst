@@ -82,6 +82,10 @@ Enable and configure the Microsoft Calendar integration in Mattermost
 
 2. In Mattermost, go to **System Console > Plugins > Microsoft Calendar** to enable this integration.
 
+.. note::
+
+  From Mattermost v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v10, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`, and upload it to your server via **System Console > Plugin Management**.
+
 3. Copy the **Application (client) ID** and **Directory (tenant) ID** from the Azure portal.
 
 4. In Mattermost, enter the following values in the fields provided. Select **Save** to apply the configuration:
