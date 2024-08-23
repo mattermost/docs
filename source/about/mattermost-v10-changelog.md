@@ -35,7 +35,7 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.0.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1).
  - Pre-packaged the MS Teams plugin for Mattermost, [v2.0.3](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.0.3).
- - Added Playbooks [v2.0.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.0.0) to the prepackaged plugins.
+ - Added Playbooks [v2.0.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.0.1) to the prepackaged plugins.
  - Added Mattermost user survey plugin to pre-packaged plugins.
  - Changed the right-hand side scroll direction and fixed the advanced text editor to the bottom.
  - Added Do not disturb and late timezone warnings to Direct Message posts.
