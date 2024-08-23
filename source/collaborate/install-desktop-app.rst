@@ -29,15 +29,10 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-    1. Download the latest version of the Mattermost desktop app: `32/64-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-setup-5.9.0-win.exe>`_
+    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-setup-5.9.0-win.exe>`_
     2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.9.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
   **MSI Installer and group policies**
-
-  You can download the latest version of the Mattermost desktop app MSI installer:
-
-    - MSI for `64-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-x64.msi>`_
-    - MSI for `32-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-x86.msi>`_
 
   The following group policies are available supporting a state option of Not Configured, Enabled, or Disabled:
 
@@ -127,40 +122,21 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-  1. Download the latest version of the Mattermost desktop app:
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.9.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-x86_64.rpm>`_
 
-      - 64-bit systems `mattermost-desktop-5.9.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-x86_64.rpm>`_
-      - 32-bit systems `mattermost-desktop-5.9.0-linux-i686.rpm <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-i686.rpm>`_
-
-  2. At the command line, execute one of the following commands based on the package you downloaded:
-
-    - 64-bit systems:
+  2. At the command line, execute the following command:
     
-      .. code-block:: sh
+    .. code-block:: sh
 
-          sudo rpm -i mattermost-desktop-5.9.0-linux-x86_64.rpm
-
-    - 32-bit systems:
-    
-      .. code-block:: sh
-      
-          sudo rpm -i mattermost-desktop-5.9.0-linux-i686.rpm
+      sudo rpm -i mattermost-desktop-5.9.0-linux-x86_64.rpm
 
   3. Run Mattermost as a desktop app.
 
-  **Manually update the desktop app**
-
-  - 64-bit systems:
+  To manually update the desktop app, run the following command:
   
     .. code-block:: sh
 
-        sudo rpm -u mattermost-desktop-5.9.0-linux-x86_64.rpm
-
-  - 32-bit systems:
-
-      .. code-block:: sh
- 
-        sudo rpm -u mattermost-desktop-5.9.0-linux-i686.rpm
+      sudo rpm -u mattermost-desktop-5.9.0-linux-x86_64.rpm
 
   .. tip:: 
     You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
@@ -173,10 +149,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Desktop App's compressed tarball**
 
-  1. Download the latest version of the Mattermost desktop app:
-
-      - 64-bit systems: `mattermost-desktop-5.9.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-x64.tar.gz>`_
-      - 32-bit systems: `mattermost-desktop-5.9.0-linux-ia32.tar.gz <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-ia32.tar.gz>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.9.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-x64.tar.gz>`_
 
   2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4755 chrome-sandbox``
 
