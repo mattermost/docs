@@ -9,9 +9,9 @@ Integrate and extend Mattermost
     GitHub interoperability </integrate/github-interoperability>
     GitLab interoperability </integrate/gitlab-interoperability>
     Jira interoperability </integrate/jira-interoperability>
-    Microsoft Calendar </integrate/microsoft-calendar-interoperability>
+    Microsoft Calendar interoperability </integrate/microsoft-calendar-interoperability>
     Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>
-    Microsoft Teams Meetings </integrate/microsoft-teams-meetings-interoperability>
+    Microsoft Teams Meetings interoperability </integrate/microsoft-teams-meetings-interoperability>
     ServiceNow interoperability </integrate/servicenow-interoperability>
     Zoom interoperability </integrate/zoom-interoperability>
 

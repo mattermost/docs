@@ -1,10 +1,10 @@
-Connect Microsoft Teams Meetings  to Mattermost
-===============================================
+Connect Microsoft Meetings to Mattermost
+=========================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Start and join voice calls, video calls, and use screen sharing with your team members in Microsoft Teams Meetings without leaving Mattermost.
+Start and join voice calls, video calls, and use screen sharing with your team members in Microsoft Teams without leaving Mattermost.
 
 Setup
 -----
@@ -21,11 +21,11 @@ Create a Mattermost App in Azure
   .. image:: ../images/ms-teams-meetings-new-azure-registration.png
     :alt: In Azure, create a new app registration.
 
-4. Fill out the form with the following values:
+4. Fill out the form with the following values, then select **Register** to submit the form:
 
   - **Name**: Mattermost Microsoft Teams Meetings Plugin
   - **Supported account types**: Default value (Single tenant)
-  - **Redirect URI**: ``https://<MM_SITE_URL>/plugins/com.mattermost.msteamsmeetings/oauth2/complete``. Replace ``<MM_SITE_URL>`` with your Mattermost server's Site URL. Select **Register** to submit the form.
+  - **Redirect URI**: ``https://<MM_SITE_URL>/plugins/com.mattermost.msteamsmeetings/oauth2/complete``. Replace ``<MM_SITE_URL>`` with your Mattermost server's Site URL. 
 
   .. image:: ../images/ms-teams-meetings-reg-info.png
     :alt: In Azure, create a new app registration.
@@ -55,33 +55,28 @@ Create a Mattermost App in Azure
   .. image:: ../images/ms-teams-meetings-delegated-permissions.png
     :alt: In Azure, select OnlineMeetings.ReadWrite permissions.
 
-11. Select **Grant admin consent for...** to grant the permissions for the application.
+10. Select **Grant admin consent for mattermost** to grant the permissions for the application.
 
   .. image:: ../images/ms-teams-meetings-grant-admin-consent.png
     :alt: In Azure, grant admin consent permissions for the application.
 
 You're all set for configuration inside of the Azure portal.
 
-Enable and configure the Microsoft Teams integration in Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-go to x to Enable the plugin
+Enable and configure the Microsoft Teams Meetings integration in Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In Azure, copy the **Application (client) ID** and **Directory (tenant) ID** from the Azure portal.
 
   .. image:: ../images/ms-teams-meetings-copy-ids.png
     :alt: In Azure, copy the Client ID and Tenant ID values.
 
-2. In Mattermost, go to **System Console > Plugins > MS Teams Meetings**.
-3. Set **Enable Plugin** to **true**.
-4. Enter the following values in the fields provided, and then select **Save** to apply the configuration:
+2. In Mattermost, go to **System Console > Plugins > Microsoft Calendar** to enable this integration.
+
+3. In Mattermost, enter the following values in the fields provided. Select **Save** to apply the configuration:
 
   - **Azure - Directory (tenant) ID** - Paste the **Directory (tenant) ID** from the Azure portal.
   - **Azure - Application (client) ID** - Paste the **Application (client) ID** from the Azure portal.
   - **Azure - Application (client) Secret** - Copy from the Azure portal (generated in **Certificates & secrets** earlier in these instructions).
-
-  .. image:: ../images/new-azure-registration.png
-    :alt: In Mattermost, paste the Azure Client ID and Tenant values, as well as the Client Secret value.
 
 Notify your teams that they can `connect their Microsoft Teams Meetings accounts to Mattermost <#connect-a-microsoft-teams-account-to-mattermost>`__.
 
