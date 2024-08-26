@@ -5,7 +5,7 @@ Collaborate within Microsoft Teams
   :alt: Open menus using the plus icon.
   :class: theme-icon
 
-The :doc:`Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams>` enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
+The :doc:`Mattermost for Microsoft Teams Messaging integration </integrate/microsoft-teams-interoperability>` enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
