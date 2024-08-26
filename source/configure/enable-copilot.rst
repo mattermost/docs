@@ -30,7 +30,7 @@ Go to **System Console > Plugins > Copilot** to enable this feature.
 Once the integration is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the Copilot in any Mattermost team or channel.
 
 Mattermost configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------
 
 With extensive customization and extensibility options, you can tailor Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
 
@@ -40,6 +40,10 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 - `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
 - `OpenAI-compatible (e.g., LocalAI) <https://github.com/go-skynet/LocalAI>`_
+
+.. note::
+
+  The ability to define multiple LLMs for your Copilot integration requires a Mattermost Enterprise license.
 
 .. tab:: Open AI
 
@@ -74,7 +78,6 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 
 .. tab:: OpenAI Compatible
 
-
   The OpenAI Compatible option allows integration with any OpenAI-compatible LLM provider, such as `Ollama <https://ollama.com/>`_:
 
   1. Deploy your model, for example, on `Ollama <https://ollama.com/>`_.
@@ -89,17 +92,17 @@ Custom instructions
 Text input here is included in the prompt for every request. Use this to give your bots extra context or instructions. For example, you could list all of your organization's specific acronyms so the bot knows your vernacular and users can ask for definitions. Or you could give it specialized instructions such as adopting a specific personality or following a certain workflow. By customizing the instructions for each individual bot, you can create a more tailored AI experience for your specific needs.
 
 Enable vision (Beta)
-~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM supports these features. Only available with OpenAI and OpenAI-compatable services.
 
 Disable tools (Beta)
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 Disabling tools will prevent the LLM from making function calls. This is useful when a model technically supports tool usage but you want to prevent it from being used within Mattermost. Try toggling this feature if you encounter unpredictable tool-related behavior with your model.
 
 Copilot plugin metrics
---------------------
+-----------------------
 
 Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``, and the following metrics are available:
 
@@ -111,12 +114,12 @@ Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` s
 - ``copilot_llm_requests_total``: The total number of requests to upstream LLMs.
 
 Integrations
----------------
+-------------
 
 Currently integrations are limited to direct messages between users and the bots. The integrations won't operate from within public, private, or group message channels.
 
 Jira
--------
+-----
 
 Issues with public Jira instances can be fetched. No configuration is required for this integration.
 
@@ -126,7 +129,7 @@ GitHub
 If you have the Mattermost GitHub plugin enabled, you can use the integration to fetch issues and PRs from your public and private GitHub repositories. The user must be logged in to their GitHub account through the Mattermost GitHub plugin.
 
 Upgrade
------------
+--------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
 

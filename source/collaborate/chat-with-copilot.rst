@@ -18,7 +18,7 @@ Overcome information overload and streamline team communication and collaboratio
   :start-after: :nosearch:
 
 Get started
-~~~~~~~~~~~
+------------
 
 Select the **Copilot** icon in Mattermost RHS (right-hand sidebar) to open the Copilot panel.
 
@@ -41,7 +41,7 @@ With Copilot you can perform the following tasks:
 - Dig further into any topic by asking for insights
 
 Summarize Mattermost call recordings
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -64,7 +64,7 @@ To summarize a Mattermost call recording:
   :scale: 50
 
 Summarize threads & unread channel messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -89,7 +89,7 @@ When your system admin has :doc:`configured multiple bots </configure/enable-cop
   :alt: Quickly summarize new messages, find action opens, and seek out unanswered questions with your Copilot.
 
 Bring Copilot into any conversation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+------------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -100,6 +100,6 @@ Invoke the power of AI by @mentioning Copilot bots by their username such as ``@
   :alt: Bring your AI into the conversation. @mention your Copilot directly within any thread and use the context to work faster and smarter.
 
 Chat privately with Copilot
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+----------------------------
 
 In addition to chatting with Copilot in the right pane, you can also chat privately with Copilot in direct message threads like you would any other Mattermost user.
