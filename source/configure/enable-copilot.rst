@@ -94,7 +94,7 @@ Enable vision (Beta)
 Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM supports these features. Only available with OpenAI and OpenAI-compatable services.
 
 Disable tools (Beta)
----------------------
+~~~~~~~~~~~~~~~~~~~
 
 Disabling tools will prevent the LLM from making function calls. This is useful when a model technically supports tool usage but you want to prevent it from being used within Mattermost. Try toggling this feature if you encounter unpredictable tool-related behavior with your model.
 
