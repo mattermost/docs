@@ -84,7 +84,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
   5. Specify your model name in the **Default Model** field.
 
 Custom instructions
-====================
+-------------------
 
 Text input here is included in the prompt for every request. Use this to give your bots extra context or instructions. For example, you could list all of your organization's specific acronyms so the bot knows your vernacular and users can ask for definitions. Or you could give it specialized instructions such as adopting a specific personality or following a certain workflow. By customizing the instructions for each individual bot, you can create a more tailored AI experience for your specific needs.
 
