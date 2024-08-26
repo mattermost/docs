@@ -116,7 +116,7 @@ Integrations
 Currently integrations are limited to direct messages between users and the bots. The integrations won't operate from within public, private, or group message channels.
 
 Jira
-====
+-------
 
 Issues with public Jira instances can be fetched. No configuration is required for this integration.
 
