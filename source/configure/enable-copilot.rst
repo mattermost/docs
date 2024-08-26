@@ -121,7 +121,7 @@ Jira
 Issues with public Jira instances can be fetched. No configuration is required for this integration.
 
 GitHub
-======
+-------
 
 If you have the Mattermost GitHub plugin enabled, you can use the integration to fetch issues and PRs from your public and private GitHub repositories. The user must be logged in to their GitHub account through the Mattermost GitHub plugin.
 
