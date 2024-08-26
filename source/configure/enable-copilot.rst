@@ -111,7 +111,7 @@ Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` s
 - ``copilot_llm_requests_total``: The total number of requests to upstream LLMs.
 
 Integrations
-~~~~~~~~~~~~
+---------------
 
 Currently integrations are limited to direct messages between users and the bots. The integrations won't operate from within public, private, or group message channels.
 
