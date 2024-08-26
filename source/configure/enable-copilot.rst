@@ -126,7 +126,7 @@ GitHub
 If you have the Mattermost GitHub plugin enabled, you can use the integration to fetch issues and PRs from your public and private GitHub repositories. The user must be logged in to their GitHub account through the Mattermost GitHub plugin.
 
 Upgrade
-~~~~~~~
+-----------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
 
