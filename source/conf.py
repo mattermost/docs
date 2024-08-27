@@ -125,6 +125,8 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "about/subscription.html#mattermost-enterprise-cloud":
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
+"about/mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/maximize-microsoft-investment.html",
 
 # Administration redirects
 "administration/announcement-banner.html":

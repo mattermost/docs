@@ -10,11 +10,15 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release day: 2024-08-16**
+- **9.11.1, released 2024-08-27**
+  - Mattermost v9.11.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.11.1 contains no database or functional changes.
+- **9.11.0, released 2024-08-16**
+  - Original 9.11.0 release.
 
 ### Important Upgrade Notes
 
- - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10. The official v8 client only works from Elasticsearch v7.10+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
+ - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10.x. The official v8 client only works from Elasticsearch v7.11 and higher versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
      - Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config, and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.
      - If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work. 
      - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
@@ -29,6 +33,8 @@ If you upgrade from a release earlier than v9.5, please read the other [Importan
 ```
 
 ### Improvements
+
+See [this walkthrough video](https://mattermost.com/video/mattermost-v9-11-changelog/) on some of the improvements in our latest release below.
 
 #### User Interface (UI)
  - Pre-packaged Calls version [v0.29.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.1).
@@ -116,6 +122,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.10.2, released 2024-08-27**
+  - Mattermost v9.10.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.10.2 contains no database or functional changes.
 - **9.10.1, released 2024-07-22**
   - Mattermost v9.10.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Mattermost Copilot plugin version [v0.8.3](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.3).
@@ -192,6 +201,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-9-feature-release)=
 ## Release v9.9 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.9.3, released 2024-08-27**
+  - Mattermost v9.9.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.9.3 contains no database or functional changes.
 - **9.9.2, released 2024-07-22**
   - Mattermost v9.9.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.9.2 contains no database or functional changes.
@@ -625,6 +637,9 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.9, released 2024-08-27**
+  - Mattermost v9.5.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.5.9 contains no database or functional changes.
 - **9.5.8, released 2024-07-22**
   - Mattermost v9.5.8 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.8 contains no database or functional changes.
