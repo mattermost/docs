@@ -17,6 +17,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Added a new message to the SSO login screen when the login is successful.
+ - Fixed an issue that prevented live captions for Calls to show.
 
 (release-v2-19-1)=
 ## 2.19.1 Release
