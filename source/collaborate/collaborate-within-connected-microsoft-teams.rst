@@ -5,7 +5,7 @@ Collaborate within Microsoft Teams
   :alt: Open menus using the plus icon.
   :class: theme-icon
 
-The :doc:`Mattermost for Microsoft Teams plugin </about/mattermost-for-microsoft-teams>` enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
+The :doc:`Mattermost for Microsoft Teams Messaging integration </integrate/microsoft-teams-interoperability>` enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
@@ -24,7 +24,7 @@ Mattermost will confirm when your account is connected, and prompt you to enable
 Enable notifications
 ^^^^^^^^^^^^^^^^^^^^
 
-Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled and you're away from Teams, any messages you receive in a chat or group chat in Microsoft Teams will be appear in Mattermost as a notification, with a link to open the chat in Microsoft Teams and continue the conversation. These notifications won't appear if you've been recently active in Teams.
+Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled and you're away from Teams, any messages you receive in a chat or group chat in Microsoft Teams will display in Mattermost as a notification, with a link to open the chat in Microsoft Teams and continue the conversation. These notifications won't appear if you've been recently active in Teams.
 
 .. note::
   Your system administrator must :ref:`enable support for notifications <configure/plugins-configuration-settings:sync notifications>`. 
