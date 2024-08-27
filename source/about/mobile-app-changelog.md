@@ -23,6 +23,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Calls: implemented client-side ICE candidate pairs metrics.
  - Added support for SSL Pinning certificates on build your own.
  - Added channel bookmarks (default off behind a feature flag).
+ - Added a new message to the SSO login screen when the login is successful.
 
 ### Bug Fixes
  - Fixed an issue with deep links that did not match the patterns of channel or permalink and were crashing the app.
