@@ -37,7 +37,7 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
  - Pre-packaged the MS Teams plugin for Mattermost, [v2.0.3](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.0.3).
  - Added Playbooks [v2.0.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.0.1) to the prepackaged plugins.
  - Pre-packaged Mattermost Copilot plugin version [v1.0.0](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v1.0.0).
- - Added Mattermost user survey plugin to pre-packaged plugins.
+ - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
  - Changed the right-hand side scroll direction and fixed the advanced text editor to the bottom.
  - Added Do not disturb and late timezone warnings to Direct Message posts.
  - Added user statuses to the Group Members modal.
