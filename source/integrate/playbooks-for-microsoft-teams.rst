@@ -13,11 +13,39 @@ Key Features:
 .. image:: ../images/mattermost_playbooks_for_teams.png
   :alt: Mattermost Playbooks for Teams, available in the Microsoft Teams App Store
 
+
 Setup
 -----
 
+Update and configure the Playbooks integration for Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step must be completed once by an Administator of the Mattermost instance.
+
+1. As a System Administrator, open the **System Console > Plugin Management** page to upload the `latest preview build of Mattermost Playbooks <https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.0.1%2Btabapp>`_ with support for the Teams app integration.
+
+2. Once uploaded, click **Settings** under the Playbooks plugin to **Enable Teams Tab App** and enter your Microsoft Teams tenant ID in the **Authorised Tenant IDs for Teams Tab App** field. 
+
+.. note::
+
+  Mattermost Playbooks for Teams is currently available as a technical preview, requiring System Admins to manually upload the latest experimental version of Playbooks to support this new functionality. This will be fully supported and pre-packaged with the Mattermost server in v10.1 (October).
+
+Choose which Playbook runs are accessible to Microsoft Teams users
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step can be completed by any user with the permissions to add participants to Playbooks or Runs.
+
+Now that the Playbooks plugin is updated and configured, you'll have to choose which Playbook runs are accessible by users in Microsoft Teams. Playbooks Runs where the **@msteams** bot is a partcipant are visible to users in Microsoft Teams who've installed the Mattermost Playbooks for Teams application and configured it with the appropriate Mattermost server URL. To add the **@msteams** bot as a participant to a Playbook Run, find the active Run in the Mattermost Playbooks product (or go to the associated run channel), click on the **Participants** in the right-hand sidebar, and then add the **@msteams** bot as a new participant. 
+
+.. tip::
+
+You must ensure the **@msteams** bot is member of the associated team before it can be added to a Playbook or Run. 
+
+
 Install the Mattermost Playbooks for Teams application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This step can be completed by any Microsoft Teams user in the associated tenant that was configured for the Playbooks plugin in the steps above. 
 
 1. Sign into your Microsoft Teams account from a `browser <https://teams.microsoft.com/>`_ or the desktop application.
 
@@ -29,15 +57,9 @@ Install the Mattermost Playbooks for Teams application
 
 5. Once the app is installed, enter the URL for your Mattermost Enterprise self-managed or cloud server.
 
-Now that the application is installed in your Microsoft Teams environment, you'll have to choose which Playbook runs are accessible by users in Microsoft Teams.  
+Setup is now complete. You should now see a list of all active runs where the **@msteams** is a participant. You can click on any active run to see recent status updates in chronological order.
 
-
-Choose which Playbook runs are accessible to Microsoft Teams users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In Mattermost, Playbooks runs where the **@msteams** bot is a partcipant are visible to users in Microsoft Teams who've installed the Mattermost Playbooks for Teams application and configured it with the appropriate Mattermost server URL. To add the **@msteams** bot as a participant to a Playbook run, find the active run in the Playbooks product (or go to the associated run channel), click on the **Participants** in the right-hand sidebar, and then add the **@msteams** bot as a new participant.
-
-
+ 
 FAQ
 -----
 
