@@ -24,10 +24,10 @@ Mattermost Server v10.0.0
 
 - We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
 - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
-- ```
 - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
 - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
 - Removed deprecated ``pageSize`` query parameter from most API endpoints.
+- Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
 
 Mattermost Server v9.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
