@@ -32,6 +32,10 @@ Copilot remembers the context for follow-up questions and requests. Access all p
 
 If your administrator has configured multiple bots, you can switch between them by selecting the bot name in the top right corner of the Copilot panel.
 
+.. image:: ../images/multi-llm-copilot.png
+  :alt: Switch between multiple bots by selecting the bot name in the top right corner of the Copilot panel.
+  :scale: 50
+
 With Copilot you can perform the following tasks:
 
 - Summarize your call and meeting recordings
