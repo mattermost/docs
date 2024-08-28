@@ -56,6 +56,8 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
   - Releases
   - Issue comments
   - Issues
+  - Discussion comments
+  - Discussions
   - Pull requests
   - Pull request review
   - Pull request review comments
