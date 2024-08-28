@@ -25,6 +25,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
  - Pre-packaged Calls plugin [v1.0.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1). This includes breaking changes such as allowing calls in direct message channels only on unlicensed servers.
  - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
  - Removed deprecated ``pageSize`` query parameter from most API endpoints.
+ - Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
 
 ```{Important}
 If you upgrade from a release earlier than v9.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
