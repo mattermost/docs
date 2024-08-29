@@ -64,5 +64,5 @@ Chat notifications are sent in real-time whenever you're not active in Microsoft
 - Web browser: Mattermost delivers notifications when you've not had activity in your Microsoft Teams browser tab for 5 minutes or more, or when the browser tab is closed.  
 - Desktop app: Mattermost delivers notifications when you've not had activity at your computer for 5 minutes or more, or when the Microsoft Teams desktop app is closed.
 
-In order to avoid double notifications, Mattermost will not deliver chat notifications if you appear as "Available", "Busy", "Do not disturb", or "Be right back" in Microsoft Teams.
+In order to avoid double notifications, Mattermost won't deliver chat notifications when your :ref:`Mattermost availability <preferences/set-your-status-availability:set-your availability>` is set to **Available**, **Busy**, **Do not disturb**, or **Be right back** in Microsoft Teams.
 
