@@ -10,6 +10,9 @@ The :doc:`Mattermost for Microsoft Teams Messaging integration </integrate/micro
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
+.. image:: ../images/microsoft-teams-chat-notifications.gif
+   :alt: Mattermost for Microsoft Teams integration forwards real-time chat notifications from Teams to Mattermost. 
+
 Connect your Mattermost account to your Microsoft Teams account
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
