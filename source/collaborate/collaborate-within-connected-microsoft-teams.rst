@@ -59,7 +59,7 @@ FAQ
 How does the integration determine when to send chat notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-Chat notifications are sent real-time whenever you're not active in Microsoft Teams and receive a chat or group chat; however, Mattermost uses your online status in Teams to determine if a chat notification should be delivered. Mattermost delivers notifications if you appear "Away" or "Offline" in Microsoft Teams, so the default behaviour for when notifications will be delivered depends on the client you typically use to access Microsoft Teams:
+Chat notifications are sent in real-time whenever you're not active in Microsoft Teams and receive a chat or group chat; however, Mattermost uses your online status in Teams to determine if a chat notification should be delivered. Mattermost delivers notifications if you appear **Away** or **Offline** in Microsoft Teams, so the default behavior for when notifications will be delivered depends on the client you typically use to access Microsoft Teams:
 
 - Web browser: Mattermost will deliver notifications if you've not had activity in your Microsoft Teams browser tab for 5 minutes, or when the browser tab is closed.  
 - Desktop App: Mattermost will deliver notifications if you've not had activity at your computer for 5 minutes, or when the Microsoft Teams desktop app is closed.
