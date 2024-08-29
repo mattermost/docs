@@ -54,7 +54,7 @@ You can run the following slash commands to manage your integration settings by 
 - ``/msteams notifications on|off``: Change your current notifications settings.
 
 FAQ
-^^^^
+-----
 
 How does the integration determine when to send chat notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
