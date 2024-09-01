@@ -3725,6 +3725,46 @@ rst_prolog = """
     :class: mm-badge-flag
 .. |deployment-img-yellow| image:: /_static/images/badges/deployment_icon_yellow.svg
     :class: mm-badge-deployment
+.. |copy-link-icon| image:: /images/link-variant_F0339.svg
+    :alt: Use the Copy Link icon to copy the public URL link for an image in a message.
+    :class: theme-icon
+.. |channel-info| image:: /images/information-outline_F02FD.svg
+    :alt: Use the Channel Info icon to access additional channel management options.
+    :class: theme-icon
+.. |more-icon| image:: /images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+    :class: theme-icon
+.. |favorite-icon| image:: /images/star-outline_F04D2.svg
+    :alt: Use the Star icon to mark a channel as a favorite.
+    :class: theme-icon
+.. |globe| image:: /images/globe_E805.svg
+    :alt: Public channels are identified with a Globe icon.
+    :class: theme-icon
+.. |lock| image:: /images/lock-outline_F0341.svg
+    :alt: Private channels are identified with a Lock icon.
+    :class: theme-icon
+.. |plus| image:: /images/plus_F0415.svg
+    :alt: The Plus icon provides access to channel and direct message functionality.
+    :class: theme-icon
+.. |save-icon| image:: /images/bookmark-outline_F00C3.svg
+    :alt: Save icon.
+    :class: theme-icon
+.. |send-icon| image:: /images/send_F048A.svg
+    :alt: Select the Send icon to post your message.
+    :class: theme-icon
+.. |restore-edit| image:: /images/restore_F099B.svg
+    :alt: Use the Restore icon to restore a previous version of an edited message.
+    :class: theme-icon
+    :width: 25
+.. |smile-icon| image:: /images/emoticon-plus-outline_E80F.svg
+    :alt: Use the Smile icon to add emojis to your message.
+    :class: theme-icon
+.. |gear| image:: /images/settings-outline_F08BB.svg
+    :alt: Use the Settings icon to customize your Mattermost user experience.
+    :class: theme-icon
+.. |more-icon-vertical| image:: /images/dots-vertical_F01D9.svg
+    :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2

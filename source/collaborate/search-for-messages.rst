@@ -12,9 +12,6 @@ Search for messages
   :alt: Search for messages and files in Mattermost.
   :class: theme-icon
   
-.. |channel-info| image:: ../images/information-outline_F02FD.svg
-  :alt: Use the Channel Info icon to access additional channel management options.
-  :class: theme-icon
 
 .. |channel-files-icon| image:: ../images/file-text-outline_F09EE.svg
   :alt: Use the Channel Files icon to search for files attached to messages in a given channel.

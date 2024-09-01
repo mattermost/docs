@@ -4,27 +4,6 @@ Send messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Select the Gear icon to open the Settings dialog.
-  :class: theme-icon
-
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :alt: Select the More icon to access additional message actions.
-  :class: theme-icon
-
-.. |send-icon| image:: ../images/send_F048A.svg
-  :alt: Select the Send icon to post your message.
-  :class: theme-icon
-
-.. |smile-icon| image:: ../images/emoticon-plus-outline_E80F.svg
-  :alt: Use the Smile icon to add emojis to your message.
-  :class: theme-icon
-
-.. |restore-edit| image:: ../images/restore_F099B.svg
-  :alt: Use the Restore icon to restore a previous version of an edited message.
-  :class: theme-icon
-  :width: 25
-
 Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
 
 - copying and pasting images.
@@ -46,7 +25,7 @@ Compose a message by typing into the text box at the bottom of the Mattermost sc
 
   .. tip::
 
-    If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear-icon| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+    If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
 .. tab:: Mobile
 
