@@ -22,7 +22,7 @@ v5.9.0 is the first Extended Support Release for the Desktop App. See more detai
 
 ### Compatibility
 
-- Desktop App is supported on any currently {ref}`supported Mattermost server version <https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases>`.
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
 - Updated Chromium minimum supported version to 126+.
 
 ### Improvements
@@ -93,7 +93,7 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 ### Compatibility
 
-- Desktop App is supported on any currently {ref}`supported Mattermost server version <https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases>`.
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
 - Updated Chromium minimum supported version to 122+.
 
 ### Improvements
@@ -149,7 +149,7 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 ### Compatibility
 
-- Desktop App is supported on any currently {ref}`supported Mattermost server version <https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases>`
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
 - Updated Chromium minimum supported version to 120+.
 
 ### Improvements
@@ -201,7 +201,7 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 ### Compatibility
 
-- Desktop App is supported on any currently {ref}`supported Mattermost server version <https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases>`
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
 - Updated Chromium minimum supported version to 118+.
 
 ### Improvements
@@ -269,7 +269,7 @@ Mattermost v5.5.0 contains a medium severity level security fix. Upgrading is hi
 
 ### Compatibility
 
-- Desktop App is supported on any currently {ref}`supported Mattermost server version <https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases>`
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
 - Updated Chromium minimum supported version to 116+.
 
 ### Improvements
