@@ -99,7 +99,7 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - :ref:`Advanced team permissions <onboard/advanced-permissions:team override scheme>`.
 - :ref:`Read-only announcement channels <manage/team-channel-members:advanced access controls>`.
 - :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
-- O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
+- O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
 - :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
 - Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`

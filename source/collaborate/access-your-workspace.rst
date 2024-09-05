@@ -91,7 +91,8 @@ When enabled by your system admin, you may log in using your GitLab, Google, Ent
 
   When enabled by your system admin, you can log in with your Entra ID account using a one-click login option.
 
-  .. image:: ../images/login-office365.png
+  .. image:: ../images/sign-in-entraid.png
+    :scale: 40
     :alt: Log in to Mattermost with your Entra ID credentials.
 
 .. tab:: AD/LDAP

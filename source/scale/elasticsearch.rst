@@ -32,7 +32,7 @@ Set up an Elasticsearch server
 
   - Mattermost v9.11 adds support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ as well as `Opensearch <https://opensearch.org/>`_ (Beta).
   - Mattermost also supports Elasticsearch v7.17+. We recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
-  - AWS Elasticsearch v7.10 customers only: The official Elasticsearch v8 client only works with Elasticsearch versions released later than v7.10. We recommend that customers using AWS Elasticsearch v7.10 upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+  - AWS Elasticsearch v7.10.x customers only: The official Elasticsearch v8 client only works with Elasticsearch version v7.11 or later. We recommend that customers using AWS Elasticsearch v7.10.x upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
   - Additionally, see the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` configuration setting documentation for additional requirements and recommendations.
 
 2. Set up Elasticsearch with ``systemd`` by running the following commands:
