@@ -8,7 +8,7 @@ Mattermost is accessible through a URL link. You'll receive a link from your Mat
 
 .. tip::
 
-  - Can't find your Mattermost link? Ask your company's IT department or your Mattermost system admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+  Can't find your Mattermost link? Ask your company's IT department or your Mattermost system admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
 
 .. toctree::
   :maxdepth: 1
@@ -63,7 +63,7 @@ If you've forgotten your password, you can reset it on the login screen by selec
 Email address or username
 --------------------------
 
-When enabled by your system admin, you can log in with the username or email address used to create your account.
+When :ref:`account creation with email <configure/authentication-configuration-settings:enable account creation with email>` is enabled by your system admin, you can log in with the username or email address used to create a Mattermost account.
 
 .. image:: ../images/sign-in_with_email.png
   :alt: Log in to Mattermost with your username or email address, or reset your password.
@@ -91,7 +91,8 @@ When enabled by your system admin, you may log in using your GitLab, Google, Ent
 
   When enabled by your system admin, you can log in with your Entra ID account using a one-click login option.
 
-  .. image:: ../images/sign-in-office365.png
+  .. image:: ../images/sign-in-entraid.png
+    :scale: 40
     :alt: Log in to Mattermost with your Entra ID credentials.
 
 .. tab:: AD/LDAP
@@ -109,3 +110,10 @@ When enabled by your system admin, you may log in using your GitLab, Google, Ent
 
   .. image:: ../images/sign-in_with_saml.png
     :alt: Log in to Mattermost with your SAML credentials.
+
+Multi-factor authentication
+---------------------------
+
+If your system admin :ref:`enables multi-factor authentication <onboard/multi-factor-authentication:enabling mfa>` for your Mattermost instance, you can :doc:`optionally set up multi-factor authentication </preferences/manage-your-security-preferences>` for your Mattermost user account by selecting your profile picture located in the top-right corner of Mattermost, and going to **Security > Multi-Factor Authentication**.
+
+If your system admin :ref:`enforces multi-factor authentication <onboard/multi-factor-authentication:enforcing mfa>`, you are required to :doc:`set up multi-factor authentication </preferences/manage-your-security-preferences>` for your Mattermost account. When you attempt to log in to Mattermost, you're directed to the multi-factor authentication setup page. You won't be able to access Mattermost until multi-factor setup is complete. If you encounter issues setting up multi-factor authentication, contact your Mattermost system admin for assistance.

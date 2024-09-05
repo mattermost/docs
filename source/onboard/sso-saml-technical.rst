@@ -40,7 +40,7 @@ SAML request (AuthNRequest)
 
 When Mattermost initiates an SP-initiated SAML request flow, it generates a **HTTP-Redirect** binding request to the IdP that contains an XML payload as a base64 string
 
-.. code-block:: none
+.. code-block:: text
 
  bM441nuRIzAjKeMM8RhegMFjZ4L4xPBHhAfHYqgnYDQnSxC++Qn5IocWuzuBGz7JQmT9C57nxjxgbFIatiqUCQN17aYrLn/mWE09C5mJMYlcV68ibEkbR/JKUQ+2u/N+mSD4/C/QvFvuB6BcJaXaz0h7NwGhHROUte6MoGJKMPE=
 
@@ -137,3 +137,8 @@ The Active Directory Object-Guid attribute (LDAP display name ``objectGUID``) is
   - You can remove the backslashes (``1ebcff1ea34a9d4fa508d4d81f1f5873``) and parse it with `Golang like this <https://play.golang.org/p/9b8iDPuz0Nm>`_. The snippets prints the base 10 representation of each value: ``[30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115]``
 
 3. Windows Powershell displays the value like this: ``1effbc1e-4aa3-4f9d-a508-d4d81f1f5873``
+
+Does ``relaystate`` need to be passed back to the client from the identity provider?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. If you're integrating Mattermost with a provider that doesn't already do so by default, ensure that ``relaystate`` is enabled. See the PingIdentity `SAML RelayState <https://support.pingidentity.com/s/article/SAML-RelayState-and-PingFederate#:~:text=RelayState%20is%20an%20optional%20parameter,the%20SAML%202.0%20bindings%20specification>`_ documentation for details.

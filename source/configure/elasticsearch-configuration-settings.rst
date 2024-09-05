@@ -40,6 +40,38 @@ Enable Elasticsearch indexing
 | - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.        |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 
+.. config:setting:: elastic-backendtype
+  :displayname: Elasticsearch backend type (Elasticsearch)
+  :systemconsole: Environment > Elasticsearch
+  :configjson: .Elasticsearchsettings.Backend
+  :environment: MM_ELASTICSEARCHSETTINGS_BACKEND
+  :description: Set the type of search backend as either Elasticsearch or Opensearch.
+
+Backend type
+~~~~~~~~~~~~~
+
++----------------------------------------------------+-----------------------------------------------------------------------------------+
+| The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                             |
+|                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.Backend: elasticsearch",``   |
+| - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                      |
+| - ``opensearch``                                   |                                                                                   |
++----------------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. important::
+
+  Mattermost v9.11 introduces support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`_ and `OpenSearch <https://opensearch.org/>`_ (Beta).
+
+  **Elasticsearch**
+  
+  - Mattermost supports Elasticsearch v7.17+. We recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
+  - The official AWS Elasticsearch v8 client only works from Elasticsearch v7.11 and later. This is a breaking change for customers using AWS Elasticsearch v7.10.x. We recommend customers upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+  - Customers using Elasticsearch v8 must set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to enable wildcard operations.
+
+  **Opensearch (Beta)**
+
+  - Customers using OpenSearch as their search backend must change the default configuration value to ``opensearch`` using :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>`, or by editing the ``config.json`` file manually, and then restarting the Mattermost server. This configuration setting value can't be changed dynamically while the Mattermost server is running using the System Console.
+  - Additionally, we recommend that ``compatibility mode`` isn't enabled because it reports the incorrect version.
+
 .. config:setting:: elastic-serverconnectionaddress
   :displayname: Server connection address (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
@@ -635,48 +667,34 @@ Live indexing batch size
 
     **Via mmctl**
 
-    .. code-block:: none
+    .. code-block:: sh
 
       mmctl config set ElasticsearchSettings.LiveIndexingBatchSize 200
 
     **Via an environment variable**
 
-    .. code-block:: none
+    .. code-block:: sh
 
       MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE = 200
 
 4. Restart the Mattermost server.
 
-.. config:setting:: elastic-bulkindexingtimewindow
-  :displayname: Bulk indexing time window (Elasticsearch)
-  :systemconsole: Environment > Elasticsearch
-  :configjson: .Elasticsearchsettings.BulkIndexingTimeWindowSeconds
-  :environment: MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS
+.. config:setting:: elastic-batchsize
+  :displayname: Batch size (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.BatchSize
+  :environment: MM_ELASTICSEARCHSETTINGS_BATCHSIZE
+  :description: The number of posts for a single batch during a bulk indexing job. Default is **10000**.
 
-  The maximum time window, in seconds, for a batch of posts being indexed by the Bulk Indexer.
-  This setting serves as a performance optimization for installs with over ~10 million posts in the database.
-  Default is **3600** seconds (1 hour).
+Batch size
+~~~~~~~~~~~
 
-Bulk indexing time window
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| The maximum time window, in seconds, for a batch of posts     | - System Config path: **Environment > Elasticsearch**                                        |
-| being indexed by the Bulk Indexer. This setting serves as a   | - ``config.json`` setting: ``".Elasticsearchsettings.BulkIndexingTimeWindowSeconds: 3600",`` |
-| performance optimization for installs with over               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BULKINDEXINGTIMEWINDOWSECONDS``           |
-| ~10 million posts in the database.                            |                                                                                              |
-|                                                               |                                                                                              |
-| Numerical input in seconds. Default is **3600** seconds       |                                                                                              |
-| (1 hour). Approximate this value based on the average number  |                                                                                              |
-| of seconds for 2,000 posts to be added to the database on a   |                                                                                              |
-| typical day in production.                                    |                                                                                              |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| **Note**: Setting this value too low will cause bulk indexing jobs to run slowly.                                                                            |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------------+
++-------------------------------------------+---------------------------------------------------------------------------+
+| The number of posts for a single batch    | - System Config path: N/A                                                 |
+| during a bulk indexing job.               | - ``config.json`` setting: ``".Elasticsearchsettings.BatchSize :10000",`` |
+|                                           | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BATCHSIZE``            |
+| Numerical input. Default is **10000**.    |                                                                           |
++-------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: elastic-requesttimeout
   :displayname: Request timeout (Elasticsearch)

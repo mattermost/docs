@@ -267,13 +267,11 @@ body:not([data-custom-theme=light]) .admonition.note .admonition-title {
 body:not([data-custom-theme=light]) .tab-set > input:checked + label {
   color: var(--primary);
 }
-body:not([data-custom-theme=light]) .highlight,
-body:not([data-custom-theme=light]) .mm-code-copy code {
+body:not([data-custom-theme=light]) .highlight {
   background: rgba(255, 255, 255, 0.04) !important;
   color: rgba(255, 255, 255, 0.8) !important;
 }
-body:not([data-custom-theme=light]) .highlight pre,
-body:not([data-custom-theme=light]) .mm-code-copy code pre {
+body:not([data-custom-theme=light]) .highlight pre {
   color: rgba(255, 255, 255, 0.8) !important;
 }
 

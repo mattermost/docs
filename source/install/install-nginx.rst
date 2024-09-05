@@ -23,9 +23,11 @@ Install NGINX on Ubuntu Server
 
   Because NGINX is available in Ubuntu's default repositories, it's possible to install it from these repositories using the ``apt`` packaging system. First, update your local ``apt`` package index for access to the most recent package listings. Then, install ``nginx``:
 
-  ``sudo apt update``
-  
-  ``sudo apt install nginx``
+
+  .. code-block:: sh
+
+    sudo apt update
+    sudo apt install nginx
 
   After accepting the procedure, ``apt`` will install NGINX and any required dependencies to your server.
 
