@@ -87,10 +87,16 @@ You can filter System Console user searches to narrow down results based on the 
 
 .. tip::
 
-  From Mattermost v9.6, you can also:
+  From Mattermost v9.6, you can also filter users by activity timeframes, including the last 30 days, the previous month, and the last 6 months.
 
-  - Filter users by activity timeframes, including the last 30 days, the previous month, and the last 6 months.
-  - Mattermost Enterprise and Professional customers can export user data as a CSV report. You'll receive the report as a direct message in Mattermost.
+Export user data
+~~~~~~~~~~~~~~~~~
+
+From Mattermost v9.6, Mattermost Enterprise and Professional system admins can export user data as a CSV report. 
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. `Filter <#filter-user-searches>`__ the user data as needed.
+3. Select **Export** located in the top right corner of the System Console interface, and then select **Export data**. You'll receive the report in CSV format as a direct message in Mattermost.
 
 Activate or deactivate users
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
