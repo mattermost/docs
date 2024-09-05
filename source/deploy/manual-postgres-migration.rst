@@ -16,7 +16,9 @@ Migrating a MySQL database to PostgreSQL manually involves the following steps:
 
 .. tip::
 
-    See the `plugin migrations <#plugin-migrations>`__ section for details on migrating collaborative playbooks and Boards.
+  See the `plugin migrations <#plugin-migrations>`__ section for details on migrating collaborative playbooks and Boards.
+
+Not sure upgrading manually is the right path forward? Mattermost customers looking for tailored guidance based on their Mattermost deployment can contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 Tool recommendations
 --------------------
