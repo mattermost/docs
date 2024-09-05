@@ -63,7 +63,7 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 6. Exit the PostgreSQL interactive terminal by running:
 
-  .. code-block:: SQL
+  .. code-block:: text
 
     \q
 
