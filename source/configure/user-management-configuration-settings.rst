@@ -56,7 +56,7 @@ You can find a user using the System Console.
   - Customize this page by showing or hiding user details, including email address, member duration, last login, activity, or post, number of days active (PostgreSQL only), and number of messages posted (PostgreSQL only). You can also control how many user records display on the page at a time.
   - Search for specific users by entering a partial or full username, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
 
-Identify a User's ID
+Identify a user's ID
 ^^^^^^^^^^^^^^^^^^^^
 
 Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
@@ -134,6 +134,19 @@ Apply roles to users using the System Console. The current available roles are *
 
 .. image:: ../images/manage-roles.png
   :alt: Manage a user's Mattermost role using the System Console.
+
+Manage user's settings
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v9.11, system admins can help users customize their Mattermost experience by editing the user's settings within the System Console. Users can view, modify, and override their own settings at any time.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user you want to manage.
+3. Select **Manage User Settings**.
+4. In **Admin Mode**, modify the user's settings as needed. Saved changes take effect immediately in the user's account.
 
 Manage user's teams
 ~~~~~~~~~~~~~~~~~~~~

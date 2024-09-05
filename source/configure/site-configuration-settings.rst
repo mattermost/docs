@@ -953,6 +953,32 @@ Push notification contents
 |   Google's notification service. ``config.json`` setting: ``"id_loaded"``                              |                                                                        |
 +--------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
+.. config:setting:: perf-enablenotificationmonitoring
+  :displayname: Enable notification monitoring (Notification Monitoring)
+  :systemconsole: Site Configuration > Notifications
+  :configjson: .MetricsSettings.EnableNotificationMetrics
+  :environment: MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS
+
+  - **true**: **(Default)** Mattermost notification data collection is enabled for client-side web and desktop app users.
+  - **false**: Mattermost notification data collection is disabled.
+
+Enable notification monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| Enable or disable notification metrics data   | - System Config path: **Environment > Performance Monitoring**                        |
+| collection.                                   | - ``config.json setting``: ``".MetricsSettings.EnableNotificationMetrics": true",``   |
+|                                               | - Environment variable: ``MM_METRICSSETTINGS_ENABLENOTIFICATIONMETRICS``              |
+| - **true**: **(Default)** Mattermost          |                                                                                       |
+|   notification data collection is enabled for |                                                                                       |
+|   client-side web and desktop app users.      |                                                                                       |
+| - **false**: Mattermost notification          |                                                                                       |
+|   data collection is disabled.                |                                                                                       |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+| See the :ref:`performance monitoring <scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation      |
+| to learn more about Mattermost Notification Health metrics.                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------------------+
+
 ----
 
 System-wide notifications

@@ -34,7 +34,6 @@ With Helm
 2. Once Helm is installed and initialized, run the following:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     helm repo add mattermost https://helm.mattermost.com
 
@@ -44,28 +43,24 @@ With Helm
 4. Create a namespace for the Mattermost Operator:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     kubectl create ns mattermost-operator
 
 5. Install your preferred version of the Mattermost Operator using the following command:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     helm install <your-release-name> mattermost/mattermost-operator -n <namespace_name>
 
   For example:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     helm install mattermost-operator mattermost/mattermost-operator -n mattermost-operator
 
   To install with any customized configuration you've made in your ``config.yaml`` file, use the ``-f`` flag:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     helm install mattermost-operator mattermost/mattermost-operator -n mattermost-operator -f config.yaml
 
@@ -80,14 +75,12 @@ With Kubernetes CLI
 1. Create a namespace for the Mattermost Operator:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     kubectl create ns mattermost-operator
 
 2. Install the Mattermost Operator:
 
   .. code-block:: sh
-    :class: mm-code-block 
 
     kubectl apply -n mattermost-operator -f https://raw.githubusercontent.com/mattermost/mattermost-operator/master/docs/mattermost-operator/mattermost-operator.yaml
 
@@ -97,7 +90,6 @@ Deploy Mattermost
 1. (Mattermost Enterprise only) Create a Mattermost license secret by opening a text editor and creating a secret manifest containing the Mattermost license. Replace ``[LICENSE_FILE_CONTENTS]`` below with the contents of your Mattermost license file. Save the file as ``mattermost-license-secret.yaml``.
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     apiVersion: v1
     kind: Secret
@@ -114,7 +106,6 @@ Deploy Mattermost
 2. Create an installation manifest file ``mattermost-installation.yaml`` locally, and open it with a text editor. Copy and paste the YAML structure below, and make any necessary adjustments for your configuration and environment. 
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
       apiVersion: installation.mattermost.com/v1beta1
       kind: Mattermost
@@ -189,7 +180,6 @@ Deploy Mattermost
   Here's an example of a secret for AWS Aurora with PostgreSQL:
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     apiVersion: v1
     data:
@@ -228,7 +218,6 @@ Deploy Mattermost
   Here's an example of a secret for Amazon S3:
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     apiVersion: v1
     data:
@@ -247,7 +236,6 @@ Deploy Mattermost
   In order for the Mattermost Operator to utilize your external database, you must modify the Mattermost manifest (inside the ``mattermost-installation.yaml`` file) by adding the following fields:
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     spec:
     ...
@@ -258,7 +246,6 @@ Deploy Mattermost
   Now, point the Mattermost Operator at your external filestore. Modify the Mattermost manifest (inside the ``mattermost-installation.yaml`` file) by adding the following fields:
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     spec:
     ...
@@ -271,7 +258,6 @@ Deploy Mattermost
   Additionally when using Amazon S3, set the ``MM_FILESETTINGS_AMAZONS3SSE`` and ``MM_FILESETTINGS_AMAZONS3SSL`` environment variables to ``true``:
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     spec:
     ...
@@ -285,7 +271,6 @@ Deploy Mattermost
   If you've configured your Mattermost Enterprise Edition installation manifest with a custom PostgreSQL database, and an Amazon S3 filestore, your installation manifest should look something like this:
 
   .. code-block:: yaml
-    :class: mm-code-block 
 
     apiVersion: installation.mattermost.com/v1beta1
     kind: Mattermost
@@ -319,28 +304,24 @@ Deploy Mattermost
   a. Create a namespace for this new Mattermost installation:
 
     .. code-block:: sh
-      :class: mm-code-block
 
       kubectl create ns mattermost
 
   b. (Mattermost Enterprise only) apply the license file by specifying the path to the file you created in step 1:
 
     .. code-block:: sh
-      :class: mm-code-block
 
       kubectl apply -n mattermost -f [PATH_TO_LICENCE_SECRET_MANIFEST]
 
   c. Apply the installation file by specifying the path to the file you created in step 2:
 
     .. code-block:: sh
-      :class: mm-code-block
 
       kubectl apply -n mattermost -f [PATH_TO_MATTERMOST_MANIFEST]
 
   The deployment process can be monitored in the Kubernetes user interface or in command line by running:
 
     .. code-block:: sh
-      :class: mm-code-block
 
       kubectl -n mattermost get mm -w
 
@@ -351,7 +332,6 @@ Deploy Mattermost
   a. When the deployment is complete, obtain the hostname or IP address of your Mattermost deployment using the following command:
 
     .. code-block:: sh
-      :class: mm-code-block
 
       kubectl -n mattermost get ingress
 
@@ -366,7 +346,6 @@ Deploy Mattermost
   If you just want to try it out on your local machine without configuring the domain, run the following command, and then navigate to http://localhost:8065.
 
     .. code-block:: sh
-      :class: mm-code-block
 
       kubectl -n mattermost port-forward svc/[YOUR_MATTERMOST_NAME] 8065:8065
 
