@@ -6,11 +6,6 @@ Manage channel members
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-
-.. |options-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :alt: Access additional message actions using the More actions icon.
-  :class: theme-icon
-
 Add members to a channel
 ------------------------
 
@@ -65,7 +60,7 @@ You can leave public or private channels any time.
 
 .. tab:: Mobile
 
-  1. In a channel, tap |options-icon| in the top right corner.
+  1. In a channel, tap |more-icon| in the top right corner.
   2. Tap **Leave channel**.
 
 Remove other members from a channel
@@ -85,7 +80,7 @@ Any member of a channel can remove other members from a channel.
 
 .. tab:: Mobile
 
-  1. In a channel, tap |options-icon| in the top right corner.
+  1. In a channel, tap |more-icon| in the top right corner.
   2. Tap **View Info**.
   3. Tap **Members**.
   4. Tap **Manage** in the top right corner of the screen.

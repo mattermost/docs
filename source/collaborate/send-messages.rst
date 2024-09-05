@@ -8,11 +8,7 @@ Enter a message in the text field, then select **Send** |send-icon| to send the 
 
 - copying and pasting images.
 - dragging-and-drop image files into the text field.
-- selecting the **Attachment** |attachment| icon.
-
-.. |attachment| image:: ../images/paperclip_F03E2.svg
-  :alt: Use the Attachment icon to add images or files to your messages.
-  :class: theme-icon
+- selecting the **Attachment** |attachments-icon| icon.
 
 Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
