@@ -4,10 +4,6 @@ Desktop App custom dictionaries
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. |vertical-3-dots| image:: ../images/dots-vertical_F01D9.svg
-  :alt: Navigate Desktop App options on Windows or Linux.
-  :class: theme-icon
-
 On Windows or Linux, Mattermost desktop app v4.7.1 and later supports custom dictionary definitions served through a URL. If custom dictionaries aren't specified, default dictionary definitions are obtained automatically from Chromium's CDNs (content delivery networks).
 
 .. note::
@@ -32,7 +28,7 @@ To access a copy of these dictionary definitions:
 Configure the Desktop App
 -------------------------
 
-1. In the Mattermost Desktop App, go to Settings by selecting |vertical-3-dots| **> File > Settings**. 
+1. In the Mattermost Desktop App, go to Settings by selecting |more-icon-vertical| **> File > Settings**.
 
 2. Under **App Options**, ensure that the **Check spelling** option is enabled. 
 

@@ -4,11 +4,7 @@ Manage your sidebar options
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Access settings using the gear icon.
-  :class: theme-icon
-
-To customize Mattermost channel sidebar options based on your preferences, select the gear icon |gear-icon| next to your profile picture, then go to **Sidebar**. 
+To customize Mattermost channel sidebar options based on your preferences, select the gear icon |gear| next to your profile picture, then go to **Sidebar**.
 
 Your channel sidebar includes :doc:`enhanced sidebar features </preferences/customize-your-channel-sidebar>`, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
