@@ -3842,7 +3842,6 @@ rst_prolog = """
     :class: theme-icon
 .. |dnd| image:: /images/dnd.png
     :alt: Do Not Disturb availability status icon in Mattermost.
-    :class: theme-icon
 .. |offline| image:: /images/offline.png
     :alt: Offline availability status icon in Mattermost.
 """
