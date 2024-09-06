@@ -4,10 +4,6 @@ Archive and unarchive channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
-    :class: theme-icon
-
 Archive a channel
 -----------------
 

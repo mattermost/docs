@@ -4,10 +4,6 @@ Customize your channel sidebar
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
-    :class: theme-icon
-
 Conversations in Mattermost are crucial to company productivity and success. Keeping conversations organized in the sidebar creates an efficient workplace. You can customize your own channel sidebar in a browser or using the desktop app based on how you use Mattermost. Customizations you make are only visible to you, are visible when using the mobile app, and won't affect what your teammates see in their sidebars.
 
 Here's how your sidebar is set up by default:
