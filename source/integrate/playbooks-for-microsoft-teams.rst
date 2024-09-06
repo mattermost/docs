@@ -74,6 +74,11 @@ Setup is now complete. In Microsoft Teams, you should now see a list of all acti
 FAQ
 -----
 
+Where can I get support for the Mattermost Playbooks for Teams app?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+You can browse existing open issues or submit a new issue for support `here <https://github.com/mattermost/mattermost-teams-tab/issues>`_.
+
+
 Do I need a Mattermost instance to use this application?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
