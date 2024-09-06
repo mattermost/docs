@@ -299,12 +299,12 @@ Use the ``mmctl config migrate`` command to :ref:`migrate your config <manage/mm
 
 Where ``<DB_USER>``, ``<DB_PASS>``, ``<DB_HOST>``, and ``<DB_NAME>`` are replaced with your environment values. Ensure you use ``--local`` when running this command. The first parameters (``<DB_USER>``, ``<DB_PASS>``) is the database the configuration is stored in, the second parameter (``<DB_HOST>``, ``<DB_NAME>``) is the file we are saving the configuration to. 
 
+In the configuration file, update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, open the ``json`` file and change the respective fields.
+
 Migrate file system configuration back to the database
 :::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
 To save configuration back to the database, Use the ``mmctl config migrate`` command again and reverse the parameters. Ensure you use the new database credentials moving it back to the target database.
-
-After migrating the configuration, update the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields to reflect new changes. To do so, in the Postgres database we should update the active configuration row:
 
 .. code-block:: sql
 
