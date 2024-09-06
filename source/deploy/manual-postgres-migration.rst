@@ -16,7 +16,9 @@ Migrating a MySQL database to PostgreSQL manually involves the following steps:
 
 .. tip::
 
-    See the `plugin migrations <#plugin-migrations>`__ section for details on migrating collaborative playbooks and Boards.
+  See the `plugin migrations <#plugin-migrations>`__ section for details on migrating collaborative playbooks and Boards.
+
+Not sure upgrading manually is the right path forward? Mattermost customers looking for tailored guidance based on their Mattermost deployment can contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 Tool recommendations
 --------------------
@@ -550,7 +552,7 @@ Use the following configuration for the baseline of the data migration:
 Focalboard
 ~~~~~~~~~~
 
-As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only the version ``v7.10.x`` of the schema. :ref:`Official announcement <about/deprecated-features:mattermost server v9.0.0>`.
+As of ``v9.0`` Boards will transition to being fully community supported as the Focalboard plugin. Hence this guide covers only version ``v7.10.x`` of the schema. :ref:`Official announcement <about/deprecated-features:mattermost server v9.0.0>`.
 
 Once we are ready to migrate, we can start migrating the **schema** and the **data**  by running ``pgloader``
 

@@ -28,6 +28,7 @@ needs_sphinx = "7.2"
 extensions = [
     "sphinx.ext.autosectionlabel",
     "myst_parser",
+    "sphinxcontrib.mermaid",
     # `reredirects` is a local clone of sphinx_reredirects with parallel
     # read and write support enabled.
     # The original sphinx_reredirects extension can be found at:
@@ -41,7 +42,7 @@ extensions = [
     "sphinx_copybutton",
     "compass-icons",
     "config-setting-v2",
-    "sphinx_inline_tabs",
+    "sphinx_inline_tabs"
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -124,6 +125,8 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "about/subscription.html#mattermost-enterprise-cloud":
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
+"about/mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/maximize-microsoft-investment.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
