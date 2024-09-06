@@ -3845,7 +3845,6 @@ rst_prolog = """
     :class: theme-icon
 .. |offline| image:: /images/offline.png
     :alt: Offline availability status icon in Mattermost.
-    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
