@@ -1,5 +1,5 @@
-Mattermost Playbooks for Microsoft Teams
-========================================
+Mattermost Playbooks for Microsoft Teams (Experimental)
+=======================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -24,7 +24,7 @@ Update and configure the Playbooks integration for Mattermost
 
 .. important::
 
-  Mattermost Playbooks for Teams is currently available as a technical preview. To use this integration, you must manually upload the latest experimental version of Mattermost Playbooks to support this new functionality. This integration will be fully supported and pre-packaged with Mattermost server v10.1 (October 2024).
+  Mattermost Playbooks for Teams is currently available as an experimental technical preview. To use this integration, you must manually upload the latest experimental version of Mattermost Playbooks to support this new functionality. This integration will be fully supported and pre-packaged with Mattermost server v10.1 (October 2024).
 
 A Mattermost system admin must complete the following steps:
 
