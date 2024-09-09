@@ -4,10 +4,6 @@ Team settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus-icon| image:: ../images/plus_F0415.svg
-  :alt: Open menus using the plus icon.
-  :class: theme-icon
-
 Team settings enable system and team administrators to adjust settings applied to a specific team. Using Mattermost in a web browser or the desktop app, select the team name to access **Team Settings**.
 
 .. image:: ../images/team-settings.png
@@ -85,7 +81,7 @@ System and team administrators can include the team in a list of teams to join f
 
 .. tip::
   
-  When you enable this option, users looking for more teams to join will also see this team in the list when they select the |plus-icon| icon in the team sidebar.
+  When you enable this option, users looking for more teams to join will also see this team in the list when they select the |plus| icon in the team sidebar.
 
 Invite code
 ~~~~~~~~~~~
