@@ -38,6 +38,9 @@ Manage your notifications
 
 Mattermost notifies you of new activity. How you're notified depends on what Mattermost client you're using, and the type of Mattermost activity you're being notified about.
 
+You're in control
+------------------
+
 By default Mattermost alerts you about all Mattermost activity all of the time.
 
 .. include:: ../_static/badges/academy-notifications.rst
@@ -46,16 +49,13 @@ By default Mattermost alerts you about all Mattermost activity all of the time.
 You are in complete control of how, when, and where you're notified based on how you prefer to work and collaborate. To access notification preferences:
 
 - In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
-- On mobile, select the **Settings** |gear| icon and tap **Notifications**.
+- On mobile, tap your profile picture, then tap **Settings**, and **Notifications**.
 
 See the table below on `Mattermost notifications <#mattermost-notifications>`__ for details on customizing your notification experience based on your preferred Mattermost client.
 
 .. tip::
 
-  - From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**
-  - If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
-
-
+  - From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
 
 Mattermost notifications
 ------------------------
@@ -68,12 +68,12 @@ The table below lists the types of notifications available in Mattermost. Select
 | **Notification Type** | **Description**                                   | **Client Support**                                                |
 +=======================+===================================================+===================================================================+
 | Icon badge (dot)      | You have unread activity in at least              | :doc:`Web </preferences/manage-your-web-notifications>`,          |
-|                       | one channel you're a member of                    | :doc:`Desktop </preferences/manage-your-desktop-notifications>`,  |
-| |dot-badge|           |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
+|                       | one channel you're a member of                    | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
+| |dot-badge|           |                                                   |                                                                   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 | Icon badge (number)   | You have at least one unread message,             | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       | @mention, or a match to a keyword you're watching | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
-| |numbered-badge|      |                                                   |                                                                   |
+| |numbered-badge|      |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 | Popup banner alerts   | Example screenshots:                              | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |

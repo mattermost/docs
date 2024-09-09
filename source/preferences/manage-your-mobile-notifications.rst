@@ -4,31 +4,49 @@ Manage your mobile notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+Enable notifications
+--------------------
 
+From Mattermost v9.9, Mattermost prompts you to enable notifications via web/desktop. Is there a mobile equivalent? Or must the user enable via desktop or web first to enable them via mobile?
 
+When notifications are enabled, you're notified of all Mattermost activity by default with `badges <#badge-based-notifications>`__ and `push notifications <#push-notifications>`. You can `customize your mobile notifications <#customize-your-notifications>`__ for Mattermost activity.
 
+When using Mattermost on a mobile device, you're notified of all new messages, @mentions, or keywords all of the time.
 
+Badge-based notifications
+-------------------------
 
+Mattermost mobile app icons display number badges for new messages, @mentions, or keywords.
 
+.. note ::
 
+  The Mattermost mobile app doesn't display dot badges indicating new unread activity. This can result in the Android users seeing Mattermost notifications in the Android Notification Shade while the Mattermost icon shows no badge.
 
- By default, you're notified of all Mattermost activity in Mattermost with badges, banner alerts, and sounds, regardless of how you access Mattermost, and your current :ref:`Mattermost availability <preferences/set-your-status-availability:set your availability>`.
+Push notifications
+------------------
 
-  When accessing Mattermost using a supported web browser, the browser tab's favicon notifies you of unread messages with an asterisk (*) and a message count. From Mattermost v9.9, you're prompted to give Mattermost permission to send you notifications in the announcement bar.
+Mobile push notifications popup notifications that display on iOS and Android mobile devices as follows:
 
-    - When you select **Enable notifications**, you won't be asked again, and you'll start receiving Mattermost notifications in the web browser. 
-    - If you dismiss the prompt, you won't receive notifications in the web browser, and you'll prompted again the next time you open Mattermost in a browser.
+- iOS: On the Lock Screen, Notification Center, and as Banners/Alerts based on your iOS settings.
+- Android: On the Lock Screen, Notification Shade, and as Banners/Heads-Up Notifications based on your Android settings.
 
-  **Want different notifications on mobile?**
+Customize your notifications
+----------------------------
 
-  To personalize your notification preferences for the mobile app, select **Desktop and mobile notifications**, and then select **Use different settings for my mobile devices** to define how mobile notifications are triggered, when they're triggered based on you being online, away, or offline, and whether they include replies to threads you're following.
+To reduce the number of notifications you receive, tap your profile picture, then tap **Settings**, and **Notifications**.
 
-  **Getting too many notifications?**
+- Tap **Mentions** to disable notifications based on keywords that trigger mentions, including first name, username, channel-wide @mentions, and keywords you've specified.
+- Tap **Push Notifications** to get notified about **mentions, direct messages, and group messages** only, and only when you're **away or offline**, or only when you're **offline**.
 
-  If you're receiving too many notifications, you can configure Mattermost to notify you for select messages only. Select **Desktop and mobile notifications > Mentions, direct messages, and group messages** to receive notifications for mentions, direct messages, and group messages only. This option also enables you to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
+Want to hear a sound on your mobile device when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing>`, select **Call Notifications** to choose the sound that plays when a call is started within a direct or group message you're participating in.
 
-  Disable web, desktop, and mobile notifications altogether by selecting **Desktop and mobile notifications > Nothing**.
+.. tip::
 
+  - From Mattermost mobile app v2.19, incoming call sounds also include vibration, and vibration only when your device is in silent mode
+  - When you set a separate call sound on mobile, your mobile change applies only to mobile.
+  - Are you a desktop app user who also used mobile? You can customize your mobile notifications in the Mattermost desktop app by going to **Settings > Desktop and mobile notifications**, enabling notifications for **all new messages**, or **mentions, direct messages and group messages**, and then selecting **Use different settings for my mobile devices**.
 
+Disable all desktop notifications
+-----------------------------------
 
-  From Mattermost mobile app v2.19, incoming call sounds on mobile include sounds and vibration, and vibration only when your device is in silent mode. You can set one **Incoming call sound** for web or desktop, and a different one for mobile. When you select an **Incoming call sound** on mobile, your changes apply only to mobile.
+Tap **Push Notifications** to get notified about **Nothing**.

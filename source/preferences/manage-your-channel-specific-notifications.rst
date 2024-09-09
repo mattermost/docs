@@ -5,7 +5,7 @@ Manage your channel-specific notifications
   :start-after: :nosearch:
 
 
-
+- mobile only: users can configure MM to send push notifications for every message in a given channel. this generates a system notification via MM.
 
 
 .. tab:: Per-channel
