@@ -68,7 +68,7 @@ If you are facing an issue where Mattermost can't connect to the PostgreSQL data
 
 .. code-block:: sql
 
-  ALTER SCHEMA <schema_name> RENAME TO public; $$,
+  ALTER SCHEMA <schema_name> RENAME TO public;
 
 Also ensure that the database user has the necessary settings to have default access to the ``public`` schema. You can do this by running the following commands:
 
