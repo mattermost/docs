@@ -150,3 +150,8 @@ Use ``go install`` to install the tool:
 .. code-block:: shell
 
    go install github.com/mattermost/migration-assist/cmd/migration-assist@latest
+
+Troubleshooting
+---------------
+
+* :doc:`Troubleshooting errors during migration from MySQL to PostgreSQL </deploy/postgres-migration:troubleshooting>`

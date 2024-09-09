@@ -36,6 +36,54 @@ Frequently asked questions
 
   We do not bundle pgloader with the Mattermost server. You will need to install pgloader separately. For more information, see the :doc:`install pgloader </deploy/manual-postgres-migration:install pgloader>` documentation.
 
-5. Are there any other migrations available for plugins, or just Boards and Playbooks?
+5. Are there any other migrations available for plugins, or just Boards, Playbooks and Calls?
   
-  We are working on providing migrations for other plugins as well such as Calls. Please stay tuned for updates.
+  We are working on providing migrations for other plugins as well such as NPS-plugin. Please stay tuned for updates.
+
+Troubleshooting
+===============
+
+Unsupported authentication for MySQL
+------------------------------------
+
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
+
+.. code-block:: sql
+
+  ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';
+
+Errors during the pgloader command execution
+--------------------------------------------
+
+If you encounter errors during the execution of the ``pgloader`` command, ensure that both of the databases are accessible and that the users have the necessary permissions to access the database. Do not continue with the migration if there are errors during the execution of the ``pgloader`` command.
+
+Also, there may be cases where ``pgloader`` continue to migration remaining tables and skip one or more tables. In such cases, it is recommended to identify issues with the table and fix them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
+
+For experienced users, it is recoverable to run the ``pgloader`` without requiring to restart the migration from scratch. In this case, you will need to manually fix the issues with the table and run the ``pgloader`` command with a tailored configuration just for those tables. Also ensure that the schema name is reverted back to ``public`` and the ``search_path`` is restored or remove necessary clauses form the configuration.
+
+Mattermost can't connect to the PostgreSQL database
+---------------------------------------------------
+
+If you are facing an issue where Mattermost can't connect to the PostgreSQL database, ensure that the PostgreSQL server is running and that the database is accessible. If there were errors during the execution of the ``pgloader`` command, it can fail to revert shcema name back to ``public`` or potentially restoring the ``search_path``. You can manually revert the schema name back to ``public`` and restore the ``search_path`` by running the following commands:
+
+.. code-block:: sql
+
+  ALTER SCHEMA <schema_name> RENAME TO public; $$,
+
+Also ensure that the database user has the necessary settings to have default access to the ``public`` schema. You can do this by running the following commands:
+
+.. code-block:: sql
+
+  ALTER USER <user> SET SEARCH_PATH TO 'public';
+  SELECT pg_catalog.set_config('search_path', '"$user", public', false); -- should give access for the session
+
+You can check for the default ``search_path`` by running the following command:
+
+.. code-block:: sql
+
+  SELECT boot_val FROM pg_settings WHERE name='search_path';
+
+Contact Support
+===============
+
+Mattermost customers looking for guidance tailored to their Mattermost deployment can contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance.
