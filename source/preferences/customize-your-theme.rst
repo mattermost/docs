@@ -6,10 +6,6 @@ Customize your Mattermost theme
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Use the Settings icon to customize your Mattermost user experience.
-  :class: theme-icon
-
 The colors of the Mattermost user interface are customizable. You can choose from `five standard themes <#standard-themes>`__ designed by the Mattermost team, design your own theme based on a standard theme, or `import your theme colors from a Slack instance <#import-theme-from-slack>`__. Your theme changes apply to all teams you're a member of, and are visible across all Mattermost clients.
 
 .. tip::
@@ -20,7 +16,7 @@ To customize your Mattermost theme:
 
 .. tab:: Web/desktop
 
-	Select the **Settings** |gear-icon| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team. 
+	Select the **Settings** |gear| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team.
 
 	Using Mattermost in a browser or the desktop app, you can customize a standard theme further to truly make it your own. After selecting a standard theme, select **Custom Theme** and modify your color choices based on your preferences. See the `custom themes <#custom-themes>`__ documentation to learn what's configurable, and see the `custom theme examples <#custom-theme-examples>`__ documentation for inspiration.
 

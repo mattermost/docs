@@ -4,9 +4,6 @@ Collect performance metrics
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus-icon| image:: ../images/plus_F0415.svg
-  :alt: Open menus using the plus icon.
-
 System admins can collect and store the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
 Download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
@@ -56,7 +53,7 @@ Once you set this up, run ``docker-compose`` as described in `Dockprom Repositor
 You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`__ dashboard by simply importing it into Grafana.
 
 1. Open Grafana (``<localhost>:3000`` by default) and then log into it. 
-2. Once you log in, go to the **Plus** |plus-icon| icon on the left sidebar, and then select **Import**. 
+2. Once you log in, go to the **Plus** |plus| icon on the left sidebar, and then select **Import**.
 3. Enter the dashboard ID (``15582``) in the **Grafana.com Dashboard** field, and then select **Load** to fetch the dashboard. 
 
 What's collected?
