@@ -1,6 +1,6 @@
 :nosearch:
 
-Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.
+Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
 
 Contents of a support packet
 ----------------------------
@@ -17,6 +17,7 @@ A Mattermost Support Packet can contain the following files:
 
 .. note:: 
 
+   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file.
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
 
