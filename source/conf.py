@@ -1837,6 +1837,8 @@ redirects = {
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-system-wide-notifications",
 "configure/plugins-configuration-settings.html#playbooks":
         "https://docs.mattermost.com/configure/plugins-configuration-settings.html#collaborative-playbooks",
+"configure/manage-user-surveys.html#upload":
+        "https://docs.mattermost.com/configure/manage-user-surveys.html#install",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
