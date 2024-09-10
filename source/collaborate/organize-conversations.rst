@@ -4,10 +4,6 @@ Organize conversations using threaded discussions
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-actions-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :alt: Access additional message actions using the More Actions icon.
-  :class: theme-icon
-
 Threads are a key part of the messaging experience in Mattermost. They're used to organize conversations and enable users to discuss topics without adding noise to channels or direct messages.
 
 Threaded discussions offers an enhanced experience for users communicating in threads and replying to messages that includes a unified threads inbox to read all conversations in one view. Threads improve the ability to process channel content, find, follow, and resume conversations more easily, and keep threaded conversations focused.
@@ -44,7 +40,7 @@ You'll automatically follow every thread you participate or are mentioned in. Yo
 
 .. tab:: Web/Desktop
 
-  Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-actions-icon| icon. 
+  Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-icon| icon.
   
   **Unfollow threads**
   
@@ -62,7 +58,7 @@ You'll automatically follow every thread you participate or are mentioned in. Yo
   If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
 .. tip::
-  - Follow messages with no replies from the **More Actions** |more-actions-icon| icon to be notified if someone replies to the message later based on your notification preferences.
+  - Follow messages with no replies from the **More Actions** |more-icon| icon to be notified if someone replies to the message later based on your notification preferences.
   - You can also use keyboard arrow keys to navigate threads in the **Threads** view.
 
 View all threads

@@ -4,10 +4,6 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
-    :class: theme-icon
-
 Using a web browser, the desktop app, or the mobile app, you can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost during a call.
 
 .. note::

@@ -4,10 +4,6 @@ User management configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :alt: You can access more options from the More icon.
-  :class: theme-icon
-
 Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Access user management options in the System Console by going to **User Management**:
 
 - `Users <#users>`__

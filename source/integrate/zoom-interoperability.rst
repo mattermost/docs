@@ -4,9 +4,6 @@ Connect Zoom to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-menu| image:: ../images/products_E82F.svg
-  :alt: The Product menu is located in the top left corner of the Mattermost screen.
-  :class: theme-icon
 
 Reduce friction and time lost to coordinating meetings and switching between apps by integrating Zoom with Mattermost. Make it easy for your teams to start both spontaneous video calls directly from Mattermost channels.
 
@@ -69,7 +66,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the Zoom integration from the in-product App Marketplace:
 
-1. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to Zoom, and select **Install**.
 3. Once installed, select **Configure**. You'll be taken to the System Console.
 4. On the Zoom configuration page, enable and configure Zoom interoperability as follows, and then select **Save**.

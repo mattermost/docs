@@ -4,10 +4,6 @@ Organize using teams
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
-  :class: theme-icon
-
 .. toctree::
    :maxdepth: 1
    :hidden:
