@@ -4,22 +4,6 @@ Join and leave channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :alt: Use the More icon to access additional message options.
-  :class: theme-icon
-
-.. |globe| image:: ../images/globe_E805.svg
-  :alt: Public channels are identified with a Globe icon.
-  :class: theme-icon
-
-.. |lock| image:: ../images/lock-outline_F0341.svg
-  :alt: Private channels are identified with a Lock icon.
-  :class: theme-icon
-
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
-  :class: theme-icon
-
 Join a channel
 --------------
 

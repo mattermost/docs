@@ -4,18 +4,6 @@ Collaborate within channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |globe| image:: ../images/globe_E805.svg
-  :alt: Public channels are identified with a Globe icon.
-  :class: theme-icon
-
-.. |lock| image:: ../images/lock-outline_F0341.svg
-  :alt: Private channels are identified with a Lock icon.
-  :class: theme-icon
-
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
-  :class: theme-icon
-
 Channels are where you connect, collaborate, and communicate with your team about various topics or projects. Use channels to organize conversations across different topics. :doc:`Sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.
 
 You're added to default channels automatically

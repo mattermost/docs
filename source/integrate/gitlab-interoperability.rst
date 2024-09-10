@@ -4,10 +4,6 @@ Connect GitLab to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-menu| image:: ../images/products_E82F.svg
-  :alt: The Product menu is located in the top left corner of the Mattermost screen.
-  :class: theme-icon
-
 Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
 
 .. note::
@@ -43,7 +39,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the GitHub integration from the in-product App Marketplace:
 
-1. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to GitLab, and select **Install**.
 3. Once installed, select **Configure**. You're taken to the System Console.
 4. On the GitLab configuration page, enable and configure GitLab interoperability as follows, and then select **Save**:
