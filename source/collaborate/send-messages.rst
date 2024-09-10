@@ -12,6 +12,10 @@ Enter a message in the text field, then select **Send** |send-icon| to send the 
 
 Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
+.. tip::
+
+  From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+
 .. tab:: Web/Desktop
 
   You can also use a keyboard to send messages:
