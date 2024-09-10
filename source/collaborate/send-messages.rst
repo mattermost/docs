@@ -50,7 +50,7 @@ By default, message drafts are synchronized on the Mattermost server and are acc
   
 .. note::
 
-  To disable global drafts, system admins can set the feature flag ``MM_FEATUREFLAGS_GLOBALDRAFTS`` to ``false`` to disable it server-wide. It can't be disabled on a per-user basis. The code is located `here <https://github.com/mattermost/mattermost/blob/master/server/public/model/feature_flags.go#L11>`_.
+  System admins can disable global drafts by disabling the `message draft server sychronization configuration setting <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
 
 Edit messages
 --------------
