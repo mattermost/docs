@@ -1,5 +1,5 @@
-Mattermost Playbooks for Microsoft Teams (Experimental)
-=======================================================
+Mattermost Playbooks for Microsoft Teams (Technical Preview)
+============================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -19,12 +19,12 @@ With the Mattermost Playbooks for Teams integration, you can:
 Setup
 -----
 
-Update and configure the Playbooks integration for Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. important::
 
-  Mattermost Playbooks for Teams is currently available as an experimental technical preview. To use this integration, you must manually upload the latest experimental version of Mattermost Playbooks to support this new functionality. This integration will be fully supported and pre-packaged with Mattermost Server v10.2 (November 2024) and later.
+  Mattermost Playbooks for Teams is currently available as a technical preview. Please reach out to playbooks-for-teams@mattermost.com and connect with our technical experts to help with installation and setup, including getting access to the latest experimental builds of Playbooks required to support this feature.
+
+Update and configure the Playbooks integration for Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A Mattermost system admin must complete the following steps:
 
@@ -33,10 +33,7 @@ A Mattermost system admin must complete the following steps:
 2. Once uploaded, select **Settings** under the Playbooks plugin to **Enable Teams Tab App**, and enter your Teams tenant ID in the **Authorised Tenant IDs for Teams Tab App** field. 
 
 Install the Mattermost Playbooks for Teams application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-.. important::
-
-  Mattermost Playbooks for Teams is currently available as an experimental technical preview. To use this integration, a Microsoft Teams Administrator must intall the app package on your Teams tenant before end users can find and install the app. Please reach out to playbooks-for-teams@mattermost.com to connect with our technical experts to help with installation and setup. 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
 Any Teams user in the associated tenant that was configured for the Playbooks integration must complete the steps below to access playbooks and runs within Teams.
 
