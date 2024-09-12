@@ -4,13 +4,9 @@ Browse channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus-icon| image:: ../images/plus_F0415.svg
-  :alt: Open menus using the plus icon.
-  :class: theme-icon
-
 .. tab:: Web/Desktop
 
-  1. Select the **Plus** |plus-icon| icon at the top of the channel sidebar to see all available public channels you can join that you're not already a member of.
+  1. Select the **Plus** |plus| icon at the top of the channel sidebar to see all available public channels you can join that you're not already a member of.
   2. Select **Browse Channels**. 
   3. Search for channels by name or scroll through the list.
   4. Select **Join** next to any channel to become a member of that channel.
@@ -21,7 +17,7 @@ Browse channels
 
 .. tab:: Mobile
 
-  1. Tap the **Plus** |plus-icon| icon located in the top right corner of the app to see all available public channels you can join that you're not already a member of. 
+  1. Tap the **Plus** |plus| icon located in the top right corner of the app to see all available public channels you can join that you're not already a member of.
   2. Tap **Browse Channels**. 
   3. Search for channels by name or filter the list of channels to show only public or archived channels. 
   4. Tap a channel to become a member of that channel.

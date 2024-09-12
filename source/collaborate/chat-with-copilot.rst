@@ -4,10 +4,6 @@ Chat with Copilot (Beta)
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |ai-actions-icon| image:: ../images/creation-outline_F1C2B.svg
-  :alt: Select the AI Actions icon to access AI options.
-  :class: theme-icon
-
 Overcome information overload and streamline communication and collaboration by chatting with Mattermost Copilot in your Mattermost instance.
 
 .. note::

@@ -4,10 +4,6 @@ Collaborate within Microsoft Teams
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus-icon| image:: ../images/plus_F0415.svg
-  :alt: Open menus using the plus icon.
-  :class: theme-icon
-
 The Mattermost for Microsoft Teams integration enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
 .. image:: ../images/microsoft-teams-chat-notifications.gif
@@ -68,5 +64,5 @@ Chat notifications are sent in real-time whenever you're not active in Microsoft
 - Web browser: Mattermost delivers notifications when you've not had activity in your Microsoft Teams browser tab for 5 minutes or more, or when the browser tab is closed.  
 - Desktop app: Mattermost delivers notifications when you've not had activity at your computer for 5 minutes or more, or when the Microsoft Teams desktop app is closed.
 
-In order to avoid double notifications, Mattermost won't deliver chat notifications when your :ref:`Mattermost availability <preferences/set-your-status-availability:set your availability>` is set to **Available**, **Busy**, **Do not disturb**, or **Be right back** in Microsoft Teams.
+In order to avoid double notifications, Mattermost won't deliver chat notifications when your availability is set to **Available**, **Busy**, **Do not disturb**, or **Be right back** in Microsoft Teams.
 
