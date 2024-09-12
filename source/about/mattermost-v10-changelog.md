@@ -104,6 +104,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added ``redis/rueidis`` to https://github.com/mattermost/mattermost.
 
 ### Known Issues
+ - Wrong server update notification may be shown in **System Console > Workspace Optmization** page [MM-60516](https://mattermost.atlassian.net/browse/MM-60516).
  - The cursor is not placed in the "Write to" field on login [MM-60275](https://mattermost.atlassian.net/browse/MM-60275).
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
