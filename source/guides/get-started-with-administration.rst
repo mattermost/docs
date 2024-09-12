@@ -8,7 +8,6 @@ Get started with administration
 
     Mattermost feature labels </getting-started/feature-labels>
     Optimize your workspace </configure/optimize-your-workspace>
-    Perform a Mattermost Health Check </manage/health-check>
     Mattermost configuration settings </configure/configuration-settings>
     Self-hosted edition and license </configure/self-hosted-account-settings>
     Cloud subscription, billing, and account </configure/cloud-billing-account-settings>
@@ -49,7 +48,6 @@ These resources will help you get started with your Mattermost self-hosted or Cl
 
 * **Mattermost feature labels** - Learn what :doc:`Mattermost feature labels </getting-started/feature-labels>`, including :ref:`Experimental <getting-started/feature-labels:experimental>`, :ref:`Beta <getting-started/feature-labels:beta>`, :ref:`General Availability <getting-started/feature-labels:general availability>`, and :ref:`Deprecated <getting-started/feature-labels:deprecated>` mean to the status, maturity, and support level of Mattermost product features and functionality in your Mattermost deployment.
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
-* :doc:`Perform a Mattermost Health Check </manage/health-check>` - Receive a comprehensive performance report that includes a detailed analysis of your current system health, actionable recommendations to enhance performance, reliability, and security, and guidance on best practices for future system maintenance.
 * **Configure your workspace** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Enable Copilot** - Learn how to :doc:`enable Copilot in Mattermost </configure/enable-copilot>`
 * **Manage user surveys** - Learn how to :doc:`create, manage, and export data from user surveys </configure/manage-user-surveys>` in your self-hosted Mattermost deployment.
@@ -92,7 +90,6 @@ Advanced workspace management
     Statistics </manage/statistics>
     In-product notices </manage/in-product-notices>
     User satisfaction surveys </manage/user-satisfaction-surveys>
-    Health check </manage/health-checks>
     System-wide notifications </manage/system-wide-notifications>
     Bulk export tool </manage/bulk-export-tool>
 
@@ -100,6 +97,5 @@ Advanced workspace management
 * :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
 * :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
 * :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
-* :doc:`Health check </manage/health-checks>` - Configure health probes for your Mattermost server.
 * :doc:`System-wide notifications </manage/system-wide-notifications>` - Display system-wide notifications to all users across all teams.
 * :doc:`Bulk export tool </manage/bulk-export-tool>` - Export user, team, channel, and post data from Mattermost.

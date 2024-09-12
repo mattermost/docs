@@ -2591,6 +2591,10 @@ redirects = {
         "https://docs.mattermost.com/manage/system-wide-notifications.html#configure-system-wide-notifications",
 "manage/announcement-banner.html#announcement-banner":
         "https://docs.mattermost.com/manage/system-wide-notifications.html",
+"manage/heath-checks.html":
+        "https://docs.mattermost.com/manage/configure-health-check-probes.html",
+"manage/health-checks.html#mattermost-probe":
+        "https://docs.mattermost.com/manage/configure-health-check-probes.html#ping-the-mattermost-server",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
