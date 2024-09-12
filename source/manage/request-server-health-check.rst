@@ -40,4 +40,4 @@ Getting started with a Mattermost Health Check is simple and involves 3 steps:
 Get help
 --------
 
-If you have any questions or need assistance,`contact your Customer Success Manager or Technical Account Manager, the `Mattermost Support Team <https://mattermost.com/support/>`_, or visit the `Mattermost Help Center <https://support.mattermost.com/>`_.
+If you have any questions or need assistance,contact your Customer Success Manager or Technical Account Manager, the `Mattermost Support Team <https://mattermost.com/support/>`_, or visit the `Mattermost Help Center <https://support.mattermost.com/>`_.
