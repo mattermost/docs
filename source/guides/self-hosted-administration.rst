@@ -14,6 +14,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 
     Mattermost self-hosted billing </manage/self-hosted-billing>
     Mattermost error codes </manage/error-codes>
+    Request a server Health Check </manage/request-server-health-check>
     Store configuration in your database </configure/configuration-in-your-database>
     Bulk loading data </onboard/bulk-loading-data>
     SMTP email setup </configure/smtp-email>
@@ -30,9 +31,11 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     SSL client certificate setup </onboard/ssl-client-certificate>
     Certificate-based authentication </onboard/certificate-based-authentication>
     Manage telemetry </manage/telemetry>
+    Configure health check probes </manage/configure-health-check-probes>
 
 * :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription.
 * :doc:`Mattermost error codes </manage/error-codes>` - Learn more about the error code you're encountering in Mattermost.
+* :doc:`Request a server Health Check </manage/request-server-health-check>` - Learn how to request a detailed analysis of your current system health, actionable recommendations to enhance performance, reliability, and security, and guidance on best practices for future system maintenance as an Enterprise customer.
 * :doc:`Store configuration in your Mattermost database </configure/configuration-in-your-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.
 * :doc:`SMTP email setup </configure/smtp-email>` - Connect to an email server to send emails for password resets and system notifications.
@@ -49,3 +52,4 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
 * :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 * :doc:`Manage telemetry </manage/telemetry>` - Self-hosted system admins can opt out of sharing telemetry data with Mattermost.
+* :doc:`Configure health check probes </manage/configure-health-check-probes>` - Configure health check probes for your self-hosted Mattermost server.
