@@ -26,7 +26,7 @@ Theme
 
     .. note::
 
-        You can define a custom theme using Mattermost in a web browser or the desktop app. See the :doc:`customize your theme </preferences/customize-your-theme>`` documentation for more information.
+        You can define a custom theme using Mattermost in a web browser or the desktop app. See the :doc:`customize your theme </preferences/customize-your-theme>` documentation for more information.
 
 Threaded discussions
 ---------------------
