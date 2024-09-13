@@ -6,10 +6,6 @@ Prepare your Mattermost MySQL database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between Channels and collaborative playbooks using the product menu icon.
-  :class: theme-icon
-
 .. important::
     
     PostgreSQL is our preferred database of choice. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
@@ -134,12 +130,15 @@ Encryption-at-rest is available for messages via hardware and software disk encr
 Use sockets for the database
 ----------------------------
 
-.. code-block:: bash
+.. code-block:: sh
 
-    $ mysql -u root -p
-    CREATE DATABASE mattermostdb;
-    CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
-    GRANT ALL ON mattermostdb.* TO mmuser;
+  mysql -u root -p
+
+.. code-block:: sql
+
+  CREATE DATABASE mattermostdb;
+  CREATE USER mmuser IDENTIFIED BY 'mmuser_password';
+  GRANT ALL ON mattermostdb.* TO mmuser;
 
 Mattermost is configured in ``/etc/webapps/mattermost/config.json``, and strings need to be quoted.
 
@@ -178,7 +177,7 @@ Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``M
 
 Finally, run this command to verify the permissions on your Mattermost directory:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo chown -R mattermost:mattermost /opt/mattermost
 
@@ -187,7 +186,7 @@ Modify the Mattermost ``systemd`` file
 
 First, find the ``mattermost.service`` file using:
 
-.. code-block:: bash
+.. code-block:: sh
 
    sudo systemctl status mattermost.service
 

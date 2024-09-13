@@ -5,7 +5,7 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v8.1 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle in May 15, 2024. Upgrading to Mattermost Server v9.5 or later is required.
+   - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
@@ -13,10 +13,26 @@ Important Upgrade Notes
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
    - Mattermost v10.0 is planned for September, 2024. See a list of planned breaking changes for this release `in the changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html>`__.
+   - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
+| v9.11                                              | Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to             |
+|                                                    | differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10.x. The     |
+|                                                    | official v8 client only works from Elasticsearch v7.11+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future        |
+|                                                    | compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config,  |
+|                                                    | and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.                                        |
+|                                                    |                                                                                                                                                                  |
+|                                                    | If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work.                                                     |
+|                                                    |                                                                                                                                                                  |
+|                                                    | If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to |
+|                                                    | work.                                                                                                                                                            |
+|                                                    |                                                                                                                                                                  |
+|                                                    | For AWS customers on Opensearch, do not enable "compatibility mode".                                                                                             |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.5                                               | We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are    |

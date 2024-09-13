@@ -74,6 +74,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster-based-deployment>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
+- :doc:`Server health checks </manage/request-server-health-check>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
 - Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
 - Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
@@ -99,7 +100,7 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - :ref:`Advanced team permissions <onboard/advanced-permissions:team override scheme>`.
 - :ref:`Read-only announcement channels <manage/team-channel-members:advanced access controls>`.
 - :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
-- O365 integration with `Microsoft Teams Calling <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
+- O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
 - :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
 - Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`

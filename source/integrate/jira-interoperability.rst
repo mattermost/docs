@@ -4,10 +4,6 @@ Connect Jira to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-menu| image:: ../images/products_E82F.svg
-  :alt: The Product menu is located in the top left corner of the Mattermost screen.
-  :class: theme-icon
-
 Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
 
 .. note::
@@ -29,7 +25,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 1. Install the Jira integration from the in-product App Marketplace:
 
-  a. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+  a. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
   b. Search for or scroll to Jira, and select **Install**.
   c. Once installed, select **Configure**. You're taken to the System Console.
   d. On the Jira configuration page, enable and configure Jira interoperability as follows, and then select **Save**:
@@ -250,7 +246,7 @@ If you're using legacy webhooks:
 - Only events described in the Legacy Webhook documentation are supported.
 - Use a curl command to make a POST request to the webhook URL. If curl command completes with a ``200 OK`` response, the integration is configured correctly. For instance, you can run the following command:
 
-.. code:: none
+.. code-block:: sh
   
   curl -X POST -v "https://<YOUR-MATTERMOST-URL>/plugins/jira/webhook?secret=<YOUR-SECRET>&team=<YOUR-TEAM>&channel=<YOUR-CHANNEL>&user_id=admin&user_key=admin" --data '{"event":"some_jira_event"}'
 

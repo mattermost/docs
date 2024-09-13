@@ -21,13 +21,17 @@ Customize the following console logs by going to **System Console > Environment 
 
 - :ref:`Stop outputting console logs <configure/environment-configuration-settings:output logs to console>`
 - :ref:`Adjust console log level <configure/environment-configuration-settings:console log level>` 
-- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
+- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`Colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
 - :ref:`Omit webhook debug messages <configure/environment-configuration-settings:enable webhook debugging>`
 
 File logs
 ---------
 
 File logs feature info level log messages including errors and information around startup and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory.
+
+.. tip::
+
+    You can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
 
 Customize the following file logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
 
@@ -139,10 +143,11 @@ Advanced logging
 System admins can output log and audit records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
 
 .. tip::
-    
-    - From Mattermost v9.3, system admins can configure advanced logging options in the System Console using multi-line JSON by going to **Environment > Logging**.
-    - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string.
-    - Mattermost Team Edition customers can output audit log records to the console or a file.
+
+  - From Mattermost v9.11, system admins can configure advanced logging JSON options using the ``mmctl config set`` command. See the :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>` documentation for an example slash command.
+  - From Mattermost v9.3, system admins can configure advanced logging options in the System Console using multi-line JSON by going to **Environment > Logging**.
+  - Alternatively, admins can configure advanced logging within the ``AdvancedLoggingJSON`` section of the ``config.json`` file using multi-line JSON or escaped JSON as a string.
+  - Mattermost Team Edition customers can output audit log records to the console or a file.
 
 Advanced logging options can be configured to:
 
@@ -193,7 +198,7 @@ Define advanced log output
 
     Advanced logging configuration can be pointed to a filespec to another configuration file, rather than multi-line JSON, to keep the config.json file tidy:
 
-    .. code:: JSON
+    .. code-block:: JSON
 
         "AdvancedLoggingJSON": "/path/to/audit_log_config.json"
 
@@ -515,7 +520,7 @@ How can I configure Advanced logging via environment variables?
 
 The ``MM_LOGSETTINGS_ADVANCEDLOGGINGJSON`` environment variable is used to configure Advanced logging . You can use ``jq`` to generate the JSON payload, e.g.
 
-.. code-block:: shell
+.. code-block:: sh
 
     export MM_LOGSETTINGS_ADVANCEDLOGGINGJSON=$(jq -n -c '{
         "console1": {
