@@ -1,13 +1,13 @@
-Scale Mattermost up to 15000 users
+Scale Mattermost up to 17000 users
 ==================================
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-This page describes the Mattermost reference architecture designed for the load of up to 15000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
+This page describes the Mattermost reference architecture designed for the load of up to 17000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
 
 - **High Availability**: Required
-- **Database Configuration**: writer, multiple readers
+- **Database Configuration**: writer, reader
 
 .. note::
     Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
@@ -15,15 +15,19 @@ This page describes the Mattermost reference architecture designed for the load 
 Requirements
 ------------
 
-+------------------------+----------+------------------+----------------+------------------+
-| **Resource Type**      | **vCPU** | **Memory (GiB)** | **# of Nodes** | **AWS Instance** |
-+========================+==========+==================+================+==================+
-| Mattermost Application | 4        | 8                | 2              | c6i.xlarge       |
-+------------------------+----------+------------------+----------------+------------------+
-| RDS Writer             | 4        | 32               | 1              | db.r6g.xlarge    |
-+------------------------+----------+------------------+----------------+------------------+
-| RDS Reader             | 4        | 32               | 1              | db.r6g.xlarge    |
-+------------------------+----------+------------------+----------------+------------------+
++------------------------+----------------+-------------------+
+| **Resource Type**      | **# of Nodes** | **AWS Instance**  |
++========================+================+===================+
+| Mattermost Application | 2              | c7i.xlarge        |
++------------------------+----------------+-------------------+
+| RDS Writer             | 1              | db.r7g.xlarge     |
++------------------------+----------------+-------------------+
+| RDS Reader             | 1              | db.r7g.xlarge     |
++------------------------+----------------+-------------------+
+| Elasticsearch Node     | 2              | r6g.xlarge.search |
++------------------------+----------------+-------------------+
+| Proxy                  | 1              | m7i.4xlarge       |
++------------------------+----------------+-------------------+
 
 Lifetime storage
 ----------------
