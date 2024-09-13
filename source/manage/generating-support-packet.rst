@@ -1,4 +1,4 @@
-Generate a support packet
+Generate a Support Packet
 ==========================
 
 .. include:: ../_static/badges/ent-pro-selfhosted.rst

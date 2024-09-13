@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
     inputs:
       PR_NUMBER:
-        type: number
+        type: string
         required: true
       TRIGGERING_ACTOR:
         type: string

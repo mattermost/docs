@@ -4,14 +4,6 @@ Manage custom groups
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
-  :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
-  :class: theme-icon
-
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
-  :class: theme-icon
-
 .. raw:: html
 
  <p class="mm-label-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
