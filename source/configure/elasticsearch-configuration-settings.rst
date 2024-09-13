@@ -413,8 +413,13 @@ Post index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
-| existing indexes, purge and rebuild the index after changing this setting.                                                                    |
+| **Important notes**:                                                                                                                          |
+|                                                                                                                                               |
+| - If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to existing indexes,       |
+|   purge and rebuild the index after changing this setting.                                                                                    |
+| - If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``.                                           |
+| - If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as                                          |
+|   `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.   |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-postindexshards
@@ -436,9 +441,10 @@ Post index shards
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
-| existing indexes, purge and rebuild the index after changing this setting.                                                                    |
+| **Important note**: If this configuration setting is changed, the changed configuration only applies to newly-created indexes.                |
+| To apply the change to existing indexes, purge and rebuild the index after changing this setting.                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
 
 .. config:setting:: elastic-channelindexreplicas
   :displayname: Channel index replicas (Elasticsearch)
@@ -458,6 +464,10 @@ Channel index replicas
 | The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
++---------------------------------------------------------------+----------------------------------------------------------------------------------+
+| **Note**: If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an         |
+| Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and                           |
+| `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.                                                                 |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-channelindexshards
@@ -498,6 +508,10 @@ User index replicas
 | The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| **Note**: If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an      |
+| Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-replicas>`__ and                      |
+| `Channel Index Replicas <#channel-index-replicas>`__ must also be updated accordingly.                                                        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-userindexshards

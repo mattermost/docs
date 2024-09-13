@@ -4,15 +4,7 @@ Manage advanced options
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Access settings using the gear icon.
-  :class: theme-icon
-
-.. |send-icon| image:: ../images/send_F048A.svg
-  :alt: Select the Send icon to post your message.
-  :class: theme-icon
-
-To customize Mattermost display options based on your preferences, select the gear icon |gear-icon| next to your profile picture, then go to **Advanced**.
+To customize Mattermost display options based on your preferences, select the gear icon |gear| next to your profile picture, then go to **Advanced**.
 
 Send messages on CTRL/⌘+ENTER
 ------------------------------
