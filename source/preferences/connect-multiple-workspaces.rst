@@ -4,9 +4,7 @@ Connect to multiple Mattermost workspaces
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |servers-icon| image:: ../images/server-variant_E81F.svg
-  :alt: Access server connection options using the Servers icon.
-  :class: theme-icon
+
 
 Using the Mattermost desktop or mobile app, you can connect to multiple Mattermost servers from a single interface, and manage system permissions.
 

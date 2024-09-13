@@ -4,9 +4,6 @@ Communicate a channel's focus and scope
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |channel-info| image:: ../images/information-outline_F02FD.svg
-  :alt: Use the Channel Info icon to access additional channel management options.
-  :class: theme-icon
 
 Every channel in Mattermost serves a purpose and exists for a reason. You can communicate a channel's focus and scope in 3 ways:
 

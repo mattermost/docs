@@ -4,10 +4,6 @@ Install the Mattermost desktop app
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
-  :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
-  :class: theme-icon
-
 The Mattermost desktop app is available for Linux, Mac, and Windows operating systems. The Desktop App supports all the features of the web experience, plus the following features:
 
 - :doc:`Connect to multiple Mattermost servers </preferences/connect-multiple-workspaces>` from a single interface, and navigate between servers using keyboard shortcuts.
