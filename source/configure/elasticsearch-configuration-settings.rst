@@ -262,9 +262,12 @@ Bulk indexing
 | posts in the database, from oldest to newest.                 | - ``config.json`` setting: N/A                                           |
 |                                                               | - Environment variable: N/A                                              |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.         |
-| Elasticsearch is available during indexing but search results may be incomplete until the indexing job is complete.                      |
-| If an in-progress indexing job is canceled, the index and search results will be incomplete.                                             |
+| **Notes**:                                                                                                                               |
+|                                                                                                                                          |
+| - Always `purge indexes <#purge-indexes>`__ before bulk indexing.                                                                        |
+| - Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.       |
+| - Elasticsearch is available during indexing, but search results may be incomplete until the indexing job is complete.                   |
+| - If an in-progress indexing job is canceled, the index and search results will be incomplete.                                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: elastic-rebuildchannelsindex
@@ -292,7 +295,7 @@ Rebuild channels index
   :systemconsole: Environment > Elasticsearch
   :configjson: N/A
   :environment: N/A
-  :description: Purge the entire Elasticsearch index by selecting Purge Indexes.
+  :description: Purge the entire Elasticsearch index by selecting Purge Indexes before creating a new index.
 
 Purge indexes
 ~~~~~~~~~~~~~
@@ -301,14 +304,14 @@ Purge indexes
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Purge the entire Elasticsearch index.                         | - System Config path: **Environment > Elasticsearch**       |
-| Typically only used if the index has corrupted and search     | - ``config.json`` setting: N/A                              |
-| isn't behaving as expected.                                   | - Environment variable: N/A                                 |
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Select the **Purge Indexes** button in the System Console to purge the index.                                               |
-| After purging the index, create a new index by selecting the **Index Now** button.                                          |
-+---------------------------------------------------------------+-------------------------------------------------------------+
++-------------------------------------------+-------------------------------------------------------------+
+| Purge the entire Elasticsearch index.     | - System Config path: **Environment > Elasticsearch**       |
+|                                           | - ``config.json`` setting: N/A                              |
+|                                           | - Environment variable: N/A                                 |
++-------------------------------------------+-------------------------------------------------------------+
+| Select the **Purge Indexes** button in the System Console to purge the index.                           |
+| After purging the index, create a new index by selecting the **Index Now** button.                      |
++-------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: elastic-indexestoskipwhilepurging
   :displayname: Indexes to skip while purging (Elasticsearch)
