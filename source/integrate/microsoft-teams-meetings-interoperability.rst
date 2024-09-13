@@ -72,7 +72,7 @@ Install the Microsoft Teams Meetings integration
 
 .. note::
 
-  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases>`, and upload it to your server via **System Console > Plugin Management**.
+  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases>`_, and upload it to your server via **System Console > Plugin Management**.
 
 Enable and configure the Microsoft Teams Meetings integration in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
