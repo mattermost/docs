@@ -10,5 +10,5 @@ Audio devices
 -------------
 
 1. Select **Edit**.
-2. Choose the microphone and speaker output used for Mattermost Calls
+2. Choose the microphone and speaker output used for Mattermost Calls.
 3. Select **Save**.

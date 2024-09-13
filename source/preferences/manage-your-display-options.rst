@@ -18,13 +18,15 @@ Theme
 
     Select **Theme Colors** to select one of 5 standard themes designed by the Mattermost team. Or, select **Custom Theme** to customize a standard theme even further.
 
+    See the :doc:`customize your theme </preferences/customize-your-theme>`` documentation for more information.
+
 .. tab:: Mobile
 
     Tap **Theme** to select one of 5 standard Mattermost themes.
 
     .. note::
 
-        You can define a custom theme using Mattermost in a web browser or the desktop app.
+        You can define a custom theme using Mattermost in a web browser or the desktop app. See the :doc:`customize your theme </preferences/customize-your-theme>`` documentation for more information.
 
 Threaded discussions
 ---------------------
