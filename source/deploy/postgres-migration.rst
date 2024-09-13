@@ -40,6 +40,10 @@ Frequently asked questions
   
   We are working on providing migrations for other plugins as well such as NPS-plugin. Please stay tuned for updates.
 
+6. Does these processes support AWS RDS databases?
+
+  Yes, the processes support AWS RDS databases. However, you may need to adjust the security group settings to allow the migration process to access the databases.
+
 Troubleshooting
 ---------------
 
