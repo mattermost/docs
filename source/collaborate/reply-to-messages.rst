@@ -6,11 +6,7 @@ Reply to messages
 
 .. tab:: Web/Desktop
 
-  Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text. 
-
-  .. |reply-arrow| image:: ../images/reply-outline_F0F20.svg
-    :alt: Reply icon.
-    :class: theme-icon
+  Reply to messages by selecting the **Reply** |reply-arrow| icon next to the message text.
 
   .. image:: ../images/reply-to-message.png
     :alt: Reply to Mattermost messages

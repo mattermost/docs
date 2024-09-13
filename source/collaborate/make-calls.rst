@@ -4,10 +4,6 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
-    :class: theme-icon
-
 Using a web browser, the desktop app, or the mobile app, you can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost during a call.
 
 .. note::
@@ -97,7 +93,7 @@ Lower a raised hand by accessing the host controls and selecting **Lower hand**.
 End the call for everyone
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v9.10, call hosts who choose to leave a call are prompted to confirm whether they want to leave or end the call for all participants.
+From Mattermost v9.10 and mobile v2.19, call hosts who choose to leave a call are prompted to confirm whether they want to leave or end the call for all participants.
 
 Share your screen
 -----------------

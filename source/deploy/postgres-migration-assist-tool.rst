@@ -4,9 +4,9 @@ Automated PostgreSQL migration
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven't performed a migration before. 
+Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven't performed a migration before. Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the :doc:`tasks to be executed </deploy/manual-postgres-migration>`. 
 
-Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the tasks to be executed. The tool offers 3 core utility commands:
+The ``migration-assist`` tool offers 3 core utility commands:
 
 1. ``migration-assist mysql``
 
@@ -19,6 +19,8 @@ Our ``migration-assist`` tool provides an efficient, error-free migration experi
 3. ``migration-assist pgloader``
 
    Generates a pgloader configuration from DSN values, ensuring accurate data transfer. See the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation for details on installing the pgloader tool.
+
+Not sure this tool is right for your Mattermost deployment? Mattermost customers looking for tailored guidance based on their Mattermost deployment can contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 Install
 -------
@@ -45,13 +47,13 @@ Step 1 - Check the MySQL database schema
 
 Run the following command to check the MySQL database schema:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist mysql "<MYSQL_DSN>" # example DSN: "user:password@tcp(address:3306)/db_name"
 
 This command outputs the readiness status and prints required fixes for common issues. The flags for fixes are as follows (where all fixes can be used together at the same time):
 
-.. code-block:: shell
+.. code-block:: text
 
    --fix-artifacts               Removes the artifacts from older versions of Mattermost
    --fix-unicode                 Removes the unsupported unicode characters from MySQL tables
@@ -62,7 +64,7 @@ Step 2 - Create the PostgreSQL database schema
 
 Run the following command to create the Postgres database schema:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist postgres "<POSTGRES_DSN>" --run-migrations --mattermost-version="<MATTERMOST_VERSION>" # example DSN: "postgres://user:password@address:5432/db_name", example Mattermost version: "v9.4.0"
 
@@ -80,7 +82,7 @@ Step 3 - Generate a pgloader configuration
 
 Run the following command to generate a pgloader configuration:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist pgloader --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > migration.load
 
@@ -93,7 +95,7 @@ Step 4 - Run pgloader
 
 :ref:`Run pgloader <deploy/manual-postgres-migration:pgloader>` with the generated configuration file:
 
-.. code-block:: shell
+.. code-block:: sh
 
    pgloader migration.load > migration.log
 
@@ -104,7 +106,7 @@ Step 5 - Restore full-text indexes
 
 Run the following command to create the full-text indexes for the ``Posts`` and ``FileInfo`` tables:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist postgres post-migrate "<POSTGRES_DSN>"
 
@@ -115,7 +117,7 @@ Step 6 - Complete plugin migrations
 
 Generate migration configuration for collaborative playbooks, boards and calls:
 
-.. code-block:: shell
+.. code-block:: sh
 
    migration-assist pgloader boards --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > boards.load
    migration-assist pgloader playbooks --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > playbooks.load
@@ -123,7 +125,7 @@ Generate migration configuration for collaborative playbooks, boards and calls:
 
 Then run pgloader with the generated configuration files:
 
-.. code-block:: shell
+.. code-block:: sh
 
    pgloader boards.load > boards_migration.log
    pgloader playbooks.load > playbooks_migration.log

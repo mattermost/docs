@@ -4,10 +4,6 @@ Deploy Mattermost via Docker
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. tip::
-
-  Looking to a way to evaluate Mattermost in a non-production environment using Docker? See the :doc:`trial Mattermost using Docker </install/trial-mattermost-using-docker>` documentation for details.
-
 Install Docker
 ---------------
 
@@ -25,7 +21,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 
   Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
 
-  .. code:: bash
+  .. code-block:: sh
 
     sudo apt update
     sudo apt install docker.io
@@ -35,7 +31,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 
   Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
 
-  .. code:: bash
+  .. code-block:: sh
 
     sudo dnf install moby-engine
     sudo systemctl start docker
@@ -51,7 +47,9 @@ Deploy Mattermost on Docker for production use
 Upgrade from ``mattermost-docker``
 -----------------------------------
 
-The `mattermost-docker <https://github.com/mattermost/mattermost-docker>`__ repository is deprecated. To migrate from the ``mattermost/mattermost-prod-app`` image, we recommend migrating to either ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support PostgreSQL 11+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
+The `mattermost-docker <https://github.com/mattermost/mattermost-docker>`__ GitHub repository is deprecated. Visit the `mattermost/docker <https://github.com/mattermost/docker>`_ GitHub repository to access the official Docker deployment solution for Mattermost.
+
+To migrate from an existing ``mattermost/mattermost-prod-app`` image, we recommend migrating to either ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support PostgreSQL 11+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
 
 For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 
@@ -74,19 +72,19 @@ Docker
 
 If deploying on an M1 Mac and encountering permission issues in the Docker container, `redo the third step <#create-the-required-directores-and-set-their-permissions>`__ and skip this command:
 
-.. code:: bash
+.. code-block:: sh
 
   sudo chown -R 2000:2000 ./volumes/app/mattermost
 
 If having issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
-.. code:: bash
+.. code-block:: sh
 
   sudo systemctl enable --now docker
 
 To remove all data and settings for your Mattermost deployment:
 
-.. code:: bash
+.. code-block:: sh
 
   sudo rm -rf ./volumes
 
@@ -103,4 +101,11 @@ For an in-depth guide to configuring the TLS certificate and key for Nginx, plea
 Further help
 ~~~~~~~~~~~~~
 
-If you encounter other problems while installing Mattermost, please refer to our :doc:`troubleshooting guide </install/troubleshooting>`. 
+If you encounter other problems while installing Mattermost, please refer to our :doc:`troubleshooting guide </install/troubleshooting>`.
+
+Trial Mattermost using Docker Preview
+--------------------------------------
+
+Looking to a way to evaluate Mattermost in a non-production environment using Docker? We recommend using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`_ to install Mattermost in Preview Mode. 
+
+See the :doc:`trial Mattermost using Docker </install/trial-mattermost-using-docker>` documentation for details.

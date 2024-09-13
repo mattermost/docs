@@ -65,7 +65,7 @@ Mattermost is compatible with most popular screen readers, such as `Apple VoiceO
 
 For example, a message read by a screen reader may sound like the following:
 
-.. code-block:: none
+.. code-block:: text
   
   Eric Sethna at 12:57pm Thursday June 13th wrote a reply "Thanks for the review", 3 attachments, 2 reactions, message is saved and pinned.
 

@@ -45,7 +45,30 @@ To install extended support releases, follow our [install](/guides/deployment) o
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
 ```
 
-![Timeline-based chart showing the lifecycle of Mattermost Extended Support Releases and feature releases from last year and this year.](../images/ESR_graphic2.png)
+```{mermaid}
+
+gantt
+    dateFormat  YYYY-MM-DD
+    axisFormat  %b %y
+    tickInterval 2month
+    
+    section 2024
+    v9.5 Extended Support  :crit,    2024-02-16, 2024-11-15
+    v9.6                   :done,  2024-03-16, 2024-06-15
+    v9.7                   :done,  2024-04-16, 2024-07-15
+    v9.8                   :active,  2024-05-15, 2024-08-15
+    v9.9                   :active,  2024-06-16, 2024-09-15
+    v9.10                  :active,  2024-07-16, 2024-10-15
+    v9.11 & Desktop App v5.9 Extended Support :crit,    2024-08-16, 2025-05-15
+    v10.0                  :upcoming,    2024-09-16, 2024-12-15
+    v10.1                  :upcoming,    2024-10-16, 2025-01-15
+    v10.2                  :upcoming,    2024-11-16, 2025-02-15
+    v10.3                  :upcoming,    2024-12-16, 2025-03-15
+
+    section 2025
+    v10.4                  :upcoming,    2025-01-16, 2025-04-15
+    v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
+```
 
 (esr-notifications)=
 ### ESR Notifications

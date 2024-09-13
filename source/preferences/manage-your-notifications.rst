@@ -4,18 +4,6 @@ Manage your notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear| image:: ../images/settings-outline_F08BB.svg
-  :alt: Use the Settings icon to customize your Mattermost user experience.
-  :class: theme-icon
-
-.. |channel-info| image:: ../images/information-outline_F02FD.svg
-  :alt: Use the Channel Info icon to access additional channel management options.
-  :class: theme-icon
-
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-  :alt: Use the More icon to access additional message options.
-  :class: theme-icon
-
 .. |dot-badge| image:: ../images/dot-badge.png
   :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
   :width: 50px
@@ -81,6 +69,8 @@ On mobile, select the **Settings** |gear| icon and tap **Notifications**.
   **Want incoming call sounds?**
 
   Want to hear a sound when a Mattermost call starts? If your Mattermost admin :ref:`enables this Beta feature <configure/plugins-configuration-settings:enable call ringing>`, you can choose the sound that plays when a call is started within a direct or group message you're participating in by going to **Desktop notifications > Notification sound for incoming calls**.
+
+  From Mattermost mobile app v2.19, incoming call sounds on mobile include sounds and vibration, and vibration only when your device is in silent mode. You can set one **Incoming call sound** for web or desktop, and a different one for mobile. When you select an **Incoming call sound** on mobile, your changes apply only to mobile.
 
 .. tab:: Email 
 

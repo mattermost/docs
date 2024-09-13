@@ -4,66 +4,6 @@ Format messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |bold-icon| image:: ../images/format-bold_F0264.svg
-  :alt: Bold message text using the Bold icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |italics-icon| image:: ../images/format-italic_F0277.svg
-  :alt: Italicize message text using the Italic icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |strikeout-icon| image:: ../images/format-strikethrough-variant_F0281.svg
-  :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |headings-icon| image:: ../images/format-header_E81D.svg
-  :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
-  :class: theme-icon
-
-.. |links-icon| image:: ../images/link-variant_F0339.svg
-  :alt: Add a message link using the Link icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |attachments-icon| image:: ../images/paperclip_F03E2.svg
-  :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |numbered-icon| image:: ../images/format-list-numbered_F027B.svg
-  :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |bullets-icon| image:: ../images/format-list-bulleted_F0279.svg
-  :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |quotes-icon| image:: ../images/format-quote-open_F0757.svg
-  :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |code-icon| image:: ../images/code-tags_F0174.svg
-  :alt: Format message text as code using the Code icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |emoji-icon| image:: ../images/emoticon-outline_F01F2.svg
-  :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |hide-formatting-icon| image:: ../images/format-letter-case_F0B34.svg
-  :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
-  :class: theme-icon
-
-.. |preview-icon| image:: ../images/eye-outline_F06D0.svg
-  :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
-  :class: theme-icon
-
-.. |settings-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Access and manage your Channels settings using the Gear icon.
-  :class: theme-icon
-
-.. |message-priority-icon| image:: ../images/alert-circle-outline_F05D6.svg
-  :alt: Mark a message as important or urgent using the Priority Message icon.
-  :class: theme-icon
-
 .. include:: ../_static/badges/academy-message-formatting.rst
   :start-after: :nosearch:
 
@@ -86,7 +26,7 @@ The message formatting toolbar offers the following formatting options:
 |                                                                   | |strikeout-icon|        |
 +-------------------------------------------------------------------+-------------------------+
 | Add `headings <#headings>`_, `links <#links>`_,                   | |headings-icon|         |
-| or attachments                                                    | |links-icon|            |
+| or attachments                                                    | |copy-link-icon|        |
 |                                                                   | |attachments-icon|      |
 +-------------------------------------------------------------------+-------------------------+
 | Format a numbered list, a bulleted list, quoted text, or          | |numbered-icon|         |
@@ -162,7 +102,7 @@ Headings
 
 Make a heading by typing ``#`` and a space before your title. For smaller headings, use more ``#``'s.
 
-.. code-block:: none
+.. code-block:: text
 
   ## Large Heading
   ### Smaller Heading
@@ -175,7 +115,7 @@ Renders as:
 
 Alternatively, you can underline the text using equal signs ``===`` or hyphens ``---`` to create headings.
 
-.. code-block:: none
+.. code-block:: text
 
   Large Heading
   -------------
@@ -190,7 +130,7 @@ Lists
 
 Create a list by using asterisks ``*``, hyphens ``-``, and/or plus signs ``+`` interchangeably as bullets. Indent bullet points by adding two spaces in front each one.
 
-.. code-block:: none
+.. code-block:: text
 
   * item one
   - item two
@@ -205,7 +145,7 @@ Renders as:
 
 Make an ordered list by using numbers instead:
 
-.. code-block:: none
+.. code-block:: text
 
   1. Item one
   1. Item two
@@ -219,7 +159,7 @@ Renders as:
 
 You can also start a list at any number:
 
-.. code-block:: none
+.. code-block:: text
 
   4. The first list number is 4.
   1. The second list number is 5.
@@ -233,7 +173,7 @@ Renders as:
 
 Make a task list by including square brackets ``[ ]``. Mark a task as complete by adding an ``x``.
 
-.. code-block:: none
+.. code-block:: text
 
   - [ ] Item one
   - [ ] Item two
@@ -251,7 +191,7 @@ Creating a fixed-width code block is recommended for pasting multi-line blocks o
 
 This can be accomplished by placing three backticks ``````` on the line directly above and directly below your code:
 
-.. code-block:: none
+.. code-block:: text
 
   ```
   this is my
@@ -265,7 +205,7 @@ This can be accomplished by placing three backticks ``````` on the line directly
 
 Or by indenting each line by four spaces:
 
-.. code-block:: none
+.. code-block:: text
 
       this is my
       code block
@@ -283,7 +223,7 @@ Supported languages and their aliases include:
 
 Example:
 
-.. code-block:: none
+.. code-block:: text
 
   ``` go
   package main
@@ -320,7 +260,7 @@ In-line code
 
 Create in-line monospaced code text by surrounding it with backticks `````. Don't use single quotes ``'``.
 
-.. code-block:: none
+.. code-block:: text
 
   `monospace`
 
@@ -335,7 +275,7 @@ To add in-line images to text, use an exclamation mark ``!`` followed by the ``a
 
 Example:
 
-.. code-block:: none
+.. code-block:: text
 
   ![alt text](URL of image "Hover text")
 
@@ -348,7 +288,7 @@ You can set the width and height of the displayed image after the URL of the ima
 
 Examples:
 
-.. code-block:: none
+.. code-block:: text
 
   .. |mattermost-icon-76x76| image:: ../images/icon-76x76.png
   .. |mattermost-icon-50x76| image:: ../images/icon-50x76.png
@@ -356,7 +296,7 @@ Examples:
 In-line image with hover text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: none
+.. code-block:: text
 
   ![Mattermost](../images/icon-76x76.png "Mattermost Icon")
 
@@ -371,7 +311,7 @@ In-line image with link
 .. note::
   An extra set of square brackets ``[ ]`` is required around the alt text, and round brackets ``( )`` are required around the image link.
 
-.. code-block:: none
+.. code-block:: text
 
   [![Mattermost](../images/icon-76x76.png)](https://github.com/mattermost/mattermost)
 
@@ -385,7 +325,7 @@ In-line image displayed with fixed width and height
 
 Example: An in-line image that's 50 pixels wide and 76 pixels high.
 
-.. code-block:: none
+.. code-block:: text
 
   ![Mattermost](../images/icon-76x76.png =50x76 "Mattermost Icon")
 
@@ -400,7 +340,7 @@ In-line image displayed with fixed width
 
 Example: An in-line image that's 50 pixels wide where the system adjusts the height to maintain the original aspect ratio.
 
-.. code-block:: none
+.. code-block:: text
 
   ![Mattermost](../images/icon-76x76.png =50 "Mattermost Icon")
 
@@ -435,7 +375,7 @@ Tables
 
 Create a table by placing a dashed line ``---`` under the header row, then separating each column with using pipes ``|``. The columns don’t need to line up exactly. Choose how to align table columns by including colons ``:`` within the header row.
 
-.. code-block:: none
+.. code-block:: text
 
   | Left-Aligned  | Center Aligned  | Right Aligned |
   | :------------ |:---------------:| -----:|
@@ -459,7 +399,7 @@ Math Formulas
 
     This feature is :ref:`disabled by default <configure/site-configuration-settings:enable inline latex rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-  .. code-block:: none
+  .. code-block:: text
 
     $X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]$
 
@@ -476,7 +416,7 @@ Math Formulas
 
     This feature is :ref:`disabled by default <configure/site-configuration-settings:enable latex code block rendering>`. Contact your system admin to enable this setting in **System Console > Site Configuration > Posts** to use this feature.
 
-  .. code-block:: none
+  .. code-block:: text
 
     ```latex
     X_k = \sum_{n=0}^{2N-1} x_n \cos \left[\frac{\pi}{N} \left(n+\frac{1}{2}+\frac{N}{2}\right) \left(k+\frac{1}{2}\right) \right]
