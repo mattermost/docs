@@ -2591,6 +2591,10 @@ redirects = {
         "https://docs.mattermost.com/manage/system-wide-notifications.html#configure-system-wide-notifications",
 "manage/announcement-banner.html#announcement-banner":
         "https://docs.mattermost.com/manage/system-wide-notifications.html",
+"manage/heath-checks.html":
+        "https://docs.mattermost.com/manage/configure-health-check-probes.html",
+"manage/health-checks.html#mattermost-probe":
+        "https://docs.mattermost.com/manage/configure-health-check-probes.html#ping-the-mattermost-server",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
@@ -3725,6 +3729,123 @@ rst_prolog = """
     :class: mm-badge-flag
 .. |deployment-img-yellow| image:: /_static/images/badges/deployment_icon_yellow.svg
     :class: mm-badge-deployment
+.. |copy-link-icon| image:: /images/link-variant_F0339.svg
+    :alt: Use the Copy Link icon to copy the public URL link for an image in a message.
+    :class: theme-icon
+.. |channel-info| image:: /images/information-outline_F02FD.svg
+    :alt: Use the Channel Info icon to access additional channel management options.
+    :class: theme-icon
+.. |more-icon| image:: /images/dots-horizontal_F01D8.svg
+    :alt: Use the More icon to access additional message options.
+    :class: theme-icon
+.. |favorite-icon| image:: /images/star-outline_F04D2.svg
+    :alt: Use the Star icon to mark a channel as a favorite.
+    :class: theme-icon
+.. |globe| image:: /images/globe_E805.svg
+    :alt: Public channels are identified with a Globe icon.
+    :class: theme-icon
+.. |lock| image:: /images/lock-outline_F0341.svg
+    :alt: Private channels are identified with a Lock icon.
+    :class: theme-icon
+.. |plus| image:: /images/plus_F0415.svg
+    :alt: The Plus icon provides access to channel and direct message functionality.
+    :class: theme-icon
+.. |save-icon| image:: /images/bookmark-outline_F00C3.svg
+    :alt: Save icon.
+    :class: theme-icon
+.. |send-icon| image:: /images/send_F048A.svg
+    :alt: Select the Send icon to post your message.
+    :class: theme-icon
+.. |restore-edit| image:: /images/restore_F099B.svg
+    :alt: Use the Restore icon to restore a previous version of an edited message.
+    :class: theme-icon
+    :width: 25
+.. |smile-icon| image:: /images/emoticon-plus-outline_E80F.svg
+    :alt: Use the Smile icon to add emojis to your message.
+    :class: theme-icon
+.. |gear| image:: /images/settings-outline_F08BB.svg
+    :alt: Use the Settings icon to customize your Mattermost user experience.
+    :class: theme-icon
+.. |more-icon-vertical| image:: /images/dots-vertical_F01D9.svg
+    :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
+    :class: theme-icon
+.. |ai-actions-icon| image:: /images/creation-outline_F1C2B.svg
+    :alt: Select the AI Actions icon to access AI options.
+    :class: theme-icon
+.. |bold-icon| image:: /images/format-bold_F0264.svg
+    :alt: Bold message text using the Bold icon in the message formatting toolbar.
+    :class: theme-icon
+.. |italics-icon| image:: /images/format-italic_F0277.svg
+    :alt: Italicize message text using the Italic icon in the message formatting toolbar.
+    :class: theme-icon
+.. |strikeout-icon| image:: /images/format-strikethrough-variant_F0281.svg
+    :alt: Strike out message text using the Strikethrough icon in the message formatting toolbar.
+    :class: theme-icon
+.. |headings-icon| image:: /images/format-header_E81D.svg
+    :alt: Format message text as a heading using the Heading icon in the message formatting toolbar. Headings 1 through 6 are supported.
+    :class: theme-icon
+.. |attachments-icon| image:: /images/paperclip_F03E2.svg
+    :alt: Add a message attachment using the Upload files icon in the message formatting toolbar.
+    :class: theme-icon
+.. |numbered-icon| image:: /images/format-list-numbered_F027B.svg
+    :alt: Format message text as a numbered list using the Numbered list icon in the message formatting toolbar.
+    :class: theme-icon
+.. |bullets-icon| image:: /images/format-list-bulleted_F0279.svg
+    :alt: Format message text as a bulleted list using the Bulleted list icon in the message formatting toolbar.
+    :class: theme-icon
+.. |quotes-icon| image:: /images/format-quote-open_F0757.svg
+    :alt: Format message text as a quotation using the Quote icon in the message formatting toolbar.
+    :class: theme-icon
+.. |code-icon| image:: /images/code-tags_F0174.svg
+    :alt: Format message text as code using the Code icon in the message formatting toolbar.
+    :class: theme-icon
+.. |emoji-icon| image:: /images/emoticon-outline_F01F2.svg
+    :alt: Add emojis or GIFs to message text using the Emoji/Gif picker icon in the message formatting toolbar.
+    :class: theme-icon
+.. |hide-formatting-icon| image:: /images/format-letter-case_F0B34.svg
+    :alt: Hide formatting options in the message formatting toolbar using the Show/Hide Formatting icon.
+    :class: theme-icon
+.. |preview-icon| image:: /images/eye-outline_F06D0.svg
+    :alt: Review your message text formatting using the Show/Hide preview icon in the message formatting toolbar.
+    :class: theme-icon
+.. |message-priority-icon| image:: /images/alert-circle-outline_F05D6.svg
+    :alt: Mark a message as important or urgent using the Priority Message icon.
+    :class: theme-icon
+.. |acknowledge-button| image:: /images/Ack-Button-Default.svg
+    :alt: Select the Acknowledge button to indicate that you've read it and taken necessary action.
+    :class: theme-icon
+.. |reply-arrow| image:: /images/reply-outline_F0F20.svg
+    :alt: Reply icon.
+    :class: theme-icon
+.. |product-list| image:: /images/products_E82F.svg
+    :alt: Navigate between Channels and collaborative playbooks using the product menu icon.
+    :class: theme-icon
+.. |search-icon| image:: /images/magnify_F0349.svg
+    :alt: Search for messages and files in Mattermost.
+    :class: theme-icon
+.. |channel-files-icon| image:: /images/file-text-outline_F09EE.svg
+    :alt: Use the Channel Files icon to search for files attached to messages in a given channel.
+    :class: theme-icon
+.. |download-icon| image:: /images/download-outline_F0B8F.svg
+    :alt: Use the Download icon to download an attached file to your local system.
+    :class: theme-icon
+.. |desktop-download-icon| image:: /images/arrow-down-bold-circle-outline_F0048.svg
+    :alt: Use the desktop app download icon to review download status, as well as access and clear the list of downloaded files.
+    :class: theme-icon
+.. |edit-on-github| image:: /images/edit-on-github.png
+    :alt: Contribute to Mattermost documentation by selecting the Edit option located in the top right corner of any documentation page.
+    :class: theme-icon
+.. |servers-icon| image:: /images/server-variant_E81F.svg
+    :alt: Access server connection options using the Servers icon.
+    :class: theme-icon
+.. |online| image:: /images/online.png
+    :alt: Online availability status icon in Mattermost.
+.. |away| image:: /images/away.png
+    :alt: Away availability status icon in Mattermost.
+.. |dnd| image:: /images/dnd.png
+    :alt: Do Not Disturb availability status icon in Mattermost.
+.. |offline| image:: /images/offline.png
+    :alt: Offline availability status icon in Mattermost.
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2

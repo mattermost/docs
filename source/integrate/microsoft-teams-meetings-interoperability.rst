@@ -1,5 +1,5 @@
-Connect Microsoft Meetings to Mattermost
-=========================================
+Connect Microsoft Teams Meetings to Mattermost
+==============================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

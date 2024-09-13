@@ -6,10 +6,6 @@ Prepare your Mattermost MySQL database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-list| image:: ../images/products_E82F.svg
-  :alt: Navigate between Channels and collaborative playbooks using the product menu icon.
-  :class: theme-icon
-
 .. important::
     
     PostgreSQL is our preferred database of choice. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.

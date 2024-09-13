@@ -686,3 +686,23 @@ Cluster log timeout
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: file-maxpayloadsize
+  :displayname: Maximum payload size (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.MaximumPayloadSizeBytes
+  :environment: MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES
+  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input. For example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
+
+Maximum payload size
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------+----------------------------------------------------------------------------------+
+| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                        |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".FileSettings.MaximumPayloadSizeBytes: 300000",``  |
+|                                                           | - Environment variable: ``MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
+| For example, the upload attachment API or the API to      |                                                                                  |
+| upload a custom emoji.                                    |                                                                                  |
+|                                                           |                                                                                  |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                  |
++-----------------------------------------------------------+----------------------------------------------------------------------------------+

@@ -4,10 +4,6 @@ Connect GitHub to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-menu| image:: ../images/products_E82F.svg
-  :alt: The Product menu is located in the top left corner of the Mattermost screen.
-  :class: theme-icon
-
 Minimize distractions and reduce context switching between your GitHub code repositories and your communication platform by integrating GitHub with Mattermost. Help your teams stay focused and productive with real-time updates on commits, pull requests, issues, and more directly from Mattermost channels.
 
 .. image:: ../images/github_mattermost.png
@@ -79,7 +75,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 2. Install the GitHub integration from the in-product App Marketplace:
 
-  a. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+  a. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
   b. Search for or scroll to GitHub, and select **Install**.
   c. Once installed, select **Configure**. You're taken to the System Console.
   d. On the GitHub configuration page, enable and configure GitHub interoperability as follows, and then select **Save**:
