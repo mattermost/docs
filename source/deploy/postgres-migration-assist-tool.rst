@@ -154,4 +154,4 @@ Use ``go install`` to install the tool:
 Troubleshooting
 ---------------
 
-* :ref:`Troubleshooting errors during migration from MySQL to PostgreSQL </deploy/postgres-migration:troubleshooting>`
+See :ref:`troubleshooting errors during migration from MySQL to PostgreSQL <deploy/postgres-migration:troubleshooting>`
