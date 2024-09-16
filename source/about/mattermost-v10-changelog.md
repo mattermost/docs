@@ -23,46 +23,51 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 
 #### User Interface (UI)
  - Added metrics-plugin to the prepackaged plugins.
-Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
-Added channel specific message notification sounds configuration.
-Added status sync support to Shared Channels.
-Moved the Shared Channel related configuration properties out of the Experimental section.
-Added ``DeleteAt`` field for ``SharedChannelRemotes`` and ``RemoteClusters``.
-Added the ``ConnectedWorkspaces.MaxPostsPerSync`` configuration property.
-Added support for sending channel invites to offline remotes in Shared Channels.
-Changed server-side logic to return a 413: Request Entity Too Large HTTP status code for a plugin upload that is too large.
-Direct and Group Message unread/read state over export and import will now be carried over.
-CRT memberships are now importable for import.
-CRT memberships are now exportable for bulk export.
-Added --local mode support in MMCTL to handle user preferences.
-Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console.
-Added new API endpoints to manage shared channels.
-Added an ``api.plugin.upload.file_too_large.app_error`` error ID.
-Improved metrics related to push proxy errors.
-Improved metrics around notifications.
-Added proper response to ``/api/v4/client_perf`` endpoint.
-
+ - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
+ - Added channel specific message notification sounds configuration.
 
 #### Administration
- - 
+ - Added ``DeleteAt`` field for ``SharedChannelRemotes`` and ``RemoteClusters``.
+ - Added support for sending channel invites to offline remotes in Shared Channels.
+ - Changed server-side logic to return a ``413: Request Entity Too Large`` HTTP status code for a plugin upload that is too large.
+ - Direct and Group Message unread/read state over export and import will now be carried over.
+ - CRT memberships are now importable for import.
+ - CRT memberships are now exportable for bulk export.
+ - Added --local mode support in MMCTL to handle user preferences.
+ - Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console.
 
 #### Performance
- - 
+ - Improved metrics related to push proxy errors.
+ - Improved metrics around notifications.
 
 ### Bug Fixes
- - 
+ - Fixed an issue where threads would be marked as read if they were open in the background.
+ - Fixed an issue where Direct and Group Messages didn't load correctly in the sidebar when refreshing the app from Drafts.
+ - Fixed an issue attempting to bind to Apps plugin when the plugin was not enabled.
+ - Fixed an issue where the Unreads tab would not update correctly after the websocket reconnected.
+ - Fixed an issue with focusing on the main box when loading the app.
+ - Fixed an issue where Team and Channel Admins could lose the ability to create posts in a moderated channel.
+ - Fixed an issue where marking a channel as unread did not show immediately in other clients.
+ - Fixed an issue with not allowing to use ``@`` and ``~`` in the ``in:`` search modifier without affecting search results.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - 
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``YoutubeReferrerPolicy`` to fix an issue where YouTube previews showed an “Video Unavailable” error instead of the video.
 
 #### Changes to the Enterprise plan:
- - 
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Added ``DisableSharedChannelsStatusSync`` to add status sync support to Shared Channels.
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Moved the Shared Channel related configuration properties out of the Experimental section.
+    - Added the ``MaxPostsPerSync`` configuration property.
 
 ### API Changes
- - 
+ - Added new API endpoints to manage shared channels.
+ - Added an ``api.plugin.upload.file_too_large.app_error`` error ID.
+ - Added proper response to ``/api/v4/client_perf`` endpoint.
 
 ### Go Version
  - v10.1 is built with Go ``v1.22.6``.
