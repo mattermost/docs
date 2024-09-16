@@ -378,3 +378,7 @@ The team members / users can access their notification logs based on their devic
 Android users can view the logs using ``logcat``.
 iOS users can acess the logs in the ``console app`` on their MacOS.
 
+How do I gather mobile app logs?
+--------------------------------
+
+See the Mattermost Support Knowledge Base article on `gathering mobile app logs <https://support.mattermost.com/hc/en-us/articles/30147601934100-How-to-Gather-Mobile-App-Logs>`_ for details.

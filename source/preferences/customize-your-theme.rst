@@ -16,13 +16,24 @@ To customize your Mattermost theme:
 
 .. tab:: Web/desktop
 
-	Select the **Settings** |gear| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team.
+  Select the **Settings** |gear| icon, then go to **Display > Theme**. Select **Theme Colors** to choose from five standard themes designed by the Mattermost team.
 
-	Using Mattermost in a browser or the desktop app, you can customize a standard theme further to truly make it your own. After selecting a standard theme, select **Custom Theme** and modify your color choices based on your preferences. See the `custom themes <#custom-themes>`__ documentation to learn what's configurable, and see the `custom theme examples <#custom-theme-examples>`__ documentation for inspiration.
+  You can customize a standard theme further to truly make it your own. After selecting a standard theme, select **Custom Theme** and modify your color choices based on your preferences. See the `custom themes <#custom-themes>`__ documentation to learn what's configurable, and see the `custom theme examples <#custom-theme-examples>`__ documentation for inspiration.
 
 .. tab:: Mobile
 
-	Tap your profile picture, and select **Settings**, then go to **Display > Theme**.
+  Tap **Theme** to select one of 5 standard Mattermost themes.
+
+  .. note::
+
+    You can define a custom theme using Mattermost in a web browser or the desktop app.
+
+Import a Slack theme
+--------------------
+
+Using Mattermost in a web browser or the desktop app, you can select **Import theme colors from Slack** to import a Slack theme. 
+
+In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the **Input Slack Theme** input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Sapphire” standard theme settings.
 
 Custom themes
 -------------
