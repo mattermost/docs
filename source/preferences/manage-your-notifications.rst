@@ -4,14 +4,6 @@ Manage your notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |dot-badge| image:: ../images/dot-badge.png
-  :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
-  :width: 50px
-
-.. |numbered-badge| image:: ../images/numbered-badge.png
-  :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
-  :width: 50px
-
 .. toctree::
   :maxdepth: 1
   :hidden:
@@ -24,7 +16,7 @@ Manage your notifications
     Manage your @mention & keyword notifications </preferences/manage-your-mentions-keywords-notifications>
     Manage your channel-specific notifications </preferences/manage-your-channel-specific-notifications>
 
-Mattermost notifies you of new activity. How you're notified depends on what Mattermost client you're using, and the type of Mattermost activity you're being notified about.
+Mattermost notifies you of new activity. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
 
 You're in control
 ------------------
@@ -39,18 +31,18 @@ You are in complete control of how, when, and where you're notified based on how
 - In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
 - On mobile, tap your profile picture, then tap **Settings**, and **Notifications**.
 
-See the table below on `Mattermost notifications <#mattermost-notifications>`__ for details on customizing your notification experience based on your preferred Mattermost client.
+See the `Mattermost notifications <#default-notifications>`__ table below for details on customizing your notification experience based on your preferred Mattermost client.
 
 .. tip::
 
-  - From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
+  From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
 
-Mattermost notifications
+Default notifications
 ------------------------
 
-Mattermost notifies you of new activity, including unread activity, messages, and :doc:`@mentions </preferences/manage-your-mentions-keyword-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching, :doc:`thread replies </preferences/manage-your-thread-reply-notifications>`, and unread activity in :doc:`specific channels </preferences/manage-your-channel-specific-notifications>`. 
+Mattermost notifies you of new activity, including unread activity, :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keyword-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching, :doc:`thread replies </preferences/manage-your-thread-reply-notifications>`, and unread activity in :doc:`specific channels </preferences/manage-your-channel-specific-notifications>`.
 
-The table below lists the types of notifications available in Mattermost. Select the Mattermost clients you use to access Mattermost to learn more about notifications specific to that client.
+The table below lists the types of notifications you can expect to receive in Mattermost. Select your preferred Mattermost clients to learn more about client-specific notifications.
 
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 | **Notification Type** | **Description**                                   | **Client Support**                                                |
@@ -63,15 +55,13 @@ The table below lists the types of notifications available in Mattermost. Select
 |                       | @mention, or a match to a keyword you're watching | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
 | |numbered-badge|      |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Popup banner alerts   | Example screenshots:                              | :doc:`Web </preferences/manage-your-web-notifications>` &         |
+| Banner alerts         | Example screenshot                                | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
-|                       | - web                                             |                                                                   |
-|                       | - desktop                                         |                                                                   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 | Push notifications    | example screenshot                                | :doc:`Mobile </preferences/manage-your-mobile-notifications>`     |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Alert sounds          | example screenshot                                | :doc:`Web </preferences/manage-your-web-notifications>`,          |
-|                       | showing available sounds                          | :doc:`Desktop </preferences/manage-your-desktop-notifications>`,  |
+| Alert sounds          |                                                   | :doc:`Web </preferences/manage-your-web-notifications>`,          |
+|                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`,  |
 |                       |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 
@@ -82,7 +72,7 @@ Mattermost notifications are also sent via email by default for :doc:`@mentions 
 
 .. note::
 
-  Mattermost also supports the ability to group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:enable email batching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
+  Mattermost can group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:enable email batching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
 
 Missing notifications?
 ----------------------

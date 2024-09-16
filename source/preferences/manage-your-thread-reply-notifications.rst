@@ -4,15 +4,49 @@ Manage your thread reply notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+You're :doc:`notified </preferences/manage-your-notifications>` in a :doc:`web browser </preferences/manage-your-web-notifications>` or the :doc:`desktop app </preferences/manage-your-desktop-notifications>`, as well as :doc:`mobile push notifications </preferences/manage-your-mobile-notifications>`, for threads you're following.
 
+.. tip::
 
+  - Mattermost auto-follows you to all direct and group messages, as well as any thread where you've been :doc:`@mentioned </collaborate/mention-people>` directly.
+  - You can choose to :ref:`follow or unfollow any thread <collaborate/organize-conversations:follow threads and messages>` at any time.
 
+You won't receive notifications for new thread replies if they don't @mention you directly. However, blue message indicators show you unread thread replies you're not following in a given public or private channel. 
 
+|blue-message-indicator|
 
-.. tab:: Replies
+For all other messages, a channel appears bolded to indicate unread messages.
 
-  If :doc:`Threaded discussions </collaborate/organize-conversations>` are disabled, you won't be notified in reply threads unless you're @mentioned. However, you can configure Mattermost to notify you when someone replies to a thread you started, or started or have participated in. Select **Reply notifications** to choose the option that works best for you. This setting is hidden when Threaded discussions is enabled.
+|bolded-channel|
 
-  **Automatic replies**
+Customize your notifications
+----------------------------
 
-  Mattermost also supports the ability to automatically send custom replies to direct messages. If your Mattermost admin enables this experimental feature, you can go to **Automatic Direct Message Replies** to select **Enable** this feature and compose your message.
+Follow all threads in channels automatically
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can follow all threads in a channel automatically by going to **Channel Settings > Notification Preferences > Follow all threads in this channel and enable the Automatically follow threads in this channel**.
+
+Get notified when threaded discussions are disabled
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your organization doesn't use threaded discussions, or you have :ref:`opted out of threaded discussions <preferences/manage-your-display-options:threaded-discussions>`, you can configure Mattermost to notify you when someone replies to a thread you started, or have participated in. Go to **Settings > Notifications > Reply notifications** to choose one of 3 options:
+
+- Receive notifications for messages in reply threads that you either start or participate in.
+- Receive notifications on messages, but only in threads that you start.
+- Don't receive notifications on messages in reply threads unless you're directly @mentioned.
+
+Send automatic replies to direct messages
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Want to automatically reply to direct messages when you're out of office? When your system admin :ref:`enables the ability you to do so <configure/experimental-configuration-settings:exp enableauto replies>`, you can configure Mattermost to send custom replies to direct messages by going to **Settings > Notifications > Automatic Direct Message Replies**, selecting **Enable**, and composing your automatic reply message. 
+
+Frequently asked questions
+--------------------------
+
+Are thread notification counts the same across all Mattermost clients?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. Mobile app badge notifications only indicate unread threads with @mentions, and not general unread activity.
+
+Using Mattermost in a web browser or the desktop app, the **Threads** list displays unread threads without @mentions in bold.
