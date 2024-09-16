@@ -113,65 +113,65 @@ c. Grant access to objects contained in the specified schema by running:
 
 8. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database by ensuring host connection types are set to ``trust``.
 
-  .. tab:: Ubuntu
+.. tab:: Ubuntu
 
-    These host connections are specific to Ubuntu 20.04, and will differ depending on the operating system version you're running. For example, in Ubuntu 22.04, the ``peer`` connection types are listed as ``sha-256`` instead.
+  These host connections are specific to Ubuntu 20.04, and will differ depending on the operating system version you're running. For example, in Ubuntu 22.04, the ``peer`` connection types are listed as ``sha-256`` instead.
 
-    **Local Database (same server)**
+  **Local Database (same server)**
 
-    If the Mattermost server and the database are on the same machine:
+  If the Mattermost server and the database are on the same machine:
 
-    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` as *root* in a text editor. 
+  a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` as *root* in a text editor. 
 
-    b.  Find the following lines:
+  b.  Find the following lines:
 
-      ``local   all             all                        peer``
+    ``local   all             all                        peer``
 
-      ``host    all             all         ::1/128        ident``
+    ``host    all             all         ::1/128        ident``
 
-    c. Change ``peer`` and ``ident`` to ``trust``:
+  c. Change ``peer`` and ``ident`` to ``trust``:
 
-      ``local   all             all                        trust``
+    ``local   all             all                        trust``
 
-      ``host    all             all         ::1/128        trust``
+    ``host    all             all         ::1/128        trust``
 
-    **Remote Database (separate server)**
+  **Remote Database (separate server)**
 
-    If the Mattermost server and the database are on different machines:
+  If the Mattermost server and the database are on different machines:
 
-    a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` in a text editor as *root* user.
+  a. Open ``/etc/postgresql/{version}/main/pg_hba.conf`` in a text editor as *root* user.
 
-    b. Add the following line to the end of the file, where ``{mattermost-server-IP}`` is the IP address of the Mattermost server: ``host all all {mattermost-server-IP}/32 md5``.
+  b. Add the following line to the end of the file, where ``{mattermost-server-IP}`` is the IP address of the Mattermost server: ``host all all {mattermost-server-IP}/32 md5``.
 
-  .. tab:: Red Hat
+.. tab:: Red Hat
 
-    These host connections are specific to Red Hat 8, and will differ depending on the operating system version you're running.
+  These host connections are specific to Red Hat 8, and will differ depending on the operating system version you're running.
 
-    **Local Database (same server)**
+  **Local Database (same server)**
 
-    If the Mattermost server and the database are on the same machine:
+  If the Mattermost server and the database are on the same machine:
 
-    a. Open ``/var/lib/pgsql/{version}/data/pg_hba.conf`` as *root* in a text editor. 
+  a. Open ``/var/lib/pgsql/{version}/data/pg_hba.conf`` as *root* in a text editor. 
 
-    b.  Find the following lines:
+  b.  Find the following lines:
 
-      ``local   all             all                        peer``
+    ``local   all             all                        peer``
 
-      ``host    all             all         ::1/128        scram-sha-256``
+    ``host    all             all         ::1/128        scram-sha-256``
 
-    c. Change ``peer`` and ``ident`` to ``trust``:
+  c. Change ``peer`` and ``ident`` to ``trust``:
 
-      ``local   all             all                        trust``
+    ``local   all             all                        trust``
 
-      ``host    all             all         ::1/128        trust``
+    ``host    all             all         ::1/128        trust``
 
-    **Remote Database (separate server)**
+  **Remote Database (separate server)**
 
-    If the Mattermost server and the database are on different machines:
+  If the Mattermost server and the database are on different machines:
 
-    a. Open ```/var/lib/pgsql/{version}/data/pg_hba.conf`` in a text editor as *root* user.
+  a. Open ```/var/lib/pgsql/{version}/data/pg_hba.conf`` in a text editor as *root* user.
 
-    b. Add the following line to the end of the file, where ``{mattermost-server-IP}`` is the IP address of the Mattermost server: ``host all all {mattermost-server-IP}/32 md5``.
+  b. Add the following line to the end of the file, where ``{mattermost-server-IP}`` is the IP address of the Mattermost server: ``host all all {mattermost-server-IP}/32 md5``.
 
 9. Reload PostgreSQL by running:
 
