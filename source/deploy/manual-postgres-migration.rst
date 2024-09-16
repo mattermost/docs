@@ -375,7 +375,7 @@ Use the following configuration for the baseline of the data migration:
    type json to jsonb drop typemod using remove-null-characters
 
   EXCLUDING TABLE NAMES MATCHING ~<IR_>, ~<focalboard>, 'schema_migrations', 'db_migrations', 'db_lock',
-   'Configurations', 'ConfigurationFiles', 'db_config_migrations'
+   'Configurations', 'ConfigurationFiles', 'db_config_migrations', 'calls'
 
   BEFORE LOAD DO
    $$ ALTER SCHEMA public RENAME TO {{ .source_db }}; $$,
@@ -675,13 +675,6 @@ Use the following configuration for the baseline of the data migration:
   pgloader calls.load > calls_migration.log
 
 Troubleshooting
------------------
+---------------
 
-Unsupported authentication for MySQL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
-
-.. code-block:: sql
-
-   ALTER USER '<mysql_user>'@'%' IDENTIFIED WITH mysql_native_password BY '<mysql_password>';
+See :ref:`troubleshooting errors during migration from MySQL to PostgreSQL <deploy/postgres-migration:troubleshooting>`
