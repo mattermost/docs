@@ -971,7 +971,7 @@ Enable AV1 (Experimental)
 
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: Enables the ability to use the AV1 codec to encode screen    | - System Config path: **Plugins > Calls**                                                   |
-|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls. enableAV1``       |
+|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableAV1``        |
 |   clients that support AV1 encoding.                                     | - Environment variable: N/A                                                                 |
 | - **false**: **(Default**) AV1 codec is disabled for screen sharing      |                                                                                             |
 |   tracks.                                                                |                                                                                             |
