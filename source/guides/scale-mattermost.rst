@@ -41,3 +41,4 @@ Scale and monitor your Mattermost deployment.
 * :doc:`Deploy Prometheus and Grafana for performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` - Use Prometheus and Grafana to monitor the health and performance of your Mattermost cluster.
 * :doc:`Performance monitoring metrics </scale/performance-monitoring-metrics>` - The custom and standard Go metrics available for monitoring system performance.
 * :doc:`Mattermost performance alerting guide </scale/performance-alerting>` - Learn strategies and best practices for monitoring your Mattermost cluster.
+* :doc:`Ensuring releases perform at scale </scale/ensuring-releases-perform-at-scale>` - Learn how Mattermost ensures new releases perform at scale.
