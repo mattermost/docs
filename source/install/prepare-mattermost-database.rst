@@ -77,39 +77,39 @@ c. Grant access to objects contained in the specified schema by running:
 
 7. (Optional) If you use separate servers for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. We recommend ensuring that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
-  .. tab:: Ubuntu
+.. tab:: Ubuntu
 
-    Open ``/etc/postgresql/{version}/main/postgresql.conf`` as *root* in a text editor.
-    
-    Replace ``{version}`` with the version of PostgreSQL that's currently running.
+  Open ``/etc/postgresql/{version}/main/postgresql.conf`` as *root* in a text editor.
+  
+  Replace ``{version}`` with the version of PostgreSQL that's currently running.
 
-    a. Find the following line: ``#listen_addresses = 'localhost'``
+  a. Find the following line: ``#listen_addresses = 'localhost'``
 
-    b. Uncomment the line and change ``localhost`` to ``*``: ``listen_addresses = '*'``
+  b. Uncomment the line and change ``localhost`` to ``*``: ``listen_addresses = '*'``
 
-    c. Restart PostgreSQL for the change to take effect by running:
+  c. Restart PostgreSQL for the change to take effect by running:
 
-      .. code-block:: none
-        :class: mm-code-block 
+  .. code-block:: none
+    :class: mm-code-block 
 
-          sudo systemctl restart postgresql-{version}
+      sudo systemctl restart postgresql-{version}
 
-  .. tab:: Red Hat
+.. tab:: Red Hat
 
-    Open ``/var/lib/pgsql/{version}/data/postgresql.conf`` as *root* in a text editor.
+  Open ``/var/lib/pgsql/{version}/data/postgresql.conf`` as *root* in a text editor.
 
-    Replace ``{version}`` with the version of PostgreSQL that's currently running. 
+  Replace ``{version}`` with the version of PostgreSQL that's currently running. 
 
-    a. Find the following line: ``#listen_addresses = 'localhost'``
+  a. Find the following line: ``#listen_addresses = 'localhost'``
 
-    b. Uncomment the line and change ``localhost`` to ``*``: ``listen_addresses = '*'``
+  b. Uncomment the line and change ``localhost`` to ``*``: ``listen_addresses = '*'``
 
-    c. Restart PostgreSQL for the change to take effect by running:
+  c. Restart PostgreSQL for the change to take effect by running:
 
-      .. code-block:: none
-        :class: mm-code-block 
+  .. code-block:: none
+    :class: mm-code-block 
 
-          sudo systemctl restart postgresql-{version}
+      sudo systemctl restart postgresql-{version}
 
 8. Modify the file ``pg_hba.conf`` to allow the Mattermost server to communicate with the database by ensuring host connection types are set to ``trust``.
 
