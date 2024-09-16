@@ -46,27 +46,27 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 5. If you're configuring PostgreSQL v15.x or later:
     
-  a. Grant the user access to the Mattermost database by running:
+a. Grant the user access to the Mattermost database by running:
 
-    .. code-block:: none
-      :class: mm-code-block 
+.. code-block:: none
+  :class: mm-code-block 
 
-        postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
-                  
+    postgres=# GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
+                
 
-  b. Grant the user to change the owner of a database to a user ``mmuser`` by running:
+b. Grant the user to change the owner of a database to a user ``mmuser`` by running:
 
-     .. code-block:: none
-      :class: mm-code-block 
+.. code-block:: none
+  :class: mm-code-block 
 
-        ALTER DATABASE mattermost OWNER TO mmuser;
+    ALTER DATABASE mattermost OWNER TO mmuser;
 
-  c. Grant access to objects contained in the specified schema by running: 
+c. Grant access to objects contained in the specified schema by running: 
 
-    .. code-block:: none
-      :class: mm-code-block 
+.. code-block:: none
+  :class: mm-code-block 
 
-        GRANT USAGE, CREATE ON SCHEMA PUBLIC TO mmuser;
+    GRANT USAGE, CREATE ON SCHEMA PUBLIC TO mmuser;
 
 6. Exit the PostgreSQL interactive terminal by running:
 
