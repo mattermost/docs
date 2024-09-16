@@ -1,5 +1,5 @@
-Mattermost Playbooks for Microsoft Teams (Experimental)
-=======================================================
+Mattermost Playbooks for Microsoft Teams (Technical Preview)
+============================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -19,12 +19,12 @@ With the Mattermost Playbooks for Teams integration, you can:
 Setup
 -----
 
-Update and configure the Playbooks integration for Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. important::
 
-  Mattermost Playbooks for Teams is currently available as an experimental technical preview. To use this integration, you must manually upload the latest experimental version of Mattermost Playbooks to support this new functionality. This integration will be fully supported and pre-packaged with Mattermost server v10.1 (October 2024).
+  Mattermost Playbooks for Teams is currently available as a technical preview. Please reach out to playbooks-for-teams@mattermost.com and connect with our technical experts to help with installation and setup, including getting access to the latest experimental builds of Playbooks required to support this feature.
+
+Update and configure the Playbooks integration for Mattermost
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 A Mattermost system admin must complete the following steps:
 
@@ -33,7 +33,7 @@ A Mattermost system admin must complete the following steps:
 2. Once uploaded, select **Settings** under the Playbooks plugin to **Enable Teams Tab App**, and enter your Teams tenant ID in the **Authorised Tenant IDs for Teams Tab App** field. 
 
 Install the Mattermost Playbooks for Teams application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  
 
 Any Teams user in the associated tenant that was configured for the Playbooks integration must complete the steps below to access playbooks and runs within Teams.
 
@@ -54,15 +54,12 @@ Any Mattermost user who has the :ref:`permissions <repeatable-processes/share-an
 
 Once the Mattermost Playbooks plugin is updated and configured, choose which playbook runs are accessible by users in Microsoft Teams. 
 
-.. tip::
-
-  The **@msteams** bot must be a member of the team to add it to a playbook or run. 
-
 To add the **@msteams** bot as a participant to a playbook run:
 
-1. Find the active run in Mattermost Playbooks (or go to the associated run channel).
-2. Select the **Participants** in the right-hand sidebar.
-3. Add the **@msteams** bot as a new participant.
+1. Ensure the **@msteams** bot is a member of the team to add it to a playbook or run. 
+2. Find the active run in Mattermost Playbooks (or go to the associated run channel).
+3. Select the **Participants** in the right-hand sidebar.
+4. Add the **@msteams** bot as a new participant.
 
 Playbooks and runs that include the **@msteams** bot as a participant are visible to users in Microsoft Teams.
 

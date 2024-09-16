@@ -210,6 +210,11 @@ My Elasticsearch indexes won't complete, what should I do?
 
 If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server, you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, `contact Mattermost Support <https://mattermost.com/support/>`__.
 
+Do I need to purge first then bulk index each time?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes.
+
 Required Permissions For Mattermost Service Account
 ---------------------------------------------------
 In "least privilege" environments you may need to further constrain the service account permissions to limit the access your Elasticsearch service account has. 
