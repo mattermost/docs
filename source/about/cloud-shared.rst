@@ -90,7 +90,12 @@ Mattermost Cloud Dedicated provides access to :doc:`audit and system logs </mana
 Customization
 ~~~~~~~~~~~~~~
 
-Approved plugins developed and/or tested by Mattermost are supported and available in the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. Custom plugins and integrations outside of Mattermost Marketplace aren’t currently supported. See the :ref:`plugins <about/integrations:plugins>` documentation for details on supported plugins in Mattermost Cloud deployments.
+Approved plugins developed and/or tested by Mattermost are supported and available in the `Mattermost Cloud Marketplace <https://mattermost.com/marketplace/>`_, including:
+
+.. include:: ./cloud-supported-integrations.rst
+  :start-after: :nosearch:
+
+Custom plugins and integrations outside of Mattermost Marketplace aren’t currently supported. 
 
 Migrate from a self-hosted instance
 ------------------------------------

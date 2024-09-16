@@ -36,6 +36,24 @@ Site URL
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: max-url-length
+  :displayname: Maximum URL length (Web Server)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.MaximumURLLength
+  :environment: MM_SERVICESETTINGS_MAXIMUMURLLENGTH
+  :description: The longest URL, in characters, including query parameters, accepted by the Mattermost server. Default is 2048 characters.
+
+Maximum URL length
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| The longest URL, in characters, including query parameters,   | - System Config path: N/A                                                |
+| accepted by the Mattermost server. Longer URLs are rejected,  | - ``config.json`` setting: ``.ServiceSettings.MaximumURLLength: 2048",`` |
+| and API calls fail with an error.                             | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMURLLENGTH``          |
+|                                                               |                                                                          |
+| Numeric value. Default is **2048** characters.                |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. config:setting:: web-listenaddress
   :displayname: Web server listen address (Web Server)
   :systemconsole: Environment > Web Server

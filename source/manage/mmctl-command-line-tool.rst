@@ -943,9 +943,6 @@ mmctl channel delete
 
 Permanently delete channels along with all related information including posts from the database.
 
-.. note::
-   Requires the :ref:`Enable API Channel Deletion <configure/experimental-configuration-settings:enable api channel deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the channel using mmctl fails.
-
 **Format**
 
 .. code-block:: sh
@@ -5468,9 +5465,6 @@ mmctl team delete
 
 Permanently delete a team along with all related information including posts from the database.
 
-.. note::
-   Requires the :ref:`Enable API Team Deletion <configure/experimental-configuration-settings:enable api team deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the team using mmctl fails.
-
 **Format**
 
 .. code-block:: sh
@@ -6223,9 +6217,6 @@ mmctl user delete
 **Description**
 
 Permanently delete users along with all related information including posts from the database.
-
-.. note::
-   Requires the :ref:`Enable API User Deletion <configure/experimental-configuration-settings:enable api user deletion>` configuration setting to be enabled. If this configuration setting is disabled, attempting to delete the user using mmctl fails.
 
 **Format**
 
