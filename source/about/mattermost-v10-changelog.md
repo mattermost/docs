@@ -7,6 +7,78 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
+(release-v10.1-feature-release)=
+## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2024-10-16**
+
+### Important Upgrade Notes
+ - 
+
+```{Important}
+If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Added metrics-plugin to the prepackaged plugins.
+Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
+Added channel specific message notification sounds configuration.
+Added status sync support to Shared Channels.
+Moved the Shared Channel related configuration properties out of the Experimental section.
+Added ``DeleteAt`` field for ``SharedChannelRemotes`` and ``RemoteClusters``.
+Added the ``ConnectedWorkspaces.MaxPostsPerSync`` configuration property.
+Added support for sending channel invites to offline remotes in Shared Channels.
+Changed server-side logic to return a 413: Request Entity Too Large HTTP status code for a plugin upload that is too large.
+Direct and Group Message unread/read state over export and import will now be carried over.
+CRT memberships are now importable for import.
+CRT memberships are now exportable for bulk export.
+Added --local mode support in MMCTL to handle user preferences.
+Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console.
+Added new API endpoints to manage shared channels.
+Added an ``api.plugin.upload.file_too_large.app_error`` error ID.
+Improved metrics related to push proxy errors.
+Improved metrics around notifications.
+Added proper response to ``/api/v4/client_perf`` endpoint.
+
+
+#### Administration
+ - 
+
+#### Performance
+ - 
+
+### Bug Fixes
+ - 
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - 
+
+#### Changes to the Enterprise plan:
+ - 
+
+### API Changes
+ - 
+
+### Go Version
+ - v10.1 is built with Go ``v1.22.6``.
+
+### Open Source Components
+ - 
+
+### Known Issues
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - 
+
 (release-v10.0-major-release)=
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
