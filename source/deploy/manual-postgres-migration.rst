@@ -677,4 +677,4 @@ Use the following configuration for the baseline of the data migration:
 Troubleshooting
 ---------------
 
-* :doc:`Troubleshooting errors during migration from MySQL to PostgreSQL </deploy/postgres-migration:troubleshooting>`
+* :ref:`Troubleshooting errors during migration from MySQL to PostgreSQL </deploy/postgres-migration:troubleshooting>`
