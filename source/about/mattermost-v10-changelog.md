@@ -12,9 +12,6 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 **Release day: 2024-10-16**
 
-### Important Upgrade Notes
- - 
-
 ```{Important}
 If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
