@@ -99,6 +99,10 @@ Install and configure the Microsoft Teams integration in Mattermost
 
 See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
 
+.. note::
+
+  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, v2.0 of this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_, and upload it to your server via **System Console > Plugin Management**.
+
 Monitor performance
 --------------------
 

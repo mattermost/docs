@@ -45,11 +45,15 @@ To set your availability, select your profile picture, then specify your availab
 +------------------+-------------------------------------------------------------------------------------------------------------------+
 | **Availability** | **Description**                                                                                                   |
 +==================+===================================================================================================================+
-| |online|         | - Set automatically for you when you're active on Mattermost using a browser, the desktop app, or the mobile app. |
+| |online|         | Online:                                                                                                           |
+|                  |                                                                                                                   |
+|                  | - Set automatically for you when you're active on Mattermost using a browser, the desktop app, or the mobile app. |
 |                  | - When using the desktop app, any mouse or keyboard activity keeps your availabliliy set to **Online**.           |
 |                  | - By default, notifications are sent to the browser, the desktop app, and the mobile app.                         |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
-| |away|           | - Set automatically for you when you've been inactive for more than 5 minutes. System admins can change this      | 
+| |away|           | Away:                                                                                                             |
+|                  |                                                                                                                   |
+|                  | - Set automatically for you when you've been inactive for more than 5 minutes. System admins can change this      | 
 |                  |   value using an experimental configuation setting called                                                         |
 |                  |   :ref:`user status away timeout <configure/experimental-configuration-settings:user status away timeout>`.       |
 |                  |                                                                                                                   |
@@ -59,9 +63,13 @@ To set your availability, select your profile picture, then specify your availab
 |                  | - You can manually set yourself as **Away** any time.                                                             |
 |                  | - By default, notifications are sent to your Mattermost mobile app.                                               |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
-| |dnd|            | - Set your availability as **Do Not Disturb** any time you don't want notifications for a period of time.         |
+| |dnd|            | Do Not Disturb:                                                                                                   |
+|                  |                                                                                                                   |
+|                  | - Set your availability as **Do Not Disturb** any time you don't want notifications for a period of time.         |
 +------------------+-------------------------------------------------------------------------------------------------------------------+
-| |offline|        | - Set automatically for you when you exit the Mattermost desktop app or close the browser window, sleep or        |
+| |offline|        | Offline:                                                                                                          |
+|                  |                                                                                                                   |
+|                  | - Set automatically for you when you exit the Mattermost desktop app or close the browser window, sleep or        |
 |                  |   lock your computer, or on mobile when you change apps, close the Mattermost mobile app, or lock your            |
 |                  |   mobile device screen.                                                                                           |
 |                  | - You can manually set yourself as **Offline** any time.                                                          |

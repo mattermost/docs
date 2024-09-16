@@ -15,25 +15,26 @@ You must be a Mattermost system admin to `upload the plugin <#upload>`__ to your
 
 The User Survey integration is compatible with the following Mattermost Server versions:
 
+  - v9.11.2 (Extended Support Release)
   - v9.8 or later
   - v9.5.2+ (Extended Support Release)
   - v8.1 (Extended Support Release)
 
-Upload
-------
+Install
+--------
 
-The User Survey integration must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_
+.. important::
 
-1. Download the binary file from the GitHub repository.
-2. Go to **System Console > Plugin Management**.
-3. Next to **Upload Plugin**, select **Choose File**.
-4. Select the binary file, select **Open**, and then select **Upload**.
+  Mattermost offers an additonal :doc:`User Satisfaction Surveys </manage/user-satisfaction-surveys>` option with limited customization options within the **Plugins** list where surveys are enabled by default. We recommend :ref:`disabling the User Satisfaction Surveys functionality <manage/user-satisfaction-surveys:how can surveys be disabled?>` when using this user survey integration.
 
-Once the binary is uploaded, the **User Survey** integration is added in the navigation pane under **Plugins**.
+1. Log in to your Mattermost workspace as a system administrator.
+2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
+3. Search for or scroll to User Survey, and select **Install**.
+4. Once installed, select **Configure**. You're taken to the System Console, directly to the **User Survey** integration page, under **Plugins**.
 
 .. note::
 
-  Mattermost offers an additonal :doc:`User Satisfaction Surveys </manage/user-satisfaction-surveys>` option with limited customization options within the **Plugins** list where surveys are enabled by default. We recommend :ref:`disabling the User Satisfaction Surveys functionality <manage/user-satisfaction-surveys:how can surveys be disabled?>` when using this user survey integration.
+  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_, and upload it to your server via **System Console > Plugin Management**.
 
 Upgrade
 ~~~~~~~
@@ -50,7 +51,7 @@ Go to **System Console > Plugins > User Survey** to enable this integration.
 Once the integration is installed and enabled, create surveys by completing configuration in the System Console, as described below.
 
 Create surveys
---------------
+~~~~~~~~~~~~~~~
 
 Under **Survey setup**, specify the date, time, and details for a new survey:
 
