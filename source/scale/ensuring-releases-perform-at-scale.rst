@@ -10,7 +10,7 @@ Each month, before being approved for distribution, a release candidate of Matte
 
 Multiple tests covering different configurations are run against highly-available deployments of Mattermost with thousands of users and millions of posts. Both PostgreSQL and MySQL are tested, although MySQL tests will be dropped when :ref:`MySQL goes out of support with Mattermost v11 <about/deprecated-features:mattermost server v10.0.0>`.
 
-The load tests generate a report detailing average API request times, database I/O, memory usage, concurrency, requests per second, and more. This performance report on the release candidate is then compared to the previous month's report. Any deviations are investigated and remedied before the release candidate is promoted to the final release.
+The load tests generate a report detailing average API request times, database I/O, memory usage, concurrency, requests per second, and more. This performance report on the release candidate is then compared to the report of the latest previous stable version. Any deviations are investigated and remedied before the release candidate is promoted to the final release.
 
 Each report, along with analysis, is posted into the public `Developers: Performance <https://community.mattermost.com/core/channels/developers-performance>`__ channel.
 
