@@ -16,6 +16,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
 ### Improvements
+ - Added a configuration setting ``NativeAppSettings > MobileExternalBrowser`` that tells the Mobile app to perform SSO Authentication using the external default browser.
  - Removed unneeded permissions on Android.
  - Improved metrics around notifications.
 
