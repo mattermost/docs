@@ -19,7 +19,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Added metrics-plugin to the prepackaged plugins.
+ - Added Metrics plugin to the prepackaged plugins, [v0.5.1](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.1).
  - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
  - Added channel specific message notification sounds configuration.
 
@@ -30,7 +30,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
  - Direct and Group Message unread/read state over export and import will now be carried over.
  - CRT memberships are now importable for import.
  - CRT memberships are now exportable for bulk export.
- - Added --local mode support in MMCTL to handle user preferences.
+ - Added ``--local mode`` support in MMCTL to handle user preferences.
  - Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console.
 
 #### Performance
