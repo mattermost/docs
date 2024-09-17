@@ -20,6 +20,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 
 #### User Interface (UI)
  - Added Metrics plugin to the prepackaged plugins, [v0.5.1](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.1).
+ - Enabled Channel Bookmarks, added re-ordering, and fixed URL validity checking.
  - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
  - Added channel specific message notification sounds configuration.
 
