@@ -21,6 +21,7 @@ Scale Mattermost
     Deploy Prometheus and Grafana for performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>
     Performance monitoring metrics </scale/performance-monitoring-metrics>
     Mattermost performance alerting guide </scale/performance-alerting>
+    Ensuring releases perform at scale </scale/ensuring-releases-perform-at-scale>
 
 Scale and monitor your Mattermost deployment.
 

@@ -1,10 +1,10 @@
 Ensuring Releases Perform at Scale
-======================
+==================================
 
 To ensure each release of Mattermost upholds our high standards for performance at scale, the Mattermost Engineering team performs thorough load testing, develops features with scale in mind, and follows strict guidelines for database schema migrations.
 
 Monthly release load tests
----------------------------------
+--------------------------
 
 Each month, before being approved for distribution, a release candidate of Mattermost is load tested via a comprehensive and mature set of `load test tooling <https://github.com/mattermost/mattermost-load-test-ng>`__ using simulated data that matches real-world, high-scale usage patterns.
 
@@ -16,7 +16,7 @@ Each report, along with analysis, is posted into the public `Developers: Perform
 
 
 Developing scalable features and systems
---------------------------------
+----------------------------------------
 
 Scale is a major consideration during the development of new features and systems, and it's included in technical specifications from the beginning of the software design process.
 
@@ -28,7 +28,7 @@ Once merged, a new build is created and deployed the next day to the `Mattermost
 
 
 Database schema changes
------------------------------
+-----------------------
 
 Database schema changes are kept to a minimum to reduce risk on upgrades and impact on performance. When a change in schema is required, Mattermost follows `strict migration guidelines <https://developers.mattermost.com/contribute/more-info/server/schema-migration-guide/>`__ that minimize risk and prevents performance impact during and after migrations.
 
@@ -38,7 +38,7 @@ Additionally, all database schema changes are load tested as a part of our month
 
 
 Monitoring post-release
------------------------------
+-----------------------
 
 After a new version of Mattermost is released, it is rolled out to Mattermost Cloud customers over a multi-week period. During roll out, performance and error rate metrics are monitored for any unexpected changes. If any user-impacting changes are observed, the release is reverted and the deviations are investigated with any fixes being delivered as a part of patch release.
 
