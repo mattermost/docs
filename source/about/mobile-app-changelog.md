@@ -24,9 +24,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue with handling of malformed Markdown tables.
  - Fixed an issue where Calls buttons and actions were not hidden if the plugin was not enabled.
 
-### Open Source Components
- - 
-
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
