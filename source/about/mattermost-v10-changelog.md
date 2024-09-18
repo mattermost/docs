@@ -70,9 +70,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ### Go Version
  - v10.1 is built with Go ``v1.22.6``.
 
-### Open Source Components
- - 
-
 ### Known Issues
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
