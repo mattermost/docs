@@ -44,7 +44,7 @@ Once a channel is muted:
 Ignore channel-wide @mentions
 ------------------------------
 
-By default, you're notified every time someone on your team uses channel-wide @mentions, including @channel, @all, or @here.
+By default, you're notified every time someone uses channel-wide :doc:`@mentions </collaborate/mention-people>` including :ref:`@channel and @all <collaborate/mention-people:@channel and @all>`, as well as :ref:`@here <collaborate/mention-people:@here>`.
 
 When you choose to ignore channel-wide @mentions in channels, the channel name is bolded in the channel sidebar for new unreads unless it's muted.
 

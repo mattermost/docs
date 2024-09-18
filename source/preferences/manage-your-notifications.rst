@@ -4,6 +4,13 @@ Manage your notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. |dot-badge| image:: ../images/dot-badge.png
+    :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
+    :width: 50px
+.. |numbered-badge| image:: ../images/numbered-badge.png
+    :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
+    :width: 50px
+
 .. toctree::
   :maxdepth: 1
   :hidden:
@@ -21,7 +28,7 @@ Mattermost notifies you of new activity. How you're notified depends on what Mat
 You're in control
 ------------------
 
-By default Mattermost alerts you about all Mattermost activity all of the time.
+By default, Mattermost alerts you about all Mattermost activity all of the time.
 
 .. include:: ../_static/badges/academy-notifications.rst
   :start-after: :nosearch:
@@ -29,38 +36,39 @@ By default Mattermost alerts you about all Mattermost activity all of the time.
 You are in complete control of how, when, and where you're notified based on how you prefer to work and collaborate. To access notification preferences:
 
 - In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
-- On mobile, tap your profile picture, then tap **Settings**, and **Notifications**.
+- On mobile, tap your profile picture, then tap **Settings > Notifications**.
 
-See the `Mattermost notifications <#default-notifications>`__ table below for details on customizing your notification experience based on your preferred Mattermost client.
+See the `Default notifications <#default-notifications>`__ table below for details on customizing your notification experience based on your preferred Mattermost client.
 
 .. tip::
 
-  From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Settings > Notifications**. If you're using an older Mattermost release, you'll find these settings split out as desktop settings and mobile settings instead.
+  From Mattermost v9.8, your desktop and mobile notification preferences have been combined together under **Notifications**. If you're using an older Mattermost release and older Mattermost clients, you'll find separate preferences for desktop and mobile.
 
 Default notifications
 ------------------------
 
-Mattermost notifies you of new activity, including unread activity, :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keyword-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching, :doc:`thread replies </preferences/manage-your-thread-reply-notifications>`, and unread activity in :doc:`specific channels </preferences/manage-your-channel-specific-notifications>`.
+Mattermost notifies you of new activity, including unread activity, :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching, :doc:`thread replies </preferences/manage-your-thread-reply-notifications>`, and unread activity in :doc:`specific channels </preferences/manage-your-channel-specific-notifications>`.
 
-The table below lists the types of notifications you can expect to receive in Mattermost. Select your preferred Mattermost clients to learn more about client-specific notifications.
+The table below lists the types of notifications you can expect to see and hear in Mattermost. Select your preferred Mattermost clients to learn more about notifications for that client.
 
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| **Notification Type** | **Description**                                   | **Client Support**                                                |
+| **Notification Type** | **What it Means**                                 | **Which Mattermost Clients?**                                     |
 +=======================+===================================================+===================================================================+
-| Icon badge (dot)      | You have unread activity in at least              | :doc:`Web </preferences/manage-your-web-notifications>`,          |
-|                       | one channel you're a member of                    | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
+| Icon badge (dot)      | You have unread activity in at least 1 channel    | :doc:`Web </preferences/manage-your-web-notifications>`,          |
+|                       | you're a member of                                | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
 | |dot-badge|           |                                                   |                                                                   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 | Icon badge (number)   | You have at least one unread message,             | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       | @mention, or a match to a keyword you're watching | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
 | |numbered-badge|      |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Banner alerts         | Example screenshot                                | :doc:`Web </preferences/manage-your-web-notifications>` &         |
+| Banner alerts         | You have unread activity in Mattermost            | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Push notifications    | example screenshot                                | :doc:`Mobile </preferences/manage-your-mobile-notifications>`     |
+| Push notifications    | You have at least one unread message,             | :doc:`Mobile </preferences/manage-your-mobile-notifications>`     |
+|                       | @mention, or a match to a keyword you're watching |                                                                   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Alert sounds          |                                                   | :doc:`Web </preferences/manage-your-web-notifications>`,          |
+| Alert sounds          | You have unread activity in Mattermost            | :doc:`Web </preferences/manage-your-web-notifications>`,          |
 |                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`,  |
 |                       |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
@@ -68,7 +76,9 @@ The table below lists the types of notifications you can expect to receive in Ma
 Email notifications
 ~~~~~~~~~~~~~~~~~~~~
 
-Mattermost notifications are also sent via email by default for :doc:`@mentions </collaborate/mention-people>` and :ref:`direct messages <collaborate/channel-types:direct messages>` when you are :ref:`offline or away <preferences/set-your-status-availability:set your availability>` from Mattermost for more than 5 minutes. You can disable email notifications by going to **Settings > Notifications > Email notifications** and changing **Immediately** to **Never**.
+By default, Mattermost notifications are sent to you via email for :doc:`@mentions </collaborate/mention-people>` and :ref:`direct messages <collaborate/channel-types:direct messages>` when you are :ref:`offline or away <preferences/set-your-status-availability:set your availability>` from Mattermost for more than 5 minutes. 
+
+You can disable email notifications by going to **Settings > Notifications > Email notifications** and changing **Immediately** to **Never**.
 
 .. note::
 

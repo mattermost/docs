@@ -3848,16 +3848,6 @@ rst_prolog = """
     :alt: Do Not Disturb availability status icon in Mattermost.
 .. |offline| image:: /images/offline.png
     :alt: Offline availability status icon in Mattermost.
-.. |dot-badge| image:: ../images/dot-badge.png
-    :alt: A dot on the badge means you have unread activity in at least one channel you're a member of.
-    :width: 50px
-.. |numbered-badge| image:: ../images/numbered-badge.png
-    :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
-    :width: 50px
-.. |chrome-mention-badge| image:: ../images/chrome-mention-badge.png
-    :alt: TBD
-.. |chrome-activity-badge| image:: ../images/chrome-activity-badge.png
-    :alt: TBD
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2

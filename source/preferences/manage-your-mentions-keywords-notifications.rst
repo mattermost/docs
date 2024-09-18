@@ -4,17 +4,25 @@ Manage your @mention and keyword notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-By default, you’re notified when you’re @mentioned in a message or a thread by your username or first name, or when a thread you’re following has a new response. You're also notified when someone uses channel-wide :doc:`mentions </collaborate/mention-people>` including :ref:`@channel and @all <collaborate/mention-people:channel and all>`, as well as :ref:`@here <collaborate/mention-people:here>`.
+You're :doc:`notified </preferences/manage-your-notifications>` in a :doc:`web browser </preferences/manage-your-web-notifications>`, the :doc:`desktop app </preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </preferences/manage-your-mobile-notifications>`, when you're @mentioned by your username or first name, and for keywords you're following.
 
-For all other messages, a channel appears bolded to indicate unread messages.
+You're also notified when someone uses channel-wide :doc:`@mentions </collaborate/mention-people>` including :ref:`@channel and @all <collaborate/mention-people:@channel and @all>`, as well as :ref:`@here <collaborate/mention-people:@here>`.
+
+For all other messages, channels appear bolded to indicate unread activity.
 
 Customize notification keywords
 --------------------------------
 
-Using a web browser or the desktop app, you can customize keywords to trigger notifications. For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer. Keywords aren't case-sensitive. Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
+Using a web browser or the desktop app, you can customize keywords to trigger notifications. Keywords aren't case-sensitive.
+
+For example, you can receive notifications for all messages and threads related to a specific topic, project name, or customer.
 
 .. image:: ../images/keywords-trigger-mentions.gif
   :alt: A walkthrough of setting keywords that trigger mentions in Mattermost.
+
+.. tip::
+
+  Separate multiple keywords using commas or by pressing :kbd:`Tab`, and use :kbd:`Backspace` to manage keywords.
 
 Passively track keywords (no notification)
 ------------------------------------------
@@ -22,7 +30,7 @@ Passively track keywords (no notification)
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
         
-From Mattermost v9.3, Mattermost Enterprise and Professional customers interested calling attention to specific topics of interest across channels, at a glance, can do so without triggering notifications in a Mattermost client.
+From Mattermost v9.3, Mattermost Enterprise and Professional customers interested calling attention to specific topics of interest across channels can do so without sending notifications to a Mattermost client.
         
 Using a web browser or the desktop app, you can passively track key terms by specifying single or multiple words to be highlighted in all channels you're a member of. Keywords and phrases are automatically highlighted using a color based on your :doc:`Mattermost theme </preferences/customize-your-theme>`.
 
