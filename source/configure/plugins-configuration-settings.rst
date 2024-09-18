@@ -944,7 +944,7 @@ Enable call ringing
 .. config:setting:: plugins-enablecallringing
   :displayname: Enable call ringing (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls. enableringing
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableringing
   :environment: N/A
 
   - **true**: Ringing functionality is enabled. Direct and group message participants receive a desktop app alert and a ringing notification when a call starts.
@@ -955,6 +955,29 @@ Enable call ringing
 |   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls. enableringing``   |
 |   when a call starts.                                                    | - Environment variable: N/A                                                                 |
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                             |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+Enable AV1 (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. config:setting:: plugins-enableav1
+  :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableAV1
+  :environment: N/A
+
+  - **true**: Enables the ability to use the AV1 codec to encode screen sharing tracks. This can result in improved screen sharing quality for clients that support it.
+  - **false**: **(False)** AV1 codec is disabled for screen sharing tracks.
+
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **true**: Enables the ability to use the AV1 codec to encode screen    | - System Config path: **Plugins > Calls**                                                   |
+|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableAV1``        |
+|   clients that support AV1 encoding.                                     | - Environment variable: N/A                                                                 |
+| - **false**: **(Default**) AV1 codec is disabled for screen sharing      |                                                                                             |
+|   tracks.                                                                |                                                                                             |
++--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| **Note**:  This setting is ignored when                                                                                                                                |
+| :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.                          |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
 ----

@@ -262,9 +262,12 @@ Bulk indexing
 | posts in the database, from oldest to newest.                 | - ``config.json`` setting: N/A                                           |
 |                                                               | - Environment variable: N/A                                              |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.         |
-| Elasticsearch is available during indexing but search results may be incomplete until the indexing job is complete.                      |
-| If an in-progress indexing job is canceled, the index and search results will be incomplete.                                             |
+| **Notes**:                                                                                                                               |
+|                                                                                                                                          |
+| - Always `purge indexes <#purge-indexes>`__ before bulk indexing.                                                                        |
+| - Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.       |
+| - Elasticsearch is available during indexing, but search results may be incomplete until the indexing job is complete.                   |
+| - If an in-progress indexing job is canceled, the index and search results will be incomplete.                                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: elastic-rebuildchannelsindex
@@ -292,7 +295,7 @@ Rebuild channels index
   :systemconsole: Environment > Elasticsearch
   :configjson: N/A
   :environment: N/A
-  :description: Purge the entire Elasticsearch index by selecting Purge Indexes.
+  :description: Purge the entire Elasticsearch index by selecting Purge Indexes before creating a new index.
 
 Purge indexes
 ~~~~~~~~~~~~~
@@ -301,14 +304,14 @@ Purge indexes
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Purge the entire Elasticsearch index.                         | - System Config path: **Environment > Elasticsearch**       |
-| Typically only used if the index has corrupted and search     | - ``config.json`` setting: N/A                              |
-| isn't behaving as expected.                                   | - Environment variable: N/A                                 |
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Select the **Purge Indexes** button in the System Console to purge the index.                                               |
-| After purging the index, create a new index by selecting the **Index Now** button.                                          |
-+---------------------------------------------------------------+-------------------------------------------------------------+
++-------------------------------------------+-------------------------------------------------------------+
+| Purge the entire Elasticsearch index.     | - System Config path: **Environment > Elasticsearch**       |
+|                                           | - ``config.json`` setting: N/A                              |
+|                                           | - Environment variable: N/A                                 |
++-------------------------------------------+-------------------------------------------------------------+
+| Select the **Purge Indexes** button in the System Console to purge the index.                           |
+| After purging the index, create a new index by selecting the **Index Now** button.                      |
++-------------------------------------------+-------------------------------------------------------------+
 
 .. config:setting:: elastic-indexestoskipwhilepurging
   :displayname: Indexes to skip while purging (Elasticsearch)
@@ -413,8 +416,13 @@ Post index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
-| existing indexes, purge and rebuild the index after changing this setting.                                                                    |
+| **Important notes**:                                                                                                                          |
+|                                                                                                                                               |
+| - If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to existing indexes,       |
+|   purge and rebuild the index after changing this setting.                                                                                    |
+| - If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``.                                           |
+| - If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as                                          |
+|   `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.   |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-postindexshards
@@ -436,9 +444,10 @@ Post index shards
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to       |
-| existing indexes, purge and rebuild the index after changing this setting.                                                                    |
+| **Important note**: If this configuration setting is changed, the changed configuration only applies to newly-created indexes.                |
+| To apply the change to existing indexes, purge and rebuild the index after changing this setting.                                             |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
 
 .. config:setting:: elastic-channelindexreplicas
   :displayname: Channel index replicas (Elasticsearch)
@@ -458,6 +467,10 @@ Channel index replicas
 | The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
++---------------------------------------------------------------+----------------------------------------------------------------------------------+
+| **Note**: If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an         |
+| Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and                           |
+| `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.                                                                 |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-channelindexshards
@@ -498,6 +511,10 @@ User index replicas
 | The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
++---------------------------------------------------------------+-------------------------------------------------------------------------------+
+| **Note**: If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an      |
+| Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-replicas>`__ and                      |
+| `Channel Index Replicas <#channel-index-replicas>`__ must also be updated accordingly.                                                        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: elastic-userindexshards
