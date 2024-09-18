@@ -48,9 +48,26 @@ By default, you're notified every time someone uses channel-wide :doc:`@mentions
 
 When you choose to ignore channel-wide @mentions in channels, the channel name is bolded in the channel sidebar for new unreads unless it's muted.
 
-Auto-follow all new channel threads
-------------------------------------
+Follow all new channel threads
+-------------------------------
 
-By default, you don’t automatically follow new conversation threads unless you start a thread or reply to a thread, follow a thread, or are @mentioned in a thread.
+By default, you don’t automatically follow new conversation threads in any channel unless you start a thread or reply to a thread, follow a thread, or are @mentioned in a thread.
 
-You can configure Mattermost to automatically follow every thread in a channel. When enabled, you can access all threads in the **Threads** view, and unfollow individual threads as you prefer.
+You can configure Mattermost to automatically follow every thread in a channel.
+
+.. tab:: Web/Desktop
+
+  1. Select the channel name to access more channel options.
+  2. Select **Notification Preferences**.
+  3. Under **Follow all threads in this channel**, select **Automatically follow threads in this channel**.
+  4. Select **Save**.
+
+  Select **Threads** in the channel sidebar to access all threads you're following, and to unfollow threads you no longer want to follow.
+
+.. tab:: Mobile
+
+  1. In a channel, tap the **More** icon |more-icon| to the right of the channel name.
+  2. Tap **View info**.
+  3. Tap **Follow all threads**.
+
+  Tap **Threads** in the channel list to access all threads you're following, and to unfollow threads you no longer want to follow.

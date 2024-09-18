@@ -80,3 +80,13 @@ Why am I prompted repeatedly enable notifications I don't want?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost will continue to prompt you to enable notifications in the desktop app until you respond to the prompt. If you want to disable all Mattermost notifications, select **Enable notifications** when prompted, and then `disable all Mattermost desktop notifications <#disable-all-desktop-notifications>`__.
+
+What does a Mattermost icon with an exclamation point mean?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/server-logout-indicator.png
+  :alt: A Mattermost logo with an exclamation point means you're logged out of at least 1 Mattermost server you connect to using the desktop app.
+
+A Mattermost icon with an exclamation point means that you're logged out of at least 1 Mattermost server you connect to using the desktop app. Log back in to any servers as needed. See the :doc:`Connect to multiple workspaces </preferences/connect-multiple-workspaces>` documentation for details.
+
+If the icon continues to display, refresh the **Playbooks** and/or **Boards** tabs located at the top of the desktop app window.

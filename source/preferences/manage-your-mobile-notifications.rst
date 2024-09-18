@@ -73,3 +73,19 @@ Disable all mobile notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To disable all Mattermost mobile notifications, tap **Push Notifications > Nothing**.
+
+Frequently asked questions
+--------------------------
+
+Are mobile notification counts the same as other Mattermost clients?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. You're only notified of unread threads with @mentions on your mobile device. You're not notified of general unread activity on mobile.
+
+What does a Mattermost icon with an exclamation point mean?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. image:: ../images/server-logout-indicator.png
+  :alt: A Mattermost logo with an exclamation point means you're logged out of at least 1 Mattermost server you connect to using the mobile app.
+
+A Mattermost icon with an exclamation point means that you're logged out of at least 1 Mattermost server you connect to using the mobile app. Log back in to any servers as needed. See the :doc:`Connect to multiple workspaces </preferences/connect-multiple-workspaces>` documentation for details.
