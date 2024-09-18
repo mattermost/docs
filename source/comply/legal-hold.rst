@@ -15,7 +15,7 @@ Primary use cases include:
 
 Mattermost is used as a secure collaboration hub by technical and operational teams, with critical documents and data shared on a daily basis. Thus, legal hold is a key requirement for Enterprises and public sector organizations who have deployed Mattermost for their teams, to meet compliance & auditory requirements while minimizing risk.
 
-Mattermost legal hold can be combined with :doc:`eDiscovery </comply/electronic-discovery>` integration and :doc;`data retention policies <comply/data-retention-policy>` to customize the data retained and deleted to comply with compliance requirements.
+Mattermost legal hold can be combined with :doc:`eDiscovery </comply/electronic-discovery>` integration and :doc:`data retention policies </comply/data-retention-policy>` to customize the data retained and deleted to comply with compliance requirements.
 
 Legal hold demo (Sneak Peek)
 ----------------------------
@@ -26,7 +26,7 @@ Check out this `YouTube sneak peek demo <https://youtu.be/86c8NoOxlQw>`_ to lear
   
    <iframe width="560" height="315" src="https://www.youtube.com/embed/86c8NoOxlQw" alt="Mattermost legal hold workflow" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
-Below are step-by-step instructions on how to carry out a legal hold for Mattermost with XML-formatted data, Amazon S3 file storage, and archiving and compliance tools, such as `Smarsh <https://www.smarsh.com/>`_.
+Below are step-by-step instructions on how to carry out a legal hold for Mattermost using the Mattermost Legal Hold plugin.
 
 How to carry out a legal hold
 -----------------------------
@@ -50,70 +50,30 @@ Install the plugin
 ^^^^^^^^^^^^^^^^^^
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of the `plugin binary release <https://github.com/mattermost/mattermost-plugin-legal-hold/releases/>`_, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server.html>` to upgrade to Mattermost v8.0.1 or later.
+2. Download the latest version of the `plugin binary release <https://github.com/mattermost/mattermost-plugin-legal-hold/releases/>`_, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
 3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 4. In the **Installed Plugins** section, scroll to **Legal Hold Plugin**, and select **Enable**.
 
 Configure the plugin
 ^^^^^^^^^^^^^^^^^^^^^
 
-enable to configure the plugin
-
-specify the time of day to run the legal hold task Time of day to run the Legal Hold task, in the form 'HH:MM ±HHMM' (e.g. '3:00am -0700').  Use +0000 for UTC.
-
-file storage
-Only Amazon S3 is supported for Mattermost legal holds at this time, for increased reliability, compliance, and automation capabilities. Support for additional file storage options such as MinIO or local file storage are under consideration.
-
-You can use existing :ref:`Amazon S3 file storage <configure/environment-configuration-settings:amazon s3 bucket>` for legal holds, where access keys are supported when using IAM roles. Alternatively, you can specify a :ref:`custom S3 Bucket <configure/plugins-configuration-settings:legal hold>` for legal holds as part of the plugin's configuration.
-
-Learn more about file storage configuration options in our :ref:`product documentation <configure/environment-configuration-settings:file storage>`.
+When the Legal Hold integration is enabled, you can configure when it runs in the format ``HH:MM ±HHMM`` and ``+0000`` for UTC, and can optionally configure a custom Amazon S3 bucket for legal holds by specifying Amazon S3 configuration settings. Alternatively, you can use existing :ref:`Amazon S3 file storage <configure/environment-configuration-settings:amazon s3 bucket>` for legal holds, where access keys are supported when using IAM roles.
 
 .. note::
 
-  You may also optionally use our API to preserve data for legal hold. See our :ref:`electronic discovery <comply/electronic-discovery:mattermost restful api>` product documentation to learn more.
-
-[REMOVE? TBD] 2 - Enable compliance exports
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Enable compliance exports containing all messages and file uploads in an XML format to your AWS S3 file storage.
-
-The exports include information on channel member history at the time the message was posted, which is critical information for some legal hold use cases. Entries for deleted messages and files are also included.
-
-1. In Mattermost, go to **System Console > Compliance > Compliance Export**.
-2. Set **Enable Compliance Exports** to **true**.
-3. Set the **Compliance Export time**. Choose a time when fewer people are using your system, such as 2:00AM your local time.
-4. Set the export file format to **Actiance XML**.
-5. Learn more about compliance export configuration options in our :doc:`product documentation </comply/compliance-export>`.
-
-.. note::
-
-    - For legal hold, only XML format is supported at this time.
-    - Support for additional file formats, such as CSV or EML, are under consideration.
-
-[RFEMOVE? TBD] 3 - Leverage compliance API in your DLP tool of choice
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Connect it directly to the Amazon S3 bucket where compliance exports are stored. Our recommended DLP tool of choice is `Smarsh <https://www.smarsh.com/>`_. Learn more about their legal hold & e-discovery processes in their `documentation <https://www.smarsh.com/platform/enterprise/discovery>`_.
-
-You may optionally also use other tools that connect with Amazon S3, such as Active360, AwareHQ, Onna, or Trellix, though our team will be able to provide limited support using these tools.
+  Only Amazon S3 is supported for Mattermost legal holds at this time, for increased reliability, compliance, and automation capabilities. Support for additional file storage options such as MinIO or local file storage are under consideration. Learn more about file storage configuration options in our :ref:`product documentation <configure/environment-configuration-settings:file storage>`.
 
 (Optional) Configure a data retention policy
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-[suggest making this a recommended step & explain the value of doing so]
-Configuring a data retention policy is typically implemented alongside legal hold, though it's not required.
+You can optionally configure a :doc:`data retention policy </comply/data-retention-policy>` for the legal hold data you want to retain and delete to align with compliance requirements.
 
-1. In Mattermost, go to **System Console > Compliance > Data Retention Policies**.
-2. Set either a **Global retention policy** that applies to all messages and files older in your system, or a **custom retention policy** for specific teams or channels. Learn more about data retention configuration options in our :doc:`product documentation </comply/data-retention-policy>`.
-
-Step 5: Create a legal hold
+Step 4: Create a legal hold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Use the built-in functionality in Smarsh to specify one or more custodians for legal hold, and the number of days the custodian(s) are placed on legal hold. 
 
 In Mattermost, create a legal hold by completing the following steps:
 
-1. Go to **System Console > Plugins > Legal Hold**, and select **Create new**.
+1. Go to **System Console > Plugins > Legal Hold Plugin**, and select **Create new**.
 2. Enter a name for the legal hold.
 3. Specify the custodian user names of individuals or user groups that you want to place on legal hold.
 4. (Optional) You can choose to exclude public channels, if preferred.
@@ -122,11 +82,13 @@ In Mattermost, create a legal hold by completing the following steps:
 
 While the legal hold is in place, you can edit it by adding or removing custodians, as well as download a copy of the preserved data to your local machine.
 
-Step 6: Release a legal hold
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. image:: ../images/legal-holds.png
+  :alt: An example of the Legal Hold management interface available to Mattermost system admins.
 
-Once the legal hold has completed, release it via the System Console by selecting **Release**. This action will take custodians off of the legal hold.
+Step 5: Release a legal hold
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Once the legal hold has completed, you can release it to take custodians off of the legal hold by selecting the **Release** option to the right of the legal hold task.
 
 Frequently asked questions
 ---------------------------
@@ -134,12 +96,12 @@ Frequently asked questions
 Who can implement legal hold?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only Mattermost system administrators can implement a legal hold.
+Only Mattermost system admins can implement a legal hold.
 
 Does a user know if they're placed under a legal hold in Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, users will not be notified if they're placed under a legal hold. This allows for investigations to be conducted without influencing user behavior and without conflicts of interest.
+No, users won't be notified if they're placed under a legal hold. This allows for investigations to be conducted without influencing user behavior and without conflicts of interest.
 
 What types of content does legal hold cover?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
