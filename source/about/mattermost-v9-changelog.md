@@ -14,7 +14,8 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
   - Mattermost v9.11.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
   - Fixed an issue where the **Edit Post Time Limit** button was not being displayed in the System Console ([MM-58529](https://mattermost.atlassian.net/browse/MM-58529), [MM-58824](https://mattermost.atlassian.net/browse/MM-58824)).
-  - Mattermost v9.11.2 contains no database or functional changes.
+  - Mattermost v9.11.2 contains the following functional change:
+      - Added a configuration setting **NativeAppSettings > MobileExternalBrowser** that tells the Mobile app to perform SSO Authentication using the external default browser.
 - **9.11.1, released 2024-08-27**
   - Mattermost v9.11.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.11.1 contains no database or functional changes.
