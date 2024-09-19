@@ -33,7 +33,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
  - CRT memberships are now importable for import.
  - CRT memberships are now exportable for bulk export.
  - Added ``--local mode`` support in MMCTL to handle user preferences.
- - Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console.
+ - Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console and the Support Packet.
 
 #### Performance
  - Improved metrics related to push proxy errors.
