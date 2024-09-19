@@ -22,7 +22,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue with handling of malformed Markdown tables.
- - Fixed an issue where Calls buttons and actions were not hidden if the plugin was not enabled.
+ - Fixed an issue where Calls buttons and actions were not hidden if the plugin was disabled.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
