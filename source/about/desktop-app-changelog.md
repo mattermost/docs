@@ -8,7 +8,14 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
 
-**Release Date: 2024-08-16**
+- **v5.9.1, released **
+
+  - Fixed a crash in Linux when trying to create a thumbnail from an image [MM-60232](https://mattermost.atlassian.net/browse/MM-60232).
+  - Fixed the **Download** button being hidden on Windows/Linux [MM-60605](https://mattermost.atlassian.net/browse/MM-60605).
+
+- **v5.9.0, released 2024-08-16**
+
+  - Original v5.9.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
