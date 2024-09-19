@@ -65,7 +65,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### API Changes
  - Added new API endpoints to manage shared channels.
- - Added an ``api.plugin.upload.file_too_large.app_error`` error ID.
  - Added proper response to ``/api/v4/client_perf`` endpoint.
 
 ### Go Version
