@@ -13,6 +13,103 @@ Important Upgrade Notes
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
    - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.
 
+.. table::
+  :widths: 5 30
+
+  ==============  ==========================================================================================
+  Upgrading to    Then...
+  ==============  ==========================================================================================
+  v10.0           - We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
+                  
+                  - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
+                  
+                  - Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. New Playbooks features and security updates will only be added to Playbooks v2 moving forward; however, Playbooks v1 will be maintained for Team Edition and Professional instances running :doc:`supported v9.x Mattermost server releases </about/mattermost-server-releases>`.
+                  
+                  - Renamed ``Channel Moderation`` to ``Advanced Access Control`` in the channel management section in the **System Console**.
+
+                  - Renamed announcement banner feature to “system-wide notifications”.
+
+                  - Renamed “Collapsed Reply Threads” to “Threaded Discussions” in the System Console.
+
+                  - Renamed “Collapsed Reply Threads” to “Threaded Discussions” in the System Console.
+
+                  - Renamed “System Roles” to “Delegated Granular Administration” in the System Console.
+
+                  - Renamed "Office 365" to "Entra ID" for SSO logins.
+
+                  - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
+
+                  - Pre-packaged Calls plugin `v1.0.1 <https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1>`__. This includes breaking changes such as allowing calls in direct message channels only on unlicensed servers.
+
+                  - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
+
+                  - Removed deprecated ``pageSize`` query parameter from most API endpoints.
+
+                  - Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
+  v9.11           - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. 
+  
+                  .. note:: 
+                    - This will break support for AWS Elasticsearch v7.10.x. The official v8 client only works from Elasticsearch v7.11+ versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
+                    - The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config, and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.
+
+                  - If you are using Opensearch, you **must** set the backend to ``opensearch``. Otherwise Mattermost will not work.
+
+                  - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false in elasticsearch.yml`` to allow for wildcard operations to work.
+
+                  - For AWS customers on Opensearch, do not enable “compatibility mode”.
+  v9.5            - We have stopped supporting MySQL v5.7 since it’s at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.
+
+                  - Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are unavailable and count of users who are registered and not deactivated exceeds 10,000. ERROR_SAFE_LIMITS_EXCEEDED.
+  v9.2            - Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to “keep-forever”. Before this fix, the enabled custom data retention policies wouldn’t run as long as the global data retention policy was set to “keep-forever” or was disabled. After the fix, the custom data retention policies will run automatically even when the global data retention policy is set to “keep-forever”. Once the server is upgraded, posts may unintentionally be deleted. Admins should make sure to disable all custom data retention policies before upgrading, and then re-enable them again after upgrading.
+
+  v9.1.0          - In v9.1.0, improved performance on data retention DeleteOrphanedRows queries.
+
+                  New migration for a new table:
+
+                  **MySQL**:
+
+                  .. code-block:: sql
+
+                    CREATE TABLE IF NOT EXISTS RetentionIdsForDeletion (
+                      Id varchar(26) NOT NULL,
+                      TableName varchar(64),
+                      Ids json,
+                      PRIMARY KEY (Id),
+                      KEY idx_retentionidsfordeletion_tablename (TableName)
+                    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+                  **PostgreSQL**:
+
+                  .. code-block:: sql
+
+                    CREATE TABLE
+
+                      IF NOT EXISTS 
+                        retentionidsfordeletion(id 
+                          VARCHAR(26) PRIMARY KEY, 
+                          tablename VARCHAR(64), 
+                          ids VARCHAR(26) []);
+                        CREATE INDEX
+
+                      IF NOT EXISTS 
+                        idx_retentionidsfordeletion_tablename 
+                        ON retentionidsfordeletion(
+                          tablename);
+                        ``
+
+                  - Hard deleting a user or a channel will now also clean up associated reactions.
+
+                  - Removed feature flag ``DataRetentionConcurrencyEnabled``. Data retention now runs without concurrency in order to avoid any performance degradation.
+
+                  - Added a new configuration setting ``DataRetentionSettings.RetentionIdsBatchSize``, which allows admins to configure how many batches of IDs will be fetched at a time when deleting orphaned reactions. The default value is 100.
+
+                  - Minimum supported Desktop App version is now v5.3. OAuth/SAML flows were modified to include ``desktop_login`` which makes earlier versions incompatible.
+  ==============  ==========================================================================================
+
+
+
+
+
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading from a version earlier than... | Then...                                                                                                                                                          |
 +====================================================+==================================================================================================================================================================+
