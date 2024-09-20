@@ -19,9 +19,9 @@ Download group policy and MSI installer files
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
       :alt: Go to the mattermost/desktop repository on GitHub.
 
-3. Navigate to the release page for `version v5.9.0 <https://github.com/mattermost/desktop/releases/tag/v5.9.0>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
+3. Navigate to the release page for `version v5.9.1 <https://github.com/mattermost/desktop/releases/tag/v5.9.1>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.9.0.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.9.1.zip>`__ file as well to extract group policy files.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
       :alt: In the mattermost/desktop repository on GitHub, go to the release page for the latest desktop release, then download the installer for your version of Windows. Download the source.zip file as well to extract group policy files.
@@ -29,12 +29,12 @@ Download group policy and MSI installer files
 Install group policy files locally
 -----------------------------------
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.9.0.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.9.1.zip`` file in place.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
       :alt: Go to the install download directory on your machine and unzip the ZIP file.
 
-2. Navigate to the unzipped ``desktop-5.9.0\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-5.9.1\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png 
       :alt: Go to the \resources\windows\gpo directory and copy its contents.
@@ -146,30 +146,30 @@ Perform a silent installation of the MSI by running the following command:
 
 Perform a silent installation of MSI by running the following command:
 
-``msiexec /i mattermost-desktop-v5.9.0-x64.msi /qn``
+``msiexec /i mattermost-desktop-v5.9.1-x64.msi /qn``
 
 .. note::
    - You'll need to update the version details in this command as new versions of the Mattermost desktop app are released.
    - You must be an administrator to run these commands, or you must run them from an admin command prompt or powershell.
 
-From version v5.9.0 of the Mattermost desktop app, the following silent MSI installation options are also available.
+From version v5.9.1 of the Mattermost desktop app, the following silent MSI installation options are also available.
 
 Install for all users
 ~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
-``msiexec /i mattermost-desktop-v5.9.0-x64.msi ALLUSERS=1``
+``msiexec /i mattermost-desktop-v5.9.1-x64.msi ALLUSERS=1``
 
 .. note::
    - Installing the MSI for all users :ref:`disables automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` for the desktop app on Windows.
-   - To :ref:`disable automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.9.0-x64.msi DISABLEAUTOUPDATE=1``
+   - To :ref:`disable automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.9.1-x64.msi DISABLEAUTOUPDATE=1``
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
 
-``msiexec /i mattermost-desktop-v5.9.0-x64.msi APPLICATIONFOLDER=<install directory>``
+``msiexec /i mattermost-desktop-v5.9.1-x64.msi APPLICATIONFOLDER=<install directory>``
 
 Change this command as new versions of the Mattermost Desktop App are released.
