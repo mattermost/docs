@@ -30,9 +30,9 @@ A Mattermost system admin must perform the following steps in Mattermost.
   c. Once installed, select **Configure**. You're taken to the System Console.
   d. On the Jira configuration page, enable and configure Jira interoperability as follows, and then select **Save**:
 
-    .. tip::
+    .. note::
   
-      Make sure to copy your new secret's now. You won't be able to see it again.
+      Make sure to copy your webhook secret if required as it will be visible only once.
 
     - Generate a **Webhook Secret** by selecting **Regenerate**.
     - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
