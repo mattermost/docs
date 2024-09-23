@@ -1,7 +1,7 @@
 Scale Mattermost up to 50000 users
 ==================================
 
-.. include:: ../_static/badges/ent-only.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 This page describes the Mattermost reference architecture designed for the load of up to 50000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
@@ -15,39 +15,20 @@ This page describes the Mattermost reference architecture designed for the load 
 Requirements
 ------------
 
-Without Elasticsearch
-~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------+----------------+-------------------+
-| **Resource Type**      | **# of Nodes** | **AWS Instance**  |
-+========================+================+===================+
-| Mattermost Application | 4              | c7i.2xlarge       |
-+------------------------+----------------+-------------------+
-| RDS Writer             | 1              | db.r7g.2xlarge    |
-+------------------------+----------------+-------------------+
-| RDS Reader             | 3              | db.r7g.2xlarge    |
-+------------------------+----------------+-------------------+
-| Elasticsearch Node     | 0              | r6g.xlarge.search |
-+------------------------+----------------+-------------------+
-| Proxy                  | 1              | m7i.4xlarge       |
-+------------------------+----------------+-------------------+
-
-With Elasticsearch
-~~~~~~~~~~~~~~~~~~~
-
-+------------------------+----------------+-------------------+
-| **Resource Type**      | **# of Nodes** | **AWS Instance**  |
-+========================+================+===================+
-| Mattermost Application | 5              | c7i.2xlarge       |
-+------------------------+----------------+-------------------+
-| RDS Writer             | 1              | db.r7g.2xlarge    |
-+------------------------+----------------+-------------------+
-| RDS Reader             | 4              | db.r7g.2xlarge    |
-+------------------------+----------------+-------------------+
-| Elasticsearch Node     | 2              | r6g.xlarge.search |
-+------------------------+----------------+-------------------+
-| Proxy                  | 1              | m7i.4xlarge       |
-+------------------------+----------------+-------------------+
++------------------------+-----------+----------------+-------------------+
+| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  |
+|                        |           | Memory (GiB)** |                   |
++========================+===========+================+===================+
+| Mattermost Application | 5         | 8/16           | c6i.2xlarge       |
++------------------------+-----------+----------------+-------------------+
+| RDS Writer             | 1         | 8/64           | db.r6g.2xlarge    |
++------------------------+-----------+----------------+-------------------+
+| RDS Reader             | 4         | 8/64           | db.r6g.2xlarge    |
++------------------------+-----------+----------------+-------------------+
+| Elasticsearch Node     | X         | 4/32           | r6g.xlarge.search |
++------------------------+-----------+----------------+-------------------+
+| Proxy                  | X         | 16/64          | m7i.4xlarge       |
++------------------------+-----------+----------------+-------------------+
 
 Lifetime storage
 ----------------

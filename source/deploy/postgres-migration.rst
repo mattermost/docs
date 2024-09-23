@@ -34,7 +34,7 @@ Frequently asked questions
 
 4. Do we/will we bundle pgloader or is that a separate install?
 
-  We do not bundle pgloader with the Mattermost server. You will need to install pgloader separately. For more information, see the :doc:`install pgloader </deploy/manual-postgres-migration:install pgloader>` documentation.
+  We do not bundle pgloader with the Mattermost server. You will need to install pgloader separately. For more information, see the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation.
 
 5. Are there any other migrations available for plugins, or just Boards, Playbooks and Calls?
   
@@ -48,7 +48,7 @@ Troubleshooting
 ---------------
 
 Unsupported authentication for MySQL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 

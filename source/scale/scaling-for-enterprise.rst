@@ -14,14 +14,19 @@ Available reference architectures
 
 The following reference architectures are available as recommended starting points for your self-hosted Mattermost deployment, where user counts refer to the number of concurrent users for a given deployment. The number of concurrent numbers is commonly lower than the total number of user accounts.
 
-- :doc:`Up to 100 users </scale/scale-to-100-users>`
-- :doc:`Up to 2000 users </scale/scale-to-2000-users>`
-- :doc:`Up to 15000 users </scale/scale-to-15000-users>`
-- :doc:`Up to 40000 users </scale/scale-to-40000-users>`
-- :doc:`Up to 50000 users </scale/scale-to-50000-users>`
-- :doc:`Up to 80000 users </scale/scale-to-80000-users>`
-- :doc:`Up to 93000 users </scale/scale-to-93000-users>`
-- :doc:`Up to 100000 users </scale/scale-to-100000-users>`
+* :doc:`Scale up to 100 users </scale/scale-to-100-users>` - Learn how to scale Mattermost to up to 100 users.
+* :doc:`Scale up to 1000 users </scale/scale-to-1000-users>` - Learn how to scale Mattermost to up to 1000 users.
+* :doc:`Scale up to 2000 users </scale/scale-to-2000-users>` - Learn how to scale Mattermost to up to 2000 users.
+* :doc:`Scale up to 15000 users </scale/scale-to-15000-users>` - Learn how to scale Mattermost to up to 15000 users.
+* :doc:`Scale up to 25000 users </scale/scale-to-25000-users>` - Learn how to scale Mattermost to up to 25000 users.
+* :doc:`Scale up to 40000 users </scale/scale-to-40000-users>` - Learn how to scale Mattermost to up to 40000 users.
+* :doc:`Scale up to 50000 users </scale/scale-to-50000-users>` - Learn how to scale Mattermost to up to 50000 users.
+* :doc:`Scale up to 70000 users </scale/scale-to-70000-users>` - Learn how to scale Mattermost to up to 70000 users.
+* :doc:`Scale up to 79000 users </scale/scale-to-79000-users>` - Learn how to scale Mattermost to up to 79000 users.
+* :doc:`Scale up to 80000 users </scale/scale-to-80000-users>` - Learn how to scale Mattermost to up to 80000 users.
+* :doc:`Scale up to 88000 users </scale/scale-to-88000-users>` - Learn how to scale Mattermost to up to 88000 users.
+* :doc:`Scale up to 93000 users </scale/scale-to-93000-users>` - Learn how to scale Mattermost to up to 93000 users.
+* :doc:`Scale up to 100000 users </scale/scale-to-100000-users>` - Learn how to scale Mattermost to up to 100000 users.
 
 Testing methodology and updates
 --------------------------------
@@ -39,4 +44,4 @@ Mattermost load testing tools
 
 Mattermost provides a set of tools written in Go to help profiling Mattermost under heavy load, simulating real-world usage of a server installation at scale. The `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-load-test-ng>`_ estimates the maximum number of concurrently active users the target system supports, and enables you to control the load to generate.
 
-Visit the `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-load-test-ng/tree/master/docs>`_ documentation on GitHub for details on getting started with the tools, and visit `the Go documentation <https://pkg.go.dev/github.com/mattermost/mattermost-load-test-ng>`_ for code-specific documentation details.
+Visit the `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-load-test-ng/tree/master/docs>`__ documentation on GitHub for details on getting started with the tools, and visit `the Go documentation <https://pkg.go.dev/github.com/mattermost/mattermost-load-test-ng>`_ for code-specific documentation details.

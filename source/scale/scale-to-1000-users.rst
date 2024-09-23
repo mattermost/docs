@@ -1,7 +1,7 @@
 Scale Mattermost up to 1000 users
 =================================
 
-.. include:: ../_static/badges/ent-only.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 This page describes the Mattermost reference architecture designed for a minimum load of 100 concurrent users and up to 1000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
@@ -15,15 +15,20 @@ This page describes the Mattermost reference architecture designed for a minimum
 Requirements
 ------------
 
-+------------------------+----------+------------------+----------------+------------------+
-| **Resource Type**      | **vCPU** | **Memory (GiB)** | **# of Nodes** | **AWS Instance** |
-+========================+==========+==================+================+==================+
-| Mattermost Application | 2        | 4                | 2              | c6i.large        |
-+------------------------+----------+------------------+----------------+------------------+
-| RDS Writer             | 2        | 16               | 1              | db.r6g.large     |
-+------------------------+----------+------------------+----------------+------------------+
-| RDS Reader             | 2        | 16               | 1              | db.r6g.large     |
-+------------------------+----------+------------------+----------------+------------------+
++------------------------+-----------+----------------+-------------------+
+| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  |
+|                        |           | Memory (GiB)** |                   |
++========================+===========+================+===================+
+| Mattermost Application | 2         | 2/4            | c6i.large         |
++------------------------+-----------+----------------+-------------------+
+| RDS Writer             | 1         | 2/16           | db.r6g.large      |
++------------------------+-----------+----------------+-------------------+
+| RDS Reader             | 1         | 2/16           | db.r6g.large      |
++------------------------+-----------+----------------+-------------------+
+| Elasticsearch Node     | X         | 4/32           | r6g.xlarge.search |
++------------------------+-----------+----------------+-------------------+
+| Proxy                  | X         | 16/64          | m7i.4xlarge       |
++------------------------+-----------+----------------+-------------------+
 
 Lifetime storage
 ----------------
