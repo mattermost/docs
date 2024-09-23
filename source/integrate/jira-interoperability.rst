@@ -32,7 +32,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
     .. note::
   
-      Make sure to copy your webhook secret if required as it will be visible only once.
+      We recommend making a copy of your webhook secret, as it will only be visible to you once.
 
     - Generate a **Webhook Secret** by selecting **Regenerate**.
     - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
