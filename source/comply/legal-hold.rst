@@ -57,16 +57,14 @@ Install the plugin
 Configure the plugin
 ^^^^^^^^^^^^^^^^^^^^^
 
-When the Legal Hold integration is enabled, you can configure when it runs in the format ``HH:MM ±HHMM`` and ``+0000`` for UTC, and can optionally configure a custom Amazon S3 bucket for legal holds by specifying Amazon S3 configuration settings. Alternatively, you can use existing :ref:`Amazon S3 file storage <configure/environment-configuration-settings:amazon s3 bucket>` for legal holds, where access keys are supported when using IAM roles.
+When the Legal Hold integration is enabled, you can configure when it runs using the format ``HH:MM ±HHMM`` and ``+0000`` for UTC. 
 
-.. note::
-
-  Only Amazon S3 is supported for Mattermost legal holds at this time, for increased reliability, compliance, and automation capabilities. Support for additional file storage options such as MinIO or local file storage are under consideration. Learn more about file storage configuration options in our :ref:`product documentation <configure/environment-configuration-settings:file storage>`.
+You can configure a custom Amazon S3 bucket for legal holds by specifying Amazon S3 configuration settings. If no S3 configuration is specified, the  Mattermost server file store used. Learn more about file storage configuration options in our :ref:`product documentation <configure/environment-configuration-settings:file storage>`.
 
 (Optional) Configure a data retention policy
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can optionally configure a :doc:`data retention policy </comply/data-retention-policy>` for the legal hold data you want to retain and delete to align with compliance requirements.
+You can optionally configure a :doc:`data retention policy </comply/data-retention-policy>` to control how long data and file attachments are retained in the Mattermost database.
 
 Step 4: Create a legal hold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -75,9 +73,9 @@ In Mattermost, create a legal hold by completing the following steps:
 
 1. Go to **System Console > Plugins > Legal Hold Plugin**, and select **Create new**.
 2. Enter a name for the legal hold.
-3. Specify the custodian user names of individuals or user groups that you want to place on legal hold.
-4. (Optional) You can choose to exclude public channels, if preferred.
-5. Specify the number of days custodians are placed in legal hold with a start and end date.
+3. Specify the user names or user groups of custodians you want to place on legal hold.
+4. (Optional) Public channels are excluded by default. You can choose to include public channels, if preferred. 
+5. Specify the number of days custodians are placed in legal hold with a start date. An end date is optional.
 6. Select **Create legal hold**.
 
 While the legal hold is in place, you can edit it by adding or removing custodians, as well as download a copy of the preserved data to your local machine.
@@ -88,7 +86,11 @@ While the legal hold is in place, you can edit it by adding or removing custodia
 Step 5: Release a legal hold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the legal hold has completed, you can release it to take custodians off of the legal hold by selecting the **Release** option to the right of the legal hold task.
+Once the legal hold has completed, release it to take custodians off of the legal hold by selecting the **Release** option to the right of the legal hold task. 
+
+.. important::
+
+  Once a legal hold is released, all data is irretrievably deleted from Mattermost.
 
 Frequently asked questions
 ---------------------------
@@ -101,7 +103,7 @@ Only Mattermost system admins can implement a legal hold.
 Does a user know if they're placed under a legal hold in Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No, users won't be notified if they're placed under a legal hold. This allows for investigations to be conducted without influencing user behavior and without conflicts of interest.
+No, users won't be notified if they're placed under a legal hold, and no reference to legal holds will be visible in their Mattermost client or accessible via the Mattermost API. This allows for investigations to be conducted without influencing user behavior and without conflicts of interest.
 
 What types of content does legal hold cover?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
