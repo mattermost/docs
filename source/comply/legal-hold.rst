@@ -74,7 +74,7 @@ In Mattermost, create a legal hold by completing the following steps:
 1. Go to **System Console > Plugins > Legal Hold Plugin**, and select **Create new**.
 2. Enter a name for the legal hold.
 3. Specify the user names or user groups of custodians you want to place on legal hold.
-4. (Optional) Public channels are excluded by default. You can choose to include public channels, if preferred. 
+4. (Optional) Public channels are excluded by default. You can choose to include public channels that the specified users or user groups are members of, if preferred.
 5. Specify the number of days custodians are placed in legal hold with a start date. An end date is optional.
 6. Select **Create legal hold**.
 
