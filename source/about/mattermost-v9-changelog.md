@@ -147,7 +147,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v9-10-chang
  - Pre-packaged Mattermost Copilot plugin version [v0.8.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.1).
  - Pre-packaged Calls plugin version [v0.28.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.28.2).
  - Re-designed the user profile popover and improved its performance.
- - Added banner to prompt users to give desktop notification permissions when opening the app.
+ - Added banner to prompt users to allow notification permissions when opening the app in web browsers.
  - Increased the width of the profile picture setting to match other user settings.
  - Improved screen reader support for the emoji picker.
  - Improved the accessibility of plugin buttons in the channel header.

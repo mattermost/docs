@@ -4,7 +4,7 @@ Manage your @mention and keyword notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You're :doc:`notified </preferences/manage-your-notifications>` in a :doc:`web browser </preferences/manage-your-web-notifications>`, the :doc:`desktop app </preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </preferences/manage-your-mobile-notifications>`, when you're @mentioned by your username or first name, and for keywords you're following.
+You're :doc:`notified </preferences/manage-your-notifications>` in a :doc:`web browser </preferences/manage-your-web-notifications>`, the :doc:`desktop app </preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </preferences/manage-your-mobile-notifications>`, when you're @mentioned by your username or first name, @mentioned as part of a user group, and for matches to keywords you're following.
 
 You're also notified when someone uses channel-wide :doc:`@mentions </collaborate/mention-people>` including :ref:`@channel and @all <collaborate/mention-people:@channel and @all>`, as well as :ref:`@here <collaborate/mention-people:@here>`.
 

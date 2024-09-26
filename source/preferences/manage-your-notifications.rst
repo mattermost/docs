@@ -23,17 +23,15 @@ Manage your notifications
     Manage your @mention & keyword notifications </preferences/manage-your-mentions-keywords-notifications>
     Manage your channel-specific notifications </preferences/manage-your-channel-specific-notifications>
 
-Mattermost notifies you of new activity. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
-
-You're in control
-------------------
-
-By default, Mattermost alerts you about all Mattermost activity all of the time.
+Mattermost notifies you of new activity you're directly involved in. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
 
 .. include:: ../_static/badges/academy-notifications.rst
   :start-after: :nosearch:
 
-You are in complete control of how, when, and where you're notified based on how you prefer to work and collaborate. To access notification preferences:
+You're in control
+------------------
+
+You are in control of how, when, and where you're notified of activity that matters to you based on how you prefer to work and collaborate. To access notification preferences:
 
 - In a web browser or the desktop app, select the **Settings** |gear| icon located in the top right corner of the screen to manage your notification preferences.
 - On mobile, tap your profile picture, then tap **Settings > Notifications**.
@@ -58,19 +56,19 @@ The table below lists the types of notifications you can expect to see and hear 
 |                       | you're a member of                                | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
 | |dot-badge|           |                                                   |                                                                   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Icon badge (number)   | You have at least one unread message,             | :doc:`Web </preferences/manage-your-web-notifications>` &         |
+| Icon badge (number)   | You have at least 1 unread message with an        | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       | @mention, or a match to a keyword you're watching | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
 | |numbered-badge|      |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
-+-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Banner alerts         | You have unread activity in Mattermost            | :doc:`Web </preferences/manage-your-web-notifications>` &         |
++-----------------------+                                                   +-------------------------------------------------------------------+
+| Banner alert popups   |                                                   | :doc:`Web </preferences/manage-your-web-notifications>` &         |
 |                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`   |
++-----------------------+                                                   +-------------------------------------------------------------------+
+| Push notifications    |                                                   | :doc:`Mobile </preferences/manage-your-mobile-notifications>`     |
+|                       |                                                   |                                                                   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Push notifications    | You have at least one unread message,             | :doc:`Mobile </preferences/manage-your-mobile-notifications>`     |
-|                       | @mention, or a match to a keyword you're watching |                                                                   |
-+-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
-| Alert sounds          | You have unread activity in Mattermost            | :doc:`Web </preferences/manage-your-web-notifications>`,          |
-|                       |                                                   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`,  |
-|                       |                                                   | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
+| Alert sounds          | You have at least 1 unread message with an        | :doc:`Web </preferences/manage-your-web-notifications>`,          |
+|                       | @mention, a match to a keyword you're watching,   | :doc:`Desktop </preferences/manage-your-desktop-notifications>`,  |
+|                       | or replies to a thread you're following           | & :doc:`Mobile </preferences/manage-your-mobile-notifications>`   |
 +-----------------------+---------------------------------------------------+-------------------------------------------------------------------+
 
 Email notifications

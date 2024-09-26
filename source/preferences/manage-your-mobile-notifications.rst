@@ -15,16 +15,20 @@ From Mattermost v9.9, Mattermost prompts you to enable notifications in the mobi
 
 When you enable notifications, you'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, and `push notifications <#push-notifications>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity on your mobile device.
 
+.. note::
+
+  You may also need to enable notifications in iOS or Android for Mattermost by changing your device preferences.
+
 Badge-based notifications
 -------------------------
 
-Mattermost mobile app icons display numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. 
+Mattermost mobile app icons display numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
 
 |numbered-badge|
 
 .. note::
 
-  - The Mattermost mobile app doesn't display dot badges indicating other unread activity by design. You're notified about the activity you're most likely to care about on mobile because you're directly involved.
+  - The Mattermost mobile app doesn't display dot badges indicating other unread activity by design. The activity you're directly involved in is prioritized over other activity.
   - Android users may see Mattermost notifications in the Android Notification Shade while the Mattermost icon shows no badge. This is because the Android notification system may also display badges unread activity.
 
 Push notifications
@@ -38,21 +42,28 @@ You'll see mobile push notification messages on your device as follows:
 Customize your notifications
 ----------------------------
 
-.. tip::
+You can manage your mobile notifications in both the desktop app and the mobile app.
 
-  Are you a desktop app user who also uses mobile? You can customize your mobile notifications in the Mattermost desktop app.
+Desktop app
+~~~~~~~~~~~~
 
-  1. Go to **Settings > Desktop and mobile notifications**.
-  2. Enable notifications for **all new messages**, or **mentions, direct messages and group messages**.
-  3. Select **Use different settings for my mobile devices**.
+In the desktop app, manage your mobile notification preferences by selecting the **Settings** |gear| icon located in the top right corner of the screen, and select **Notifications > Desktop and mobile notifications**.
 
-Reduce mobile notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By default, you receive mobile notifications when your Mattermost availability is :ref:`away or offline <preferences/set-your-status-availability:set your availability>`.
 
-To reduce the number of notifications you receive on your mobile device, tap your profile picture, then tap **Settings > Notifications**.
+- Want to receive mobile notifications when you're online too? Under **Trigger mobile notifications when I am**, select **Online, away, or offline**. Note that you won't be notified on your device if you're actively using Mattermost in a web browser. Alternatively, select **Offline** to receive fewer mobile notifications.
+
+- Want different desktop and mobile notifications? Select **Use different settings for my mobile devices**, and then select **All new messages**, or **Mentions, direct messages and group messages**.
+
+Mobile app
+~~~~~~~~~~
+
+In the mobile app, tap your profile picture, then tap **Settings > Notifications**.
 
 - Tap **Mentions** to disable notifications based on keywords that trigger mentions, including first name, username, channel-wide @mentions, and keywords you've specified.
-- Tap **Push Notifications** to get notified about **mentions, direct messages, and group messages** only, and only when you're **away or offline**, or only when you're **offline**.
+- Tap **Push Notifications** to choose what to be notified about.
+
+You can also :ref:`manage email notifications <preferences/manage-your-notifications:email notifications>` and :ref:`send automatic replies to direct messages <preferences/manage-your-thread-reply-notifications:send automatic replies to direct messages>` directly from your device.
 
 Incoming Call notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -63,11 +74,6 @@ Want to hear a sound on your mobile device when a Mattermost call starts? If you
 
   - From Mattermost mobile app v2.19, incoming call sounds also include device vibration, as well as vibration-only when your device is in silent mode.
   - If you prefer a separate call sound on mobile, your mobile change applies only to your mobile device.
-
-Receive push notifications for all channel messages
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-To receive push notifications for all new messages in specific channels, tap the channel name > tap **Mobile Notifications > All new messages**.
 
 Disable all mobile notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

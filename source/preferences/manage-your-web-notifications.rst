@@ -13,10 +13,10 @@ Manage your web notifications
 Enable notifications
 --------------------
 
-From Mattermost v9.9, Mattermost prompts you to enable notifications in your web browser.
+From Mattermost v9.10, Mattermost prompts you to enable notifications in your web browser.
 
 .. image:: ../images/enable-notifications.png
-  :alt: From Mattermost v9.9, you're prompted to enable notifications.
+  :alt: From Mattermost v9.10, you're prompted to enable notifications.
 
 - When you select **Enable notifications**, you won't be asked again. You'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__ and `sounds <#notification-sounds>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity in a web browser.
 - If you dismiss this prompt, you won't receive Mattermost notifications in the web browser, and you'll prompted again the next time you open Mattermost in a web browser.
@@ -24,11 +24,13 @@ From Mattermost v9.9, Mattermost prompts you to enable notifications in your web
 Badge-based notifications
 -------------------------
 
-Numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
+In a web browser, Mattermost icons display the following types of badges:
 
-A red dot badge means an unread @mention or keyword. |chrome-mention-badge|
+- Numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
 
-A black dot badge means an unread direct or group message. |chrome-activity-badge|
+ - A red dot badge means an unread @mention or keyword. |chrome-mention-badge|
+
+ - A black dot badge means an unread direct or group message. |chrome-activity-badge|
 
 Notification sounds
 --------------------
@@ -49,8 +51,8 @@ To reduce the number of notifications you receive, select **Desktop and mobile n
 
 With limited notifications enabled, you can also choose to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
 
-Notification sounds
-~~~~~~~~~~~~~~~~~~~~
+Change or disable sounds
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can change or disable notification sounds by going to **Desktop notification sounds > Message notification sound**.
 

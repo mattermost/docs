@@ -4,14 +4,14 @@ Manage your thread reply notifications
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You're :doc:`notified </preferences/manage-your-notifications>` in a :doc:`web browser </preferences/manage-your-web-notifications>`, the :doc:`desktop app </preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </preferences/manage-your-mobile-notifications>`, for threads you're following.
+You're :doc:`notified </preferences/manage-your-notifications>` in a :doc:`web browser </preferences/manage-your-web-notifications>`, the :doc:`desktop app </preferences/manage-your-desktop-notifications>`, and on your :doc:`mobile device </preferences/manage-your-mobile-notifications>`, for threads you're following when you're @mentioned or the messages contain a keyword you're tracking.
 
 .. tip::
 
-  - Mattermost auto-follows you on all direct and group messages, as well as any thread where you've been :doc:`@mentioned </collaborate/mention-people>` directly.
+  - Mattermost auto-follows you on all direct and group messages, any thread you start, as well as any thread where you've been :doc:`@mentioned </collaborate/mention-people>` directly.
   - You can choose to :ref:`follow or unfollow any thread <collaborate/organize-conversations:follow threads and messages>` at any time.
 
-You won't receive notifications for new thread replies if they don't @mention you directly. However, blue message indicators show you unread thread replies you're not following in a given public or private channel. 
+You won't receive notifications for threads you're not following, or thread replies when they don't @mention you directly. However, blue message indicators show you unread thread replies you're not following in a given public or private channel. 
 
 For all other messages, a channel appears bolded to indicate unread messages.
 

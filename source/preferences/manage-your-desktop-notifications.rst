@@ -15,22 +15,22 @@ Manage your desktop notifications
 Enable notifications
 --------------------
 
-From Mattermost v9.9, Mattermost prompts you to enable notifications in the desktop app.
+From Mattermost v9.9 and desktop app v5.5, Mattermost prompts you to enable notifications in the desktop app the first time you connect to a Mattermost server.
 
-.. image:: ../images/enable-notifications.png
-  :alt: From Mattermost v9.9, you're prompted to enable notifications.
+- When you select **Allow**, you won't be asked again. You'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, `banner alerts <#banner-alerts>`__ and `sounds <#notification-sounds>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity in the desktop app.
+- If you select **Deny** or **Deny Permanently**, you won't be asked again. You won't receive Mattermost notifications in the web browser. You can change this preference by :ref:`editing the server connection <preferences/connect-multiple-workspaces:edit a server>` to :ref:`manage your notification permissions <preferences/connect-multiple-workspaces:manage system permissions>`.
 
-- When you select **Enable notifications**, you won't be asked again. You'll start receiving notifications for all Mattermost activity with `badges <#badge-based-notifications>`__, `banner alerts <#banner-alerts>`__ and `sounds <#notification-sounds>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity in the desktop app.
-- If you dismiss this prompt, you won't receive Mattermost notifications in the web browser, and you'll prompted again the next time you open Mattermost in a web browser.
+.. note::
+
+  You may also need to enable notifications in Windows, macOS, or Linux for Mattermost by changing your System Preferences.
 
 Badge-based notifications
 -------------------------
 
 Mattermost desktop app icons display the following types of badges:
 
-- A numbered badge for unread :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. |numbered-badge|
+- A numbered badge for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. |numbered-badge|
 - A dot badge for unread activity. |dot-badge|
-
 
 Banner alerts
 -------------
@@ -45,19 +45,16 @@ By default, desktop app notifications include audible sounds.
 Customize your notifications
 ----------------------------
 
-.. tip::
+By default, you are notified when you're @mentioned, when you receive a direct or group message, or for matches to keywords you're following. 
 
-  Mattermost notification settings labeled as Desktop also configure your web-based notifications when using Mattermost in a web browser.
+Want to receive notifications about replies to threads you’re following? Select **Notify me about replies to threads I’m following**.
 
-Reduce desktop notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Want notifications for all new messages? Select **Desktop and mobile notifications > All new messages**
 
-To reduce the number of notifications you receive, select **Desktop and mobile notifications > Mentions, direct messages, and group messages**, and save your changes. 
+Desktop app users can also :doc:`customize their desktop app experience </preferences/customize-desktop-app-experience>` further based on their platform operating system.
 
-With limited notifications enabled, you can also choose to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
-
-Notification sounds
-~~~~~~~~~~~~~~~~~~~~
+Change or disable sounds
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can change or disable notification sounds by going to **Desktop notification sounds > Message notification sound**.
 
@@ -73,13 +70,10 @@ Select **Desktop and mobile notifications > Nothing** to disable all desktop and
 
 Clear the **Use different settings for my mobile devices** to additionally disable all Mattermost mobile notifications everywhere you use Mattermost.
 
+Additionally, macOS users can disable notifications for all unread activity in the desktop app by :doc:`customizing your desktop app experience </preferences/customize-desktop-app-experience>` to disable the **Show red badge on Dock icon to indicate unread messages** option.
+
 Frequently asked questions
 ---------------------------
-
-Why am I prompted repeatedly enable notifications I don't want?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost will continue to prompt you to enable notifications in the desktop app until you respond to the prompt. If you want to disable all Mattermost notifications, select **Enable notifications** when prompted, and then `disable all Mattermost desktop notifications <#disable-all-desktop-notifications>`__.
 
 What does a Mattermost icon with an exclamation point mean?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
