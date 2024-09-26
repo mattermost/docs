@@ -183,3 +183,69 @@ Disable Customer Portal requests
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | **Note**: Cloud admins can’t modify this configuration setting.                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableapiteamdeletion
+  :displayname: Enable API team deletion (ServiceSettings)
+  :systemconsole: N/A
+  :configjson: EnableAPITeamDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins (or users with appropriate permissions), or by running the mmctl team delete command, to permanently delete a team.
+  - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
+
+Enable API team deletion
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins (or users with appropriate permissions), or by running the :ref:`mmctl team delete <manage/mmctl-command-line-tool:mmctl team delete>` command to permanently delete a team.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableapiuserdeletion
+  :displayname: Enable API user deletion (ServiceSettings)
+  :systemconsole: N/A
+  :configjson: EnableAPIUserDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the mmctl user delete command, to permanently delete a user.
+  - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/users/{userid}`` can still be used to soft delete a user.
+
+Enable API user deletion
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the :ref:`mmctl user delete <manage/mmctl-command-line-tool:mmctl user delete>` command, to permanently delete a user.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
+
++-------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
++-------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-enableapichanneldeletion
+  :displayname: Enable API channel deletion (ServiceSettings)
+  :systemconsole: N/A
+  :configjson: EnableAPIChannelDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the mmctl channel delete command, to permanently delete a channel.
+  - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
+
+Enable API channel deletion
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` command, to permanently delete a channel.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
+
++----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
++----------------------------------------------------------------------------------------------------------------------+
