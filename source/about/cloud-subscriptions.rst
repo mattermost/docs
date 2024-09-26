@@ -11,6 +11,7 @@ Cloud subscriptions
 
    Cloud Dedicated </about/cloud-dedicated>
    Cloud Shared </about/cloud-shared>
+   Cloud VPC Private Connectivity </about/cloud-vpc-private-connectivity>
 
 Mattermost offers secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance. Cloud-native architecture supports organizations of any size for a workspace that scales with your team, without any resource planning.
 
@@ -18,6 +19,7 @@ Enterprises can choose between dedicated and shared infrastructure based on your
 
 - :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>`: Better suited for larger organizations or those with specific needs around security, compliance, and customization, who are willing to pay a premium for dedicated resources and enhanced support.
 - :doc:`Mattermost Cloud Shared </about/cloud-shared>`: A cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
+- :doc:`Cloud VPC Private Connectivity </about/cloud-vpc-private-connectivity>`: Learn how to access Mattermost Cloud within your own internal network.
 
 Compare offerings
 -----------------
