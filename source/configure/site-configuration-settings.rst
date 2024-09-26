@@ -333,7 +333,7 @@ iOS app download link
   :displayname: App custom URL schemes (Customization)
   :systemconsole: N/A
   :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: MM_NATIVEAPPSETTINGS_APPCUSTOMURLSCHEMES
+  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
   :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
 
 App custom URL schemes
@@ -345,9 +345,14 @@ Define valid custom URL schemes for redirect links provided by custom-built mobi
 
 When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input separated by spaces. For example: ``[mmauth  mmauthbeta]``.  |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input separated by spaces.   |
++------------------------------------------------------------------------------------------------------------------------------------------------+
+| For example:                                                                                                                                   |
+|                                                                                                                                                |
+| - ``MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://``                                                                       |
+| - Via mmctl: ``mmctl config set NativeAppSettings.AppCustomURLSchemes "mmauth://" "mmauthbeta://"``                                            |
++------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 
