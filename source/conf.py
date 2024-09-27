@@ -3632,8 +3632,7 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/compass-icons.css",
-    "css/tablefix.css"
+    "css/compass-icons.css"
 ]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
