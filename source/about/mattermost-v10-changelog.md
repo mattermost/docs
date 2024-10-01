@@ -48,6 +48,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
  - Fixed an issue where Team and Channel Admins could lose the ability to create posts in a moderated channel.
  - Fixed an issue where marking a channel as unread did not show immediately in other clients.
  - Fixed an issue with not allowing to use ``@`` and ``~`` in the ``in:`` search modifier without affecting search results.
+ - Fixed an issue with YouTube previews no longer being displayed.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
