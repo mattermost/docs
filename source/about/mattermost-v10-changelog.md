@@ -19,7 +19,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Added Metrics plugin to the prepackaged plugins, [v0.5.1](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.1).
+ - Added Metrics plugin to the prepackaged plugins, [v0.5.3](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.3).
  - Pre-packaged Calls plugin [v1.1.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.1.0).
  - Enabled Channel Bookmarks, added re-ordering, and fixed URL validity checking.
  - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
