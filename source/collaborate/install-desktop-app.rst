@@ -164,7 +164,8 @@ The first time you log in to Mattermost using the desktop app, you'll see a spla
 
 .. tip::
 
-  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+ - Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+ - Having trouble launching your Desktop App? See the `Troubleshooting section <#troubleshooting-your-desktop-app-installation>` for details.
 
 Additional documentation resources
 ----------------------------------
@@ -203,6 +204,11 @@ How do I download app diagnostics?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 From Mattermost desktop v5.3, you can download a diagnostics text file via **Help > Run diagnostics**, which can be attached to a Support ticket.
+
+Desktop App displays white screen while launching and doesn't load the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Delete the local ``Mattermost desktop app`` configuration file. For file location details, refer to: `Where is configuration stored locally? <#where-is-configuration-stored-locally>`
+2. Reinstall the application. 
 
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
