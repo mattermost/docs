@@ -10,6 +10,15 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.2, released 2024-09-26**
+  - Mattermost v9.11.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
+  - Pre-packaged Calls plugin [v0.29.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.2).
+  - Pre-packaged Playbooks plugin [v1.40.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.40.0).
+  - Fixed an issue where the **Edit Post Time Limit** button was not being displayed in the System Console ([MM-58529](https://mattermost.atlassian.net/browse/MM-58529), [MM-58824](https://mattermost.atlassian.net/browse/MM-58824)).
+  - Fixed racy use of session in ``NewWebConn`` [MM-60307](https://mattermost.atlassian.net/browse/MM-60307).
+  - Mattermost v9.11.2 contains the following functional change:
+      - Added a configuration setting **NativeAppSettings > MobileExternalBrowser** that tells the Mobile app to perform SSO Authentication using the external default browser [MM-60332](https://mattermost.atlassian.net/browse/MM-60332).
 - **9.11.1, released 2024-08-27**
   - Mattermost v9.11.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.11.1 contains no database or functional changes.
@@ -122,6 +131,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.10.3, released 2024-09-26**
+  - Mattermost v9.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v1.40.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.40.0).
+  - Mattermost v9.10.3 contains no database or functional changes.
 - **9.10.2, released 2024-08-27**
   - Mattermost v9.10.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.10.2 contains no database or functional changes.
@@ -637,6 +650,11 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.10, released 2024-09-26**
+  - Mattermost v9.5.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed racy use of session in ``NewWebConn`` [MM-60307](https://mattermost.atlassian.net/browse/MM-60307).
+  - Pre-packaged Playbooks plugin [v1.40.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.40.0).
+  - Mattermost v9.5.10 contains no database or functional changes.
 - **9.5.9, released 2024-08-27**
   - Mattermost v9.5.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.9 contains no database or functional changes.

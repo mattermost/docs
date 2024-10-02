@@ -31,6 +31,10 @@ A Mattermost system admin must perform the following steps in GitHub.
 5. Copy the **Client ID** and **Client Secret** in the resulting screen.
 6. In Mattermost, go to **System Console > Plugins > GitHub**, and regenerate both a **Webhook Secret** and **At Rest Encryption Key** by selecting **Regenerate** next to each field. You'll need a copy of the **Webhook Secret** value to create a webhook in GitHub.
 
+.. note::
+
+  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
+
 Create a webhook in GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
