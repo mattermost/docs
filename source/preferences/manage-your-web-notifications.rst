@@ -13,7 +13,7 @@ Manage your web notifications
 Enable notifications
 --------------------
 
-From Mattermost v9.10, Mattermost prompts you to enable notifications in your web browser.
+From Mattermost v9.10, Mattermost prompts you to grant permission to your web browser to show notifications. 
 
 .. image:: ../images/enable-notifications.png
   :alt: From Mattermost v9.10, you're prompted to enable notifications.
@@ -28,9 +28,11 @@ In a web browser, Mattermost icons display the following types of badges:
 
 - Numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
 
- - A red dot badge means an unread @mention or keyword. |chrome-mention-badge|
+A red dot badge means you have unread @mentions, keywords, direct messages, and group messages. 
+|chrome-mention-badge|
 
- - A black dot badge means an unread direct or group message. |chrome-activity-badge|
+A black dot badge means you have unread activity in channels you're a member of. 
+|chrome-activity-badge|
 
 Notification sounds
 --------------------
@@ -47,7 +49,7 @@ Customize your notifications
 Reduce web notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To reduce the number of notifications you receive, select **Desktop and mobile notifications > Mentions, direct messages, and group messages**, and save your changes. 
+To reduce the number of notifications you receive, select **Desktop and mobile notifications > Mentions, direct messages, and group messages**, and save your changes. You can set this preference across all channels or for specific channels.
 
 With limited notifications enabled, you can also choose to receive notifications about replies to threads you're following by selecting **Notify me about replies to threads I'm following**.
 
@@ -74,4 +76,4 @@ Frequently asked questions
 Why am I prompted repeatedly enable notifications I don't want?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost will continue to prompt you to enable notifications in a web browser until you respond to the prompt. If you want to disable all Mattermost notifications, select **Enable notifications** when prompted, and then `disable all Mattermost web notifications <#disable-all-web-notifications>`__.
+Mattermost will continue to prompt you to grant permission to the browser to show notifications until you respond to the prompt. If you want to disable all Mattermost notifications, select **Enable notifications** when prompted, and then `disable all Mattermost web notifications <#disable-all-web-notifications>`__.
