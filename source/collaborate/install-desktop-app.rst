@@ -207,7 +207,7 @@ From Mattermost desktop v5.3, you can download a diagnostics text file via **Hel
 
 Desktop App displays white screen while launching and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-1. Delete the local ``Mattermost desktop app`` configuration file. For file location details, refer to: `Where is configuration stored locally? <#where-is-configuration-stored-locally>`
+1. Delete the local ``Mattermost desktop app`` configuration file. See the `Where is configuration stored locally? <#where-is-configuration-stored-locally>`__ section above for file location details.
 2. Reinstall the application. 
 
 "Installation has failed" dialog
