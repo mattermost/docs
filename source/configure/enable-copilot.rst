@@ -82,7 +82,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 
   1. Deploy your model, for example, on `Ollama <https://ollama.com/>`_.
   2. Select **OpenAI Compatible** in the **AI Service** dropdown.
-  3. Enter the URL to your AI service from your Mattermost deployment in the **API URL** field. Be sure to include the port, and append `/v1` to the end of the URL. (e.g., `http://localhost:11434/v1` for Ollama)
+  3. Enter the URL to your AI service from your Mattermost deployment in the **API URL** field. Be sure to include the port, and append ``/v1`` to the end of the URL. (e.g., ``http://localhost:11434/v1`` for Ollama)
   4. If using Ollama, leave the **API Key** field blank.
   5. Specify your model name in the **Default Model** field.
 
