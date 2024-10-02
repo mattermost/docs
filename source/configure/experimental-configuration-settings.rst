@@ -1580,26 +1580,6 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
 +---------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Experimental)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: N/A
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
-App custom URL schemes
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client.
-
-When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: exp-o365scope
   :displayname: Entra ID scope (Experimental)
   :systemconsole: N/A
