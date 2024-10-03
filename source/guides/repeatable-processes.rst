@@ -6,7 +6,7 @@ Build repeatable processes
 
 .. important::
 
-  Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. New Playbooks features & security updates will only be added to Playbooks v2 moving forward; however, Playbooks v1 will be maintained for Team Edition and Professional instances running :doc:`supported v9.x Mattermost server releases </about/mattermost-server-releases>`. 
+  Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. New Playbooks features will only be added to Playbooks v2 moving forward; however, Team Edition and Professional instances may continue to use Playbooks v1 as-is which will be maintained and supported until May 2025.
 
 Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </repeatable-processes/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </repeatable-processes/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
 
