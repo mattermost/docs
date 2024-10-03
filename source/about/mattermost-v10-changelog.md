@@ -10,7 +10,11 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.1-feature-release)=
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release day: 2024-10-16**
+- **10.1.1, released 2024-10-16**
+  - Fixed an issue where a shared indicator was shown in all Direct Messages, regardless of the user coming from a shared server [MM-60744](https://mattermost.atlassian.net/browse/MM-60744).
+  - Mattermost v10.1.1 contains no database or functional changes.
+- **10.1.0, released 2024-10-16**
+  - Original 10.1.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
