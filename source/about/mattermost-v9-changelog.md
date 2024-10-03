@@ -657,6 +657,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 - **9.5.11, released **
   - Mattermost v9.5.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
+  - Pre-packaged Calls plugin [v0.29.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.2).
   - Mattermost v9.5.11 contains no database or functional changes.
 - **9.5.10, released 2024-09-26**
   - Mattermost v9.5.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
