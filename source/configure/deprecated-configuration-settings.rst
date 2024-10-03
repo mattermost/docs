@@ -807,48 +807,6 @@ The file must be in the same directory as your ``config.json`` file if you set a
 
 ----
 
-Experimental API endpoint settings
-----------------------------------
-
-Enable API team deletion
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in Mattermost v10 (Sept 2024) release*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false``. |
-+-------------------------------------------------------------------------------+
-
-Enable API user deletion
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in Mattermost v10 (Sept 2024) release*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
-
-+-------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false``. |
-+-------------------------------------------------------------------------------+
-
-Enable API channel deletion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Removed in Mattermost v10 (Sept 2024) release*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
-
-+----------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false``. |
-+----------------------------------------------------------------------------------+
-
 Other deprecated settings
 --------------------------
 

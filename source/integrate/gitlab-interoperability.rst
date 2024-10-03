@@ -37,7 +37,7 @@ Mattermost configuration
 
 A Mattermost system admin must perform the following steps in Mattermost.
 
-Install the GitHub integration from the in-product App Marketplace:
+Install the GitLab integration from the in-product App Marketplace:
 
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to GitLab, and select **Install**.
