@@ -10,7 +10,11 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.0-major-release)=
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release day: 2024-09-16**
+- **10.0.1, released **
+  - Mattermost v10.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.0.1 contains no database or functional changes.
+- **10.0.0, released 2024-09-16**
+  - Original 10.0.0 release.
 
 ### Important Upgrade Notes
  - We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
