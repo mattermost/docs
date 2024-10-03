@@ -29,6 +29,7 @@ From Mattermost v9.9 and desktop app v5.5, Mattermost prompts you to enable noti
   - You may also need to enable notifications in Windows, macOS, or Linux for Mattermost by changing your System Preferences.
   - You can change this desktop notification preference by :ref:`editing the server connection <preferences/connect-multiple-workspaces:edit a server>` to :ref:`manage your notification permissions <preferences/connect-multiple-workspaces:manage system permissions>`.
 
+
 Badge-based notifications
 -------------------------
 
