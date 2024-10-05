@@ -1378,7 +1378,7 @@ Enable user satisfaction survey
 .. config:setting:: integrations-servicenow
   :displayname: ServiceNow interoperability (Plugins)
   :systemconsole: Plugins > ServiceNow
-  :configjson: PluginSettings.Plugins.com.mattermost.user-survey.systemconsolesetting.EnableSurvey
+  :configjson: servicenow
   :environment: N/A
   :description: Connect your ServiceNow instance to your Mattermost instance.
 
