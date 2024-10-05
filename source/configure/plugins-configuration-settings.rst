@@ -1338,7 +1338,7 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-surveysenable
   :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
   :environment: N/A
 
   - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
