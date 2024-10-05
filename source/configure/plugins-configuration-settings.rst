@@ -1347,15 +1347,16 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           |                                                               |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys**                                |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.user-survey.Enable`` |
+|                                                                                                               | - Environment variable: N/A                                                                  |
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-surveysenablesend
   :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
   :environment: N/A
 
   - **true**: A user satisfaction survey is sent to all users every quarter.
@@ -1376,7 +1377,7 @@ Enable user satisfaction survey
 .. config:setting:: integrations-servicenow
   :displayname: ServiceNow interoperability (Plugins)
   :systemconsole: Plugins > ServiceNow
-  :configjson: servicenow
+  :configjson: PluginSettings.Plugins.com.mattermost.user-survey.systemconsolesetting.EnableSurvey
   :environment: N/A
   :description: Connect your ServiceNow instance to your Mattermost instance.
 
