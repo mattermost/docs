@@ -63,9 +63,9 @@ c. Grant access to objects contained in the specified schema by running:
 
 6. Exit the PostgreSQL interactive terminal by running:
 
-  .. code-block:: text
+.. code-block:: text
 
-    \q
+  \q
 
 7. (Optional) If you use separate servers for your database and the Mattermost server, you may allow PostgreSQL to listen on all assigned IP addresses. We recommend ensuring that only the Mattermost server is able to connect to the PostgreSQL port using a firewall.
 
