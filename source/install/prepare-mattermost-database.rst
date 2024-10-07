@@ -175,17 +175,17 @@ c. Grant access to objects contained in the specified schema by running:
 
   If the Mattermost server and the database are on the same machine, use the following command: 
 
-    .. code-block:: sh
+  .. code-block:: sh
 
-        psql --dbname=mattermost --username=mmuser --password
+      psql --dbname=mattermost --username=mmuser --password
 
 .. tab:: Remote Database (separate server)
 
   If the Mattermost server is on a different machine, log into that machine and use the following command: 
 
-    .. code-block:: sh
+  .. code-block:: sh
 
-        psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password
+      psql --host={postgres-server-IP} --dbname=mattermost --username=mmuser --password
 
   .. note::
 
