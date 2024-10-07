@@ -16,9 +16,9 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 2. Access PostgreSQL by running:
 
-  .. code-block:: sh
+.. code-block:: sh
 
-    sudo -u postgres psql
+  sudo -u postgres psql
 
 3. Create the Mattermost database by running:
 
