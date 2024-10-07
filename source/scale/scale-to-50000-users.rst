@@ -19,15 +19,15 @@ Requirements
 | **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  |
 |                        |           | Memory (GiB)** |                   |
 +========================+===========+================+===================+
-| Mattermost Application | 5         | 8/16           | c6i.2xlarge       |
+| Mattermost Application | 5         | 8/16           | c7i.2xlarge       |
 +------------------------+-----------+----------------+-------------------+
-| RDS Writer             | 1         | 8/64           | db.r6g.2xlarge    |
+| RDS Writer             | 1         | 8/64           | db.r7g.2xlarge    |
 +------------------------+-----------+----------------+-------------------+
-| RDS Reader             | 4         | 8/64           | db.r6g.2xlarge    |
+| RDS Reader             | 4         | 8/64           | db.r7g.2xlarge    |
 +------------------------+-----------+----------------+-------------------+
-| Elasticsearch Node     | X         | 4/32           | r6g.xlarge.search |
+| Elasticsearch Node     | 2         | 4/32           | r6g.xlarge.search |
 +------------------------+-----------+----------------+-------------------+
-| Proxy                  | X         | 16/64          | m7i.4xlarge       |
+| Proxy                  | 1         | 16/64          | m7i.4xlarge       |
 +------------------------+-----------+----------------+-------------------+
 
 Lifetime storage

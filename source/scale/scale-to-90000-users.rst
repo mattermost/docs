@@ -1,10 +1,10 @@
-Scale Mattermost up to 93000 users
+Scale Mattermost up to 90000 users
 ==================================
 
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This page describes the Mattermost reference architecture designed for the load of up to 93000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
+This page describes the Mattermost reference architecture designed for the load of up to 90000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
 
 - **High Availability**: Required
 - **Database Configuration**: writer, multiple readers
@@ -25,7 +25,7 @@ Requirements
 +------------------------+-----------+----------------+-------------------+
 | RDS Reader             | 4         | 16/128         | db.r7g.4xlarge    |
 +------------------------+-----------+----------------+-------------------+
-| Elasticsearch Node     | 0         | 4/32           | r6g.xlarge.search |
+| Elasticsearch Node     | 2         | 4/32           | r6g.xlarge.search |
 +------------------------+-----------+----------------+-------------------+
 | Proxy                  | 1         | 16/64          | m7i.4xlarge       |
 +------------------------+-----------+----------------+-------------------+
@@ -45,11 +45,11 @@ Estimated storage per user, per month
 Example
 ~~~~~~~
 
-A 93000-person team with medium usage (with a safety factor of 2x) would require between 10.56TB :sup:`1` and 52.8TB :sup:`2` of free space per annum.
+A 90000-person team with medium usage (with a safety factor of 2x) would require between 10.56TB :sup:`1` and 52.8TB :sup:`2` of free space per annum.
 
-:sup:`1` 93000 users * 5 MB * 12 months * 2x safety factor
+:sup:`1` 90000 users * 5 MB * 12 months * 2x safety factor
 
-:sup:`2` 93000 users * 25 MB * 12 months * 2x safety factor
+:sup:`2` 90000 users * 25 MB * 12 months * 2x safety factor
 
 We strongly recommend that you review storage utilization at least quarterly to ensure adequate free space is available.
 
