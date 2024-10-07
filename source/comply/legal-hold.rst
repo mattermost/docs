@@ -39,7 +39,7 @@ Legal Hold is available in :ref:`Mattermost Enterprise <about/editions-and-offer
 Step 2: Establish a Legal Hold policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Establish a policy for when to implement a Legal Hold. This should be developed in consultation with your legal counsel and should include procedures for identifying relevant custodians (those who have potentially relevant information).
+Establish a policy for when to implement a Legal Hold. This should be developed in consultation with your legal counsel and should include procedures for identifying relevant users (those who have potentially relevant information).
 
 Establishing a Legal Hold policy first enables you to configure the Mattermost system correctly to meet your compliance & auditory requirements, minimizing associated risk.
 
@@ -73,10 +73,10 @@ In Mattermost, create a Legal Hold by completing the following steps:
 
 1. Go to **System Console > Plugins > Legal Hold Plugin**, and select **Create new**.
 2. Enter a name for the Legal Hold.
-3. Specify the user names or user groups of custodians you want to place on Legal Hold.
-4. (Optional) Public channels are excluded by default. You can choose to include public channels that the specified users or user groups are members of, if preferred.
-5. Specify the number of days custodians are placed in Legal Hold with a start date. An end date is optional.
-6. Select **Create Legal Hold**.
+3. Specify the user names or user groups of users you want to place on Legal Hold.
+4. (Optional) Public channels are excluded by default. You can choose to include public channels that the specified users or user groups are members of, if preferred; however, doing so will significantly increase the amount of data held based on the number public channels available.
+5. Specify the number of days that users are placed in Legal Hold with a start date. An end date is optional.
+6. Select **Create Legal Hold**. `Downloadable data <#download-legal-hold-data>`__ won't be available until the next scheduled job runs.
 
 Manage Legal Holds
 ^^^^^^^^^^^^^^^^^^
@@ -89,12 +89,12 @@ While a Legal Hold is in place, you can edit details of the Legal Hold, access t
 Edit a Legal Hold
 ::::::::::::::::::
 
-Select the **Edit** |edit-on-github| icon to change the name of the legal hold, add or remove custodians, change the end date, as well as include or exclude public channels.
+Select the **Edit** |edit-on-github| icon to change the name of the Legal Hold, add or remove users, change the end date, as well as include or exclude public channels.
 
 Access a Legal Hold secret
 :::::::::::::::::::::::::::
 
-A legal hold secret enables you to verify the authenticity of the data for a Legal Hold in Mattermost.
+A Legal Hold secret enables you to verify the authenticity of the data for a Legal Hold in Mattermost.
 
 Select the **Show** |preview-icon| icon to display the Legal Hold secret key. Keep a copy of this key in a secure location.
 
@@ -127,7 +127,7 @@ Select the **Download** |download-icon| icon to download a copy of the preserved
 Step 5: Release a Legal Hold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once the Legal Hold has completed, release it to take custodians off of the Legal Hold by selecting the **Release** option to the right of the Legal Hold task. 
+Once the Legal Hold has completed, release it to take users off of the Legal Hold by selecting the **Release** option to the right of the Legal Hold task. 
 
 .. important::
 
