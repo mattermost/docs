@@ -22,17 +22,17 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 3. Create the Mattermost database by running:
 
-  .. tab:: Ubuntu
+.. tab:: Ubuntu
 
-    .. code-block:: SQL
+  .. code-block:: SQL
 
-      CREATE DATABASE mattermost;
+    CREATE DATABASE mattermost;
 
-  .. tab:: Red Hat
+.. tab:: Red Hat
 
-    .. code-block:: SQL
+  .. code-block:: SQL
 
-      CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
+    CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
 
 4. Create the Mattermost user *mmuser* by running the following command. Ensure you use a password that's more secure than ``mmuser-password``.
 
