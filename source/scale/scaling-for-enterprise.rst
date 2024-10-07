@@ -35,7 +35,7 @@ All tests were executed with the custom load test tool built by the Mattermost d
 
 At a high level, each deployment size was fixed (Mattermost server node count/sizing, database reader/writer count/sizing), and unbounded tests were used to report the maximum numbers of concurrent users the deployment can support. Each test included populated PostgreSQL v14 databases and a post table history of 100 million posts, ~3000 users, 20 teams, and ~720000 channels to provide a test simulation of a production Mattermost deployment. 
 
-Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions) where the coordinator metrics define a health system under load. Tests were performed using the Mattermost v8.1 extended support release (ESR). Elasticsearch and job servers weren't used. All tests had an NGINX proxy running in front of them.
+Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions) where the coordinator metrics define a health system under load. Tests were performed using the Mattermost v9.5 extended support release (ESR). Job servers weren't used. All tests had an NGINX proxy running in front of them.
 
 Full testing methodology, configuration, and setup is available. Visit the `Mattermost Community <https://community.mattermost.com/>`_ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`_ for details.
 
