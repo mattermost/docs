@@ -165,9 +165,9 @@ c. Grant access to objects contained in the specified schema by running:
 
 9. Reload PostgreSQL by running:
 
-  .. code-block:: sh
+.. code-block:: sh
 
-      sudo systemctl reload postgresql-{version}
+  sudo systemctl reload postgresql-{version}
 
 10. Verify that you can connect with the user *mmuser*.
 
