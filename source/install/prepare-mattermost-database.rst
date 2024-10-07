@@ -36,9 +36,9 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 4. Create the Mattermost user *mmuser* by running the following command. Ensure you use a password that's more secure than ``mmuser-password``.
 
-  .. code-block:: SQL
+.. code-block:: SQL
 
-    CREATE USER mmuser WITH PASSWORD 'mmuser-password';
+  CREATE USER mmuser WITH PASSWORD 'mmuser-password';
 
 5. If you're configuring PostgreSQL v15.x or later:
     
