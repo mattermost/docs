@@ -963,7 +963,7 @@ Enable AV1 (Experimental)
 .. config:setting:: plugins-enableav1
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableAV1
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableav1
   :environment: N/A
 
   - **true**: Enables the ability to use the AV1 codec to encode screen sharing tracks. This can result in improved screen sharing quality for clients that support it.
@@ -971,7 +971,7 @@ Enable AV1 (Experimental)
 
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: Enables the ability to use the AV1 codec to encode screen    | - System Config path: **Plugins > Calls**                                                   |
-|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableAV1``        |
+|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableav1``        |
 |   clients that support AV1 encoding.                                     | - Environment variable: N/A                                                                 |
 | - **false**: **(Default**) AV1 codec is disabled for screen sharing      |                                                                                             |
 |   tracks.                                                                |                                                                                             |
@@ -979,6 +979,26 @@ Enable AV1 (Experimental)
 | **Note**:  This setting is ignored when                                                                                                                                |
 | :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.                          |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+Enable DC signaling (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. config:setting:: plugins-enabledcsignaling
+  :displayname: Use data channels for signaling media tracks (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling
+  :environment: N/A
+
+  - **true**: Clients will use WebRTC data channels for signaling of media tracks (i.e., voice, screen). This can result in a more efficient and less race-prone process, especially in case of poor network connections.
+  - **false**: **(False)** Clients will use WebSockets for signaling media tracks.
+
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| - **true**: Clients will use WebRTC data channels for signaling of media   | - System Config path: **Plugins > Calls**                                                        |
+|   tracks (i.e., voice, screen). This can result in a more efficient and    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling``     |
+|   less race-prone process, especially in case of poor network connections. | - Environment variable: N/A                                                                      |
+| - **false**: **(Default**) Clients will use WebSockets for signaling       |                                                                                                  |
+|   media tracks.                                                            |                                                                                                  |
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 ----
 
