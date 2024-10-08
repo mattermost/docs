@@ -416,7 +416,15 @@ class SearchClass {
         if (this.hasConfigSettingsIndex()) {
             console.log("query(): searching lunr");
             /** @type {Array<{score: number, ref: string, matchData: Record<string,any>}>} */
-            const lunrResults = this._lunrConfigSettingIndex.search(query);
+            let lunrResults;
+            try {
+                lunrResults = this._lunrConfigSettingIndex.search(query);
+            } catch (e) {
+                console.log('Error when trying to search query ' + JSON.stringify(query) + ' in lunr');
+                this.setPostSearchStatus(0, 0);
+                return;
+            }
+            
             console.log(`query(): lunr search returned ${lunrResults.length} results`);
             configSettingSearchResults = lunrResults.map((result) => {
                 /** @type {Array<ConfigSettingRecord>} */
