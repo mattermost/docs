@@ -62,7 +62,7 @@ after the DOM has finished loading #}
 	    const searchQuery = new URLSearchParams(window.location.search).get('q');
 
 	    if (!searchQuery || searchQuery.trim() === '') {
-	        searchTitle.textContent = "No search query entered!";
+	        searchTitle.textContent = "Search Results";
 	        searchSummary.textContent = "Please enter a search term to get results.";
 	       }
 	});
