@@ -122,7 +122,7 @@ Error:
 Download Legal Hold data
 :::::::::::::::::::::::::
 
-Select the **Download** |download-icon| icon to download a copy of the preserved data to a location on your local machine.
+Select the **Download** |download-icon| icon to download a copy of the preserved data to a location on your local machine. Note, no data will be available to download until at least one scheduled job is completed. 
 
 Step 5: Release a Legal Hold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
