@@ -4,11 +4,7 @@ Connect Microsoft Teams to Mattermost
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-menu| image:: ../images/products_E82F.svg
-  :alt: The Product menu is located in the top left corner of the Mattermost screen.
-  :class: theme-icon
-
-Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
+Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Microsoft Teams to Mattermost.
 
 Setup
 -----
@@ -96,12 +92,16 @@ Install and configure the Microsoft Teams integration in Mattermost
   These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
 
 1. Log in to your Mattermost workspace as a system administrator.
-2. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 3. Search for or scroll to MS Teams, and select **Install**.
 4. Once installed, select **Configure**. You're taken to the System Console.
 5. Configure the **Tenant ID**, **Client ID**, and **Client Secret** with the values obtained from setting up the OAuth App in Azure above.
 
 See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
+
+.. note::
+
+  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, v2.0 of this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_, and upload it to your server via **System Console > Plugin Management**.
 
 Monitor performance
 --------------------

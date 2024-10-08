@@ -4,41 +4,29 @@ Manage your display options
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |gear-icon| image:: ../images/settings-outline_F08BB.svg
-  :alt: Access settings using the gear icon.
-  :class: theme-icon
+You can customize Mattermost display options based on your preferences.
 
-To customize Mattermost display options based on your preferences, select the gear icon |gear-icon| next to your profile picture, then go to **Display**. 
+- Using Mattermost in a web browser or the desktop app, select the gear icon |gear| next to your profile picture, then go to **Display**.
+- On the Mattermost mobile app, tap your profile picture, and then tap **Settings > Display**.
 
 Theme
 -----
 
 .. tab:: Web/Desktop
 
-    Select **Theme** to apply a different look and feel to your Mattermost screen.
+    Select **Theme** to apply a different look and feel to Mattermost.
 
     Select **Theme Colors** to select one of 5 standard themes designed by the Mattermost team. Or, select **Custom Theme** to customize a standard theme even further.
 
+    See the :doc:`customize your theme </preferences/customize-your-theme>` documentation for more information.
+
 .. tab:: Mobile
 
-    Access **Settings** by tapping on your profile picture. Then, tap **Display** and **Theme**.
+    Tap **Theme** to select one of 5 standard Mattermost themes.
 
-Customize a theme
------------------
+    .. note::
 
-Using Mattermost in a web browser or the desktop app, you can customize any of the standard themes by selecting a standard theme and then selecting **Custom Theme** to load the standard theme into the custom theme color selectors.
-
-Select **Custom Theme** to customize your theme colors and share them with others by copying and pasting theme vectors into the input box. Observe a live preview as you customize theme colors, then select **Save** to confirm your changes. Discard your changes by selecting **Cancel**, or by exiting the settings modal and selecting **Yes, Discard**. See the :doc:`customize your theme </preferences/customize-your-theme>` documentation to learn more about working with the custom theme color selectors.
-
-.. tip::
-  In Enterprise edition, if you are a member of multiple teams, you can optionally select the checkbox **Apply new theme to all my teams** to have the theme show up across teams. Otherwise, the changes will only apply to the current team.
-
-Import a Slack theme
-~~~~~~~~~~~~~~~~~~~~
-
-Using Mattermost in a web browser or the desktop app, you can select **Import theme colors from Slack** to import a Slack theme. 
-
-In Slack, go to **Preferences > Sidebar Theme** and open the custom theme option. From there, copy the theme color vector and then paste it into the **Input Slack Theme** input box in Mattermost. Any theme settings that are not customizable in Slack will default to the “Sapphire” standard theme settings.
+        You can define a custom theme using Mattermost in a web browser or the desktop app. See the :doc:`customize your theme </preferences/customize-your-theme>` documentation for more information.
 
 Threaded discussions
 ---------------------
@@ -53,7 +41,7 @@ Depending on how your system admin has :ref:`configured threaded discussions <co
 
 .. tab:: Mobile
 
-    Access **Settings** by tapping on your profile picture. Then, tap **Display** and **Threaded discussions**.
+    Tap **Threaded discussions** to manage this option.
 
 Clock display
 -------------
@@ -66,7 +54,7 @@ You can customize how time is displayed in Mattermost.
 
 .. tab:: Mobile
 
-    Access **Settings** by tapping on your profile picture. Then, tap **Display** and **Clock Display**.
+    Tap **Clock Display** to display time in Mattermost using a 12-hour or 24-hour convention.
 
 Teammate name display
 ---------------------
@@ -118,7 +106,7 @@ You can customize the timezone used for timestamps in Mattermost and in email no
 
 .. tab:: Mobile
 
-    Access **Settings** by tapping on your profile picture. Then, tap **Display** and **Timezone**.
+    Tap **Timezone** to set your timezone automatically based on your mobile device preference.
 
 Website link previews
 ---------------------

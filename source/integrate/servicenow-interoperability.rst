@@ -4,10 +4,6 @@ Connect ServiceNow to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |product-menu| image:: ../images/products_E82F.svg
-  :alt: The Product menu is located in the top left corner of the Mattermost screen.
-  :class: theme-icon
-
 Minimize distractions and reduce context switching by bridging the gap between IT service management (ITSM) and team communication. Create and manage incident reports, change requests, and service tickets, as well as manage event-driven notification subscriptions for ServiceNow record changes, in real-time, and automate routine tasks to decrease response times without leaving Mattermost.
 
 Setup
@@ -91,7 +87,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the ServiceNow integration from the in-product App Marketplace:
 
-1. In Mattermost, from the Product menu |product-menu|, select **App Marketplace**.
+1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to ServiceNow, and select **Install**.
 3. Once installed, select **Configure**. You're taken to the System Console.
 4. On the ServiceNow configuration page, enable and configure ServiceNow interoperability as follows, and then select **Save**:

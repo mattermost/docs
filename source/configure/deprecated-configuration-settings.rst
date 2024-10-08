@@ -20,6 +20,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Permission policy settings <#permission-policy-settings>`__
 - `Image settings <#image-settings>`__
 - `Experimental display settings <#experimental-display-settings>`__
+- `Experimental API endpoint settings <#experimental-api-endpoint-settings>`__
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----

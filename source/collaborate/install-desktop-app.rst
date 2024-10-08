@@ -4,10 +4,6 @@ Install the Mattermost desktop app
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon-vertical| image:: ../images/dots-vertical_F01D9.svg
-  :alt: Use the More icon in the top left corner to access Mattermost desktop apps customization settings.
-  :class: theme-icon
-
 The Mattermost desktop app is available for Linux, Mac, and Windows operating systems. The Desktop App supports all the features of the web experience, plus the following features:
 
 - :doc:`Connect to multiple Mattermost servers </preferences/connect-multiple-workspaces>` from a single interface, and navigate between servers using keyboard shortcuts.
@@ -29,7 +25,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-setup-5.9.0-win.exe>`_
+    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-win-x64.msi>`_
     2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.9.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
   **MSI Installer and group policies**
@@ -168,7 +164,8 @@ The first time you log in to Mattermost using the desktop app, you'll see a spla
 
 .. tip::
 
-  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+ - Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+ - Having trouble launching your Desktop App? See the `Troubleshooting section <#troubleshooting-your-desktop-app-installation>` for details.
 
 Additional documentation resources
 ----------------------------------
@@ -208,6 +205,11 @@ How do I download app diagnostics?
 
 From Mattermost desktop v5.3, you can download a diagnostics text file via **Help > Run diagnostics**, which can be attached to a Support ticket.
 
+Desktop App displays white screen while launching and doesn't load the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. Delete the local ``Mattermost desktop app`` configuration file. See the `Where is configuration stored locally? <#where-is-configuration-stored-locally>`__ section above for file location details.
+2. Reinstall the application. 
+
 "Installation has failed" dialog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -239,7 +241,7 @@ To resolve this issue, you can reset the desktop app screen location by deleting
 To reset the desktop app screen location:
 
 1. If the desktop app is running, right-click the Mattermost icon in the task bar, then select **Close Window**.
-2. Open Windows File Explorer, and go to the ``%APPDATA%\\Mattermost`` folder.
+2. Open Windows File Explorer, and go to the ``%APPDATA%\Mattermost`` folder.
 3. Delete the file ``bounds-info.json``.
 
 Desktop App constantly refreshes the page
@@ -256,7 +258,7 @@ Desktop App constantly asks to log in to Mattermost server
 
 This issue can occur after a crash or unexpected shutdown of the desktop app that causes the app data to be corrupted. To resolve the issue:
 
-- Windows: Open Windows File Explorer, go to the ``%APPDATA%\\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
+- Windows: Open Windows File Explorer, go to the ``%APPDATA%\Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 - Mac: Open Finder, go to the ``~/Library/Application Support/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files.
 - Linux: Open the file manager, go to the ``~/.config/Mattermost`` folder, then delete the ``IndexedDB`` folder and the ``Cookies`` and ``Cookies-journal`` files. Linux file managers may hide folders starting with a period by default. You can delete them from the terminal using ``rm -rf ~/.config/Mattermost``.
 

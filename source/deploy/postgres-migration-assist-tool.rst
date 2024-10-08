@@ -4,9 +4,9 @@ Automated PostgreSQL migration
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven't performed a migration before. 
+Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven't performed a migration before. Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the :doc:`tasks to be executed </deploy/manual-postgres-migration>`. 
 
-Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the tasks to be executed. The tool offers 3 core utility commands:
+The ``migration-assist`` tool offers 3 core utility commands:
 
 1. ``migration-assist mysql``
 
@@ -19,6 +19,8 @@ Our ``migration-assist`` tool provides an efficient, error-free migration experi
 3. ``migration-assist pgloader``
 
    Generates a pgloader configuration from DSN values, ensuring accurate data transfer. See the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation for details on installing the pgloader tool.
+
+Not sure this tool is right for your Mattermost deployment? Mattermost customers looking for tailored guidance based on their Mattermost deployment can contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 Install
 -------
@@ -148,3 +150,8 @@ Use ``go install`` to install the tool:
 .. code-block:: shell
 
    go install github.com/mattermost/migration-assist/cmd/migration-assist@latest
+
+Troubleshooting
+---------------
+
+See :ref:`troubleshooting errors during migration from MySQL to PostgreSQL <deploy/postgres-migration:troubleshooting>`
