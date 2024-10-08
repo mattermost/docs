@@ -15,8 +15,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 6s devices and later with iOS 13.4+ is required.
 
-### Bug Fixes
- - 
+### Improvements
+ - Added a configuration setting ``NativeAppSettings > MobileExternalBrowser`` that tells the Mobile app to perform SSO Authentication using the external default browser.
 
 (release-v2-20-0)=
 ## 2.20.0 Release
