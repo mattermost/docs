@@ -3347,18 +3347,18 @@ redirects = {
         "https://docs.mattermost.com/scale/performance-monitoring-metrics.html#why-are-chart-labels-difficult-to-distinguish",
 "scale/high-availability-cluster.html":
         "https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html",
-"scale/scale-up-to-100-users.html":
-        "https://docs.mattermost.com/scale/scale-up-to-200-users.html",
-"scale/scale-up-to-1000-users.html":
-        "https://docs.mattermost.com/scale/scale-up-to-2000-users.html",
-"scale/scale-up-to-25000-users.html":
-        "https://docs.mattermost.com/scale/scale-up-to-30000-users.html",
-"scale/scale-up-to-70000-users.html":
-        "https://docs.mattermost.com/scale/scale-up-to-80000-users.html",
-"scale/scale-up-to-79000-users.html":
-        "https://docs.mattermost.com/scale/scale-up-to-80000-users.html",
-"scale/scale-up-to-88000-users.html":
-        "https://docs.mattermost.com/scale/scale-up-to-90000-users.html",
+"scale/scale-to-100-users.html":
+        "https://docs.mattermost.com/scale/scale-to-200-users.html",
+"scale/scale-to-1000-users.html":
+        "https://docs.mattermost.com/scale/scale-to-2000-users.html",
+"scale/scale-to-25000-users.html":
+        "https://docs.mattermost.com/scale/scale-to-30000-users.html",
+"scale/scale-to-70000-users.html":
+        "https://docs.mattermost.com/scale/scale-to-80000-users.html",
+"scale/scale-to-79000-users.html":
+        "https://docs.mattermost.com/scale/scale-to-80000-users.html",
+"scale/scale-to-88000-users.html":
+        "https://docs.mattermost.com/scale/scale-to-90000-users.html",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
