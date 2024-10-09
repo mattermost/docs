@@ -646,6 +646,7 @@ class SearchClass {
         if (!numberOfResults && !numberOfConfigSettingResults) {
             const searchStatusEl = document.getElementById("search-summary");
             if (searchStatusEl) {
+                this.title.innerText = _('Search Results');
                 searchStatusEl.innerText = "Your search did not match any documents. Please make sure that all words are spelled correctly.";
             }
             return;
