@@ -6,6 +6,9 @@ Enable Copilot
 
 Signficantly increase team productivity and decision-making speed by enhancing your real-time collaboration capabilities with instant access to AI-generated information, discussion summaries, and contextually-aware action recommendations with Mattermost's Copilot. Your users can interact with AI capabilities directly within their daily communication channels without needing to switch between multiple tools or platforms
 
+.. include:: ../_static/badges/academy-copilot-setup.rst
+  :start-after: :nosearch:
+
 Setup
 ------
 
@@ -82,7 +85,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 
   1. Deploy your model, for example, on `Ollama <https://ollama.com/>`_.
   2. Select **OpenAI Compatible** in the **AI Service** dropdown.
-  3. Enter the URL to your AI service from your Mattermost deployment in the **API URL** field. Be sure to include the port, and append ``/v1`` to the end of the URL. (e.g., ``http://localhost:11434/v1`` for Ollama)
+  3. Enter the URL to your AI service from your Mattermost deployment in the **API URL** field. Be sure to include the port, and append ``/v1`` to the end of the URL if using Ollama. (e.g., ``http://localhost:11434/v1`` for Ollama, otherwise ``http://localhost:11434/``)
   4. If using Ollama, leave the **API Key** field blank.
   5. Specify your model name in the **Default Model** field.
 
