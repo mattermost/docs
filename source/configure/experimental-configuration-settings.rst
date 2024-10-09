@@ -1580,26 +1580,6 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
 +---------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Experimental)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: N/A
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
-App custom URL schemes
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client.
-
-When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: exp-o365scope
   :displayname: Entra ID scope (Experimental)
   :systemconsole: N/A
@@ -1947,72 +1927,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 .. note::
    This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
-
-.. config:setting:: exp-enableapiteamdeletion
-  :displayname: Enable API team deletion (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableAPITeamDeletion
-  :environment: N/A
-
-  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
-  - **false**: **(Default)** The API endpoint cannot be called.
-
-Enable API team deletion
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enableapiuserdeletion
-  :displayname: Enable API user deletion
-  :systemconsole: N/A
-  :configjson: EnableAPIUserDeletion
-  :environment: N/A
-
-  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
-  - **false**: **(Default)** The API endpoint cannot be called.
-
-Enable API user deletion
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enableapichanneldeletion
-  :displayname: Enable API channel deletion (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableAPIChannelDeletion
-  :environment: N/A
-
-  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
-  - **false**: **(Default)** The API endpoint cannot be called.
-
-Enable API channel deletion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
-
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableopentracing
   :displayname: Enable OpenTracing (Experimental)

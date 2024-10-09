@@ -1,8 +1,8 @@
 :nosearch:
 
-Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies. Confidential data, such as passwords, are automatically stripped.
+Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
 
-Contents of a support packet
+Contents of a Support Packet
 ----------------------------
 
 A Mattermost Support Packet can contain the following files:
@@ -17,15 +17,16 @@ A Mattermost Support Packet can contain the following files:
 
 .. note:: 
 
+   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file.
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
 
-Generate the support packet
----------------------------
+Generate
+---------
 
 .. important::
    
-   Before generating a support packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
+   Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
 
 .. tab:: Web/Desktop
 
@@ -59,7 +60,7 @@ Ensure you sanitize any additional confidential details in the ``plugin.json`` f
 Share the packet with Mattermost
 --------------------------------
 
-Add the generated support packet to a Mattermost Support ticket, or share with with the Mattermost team you're working with.
+Add the generated Support Packet to a `standard support request <https://support.mattermost.com/hc/en-us/requests/new>`_, or share with with the Mattermost team you're working with.
 
 .. important::
 
@@ -77,12 +78,12 @@ From Mattermost v9.11, generated Support Packets include a ``metadata.yaml`` fil
 |                       |                       | Current version is 1.                                                                                             |                            |
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | type                  | Required              | The type of the packet.                                                                                           | mattermost                 |
-|                       |                       | Each type of support packet can be mapped to a specific component generating the support packet.                  |                            |
+|                       |                       | Each type of Support Packet can be mapped to a specific component generating the Support Packet.                  |                            |
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | generated_at          | Required              | The date and time the packet was created.                                                                         | 1707473288731              |
 |                       |                       | Value is in epoch (ms).                                                                                           |                            |
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
-| server_version        | Required              | Version of the server that the support packet was generated at.                                                   | 9.1.1                      |
+| server_version        | Required              | Version of the server that the Support Packet was generated at.                                                   | 9.1.1                      |
 |                       |                       | Semver is expected.                                                                                               |                            |
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | server_id             | Required              | Unique identifier of the server.                                                                                  | 9qpiszyjr3g8bxda35abcd1234 |

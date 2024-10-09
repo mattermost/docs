@@ -29,6 +29,10 @@ Direct messages conversations between 2 people. You can start a direct message w
 
 Direct messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. See the :doc:`notification documentation </preferences/manage-your-notifications>` for details on customizing notifications based on your preferences.
 
+.. tip::
+
+  From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+
 Group messages
 --------------
 
