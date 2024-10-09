@@ -7,7 +7,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 (release-v2-20-1)=
 ## 2.20.1 Release
- - Release Date: October 8, 2024
+ - Release Date: October 9, 2024
  - Server Versions Supported: Server v9.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
