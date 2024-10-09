@@ -6,6 +6,9 @@ Connect Microsoft Teams to Mattermost
 
 Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Microsoft Teams to Mattermost.
 
+.. include:: ../_static/badges/academy-msteams.rst
+  :start-after: :nosearch:
+
 Setup
 -----
 
