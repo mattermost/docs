@@ -9,6 +9,7 @@ Large quantities of data can be imported from a `JSONL <https://jsonlines.org>`_
 You can import the following data types:
 
 - Teams
+- Threaded discussions
 - Channels (public and private)
 - Users
 - Users' team memberships
@@ -20,6 +21,7 @@ You can import the following data types:
 - Posts' reactions
 - Posts' file attachments
 - Direct message and group message channels
+- Direct message and group message channels' read/unread status
 - Direct messages and group messages
 - Direct messages from a user to themselves
 - Permissions schemes
