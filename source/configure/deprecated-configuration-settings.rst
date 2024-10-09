@@ -24,12 +24,6 @@ The following Mattermost configuration settings are deprecated and are no longer
 
 ----
 
-Mattermost Boards setting
---------------------------
-
-*Removed in the Mattermost v8.0 release*
-
-
 Bleve settings
 --------------
 
