@@ -15,7 +15,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 ### Important Upgrade Notes
  - We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
  - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
- - Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. Professional SKU customers may continue to use Playbooks v1 uninterrupted which will be maintained and supported until September 2025, followed by an appropriate grandfathering strategy. More detailed information and the discussion are available on our [forums here](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563).
+ - Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. Professional SKU customers may continue to use Playbooks v1 uninterrupted which will be maintained and supported until September 2025, followed by an appropriate grandfathering strategy. More detailed information and the discussion are available on the [Mattermost discussion forum](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563).
  - Renamed ``Channel Moderation`` to ``Advanced Access Control`` in the channel management section in the **System Console**.
  - Renamed announcement banner feature to “system-wide notifications”.
  - Renamed “Collapsed Reply Threads” to “Threaded Discussions” in the System Console.
