@@ -1,10 +1,10 @@
-Scale Mattermost up to 50000 users
-==================================
+Scale Mattermost up to 100000 users
+====================================
 
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This page describes the Mattermost reference architecture designed for the load of up to 50000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
+This page describes the Mattermost reference architecture designed for the load of up to 100000 concurrent users. Unsure which reference architecture to use? See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for details.
 
 - **High Availability**: Required
 - **Database Configuration**: writer, multiple readers
@@ -19,11 +19,11 @@ Requirements
 | **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  |
 |                        |           | Memory (GiB)** |                   |
 +========================+===========+================+===================+
-| Mattermost Application | 5         | 8/16           | c7i.2xlarge       |
+| Mattermost Application | 6         | 16/32          | c7i.4xlarge       |
 +------------------------+-----------+----------------+-------------------+
-| RDS Writer             | 1         | 8/64           | db.r7g.2xlarge    |
+| RDS Writer             | 1         | 16/128         | db.r7g.4xlarge    |
 +------------------------+-----------+----------------+-------------------+
-| RDS Reader             | 4         | 8/64           | db.r7g.2xlarge    |
+| RDS Reader             | 5         | 16/128         | db.r7g.4xlarge    |
 +------------------------+-----------+----------------+-------------------+
 | Elasticsearch Node     | 2         | 4/32           | r6g.xlarge.search |
 +------------------------+-----------+----------------+-------------------+
@@ -45,11 +45,11 @@ Estimated storage per user, per month
 Example
 ~~~~~~~
 
-A 50000-person team with medium usage (with a safety factor of 2x) would require between 6TB :sup:`1` and 30TB :sup:`2` of free space per annum.
+A 100000-person team with medium usage (with a safety factor of 2x) would require between 10.56TB :sup:`1` and 52.8TB :sup:`2` of free space per annum.
 
-:sup:`1` 50000 users * 5 MB * 12 months * 2x safety factor
+:sup:`1` 100000 users * 5 MB * 12 months * 2x safety factor
 
-:sup:`2` 50000 users * 25 MB * 12 months * 2x safety factor
+:sup:`2` 100000 users * 25 MB * 12 months * 2x safety factor
 
 We strongly recommend that you review storage utilization at least quarterly to ensure adequate free space is available.
 
