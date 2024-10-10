@@ -10,6 +10,11 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.3, released 2024-10-10**
+  - Mattermost v9.11.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
+  - Improved the performance of LDAP sync jobs when group-contained teams and channels are used [MM-60253](https://mattermost.atlassian.net/browse/MM-60253).
+  - Mattermost v9.11.3 contains no database or functional changes.
 - **9.11.2, released 2024-09-26**
   - Mattermost v9.11.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
@@ -160,7 +165,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v9-10-chang
  - Pre-packaged Mattermost Copilot plugin version [v0.8.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.1).
  - Pre-packaged Calls plugin version [v0.28.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.28.2).
  - Re-designed the user profile popover and improved its performance.
- - Added banner to prompt users to give desktop notification permissions when opening the app.
+ - Added banner to prompt users to allow notification permissions when opening the app in web browsers.
  - Increased the width of the profile picture setting to match other user settings.
  - Improved screen reader support for the emoji picker.
  - Improved the accessibility of plugin buttons in the channel header.
@@ -650,6 +655,12 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.11, released 2024-10-10**
+  - Mattermost v9.5.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
+  - Pre-packaged Calls plugin [v0.29.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.2).
+  - Improved the performance of LDAP sync jobs when group-contained teams and channels are used [MM-60253](https://mattermost.atlassian.net/browse/MM-60253).
+  - Mattermost v9.5.11 contains no database or functional changes.
 - **9.5.10, released 2024-09-26**
   - Mattermost v9.5.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed racy use of session in ``NewWebConn`` [MM-60307](https://mattermost.atlassian.net/browse/MM-60307).
