@@ -7,6 +7,83 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
+(release-v10.1-feature-release)=
+## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+- **10.1.1, released 2024-10-16**
+  - Fixed an issue where a shared indicator was shown in all Direct Messages, regardless of the user coming from a shared server [MM-60744](https://mattermost.atlassian.net/browse/MM-60744).
+  - Mattermost v10.1.1 contains no database or functional changes.
+- **10.1.0, released 2024-10-16**
+  - Original 10.1.0 release.
+
+```{Important}
+If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Added Metrics plugin to the prepackaged plugins, [v0.5.3](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.5.3).
+ - Pre-packaged Calls plugin [v1.1.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.1.0).
+ - Enabled Channel Bookmarks, added re-ordering, and fixed URL validity checking.
+ - Added a more descriptive error message, "Uploaded plugin size exceeds limit." for plugin uploads that are too large.
+ - Added channel specific message notification sounds configuration.
+
+#### Administration
+ - Added ``DeleteAt`` field for ``SharedChannelRemotes`` and ``RemoteClusters``.
+ - Added support for sending channel invites to offline remotes in Shared Channels.
+ - Changed server-side logic to return a ``413: Request Entity Too Large`` HTTP status code for a plugin upload that is too large.
+ - Direct and Group Message unread/read state over export and import will now be carried over.
+ - CRT memberships are now importable for import.
+ - CRT memberships are now exportable for bulk export.
+ - Added ``--local mode`` support in MMCTL to handle user preferences.
+ - Plugins are now allowed to mark setting fields as secret, obfuscating them in the System Console and the Support Packet.
+
+#### Performance
+ - Improved metrics related to push proxy errors.
+ - Improved metrics around notifications.
+
+### Bug Fixes
+ - Fixed an issue where threads would be marked as read if they were open in the background.
+ - Fixed an issue where Direct and Group Messages didn't load correctly in the sidebar when refreshing the app from Drafts.
+ - Fixed an issue attempting to bind to Apps plugin when the plugin was not enabled.
+ - Fixed an issue where the Unreads tab would not update correctly after the websocket reconnected.
+ - Fixed an issue with focusing on the main box when loading the app.
+ - Fixed an issue where Team and Channel Admins could lose the ability to create posts in a moderated channel.
+ - Fixed an issue where marking a channel as unread did not show immediately in other clients.
+ - Fixed an issue with not allowing to use ``@`` and ``~`` in the ``in:`` search modifier without affecting search results.
+ - Fixed an issue with YouTube previews no longer being displayed.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``YoutubeReferrerPolicy`` to fix an issue where YouTube previews showed an “Video Unavailable” error instead of the video.
+
+#### Changes to the Enterprise plan:
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Added ``DisableSharedChannelsStatusSync`` to add status sync support to Shared Channels.
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Moved the Shared Channel related configuration properties out of the Experimental section.
+    - Added the ``MaxPostsPerSync`` configuration property.
+
+### API Changes
+ - Added new API endpoints to manage shared channels.
+ - Added proper response to ``/api/v4/client_perf`` endpoint.
+
+### Go Version
+ - v10.1 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - [adityasoni2019](https://github.com/adityasoni2019), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [algeorgiadis](https://github.com/algeorgiadis), [amyblais](https://github.com/amyblais), [andreabia](https://translate.mattermost.com/user/andreabia), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [armmanvaillancourt](https://github.com/armmanvaillancourt), [Aryakoste](https://github.com/Aryakoste), [ayusht2810](https://github.com/ayusht2810), [azistellar](https://translate.mattermost.com/user/azistellar), [azizthegit](https://github.com/azizthegit), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [ChinoUkaegbu](https://github.com/ChinoUkaegbu), [Chlbek](https://translate.mattermost.com/user/Chlbek), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielsischy](https://github.com/danielsischy), [daveseo901](https://github.com/daveseo901), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [Eleferen](https://translate.mattermost.com/user/Eleferen), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [Gesare5](https://github.com/Gesare5), [Glandos](https://github.com/Glandos), [grundleborg](https://github.com/grundleborg), [gvarma28](https://github.com/gvarma28), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hereje](https://github.com/hereje), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [ja49619](https://translate.mattermost.com/user/ja49619), [johnsonbrothers](https://github.com/johnsonbrothers), [jones](https://translate.mattermost.com/user/jones), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kaoski](https://github.com/kaoski), [kayazeren](https://github.com/kayazeren), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [L3o-pold](https://github.com/L3o-pold), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [lukasMega](https://github.com/lukasMega), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [manujgrover71](https://github.com/manujgrover71), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [milotype](https://translate.mattermost.com/user/milotype), [Morgan_svk](https://translate.mattermost.com/user/Morgan_svk), [Movion](https://github.com/Movion), [mvitale1989](https://github.com/mvitale1989), [nekodayo2222](https://translate.mattermost.com/user/nekodayo2222), [nickmisasi](https://github.com/nickmisasi), [nikhilskul7](https://github.com/nikhilskul7), [Porma120](https://github.com/Porma120), [pvev](https://github.com/pvev), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Rishiii7](https://github.com/Rishiii7), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://github.com/Sharuru), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [testtomato1230](https://translate.mattermost.com/user/testtomato1230), [TheInvincibleRalph](https://github.com/TheInvincibleRalph), [ThrRip](https://translate.mattermost.com/user/ThrRip), [toninis](https://github.com/toninis), [tsabi](https://github.com/tsabi), [vish9812](https://github.com/vish9812), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [yaz](https://translate.mattermost.com/user/yaz), [yuney-worx4you](https://github.com/yuney-worx4you)
+
 (release-v10.0-major-release)=
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
