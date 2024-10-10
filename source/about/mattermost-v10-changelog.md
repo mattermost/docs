@@ -12,7 +12,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 - **10.0.1, released 2024-10-10**
   - Mattermost v10.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue enabling Professional customers and Team Edition users to upgrade to Playbooks v2 via the in-product marketplace, which fails to start without an Enterprise License. Additional details and discussion can be found on the [forums here](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563) [MM-60679](https://mattermost.atlassian.net/issues/MM-60679)
+  - Fixed an issue enabling Professional customers and Team Edition users to upgrade to Playbooks v2 via the in-product marketplace, which fails to start without an Enterprise License. Additional details and discussion can be found on the [forums here](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563) [MM-60679](https://mattermost.atlassian.net/browse/MM-60679).
   - Mattermost v10.0.1 contains no database or functional changes.
 - **10.0.0, released 2024-09-16**
   - Original 10.0.0 release.
