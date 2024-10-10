@@ -87,19 +87,23 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.0-major-release)=
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release day: 2024-09-16**
+- **10.0.1, released 2024-10-10**
+  - Mattermost v10.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.0.1 contains no database or functional changes.
+- **10.0.0, released 2024-09-16**
+  - Original 10.0.0 release.
 
 ### Important Upgrade Notes
  - We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
  - Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
- - Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. New Playbooks features and security updates will only be added to Playbooks v2 moving forward; however, Playbooks v1 will be maintained for Team Edition and Professional instances running [supported v9.x Mattermost server releases](https://docs.mattermost.com/about/mattermost-server-releases.html).
+ - Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. Professional SKU customers may continue to use Playbooks v1 uninterrupted which will be maintained and supported until September 2025, followed by an appropriate grandfathering strategy. More detailed information and the discussion are available on the [Mattermost discussion forum](https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563).
  - Renamed ``Channel Moderation`` to ``Advanced Access Control`` in the channel management section in the **System Console**.
  - Renamed announcement banner feature to “system-wide notifications”.
  - Renamed “Collapsed Reply Threads” to “Threaded Discussions” in the System Console.
  - Renamed “System Roles” to “Delegated Granular Administration” in the System Console.
  - Renamed "Office 365" to "Entra ID" for SSO logins.
  - Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
- - Pre-packaged Calls plugin [v1.0.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1). This includes breaking changes such as allowing calls in direct message channels only on unlicensed servers.
+ - Pre-packaged Calls plugin [v1.0.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1). This includes breaking changes including removal of group calls from unlicensed servers in order to focus supportability and quality on licensed servers. Unlicensed servers can continue to use Calls in direct message channels, which represent the majority of activity.
  - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
  - Removed deprecated ``pageSize`` query parameter from most API endpoints.
  - Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
@@ -109,6 +113,8 @@ If you upgrade from a release earlier than v9.11, please read the other [Importa
 ```
 
 ### Highlights
+
+See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-changelog/) on some of the highlights and improvements in our latest release below.
 
 #### Mattermost Microsoft Teams Plugin
  - Pre-packaged the Microsoft Teams plugin for Mattermost, [v2.0.3](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.0.3).

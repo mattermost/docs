@@ -42,7 +42,7 @@ To enable persistent notifications for a message:
 Receive persistent notifications
 --------------------------------
 
-You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your :doc:`notifications preferences </preferences/manage-your-notifications>` for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're :ref:`Out of Office <preferences/set-your-status-availability:set your availability>`. Learn more about customizing how you receive notifications by visiting the :ref:`get notified <preferences/manage-your-notifications:get notified>` documentation.
+You must have desktop and/or mobile push notifications enabled to receive persistent notifications. How you're notified depends on your :doc:`notifications preferences </preferences/manage-your-notifications>` for desktop and mobile push notifications. You won't be notified when your availability is set to **Do Not Disturb**, or if you're :ref:`Out of Office <preferences/set-your-status-availability:set your availability>`. Learn more about managing and customizing how you receive :doc:`Mattermost notifications </preferences/manage-your-notifications>`.
 
 Urgent messages show a red mention badge which remains visibible until you view the message. Selecting the **Acknowledge** icon (when present) won't impact the urgent red mention badge.
 
