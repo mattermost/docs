@@ -3827,7 +3827,6 @@ rst_prolog = """
     :class: theme-icon
 .. |acknowledge-button| image:: /images/Ack-Button-Default.svg
     :alt: Select the Acknowledge button to indicate that you've read it and taken necessary action.
-    :class: theme-icon
 .. |reply-arrow| image:: /images/reply-outline_F0F20.svg
     :alt: Reply icon.
     :class: theme-icon
