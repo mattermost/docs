@@ -12,23 +12,33 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: ci/Checkout code
-        uses: actions/checkout@ac593985615ec2ede58e132d2e21d2b1cbd6127c  # v3.3.0
-      - uses: actions/setup-python@db9987b4c1f10f0404fa60ee629f675fafbd6763  # v4.6.0
+        uses: actions/checkout@eef61447b9ff4aafe5dcd4e0bbf5d482be7e7871  # v4.2.1
+
+      - uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3  # v5.2.0
         with:
           python-version: 3.9
+
       - name: ci/Install dependencies
         run: make python-deps
+
       - name: ci/Run tests
-        run: TZ=UTC make test
+        env:
+          TZ: UTC
+        run: make test
+
       - name: ci/Build docs
-        run: TZ=UTC make html
+        env:
+          TZ: UTC
+        run: make html
+
       - name: ci/Persist docs artifacts
-        uses: actions/upload-artifact@65d862660abb392b8c4a3d1195a2108db131dd05  # v3.1.2
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882  # v4.4.3
         with:
           name: docs
           path: build/html
+
       - name: ci/Persist doc logs artifacts
-        uses: actions/upload-artifact@65d862660abb392b8c4a3d1195a2108db131dd05  # v3.1.2
+        uses: actions/upload-artifact@b4b15b8c7c6ac21ea08fcf65892d2ee8f75cf882  # v4.4.3
         with:
           name: doc-logs
           path: build/*.log
