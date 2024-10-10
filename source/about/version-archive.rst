@@ -13,7 +13,7 @@ Version archive
 
   Mattermost Enterprise Edition v10.0.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.1/mattermost-10.0.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.0.1/mattermost-10.0.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``4d6a4a3c26c6eeb6cc34dfbd02110ba9e469f8976b777ace6ac95206552a9b8b``
+    - SHA-256 Checksum: ``c0e8242168968bf7c9dce0c5a3a372183d1056eb6d92cd095e812b0e28bca761``
     - GPG Signature: https://releases.mattermost.com/10.0.1/mattermost-10.0.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.11.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.3/mattermost-9.11.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.11.3/mattermost-9.11.3-linux-amd64.tar.gz``
@@ -385,7 +385,7 @@ Version archive
 
   Mattermost Team Edition v10.0.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.1/mattermost-team-10.0.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.0.1/mattermost-team-10.0.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``fa56458e6aaa438b4387ff89b22b0ba390fe550f6220296542be383969b6a2f8``
+    - SHA-256 Checksum: ``932090fd6fbc44e33ddcdc57f89fe1048c3a1d486de3b0395839aef47a182b77``
     - GPG Signature: https://releases.mattermost.com/10.0.1/mattermost-team-10.0.1-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.11.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.3/mattermost-team-9.11.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.11.3/mattermost-team-9.11.3-linux-amd64.tar.gz``
