@@ -579,7 +579,7 @@ Please use the following JSON configuration as as starting point to enable trace
                 }
             ],
             "options": {
-                "file_name": "./logs/ldap.log",
+                "filename": "./logs/ldap.log",
                 "max_size": 100,
                 "max_age": 14,
                 "max_backups": 3,
