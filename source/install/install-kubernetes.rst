@@ -1,8 +1,42 @@
-Install Mattermost on Kubernetes
-================================
+Deploy Mattermost on Kubernetes
+=====================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
+
+
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+  :titlesonly:
+
+  Install Mattermost on Azure AKS </install/install-kubernetes-aks>
+
+
+You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
+
+Mattermost supports Kubernetes clusters running either self-hosted in data centers, or in managed services such as Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, DigitalOcean Kubernetes, and others.
+
+You'll need a `Kubernetes cluster <https://kubernetes.io/docs/setup/>`__ running `a version that is currently supported with patch releases <https://kubernetes.io/releases/>`__,  Kubernetes CLI `kubectl <https://kubernetes.io/docs/reference/kubectl/overview/>`__ installed on local machine, and a basic understanding of Kubernetes concepts (such as deployments, pods) and actions (such as applying manifests, viewing pod logs).  
+
+Running Mattermost in Kubernetes requires resources based on your total number of users. See the :ref:`Mattermost Kubernetes Operator <install/install-kubernetes:mattermost operator>` documentation to learn more about the minimum Kubernetes cluster resources Mattermost requires at different scales.\
+
+.. tip::
+    
+    - If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`__, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`__, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`__, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`__.
+    - Looking for a quick way to evaluate Mattermost or to try out the latest Mattermost deployment? See this article for details on creating your own Mattermost instance on Kubernetes using Minicube: https://medium.com/@Erez.Tamam/create-your-own-mattermost-instance-on-kubernetes-in-10-minutes-d13f576ed794.
+  
+.. tip::
+
+  * See the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your production deployment.
+  
+  * Encountering issues with your deployment? See the :ref:`Deployment Troubleshooting <install/troubleshooting:deployment troubleshooting>` or :doc:`high scale troubleshooting </deploy/high-scale-troubleshoot>` documentation for details.
+
+* :doc:`Install Mattermost on Azure AKS </install/install-kubernetes-aks>` - Learn how to easily deploy on AKS. 
+
+
+Install Mattermost on Kubernetes
+================================
 
 You can install and deploy a production-ready Mattermost system on a Kubernetes cluster using the Mattermost Kubernetes Operator in practically any environment with less IT overhead and more automation.
 
