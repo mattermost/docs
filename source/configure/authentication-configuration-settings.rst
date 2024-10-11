@@ -53,6 +53,9 @@ Enable account creation
 |   Selecting **Create Account** displays an error.                               |                                                                        |
 |   Applies to email, OpenID Connect, and OAuth 2.0 user account authentication.  |                                                                        |
 +---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this       |
+| configuration setting is enabled.                                                                                                                        |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: signup-restrictcreationtodomains
   :displayname: Restrict account creation to specified email domains (Signup)
