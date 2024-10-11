@@ -91,7 +91,7 @@ Maximum file size
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                   |
 |                                                                                                                                              |
-| - When :ref: `uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invlaid response from           |
+| - When :ref:`uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invlaid response from            |
 |   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy        |
 |   settings may not be sufficient.                                                                                                            |
 | - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                     |
