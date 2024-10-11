@@ -41,23 +41,71 @@ Client
 Network
 ~~~~~~~
 
-.. note::
+Network Requirements for Calls Deployment
+=========================================
 
-  Scroll horizontally to see additional columns in the table below.
+1. API (Calls plugin)
+---------------------
 
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Service                         | Ports  | Protocols       | Source                                                     | Target                                   | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| API (Calls plugin)              | 80,443 | TCP (incoming)  | Mattermost clients (web/desktop/mobile)                    | Mattermost instance (Calls plugin)       | To allow for HTTP and WebSocket connectivity from clients to Calls plugin. This API is exposed on the same connection as Mattermost, so there’s likely no need to change anything.                                                                                                                                                                                                                                                                                                          |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RTC (Calls plugin or ``rtcd``)  | 8443   | UDP (incoming)  | Mattermost clients (Web/Desktop/Mobile)                    | Mattermost instance or ``rtcd`` service  | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or ``rtcd``) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).                                                                                                                                                            |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RTC (Calls plugin or ``rtcd``)  | 8443   | TCP (incoming)  | Mattermost clients (Web/Desktop/Mobile)                    | Mattermost instance or ``rtcd`` service  | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or ``rtcd``) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires ``rtcd`` version >= v0.11 and Calls version >= v0.17.    |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| API (``rtcd``)                  | 8045   | TCP (incoming)  | Mattermost instance(s) (Calls plugin)                      | ``rtcd`` service                         | To allow for HTTP/WebSocket connectivity from Calls plugin to ``rtcd`` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server.                                                                                                                                                                                                                                                                                        |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the |ice_host_override_link| config option.                                                                                                                                                                                                             |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+:Ports: 80, 443
+:Protocol: TCP (incoming)
+:Source: Mattermost clients (web/desktop/mobile)
+:Target: Mattermost instance (Calls plugin)
+:Purpose: 
+    To allow for HTTP and WebSocket connectivity from clients to Calls plugin. 
+    This API is exposed on the same connection as Mattermost, so there's likely no need to change anything.
+
+2. RTC (Calls plugin or ``rtcd``) - UDP
+---------------------------------------
+
+:Port: 8443
+:Protocol: UDP (incoming)
+:Source: Mattermost clients (Web/Desktop/Mobile)
+:Target: Mattermost instance or ``rtcd`` service
+:Purpose:
+    To allow clients to establish connections that transport calls related media (e.g. audio, video). 
+    This should be open on any network component (e.g. NAT, firewalls) in between the instance running 
+    the plugin (or ``rtcd``) and the clients joining calls so that UDP traffic is correctly routed 
+    both ways (from/to clients).
+
+3. RTC (Calls plugin or ``rtcd``) - TCP
+---------------------------------------
+
+:Port: 8443
+:Protocol: TCP (incoming)
+:Source: Mattermost clients (Web/Desktop/Mobile)
+:Target: Mattermost instance or ``rtcd`` service
+:Purpose:
+    To allow clients to establish connections that transport calls related media (e.g. audio, video). 
+    This should be open on any network component (e.g. NAT, firewalls) in between the instance running 
+    the plugin (or ``rtcd``) and the clients joining calls so that TCP traffic is correctly routed 
+    both ways (from/to clients). This can be used as a backup channel in case clients are unable to 
+    connect using UDP. It requires ``rtcd`` version >= v0.11 and Calls version >= v0.17.
+
+4. API (``rtcd``)
+-----------------
+
+:Port: 8045
+:Protocol: TCP (incoming)
+:Source: Mattermost instance(s) (Calls plugin)
+:Target: ``rtcd`` service
+:Purpose:
+    To allow for HTTP/WebSocket connectivity from Calls plugin to ``rtcd`` service. 
+    Can be exposed internally as the service only needs to be reachable by the instance(s) 
+    running the Mattermost server.
+
+5. STUN (Calls plugin or ``rtcd``)
+----------------------------------
+
+:Port: 3478
+:Protocol: UDP (outgoing)
+:Source: Mattermost Instance(s) (Calls plugin) or ``rtcd`` service
+:Target: Configured STUN servers
+:Purpose:
+    (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. 
+    Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting 
+    an IP or hostname through the ICE Host Override config option.
+
 
 .. |ice_host_override_link| replace:: :ref:`ICE Host Override <configure/plugins-configuration-settings:ice host override>`
 
