@@ -29,9 +29,11 @@ Direct messages conversations between 2 people. You can start a direct message w
 
 Direct messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. See the :doc:`notification documentation </preferences/manage-your-notifications>` for details on customizing notifications based on your preferences.
 
-.. tip::
+.. note::
 
-  From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+  - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+  
+  - Any message history you have with a deactived user remains available :ref:`unless your systems administrator disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
 
 Group messages
 --------------
@@ -40,6 +42,8 @@ Group messages are conversations between 3 to 7 people. You can also start a gro
 
 From Mattermost v9.1, group messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. You can control how you're notified about group message conversations by going to **Settings > Notifications**. See the :doc:`notification documentation </preferences/manage-your-notifications>` to learn more.
 
-.. tip::
+.. note::
 
-   Want to have a group conversation with more than 7 people? You can :doc:`create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert the group message to a private channel </collaborate/convert-group-messages>`.
+   - Want to have a group conversation with more than 7 people? You can :doc:`create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert the group message to a private channel </collaborate/convert-group-messages>`.
+  
+   - Any group message history you have with a deactived user remains available :ref:`unless your systems administrator disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
