@@ -104,9 +104,18 @@ The following software is required to build the documentation:
     - Use `make clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the LHS navigation pane and want to ensure you're not reviewing cached results.
     - Use `make livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE.
 
-   Windows users will require [GNU Make](https://gnuwin32.sourceforge.net/packages/make.htm) installed for the above commands to work correctly. If GNU Make is not installed, please substitute `CMD /C make.bat` for `make` in the above commands to use the Windows command interpreter. For example `make html` will become `CMD /C make.bat html`.
-
-   Note: When using the `CMD /C make.bat` substitution, only a single target may be specified. Instead of running `CMD /C make.bat clean html`, each target must be run seperately. For example, `CMD /C make.bat clean` followed by `CMD /C make.bat html`. 
+> [!NOTE]
+> Windows users require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
+>
+> 1. Install [chocolatey](https://chocolatey.org/).
+> 2. In a Windows terminal, select the downward chevron, and hold `CTRL` while selecting **PowerShell** to run commands as an admin.
+> 3. Accept the admin prompt.
+> 4. Run the following command: `choco install make`
+> 5. Exit the terminal.
+>
+> If `make` isn't installed, substitute `CMD /C make.bat` for make in the build commands above to use the Windows command interpreter. For example, to run `make html`, run the command: `CMD /C make.bat html`. Only a single target may be specified using this method. This means that, instead of running `CMD /C make.bat clean html`, each target must be run separately as `CMD /C make.bat clean` followed by `CMD /C make.bat html`. 
+>
+> When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. It's not yet clear where to make changes to support multiple processing cores on Windows machines. More investigation is needed.
 
 6. When working with static build results, navigate to the `build` directory:
     ```sh
