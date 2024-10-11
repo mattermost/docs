@@ -16,7 +16,7 @@ With file attachments, you can share additional information that helps your team
   
   **Share public links**
       
-  Public links allow you to share message attachments with anyone outside your Mattermost workspace. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
+  Public links allow you to share message attachments with anyone outside your Mattermost :doc:`workspace </guides/use-mattermost>`. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
 
   .. tip::
 

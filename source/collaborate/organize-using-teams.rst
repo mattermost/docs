@@ -12,7 +12,7 @@ Organize using teams
    Team settings </collaborate/team-settings>
    Team keyboard shortcuts </collaborate/team-keyboard-shortcuts>
 
-A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
+A team is a digital :doc:`workspace </guides/use-mattermost>` where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
 
 Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </collaborate/team-settings>` for existing teams.
 
