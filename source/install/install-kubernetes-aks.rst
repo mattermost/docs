@@ -14,7 +14,7 @@ Deploying Mattermost on Azure AKS requires the following database and cluster pr
 PostgreSQL v13.0+ database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost requires a pre-existing PostgreSQL database within your infrastructure. We recommend using `Azure Database for PostgreSQL flexible server <https://learn.microsoft.com/en-us/azure/postgresql/>`_. Deploy one by following `this Microsoft quick start guide <https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal>`_.
+Mattermost requires a pre-existing PostgreSQL database within your infrastructure. We recommend using `Azure Database for PostgreSQL - Flexible Server <https://learn.microsoft.com/en-us/azure/postgresql/>`_. Deploy one by following `this Microsoft quick start guide <https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal>`_.
 
 .. tip::
   We recommend using Private Access for your database.
