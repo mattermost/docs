@@ -1,10 +1,10 @@
-# Mattermost Documentation
+# 📚 Mattermost Documentation
 
 This repository generates the documentation available at https://docs.mattermost.com/. All documentation is available under the terms of a [Creative Commons License](https://creativecommons.org/licenses/by-nc-sa/3.0/).
 
 If you have any questions, create an account on the [Mattermost Community server](https://community.mattermost.com/signup_user_complete/?id=f1924a8db44ff3bb41c96424cdc20676), then join the writing team in the [Documentation Working Group](https://community.mattermost.com/core/channels/dwg-documentation-working-group) channel. We look forward to working with you!
 
-# Table of Contents
+# 🗂️ Table of Contents
 
  * [Contributing](#contribute-to-mattermost-product-documentation)
      * [Get started](#get-started)
@@ -15,7 +15,7 @@ If you have any questions, create an account on the [Mattermost Community server
      * [Review Pull Requests](#review-pull-requests)
  * [Build Mattermost product documentation locally](#build-locally)
 
-## Contribute to Mattermost product documentation
+## 🤝 Contribute to Mattermost product documentation
 
 ### Get started
 
