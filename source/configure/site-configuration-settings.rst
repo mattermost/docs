@@ -362,7 +362,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :description: This property configures the mobile app to perform SSO Authentication using the external default browser.
 
 Mobile external browser
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
