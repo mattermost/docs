@@ -29,7 +29,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
     2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.9.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
   .. warning:: 
-  Mattermost Desktop should always be installed on a local drive. Network Shares are not supported as installation locations.
+    Mattermost Desktop should always be installed on a local drive. Network Shares are not supported as installation locations.
 
   **MSI Installer and group policies**
 
