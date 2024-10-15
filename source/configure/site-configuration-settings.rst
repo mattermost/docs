@@ -354,6 +354,13 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 | - Via mmctl: ``mmctl config set NativeAppSettings.AppCustomURLSchemes "mmauth://" "mmauthbeta://"``                                            |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: custom-mobileexternalbrowser
+  :displayname: Mobile external browser (Customization)
+  :systemconsole: N/A
+  :configjson: .NativeAppSettings.MobileExternalBrowser
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
+  :description: This property configures the mobile app to perform SSO Authentication using the external default browser.
+
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~
 
@@ -362,7 +369,7 @@ Mobile external browser
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | This property configures the mobile app to perform SSO Authentication using the external default browser.                                       | - System Config path: N/A                                                   |
-|                                                                                                                                                 | - ``config.json`` setting: ``NativeAppSettings -> MobileExternalBrowser``   |
+|                                                                                                                                                 | - ``config.json`` setting: ``.NativeAppSettings.MobileExternalBrowser``     |
 | String input.                                                                                                                                   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
