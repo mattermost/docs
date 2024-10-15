@@ -357,7 +357,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 .. config:setting:: custom-mobileexternalbrowser
   :displayname: Mobile external browser (Customization)
   :systemconsole: N/A
-  :configjson: .NativeAppSettings.MobileExternalBrowser
+  :configjson: NativeAppSettings.MobileExternalBrowser
   :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
   :description: This property configures the mobile app to perform SSO Authentication using the external default browser.
 
