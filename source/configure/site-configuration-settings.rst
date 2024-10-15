@@ -362,7 +362,7 @@ Mobile external browser
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | This property configures the mobile app to perform SSO Authentication using the external default browser.                                       | - System Config path: N/A                                                   |
-|                                                                                                                                                 | - ``config.json`` setting: ``NativeAppSettings -> MobileExternalBrowser``   |
+|                                                                                                                                                 | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
 | String input.                                                                                                                                   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
