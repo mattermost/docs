@@ -354,6 +354,18 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 | - Via mmctl: ``mmctl config set NativeAppSettings.AppCustomURLSchemes "mmauth://" "mmauthbeta://"``                                            |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
+Mobile external browser
+~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| This property configures the mobile app to perform SSO Authentication using the external default browser.                                       | - System Config path: N/A                                                   |
+|                                                                                                                                                 | - ``config.json`` setting: ``NativeAppSettings -> MobileExternalBrowser``   |
+| String input.                                                                                                                                   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
 ----
 
 Localization
