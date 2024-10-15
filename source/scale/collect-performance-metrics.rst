@@ -22,11 +22,14 @@ Mattermost configuration
 For a self-hosted Mattermost deployment, a Mattermost system admin must perform the following steps in Mattermost.
 
 1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
-3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
-5. Specify the path of the time-series database, and select **Save**.
-6. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+2. From Mattermost v10.1, you can install the Metrics plugin from the in-product Mattermost Marketplace by selecting the **Product** |product-list| icon and selecting **App Marketplace**. Search for **Metrics** and select **Install**.
+3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
+4. Specify the path of the time-series database, and select **Save**.
+5. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+
+.. note::
+
+  For Mattermost deployments prior to v10.1, you must download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__, compatible with Mattermost v8.0.1 and later. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded.
 
 Upgrade
 -------
