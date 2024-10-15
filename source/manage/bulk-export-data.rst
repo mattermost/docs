@@ -38,6 +38,7 @@ At this time, the export supports attributes of the objects listed below. All Ma
 You can export the following data types:
 
 - Teams
+- Threaded discussions
 - Channels (public, private, and direct)
 - Users
 - Users' team memberships
@@ -47,7 +48,8 @@ You can export the following data types:
 - Posts' replies and threads in public or private channels
 - Posts' reactions
 - Custom emoji
-- Direct message channels
+- Direct message and group message channels
+- Direct message and group message channels' read/unread status
 - Direct message posts
 - Roles
 - Permissions schemes
