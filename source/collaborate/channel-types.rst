@@ -33,7 +33,7 @@ Direct messages increment the numbered badge and trigger a notification unless t
 
   - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
   
-  - Any message history you have with a deactived user remains available :ref:`unless your systems administrator disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
+  - Any message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
 
 Group messages
 --------------
