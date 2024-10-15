@@ -58,12 +58,12 @@ The person who creates a channel is assigned the channel admin role for that cha
 - Ability to remove members from the channel.
 - Ability to configure channel actions that automate tasks based on trigger conditions, such as :ref:`joining a channel <collaborate/join-leave-channels:join a channel>` or :doc:`sending a message </collaborate/send-messages>` in a channel.
 
-Depending on your system configuration, channel admins can be granted special permissions by the system admin to rename and delete channels.
+Depending on your system configuration, channel admins can be granted special permissions by the system admin to rename and delete channels. 
 
 Member
 ------
 
-This is the default role given to users when they join a team. Members have basic permissions on a Mattermost team.
+This is the default role given to users when they join a team. Members have basic permissions on a Mattermost team. See the :doc:`advanced permissions backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` documentation for details.
 
 Guest
 -----
