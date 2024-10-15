@@ -938,9 +938,6 @@ Live captions language
 | - This setting is available starting in plugin version 0.17.                                                                                                                                                                                            |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
-Enable call ringing
-~~~~~~~~~~~~~~~~~~~
-
 .. config:setting:: plugins-enablecallringing
   :displayname: Enable call ringing (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -950,6 +947,9 @@ Enable call ringing
   - **true**: Ringing functionality is enabled. Direct and group message participants receive a desktop app alert and a ringing notification when a call starts.
   - **false**: **(False)** Ringing functionality is disabled.
 
+Enable call ringing
+~~~~~~~~~~~~~~~~~~~
+
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                   |
 |   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls. enableringing``   |
@@ -957,21 +957,21 @@ Enable call ringing
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                             |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
-Enable AV1 (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. config:setting:: plugins-enableav1
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableAV1
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableav1
   :environment: N/A
 
   - **true**: Enables the ability to use the AV1 codec to encode screen sharing tracks. This can result in improved screen sharing quality for clients that support it.
   - **false**: **(False)** AV1 codec is disabled for screen sharing tracks.
 
+Enable AV1 (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: Enables the ability to use the AV1 codec to encode screen    | - System Config path: **Plugins > Calls**                                                   |
-|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableAV1``        |
+|   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enableav1``        |
 |   clients that support AV1 encoding.                                     | - Environment variable: N/A                                                                 |
 | - **false**: **(Default**) AV1 codec is disabled for screen sharing      |                                                                                             |
 |   tracks.                                                                |                                                                                             |
@@ -979,6 +979,28 @@ Enable AV1 (Experimental)
 | **Note**:  This setting is ignored when                                                                                                                                |
 | :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.                          |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. config:setting:: plugins-enabledcsignaling
+  :displayname: Use data channels for signaling media tracks (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling
+  :environment: N/A
+
+  - **true**: Clients will use WebRTC data channels for signaling of media tracks (i.e., voice, screen). This can result in a more efficient and less race-prone process, especially in case of poor network connections.
+  - **false**: **(False)** Clients will use WebSockets for signaling media tracks.
+
+Enable DC signaling (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| - **true**: Clients will use WebRTC data channels for signaling of media   | - System Config path: **Plugins > Calls**                                                        |
+|   tracks (i.e., voice, screen). This can result in a more efficient and    | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling``     |
+|   less race-prone process, especially in case of poor network connections. | - Environment variable: N/A                                                                      |
+| - **false**: **(Default**) Clients will use WebSockets for signaling       |                                                                                                  |
+|   media tracks.                                                            |                                                                                                  |
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| **Note**: Version v0.18.0 or higher of the |rtcd_service| is required for this functionality to work when hosting calls through the dedicated WebRTC service.                 |
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 ----
 
@@ -1338,7 +1360,7 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-surveysenable
   :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
   :environment: N/A
 
   - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
@@ -1347,15 +1369,16 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           |                                                               |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys**                                |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.user-survey.Enable`` |
+|                                                                                                               | - Environment variable: N/A                                                                  |
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-surveysenablesend
   :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
   :environment: N/A
 
   - **true**: A user satisfaction survey is sent to all users every quarter.
@@ -1364,12 +1387,13 @@ Enable plugin
 Enable user satisfaction survey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: (Default) User satisfaction surveys are disabled.                                                              |                                                               |
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                       |
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys**                                                      |
+| - **false**: (Default) User satisfaction surveys are disabled.                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.user-survey.systemconsolesetting.EnableSurvey`` |
+|                                                                                                                             | - Environment variable: N/A                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 ----
 
