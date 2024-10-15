@@ -59,7 +59,7 @@ If you have no other teams to join, selecting the |plus| icon takes you directly
   From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the system admin has disabled team creation.
 
   .. image:: ../images/team-create-team.gif
-  :alt: Create a new team by selecting the team name.
+    :alt: Create a new team by selecting the team name.
 
 Team name and URL selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
