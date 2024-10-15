@@ -47,6 +47,9 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
   
   Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, configuring supported group policies, and performing silent MSI installations. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
+.. warning:: 
+  Mattermost Desktop should always be installed on a local drive. Network Shares are not supported as installation locations.
+
 .. tab:: macOS
 
   MacOS 11+ is required. You have two ways to install the desktop app, and how you install the app determines whether it updates automatically.
