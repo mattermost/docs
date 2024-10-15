@@ -711,7 +711,7 @@ This setting resolves issues where YouTube video previews display as unavailable
 **False**: (Default) The referrer policy is set to ``no-referrer`` which enhances user privacy by not disclosing the source URL, but limits the ability to track user engagement and traffic sources in analytics tools.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.     |
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.    |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
