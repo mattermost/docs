@@ -701,6 +701,19 @@ When an alternate filestore target is configured, Mattermost Cloud admins can ge
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
+YouTube referrer policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting resolves issues where YouTube video previews display as unavailable.
+
+**True**: The referrer policy for embedded YouTube videos is set to ``strict-origin-when-cross-origin``.
+
+**False**: (Default) The referrer policy is set to ``no-referrer`` which enhances user privacy by not disclosing the source URL, but limits the ability to track user engagement and traffic sources in analytics tools.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.     |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
 ----
 
 Experimental Bleve configuration settings
