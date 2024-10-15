@@ -355,7 +355,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
 Mobile external browser
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
