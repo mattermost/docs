@@ -49,11 +49,17 @@ If team creation is enabled by the system admin, teams can be created from the t
 
 If you have appropriate permissions, select the |plus| icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the system admin has disabled team creation.
 
+.. image:: ../images/create-team.gif
+  :alt: Create a new team from the top of the team sidebar.
+
 If you have no other teams to join, selecting the |plus| icon takes you directly to the team creation page if team creation is enabled.
 
 .. tip::
 
   From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the system admin has disabled team creation.
+
+  .. image:: ../images/team-create-team.gif
+  :alt: Create a new team by selecting the team name.
 
 Team name and URL selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
