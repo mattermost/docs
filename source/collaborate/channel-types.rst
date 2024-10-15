@@ -46,4 +46,4 @@ From Mattermost v9.1, group messages increment the numbered badge and trigger a 
 
    - Want to have a group conversation with more than 7 people? You can :doc:`create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert the group message to a private channel </collaborate/convert-group-messages>`.
   
-   - Any group message history you have with a deactived user remains available :ref:`unless your systems administrator disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
+   - Any group message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
