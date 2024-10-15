@@ -257,9 +257,20 @@ Teams
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
-See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
+Archive the team
+~~~~~~~~~~~~~~~~~
 
 See the :ref:`archive a team <collaborate/organize-using-teams:archive a team>` documentation for details on archiving teams that are no longer needed.
+
+Synchronize team members
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Admins can choose between inviting members to a team manually or synchronizing members automatically from AD/LDAP groups. See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
+
+Who can join the team?
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Admins can choose to make the team discoverable by allowing anyone with an account to join the team. Alternatively admins can enable specific email domains to join the team.
 
 ----
 
