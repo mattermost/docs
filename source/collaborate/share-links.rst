@@ -56,7 +56,7 @@ A Mattermost deep link is a URL that directs users to a specific location within
   Deep links can also be used, in combination with bots, scripts, and integrations, to trigger specific actions within Mattermost.
   
 Format deep links
------------------
+~~~~~~~~~~~~~~~~~
 Take the link you have copied from the three dots around your message or the channels that you are working on and will find at the dropdown menu e.g., https://your-mattermost-domain.com/team-name/channels/channel-name. 
 
 For Mobile deep linking; which represents the structuring link in such a way that it can open your Mattermost mobile application. 
