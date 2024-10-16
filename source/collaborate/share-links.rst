@@ -47,7 +47,7 @@ Share message links
   - Message previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a public channel, any member of the team can see the message preview. If the link is to a message in a private channel or direct message, only members in that channel can see the message preview.
   - If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for this functionality to work.
 
-What about **deep link**; how can it be configured? 
+Deep links
 ============================
 Deep link are unique link that has the ability to direct users to a specific resource on a web page or application, for example let's say you have an image on your website that you want your team to view, you can make them view the image and dissect the concept you want to share with them almost instantaneously with deep link. 
 
