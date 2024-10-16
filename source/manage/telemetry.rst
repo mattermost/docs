@@ -18,7 +18,7 @@ We use the data for the following purposes to:
 
 .. note::
 
-  Telemetry data collection is enabled by default for all Mattermost deployments. Self-hosted system admins can opt out of sharing telemetry data from Mattermost self-hosted servers within the System Console. Cloud system admins can't disable telemetry for Mattermost Cloud workspaces.
+  Telemetry data collection is enabled by default for all Mattermost deployments. Self-hosted system admins can opt out of sharing telemetry data from Mattermost self-hosted servers within the System Console. Cloud system admins can't disable telemetry for Mattermost Cloud deployments.
 
 Security update check feature
 -----------------------------

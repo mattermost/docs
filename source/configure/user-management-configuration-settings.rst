@@ -27,7 +27,7 @@ Mattermost system admins can provision and manage user accounts, team membership
 Provision users
 ~~~~~~~~~~~~~~~
 
-Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost workspace. A Mattermost admin can :doc:`provision Mattermost users </onboard/user-provisioning-workflows>` using one or more of the following methods:
+Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost deployment. A Mattermost admin can :doc:`provision Mattermost users </onboard/user-provisioning-workflows>` using one or more of the following methods:
 
 - :ref:`Enable account creation <configure/authentication-configuration-settings:enable account creation>`.
 - Use :ref:`mmctl user create <manage/mmctl-command-line-tool:mmctl user create>` or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
@@ -257,9 +257,20 @@ Teams
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
 
-See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
+Archive the team
+~~~~~~~~~~~~~~~~~
 
 See the :ref:`archive a team <collaborate/organize-using-teams:archive a team>` documentation for details on archiving teams that are no longer needed.
+
+Synchronize team members
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Admins can choose between inviting members to a team manually or synchronizing members automatically from AD/LDAP groups. See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
+
+Who can join the team?
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Admins can choose to make the team discoverable by allowing anyone with an account to join the team. Alternatively admins can enable specific email domains to join the team.
 
 ----
 

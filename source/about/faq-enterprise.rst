@@ -49,7 +49,7 @@ Yes, Enterprises can inquire about `Mattermost Cloud Enterprise <https://matterm
 
 For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
 
-For small businesses, :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` is available as a self-serve, multi-tenant, software-as-a-service offering, which can be purchased with a credit card at https://customers.mattermost.com/cloud/connect-workspace
+For small businesses, :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` is available as a self-serve, multi-tenant, software-as-a-service offering.
 
 Do you offer special programs for non-profit organizations, open source projects, or educational institutions?
 ----------------------------------------------------------------------------------------------------------------
