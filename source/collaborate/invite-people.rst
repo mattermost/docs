@@ -4,11 +4,11 @@ Add people to your workspace
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Getting people set up with a Mattermost account is typically something that admins do when deploying and configuring the Mattermost workspace. However, :ref:`team admins <collaborate/learn-about-roles:team admin>` can also invite people, including :doc:`guests </onboard/guest-accounts>`, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
+Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost instance. However, :ref:`team admins <collaborate/learn-about-roles:team admin>` can also invite people, including :doc:`guests </onboard/guest-accounts>`, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
 
 All users can add existing Mattermost users to a Mattermost team or channel, unless the system admin has restricted the ability for you to do so.
 
-- Inviting people to a team sends an email prompting recipients to create a Mattermost account on your Mattermost workspace.
+- Inviting people to a team sends an email prompting recipients to create a Mattermost account on your Mattermost :doc:`workspace </guides/use-mattermost>`.
 - Adding an existing user to a team or to a channel makes those users team or channel members.
 
 .. tip::
