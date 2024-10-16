@@ -6,7 +6,7 @@ Cloud Shared
 
 Mattermost Cloud Shared is designed as a cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
 
-Your Mattermost workspace is isolated, is fully hosted and managed by Mattermost, and runs :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` on shared infrastructure where resources are shared among multiple Mattermost customers, which might affect performance during peak times. 
+Your Mattermost deployment is isolated, is fully hosted and managed by Mattermost, and runs :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` on shared infrastructure where resources are shared among multiple Mattermost customers, which might affect performance during peak times. 
 
 Reference architecture
 ----------------------
@@ -52,7 +52,7 @@ Mattermost offers advanced security and authentication options for integrating w
 Secure networking
 ~~~~~~~~~~~~~~~~~~
 
-Enterprise customers with a Mattermost Cloud Shared deployment can :ref:`configure IP filtering <manage/cloud-ip-filtering:configure ip filtering>` through CIDR-based IP ranges, within the Mattermost System Console to specify authorized IPs or IP ranges for seamless access control. Users attempting to access the workspace from IPs outside defined ranges are restricted from entry.
+Enterprise customers with a Mattermost Cloud Shared deployment can :ref:`configure IP filtering <manage/cloud-ip-filtering:configure ip filtering>` through CIDR-based IP ranges, within the Mattermost System Console to specify authorized IPs or IP ranges for seamless access control. Users attempting to access their :doc:`workspace </guides/use-mattermost>` from IPs outside defined ranges are restricted from entry.
 
 Encryption
 ~~~~~~~~~~~
@@ -70,7 +70,7 @@ Connections to calls are secured with a combination of:
 Cloud native exports
 ~~~~~~~~~~~~~~~~~~~~
 
-Mattermost supports optional :ref:`filestore configuration settings <configure/experimental-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as the workspace admins who manage a given installation. The exports can also be accessed by generating unique download links as needed.
+Mattermost supports optional :ref:`filestore configuration settings <configure/experimental-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as deployment admins who manage a given installation. The exports can also be accessed by generating unique download links as needed.
 
 The following diagram provides a high-level view of how this functionality works:
 
@@ -100,4 +100,4 @@ Custom plugins and integrations outside of Mattermost Marketplace aren’t curre
 Migrate from a self-hosted instance
 ------------------------------------
 
-See our :ref:`workspace migration <manage/cloud-data-export:migrate from self-hosted to cloud>` documentation to learn more about migrating from a self-hosted to a Mattermost Cloud instance.
+See our :ref:`self-hosted to cloud migration <manage/cloud-data-export:migrate from self-hosted to cloud>` documentation to learn more about migrating from a self-hosted to a Mattermost Cloud instance.

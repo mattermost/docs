@@ -6,7 +6,7 @@ Ensure your teams are are always informed about important events, status changes
 Interoperability with pre-packaged integrations
 ------------------------------------------------
 
-The following pre-packaged feature & interoperability integrations are available for your Mattermost system admin to enable and configure for you to use.
+Your system admin can install the following pre-packaged integrations through the Mattermost Marketplace, and enable and configure them in the Mattermost System Console.
 
 Mattermost features
 ~~~~~~~~~~~~~~~~~~~~
