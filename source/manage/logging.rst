@@ -114,7 +114,7 @@ Audit logging (Beta)
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost workspace, such as access to the Mattermost REST API or mmctl. 
+By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost :doc:`workspace </guides/use-mattermost>`, such as access to the Mattermost REST API or mmctl. 
 
 .. tip::
     From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
