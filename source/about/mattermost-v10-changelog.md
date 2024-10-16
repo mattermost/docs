@@ -10,10 +10,14 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.2-feature-release)=
 ## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release Day: November 16, 2024
+**Release Day: November 15, 2024
+
+### Important Upgrade Notes
+
+ - Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely on artifact verification using DCT, please [transition to using Cosign](https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/). See the [DCT deprecation Mattermost forum post](https://forum.mattermost.com/t/upcoming-dct-deprecation/19275) for more details. 
 
 ```{Important}
-If you upgrade from a release earlier than v10.1, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
 ### Improvements
@@ -35,15 +39,13 @@ If you upgrade from a release earlier than v10.1, please read the other [Importa
  - Improved log messages for cluster communication.
  - Information about deleted rows from the Data Retention job are now logged.
  - License details to logs are now emitted when added or removed.
+ - Added a new mmctl command, ``mmctl post delete <post-id>``, in order to permanently delete a post and its attachments.
 
 #### Performance
  - Added metrics to prometheus to check the mobile versions for each session daily.
  - Improved the performance of LDAP sync jobs when group-contained teams and channels are used.
  - Added minor improvements to notification metrics.
  - Added minor improvements to mobile push notifications.
-
-#### mmctl
- - Added a new mmctl command, ``mmctl post delete <post-id>``, in order to permanently delete a post and its attachments.
 
 ### Bug Fixes
  - Fixed an issue with email notifications using 24-hour timestamps by default.
@@ -60,9 +62,11 @@ If you upgrade from a release earlier than v10.1, please read the other [Importa
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Added a new configuration setting called ``ServiceSettings.EnableAPIPostDeletion`` in order to enable/disable post deletion. This configuration setting does not need to be enabled when running mmctl in local mode.
- - Added ``ServiceSettings.EnableDesktopLandingPage`` to allow the desktop app landing page to be disabled.
- - Added a configuration setting ``NativeAppSettings -> MobileExternalBrowser`` that tells the Mobile app to perform SSO Authentication using the external default browser.
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added a new configuration setting ``EnableAPIPostDeletion`` in order to enable/disable post deletion. This configuration setting does not need to be enabled when running mmctl in local mode.
+    - Added ``EnableDesktopLandingPage`` to allow the desktop app landing page to be disabled.
+ - Under ``NativeAppSettings`` in ``config.json``:
+     - Added a configuration setting ``MobileExternalBrowser`` that tells the Mobile app to perform SSO Authentication using the external default browser.
 
 ### Go Version
  - v10.2 is built with Go ``v1.22.6``.
