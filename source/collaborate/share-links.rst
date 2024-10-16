@@ -48,7 +48,7 @@ Share message links
   - If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for this functionality to work.
 
 Deep links
-============================
+--------------
 Deep link are unique link that has the ability to direct users to a specific resource on a web page or application, for example let's say you have an image on your website that you want your team to view, you can make them view the image and dissect the concept you want to share with them almost instantaneously with deep link. 
 
 Although you can treat the link you copy from your message and image, based on the illustration above as a deep link; hence, it takes collaborators to the object you wish to point them to; however, you will need to create a custom deep link if you want something like the opening and activation of Mattermost app on your mobile phone or web deep linking to specific resources through browser which may not be feasible through the link you copied from your messaging channels. 
