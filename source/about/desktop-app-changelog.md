@@ -23,27 +23,40 @@ Mattermost v5.10.0 contains a low severity level security fix. Upgrading is high
 
 ### Improvements
 
+#### Windows
+
+- Started using ``titleBarOverlay`` for Windows instead of the buttons that were baked-in to the app.
+
 #### Linux
 
-- C
+- Full screen mode is now disabled on Linux.
 
 #### All Platforms
 
-- 
+- Plugins are now allowed to open ``about:blank`` popup windows using ``window.open()``.
+- Added support for plugins to ask for desktop source for screen sharing through the ``desktopAPI.getDesktopSources`` call.
+- Added ``Developer Mode`` settings to help debug performance issues.
 
 ### Bug Fixes
 
-#### Windows
+#### macOS
 
-- 
+- Fixed an issue with resizing the app when the welcome screen was open on macOS, and forced the button to always appear on the welcome screen.
+
+#### Linux
+
+- Fixed a crash in Linux when trying to create a thumbnail from an image.
 
 #### All Platforms
 
-- 
+- Fixed a potential crash where the app menu could regenerate when ``currentServerId`` wasn't set.
+- Fixed an issue with dark-mode style for download location in settings.
+- Fixed an issue where logging out from the Boards/Playbooks tabs and trying to navigate after logging back in would force an unexpected logout.
+- Fixed an issue with the Download button being hidden on Windows/Linux.
 
 ### Open Source Components
 
-- Removed  from https://github.com/mattermost/desktop.
+- Added ``@emotion/react`` to https://github.com/mattermost/desktop.
 
 ### Known Issues
 
