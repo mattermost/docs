@@ -49,9 +49,11 @@ Share message links
 
 Deep links
 --------------
-Deep link are unique link that has the ability to direct users to a specific resource on a web page or application, for example let's say you have an image on your website that you want your team to view, you can make them view the image and dissect the concept you want to share with them almost instantaneously with deep link. 
+A Mattermost deep link is a URL that directs users to a specific location within Mattermost. Typically, these links are used to go to specific teams, channels, messages, or threads. 
 
-Although you can treat the link you copy from your message and image, based on the illustration above as a deep link; hence, it takes collaborators to the object you wish to point them to; however, you will need to create a custom deep link if you want something like the opening and activation of Mattermost app on your mobile phone or web deep linking to specific resources through browser which may not be feasible through the link you copied from your messaging channels. 
+.. tip::
+
+  Deep links can also be used, in combination with bots, scripts, and integrations, to trigger specific actions within Mattermost.
   
 To customize the Mattermost deep link for suitability:
 -----------------
