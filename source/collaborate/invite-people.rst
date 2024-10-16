@@ -81,4 +81,5 @@ You can share a unique URL that takes users to a Mattermost account creation pag
   Users on the same Mattermost server can view the username and full name of other users so they can communicate with them directly, via direct messages, regardless of team membership. 
 
 .. note::
-If you send an invite link to a team member that is already on the team the server, you will receive the message "This user is already a team member". Click on **Done** and invite them to a different channel instead. 
+  - You can't invite someone to a Mattermost team, as a **member**, if that user is already a member of that team. 
+  - You can't invite someone to a Mattermost team, as a **guest**, if that user already has a Mattermost account. Invite them to a team as a **member** instead.
