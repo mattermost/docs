@@ -75,7 +75,7 @@ You're all set for configuration in the Azure portal.
 Install the Microsoft Calendar integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Log in to your Mattermost workspace as a system administrator.
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
 2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 3. Search for or scroll to Microsoft Calendar, and select **Install**.
 4. Once installed, select **Configure**. You're taken to the System Console, directly to the **Microsoft Calendar** integration page, under **Plugins**.

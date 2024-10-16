@@ -3,7 +3,6 @@ Deprecated configuration settings
 
 The following Mattermost configuration settings are deprecated and are no longer supported in current Mattermost releases:
 
-- `Mattermost Boards settings <#mattermost-boards-settings>`__
 - `Bleve settings <#bleve-settings>`__
 - `Elasticsearch settings <#elasticsearch-settings>`__
 - `Service settings <#service-settings>`__
@@ -24,29 +23,6 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----
-
-Mattermost Boards setting
---------------------------
-
-*Removed in the Mattermost v8.0 release*
-
-Enable publicly-shared boards
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------+--------------------------------------------------------------------------------------+
-| Enable or disable the ability to share               | - System Config path: **Products > Boards**                                          |
-| links to Mattermost boards with other users.         | - ``config.json`` setting: ``".ProductSettings.EnablePublicSharedBoards: false”,``   |
-|                                                      | - Environment variable: ``MM_PRODUCTSETTINGS_ENABLEPUBLICSHAREDBOARDS``              |
-| - **true**: Enables the ability to share links to    |                                                                                      |
-|   Mattermost boards with other users.                |                                                                                      |
-| - **false**: **(Default)** Mattermost boards can't   |                                                                                      |
-|   be shared with other users.                        |                                                                                      |
-+------------------------------------------------------+--------------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                  |
-|                                                                                                                                             |
-| - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
-|   in-product vertical.                                                                                                                      |
-+------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Bleve settings
 --------------
