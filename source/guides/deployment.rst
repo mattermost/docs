@@ -18,6 +18,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy with a tarball </install/install-tar>
     Deploy using Omnibus </install/installing-mattermost-omnibus>
     Deploy using Kubernetes </install/install-kubernetes>
+    Deploy Mattermost on Azure AKS </install/install-kubernetes-aks>
     Deploy on Red Hat </install/install-rhel-8>
     Set up an NGINX proxy </install/setup-nginx-proxy>
     Set up TLS </install/setup-tls>
@@ -41,6 +42,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Deploy with a tarball </install/install-tar>` - Support for any Linux distribution.
 * :doc:`Deploy using Omnibus </install/installing-mattermost-omnibus>` - An entire Mattermost installation on a single server.
 * :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.
+* :doc:`Deploy Mattermost on Azure AKS </install/install-kubernetes-aks>` - Deploy Mattermost on Azure AKS.
 * :doc:`Deploy on Red Hat </install/install-rhel-8>` - Support for all current Red Hat Enterprise Linux platforms with a tarball.
 * :doc:`Set up NGINX proxy </install/setup-nginx-proxy>` - Learn how to configure Mattermost for HTTPS for deployments of more than 200 users.
 * :doc:`Set up TLS </install/setup-tls>` - Learn how to configure Mattermost for HTTPS for deployments of fewer than 200 concurrent users.

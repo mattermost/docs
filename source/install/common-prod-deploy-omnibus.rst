@@ -8,7 +8,7 @@ Mattermost bundles the components of a Mattermost deployment into a single insta
 **Minimum system requirements**
 
 - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
-- Database: PostgreSQL v12+ or MySQL v8+ 
+- Database: PostgreSQL v12+
 - Network ports required: 
 
   - Application ports 80/443, TLS, TCP Inbound

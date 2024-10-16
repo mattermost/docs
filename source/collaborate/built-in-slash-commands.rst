@@ -9,7 +9,7 @@ You can interact with Mattermost users, channels, conversations, and more using 
 Slash commands
 --------------
 
-The following built-in slash comamnds are available in your Mattermost workspace. 
+The following built-in slash comamnds are available in your Mattermost :doc:`workspace </guides/use-mattermost>`. 
 
 .. tip::
 

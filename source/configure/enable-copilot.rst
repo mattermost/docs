@@ -12,7 +12,9 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 Setup
 ------
 
-Mattermost AI Copilot comes pre-installed from Mattermost Server v9.7 or later. You must be a Mattermost system admin to `enable <#enable>`__ and `configure  <#mattermost-configuration>`__ it using the System Console.
+From Mattermost v9.7, you can install Mattermost Copilot from the in-product Mattermost Marketplace by selecting the **Product** |product-list| icon and selecting **App Marketplace**. Search for **Copilot** and select **Install**.
+
+You must be a Mattermost system admin to `enable <#enable>`__ and `configure  <#mattermost-configuration>`__ it using the System Console.
 
 .. note::
   If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using Mattermost Copilot with Mattermost v9.7 and later.

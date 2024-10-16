@@ -13,7 +13,7 @@ Cloud subscriptions
    Cloud Shared </about/cloud-shared>
    Cloud VPC Private Connectivity </about/cloud-vpc-private-connectivity>
 
-Mattermost offers secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance. Cloud-native architecture supports organizations of any size for a workspace that scales with your team, without any resource planning.
+Mattermost offers secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance. Cloud-native architecture supports organizations of any size for a deployment that scales with your team, without any resource planning.
 
 Enterprises can choose between dedicated and shared infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed:
 
