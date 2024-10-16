@@ -16,7 +16,7 @@ Important Upgrade Notes
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
-| v10.2                                              | Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely   |
+| v10.2                                              | Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely                        |
 |                                                    | on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See    |
 |                                                    | the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.                          |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
