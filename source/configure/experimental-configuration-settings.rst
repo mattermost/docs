@@ -691,7 +691,7 @@ This setting enables you to specify an alternate filestore target for Mattermost
 
 **False**: Standard :ref:`file storage <configure/environment-configuration-settings:file storage>` is used (or when the configuration setting is omitted).
 
-When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost workspace migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
+When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
 
 .. note::
 
@@ -699,6 +699,19 @@ When an alternate filestore target is configured, Mattermost Cloud admins can ge
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
+YouTube referrer policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting resolves issues where YouTube video previews display as unavailable.
+
+**True**: The referrer policy for embedded YouTube videos is set to ``strict-origin-when-cross-origin``.
+
+**False**: (Default) The referrer policy is set to ``no-referrer`` which enhances user privacy by not disclosing the source URL, but limits the ability to track user engagement and traffic sources in analytics tools.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.    |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----

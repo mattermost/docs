@@ -361,7 +361,7 @@ Mattermost server
 Database server
 
  - Internal hostname: postgresql.lan
- - PostgreSQL v11
+ - PostgreSQL v12
  - LDAP Provider - 192.168.1.102
  - Internal hostname: ldap.lan
  - OpenLDAP 2.4.54 (Docker container)
@@ -386,7 +386,7 @@ Database servers
  - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
  - Primary: db1.local.lan
  - Read-Only: db2.local.lan, db3.local.lan  
- - PostgreSQL v11
+ - PostgreSQL v12
 
 Elasticsearch server
 
