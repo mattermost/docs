@@ -11,7 +11,7 @@ These instructions outline how to install Mattermost Server on a 64-bit Linux ho
 **Minimum system requirements**
 
 - Hardware: 2 vCPUs/cores with 4GB RAM (support for 1,000-2,000 users)
-- Database: PostgreSQL v12+ or MySQL v8+
+- Database: PostgreSQL v12+
 - Network ports required:
 
    - Application ports 80/443, TLS, TCP Inbound
