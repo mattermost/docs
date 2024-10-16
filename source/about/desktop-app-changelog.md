@@ -69,7 +69,7 @@ Mattermost v5.10.0 contains a low severity level security fix. Upgrading is high
 
 ### Contributors
 
-- 
+- [devinbinnie](https://github.com/devinbinnie), [streamer45](https://github.com/streamer45), [theaino](https://github.com/theaino).
 
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
