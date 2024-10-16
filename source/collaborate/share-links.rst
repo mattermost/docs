@@ -57,23 +57,8 @@ A Mattermost deep link is a URL that directs users to a specific location within
   
 Format deep links
 ~~~~~~~~~~~~~~~~~
-Take the link you have copied from the three dots around your message or the channels that you are working on and will find at the dropdown menu e.g., https://your-mattermost-domain.com/team-name/channels/channel-name. 
+Deep links must be formatted in Mattermost as follows:
 
-For Mobile deep linking; which represents the structuring link in such a way that it can open your Mattermost mobile application. 
-1. Starting with the URL structure; let's assume you have mattermost://team-id/messages/message-id. 
-
-Configure the link by modifying the team id in the URL by replacing the teamid with the name of your choice.
-
-Also replace the messageid with a name that is unique to you for proper identification in your channels. 
- 
-For web deep linking
-Which takes users directly to the content you have for them directly from your browser, follow the guidelines given to you from the previous section, which comprises: 
-Locate the permalink to the file. 
-Copying the URL 
-And distributing in any part of your message. 
-
-Furthermore, you can customize the link by building a button for it, thereby making it more attractive and interactive for your users or team. 
-
-Before you launch your link with assurance, test the link by yourself in your browser or mobile app to ascertain that it is readily available upon demand and compatible with the Mattermost functionary packages. 
-
-You are now acquainted with the techniques you can deploy to enhance the experience of your team in Mattermost collaborative application, by issuing straightforward reference within your content with deep links. Go ahead and add a deep link to your message.  
+- Deep link to a team: ``mattermost://<your-Mattermost-server-URL>/<team-name>``
+- Deep link to a channel: ``mattermost://<your-Mattermost-server-URL>/<team-name>/channels/<channel-name>``
+- Deep link to a message or thread: ``mattermost://<your-Mattermost-server-URL>/<team-name>/pl/<post-id>``
