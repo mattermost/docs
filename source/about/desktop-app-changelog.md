@@ -8,7 +8,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-10)=
 ## Release v5.10
 
-**Release Date: 2024-11-16**
+**Release Date: 2024-11-15**
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
