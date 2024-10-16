@@ -46,7 +46,7 @@ Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
 
 1. Copy the invitation code blob in the System message, then send the code blob and the decryption password to the remote Mattermost aystem admin you want to securely connect with.
-2. Ensure that the remote Mattermost instance can access your workspace URL listed in the System message.
+2. Ensure that the remote Mattermost instance can access your :doc:`workspace </guides/use-mattermost>` URL listed in the System message.
 
 Remove a secure connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

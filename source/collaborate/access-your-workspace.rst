@@ -4,7 +4,7 @@ Access your workspace
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the :doc:`desktop app </collaborate/install-desktop-app>`, the :doc:`mobile app for iOS </collaborate/install-ios-app>`, or the :doc:`mobile app for Android </collaborate/install-android-app>`.
+Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the :doc:`desktop app </collaborate/install-desktop-app>`, the :doc:`mobile app for iOS </collaborate/install-ios-app>`, or the :doc:`mobile app for Android </collaborate/install-android-app>`.
 
 .. tip::
 
