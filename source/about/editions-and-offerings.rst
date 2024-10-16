@@ -127,7 +127,7 @@ Features include:
 
 - Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
 - Native apps for iOS, Android, Windows, macOS, and Linux.
-- Pre-packaged integrations with most common developer tools, including Jira, Confluence, GitHub, GitLab, CircleCI, Zoom, Jitsi, and more.
+- Pre-packaged integrations with most common developer tools, including Jira, GitHub, GitLab, Zoom, and more.
 - Tools for :doc:`custom branding </configure/custom-branding-tools>` and :doc:`themes </preferences/customize-your-theme>`.
 - :doc:`Multi-factor authentication </onboard/multi-factor-authentication>`.
 - Single Sign-on with :doc:`GitLab </onboard/sso-gitlab>` using the OAuth 2.0 standard.

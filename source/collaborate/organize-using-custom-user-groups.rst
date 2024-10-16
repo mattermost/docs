@@ -27,7 +27,7 @@ Create a custom group
 
 1. Using Mattermost in a web browser or the desktop app, select |plus| at the top of the channel sidebar, then select **Create New User Group**.
 
-2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique across the Mattermost workspace. If a name is in use as a channel name, display name, or another custom group's name, it won't be available.
+2. Specify a name and mention. The mention is the handle you use to @mention a notification to the group. Group names must be unique across the Mattermost :doc:`workspace </guides/use-mattermost>`. If a name is in use as a channel name, display name, or another custom group's name, it won't be available.
 
 3. Search for and select members to add to the custom user group, then select **Create Group**.
 
