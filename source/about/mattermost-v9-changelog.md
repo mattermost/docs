@@ -10,6 +10,9 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.4, released **
+  - Mattermost v9.11.4 contains 
+  - Mattermost v9.11.4 contains no database or functional changes.
 - **9.11.3, released 2024-10-10**
   - Mattermost v9.11.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
@@ -655,6 +658,9 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.12, released **
+  - Mattermost v9.5.12 contains 
+  - Mattermost v9.5.12 contains no database or functional changes.
 - **9.5.11, released 2024-10-10**
   - Mattermost v9.5.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
