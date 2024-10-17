@@ -21,7 +21,7 @@ Install Mattermost Omnibus
       <ul>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
 	<li>Operating System: Ubuntu 20.04 or greater</li>
-        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v11+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v12+</a></li>
         <li>Network ports required:
           <ul>
             <li>Application ports 80/443, TLS, TCP Inbound</li>
