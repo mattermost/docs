@@ -53,6 +53,9 @@ Enable account creation
 |   Selecting **Create Account** displays an error.                               |                                                                        |
 |   Applies to email, OpenID Connect, and OAuth 2.0 user account authentication.  |                                                                        |
 +---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this       |
+| configuration setting is enabled.                                                                                                                        |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: signup-restrictcreationtodomains
   :displayname: Restrict account creation to specified email domains (Signup)
@@ -2913,7 +2916,7 @@ Enable guest access
 |                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
 | **Note**: For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is     |
-| deactivated.This means that guest accounts count as a paid user in your Mattermost workspace.                                        |
+| deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`.        |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains

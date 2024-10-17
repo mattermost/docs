@@ -21,7 +21,7 @@ Install Mattermost Server on Ubuntu
       <ul>
         <li>Operating System: 20.04 LTS, 22.04 LTS, 24.04 LTS
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v11+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v12+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
@@ -120,6 +120,10 @@ After modifying the ``config.json`` configuration file, you can now start the Ma
 Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
 
 The final step, depending on your requirements, is to run ``sudo systemctl enable mattermost.service`` so that Mattermost will start on system boot.
+
+.. note::
+
+	The value of the ``sslmode`` property in the ``DataSource`` configuration is entirely dependent on your native environment. Please consult the native environment setup documentation for guidance on its value. The available options for ``sslmode`` are ``disable`` or ``require``. For example, if you are using Amazon Lightsail as your data source, you must set ``sslmode`` to ``require`` to successfully connect to the database.
 
 Updates
 -------

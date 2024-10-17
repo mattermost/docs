@@ -691,7 +691,7 @@ This setting enables you to specify an alternate filestore target for Mattermost
 
 **False**: Standard :ref:`file storage <configure/environment-configuration-settings:file storage>` is used (or when the configuration setting is omitted).
 
-When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost workspace migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
+When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
 
 .. note::
 
@@ -699,6 +699,19 @@ When an alternate filestore target is configured, Mattermost Cloud admins can ge
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
+YouTube referrer policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting resolves issues where YouTube video previews display as unavailable.
+
+**True**: The referrer policy for embedded YouTube videos is set to ``strict-origin-when-cross-origin``.
+
+**False**: (Default) The referrer policy is set to ``no-referrer`` which enhances user privacy by not disclosing the source URL, but limits the ability to track user engagement and traffic sources in analytics tools.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.    |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
@@ -1579,26 +1592,6 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
 +---------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Experimental)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: N/A
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
-App custom URL schemes
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client.
-
-When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-o365scope
   :displayname: Entra ID scope (Experimental)
