@@ -52,7 +52,7 @@ Mattermost offers advanced security and authentication options for integrating w
 Secure networking
 ~~~~~~~~~~~~~~~~~~
 
-Mattermost Cloud Dedicated supports :doc:`IP filtering </manage/cloud-ip-filtering>` through CIDR-based IP ranges, providing flexibility for system administrators to include various authorized IPs or IP ranges for seamless access control. Users attempting to access the workspace from IPs outside defined ranges are restricted from entry. Cloud system admins can :ref:`configure IP filtering <manage/cloud-ip-filtering:configure ip filtering>` through their Mattermost System Console.
+Mattermost Cloud Dedicated supports :doc:`IP filtering </manage/cloud-ip-filtering>` through CIDR-based IP ranges, providing flexibility for system administrators to include various authorized IPs or IP ranges for seamless access control. Users attempting to access their :doc:`workspace </guides/use-mattermost>` from IPs outside defined ranges are restricted from entry. Cloud system admins can :ref:`configure IP filtering <manage/cloud-ip-filtering:configure ip filtering>` through their Mattermost System Console.
 
 Encryption
 ~~~~~~~~~~~
@@ -70,7 +70,7 @@ Connections to calls are secured with a combination of:
 Cloud native exports
 ~~~~~~~~~~~~~~~~~~~~
 
-Mattermost supports optional :ref:`filestore configuration settings <configure/experimental-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as the workspace admins who manage a given installation. The exports can also be accessed by generating unique download links as needed.
+Mattermost supports optional :ref:`filestore configuration settings <configure/experimental-configuration-settings:enable dedicated export filestore target>` to direct compliance and bulk export data to a separate S3 bucket from standard files. This separate bucket can be configured to allow for secure access by Mattermost Cloud teams as well as admins who manage a given Mattermost deployment. The exports can also be accessed by generating unique download links as needed.
 
 The following diagram provides a high-level view of how this functionality works:
 
@@ -98,4 +98,4 @@ Approved plugins developed and/or tested by Mattermost are supported and availab
 Migrate from a self-hosted instance
 ------------------------------------
 
-See our :ref:`workspace migration <manage/cloud-data-export:migrate from self-hosted to cloud>` documentation to learn more about migrating from a self-hosted to a Mattermost Cloud instance.
+See our :ref:`self-hosted to cloud migration <manage/cloud-data-export:migrate from self-hosted to cloud>` documentation to learn more about migrating from a self-hosted to a Mattermost Cloud instance.

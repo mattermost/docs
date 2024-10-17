@@ -6,6 +6,9 @@ Connect Microsoft Teams to Mattermost
 
 Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Microsoft Teams to Mattermost.
 
+.. include:: ../_static/badges/academy-msteams.rst
+  :start-after: :nosearch:
+
 Setup
 -----
 
@@ -91,7 +94,7 @@ Install and configure the Microsoft Teams integration in Mattermost
 
   These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
 
-1. Log in to your Mattermost workspace as a system administrator.
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
 2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 3. Search for or scroll to MS Teams, and select **Install**.
 4. Once installed, select **Configure**. You're taken to the System Console.
