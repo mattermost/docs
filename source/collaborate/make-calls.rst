@@ -4,10 +4,6 @@ Make calls
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |more-icon| image:: ../images/dots-horizontal_F01D8.svg
-    :alt: Use the More icon to access additional message options.
-    :class: theme-icon
-
 Using a web browser, the desktop app, or the mobile app, you can `join a call <#join-a-call>`__ or `start a call <#start-a-call>`__, `share your screen <#share-screen>`__, raise your hand, `react using emojis <#react-using-emojis>`__ during a call, `chat in a thread <#chat-in-a-call>`__, and continue working in Mattermost during a call.
 
 .. note::
@@ -229,7 +225,7 @@ Troubleshooting
 My audio doesn't work when I join a call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you can hear the other participants in the call but they can't hear you, select the horizontal dots next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select the horizontal dots again to close the menu.
+If you can hear the other participants in the call but they can't hear you, select the Gear icon |gear| next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select |gear| again to close the menu. Alternatively, you can :doc:`manage your audio and microphone preferences </preferences/manage-your-calls-preferences>` in **Settings**.
 
 My call is disconnected after a few seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -248,7 +244,7 @@ There's a known bug on macOS with some versions of Chrome (which is used by Matt
 5. Select **Screen share** and give it permissions again.
 6. Restart Mattermost again.
 
-If the issue persists please post in the public calls channel.
+If the issue persists please post on the Mattermost Community Server in the `Developer: Calls <https://community.mattermost.com/core/channels/developers-channel-call>`_ channel to troubleshoot further.
 
 Debugging
 ---------
@@ -290,7 +286,7 @@ You can access and share debug logs from **Account screen > Settings > Report a 
 Call stats dump
 ~~~~~~~~~~~~~~~
 
-In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
+In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message. Additionally, run the ``/call logs`` command to review the client logs for the last call session.
 
 You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
 

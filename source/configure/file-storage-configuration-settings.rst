@@ -91,7 +91,7 @@ Maximum file size
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 | **Notes**:                                                                                                                                   |
 |                                                                                                                                              |
-| - When :ref: `uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invlaid response from           |
+| - When :ref:`uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invlaid response from            |
 |   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy        |
 |   settings may not be sufficient.                                                                                                            |
 | - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                     |
@@ -512,24 +512,4 @@ Amazon S3 request timeout
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-
-.. config:setting:: file-maxpayloadsize
-  :displayname: Maximum payload size (File Storage)
-  :systemconsole: N/A
-  :configjson: .FileSettings.MaximumPayloadSizeBytes
-  :environment: MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES
-  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input. For example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
-
-Maximum payload size
-~~~~~~~~~~~~~~~~~~~~
-
-+-----------------------------------------------------------+----------------------------------------------------------------------------------+
-| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                        |
-| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".FileSettings.MaximumPayloadSizeBytes: 300000",``  |
-|                                                           | - Environment variable: ``MM_FILESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
-| For example, the upload attachment API or the API to      |                                                                                  |
-| upload a custom emoji.                                    |                                                                                  |
-|                                                           |                                                                                  |
-| Numerical value. Default is **300000** (300 kB).          |                                                                                  |
-+-----------------------------------------------------------+----------------------------------------------------------------------------------+
 

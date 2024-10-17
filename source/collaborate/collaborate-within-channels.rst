@@ -4,24 +4,12 @@ Collaborate within channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |globe| image:: ../images/globe_E805.svg
-  :alt: Public channels are identified with a Globe icon.
-  :class: theme-icon
-
-.. |lock| image:: ../images/lock-outline_F0341.svg
-  :alt: Private channels are identified with a Lock icon.
-  :class: theme-icon
-
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
-  :class: theme-icon
-
 Channels are where you connect, collaborate, and communicate with your team about various topics or projects. Use channels to organize conversations across different topics. :doc:`Sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.
 
 You're added to default channels automatically
 ----------------------------------------------
 
-Everyone who joins a Mattermost workspace is automatically added to two default public channels: **Town Square** and **Off-Topic**. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
+Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is automatically added to two default public channels: **Town Square** and **Off-Topic**. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
 
 - **Town Square** is great for your team-wide communications, such as announcements.
 - **Off-Topic** is great for fun, social, non-work-related conversations.
@@ -63,6 +51,7 @@ Learn more about collaborating within Mattermost channels:
   Browse channels </collaborate/browse-channels> 
   Navigate between channels </collaborate/navigate-between-channels>
   Mark channels as favorites </collaborate/favorite-channels>
+  Manage channel bookmarks </collaborate/manage-channel-bookmarks>
   Mark channels as unread </collaborate/mark-channels-unread>
   Archive and unarchive channels </collaborate/archive-unarchive-channels>
 
@@ -79,5 +68,6 @@ Learn more about collaborating within Mattermost channels:
 * :doc:`Convert group messages to private channels </collaborate/convert-group-messages>` - Learn how to convert group messages to private channels.
 * :doc:`Manage channel members </collaborate/manage-channel-members>` - Add and remove users from channels.
 * :doc:`Mark channels as favorites </collaborate/favorite-channels>` - Mark commonly visited channels as favorites.
+* :doc:`Manage channel bookmarks </collaborate/manage-channel-bookmarks>` - Manage quick access links or files pinned to the top of channels.
 * :doc:`Mark channels as unread </collaborate/mark-channels-unread>` - Mark channels unread to return to messages later.
 * :doc:`Archive and unarchive channels </collaborate/archive-unarchive-channels>` - Keep the number of available channels manageable. 

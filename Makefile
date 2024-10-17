@@ -35,8 +35,8 @@ endif
 # Install necessary dependencies for the CI build pipeline.
 # NOTE: if the version of Python used to build the docs changes, update the `pipenv` command below accordingly.
 python-deps:
-	pip install pipenv==2023.11.15
-	pipenv install --dev --clear --deploy --python 3.9
+	pip install pipenv==2024.1.0
+	pipenv install --dev --clear --deploy --python 3.12
 
 test:
 	pipenv run pytest

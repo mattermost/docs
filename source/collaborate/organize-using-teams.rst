@@ -4,10 +4,6 @@ Organize using teams
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus| image:: ../images/plus_F0415.svg
-  :alt: The Plus icon provides access to channel and direct message functionality.
-  :class: theme-icon
-
 .. toctree::
    :maxdepth: 1
    :hidden:
@@ -16,9 +12,9 @@ Organize using teams
    Team settings </collaborate/team-settings>
    Team keyboard shortcuts </collaborate/team-keyboard-shortcuts>
 
-A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
+A team is a digital :doc:`workspace </guides/use-mattermost>` where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is :ref:`set up <configure/experimental-configuration-settings:primary team>` in your organization, you can belong to one team or multiple teams, and :ref:`access to the team <collaborate/team-settings:access settings>` can be open or restricted.
 
-Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </collaborate/team-settings>` for existing teams.
+Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </collaborate/team-settings>` for existing teams. System admins can grant the **Create Team** permission to roles via the :ref:`System scheme <onboard/advanced-permissions:system scheme>` or the :ref:`Team override scheme <onboard/advanced-permissions:team override scheme>`.
 
 .. include:: ../_static/badges/academy-teams.rst
   :start-after: :nosearch:

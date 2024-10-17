@@ -4,9 +4,6 @@ Collect performance metrics
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |plus-icon| image:: ../images/plus_F0415.svg
-  :alt: Open menus using the plus icon.
-
 System admins can collect and store the :doc:`same performance monitoring metrics </scale/performance-monitoring-metrics>` as Prometheus, without having to deploy these third-party tools. Data is collected every minute and is stored in a path you configure. The data is synchronized to either a cloud-based or local file store every hour, and retained for 15 days. 
 
 Download and share the collected data with Mattermost to understand application performance, troubleshoot system stability and performance, as well as inform route cause analysis.
@@ -24,12 +21,15 @@ Mattermost configuration
 
 For a self-hosted Mattermost deployment, a Mattermost system admin must perform the following steps in Mattermost.
 
-1. Log in to your Mattermost workspace as a system administrator.
-2. Download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__, compatible with Mattermost v8.0.1 and later. If you are using an earlier version of Mattermost, :doc:`follow our documentation </upgrade/upgrading-mattermost-server>` to upgrade to Mattermost v8.0.1 or later.
-3. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
-4. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
-5. Specify the path of the time-series database, and select **Save**.
-6. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
+2. From Mattermost v10.1, you can install the Metrics plugin from the in-product Mattermost Marketplace by selecting the **Product** |product-list| icon and selecting **App Marketplace**. Search for **Metrics** and select **Install**.
+3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **Mattermost Metrics Plugin**, and select **Enable Plugin**.
+4. Specify the path of the time-series database, and select **Save**.
+5. Go to **System Console > Environment > Performance Monitoring**, and set **Enable Performance Monitoring** to **true**. Select **Save**.
+
+.. note::
+
+  For Mattermost deployments prior to v10.1, you must download the latest version of `the plugin binary release <https://github.com/mattermost/mattermost-plugin-metrics/releases>`__, compatible with Mattermost v8.0.1 and later. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded.
 
 Upgrade
 -------
@@ -56,7 +56,7 @@ Once you set this up, run ``docker-compose`` as described in `Dockprom Repositor
 You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582>`__ dashboard by simply importing it into Grafana.
 
 1. Open Grafana (``<localhost>:3000`` by default) and then log into it. 
-2. Once you log in, go to the **Plus** |plus-icon| icon on the left sidebar, and then select **Import**. 
+2. Once you log in, go to the **Plus** |plus| icon on the left sidebar, and then select **Import**.
 3. Enter the dashboard ID (``15582``) in the **Grafana.com Dashboard** field, and then select **Load** to fetch the dashboard. 
 
 What's collected?

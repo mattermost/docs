@@ -39,17 +39,23 @@ Access the following configuration settings in the System Console by going to **
   :configjson: .TeamSettings.EnableUserCreation
   :environment: MM_TEAMSETTINGS_ENABLEUSERCREATION
 
-  - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.
-  - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message.
+  - **true**: **(Default)** Anyone can sign up for a user account on this server without needing to be invited. Applies to email-based signups only.
+  - **false**: The ability to create accounts is disabled. Selecting **Create Account** displays an error. Applies to email, OpenID Connect, and OAuth 2.0 user account authentication.
 
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
-| - **true**: **(Default)** New accounts can be created by an email invitation or a public team invitation link.                           | - System Config path: **Authentication > Signup**                      |
-| - **false**: Disables new account creation. Attempting to create an account through an existing email or link displays an error message. | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
-|                                                                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
-+------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| - **true**: **(Default)** Anyone can sign up for a user account                 | - System Config path: **Authentication > Signup**                      |
+|   on this server without needing to be invited.                                 | - ``config.json`` setting: ``.TeamSettings.EnableUserCreation: true``  |
+|   Applies to email-based signups only.                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERCREATION``         |
+| - **false**: The ability to create accounts is disabled.                        |                                                                        |
+|   Selecting **Create Account** displays an error.                               |                                                                        |
+|   Applies to email, OpenID Connect, and OAuth 2.0 user account authentication.  |                                                                        |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
+| **Note**: LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this       |
+| configuration setting is enabled.                                                                                                                        |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: signup-restrictcreationtodomains
   :displayname: Restrict account creation to specified email domains (Signup)
@@ -2910,7 +2916,7 @@ Enable guest access
 |                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``         |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
 | **Note**: For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is     |
-| deactivated.This means that guest accounts count as a paid user in your Mattermost workspace.                                        |
+| deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`.        |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: guest-whitelistdomains

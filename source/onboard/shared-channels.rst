@@ -1,7 +1,7 @@
 Shared channels (Experimental)
 ==============================
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Communicate across organizations, as well as external partners and vendors using Mattermost by synchronizing messages, emoji reactions, and file sharing in real-time through secured connections and shared channels. 
@@ -46,7 +46,7 @@ Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
 
 1. Copy the invitation code blob in the System message, then send the code blob and the decryption password to the remote Mattermost aystem admin you want to securely connect with.
-2. Ensure that the remote Mattermost instance can access your workspace URL listed in the System message.
+2. Ensure that the remote Mattermost instance can access your :doc:`workspace </guides/use-mattermost>` URL listed in the System message.
 
 Remove a secure connection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

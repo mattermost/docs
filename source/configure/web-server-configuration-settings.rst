@@ -36,6 +36,24 @@ Site URL
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: max-url-length
+  :displayname: Maximum URL length (Web Server)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.MaximumURLLength
+  :environment: MM_SERVICESETTINGS_MAXIMUMURLLENGTH
+  :description: The longest URL, in characters, including query parameters, accepted by the Mattermost server. Default is 2048 characters.
+
+Maximum URL length
+~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| The longest URL, in characters, including query parameters,   | - System Config path: N/A                                                |
+| accepted by the Mattermost server. Longer URLs are rejected,  | - ``config.json`` setting: ``.ServiceSettings.MaximumURLLength: 2048",`` |
+| and API calls fail with an error.                             | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMURLLENGTH``          |
+|                                                               |                                                                          |
+| Numeric value. Default is **2048** characters.                |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. config:setting:: web-listenaddress
   :displayname: Web server listen address (Web Server)
   :systemconsole: Environment > Web Server
@@ -686,3 +704,23 @@ Cluster log timeout
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. config:setting:: service-maxpayloadsize
+  :displayname: Maximum payload size (File Storage)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.MaximumPayloadSizeBytes
+  :environment: MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES
+  :description: The maximum payload size in bytes for all APIs except APIs that receive a file as an input. For example, the upload attachment API or the API to upload a custom emoji. Default is 300000.
+
+Maximum payload size
+~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------+-------------------------------------------------------------------------------------+
+| The maximum payload size in bytes for all APIs except     | - System Config path: N/A                                                           |
+| APIs that receive a file as an input.                     | - ``config.json`` setting: ``".ServiceSettings.MaximumPayloadSizeBytes: 300000",``  |
+|                                                           | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMPAYLOADSIZEBYTES``              |
+| For example, the upload attachment API or the API to      |                                                                                     |
+| upload a custom emoji.                                    |                                                                                     |
+|                                                           |                                                                                     |
+| Numerical value. Default is **300000** (300 kB).          |                                                                                     |
++-----------------------------------------------------------+-------------------------------------------------------------------------------------+
