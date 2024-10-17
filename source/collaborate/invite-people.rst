@@ -48,7 +48,18 @@ Direct invites are invitation emails sent from your team's server directly to th
 .. tab:: Mobile
 
   1. Tap the |plus| icon in the top right corner of the screen.
+
+    .. image:: ../images/direct-mobile-invite-options.jpg
+      :alt: When you click on the + button, you can access more options from the popup window at bottom.
+
   2. Tap the **Invite people to the team** option.
+
+    .. image:: ../images/direct-mobile-invite-by-email.jpg
+      :alt: You can invite an user using their email address.
+
+    .. image:: ../images/direct-mobile-invite-by-name.jpg
+      :alt: You can invite an user using their name.
+
   3. Invite people by:
 
     - Entering the name of a user on another Mattermost team on the same server.
@@ -72,8 +83,20 @@ You can share a unique URL that takes users to a Mattermost account creation pag
 .. tab:: Mobile
 
   1. Tap the |plus| icon in the top right corner of the screen.
+
+    .. image:: ../images/direct-mobile-invite-options.jpg
+      :alt: When you click on the + button, you can access more options from the popup window at bottom.
+
   2. Tap the **Invite people to the team** option.
+
+    .. image:: ../images/direct-mobile-invite.jpg
+      :alt: You can also invite an user by clicking on the Share link button.
+
   3. Tap **Share link**.
+
+    .. image:: ../images/direct-mobile-invite-by-share-link.jpg
+      :alt: You can invite an user by sharing the invite link directly.
+
   4. Share the link with others.
 
 .. note::
