@@ -72,6 +72,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.2 is built with Go ``v1.22.6``.
 
 ### Known Issues
+ - Shared Channels: Direct Messages are not supported.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
