@@ -13,7 +13,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
 ```{Note}
-Mattermost v5.10.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 ```
 
 ### Compatibility
