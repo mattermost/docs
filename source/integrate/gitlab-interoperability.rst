@@ -39,6 +39,10 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the GitLab integration from the in-product App Marketplace:
 
+.. note::
+
+  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
+
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to GitLab, and select **Install**.
 3. Once installed, select **Configure**. You're taken to the System Console.
