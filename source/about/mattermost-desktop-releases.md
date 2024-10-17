@@ -4,7 +4,7 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
 ```
 
 ## Frequency
