@@ -10,7 +10,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.2-feature-release)=
 ## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release Day: November 15, 2024
+**Release Day: November 15, 2024**
 
 ### Important Upgrade Notes
 
