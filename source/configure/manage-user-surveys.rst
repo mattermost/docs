@@ -27,7 +27,7 @@ Install
 
   Mattermost offers an additonal :doc:`User Satisfaction Surveys </manage/user-satisfaction-surveys>` option with limited customization options within the **Plugins** list where surveys are enabled by default. We recommend :ref:`disabling the User Satisfaction Surveys functionality <manage/user-satisfaction-surveys:how can surveys be disabled?>` when using this user survey integration.
 
-1. Log in to your Mattermost workspace as a system administrator.
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system administrator.
 2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 3. Search for or scroll to User Survey, and select **Install**.
 4. Once installed, select **Configure**. You're taken to the System Console, directly to the **User Survey** integration page, under **Plugins**.

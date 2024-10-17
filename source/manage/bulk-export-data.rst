@@ -5,7 +5,7 @@ Bulk export data
 
 .. tab:: Use mmctl
 
-  1. Create a full export file including attachments by running the :ref:`mmctl export create -- attachments <manage/mmctl-command-line-tool:mmctl export create>` command. See the :ref:`Mattermost workspace migration <manage/cloud-data-export:create the export>` documentation for details.
+  1. Create a full export file including attachments by running the :ref:`mmctl export create -- attachments <manage/mmctl-command-line-tool:mmctl export create>` command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details.
 
   2. While the job is running, you can check its status by running the :ref:`mmctl export job show <manage/mmctl-command-line-tool:mmctl export job show>` command.
 
@@ -38,6 +38,7 @@ At this time, the export supports attributes of the objects listed below. All Ma
 You can export the following data types:
 
 - Teams
+- Threaded discussions
 - Channels (public, private, and direct)
 - Users
 - Users' team memberships
@@ -47,7 +48,8 @@ You can export the following data types:
 - Posts' replies and threads in public or private channels
 - Posts' reactions
 - Custom emoji
-- Direct message channels
+- Direct message and group message channels
+- Direct message and group message channels' read/unread status
 - Direct message posts
 - Roles
 - Permissions schemes
