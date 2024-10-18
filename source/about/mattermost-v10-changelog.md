@@ -108,6 +108,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
  - Removed deprecated ``pageSize`` query parameter from most API endpoints.
  - Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
+ - Usernames starting with a number are now randomized when synced with LDAP.
 
 ```{Important}
 If you upgrade from a release earlier than v9.11, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
