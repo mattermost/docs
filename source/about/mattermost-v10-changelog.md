@@ -12,6 +12,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 - **10.1.2, released **
   - 
+  - Fixed an issue with message export file attachments with dedicated filestore.
   - Mattermost v10.1.2 contains no database or functional changes.
 - **10.1.1, released 2024-10-16**
   - Fixed an issue where a shared indicator was shown in all Direct Messages, regardless of the user coming from a shared server [MM-60744](https://mattermost.atlassian.net/browse/MM-60744).
