@@ -127,6 +127,8 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "about/mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/maximize-microsoft-investment.html",
+"about/install-mattermost-for-microsoft-teams-plugin.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -1915,6 +1917,10 @@ redirects = {
         "https://docs.mattermost.com/guides/deployment.html",
 "deploy/deploy-http.html":
         "https://docs.mattermost.com/guides/deployment.html",
+"deploy/deploy-mattermost-apps.html":
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html",
+"deploy/configure-app-framework.html":
+        "https://developers.mattermost.com/integrate/plugins/",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
@@ -1922,7 +1928,7 @@ redirects = {
 "deployment/auth.html":
         "https://docs.mattermost.com/onboard/multi-factor-authentication.html",
 "deployment/admin-roles.html":
-	"https://docs.mattermost.com/onboard/system-admin-roles.html",
+	"https://docs.mattermost.com/onboard/delegated-granular-administration.html",
 "deployment/atlassian-integrations.html":
         "https://mattermost.com/marketplace/",
 "deployment/advanced-permissions.html#read-only-channels":
@@ -2113,7 +2119,7 @@ redirects = {
 
 # Microsoft Teams redirects
 "about/embed-mattermost-within-microsoft-teams.html":
-        "https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html",
+        "https://docs.mattermost.com/about/maximize-microsoft-investment.html",
 
 # Focalboard redirects
 "focalboard/installing-boards":
@@ -2680,6 +2686,7 @@ redirects = {
 "manage/workspace-usage.html":
         "https://docs.mattermost.com/guides/cloud-workspace-management.html",
 
+
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
         "https://docs.mattermost.com/welcome/about-teams.html",
@@ -3068,11 +3075,11 @@ redirects = {
 "messaging/cloud-user-management.html#obtaining-user-id":
 	"https://docs.mattermost.com/configure/user-management-configuration-settings.html#users",
 "messaging/cloud-user-management.html#about-system-roles-beta":
-	"https://docs.mattermost.com/onboard/system-admin-roles.html",
+	"https://docs.mattermost.com/onboard/delegated-granular-administration.html",
 "messaging/cloud-user-management.html#assigning-system-roles":
-	"https://docs.mattermost.com/onboard/system-admin-roles.html#assign-system-admin-roles",
+	"https://docs.mattermost.com/onboard/delegated-granular-administration.html#assign-admin-roles",
 "messaging/cloud-user-management.html#editing-privileges-of-system-roles":
-	"https://docs.mattermost.com/onboard/system-admin-roles.html#edit-privileges-of-system-admin-roles-advanced",
+	"https://docs.mattermost.com/onboard/delegated-granular-administration.html#edit-privileges-of-admin-roles-advanced",
 
 # Mobile redirects
 "mobile/deploy-mobile-apps-using-emm-provider.html":
