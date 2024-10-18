@@ -33,6 +33,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 
 #### All Platforms
 
+- Implemented a ``performanceMonitor`` to collect and send anonymous usage data to server dashboards.
 - Plugins are now allowed to open ``about:blank`` popup windows using ``window.open()``.
 - Added support for plugins to ask for desktop source for screen sharing through the ``desktopAPI.getDesktopSources`` call.
 - Added ``Developer Mode`` settings to help debug performance issues.
