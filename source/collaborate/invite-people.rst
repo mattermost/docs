@@ -94,13 +94,13 @@ You can share a unique URL that takes users to a Mattermost account creation pag
   2. Tap the **Invite people to the team** option.
 
     .. image:: ../images/direct-mobile-invite.jpg
-      :alt: You can also invite a user by clicking on the Share link button.
+      :alt: You can also invite a user by selecting Share link button.
       :scale: 60
 
   3. Tap **Share link**.
 
     .. image:: ../images/direct-mobile-invite-by-share-link.jpg
-      :alt: You can invite a user by sharing the invite link directly.
+      :alt: You can invite a user by sharing the invite link directly with them.
       :scale: 60
 
   4. Share the link with others.
