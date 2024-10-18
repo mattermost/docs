@@ -5,6 +5,73 @@
 
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
+(release-v5-10)=
+## Release v5.10
+
+**Release Date: 2024-11-15**
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+```{Note}
+Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 126+.
+
+### Improvements
+
+#### Windows
+
+- Started using ``titleBarOverlay`` for Windows instead of the buttons that were baked-in to the app.
+
+#### Linux
+
+- Full screen mode is now disabled on Linux.
+
+#### All Platforms
+
+- Implemented a ``performanceMonitor`` to collect and send anonymous usage data to server dashboards.
+- Plugins are now allowed to open ``about:blank`` popup windows using ``window.open()``.
+- Added support for plugins to ask for desktop source for screen sharing through the ``desktopAPI.getDesktopSources`` call.
+- Added ``Developer Mode`` settings to help debug performance issues.
+
+### Bug Fixes
+
+#### macOS
+
+- Fixed an issue with resizing the app when the welcome screen was open on macOS, and forced the button to always appear on the welcome screen.
+
+#### Linux
+
+- Fixed a crash in Linux when trying to create a thumbnail from an image.
+
+#### All Platforms
+
+- Fixed a potential crash where the app menu could regenerate when ``currentServerId`` wasn't set.
+- Fixed an issue with dark-mode style for download location in settings.
+- Fixed an issue where logging out from the Boards/Playbooks tabs and trying to navigate after logging back in would force an unexpected logout.
+- Fixed an issue with the Download button being hidden on Windows/Linux.
+
+### Open Source Components
+
+- Added ``@emotion/react`` to https://github.com/mattermost/desktop.
+
+### Known Issues
+
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+### Contributors
+
+- [devinbinnie](https://github.com/devinbinnie), [streamer45](https://github.com/streamer45), [theaino](https://github.com/theaino).
+
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
 
