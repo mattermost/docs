@@ -125,7 +125,7 @@ Use quotation marks ``" "`` to return search results for exact terms. For exampl
 Wildcards
 ~~~~~~~~~
 
-Use the asterisk ``*`` symbol for wildcard searches that match within words. For example, searching ``rea*`` returns messages or files containing ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``.
+Use the asterisk ``*`` symbol at the end of the word to perform a wildcard search. The wildcard search returns all words that begin with the specified letters. The wildcard in search cannot be used at the beginning or in the middle of a word. For example, searching ``rea*`` returns messages or files containing words like ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``. However, searches like ``*each`` and ``re*ch`` are invalid wildcard searches.
 
 Hashtags
 --------
