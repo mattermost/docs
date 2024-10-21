@@ -1103,7 +1103,7 @@ Microsoft Teams Meetings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrate/microsoft-teams-meetings-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-teams-meetings-interoperability::enable-and-configure-the-microsoft-teams-meetings-integration-in-mattermost>`.
+See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrate/microsoft-teams-meetings-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-teams-meetings-interoperability:enable and configure the microsoft teams meetings integration in mattermost>`.
 
 
 ----
