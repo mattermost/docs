@@ -89,7 +89,7 @@ You can share a unique URL that takes users to a Mattermost account creation pag
 
     .. image:: ../images/direct-mobile-invite-options.jpg
       :alt: When you select +, you can access more options from the popup window.
-      :scale: 60
+      :scale: 30
 
   2. Tap the **Invite people to the team** option.
 
