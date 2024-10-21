@@ -45,7 +45,7 @@ If you belong to more than one team, a team sidebar displays to the left of the 
 Create a team
 --------------
 
-You can create a team using a web browser or the desktop app by selecting a team name, and then selecting Create a Team, unless your system admin has disabled your ability to do so.
+You can create a team using a web browser or the desktop app by selecting a team name, and then selecting **Create a Team**, unless your system admin has disabled your ability to do so.
 
 .. image:: ../images/create-team.gif
   :alt: Create a new team by selecting the team name.
