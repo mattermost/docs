@@ -1085,7 +1085,7 @@ Microsoft Calendar
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar-interoperability::enable-and-configure-the-microsoft-calendar-integration-in-mattermost>`.
+See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar-interoperability:enable and configure the microsoft calendar integration in mattermost>`.
 
 ----
 
