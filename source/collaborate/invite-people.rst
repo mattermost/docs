@@ -51,7 +51,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 
     .. image:: ../images/direct-mobile-invite-options.jpg
       :alt: When you select +, you can access more options from the popup window.
-      :scale: 60
+      :scale: 40
 
   2. Tap the **Invite people to the team** option.
 
