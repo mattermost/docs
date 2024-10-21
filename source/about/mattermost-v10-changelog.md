@@ -11,9 +11,10 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.1.2, released **
-  - 
+  - Mattermost v10.1.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with message export file attachments with a dedicated filestore [MM-60063](https://mattermost.atlassian.net/browse/MM-60063).
-  - Mattermost v10.1.2 contains no database or functional changes.
+  - Mattermost v10.1.2 contains the following functional change:
+      - Added a configuration setting **NativeAppSettings > MobileExternalBrowser** that tells the Mobile app to perform SSO Authentication using the external default browser [MM-60332](https://mattermost.atlassian.net/browse/MM-60332).
 - **10.1.1, released 2024-10-16**
   - Fixed an issue where a shared indicator was shown in all Direct Messages, regardless of the user coming from a shared server [MM-60744](https://mattermost.atlassian.net/browse/MM-60744).
   - Mattermost v10.1.1 contains no database or functional changes.
@@ -92,7 +93,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.0.2, released **
-  - Mattermost v10.0.2 contains
+  - Mattermost v10.0.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.0.2 contains no database or functional changes.
 - **10.0.1, released 2024-10-10**
   - Mattermost v10.0.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
