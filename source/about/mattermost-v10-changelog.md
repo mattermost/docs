@@ -28,7 +28,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
  - A warning is now shown when deleting a post or comment from a remote/shared channel.
  - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
  - Updated the channel header to hide pinned posts when there aren't any in the channel.
- - Added full support for at-mentions in the values of fields in message attachments.
+ - Added full support for @mentions in the values of fields in message attachments.
 
 #### Administration
  - Added a new URL parameter called ``permanent`` to ``DELETE /api/v4/posts/<post-id>``, and set ``permanent`` to ``true`` in order to permanently delete a post and its attachments.
