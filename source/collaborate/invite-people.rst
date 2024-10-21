@@ -101,7 +101,7 @@ You can share a unique URL that takes users to a Mattermost account creation pag
 
     .. image:: ../images/direct-mobile-invite-by-share-link.jpg
       :alt: You can invite a user by sharing the invite link directly with them.
-      :scale: 60
+      :scale: 30
 
   4. Share the link with others.
 
