@@ -57,7 +57,7 @@ Direct invites are invitation emails sent from your team's server directly to th
 
     .. image:: ../images/direct-mobile-invite-by-email.jpg
       :alt: You can invite a user using their email address.
-      :scale: 60
+      :scale: 30
 
     .. image:: ../images/direct-mobile-invite-by-name.jpg
       :alt: You can invite a user using their name.
