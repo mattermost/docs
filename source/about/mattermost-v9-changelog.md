@@ -32,16 +32,19 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Important Upgrade Notes
 
- - Added support for Elasticsearch v8. Also added Beta support for [Opensearch](https://opensearch.org/). A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is `elasticsearch`, which breaks support for AWS Elasticsearch v7.10.x since the official v8 client only works from Elasticsearch v7.11 and higher versions. See the important note below for details.
+ - Added support for Elasticsearch v8. Also added Beta support for [Opensearch v1.x and v2.x](https://opensearch.org/). A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is `elasticsearch`, which breaks support for AWS Elasticsearch v7.10.x since the official v8 client only works from Elasticsearch v7.11 and higher versions. See the important note below for details.
  - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the [Elasticsearch upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) documentation for details.
  - When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
 ```{Important}
+**AWS Elasticsearch**
+
 If you're using AWS Elasticsearch, you must:
-- Upgrade to AWS Opensearch for future compatibility. Refer to the [Opensearch upgrade](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html) documentation for details.
-- Shut down the Mattermost server and update the Mattermost `ElasticsearchSettings.Backend` configuration setting value from `elasticsearch` to `opensearch` manually or using [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set). This value cannot be  changed using the System Console nor changed dynamically while the server is running. See the Mattermost [Elasticsearch backend type](https://docs.mattermost.com/configure/environment-configuration-settings.html#elastic-backendtype) documentation for additional details.
-- Restart the Mattermost server after updating the configuration setting value.
-- Disable "compatibility mode" in Opensearch.
+1. Upgrade to AWS Opensearch. Refer to the [Opensearch upgrade](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html) documentation for details.
+2. Disable "compatibility mode" in Opensearch.
+3. Upgrade Mattermost server.
+4. Update the Mattermost `ElasticsearchSettings.Backend` configuration setting value from `elasticsearch` to `opensearch` manually or using [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set). This value cannot be changed using the System Console. See the Mattermost [Elasticsearch backend type](https://docs.mattermost.com/configure/environment-configuration-settings.html#elastic-backendtype) documentation for additional details.
+5. Restart the Mattermost server.
 ```
 
 ### Compatibility
