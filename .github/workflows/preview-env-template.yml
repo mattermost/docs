@@ -26,13 +26,10 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@f677139bbe7f9c59b41e40162b753c062f5d49a3 # v5.2.0
         with:
-          python-version: "3.9"
+          python-version: 3.12
 
-      - name: Install pipenv
-        run: pip install pipenv
-
-      - name: Install dependencies
-        run: pipenv install --dev
+      - name: ci/Install dependencies
+        run: make python-deps
 
       - name: Build
         run: make SPHINXOPTS="-j auto -D html_baseurl=http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/${{ inputs.PR_NUMBER }}" html
@@ -42,7 +39,7 @@ jobs:
         with:
           aws_key_id: ${{ secrets.AWS_KEY_ID }}
           aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          aws_bucket: mattermost-docs-preview-pulls
           source_dir: ./build/html
           destination_dir: ${{ inputs.PR_NUMBER }}
 
