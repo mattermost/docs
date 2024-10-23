@@ -660,6 +660,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 
 - **9.5.12, released **
   - Mattermost v9.5.12 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed desyncing issues with unreads between the team sidebar and the title bar [MM-54021](https://mattermost.atlassian.net/browse/MM-54021).
   - Mattermost v9.5.12 contains no database or functional changes.
 - **9.5.11, released 2024-10-10**
   - Mattermost v9.5.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
