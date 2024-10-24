@@ -102,6 +102,21 @@ Collaborative Playbook
 | Templates and checklists | |checkmark| | |checkmark| |        |
 +--------------------------+-------------+-------------+--------+
 
+Calls
+~~~~~
++------------------+-------------+-------------+-------------+
+|      Feature     |     Web     |   Desktop   |    Mobile   |
++------------------+-------------+-------------+-------------+
+| Join call        | |checkmark| | |checkmark| | |checkmark| |
++------------------+-------------+-------------+-------------+
+| Share screen     | |checkmark| | |checkmark| |             |
++------------------+-------------+-------------+-------------+
+| Chat in thread   | |checkmark| | |checkmark| | |checkmark| |
++------------------+-------------+-------------+-------------+
+| React with emoji | |checkmark| | |checkmark| | |checkmark| |
++------------------+-------------+-------------+-------------+
+| Start recording  | |checkmark| | |checkmark| | |checkmark| |
++------------------+-------------+-------------+-------------+
 
 What feature quality levels does Mattermost have?
 --------------------------------------------------
