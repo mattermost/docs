@@ -5,18 +5,21 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+   - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
-   - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+| v10.2                                              | Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely                        |
+|                                                    | on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See    |
+|                                                    | the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.                          |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.0                                              | We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported       |
 |                                                    | version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

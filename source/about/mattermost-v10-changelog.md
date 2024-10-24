@@ -1,11 +1,89 @@
 # v10 changelog
 
 ```{Important}
-Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
 - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
+
+(release-v10.2-feature-release)=
+## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release Day: November 15, 2024**
+
+### Important Upgrade Notes
+
+ - Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely on artifact verification using DCT, please [transition to using Cosign](https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/). See the [DCT deprecation Mattermost forum post](https://forum.mattermost.com/t/upcoming-dct-deprecation/19275) for more details. 
+
+```{Important}
+If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.2.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.0).
+ - Changed the logic of ``useMilitaryTime`` to ``false`` to default to 12-hour time format unless the user's preference from ``data.Value`` is ``true``. When a notification email is sent to a user, the time should now default to the 12-hour format unless otherwise stated by the user. 
+ - A warning is now shown when deleting a post or comment from a remote/shared channel.
+ - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
+ - Updated the channel header to hide pinned posts when there aren't any in the channel.
+ - Added full support for @mentions in the values of fields in message attachments.
+
+#### Administration
+ - Added a new URL parameter called ``permanent`` to ``DELETE /api/v4/posts/<post-id>``, and set ``permanent`` to ``true`` in order to permanently delete a post and its attachments.
+ - Added Shared Channels administration page to the System Console.
+ - Added a team selector to accept connection invite flow in Shared Workspaces.
+ - Restricted activation and deactivation of LDAP-managed users through both the System Admin Console UI and Mattermost API.
+ - Export/import improvements: added the ability to export all user preferences and flagged posts.
+ - Increased timeouts to fetch cluster logs.
+ - Improved log messages for cluster communication.
+ - Information about deleted rows from the Data Retention job are now logged.
+ - License details to logs are now emitted when added or removed.
+ - Added a new mmctl command, ``mmctl post delete <post-id>``, in order to permanently delete a post and its attachments.
+
+#### Performance
+ - Added metrics to prometheus to check the mobile versions for each session daily.
+ - Improved the performance of LDAP sync jobs when group-contained teams and channels are used.
+ - Added minor improvements to notification metrics.
+ - Added minor improvements to mobile push notifications.
+
+### Bug Fixes
+ - Fixed an issue with email notifications using 24-hour timestamps by default.
+ - Fixed an issue where bots were not ignored when counting deactivated accounts for statistics.
+ - Fixed an issue where drafts didn’t allow scrolling if the user had many drafts.
+ - Fixed an issue that caused Javascript errors in the System Console.
+ - Fixed racy use of session in ``NewWebConn``.
+ - Fixed a race condition that would happen after a server start if ``EnableTesting`` was enabled.
+ - Fixed an issue where no error message was shown when replying to a deleted post from the draft screen.
+ - Fixed an issue where the check icons were missing from the Sort and Show options in the Direct Messages tab, and the Sort tab of the Channels tab.
+ - Fixed desyncing issues with unreads between the team sidebar and the title bar.
+ - Fixed an issue with message export file attachments with dedicated filestore: when the dedicated filestore is set, file attachments will be found and exported correctly.
+ - Reverted a change enforcing usernames to start with alpha characters on the server.
+ - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added a new configuration setting ``EnableAPIPostDeletion`` in order to enable/disable post deletion. This configuration setting does not need to be enabled when running mmctl in local mode.
+    - Added ``EnableDesktopLandingPage`` to allow the desktop app landing page to be disabled.
+ - Under ``NativeAppSettings`` in ``config.json``:
+     - Added a configuration setting ``MobileExternalBrowser`` that tells the Mobile app to perform SSO Authentication using the external default browser.
+
+### Go Version
+ - v10.2 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - Shared Channels: Direct Messages are not supported.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - 
 
 (release-v10.1-feature-release)=
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
