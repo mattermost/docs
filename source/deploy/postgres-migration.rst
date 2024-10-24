@@ -63,11 +63,11 @@ If you encounter errors during the execution of the ``pgloader`` command, ensure
 
 .. note::
 
-  For experienced users, it is recoverable to run the ``pgloader`` without requiring to restart the migration from scratch. In this case, you will need to manually fix the issues with the table and run the ``pgloader`` command with a tailored configuration just for those tables. Also ensure that the schema name is reverted back to ``public`` and the ``search_path`` is restored or remove necessary clauses form the configuration.
+  For experienced users, it is recoverable to run the ``pgloader`` without requiring a restart of the migration from scratch. In this case, you will need to manually fix the issues with the table, and run the ``pgloader`` command with a tailored configuration specifically for those tables. Also ensure that the schema name is reverted back to ``public``, and the ``search_path`` is restored (or remove necessary clauses from the configuration).
 
-Some common errors that you may encounter during the execution of the ``pgloader`` command are:
+The following sections detail how to resolve some common errors you may encounter during the execution of the ``pgloader`` command:
 
-Invalid Input Syntax for Type JSON
+Invalid input syntax for type JSON
 ::::::::::::::::::::::::::::::::::
 
 If you receive an error message similar to the following:
