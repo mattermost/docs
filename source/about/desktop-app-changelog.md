@@ -55,6 +55,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 - Fixed an issue with dark-mode style for download location in settings.
 - Fixed an issue where logging out from the Boards/Playbooks tabs and trying to navigate after logging back in would force an unexpected logout.
 - Fixed an issue with the Download button being hidden on Windows/Linux.
+- Fixed an issue where pre-defined servers couldn't edit permissions, and the dropdown would not show badges.
 
 ### Open Source Components
 
