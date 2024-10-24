@@ -104,11 +104,11 @@ If you receive an error message similar to the following:
 
    ERROR mysql: 76 fell through ECASE expression.
 
-It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`_ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: ::ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
+It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`_ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
 
 .. note::
 
-  Also, there may be cases where ``pgloader`` continue to migration remaining tables and skip one or more tables. In such cases, it is recommended to identify issues with the table and fix them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
+  Also, there may be cases where ``pgloader`` continue to migrate remaining tables and skip one or more tables during migration. In such cases, it is recommended to identify issues with the table and fix them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
 
 
 Mattermost can't connect to the PostgreSQL database
