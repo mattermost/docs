@@ -58,7 +58,7 @@ Select the **Skin tone** icon in the top right corner of the emoji picker to spe
 Upload custom emojis
 ~~~~~~~~~~~~~~~~~~~~
 
-Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost workspace can access to react to messages. From the emoji picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 512 KiB in size.
+Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost :doc:`workspace </guides/use-mattermost>` can access to react to messages. From the emoji picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 512 KiB in size.
 
 1. Enter a name for your custom emoji. This is the name that shows up in the emoji autocomplete.
 2. Choose **Select**, then select the image to use for the emoji.

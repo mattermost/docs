@@ -220,6 +220,22 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | manage_ldap_sync_job                         | system  | Manage the status of an LDAP synchronization job.                                                                                                                                                     |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| add_bookmark_public_channel                  | channel | Add bookmarks to a public channel.                                                                                                                                                                    |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| add_bookmark_private_channel                 | channel | Add bookmarks to a private channel.                                                                                                                                                                   |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| edit_bookmark_public_channel                 | channel | Make changes to bookmarks in a public channel.                                                                                                                                                        |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| edit_bookmark_private_channel                | channel | Make changes to bookmarks in a private channel.                                                                                                                                                       |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| delete_bookmark_public_channel               | channel | Delete bookmarks in a public channel.                                                                                                                                                                 |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| delete_bookmark_private_channel              | channel | Delete bookmarks in a private channel.                                                                                                                                                                |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| order_bookmark_public_channel                | channel | Reorder bookmarks in a public channel.                                                                                                                                                                |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| order_bookmark_private_channel               | channel | Reorder bookmarks in a private channel.                                                                                                                                                               |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ``Roles`` field
 ~~~~~~~~~~~~~~~
@@ -260,6 +276,14 @@ The following built-in roles and associated permissions are available:
 - remove_reaction
 - manage_public_channel_members
 - manage_channel_roles
+- add_bookmark_public_channel
+- edit_bookmark_public_channel
+- delete_bookmark_public_channel
+- order_bookmark_public_channel
+- add_bookmark_private_channel
+- edit_bookmark_private_channel
+- delete_bookmark_private_channel
+- order_bookmark_private_channel
 
 *channel_guest*
 
@@ -293,6 +317,14 @@ The following built-in roles and associated permissions are available:
 - manage_private_channel_properties
 - create_post
 - edit_post
+- add_bookmark_public_channel
+- edit_bookmark_public_channel
+- delete_bookmark_public_channel
+- order_bookmark_public_channel
+- add_bookmark_private_channel
+- edit_bookmark_private_channel
+- delete_bookmark_private_channel
+- order_bookmark_private_channel
 
 *system_admin*
 
@@ -416,6 +448,14 @@ The following built-in roles and associated permissions are available:
 - manage_elasticsearch_post_indexing_job
 - manage_elasticsearch_post_aggregation_job
 - manage_ldap_sync_job
+- add_bookmark_public_channel
+- edit_bookmark_public_channel
+- delete_bookmark_public_channel
+- order_bookmark_public_channel
+- add_bookmark_private_channel
+- edit_bookmark_private_channel
+- delete_bookmark_private_channel
+- order_bookmark_private_channel
 
 *system_custom_group_admin*
 
@@ -591,6 +631,14 @@ The following built-in roles and associated permissions are available:
 - convert_public_channel_to_private
 - add_reaction
 - import_team
+- add_bookmark_public_channel
+- edit_bookmark_public_channel
+- delete_bookmark_public_channel
+- order_bookmark_public_channel
+- add_bookmark_private_channel
+- edit_bookmark_private_channel
+- delete_bookmark_private_channel
+- order_bookmark_private_channel
 
 *team_guest*
 

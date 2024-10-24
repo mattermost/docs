@@ -35,7 +35,7 @@ Search for message and files
 
   File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
 
-  - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
+  - For Mattermost Cloud :doc:`workspaces </guides/use-mattermost>`, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
   - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
 
   .. note::
@@ -125,7 +125,7 @@ Use quotation marks ``" "`` to return search results for exact terms. For exampl
 Wildcards
 ~~~~~~~~~
 
-Use the asterisk ``*`` symbol for wildcard searches that match within words. For example, searching ``rea*`` returns messages or files containing ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``.
+Use the asterisk ``*`` symbol at the end of the word to perform a wildcard search. The wildcard search returns all words that begin with the specified letters. The wildcard in search cannot be used at the beginning or in the middle of a word. For example, searching ``rea*`` returns messages or files containing words like ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``. However, searches like ``*each`` and ``re*ch`` are invalid wildcard searches.
 
 Hashtags
 --------
