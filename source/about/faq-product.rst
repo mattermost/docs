@@ -146,6 +146,24 @@ Integrations
 | Right-hand sidebar     | |checkmark| | |checkmark| |                     |
 +------------------------+-------------+-------------+---------------------+
 
+Authentication
+~~~~~~~~~~~~~~
++----------------------+-------------+-------------+-------------+
+|        Feature       |     Web     |   Desktop   |    Mobile   |
++----------------------+-------------+-------------+-------------+
+| Email-password login | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| AD/LDAP              | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| SAML SSO             | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| GitLab SSO           | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Entra ID SSO         | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Google SSO           | |checkmark| | |checkmark| |             |
++----------------------+-------------+-------------+-------------+
+
 What feature quality levels does Mattermost have?
 --------------------------------------------------
 
