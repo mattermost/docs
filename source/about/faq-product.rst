@@ -164,6 +164,20 @@ Authentication
 | Google SSO           | |checkmark| | |checkmark| |             |
 +----------------------+-------------+-------------+-------------+
 
+Other
+~~~~~
++-------------------------------+-------------+-------------+-------------+
+|            Feature            |     Web     |   Desktop   |    Mobile   |
++-------------------------------+-------------+-------------+-------------+
+| Localization for 20 languages | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------+-------------+-------------+-------------+
+| Custom user interface themes  | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------+-------------+-------------+-------------+
+| User profile settings         | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------+-------------+-------------+-------------+
+| Channel settings              | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------+-------------+-------------+-------------+
+
 What feature quality levels does Mattermost have?
 --------------------------------------------------
 
