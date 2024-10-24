@@ -1,16 +1,32 @@
 # Minimal makefile for Sphinx documentation
 #
 .PHONY: Makefile help python-deps linkcheck livehtml python-deps test compass-icons
+
+# Check Make version (we need at least GNU Make 3.82). Fortunately,
+# 'undefine' directive has been introduced exactly in GNU Make 3.82.
+ifeq ($(filter undefine,$(.FEATURES)),)
+$(error Unsupported Make version. \
+    The build system does not work properly with GNU Make $(MAKE_VERSION), \
+    please use GNU Make 3.82 or above.)
+endif
+
 #
 # You can set these variables from the command line, and also
 # from the environment for the last three.
 SOURCEDIR       = source
 BUILDDIR        = build
-WARNINGSFILE    = $(BUILDDIR)/warnings.log
 SPHINXOPTS      ?= -j auto
 SPHINXBUILD     ?= pipenv run sphinx-build
 SPHINXAUTOBUILD ?= pipenv run sphinx-autobuild
 AUTOBUILDOPTS   ?= -D=html_baseurl=http://127.0.0.1:8000
+
+ifeq ($(OS),Windows_NT)
+SHELL=C:\Windows\system32\cmd.exe
+.SHELLFLAGS=/C
+WARNINGSFILE=$(BUILDDIR)\warnings.log
+else
+WARNINGSFILE=$(BUILDDIR)/warnings.log
+endif
 
 # If we're not on Windows, check to see if 'mm_url_path_prefix' is included in SPHINXOPTS.
 # If it is included, extract the PR ID from the prefix and set the html_baseurl config
@@ -26,11 +42,7 @@ endif
 
 # Put it first so that "make" without argument is like "make help".
 help:
-ifeq ($(OS),Windows_NT)
-	@CMD /C $(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-else
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
-endif
 
 # Install necessary dependencies for the CI build pipeline.
 # NOTE: if the version of Python used to build the docs changes, update the `pipenv` command below accordingly.
@@ -44,8 +56,8 @@ test:
 # Run `make livehtml` to start sphinx-autobuild.
 livehtml:
 ifeq ($(OS),Windows_NT)
-	@CMD /C IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
-	@CMD /C $(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(AUTOBUILDOPTS) $(O)
+	@IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
+	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)\html" -d "$(BUILDDIR)\doctrees" $(SPHINXOPTS) $(AUTOBUILDOPTS) $(O)
 else
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXAUTOBUILD) "$(SOURCEDIR)" "$(BUILDDIR)/html" -d "$(BUILDDIR)/doctrees" $(SPHINXOPTS) $(AUTOBUILDOPTS) $(O)
@@ -56,8 +68,8 @@ endif
 # directories or files not included in the documentation
 linkcheck:
 ifeq ($(OS),Windows_NT)
-	@CMD /C IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
-	@CMD /C $(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
+	@IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
+	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive\*,process\* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
 else
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
@@ -67,8 +79,8 @@ endif
 # Download the latest Compass Icon assets.
 compass-icons:
 ifeq ($(OS),Windows_NT)
-	@CMD /C IF NOT EXIST source/_static/css MD source/_static/css
-	@CMD /C IF NOT EXIST source/_static/font MD source/_static/font
+	@IF NOT EXIST source/_static/css MD source/_static/css
+	@IF NOT EXIST source/_static/font MD source/_static/font
 else
 	@mkdir -p source/_static/css
 	@mkdir -p source/_static/font
@@ -80,8 +92,8 @@ endif
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 %: Makefile
 ifeq ($(OS),Windows_NT)
-	@CMD /C IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
-	@CMD /C $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
+	@IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
 else
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS2) $(O) 2>>"$(WARNINGSFILE)"
