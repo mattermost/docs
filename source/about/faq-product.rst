@@ -6,84 +6,43 @@ What features are available on different Mattermost clients?
 
 The following chart highlights the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
 
-**Legend:**
+Messages
+~~~~~~~~
++---------------------------------------------------+-----+---------+--------+
+| Feature                                           | Web | Desktop | Mobile |
++---------------------------------------------------+-----+---------+--------+
+| Threaded messages                                 |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Markdown                                          |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Emojis                                            |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Emoji reactions                                   |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Viewing emoji reactions                           |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| File sharing                                      |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| @ mentions                                        |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Hashtags                                          |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Search (with in:, from:, before:, on: and after:) |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Search highlighting                               |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| View/marking pinned or saved posts                |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Image link previews                               |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Website previews                                  |     |         |        |
++---------------------------------------------------+-----+---------+--------+
+| Notifications                                     |     |         |        |
++---------------------------------------------------+-----+---------+--------+
 
-* X - Full Support
-* O - Partial support
+Channels
+~~~~~~~~
 
-.. csv-table::
-    :header: "Feature", "Web", "Desktop", "Mobile"
-
-    **MESSAGES**
-    "Threaded messages", "X", "X", "X"
-    "Markdown", "X", "X", "O"
-    "Emojis", "X", "X", "X"
-    "Emoji reactions", "X", "X", "X"
-    "Viewing emoji reactions", "X", "X", "X"
-    "File sharing", "X", "X", "X"
-    "@ mentions", "X", "X", "X"
-    "Hashtags", "X", "X", "X"
-    "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X", "X"
-    "View/marking pinned or saved posts", "X", "X", "X"
-    "Image link previews", "X", "X", "X"
-    "Website previews", "X", "X", "X"
-    "Notifications", "X", "X", "X"
-    "**CHANNELS**"
-    "Create a new channel", "X", "X", "X"
-    "Join a channel", "X", "X", "X"
-    "Leave a channel", "X", "X", "X"
-    "Favorite a channel", "X", "X", "X"
-    "Mute a channel", "X", "X", "X"
-    "Manage members", "X", "X", "X"
-    "Add members", "X", "X", "X"
-    "Edit channel", "X", "X", "X"
-    "Archive members", "X", "X", "X"
-    **TEAMS**
-    "Multi-team support for notifications", "X", "X", "X"
-    "Team switching", "X", "X", "X"
-    "Team-based theming", "X", "X", "X"
-    "Team settings", "X", "X"
-    "Join existing team", "X", "X", "X"
-    "Create a new team", "X", "X"
-    "Get team invite link", "X", "X", "X"
-    "Add members to team", "X", "X", "X"
-    "Get team invite link", "X", "X", "X"
-    "Add members to team", "X", "X", "X"
-    "Manage team members", "X", "X",
-    "Leave team", "X", "X"
-    **COLLABORATIVE PLAYBOOKS**
-    "Templates and checklists", "X", "X"
-    **CALLS**
-    "Join call", "X", "X", "X"
-    "Share screen", "X", "X"
-    "Chat in thread", "X", "X", "X"
-    "React with emoji", "X", "X", "X"
-    "Start recording", "X", "X", "X"
-    **INTEGRATIONS**
-    "Slash commands", "X", "X", "O"
-    "Server-side plugins", "X", "X", "X"
-    "User interface plugins", "X", "X",
-    "Oauth applications", "X", "X", "X"
-    "Incoming webhooks", "X", "X", "X"
-    "Outgoing webhooks", "X", "X", "X"
-    "Message attachments", "X", "X", "X"
-    "Message buttons", "X", "X", "X"
-    "Message menus", "X", "X", "X"
-    "Message actions", "X", "X"
-    "Right-hand sidebar", "X", "X"
-    **AUTHENTICATION**
-    "Email-password login", "X", "X", "X"
-    "AD/LDAP", "X", "X", "X"
-    "SAML SSO", "X", "X", "X"
-    "GitLab SSO", "X", "X", "X"
-    "Entra ID SSO", "X", "X", "X"
-    "Google SSO", "X", "X",
-    **OTHER**
-    "Localization for 20 languages", "X", "X", "X"
-    "Custom user interface themes", "X", "X", "X"
-    "User profile settings", "X", "X", "X"
-    "Channel settings", "X", "X", "X"
 
 What feature quality levels does Mattermost have?
 --------------------------------------------------
