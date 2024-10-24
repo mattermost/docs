@@ -40,6 +40,29 @@ Messages
 | Notifications                                     | |checkmark| | |checkmark| | |checkmark|         |
 +---------------------------------------------------+-------------+-------------+---------------------+
 
+Channels
+~~~~~~~~
++----------------------+-------------+-------------+-------------+
+|        Feature       |     Web     |   Desktop   |    Mobile   |
++----------------------+-------------+-------------+-------------+
+| Create a new channel | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Join a channel       | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Leave a channel      | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Favorite a channel   | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Mute a channel       | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Manage members       | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Add members          | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Edit channel         | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
+| Archive members      | |checkmark| | |checkmark| | |checkmark| |
++----------------------+-------------+-------------+-------------+
 
 What feature quality levels does Mattermost have?
 --------------------------------------------------
