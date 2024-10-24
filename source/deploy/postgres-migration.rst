@@ -61,9 +61,55 @@ Errors during the pgloader command execution
 
 If you encounter errors during the execution of the ``pgloader`` command, ensure that both of the databases are accessible and that the users have the necessary permissions to access the database. Do not continue with the migration if there are errors during the execution of the ``pgloader`` command.
 
-Also, there may be cases where ``pgloader`` continue to migration remaining tables and skip one or more tables. In such cases, it is recommended to identify issues with the table and fix them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
+.. note::
 
-For experienced users, it is recoverable to run the ``pgloader`` without requiring to restart the migration from scratch. In this case, you will need to manually fix the issues with the table and run the ``pgloader`` command with a tailored configuration just for those tables. Also ensure that the schema name is reverted back to ``public`` and the ``search_path`` is restored or remove necessary clauses form the configuration.
+  For experienced users, it is recoverable to run the ``pgloader`` without requiring to restart the migration from scratch. In this case, you will need to manually fix the issues with the table and run the ``pgloader`` command with a tailored configuration just for those tables. Also ensure that the schema name is reverted back to ``public`` and the ``search_path`` is restored or remove necessary clauses form the configuration.
+
+Some common errors that you may encounter during the execution of the ``pgloader`` command are:
+
+Invalid Input Syntax for Type JSON
+::::::::::::::::::::::::::::::::::
+
+If you receive an error message similar to the following:
+
+.. code-block:: text
+
+  ERROR Database error 22P02: invalid input syntax for type json
+
+That would mean that the data in the MySQL database is not in a valid JSON format. You can fix this issue by updating the data in the MySQL database to be in a valid JSON format. To find out which row is causing the issue, you can run the following query (the ``<table_name>`` and ``<column_name>`` should be replaced with the actual table and column names that should've been indicated in the ``pgloader`` output):
+
+.. code-block:: sql
+
+  SELECT * FROM <table_name> WHERE JSON_VALID(<column_name>) = 0;
+
+You can find and update the data in the MySQL database to be in a valid JSON format with the query above. After updating the data, you can run the ``pgloader`` command again.
+
+Failed to Find Column or Table
+::::::::::::::::::::::::::::::
+
+If you receive an error message similar to the following:
+
+.. code-block:: text
+
+   pgloader failed to find column
+
+That would mean that the column or table is missing in the Postgres database. You can fix this issue by checking whether you have created the correct version of Postgres schema. After re-creating the shcema, you can run the ``pgloader`` command again.
+
+Fell Through ECASE Expression
+:::::::::::::::::::::::::::::
+
+If you receive an error message similar to the following:
+
+.. code-block:: text
+
+   ERROR mysql: 76 fell through ECASE expression.
+
+It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`_ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: ::ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
+
+.. note::
+
+  Also, there may be cases where ``pgloader`` continue to migration remaining tables and skip one or more tables. In such cases, it is recommended to identify issues with the table and fix them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
+
 
 Mattermost can't connect to the PostgreSQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
