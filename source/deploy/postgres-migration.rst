@@ -68,7 +68,7 @@ If you encounter errors during the execution of the ``pgloader`` command, ensure
 The following sections detail how to resolve some common errors you may encounter during the execution of the ``pgloader`` command:
 
 Invalid input syntax for type JSON
-::::::::::::::::::::::::::::::::::
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you receive an error message similar to the following:
 
@@ -76,7 +76,7 @@ If you receive an error message similar to the following:
 
   ERROR Database error 22P02: invalid input syntax for type json
 
-That would mean that the data in the MySQL database is not in a valid JSON format. You can fix this issue by updating the data in the MySQL database to be in a valid JSON format. To find out which row is causing the issue, you can run the following query (the ``<table_name>`` and ``<column_name>`` should be replaced with the actual table and column names that should've been indicated in the ``pgloader`` output):
+That would mean that the data in the MySQL database is not in a valid JSON format. You can fix this issue by updating the data in the MySQL database to be in a valid JSON format. To find out which row is causing the issue, you can run the following query (where ``<table_name>`` and ``<column_name>`` should be replaced with the actual table and column names indicated in the ``pgloader`` output):
 
 .. code-block:: sql
 
@@ -84,8 +84,8 @@ That would mean that the data in the MySQL database is not in a valid JSON forma
 
 You can find and update the data in the MySQL database to be in a valid JSON format with the query above. After updating the data, you can run the ``pgloader`` command again.
 
-Failed to Find Column or Table
-::::::::::::::::::::::::::::::
+Failed to find column or table
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you receive an error message similar to the following:
 
@@ -93,10 +93,10 @@ If you receive an error message similar to the following:
 
    pgloader failed to find column
 
-That would mean that the column or table is missing in the Postgres database. You can fix this issue by checking whether you have created the correct version of Postgres schema. After re-creating the shcema, you can run the ``pgloader`` command again.
+The column or table is missing in the PostgreSQL database. You can fix this issue by checking whether you have created the correct version of Postgres schema. After re-creating the schema, you can run the ``pgloader`` command again.
 
-Fell Through ECASE Expression
-:::::::::::::::::::::::::::::
+Fell through ECASE expression
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If you receive an error message similar to the following:
 
@@ -108,7 +108,7 @@ It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`_ with pg
 
 .. note::
 
-  Also, there may be cases where ``pgloader`` continue to migrate remaining tables and skip one or more tables during migration. In such cases, it is recommended to identify issues with the table and fix them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
+  Also, there may be cases where pgloader continues to migrate remaining tables and skip one or more tables during migration. In such cases, we recommend identifying issues with the table and fixing them before running the ``pgloader`` command again with a clean database. It is possible to run the ``pgloader`` command with the ``--debug`` flag to get more information about the errors.
 
 
 Mattermost can't connect to the PostgreSQL database
