@@ -37,6 +37,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 - Plugins are now allowed to open ``about:blank`` popup windows using ``window.open()``.
 - Added support for plugins to ask for desktop source for screen sharing through the ``desktopAPI.getDesktopSources`` call.
 - Added ``Developer Mode`` settings to help debug performance issues.
+- Upgraded ``electron-log`` and turned on async logging.
 
 ### Bug Fixes
 
