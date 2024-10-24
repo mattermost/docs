@@ -60,6 +60,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
  - Fixed desyncing issues with unreads between the team sidebar and the title bar.
  - Fixed an issue with message export file attachments with dedicated filestore: when the dedicated filestore is set, file attachments will be found and exported correctly.
  - Reverted a change enforcing usernames to start with alpha characters on the server.
+ - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
