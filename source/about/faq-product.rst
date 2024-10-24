@@ -118,6 +118,34 @@ Calls
 | Start recording  | |checkmark| | |checkmark| | |checkmark| |
 +------------------+-------------+-------------+-------------+
 
+Integrations
+~~~~~~~~~~~~
++------------------------+-------------+-------------+---------------------+
+|         Feature        |     Web     |   Desktop   |        Mobile       |
++------------------------+-------------+-------------+---------------------+
+| Slash commands         | |checkmark| | |checkmark| | Partially Supported |
++------------------------+-------------+-------------+---------------------+
+| Server-side plugins    | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| User interface plugins | |checkmark| | |checkmark| |                     |
++------------------------+-------------+-------------+---------------------+
+| Oauth applications     | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| Incoming webhooks      | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| Outgoing webhooks      | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| Message attachments    | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| Message buttons        | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| Message menus          | |checkmark| | |checkmark| | |checkmark|         |
++------------------------+-------------+-------------+---------------------+
+| Message actions        | |checkmark| | |checkmark| |                     |
++------------------------+-------------+-------------+---------------------+
+| Right-hand sidebar     | |checkmark| | |checkmark| |                     |
++------------------------+-------------+-------------+---------------------+
+
 What feature quality levels does Mattermost have?
 --------------------------------------------------
 
