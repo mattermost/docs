@@ -76,7 +76,7 @@ If you receive an error message similar to the following:
 
   ERROR Database error 22P02: invalid input syntax for type json
 
-That would mean that the data in the MySQL database is not in a valid JSON format. You can fix this issue by updating the data in the MySQL database to be in a valid JSON format. To find out which row is causing the issue, you can run the following query (where ``<table_name>`` and ``<column_name>`` should be replaced with the actual table and column names indicated in the ``pgloader`` output):
+The data in the MySQL database is not in a valid JSON format. You can fix this issue by updating the data in the MySQL database to be in a valid JSON format. To find out which row is causing the issue, run the following query (where ``<table_name>`` and ``<column_name>`` should be replaced with the actual table and column names indicated in the ``pgloader`` output):
 
 .. code-block:: sql
 
