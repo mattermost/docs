@@ -1080,7 +1080,7 @@ See the :doc:`Legal holds </comply/legal-hold>` product documentation for detail
   :description: Connect your Microsoft Calendar to your Mattermost instance.
 
 Microsoft Calendar
-----
+-------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1098,7 +1098,7 @@ See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-cal
   :description: Connect your Microsoft Teams Meetings to your Mattermost instance.
 
 Microsoft Teams Meetings
-----
+------------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

@@ -1001,8 +1001,12 @@ Experimental configuration settings for self-hosted deployments only
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+.. tip::
+
+  Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
+  - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
 .. config:setting:: exp-allowedthemes
   :displayname: Allowed themes (Experimental)
@@ -1846,7 +1850,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +------------------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-websocketport
   :displayname: Websocket port (Experimental)
@@ -1867,7 +1871,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-enableopentracing
   :displayname: Enable OpenTracing (Experimental)

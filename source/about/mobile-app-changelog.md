@@ -3847,7 +3847,7 @@ Many thanks to all our contributors. In alphabetical order:
 - Release Date: March 29, 2017
 - Server Versions Supported: Server v3.7+ is required, Self-Signed SSL Certificates are not yet supported
 
-Note: If you need an SSL certificate, consider using [Let's Encrypt](https://docs.mattermost.com/install/config-ssl-http2-nginx.html) instead of a self-signed one.
+Note: If you need an SSL certificate, consider using Let's Encrypt instead of a self-signed one.
 
 ### Highlights
 
