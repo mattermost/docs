@@ -19,7 +19,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
-- Updated Chromium minimum supported version to 126+.
+- Updated Chromium minimum supported version to 130+.
 
 ### Improvements
 
@@ -38,6 +38,10 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 - Added support for plugins to ask for desktop source for screen sharing through the ``desktopAPI.getDesktopSources`` call.
 - Added ``Developer Mode`` settings to help debug performance issues.
 - Upgraded ``electron-log`` and turned on async logging.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 33.0.2. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
