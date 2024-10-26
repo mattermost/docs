@@ -42,27 +42,27 @@ Messages
 
 Channels
 ~~~~~~~~
-+----------------------+-------------+-------------+-------------+
-|        Feature       |     Web     |   Desktop   |    Mobile   |
-+----------------------+-------------+-------------+-------------+
-| Create a new channel | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Join a channel       | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Leave a channel      | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Favorite a channel   | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Mute a channel       | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Manage members       | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Add members          | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Edit channel         | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
-| Archive members      | |checkmark| | |checkmark| | |checkmark| |
-+----------------------+-------------+-------------+-------------+
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+|                                                 Feature                                                |     Web     |   Desktop   |    Mobile   |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Create a new channel <collaborate/create-channels>`                                              | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Join a channel <collaborate/join-leave-channels:join a channel>`                                 | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Leave a channel <collaborate/join-leave-channels:leave a channel>`                               | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Favorite a channel <collaborate/favorite-channels>`                                              | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Mute a channel <preferences/manage-your-channel-specific-notifications:mute channels>`           | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Manage members <collaborate/manage-channel-members>`                                             | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Add members <collaborate/manage-channel-members:add members to a channel>`                       | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Edit channel <collaborate/rename-channels>`                                                      | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Deactivate members <configure/user-management-configuration-settings:active or deactivate users> | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Teams
 ~~~~~
