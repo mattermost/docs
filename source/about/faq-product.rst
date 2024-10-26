@@ -17,13 +17,13 @@ Messages
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Emojis <configure/site-configuration-settings:emoji>`                                                 | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Emoji reactions <collaborate/react-with-emoji-gifs:quick emoji reactions>`                            | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Emoji reactions <collaborate/react-with-emojis-gifs:quick emoji reactions>`                           | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Viewing emoji reactions <collaborate/react-with-emoji-gifs:quick emoji reactions>`                    | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Viewing emoji reactions <collaborate/react-with-emojis-gifs:quick emoji reactions>`                   | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`File sharing <configure/site-configuration-settings:fileshare allowfilesharing>`                      | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`File sharing <configure/site-configuration-settings:file sharing and downloads>`                      | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref`@ mentions <collaborate/mention-people>`                                                               | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`@ mentions <collaborate/mention-people:mention people in messages>`                                   | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Hashtags <collaborate/search-for-messages:hashtags>`                                                  | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
@@ -31,15 +31,15 @@ Messages
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | Search highlighting                                                                                         | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`View/marking pinned or saved posts <collaborate/save-pin-messages>`                                   | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`View/marking pinned or saved posts <collaborate/save-pin-messages:save and pin messages>`             | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Image link previews <collaborate/share-links>`                                                        | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Image link previews <collaborate/share-links:share links to channels and messages>`                   | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Website previews <configure/site-configuration-settings:posts enablelinkpreviews>`                    | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Website previews <configure/site-configuration-settings:enable website link previews>`                | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Notifications <preferences/manage-your-notifications>`                                                | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Notifications <preferences/manage-your-notifications:manage your notifications>`                      | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Channel bookmarks <collaborate/manage-channel-bookmarks>`                                             | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Channel bookmarks <collaborate/manage-channel-bookmarks:manage channel bookmarks>`                    | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 
 Channels
