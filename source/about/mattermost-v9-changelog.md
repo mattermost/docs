@@ -10,6 +10,10 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.4, released 2024-10-28**
+  - Mattermost v9.11.4 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where users would not see channels they were added to/messages from those channels in clustered environments [MM-59911](https://mattermost.atlassian.net/browse/MM-59911).
+  - Mattermost v9.11.4 contains no database or functional changes.
 - **9.11.3, released 2024-10-10**
   - Mattermost v9.11.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
@@ -32,11 +36,20 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Important Upgrade Notes
 
- - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10.x. The official v8 client only works from Elasticsearch v7.11 and higher versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
-     - Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config, and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.
-     - If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work. 
-     - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
-     - For AWS customers on Opensearch, do not enable "compatibility mode".
+ - Added support for Elasticsearch v8. Also added Beta support for [Opensearch v1.x and v2.x](https://opensearch.org/). A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is `elasticsearch`, which breaks support for AWS Elasticsearch v7.10.x since the official v8 client only works from Elasticsearch v7.11 and higher versions. See the important note below for details.
+ - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the [Elasticsearch upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) documentation for details.
+ - When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+
+```{Important}
+**AWS Elasticsearch**
+
+If you're using AWS Elasticsearch, you must:
+1. Upgrade to AWS Opensearch. Refer to the [Opensearch upgrade](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html) documentation for details.
+2. Disable "compatibility mode" in Opensearch.
+3. Upgrade Mattermost server.
+4. Update the Mattermost `ElasticsearchSettings.Backend` configuration setting value from `elasticsearch` to `opensearch` manually or using [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set). This value cannot be changed using the System Console. See the Mattermost [Elasticsearch backend type](https://docs.mattermost.com/configure/environment-configuration-settings.html#elastic-backendtype) documentation for additional details.
+5. Restart the Mattermost server.
+```
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 126+.
@@ -655,6 +668,10 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.12, released 2024-10-28**
+  - Mattermost v9.5.12 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed desyncing issues with unreads between the team sidebar and the title bar [MM-54021](https://mattermost.atlassian.net/browse/MM-54021).
+  - Mattermost v9.5.12 contains no database or functional changes.
 - **9.5.11, released 2024-10-10**
   - Mattermost v9.5.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).

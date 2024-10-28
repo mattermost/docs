@@ -1,5 +1,3 @@
-..  _smtp-email-setup:
-
 SMTP email setup
 ================
 
