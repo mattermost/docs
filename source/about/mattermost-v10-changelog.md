@@ -10,7 +10,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.1-feature-release)=
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.1.2, released **
+- **10.1.2, released 2024-10-28**
   - Mattermost v10.1.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with message export file attachments with a dedicated filestore [MM-60063](https://mattermost.atlassian.net/browse/MM-60063).
   - Mattermost v10.1.2 contains the following functional change:
@@ -92,7 +92,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.0-major-release)=
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.0.2, released **
+- **10.0.2, released 2024-10-28**
   - Mattermost v10.0.2 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Reverted a change enforcing usernames to start with alpha characters on the server [MM-61143](https://mattermost.atlassian.net/browse/MM-61143).
   - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned [MM-61233](https://mattermost.atlassian.net/browse/MM-61233).
