@@ -12,8 +12,21 @@ Guest accounts
 
 Guest accounts are a way to collaborate with individuals, such as vendors and contractors, outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
-.. include:: /onboard/guest-account-access.rst
-  :start-after: :nosearch:
+Guests can:
+
+- Pin messages to channels
+- Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)
+- Favorite channels
+- Mute channels
+- Update their profile
+- Use different authentication methods than other users
+
+Guests cannot:
+
+- Discover public channels
+- Join open teams
+- Create direct messages or group messages with members who aren’t within the same channel
+- Invite people
 
 .. important::
 
