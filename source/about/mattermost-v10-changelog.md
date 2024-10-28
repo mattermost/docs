@@ -23,7 +23,7 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls plugin [v1.2.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.0).
+ - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
  - Changed the logic of ``useMilitaryTime`` to ``false`` to default to 12-hour time format unless the user's preference from ``data.Value`` is ``true``. When a notification email is sent to a user, the time should now default to the 12-hour format unless otherwise stated by the user. 
  - A warning is now shown when deleting a post or comment from a remote/shared channel.
  - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
