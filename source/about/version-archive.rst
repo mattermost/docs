@@ -13,7 +13,7 @@ Version archive
 
   Mattermost Enterprise Edition v10.1.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.2/mattermost-10.1.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.2/mattermost-10.1.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``aaeb49e8891780ff20ac5a09fe3ee624145404fc4dda72a5174e85cb2744ffa6``
+    - SHA-256 Checksum: ``b5870b3e944957268f59c823d189fa195629085d445004d0919545a87278f609``
     - GPG Signature: https://releases.mattermost.com/10.1.2/mattermost-10.1.2-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.0.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.2/mattermost-10.0.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.0.2/mattermost-10.0.2-linux-amd64.tar.gz``
@@ -389,7 +389,7 @@ Version archive
 
   Mattermost Team Edition v10.1.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.2/mattermost-team-10.1.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.2/mattermost-team-10.1.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``5b08c9685950b22611d56d0a0e77b25d0d57f201a54cc2a8b7148608d5f048af``
+    - SHA-256 Checksum: ``9532d8009cba69b09de9876a0917833a955270d1d8233623b5fbdb18d98e959a``
     - GPG Signature: https://releases.mattermost.com/10.1.2/mattermost-team-10.1.2-linux-amd64.tar.gz.sig
   Mattermost Team Edition v10.0.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.2/mattermost-team-10.0.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.0.2/mattermost-team-10.0.2-linux-amd64.tar.gz``
