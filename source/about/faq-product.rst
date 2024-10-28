@@ -102,19 +102,19 @@ Collaborative Playbook
 
 Calls
 ~~~~~
-+------------------+-------------+-------------+-------------+
-|      Feature     |     Web     |   Desktop   |    Mobile   |
-+------------------+-------------+-------------+-------------+
-| Join call        | |checkmark| | |checkmark| | |checkmark| |
-+------------------+-------------+-------------+-------------+
-| Share screen     | |checkmark| | |checkmark| |             |
-+------------------+-------------+-------------+-------------+
-| Chat in thread   | |checkmark| | |checkmark| | |checkmark| |
-+------------------+-------------+-------------+-------------+
-| React with emoji | |checkmark| | |checkmark| | |checkmark| |
-+------------------+-------------+-------------+-------------+
-| Start recording  | |checkmark| | |checkmark| | |checkmark| |
-+------------------+-------------+-------------+-------------+
++---------------------------------------------------------------------+-------------+-------------+-------------+
+|                               Feature                               |     Web     |   Desktop   |    Mobile   |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Join call <collaborate/make-calls:join a call>`               | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Share screen <collaborate/make-calls:share your screen>`      | |checkmark| | |checkmark| |             |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Chat in thread <collaborate/make-calls:chat in a call>`       | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`React with emoji <collaborate/make-calls:react using emojis>` | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Start recording <collaborate/make-calls:record a call>`       | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
 
 Integrations
 ~~~~~~~~~~~~
