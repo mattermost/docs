@@ -151,15 +151,15 @@ Authentication
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Email-password login <configure/authentication-configuration-settings:email>` | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`AD/LDAP <onboard/ad-ldap:ad ldap setup>`                                      | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`AD/LDAP <onboard/ad-ldap>`                                                    | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`SAML SSO <onboard/sso-saml:saml single sign on>`                              | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`SAML SSO <onboard/sso-saml>`                                                  | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`GitLab SSO <onboard/sso-gitlab:gitlab single sign on>`                        | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`GitLab SSO <onboard/sso-gitlab>`                                              | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Entra ID SSO <onboard/sso-entraid:entra id single sign on>`                   | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Entra ID SSO <onboard/sso-entraid>`                                           | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Google SSO <onboard/sso-google:google single sign on>`                        | |checkmark| | |checkmark| |             |
+| :doc:`Google SSO <onboard/sso-google>`                                              | |checkmark| | |checkmark| |             |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Other
