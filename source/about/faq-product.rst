@@ -149,17 +149,17 @@ Authentication
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                       Feature                                       |     Web     |   Desktop   |    Mobile   |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Email-password login <configure/authentication-configuration-settings:email>` | |checkmark| | |checkmark| | |checkmark| |
+| :ref:`Email password login <configure/authentication-configuration-settings:email>` | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`AD/LDAP <onboard/ad-ldap>`                                                    | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`AD/LDAP </onboard/ad-ldap>`                                                   | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`SAML SSO <onboard/sso-saml>`                                                  | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`SAML SSO </onboard/sso-saml>`                                                 | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`GitLab SSO <onboard/sso-gitlab>`                                              | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`GitLab SSO </onboard/sso-gitlab>`                                             | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Entra ID SSO <onboard/sso-entraid>`                                           | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Entra ID SSO </onboard/sso-entraid>`                                          | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Google SSO <onboard/sso-google>`                                              | |checkmark| | |checkmark| |             |
+| :doc:`Google SSO </onboard/sso-google>`                                             | |checkmark| | |checkmark| |             |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Other
