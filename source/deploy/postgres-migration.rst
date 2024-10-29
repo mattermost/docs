@@ -50,7 +50,7 @@ Troubleshooting
 Unsupported authentication for MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 
 .. code-block:: sql
 
@@ -104,7 +104,7 @@ If you receive an error message similar to the following:
 
    ERROR mysql: 76 fell through ECASE expression.
 
-It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`_ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
+It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`__ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
 
 .. note::
 
