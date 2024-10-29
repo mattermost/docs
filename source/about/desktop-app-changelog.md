@@ -29,7 +29,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 
 #### Linux
 
-- Full screen mode is now disabled on Linux.
+- Full screen mode is now disabled on Linux. This decision was made for a number of reasons outlined at https://github.com/mattermost/desktop/pull/3151#issue-2539440389.
 
 #### All Platforms
 
