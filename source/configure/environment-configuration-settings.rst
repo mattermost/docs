@@ -4170,7 +4170,7 @@ This setting isn't available in the System Console and can only be enabled in ``
 
 **True**: Unlocks the following options in the Desktop App for the purposes of troubleshooting and debugging. You should only enable this setting if instructed to by a Mattermost developer.
 
-* **Browser Mode Only**: Completely disables the preload script and stops web app components from knowing they're in the Desktop App. This option should be the best indicator of whether a web app component is causing performance memory retention issues. This option disables notifications, cross-tab navigation, unread/mentions badges, the calls widget, and breaks resizing on macOS.
+* **Browser Mode Only**: Completely disables the preload script and stops web app components from knowing they're in the Desktop App. This option should be the best indicator of whether a web app component is causing performance and/or memory retention issues. This option disables notifications, cross-tab navigation, unread/mentions badges, the calls widget, and breaks resizing on macOS.
 * **Disable Notification Storage**: Turns off maps that hold references to unread notifications until they've been selected & read. This option is good for debugging in cases where Mattermost is holding onto too many references to unused notifications.
 * **Disable User Activity Monitor**: Turns off the interval that checks whether the user is away or not. This option is good for debugging whether a user's availability status is causing unexpected desktop app behavior.
 * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
