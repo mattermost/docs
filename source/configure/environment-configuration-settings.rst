@@ -4164,7 +4164,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 Enable desktop app developer mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Desktop App v5.10, this setting enables desktop app developer debugging options, and is disabled by default.
+From Desktop App v5.10, this setting enables desktop app developer debugging options available by going to the **View > Developer Tools** menu, and this setting is disabled by default.
 
 This setting isn't available in the System Console and can only be enabled in ``config.json`` by setting the environment variable ``MM_DESKTOP_DEVELOPER_MODE`` to ``true``.
 
