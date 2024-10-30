@@ -8,42 +8,42 @@ The following chart highlights the end user features of Mattermost and their sup
 
 Messages
 ~~~~~~~~
+
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 |                                                   Feature                                                   |     Web     |   Desktop   |      Mobile     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Threaded messages <configure/site-configuration-settings:threaded discussions>`                       | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Threaded discussions </collaborate/organize-conversations>`                                           | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Format messages with Markdown <collaborate/format-messages:use markdown>`                             | |checkmark| | |checkmark| | Partial Support |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Emojis <configure/site-configuration-settings:emoji>`                                                 | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Emojis </collaborate/react-with-emojis-gifs>`                                                         | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Emoji reactions <collaborate/react-with-emojis-gifs:quick emoji reactions>`                           | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Viewing emoji reactions <collaborate/react-with-emojis-gifs:quick emoji reactions>`                   | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`File sharing </collaborate/share-files-in-messages>`                                                  | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`File sharing <configure/site-configuration-settings:file sharing and downloads>`                      | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`@mentions </collaborate/mention-people>`                                                              | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`@ mentions <collaborate/mention-people:mention people in messages>`                                   | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Search hashtags <collaborate/search-for-messages:hashtags>`                                           | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Hashtags <collaborate/search-for-messages:hashtags>`                                                  | |checkmark| | |checkmark| | |checkmark|     |
-+-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Search (with in:, from:, before:, on: and after:) <collaborate/search-for-messages:search modifiers>` | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Search modifiers <collaborate/search-for-messages:search modifiers>`                                  | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | Search highlighting                                                                                         | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`View/marking pinned or saved posts <collaborate/save-pin-messages:save and pin messages>`             | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Pin and save messages <collaborate/save-pin-messages:save and pin messages>`                          | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Image link previews <collaborate/share-links:share links to channels and messages>`                   | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Preview image links <collaborate/share-files-in-messages.html#preview-file-attachments>`              | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Website previews <configure/site-configuration-settings:enable website link previews>`                | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Preview websites <configure/site-configuration-settings:enable website link previews>`                | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Notifications <preferences/manage-your-notifications:manage your notifications>`                      | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Notifications </preferences/manage-your-notifications>`                                               | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Channel bookmarks <collaborate/manage-channel-bookmarks:manage channel bookmarks>`                    | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Bookmark channels </collaborate/manage-channel-bookmarks>`                                            | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 
 Channels
 ~~~~~~~~
+
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                                 Feature                                                  |     Web     |   Desktop   |    Mobile   |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
@@ -68,6 +68,7 @@ Channels
 
 Teams
 ~~~~~
+
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                            Feature                                           |     Web     |   Desktop   |    Mobile   |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
@@ -92,8 +93,9 @@ Teams
 | :ref:`Leave team <collaborate/organize-using-teams:leave a team>`                            | |checkmark| | |checkmark| |             |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
-Collaborative Playbook
-~~~~~~~~~~~~~~~~~~~~~~
+Collaborative playbooks
+~~~~~~~~~~~~~~~~~~~~~~~
+
 +---------------------------------------------------------------------------------------------------------------+-------------+-------------+--------+
 |                                                          Feature                                              |      Web    |   Desktop   | Mobile |
 +--------------------------+-------------+-------------+--------------------------------------------------------+-------------+-------------+--------+
@@ -102,6 +104,7 @@ Collaborative Playbook
 
 Calls
 ~~~~~
+
 +---------------------------------------------------------------------+-------------+-------------+-------------+
 |                               Feature                               |     Web     |   Desktop   |    Mobile   |
 +---------------------------------------------------------------------+-------------+-------------+-------------+
@@ -146,6 +149,7 @@ Integrations
 
 Authentication
 ~~~~~~~~~~~~~~
+
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                       Feature                                       |     Web     |   Desktop   |    Mobile   |
 +-------------------------------------------------------------------------------------+-------------+-------------+-------------+
@@ -164,6 +168,7 @@ Authentication
 
 Other
 ~~~~~
+
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                                 Feature                                                |     Web     |   Desktop   |    Mobile   |
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
