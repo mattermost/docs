@@ -32,7 +32,7 @@ Messages
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Pin and save messages <collaborate/save-pin-messages:save and pin messages>`                          | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Preview image links <collaborate/share-files-in-messages.html#preview-file-attachments>`              | |checkmark| | |checkmark| | |checkmark|     |
+| :ref:`Preview image links <collaborate/share-files-in-messages:preview file attachments>`                   | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Preview websites <configure/site-configuration-settings:enable website link previews>`                | |checkmark| | |checkmark| | |checkmark|     |
 +-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
@@ -47,21 +47,21 @@ Channels
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                                 Feature                                                  |     Web     |   Desktop   |    Mobile   |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Create a new channel <collaborate/create-channels:create channels>`                                | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Create a new channel </collaborate/create-channels>`                                               | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Join a channel <collaborate/join-leave-channels:join a channel>`                                   | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Leave a channel <collaborate/join-leave-channels:leave a channel>`                                 | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Favorite a channel <collaborate/favorite-channels:mark channels as favorites>`                     | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Favorite a channel </collaborate/favorite-channels>`                                               | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Mute a channel <preferences/manage-your-channel-specific-notifications:mute channels>`             | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Manage members <collaborate/manage-channel-members:manage channel members>`                        | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Manage members </collaborate/manage-channel-members>`                                              | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Add members <collaborate/manage-channel-members:add members to a channel>`                         | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Edit channel <collaborate/rename-channels:rename channels>`                                        | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Rename channels </collaborate/rename-channels>`                                                    | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Deactivate members <configure/user-management-configuration-settings:activate or deactivate users>`| |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
