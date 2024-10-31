@@ -49,8 +49,8 @@ A channel purpose can be up to 250 characters in length, and is often used to he
   2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
 
     .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
-      :alt: Tap on More options to access available options for the channel.
-      :scale: 30
+        :alt: Tap on More options to access available options for the channel.
+        :scale: 30
 
   3. Tap **View info**.
 
