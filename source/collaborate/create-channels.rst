@@ -42,9 +42,25 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   Tap |plus| in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to create a private channel, tap the **Make Private** option.
 
+    .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
+      :alt: You can create a new channel by tapping the plus in the top right corner.
+      :scale: 30
+    
+    .. image:: ../images/private-channel-create.jpg
+      :alt: You can make a channel private by tapping the Make Private option.
+      :scale: 30
+
   **To start a direct or group message**
 
   Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. Tap **Start** to start the conversation.
+
+    .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
+      :alt: You can start a direct or group message by tapping the plus in the top right corner.
+      :scale: 30
+    
+    .. image:: ../images/start-group-conversation.jpg
+      :alt: You can stat a group conversation by selecting up to 7 members.
+      :scale: 30
 
 Automate with channel actions
 -----------------------------
