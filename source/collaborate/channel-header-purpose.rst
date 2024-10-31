@@ -42,33 +42,33 @@ A channel purpose can be up to 250 characters in length, and is often used to he
 
   1. Tap the channel you want to edit.
 
-    .. image:: ../images/mobile-select-a-channel.jpg
-      :alt: Select a channel that you want to rename.
-      :scale: 30
+  .. image:: ../images/mobile-select-a-channel.jpg
+    :alt: Select a channel that you want to edit.
+    :scale: 30
 
   2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
 
-    .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
-      :alt: Tap on More options to access available options for the channel.
-      :scale: 30
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+    :alt: Tap on More options to access available options for the channel.
+    :scale: 30
 
   3. Tap **View info**.
 
-    .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
-      :alt: Tap on View info to see the basic channel info.
-      :scale: 30
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+    :alt: Tap on View info to see the basic channel info.
+    :scale: 30
 
   4. Tap **Edit Channel**.
 
-    .. image:: ../images/mobile-edit-channel.jpg
-      :alt: Click on Edit channel to rename the channel.
-      :scale: 25
+  .. image:: ../images/mobile-edit-channel.jpg
+    :alt: Click on Edit channel to update the purpose of the channel.
+    :scale: 25
   
   5. Type the new purpose of the channel and tap on **Save** to update the purpose.
 
-    .. image:: ../images/mobile-update-channel-purpose.jpg
-      :alt: Click on Edit channel to rename the channel.
-      :scale: 30
+  .. image:: ../images/mobile-update-channel-purpose.jpg
+    :alt: Click on Edit channel to rename the channel.
+    :scale: 30
 
 Channel header
 --------------
@@ -87,32 +87,32 @@ A channel header can be up to 1024 characters in length, include Markdown format
 
 .. tab:: Mobile
 
- 1. Tap the channel you want to edit.
+  1. Tap the channel you want to edit.
 
-    .. image:: ../images/mobile-select-a-channel.jpg
-      :alt: Select a channel that you want to rename.
-      :scale: 30
+  .. image:: ../images/mobile-select-a-channel.jpg
+    :alt: Select a channel that you want to edit.
+    :scale: 30
 
   2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
 
-    .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
-      :alt: Tap on More options to access available options for the channel.
-      :scale: 30
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+    :alt: Tap on More options to access available options for the channel.
+    :scale: 30
 
   3. Tap **View info**.
 
-    .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
-      :alt: Tap on View info to see the basic channel info.
-      :scale: 30
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+    :alt: Tap on View info to see the basic channel info.
+    :scale: 30
 
   4. Tap **Edit Channel**.
 
-    .. image:: ../images/mobile-edit-channel.jpg
-      :alt: Click on Edit channel to rename the channel.
-      :scale: 25
+  .. image:: ../images/mobile-edit-channel.jpg
+    :alt: Click on Edit channel to to update the header of the channel.
+    :scale: 25
   
   5. Type the new header of the channel and tap on **Save** to update the header.
 
-    .. image:: ../images/mobile-update-channel-header.jpg
-      :alt: Click on Edit channel to rename the channel.
-      :scale: 30
+  .. image:: ../images/mobile-update-channel-header.jpg
+    :alt: Click on Edit channel to rename the channel.
+    :scale: 30
