@@ -140,7 +140,7 @@ This is the final step of the migration process, where we need to update the Mat
 
 .. note::
 
-If your configuration was stored in the database, see the :ref:`configuration in database <deploy/manual-postgres-migration:configuration in database>` documentation for migration details. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
+  If your configuration was stored in the database, see the :ref:`configuration in database <deploy/manual-postgres-migration:configuration in database>` documentation for migration details. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
 
 Compile the migration-assist tool
 ---------------------------------
