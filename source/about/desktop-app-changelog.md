@@ -67,6 +67,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 
 ### Known Issues
 
+- Clicking on links does not put the Desktop app in the background to show the external browser [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
 - Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
