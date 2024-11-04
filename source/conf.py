@@ -2739,6 +2739,8 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "manage/team-channel-members.html#channel-moderation":
         "https://docs.mattermost.com/manage/team-channel-members.html#advanced-access-controls.html",
+"manage/announcement-banner.html":
+        "https://docs.mattermost.com/manage/system-wide-notifications.html",
 "manage/announcement-banner.html#configure-an-announcement-banner":
         "https://docs.mattermost.com/manage/system-wide-notifications.html#configure-system-wide-notifications",
 "manage/announcement-banner.html#announcement-banner":
