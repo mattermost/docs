@@ -76,6 +76,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.2 is built with Go ``v1.22.6``.
 
 ### Known Issues
+ - The scrollbar is not clickable when there is a "Jump to recents" toaster [MM-61526](https://mattermost.atlassian.net/browse/MM-61526).
  - Shared Channels: Direct Messages are not supported.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
