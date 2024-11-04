@@ -3828,6 +3828,7 @@ html_js_files = [
     "js/jquery.js",
     "js/thermometer.js",
     "js/myscript-v1.js",
+    "js/open-external-links.js",
 ]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
