@@ -164,7 +164,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Custom Groups:* Invite people to a channel by using a custom group, mention a custom group, and modify a custom group.
   - *Read-Only Channels:* Navigate to a read-only channel, and post a message to a read-only channel.
   - *Shared Workspaces:* Navigate to a shared channel, post a message in a shared channel, and mention a remote user.
-  - *Guest Accounts:* Mention a guest account, DM a guest, add a guest to a channel.
+  - *Guest Accounts:* Mention a guest account, directly message a guest, and add a guest to a channel.
 
 Playbooks telemetry
 --------------------
