@@ -161,6 +161,10 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
   - *Threaded discussions:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
+  - *Custom Groups:* Invite people to a channel by using a custom group, mention a custom group, modify a custom group
+  - *Read-Only Channels:* navigate to a read-only channel, post a message to a read-only channel.
+  - *Shared Workspaces:* navigate to a shared channel, post a message in a shared channel, mention a remote user.
+  - *Guest Accounts:* mention a guest account, DM a guest, add a guest to a channel.
 
 Playbooks telemetry
 --------------------
