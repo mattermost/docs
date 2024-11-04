@@ -162,7 +162,7 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
   - *Threaded discussions:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
   - *Custom Groups:* Invite people to a channel by using a custom group, mention a custom group, or modify a custom group.
-  - *Read-Only Channels:* Navigate to a read-only channel, post a message to a read-only channel.
+  - *Read-Only Channels:* Navigate to a read-only channel, and post a message to a read-only channel.
   - *Shared Workspaces:* Navigate to a shared channel, post a message in a shared channel, mention a remote user.
   - *Guest Accounts:* Mention a guest account, DM a guest, add a guest to a channel.
 
