@@ -49,7 +49,7 @@ To mark a channel as a **Favorite**:
 
 .. tip::
 
-  You can also mark a channel as favorite in this way.
+  Alternatively, you can mark a favorite channel as follows:
 
   1. In a channel, tap the channel name at the top of the screen.
 
