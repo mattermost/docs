@@ -30,7 +30,7 @@ Benefits to using this option:
 How to migrate configuration to the database
 --------------------------------------------
 
-These instructions cover migrating the Mattermost configuration to the database and updating your ``systemd`` configuration to load it from the database.
+These instructions cover migrating the Mattermost configuration to your database and updating your ``systemd`` configuration to load it from the database.
 
 .. note::
   These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory you'll have to modify the paths to match your environment.
@@ -49,7 +49,7 @@ Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. important::
-   
+
    If you're running Mattermost in a High Availability cluster-based deployment, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
@@ -64,10 +64,45 @@ Run this command to verify the permissions on your Mattermost directory:
 
    sudo chown -R mattermost:mattermost /opt/mattermost
 
+Enable local mode
+~~~~~~~~~~~~~~~~~
+
+Edit the ``config.json`` to enable local mode by setting ``EnableLocalMode`` to ``true``.
+
+Restart Mattermost
+~~~~~~~~~~~~~~~~~~
+
+Run the following command to restart the Mattermost server and apply the configuration change:
+
+.. code-block:: sh
+
+   sudo systemctl daemon-reload
+   sudo systemctl restart mattermost
+
+Migrate configuration from ``config.json``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running the following command:
+
+.. code-block:: sh
+
+   .bin/mmctl mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
+
+.. important::
+ 
+   - If you're using a High Availability cluster-based deployment, you only need to run this command on 1 server in the cluster.
+   - When migrating configuration, Mattermost incorporates configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>` documentation for details.
+   - As with the environment file, you'll have to escape any single quotes in the database connection string. 
+   - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to re-pull the certificates. Configuration files are stored in the ``configurationfiles`` table in the database.
+
+When configuration in the database is enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
+
+If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
+
 Modify the Mattermost ``systemd`` file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-First, find the ``mattermost.service`` file using:
+Find the ``mattermost.service`` file using the following command:
 
 .. code-block:: sh
 
@@ -111,30 +146,10 @@ Here's a complete ``mattermost.service`` file with the ``EnvironmentFile`` line 
    [Install]
    WantedBy=postgresql.service
 
-Migrate configuration from ``config.json``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl config migrate>` command to migrate the configuration by running the following command:
-
-.. code-block:: sh
-
-   mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
-
-.. important::
- 
-   - If you're using a High Availability cluster-based deployment, you only need to run this command on 1 server in the cluster.
-   - When migrating configuration, Mattermost incorporates configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>` documentation for details.
-   - As with the environment file, you'll have to escape any single quotes in the database connection string. 
-   - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to re-pull the certificates. Configuration files are stored in the ``configurationfiles`` table in the database.
-
-When configuration in the database is enabled, any changes to the configuration are recorded to the ``Configurations`` and ``ConfigurationFiles`` tables. Furthermore, ``ClusterSettings.ReadOnlyConfig`` is ignored, enabling full use of the System Console.
-
-If you have configuration settings that must be set on a per-server basis you should add them as environment variables to the ``mattermost.environment`` file. These must be on their own line, and you must escape them properly.
-
 Verify that the configuration was migrated correctly
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Configurations are stored in the ``Configurations`` table in the database. To verify that you've migrated the configuration successfully run this query:
+Configurations are stored in the ``Configurations`` table in the database. Run the following query to verify that you've migrated the configuration successfully:
 
 .. code-block:: sql
 
@@ -148,7 +163,7 @@ Reload ``systemd`` files and restart Mattermost
 .. note::
   If you're running Mattermost in High Availability this step must be run on all servers in the cluster.
 
-Finally, run these commands to reload the daemon and restart Mattermost using the new ``MM_CONFIG`` environment variable.
+Run these commands to reload the daemon and restart Mattermost using the new ``MM_CONFIG`` environment variable.
 
 .. code-block:: sh
 
