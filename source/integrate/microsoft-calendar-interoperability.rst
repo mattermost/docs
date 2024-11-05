@@ -113,3 +113,13 @@ Usage
 Users who want to use Microsoft Calendar interconnectivity must connect a Microsoft Office account to Mattermost. 
 
 Once connected, you'll receive direct messages from the Microsoft Calendar bot in Mattermost for Microsoft Calendar activity.
+
+Upgrade
+-------
+
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+
+.. important::
+
+  - We strongly recommend removing older versions of this integration before uploading a new version. Mattermost server selects the newest integration version automatically, unless :ref:`automatic prepackaged plugins <configure/plugins-configuration-settings:automatic prepackaged plugins>` is disabled because precise control over plugin versions is preferred.
+  - Use the System Console, REST API, or in-product Marketplace to manage this integration. Manually placing Mattermost integration files in the ``/plugins`` directory isn't recommended.

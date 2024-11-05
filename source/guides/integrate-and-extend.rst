@@ -36,3 +36,15 @@ Your Mattermost deployment comes with the following integrations you can configu
 .. tip::
 
     Visit the `Mattermost Developer Documentation <https://developers.mattermost.com/integrate/getting-started/>`__ for details on developing `webhooks <https://developers.mattermost.com/integrate/webhooks>`__, developing `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, `custom plugins <https://developers.mattermost.com/integrate/plugins/>`__, building advanced bots and integrations using the `Mattermost REST API <https://api.mattermost.com/>`__, `embedding Mattermost <https://developers.mattermost.com/integrate/customization/embedding/>`__ into web browsers and web apps, `customizing the Mattermost source code <https://developers.mattermost.com/integrate/customization/customization/>`__, and developing `interactive messages <https://developers.mattermost.com/integrate/plugins/interactive-messages/>`__ on the Mattermost platform.
+
+Mattermost Marketplace integrations
+-----------------------------------
+
+Additional Mattermost integrations are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_. You can install these integrations directly from the Marketplace, by uploading them in the System Console, or by using the REST API.
+
+.. important::
+
+  - Manually placing Mattermost integration files in the ``/plugins`` directory isn't recommended. 
+  - Mattermost uses the latest integration version available within the following directories: ``<installdirectory>/prepackaged-plugins`` and ``FileSettings.Directory/plugins``, where the latter is the source of truth for installed plugins and contains ``*.tar.gz`` files.
+  - We strongly recommend that system admins ensure that ``{{FileStore.Directory}}/plugins`` is mounted at startup to avoid integration downgrades.
+  - We also strongly recommend testing integration updates in a staging environment before deploying to production, and regularly backing up integrations.
