@@ -171,7 +171,7 @@ Disable Customer Portal requests
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable customer portal requests.   | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``".CloudSettings.Disable": false",``          |
+|                                               | - ``config.json setting``: ``CloudSettings`` > ``Disable`` > ``false,``   |
 |                                               | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
 | - **true**: **(Default)** Server-side         |                                                                           |
 |   requests made to the customer portal are    |                                                                           |
@@ -181,8 +181,9 @@ Disable Customer Portal requests
 |   but will always fail in air-gapped and      |                                                                           |
 |   restricted deployment environments.         |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| **Note**: Cloud admins can’t modify this configuration setting.                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. note::
+  Cloud admins can’t modify this configuration setting. 
 
 .. config:setting:: exp-enableapiteamdeletion
   :displayname: Enable API team deletion (ServiceSettings)
