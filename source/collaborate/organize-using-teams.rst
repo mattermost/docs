@@ -12,9 +12,9 @@ Organize using teams
    Team settings </collaborate/team-settings>
    Team keyboard shortcuts </collaborate/team-keyboard-shortcuts>
 
-A team is a digital workspace where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is set up in your organization, you can belong to one team or multiple teams.
+A team is a digital :doc:`workspace </guides/use-mattermost>` where you and your teammates can collaborate in Mattermost. Depending on how Mattermost is :ref:`set up <configure/experimental-configuration-settings:primary team>` in your organization, you can belong to one team or multiple teams, and :ref:`access to the team <collaborate/team-settings:access settings>` can be open or restricted.
 
-Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </collaborate/team-settings>` for existing teams.
+Users with the **Create Teams** permission can `create new teams <#create-a-team>`__ and :doc:`manage team settings </collaborate/team-settings>` for existing teams. System admins can grant the **Create Team** permission to roles via the :ref:`System scheme <onboard/advanced-permissions:system scheme>` or the :ref:`Team override scheme <onboard/advanced-permissions:team override scheme>`.
 
 .. include:: ../_static/badges/academy-teams.rst
   :start-after: :nosearch:
@@ -45,15 +45,10 @@ If you belong to more than one team, a team sidebar displays to the left of the 
 Create a team
 --------------
 
-If team creation is enabled by the system admin, teams can be created from the team sidebar or the channel sidebar using a web browser or the desktop app. The person who creates a team is automatically  assigned the team admin role for that team.
+You can create a team using a web browser or the desktop app by selecting a team name, and then selecting **Create a Team**, unless your system admin has disabled your ability to do so.
 
-If you have appropriate permissions, select the |plus| icon at the top of the team sidebar, then select **Create a New Team** on the team selection page, which guides you through the rest of the team creation steps. If this option is not visible on the web page, then the system admin has disabled team creation.
-
-If you have no other teams to join, selecting the |plus| icon takes you directly to the team creation page if team creation is enabled.
-
-.. tip::
-
-  From your current Mattermost team, you can also select your team name, then select **Create a Team**. If this option is not visible in the menu, then the system admin has disabled team creation.
+.. image:: ../images/create-team.gif
+  :alt: Create a new team by selecting the team name.
 
 Team name and URL selection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
