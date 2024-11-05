@@ -73,7 +73,7 @@ Add a bookmark
         :alt: Tap on Add a file to add a file as Bookmark.
         :scale: 30
 
-    6. Tap on **Save**.
+    5. Tap on **Save**.
 
 Manage bookmarks
 ----------------
