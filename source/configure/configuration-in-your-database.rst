@@ -6,34 +6,27 @@ Store configuration in your database
 
 You can use your database as the single source of truth for the active configuration of your Mattermost installation. This changes the Mattermost binary from reading the default ``config.json`` file to reading the configuration settings stored within a configuration table in the database. Mattermost has been running our `community server <https://community.mattermost.com>`__ on this option since the feature was released, and recommends its use for those on :doc:`High Availability deployments </scale/high-availability-cluster-based-deployment>`.
 
+Benefits to using this option:
+
+* Conveniently manages configuration changes directly from the System Console, even in High Availability deployments and read-only containerized environments.
+* Ensures all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
+* Automatically deploys SAML certificates and keys to all servers in the cluster.
+
 .. tip::
 
    The Mattermost configuration database and Mattermost application database are 2 different entities. It's possible to store Mattermost configuration in one database and Mattermost data in another database. 
 
    To do so, you must update the :ref:`Datasource <configure/environment-configuration-settings:data source>` configuration setting to a new data source name, which can be done while the application is running. Explicitly setting the ``MM_SQLSETTINGS_DATASOURCE`` environment variable to override what has been defined in the configuration, whether it's in a database, or in a file, allows the correct data source name to be passed to the Mattermost application.
 
-Benefits to using this option:
-
-* Conveniently manage configuration changes directly from the System Console, even in High Availability deployments and read-only containerized environments.
-* Ensure all servers in a High Availability deployment have the same configuration, even when new servers are added to the cluster.
-* Automatically deploy SAML certificates and keys to all servers in the cluster.
-
-.. important::
-   
-   Once you start using configuration in the database, you shouldn't manually edit the active configuration row. You should edit or update the configuration in one of the following ways:
-
-   * Use the System Console to make changes to the configuration.
-   * Use ``mmctl`` to make changes to the configuration.
-
-   The Mattermost server keeps active configuration in memory and writes new ones to the database only when there is a change. This way we avoid polling the database to process changes to the configuration. Publishing the changes to the cluster are handled by the application itself.
-
 How to migrate configuration to the database
 --------------------------------------------
 
 These instructions cover migrating the Mattermost configuration to your database and updating your ``systemd`` configuration to load it from the database.
 
-.. note::
-  These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory you'll have to modify the paths to match your environment.
+.. important::
+
+   - These instructions assume you have Mattermost server installed at ``/opt/mattermost``. If you're running Mattermost in a different directory you'll have to modify the paths to match your environment.
+   - If you're running Mattermost in a High Availability cluster-based deployment, you must complete all of the steps below on each server in the cluster.
 
 Get your database connection string
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -47,10 +40,6 @@ The first step is to get your master database connection string. We recommend ac
 
 Create an environment file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
-
-   If you're running Mattermost in a High Availability cluster-based deployment, this step must be done on all servers in the cluster.
 
 Create the file ``/opt/mattermost/config/mattermost.environment`` to set the ``MM_CONFIG`` environment variable to the database connection string. For example:
 
@@ -76,7 +65,6 @@ Run the following command to restart the Mattermost server and apply the configu
 
 .. code-block:: sh
 
-   sudo systemctl daemon-reload
    sudo systemctl restart mattermost
 
 Migrate configuration from ``config.json``
@@ -90,7 +78,7 @@ You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl
 
 .. important::
  
-   - If you're using a High Availability cluster-based deployment, you only need to run this command on 1 server in the cluster.
+   - If you're using a High Availability cluster-based deployment, you only need to run this command once and migrate the configuration from one server in the cluster.
    - When migrating configuration, Mattermost incorporates configuration from any existing ``MM_*`` environment variables set in the current shell. See :doc:`Environment Variables  </configure/configuration-settings>` documentation for details.
    - As with the environment file, you'll have to escape any single quotes in the database connection string. 
    - Any existing SAML certificates will be migrated into the database as well so they are available for all servers in the cluster. When the certificates expire, you can upload new certificates using the System Console or mmctl, which triggers a database update. Replacing the certificate files manually requires a reload of the Mattermost server to re-pull the certificates. Configuration files are stored in the ``configurationfiles`` table in the database.
@@ -160,9 +148,6 @@ There should be exactly one line returned, and the ``Value`` field for that line
 Reload ``systemd`` files and restart Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. note::
-  If you're running Mattermost in High Availability this step must be run on all servers in the cluster.
-
 Run these commands to reload the daemon and restart Mattermost using the new ``MM_CONFIG`` environment variable.
 
 .. code-block:: sh
@@ -170,8 +155,17 @@ Run these commands to reload the daemon and restart Mattermost using the new ``M
    sudo systemctl daemon-reload
    sudo systemctl restart mattermost
 
+.. important::
+
+   Once you start using configuration in the database, you shouldn't manually edit the active configuration row. You should edit or update the configuration in one of the following ways:
+
+   * Use the System Console to make changes to the configuration.
+   * Use ``mmctl`` to make changes to the configuration.
+
+   The Mattermost server keeps active configuration in memory and writes new ones to the database only when there is a change. This way we avoid polling the database to process changes to the configuration. Publishing the changes to the cluster are handled by the application itself.
+
 Rolling back
-~~~~~~~~~~~~
+------------
 
 If you run into issues with your configuration in the database you can roll back to the ``config.json`` file by commenting out the ``MM_CONFIG`` line in ``/opt/mattermost/config/mattermost.environment`` and restarting Mattermost with ``systemctl restart mattermost``.
 
