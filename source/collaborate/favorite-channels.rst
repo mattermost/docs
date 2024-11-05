@@ -47,7 +47,7 @@ To mark a channel as a **Favorite**:
       :alt: Tap on Favorite to mark the channel as one of the favorites.
       :scale: 30
 
-.. note::
+.. tip::
 
   You can also mark a channel as favorite in this way.
 
