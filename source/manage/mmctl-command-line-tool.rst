@@ -4806,6 +4806,7 @@ Manage posts.
 
    Child Commands
       -  `mmctl post create`_ - Create a post
+      -  `mmctl post delete`_ - Delete a post
       -  `mmctl post list`_ - List posts for a channel
 
 **Options**
@@ -4840,6 +4841,62 @@ Create a post.
    -h, --help              help for create
    -m, --message string    Message for the post
    -r, --reply-to string   Post id to reply to
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl post delete
+~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Mark a post as deleted and remove it and all attachments from the client without permanently deleting it from the database. 
+Permanently delete a post and all attachments using the ``--permanent`` flag.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl post delete [posts] [flags]
+
+**Examples**
+
+Mark post as deleted:
+
+.. code-block:: sh
+
+   mmctl post delete udjmt396tjghi8wnsk3a1qs1sw
+
+Permanently delete a post and its file contents from the database and filestore:
+
+.. code-block:: sh
+
+   mmctl post delete udjmt396tjghi8wnsk3a1qs1sw --permanent
+
+Permanently delete multiple posts and their file contents from the database and filestore:
+
+.. code-block:: sh
+
+   mmctl post delete udjmt396tjghi8wnsk3a1qs1sw 7jgcjt7tyjyyu83qz81wo84w6o --permanent
+
+**Options**
+
+.. code-block:: sh
+
+   --confirm     Confirm you really want to delete the post and a DB backup has been performed
+   -h, --help    help for delete
+   --permanent   Permanently delete the post and its contents from the database
 
 **Options inherited from parent commands**
 
