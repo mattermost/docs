@@ -41,18 +41,18 @@ Add a bookmark
 
         .. image:: ../images/mobile-bookmark-add.png
             :alt: Using the mobile app, go to the channel view info screen to add a bookmark for the first time.
-            :scale: 50
+            :width: 300 px
 
      - Select **Add a link** to specify the link URL, specify bookmark text, and an optional bookmark icon. 
      - Select **Add a file** to select a file, specify bookmark text, and an optional bookmark icon.
 
         .. image:: ../images/mobile-bookmark-add-choice.png
             :alt: Using the mobile app, choose whether to add a link or a file.
-            :scale: 50
+            :width: 300 px
 
         .. image:: ../images/mobile-bookmark-add-details.png
             :alt: Using the mobile app, specify the link or file, bookmark text, and an optional bookmark icon.
-            :scale: 50
+            :width: 300 px
 
     2. Select **Add bookmark**.
 

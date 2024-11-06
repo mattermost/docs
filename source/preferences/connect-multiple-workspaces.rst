@@ -69,7 +69,7 @@ Edit a server
   Swipe left on an existing server entry to reveal additional options. Tap **Edit**.
 
   .. image:: ../images/swipe-left-to-remove.gif
-    :width: 400px
+    :width: 300px
     :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to edit the connection.
 
 Remove a server
