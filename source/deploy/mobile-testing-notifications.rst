@@ -20,7 +20,7 @@ Then use the following instructions to confirm push notifications are working pr
 
   A. Go to the notification settings menu in the mobile app.
 
-  .. image:: ../images/mobile_notification_settings.gif
+  .. image:: ../images/mobile_notification_settings.png
     :alt: Access notification settings by selecting your profile picture to access Settings > Notifications.
     :width: 300 px
 
