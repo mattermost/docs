@@ -1,5 +1,5 @@
 AD/LDAP setup
-=======================
+=============
 
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -24,39 +24,64 @@ Pre-installation notes
 
 If you're using AD/LDAP with **nested security groups** you need to write a PowerShell script, or similar, to flatten and aggregate the tree into a single security group to map into Mattermost.
 
+We strongly recommend the following as you prepare to set up AD/LDAP:
+
+Attribute Naming and Case Sensitivity:
+
+* Attribute names in both AD/LDAP and Mattermost configurations are **case-sensitive**.
+* Ensure that the attribute names in the AD/LDAP claim rules **exactly match** the expected attribute names in Mattermost. Case deviations will result in issues.
+
+Essential attributes:
+
+* The ``NameID`` element is required for user identification in SAML assertions.
+* All required attributes (e.g., ``Email``, ``Username``, ``FirstName``, and ``LastName``) must be included and correctly mapped.
+
+How to choose a stable unique identifier for ``NameID``:
+
+* Using a stable and unique identifier (``EmployeeID`` or ``ObjectGUID``) for the ``NameID`` helps prevent issues in cases where user details could change over time (e.g., ``LastName`` or ``Email``).
+* If stable, unique attributes aren't available in AD, using attributes that might change over time can result in future issues.
+
 Getting started
 ----------------
 
 There are two ways to set up AD/LDAP:
 
 1. **Configure AD/LDAP using the System Console user interface**
-     - Log in to your workspace and create a new account using email and password. This is assigned the system admin role as the first user created.
-     - Next, configure AD/LDAP and then convert your system admin account to use the AD/LDAP login method.
+
+  - Log in to your workspace and create a new account using email and password. This is assigned the system admin role as the first user created.
+  - Next, configure AD/LDAP and then convert your system admin account to use the AD/LDAP login method.
 
 2. **Configure AD/LDAP by editing ``config.json``**
-     - Edit ``config.json`` to enable AD/LDAP based on the :ref:`AD/LDAP settings documentation <configure/authentication-configuration-settings:ad/ldap>`. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the system admin role.
+
+  - Edit ``config.json`` to enable AD/LDAP based on the :ref:`AD/LDAP settings documentation <configure/authentication-configuration-settings:ad/ldap>`. When you log in to Mattermost the first user to log in with valid AD/LDAP credentials will be assigned the system admin role.
 
 Configure AD/LDAP login
 --------------------------
 
 1. **Create a system admin account using email authentication.**
-     - Create a new workspace and create an account using email and password, which is automatically assigned the **system admin** role since it is the first account created. You may also assign the role to another account.
+
+  - Create a new workspace and create an account using email and password, which is automatically assigned the **system admin** role since it is the first account created. You may also assign the role to another account.
 
 2. **Configure AD/LDAP.**
-     - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap>`.
+
+  - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap>`.
 
 3. **Confirm that AD/LDAP sign-on is enabled.**
-     - After AD/LDAP has been enabled, confirm that users can log in using AD/LDAP credentials.
+
+  - After AD/LDAP has been enabled, confirm that users can log in using AD/LDAP credentials.
 
 4. **Switch your system admin account from email to AD/LDAP authentication.**
-     - Navigate to your profile, and select **Security > Sign-in Method > Switch to AD/LDAP** and log in with your AD/LDAP credentials to complete the switch.
+
+  - Navigate to your profile, and select **Security > Sign-in Method > Switch to AD/LDAP** and log in with your AD/LDAP credentials to complete the switch.
 
 5. **(Optional) Restrict authentication to AD/LDAP.**
-     - Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to **false** and **Enable sign-in with username** to **false**.
-     - Then choose **Save** to save the changes. This should leave AD/LDAP as the only login option.
+
+  - Go to **System Console > Authentication > Email** and set **Enable sign-in with email** to **false** and **Enable sign-in with username** to **false**.
+  - Then choose **Save** to save the changes. This should leave AD/LDAP as the only login option.
 
 6. **(Optional) If you configured `First Name Attribute` and `Last Name Attribute` in the System Console.**
-     - Navigate to **System Console > Site Configuration > Users and Teams** and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
+
+  - Navigate to **System Console > Site Configuration > Users and Teams** and set **Teammate Name Display** to **Show first and last name**. This is recommended for a better user experience.
 
 .. note::
 
@@ -76,11 +101,13 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 1. Go to **System Console > Authentication > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to **true**.
 
 2. Scroll down to **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
-     - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
-     - To configure AD/LDAP synchronization with SAML sign-in, see the :doc:`SAML documentation </onboard/sso-saml>`.
+
+  - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
+  - To configure AD/LDAP synchronization with SAML sign-in, see the :doc:`SAML documentation </onboard/sso-saml>`.
 
 .. note::
-   - Make sure that at least one AD/LDAP user is in Mattermost or the sync will not complete.
+
+   - Ensure at least one AD/LDAP user is in Mattermost or the sync won't complete.
    - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details. 
 
 Configure AD/LDAP sign-in using filters
@@ -130,6 +157,7 @@ The next login is based upon Session lengths set in **System Console > Session L
 4. Choose **Save**.
 
 .. note::
+
      If the Admin Filter is set to ``false``, the member's role as system admin is retained. However if this filter is removed/changed, system admins that were promoted via this filter will be demoted to members and won't retain access to the System Console.
 
 When this filter isn't in use, members can be manually promoted/demoted via **System Console > User Management**.
@@ -246,11 +274,21 @@ To do this, you can set the :ref:`Login ID Attribute <configure/authentication-c
 I see the log error ``LDAP Result Code 4 "Size Limit Exceeded"``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This indicates your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
+This indicates that your AD/LDAP server configuration has a maximum page size set and the query coming from Mattermost is returning a result set in excess of that limit.
 
 To address this issue you can set the :ref:`max page size <configure/authentication-configuration-settings:maximum page size>` in your Mattermost configuration to match the limit on your AD/LDAP server. This will return a sequence of result sets that do not exceed the max page size, rather than returning all results in a single query. A max page size setting of 1500 is recommended.
 
 If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the synchronization. The error should disappear at that point.
+
+I see the log error ``Missing NameID Element``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This indicates that the  AD/LDAP server configuration doesn't include the ``NameID`` element in the SAML assertion. The ``NameID`` element is required for user identification in SAML assertions. Ensure the ``NameID`` is mapped to a unique user identifier, such as the user's email address or another stable attribute that isn't subject to change over time.
+
+I see the log error ``Username Attribute is Missing``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``Username`` attribute in the SAML assertion was either missing or is incorrectly named. Verify that all required attributes are included in the SAML assertion. Attribute names are case-sensitive and must match exactly what Mattermost expects. Update the claim rules in AD/LDAP to correctly map LDAP attributes to the expected outgoing claim types, ensuring proper casing (e.g., ``Username`` instead of ``UserName``).
 
 Can the Enter ID User Filter read security groups?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
