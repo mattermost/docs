@@ -2632,6 +2632,8 @@ Amazon S3 storage class
 | String value. Default is an empty string.                     |                                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 | **Note**: Most S3 compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided.    |
+| See https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass for more      |
+| documentation about supported storage classes.                                                                                      |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: file-exportamazons3storageclass
@@ -2651,6 +2653,8 @@ Amazon S3 export storage class
 | String value. Default is an empty string.                     |                                                                           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 | **Note**: Most S3 compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided.          |
+| See https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass for more            |
+| documentation about supported storage classes.                                                                                            |
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: file-initialfont
