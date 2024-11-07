@@ -4040,6 +4040,9 @@ rst_prolog = """
 .. |add-user-icon| image:: /images/account-plus-outline_F0801.svg
     :alt: Account plus outline icon used to add user to a channel.
     :class: theme-icon
+.. |shared| image:: /images/circle-multiple-outline_F0695.svg
+    :alt: Shared icon indicates channels and their members that are shared across connected Mattermost servers.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
