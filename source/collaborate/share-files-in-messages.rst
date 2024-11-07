@@ -53,7 +53,7 @@ With file attachments, you can share additional information that helps your team
   2. Tap **Files**.
 
   .. image:: ../images/mobile-edit-channel.jpg
-      :alt: Tap on Add members to add members to the channel.
+      :alt: Tap on Files to explore the available file attachments in the channel.
       :scale: 30
 
   3. Tap a file to download it, open it, or copy a public link to the file.
