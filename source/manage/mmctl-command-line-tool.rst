@@ -159,61 +159,6 @@ Using local mode
 
 You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the :ref:`server configuration setting <configure/experimental-configuration-settings:enable local mode socket location>`.
 
-Generate a Personal Access Token
---------------------------------
-
-1. Go to your Mattermost instance.
-2. Navigate to your profile and select Profile.
-3. Under the Security tab, find Personal Access Tokens.
-4. Generate a new token by selecting Create Token, providing a token description, and then copying it/storing it in a secure place since you'll only see it once.
-
-Log in Using mmctl with Token
------------------------------
-
-1. In a terminal, use the following command to login to mmctl using the generated token:
-
-``mmctl auth login <your-mattermost-server-url> --name <login-name> --token <your-access-token>``
-
-2. Replace ``<your-mattermost-server-url>`` with your Mattermost server URL, ``<login-name>`` with a name to refer to this login, and ``<your-access-token>`` with the token generated above.
-
-**Example:**
-
-Assuming your Mattermost server URL is https://mattermost.example.com, your desired login name is my-profile, and your token is abcd1234, the command would be:
-
-``mmctl auth login https://mattermost.example.com --name my-profile --token abcd1234``
-
-.. note::
-
-    
-    - Make sure your token is kept secure and do not share it.
-    - To logout or remove the authentication, you can use: ``mmctl auth remove <login-name>``, and replace ``<login-name>`` with the name you provided, for example: ``mmctl auth remove my-profile``.
-    - Ensure you have the necessary permissions to generate and use personal access tokens on your Mattermost instance.
-
-Grant the ability to create user-tokens individually
-----------------------------------------------------
-
-Alternatively, admins can permit only admins to generate and use personal access tokens while restricting regular users.
-
-1. Access System Console as an admin.
-
-2. Disable Personal Access Token Permissions for all users by going to **Integrations > Integration Management > Enable Personal Access Tokens**. Set to **false**.
-
-3. Allow admin to generate tokens.
-
-   - Select an admin user.
-   - Select **Manage Roles** from the **Actions** drop-down menu.
-   - Enable the **Allow this account to generate personal access tokens**, and select **Save**.
-
-4. Verify Configuration.
-
-      **For Admin Users:**
-         - Log in as an admin and go to **Profile > Security > Personal Access Tokens**.
-         -  Ensure the option to generate tokens is available.
-      **For Regular Users:**
-         -  Log in as a regular user, and confirm that the **Personal Access Tokens** section under **Security** is absent.
-
-This approach ensures that only users with admin privileges can generate and manage personal access tokens, providing an additional layer of security and control over token usage within your organization.
-
 Running mmctl tests
 -------------------
 
@@ -415,7 +360,7 @@ mmctl auth login
 
 **Description**
 
-Log in to an instance and store credentials.
+Log in to an instance and store credentials. You can log in with `a personal access token <https://developers.mattermost.com/integrate/reference/personal-access-token>`_ instead of using username/password. See `access tokens <#access-tokens>`__ for details.
 
 **Format**
 
@@ -457,6 +402,86 @@ Log in to an instance and store credentials.
    --quiet                        prevent mmctl to generate output for the commands
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
+
+Password
+^^^^^^^^^
+
+.. code-block:: sh
+
+   $ mmctl auth login https://community.mattermost.com --name community --username my-username --password-file mysupersecret
+
+The ``login`` command can also work interactively, so if you leave any required flag empty, ``mmctl`` will ask you for it interactively:
+
+.. code-block:: sh
+
+   $ mmctl auth login https://community.mattermost.com
+   Connection name: community
+   Username: my-username
+   Password File:
+
+MFA
+^^^^
+
+To log in with MFA, use the ``--mfa-token`` flag:
+
+.. code-block:: sh
+
+   $ mmctl auth login https://community.mattermost.com --name community --username my-username --password-file mysupersecret --mfa-token 123456
+
+Access tokens
+^^^^^^^^^^^^^
+
+You can generate and use a personal access token to authenticate with a server, instead of using username and password to log in:
+
+.. code-block:: sh
+
+   $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
+
+Alternatively, you can log in to your Mattermost server with a username and password:
+
+.. code-block:: sh
+
+   $ mmctl auth login https://my-instance.example.com --name my-instance --username john.doe --password-file mysupersecret
+   credentials for my-instance: john.doe@https://my-instance.example.com stored
+
+We can check the currently stored credentials with:
+
+.. code-block:: sh
+
+   $ mmctl auth list
+
+   | Active |        Name | Username |                     InstanceUrl |
+   |--------|-------------|----------|---------------------------------|
+   |      * | my-instance | john.doe | https://my-instance.example.com |
+
+And now we can run commands normally:
+
+.. code-block:: sh
+
+   $ mmctl user search john.doe
+   id: qykfw3t933y38k57ubct77iu9c
+   username: john.doe
+   nickname:
+   position:
+   first_name: John
+   last_name: Doe
+   email: john.doe@example.com
+   auth_service:
+
+Installing shell completions
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
+
+.. code-block:: sh
+
+   source <(mmctl completion bash)
+
+For zsh, add the following line to your ``~/.zshrc`` file:
+
+.. code-block:: sh
+
+   source <(mmctl completion zsh)
 
 mmctl auth renew
 ~~~~~~~~~~~~~~~~
@@ -540,84 +565,6 @@ Set credentials to use in the following commands.
    --suppress-warnings            disables printing warning messages
 
 Authenticate to a server (e.g. >mmctl auth login ``https://test.mattermost.com)``, then enter your username and password (and MFA token if MFA is enabled on the account).
-
-**Password**
-
-.. code-block:: sh
-
-   $ mmctl auth login https://community.mattermost.com --name community --username my-username --password-file mysupersecret
-
-The ``login`` command can also work interactively, so if you leave any required flag empty, ``mmctl`` will ask you for it interactively:
-
-.. code-block:: sh
-
-   $ mmctl auth login https://community.mattermost.com
-   Connection name: community
-   Username: my-username
-   Password File:
-
-**MFA**
-
-To log in with MFA, use the ``--mfa-token`` flag:
-
-.. code-block:: sh
-
-   $ mmctl auth login https://community.mattermost.com --name community --username my-username --password-file mysupersecret --mfa-token 123456
-
-Access tokens
-^^^^^^^^^^^^^
-
-You can generate and use a personal access token to authenticate with a server, instead of using username and password to log in:
-
-.. code-block:: sh
-
-   $ mmctl auth login https://community.mattermost.com --name community --access-token MY_ACCESS_TOKEN
-
-Alternatively, you can log in to your Mattermost server with a username and password:
-
-.. code-block:: sh
-
-   $ mmctl auth login https://my-instance.example.com --name my-instance --username john.doe --password-file mysupersecret
-   credentials for my-instance: john.doe@https://my-instance.example.com stored
-
-We can check the currently stored credentials with:
-
-.. code-block:: sh
-
-   $ mmctl auth list
-
-   | Active |        Name | Username |                     InstanceUrl |
-   |--------|-------------|----------|---------------------------------|
-   |      * | my-instance | john.doe | https://my-instance.example.com |
-
-And now we can run commands normally:
-
-.. code-block:: sh
-
-   $ mmctl user search john.doe
-   id: qykfw3t933y38k57ubct77iu9c
-   username: john.doe
-   nickname:
-   position:
-   first_name: John
-   last_name: Doe
-   email: john.doe@example.com
-   auth_service:
-
-Installing shell completions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To install the shell completions for bash, add the following line to your ``~/.bashrc`` or ``~/.profile`` file:
-
-.. code-block:: sh
-
-   source <(mmctl completion bash)
-
-For zsh, add the following line to your ``~/.zshrc`` file:
-
-.. code-block:: sh
-
-   source <(mmctl completion zsh)
 
 mmctl bot
 ---------
