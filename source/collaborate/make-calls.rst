@@ -225,7 +225,7 @@ Troubleshooting
 My audio doesn't work when I join a call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you can hear the other participants in the call but they can't hear you, select the Gear icon |gear| next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select |gear| again to close the menu. Alternatively, you can :doc:`manage your audio and microphone preferences </preferences/manage-your-calls-preferences>` in **Settings**.
+If you can hear the other participants in the call but they can't hear you, select the Gear icon |gear| next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select |gear| again to close the menu. Alternatively, you can :doc:`manage your audio and microphone preferences </preferences/manage-your-plugin-preferences>` in **Settings**.
 
 My call is disconnected after a few seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

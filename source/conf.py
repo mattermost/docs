@@ -3381,6 +3381,10 @@ redirects = {
 "playbooks/get-started-with-playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
 
+# Preference redirects
+"preferences/manage-your-calls-preferences.html":
+        "https://docs.mattermost.com/preferences/manage-your-plugin-preferences.html",
+
 # Process redirects
 # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.
 "process/accepting-pull-request.html":
