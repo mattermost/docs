@@ -15,6 +15,14 @@ Reply to messages
 
   Tap on a message to reply to it, or long press and select **Reply**.
 
+  .. image:: ../images/mobile-reply-to-a-message-by-tapping-on-it.gif
+      :alt: Tap on a Message to send a reply.
+      :scale: 45
+  
+  .. image:: ../images/mobile-reply-to-a-message-using-reply.gif
+      :alt: Tap and hold on text to select reply.
+      :scale: 45
+
 Depending on how your system admin has configured Mattermost, you may be able to :ref:`edit <collaborate/send-messages:edit messages>`, :ref:`restore <collaborate/send-messages:restore a previous version of an edited message>`, and :ref:`delete <collaborate/send-messages:delete messages>` messages after you've sent them.
 
 .. tip::
