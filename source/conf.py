@@ -2739,6 +2739,8 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "manage/team-channel-members.html#channel-moderation":
         "https://docs.mattermost.com/manage/team-channel-members.html#advanced-access-controls.html",
+"manage/announcement-banner.html":
+        "https://docs.mattermost.com/manage/system-wide-notifications.html",
 "manage/announcement-banner.html#configure-an-announcement-banner":
         "https://docs.mattermost.com/manage/system-wide-notifications.html#configure-system-wide-notifications",
 "manage/announcement-banner.html#announcement-banner":
@@ -4035,6 +4037,9 @@ rst_prolog = """
     :alt: Offline availability status icon in Mattermost.
 .. |checkmark| image:: /images/check-circle-green.svg
     :alt: Green checkmark icon used to indicate that a given feature is included in a specific package, deployment, or plan.
+.. |add-user-icon| image:: /images/account-plus-outline_F0801.svg
+    :alt: Account plus outline icon used to add user to a channel.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2

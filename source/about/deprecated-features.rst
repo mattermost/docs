@@ -6,6 +6,11 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v10.5.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- In the February 2025 Mattermost release (and next ESR), the Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`_.
+
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
