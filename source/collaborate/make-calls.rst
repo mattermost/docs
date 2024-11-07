@@ -48,6 +48,10 @@ Start a call
 .. tab:: Mobile
     
   To start a call, go the channel info menu. Then tap **Start Call**.
+
+  .. image:: ../images/mobile-start-a-call-in-a-channel.gif
+      :alt: Tap on Start Call to start a call in the channel.
+      :scale: 50
      
   After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
 
@@ -123,6 +127,10 @@ All call participants can use emojis to react during a call.
   
   Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
 
+  .. image:: ../images/mobile-react-using-emojis-in-a-call.gif
+      :alt: Tap on React to use emojis reactions during a call.
+      :scale: 50
+
 Chat in a call
 --------------
 
@@ -135,6 +143,10 @@ A chat thread is created automatically for every new call.
 .. tab:: Mobile
   
   Expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+
+  .. image:: ../images/mobile-chat-in-a-call.gif
+      :alt: Tap on Call Thread to chat while being in a call.
+      :scale: 50
 
 Record a call
 -------------
@@ -161,7 +173,25 @@ To record a call:
 
 .. tab:: Mobile
   
-  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command.
+
+  .. image:: ../images/mobile-start-a-call-recording-using-slash-commands.gif
+      :alt: Use '/call recording start' to start recording a call
+      :scale: 50
+  
+  .. image:: ../images/mobile-stop-a-call-recording-using-slash-commands.gif
+      :alt: Use '/call recording stop' to stop recording the call.
+      :scale: 50
+  
+  Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, tap on **Stop Recording** button.
+
+  .. image:: ../images/mobile-start-a-call-recording-using-call-banner.gif
+      :alt: Tap on Record to start recording a call.
+      :scale: 50
+
+  .. image:: ../images/mobile-stop-a-call-recording-using-call-banner.gif
+      :alt: Tap on Stop Recording to stop recording the call.
+      :scale: 50
 
 Live captions during calls (Beta)
 ---------------------------------
