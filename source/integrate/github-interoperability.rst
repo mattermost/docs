@@ -105,7 +105,7 @@ We recommend updating this integration as new versions are released. Generally, 
 .. important::
 
   - We strongly recommend removing older versions of this integration before uploading a new version. Mattermost server selects the newest integration version automatically, unless :ref:`automatic prepackaged plugins <configure/plugins-configuration-settings:automatic prepackaged plugins>` is disabled because precise control over plugin versions is preferred.
-  - Use the System Console, REST API, or in-product Marketplace to manage this integration. Manually placing Mattermost integration files in the ``/plugins`` directory isn't recommended.
+  - Use the System Console, REST API, or in-product Marketplace to manage this integration. Manually placing Mattermost integration files in the ``/plugins`` directory isn't recommended and will be `deprecated in future versions <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`_.
 
 Usage
 -----
