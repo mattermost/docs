@@ -44,7 +44,7 @@ Additional Mattermost integrations are available on the `Mattermost Marketplace 
 
 .. important::
 
-  - Manually placing Mattermost integration files in the ``/plugins`` directory isn't recommended. 
+  - Manually placing Mattermost integration files in the ``/plugins`` directory isn't recommended and will be `deprecated in future versions <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`_.
   - Mattermost uses the latest integration version available within the following directories: ``<installdirectory>/prepackaged-plugins`` and ``FileSettings.Directory/plugins``, where the latter is the source of truth for installed plugins and contains ``*.tar.gz`` files.
   - We strongly recommend that system admins ensure that ``{{FileStore.Directory}}/plugins`` is mounted at startup to avoid integration downgrades.
   - We also strongly recommend testing integration updates in a staging environment before deploying to production, and regularly backing up integrations.
