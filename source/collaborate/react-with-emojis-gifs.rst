@@ -42,6 +42,10 @@ Include emojis and GIFs in messages
 
   Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction. Mattermost accesses the emojis and GIFs available on your mobile device.
 
+  .. image:: ../images/mobile-include-emojis-for-a-message-reaction.gif
+      :alt: Tap and hold on a message to access the recent emojis or even choose other ones.
+      :scale: 50
+
 Manage emojis
 -------------
 
