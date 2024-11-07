@@ -4041,6 +4041,8 @@ rst_prolog = """
     :alt: Offline availability status icon in Mattermost.
 .. |checkmark| image:: /images/check-circle-green.svg
     :alt: Green checkmark icon used to indicate that a given feature is included in a specific package, deployment, or plan.
+.. |pinned-messages| image:: /images/pin-outline_F0931.svg
+    :alt: Pin icon used to indicate when there are pinned messages in a given channel.
 .. |add-user-icon| image:: /images/account-plus-outline_F0801.svg
     :alt: Account plus outline icon used to add user to a channel.
     :class: theme-icon
