@@ -6,84 +6,180 @@ What features are available on different Mattermost clients?
 
 The following chart highlights the end user features of Mattermost and their support across Web, Desktop, and Mobile applications (iOS and Android).
 
-**Legend:**
+Messages
+~~~~~~~~
 
-* X - Full Support
-* O - Partial support
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+|                                                 **Feature**                                                 |   **Web**   | **Desktop** |    **Mobile**   |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`Threaded discussions </collaborate/organize-conversations>`                                           | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Format messages with Markdown <collaborate/format-messages:use markdown>`                             | |checkmark| | |checkmark| | Partial Support |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`Emojis </collaborate/react-with-emojis-gifs>`                                                         | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Emoji reactions <collaborate/react-with-emojis-gifs:quick emoji reactions>`                           | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`File sharing </collaborate/share-files-in-messages>`                                                  | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`@mentions </collaborate/mention-people>`                                                              | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Search hashtags <collaborate/search-for-messages:hashtags>`                                           | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Search modifiers <collaborate/search-for-messages:search modifiers>`                                  | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| Search highlighting                                                                                         | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Pin and save messages <collaborate/save-pin-messages:save and pin messages>`                          | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Preview image links <collaborate/share-files-in-messages:preview file attachments>`                   | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Preview websites <configure/site-configuration-settings:enable website link previews>`                | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`Notifications </preferences/manage-your-notifications>`                                               | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :doc:`Bookmark channels </collaborate/manage-channel-bookmarks>`                                            | |checkmark| | |checkmark| | |checkmark|     |
++-------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 
-.. csv-table::
-    :header: "Feature", "Web", "Desktop", "Mobile"
+Channels
+~~~~~~~~
 
-    **MESSAGES**
-    "Threaded messages", "X", "X", "X"
-    "Markdown", "X", "X", "O"
-    "Emojis", "X", "X", "X"
-    "Emoji reactions", "X", "X", "X"
-    "Viewing emoji reactions", "X", "X", "X"
-    "File sharing", "X", "X", "X"
-    "@ mentions", "X", "X", "X"
-    "Hashtags", "X", "X", "X"
-    "Search (with in:, from:, before:, on: and after:)", "X", "X", "X"
-    "Search highlighting", "X", "X", "X"
-    "View/marking pinned or saved posts", "X", "X", "X"
-    "Image link previews", "X", "X", "X"
-    "Website previews", "X", "X", "X"
-    "Notifications", "X", "X", "X"
-    "**CHANNELS**"
-    "Create a new channel", "X", "X", "X"
-    "Join a channel", "X", "X", "X"
-    "Leave a channel", "X", "X", "X"
-    "Favorite a channel", "X", "X", "X"
-    "Mute a channel", "X", "X", "X"
-    "Manage members", "X", "X", "X"
-    "Add members", "X", "X", "X"
-    "Edit channel", "X", "X", "X"
-    "Archive members", "X", "X", "X"
-    **TEAMS**
-    "Multi-team support for notifications", "X", "X", "X"
-    "Team switching", "X", "X", "X"
-    "Team-based theming", "X", "X", "X"
-    "Team settings", "X", "X"
-    "Join existing team", "X", "X", "X"
-    "Create a new team", "X", "X"
-    "Get team invite link", "X", "X", "X"
-    "Add members to team", "X", "X", "X"
-    "Get team invite link", "X", "X", "X"
-    "Add members to team", "X", "X", "X"
-    "Manage team members", "X", "X",
-    "Leave team", "X", "X"
-    **COLLABORATIVE PLAYBOOKS**
-    "Templates and checklists", "X", "X"
-    **CALLS**
-    "Join call", "X", "X", "X"
-    "Share screen", "X", "X"
-    "Chat in thread", "X", "X", "X"
-    "React with emoji", "X", "X", "X"
-    "Start recording", "X", "X", "X"
-    **INTEGRATIONS**
-    "Slash commands", "X", "X", "O"
-    "Server-side plugins", "X", "X", "X"
-    "User interface plugins", "X", "X",
-    "Oauth applications", "X", "X", "X"
-    "Incoming webhooks", "X", "X", "X"
-    "Outgoing webhooks", "X", "X", "X"
-    "Message attachments", "X", "X", "X"
-    "Message buttons", "X", "X", "X"
-    "Message menus", "X", "X", "X"
-    "Message actions", "X", "X"
-    "Right-hand sidebar", "X", "X"
-    **AUTHENTICATION**
-    "Email-password login", "X", "X", "X"
-    "AD/LDAP", "X", "X", "X"
-    "SAML SSO", "X", "X", "X"
-    "GitLab SSO", "X", "X", "X"
-    "Entra ID SSO", "X", "X", "X"
-    "Google SSO", "X", "X",
-    **OTHER**
-    "Localization for 20 languages", "X", "X", "X"
-    "Custom user interface themes", "X", "X", "X"
-    "User profile settings", "X", "X", "X"
-    "Channel settings", "X", "X", "X"
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+|                                               **Feature**                                                |   **Web**   | **Desktop** |  **Mobile** |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Create a new channel </collaborate/create-channels>`                                               | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Join a channel <collaborate/join-leave-channels:join a channel>`                                   | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Leave a channel <collaborate/join-leave-channels:leave a channel>`                                 | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Favorite a channel </collaborate/favorite-channels>`                                               | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Mute a channel <preferences/manage-your-channel-specific-notifications:mute channels>`             | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Manage members </collaborate/manage-channel-members>`                                              | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Add members <collaborate/manage-channel-members:add members to a channel>`                         | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Rename channels </collaborate/rename-channels>`                                                    | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Deactivate members <configure/user-management-configuration-settings:activate or deactivate users>`| |checkmark| | |checkmark| |             |
++----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+
+Teams
+~~~~~
+
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+|                                          **Feature**                                         |   **Web**   | **Desktop** |  **Mobile** |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Multi-team support for notifications </preferences/manage-your-notifications>`         | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Team switching </collaborate/organize-using-teams>`                                    | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Team-based theming </preferences/customize-your-theme>`                                | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Team settings </collaborate/team-settings>`                                            | |checkmark| | |checkmark| |             |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Join existing team <collaborate/organize-using-teams:join a team>`                     | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Create a new team <collaborate/organize-using-teams:create a team>`                    | |checkmark| | |checkmark| |             |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Get team invite link <collaborate/invite-people:send a team invite link>`              | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Add members to team <collaborate/invite-people:add people to your workspace>`          | |checkmark| | |checkmark| | |checkmark| |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Manage team members <manage/team-channel-members:teams>`                               | |checkmark| | |checkmark| |             |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Leave team <collaborate/organize-using-teams:leave a team>`                            | |checkmark| | |checkmark| |             |
++----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+
+Collaborative playbooks
+~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------+-------------+-------------+------------+
+|                                                        **Feature**            |    **Web**  | **Desktop** | **Mobile** |
++--------------------------+----------------------------------------------------+-------------+-------------+------------+
+| :doc:`Collaborative playbooks </repeatable-processes/work-with-playbooks>`    | |checkmark| | |checkmark| |            |
++--------------------------+----------------------------------------------------+-------------+-------------+------------+
+
+Calls
+~~~~~
+
++---------------------------------------------------------------------+-------------+-------------+-------------+
+|                             **Feature**                             |   **Web**   | **Desktop** |  **Mobile** |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Join call <collaborate/make-calls:join a call>`               | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Share screen <collaborate/make-calls:share your screen>`      | |checkmark| | |checkmark| |             |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Chat in thread <collaborate/make-calls:chat in a call>`       | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`React with emoji <collaborate/make-calls:react using emojis>` | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Record a call <collaborate/make-calls:record a call>`         | |checkmark| | |checkmark| | |checkmark| |
++---------------------------------------------------------------------+-------------+-------------+-------------+
+
+Integrations
+~~~~~~~~~~~~
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+|                                            **Feature**                                                          |   **Web**   | **Desktop** |    **Mobile**   |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Slash commands <repeatable-processes/interact-with-playbooks:slash commands>`                             | |checkmark| | |checkmark| | Partial Support |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| :ref:`Server-side plugins <guides/integrate-and-extend:integrate and extend mattermost>`                        | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_               | |checkmark| | |checkmark| |                 |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `OAuth 2.0 <https://developers.mattermost.com/integrate/apps/authentication/oauth2/>`_                          | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Incoming webhooks <https://developers.mattermost.com/integrate/webhooks/incoming/>`_                           | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_                           | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Message attachments <https://developers.mattermost.com/integrate/reference/message-attachments/>`_             | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Message buttons <https://developers.mattermost.com/integrate/plugins/interactive-messages/#message-buttons>`_  | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Message menus <https://developers.mattermost.com/integrate/plugins/interactive-messages/#message-menus>`_      | |checkmark| | |checkmark| | |checkmark|     |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Message actions <https://developers.mattermost.com/integrate/plugins/components/webapp/actions/>`_             | |checkmark| | |checkmark| |                 |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+| `Right-hand sidebar <https://developers.mattermost.com/integrate/reference/server/server-reference/>`_          | |checkmark| | |checkmark| |                 |
++-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
+
+Authentication
+~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+|                                     **Feature**                                           |   **Web**   | **Desktop** |  **Mobile** |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Email password login <collaborate/access-your-workspace:email address or username>` | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`AD/LDAP </onboard/ad-ldap>`                                                         | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`SAML SSO </onboard/sso-saml>`                                                       | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`GitLab SSO </onboard/sso-gitlab>`                                                   | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Entra ID SSO </onboard/sso-entraid>`                                                | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Google SSO </onboard/sso-google>`                                                   | |checkmark| | |checkmark| | |checkmark| |
++-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+
+Other
+~~~~~
+
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+|                                                 **Feature**                                            |   **Web**   | **Desktop** |  **Mobile** |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Localization for 22 languages <preferences/manage-your-display-options:language>`                | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`Custom user interface themes <preferences/customize-your-theme:customize your mattermost theme>` | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :ref:`User profile settings <preferences/manage-your-profile:manage your mattermost profile>`          | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
+| :doc:`Channel notification settings </preferences/manage-your-channel-specific-notifications>`         | |checkmark| | |checkmark| | |checkmark| |
++--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 What feature quality levels does Mattermost have?
 --------------------------------------------------

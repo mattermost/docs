@@ -1001,8 +1001,12 @@ Experimental configuration settings for self-hosted deployments only
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+.. tip::
+
+  Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
+  - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
 .. config:setting:: exp-allowedthemes
   :displayname: Allowed themes (Experimental)
@@ -1055,78 +1059,6 @@ This setting is used to maximize performance for large Enterprise deployments.
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
 +---------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-latestandroidversion
-  :displayname: Latest Android version (Experimental)
-  :systemconsole: N/A
-  :configjson: AndroidLatestVersion
-  :environment: N/A
-  :description: The latest version of the Android React Native app that is recommended for use.
-
-Latest Android version
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the Android React Native app that is recommended for use.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-minimumandroidversion
-  :displayname: Minimum Android version (Experimental)
-  :systemconsole: N/A
-  :configjson: AndroidMinVersion
-  :environment: N/A
-  :description: The minimum version of the Android React Native app that is required to be used.
-
-Minimum Android version
-~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the Android React Native app that is required to be used.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-latestiosversion
-  :displayname: Latest iOS version (Experimental)
-  :systemconsole: N/A
-  :configjson: IosLatestVersion
-  :environment: N/A
-  :description: The latest version of the iOS app that is recommended for use.
-
-Latest iOS version
-~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the iOS app that is recommended for use.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-minimumiosversion
-  :displayname: Minimum iOS version (Experimental)
-  :systemconsole: N/A
-  :configjson: IosMinVersion
-  :environment: N/A
-  :description: The minimum version of the iOS React Native app that is required to be used.
-
-Minimum iOS version
-~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the iOS React Native app that is required to be used.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-batchsize
   :displayname: Batch size (Experimental)
@@ -1918,7 +1850,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +------------------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-websocketport
   :displayname: Websocket port (Experimental)
@@ -1939,7 +1871,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-enableopentracing
   :displayname: Enable OpenTracing (Experimental)

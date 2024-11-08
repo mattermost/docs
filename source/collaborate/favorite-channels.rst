@@ -30,7 +30,45 @@ To mark a channel as a **Favorite**:
 .. tab:: Mobile
 
   1. Tap the channel you want to mark as a favorite.
-  2. Tap the **More** (...) icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Select a channel that you want to mark as favorite.
+      :scale: 30
+
+  2. Tap the |more-icon-vertical| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on More options to access available options for the channel.
+      :scale: 30
+
   3. Tap **Favorite**.
+
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+      :alt: Tap on Favorite to mark the channel as one of the favorites.
+      :scale: 30
+
+.. tip::
+
+  Alternatively, you can mark a favorite channel as follows:
+
+  1. In a channel, tap the channel name at the top of the screen.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on the channel name to view available options for the channel.
+      :scale: 30
+
+  2. Tap on **Favorite**
+
+  .. image:: ../images/mobile-favorite-a-channel-within-channel.jpg
+      :alt: Tap on Favorite to mark the channel as one of the favorites.
+      :scale: 30
   
-  To remove a channel from the **Favorites** list, tap the **Favorited** option.
+To remove a channel from the **Favorites** list, tap the **Favorited** option.
+
+.. image:: ../images/mobile-unfavorite-a-channel.jpg
+      :alt: Tap on Favorited to unfavorite the channel.
+      :scale: 30
+
+.. image:: ../images/mobile-unfavorite-a-channel-from-within-the-channel.jpg
+      :alt: Tap on Favorited to unfavorite the channel.
+      :scale: 30
