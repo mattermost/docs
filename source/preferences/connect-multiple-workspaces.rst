@@ -68,8 +68,8 @@ Edit a server
 
   Swipe left on an existing server entry to reveal additional options. Tap **Edit**.
 
-  .. image:: ../images/swipe-left-to-remove.png
-    :width: 400px
+  .. image:: ../images/swipe-left-to-remove.gif
+    :width: 300px
     :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to edit the connection.
 
 Remove a server
@@ -92,7 +92,7 @@ Removing a server from your desktop app doesn't delete its data. You can add the
 
   Swipe left on an existing server entry to reveal additional options. Tap **Remove**.
 
-  .. image:: ../images/swipe-left-to-remove.png
+  .. image:: ../images/swipe-left-to-remove.gif
     :width: 400px
     :alt: In the Mattermost mobile app, swipe left on an existing server connection entry to delete the connection.
 
