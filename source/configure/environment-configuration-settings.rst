@@ -4176,3 +4176,29 @@ This setting isn't available in the System Console and can only be enabled in ``
 * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
 * **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
 * **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.
+
+.. config:setting:: exp-enableapipostdeletion
+  :displayname: Enable API post deletion (ServiceSettings)
+  :systemconsole: N/A
+  :configjson: EnableAPIPostDeletion
+  :environment: N/A
+
+  - **true**: The ``api/v4/posts/{postid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the mmctl post delete command, to permanently delete a message and its attachments.
+  - **false**: **(Default)** The API endpoint cannot be called, but ``api/v4/posts/{postid}`` can still be used to soft delete a message without removing it from the database.
+
+Enable API post deletion
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: The ``api/v4/posts/{postid}?permanent=true`` API endpoint can be called by system admins (or users with appropriate permissions), or by running the :ref:`mmctl post delete <manage/mmctl-command-line-tool:mmctl post delete>` command, to permanently delete a message and its attachments.
+
+**False**: The API endpoint cannot be called. Note that ``api/v4/posts/{postid}`` can still be used to soft delete a channel without removing it from the database.
+
++----------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAPIPostDeletion": false`` with options ``true`` and ``false``.    |
++----------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  This configuration setting doesn't need to be enabled when running :doc:`mmctl </manage/mmctl-command-line-tool>` in :ref:`local mode <manage/mmctl-command-line-tool:local mode>`.

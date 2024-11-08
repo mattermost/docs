@@ -26,7 +26,7 @@ Learn more
   Manage your display options </preferences/manage-your-display-options>
   Manage your sidebar options </preferences/manage-your-sidebar-options>
   Manage advanced options </preferences/manage-advanced-options>
-  Manage your calls preferences </preferences/manage-your-calls-preferences>
+  Manage your plugin preferences </preferences/manage-your-plugin-preferences>
   Customize your desktop app experience </preferences/customize-desktop-app-experience>
   Connect to multiple workspaces </preferences/connect-multiple-workspaces>
 
@@ -39,6 +39,6 @@ Learn more
 * :doc:`Customize your display options </preferences/manage-your-display-options>` - Customize your Mattermost display to suit your preferences.
 * :doc:`Manage your sidebar options </preferences/manage-your-sidebar-options>` - Customize your Mattermost channel sidebar to suit your preferences.
 * :doc:`Manage advanced options </preferences/manage-advanced-options>` - Customize advanced Mattermost user options to suit your preferences.
-* :doc:`Manage your calls preferences </preferences/manage-your-calls-preferences>` - Custome Mattermost Calls to suit your preferences.
+* :doc:`Manage your plugin preferences </preferences/manage-your-plugin-preferences>` - Customize Mattermost plugin preferences for Microsoft Teams and Calls.
 * :doc:`Customize your desktop app experience </preferences/customize-desktop-app-experience>` - Learn about additional preferences available only in the desktop app.
 * :doc:`Connect to multiple Mattermost workspaces </preferences/connect-multiple-workspaces>` - Learn how to connect to multiple Mattermost workspaces using the Mattermost desktop or mobile app.

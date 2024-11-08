@@ -99,14 +99,16 @@ You can find more on logging settings :ref:`here <configure/environment-configur
 Mattermost Desktop App logs
 ---------------------------
 
-The desktop app log file can be found in the user directory:
+Access desktop app logs by going to **Help > Show logs** from the menu bar.
+
+Alternatively, you can access desktop app log files in the following directory:
 
 - **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
 - **Linux:** ``~/.local/share/Mattermost/logs`` OR ``~/.config/Mattermost/logs``
-- **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation)
+- **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation only)
 
-Mattermost Browser App logs
----------------------------
+Mattermost web logs
+--------------------
 
 The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser for action history. 
 
@@ -121,11 +123,13 @@ Review Mattermost environment
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
 
 - If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
+
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
     - Did the network environment change? For example, was a server moved or a domain migrated?
     - Did the system (client or server) recently fail or abnormally terminate?
 - How many users are impacted?
+
     - Is this problem affecting one, some, or all users?
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
