@@ -56,7 +56,7 @@ Run this command to verify the permissions on your Mattermost directory:
 Enable local mode
 ~~~~~~~~~~~~~~~~~
 
-Edit the ``config.json`` to enable local mode by setting ``EnableLocalMode`` to ``true``.
+Edit the ``config.json`` to enable local mode by setting ``EnableLocalMode`` to ``true``. See the :ref:`local mode <manage/mmctl-command-line-tool:local mode>` documentation for details on activating and using local mode.
 
 Restart Mattermost
 ~~~~~~~~~~~~~~~~~~
