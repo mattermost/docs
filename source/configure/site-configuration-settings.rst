@@ -16,6 +16,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `File Sharing and Downloads <#file-sharing-and-downloads>`__
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
+- `Connected Workspaces <#connected-workspaces>`__
 
 ----
 
@@ -1714,3 +1715,71 @@ Enable end user notices
 | - **false**: Users will not receive in-product notices.                                                                                                                        | - ``config.json`` setting: ``.AnnouncementSettings.UserNoticesEnabled: true`` |
 |                                                                                                                                                                                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED``        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+Connected workspaces
+---------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+The following settings aren't available in the System Console and can only be set in ``config.json``. 
+When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
+
+.. config:setting:: enable-connected-workspace
+  :displayname: Enable connected workspaces (Beta)
+  :systemconsole: Site Configuration > Connected Workspaces (Beta)
+  :configjson: ConnectedWorkspacesSettings.EnableSharedChannels, ConnectedWorkspacesSettings.EnableRemoteClusterService 
+  :environment: N/A
+  :description: Establish secure connections between Mattermost instances, and invite secured connections to shared channels
+
+Enable connected workspaces
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel. 
+Both configuration settings are disabled by default and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
+
+This feature's two ``config.json`` settings include:
+
+- ``ConnectedWorkspacesSettings.EnableRemoteClusterService: false`` with options ``true`` and ``false``.
+- ``ConnectedWorkspacesSettings.EnableSharedChannels: false`` with options ``true`` and ``false``.
+
+.. note::
+
+  - Neither setting is available in the System Console and can only be set in ``config.json``.
+  - System admins for Cloud deployments can submit a request to have these required configuration settings enabled for their Cloud deployment instance.
+
+.. config:setting:: disable-status-sync
+  :displayname: Disable shared channel status sync
+  :systemconsole: N/A
+  :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
+  :environment: N/A
+
+  - **true**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
+  - **false**: Channel as well as member status and availability isn't synchronized.
+
+Disable shared channel status sync
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Disable channel as well as member status and availability synchronization between connected workspaces.
+
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.  | - System Config path: N/A                                                                                     |
+| - **false**: Channel as well as member status and availability isn't synchronized.                                         | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DisableSharedChannelsStatusSync`` > ``true``   |
+|                                                                                                                            | - Environment variable: N/A                                                                                   |
++----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: default-maxpostspersync
+  :displayname: Default maximum posts per sync
+  :systemconsole: N/A
+  :configjson: ConnectedWorkspacesSettings.DefaultMaxPostsPerSync
+  :environment: N/A
+  :description: Define the default maximum number of mesages to synchronize at a time between connected workspaces. Default is 50.
+
+Default maximum posts per sync
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| Define the default maximum number of mesages to synchronize at a time.    | - System Config path: N/A                                                                        |
+|                                                                           | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DefaultMaxPostsPerSync`` > ``50`` |
+| Default is **50**.                                                        | - Environment variable: N/A                                                                      |
++---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+

@@ -6,22 +6,26 @@ Connected workspaces (Beta)
 
 Communicate across organizations, as well as external partners and vendors using Mattermost by synchronizing messages, emoji reactions, and file sharing in real-time through secured, connected Mattermost workspaces.
 
-Connected workspaces in Mattermost behave like regular channels, offering the same user experience and functionality as public and private channels. All members using secure connections, including local members and remote members, can :doc:`send and receive messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`. Content is synchronized in real-time across all participating Mattermost instances.
+Connected workspaces in Mattermost behave like regular public and private channels and offer the same user experience and functionality. All members using secure connections, including local members and remote members, can :doc:`send and receive channel messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`.  Content is synchronized across all participating Mattermost instances.
+
+.. important::
+
+    The ability to create a direct or group message with remote users through connected workspaces isn't supported. However, to maintain backwards compatibility with experimental shared channels functionality available prior to Mattermost v10.2, system admins must enable the ``EnableSharedChannelsDMs`` feature flag to continue creating direct messages with remote users across connected workspaces.
 
 A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Set up connected workspaces
 ---------------------------
 
-The process of connecting Mattermost workspaces involves the following steps:
+The process of connecting Mattermost workspaces involves the following 4 steps:
 
-1. Each system admin interested in creating connected workflows and/or accepting connection invitations within their Mattermost instance must `enable the connected workflows functionality <#enable-connected-workflows>`__.
+1. Each system admin of a Mattermost instance who wants to connect to another Mattermost workspaces must `enable the connected workflows functionality <#enable-connected-workflows>`__.
 
-2. A system admin uses the System Console, or slash commands, to create a secure and trusted connection between other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance. 
+2. Using the System Console or slash commands, system admins create a secure and trusted connection with other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
 
-3. The remote system admin receiving the invitation uses the System Console, or slash commands, to `accept the invitation <#accept-a-secure-connection-invitation>`__.
+3. Using the System Console or slash commands, a remote system admin receives the invitation and `accepts the invitation <#accept-a-secure-connection-invitation>`__.
 
-4. Once a trusted relationship is established between Mattermost servers, system admins can `share specific public or private channels <#share-channels-with-secure-connections>`__ with secure connections.
+4. Once a trusted relationship is established between 2 Mattermost servers, system admins can `share specific public or private channels <#share-channels-with-secure-connections>`__ with secure connections.
 
 .. note:: 
 
@@ -33,6 +37,7 @@ Enable connected workflows
 ---------------------------
 
 System admins must enable connected workspaces functionality for their Mattermost instance. Ensure the following configuration settings are set to ``true`` in ``config.json``:
+
 - ``ConnectedWorkspacesSettings.EnableRemoteClusterService = true``
 - ``ConnectedWorkspacesSettings.EnableSharedChannels = true``
 
@@ -43,7 +48,7 @@ Create a secure connection
 
 .. tab:: System Console
 
-    Only system admins can create workspace connections.
+    Only system admins can create workspace connections using the System Console.
 
     1. Go to **Site Configuration > Connected Workspaces (Beta)**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Create a connection**.
@@ -70,15 +75,14 @@ Create a secure connection
 Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. warning::
+.. important::
     
-    - You must use a system, other than Mattermost, to share invitation codes and passwords.
-    - We strongly recommend sharing invitation codes separately from passwords to ensure that no one has all of the data necessary to take action if the message were compromised.
+    - You must use a system, other than Mattermost, to share invitation codes and passwords. We strongly recommend sharing invitation codes separately from passwords to ensure that no one has all of the data necessary to take action if the message were compromised.
     - Ensure the remote Mattermost instance can access your Mattermost workspace URL.
 
 .. tab:: System Console
 
-    In the System Console, you're prompted to share the invitation code and password with the system admin of the remote Mattermost server you want to connect with. Copy both the invitation code and password to a safe location, then select **Done**.
+    Once you've created a connection in the System Console, you're prompted to share the invitation code and password with the system admin of the remote Mattermost server you want to connect with. Copy both the invitation code and password to a safe location, then select **Done**.
 
 .. tab:: Slash Commands
 
@@ -132,40 +136,62 @@ Once a connection is established between two Mattermost servers, system admins c
 
     Alternatively, you can extend a read-only invitation to a secure connection by appending the optional ``--readonly`` parameter to this command. Remote members can’t post or reply to messages within shared read-only channels.
 
-.. tip:: 
-
-    To convert a read-only shared channel to a participation channel, remove the original secured connection from the channel, then re-extend an invitation to that secure connection while omitting the optional ``--readonly`` parameter. For example:
-
-    ``/share-channel invite --connectionID``
- 
-    This slash command invites the shared connection to the current channel based on its ``connectionID``.
-
     .. tip:: 
+
+        To convert a read-only shared channel to a participation channel, remove the original secured connection from the channel, then re-extend an invitation to that secure connection while omitting the optional ``--readonly`` parameter. For example:
+
+        ``/share-channel invite --connectionID``
+ 
+        This slash command invites the shared connection to the current channel based on its ``connectionID``.
+
         See `Reviewing Secure Connection Status <#review-secure-connection-status>`_ to find the ``connectionID`` for a shared connection.
 
 Manage connections and invitations
 ----------------------------------
 
-System admins can edit or delete a connected workspace, unshare channels, review connection status, and regenerate invitation codes and passwords for pending connections.
+System admins can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-connected-workspace>`__ a connected workspace, and `review connection status <#review-connection-status>`__, and `regenerate invitation codes and passwords <#regenerate-invitation-codes-for-pending-connections>`__ for pending connections.
 
 Edit a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In the System Console, system admins can make changes to the org name, the destination team, or shared channels by selecting ... > Edit
+.. tab:: System Console
+
+    In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
+    
+    1. Under **Connected Workspaces**, identify the connected workspace you want to change.
+    2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
+
+.. tab:: Slash Commands
+
+    Run the following slash command to remove all secure connections from the current channel:
+
+    ``/share-channel unshare``
+
+    This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
+
+    Unsharing a shared channel stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users as expected.
 
 Delete a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab:: System Console
 
-DRAFT
     Deleting a connected server severs the trust relationship between the local Mattermost server and the remote Mattermost server.
 
-    1.  Under **Connected Workspaces**, identify the connected workspace you want to remove, and select ... > Delete
+    1. Under **Connected Workspaces**, identify the connected workspace you want to remove.
+    2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Delete**.
 
 .. tab:: Slash Commands
 
-    Run the following slash command to delete a secure connection from your Mattermost instance:
+    Using slash commands, you can uninvite or delete a secure connection from your Mattermost instance.
+    
+    Run the following slash command to uninvite a secure connection:
+
+    ``/share-channel uninvite --connectionID``
+
+    This slash command removes a secure connection from the current channel based on its ``connectionID``. The channel continues to function for local users as expected, and the secure connection may continue to be invited to other shared channels.
+    
+    Run the following slash command to delete a secure connection:
 
     ``/secure-connection remove --connectionID``
 
@@ -175,27 +201,12 @@ DRAFT
 
     This slash command severs the trust relationship between the local Mattermost server and a remote Mattermost server based on its ``connectionID`` and removes the secure connection from all shared Mattermost channels.
 
-    Run the following slash command to uninvite a secure connection:
-
-    ``/share-channel uninvite --connectionID``
-
-    This slash command removes a secure connection from the current channel based on its connection ID. The channel continues to function for local users as expected, and the secure connection may continue to be invited to other shared channels.
-
-    Run the following slash command to remove all secure connections:
-
-    ``/share-channel unshare``
-
-    This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
-
-    Unsharing a shared channel stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users as expected.
-
 Review connection status
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. tab:: System Console
 
-DRAFT
-    go to Site Config > Connected Workspaces (Beta) and see all connected workspaces and their current status as one of: Connected, Offline, or Connection Pending.
+    Under **Connected Workspaces**, you can review all connected workspaces and their current status as one of: **Connected**, **Offline**, or **Connection Pending**.
 
 .. tab:: Slash Commands
 
@@ -215,17 +226,20 @@ DRAFT
 Regenerate invitation codes for pending connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-DRAFT
-System console only:
-- for connections pending, can (re)Generate invitation code (does that also impact the password?? YES)
-    - regenerating doesn't invalidate the old password; it can be used
-    - can't regenerate invite/pswd once the connection invite is accepted
+When using the System Console to manage connected workspaces, system admins can re-generate invitation codes and passwords for pending connections. 
+
+1. Under **Connected Workspaces**, identify the pending connection whose invitation and password you want to regenerate.
+2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Regenerate invitation code**.
+
+.. note::
+
+    Regenerating doesn't invalidate the existing password, and the existing password can continue to be used in addition to the newly-generated password. Once a connection invitation is accepted and the workspace displays a status of **Connected**, invitation codes and passwords can't be regenerated.
 
 Frequently Asked Questions
 ---------------------------
 
 Why is this feature in beta?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This feature is considered beta while we recruit customer testing partners. Mattermost QA has tested this feature, but we want to work with system admins to iterate on the most optimal connected workspace experience.
 
@@ -247,23 +261,20 @@ No. When using slash commands, ``--displayname`` is optional. When omitted, ``--
 What information is synchronized between connected workspaces?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-DRAFT:
-* ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync (default?). If enabled, statuses should stop syncing + telemetry
-* ConnectedWorkspaces.DefaultMaxPostsPerSync = 50 by default 
+By default, member status and availability for all members of shared channels is synchronized between connected workspaces.
 
-status sync details:
-- status of all members of shared channels should get synced
-- When a member is added to a shared channel, their status doesn't get synced until it changes for the first time. To put it in a generic way, status doesn't get synced on membership change, but on status change once somebody is already a member.
-* When the status of a user changes, its synchronization gets queued and it gets synced after two seconds in the queue. It's not immediate.
-* The web client doesn't show status changes right away, but it polls the server every minute. Refreshing forces fetching the new statuses, so it's a good way to test that they changed instead of waiting one minute intervals.
-* Custom statuses should work as well, although those are not part of this feature.
-* "Last seen at" should work fine as well.
-* Things like the "do not disturb" with a X minutes timer to be disabled, or the away status out of inactivity should work too. 
+When a user is added to a shared channel, member status is synchronized within a few seconds of the member's status changing. Status updates aren't immediate and don't necessarily display in real-time.
+
+When using Mattermost in a web browser, Mattermost polls the server every minute. Refreshing the browser page triggers immediate synchronization.
+
+By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync>`. 
+
+Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync>`.
 
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than five minutes. Once connectivity is restored, a full sync will happen for all missed messages, including direct messages and channel links.
+Yes. A System message is posted in the channel visible to all channel members when message synchronization is interrupted for more than 5 minutes. Once connectivity is restored, a full synchronization will happen for all missed messages, including direct messages and channel links.
 
 What happens if two secure connections share the same usernames?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

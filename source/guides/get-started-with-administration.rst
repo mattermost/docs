@@ -86,14 +86,14 @@ Advanced workspace management
     :maxdepth: 1
     :hidden:
 
-    Shared channels </onboard/shared-channels>
+    Connected workspaces </onboard/connected-workspaces>
     Statistics </manage/statistics>
     In-product notices </manage/in-product-notices>
     User satisfaction surveys </manage/user-satisfaction-surveys>
     System-wide notifications </manage/system-wide-notifications>
     Bulk export tool </manage/bulk-export-tool>
 
-* :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
+* :doc:`Connected workspaces </onboard/connected-workspaces>` - Connect channels from multiple Mattermost servers in a federated architecture.
 * :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
 * :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
 * :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.
