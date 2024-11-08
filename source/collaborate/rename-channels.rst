@@ -18,11 +18,37 @@ Anyone can rename the channels they belong to, unless the system admin has :doc:
 .. tab:: Mobile
 
   1. Tap the channel you want to rename.
-  2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+
+    .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Select a channel that you want to rename.
+      :scale: 30
+
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+
+    .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on More options to access available options for the channel.
+      :scale: 30
+
   3. Tap **View info**.
+
+    .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+      :alt: Tap on View info to see the basic channel info.
+      :scale: 30
+
   4. Tap **Edit Channel**.
+
+    .. image:: ../images/mobile-edit-channel.jpg
+      :alt: Click on Edit channel to rename the channel.
+      :scale: 25
+
   5. You're prompted to provide three pieces of information:
 
     - **Name:** This appears in the Mattermost user interface.
     - **Purpose:** (Optional) Used to describe the channel's function or goal.
     - **Header:** (Optional) Used to include information relevant to the channel, such as key contacts or document links.
+
+    Tap on **Save** to save the new channel name.
+
+    .. image:: ../images/mobile-rename-channel-name-and-save.jpg
+      :alt: Type the new channel name and click on Save to rename the channel.
+      :scale: 30
