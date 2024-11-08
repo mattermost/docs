@@ -21,10 +21,34 @@ You must be a system admin or team admin to convert public channels to private c
   To convert a public channel to a private channel:
   
   1. Tap the channel you want to convert.
-  2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Select a channel that you want to rename.
+      :scale: 30
+
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on More options to access available options for the channel.
+      :scale: 30
+
   3. Tap **View info**.
+
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+      :alt: Tap on View info to see the basic channel info.
+      :scale: 30
+
   4. Tap **Convert to private channel**.
+
+  .. image:: ../images/mobile-convert-to-private-channel.jpg
+      :alt: Tap on Convert to private channel to make the channel private.
+      :scale: 30
+
   5. Tap **Yes** to confirm.
+
+  .. image:: ../images/mobile-confirm-convert-to-private-channel.jpg
+      :alt: Tap on Yes to confirm your choice.
+      :scale: 30
 
 Convert private channels to public channels
 -------------------------------------------

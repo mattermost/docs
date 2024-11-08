@@ -39,8 +39,22 @@ To join a public channel:
 .. tab:: Mobile
 
   1. Tap |plus| located in the top right corner the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Tap the plus icon to view additional options.
+      :scale: 30
+
   2. Tap **Browse Channels**. 
+
+  .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
+      :alt: Click on Browse Channels to view the list of public channels.
+      :scale: 30
+
   3. Tap the public channel you want to join.
+
+  .. image:: ../images/mobile-browse-public-channels.jpg
+      :alt: Tap on the public channel name that you want to join.
+      :scale: 30
 
 .. tip::
 
@@ -72,5 +86,25 @@ When you leave a private channel, you must be re-added by another channel member
 .. tab:: Mobile
 
   1. Tap the channel you want to leave.
-  2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Select the channel that you want to leave.
+      :scale: 30
+
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on More options to access available options for the channel you want to leave.
+      :scale: 30
+  
   3. Tap **Leave channel**.
+
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+      :alt: Tap on Leave channel to leave the current channel.
+      :scale: 30
+  
+  4. Tap on **Leave** to confirm you choice.
+
+  .. image:: ../images/mobile-confirm-leave-a-channel.jpg
+      :alt: Tap on Leave to confirm your choice.
+      :scale: 30
