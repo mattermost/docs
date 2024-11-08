@@ -37,7 +37,7 @@ To ensure your instance and configuration are compatible with a high availabilit
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
 1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :doc:`high availability cluster-based  deployment configuration settings </configure/high-availability-configuration-settings>` documentation for details.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based deployment configuration settings <configure/environment-configuration-settings:high availability>` documentation for details.
 3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
 5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
