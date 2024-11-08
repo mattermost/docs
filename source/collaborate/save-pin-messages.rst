@@ -49,7 +49,7 @@ Save messages
   Alternatively, you can also tap on the saved message in a channel and then tap the |saved-icon| icon below it to unsave.
 
   .. image:: ../images/mobile-unsave-a-message-from-the-channel.gif
-      :alt: Tap and hold on a message in the saved messages list to explore available options to save it.
+      :alt: Tap and hold on a saved message in the channel to explore available options to unsave it.
       :scale: 50
 
 Pin messages
@@ -129,7 +129,7 @@ All members of a channel can pin important or useful messages to that channel. T
   Remove an item from your **Pinned Messages** list by long pressing a message and selecting **Unpin from Channel**. 
 
   .. image:: ../images/mobile-unpin-a-message-from-pinned-messages.gif
-      :alt: Tap and hold on a message in the pinned message list to explore available options to unpin it.
+      :alt: Tap and hold on a message in the pinned messages list to explore available options to unpin it.
       :scale: 50
 
   Alternatively, you can long press on a pinned message in the channel and then tap on **Unpin from Channel** to unpin it.
