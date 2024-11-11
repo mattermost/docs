@@ -25,8 +25,8 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.10.0/mattermost-desktop-5.10.0-win-x64.msi>`_
-    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.10.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
+    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-win-x64.msi>`_
+    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.10.1-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
   .. warning:: 
     Mattermost Desktop should always be installed on a local drive. Network Shares are not supported as installation locations.
@@ -64,8 +64,8 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
   
   1. Download the latest version of the Mattermost desktop app:
           
-     - `Intel systems <https://releases.mattermost.com/desktop/5.10.0/mattermost-desktop-5.10.0-mac-x64.dmg>`_
-     - `M1 systems <https://releases.mattermost.com/desktop/5.10.0/mattermost-desktop-5.10.0-mac-m1.dmg>`_ (Beta)
+     - `Intel systems <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-mac-x64.dmg>`_
+     - `M1 systems <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-mac-m1.dmg>`_ (Beta)
 
   2. Double-click the download to open the disk image.
 
@@ -121,13 +121,13 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.10.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.10.0/mattermost-desktop-5.10.0-linux-x86_64.rpm>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.10.1-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-linux-x86_64.rpm>`_
 
   2. At the command line, execute the following command:
     
     .. code-block:: sh
 
-      sudo rpm -i mattermost-desktop-5.10.0-linux-x86_64.rpm
+      sudo rpm -i mattermost-desktop-5.10.1-linux-x86_64.rpm
 
   3. Run Mattermost as a desktop app.
 
@@ -135,7 +135,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
   
     .. code-block:: sh
 
-      sudo rpm -u mattermost-desktop-5.10.0-linux-x86_64.rpm
+      sudo rpm -u mattermost-desktop-5.10.1-linux-x86_64.rpm
 
   .. tip:: 
     You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
@@ -148,7 +148,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Desktop App's compressed tarball**
 
-  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.10.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.10.0/mattermost-desktop-5.10.0-linux-x64.tar.gz>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.10.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-linux-x64.tar.gz>`_
 
   2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4755 chrome-sandbox``
 
