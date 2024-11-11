@@ -8,7 +8,13 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-10)=
 ## Release v5.10
 
-**Release Date: 2024-11-15**
+- **v5.10.1, released 2024-11-15**
+
+  - Fixed issues with loading the app from cold when deep linking.
+
+- **v5.10.0, released 2024-11-15**
+
+  - Original v5.10.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
