@@ -1477,9 +1477,12 @@ CA path
 | certificates for the Elasticsearch server.         | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
-| Leave this setting blank to use the default Certificate Authority certificates for the operating system.                      |
-+----------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  - The certificate path should be ``/opt/mattermost/data/elasticsearch/`` and configured in the System Console as ``./elasticsearch/cert.pem``.
+  - Available from Mattermost v7.8. Can be used in conjunction with basic authentication credentials or can replace them.
+  - Leave this setting blank to use the default Certificate Authority certificates for the operating system.
 
 .. config:setting:: elastic-clientcertificatepath
   :displayname: Client certificate path (Elasticsearch)
