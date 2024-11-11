@@ -2003,6 +2003,5 @@ mark {
 /* NESTED TABS */
 #check-your-mattermost-client-settings .tab-set .tab-set {
     background-color: var(--color-background-secondary);
-    padding: 1rem 1rem;
-    margin-top: -2rem;
+    padding: 0rem 1rem 1rem 1rem;
 }
