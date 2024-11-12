@@ -10,7 +10,7 @@ If the server URL is correct, there could be an issue with the SSL certificate c
 
 To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-Please note that the apps cannot connect to servers with self-signed certificates, consider using :doc:`Let's Encrypt </install/config-ssl-http2-nginx>` instead.
+Please note that the apps cannot connect to servers with self-signed certificates, consider using :ref:`Let's Encrypt <install/setup-nginx-proxy:configure nginx with ssl and http/2>` instead.
 
 Login with ADFS/Office365 is not working
 ----------------------------------------
