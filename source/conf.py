@@ -1508,7 +1508,7 @@ redirects = {
 "configure/configuration-settings.html#user-status-away-timeout":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#user-status-away-timeout",
 "configure/configuration-settings.html#enable-shared-channels":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-shared-channels",
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
