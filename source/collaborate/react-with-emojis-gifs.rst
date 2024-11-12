@@ -29,7 +29,7 @@ Include emojis and GIFs in messages
 
   Can't find the perfect emoji? `Upload your own custom emoji <#upload-custom-emojis>`__.
 
-.. tab:: Web/desktop
+.. tab:: Web/Desktop
 
   Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji and GIF picker. 
 
