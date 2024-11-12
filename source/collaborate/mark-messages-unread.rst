@@ -19,3 +19,7 @@ If you read a message, but don't have time to address it right away, you can mar
 .. tab:: Mobile
 
   Long press a message, and then tap **Mark as Unread**.
+
+  .. image:: ../images/mobile-mark-a-message-as-unread.gif
+      :alt: Tap and hold on a message to access the available options.
+      :scale: 50
