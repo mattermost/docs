@@ -1477,9 +1477,11 @@ CA path
 | certificates for the Elasticsearch server.         | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
-| Leave this setting blank to use the default Certificate Authority certificates for the operating system.                      |
-+----------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  - Available from Mattermost v7.8. The certificate path should be ``/opt/mattermost/data/elasticsearch/`` and configured in the System Console as ``./elasticsearch/cert.pem``.
+  - Can be used in conjunction with basic authentication credentials or can replace them. Leave this setting blank to use the default Certificate Authority certificates for the operating system.
 
 .. config:setting:: elastic-clientcertificatepath
   :displayname: Client certificate path (Elasticsearch)
@@ -4160,3 +4162,19 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
+
+Enable desktop app developer mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Desktop App v5.10, this setting enables developer debugging options available by going to the **View > Developer Tools** menu in the Mattermost desktop app. 
+
+This setting isn't available in the System Console and can only be enabled in ``config.json`` by setting the environment variable ``MM_DESKTOP_DEVELOPER_MODE`` to ``true``. This setting is disabled by default.
+
+**True**: Unlocks the following options in the Desktop App for the purposes of troubleshooting and debugging. You should only enable this setting if instructed to by a Mattermost developer:
+
+  * **Browser Mode Only**: Completely disables the preload script and stops web app components from knowing they're in the desktop app. This option should be the best indicator of whether a web app component is causing performance and/or memory retention issues. This option disables notifications, cross-tab navigation, unread/mentions badges, the calls widget, and breaks resizing on macOS.
+  * **Disable Notification Storage**: Turns off maps that hold references to unread notifications until they've been selected & read. This option is good for debugging in cases where Mattermost is holding onto too many references to unused notifications.
+  * **Disable User Activity Monitor**: Turns off the interval that checks whether the user is away or not. This option is good for debugging whether a user's availability status is causing unexpected desktop app behavior.
+  * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
+  * **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
+  * **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.

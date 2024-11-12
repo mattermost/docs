@@ -360,7 +360,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :systemconsole: N/A
   :configjson: NativeAppSettings.MobileExternalBrowser
   :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
-  :description: This property configures the mobile app to perform SSO Authentication using the external default browser.
+  :description: This setting configures the mobile app to perform SSO Authentication using the external default browser.
 
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -368,11 +368,12 @@ Mobile external browser
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| This property configures the mobile app to perform SSO Authentication using the external default browser.                                       | - System Config path: N/A                                                   |
-|                                                                                                                                                 | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
-| String input.                                                                                                                                   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| From Mattermost v10.2 and Mobile v2.2.1, this setting configures the mobile app       | - System Config path: N/A                                                   |
+| to perform SSO Authentication using the external default browser.                     | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
+|                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
+| String input.                                                                         |                                                                             |
++---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 ----
 

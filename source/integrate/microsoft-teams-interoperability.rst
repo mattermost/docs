@@ -104,7 +104,7 @@ See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-c
 
 .. note::
 
-  - From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, v2.0 of this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-user-survey/releases>`_, and upload it to your server via **System Console > Plugin Management**.
+  - From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, v2.0 of this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams>`_, and upload it to your server via **System Console > Plugin Management**.
   -  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
 
 Monitor performance
@@ -128,6 +128,11 @@ Usage
 -----
 
 See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams interoperability.
+
+Upgrade
+-------
+
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-msteams>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Frequently asked questions
 --------------------------

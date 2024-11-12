@@ -87,6 +87,10 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the ServiceNow integration from the in-product App Marketplace:
 
+.. note::
+
+  We recommend making a copy of your webhook and encryption secret, as it will only be visible to you once.
+
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to ServiceNow, and select **Install**.
 3. Once installed, select **Configure**. You're taken to the System Console.
@@ -107,8 +111,7 @@ Notify your teams that they can `connect their ServiceNow accounts to Mattermost
 Upgrade
 -------
 
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
-Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Usage
 -----
