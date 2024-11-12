@@ -943,6 +943,8 @@ Live captions language
   - **true**: Ringing functionality is enabled. Direct and group message participants receive a desktop app alert and a ringing notification when a call starts.
   - **false**: **(False)** Ringing functionality is disabled.
 
+Enable call ringing
+~~~~~~~~~~~~~~~~~~~
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                                    |
 |   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableringing``   |
@@ -959,6 +961,9 @@ Live captions language
   - **true**: Enables the ability to use the AV1 codec to encode screen sharing tracks. This can result in improved screen sharing quality for clients that support it.
   - **false**: **(False)** AV1 codec is disabled for screen sharing tracks.
 
+
+Enable AV1 (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | - **true**: Enables the ability to use the AV1 codec to encode screen    | - System Config path: **Plugins > Calls**                                                                     |
 |   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableAV1``        |
@@ -970,6 +975,7 @@ Live captions language
 .. note::
   This setting is ignored when
   :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.
+
 
 .. config:setting:: plugins-enabledcsignaling
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)

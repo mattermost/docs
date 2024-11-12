@@ -44,6 +44,7 @@ Access the following configuration settings in the System Console by going to **
 
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
+
 +---------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**: **(Default)** Anyone can sign up for a user account                 | - System Config path: **Authentication > Signup**                                |
 |   on this server without needing to be invited.                                 | - ``config.json`` setting: ``TeamSettings`` > ``EnableUserCreation`` > ``true``  |
@@ -53,6 +54,10 @@ Enable account creation
 |   Applies to email, OpenID Connect, and OAuth 2.0 user account authentication.  |                                                                                  |
 +---------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
+.. note::
+   LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this
+   configuration setting is enabled.
+   
 .. config:setting:: signup-restrictcreationtodomains
   :displayname: Restrict account creation to specified email domains (Signup)
   :systemconsole: Authentication > Signup
@@ -2940,7 +2945,7 @@ Enable guest access
 
 .. note::
   For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
-  deactivated. This means that guest accounts count as a paid user in your Mattermost workspace.
+  deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`.
 
 .. config:setting:: guest-whitelistdomains
   :displayname: Whitelisted guest domains (Guest Access)
