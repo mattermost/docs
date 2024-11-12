@@ -240,7 +240,7 @@ RTC server address (UDP)
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
+  This setting is only applicable when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: plugins-callsrtcserveraddress
   :displayname: RTC server port (TCP) (Plugins - Calls)
@@ -263,9 +263,7 @@ RTC server address (TCP)
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
-
-  - This setting is available starting in plugin version 0.17.
+  This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: plugins-callsrtcserverportudp
   :displayname: RTC server port (UDP) (Plugins - Calls)
@@ -290,7 +288,7 @@ RTC server port (UDP)
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
+  This setting is only applicable when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: plugins-callsrtcserverporttcp
   :displayname: RTC server port (TCP) (Plugins - Calls)
@@ -305,18 +303,17 @@ RTC server port (TCP)
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
-| This setting controls the TCP port listened on by the RTC server. All calls TCP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                                                |
-|                                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``tcpserverport``               |
-|                                                                                                                               | - Environment variable: N/A                                                                                              |
-| Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                                          |
-|                                                                                                                               |                                                                                                                          |
-| Default is **8443**.                                                                                                          |                                                                                                                          |
-+-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+| This setting controls the TCP port listened on by the RTC server. All calls TCP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                                   |
+|                                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``tcpserverport``  |
+|                                                                                                                               | - Environment variable: N/A                                                                                 |
+| Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                             |
+|                                                                                                                               |                                                                                                             |
+| Default is **8443**.                                                                                                          |                                                                                                             |
++-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
-  - This setting is available starting in plugin version 0.17.
+  This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: plugins-enableonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
@@ -333,11 +330,11 @@ Enable on specific channels
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
-| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                                    |
-| - **false**: Only system admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``allowenablecalls``                |
-|                                                                                                                                        | - Environment variable: N/A                                                                                                  |
-+----------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
+| - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                       |
+| - **false**: Only system admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``allowenablecalls``   |
+|                                                                                                                                        | - Environment variable: N/A                                                                                     |
++----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-testmode
   :displayname: Test mode (Plugins - Calls)
@@ -376,16 +373,16 @@ ICE host override
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This setting can be used to override the host addresses that get advertised to clients when connecting to calls. The accepted formats are the following:                                                                                                                                 | - System Config path: **Plugins > Calls**                                                                                                                                      |
-|                                                                                                                                                                                                                                                                                          | - ``config.json`` setting:  ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostoverride``                                                                  |
-|                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                |
-| - A single IP address (e.g. ``10.0.0.1``).                                                                                                                                                                                                                                               |                                                                                                                                                                                |
-| - A single hostname or FQDN (e.g. ``calls.myserver.tld``).                                                                                                                                                                                                                               |                                                                                                                                                                                |
-| - (starting in v0.17.0) A comma separated list of externalAddr/internalAddr mappings (e.g. ``10.0.0.1/172.0.0.1,10.0.0.2/172.0.0.2``).                                                                                                                                                   |                                                                                                                                                                                |
-|                                                                                                                                                                                                                                                                                          |                                                                                                                                                                                |
-| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                                                                                                                                               |                                                                                                                                                                                |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| This setting can be used to override the host addresses that get advertised to clients when connecting to calls. The accepted formats are the following:         | - System Config path: **Plugins > Calls**                                                                      |
+|                                                                                                                                                                  | - ``config.json`` setting:  ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostoverride``  |
+|                                                                                                                                                                  |                                                                                                                |
+| - A single IP address (e.g. ``10.0.0.1``).                                                                                                                       |                                                                                                                |
+| - A single hostname or FQDN (e.g. ``calls.myserver.tld``).                                                                                                       |                                                                                                                |
+| - (starting in v0.17.0) A comma separated list of externalAddr/internalAddr mappings (e.g. ``10.0.0.1/172.0.0.1,10.0.0.2/172.0.0.2``).                           |                                                                                                                |
+|                                                                                                                                                                  |                                                                                                                |
+| This is an optional field. Changing this setting requires a plugin restart to take effect.                                                                       |                                                                                                                |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. note::
   - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
@@ -417,7 +414,7 @@ ICE host port override
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This value will apply to both UDP and TCP host candidates.
+  This value will apply to both UDP and TCP host candidates.
 
 .. config:setting:: plugins-callsrtcdserviceurl
   :displayname: RTCD service URL (Plugins - Calls)
@@ -466,8 +463,7 @@ Max call participants
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources.
-  See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.
+  This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.
 
 .. config:setting:: plugins-callsiceservers
   :displayname: ICE server configurations (Plugins - Calls)
@@ -524,9 +520,8 @@ ICE servers configurations
 	    "urls": ["turn:turn.example.com:443"]
     }]
 
-+---------------------------------------------------------------------------------------------------------------------------------------+
-| **Note**: To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.    |
-+---------------------------------------------------------------------------------------------------------------------------------------+
+.. note::
+  To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.
 
 .. config:setting:: plugins-callsturnauthsecret
   :displayname: TURN static auth secret (Plugins - Calls)
@@ -680,7 +675,6 @@ Job service URL
 | This is a required field. Changing this setting requires a plugin restart to take effect.                                                      | - Environment variable: ``MM_CALLS_JOB_SERVICE_URL``                                                                   |
 +------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------+
 
-
 .. note::
   - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
   - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_JOB_SERVICE_CLIENT_ID``
@@ -728,7 +722,7 @@ Call recording quality
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
+  The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
 
 .. config:setting:: plugins-enablecalltranscriptions
   :displayname: Enable call transcriptions (Plugins - Calls)
@@ -751,8 +745,9 @@ Enable call transcriptions (Beta)
 |                                                                                                                                                                                                                                                                    |                                                                                                                              |
 | Transcriptions are generated from the call participants' audio tracks and the resulting files are attached to the call thread when the recording ends. Captions will be optionally rendered on top of the recording file video player.                             |                                                                                                                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
+
 .. note::
-  - Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. This setting is available starting in plugin version 0.22.
+  This setting is available starting in plugin version 0.22. Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. 
 
 .. config:setting:: plugins-transcribermodelsize
   :displayname: Call transcriber model size (Plugins - Calls)
@@ -777,8 +772,7 @@ Transcriber model size
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
 .. note::
-  The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
-  This setting is available starting in plugin version 0.22.
+  This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
 
 .. config:setting:: plugins-transcribernumthreads
   :displayname: Call transcriber threads (Plugins - Calls)
@@ -800,7 +794,7 @@ Call transcriber threads
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
+  The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
 
 .. config:setting:: plugins-enablelivecaptions
   :displayname: (Experimental) Enable live captions (Plugins - Calls)
@@ -828,9 +822,7 @@ Enable live captions (Beta)
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and
-  :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` to be enabled.
-  This setting is available starting in plugin version 0.26.2.
+  This setting is available starting in plugin version 0.26.2. Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` to be enabled.
 
 .. config:setting:: plugins-livecaptionsmodelsize
   :displayname: Live captions: Model size (Plugins - Calls)
@@ -852,7 +844,7 @@ Live captions: Model size
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The model size setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information. This setting is available starting in plugin version 0.26.2.
+  This setting is available starting in plugin version 0.26.2. The model size setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
 
 .. config:setting:: plugins-livecaptionsnumtranscribers
   :displayname: Live captions: Number of transcribers used per call (Plugins - Calls)
@@ -874,7 +866,7 @@ Live captions: Number of transcribers used per call
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The live captions number of transcribers setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information. This setting is available starting in plugin version 0.26.2.
+  This setting is available starting in plugin version 0.26.2. The live captions number of transcribers setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
 
 .. config:setting:: plugins-livecaptionsnumthreadspertranscriber
   :displayname: Live captions: Number of threads per transcriber (Plugins - Calls)
@@ -896,7 +888,7 @@ Live captions: Number of threads per transcriber
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The live captions number of threads per transcriber setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information. This setting is available starting in plugin version 0.26.2.
+  This setting is available starting in plugin version 0.26.2. The live captions number of threads per transcriber setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information
 
 .. config:setting:: plugins-livecaptionslanguage
   :displayname: Live captions language (Plugins - Calls)
@@ -940,11 +932,7 @@ Live captions language
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
 .. note::
-  - This setting is only applicable when not running calls through the standalone ``rtcd`` service.
-  - This setting is available starting in plugin version 0.17.
-
-Enable call ringing
-~~~~~~~~~~~~~~~~~~~
+  This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
 .. config:setting:: plugins-enablecallringing
   :displayname: Enable call ringing (Plugins - Calls)
@@ -962,13 +950,10 @@ Enable call ringing
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                                              |
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
-Enable AV1 (Experimental)
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
 .. config:setting:: plugins-enableav1
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
-  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableAV1
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enableav1
   :environment: N/A
 
   - **true**: Enables the ability to use the AV1 codec to encode screen sharing tracks. This can result in improved screen sharing quality for clients that support it.
@@ -985,6 +970,29 @@ Enable AV1 (Experimental)
 .. note::
   This setting is ignored when
   :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.
+
+.. config:setting:: plugins-enabledcsignaling
+  :displayname: Use data channels for signaling media tracks (Plugins - Calls)
+  :systemconsole: Plugins > Calls
+  :configjson: PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling
+  :environment: N/A
+
+  - **true**: Clients will use WebRTC data channels for signaling of media tracks (i.e., voice, screen). This can result in a more efficient and less race-prone process, especially in case of poor network connections.
+  - **false**: **(False)** Clients will use WebSockets for signaling media tracks.
+
+Enable DC signaling (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| - **true**: Clients will use WebRTC data channels for signaling of media   | - System Config path: **Plugins > Calls**                                                                          |
+|   tracks (i.e., voice, screen). This can result in a more efficient and    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enabledcsignaling``     |
+|   less race-prone process, especially in case of poor network connections. | - Environment variable: N/A                                                                                        |
+| - **false**: **(Default**) Clients will use WebSockets for signaling       |                                                                                                                    |
+|   media tracks.                                                            |                                                                                                                    |
++----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Version v0.18.0 or higher of the |rtcd_service| is required for this functionality to work when hosting calls through the dedicated WebRTC service.
 
 ----
 
@@ -1055,6 +1063,46 @@ Legal hold
 See the :doc:`Legal holds </comply/legal-hold>` product documentation for details.
 
 ----
+
+.. config:setting:: plugins-msteamscalendar
+  :displayname: Microsoft Calendar interoperability (Plugins > Microsoft Calendar)
+  :systemconsole: Plugins > Microsoft Calendar
+  :configjson: N/A
+  :environment: N/A
+  :description: Connect your Microsoft Calendar to your Mattermost instance.
+
+Microsoft Calendar
+-------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar-interoperability:enable and configure the microsoft calendar integration in mattermost>`.
+
+----
+
+.. config:setting:: plugins-msteamsmeeting
+  :displayname: Microsoft Teams Meetings interoperability (Plugins > MS Teams Meetings)
+  :systemconsole: Plugins >  MS Teams Meetings
+  :configjson: N/A
+  :environment: N/A
+  :description: Connect your Microsoft Teams Meetings to your Mattermost instance.
+
+Microsoft Teams Meetings
+------------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrate/microsoft-teams-meetings-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-teams-meetings-interoperability:enable and configure the microsoft teams meetings integration in mattermost>`.
+
+
+----
+
+
+
+
+
 
 MS Teams
 ---------
@@ -1347,7 +1395,7 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: plugins-surveysenable
   :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
   :environment: N/A
 
   - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
@@ -1356,15 +1404,16 @@ Access the following configuration settings in the System Console by going to **
 Enable plugin
 ~~~~~~~~~~~~~
 
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           |                                                               |
-+---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys**                                |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.user-survey.Enable`` |
+|                                                                                                               | - Environment variable: N/A                                                                  |
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
 .. config:setting:: plugins-surveysenablesend
   :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
-  :configjson: N/A
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
   :environment: N/A
 
   - **true**: A user satisfaction survey is sent to all users every quarter.
@@ -1373,12 +1422,13 @@ Enable plugin
 Enable user satisfaction survey
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys** |
-| - **false**: (Default) User satisfaction surveys are disabled.                                                              |                                                               |
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                       |
-+-----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys**                                                      |
+| - **false**: (Default) User satisfaction surveys are disabled.                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.user-survey.systemconsolesetting.EnableSurvey`` |
+|                                                                                                                             | - Environment variable: N/A                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 ----
 

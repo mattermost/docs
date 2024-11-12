@@ -44,7 +44,6 @@ Access the following configuration settings in the System Console by going to **
 
 Enable account creation
 ~~~~~~~~~~~~~~~~~~~~~~~
-
 +---------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**: **(Default)** Anyone can sign up for a user account                 | - System Config path: **Authentication > Signup**                                |
 |   on this server without needing to be invited.                                 | - ``config.json`` setting: ``TeamSettings`` > ``EnableUserCreation`` > ``true``  |
@@ -111,8 +110,9 @@ Enable email invitations
 | - **false**: **(Default for self-hosted deployments)** | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMAILINVITATIONS``                   |
 |   Disables email invitations.                          |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
 .. note::
-  - Cloud admins can't modify this configuration setting.
+  Cloud admins can't modify this configuration setting.
 
 Invalidate pending email invites
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -150,8 +150,9 @@ Enable account creation with email
 | - **false**: Disables creation of team and user accounts with email and password. Requires    | - ``config.json`` setting: ``EmailSettings`` > ``EnableSignUpWithEmail`` |
 |   a single sign-on (SSO) service to create accounts.                                          | - Environment variable: ``MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL``       |
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. note::
-  - Cloud admins can't modify this configuration setting.
+  Cloud admins can't modify this configuration setting.
 
 .. config:setting:: email-requireverification
   :displayname: Require email verification (Signup)
@@ -194,8 +195,8 @@ Enable sign-in with email
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  - To provide users with only a single email sign in option on the login page, ensure that the
-    `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**. 
+  To provide users with only a single email sign in option on the login page, ensure that the
+  `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**. 
 
 .. config:setting:: email-enablesigninwithusername
   :displayname: Enable sign-in with username (Signup)
@@ -218,7 +219,7 @@ Enable sign-in with username
 +------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. note::
-  - We highly recommended that email-based authentication is only used in small teams on private networks.
+  We highly recommended that email-based authentication is only used in small teams on private networks.
 
 ----
 
@@ -332,9 +333,10 @@ Enable forgot password link
 |   Mattermost login page.                                                        | - ``config.json`` setting: ``LdapSettings`` > ``ForgotPasswordLink`` > ``true``  |
 | - **false**: Hides the **Forgot Password** link from the Mattermost login page. | - Environment variable: ``MM_LDAPSETTINGS_FORGOTPASSWORDLINK``                   |
 +---------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
 .. note::
-  - You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.
-    See the :ref:`configuration <configure/site-configuration-settings:forgot password custom link>` documentation for details.
+  You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.
+  See the :ref:`configuration <configure/site-configuration-settings:forgot password custom link>` documentation for details.
 ----
 
 MFA
@@ -393,9 +395,10 @@ Enforce multi-factor authentication
 |   setup page until configuration is complete.                                    |                                                                                                   |
 | - **false**: **(Default)** MFA is optional.                                      |                                                                                                   |
 +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
+
 .. note::
-  - If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider
-    outside of Mattermost.
+  If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider
+  outside of Mattermost.
 ----
 
 AD/LDAP
@@ -449,12 +452,13 @@ Enable synchronization with AD/LDAP
 | - **false**: **(Default)** Disables AD/LDAP synchronization.  | - ``config.json`` setting: ``LdapSettings`` > ``EnableSync`` > ``false`` |
 |                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLESYNC``                   |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. note::
-  - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and 
-    availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to 
-    modifying these settings. See the 
-    :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` 
-    documentation for details.
+  Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and 
+  availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to 
+  modifying these settings. See the 
+  :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` 
+  documentation for details.
 
 .. config:setting:: ldap-loginfieldname
   :displayname: Login field name (AD/LDAP)
@@ -495,12 +499,13 @@ AD/LDAP server
 |                                                              | - ``config.json`` setting: ``LdapSettings`` > ``LdapServer``          |
 | String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``                |
 +--------------------------------------------------------------+-----------------------------------------------------------------------+ 
+
 .. note::
-  - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and
-    availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to
-    modifying these settings. See the
-    :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>`
-    documentation for details.
+  Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and
+  availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to
+  modifying these settings. See the
+  :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>`
+  documentation for details.
 
 .. config:setting:: ldap-port
   :displayname: AD/LDAP port (AD/LDAP)
@@ -645,8 +650,10 @@ Bind username
 |                                                                                                                                          |                                                                |
 | String input.                                                                                                                            |                                                                |
 +------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
 .. note::
-  - This field is required. Anonymous bind is not currently supported.
+  This field is required. Anonymous bind is not currently supported.
+
 .. config:setting:: ldap-bindpassword
   :displayname: Bind password (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -708,8 +715,10 @@ User filter
 |                                                                                                                                                                                                                                                                                                                                                                                                         |                                                              |
 | String input.                                                                                                                                                                                                                                                                                                                                                                                           |                                                              |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
+
 .. note::
-  - This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
+  This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
+
 .. config:setting:: ldap-groupfilter
   :displayname: Group filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -732,8 +741,10 @@ Group filter
 |                                                                                                                                                                                                                                                  | - ``config.json`` setting: ``LdapSettings`` > ``GroupFilter`` |
 | String input. Default is ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))``.                                                                                                                                   | - Environment variable: ``MM_LDAPSETTINGS_GROUPFILTER``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
 .. note::
-  - This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.
+  This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.
+
 .. config:setting:: ldap-enableadminfilter
   :displayname: Enable admin filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -755,8 +766,10 @@ Enable admin filter
 | - **false**: **(Default)** Disables the **Admin Filter** setting.                                                                                                                                                           | - ``config.json`` setting: ``LdapSettings`` > ``EnableAdminFilter`` > ``false`` |
 |                                                                                                                                                                                                                             | - Environment variable: ``MM_LDAPSETTINGS_ENABLEADMINFILTER``                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
 .. note::
-  - If this setting is ``false``, no additional users are designated as system admins by the filter. Users that were previously designated as system admins retain this role unless the filter is changed or removed.
+  If this setting is ``false``, no additional users are designated as system admins by the filter. Users that were previously designated as system admins retain this role unless the filter is changed or removed.
+
 .. config:setting:: ldap-adminfilter
   :displayname: Admin filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -822,8 +835,10 @@ ID attribute
 |                                                                                                                                                                                                    |                                                                                                                                  |
 | String input.                                                                                                                                                                                      |                                                                                                                                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
+
 .. note::
-  - If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.
+  If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.
+
 .. config:setting:: ldap-loginidattribute
   :displayname: Login ID attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -1034,8 +1049,10 @@ Group display name attribute
 |                                                                                                  | - ``config.json`` setting: ``LdapSettings`` > ``GroupDisplayNameAttribute``                                                                 |
 | String input.                                                                                    | - Environment variable: ``MM_LDAPSETTINGS_GROUPDISPLAYNAMEATTRIBUTE``                                                                       |
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. note::
-  - This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
+  This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
+
 .. config:setting:: ldap-groupidattribute
   :displayname: Group ID attribute
   :systemconsole: Authentication > AD/LDAP
@@ -1060,8 +1077,10 @@ Group ID attribute
 |                                                                                                              |                                                                                                                                 |
 | String input.                                                                                                |                                                                                                                                 |
 +--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
+
 .. note::
-  - This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
+  This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
+
 .. config:setting:: ldap-syncinterval
   :displayname: Synchronization interval (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -1087,8 +1106,10 @@ Synchronization interval (minutes)
 |                                                                                                                              |                                                                                |
 | Numerical input. Default is **60**.                                                                                          |                                                                                |
 +------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+
 .. note::
-  - LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
+  LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
+
 .. config:setting:: ldap-maxpagesize
   :displayname: Maximum page size (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -1162,8 +1183,10 @@ AD/LDAP synchronize now
 |                                                                                                           |                                                    |
 | Following a manual sync, the next sync will occur after the time set in the **Synchronization Interval**. |                                                    |
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
+
 .. note::
-  - If a sync is ``Pending`` and does not complete, check that **Enable Synchronization with AD/LDAP** is set to ``true``.
+  If a sync is ``Pending`` and does not complete, check that **Enable Synchronization with AD/LDAP** is set to ``true``.
+  
 .. figure:: ../images/ldap-sync-table.png
 
 .. _saml-enterprise:
@@ -1284,10 +1307,11 @@ Override SAML bind data with AD/LDAP information
 |                                                                                                                                                                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_ENABLESYNCWITHLDAPINCLUDEAUTH``                   |
 | For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` for details.                                                                                                                                                                         |                                                                                             |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
 .. note::
-  - This setting should be **false** unless LDAP sync is enabled.
-  - Changing this setting from **true** to **false** will disable the override.
+  - This setting should be **false** unless LDAP sync is enabled. Changing this setting from **true** to **false** will disable the override.
   - SAML IDs must match LDAP IDs when the override is enabled.
+
 .. config:setting:: saml-providermetadataurl
   :displayname: Identity provider metadata URL (SAML)
   :systemconsole: Authentication > SAML 2.0
@@ -1978,8 +2002,10 @@ GitLab OAuth 2.0 Application ID
 |                                                                                                                                                      |                                                                  |
 | String input.                                                                                                                                        |                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
+
 .. note::
-  - GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.
+  GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.
+
 .. config:setting:: oauth-gitlabappsecretkey
   :displayname: GitLab OAuth 2.0 Application secret key (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
@@ -2221,8 +2247,10 @@ Enable OAuth 2.0 Authentication with Entra ID
 | - **false**: **(Default)** Disables Entra ID OAuth authentication.                  | - ``config.json`` setting: ``Office365Settings`` > ``Enable`` > ``false``|
 |                                                                                     | - Environment variable: ``MM_OFFICE365SETTINGS_ENABLE``                  |
 +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. note::
-  - See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+  See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+
 .. config:setting:: oauth-entra-id-appid
   :displayname: Application ID (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
@@ -2242,8 +2270,10 @@ Entra ID OAuth 2.0 Application ID
 |                                                                                                                                                 | - ``config.json`` setting: ``Office365Settings`` > ``Id`` |
 | String input.                                                                                                                                   | - Environment variable: ``MM_OFFICE365SETTINGS_ID``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
 .. note::
-  - See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+  See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+
 .. config:setting:: oauth-entra-id-appsecret
   :displayname: Application secret password (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
@@ -2263,8 +2293,10 @@ Entra ID OAuth 2.0 Application secret password
 |                                                                                                                                                              | - ``config.json`` setting: ``Office365Settings`` > ``Secret`` |
 | String input.                                                                                                                                                | - Environment variable: ``MM_OFFICE365SETTINGS_SECRET``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
 .. note::
-  - See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+  See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+
 .. config:setting:: oauth-entra-id-directoryid
   :displayname: Directory ID (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
@@ -2284,8 +2316,10 @@ Entra ID OAuth 2.0 Directory (tenant) ID
 |                                                                                               | - ``config.json`` setting: ``Office365Settings`` > ``DirectoryId`` |
 | String input.                                                                                 | - Environment variable: ``MM_OFFICE365SETTINGS_DIRECTORYID``       |
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
+
 .. note::
-  - See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+  See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
+
 .. config:setting:: oauth-entra-id-userapiendpoint
   :displayname: User API endpoint (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
@@ -2379,8 +2413,10 @@ Select OpenID Connect service provider
 | - **Entra ID** (`see settings <#entra-id-openid-settings>`__)                    |                                                           |
 | - **OpenID Connect (Other)** (`see settings <#openid-connect-other-settings>`__) |                                                           |
 +----------------------------------------------------------------------------------+-----------------------------------------------------------+
+
 .. note::
-  - **GitLab** OpenID is available in all plans. All other providers require Mattermost Enterprise or Professional.
+  **GitLab** OpenID is available in all plans. All other providers require Mattermost Enterprise or Professional.
+
 GitLab OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2408,8 +2444,10 @@ Enable OpenID Connect authentication with GitLab
 | - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                | - ``config.json`` setting: ``GitLabSettings`` > ``Enable`` > ``false`` |
 |                                                                                          | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``                   |
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
 .. note::
-  - See the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+  See the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+
 .. config:setting:: oidc-gitlabsiteurl
   :displayname: GitLab site URL (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
@@ -2430,8 +2468,10 @@ GitLab OpenID site URL
 |                                                                                         | - Environment variable: N/A                               |
 | String input.                                                                           |                                                           |
 +-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
+
 .. note::
-  - See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+  See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+
 .. config:setting:: oidc-gitlabdiscoveryendpoint
   :displayname: Discovery endpoint (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
@@ -2452,8 +2492,10 @@ GitLab OpenID Discovery endpoint
 |                                                                                     | - Environment variable: ``MM_GITLABSETTINGS_DISCOVERYENDPOINT``      |
 | String input. Default is ``https://gitlab.com/.well-known/openid-configuration``    |                                                                      |
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------+
+
 .. note::
-  - See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+  See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+
 .. config:setting:: oidc-gitlabclientid
   :displayname: Client ID (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
@@ -2474,8 +2516,10 @@ GitLab OpenID Client ID
 |                                                                 | - Environment variable: ``MM_GITLABSETTINGS_ID``                         |
 | String input.                                                   |                                                                          |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
+
 .. note::
-  - See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+  See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+
 .. config:setting:: oidc-gitlabclientsecret
   :displayname: Client secret (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
@@ -2496,8 +2540,10 @@ GitLab OpenID Client secret
 |                                                                         | - Environment variable: ``MM_GITLABSETTINGS_SECRET``             |
 | String input.                                                           |                                                                  |
 +-------------------------------------------------------------------------+------------------------------------------------------------------+
+
 .. note::
-  - See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+  See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
+
 Google OpenID settings
 ^^^^^^^^^^^^^^^^^^^^^^
 
@@ -2810,10 +2856,12 @@ OpenID Connect (other) Discovery endpoint
 |                                                                                                        |                                                                       |
 | String input.                                                                                          |                                                                       |
 +--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
 .. note::
   The **Discovery Endpoint** setting can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use
   custom admin roles to limit access to modifying these settings. See the 
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.
+
 .. config:setting:: oidc-clientid
   :displayname: Client ID (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
@@ -2889,9 +2937,11 @@ Enable guest access
 | - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``GuestAccountsSettings`` > ``Enable`` > ``false`` |
 |                                                                | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENABLE``                   |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------+
+
 .. note::
   For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
   deactivated. This means that guest accounts count as a paid user in your Mattermost workspace.
+
 .. config:setting:: guest-whitelistdomains
   :displayname: Whitelisted guest domains (Guest Access)
   :systemconsole: Authentication > Guest Access
@@ -2933,8 +2983,10 @@ Enforce multi-factor authentication
 | - **false**: **(Default)** MFA is not required for guests.                                                    | - ``config.json`` setting: ``GuestAccountsSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
 |                                                                                                               | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_ENFORCEMULTIFACTORAUTHENTICATION``                   |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
+
 .. note::
-  - This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.
+  This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.
+
 .. config:setting:: guest-showtag
   :displayname: Show guest tag (Guest Access)
   :systemconsole: Authentication > Guest Access
@@ -2952,6 +3004,6 @@ Show guest tag
 | - **false**:  Guest tags aren't visible in Mattermost.          | - ``config.json`` setting: ``GuestAccountsSettings`` > ``HideTags`` > ``true`` |
 |                                                                 | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_HIDETAGS``                  |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
+
 .. note::
-  - See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details.
-  - This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app.
+  This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details.

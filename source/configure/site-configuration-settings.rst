@@ -154,7 +154,7 @@ Help link
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. note::
-  - If this value is empty, the Help link is hidden on the login and sign up pages. However, the **Help Resources** link remains available under the **Help** menu.
+  If this value is empty, the Help link is hidden on the login and sign up pages. However, the **Help Resources** link remains available under the **Help** menu.
 
 .. config:setting:: custom-termsofuselink
   :displayname: Terms of Use link (Customization)
@@ -178,8 +178,10 @@ Terms of Use link
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                         |
 | String input. Default is ``https://about.mattermost.com/default-terms/``.                                                                                                                                                                                                                                                                                                                                                                       |                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
 .. note::
-  - This setting doesn't change the **Terms of Use** link in the **About Mattermost** window.
+  This setting doesn't change the **Terms of Use** link in the **About Mattermost** window.
+
 .. config:setting:: custom-privacypolicylink
   :displayname: Privacy Policy link (Customization)
   :systemconsole: Site Configuration > Customization
@@ -200,8 +202,10 @@ Privacy Policy link
 |                                                                                                                                                                                                    | - ``config.json`` setting: ``SupportSettings`` > ``PrivacyPolicyLink`` |
 | String input. Default is ``https://about.mattermost.com/default-privacy-policy/``.                                                                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_PRIVACYPOLICYLINK``       |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
+
 .. note::
-  - This setting does not change the **Privacy Policy** link in the **About Mattermost** window. 
+  This setting does not change the **Privacy Policy** link in the **About Mattermost** window. 
+
 .. config:setting:: custom-aboutlink
   :displayname: About link (Customization)
   :systemconsole: Site Configuration > Customization
@@ -239,10 +243,10 @@ Forgot Password custom link
 |                                                                               | - Environment variable: ``MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK``       |
 | Leave this field blank to use Mattermost's Password Reset workflow.           |                                                                               |
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
+
 .. note::
-  - You can control whether the **Forgot Password** link is visible or hidden by going to **Authentication > Password > Enable Forgot Password Link**.
-    See the :ref:`configuration <configure/authentication-configuration-settings:enable forgot password link>` documentation for details.  
-  - This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app.
+  This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. You can control whether the **Forgot Password** link is visible or hidden in clients by going to **Authentication > Password > Enable Forgot Password Link**. See the :ref:`configuration <configure/authentication-configuration-settings:enable forgot password link>` documentation for details.
+
 
 .. config:setting:: custom-reportaproblemlink
   :displayname: Report a Problem link (Customization)
@@ -351,6 +355,25 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 | - Via mmctl: ``mmctl config set NativeAppSettings.AppCustomURLSchemes "mmauth://" "mmauthbeta://"``                                            |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: custom-mobileexternalbrowser
+  :displayname: Mobile external browser (Customization)
+  :systemconsole: N/A
+  :configjson: NativeAppSettings.MobileExternalBrowser
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
+  :description: This property configures the mobile app to perform SSO Authentication using the external default browser.
+
+Mobile external browser
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| This property configures the mobile app to perform SSO Authentication using the external default browser.                                       | - System Config path: N/A                                                   |
+|                                                                                                                                                 | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
+| String input.                                                                                                                                   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
++-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
 ----
 
 Localization
@@ -368,7 +391,7 @@ Access the following configuration settings in the System Console by going to **
   :environment: MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE
   :description: The default language for system messages and logs. Default value is **en**.
 
-Default server language
+
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -381,9 +404,11 @@ Default server language
 |                                                                                |                                                                                |
 | Default is ``"en"``.                                                           |                                                                                |
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+
 .. note::
-  - Changing this configuration setting changes the default server language for users who haven't set a language preference via **Settings**.        
-     Mattermost applies the user's language preference when specified. 
+  Changing this configuration setting changes the default server language for users who haven't set a language preference via **Settings**.        
+  Mattermost applies the user's language preference when specified. 
+
 .. config:setting:: l10n-defaultclientlanguage
   :displayname: Default client language (Localization)
   :systemconsole: Site Configuration > Localization
@@ -404,9 +429,10 @@ Default client language
 |                                                                                |                                                                                |
 | Default is ``"en"``.                                                           |                                                                                |
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
+
 .. note::
-  - Changing this configuration setting changes the default client language for users who haven't set a language preference via **Settings**.        
-    Mattermost applies the user's language preference when specified.
+  Changing this configuration setting changes the default client language for users who haven't set a language preference via **Settings**. Mattermost applies the user's language preference when specified.
+
 .. config:setting:: l10n-availablelanguages
   :displayname: Available languages (Localization)
   :systemconsole: Site Configuration > Localization
@@ -606,8 +632,9 @@ Allow users to view archived channels
 | - **false**: Users are unable to access content in archived channels.                                          | - ``config.json`` setting: ``TeamSettings`` > ``ExperimentalViewArchivedChannels`` > ``true`` |
 |                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``                  |
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
 .. note::
-  - Cloud admins can't modify this configuration setting.
+  Cloud admins can't modify this configuration setting.
 
 .. config:setting:: users-showemailaddress
   :displayname: Show email address (Users and Teams)
@@ -766,6 +793,7 @@ Enable email notifications
 | - **false**: Disables notifications. A developer may choose this option to speed development by skipping email setup (see also the **Enable preview mode banner** setting). | - ``config.json`` setting: ``EmailSettings`` > ``SendEmailNotifications`` > ``ture``  |
 |                                                                                                                                                                             | - Environment variable: ``MM_EMAILSETTINGS_SENDEMAILNOTIFICATIONS``                   |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
+
 .. note::
   - Cloud admins can't modify this configuration setting.
   - If this setting is **false**, and the SMTP server is set up, account-related emails (such as authentication messages) will be sent regardless of this setting.
@@ -792,7 +820,7 @@ Enable preview mode banner
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. note::
-  - Cloud admins can't modify this configuration setting.
+  Cloud admins can't modify this configuration setting.
 
 .. config:setting:: notification-enableemailbatching
   :displayname: Enable email batching (Notifications)
@@ -811,11 +839,13 @@ Enable email batching
 | - **false**: **(Default)** Emails will be sent for each mention or direct message.                                                                                                                                                                                           | - ``config.json`` setting: ``EmailSettings`` > ``EnableEmailBatching`` > ``false`` |
 |                                                                                                                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``                   |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+
 .. note::
   - Cloud admins can't modify this configuration setting.
   - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.
   - The :ref:`Site Url <configure/environment-configuration-settings:site url>` and :ref:`SMTP Email Server <configure/environment-configuration-settings:smtp server>` must be configured to allow email batching.
   - Email batching in :ref:`High Availability Mode <configure/environment-configuration-settings:enable high availability mode>` is planned, but not yet supported.
+
 .. config:setting:: notification-emailcontents
   :displayname: Email notification contents (Notifications)
   :systemconsole: Site Configuration > Notifications
@@ -991,9 +1021,10 @@ Enable notification monitoring
 | - **false**: Mattermost notification          |                                                                                                    |
 |   data collection is disabled.                |                                                                                                    |
 +-----------------------------------------------+----------------------------------------------------------------------------------------------------+
-| See the :ref:`performance monitoring <scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation                   |
-| to learn more about Mattermost Notification Health metrics.                                                                                        |
-+-----------------------------------------------+----------------------------------------------------------------------------------------------------+
+
+.. note::
+  See the :ref:`performance monitoring <scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` documentation 
+  to learn more about Mattermost Notification Health metrics.
 
 ----
 
@@ -1137,8 +1168,9 @@ Enable custom emoji
 |   JPG files up to 512 KB in size.                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLECUSTOMEMOJI``                   |
 | - **false**:  Disables custom emojis.                                         |                                                                                    |
 +-------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+
 .. note::
-  - While Mattermost supports up to 6000 custom emojis, an increase in custom emojis can slow your server’s performance.
+  While Mattermost supports up to 6000 custom emojis, an increase in custom emojis can slow your server’s performance.
 ----
 
 Posts
@@ -1171,6 +1203,7 @@ Automatically follow threads
 |   for each user and whether the thread is read or unread.                                       |                                                                                  |
 | - **false**: Disables automatic following of threads.                                           |                                                                                  |
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
 .. note::
   - This setting **must** be enabled for :doc:`threaded discussions </collaborate/organize-conversations>` to function.
   - Enabling this setting does not automatically follow threads based on previous user actions.
@@ -1223,10 +1256,11 @@ Message priority
 | - **false**: Disables the ability to set message priority and request       |                                                                                  |
 |   acknowledgements.                                                         |                                                                                  |
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+
 .. note::
-  - `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to
-    track that specific, time-sensitive messages have been seen and actioned. See the
-    :doc:`message priority </collaborate/message-priority>` documentation to learn more.
+  `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to
+  track that specific, time-sensitive messages have been seen and actioned. See the
+  :doc:`message priority </collaborate/message-priority>` documentation to learn more.
 
 .. config:setting:: posts-persistentnotifications
   :displayname: Persistent notifications (Posts)
@@ -1316,7 +1350,7 @@ Enable website link previews
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
-  - The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
+  The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
 
 .. config:setting:: posts-disablepreviewsperdomain
   :displayname: Disable link previews for specific domains (Posts)
@@ -1369,8 +1403,9 @@ Enable SVGs
 | - **false**: **(Default)** Disables previews of SVG files.                    | - ``config.json`` setting: ``ServiceSettings`` > ``EnableSVGs`` > ``false``|
 |                                                                               | - Environment variable: ``MM_SERVICESETTINGS_ENABLESVGS``                  |
 +-------------------------------------------------------------------------------+----------------------------------------------------------------------------+
-| **Warning**: Enabling SVGs is not recommended in environments where not all users are trusted.                                                             |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. warning::
+  Enabling SVGs is not recommended in environments where not all users are trusted.
 
 .. config:setting:: posts-enablelatex
   :displayname: Enable LaTeX code block rendering (Posts)
@@ -1389,8 +1424,9 @@ Enable LaTeX code block rendering
 | - **false**: **(Default)** Disables rendering in blocks. Instead, LaTeX code is highlighted.                                                       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableLatex`` > ``false``|
 |                                                                                                                                                    | - Environment variable: ``MM_SERVICESETTINGS_ENABLELATEX``                  |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| **Warning**: Enabling LaTeX rendering is not recommended in environments where not all users are trusted.                                                                                                                        |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. warning::
+  Enabling LaTeX rendering is not recommended in environments where not all users are trusted.
 
 .. config:setting:: posts-enableinlinelatex
   :displayname: Enable inline LaTeX rendering (Posts)
@@ -1409,8 +1445,9 @@ Enable inline LaTeX rendering
 | - **false**: **(Default)** Disables inline rendering of LaTeX. Instead, LaTeX in message text is highlighted.           | - ``config.json`` setting: ``ServiceSettings`` > ``EnableInlineLatex`` > ``false`` |
 |   LaTeX can also be rendered in a code block, if that feature is enabled. See **Enable LaTeX code block rendering**.    | - Environment variable: ``MM_SERVICESETTINGS_ENABLEINLINELATEX``                   |
 +-------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| **Warning**: Enabling LaTeX rendering isn't recommended in environments where not all users are trusted.                                                                                                     |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. warning::
+  Enabling LaTeX rendering isn't recommended in environments where not all users are trusted.
 
 .. config:setting:: posts-customurlschemes
   :displayname: Custom URL schemes (Posts)
@@ -1446,8 +1483,10 @@ Maximum Markdown nodes
 | Numerical input. Default is **0** which applies a           |                                                                                 |
 | Mattermost-specified limit.                                 |                                                                                 |
 +-------------------------------------------------------------+---------------------------------------------------------------------------------+
+
 .. note::
-  - This limit applies to all Mattermost clients, including web, desktop app, and mobile app.
+  This limit applies to all Mattermost clients, including web, desktop app, and mobile app.
+  
 .. config:setting:: posts-googleapikey
   :displayname: Google API key (Posts)
   :systemconsole: Site Configuration > Posts
@@ -1466,9 +1505,10 @@ Google API key
 |                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``ServiceSettings`` > ``GoogleDeveloperKey`` |
 | String input.                                                                                                                                                                                                                                                      | - Environment variable: ``MM_SERVICESETTINGS_GOOGLEDEVELOPERKEY``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
 .. note::
-  - The key must have the YouTube Data API added as a service.
-  - This key is used in client-side Javascript.
+  This key is used in client-side Javascript, and must have the YouTube Data API added as a service.
+
 .. config:setting:: posts-AllowSyncedDrafts
   :displayname: Enable server syncing of message drafts (Posts)
   :systemconsole: Site Configuration > Posts
@@ -1615,9 +1655,11 @@ Enable public file links
 | - **false**: **(Default)** Prevents users from creating public links to files and disables all previously created links.                                                                      | - ``config.json`` setting: ``FileSettings`` > ``EnablePublicLink`` > ``false``  |
 |                                                                                                                                                                                               | - Environment variable: ``MM_FILESETTINGS_ENABLEPUBLICLINK``                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
+
 .. note::
-  - When set to ``false``, anyone who tries to visit a previously created public link will receive an error message. If the setting is returned to ``true``, previously created links will be accessible, unless the **Public link salt** has been regenerated.
-.. config:setting:: publink-salt
+  When set to **false**, anyone who tries to visit a previously created public link will receive an error message. If the setting is returned to **true**, previously created links will be accessible, unless the **Public link salt** has been regenerated.
+
+  .. config:setting:: publink-salt
   :displayname: Public link salt (Public links)
   :systemconsole: Site Configuration > Public Links
   :configjson: .FileSettings.EnablePublicLink

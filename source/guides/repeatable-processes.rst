@@ -14,7 +14,15 @@ Playbooks monitor channels for keywords or user actions to trigger a structured 
 
 :doc:`Advanced permissions </repeatable-processes/share-and-collaborate>` are also available to delegate and manage playbook controls in larger organizations.
 
-Collaborative playbooks are available in Mattermost self-hosted and Mattermost Cloud workspaces by selecting the product menu located in the top-left corner of the Mattermost interface. Use collaborative playbooks to orchestrate prescribed workflows and define, streamline, and document complex, recurring operations, and help your organization stay in command with integrated communication, collaboration, and status dashboards managing your workflow life cycles.
+Configuration
+--------------
+
+Playbooks comes pre-packaged, installed, and enabled with Mattermost server. Access playbooks by selecting the product menu located in the top-left corner of the Mattermost interface. 
+
+Usage
+-----
+
+Use collaborative playbooks to orchestrate prescribed workflows and define, streamline, and document complex, recurring operations, and help your organization stay in command with integrated communication, collaboration, and status dashboards managing your workflow life cycles.
 
 .. include:: ../_static/badges/academy-playbooks.rst
   :start-after: :nosearch:

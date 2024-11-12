@@ -12,7 +12,9 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 Setup
 ------
 
-Mattermost AI Copilot comes pre-installed from Mattermost Server v9.7 or later. You must be a Mattermost system admin to `enable <#enable>`__ and `configure  <#mattermost-configuration>`__ it using the System Console.
+From Mattermost v9.7, you can install Mattermost Copilot from the in-product Mattermost Marketplace by selecting the **Product** |product-list| icon and selecting **App Marketplace**. Search for **Copilot** and select **Install**.
+
+You must be a Mattermost system admin to `enable <#enable>`__ and `configure  <#mattermost-configuration>`__ it using the System Console.
 
 .. note::
   If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using Mattermost Copilot with Mattermost v9.7 and later.
@@ -107,7 +109,7 @@ Disabling tools will prevent the LLM from making function calls. This is useful 
 Copilot plugin metrics
 -----------------------
 
-Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``, and the following metrics are available:
+Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/environment-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``, and the following metrics are available:
 
 - ``copilot_system_plugin_start_timestamp_seconds``: The time the plugin started.
 - ``copilot_system_plugin_info``: The plugin version and installation ID.
