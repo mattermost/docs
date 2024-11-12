@@ -68,12 +68,7 @@ This is the default role given to users when they join a team. Members have basi
 Guest
 -----
 
-A guest is a role with restricted permissions. Guests enable organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with.
-
-.. include:: /onboard/guest-account-access.rst
-  :start-after: :nosearch:
-
-See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details on working with guest accounts.
+A guest is a role with restricted permissions. Guests enable organizations to collaborate with users outside of their organization, and control what channels they are in and who they can collaborate with. See the :doc:`guest accounts </onboard/guest-accounts>` documentation for details on working with guest accounts.
 
 Deactivated
 -----------

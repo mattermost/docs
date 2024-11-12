@@ -1072,6 +1072,47 @@ See the :doc:`Legal holds </comply/legal-hold>` product documentation for detail
 
 ----
 
+.. config:setting:: plugins-msteamscalendar
+  :displayname: Microsoft Calendar interoperability (Plugins > Microsoft Calendar)
+  :systemconsole: Plugins > Microsoft Calendar
+  :configjson: N/A
+  :environment: N/A
+  :description: Connect your Microsoft Calendar to your Mattermost instance.
+
+Microsoft Calendar
+-------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar-interoperability:enable and configure the microsoft calendar integration in mattermost>`.
+
+----
+
+
+.. config:setting:: plugins-msteamsmeeting
+  :displayname: Microsoft Teams Meetings interoperability (Plugins > MS Teams Meetings)
+  :systemconsole: Plugins >  MS Teams Meetings
+  :configjson: N/A
+  :environment: N/A
+  :description: Connect your Microsoft Teams Meetings to your Mattermost instance.
+
+Microsoft Teams Meetings
+------------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrate/microsoft-teams-meetings-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-teams-meetings-interoperability:enable and configure the microsoft teams meetings integration in mattermost>`.
+
+
+----
+
+
+
+
+
+
 MS Teams
 ---------
 
