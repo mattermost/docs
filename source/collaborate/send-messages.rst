@@ -4,19 +4,15 @@ Send messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
-
-- copying and pasting images.
-- dragging-and-drop image files into the text field.
-- selecting the **Attachment** |attachments-icon| icon.
-
-Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
-
-.. tip::
-
-  From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
-
 .. tab:: Web/Desktop
+
+  Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
+
+  - copying and pasting images.
+  - dragging-and-drop image files into the text field.
+  - selecting the **Attachment** |attachments-icon| icon.
+
+  Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
 
   You can also use a keyboard to send messages:
   
@@ -25,11 +21,23 @@ Compose a message by typing into the text box at the bottom of the Mattermost sc
 
   .. tip::
 
-    If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+    - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+    - If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
 .. tab:: Mobile
 
-  Tap the **Smile** icon |smile-icon| to add emojis while composing your message.
+  1. In a channel, tap on the text field at the bottom of the Mattermost app to type a message.
+
+  .. image:: ../images/mobile-type-a-message-in-a-channel.jpg
+    :alt: Type a message in the text box at the bottom of the mobile app.
+    :scale: 30
+
+  2. Tap on **Send** |send-icon| icon to send it in the channel.
+
+  .. image:: ../images/mobile-sending-a-message.gif
+    :alt: Tapp on the send icon to send the message in the channel.
+    :scale: 50
+
 
 .. tip::
 
@@ -40,33 +48,87 @@ Compose a message by typing into the text box at the bottom of the Mattermost sc
 Draft messages
 --------------
 
-From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar 
+.. tab:: Web/Desktop
 
-.. image:: ../images/Global-Drafts-Animated-GIF.gif
-  :width: 700
-  :alt: Global drafts makes it easy for you to find all messages in progress.
+  From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar 
 
-By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app with mobile support coming in a future release. 
+  .. image:: ../images/Global-Drafts-Animated-GIF.gif
+    :width: 700
+    :alt: Global drafts makes it easy for you to find all messages in progress.
 
-.. Tip::
+  By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app. 
+
+  .. Tip::
   
-  You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
+    You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
+
+.. tab:: Mobile
+
+  When composing a message, you can simply opt to complete it later by exiting the channel. 
   
+  The partially composed message is retained in the text field and you can see a |edit-icon| before the channel name on the app.
+
+  .. image:: ../images/mobile-draft-a-message.gif
+    :alt: You can sync a daft message by exiting the channel mid-way while composing the message.
+    :scale: 50
+
+
 .. note::
 
-  System admins can disable global drafts by disabling the `message draft server sychronization configuration setting <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
+  System admins can disable global drafts by disabling the :ref:`message draft server sychronization configuration setting <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
 
 Edit messages
 --------------
 
-All users can edit their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
+.. tab:: Web/Desktop
 
-1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you've sent.
+  All users can edit their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
 
-  .. image:: ../images/more-actions.png
-     :alt: Select the More option to edit or delete a sent message.
+  1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you've sent.
 
-2. Select **Edit** to edit your own messages. Editing a message won't trigger new :doc:`@mention notifications </collaborate/mention-people>`, or :doc:`desktop notifications </preferences/manage-your-notifications>`.
+    .. image:: ../images/more-actions.png
+      :alt: Select the More option to edit or delete a sent message.
+
+  2. Select **Edit** to edit your own messages. Editing a message won't trigger new :doc:`@mention notifications </collaborate/mention-people>`, or :doc:`desktop notifications </preferences/manage-your-notifications>`.
+
+.. tab:: Mobile
+
+  1. Long press on the message that you want to edit and tap on **Edit**.
+
+  .. image:: ../images/mobile-edit-a-message.gif
+    :alt: Tap and hold on a message that you want to edit.
+    :scale: 50
+
+  2. Type the updated message and tap on **Save**.
+
+  .. image:: ../images/mobile-editing-a-message.jpg
+    :alt: Type the updated message and tap save to save the edited message.
+    :scale: 30
+
+
+Delete messages
+----------------
+
+.. tab:: Web/Desktop
+
+  All users can delete their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
+
+  1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you want to delete.
+  2. Select **Delete** to delete your own messages. Select **Delete** again to confirm.
+
+.. tab:: Mobile
+
+  1. Long Press on the message you want to delete and tap on **Delete**.
+
+  .. image:: ../images/mobile-delete-a-message.gif
+    :alt: Tap and hold on the message that you want to delete.
+    :scale: 50
+
+  2. Tap on **Delete** again to confirm your choice.
+
+  .. image:: ../images/mobile-confirm-delete-a-message.jpg
+    :alt: Confirm your choice to delete the message.
+    :scale: 30
 
 Restore a previous version of an edited message
 -----------------------------------------------
@@ -80,14 +142,6 @@ From Mattermost v7.9, you can view the edit history of your edited messages, and
 
 .. image:: ../images/restore-previous-edited-message.gif
   :alt: Select Edited next to an edited message, and then select the version you want to restore.
-
-Delete messages
-----------------
-
-All users can delete their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
-
-1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you want to delete.
-2. Select **Delete** to delete your own messages. Select **Delete** again to confirm.
 
 Do more with your messages
 --------------------------
