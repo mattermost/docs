@@ -342,6 +342,7 @@ Enable forgot password link
 .. note::
   You can customize the **Forgot Password** link URL by going to **Site Configuration > Customization > Forgot Password Custom Link**.
   See the :ref:`configuration <configure/site-configuration-settings:forgot password custom link>` documentation for details.
+
 ----
 
 MFA
@@ -404,6 +405,7 @@ Enforce multi-factor authentication
 .. note::
   If your system has users who authenticate with methods other than AD/LDAP and email, MFA must be enforced with the authentication provider
   outside of Mattermost.
+
 ----
 
 AD/LDAP

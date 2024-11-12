@@ -1171,6 +1171,7 @@ Enable custom emoji
 
 .. note::
   While Mattermost supports up to 6000 custom emojis, an increase in custom emojis can slow your server’s performance.
+
 ----
 
 Posts
@@ -1659,7 +1660,7 @@ Enable public file links
 .. note::
   When set to **false**, anyone who tries to visit a previously created public link will receive an error message. If the setting is returned to **true**, previously created links will be accessible, unless the **Public link salt** has been regenerated.
 
-  .. config:setting:: publink-salt
+.. config:setting:: publink-salt
   :displayname: Public link salt (Public links)
   :systemconsole: Site Configuration > Public Links
   :configjson: .FileSettings.EnablePublicLink
