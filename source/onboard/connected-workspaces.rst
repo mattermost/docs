@@ -222,6 +222,7 @@ Review connection status
     - Invite accepted (Yes/No)
     - Online (Yes/No)
     - Last ping timestamp (UTC)
+    - Deleted
 
 Regenerate invitation codes for pending connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
