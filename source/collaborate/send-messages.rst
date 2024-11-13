@@ -143,6 +143,10 @@ From Mattermost v7.9, you can view the edit history of your edited messages, and
 .. image:: ../images/restore-previous-edited-message.gif
   :alt: Select Edited next to an edited message, and then select the version you want to restore.
 
+.. note::
+  
+  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
+
 Do more with your messages
 --------------------------
 
