@@ -72,10 +72,9 @@ Draft messages
     :alt: You can sync a daft message by exiting the channel mid-way while composing the message.
     :scale: 50
 
-
 .. note::
 
-  System admins can disable global drafts by disabling the :ref:`message draft server sychronization configuration setting <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
+  System admins can disable global drafts by disabling :ref:`message draft server sychronization <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
 
 Edit messages
 --------------
