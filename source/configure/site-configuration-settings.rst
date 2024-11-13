@@ -1755,8 +1755,8 @@ This feature's two ``config.json`` settings include:
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
   :environment: N/A
 
-  - **true**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
-  - **false**: Channel as well as member status and availability isn't synchronized.
+  - **true**: Channel as well as member status and availability isn't synchronized.
+  - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
 
 Disable shared channel status sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
