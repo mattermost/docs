@@ -54,7 +54,7 @@ By default, message drafts are synchronized on the Mattermost server and are acc
   
 .. note::
 
-  System admins can disable global drafts by disabling the `message draft server sychronization configuration setting <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
+  System admins can disable global drafts by disabling :ref:`message draft server sychronization <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
 
 Edit messages
 --------------
