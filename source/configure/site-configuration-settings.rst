@@ -1764,8 +1764,8 @@ Disable shared channel status sync
 Disable channel as well as member status and availability synchronization between connected workspaces.
 
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.  | - System Config path: N/A                                                                                     |
-| - **false**: Channel as well as member status and availability isn't synchronized.                                         | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DisableSharedChannelsStatusSync`` > ``true``   |
+| - **true**: Channel as well as member status and availability isn't synchronized.                                          | - System Config path: N/A                                                                                     |
+| - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals. | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DisableSharedChannelsStatusSync`` > ``true``   |
 |                                                                                                                            | - Environment variable: N/A                                                                                   |
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
