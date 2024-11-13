@@ -1761,7 +1761,7 @@ This feature's two ``config.json`` settings include:
 Disable shared channel status sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Disable channel as well as member status and availability synchronization between connected workspaces.
+Disable member status and availability synchronization between connected workspaces.
 
 +----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | - **true**: Channel as well as member status and availability isn't synchronized.                                          | - System Config path: N/A                                                                                     |
