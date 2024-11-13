@@ -51,7 +51,7 @@ Team statistics
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Bots, deactivated users, and synthetic users in                                                                     |
 | :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                               |
-| and :doc:`connected workspace </onboard/connected-workspaces>` users aren't counted towards the total number of active users. |
+| and :doc:`connected workspaces </onboard/connected-workspaces>` users aren't counted towards the total number of active users. |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
