@@ -29,7 +29,7 @@ Site statistics
 |                                                                                                                                      |
 | - Bots, deactivated users, and synthetic users in                                                                                    |
 |   :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                                    |
-|   and :doc:`connected workspace </onboard/connected-workspaces>` users aren't counted towards the total number of activated users.   |
+|   and :doc:`connected workspaces </onboard/connected-workspaces>` users aren't counted towards the total number of activated users.   |
 | - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is             |
 |   deactivated. This means that guest accounts count as a paid user in your Mattermost                                                |
 |   :doc:`workspace </guides/use-mattermost>`.                                                                                         |
