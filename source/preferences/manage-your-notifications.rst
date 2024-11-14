@@ -16,6 +16,7 @@ Manage your notifications
   :hidden:
   :titlesonly:
 
+    Troubleshoot notifications </preferences/troubleshoot-notifications>
     Manage your web notifications </preferences/manage-your-web-notifications>
     Manage your desktop notifications </preferences/manage-your-desktop-notifications>
     Manage your mobile notifications </preferences/manage-your-mobile-notifications>
@@ -27,6 +28,8 @@ Mattermost notifies you of new activity you're directly involved in. How you're 
 
 .. include:: ../_static/badges/academy-notifications.rst
   :start-after: :nosearch:
+
+Missing notifications? Visit our :doc:`troubleshoot notifications </preferences/troubleshoot-notifications>` documentation for guidance on ensuring notification delivery.
 
 You're in control
 ------------------
