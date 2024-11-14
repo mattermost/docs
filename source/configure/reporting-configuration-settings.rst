@@ -19,21 +19,21 @@ Site statistics
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
-+----------------------------------------------------------------+-------------------------------------------------------------+
-| View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > Site Statistics**       |
-| including: users, seats, teams, channels, posts, calls,        | - ``config.json setting``: N/A                              |
-| sessions, commands, webhooks, websocket and database           | - Environment variable: N/A                                 |
-| connections, and collaborative playbooks,                      |                                                             |
-+----------------------------------------------------------------+-------------------------------------------------------------+
-| **Notes**:                                                                                                                   |
-|                                                                                                                              |
-| - Bots, deactivated users, and synthetic users in                                                                            |
-|   :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                            |
-|   and :doc:`shared channels users </onboard/shared-channels>` aren't counted towards the total number of activated users.    |
-| - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is     |
-|   deactivated. This means that guest accounts count as a paid user in your Mattermost                                        |
-|   :doc:`workspace </guides/use-mattermost>`.                                                                                 |
-+---------------------------------------------------------------+--------------------------------------------------------------+
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > Site Statistics**               |
+| including: users, seats, teams, channels, posts, calls,        | - ``config.json setting``: N/A                                      |
+| sessions, commands, webhooks, websocket and database           | - Environment variable: N/A                                         |
+| connections, and collaborative playbooks,                      |                                                                     |
++----------------------------------------------------------------+---------------------------------------------------------------------+
+| **Notes**:                                                                                                                           |
+|                                                                                                                                      |
+| - Bots, deactivated users, and synthetic users in                                                                                    |
+|   :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                                    |
+|   and :doc:`connected workspaces </onboard/connected-workspaces>` users aren't counted towards the total number of activated users.   |
+| - For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is             |
+|   deactivated. This means that guest accounts count as a paid user in your Mattermost                                                |
+|   :doc:`workspace </guides/use-mattermost>`.                                                                                         |
++---------------------------------------------------------------+----------------------------------------------------------------------+
 
 ----
 
@@ -51,7 +51,7 @@ Team statistics
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | **Note**: Bots, deactivated users, and synthetic users in                                                                     |
 | :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>`                               |
-| and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of active users.         |
+| and :doc:`connected workspaces </onboard/connected-workspaces>` users aren't counted towards the total number of active users. |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
 ----
