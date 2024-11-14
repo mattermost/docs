@@ -1999,3 +1999,9 @@ mark {
 .mermaid text#task20-text {
     fill: white !important;
 }
+
+/* NESTED TABS */
+#check-your-mattermost-client-settings .tab-set .tab-set {
+    background-color: var(--color-background-secondary);
+    padding: 0rem 1rem 1rem 1rem;
+}
