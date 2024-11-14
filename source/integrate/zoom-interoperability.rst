@@ -66,6 +66,10 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the Zoom integration from the in-product App Marketplace:
 
+.. note::
+
+  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
+
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to Zoom, and select **Install**.
 3. Once installed, select **Configure**. You'll be taken to the System Console.
