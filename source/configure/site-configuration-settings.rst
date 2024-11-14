@@ -337,21 +337,21 @@ iOS app download link
   :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
   :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
 
-Enable desktop app landing page
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| - **true**: **(Default)** Prompts users to use the Desktop App | - System Config path: **Site Configuration > Customization**                   |
-| - **false**: Doesn't prompt users to use the Desktop App       | - ``config.json`` setting: ``.ServiceSettings.EnableDesktopLandingPage: true`` |
-|                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``        |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------+
-
 .. config:setting:: custom-enabledesktoplandingpage
   :displayname: Enable desktop app landing page (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: N/A
   :environment: N/A
   :description: Whether or not to prompt users to use the Desktop App when first visiting Mattermost from a new browser.
+
+Enable desktop app landing page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------+--------------------------------------------------------------------------------+
+| - **true**: **(Default)** Prompts users to use the Desktop App | - System Config path: **Site Configuration > Customization**                   |
+| - **false**: Doesn't prompt users to use the Desktop App       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
+|                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``        |
++----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 App custom URL schemes
 ~~~~~~~~~~~~~~~~~~~~~~
