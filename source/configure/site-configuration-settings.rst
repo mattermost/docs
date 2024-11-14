@@ -343,6 +343,9 @@ iOS app download link
   :configjson: N/A
   :environment: N/A
   :description: Control whether or not to prompt users to use the Desktop App when first visiting Mattermost from a new browser.
+  
+  - **true**: **(Default)** Mattermost prompts users to use the desktop app.
+  - **false**:  Mattermost doesn't prompt users to use the desktop app.
 
 Enable desktop app landing page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
