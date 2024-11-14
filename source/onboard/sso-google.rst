@@ -20,7 +20,7 @@ Follow these steps to configure Mattermost to use Google as a Single Sign-on (SS
 Step 1: Create OpenID Connect project in Google API Manager
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Go to `Google Cloud Platform <https://console.developers.google.com>`__.
+1. Go to Google Cloud Platform.
 
 2. Select **Credentials** in the left-hand sidebar.
 
@@ -49,7 +49,7 @@ Step 1: Create OpenID Connect project in Google API Manager
 Step 2: Enable Google People API
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to the `Google People API <https://console.developers.google.com/apis/api/plus/overview>`__, then select **Enable** in the header. This might take a few minutes to propagate through Google's systems.
+Go to the `Google People API <https://developers.google.com/people>`_, then select **Enable** in the header. This might take a few minutes to propagate through Google's systems.
 
 Step 3: Configure Mattermost for Google Apps SSO
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -831,7 +831,7 @@ Important Upgrade Notes
 |                                                    |  Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | To enable Focalboard, open the Marketplace from the sidebar menu, install the Focalboard plugin, then click on **Configure**, enable it, and save. Update your   |
-|                                                    | NGINX or Apache web proxy config following `these steps <https://github.com/mattermost/focalboard/discussions/566>`_.                                            |
+|                                                    | NGINX or Apache web proxy config.                                                                                                                                |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.35.0                                            | Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the |
 |                                                    | migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual |
@@ -1007,7 +1007,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Go module path of ``mattermost-server`` was changed to comply with the Go module version specification. Developers using Go modules with                     |
 |                                                    | ``mattermost-server`` as a dependency must change the module and import paths to ``github.com/mattermost/mattermost-server/v5`` when upgrade this dependency     |
-|                                                    | to `v5.18`. See `<https://blog.golang.org/v2-go-modules>`__ for further information.                                                                             |
+|                                                    | to `v5.18`. See `<https://go.dev/blog/v2-go-modules>`__ for further information.                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.                      |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

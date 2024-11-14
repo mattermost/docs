@@ -115,7 +115,7 @@ You can set up :doc:`performance monitoring </scale/deploy-prometheus-grafana-fo
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
 
-Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams/blob/main/server/metrics/dashboards/cloud.json>`__ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
+Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams/tree/main/server/metrics/dashboards>`_ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
 
 .. image:: ../images/grafana-dashboard-msteams.png
   :alt: Example of a Grafana monitoring dashboard for a Mattermost instance connected to Microsoft Teams.

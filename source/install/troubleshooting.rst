@@ -425,7 +425,7 @@ Take a screenshot or screen recording `on iPhone <https://support.apple.com/guid
 
 **Android**
 
-Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`__.
+Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`_.
 
 Appendix
 --------

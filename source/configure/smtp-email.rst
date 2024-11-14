@@ -112,7 +112,7 @@ For example, if **System Console > Logs** displays the following error, search f
 Checking your SMTP server is reachable 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Attempt to Telnet to the email service to make sure the server is reachable. For additional information, visit https://docs.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019. If you're using an earlier version than Exchange Server 2019, select your version from the left-hand navigation menu.
+- Attempt to Telnet to the email service to make sure the server is reachable. For additional information, visit https://learn.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019. If you're using an earlier version than Exchange Server 2019, select your version from the left-hand navigation menu.
 - You must run the following commands from the same machine or virtual instance where ``mattermost/bin/mattermost`` is located.
 - Telnet to the email server with ``telnet mail.example.com 25``. If the command works you should see something like:
 
