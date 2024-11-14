@@ -5419,6 +5419,10 @@ mmctl team
 
 Manage teams.
 
+.. important::
+
+   When specifying team names within mmctl commands, you must use the ``team-URL`` version of the team name, rather than the display name you see in the channel sidebar. Your ``team-URL`` does not contain spaces. Run the `mmctl team list <#mmctl-team-list>`__ command to return a list of all teams on the server in ``team-URL`` format. See the :ref:`team name and URL selection <collaborate/organize-using-teams:team name and url selection>` documentation for details.
+
    Child Commands
       -  `mmctl team archive`_ - Archive some teams
       -  `mmctl team create`_ - Create teams
