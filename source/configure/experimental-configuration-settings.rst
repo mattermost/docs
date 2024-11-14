@@ -1118,37 +1118,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-remoteclusters
-  :displayname: Remote clusters (Experimental)
-  :systemconsole: N/A
-  :configjson: RemoteClusters
-  :environment: N/A
-
-  - **true**: System admins can manage remote clusters using the System Console.
-  - **false**: **(Default)** Remote cluster management is disabled.
-
-Remote clusters
-~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to add, remove, and view remote clusters for shared channels.
-
-**True**: System admins can manage remote clusters using the System Console.
-
-**False**: (**Default**) Remote cluster management is disabled.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: exp-enableclientcert
   :displayname: Enable client-side certification (Experimental)
   :systemconsole: N/A
