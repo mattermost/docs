@@ -16,7 +16,7 @@ With file attachments, you can share additional information that helps your team
   
   **Share public links**
       
-  Public links allow you to share message attachments with anyone outside your Mattermost workspace. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
+  Public links allow you to share message attachments with anyone outside your Mattermost :doc:`workspace </guides/use-mattermost>`. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
 
   .. tip::
 
@@ -38,11 +38,35 @@ With file attachments, you can share additional information that helps your team
 
   You can share files with other Mattermost users or entire channels by tapping the **Attachment** |attachments-icon| icon under the message input box when composing a message.
 
+  .. image:: ../images/mobile-attach-a-file-to-send-in-a-channel.gif
+      :alt: Tap on attachment icon to attach a file and send it in the channel.
+      :scale: 50
+
   **Access files**
 
   1. Tap the channel name at the top of the screen.
+
+  .. image:: ../images/mobile-channel-name-click.jpg
+      :alt: Click on the channel name to explore available options.
+      :scale: 30
+
   2. Tap **Files**.
+
+  .. image:: ../images/mobile-edit-channel.jpg
+      :alt: Tap on Files to explore the available file attachments in the channel.
+      :scale: 30
+
   3. Tap a file to download it, open it, or copy a public link to the file.
+
+  .. image:: ../images/mobile-tap-a-file-name-to-download.jpg
+      :alt: Tap on a file to download and open it.
+      :scale: 30
+  
+  Or you can also click on |more-icon| to download the file or open it in the channel.
+
+  .. image:: ../images/mobile-more-options-to-download-or-view-a-file.jpg
+      :alt: You can also use more options to download ot view the file in the channel.
+      :scale: 30
 
 Attachment limits and sizes
 ---------------------------

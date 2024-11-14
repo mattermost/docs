@@ -6,7 +6,7 @@ Build repeatable processes
 
 .. important::
 
-  Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. New Playbooks features will only be added to Playbooks v2 moving forward; however, Team Edition and Professional instances may continue to use Playbooks v1 as-is which will be maintained and supported until May 2025.
+  Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. Professional SKU customers may continue to use Playbooks v1 uninterrupted which will be maintained and supported until September 2025, followed by an appropriate grandfathering strategy. More detailed information and the discussion are available on the `Mattermost discussion forum <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`_.
 
 Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </repeatable-processes/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </repeatable-processes/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
 
@@ -14,7 +14,15 @@ Playbooks monitor channels for keywords or user actions to trigger a structured 
 
 :doc:`Advanced permissions </repeatable-processes/share-and-collaborate>` are also available to delegate and manage playbook controls in larger organizations.
 
-Collaborative playbooks are available in Mattermost self-hosted and Mattermost Cloud workspaces by selecting the product menu located in the top-left corner of the Mattermost interface. Use collaborative playbooks to orchestrate prescribed workflows and define, streamline, and document complex, recurring operations, and help your organization stay in command with integrated communication, collaboration, and status dashboards managing your workflow life cycles.
+Configuration
+--------------
+
+Playbooks comes pre-packaged, installed, and enabled with Mattermost server. Access playbooks by selecting the product menu located in the top-left corner of the Mattermost interface. 
+
+Usage
+-----
+
+Use collaborative playbooks to orchestrate prescribed workflows and define, streamline, and document complex, recurring operations, and help your organization stay in command with integrated communication, collaboration, and status dashboards managing your workflow life cycles.
 
 .. include:: ../_static/badges/academy-playbooks.rst
   :start-after: :nosearch:
