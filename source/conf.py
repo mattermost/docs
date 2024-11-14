@@ -1508,7 +1508,7 @@ redirects = {
 "configure/configuration-settings.html#user-status-away-timeout":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#user-status-away-timeout",
 "configure/configuration-settings.html#enable-shared-channels":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-shared-channels",
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
@@ -1887,6 +1887,9 @@ redirects = {
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
 "configure/database-configuration-settings":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#database",
+"configure/experimental-configuration-settings.html#enable-shared-channels":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
+
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -3237,6 +3240,18 @@ redirects = {
         "https://docs.mattermost.com/onboard/sso-saml.html",
 "onboard/common-sso-entraid.html":
         "https://docs.mattermost.com/onboard/sso-entraid.html",
+"onboard/shared-channels.html":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html",
+"onboard/shared-channels.html#set-up-shared-channels":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#set-up-connected-workspaces",
+"onboard/shared-channels.html#create-a-secure-connection-invitation":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#create-a-secure-connection",
+"onboard/shared-channels.html#accept-a-secure-connection-invitation":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#accept-a-connection-invitation",
+"onboard/shared-channels.html#share-channels-with-secure-connections":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#share-channels-with-secure-connections",
+"onboard/shared-channels.html#frequently-asked-questions":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#frequently-asked-questions",
 
 # Overview redirects
 "overview/architecture.html":
@@ -4046,6 +4061,8 @@ rst_prolog = """
 .. |add-user-icon| image:: /images/account-plus-outline_F0801.svg
     :alt: Account plus outline icon used to add user to a channel.
     :class: theme-icon
+.. |shared| image:: /images/circle-multiple-outline_F0695.svg
+    :alt: Shared icon indicates channels and their members that are shared across connected Mattermost servers.
 .. |saved-icon| image:: /images/bookmark_F00C0.svg
     :alt: Saved icon.
     :class: theme-icon
