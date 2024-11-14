@@ -1763,11 +1763,11 @@ Disable shared channel status sync
 
 Disable member status and availability synchronization between connected workspaces.
 
-+----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
-| - **true**: Channel as well as member status and availability isn't synchronized.                                          | - System Config path: N/A                                                                                     |
-| - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals. | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DisableSharedChannelsStatusSync`` > ``true``   |
-|                                                                                                                            | - Environment variable: N/A                                                                                   |
-+----------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
+| - **true**: Channel as well as member status and availability isn't synchronized.                                          | - System Config path: N/A                                                                                      |
+| - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals. | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DisableSharedChannelsStatusSync`` > ``false``   |
+|                                                                                                                            | - Environment variable: N/A                                                                                    |
++----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: default-maxpostspersync
   :displayname: Default maximum posts per sync
