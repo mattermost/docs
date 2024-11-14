@@ -42,6 +42,10 @@ Share message links
 
   Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
 
+  .. image:: ../images/mobile-copy-a-link-to-the-message.gif
+      :alt: Tap and hold on a message to access the available options.
+      :scale: 50
+
 .. note::
 
   - Message previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a public channel, any member of the team can see the message preview. If the link is to a message in a private channel or direct message, only members in that channel can see the message preview.
