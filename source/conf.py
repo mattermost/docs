@@ -4043,6 +4043,9 @@ rst_prolog = """
 .. |saved-icon| image:: /images/bookmark_F00C0.svg
     :alt: Saved icon.
     :class: theme-icon
+.. |edit-icon| image:: /images/pencil-outline_F0CB6.svg
+    :alt: Edit icon.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
