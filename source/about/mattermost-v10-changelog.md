@@ -1,11 +1,90 @@
 # v10 changelog
 
 ```{Important}
-Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
 - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
+
+(release-v10.2-feature-release)=
+## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release Day: November 15, 2024**
+
+### Important Upgrade Notes
+
+ - Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely on artifact verification using DCT, please [transition to using Cosign](https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/). See the [DCT deprecation Mattermost forum post](https://forum.mattermost.com/t/upcoming-dct-deprecation/19275) for more details. 
+
+```{Important}
+If you upgrade from a release earlier than v10.0, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
+ - Changed the logic of ``useMilitaryTime`` to ``false`` to default to 12-hour time format unless the user's preference from ``data.Value`` is ``true``. When a notification email is sent to a user, the time should now default to the 12-hour format unless otherwise stated by the user. 
+ - A warning is now shown when deleting a post or comment from a remote/shared channel.
+ - Bot messages will now properly mention both users when they happen on non-bot Direct Messages.
+ - Updated the channel header to hide pinned posts when there aren't any in the channel.
+ - Added full support for @mentions in the values of fields in message attachments.
+
+#### Administration
+ - Added a new URL parameter called ``permanent`` to ``DELETE /api/v4/posts/<post-id>``, and set ``permanent`` to ``true`` in order to permanently delete a post and its attachments.
+ - Added Shared Channels administration page to the System Console.
+ - Added a team selector to accept connection invite flow in Shared Workspaces.
+ - Restricted activation and deactivation of LDAP-managed users through both the System Admin Console UI and Mattermost API.
+ - Export/import improvements: added the ability to export all user preferences and flagged posts.
+ - Increased timeouts to fetch cluster logs.
+ - Improved log messages for cluster communication.
+ - Information about deleted rows from the Data Retention job are now logged.
+ - License details to logs are now emitted when added or removed.
+ - Added a new mmctl command, ``mmctl post delete <post-id>``, in order to permanently delete a post and its attachments.
+
+#### Performance
+ - Added metrics to prometheus to check the mobile versions for each session daily.
+ - Improved the performance of LDAP sync jobs when group-contained teams and channels are used.
+ - Added minor improvements to notification metrics.
+ - Added minor improvements to mobile push notifications.
+
+### Bug Fixes
+ - Fixed an issue with email notifications using 24-hour timestamps by default.
+ - Fixed an issue where bots were not ignored when counting deactivated accounts for statistics.
+ - Fixed an issue where drafts didn’t allow scrolling if the user had many drafts.
+ - Fixed an issue that caused Javascript errors in the System Console.
+ - Fixed racy use of session in ``NewWebConn``.
+ - Fixed a race condition that would happen after a server start if ``EnableTesting`` was enabled.
+ - Fixed an issue where no error message was shown when replying to a deleted post from the draft screen.
+ - Fixed an issue where the check icons were missing from the Sort and Show options in the Direct Messages tab, and the Sort tab of the Channels tab.
+ - Fixed desyncing issues with unreads between the team sidebar and the title bar.
+ - Fixed an issue with message export file attachments with dedicated filestore: when the dedicated filestore is set, file attachments will be found and exported correctly.
+ - Reverted a change enforcing usernames to start with alpha characters on the server.
+ - Reverted a breaking change in ``registerSlashCommandWillBePostedHook`` that caused errors to surface in case an expected empty object was returned.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added a new configuration setting ``EnableAPIPostDeletion`` in order to enable/disable post deletion. This configuration setting does not need to be enabled when running mmctl in local mode.
+    - Added ``EnableDesktopLandingPage`` to allow the desktop app landing page to be disabled.
+ - Under ``NativeAppSettings`` in ``config.json``:
+     - Added a configuration setting ``MobileExternalBrowser`` that tells the Mobile app to perform SSO Authentication using the external default browser.
+
+### Go Version
+ - v10.2 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - The scrollbar is not clickable when there is a "Jump to recents" toaster [MM-61526](https://mattermost.atlassian.net/browse/MM-61526).
+ - Shared Channels: Direct Messages are not supported.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - [047pegasus](https://github.com/047pegasus), [1510janu](https://github.com/1510janu), [aamfahim](https://github.com/aamfahim), [aditipatelpro](https://github.com/aditipatelpro), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andreabia](https://translate.mattermost.com/user/andreabia), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [anudhyan](https://github.com/anudhyan), [Arch130](https://github.com/Arch130), [arilloid](https://github.com/arilloid), [Aryakoste](https://github.com/Aryakoste), [asaadmahmood](https://github.com/asaadmahmood), [azadDsync](https://github.com/azadDsync), [azigler](https://github.com/azigler), [belkhoujaons](https://github.com/belkhoujaons), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [Camillarhi](https://github.com/Camillarhi), [CarlssonFilip](https://github.com/CarlssonFilip), [catalintomai](https://github.com/catalintomai), [CBID2](https://github.com/CBID2), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [danielsischy](https://github.com/danielsischy), [devinbinnie](https://github.com/devinbinnie), [DHaussermann](https://github.com/DHaussermann), [diamant3](https://github.com/diamant3), [Dishika18](https://github.com/Dishika18), [Eleferen](https://translate.mattermost.com/user/Eleferen), [emdecr](https://github.com/emdecr), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [esarafianou](https://github.com/esarafianou), [esethna](https://github.com/esethna), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [fume4mattermost](https://github.com/fume4mattermost), [gabrieljackson](https://github.com/gabrieljackson), [Gesare5](https://github.com/Gesare5), [Good-Soma](https://github.com/Good-Soma), [grubbins](https://github.com/grubbins), [gvarma28](https://github.com/gvarma28), [hamzawritescode](https://github.com/hamzawritescode), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [HarshitVashisht11](https://github.com/HarshitVashisht11), [hereje](https://github.com/hereje), [hmhealey](https://github.com/hmhealey), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [ja49619](https://translate.mattermost.com/user/ja49619), [jespino](https://github.com/jespino), [jlandells](https://github.com/jlandells), [johnsonbrothers](https://github.com/johnsonbrothers), [jopaleti](https://github.com/jopaleti), [jprusch](https://github.com/jprusch), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [Killer2OP](https://github.com/Killer2OP), [kom-senapati](https://github.com/kom-senapati), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [KuSh](https://github.com/KuSh), [KvngMikey](https://github.com/KvngMikey), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [Malay-dev](https://github.com/Malay-dev), [master7](https://translate.mattermost.com/user/master7), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [mm-prodsec-bot](https://github.com/mm-prodsec-bot), [moda-l10n](https://translate.mattermost.com/user/moda-l10n), [Morgan_svk](https://translate.mattermost.com/user/Morgan_svk), [Movion](https://github.com/Movion), [mvitale1989](https://github.com/mvitale1989), [nickmisasi](https://github.com/nickmisasi), [Niharika0104](https://github.com/Niharika0104), [nikolaiz](https://translate.mattermost.com/user/nikolaiz), [NilsArnlund](https://github.com/NilsArnlund), [panoramix360](https://github.com/panoramix360), [pradeepmurugesan](https://github.com/pradeepmurugesan), [pvev](https://github.com/pvev), [qfrigolac](https://github.com/qfrigolac), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Ranjana761](https://github.com/Ranjana761), [raremax](https://translate.mattermost.com/user/raremax), [Reinkard](https://github.com/Reinkard), [RS-labhub](https://github.com/RS-labhub), [Ruhi14](https://github.com/Ruhi14), [Rutam21](https://github.com/Rutam21), [s4kh](https://github.com/s4kh), [sahariardev](https://github.com/sahariardev), [samarth29jc](https://github.com/samarth29jc), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [sedivst](https://translate.mattermost.com/user/sedivst), [Sharuru](https://translate.mattermost.com/user/Sharuru), [shraddha761](https://github.com/shraddha761), [space-w-alker](https://github.com/space-w-alker), [srisri332](https://github.com/srisri332), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [stylianosrigas](https://github.com/stylianosrigas), [svelle](https://github.com/svelle), [swills](https://github.com/swills), [tanmaythole](https://github.com/tanmaythole), [TealWater](https://github.com/TealWater), [TheInvincibleRalph](https://github.com/TheInvincibleRalph), [theoforger](https://github.com/theoforger), [ThrRip](https://github.com/ThrRip), [TomerPacific](https://github.com/TomerPacific), [toninis](https://github.com/toninis), [varghesejose2020](https://github.com/varghesejose2020), [vawaver](https://translate.mattermost.com/user/vawaver), [vhaska](https://translate.mattermost.com/user/vhaska), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [vish9812](https://github.com/vish9812), [WeBjAnJaN](https://translate.mattermost.com/user/WeBjAnJaN), [wetneb](https://github.com/wetneb), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yanyiyi](https://github.com/yanyiyi), [yasserfaraazkhan](https://github.com/yasserfaraazkhan), [z44440000z](https://github.com/z44440000z), [ZubairImtiaz3](https://github.com/ZubairImtiaz3)
 
 (release-v10.1-feature-release)=
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
