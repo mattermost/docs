@@ -347,11 +347,11 @@ iOS app download link
 Enable desktop app landing page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------+------------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Prompts users to use the Desktop App | - System Config path: **Site Configuration > Customization**                             |
-| - **false**: Doesn't prompt users to use the Desktop App       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
-|                                                                | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
-+----------------------------------------------------------------+------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Prompts users to use the desktop app. | - System Config path: **Site Configuration > Customization**                             |
+| - **false**: Doesn't prompt users to use the desktop app.       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
+|                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
++-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 App custom URL schemes
 ~~~~~~~~~~~~~~~~~~~~~~
