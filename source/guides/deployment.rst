@@ -26,6 +26,8 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deployment guides </guides/deployment-guides>
     Upgrade Mattermost </guides/upgrade-mattermost>
     Scale Mattermost </guides/scale-mattermost>
+    Secure Mattermost </guides/secure-mattermost>
+    Compliance with Mattermost </guides/compliance-with-mattermost>
     Deployment troubleshooting </guides/deployment-troubleshooting>
     Additional server installation guides </guides/additional-server-installation-guides>
 
@@ -50,5 +52,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>` - Review software and hardware requirements for Mattermost server, and plan out your Mattermost rollout.
 * :doc:`Upgrade Mattermost </guides/upgrade-mattermost>` - Learn how to stay up to date with the latest features and improvements.
 * :doc:`Scale Mattermost </guides/scale-mattermost>` - Learn how to scale and monitor your Mattermost deployment.
+* :doc:`Secure Mattermost </guides/secure-mattermost>` - Learn how to safeguard your Mattermost data.
+* :doc:`Compliance with Mattermost </guides/compliance-with-mattermost>` - Learn how to keep sensitive data safe and compliant in the strictest, most complex environments.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Having trouble with your deployment?
 * :doc:`Additional server installation guides </guides/additional-server-installation-guides>` - Additional deployment guides and an open source component list you can reference for every release.

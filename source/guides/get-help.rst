@@ -18,7 +18,7 @@ Documentation
 Help Center
 -----------
 
-Visit the `Mattermost Help Center <http://support.mattermost.com>`__ to access frequently asked questions and common troubleshooting tips.
+Visit the `Mattermost Help Center <https://support.mattermost.com/hc/en-us>`_ to access frequently asked questions and common troubleshooting tips.
 
 Customer Support
 ----------------

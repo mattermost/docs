@@ -111,8 +111,7 @@ Notify your teams that they can `connect their ServiceNow accounts to Mattermost
 Upgrade
 -------
 
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost.
-Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Usage
 -----
