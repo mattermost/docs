@@ -11,13 +11,13 @@ Mattermost Server v10.5.0
 
 - In the February 2025 Mattermost release (and next ESR), the Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
 
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- As part of our continuous efforts to enhance your user experience, we will be phasing out the Classic Mobile App. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ to continue enjoying our services without interruption. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
-
-Removed features by Mattermost version
-----------------------------------------
+- As part of our continuous efforts to enhance your user experience, we have phased out the Classic Mobile App. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ to continue enjoying our services without interruption. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
 
 Mattermost Server v10.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
