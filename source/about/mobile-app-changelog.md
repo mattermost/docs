@@ -33,6 +33,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue where ephemeral posts didn't go away after a refresh or an app relaunch.
  - Fixed an issue where the “Visible to you” text was missing from ephemeral posts.
  - Fixed a layout issue on iPad with split screen and stage manager.
+ - Fixed a crash caused by incorrect Markdown handling.
 
 ### Open Source Components
  - Added ``react-native-url-polyfill`` to https://github.com/mattermost/mattermost-mobile.
