@@ -43,4 +43,4 @@ You can:
 - Change the task assignee from yourself to another team member. The task will then be removed from your inbox.
 - You can change the due date of tasks to manage priorities and urgency.
 
-To view your task inbox, access the **Playbooks** tab in Mattermost. In the header, next to your profile photo, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed.
+To view your task inbox, access the **Playbooks** tab in Mattermost. In the header, next to your profile image, select the tasks list icon. A list of every task assigned to you from every run that's in progress is displayed.

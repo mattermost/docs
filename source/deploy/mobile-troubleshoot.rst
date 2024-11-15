@@ -15,7 +15,7 @@ Please note that the apps cannot connect to servers with self-signed certificate
 Login with ADFS/Office365 is not working
 ----------------------------------------
 
-In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------

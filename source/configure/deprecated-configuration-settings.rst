@@ -834,4 +834,21 @@ This configuration setting disables the ability to send inactivity email notific
 Disable Apps Bar
 ~~~~~~~~~~~~~~~~
 
-This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. This setting is enabled for all customers by default from Mattermost v8.0.
+This setting is enabled for all customers by default from Mattermost v8.0. This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. 
+
+Remote clusters
+~~~~~~~~~~~~~~~
+
+*Deprecated in November 16th, 2024 release in favor of Connected Workspaces*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to add, remove, and view remote clusters for shared channels.
+
+**True**: System admins can manage remote clusters using the System Console.
+
+**False**: (**Default**) Remote cluster management is disabled.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
