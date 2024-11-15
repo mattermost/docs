@@ -11,6 +11,10 @@ Version archive
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v10.2.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``06b3576df15422aa6faa4bdbfa3f01c3dbe1bc5363aa2d275c2be4fcd196aa67``
+    - GPG Signature: https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.1.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``45ff7cbe4c5c1cec14f4d35bd8bd447d25131a515a2404cc337856911ae81bbf``
@@ -387,6 +391,10 @@ Version archive
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v10.2.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``c060ad8bc6d437c54b0badeffc752bc986e16759049a4282a8e49b1bae47d0d1``
+    - GPG Signature: https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz.sig
   Mattermost Team Edition v10.1.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``39e38d1aef8c13c51f4ad00f12cc7b7f2e3a4871ba95dfef006f1df1223c9619``
