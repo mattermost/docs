@@ -36,8 +36,6 @@ If you’re able to upgrade HipChat Server or HipChat Data Center to the latest 
 #. Enter ``hipchat export --export  -p your_password``.
 #. Once the export is done, you will receive an email with a link to download the file.
 
-More detailed instructions can be found on Hipchat's `documentation <https://confluence.atlassian.com/hipchatdc3/export-data-from-hipchat-data-center-913476832.html>`__ and `knowledge base <https://confluence.atlassian.com/hipchatkb/exporting-from-hipchat-server-or-data-center-for-data-portability-950821555.html>`__.
-
 Step 3: Import your data into Mattermost 
 ----------------------------------------
 

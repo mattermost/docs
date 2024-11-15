@@ -44,7 +44,7 @@ There are multiple ways to install the Mattermost Kubernetes Operator. We recomm
 With Helm
 ^^^^^^^^^
 
-1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, see the `Helm quickstart documentation <https://docs.helm.sh/using_helm/#quickstart>`_.
+1. Install Helm. We recommend Helm v3.13.0 or later. For installation instructions, see the `Helm quickstart documentation <https://helm.sh/docs/using_helm/>`_.
 
 2. Once Helm is installed and initialized, run the following:
 
@@ -369,7 +369,7 @@ Deploy Mattermost
 Mattermost CloudNative Bootstrapper (Sneak peek)
 ------------------------------------------------
 
-Check out this `YouTube sneak peek demo <https://youtu.be/OZJj0ObA-Lk>`__, by Nick Misasi, Senior Software Design Engineer, to learn about streamlining your Mattermost deployments on Kubernetes using the Mattermost CloudNative Bootstrapper.
+Check out this `YouTube sneak peek demo <https://www.youtube.com/watch?v=OZJj0ObA-Lk&feature=youtu.be>`_, by Nick Misasi, Senior Software Design Engineer, to learn about streamlining your Mattermost deployments on Kubernetes using the Mattermost CloudNative Bootstrapper.
 
 .. raw:: html
   

@@ -106,7 +106,7 @@ If your Mattermost instance can't connect to your Jira instance, you won't be ab
 
 For example, if the team URL is ``contributors``, channel URL is ``town-square``, site URL is ``https://community.mattermost.com``, and the generated webhook secret is ``MYSECRET``, the final webhook URL would be: ``https://community.mattermost.com/plugins/jira/webhook?secret=MYSECRET&team=contributors&channel=town-square``.
 
-4. (Optional) Set a description and a custom JQL query to determine which tickets trigger events. For information on JQL queries, see the `Atlassian help documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`__.
+4. (Optional) Set a description and a custom JQL query to determine which tickets trigger events. For information on JQL queries, see the `Atlassian help documentation <https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-search-in-jira-cloud/>`_.
 
 5. Set which issue events send messages to Mattermost channels, then select **Save**. The following issue events are supported: issues created, issues deleted, and issues updated (including reopened or resolved when the assignee changes).
 

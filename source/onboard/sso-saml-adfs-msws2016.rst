@@ -53,7 +53,7 @@ If you would like to set up encryption for your SAML connection, select **Browse
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_008.png
 
-This string must match the **Service Provider Identifier** string. For more information about the Relying party trust identifier and how prefix matching is applied see `this documentation <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/technical-reference/how-uris-are-used-in-ad-fs>`_.
+This string must match the **Service Provider Identifier** string. For more information about the Relying party trust identifier and how prefix matching is applied see `this documentation <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/technical-reference/how-uris-are-used-in-ad-fs>`_.
 
 Add your **SAML 2.0 SSO service URL** using this same process.
 
