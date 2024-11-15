@@ -64,12 +64,16 @@ Make checklists
 
   You can start with the default checklist and edit it, or you can delete it and select **+ New checklist**.
 
-    * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+  * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+
     * Drag and drop to reorganize checklists and tasks.
     * Add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
-    * Add a slash command to the task that can be executed by members of the playbook as needed.
 
 5. Choose **Save**.
+
+.. note::
+
+  Tasks in a playbook consists of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </collaborate/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
 
 Multiple runs in a channel
 --------------------------

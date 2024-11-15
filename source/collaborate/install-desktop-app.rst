@@ -10,7 +10,7 @@ The Mattermost desktop app is available for Linux, Mac, and Windows operating sy
 - :doc:`Auto-start Mattermost </preferences/customize-desktop-app-experience>` when a user logs into their machine.
 - :doc:`Add Mattermost </preferences/customize-desktop-app-experience>` to the Windows Start menu, the Taskbar, the Dock, or the System Tray.
 - :doc:`Deep link to the desktop app </preferences/customize-desktop-app-experience>` via the ``mattermost://`` protocol if the app is already installed. (Windows/macOS only)
-- :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`_. (Linux only)
+- :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/title/Desktop_entries>`_. (Linux only)
 
 See the :ref:`desktop app software requirements <install/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.
 
@@ -56,7 +56,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install from the App Store**
 
-  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`_. When you install through the App Store, your desktop app updates automatically when a new release is available.
+  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_. When you install through the App Store, your desktop app updates automatically when a new release is available.
 
   **Download the Desktop App from GitHub**
 

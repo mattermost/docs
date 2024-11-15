@@ -285,7 +285,7 @@ By setting up global network traffic management, you can send a user to an inter
  - In the internal network, deploy on a private network via per device VPN.
  - In the external network, deploy with :doc:`TLS mutual auth </onboard/ssl-client-certificate>` with an NGINX proxy, and :doc:`client-side certificates </onboard/certificate-based-authentication>` for desktop and iOS.
  
-Many services such as Microsoft Azure provide options for `managing network traffic <https://docs.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`__, or you can engage a services partner to assist.
+Many services such as Microsoft Azure provide options for `managing network traffic <https://learn.microsoft.com/en-us/azure/traffic-manager/traffic-manager-overview>`_, or you can engage a services partner to assist.
 
 How do I receive mobile push notifications if my IT policy requires the use of a corporate proxy server?
 --------------------------------------------------------------------------------------------------------

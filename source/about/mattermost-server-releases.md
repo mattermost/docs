@@ -5,7 +5,7 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
 - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 ```
 
@@ -19,6 +19,7 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
+| v10.2 [Download](https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.2-feature-release>` | 2024-11-15 | 2025-02-15 |
 | v10.1 [Download](https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.1-feature-release>` | 2024-10-16 | 2025-01-15 |
 | v10.0 [Download](https://releases.mattermost.com/10.0.3/mattermost-10.0.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.0-major-release>` | 2024-09-16 | 2024-12-15 |
 | v9.11 [Download](https://releases.mattermost.com/9.11.5/mattermost-9.11.5-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-11-extended-support-release>` | 2024-08-16 | 2025-05-15 {ref}`EXTENDED <release-types>` |

@@ -118,6 +118,11 @@ Disconnect a Microsoft Teams account from Mattermost
 
 Run the `/mstmeetings disconnect` slash command to disconnect a Microsoft Teams account from Mattermost.
 
+Upgrade
+-------
+
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-mscalendar>`__ for the latest release, available releases, and compatibiilty considerations.
+
 Get help
 --------
 

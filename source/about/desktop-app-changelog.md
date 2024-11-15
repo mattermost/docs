@@ -197,7 +197,7 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 **Release Date: December 15, 2023**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v5.6.0>)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v5.6.0)
 
 ### Compatibility
 
@@ -557,7 +557,7 @@ Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highl
 
 #### macOS
 
-- Mattermost can now be installed on the [Mac App Store](https://apps.apple.com/app/mattermost-desktop/id1614666244). Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
+- Mattermost can now be installed on the [Mac App Store](https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12). Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
 
 #### Linux
 
@@ -1324,7 +1324,7 @@ Release date: May 16, 2018
 
 - Updated design for loading animation icon.
 - Improved appearance of server tabs.
-- Enabled [Certificate Transparency](https://www.certificate-transparency.org/what-is-ct) verification in HTTPS.
+- Enabled [Certificate Transparency](https://certificate.transparency.dev/) verification in HTTPS.
 
 #### Windows
 
@@ -1807,7 +1807,7 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
 
 - Added an option to flash taskbar icon when a new message is received
 - Added a badge to count mentions on the taskbar icon (for Unity)
-- Added a script, `create_desktop_file.sh` to create `Mattermost.desktop` desktop entry to help [integrate the application into a desktop environment](https://wiki.archlinux.org/index.php/Desktop_entries) more easily
+- Added a script, `create_desktop_file.sh` to create `Mattermost.desktop` desktop entry to help [integrate the application into a desktop environment](https://wiki.archlinux.org/title/Desktop_entries) more easily
 - Added access to the settings menu from the system tray icon
 - Only one instance of the desktop application will now load at a time
 

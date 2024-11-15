@@ -70,7 +70,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </repeatable-processes/share-and-collaborate>`
 - :doc:`Channel export </comply/export-mattermost-channel-data>`
 - :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging (beta)>`.
-- :doc:`Advanced collaboration with shared channels across Mattermost instances </onboard/shared-channels>`.
+- :doc:`Advanced collaboration with connected workspaces across Mattermost instances </onboard/connected-workspaces>`.
 - :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster-based-deployment>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
