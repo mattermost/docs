@@ -55,7 +55,7 @@ Save messages
 Pin messages
 ------------
 
-All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel.
+All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel. From Mattermost v10.2, the **Pinned** |pinned-messages| icon is hidden when no messages are pinned.
 
 .. tab:: Web/Desktop
 

@@ -5,12 +5,16 @@ Version archive
   :start-after: :nosearch:
 
 .. important::
-  - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+  - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
   - Note that our package signing key has been moved away from Keybase. If you still reference Keybase in your deployment steps for retrieving the key, update them to the new key location: https://deb.packages.mattermost.com/pubkey.gpg.
   - If you want to check that the version of Mattermost you are installing is the official, unmodified version, compare the SHA-256 checksum or the file's GPG signature with the one published in this version archive. To verify the GPG signature of a Mattermost release, use the public key stored at the following URL: https://deb.packages.mattermost.com/pubkey.gpg.
 
 .. tab:: Mattermost Enterprise
 
+  Mattermost Enterprise Edition v10.2.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``06b3576df15422aa6faa4bdbfa3f01c3dbe1bc5363aa2d275c2be4fcd196aa67``
+    - GPG Signature: https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.1.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``45ff7cbe4c5c1cec14f4d35bd8bd447d25131a515a2404cc337856911ae81bbf``
@@ -387,6 +391,10 @@ Version archive
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
+  Mattermost Team Edition v10.2.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``c060ad8bc6d437c54b0badeffc752bc986e16759049a4282a8e49b1bae47d0d1``
+    - GPG Signature: https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz.sig
   Mattermost Team Edition v10.1.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``39e38d1aef8c13c51f4ad00f12cc7b7f2e3a4871ba95dfef006f1df1223c9619``

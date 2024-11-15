@@ -11,15 +11,15 @@ If you don't have Docker installed, follow the instructions below based on your 
 
 .. tab:: macOS
 
-  Install `Docker for Mac <https://docs.docker.com/installation/mac/>`__.
+  Install `Docker for Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_.
 
 .. tab:: Windows 10
 
-  Install `Docker for Windows <https://docs.docker.com/installation/windows/>`__.
+  Install `Docker for Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_.
 
 .. tab:: Ubuntu
 
-  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`__ documentation, or you can use the Docker package from the Ubuntu repositories:
+  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation, or you can use the Docker package from the Ubuntu repositories:
 
   .. code-block:: sh
 
@@ -29,7 +29,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 
 .. tab:: Fedora
 
-  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/installation/linux/fedora/>`__ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
+  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
 
   .. code-block:: sh
 
@@ -41,7 +41,7 @@ If you don't have Docker installed, follow the instructions below based on your 
 Deploy Mattermost on Docker for production use
 ----------------------------------------------
 
-You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`__ (release 1.28 or later).
+You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
 
 .. important::
 
