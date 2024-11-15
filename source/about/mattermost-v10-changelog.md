@@ -7,6 +7,79 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
+(release-v10.3-feature-release)=
+## Release v10.3 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release Day: December 16, 2024**
+
+### Important Upgrade Notes
+
+ - As part of our continuous efforts to enhance your user experience, we have phased out the Classic Mobile App. Please download the new v2 Mobile App from the [Apple App Store](https://apps.apple.com/us/app/mattermost/id1257222717) or [Google Play Store](https://play.google.com/store/apps/details?id=com.mattermost.rn) to continue enjoying our services without interruption. See more details in the [classic mobile app deprecation](https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703) Mattermost forum post.
+
+### Compatibility
+
+ - Updated minimum Edge and Chrome versions to 130+.
+
+```{Important}
+If you upgrade from a release earlier than v10.2, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
+ - Downgraded Traditional Chinese language to Beta.
+ - Added c
+ - Copilot plugin is now installed and enabled by default.
+ - Added an option to test notifications.
+ - Added a new search interface.
+ - Updated product string for clarity.
+ - Removed most places where deprecated translation code is used in the web app.
+ - Removed some duplicate CSS from the web app bundle.
+
+#### Administration
+ - Added the ``fetchMissingUsers`` option to ``PostUtils.messageHtmlToComponent`` for use by plugins.
+ - Exporting bot users now functions in a more proper way.
+ - The message export code now lives in the source available enterprise folder.
+ - Added a warning text to mmctl when user specifies per-page parameter larger than maximum.
+ - Updated ``API POST /api/v4/user`` to use a proper error message.
+
+#### Performance
+ - Added Desktop App performance metrics.
+
+### Bug Fixes
+ - Fixed an issue with post drafts being unnecessarily saved when changing channels.
+ - Fixed an issue where the Web App would feel slower to load in the Desktop App.
+ - Fixed example for mmctl permissions role show command.
+ - Fixed an issue where new messages from new channels wouldn't appear in the sidebar after reconnecting the websocket.
+ - Fixed an issue with a link in the Compliance Monitoring page banner in the System Console.
+ - Fixed an issue that no longer allowed managing user tokens via the System Console.
+ - Fixed a SVG image rendering issue by setting conditional width and height attributes in ``ImagePreview`` and ``SizeAwareImage`` components.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ServiceSettings `` in ``config.json``:
+    - Added ``ScheduledPosts`` to add a feature to schedule a post for the future.
+
+### Go Version
+ - v10.3 is built with Go ``v1.22.6``.
+
+### Open Source Components
+ - Added ``opensearch-project/opensearch-go`` to https://github.com/mattermost/mattermost.
+
+### Known Issues
+ - The scrollbar is not clickable when there is a "Jump to recents" toaster [MM-61526](https://mattermost.atlassian.net/browse/MM-61526).
+ - Shared Channels: Direct Messages are not supported.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - 
+
 (release-v10.2-feature-release)=
 ## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
