@@ -42,15 +42,23 @@ Upgrade Mattermost Server
 
      cd /tmp
 
-2. Download `the latest version of Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download `the latest version of Mattermost Server <https://mattermost.com/deploy/>`__ based on your Mattermost edition.
 
-   .. code-block:: sh
+  .. tab:: Enterprise Edition
 
-     # Enterprise Edition
-     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+    In the following command, replace ``X.X.X`` with the version that you want to download:
 
-     # Team Edition
-     wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
+    .. code-block:: sh
+
+      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+
+  .. tab:: Team Edition
+
+    In the following command, replace ``X.X.X`` with the version that you want to download:
+
+    .. code-block:: sh
+
+      wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 3. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 
