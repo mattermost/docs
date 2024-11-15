@@ -5,18 +5,21 @@ Important Upgrade Notes
   :start-after: :nosearch:
 
 .. important::
-   - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle in November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+   - Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
    - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
    - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
    - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
    - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
    - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
-   - Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+| v10.2                                              | Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely                        |
+|                                                    | on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See    |
+|                                                    | the `upcoming DCT deprecation <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ Mattermost forum post for more details.                          |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.0                                              | We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported       |
 |                                                    | version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.                                                                     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -54,9 +57,8 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    | .. note::                                                                                                                                                        |
 |                                                    |                                                                                                                                                                  |
-|                                                    |   - Customers using AWS Elasticsearch must upgrade to AWS Opensearch. Upgrade steps                                                                              |
-|                                                    |     can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.                                              |
-|                                                    |     AWS customers using Opensearch must also disable "compatibility mode".                                                                                       |
+|                                                    |   - For AWS customers on Opensearch, you must modify Mattermost configuration from ``elasticsearch`` to ``opensearch`` and disable compatibility mode.           |
+|                                                    |     See the `Opensearch documentation <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ for details on upgrading.  |
 |                                                    |   - After upgrading the Mattermost server, use :ref:`mmctl <manage/mmctl-command-line-tool:mmctl config set>` or edit the config manually, then restart the      |
 |                                                    |     Mattermost server.                                                                                                                                           |
 |                                                    |   - If you are using Opensearch, you **must** set the backend to ``opensearch``. Otherwise Mattermost will not work.                                             |
@@ -67,7 +69,7 @@ Important Upgrade Notes
 | v9.5                                               | We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are    |
-|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. ERROR_SAFE_LIMITS_EXCEEDED.                                                |
+|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. :doc:`ERROR_SAFETY_LIMITS_EXCEEDED </manage/error-codes>`.                 |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.2                                               | Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to "keep-forever". Before     |
 |                                                    | this fix, the enabled custom data retention policies wouldn't run as long as the global data retention policy was set to "keep-forever" or was disabled. After   |
@@ -829,7 +831,7 @@ Important Upgrade Notes
 |                                                    |  Availability upgrade, or customers must shut down all nodes, perform the upgrade, and then bring all nodes back up.                                             |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | To enable Focalboard, open the Marketplace from the sidebar menu, install the Focalboard plugin, then click on **Configure**, enable it, and save. Update your   |
-|                                                    | NGINX or Apache web proxy config following `these steps <https://github.com/mattermost/focalboard/discussions/566>`_.                                            |
+|                                                    | NGINX or Apache web proxy config.                                                                                                                                |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.35.0                                            | Due to the introduction of backend database architecture required for upcoming new features, Shared Channels and Collapsed Reply Threads, the performance of the |
 |                                                    | migration process for the v5.35 release (May 16, 2021) has been noticeably affected. Depending on the size, type, and version of the database, longer than usual |
@@ -1005,7 +1007,7 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Go module path of ``mattermost-server`` was changed to comply with the Go module version specification. Developers using Go modules with                     |
 |                                                    | ``mattermost-server`` as a dependency must change the module and import paths to ``github.com/mattermost/mattermost-server/v5`` when upgrade this dependency     |
-|                                                    | to `v5.18`. See `<https://blog.golang.org/v2-go-modules>`__ for further information.                                                                             |
+|                                                    | to `v5.18`. See `<https://go.dev/blog/v2-go-modules>`__ for further information.                                                                                 |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Removed ``Team.InviteId`` from the related Websocket event and sanitized it on all team API endpoints for users without invite permissions.                      |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

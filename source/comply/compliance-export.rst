@@ -80,7 +80,7 @@ Global Relay EML
    - For a **Custom** type, set the **Global Relay SMTP username**, **Global Relay SMTP password**, **Global Relay SMTP email address**, **SMTP Server Name**, and the **SMTP Server Port**, provided by Global Relay. **Custom** type can be used to integrate with Proofpoint.
 6. Select **Save**.
 
-Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/gr-services/archive>`__.
+Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/products/archive-data-compliance/>`_.
 
 .. note::
   
