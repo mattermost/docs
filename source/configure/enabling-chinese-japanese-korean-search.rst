@@ -98,7 +98,7 @@ Below is additional information on how to configure the database for different l
 
     未尽事宜，可以参考以下链接：
 
-    - `SCWS 官方文档 <www.xunsearch.com/scws/docs.php>`_
+    - SCWS 官方文档
     - `Zhparser 官方文档 <https://github.com/amutu/zhparser/blob/master/README.md>`_
     - `Mattermost 建表语句 <https://github.com/mattermost/mattermost/tree/master/server/channels/db/migrations/postgres>`_
 

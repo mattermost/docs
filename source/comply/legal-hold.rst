@@ -20,7 +20,7 @@ Mattermost Legal Hold can be combined with :doc:`eDiscovery </comply/electronic-
 Legal Hold demo (Sneak Peek)
 ----------------------------
 
-Check out this `YouTube sneak peek demo <https://youtu.be/86c8NoOxlQw>`_ to learn about Mattermost's Legal Hold workflow.
+Check out this `YouTube sneak peek demo <https://www.youtube.com/watch?v=86c8NoOxlQw&feature=youtu.be>`_ to learn about Mattermost's Legal Hold workflow.
 
 .. raw:: html
   
