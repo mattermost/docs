@@ -8,13 +8,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-10)=
 ## Release v5.10
 
-- **v5.10.1, released 2024-11-15**
-
-  - Fixed issues with loading the app from cold when deep linking.
-
-- **v5.10.0, released 2024-11-15**
-
-  - Original v5.10.0 release
+**Release Date: 2024-11-15**
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
@@ -66,6 +60,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 - Fixed an issue where logging out from the Boards/Playbooks tabs and trying to navigate after logging back in would force an unexpected logout.
 - Fixed an issue with the Download button being hidden on Windows/Linux.
 - Fixed an issue where pre-defined servers couldn't edit permissions, and the dropdown would not show badges.
+- Fixed issues with loading the app from cold when deep linking.
 
 ### Open Source Components
 
