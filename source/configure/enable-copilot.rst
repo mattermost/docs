@@ -42,7 +42,7 @@ With extensive customization and extensibility options, you can tailor Copilot t
 Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot** and selecting **Add an AI Bot**. Mattermost supports the following LLMs:
 
 - `OpenAI <https://openai.com/index/openai-api/>`_
-- `Anthropic (Claude) <https://console.anthropic.com/account/keys>`_
+- `Anthropic (Claude) <https://console.anthropic.com/settings/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
 - `OpenAI-compatible (e.g., LocalAI) <https://github.com/go-skynet/LocalAI>`_
 
@@ -60,7 +60,7 @@ Configure a large language model (LLM) for your Copilot integration by going to 
 
 .. tab:: Anthropic (Claude)
 
-  1. Obtain an `Anthropic API key <https://console.anthropic.com/account/keys>`_.
+  1. Obtain an `Anthropic API key <https://console.anthropic.com/settings/keys>`_.
   2. Select **Anthropic** in the **Service** dropdown.
   3. Enter your Anthropic API key in the **API Key** field.
   4. Specify a model name in the **Default Model** field corresponding with the model's label in the API, such as `claude-3-5-sonnet-20240620`.
@@ -109,7 +109,7 @@ Disabling tools will prevent the LLM from making function calls. This is useful 
 Copilot plugin metrics
 -----------------------
 
-Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``, and the following metrics are available:
+Metrics for Copilot are exposed through the ``/plugins/mattermost-ai/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/environment-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``, and the following metrics are available:
 
 - ``copilot_system_plugin_start_timestamp_seconds``: The time the plugin started.
 - ``copilot_system_plugin_info``: The plugin version and installation ID.

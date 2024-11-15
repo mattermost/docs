@@ -30,14 +30,32 @@ Save messages
 
   Long press a message, and then select **Save**.
 
+  .. image:: ../images/mobile-save-a-message.gif
+      :alt: Tap and hold on a message in the channel to explore available options to save it.
+      :scale: 50
+
   To see all of your saved messages, tap the **Save** |save-icon| icon at the bottom of the app.
 
+  .. image:: ../images/mobile-view-saved-messages.gif
+      :alt: Tap on Save icon at the bottom of the app to access the Saved Messages list.
+      :scale: 50
+
   Remove an item from your **Saved Messages** list by long pressing a message and selecting **Unsave**.
+
+  .. image:: ../images/mobile-unsave-a-message-from-saved-messages.gif
+      :alt: Tap and hold on a message in the saved messages list to explore available options to unsave it.
+      :scale: 50
+
+  Alternatively, you can also tap on the saved message in a channel and then tap the |saved-icon| icon below it to unsave.
+
+  .. image:: ../images/mobile-unsave-a-message-from-the-channel.gif
+      :alt: Tap and hold on a saved message in the channel to explore available options to unsave it.
+      :scale: 50
 
 Pin messages
 ------------
 
-All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel.
+All members of a channel can pin important or useful messages to that channel. The list of pinned messages is visible to all channel members. There is no limit to the number of pinned posts in a channel. From Mattermost v10.2, the **Pinned** |pinned-messages| icon is hidden when no messages are pinned.
 
 .. tab:: Web/Desktop
 
@@ -74,11 +92,48 @@ All members of a channel can pin important or useful messages to that channel. T
 
   Long press a message, and then select **Pin to Channel**.
 
+  .. image:: ../images/mobile-pin-a-message-to-the-channel.gif
+      :alt: Tap and hold on a message in the channel to explore available options to pin it.
+      :scale: 50
+
   To see all of your pinned messages in a channel:
   
   1. Tap the channel whose pinned messages you want to review.
-  2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Select a channel whose pinned messages you want to view.
+      :scale: 30
+
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on More options to access available options for the channel.
+      :scale: 30
+
   3. Tap **View Info**.
+
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+      :alt: Tap on View info to view additional information about the channel.
+      :scale: 30
+
   4. Tap **Pinned Messages**.
+
+  .. image:: ../images/mobile-edit-channel.jpg
+      :alt: Tap on Pinned Messages to view the list of pinned messages.
+      :scale: 30
+
+  .. image:: ../images/mobile-view-the-pinned-message-in-the-pinned-messages-list.jpg
+      :alt: View the specific pinned message you want to see from the list.
+      :scale: 30
   
-  To unpin a message, long press a message, and then select **Unpin from Channel**. 
+  Remove an item from your **Pinned Messages** list by long pressing a message and selecting **Unpin from Channel**. 
+
+  .. image:: ../images/mobile-unpin-a-message-from-pinned-messages.gif
+      :alt: Tap and hold on a message in the pinned messages list to explore available options to unpin it.
+      :scale: 50
+
+  Alternatively, you can long press on a pinned message in the channel and then tap on **Unpin from Channel** to unpin it.
+
+  .. image:: ../images/mobile-unpin-a-message-from-the-channel.gif
+      :alt: Tap and hold on a pinned message in the channel to explore available options to unpin it.
+      :scale: 50

@@ -99,8 +99,12 @@ Activate or deactivate users
 
 To delete a user from your Mattermost deployment, you can deactivate the user's account. Deactivated users have an deactivated status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. You can manage the user's role, password, and email address while a user's account is deactivated.
 
+.. note::
+
+  LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
+
 1. Go to **System Console > User Management > Users** to access all user accounts.
-2. Select a **User** that you wish to activate/deactivate.
+2. Select a **User** that you wish to activate or deactivate.
 3. If the selected user is currently active, you can find the **Deactivate** button in the **User Configuration** page.
 4. Select **Deactivate**, and confirm the deactivation.
 

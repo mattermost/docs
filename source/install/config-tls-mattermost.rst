@@ -70,5 +70,5 @@ Use TLS on NGINX (as a proxy)
  
 Other helpful resources:
 
-- `NGINX's SSL blog <https://www.nginx.com/blog/nginx-ssl/>`__
-- `NGINX's SSL guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
+- `NGINX's SSL blog <https://www.f5.com/company/blog/nginx/nginx-ssl/>`_
+- `NGINX's SSL guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`_

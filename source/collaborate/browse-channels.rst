@@ -17,10 +17,33 @@ Browse channels
 
 .. tab:: Mobile
 
-  1. Tap the **Plus** |plus| icon located in the top right corner of the app to see all available public channels you can join that you're not already a member of.
+  1. Tap the **Plus** |plus| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+      :alt: Tap the plus icon to view additional options.
+      :scale: 30
+
   2. Tap **Browse Channels**. 
-  3. Search for channels by name or filter the list of channels to show only public or archived channels. 
+
+  .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
+      :alt: Click on Browse Channels to view the list of public channels.
+      :scale: 30
+
+  3. Search for channels by name or filter the list of channels to show only public, archived or shared channels. 
+
+  .. image:: ../images/mobile-browse-public-channels-using-search.jpg
+      :alt: Type the name of a channel in search to find it from the list.
+      :scale: 30
+
+  .. image:: ../images/mobile-browse-public-channels-using-filters.jpg
+      :alt: Tap on Show to select from available filters such as Public channels, Archived channels, etc.
+      :scale: 30
+  
   4. Tap a channel to become a member of that channel.
+
+  .. image:: ../images/mobile-browse-public-channels.jpg
+      :alt: Tap on the public channel name that you want to join.
+      :scale: 30
 
   .. tip::
 
