@@ -126,7 +126,7 @@ How is a user defined for subscriptions?
 
 For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
 
-Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of activated users.
+Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </onboard/connected-workspaces>` users aren't counted towards the total number of activated users.
 
 You can review your user count, for billing purposes, by going to **System Console > Site Statistics**, under **Total Activated Users**.
 
