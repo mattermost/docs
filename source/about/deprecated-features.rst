@@ -10,7 +10,7 @@ Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - The Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
-- Mattermost will stop providing official builds for the Microsoft Windows operating system. Administrators should migrate existing installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-builds-for-microsoft-windows/21498>`__.
+- Mattermost will stop providing official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-builds-for-microsoft-windows/21498>`__.
 
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
