@@ -20,6 +20,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Image settings <#image-settings>`__
 - `Experimental display settings <#experimental-display-settings>`__
 - `Experimental API endpoint settings <#experimental-api-endpoint-settings>`__
+- `Shared channels settings <#shared-channels-settings>`__
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----
@@ -783,6 +784,45 @@ The file must be in the same directory as your ``config.json`` file if you set a
 
 ----
 
+Shared channels settings
+------------------------
+
+Enable remote cluster service (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces>` configuration settings
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to add, remove, and view remote clusters for shared channels.
+
+**True**: System admins can manage remote clusters using the System Console.
+
+**False**: (**Default**) Remote cluster management is disabled.
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableRemoteClusters": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable shared channels (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces>` configuration settings
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
+
+**True**: System admins can establish secure connections between Mattermost instances.
+
+**False**: (**Default**) The ability to establish secure connections is disabled.
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableSharedChannels": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------------------------+
+
+----
+
 Other deprecated settings
 --------------------------
 
@@ -835,20 +875,3 @@ Disable Apps Bar
 ~~~~~~~~~~~~~~~~
 
 This setting is enabled for all customers by default from Mattermost v8.0. This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. 
-
-Remote clusters
-~~~~~~~~~~~~~~~
-
-*Deprecated in November 16th, 2024 release in favor of Connected Workspaces*
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to add, remove, and view remote clusters for shared channels.
-
-**True**: System admins can manage remote clusters using the System Console.
-
-**False**: (**Default**) Remote cluster management is disabled.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+

@@ -1752,7 +1752,7 @@ Connected workspaces
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
-.. config:setting:: enable-connected-workspace
+.. config:setting:: enable-connected-workspaces
   :displayname: Enable connected workspaces (Beta)
   :systemconsole: Site Configuration > Connected Workspaces (Beta)
   :configjson: ConnectedWorkspacesSettings.EnableSharedChannels, ConnectedWorkspacesSettings.EnableRemoteClusterService 
@@ -1772,8 +1772,9 @@ This feature's two ``config.json`` settings include:
 
 .. note::
 
-  - Neither setting is available in the System Console and can only be set in ``config.json``.
+  - Neither setting is available in the System Console and can only be set in ``config.json`` under ``ConnectedWorkspacesSettings``. 
   - System admins for Cloud deployments can submit a request to have these required configuration settings enabled for their Cloud deployment instance.
+  - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 .. config:setting:: disable-status-sync
   :displayname: Disable shared channel status sync

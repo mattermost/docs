@@ -21,7 +21,7 @@ The process of connecting Mattermost workspaces involves the following 4 steps:
 
 1. Each system admin of a Mattermost instance who wants to connect to another Mattermost workspaces must `enable the connected workflows functionality <#enable-connected-workflows>`__.
 
-2. Using the System Console or slash commands, system admins create a secure and trusted connection with other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
+2. Using the System Console or slash commands, system admins `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
 
 3. Using the System Console or slash commands, a remote system admin receives the invitation and `accepts the invitation <#accept-a-secure-connection-invitation>`__.
 
@@ -42,6 +42,10 @@ System admins must enable connected workspaces functionality for their Mattermos
 - ``ConnectedWorkspacesSettings.EnableSharedChannels = true``
 
 See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces>` documentation for details.
+
+.. note::
+
+    Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 Create a secure connection
 ---------------------------

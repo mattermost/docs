@@ -281,7 +281,7 @@ To address this issue you can set the :ref:`max page size <configure/authenticat
 If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the synchronization. The error should disappear at that point.
 
 I see the log error ``Missing NameID Element``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This indicates that the  AD/LDAP server configuration doesn't include the ``NameID`` element in the SAML assertion. The ``NameID`` element is required for user identification in SAML assertions. Ensure the ``NameID`` is mapped to a unique user identifier, such as the user's email address or another stable attribute that isn't subject to change over time.
 
