@@ -1889,7 +1889,10 @@ redirects = {
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#database",
 "configure/experimental-configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
-
+"configure/experimental-configuration-settings.rst#enable-shared-channels":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-shared-channels-experimental",
+"configure/experimental-configuration-settings.rst#remote-clusters":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-remote-cluster-service-experimental",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
