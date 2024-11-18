@@ -9,6 +9,10 @@ You can customize many aspects of your Mattermost experience based on your prefe
 .. include:: ../_static/badges/academy-customize-ui.rst
   :start-after: :nosearch:
 
+.. tip::
+
+  Download `this guide to customizing Mattermost for technical teams <https://mattermost.com/customizing-mattermost-for-technical-teams-guide/>`_ to learn how to get more from the platform.
+
 Learn more
 ----------
 

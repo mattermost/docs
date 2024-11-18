@@ -4,13 +4,15 @@ Work with collaborative playbooks
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
+A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team. When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
 
-Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
+.. tip::
 
-When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
+  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>` to learn about the key features and functionality to look for in your incident response tooling.
 
-There are other parts of a playbook, such as automation settings, and metrics. But the very first thing you’ll want to set up is a checklist.
+There are other parts of a playbook, such as automation settings, and metrics. Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
+
+But the very first thing you’ll want to set up is a checklist.
 
 Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a channel (either a dedicated one or a new one every time you run the playbook). 
 

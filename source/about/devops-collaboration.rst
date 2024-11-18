@@ -1,7 +1,11 @@
 DevOps collaboration
 ====================
 
-In DevOps, teams work together to accelerate software development and deployment processes, reduce costs, and ensure their organization remains competitive in the fast-paced digital marketplace. 
+In DevOps, teams work together to accelerate software development and deployment processes, reduce costs, and ensure their organization remains competitive in the fast-paced digital marketplace.
+
+.. tip::
+
+  Watch `this on demand webinar on driving security and business vbalue through DevOps <https://mattermost.com/driving-security-with-devops/>`_ to learn why developer experience is still critical to driving value inside and from the organization. Then download our `release management guide <https://mattermost.com/level-up-release-management-guide/>`_ to learn how to create strong release management processes to delivery software quickly and predictably, and our `technical and operational team productivty datasheet <https://mattermost.com/technical-and-operational-team-productivity-datasheet/>`_ to learn how technical and operational teams can benefit from using Mattermost for collaboration.
 
 DevOp practitioners include a variety of disciplines including product managers, designers, developers, operations, quality assurance, security, and project managers. 
 
