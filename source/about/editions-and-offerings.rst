@@ -115,7 +115,7 @@ Mattermost Free
 
 Mattermost Free is a set of collaboration features for accelerating your technical team’s productivity, shipping software faster with higher quality, and improving alignment among team members.
 
-Mattermost Free is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). It is best suited for teams of up to 50 members. See deployment options at: https://mattermost.com/deploy/.
+Mattermost Free is available to our self-hosted community through both our open source Mattermost Team Edition offering, and in our commercial Mattermost Enterprise Edition offering (when no subscription license key is active). It is best suited for teams of up to 50 members. See deployment options at: https://mattermost.com/download/.
 
 .. important::
 
@@ -163,4 +163,4 @@ As the platform matures and new features are added, they're evaluated to be incl
 
 We recognize there aren't any features that are only useful to managers, directors, and executives. Individual practitioners may want certain features; however, we think that other buyers are relatively more likely to care about it. We also recognize that there may be some features that are put into an edition to find later there is much demand for it by individuals or a singular team; we will not hesitate to move that feature. We value feedback from our community and iterate based on that feedback. Simultaneously, we also need to offer commercial products that hold value and do our best to find the right balance. We believe the more of Mattermost that you use, the more likely it is that you benefit from the advanced editions we offer.
 
-You can provide us with feedback via `our idea portal <https://mattermost.com/suggestions/>`, where ideas and input influences the future of the platform.
+You can provide us with feedback via `our idea portal <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_, where ideas and input influences the future of the platform.

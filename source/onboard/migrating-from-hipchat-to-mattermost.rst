@@ -10,7 +10,7 @@ You can migrate HipChat users and message histories to Mattermost using the foll
 Step 1:  Set up your Mattermost instance
 -----------------------------------------
 
-- `Go to Mattermost download page <https://mattermost.com/deploy/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
+- `Go to Mattermost download page <https://mattermost.com/download/>`__ to install Mattermost in your environment using one of the installation guides for Linux binary install, Docker install or various orchestrated installations. 
 
 Questions? Please visit our `troubleshooting forum <https://forum.mattermost.com/t/how-to-use-the-troubleshooting-forum/150>`__ for help. 
 

@@ -614,7 +614,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 #### User Interface (UI)
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
- - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
+ - Added the [Outgoing OAuth Connections](https://developers.mattermost.com/integrate/slash-commands/outgoing-oauth-connections/) integration type.
  - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Professional and Enterprise plans). On MySQL, users cannot view live results of the batch export in the user interface.
  - Improved the appearance of profile/account menus.
  - Added support for checkbox types in the **System Console** settings.

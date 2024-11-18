@@ -93,9 +93,9 @@ Labeled links
 
 Create labeled links by putting the desired text in square brackets ``[ ]`` and the associated link in round brackets ``( )``.
 
-``[Check out Mattermost!](https://about.mattermost.com/)``
+``[Check out Mattermost!](https://.mattermost.com/)``
 
-Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__
+Renders as: `Check out Mattermost! <https://mattermost.com/>`_
 
 Headings
 ~~~~~~~~

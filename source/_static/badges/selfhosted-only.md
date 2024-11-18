@@ -4,7 +4,7 @@
 
 Note
 
-![deployment-img-yellow](_static/images/badges/deployment_icon_yellow.svg) Available only for `self-hosted <https://mattermost.com/deploy/>`_ deployments
+![deployment-img-yellow](_static/images/badges/deployment_icon_yellow.svg) Available only for `self-hosted <https://mattermost.com/download/>`_ deployments
 
 ```{raw} html
 </div>
