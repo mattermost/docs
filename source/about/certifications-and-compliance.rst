@@ -17,7 +17,7 @@ Continual commitment to the principles of GDPR
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
 
 - **Security Infrastructure:** Continual investment in security, privacy and compliance capabilities.
-- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`_ in our standard `Terms of Service <https://mattermost.com/terms-of-service/>`_.
+- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`_ in our standard `Terms of Service <https://mattermost.com/terms-of-use/>`_.
 - **Privacy Measures:** Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`_.
 - **Product Features:** To ensure data management and data portability.
 

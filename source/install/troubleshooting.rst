@@ -10,7 +10,7 @@ Depending on the type of error or problem you're experiencing, refer to the sect
 
 If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` or :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>`, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
-Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
+Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
 Important notes
 ---------------
@@ -421,7 +421,7 @@ Press :kbd:`Ctrl` :kbd:`Shift` :kbd:`S` to open the snipping tool to take a scre
 
 **iOS**
 
-Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios>`__.
+Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-iphc872c0115/ios>`_.
 
 **Android**
 
