@@ -8,7 +8,7 @@ Minimize distractions and reduce context switching by bridging the gap between I
 
 .. tip::
 
-  Download `this on demand webinar on incident response with Mattermost and ServiceNow <https://mattermost.com/video/streamline-incident-response-with-mattermost-and-servicenow/>`_ to learn how to streamline incident response.
+  Watch `this on-demand webinar on incident response with Mattermost and ServiceNow <https://mattermost.com/video/streamline-incident-response-with-mattermost-and-servicenow/>`_ to learn how to streamline incident response.
 
 Setup
 ------
