@@ -100,7 +100,7 @@ The following table lists the Mattermost services ports for Mattermost Server, p
 
 **Mobile Clients**
 
-In order to receive push notifications, your network must allow traffic on `port 5223 for iOS devices <https://support.apple.com/en-us/HT203609>`__ and `ports 5228-5230 for Android <https://firebase.google.com/docs/cloud-messaging/concept-options#messaging-ports-and-your-firewall>`__.
+In order to receive push notifications, your network must allow traffic on `port 5223 for iOS devices <https://support.apple.com/en-us/102266>`_ and `ports 5228-5230 for Android <https://firebase.google.com/docs/cloud-messaging/concept-options#messaging-ports-and-your-firewall>`_.
 
 High Availability and scalability
 ---------------------------------

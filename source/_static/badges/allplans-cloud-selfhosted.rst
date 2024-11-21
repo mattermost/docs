@@ -7,7 +7,7 @@
 
 |plans-img| Available on `all plans <https://mattermost.com/pricing/>`__
 
-|deployment-img| `Cloud <https://mattermost.com/sign-up/>`__ and `self-hosted <https://mattermost.com/deploy/>`__ deployments
+|deployment-img| `Cloud <https://mattermost.com/sign-up/>`__ and `self-hosted <https://mattermost.com/download/>`__ deployments
 
 .. raw:: html
 

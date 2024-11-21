@@ -870,7 +870,7 @@ redirects = {
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
-	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
+	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
@@ -2393,9 +2393,9 @@ redirects = {
 "install/outbound-proxy.html":
         "https://docs.mattermost.com/configure/using-outbound-proxy.html",
 "install/prod-docker.html":
-	"https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+	"https://forum.mattermost.com/t/deploy-mattermost-on-docker/12231",
 "install/prod-windows-2012.html":
-	"https://forum.mattermost.org/t/production-install-on-windows-server/12232",
+	"https://forum.mattermost.com/t/production-install-on-windows-server/12232",
 "install/requirements.html":
         "https://docs.mattermost.com/install/software-hardware-requirements.html",
 "install/setting-up-local-machine-using-docker.html":

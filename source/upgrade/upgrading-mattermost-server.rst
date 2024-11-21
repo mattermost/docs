@@ -42,7 +42,7 @@ Upgrade Mattermost Server
 
      cd /tmp
 
-2. Download `the latest version of Mattermost Server <https://mattermost.com/deploy/>`__ based on your Mattermost edition.
+2. Download `the latest version of Mattermost Server <https://mattermost.com/download/>`__ based on your Mattermost edition.
 
   .. tab:: Enterprise Edition
 

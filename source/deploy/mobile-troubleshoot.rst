@@ -83,7 +83,7 @@ See our :ref:`Configuration Settings <configure/environment-configuration-settin
 None of these solve my problem!
 -------------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot/16>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/hc/en-us/requests/new>`_.
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
 

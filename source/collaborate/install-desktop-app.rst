@@ -102,7 +102,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Snapcraft package**
 
-  A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website for details.
+  A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/installing-snapd>`_ on the Snapcraft website for details.
 
   1. At the command line, execute the following command: 
   
@@ -232,7 +232,7 @@ Desktop App window is black and doesn't load the page
 4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux or **Mattermost > Settings** on macOS, and unselect **Use GPU hardware acceleration**.
 5. If you are using a special video driver, such as Optimus, try disabling it to see if the problem is resolved.
 
-If none of the above steps resolve the issue, please open a new ticket in the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_.
+If none of the above steps resolve the issue, please open a new ticket in the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_.
 
 Desktop App is not visible, but the Mattermost icon is in the Task Bar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -278,7 +278,7 @@ Desktop app not responsive within Citrix Virtual Apps or Desktop Environment
 
 Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\Services\CtxUvi\UviProcessExcludes`` and reboot the system.
 
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`_.
 
 Can I uninstall the desktop app I installed using snap on Linux?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
