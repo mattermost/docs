@@ -8,7 +8,7 @@ Minimize distractions and reduce context switching between your GitLab code repo
 
 .. tip::
 
-  Watch `this on demand webinar on release management with Mattermost and GitLab <https://mattermost.com/webinar/release-management-with-gitlab/>`_ to learn how to streamline and standardize your release processes, while reducing the amount of effort required to ship your latest releases.
+  Watch `this on-demand webinar on release management with Mattermost and GitLab <https://mattermost.com/webinar/release-management-with-gitlab/>`_ to learn how to streamline and standardize your release processes, while reducing the amount of effort required to ship your latest releases.
 
 .. image:: ../images/gitlab_mattermost.png
   :alt: An example of the GitLab integration for Mattermost.
