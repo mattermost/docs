@@ -6,6 +6,10 @@ Connect ServiceNow to Mattermost
 
 Minimize distractions and reduce context switching by bridging the gap between IT service management (ITSM) and team communication. Create and manage incident reports, change requests, and service tickets, as well as manage event-driven notification subscriptions for ServiceNow record changes, in real-time, and automate routine tasks to decrease response times without leaving Mattermost.
 
+.. tip::
+
+  Watch `this on-demand webinar on incident response with Mattermost and ServiceNow <https://mattermost.com/video/streamline-incident-response-with-mattermost-and-servicenow/>`_ to learn how to streamline incident response.
+
 Setup
 ------
 

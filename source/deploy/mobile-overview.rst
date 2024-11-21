@@ -6,24 +6,24 @@ Deploy Mattermost mobile apps
 
 This documentation provides foundational information you need when developing a plan for an enterprise mobile application deployment. It’s intended for business leaders, system administrators, and mobile app developers responsible for deploying Mattermost in their organization.
 
-This documentation provides information to help you: 
+This documentation provides information to help you determine the ideal mobile deployment model for your organization, understand what’s required to build your own Mattermost Mobile Apps, and deploy Mattermost mobile apps.
 
-- Determine the ideal mobile deployment model for your organization.
-- Understand what’s required to build your own Mattermost Mobile Apps.
-- Deploy Mattermost mobile apps.
+.. tip::
 
-.. note::
-
-  - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
-  - Some features described in this guide are available only in Mattermost Enterprise Edition.
+  Download `this Mattermost mobile datasheet <https://mattermost.com/mattermost-mobile-datasheet/>`_ to learn more about key features and use cases for the Mattermost mobile app.
 
 Decision summary
 ----------------
 
 When planning for a mobile app deployment, you have two important decisions to make: 
 
-- What app will you deploy - a pre-built app or your own custom build?
+- What app will you deploy? A pre-built app or your own custom build?
 - How will you deploy it?
+
+.. note::
+
+  - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
+  - Some features described in this guide are available only in Mattermost Enterprise Edition.
 
 Mattermost provides official mobile apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See :doc:`Using Mattermost’s Pre-Built Apps </deploy/use-prebuilt-mobile-apps>` to learn more about using Mattermost pre-built apps.
 
