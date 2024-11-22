@@ -123,14 +123,14 @@ Custom brand text
   :configjson: .SupportSettings.EnableAskCommunityLink
   :environment: MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK
 
-  - **true**: **(Default)** A link to the `Mattermost Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__ appears as **Ask the community** under the **Help** menu in the channel header.
+  - **true**: **(Default)** A link to the `Mattermost Community <https://mattermost.com/community/>`__ appears as **Ask the community** under the **Help** menu in the channel header.
   - **false**: The link does not appear.
 
 Enable Ask Community link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-|  - **true**: **(Default)** A link to the `Mattermost Community <https://mattermost.com/pl/default-ask-mattermost-community/>`__ appears as **Ask the community** under the **Help** menu in the channel header. |  - System Config path: **Site Configuration > Customization**                           |
+|  - **true**: **(Default)** A link to the `Mattermost Community <https://mattermost.com/community/>`__ appears as **Ask the community** under the **Help** menu in the channel header.                           |  - System Config path: **Site Configuration > Customization**                           |
 |  - **false**: The link does not appear.                                                                                                                                                                         |  - ``config.json`` setting: ``SupportSettings`` > ``EnableAskCommunityLink`` > ``true`` |
 |                                                                                                                                                                                                                 |  - Environment variable: ``MM_SUPPORTSETTINGS_ENABLEASKCOMMUNITYLINK``                  |
 |  The link does not display on mobile apps.                                                                                                                                                                      |                                                                                         |
@@ -175,7 +175,7 @@ Terms of Use link
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This field sets the URL for the Terms of Use of a self-hosted site. A link to the terms appears at the bottom of the sign-up and login pages.                                                                                                                                                                                                                                                                                                   | - System Config path: **Site Configuration > Customization**            |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                 | - ``config.json`` setting: ``SupportSettings`` > ``TermsOfServiceLink`` |
-| The default URL links to a `Terms of Use <https://about.mattermost.com/default-terms/>`__ page hosted on ``mattermost.com``. This includes the Mattermost Acceptable Use Policy explaining the terms under which Mattermost software is provided to end users. If you change the default link to add your own terms, the new terms **must include a link** to the default terms so end users are aware of the Mattermost Acceptable Use Policy. | - Environment variable: ``MM_SUPPORTSETTINGS_TERMSOFSERVICELINK``       |
+| The default URL links to a `Terms of Use <https://mattermost.com/terms-of-use/>`__ page hosted on ``mattermost.com``. This includes the Mattermost Acceptable Use Policy explaining the terms under which Mattermost software is provided to end users. If you change the default link to add your own terms, the new terms **must include a link** to the default terms so end users are aware of the Mattermost Acceptable Use Policy.        | - Environment variable: ``MM_SUPPORTSETTINGS_TERMSOFSERVICELINK``       |
 |                                                                                                                                                                                                                                                                                                                                                                                                                                                 |                                                                         |
 | String input. Default is ``https://about.mattermost.com/default-terms/``.                                                                                                                                                                                                                                                                                                                                                                       |                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -996,9 +996,8 @@ Push notification contents
 |                                                                                                        |                                                                             |
 | - **Full message content sent in the notification payload**: Includes the message                      |                                                                             |
 |   contents in the push notification payload, which may be sent through                                 |                                                                             |
-|   `Apple’s Push Notification service <https://developer.apple.com/library/archive/documentation/       |                                                                             |
-|   NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//                             |                                                                             |
-|   apple_ref/doc/uid/TP40008194-CH8-SW1>`__ or `Google’s Firebase Cloud Messaging <https://firebase.    |                                                                             |
+|   `Apple’s Push Notification service <https://developer.apple.com/documentation/usernotifications>`__  |                                                                             |
+|   or `Google’s Firebase Cloud Messaging <https://firebase.                                             |                                                                             |
 |   google.com/docs/cloud-messaging>`__ .                                                                |                                                                             |
 |   We **highly recommended** this option only be used with an ``https`` protocol to encrypt             |                                                                             |
 |   the connection and protect confidential information. ``config.json`` setting: ``"full"``             |                                                                             |
@@ -1007,8 +1006,9 @@ Push notification contents
 |   The notification payload contains no message content. Instead it contains a unique message ID used   |                                                                             |
 |   to fetch message content from the Mattermost server when a push notification is received via a       |                                                                             |
 |   `notification service app extension <https://developer.apple.com/documentation/usernotifications/    |                                                                             |
+|   modifying-content-in-newly-delivered-notifications                                                   |                                                                             |
 |   modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification         |                                                                             |
-|   pattern <https://developer.android.com/training/notify-user/expanded>`__ on Android.                 |                                                                             |
+|   pattern <https://developer.android.com/develop/ui/views/notifications/expanded>`__ on Android.       |                                                                             |
 |                                                                                                        |                                                                             |
 |   If the server cannot be reached, a generic push notification is displayed without message            |                                                                             |
 |   content or sender name. For customers who wrap the Mattermost mobile application in a secure         |                                                                             |
@@ -1247,7 +1247,7 @@ Threaded discussions
 
 .. important::
 
-  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator’s guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564>`__ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
+  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator’s guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`threaded discussions </collaborate/organize-conversations>`      | - System Config path: **Site Configuration > Posts**                      |
@@ -1743,8 +1743,8 @@ Enable end user notices
 |                                                                                                                                                                                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED``                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-Connected workspaces
----------------------
+Connected workspaces (Beta)
+---------------------------
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -1752,15 +1752,15 @@ Connected workspaces
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
-.. config:setting:: enable-connected-workspace
+.. config:setting:: enable-connected-workspaces
   :displayname: Enable connected workspaces (Beta)
   :systemconsole: Site Configuration > Connected Workspaces (Beta)
   :configjson: ConnectedWorkspacesSettings.EnableSharedChannels, ConnectedWorkspacesSettings.EnableRemoteClusterService 
   :environment: N/A
   :description: Establish secure connections between Mattermost instances, and invite secured connections to shared channels
 
-Enable connected workspaces
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable connected workspaces (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel. 
 Both configuration settings are disabled by default and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
@@ -1772,11 +1772,12 @@ This feature's two ``config.json`` settings include:
 
 .. note::
 
-  - Neither setting is available in the System Console and can only be set in ``config.json``.
+  - Neither setting is available in the System Console and can only be set in ``config.json`` under ``ConnectedWorkspacesSettings``. 
   - System admins for Cloud deployments can submit a request to have these required configuration settings enabled for their Cloud deployment instance.
+  - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to connected workspace configuration settings in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 .. config:setting:: disable-status-sync
-  :displayname: Disable shared channel status sync
+  :displayname: Disable shared channel status sync (Beta)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
   :environment: N/A
@@ -1784,8 +1785,8 @@ This feature's two ``config.json`` settings include:
   - **true**: Channel as well as member status and availability isn't synchronized.
   - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
 
-Disable shared channel status sync
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Disable shared channel status sync (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Disable member status and availability synchronization between connected workspaces.
 
@@ -1796,14 +1797,14 @@ Disable member status and availability synchronization between connected workspa
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: default-maxpostspersync
-  :displayname: Default maximum posts per sync
+  :displayname: Default maximum posts per sync (Beta)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DefaultMaxPostsPerSync
   :environment: N/A
   :description: Define the default maximum number of mesages to synchronize at a time between connected workspaces. Default is 50.
 
-Default maximum posts per sync
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Default maximum posts per sync (Beta)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | Define the default maximum number of mesages to synchronize at a time.    | - System Config path: N/A                                                                        |

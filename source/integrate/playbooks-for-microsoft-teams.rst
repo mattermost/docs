@@ -37,7 +37,7 @@ Install the Mattermost Playbooks for Teams application
 
 Any Teams user in the associated tenant that was configured for the Playbooks integration must complete the steps below to access playbooks and runs within Teams.
 
-1. Sign in to your Microsoft Teams account from a `browser <https://teams.microsoft.com/>`_ or the desktop application.
+1. Sign in to your Microsoft Teams account from a `browser <https://teams.microsoft.com/v2/?clientexperience=t2>`_ or the desktop application.
 
 2. Select the **[+] Apps** button in the Teams sidebar.
 

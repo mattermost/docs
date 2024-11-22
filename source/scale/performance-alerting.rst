@@ -8,7 +8,7 @@ Mattermost performance alerting guide
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-Mattermost recommends using `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.org/>`__ to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard once you've :doc:`set up system health tracking </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
+Mattermost recommends using `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.com/>`_ to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard once you've :doc:`set up system health tracking </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
 .. note:: 
   We highly recommend setting up performance alerting for deployments above 5,000 users, where additional servers have been added for performance load-balancing.
@@ -23,7 +23,7 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
 1. In Mattermost:
 
   a. Create an Alerts channel.
-  b. Create an `incoming webhook <https://developers.mattermost.com/integrate/webhooks/incoming/>`__ for the Alerts channel and copy the URL.
+  b. Create an `incoming webhook <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ for the Alerts channel and copy the URL.
 
 2. In Grafana:
 
@@ -40,7 +40,7 @@ If you would also like to get email alerts, you can follow `these instructions <
 Configure alerts
 ----------------
 
-The `Mattermost dashboards <https://grafana.com/dashboards?search=mattermost>`__ for Grafana come with some partially pre-configured alerts on the following charts:
+The `Mattermost dashboards <https://grafana.com/grafana/dashboards/?search=mattermost>`_ for Grafana come with some partially pre-configured alerts on the following charts:
 
 * CPU Utilization Rate
 * Memory Usage

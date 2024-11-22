@@ -88,4 +88,4 @@ You can disable email notifications by going to **Settings > Notifications > Ema
 Missing notifications?
 ----------------------
 
-Visit the Mattermost `notifications Knowledge Base article <https://support.mattermost.com/hc/en-us/articles/19161390661780>`__ for additional troubleshooting tips and tricks.
+Visit the Mattermost `notifications Knowledge Base article <https://support.mattermost.com/hc/en-us/articles/19161390661780-Troubleshooting-Mattermost-Notifications>`_ for additional troubleshooting tips and tricks.
