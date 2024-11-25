@@ -93,13 +93,13 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 - **v5.9.1, released 2024-11-20**
 
   - Fixed a crash in Linux when trying to create a thumbnail from an image [MM-60232](https://mattermost.atlassian.net/browse/MM-60232).
-  - Fixed an issue with the Download button being hidden on Windows/Linux [MM-60605](https://mattermost.atlassian.net/browse/MM-60605).
+  - Fixed an issue with the **Download** button being hidden on Windows/Linux [MM-60605](https://mattermost.atlassian.net/browse/MM-60605).
 
 - **v5.9.0, released 2024-08-16**
 
   - Original v5.9.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.9.1)
 
 ```{Note}
 Mattermost v5.9.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
