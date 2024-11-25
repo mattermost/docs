@@ -42,7 +42,7 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
  - Added the ``fetchMissingUsers`` option to ``PostUtils.messageHtmlToComponent`` for use by plugins.
  - Exporting bot users now functions in a more proper way.
  - The message export code now lives in the source available enterprise folder.
- - Added a warning text to mmctl when user specifies per-page parameter larger than maximum.
+ - Added a warning to mmctl for cases where a user specifies a per-page parameter that's larger than the maximum value supported.
  - Updated ``API POST /api/v4/user`` to use a proper error message.
 
 #### Performance
@@ -50,7 +50,7 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 
 ### Bug Fixes
  - Fixed an issue with post drafts being unnecessarily saved when changing channels.
- - Fixed an issue where the Web App would feel slower to load in the Desktop App.
+ - Fixed an issue where the Web App would feel slower to load than the Desktop App.
  - Fixed example for mmctl permissions role show command.
  - Fixed an issue where new messages from new channels wouldn't appear in the sidebar after reconnecting the websocket.
  - Fixed an issue with a link in the Compliance Monitoring page banner in the System Console.
@@ -62,7 +62,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to all plans:
  - Under ``ServiceSettings `` in ``config.json``:
-    - Added ``ScheduledPosts`` to add a feature to schedule a post for the future.
+    - Added ``ScheduledPosts`` to add a feature to schedule and send message in the future.
 
 ### Go Version
  - v10.3 is built with Go ``v1.22.6``.
