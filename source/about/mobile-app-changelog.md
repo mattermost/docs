@@ -11,9 +11,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
 
 ### Compatibility
- - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/upgrade/extended-support-release.html) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
- - iPhone 6s devices and later with iOS 13.4+ is required.
+ - iPhone 6s devices and later with iOS 13.4+ are required.
 
 ### Improvements
  - Added the test notification tool for servers above v10.3.0.
@@ -24,14 +24,14 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Improved load performance measures.
  - Improved connection behavior when switching network types (cell, wifi, vpn...).
  - Added a new index to the type column in the ``Post`` table. Bumped up server database schema version to 6.
- - Added a new column ``update_at`` to the Drafts Table.
+ - Added a new column ``update_at`` to the Drafts table.
 
 ### Bug Fixes
  - Fixed an issue with the sort order of channel bookmarks when sorted on a different client.
  - Fixed an issue where posts in archived channels showed emoji reactions with a count “0” instead of the actual count.
  - Fixed an issue with the sorting of teams in the team sidebar by following the user preferences if set.
  - Fixed an issue where ephemeral posts didn't go away after a refresh or an app relaunch.
- - Fixed an issue where the “Visible to you” text was missing from ephemeral posts.
+ - Fixed an issue where the **Visible to you** text was missing from ephemeral posts.
  - Fixed a layout issue on iPad with split screen and stage manager.
  - Fixed a crash caused by incorrect Markdown handling.
 
