@@ -8,7 +8,14 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-10)=
 ## Release v5.10
 
-**Release Date: 2024-11-15**
+- **v5.10.1, released 2024-11-20**
+
+  - Fixed an issue where the app would not restore when opened again from cold [MM-61864](https://mattermost.atlassian.net/browse/MM-61864).
+  - Fixed an issue where deep linking from cold didn't work on Linux.
+
+- **v5.10.0, released 2024-11-15**
+
+  - Original v5.10.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
@@ -83,9 +90,16 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
 
-**Release Date: 2024-08-16**
+- **v5.9.1, released 2024-11-20**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+  - Fixed a crash in Linux when trying to create a thumbnail from an image [MM-60232](https://mattermost.atlassian.net/browse/MM-60232).
+  - Fixed an issue with the **Download** button being hidden on Windows/Linux [MM-60605](https://mattermost.atlassian.net/browse/MM-60605).
+
+- **v5.9.0, released 2024-08-16**
+
+  - Original v5.9.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.9.1)
 
 ```{Note}
 Mattermost v5.9.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
