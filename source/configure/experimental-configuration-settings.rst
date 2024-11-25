@@ -1284,7 +1284,7 @@ Amazon S3 signature v2
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html.
+By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html.
 
 **True**: Use Signature Version 2 Signing Process.
 
@@ -1445,7 +1445,7 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
   :configjson: BlockProfileRate
   :environment: N/A
 
-  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
   To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
   Default is **0**.
 
@@ -1454,7 +1454,7 @@ Block profile rate
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 

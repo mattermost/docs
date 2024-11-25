@@ -138,6 +138,6 @@ The Support Packet contains 3 go runtime profiling files:
 - ``heap.prof`` contains a heap profile
 - ``goroutines`` contains a dump of all the running go routines
 
-These files can be read using `pprof <https://golang.google.cn/pkg/cmd/pprof/>`__.
+These files can be read using `pprof <https://golang.google.cn/cmd/pprof/>`_.
 
 Use ``go tool pprof -web X`` to open a visualization of the profile in your browser, replacing ``X`` with the profile's file name.

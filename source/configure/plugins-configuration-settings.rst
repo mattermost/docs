@@ -1115,6 +1115,10 @@ MS Teams
 
 Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
+.. tip::
+
+  Download our `Mattermost for Microsoft Teams datasheet <https://mattermost.com/mattermost-for-microsoft-teams-datasheet/>`_ to learn how Mattermost helps your organization get more from your Microsoft tools.
+
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
 
 .. include:: ../_static/badges/academy-msteams.rst
