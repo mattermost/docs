@@ -29,7 +29,7 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
  - Downgraded Traditional Chinese language to Beta.
- - Added c
+ - Added a feature to schedule a post for the future.
  - Copilot plugin is now installed and enabled by default.
  - Added an option to test notifications.
  - Added a new search interface.
@@ -38,6 +38,7 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
  - Removed some duplicate CSS from the web app bundle.
 
 #### Administration
+ - A 200 response is now returned for HEAD requests to a sub-path rather than responding with a 302. This fixes mobile devices trying to connect to a server hosted on a sub-path.
  - Added the ``fetchMissingUsers`` option to ``PostUtils.messageHtmlToComponent`` for use by plugins.
  - Exporting bot users now functions in a more proper way.
  - The message export code now lives in the source available enterprise folder.
