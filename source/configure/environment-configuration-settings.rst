@@ -1321,7 +1321,7 @@ Replica lag settings
         postgres=# GRANT pg_monitor TO mmuser;
 
 2. Save the config and restart all Mattermost nodes.
-3. Navigate to your Grafana instance monitoring Mattermost and open the `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`__ dashboard.
+3. Navigate to your Grafana instance monitoring Mattermost and open the `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`_ dashboard.
 4. The ``QueryTimeLag`` chart is already setup for you utilizing the existing ``Replica Lag`` chart. If using ``QueryAbsoluteLag`` metric clone the ``Replica Lag`` chart and edit the query to use the below absolute lag metrics and modify the title to be ``Replica Lag Absolute``.
 
   .. code-block:: text
@@ -2503,7 +2503,7 @@ Amazon S3 signature v2
 | - **true**: Use Signature v2 signing process.                 |                                                                          |
 | - **false**: **(Default)** Use Signature v4 signing process.  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| See the `AWS <https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html>`__ documentation for information about when to     |
+| See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html>`_ documentation for information about when to        |
 | use the Signature v2 signing process.                                                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 

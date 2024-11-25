@@ -27,7 +27,7 @@ Select your profile picture, select **Profile**, and then select **Security** to
 |                      | **Download a passcode generation app**                                                                 |
 |                      |                                                                                                        |
 |                      | - Download Google Authenticator for an Apple device from                                               |
-|                      |   `iTunes <https://itunes.apple.com/us/app/google-authenticator/id388497605?mt=8>`__                   |
+|                      |   `iTunes <https://apps.apple.com/us/app/google-authenticator/id388497605>`_                           |
 |                      | - Download Google Authenticator for an Android device from                                             |
 |                      |   `Google Play <https://play.google.com/store/apps/details?id=com.google.                              |
 |                      |   android.apps.authenticator2&hl=en>`__                                                                |

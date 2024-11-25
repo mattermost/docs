@@ -14,6 +14,9 @@ Playbooks monitor channels for keywords or user actions to trigger a structured 
 
 :doc:`Advanced permissions </repeatable-processes/share-and-collaborate>` are also available to delegate and manage playbook controls in larger organizations.
 
+.. image:: ../images/Playbooks_Hero.png
+   :alt: An example of the collaborative playbooks screen that includes active run details in the right-hand pane.
+
 Configuration
 --------------
 
@@ -27,10 +30,10 @@ Use collaborative playbooks to orchestrate prescribed workflows and define, stre
 .. include:: ../_static/badges/academy-playbooks.rst
   :start-after: :nosearch:
 
-Try it yourself! Walk through our `Incident Response playbook demonstration <https://mattermost.com/demo/playbooks-incident-response/>`__ to see what you can do with playbooks.
+Try it yourself!
+~~~~~~~~~~~~~~~~
 
-.. image:: ../images/Playbooks_Hero.png
-   :alt: An example of the collaborative playbooks screen that includes active run details in the right-hand pane.
+Walk through our `Incident Response playbook demonstration <https://mattermost.com/demo/playbooks-incident-response/>`__ to see what you can do with playbooks.
 
 Learn more
 ----------

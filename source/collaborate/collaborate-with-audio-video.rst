@@ -3,6 +3,10 @@ Collaborate with audio and video
 
 Mattermost offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration.
 
+.. tip::
+
+    Looking for a `Skype for Business replacement <https://mattermost.com/skype-for-business-datasheet/>`_? Learn why Mattermost is the best solution to upgrade your collaboration strategy.
+
 For video conferencing, Mattermost integrates seamlessly with leading providers, giving users the flexibility to easily transition from chat to video:
 
 - **Pexip**: An enterprise-grade video conferencing solution with advanced security features, tailored for secure and scalable video collaboration.
