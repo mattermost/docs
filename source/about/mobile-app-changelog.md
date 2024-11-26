@@ -31,7 +31,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue where posts in archived channels showed emoji reactions with a count “0” instead of the actual count.
  - Fixed an issue with the sorting of teams in the team sidebar by following the user preferences if set.
  - Fixed an issue where ephemeral posts didn't go away after a refresh or an app relaunch.
- - Fixed an issue where the **Visible to you** text was missing from ephemeral posts.
+ - Fixed an issue where the **Only visible to you** text was missing from ephemeral posts.
  - Fixed a layout issue on iPad with split screen and stage manager.
  - Fixed a crash caused by incorrect Markdown handling.
 
