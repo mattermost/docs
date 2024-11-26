@@ -11,22 +11,22 @@ Version archive
 
 .. tab:: Mattermost Enterprise
 
-  Mattermost Enterprise Edition v10.2.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz``
+  Mattermost Enterprise Edition v10.2.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.1/mattermost-10.2.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.2.1/mattermost-10.2.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``06b3576df15422aa6faa4bdbfa3f01c3dbe1bc5363aa2d275c2be4fcd196aa67``
-    - GPG Signature: https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz.sig
-  Mattermost Enterprise Edition v10.1.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz``
+    - GPG Signature: https://releases.mattermost.com/10.2.1/mattermost-10.2.1-linux-amd64.tar.gz.sig
+  Mattermost Enterprise Edition v10.1.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.4/mattermost-10.1.4-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.1.4/mattermost-10.1.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``45ff7cbe4c5c1cec14f4d35bd8bd447d25131a515a2404cc337856911ae81bbf``
-    - GPG Signature: https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz.sig
-  Mattermost Enterprise Edition v10.0.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.3/mattermost-10.0.3-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.0.3/mattermost-10.0.3-linux-amd64.tar.gz``
+    - GPG Signature: https://releases.mattermost.com/10.1.4/mattermost-10.1.4-linux-amd64.tar.gz.sig
+  Mattermost Enterprise Edition v10.0.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``dec2efcf8a8b34427408c87a80a5bdde2b3f9d26ff861cf15144323b5154342b``
-    - GPG Signature: https://releases.mattermost.com/10.0.3/mattermost-10.0.3-linux-amd64.tar.gz.sig
-  Mattermost Enterprise Edition v9.11.5 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.5/mattermost-9.11.5-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/9.11.5/mattermost-9.11.5-linux-amd64.tar.gz``
+    - GPG Signature: https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz.sig
+  Mattermost Enterprise Edition v9.11.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.6/mattermost-9.11.6-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/9.11.6/mattermost-9.11.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``8f268950df30a6e062bca35d9bb7f5998c3280ef310be671cb449d903a2f76c0``
-    - GPG Signature: https://releases.mattermost.com/9.11.5/mattermost-9.11.5-linux-amd64.tar.gz.sig
+    - GPG Signature: https://releases.mattermost.com/9.11.6/mattermost-9.11.6-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.3/mattermost-9.10.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.3/mattermost-9.10.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``638433634efbffe3c1d373b3f344406d37fcc3ab86292d4381890e3eeb86fb9d``
@@ -391,22 +391,22 @@ Version archive
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v10.2.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz``
+  Mattermost Team Edition v10.2.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.1/mattermost-team-10.2.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.2.1/mattermost-team-10.2.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``c060ad8bc6d437c54b0badeffc752bc986e16759049a4282a8e49b1bae47d0d1``
-    - GPG Signature: https://releases.mattermost.com/10.2.0/mattermost-team-10.2.0-linux-amd64.tar.gz.sig
-  Mattermost Team Edition v10.1.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz``
+    - GPG Signature: https://releases.mattermost.com/10.2.1/mattermost-team-10.2.1-linux-amd64.tar.gz.sig
+  Mattermost Team Edition v10.1.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.4/mattermost-team-10.1.4-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.1.4/mattermost-team-10.1.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``39e38d1aef8c13c51f4ad00f12cc7b7f2e3a4871ba95dfef006f1df1223c9619``
-    - GPG Signature: https://releases.mattermost.com/10.1.3/mattermost-team-10.1.3-linux-amd64.tar.gz.sig
-  Mattermost Team Edition v10.0.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.3/mattermost-team-10.0.3-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.0.3/mattermost-team-10.0.3-linux-amd64.tar.gz``
+    - GPG Signature: https://releases.mattermost.com/10.1.4/mattermost-team-10.1.4-linux-amd64.tar.gz.sig
+  Mattermost Team Edition v10.0.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.4/mattermost-team-10.0.4-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.0.4/mattermost-team-10.0.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``999ca5099e269608380c31150c1173eb2a82420095c250e5a60712a680103013``
-    - GPG Signature: https://releases.mattermost.com/10.0.3/mattermost-team-10.0.3-linux-amd64.tar.gz.sig
-  Mattermost Team Edition v9.11.5 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.5/mattermost-team-9.11.5-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/9.11.5/mattermost-team-9.11.5-linux-amd64.tar.gz``
+    - GPG Signature: https://releases.mattermost.com/10.0.4/mattermost-team-10.0.4-linux-amd64.tar.gz.sig
+  Mattermost Team Edition v9.11.6 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.6/mattermost-team-9.11.6-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/9.11.6/mattermost-team-9.11.6-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``f589ed7902583d5dd261ce1ee0cffda99eecccec1a8b980d5f513f908b35ec04``
-    - GPG Signature: https://releases.mattermost.com/9.11.5/mattermost-team-9.11.5-linux-amd64.tar.gz.sig
+    - GPG Signature: https://releases.mattermost.com/9.11.6/mattermost-team-9.11.6-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.3/mattermost-team-9.10.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.3/mattermost-team-9.10.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``d50e2d3352129f3eaa5271cb3031b0210f9283954e727f7dca959b4c277ea6fc``
