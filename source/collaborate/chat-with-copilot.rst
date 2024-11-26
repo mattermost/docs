@@ -50,6 +50,10 @@ Copilot remembers the context for follow-up questions and requests. Access all p
 
   Start or open a direct message with the Copilot bot. If your administrator has configured multiple bots, switch between them by starting or opening each bot by name.
 
+  .. image:: ../images/mobile-start-a-conversation-with-copilot.gif
+    :alt: Start a new conversation with Copilot in the Mattermost mobile app.
+    :scale: 50
+
 Summarize Mattermost call recordings
 ------------------------------------
 
