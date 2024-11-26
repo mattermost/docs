@@ -10,7 +10,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.2-feature-release)=
 ## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.2.1, released **
+- **10.2.1, released  **
   - Mattermost v10.2.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where plugin settings got wiped if the plugin declared some of its fields as secrets [MM-61441](https://mattermost.atlassian.net/browse/MM-61441).
   - Mattermost v10.2.1 contains no database or functional changes.
