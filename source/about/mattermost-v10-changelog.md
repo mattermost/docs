@@ -14,7 +14,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Important Upgrade Notes
 
- - As part of our continuous efforts to enhance your user experience, we have phased out the Classic Mobile App. Please download the new v2 Mobile App from the [Apple App Store](https://apps.apple.com/us/app/mattermost/id1257222717) or [Google Play Store](https://play.google.com/store/apps/details?id=com.mattermost.rn) to continue enjoying our services without interruption. See more details in the [classic mobile app deprecation](https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703) Mattermost forum post.
+ - The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the [Apple App Store](https://apps.apple.com/us/app/mattermost/id1257222717) or [Google Play Store](https://play.google.com/store/apps/details?id=com.mattermost.rn). See more details in the [classic mobile app deprecation](https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703) Mattermost forum post.
 
 ### Compatibility
 
@@ -40,10 +40,8 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 #### Administration
  - A 200 response is now returned for HEAD requests to a sub-path rather than responding with a 302. This fixes mobile devices trying to connect to a server hosted on a sub-path.
  - Added the ``fetchMissingUsers`` option to ``PostUtils.messageHtmlToComponent`` for use by plugins.
- - Exporting bot users now functions in a more proper way.
- - The message export code now lives in the source available enterprise folder.
+ - Added support for exporting and importing bot users via mmctl.
  - Added a warning to mmctl for cases where a user specifies a per-page parameter that's larger than the maximum value supported.
- - Updated ``API POST /api/v4/user`` to use a proper error message.
 
 #### Performance
  - Added Desktop App performance metrics.
@@ -51,7 +49,6 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 ### Bug Fixes
  - Fixed an issue with post drafts being unnecessarily saved when changing channels.
  - Fixed an issue where the Web App would feel slower to load than the Desktop App.
- - Fixed example for mmctl permissions role show command.
  - Fixed an issue where new messages from new channels wouldn't appear in the sidebar after reconnecting the websocket.
  - Fixed an issue with a link in the Compliance Monitoring page banner in the System Console.
  - Fixed an issue that no longer allowed managing user tokens via the System Console.
