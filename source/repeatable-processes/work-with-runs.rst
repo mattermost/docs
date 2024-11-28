@@ -30,12 +30,17 @@ When you configure your playbook, you can decide whether each run of that playbo
 
 If you decide to run a playbook in a new channel, you can do this when you start the run. In the channel RHS, select **Start run**. Then select how you'd like it to be executed.
 
+.. tip::
+
+  - When deciding whether to reuse a channel for multiple runs, or create new channels for each playbook run, multiple runs in a single channel can help avoid too many channels being created, which can lead to channel overload. 
+  - Playbook run channels aren't automatically archived when runs are marked as complete; however, you can :ref:`archive channels <collaborate/archive-unarchive-channels:archive a channel>` you no longer need, and system admins can :ref:`allow user access to archived channels <configure/site-configuration-settings:allow users to view archived channels>` if needed. See the :ref:`multiple runs in a channel <repeatable-processes/work-with-playbooks:multiple runs in a channel>` documentation for additional considerations.
+  - In contrast, using a dedicated channel for each playbook run can be helpful particularly in cases where strict :doc:`compliance </comply/compliance-export>` and :doc:`channel data export </comply/export-mattermost-channel-data>` is required.
+
 Send outgoing webhooks
 ----------------------
 
 1. In your run, select **Toggle Run Details** to open the right-hand sidebar.
 2. Select **Run details**.
 3. In the **Run details** page, scroll down to **Actions**.
-4. Add your webhook URLs in the field provided.
-    - You can turn off this option using the toggle.
+4. Add your webhook URLs in the field provided. You can turn off this option using the toggle.
 5. Select **Save**.

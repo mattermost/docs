@@ -31,6 +31,10 @@ A Mattermost system admin must perform the following steps in GitHub.
 5. Copy the **Client ID** and **Client Secret** in the resulting screen.
 6. In Mattermost, go to **System Console > Plugins > GitHub**, and regenerate both a **Webhook Secret** and **At Rest Encryption Key** by selecting **Regenerate** next to each field. You'll need a copy of the **Webhook Secret** value to create a webhook in GitHub.
 
+.. note::
+
+  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
+
 Create a webhook in GitHub
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -57,7 +61,7 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
   - Pull request review comments
   - Pushes
   - Stars
-  - Releases
+  - Workflows
 
 6. Select **Add Webhook** to save your changes.
 
@@ -133,7 +137,7 @@ Run the ``/github subscriptions add`` slash command to subscribe a Mattermost ch
 
 For example, to post notifications for issues, issue comments, and pull requests matching the label **Help Wanted** from the ``mattermost/mattermost-server`` GitHub repository, use: ``/github subscriptions add mattermost/mattermost-server --features issues,pulls,issue_comments,label:"Help Wanted"``. The following flags are supported:
 
-- ``--features``: A comma-delimited list of one or more of: issues, pulls, pulls_merged, pulls_created, pushes, creates, deletes, issue_creations, issue_comments, pull_reviews, releases, label:"labelname". Defaults to ``pulls,issues,creates,deletes``.
+- ``--features``: A comma-delimited list of one or more of: issues, pulls, pulls_merged, pulls_created, pushes, creates, deletes, issue_creations, issue_comments, pull_reviews, releases, workflow_success, workflow_failure, label:"labelname". Defaults to ``pulls,issues,creates,deletes``.
 - ``--exclude-org-member``: The events triggered by organization members that won't be delivered. It will be locked to the organization configured and only works for users whose membership is public. Organization members and collaborators are not the same.
 - ``--render-style``: Notifications are delivered in the specified style (for example, the body of a pull request will not be displayed). Supported values are ``collapsed``, ``skip-body``, or ``default`` (which is the same as omitting the flag).
 - ``--exclude``: A comma-separated list of the repositories to exclude from getting the subscription notifications like ``mattermost/mattermost-server``. Only supported for subscriptions to an organization.
@@ -169,7 +173,7 @@ GitHub user tokens are AES-encrypted with an **At Rest Encryption Key** generate
 Get help
 --------
 
-Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost GitHub plugin repository <https://github.com/mattermost/mattermost-plugin-github>`_.
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost GitHub plugin repository <https://github.com/mattermost/mattermost-plugin-github>`_.
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 

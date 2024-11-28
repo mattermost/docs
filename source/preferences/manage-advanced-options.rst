@@ -4,7 +4,7 @@ Manage advanced options
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-To customize Mattermost display options based on your preferences, select the gear icon |gear| next to your profile picture, then go to **Advanced**.
+Using Mattermost in a web browser or the desktop app, you can customize advanced Mattermost options based on your preferences. Select the gear icon |gear| next to your profile picture, then select **Advanced**.
 
 Send messages on CTRL/⌘+ENTER
 ------------------------------

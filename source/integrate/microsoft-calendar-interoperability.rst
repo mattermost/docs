@@ -72,6 +72,18 @@ Create a Mattermost App in Azure
 
 You're all set for configuration in the Azure portal.
 
+Install the Microsoft Calendar integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
+2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
+3. Search for or scroll to Microsoft Calendar, and select **Install**.
+4. Once installed, select **Configure**. You're taken to the System Console, directly to the **Microsoft Calendar** integration page, under **Plugins**.
+
+.. note::
+
+  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`_, and upload it to your server via **System Console > Plugin Management**.
+
 Enable and configure the Microsoft Calendar integration in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -81,10 +93,6 @@ Enable and configure the Microsoft Calendar integration in Mattermost
     :alt: In Azure, copy the Client ID and Tenant ID values.
 
 2. In Mattermost, go to **System Console > Plugins > Microsoft Calendar** to enable this integration.
-
-.. note::
-
-  From Mattermost v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v10, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`, and upload it to your server via **System Console > Plugin Management**.
 
 3. Copy the **Application (client) ID** and **Directory (tenant) ID** from the Azure portal.
 
@@ -105,3 +113,8 @@ Usage
 Users who want to use Microsoft Calendar interconnectivity must connect a Microsoft Office account to Mattermost. 
 
 Once connected, you'll receive direct messages from the Microsoft Calendar bot in Mattermost for Microsoft Calendar activity.
+
+Upgrade
+-------
+
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`__ for the latest release, available releases, and compatibiilty considerations.

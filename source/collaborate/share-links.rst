@@ -42,7 +42,27 @@ Share message links
 
   Long press a message, and then tap **Copy Link** to copy the link to the clipboard. Long press to paste the link as a message or reply. Sharing links to messages generates a preview of the message.
 
+  .. image:: ../images/mobile-copy-a-link-to-the-message.gif
+      :alt: Tap and hold on a message to access the available options.
+      :scale: 50
+
 .. note::
 
   - Message previews respect channel membership permissions, so they’re only visible to users who have access to the original message. If the link is to a message in a public channel, any member of the team can see the message preview. If the link is to a message in a private channel or direct message, only members in that channel can see the message preview.
   - If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for this functionality to work.
+
+Deep links
+--------------
+A Mattermost deep link is a URL that directs users to a specific location within Mattermost. Typically, these links are used to go to specific teams, channels, messages, or threads. 
+
+.. tip::
+
+  Deep links can also be used, in combination with bots, scripts, and integrations, to trigger specific actions within Mattermost.
+  
+Format deep links
+~~~~~~~~~~~~~~~~~
+Deep links must be formatted in Mattermost as follows:
+
+- Deep link to a team: ``mattermost://<your-Mattermost-server-URL>/<team-name>``
+- Deep link to a channel: ``mattermost://<your-Mattermost-server-URL>/<team-name>/channels/<channel-name>``
+- Deep link to a message or thread: ``mattermost://<your-Mattermost-server-URL>/<team-name>/pl/<post-id>``

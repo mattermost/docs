@@ -6,6 +6,9 @@ Connect Microsoft Teams to Mattermost
 
 Break through siloes in a mixed Mattermost and Microsoft Teams environment by forwarding real-time chat notifications from Microsoft Teams to Mattermost.
 
+.. include:: ../_static/badges/academy-msteams.rst
+  :start-after: :nosearch:
+
 Setup
 -----
 
@@ -91,13 +94,18 @@ Install and configure the Microsoft Teams integration in Mattermost
 
   These installation instructions assume you already have a Mattermost instance running v9.8.0 (or later) and configured to use PostgreSQL. This Mattermost integration doesn't support MySQL databases.
 
-1. Log in to your Mattermost workspace as a system administrator.
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
 2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 3. Search for or scroll to MS Teams, and select **Install**.
 4. Once installed, select **Configure**. You're taken to the System Console.
 5. Configure the **Tenant ID**, **Client ID**, and **Client Secret** with the values obtained from setting up the OAuth App in Azure above.
 
 See the :ref:`Microsoft Teams plugin configuration settings <configure/plugins-configuration-settings:ms teams>` documentation for additional configuration options.
+
+.. note::
+
+  - From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, v2.0 of this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams>`_, and upload it to your server via **System Console > Plugin Management**.
+  -  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
 
 Monitor performance
 --------------------
@@ -107,7 +115,7 @@ You can set up :doc:`performance monitoring </scale/deploy-prometheus-grafana-fo
 - Monitoring enables you to proactively review the overall health of the plugin, including database calls, HTTP requests, and API latency.
 - Alerting enables you to detect and take action as issues come up, such as the integration being offline.
 
-Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams/blob/main/server/metrics/dashboards/cloud.json>`__ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
+Grafana dashboards `are available on GitHub <https://github.com/mattermost/mattermost-plugin-msteams/tree/main/server/metrics/dashboards>`_ for Mattermost Cloud deployments as a useful starting point. These dashboards are designed for use in Mattermost Cloud, and filter to a given ``namespace``. 
 
 .. image:: ../images/grafana-dashboard-msteams.png
   :alt: Example of a Grafana monitoring dashboard for a Mattermost instance connected to Microsoft Teams.
@@ -120,6 +128,11 @@ Usage
 -----
 
 See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams interoperability.
+
+Upgrade
+-------
+
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-msteams>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Frequently asked questions
 --------------------------

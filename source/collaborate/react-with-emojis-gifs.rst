@@ -9,21 +9,27 @@ Emojis and GIFs are small, digital images, animated images, or icons you can use
 Quick emoji reactions
 -----------------------
 
-Hover over a message to react quickly using your most recent emojis. You can react with up to 50 emojis per message.
+You can react with up to 50 emojis per message. Recently used emojis are sorted based on how often you've used them. Don't see your most recently used emojis? Enable quick reactions by going to **Settings > Display** and enabling **Quick reactions on messages**.
+
+.. tab:: Web/Desktop
+
+  Hover over a message to select a recently used emoji.
 
     .. image:: ../images/recent-emojis.png
       :alt: React to messages quickly by selecting one of your most recently used emojis.
 
-Recently used emojis are sorted based on how often you've used them.
+.. tab:: Mobile
 
-.. tip::
-  
-  If you don't see your most recently used emojis, enable quick reactions by selecting **Settings > Display > Quick reactions on messages**.
+  Long press on a message, and then select a recently used emoji.
 
 Include emojis and GIFs in messages
 -----------------------------------
 
-.. tab:: Web/desktop
+.. tip::
+
+  Can't find the perfect emoji? `Upload your own custom emoji <#upload-custom-emojis>`__.
+
+.. tab:: Web/Desktop
 
   Select the **Smile** icon |smile-icon| inside the Mattermost message input box to open the emoji and GIF picker. 
 
@@ -34,13 +40,13 @@ Include emojis and GIFs in messages
   .. image:: ../images/emojiautocomplete.png
     :alt: Emoji autocomplete
 
-  .. tip::
-
-    Can't find the perfect emoji? You can `upload your own custom emoji <#upload-custom-emojis>`__ if your system admin has :ref:`enabled you to do so <configure/site-configuration-settings:enable custom emoji>`.
-
 .. tab:: Mobile
 
-  Long press on a message, and then select a recently used emoji, or select the |smile-icon| to add a different reaction. Mattermost accesses the emojis and GIFs available on your mobile device.
+  Select the |smile-icon| to add an emoji. Mattermost accesses the emojis and GIFs available on your mobile device. You can also specify emojis based on their name. Type at least two characters of the word describing the emoji. This opens an emoji autocomplete.
+
+  .. image:: ../images/mobile-include-emojis-for-a-message-reaction.gif
+    :alt: Tap and hold on a message to access the recent emojis or even choose other ones.
+    :scale: 50
 
 Manage emojis
 -------------
@@ -56,23 +62,24 @@ Select the **Skin tone** icon in the top right corner of the emoji picker to spe
   :alt: Select a default skin tone preference for people-based emojis.
 
 Upload custom emojis
-~~~~~~~~~~~~~~~~~~~~
+--------------------
 
-Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost workspace can access to react to messages. From the emoji picker, select **Custom Emoji**. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 512 KiB in size.
+Using Mattermost in a web browser or the desktop app, you can upload new emojis that everyone in your Mattermost :doc:`workspace </guides/use-mattermost>` can access to react to messages, unless your system admin has :ref:`disabled your ability to do so <configure/site-configuration-settings:enable custom emoji>`.
 
-1. Enter a name for your custom emoji. This is the name that shows up in the emoji autocomplete.
-2. Choose **Select**, then select the image to use for the emoji.
-3. Select **Save**. Once saved, your emoji is added to the list of custom emoji.
+1. From the emoji picker, select **Custom Emoji**. 
+
+.. image:: ../images/add-custom-emoji1.png
+  :alt: Select Custom Emoji to upload custom emojis to Mattermost.
+
+2. Enter a name for your custom emoji. This is the name that shows up in the emoji autocomplete.
+3. Choose **Select**, then select the image to use for the emoji. Small, square pictures work best when selecting an image to upload. The file can be any JPG, GIF, or PNG that's up to 512 KiB in size.
+4. Select **Save**. Once saved, your emoji is added to the list of custom emoji.
 
 .. image:: ../images/add_custom_emoji.png
-  :alt: You can upload custom emojis to Mattermost.
+  :alt: Name and upload custom emojis to Mattermost.
 
 4. To use your custom emoji in a message, select it from the emoji picker, or type ``:`` followed by your emoji name to bring it up in the emoji autocomplete.
 
-.. note::
-
-  If you can't see the **Custom Emoji** option, your Mattermost system admin may have restricted access to upload custom emoji. Contact your Mattermost system admin for assistance.
-  
 Remove custom emojis
 ~~~~~~~~~~~~~~~~~~~~
 

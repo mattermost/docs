@@ -3,7 +3,6 @@ Deprecated configuration settings
 
 The following Mattermost configuration settings are deprecated and are no longer supported in current Mattermost releases:
 
-- `Mattermost Boards settings <#mattermost-boards-settings>`__
 - `Bleve settings <#bleve-settings>`__
 - `Elasticsearch settings <#elasticsearch-settings>`__
 - `Service settings <#service-settings>`__
@@ -20,32 +19,11 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Permission policy settings <#permission-policy-settings>`__
 - `Image settings <#image-settings>`__
 - `Experimental display settings <#experimental-display-settings>`__
+- `Experimental API endpoint settings <#experimental-api-endpoint-settings>`__
+- `Shared channels settings <#shared-channels-settings>`__
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----
-
-Mattermost Boards setting
---------------------------
-
-*Removed in the Mattermost v8.0 release*
-
-Enable publicly-shared boards
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+------------------------------------------------------+--------------------------------------------------------------------------------------+
-| Enable or disable the ability to share               | - System Config path: **Products > Boards**                                          |
-| links to Mattermost boards with other users.         | - ``config.json`` setting: ``".ProductSettings.EnablePublicSharedBoards: false”,``   |
-|                                                      | - Environment variable: ``MM_PRODUCTSETTINGS_ENABLEPUBLICSHAREDBOARDS``              |
-| - **true**: Enables the ability to share links to    |                                                                                      |
-|   Mattermost boards with other users.                |                                                                                      |
-| - **false**: **(Default)** Mattermost boards can't   |                                                                                      |
-|   be shared with other users.                        |                                                                                      |
-+------------------------------------------------------+--------------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                  |
-|                                                                                                                                             |
-| - From Mattermost v7.7 through Mattermost v7.10, this configuration setting applies to Mattermost Boards available as an official           |
-|   in-product vertical.                                                                                                                      |
-+------------------------------------------------------+--------------------------------------------------------------------------------------+
 
 Bleve settings
 --------------
@@ -806,6 +784,45 @@ The file must be in the same directory as your ``config.json`` file if you set a
 
 ----
 
+Shared channels settings
+------------------------
+
+Enable remote cluster service (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces (beta)>` configuration settings
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable this setting to add, remove, and view remote clusters for shared channels.
+
+**True**: System admins can manage remote clusters using the System Console.
+
+**False**: (**Default**) Remote cluster management is disabled.
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableRemoteClusters": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------------------------+
+
+Enable shared channels (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces (beta)>` configuration settings
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
+
+**True**: System admins can establish secure connections between Mattermost instances.
+
+**False**: (**Default**) The ability to establish secure connections is disabled.
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableSharedChannels": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------------------------+
+
+----
+
 Other deprecated settings
 --------------------------
 
@@ -857,4 +874,4 @@ This configuration setting disables the ability to send inactivity email notific
 Disable Apps Bar
 ~~~~~~~~~~~~~~~~
 
-This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. This setting is enabled for all customers by default from Mattermost v8.0.
+This setting is enabled for all customers by default from Mattermost v8.0. This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. 

@@ -5,7 +5,7 @@ This page provides troubleshooting guidance for high scale Mattermost deployment
 
 If these steps do not resolve the issue, and you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, please reach out to our customer support team via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
-Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
+Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
 My system keeps hanging when I search for a message in Mattermost
 ---------------------------------------------------------------------

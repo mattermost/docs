@@ -598,36 +598,6 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablesharedchannels
-  :displayname: Enable shared channels (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: ExperimentalSettings:EnableSharedChannels, ExperimentalSettings:EnableRemoteClusterService
-  :environment: N/A
-
-  Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
-  Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console. Default value of both settings is **false**.
-
-Enable shared channels
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
-   - System admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
-
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -648,7 +618,7 @@ This setting disables attempts to detect when the computer has woken up and refe
 
 **True**: Mattermost won't attempt to detect when the computer has woken up and refetch data. This might reduce the amount of regular network traffic the app is sending.
 
-**False**: (Default) Mattermost attempts to detect when the computer has woken up and refreshes data.
+**False**: (**Default**) Mattermost attempts to detect when the computer has woken up and refreshes data.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` with options ``true`` and ``false``.   |
@@ -691,7 +661,7 @@ This setting enables you to specify an alternate filestore target for Mattermost
 
 **False**: Standard :ref:`file storage <configure/environment-configuration-settings:file storage>` is used (or when the configuration setting is omitted).
 
-When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost workspace migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
+When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
 
 .. note::
 
@@ -699,6 +669,19 @@ When an alternate filestore target is configured, Mattermost Cloud admins can ge
 
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
++-------------------------------------------------------------------------------------------------------------------------------------------+
+
+YouTube referrer policy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+This setting resolves issues where YouTube video previews display as unavailable.
+
+**True**: The referrer policy for embedded YouTube videos is set to ``strict-origin-when-cross-origin``.
+
+**False**: (Default) The referrer policy is set to ``no-referrer`` which enhances user privacy by not disclosing the source URL, but limits the ability to track user engagement and traffic sources in analytics tools.
+
++-------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.    |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
@@ -988,8 +971,12 @@ Experimental configuration settings for self-hosted deployments only
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+.. tip::
+
+  Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
+  - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
 .. config:setting:: exp-allowedthemes
   :displayname: Allowed themes (Experimental)
@@ -1042,78 +1029,6 @@ This setting is used to maximize performance for large Enterprise deployments.
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
 +---------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-latestandroidversion
-  :displayname: Latest Android version (Experimental)
-  :systemconsole: N/A
-  :configjson: AndroidLatestVersion
-  :environment: N/A
-  :description: The latest version of the Android React Native app that is recommended for use.
-
-Latest Android version
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the Android React Native app that is recommended for use.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-minimumandroidversion
-  :displayname: Minimum Android version (Experimental)
-  :systemconsole: N/A
-  :configjson: AndroidMinVersion
-  :environment: N/A
-  :description: The minimum version of the Android React Native app that is required to be used.
-
-Minimum Android version
-~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the Android React Native app that is required to be used.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AndroidMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-latestiosversion
-  :displayname: Latest iOS version (Experimental)
-  :systemconsole: N/A
-  :configjson: IosLatestVersion
-  :environment: N/A
-  :description: The latest version of the iOS app that is recommended for use.
-
-Latest iOS version
-~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The latest version of the iOS app that is recommended for use.
-
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IosLatestVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-minimumiosversion
-  :displayname: Minimum iOS version (Experimental)
-  :systemconsole: N/A
-  :configjson: IosMinVersion
-  :environment: N/A
-  :description: The minimum version of the iOS React Native app that is required to be used.
-
-Minimum iOS version
-~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-The minimum version of the iOS React Native app that is required to be used.
-
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IosMinVersion": ""`` with string input corresponding to a version string, such as ``"1.2.0"``. |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-batchsize
   :displayname: Batch size (Experimental)
@@ -1202,37 +1117,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-remoteclusters
-  :displayname: Remote clusters (Experimental)
-  :systemconsole: N/A
-  :configjson: RemoteClusters
-  :environment: N/A
-
-  - **true**: System admins can manage remote clusters using the System Console.
-  - **false**: **(Default)** Remote cluster management is disabled.
-
-Remote clusters
-~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to add, remove, and view remote clusters for shared channels.
-
-**True**: System admins can manage remote clusters using the System Console.
-
-**False**: Remote cluster management is disabled.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableclientcert
   :displayname: Enable client-side certification (Experimental)
@@ -1400,7 +1284,7 @@ Amazon S3 signature v2
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html.
+By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html.
 
 **True**: Use Signature Version 2 Signing Process.
 
@@ -1561,7 +1445,7 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
   :configjson: BlockProfileRate
   :environment: N/A
 
-  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
   To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
   Default is **0**.
 
@@ -1570,7 +1454,7 @@ Block profile rate
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
@@ -1579,26 +1463,6 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 +---------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
 +---------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Experimental)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: N/A
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
-App custom URL schemes
-~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps. This ensures users are redirected to the custom-built mobile app and not Mattermost's mobile client.
-
-When configured, after OAuth or SAML user authentication is complete, custom URL schemes sent by mobile clients are validated to ensure they don't include default schemes such as ``http`` or ``https``. Mobile users are then redirected back to the mobile app using the custom scheme URL provided by the mobile client. We recommend that you update your mobile client values as well with valid custom URL schemes.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"NativeAppSettings.AppCustomURLSchemes"`` with an array of strings as input. For example: ``[custom-app://, some-app://]``.                    |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-o365scope
   :displayname: Entra ID scope (Experimental)
@@ -1925,7 +1789,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +------------------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-websocketport
   :displayname: Websocket port (Experimental)
@@ -1946,73 +1810,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
-
-.. config:setting:: exp-enableapiteamdeletion
-  :displayname: Enable API team deletion (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableAPITeamDeletion
-  :environment: N/A
-
-  - **true**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
-  - **false**: **(Default)** The API endpoint cannot be called.
-
-Enable API team deletion
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The ``api/v4/teams/{teamid}?permanent=true`` API endpoint can be called by team admins and system admins to permanently delete a team.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/teams/{teamid}`` can still be used to soft delete a team.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enableapiuserdeletion
-  :displayname: Enable API user deletion
-  :systemconsole: N/A
-  :configjson: EnableAPIUserDeletion
-  :environment: N/A
-
-  - **true**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
-  - **false**: **(Default)** The API endpoint cannot be called.
-
-Enable API user deletion
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The ``api/v4/users/{userid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a user.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/users/{userid}`` can still be used to soft delete a user.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enableapichanneldeletion
-  :displayname: Enable API channel deletion (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableAPIChannelDeletion
-  :environment: N/A
-
-  - **true**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
-  - **false**: **(Default)** The API endpoint cannot be called.
-
-Enable API channel deletion
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: The ``api/v4/channels/{channelid}?permanent=true`` API endpoint can be called by system admins, or users with appropriate permissions, to permanently delete a channel.
-
-**False**: The API endpoint cannot be called. Note that ``api/v4/channels/{channelid}`` can still be used to soft delete a channel.
-
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------+
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-enableopentracing
   :displayname: Enable OpenTracing (Experimental)

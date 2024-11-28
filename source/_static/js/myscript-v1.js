@@ -22,7 +22,7 @@ $(document).ready(function () {
     }
 
     // Listen for changes in the theme preference
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         // Only update the theme based on prefers-color-scheme if 'data-theme' is 'auto' or not set
         if (
             !$('body').attr('data-theme') ||
@@ -65,11 +65,11 @@ $(document).ready(function () {
 
     // Notification Banner
 
-    // Fallback for when a notification CTA expires - ie. webinar happens
+    // Fallback for when a notification CTA expires
     const dateInFuture = (value) =>
         new Date().getTime() <= new Date(value).getTime();
-    const expiryDate = '2024-09-10T00:00:00-0500';
-    // 2024-09-10 @ 12am EST
+    const expiryDate = '2024-10-31T00:00:00-0500';
+    // 12am EST
     const fallback_url =
         'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
     const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
@@ -85,7 +85,7 @@ $(document).ready(function () {
     // So it will show up for new announcements
     // Keep "mm_notification_banner__" at the beginning of the key
     // Add system to clean out storage items that are no longer needed
-    let notification_banner_key = 'mm_notification_banner__ed-survey-announcement';
+    let notification_banner_key = 'mm_notification_banner__v10-mst-sept';
     if (!dateInFuture(expiryDate)) {
         notification_banner_key = 'mm_notification_banner__fallback-mst';
     }
@@ -149,4 +149,18 @@ $(document).ready(function () {
         document.body.classList.toggle('nav-open');
         document.getElementById('navigation').classList.toggle('nav-is-active');
     });
+
+    // Remove classes to close the nav if screen size is larger than 992px
+    function closeNav() {
+        if (window.innerWidth > 992) {
+            document.body.classList.remove('nav-open');
+            document.getElementById('navigation').classList.remove('nav-is-active');
+            hamburger.classList.remove('is-active');
+        }
+    }
+
+    closeNav();
+
+    $(window).on('resize', closeNav);
+
 });

@@ -1,7 +1,7 @@
 # v9 changelog
 
 ```{Important}
-Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
+Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
 - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 - See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
@@ -10,6 +10,28 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.5, released 2024-11-14**
+  - Mattermost v9.11.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin [v0.29.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.4).
+  - Mattermost v9.11.5 contains no database or functional changes.
+- **9.11.4, released 2024-10-28**
+  - Mattermost v9.11.4 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where users would not see channels they were added to/messages from those channels in clustered environments [MM-59911](https://mattermost.atlassian.net/browse/MM-59911).
+  - Mattermost v9.11.4 contains no database or functional changes.
+- **9.11.3, released 2024-10-10**
+  - Mattermost v9.11.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
+  - Improved the performance of LDAP sync jobs when group-contained teams and channels are used [MM-60253](https://mattermost.atlassian.net/browse/MM-60253).
+  - Mattermost v9.11.3 contains no database or functional changes.
+- **9.11.2, released 2024-09-26**
+  - Mattermost v9.11.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added Mattermost user survey plugin to pre-packaged plugins, [v1.1.1](https://github.com/mattermost/mattermost-plugin-user-survey/releases).
+  - Pre-packaged Calls plugin [v0.29.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.2).
+  - Pre-packaged Playbooks plugin [v1.40.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.40.0).
+  - Fixed an issue where the **Edit Post Time Limit** button was not being displayed in the System Console ([MM-58529](https://mattermost.atlassian.net/browse/MM-58529), [MM-58824](https://mattermost.atlassian.net/browse/MM-58824)).
+  - Fixed racy use of session in ``NewWebConn`` [MM-60307](https://mattermost.atlassian.net/browse/MM-60307).
+  - Mattermost v9.11.2 contains the following functional change:
+      - Added a configuration setting **NativeAppSettings > MobileExternalBrowser** that tells the Mobile app to perform SSO Authentication using the external default browser [MM-60332](https://mattermost.atlassian.net/browse/MM-60332).
 - **9.11.1, released 2024-08-27**
   - Mattermost v9.11.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.11.1 contains no database or functional changes.
@@ -18,11 +40,20 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Important Upgrade Notes
 
- - Added support for Elasticsearch v8. Also added Beta support for Opensearch. A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch. Note that this will break support for AWS Elasticsearch v7.10.x. The official v8 client only works from Elasticsearch v7.11 and higher versions. Customers using AWS Elasticsearch are requested to upgrade to AWS Opensearch for future compatibility. Upgrade steps can be found here: https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html.
-     - Note: The value cannot be dynamically changed from the System Console while the server is running. One needs to shut down the server, manually edit the config, and then restart the server when switching from one backend to another, and either use mmctl or edit the config manually.
-     - If you are using Opensearch, you **must** set the backend to opensearch. Otherwise Mattermost will not work. 
-     - If you are using Elasticsearch v8, be sure to set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
-     - For AWS customers on Opensearch, do not enable "compatibility mode".
+ - Added support for Elasticsearch v8. Also added Beta support for [Opensearch v1.x and v2.x](https://opensearch.org/). A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is `elasticsearch`, which breaks support for AWS Elasticsearch v7.10.x since the official v8 client only works from Elasticsearch v7.11 and higher versions. See the important note below for details.
+ - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the [Elasticsearch upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) documentation for details.
+ - When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+
+```{Important}
+**AWS Elasticsearch**
+
+If you're using AWS Elasticsearch, you must:
+1. Upgrade to AWS Opensearch. Refer to the [Opensearch upgrade](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html) documentation for details.
+2. Disable "compatibility mode" in Opensearch.
+3. Upgrade Mattermost server.
+4. Update the Mattermost `ElasticsearchSettings.Backend` configuration setting value from `elasticsearch` to `opensearch` manually or using [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set). This value cannot be changed using the System Console. See the Mattermost [Elasticsearch backend type](https://docs.mattermost.com/configure/environment-configuration-settings.html#elastic-backendtype) documentation for additional details.
+5. Restart the Mattermost server.
+```
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 126+.
@@ -122,6 +153,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v9-10-feature-release)=
 ## Release v9.10 - [Feature Release](https://docs.mattermost.com/upgrade/release-definitions.html#feature-release)
 
+- **9.10.3, released 2024-09-26**
+  - Mattermost v9.10.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v1.40.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.40.0).
+  - Mattermost v9.10.3 contains no database or functional changes.
 - **9.10.2, released 2024-08-27**
   - Mattermost v9.10.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.10.2 contains no database or functional changes.
@@ -147,7 +182,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v9-10-chang
  - Pre-packaged Mattermost Copilot plugin version [v0.8.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v0.8.1).
  - Pre-packaged Calls plugin version [v0.28.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.28.2).
  - Re-designed the user profile popover and improved its performance.
- - Added banner to prompt users to give desktop notification permissions when opening the app.
+ - Added banner to prompt users to allow notification permissions when opening the app in web browsers.
  - Increased the width of the profile picture setting to match other user settings.
  - Improved screen reader support for the emoji picker.
  - Improved the accessibility of plugin buttons in the channel header.
@@ -579,7 +614,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 #### User Interface (UI)
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
- - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
+ - Added the [Outgoing OAuth Connections](https://developers.mattermost.com/integrate/slash-commands/outgoing-oauth-connections/) integration type.
  - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Professional and Enterprise plans). On MySQL, users cannot view live results of the batch export in the user interface.
  - Improved the appearance of profile/account menus.
  - Added support for checkbox types in the **System Console** settings.
@@ -637,6 +672,25 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.13, released 2024-11-14**
+  - Mattermost v9.5.13 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin [v0.29.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.4).
+  - Mattermost v9.5.13 contains no database or functional changes.
+- **9.5.12, released 2024-10-28**
+  - Mattermost v9.5.12 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed desyncing issues with unreads between the team sidebar and the title bar [MM-54021](https://mattermost.atlassian.net/browse/MM-54021).
+  - Mattermost v9.5.12 contains no database or functional changes.
+- **9.5.11, released 2024-10-10**
+  - Mattermost v9.5.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with YouTube previews no longer being displayed [MM-60351](https://mattermost.atlassian.net/browse/MM-60351).
+  - Pre-packaged Calls plugin [v0.29.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.2).
+  - Improved the performance of LDAP sync jobs when group-contained teams and channels are used [MM-60253](https://mattermost.atlassian.net/browse/MM-60253).
+  - Mattermost v9.5.11 contains no database or functional changes.
+- **9.5.10, released 2024-09-26**
+  - Mattermost v9.5.10 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed racy use of session in ``NewWebConn`` [MM-60307](https://mattermost.atlassian.net/browse/MM-60307).
+  - Pre-packaged Playbooks plugin [v1.40.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.40.0).
+  - Mattermost v9.5.10 contains no database or functional changes.
 - **9.5.9, released 2024-08-27**
   - Mattermost v9.5.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.5.9 contains no database or functional changes.
@@ -1264,7 +1318,7 @@ If you upgrade from a release earlier than v8.1, please read the other [Importan
  - Accelerate mission-critical workflows that keep your team aligned and your data secure on [the Mattermost and Atlassian platforms](https://mattermost.com/atlassian/).
 
 #### Air-Gapped, Edge-Ready Generative AI with Defense Unicorn's LeapfrogAI
- - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://www.defenseunicorns.com/leapfrogai).
+ - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://defenseunicorns.com/leapfrogai).
 
 #### AI-Accelerated Collaboration
  - Mattermost partner Mobius Logic has enhanced the MS Teams Connector for the Microsoft 365 platform by embedding Mattermost directly inside [Microsoft Teams](https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html).

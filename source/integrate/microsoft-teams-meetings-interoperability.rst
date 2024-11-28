@@ -62,6 +62,18 @@ Create a Mattermost App in Azure
 
 You're all set for configuration inside of the Azure portal.
 
+Install the Microsoft Teams Meetings integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
+2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
+3. Search for or scroll to MS Teams Meetings, and select **Install**.
+4. Once installed, select **Configure**. You're taken to the System Console, directly to the **MS Teams Meetings** integration page, under **Plugins**.
+
+.. note::
+
+  From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases>`_, and upload it to your server via **System Console > Plugin Management**.
+
 Enable and configure the Microsoft Teams Meetings integration in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -70,11 +82,7 @@ Enable and configure the Microsoft Teams Meetings integration in Mattermost
   .. image:: ../images/ms-teams-meetings-copy-ids.png
     :alt: In Azure, copy the Client ID and Tenant ID values.
 
-2. In Mattermost, go to **System Console > Plugins > Microsoft Calendar** to enable this integration.
-
-.. note::
-
-  From Mattermost v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v10, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-msteams-meetings/releases>`, and upload it to your server via **System Console > Plugin Management**.
+2. In Mattermost, go to **System Console > Plugins > MS Teams Meetings** to enable this integration.
 
 3. In Mattermost, enter the following values in the fields provided. Select **Save** to apply the configuration:
 
@@ -109,6 +117,11 @@ Disconnect a Microsoft Teams account from Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Run the `/mstmeetings disconnect` slash command to disconnect a Microsoft Teams account from Mattermost.
+
+Upgrade
+-------
+
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-mscalendar>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Get help
 --------

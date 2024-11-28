@@ -4,13 +4,15 @@ Work with collaborative playbooks
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team.
+A collaborative playbook is a checklist of the tasks that make up your processes. Collaborative playbooks allow you to take codified knowledge and processes and make them accessible and editable by your organization and team. When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
 
-Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
+.. tip::
 
-When you're setting up your playbook, you'll be able to break tasks down, and assign actions to them - such as using a slash command to start a Zoom call. You can also decide whether to use the same channel every time your playbook is run, or a new one.
+  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>` to learn about the key features and functionality to look for in your incident response tooling.
 
-There are other parts of a playbook, such as automation settings, and metrics. But the very first thing you’ll want to set up is a checklist.
+There are other parts of a playbook, such as automation settings, and metrics. Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
+
+But the very first thing you’ll want to set up is a checklist.
 
 Each time you use the process you’ve documented, such as onboarding a new customer, the playbook is used to start a run - a discrete single use of the process - and that run is captured in a channel (either a dedicated one or a new one every time you run the playbook). 
 
@@ -64,12 +66,16 @@ Make checklists
 
   You can start with the default checklist and edit it, or you can delete it and select **+ New checklist**.
 
-    * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+  * Within each checklist, select **+ New task** to add tasks that are meant to be completed together.
+
     * Drag and drop to reorganize checklists and tasks.
     * Add task descriptions to give additional context to members of the playbook. Descriptions support a limited form of Markdown, including text styling and hyperlinks.
-    * Add a slash command to the task that can be executed by members of the playbook as needed.
 
 5. Choose **Save**.
+
+.. note::
+
+  Tasks in a playbook consists of text rendered in Markdown (when present). You can't run commands directly from a task in a playbook, but you can trigger :doc:`built-in slash commands </collaborate/built-in-slash-commands>` and `custom slash commands <https://developers.mattermost.com/integrate/slash-commands/custom/>`_, or outgoing webhooks, to run as part of the task action by starting the task with ``/``.
 
 Multiple runs in a channel
 --------------------------

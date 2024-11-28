@@ -27,10 +27,34 @@ When a channel is archived, it's deleted from the user interface, but a copy exi
   To archive a channel:
   
   1. Tap the channel you want to delete.
-  2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+    :alt: Select a channel that you want to edit.
+    :scale: 30
+
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+    :alt: Tap on More options to access available options for the channel.
+    :scale: 30
+
   3. Tap **View info**.
+
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+    :alt: Tap on View info to see the basic channel info.
+    :scale: 30
+
   4. Tap **Archive Channel**.
+
+  .. image:: ../images/mobile-edit-channel.jpg
+    :alt: Tap on Archive channel to archive the current channel.
+    :scale: 30
+
   5. Tap **Yes** to confirm.
+
+  .. image:: ../images/mobile-confirm-archive-a-channel.jpg
+    :alt: Tap on Yes to confirm your choice.
+    :scale: 30
 
 Unarchive a channel
 -------------------
@@ -49,10 +73,34 @@ System admins and Team admins can restore archived channels. When a channel is u
   To unarchive a channel:
   
   1. Tap the channel you want to unarchive.
-  2. Tap the **More** |more-icon| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-a-channel.jpg
+    :alt: Select a channel that you want to edit.
+    :scale: 30
+
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+
+  .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+    :alt: Tap on More options to access available options for the channel.
+    :scale: 30
+
   3. Tap **View info**.
+
+  .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+    :alt: Tap on View info to see the basic channel info.
+    :scale: 30
+
   4. Tap **Unarchive Channel**.
+
+  .. image:: ../images/mobile-unarchive-a-channel.jpg
+    :alt: Tap on Unarchive channel to unarchive the current channel.
+    :scale: 30
+
   5. Tap **Yes** to confirm.
+
+  .. image:: ../images/mobile-confirm-unarchive-a-channel.jpg
+    :alt: Tap on Yes to confirm your choice.
+    :scale: 30
 
 .. tip::
 

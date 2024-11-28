@@ -35,7 +35,7 @@ Search for message and files
 
   File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
 
-  - For Mattermost Cloud workspaces, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
+  - For Mattermost Cloud :doc:`workspaces </guides/use-mattermost>`, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
   - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
 
   .. note::
@@ -62,9 +62,32 @@ Search for message and files
 .. tab:: Mobile
 
   1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
+
+  .. image:: ../images/mobile-search-for-messages.jpg
+      :alt: Tap on the Search icon to search for messages or files attached to messages.
+      :scale: 30
+
   2. To the right of search options, tap to select which team to search.
+
+  .. image:: ../images/mobile-search-message-team-selection.jpg
+      :alt: Tap on the Team selector to select the team you want to search in.
+      :scale: 30
+
   3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
+
+  .. image:: ../images/mobile-search-message-criteria-with-hashtags.jpg
+      :alt: Type your search criteria along with applicable hashtags.
+      :scale: 30
+
   4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
+
+  .. image:: ../images/mobile-search-message-with-modifiers.jpg
+      :alt: Apply search modifiers to further refine your search.
+      :scale: 30
+  
+  .. image:: ../images/mobile-search-message-results.jpg
+      :alt: Check the search results to find your required message or file from the list.
+      :scale: 30
 
 To access files recently shared in a channel:
 
@@ -125,7 +148,7 @@ Use quotation marks ``" "`` to return search results for exact terms. For exampl
 Wildcards
 ~~~~~~~~~
 
-Use the asterisk ``*`` symbol for wildcard searches that match within words. For example, searching ``rea*`` returns messages or files containing ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``.
+Use the asterisk ``*`` symbol at the end of the word to perform a wildcard search. The wildcard search returns all words that begin with the specified letters. The wildcard in search cannot be used at the beginning or in the middle of a word. For example, searching ``rea*`` returns messages or files containing words like ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``. However, searches like ``*each`` and ``re*ch`` are invalid wildcard searches.
 
 Hashtags
 --------

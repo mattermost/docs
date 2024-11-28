@@ -48,6 +48,10 @@ Start a call
 .. tab:: Mobile
     
   To start a call, go the channel info menu. Then tap **Start Call**.
+
+  .. image:: ../images/mobile-start-a-call-in-a-channel.gif
+      :alt: Tap on Start Call to start a call in the channel.
+      :scale: 50
      
   After starting the call, audio will come through the device's speaker or a Bluetooth device, if connected. On Android, audio output will automatically switch to a Bluetooth device if one is connected during a call. You can tap the **Speaker** icon to manually select the output device.
 
@@ -93,7 +97,7 @@ Lower a raised hand by accessing the host controls and selecting **Lower hand**.
 End the call for everyone
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v9.10 and mobile v2.19, call hosts who choose to leave a call are prompted to confirm whether they want to leave or end the call for all participants.
+From Mattermost v10.2 and mobile v2.19, call hosts who choose to leave a call are prompted to confirm whether they want to leave or end the call for all participants.
 
 Share your screen
 -----------------
@@ -123,6 +127,10 @@ All call participants can use emojis to react during a call.
   
   Expand the call window using the arrows in the top-right of the active call banner. From there, select **React**.
 
+  .. image:: ../images/mobile-react-using-emojis-in-a-call.gif
+      :alt: Tap on React to use emojis reactions during a call.
+      :scale: 50
+
 Chat in a call
 --------------
 
@@ -135,6 +143,10 @@ A chat thread is created automatically for every new call.
 .. tab:: Mobile
   
   Expand the call window using the arrows in the top-right of the active call banner. Then select **More > Call Thread**.
+
+  .. image:: ../images/mobile-chat-in-a-call.gif
+      :alt: Tap on Call Thread to chat while being in a call.
+      :scale: 50
 
 Record a call
 -------------
@@ -161,7 +173,25 @@ To record a call:
 
 .. tab:: Mobile
   
-  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command. Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, select the **Record** button again.
+  To start recording, use the ``/call recording start`` slash command. When you're finished recording, use the ``/call recording stop`` slash command.
+
+  .. image:: ../images/mobile-start-a-call-recording-using-slash-commands.gif
+      :alt: Use '/call recording start' to start recording a call
+      :scale: 50
+  
+  .. image:: ../images/mobile-stop-a-call-recording-using-slash-commands.gif
+      :alt: Use '/call recording stop' to stop recording the call.
+      :scale: 50
+  
+  Alternatively, expand the call window using the arrows in the top-right of the active call banner. Then select the **Record** button. To finish, tap on **Stop Recording** button.
+
+  .. image:: ../images/mobile-start-a-call-recording-using-call-banner.gif
+      :alt: Tap on Record to start recording a call.
+      :scale: 50
+
+  .. image:: ../images/mobile-stop-a-call-recording-using-call-banner.gif
+      :alt: Tap on Stop Recording to stop recording the call.
+      :scale: 50
 
 Live captions during calls (Beta)
 ---------------------------------
@@ -225,7 +255,7 @@ Troubleshooting
 My audio doesn't work when I join a call
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you can hear the other participants in the call but they can't hear you, select the horizontal dots next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select the horizontal dots again to close the menu.
+If you can hear the other participants in the call but they can't hear you, select the Gear icon |gear| next to the call end button in the widget. From there, you can check and change your audio output and microphone settings. Select |gear| again to close the menu. Alternatively, you can :doc:`manage your audio and microphone preferences </preferences/manage-your-plugin-preferences>` in **Settings**.
 
 My call is disconnected after a few seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -244,7 +274,7 @@ There's a known bug on macOS with some versions of Chrome (which is used by Matt
 5. Select **Screen share** and give it permissions again.
 6. Restart Mattermost again.
 
-If the issue persists please post in the public calls channel.
+If the issue persists please post on the Mattermost Community Server in the `Developer: Calls <https://community.mattermost.com/core/channels/developers-channel-call>`_ channel to troubleshoot further.
 
 Debugging
 ---------
@@ -286,7 +316,7 @@ You can access and share debug logs from **Account screen > Settings > Report a 
 Call stats dump
 ~~~~~~~~~~~~~~~
 
-In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message.
+In cases where there are audio/video issues, difficulty in hearing other participants, and/or stuttering video and/or choppy audio, run the ``/call stats`` slash command in the channel where the call is currently active. This returns a JSON object via an ephemeral message. Additionally, run the ``/call logs`` command to review the client logs for the last call session.
 
 You can run this command in an active call or after leaving the call in question. However, we will only save data for the last joined call so joining again will delete the previous call's feedback.
 

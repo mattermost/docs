@@ -6,18 +6,34 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v10.5.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
+- Mattermost will stop providing official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
+
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - As part of our continuous efforts to enhance your user experience, we will be phasing out the Classic Mobile App. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ to continue enjoying our services without interruption. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
 
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Server v10.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Docker Content Trust (DCT) for signing Docker image artifacts will be replaced by Sigstore Cosign in our upcoming release, v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See `this forum post <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`_ for more details.
+- Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November, 2024). If you rely on artifact verification using DCT, please `transition to using Cosign <https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/>`_. See `this forum post <https://forum.mattermost.com/t/upcoming-dct-deprecation/19275>`__ for more details.
 
-Removed features by Mattermost version
-----------------------------------------
+Mattermost Server v10.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with the minimum supported version of the PostgreSQL database. End of support for MySQL is targeted for Mattermost v11.
+- Apps Framework is deprecated for new installs. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.
+- Fully deprecated the ``/api/v4/image`` endpoint when the image proxy is disabled.
+- Removed deprecated ``Config.ProductSettings``, ``LdapSettings.Trace``, and ``AdvancedLoggingConfig`` configuration fields.
+- Removed deprecated ``pageSize`` query parameter from most API endpoints.
+- Deprecated the experimental Strict CSRF token enforcement. This feature will be fully removed in Mattermost v11.
 
 Mattermost Server v9.9.0
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -55,7 +71,7 @@ Mattermost Server v6.0.0
 - Slack Import via the web app. The Slack import tool accessible via the Team Setting menu is being replaced by the mmetl tool that is much more comprehensive for the types of data it can assist in uploading.
 - MySQL versions below 5.7.12. Minimum support will now be for 5.7.12. This version introduced a native JSON data type that lets us improve performance and scalability of several database fields (most notably Users and Posts props). Additionally, version 5.6 (our current minimum version) reached `EOL in February 2021 <https://www.mysql.com/support/eol-notice.html>`_.
 - Elasticsearch 5 and 6. `Versions 5.x reached EOL in March of 2019, and versions 6.x reached EOL in November 2020 <https://www.elastic.co/support/eol>`_. Our minimal supported version with Mattermost v6.0 will be Elasticsearch version 7.0.
-- Windows 7 reached `EOL in January 2020 <https://support.microsoft.com/en-us/windows/windows-7-support-ended-on-january-14-2020-b75d4580-2cc7-895a-2c9c-1466d9a53962>`_. We will no longer provide support for the desktop app issues on Windows 7.
+- Windows 7 reached `EOL in January 2020 <https://support.microsoft.com/en-us/windows/what-does-it-mean-if-windows-isn-t-supported-08f3b92d-7539-671e-1452-2e71cdad18b5>`_. We will no longer provide support for the desktop app issues on Windows 7.
 - :ref:`DisableLegacyMFAEndpoint <configure/deprecated-configuration-settings:disable legacy mfa api endpoint>` configuration setting.
 - :ref:`Experimental Timezone <configure/deprecated-configuration-settings:timezone>` configuration setting.
 - All legacy channel sidebar experimental configuration settings. We encourage customers using these settings to upgrade to v5.32 or later to access custom, collapsible channel categories among many other channel organization features. The settings being deprecated include:
@@ -94,7 +110,7 @@ Mattermost Server v5.30.0
 Mattermost Server v5.16.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Removed support for Internet Explorer (IE11) in Mattermost v5.16.0. Learn more in our `forum post <https://forum.mattermost.org/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__.
+- Removed support for Internet Explorer (IE11) in Mattermost v5.16.0. Learn more in our `forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__.
 
 Mattermost Server v5.12.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -17,7 +17,7 @@ Continual commitment to the principles of GDPR
 Mattermost is a collaboration hub for highly-trusted organizations and is committed to supporting the principles of GDPR to protect the data of people in the European Union. Mattermost adheres to this mission through the use of:
 
 - **Security Infrastructure:** Continual investment in security, privacy and compliance capabilities.
-- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`_ in our standard `Terms of Service <https://mattermost.com/terms-of-service/>`_.
+- **Contractual Obligations:** Appropriate contractual obligations through our terms of service, including the `Data Processing Addendum <https://mattermost.com/data-processing-addendum/>`_ in our standard `Terms of Service <https://mattermost.com/terms-of-use/>`_.
 - **Privacy Measures:** Privacy measures are outlined in our `Privacy Policy <https://mattermost.com/privacy-policy/>`_.
 - **Product Features:** To ensure data management and data portability.
 
@@ -156,7 +156,7 @@ Mattermost Enterprise Edition (includes Mattermost Professional & Enterprise) is
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
 **Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories with specific prohibitions, such as Crimea, Donetsk, and Luhansk regions of Ukraine, Belarus, Russia, Venezuela, Myanmar/Burma, and Cambodia. Details can be
-located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`_ and `OFAC <https://www.treasury.gov/resource-center/sanctions/Pages/default.aspx>`_. The countries and their sanctions are subject to change.
+located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`_ and `OFAC <https://ofac.treasury.gov/>`_. The countries and their sanctions are subject to change.
 
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
 in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736-general-prohibitions/file>`_ of weapons of mass destruction, along with other prohibited end-uses under the U.S. Export Administration Regulations (“EAR”).

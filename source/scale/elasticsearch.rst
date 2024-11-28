@@ -26,14 +26,23 @@ Deploying Elasticsearch includes the following two steps: `setting up the Elasti
 Set up an Elasticsearch server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.14+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
+1. Download and install the latest release of `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/8.15/install-elasticsearch.html>`_, or `Elasticsearch v7.17+ <https://www.elastic.co/guide/en/elasticsearch/reference/7.17/install-elasticsearch.html>`_. See the Elasticsearch documentation for installation details.
 
 .. important::
 
-  - Mattermost v9.11 adds support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ as well as `Opensearch <https://opensearch.org/>`_ (Beta).
-  - Mattermost also supports Elasticsearch v7.17+. We recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
-  - AWS Elasticsearch v7.10.x customers only: The official Elasticsearch v8 client only works with Elasticsearch version v7.11 or later. We recommend that customers using AWS Elasticsearch v7.10.x upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_ for future compatibility. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
-  - Additionally, see the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` configuration setting documentation for additional requirements and recommendations.
+  - Mattermost v9.11 adds support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ as well as beta support for `Opensearch v1.x and v2.x <https://opensearch.org/>`_.
+  - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
+  - When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
+  
+  **AWS Elasticsearch** 
+
+  If you're using AWS Elasticsearch, you must:
+
+    1. Upgrade to AWS Opensearch. Refer to the `Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
+    2. Disable "compatibility mode" in Opensearch.
+    3. Upgrade Mattermost server.
+    4. Update the Mattermost ``ElasticsearchSettings.Backend`` configuration setting value from ``elasticsearch`` to ```opensearch``` manually or using :ref:`mmctl <manage/mmctl-command-line-tool:mmctl config set>`. This value cannot be changed using the System Console. See the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` documentation for additional details.
+    5. Restart the Mattermost server.
 
 2. Set up Elasticsearch with ``systemd`` by running the following commands:
 
@@ -209,6 +218,11 @@ My Elasticsearch indexes won't complete, what should I do?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you have an Elasticsearch indexing job that's paused, it's likely your Elasticsearch server has restarted. If you restart your Elasticsearch server, you must also restart Mattermost to ensure jobs are completed. If restarting the Mattermost server does not resolve the issue, `contact Mattermost Support <https://mattermost.com/support/>`__.
+
+Do I need to purge first then bulk index each time?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes.
 
 Required Permissions For Mattermost Service Account
 ---------------------------------------------------

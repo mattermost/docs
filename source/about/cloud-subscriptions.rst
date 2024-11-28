@@ -11,43 +11,45 @@ Cloud subscriptions
 
    Cloud Dedicated </about/cloud-dedicated>
    Cloud Shared </about/cloud-shared>
+   Cloud VPC Private Connectivity </about/cloud-vpc-private-connectivity>
 
-Mattermost offers secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance. Cloud-native architecture supports organizations of any size for a workspace that scales with your team, without any resource planning.
+Mattermost offers secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance. Cloud-native architecture supports organizations of any size for a deployment that scales with your team, without any resource planning.
 
 Enterprises can choose between dedicated and shared infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed:
 
 - :doc:`Mattermost Cloud Dedicated </about/cloud-dedicated>`: Better suited for larger organizations or those with specific needs around security, compliance, and customization, who are willing to pay a premium for dedicated resources and enhanced support.
 - :doc:`Mattermost Cloud Shared </about/cloud-shared>`: A cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
+- :doc:`Cloud VPC Private Connectivity </about/cloud-vpc-private-connectivity>`: Learn how to access Mattermost Cloud within your own internal network.
 
 Compare offerings
 -----------------
 
-+-------------------------------+---------------+------------+
-| **Resource**                  | **Dedicated** | **Shared** |
-+===============================+===============+============+
-| Mattermost High Availability  |      YES      |     YES    |
-| cluster-based deployment      |               |            |
-+-------------------------------+---------------+------------+
-| Network policy                |      YES      |     YES    |
-+-------------------------------+---------------+------------+
-| Namespace                     |      YES      |     YES    |
-+-------------------------------+---------------+------------+
-| Network                       |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Kubernetes High Availability  |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Database High Availability    |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Object storage                |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Encryption keys               |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Custom backup schedule        |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| IP Filtering                  |      YES      |     YES    |
-+-------------------------------+---------------+------------+
-| Bring your own key            |      YES      |     NO     |
-+-------------------------------+---------------+------------+
++-------------------------------+---------------+-------------+
+| **Resource**                  | **Dedicated** | **Shared**  |
++===============================+===============+=============+
+| Mattermost High Availability  | |checkmark|   | |checkmark| |
+| cluster-based deployment      |               |             |
++-------------------------------+---------------+-------------+
+| Network policy                | |checkmark|   | |checkmark| |
++-------------------------------+---------------+-------------+
+| Namespace                     | |checkmark|   | |checkmark| |
++-------------------------------+---------------+-------------+
+| Network                       | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Kubernetes High Availability  | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Database High Availability    | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Object storage                | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Encryption keys               | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Custom backup schedule        | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| IP Filtering                  | |checkmark|   | |checkmark| |
++-------------------------------+---------------+-------------+
+| Bring your own key            | |checkmark|   |             |
++-------------------------------+---------------+-------------+
 
 Frequently asked questions about Mattermost Cloud
 -------------------------------------------------

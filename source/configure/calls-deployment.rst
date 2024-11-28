@@ -1,7 +1,7 @@
 Calls self-hosted deployment
 ============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
@@ -64,12 +64,10 @@ Network
 Limitations
 -----------
 
-- In Mattermost Cloud, up to 50 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
-
-.. note::
-
-  We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the external, dedicated, and scalable rtcd service. See the :doc:`self-hosted calls deployment </configure/calls-deployment>` documentation for details.
+- All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
+- For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
+- Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <collaborate/make-calls:live captions during calls (beta)>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <configure/calls-deployment:rtcd>`.
+- For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <configure/plugins-configuration-settings:calls>`. The default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the :ref:`performance section <configure/calls-deployment:performance>` below.
 
 Configuration
 -------------
@@ -230,7 +228,7 @@ Both the plugin and the external ``rtcd`` service expose some Prometheus metrics
 Calls plugin metrics
 ^^^^^^^^^^^^^^^^^^^^
 
-Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/performance-monitoring-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
+Metrics for the calls plugin are exposed through the ``/plugins/com.mattermost.calls/metrics`` subpath under the existing Mattermost server metrics endpoint. This is controlled by the :ref:`Listen address for performance <configure/environment-configuration-settings:listen address for performance>` configuration setting. It defaults to port ``8067``.
 
 .. note::
    On Mattermost versions prior to v9.5, plugin metrics were exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` configuration setting. This defaults to port ``8065``.

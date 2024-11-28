@@ -18,6 +18,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy with a tarball </install/install-tar>
     Deploy using Omnibus </install/installing-mattermost-omnibus>
     Deploy using Kubernetes </install/install-kubernetes>
+    Deploy Mattermost on Azure AKS </install/install-kubernetes-aks>
     Deploy on Red Hat </install/install-rhel-8>
     Set up an NGINX proxy </install/setup-nginx-proxy>
     Set up TLS </install/setup-tls>
@@ -25,6 +26,8 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deployment guides </guides/deployment-guides>
     Upgrade Mattermost </guides/upgrade-mattermost>
     Scale Mattermost </guides/scale-mattermost>
+    Secure Mattermost </guides/secure-mattermost>
+    Compliance with Mattermost </guides/compliance-with-mattermost>
     Deployment troubleshooting </guides/deployment-troubleshooting>
     Additional server installation guides </guides/additional-server-installation-guides>
 
@@ -41,6 +44,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Deploy with a tarball </install/install-tar>` - Support for any Linux distribution.
 * :doc:`Deploy using Omnibus </install/installing-mattermost-omnibus>` - An entire Mattermost installation on a single server.
 * :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.
+* :doc:`Deploy Mattermost on Azure AKS </install/install-kubernetes-aks>` - Deploy Mattermost on Azure AKS.
 * :doc:`Deploy on Red Hat </install/install-rhel-8>` - Support for all current Red Hat Enterprise Linux platforms with a tarball.
 * :doc:`Set up NGINX proxy </install/setup-nginx-proxy>` - Learn how to configure Mattermost for HTTPS for deployments of more than 200 users.
 * :doc:`Set up TLS </install/setup-tls>` - Learn how to configure Mattermost for HTTPS for deployments of fewer than 200 concurrent users.
@@ -48,5 +52,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>` - Review software and hardware requirements for Mattermost server, and plan out your Mattermost rollout.
 * :doc:`Upgrade Mattermost </guides/upgrade-mattermost>` - Learn how to stay up to date with the latest features and improvements.
 * :doc:`Scale Mattermost </guides/scale-mattermost>` - Learn how to scale and monitor your Mattermost deployment.
+* :doc:`Secure Mattermost </guides/secure-mattermost>` - Learn how to safeguard your Mattermost data.
+* :doc:`Compliance with Mattermost </guides/compliance-with-mattermost>` - Learn how to keep sensitive data safe and compliant in the strictest, most complex environments.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Having trouble with your deployment?
 * :doc:`Additional server installation guides </guides/additional-server-installation-guides>` - Additional deployment guides and an open source component list you can reference for every release.

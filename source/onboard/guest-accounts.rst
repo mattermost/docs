@@ -12,12 +12,25 @@ Guest accounts
 
 Guest accounts are a way to collaborate with individuals, such as vendors and contractors, outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
-.. include:: /onboard/guest-account-access.rst
-  :start-after: :nosearch:
+Guests can:
+
+- Pin messages to channels
+- Use slash commands (excluding restricted commands such as invite members, rename channels, change headers, etc)
+- Favorite channels
+- Mute channels
+- Update their profile
+- Use different authentication methods than other users
+
+Guests cannot:
+
+- Discover public channels
+- Join open teams
+- Create direct messages or group messages with members who aren’t within the same channel
+- Invite people
 
 .. important::
 
-  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.This means that guest accounts count as a paid user in your Mattermost workspace. However, guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
+  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`. However, guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
 
 Enable guest accounts
 ----------------------

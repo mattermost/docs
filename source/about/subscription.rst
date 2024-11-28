@@ -14,14 +14,15 @@ Mattermost offers 2 types of subscription:
 
 * :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
 * :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for secure enterprise collaboration with full control over your data.
-* :doc:`Editions and offerings </about/editions-and-offerings>` - Learn more about Mattermost's commercial edition, available plans, other plans, and product decisions.
+
+Learn more about Mattermost's commerial :doc:`editions and offerings </about/editions-and-offerings>`.
 
 Mattermost Cloud  
 ----------------
 
 Enterprises can inquire about Mattermost Cloud -- a secure, cloud-based collaboration for fast moving enterprises that’s private, scaleable, and low maintenance offered on the same Kubernetes-based platform as the self-hosted edition, and managed by Mattermost, Inc.
 
-Enterprises can choose between :doc:`dedicated </about/cloud-dedicated>` and :doc:`shared </about/cloud-shared>` infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed.
+Enterprises can choose between :doc:`dedicated </about/cloud-dedicated>` and :doc:`shared </about/cloud-shared>` infrastructure based on your organizations’ size, budget, technical requirements, and level of control and customization needed. :doc:`Private connectivity through VPC </about/cloud-vpc-private-connectivity>` is also available.
 
 Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
@@ -125,7 +126,7 @@ How is a user defined for subscriptions?
 
 For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
 
-Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of activated users.
+Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </onboard/connected-workspaces>` users aren't counted towards the total number of activated users.
 
 You can review your user count, for billing purposes, by going to **System Console > Site Statistics**, under **Total Activated Users**.
 

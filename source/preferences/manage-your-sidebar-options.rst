@@ -4,15 +4,15 @@ Manage your sidebar options
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-To customize Mattermost channel sidebar options based on your preferences, select the gear icon |gear| next to your profile picture, then go to **Sidebar**.
+Using Mattermost in a web browser or the desktop app, you can customize your Mattermost sidebar based on your preferences. Select the gear icon |gear| next to your profile picture, then select **Sidebar**.
 
 Your channel sidebar includes :doc:`enhanced sidebar features </preferences/customize-your-channel-sidebar>`, including custom, collapsible channel categories, drag and drop, unread filtering, channel sorting options, and more.
 
 .. note::
 
-    - The following sidebar settings apply to your current sidebar only.
-    - You must manage sidebar settings individually for every team you're a member of.
-    - You can manage these settings in a web browser or the desktop app. You can't manage these channel sidebar settings using the Mattermost mobile app.
+  - The following sidebar settings apply to your current sidebar only.
+  - You must manage sidebar settings individually for every team you're a member of.
+  - You can manage these settings in a web browser or the desktop app. You can't manage these channel sidebar settings using the Mattermost mobile app.
 
 Group unread channels separately
 --------------------------------

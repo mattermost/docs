@@ -62,7 +62,7 @@ Use TLS on NGINX (as a proxy)
 
 .. note::
 
-  Do not set up TLS on Mattermost before before doing so for NGINX. It breaks the connection as the TLS prevents it from successfully communicating with the Mattermost server.
+  Do not set up TLS on Mattermost before doing so for NGINX. It breaks the connection as the TLS prevents it from successfully communicating with the Mattermost server.
 
 - NGINX will act as a forward proxy to encrypt the traffic between the client and Mattermost server. After installing the SSL certificate, the incoming traffic will be handled via NGINX on port 443 exposed to the internet, proxy to the Mattermost server running on port 80.
 - (Optional) Upstream encryption between NGINX to Mattermost server is allowed.
@@ -70,5 +70,5 @@ Use TLS on NGINX (as a proxy)
  
 Other helpful resources:
 
-- `NGINX's SSL blog <https://www.nginx.com/blog/nginx-ssl/>`__
-- `NGINX's SSL guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`__
+- `NGINX's SSL blog <https://www.f5.com/company/blog/nginx/nginx-ssl/>`_
+- `NGINX's SSL guide <https://docs.nginx.com/nginx/admin-guide/security-controls/terminating-ssl-http/>`_

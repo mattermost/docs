@@ -7,7 +7,7 @@
 
 Note
 
-|deployment-img-yellow| Available only for `self-hosted <https://mattermost.com/deploy/>`__ deployments
+|deployment-img-yellow| Available only for `self-hosted <https://mattermost.com/download/>`__ deployments
 
 .. raw:: html
 

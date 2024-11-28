@@ -5,7 +5,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 
 .. tip::
     
-    If you're the admin for a Mattermost Cloud workspace, see the :doc:`Cloud workspace management </guides/cloud-workspace-management>` documentation.
+    If you're the system admin for a Mattermost Cloud workspace, see the :doc:`Cloud workspace management </guides/cloud-workspace-management>` documentation.
 
 .. toctree::
     :maxdepth: 1
@@ -26,10 +26,8 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Migrate from Slack </onboard/migrate-from-slack>
     Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
     Customize Mattermost </configure/customizing-mattermost>
-    Mattermost logging </manage/logging>
     JSON audit log schema </comply/embedded-json-audit-log-schema>
     SSL client certificate setup </onboard/ssl-client-certificate>
-    Certificate-based authentication </onboard/certificate-based-authentication>
     Manage telemetry </manage/telemetry>
     Configure health check probes </manage/configure-health-check-probes>
 
@@ -47,9 +45,7 @@ This section of the guide is for system admins of self-hosted Mattermost servers
 * :doc:`Migrate from Slack </onboard/migrate-from-slack>` - Learn how to migrate from Slack to Mattermost.
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Set up search capabilities for teams communicating via Chinese, Japanese, or Korean.
 * :doc:`Whitelabel Mattermost </configure/customizing-mattermost>` - Whitelabel the Mattermost server and apps.
-* :doc:`Mattermost logging </manage/logging>` - Learn how Mattermost records activities and events performed within a Mattermost workspace.
 * :doc:`JSON audit log schema </comply/embedded-json-audit-log-schema>` - Learn how to configure Mattermost audit logging using a JSON object.
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Configure SSL client certificates for Mattermost Desktop and Web Apps.
-* :doc:`Certificate-Based Authentication </onboard/certificate-based-authentication>` - Set up certificate-based authentication for Mattermost.
 * :doc:`Manage telemetry </manage/telemetry>` - Self-hosted system admins can opt out of sharing telemetry data with Mattermost.
 * :doc:`Configure health check probes </manage/configure-health-check-probes>` - Configure health check probes for your self-hosted Mattermost server.
