@@ -1,0 +1,79 @@
+{
+    "console_1": {
+        "Type": "console",
+        "Format": "json",
+        "Levels": [
+            {"ID": 5, "Name": "debug", "Stacktrace": false},
+            {"ID": 4, "Name": "info", "Stacktrace": false},
+            {"ID": 3, "Name": "warn", "Stacktrace": false},
+            {"ID": 2, "Name": "error", "Stacktrace": true},
+            {"ID": 1, "Name": "fatal", "Stacktrace": true},
+            {"ID": 0, "Name": "panic", "Stacktrace": true},
+        ],
+        "Options": {
+            "Out": "stdout"
+        },
+        "MaxQueueSize": 1000
+    },
+    "file_1": {
+        "Type": "file",
+        "Format": "plain",
+        "Levels": [
+            {"ID": 5, "Name": "debug", "Stacktrace": false},
+            {"ID": 4, "Name": "info", "Stacktrace": false},
+            {"ID": 3, "Name": "warn", "Stacktrace": false},
+            {"ID": 2, "Name": "error", "Stacktrace": true},
+            {"ID": 1, "Name": "fatal", "Stacktrace": true},
+            {"ID": 0, "Name": "panic", "Stacktrace": true},
+        ],
+        "Options": {
+            "Compress": true,
+            "Filename": "mattermost_logr.log",
+            "MaxAgeDays": 1,
+            "MaxBackups": 10,
+            "MaxSizeMB": 500 
+        },
+        "MaxQueueSize": 1000
+    },
+    "syslog_1": {
+        "Type": "syslog",
+        "Format": "plain",
+        "Levels": [
+            {"ID": 5, "Name": "debug", "Stacktrace": false},
+            {"ID": 4, "Name": "info", "Stacktrace": false},
+            {"ID": 3, "Name": "warn", "Stacktrace": false},
+            {"ID": 2, "Name": "error", "Stacktrace": true},
+            {"ID": 1, "Name": "fatal", "Stacktrace": true},
+            {"ID": 0, "Name": "panic", "Stacktrace": true},
+        ],
+        "Options": {
+            "IP": "logserver.mattermost.com",
+            "Port": 514,
+            "Tag": "mattermost-node3",
+            "TLS": true,
+            "Cert": "mycert.pem",
+            "Insecure": false
+        },
+        "MaxQueueSize": 1000
+    },
+    "tcp1": {
+        "Type": "tcp",
+        "Format": "json",
+        "Levels": [
+            {"ID": 5, "Name": "debug", "Stacktrace": false},
+            {"ID": 4, "Name": "info", "Stacktrace": false},
+            {"ID": 3, "Name": "warn", "Stacktrace": false},
+            {"ID": 2, "Name": "error", "Stacktrace": true},
+            {"ID": 1, "Name": "fatal", "Stacktrace": true},
+            {"ID": 0, "Name": "panic", "Stacktrace": true},
+        ],
+        "Options": {
+            "IP": "logserver.mattermost.com",
+            "Port": 8081,
+            "TLS": true,
+            "Cert": "mycert.pem",
+            "Insecure": false
+        },
+        "MaxQueueSize": 1000
+    }
+}
