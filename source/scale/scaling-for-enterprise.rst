@@ -40,3 +40,9 @@ Mattermost load testing tools
 Mattermost provides a set of tools written in Go to help profiling Mattermost under heavy load, simulating real-world usage of a server installation at scale. The `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-load-test-ng>`_ estimates the maximum number of concurrently active users the target system supports, and enables you to control the load to generate.
 
 Visit the `Mattermost Load Test Tool <https://github.com/mattermost/mattermost-load-test-ng/tree/master/docs>`__ documentation on GitHub for details on getting started with the tools, and visit `the Go documentation <https://pkg.go.dev/github.com/mattermost/mattermost-load-test-ng>`_ for code-specific documentation details.
+
+.. important::
+
+    - The Mattermost Load Test Tool was designed and is used by our performance engineers to compare and benchmark the performance of the service from month to month to prepare for new releases. It's also used extensively in developing our recommended hardware sizing. 
+    - We recommend deploying :doc:`Prometheus and Grafana </scale/deploy-prometheus-grafana-for-performance-monitoring>` with our :ref:`dashboards <scale/deploy-prometheus-grafana-for-performance-monitoring:getting started>` for ongoing monitoring and scale guidance.
+    - If you encounter performance concerns, we recommend :doc:`collecting performance metrics </scale/collect-performance-metrics>` and sharing them with us as a first troubleshooting step.
