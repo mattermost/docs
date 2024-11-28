@@ -62,9 +62,32 @@ Search for message and files
 .. tab:: Mobile
 
   1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
+
+  .. image:: ../images/mobile-search-for-messages.jpg
+      :alt: Tap on the Search icon to search for messages or files attached to messages.
+      :scale: 30
+
   2. To the right of search options, tap to select which team to search.
+
+  .. image:: ../images/mobile-search-message-team-selection.jpg
+      :alt: Tap on the Team selector to select the team you want to search in.
+      :scale: 30
+
   3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
+
+  .. image:: ../images/mobile-search-message-criteria-with-hashtags.jpg
+      :alt: Type your search criteria along with applicable hashtags.
+      :scale: 30
+
   4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
+
+  .. image:: ../images/mobile-search-message-with-modifiers.jpg
+      :alt: Apply search modifiers to further refine your search.
+      :scale: 30
+  
+  .. image:: ../images/mobile-search-message-results.jpg
+      :alt: Check the search results to find your required message or file from the list.
+      :scale: 30
 
 To access files recently shared in a channel:
 
