@@ -48,9 +48,9 @@ You can manage your mobile notifications in both the desktop app and the mobile 
 
   In the desktop app, manage your mobile notification preferences by selecting the **Settings** |gear| icon located in the top right corner of the screen, and select **Notifications > Desktop and mobile notifications**.
 
-  By default, you receive mobile notifications when your Mattermost availability is :ref:`away or offline <preferences/set-your-status-availability:set your availability>`.
+  By default, you receive mobile notifications for @mentions, direct messages, and group messages when your Mattermost availability is :ref:`Online, away, or offline <preferences/set-your-status-availability:set your availability>`. You won't receive Mattermost notifications on your device if you're actively using Mattermost in a web browser.
 
-  - Want to receive mobile notifications when you're online too? Under **Trigger mobile notifications when I am**, select **Online, away, or offline**. Note that you won't be notified on your device if you're actively using Mattermost in a web browser. Alternatively, select **Offline** to receive fewer mobile notifications.
+  - Want to receive fewer mobile notifications? Under **Trigger mobile notifications when I am**, select **Away or Offline** or **Offline**.
 
   - Want different desktop and mobile notifications? Select **Use different settings for my mobile devices**, and then select **All new messages**, or **Mentions, direct messages and group messages**.
 
