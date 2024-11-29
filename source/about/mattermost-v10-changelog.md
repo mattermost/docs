@@ -68,6 +68,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added ``opensearch-project/opensearch-go`` to https://github.com/mattermost/mattermost.
 
 ### Known Issues
+ - Tooltip "Clear" is missing on hovering over X in search box [MM-61985](https://mattermost.atlassian.net/browse/MM-61985).
+ - New search button does not use a button element for accessibility [MM-61234](https://mattermost.atlassian.net/browse/MM-61234).
+ - The bottom padding is missing in the edit state of a scheduled messages [MM-61722](https://mattermost.atlassian.net/browse/MM-61722).
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
