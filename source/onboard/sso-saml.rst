@@ -22,7 +22,7 @@ The SAML Single sign-on integration offers the following benefits:
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
 - **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
 
-.. warning::
+.. important::
   - SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
   - Account creation and updates is influenced by the attributes configured for identification. 
   
