@@ -33,7 +33,7 @@ Perform the downgrade
 1. Stop the Mattermost service to ensure that no data is being written to the database during the downgrade process.
 2. Downgrade the application by replacing the current Mattermost application binary with the version you want to downgrade to. Make sure to use the binary of the target version.
 
-3. If the database schema has changed between versions, you must to downgrade the schema. Use the :ref:`mattermost db downgrade <manage/command-line-tools:mattermost db downgrade>` command. For example: ``mattermost db downgrade --target <target-schema-version>``
+3. If the database schema has changed between versions, you must to downgrade the schema. Use the newer mattermost binary to perform downgrade. :ref:`mattermost db downgrade <manage/command-line-tools:mattermost db downgrade>` command. For example: ``mattermost db downgrade 128,127,126``
 
 .. tip::
 
