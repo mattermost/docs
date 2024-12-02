@@ -1,12 +1,13 @@
 Schedule messages
 ==================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-There are times when you want to send a message, but you don't want it sent immediately. For example, it may be after working hours for the recipient. You can schedule messages to send at a date and time in the future.
+There are times when you want to send a message, but you don't want it sent immediately. For example, it may be after working hours for the recipient. 
+From Mattermost v10.3, using Mattermost in a web browser or the desktop app, you can schedule messages to send in the future. 
 
-From Mattermost v10.3, using Mattermost in a web browser or the desktop app, you can schedule messages to send in the future. Compose a message, then select the right side of the **Send** icon |send-icon| to schedule when the message will be sent.
+Compose a message, then select the right side of the **Send** icon |send-icon| to schedule when the message will be sent. You can choose from a fixed time or set a custom time.
 
 .. image:: ../images/scheduled-messages.gif
     :alt: Compose a message and select the right side of the Send icon to schedule when the message will be sent.
