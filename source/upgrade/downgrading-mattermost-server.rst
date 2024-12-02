@@ -4,49 +4,46 @@ Downgrade Mattermost Server
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. Server binaries can be found in the :doc:`Mattermost server version archive </about/version-archive>` documentation. We do not recommend downgrading more than one version back from your current installation.
-
-Downgrade Mattermost v6.0 to v5.38
------------------------------------
-
-Run the following set of queries, specific to your database, to downgrade the schema from v6.0 to v5.38.
+In most cases you can downgrade Mattermost Server using the same steps as :doc:`upgrading-mattermost-server`. Server binaries can be found in the :doc:`Mattermost server version archive </about/version-archive>` documentation. 
 
 .. important::
 
-  The performance impact of a downgrade from v6.0 is similar to the v6.0 database migration. See the :ref:`upgrade to Mattermost v6.0 <upgrade/prepare-to-upgrade-mattermost:upgrade to mattermost v6.0>` documentation for details.
+  - We don't recommend downgrading more than one version back from your current installation.
+  - We strongly recommend testing the downgrade in a staging environment first to identify any potential issues.
+  - Ensure that your plugins and integrations are compatible with the downgraded version you're moving to.
 
-.. code-block:: sh
+Prepare for downgrade
+---------------------
 
-  INSERT INTO Systems (Name,Value) VALUES ('Version','5.38.0') ON CONFLICT (name) DO UPDATE SET Value = '5.38.0';
+Before downgrading the Mattermost server, we strongly recommend the following preparation steps.
 
-  CREATE INDEX idx_status_status ON Status (Status);
-  DROP INDEX idx_status_status_dndendtime;
-  CREATE INDEX idx_channelmembers_user_id ON ChannelMembers (UserId);
-  DROP INDEX idx_channelmembers_user_id_channel_id_last_viewed_at;
-  DROP INDEX idx_channelmembers_channel_id_scheme_guest_user_id;
-  CREATE INDEX idx_threads_channel_id ON Threads (ChannelId);
-  DROP INDEX idx_threads_channel_id_last_reply_at;
-  CREATE INDEX idx_channels_team_id ON Channels (TeamId);
-  DROP INDEX idx_channels_team_id_type;
-  DROP INDEX idx_channels_team_id_display_name;
-  CREATE INDEX idx_posts_root_id ON Posts (RootId);
-  DROP INDEX idx_posts_root_id_delete_at;
+1. Back up your data: Ensure you have a full backup of your database and Mattermost application files. This is crucial in case you need to revert any changes.
 
-  ALTER TABLE CommandWebhooks ADD COLUMN ParentId varchar(26);
-  UPDATE CommandWebhooks SET ParentId = '';
-  ALTER TABLE Posts ADD COLUMN ParentId varchar(26);
-  UPDATE Posts SET ParentId = '';
+  a. Back up your database using your organization’s standard procedures for backing up the database.
 
-  ALTER TABLE users ALTER COLUMN timezone TYPE varchar(256);
-  ALTER TABLE users ALTER COLUMN notifyprops TYPE varchar(2000);
-  ALTER TABLE users ALTER COLUMN props TYPE varchar(4000);
-  ALTER TABLE threads ALTER COLUMN participants TYPE text;
-  ALTER TABLE sessions ALTER COLUMN props TYPE varchar(1000);
-  ALTER TABLE posts ALTER COLUMN props TYPE varchar(8000);
-  ALTER TABLE linkmetadata ALTER COLUMN data TYPE varchar(4096);
-  ALTER TABLE jobs ALTER COLUMN data TYPE varchar(1024);
-  ALTER TABLE channelmembers ALTER COLUMN notifyprops TYPE varchar(2000);
+  b. Back up your application by copying into an archive folder (e.g. ``mattermost-back-YYYY-MM-DD-HH-mm``). Ensure to copy your Mattermost configuration files and any other necessary application files.
 
-.. note:: 
-        
-  The inverse of `the final v6.0 upgrade query <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#postgresql-1>`_ is intentionally omitted from these downgrade queries because its result is backwards compatible, and running the query would unnecessarily delay the downgrade process.
+2. Carefully review the Mattermost changelog for the version you are downgrading to in order to understand any potential issues or incompatibilities.
+
+3. Verify the current schema version of your database using the :ref:`mattermost db version <manage/command-line-tools:mattermost db version>` command.
+
+Perform the downgrade
+---------------------
+
+1. Stop the Mattermost service to ensure that no data is being written to the database during the downgrade process.
+2. Downgrade the application by replacing the current Mattermost application binary with the version you want to downgrade to. Make sure to use the binary of the target version.
+
+3. If the database schema has changed between versions, you must to downgrade the schema. Use the :ref:`mattermost db downgrade <manage/command-line-tools:mattermost db downgrade>` command. For example: ``mattermost db downgrade --target <target-schema-version>``
+
+.. tip::
+
+  You can review downgrade changes before committing them by using the ``--save-plan`` option to generate the SQL downgrade script. This option allows you to save the SQL statements that would be executed during the downgrade process to a specified file, instead of applying them directly to the database. For example: ``mattermost db downgrade --save-plan downgrade_plan.sql``.
+
+4. There may be changes in configuration settings between versions. Revert any necessary configuration changes in the ``config.json`` file to match the downgraded version's expectations and support.
+
+After the downgrade
+--------------------
+
+1. Restart the Mattermost Server after completing the downgrade.
+2. Check the logs and test the application to ensure that everything is functioning correctly.
+3. Inform your users about the downgrade and any potential changes they might experience.
