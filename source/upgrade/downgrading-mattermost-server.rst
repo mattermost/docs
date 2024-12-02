@@ -37,7 +37,7 @@ Perform the downgrade
 
 .. tip::
 
-  You can review downgrade changes before committing them by using the ``--save-plan`` option to generate the SQL downgrade script. This option allows you to save the SQL statements that would be executed during the downgrade process to a specified file, instead of applying them directly to the database. For example: ``mattermost db downgrade --save-plan downgrade_plan.sql``.
+  You can review downgrade changes before committing them if you have used the ``--save-plan`` option while upgrading Mattermost. It has both forwards and backwards SQL scripts. This option allows you to not specify specific migrations to be downgraded and also allows you to use older versions of mattermost to perform downgrade. For example: ``mattermost db downgrade migration_plan_128_127.json``.
 
 4. There may be changes in configuration settings between versions. Revert any necessary configuration changes in the ``config.json`` file to match the downgraded version's expectations and support.
 
