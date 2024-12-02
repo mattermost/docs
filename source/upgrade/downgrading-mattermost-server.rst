@@ -8,7 +8,7 @@ In most cases you can downgrade Mattermost Server using the same steps as :doc:`
 
 .. important::
 
-  - We don't recommend downgrading more than one version back from your current installation.
+  - We don't recommend downgrading more than one major version back from your current installation.
   - We strongly recommend testing the downgrade in a staging environment first to identify any potential issues.
   - Ensure that your plugins and integrations are compatible with the downgraded version you're moving to.
 
