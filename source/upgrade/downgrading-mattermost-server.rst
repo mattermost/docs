@@ -25,7 +25,7 @@ Before downgrading the Mattermost server, we strongly recommend the following pr
 
 2. Carefully review the Mattermost changelog for the version you are downgrading to in order to understand any potential issues or incompatibilities.
 
-3. Verify the current schema version of your database using the :ref:`mattermost db version <manage/command-line-tools:mattermost db version>` command.
+3. Verify the current schema version of your database using the :ref:`mattermost db version --all<manage/command-line-tools:mattermost db version>` command. Also, if you aren't sure about the target schema, you can verify the target schema version (i.e., applied migrations) by checking the public `GitHub repository <https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/migrations.list>`_ (Select the tag for desired version).
 
 Perform the downgrade
 ---------------------
