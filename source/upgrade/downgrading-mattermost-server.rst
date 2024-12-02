@@ -31,18 +31,19 @@ Perform the downgrade
 ---------------------
 
 1. Stop the Mattermost service to ensure that no data is being written to the database during the downgrade process.
-2. Downgrade the application by replacing the current Mattermost application binary with the version you want to downgrade to. Make sure to use the binary of the target version.
 
-3. If the database schema has changed between versions, you must to downgrade the schema. Use the newer mattermost binary to perform downgrade. :ref:`mattermost db downgrade <manage/command-line-tools:mattermost db downgrade>` command. For example: ``mattermost db downgrade 128,127,126``
+2. If the database schema has changed between versions, you must downgrade the schema. Use the newer mattermost binary to perform the downgrade using the :ref:`mattermost db downgrade <manage/command-line-tools:mattermost db downgrade>` command. For example: ``mattermost db downgrade 128,127,126``
 
 .. tip::
 
-  You can review downgrade changes before committing them if you have used the ``--save-plan`` option while upgrading Mattermost. It has both forwards and backwards SQL scripts. This option allows you to not specify specific migrations to be downgraded and also allows you to use older versions of mattermost to perform downgrade. For example: ``mattermost db downgrade migration_plan_128_127.json``.
+  You can review downgrade changes before committing them if you have used the ``--save-plan`` option while upgrading Mattermost. It has both forwards and backwards SQL scripts. This option allows you to avoid specifying migrations to be downgraded, and allows you to use older versions of Mattermost to perform the downgrade. For example: ``mattermost db downgrade migration_plan_128_127.json``.
 
-4. There may be changes in configuration settings between versions. Revert any necessary configuration changes in the ``config.json`` file to match the downgraded version's expectations and support.
+3. There may be changes in configuration settings between versions. Revert any necessary configuration changes in the ``config.json`` file to match the downgraded version's expectations and support.
 
 After the downgrade
 --------------------
+
+Replace the current Mattermost application binary with the version you want to downgrade to. Make sure to use the binary of the target version. The newer Mattermost binary contains the downgrade SQL for the migrations to be rolled back. The newer binary version is used to perform the downgrade; then you start using the application binary of the version you want to downgrade to.
 
 1. Restart the Mattermost Server after completing the downgrade.
 2. Check the logs and test the application to ensure that everything is functioning correctly.
