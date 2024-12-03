@@ -35,7 +35,7 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
 
 .. tip::
 
-  Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools.html#mattermost-db-migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
+  Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools:mattermost db migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
 
 Upgrade Mattermost Server
 --------------------------
