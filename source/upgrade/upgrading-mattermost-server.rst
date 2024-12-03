@@ -33,6 +33,10 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
   - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 - **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend a minimum 2GB of free disk space to allow for extraction, copy, and cleanup, and a minimum of twice the size of your Mattermost installation available for the database.
 
+.. tip::
+
+  Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools.html#mattermost-db-migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
+
 Upgrade Mattermost Server
 --------------------------
 
