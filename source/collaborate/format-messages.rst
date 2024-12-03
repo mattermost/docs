@@ -646,6 +646,10 @@ Renders as:
 .. image:: ../images/markdownTable1.png
    :alt: Markdown Table Sample
 
+.. note::
+
+  Multi-line text in a table cell isn't supported using HTML tags such as ``<br>`` or ``<br/>``.
+
 Math Formulas
 ~~~~~~~~~~~~~
 
