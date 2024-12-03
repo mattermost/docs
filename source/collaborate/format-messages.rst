@@ -187,7 +187,7 @@ Renders as:
 Code blocks
 ~~~~~~~~~~~
 
-Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files.
+Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files. Rendered code blocks include a **Copy** option to copy the contents of the code block.
 
 This can be accomplished by placing three backticks ``````` on the line directly above and directly below your code:
 
