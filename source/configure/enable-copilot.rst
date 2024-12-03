@@ -8,7 +8,7 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 
 .. tip::
 
-  Looking for a Mattermost Copilot demo? Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows, then download the `Mattermost Copilot datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
+  Looking for a Mattermost Copilot demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_! Then, watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows, and download the `Mattermost Copilot datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
 
 .. include:: ../_static/badges/academy-copilot-setup.rst
   :start-after: :nosearch:
