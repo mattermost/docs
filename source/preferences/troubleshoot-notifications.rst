@@ -9,7 +9,7 @@ The Mattermost notifications you receive depend on your `Mattermost preferences 
 Send yourself a test notification
 ----------------------------------
 
-From Mattermost v10.3, you can send yourself a test notification by selecting **Settings** |gear| in the top right corner of Mattermost.
+From Mattermost v10.3, you can send yourself a test notification by selecting **Settings** |gear|, and going to the **Notifications** options.
 
 Under **Troubleshooting notifications** select the **Send a test notification** option. If notifications are working, you'll receive a system-bot direct message to confirm. 
 
