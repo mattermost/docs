@@ -112,7 +112,7 @@ For example, if **System Console > Logs** displays the following error, search f
 Checking your Notifications settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If SMTP sending fails with message ``Failed to set the to address``, go to **System Console > Notifications** and verify that **Notification Display Name** and **Notification From Address** are correctly set. You might need to define also **Support Email Address** and **Notification Reply-To Address**.
+If SMTP sending fails with message ``Failed to set the to address``, go to **System Console > Site Configuration > Notifications** to verify that **Notification Display Name** and **Notification From Address** are set correctly. You may also need to define a **Support Email Address** and **Notification Reply-To Address**.
 
 Checking your SMTP server is reachable 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
