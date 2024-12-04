@@ -53,6 +53,7 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
  - Fixed an issue with a link in the Compliance Monitoring page banner in the System Console.
  - Fixed an issue that no longer allowed managing user tokens via the System Console.
  - Fixed a SVG image rendering issue by setting conditional width and height attributes in ``ImagePreview`` and ``SizeAwareImage`` components.
+ - Fixed an issue with the web app status not being updated correctly for the current user.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
