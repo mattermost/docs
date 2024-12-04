@@ -447,7 +447,7 @@ Enable onboarding flow
 Enable user typing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether "user is typing..." messages are displayed below the message box when using Mattermost in a web browser or the desktiop app. 
+This setting determines whether "user is typing..." messages are displayed below the message box when using Mattermost in a web browser or the desktop app. 
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": true`` with options ``true`` and ``false``. |
