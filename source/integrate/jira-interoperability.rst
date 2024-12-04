@@ -51,7 +51,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
     - **Enable slash command**: Enable or disable slash command autocompletion to guide users through available ``/jira`` slash commands.
     - **Display Subscription name in notifications**: Show or hide subscription name in notification messages posted to a channel.
     - **Admin API Token**: Set an `API token  <https://support.atlassian.com/atlassian-account/docs/manage-api-tokens-for-your-atlassian-account/>`_ to get notified for comments and issue creation events, even when the user triggering the event isn't connected to Jira, and set up Autolink. API tokens must be created using an admin Jira account; otherwise, notifications won't be delivered for projects the user can't access, and Autolink won't work.
-    - **Admin Email**: Set Admin email to set up Autolink for the Jira plugin
+    - **Admin Email**: Set Admin email to set up Autolink for the Jira plugin.
 
 2. Run ``/jira setup`` to start the wizard to configure the plugin. If you wish to set up the plugin manually, then please follow the steps below.     
 
