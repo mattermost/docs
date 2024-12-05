@@ -14,7 +14,7 @@ When using the `Mattermost Notification Health <https://grafana.com/grafana/dash
 Push Proxy Delivery Rate
 ------------------------
 
-The **Push Proxy Delivery Rate** panel indicates the percentage of push notifications that have been successfully delivered to the endpoints (i.e., mobile devices) out of the total number of push notifications sent.
+The **Push Proxy Delivery Rate** panel indicates the percentage of push notifications that have been successfully delivered to the Push Notification Service (i.e., Apple Push Notification service (APNs) or Firebase Cloud Messaging (FCM)) out of the total number of push notifications sent.
 
 Monitor this delivery rate to ensure that users are receiving their notifications in a timely manner. This value should always be 100%. Anything below 99% should be investigated further to identify issues with the push notification configuration, connectivity problems, or possible service interruptions with the push proxy provider.
 
@@ -34,9 +34,9 @@ Missing profile errors are generally safe to ignore. However, if you see occuren
 Push Notifications Not Sent Distribution
 ------------------------------------------
 
-The **Push Notifications Not Sent Distribution** panel helps admins ensure the robustness and reliability of the push notification system by providing detailed insights into the specific reasons for notification delivery failures. This panel displays the distribution of push notifications that were not sent, categorized by the specific reasons why they were not sent. This information helps admins understand the causes behind undelivered push notifications. 
+The **Push Notifications Not Sent Distribution** panel helps admins ensure the robustness and reliability of the push notification system by providing detailed insights into the specific reasons why notifications weren't sent.
 
-This information helps admins understand the reasons why push notifications may not be sent, identify underlying system or configuration problems that need attention, prioritize areas for troubleshooting and improvement by focusing on the most significant issues affecting notification delivery rates, and monitor any trends or spikes in push notifications not sent, resulting in proactive maintenance and quicker resolution of issues as they arise.
+This information helps admins understand the reasons why push notifications may not be sent, (i.e., the channel is muted), identify underlying system or configuration problems that need attention, prioritize areas for troubleshooting and improvement by focusing on the most significant issues affecting notification delivery rates, and monitor any trends or spikes in push notifications not sent, resulting in proactive maintenance and quicker resolution of issues as they arise.
 
 .. image:: ../images/push-notifications-not-sent-distribution.png
   :alt: The Push Notifications Not Sent Distribution panel provides admins with detailed insights into the specific reasons for notification delivery failures.
