@@ -21,6 +21,9 @@ Search for message and files
     .. image:: ../images/search-messages.png
       :alt: Use the Search field to search for messages.
 
+    .. image:: ../images/search-messages-expanded.png
+      :alt: Use the expanded Search field to search for messages.
+
   2. When message results display in the Search Results pane, select **Jump** to view a full message in context.
 
     .. image:: ../images/jump-to-message.png
@@ -54,7 +57,7 @@ Search for message and files
     :alt: You can filter search results by file type.
 
   .. tip::
-    Select the **Channel Files** icon below the channel name to access files recently shared in the current channel. 
+    Select the **Channel Files** icon to the right of the channel name to access files recently shared in the current channel. 
 
     .. image:: ../images/channel-files-icon.png
       :alt: Use the Channel Files option to access recently shared files in the current channel.
@@ -91,15 +94,13 @@ Search for message and files
 
 To access files recently shared in a channel:
 
-- Select the |channel-files-icon| icon below the channel name to access files recently shared in that channel. 
+- Select the |channel-files-icon| icon to the right of the channel name to access files recently shared in that channel. 
 - Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
 
 Search modifiers
 ----------------
 
 You can apply search modifiers to any search to reduce the number of results returned. Select a search modifier to add it to the Search field. Supported modifiers are described below. Your search results include messages from all of your teams.
-
-.. image:: ../images/search-modifiers.png
 
 ``from:`` and ``in:``
 ~~~~~~~~~~~~~~~~~~~~~
@@ -127,11 +128,13 @@ You can apply search modifiers to any search to reduce the number of results ret
 
   * For example, searching ``website before: 2018-09-01 after: 2018-08-01`` returns all messages or files containing the term ``website`` posted between August 1, 2018 and September 1, 2018.
 
-- Use ``on:`` to find messages files posted on a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format.
+- Use ``on:`` to find messages or files posted on a specific date. Use the date picker to select a date, or type it in YYYY-MM-DD format.
 
   * For example, searching ``website on: 2018-09-01`` returns messages or files containing the term ``website`` posted on September 1, 2018.
 
-.. image:: ../images/calendar2.png
+  .. image:: ../images/calendar2.png
+    :alt: Select the on modifier to specify messages or files for a specific a date.
+    :scale: 50
 
 Exclusions
 ~~~~~~~~~~
@@ -175,7 +178,7 @@ Notes about performing Mattermost searches
 - Search modifiers can help narrow down searches. See the `search modifiers <#search-modifiers>`__ section for details.
 - You can search Archived channels as long as you're a member of that channel.
 
-  - If you're unable to see messages or files in archived channels in your search results, ask your system admin if **Allow users to view archived channels** has been disabled under **System Console > Site Configuration > Users and Teams**.
+  - If you're unable to see messages or files in archived channels in your search results, ask your system admin if **Allow users to view archived channels** has been disabled via **System Console > Site Configuration > Users and Teams**.
   - To remove archived channels from your search results, you can leave the Archived channels.
 - Like many search engines, common words such as ``the``, ``which``, and ``are`` (known as "stop words"), as well as two-letter and one-letter search terms, are not shown in search results because they typically return too many results. See the `Technical notes about searching <#technical-notes-about-searching>`__ section below for details.
 - IP addresses (e.g. ``10.100.200.101``) don't return results.

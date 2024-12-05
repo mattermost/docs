@@ -71,6 +71,17 @@ Developers building integrations can create webhook tokens for public channels. 
 | This feature's ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Network Traffic: Outgoing webhooks generate network requests to external services. Disabling them reduces the amount of traffic and resource usage related to those requests.
+  - Decreased Load on Server: Handling webhook events and managing connections to external services uses server resources. By disabling outgoing webhooks, the server workload is reduced, allowing it to allocate more resources to other important tasks.
+  - Improved Response Time: When outgoing webhooks are enabled, the server waits for the external services to return responses, potentially slowing down the performance if the external services are slow or unresponsive. Disabling them removes this dependency, leading to faster response times for user requests.
+  - Lower Memory Usage: Webhooks need memory to process and store data about the requests and responses. Disabling them can free up memory which can be used to improve overall server performance.
+  - Simplified Error Handling: Managing errors and retries for outgoing webhook failures can add complexity and overhead. Disabling outgoing webhooks can simplify error handling and reduce the processing overhead associated with it.
+  - However, outgoing webhooks are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+
 .. config:setting:: integrate-enablecustomslashcommands
   :displayname: Enable custom slash commands (Integrations)
   :systemconsole: Integrations > Integration Management
