@@ -932,6 +932,9 @@ Notification from address
 | String input. Default is ``test@example.com``. This field is required when changing settings in the System Console.   | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKEMAIL``         |
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
+.. note::
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: notification-supportemailaddress
   :displayname: Support email address (Notifications)
   :systemconsole: Site Configuration > Notifications
