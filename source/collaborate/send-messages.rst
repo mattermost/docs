@@ -4,77 +4,60 @@ Send messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+You can send messages in public and private channels as well as to other users in Mattermost.
+
+.. tip::
+
+  - When you send messages in a channel, depending on the :doc:`channel actions configured </collaborate/create-channels>`, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
+  - If you're sending a direct message to another user, Mattermost warns you when the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
+
 .. tab:: Web/Desktop
 
-  Enter a message in the text field, then select **Send** |send-icon| to send the message. You can include images and file attachments to your messages by:
-
-  - copying and pasting images.
-  - dragging-and-drop image files into the text field.
-  - selecting the **Attachment** |attachments-icon| icon.
-
-  Compose a message by typing into the text box at the bottom of the Mattermost screen, then select the **Send** |send-icon| icon.
-
-  You can also use a keyboard to send messages:
-  
-  - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
-  - To create new text lines, press :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac. 
+  Enter a message in the text field, then select **Send** |send-icon| to send the message. 
 
   .. tip::
-
-    - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
-    - If you find you're accidentally sending messages too soon, you can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or press :kbd:`⇧` :kbd:`↵` on Mac to send all messages. Select the **gear** |gear| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
+    
+    You can also use a keyboard to send messages:
+  
+    - Press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac. 
+    - You can configure Mattermost to require :kbd:`Shift` :kbd:`Enter` on Windows or Linux, or :kbd:`⇧` :kbd:`↵` on Mac to send multi-line messages. Select the **gear** |gear| icon to go to **Settings**, then select **Advanced > Send messages on CTRL+ENTER**.
 
 .. tab:: Mobile
 
-  1. In a channel, tap on the text field at the bottom of the Mattermost app to type a message.
+  1. Tap the text field at the bottom of the Mattermost app to type a message.
 
   .. image:: ../images/mobile-type-a-message-in-a-channel.jpg
     :alt: Type a message in the text box at the bottom of the mobile app.
     :scale: 30
 
-  2. Tap on **Send** |send-icon| icon to send it in the channel.
+  2. Tap **Send** |send-icon| icon to send it in the channel.
 
   .. image:: ../images/mobile-sending-a-message.gif
-    :alt: Tapp on the send icon to send the message in the channel.
+    :alt: Tap on the send icon to send the message in the channel.
     :scale: 50
 
-
-.. tip::
-
-  - When you send messages in a channel, depending on the :doc:`channel actions configured </collaborate/create-channels>`, specific words in the post can trigger a prompt to run a playbook. Access **Channel Actions** from the channel name drop-down menu in the center pane to see what automatic actions have been configured for the current channel.
-  - Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`__ to enable this functionality.
-  - `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if the system admin hasn't restricted the ability to do so using :doc:`advanced permissions </onboard/advanced-permissions>`.
-  
 Draft messages
 --------------
 
+From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later, unless your system admin has :ref:`disabled global drafts <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
+
+By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app. Limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server** to disable draft synchronization.
+
 .. tab:: Web/Desktop
 
-  From Mattermost v7.7, when composing new messages, it's easy to return to a message in progress later. Draft messages are added to a **Drafts** view available at the top of the channel sidebar 
+  Draft messages are added to a **Drafts** view available at the top of the channel sidebar. 
 
   .. image:: ../images/Global-Drafts-Animated-GIF.gif
     :width: 700
     :alt: Global drafts makes it easy for you to find all messages in progress.
 
-  By default, message drafts are synchronized on the Mattermost server and are accessible everywhere you access Mattermost, including a web browser or the desktop app. 
-
-  .. Tip::
-  
-    You can disable server-synchronized drafts and limit drafts to your current Mattermost client only by going to **Settings > Advanced > Allow message drafts to sync with the server**.
-
 .. tab:: Mobile
 
-  When composing a message, you can simply opt to complete it later by exiting the channel. 
-  
-  The partially composed message is retained in the text field and you can see a |edit-icon| before the channel name on the app.
+  When composing a message, you can simply opt to complete it later. The partially composed message is kept in the text field and an **Edit** option |edit-icon| displays next to the channel name.
 
   .. image:: ../images/mobile-draft-a-message.gif
     :alt: You can sync a daft message by exiting the channel mid-way while composing the message.
     :scale: 50
-
-.. note::
-
-  System admins can disable global drafts by disabling :ref:`message draft server sychronization <configure/site-configuration-settings:enable server syncing of message drafts>` in the System Console.
 
 Edit messages
 --------------
@@ -104,7 +87,6 @@ Edit messages
     :alt: Type the updated message and tap save to save the edited message.
     :scale: 30
 
-
 Delete messages
 ----------------
 
@@ -132,25 +114,32 @@ Delete messages
 Restore a previous version of an edited message
 -----------------------------------------------
 
-From Mattermost v7.9, you can view the edit history of your edited messages, and restore a previous version of an edited message. Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </collaborate/mention-people>`.
+From Mattermost v7.9, `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can `edit or delete messages <#edit-or-delete-messages>`__ after sending them if your system admin hasn't restricted the ability to do so using :doc:`advanced permissions </onboard/advanced-permissions>`.
 
-1. Select the word *Edited* next to your message. 
-2. In the right pane, you'll see all previous versions of the message.
+Message recipients can't see your message edit history, and restoring a previous message version won't trigger new :doc:`@mention notifications </collaborate/mention-people>`.
+
+.. note::
+  
+  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
+
+1. Select the word **Edited** next to your message. 
+2. In the right pane, review all previous versions of the message.
 3. Select the **Restore** |restore-edit| icon next to the version you want to restore.
 4. Select **Confirm**.
 
 .. image:: ../images/restore-previous-edited-message.gif
   :alt: Select Edited next to an edited message, and then select the version you want to restore.
 
-.. note::
-  
-  Restoring a previous version of the message is available in the Mattermost desktop app or a web browser. The ability to restore using the mobile app isn't supported.
-
 Do more with your messages
 --------------------------
 
-Express yourself your way using the following message features:
+.. tip::
 
+  Using a RTL plugin, Mattermost can automatically detect and display messages written using right-to-left scripts, such as Arabic, Hebrew, or Persian. Your system admin must install the `RTL Plugin <https://github.com/QueraTeam/mattermost-rtl>`_ to enable this functionality.
+
+Express yourself in Mattermost messages using the following features:
+
+- :doc:`Schedule messages </collaborate/schedule-messages>`
 - :doc:`Set message priority </collaborate/message-priority>`
 - :doc:`Format messages </collaborate/format-messages>`
 - :doc:`Mention people </collaborate/mention-people>`
