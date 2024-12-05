@@ -4072,6 +4072,8 @@ rst_prolog = """
 .. |edit-icon| image:: /images/pencil-outline_F0CB6.svg
     :alt: Edit icon.
     :class: theme-icon
+.. |scheduled-message-total| image:: /images/schedule-count-red-badge.png
+    :alt: Total count of scheduled messages.
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
