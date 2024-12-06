@@ -22,6 +22,8 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 
 ### Improvements
 
+See [this walkthrough video](https://mattermost.com/video/mattermost-v10-2-changelog/) on some of the highlights and improvements in our latest release below.
+
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.2.1).
  - Changed the logic of ``useMilitaryTime`` to ``false`` to default to 12-hour time format unless the user's preference from ``data.Value`` is ``true``. When a notification email is sent to a user, the time should now default to the 12-hour format unless otherwise stated by the user. 
@@ -32,9 +34,9 @@ If you upgrade from a release earlier than v10.0, please read the other [Importa
 
 #### Administration
  - Added a new URL parameter called ``permanent`` to ``DELETE /api/v4/posts/<post-id>``, and set ``permanent`` to ``true`` in order to permanently delete a post and its attachments.
- - Added Shared Channels administration page to the System Console.
- - Added a team selector to accept connection invite flow in Shared Workspaces.
- - Restricted activation and deactivation of LDAP-managed users through both the System Admin Console UI and Mattermost API.
+ - Added Connected Workspaces (Beta) administration page to the System Console when Connected Workspaces are [enabled](https://docs.mattermost.com/onboard/connected-workspaces.html#enable-connected-workflows) for the server.
+ - Added a team selector to accept connection invite flow in Connected Workspaces.
+ - Restricted activation and deactivation of LDAP-managed users through both the System Console UI and Mattermost API.
  - Export/import improvements: added the ability to export all user preferences and flagged posts.
  - Increased timeouts to fetch cluster logs.
  - Improved log messages for cluster communication.

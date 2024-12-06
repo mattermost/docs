@@ -48,15 +48,15 @@ Organizations using Mattermost Free to evaluate a future purchase of :ref:`Matte
 Community server
 ----------------
 
-- `Mattermost Community server <https://community.mattermost.com>`__ - Connect with thousands of contributors, customers, and users to build, share, and learn together. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
+- `Mattermost Community server <https://community.mattermost.com>`_ - Connect with thousands of contributors, customers, and users to build, share, and learn together. This server is our virtual office and is open to everyone. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`_ before participating.
 
 Mattermost user forums
 ----------------------
 
-- `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ - Join our community forum for peer-based technical support. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`__ before participating.
+- `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ - Join our community forum for peer-based technical support. Please review our `Code of Conduct <https://handbook.mattermost.com/contributors/contributors/guidelines/contribution-guidelines>`_ before participating.
 
 Feedback
 --------
 
-- `Report a bug <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`__ - Report bugs or other issues you encounter when using Mattermost to our development team.
-- `Propose a feature <https://mattermost.com/suggestions/>`__ - Vote for feature proposals or submit your own.
+- `Report a bug <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`_ - Report bugs or other issues you encounter when using Mattermost to our development team.
+- `Propose a feature <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_ - Vote for feature proposals or submit your own.

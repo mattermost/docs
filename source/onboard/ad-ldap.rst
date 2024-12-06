@@ -165,14 +165,14 @@ When this filter isn't in use, members can be manually promoted/demoted via **Sy
 Configure AD/LDAP deployments with multiple domains
 -----------------------------------------------------
 
-Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see `Forests as Collections of Domain Controllers that Trust Each Other <https://technet.microsoft.com/en-us/library/cc759073%28v=ws.10%29.aspx?f=255&MSPPError=-2147217396>`__ for more information.
+Organizations using multiple domains can integrate with Mattermost using a "Forest" configuration to bring together multiple domains. Please see `Forests as Collections of Domain Controllers that Trust Each Other <https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc759073(v=ws.10)?redirectedfrom=MSDN>`_ for more information.
 
 For forest configurations that contain multiple domains which do NOT share a common root, you can search across all of the domains using the Global Catalog. To do so, update your ``config.json`` as follows:
 
 - Set the LdapPort to 3268 (instead of 389)
 - Set the BaseDN to " " (A single space character)
 
-See `Global Catalog and LDAP Searches <https://technet.microsoft.com/en-us/library/cc978012.aspx>`__ for additional details.
+See `Global Catalog and LDAP Searches <https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-2000-server/cc978012(v=technet.10)?redirectedfrom=MSDN>`_ for additional details.
 
 Troubleshooting/FAQ
 -------------------
@@ -239,7 +239,7 @@ When a user is deactivated in Mattermost via options one or two above, all the u
 Can I connect to multiple AD/LDAP servers?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-There is currently no built-in way to connect to multiple AD/LDAP servers. You will need to connect the instances in a forest before connecting to Mattermost. Consider upvoting the `feature request <https://mattermost.com/suggestions/>`__ on our forum.
+There is currently no built-in way to connect to multiple AD/LDAP servers. You will need to connect the instances in a forest before connecting to Mattermost. Consider upvoting the `feature request <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_ on our forum.
 
 When trying to log in, I see the error ``AD/LDAP not available on this server``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -281,7 +281,7 @@ To address this issue you can set the :ref:`max page size <configure/authenticat
 If the error is still occurring, it is likely that no AD/LDAP users have logged into Mattermost yet. Ensure that at least one AD/LDAP user has logged into Mattermost and re-run the synchronization. The error should disappear at that point.
 
 I see the log error ``Missing NameID Element``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This indicates that the  AD/LDAP server configuration doesn't include the ``NameID`` element in the SAML assertion. The ``NameID`` element is required for user identification in SAML assertions. Ensure the ``NameID`` is mapped to a unique user identifier, such as the user's email address or another stable attribute that isn't subject to change over time.
 

@@ -6,9 +6,12 @@ Chat with Copilot
 
 Overcome information overload and streamline team communication and collaboration with Mattermost Copilot in your Mattermost instance. Copilot is a generative AI assistant with a flexible LLM backend that can be configured to meet your organization's needs. Copilot can summarize call recordings, threads, unread channel messages, and provide insights on any topic you're curious about.
 
-.. note::
+.. tip::
 
-  Copilot must be :doc:`enabled and configured </configure/enable-copilot>` by a Mattermost system admin in the System Console before you can start using it.
+  Looking for a Mattermost Copilot demo? Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows.
+
+.. include:: ../_static/badges/academy-copilot-calls.rst
+  :start-after: :nosearch:
 
 With Copilot you can perform the following tasks:
 
@@ -18,8 +21,9 @@ With Copilot you can perform the following tasks:
 - Extract learnings and transform content into charts, resources, documentation, articles, and more
 - Dig further into any topic by asking for insights
 
-.. include:: ../_static/badges/academy-copilot-calls.rst
-  :start-after: :nosearch:
+.. note::
+
+  Copilot must be :doc:`enabled and configured </configure/enable-copilot>` by a Mattermost system admin in the System Console before you can start using it.
 
 Get started
 ------------
@@ -45,6 +49,10 @@ Copilot remembers the context for follow-up questions and requests. Access all p
 .. tab:: Mobile
 
   Start or open a direct message with the Copilot bot. If your administrator has configured multiple bots, switch between them by starting or opening each bot by name.
+
+  .. image:: ../images/mobile-start-a-conversation-with-copilot.gif
+    :alt: Start a new conversation with Copilot in the Mattermost mobile app.
+    :scale: 50
 
 Summarize Mattermost call recordings
 ------------------------------------
