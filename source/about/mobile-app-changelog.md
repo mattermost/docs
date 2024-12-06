@@ -36,6 +36,7 @@ Note: Mattermost Mobile App v2.23.0 contains medium level security fixes. Updati
  - Fixed an issue where the **Only visible to you** text was missing from ephemeral posts.
  - Fixed a layout issue on iPad with split screen and stage manager.
  - Fixed a crash caused by incorrect Markdown handling.
+ - Fixed an issue with image overflow when using message attachments.
 
 ### Open Source Components
  - Added ``react-native-url-polyfill`` to https://github.com/mattermost/mattermost-mobile.
