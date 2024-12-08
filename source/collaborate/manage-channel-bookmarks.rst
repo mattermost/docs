@@ -24,37 +24,54 @@ Add a bookmark
 
         .. image:: ../images/desktop-bookmark-add.png
             :alt: Using a web browser or the desktop app, select the Plus icon to add a channel bookmark.
-            :scale: 50
     
      - Select **Add a link** to specify the link URL, specify bookmark text, and an optional bookmark icon.
      - Select **Add a file** to select a file, specify bookmark text, and an optional bookmark icon.
 
         .. image:: ../images/desktop-bookmark-add-choice.png
             :alt: Using a web browser or the desktop app, choose whether to add a link or a file.
-            :scale: 50
 
 .. tab:: Mobile
 
     The bookmarks bar is hidden by default when a channel has no bookmarks. 
     
-    1. Select the **More** |more-icon| icon and select **View info**, and **Add a bookmark** to add the first bookmark. For subsequent bookmarks, select the **Plus** |plus| icon in the bookmarks bar.
+    1. In a channel, select the **More** |more-icon-vertical| icon.
 
-        .. image:: ../images/mobile-bookmark-add.png
-            :alt: Using the mobile app, go to the channel view info screen to add a bookmark for the first time.
-            :scale: 50
+    .. image:: ../images/mobile-select-more-options-for-a-channel.jpg
+      :alt: Tap on More options to access available options for the channel.
+      :scale: 30
+    
+    2. Select **View info**.
 
-     - Select **Add a link** to specify the link URL, specify bookmark text, and an optional bookmark icon. 
-     - Select **Add a file** to select a file, specify bookmark text, and an optional bookmark icon.
+    .. image:: ../images/mobile-select-view-info-for-a-channel.jpg
+      :alt: Tap on View info to view additional information about the channel.
+      :scale: 30
+    
+    3. Tap on **Add a bookmark** to add the first bookmark.
 
-        .. image:: ../images/mobile-bookmark-add-choice.png
-            :alt: Using the mobile app, choose whether to add a link or a file.
-            :scale: 50
+    .. image:: ../images/mobile-add-first-channel-bookmark.jpg
+        :alt: Tap on Add a bookmark to add the first bookmark.
+        :scale: 30
+         
+    For subsequent bookmarks, select the **Plus** |plus| icon in the bookmarks bar.
+    
+    .. image:: ../images/mobile-add-subsequent-channel-bookmarks.jpg
+        :alt: Tap on the Plus icon to add more bookmarks to the channel.
+        :scale: 30
 
-        .. image:: ../images/mobile-bookmark-add-details.png
-            :alt: Using the mobile app, specify the link or file, bookmark text, and an optional bookmark icon.
-            :scale: 50
+    4. You can either select **Add a link** to specify the link URL, specify bookmark text, and an optional bookmark icon. 
 
-    2. Select **Add bookmark**.
+    .. image:: ../images/mobile-attach-a-channel-bookmark-link.jpg
+        :alt: Tap on Add a link to add a Bookmark link.
+        :scale: 30
+     
+    Or you can select **Add a file** to select a file, specify bookmark text, and an optional bookmark icon.
+
+    .. image:: ../images/mobile-attach-a-channel-bookmark-file.jpg
+        :alt: Tap on Add a file to add a file as Bookmark.
+        :scale: 30
+
+    5. Tap on **Save**.
 
 Manage bookmarks
 ----------------
@@ -83,6 +100,10 @@ You can make changes to the bookmark link or file, the bookmark title, or the op
 
     Long-press on a bookmark and select **Edit**.
 
+    .. image:: ../images/mobile-edit-a-channel-bookmark.gif
+        :alt: Tap and hold a bookmark name to explore more options.
+        :scale: 50
+
 Share bookmarks
 ^^^^^^^^^^^^^^^^
 
@@ -101,6 +122,10 @@ You can copy bookmark links when your system admin has :ref:`enabled your abilit
 
     Long-press on a bookmark and select **Copy link**.
 
+    .. image:: ../images/mobile-copy-a-channel-bookmark-link.gif
+        :alt: Tap and hold a bookmark name to explore more options.
+        :scale: 50
+
 Delete bookmarks
 ^^^^^^^^^^^^^^^^^
 
@@ -113,4 +138,8 @@ Deleting a channel bookmark deletes it for all channel members.
 .. tab:: Mobile
 
     Long-press on a bookmark and select **Delete**.
+
+    .. image:: ../images/mobile-delete-a-channel-bookmark.gif
+        :alt: Tap and hold a bookmark name to explore more options.
+        :scale: 50
 

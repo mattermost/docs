@@ -66,6 +66,10 @@ A Mattermost system admin must perform the following steps in Mattermost.
 
 Install the Zoom integration from the in-product App Marketplace:
 
+.. note::
+
+  We recommend making a copy of your webhook secret and encryption key, as it will only be visible to you once.
+
 1. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.
 2. Search for or scroll to Zoom, and select **Install**.
 3. Once installed, select **Configure**. You'll be taken to the System Console.
@@ -102,7 +106,7 @@ Run the ``/zoom settings`` slash command to set your preference for using your Z
 Get help
 --------
 
-Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Zoom plugin repository <https://github.com/mattermost/mattermost-plugin-zoom>`_.
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Zoom plugin repository <https://github.com/mattermost/mattermost-plugin-zoom>`_.
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 

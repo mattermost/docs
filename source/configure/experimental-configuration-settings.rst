@@ -598,36 +598,6 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablesharedchannels
-  :displayname: Enable shared channels (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: ExperimentalSettings:EnableSharedChannels, ExperimentalSettings:EnableRemoteClusterService
-  :environment: N/A
-
-  Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
-  Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console. Default value of both settings is **false**.
-
-Enable shared channels
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
-   - System admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
-
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -648,7 +618,7 @@ This setting disables attempts to detect when the computer has woken up and refe
 
 **True**: Mattermost won't attempt to detect when the computer has woken up and refetch data. This might reduce the amount of regular network traffic the app is sending.
 
-**False**: (Default) Mattermost attempts to detect when the computer has woken up and refreshes data.
+**False**: (**Default**) Mattermost attempts to detect when the computer has woken up and refreshes data.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` with options ``true`` and ``false``.   |
@@ -1001,8 +971,12 @@ Experimental configuration settings for self-hosted deployments only
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
 
-.. include:: common-config-settings-notation.rst
-    :start-after: :nosearch:
+.. tip::
+
+  Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
+  - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
 .. config:setting:: exp-allowedthemes
   :displayname: Allowed themes (Experimental)
@@ -1143,37 +1117,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-remoteclusters
-  :displayname: Remote clusters (Experimental)
-  :systemconsole: N/A
-  :configjson: RemoteClusters
-  :environment: N/A
-
-  - **true**: System admins can manage remote clusters using the System Console.
-  - **false**: **(Default)** Remote cluster management is disabled.
-
-Remote clusters
-~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to add, remove, and view remote clusters for shared channels.
-
-**True**: System admins can manage remote clusters using the System Console.
-
-**False**: Remote cluster management is disabled.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: exp-enableclientcert
   :displayname: Enable client-side certification (Experimental)
@@ -1341,7 +1284,7 @@ Amazon S3 signature v2
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html.
+By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html.
 
 **True**: Use Signature Version 2 Signing Process.
 
@@ -1502,7 +1445,7 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
   :configjson: BlockProfileRate
   :environment: N/A
 
-  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
   To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
   Default is **0**.
 
@@ -1511,7 +1454,7 @@ Block profile rate
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
@@ -1846,7 +1789,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +------------------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-websocketport
   :displayname: Websocket port (Experimental)
@@ -1867,7 +1810,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------+
 
 .. note::
-   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/web-server-configuration-settings:web server listen address>` setting.
+   This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
 .. config:setting:: exp-enableopentracing
   :displayname: Enable OpenTracing (Experimental)

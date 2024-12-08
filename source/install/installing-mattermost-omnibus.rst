@@ -213,4 +213,4 @@ What ``mmomni`` commands are available?
 Where can I get help?
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you have any problems installing Mattermost Omnibus, see the :doc:`troubleshooting guide </install/troubleshooting>` for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`__.
+If you have any problems installing Mattermost Omnibus, see the :doc:`troubleshooting guide </install/troubleshooting>` for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`__.

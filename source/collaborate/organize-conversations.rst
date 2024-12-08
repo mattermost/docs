@@ -40,26 +40,61 @@ You'll automatically follow every thread you participate or are mentioned in. Yo
 
 .. tab:: Web/Desktop
 
-  Toggle the thread’s **Follow/Following** indicator, or select **Follow thread** from the **More Actions** |more-icon| icon.
-  
-  **Unfollow threads**
-  
-  If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+  Toggle the thread’s **Follow** indicator, or select **Follow thread** from the **More Actions** |more-icon| icon.
 
   .. image:: ../images/crt-following-thread.jpg
-    :alt: Follow, unfollow, and mark threads as unread from the More Actions icon.
+    :alt: Unfollow threads from the More Actions icon.
+
+  .. tip::
+    - Follow messages with no replies from the **More Actions** |more-icon| icon to be notified if someone replies to the message later based on your notification preferences.
+    - You can also use keyboard arrow keys to navigate threads in the **Threads** view.
 
 .. tab:: Mobile
 
   Long-press on a message to access message options, then tap **Follow Thread**. 
-  
-  **Unfollow threads**
-  
-  If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
 
-.. tip::
-  - Follow messages with no replies from the **More Actions** |more-icon| icon to be notified if someone replies to the message later based on your notification preferences.
-  - You can also use keyboard arrow keys to navigate threads in the **Threads** view.
+  .. image:: ../images/mobile-follow-a-message-thread-with-follow-option.gif
+      :alt: Tap and hold on a message thread to select Follow Thread.
+      :scale: 50
+
+  Alternatively, you can also tap on the **Follow** indicator below a message thread to follow it.
+
+  .. image:: ../images/mobile-follow-a-message-thread-by-tapping-follow.gif
+      :alt: Toggle the Follow indicator to start folowing a thread.
+      :scale: 50
+
+  .. tip::
+    Follow messages with no replies from the **More Actions** |more-icon-vertical| icon to be notified if someone replies to the message later based on your notification preferences.
+
+    .. image:: ../images/mobile-follow-a-message-with-no-replies.gif
+      :alt: Tap and hold on a message with no replies to select Follow Message.
+      :scale: 50
+    
+Unfollow threads
+----------------
+
+If you’re no longer interested in a or message thread, unfollow it to stop receiving notifications. Viewing a thread without responding to it doesn’t automatically follow that thread.
+
+.. tab:: Web/Desktop
+
+  Toggle the thread’s **Following** indicator, or select **Unfollow thread** from the **More Actions** |more-icon| icon to unfollow it.
+
+  .. image:: ../images/desktop-unfollow-message-thread.jpg
+    :alt: Unfollow threads from the More Actions icon.
+
+.. tab:: Mobile
+
+  Long-press on a message to access message options, then tap **Unfollow Thread**.
+
+  .. image:: ../images/mobile-unfollow-a-message-thread-with-unfollow-option.gif
+      :alt: Tap and hold on a message thread you're following to select Unfollow Thread.
+      :scale: 50
+
+  Alternatively, you can tap on the **Following** indicator below the message thread to unfollow it.
+
+  .. image:: ../images/mobile-unfollow-a-message-thread-by-tapping-following.gif
+      :alt: Toggle the Following indicator to stop following a thread.
+      :scale: 50
 
 View all threads
 ----------------

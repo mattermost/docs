@@ -6,31 +6,12 @@ Chat with Copilot
 
 Overcome information overload and streamline team communication and collaboration with Mattermost Copilot in your Mattermost instance. Copilot is a generative AI assistant with a flexible LLM backend that can be configured to meet your organization's needs. Copilot can summarize call recordings, threads, unread channel messages, and provide insights on any topic you're curious about.
 
-.. note::
+.. tip::
 
-  Copilot must be :doc:`enabled and configured </configure/enable-copilot>` by a Mattermost system admin in the System Console before you can start using it.
+  Looking for a Mattermost Copilot demo? Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows.
 
 .. include:: ../_static/badges/academy-copilot-calls.rst
   :start-after: :nosearch:
-
-Get started
-------------
-
-Select the **Copilot** icon in Mattermost RHS (right-hand sidebar) to open the Copilot panel.
-
-.. image:: ../images/copilot-AI-RHS.webp
-  :alt: Privately chat with Copilot inside Mattermost via the right-hand sidebar.
-  :scale: 50
-
-Begin with suggested prompts, or engage in a private thread with Copilot for a tailored experience. If you have follow-up questions or need further insights, simply ask! Copilot is designed to provide deeper understanding based on your inquiries. 
-
-Copilot remembers the context for follow-up questions and requests. Access all previous AI conversations by selecting **View chat history** from the Copilot panel.
-
-If your administrator has configured multiple bots, you can switch between them by selecting the bot name in the top right corner of the Copilot panel.
-
-.. image:: ../images/multi-llm-copilot.png
-  :alt: Switch between multiple bots by selecting the bot name in the top right corner of the Copilot panel.
-  :scale: 50
 
 With Copilot you can perform the following tasks:
 
@@ -39,6 +20,39 @@ With Copilot you can perform the following tasks:
 - Stay on top of your messages by identifying next steps, decisions, and unanswered questions
 - Extract learnings and transform content into charts, resources, documentation, articles, and more
 - Dig further into any topic by asking for insights
+
+.. note::
+
+  Copilot must be :doc:`enabled and configured </configure/enable-copilot>` by a Mattermost system admin in the System Console before you can start using it.
+
+Get started
+------------
+
+Begin with suggested prompts, or engage in a private thread with Copilot for a tailored experience. If you have follow-up questions or need further insights, simply ask! Copilot is designed to provide deeper understanding based on your inquiries. 
+
+Copilot remembers the context for follow-up questions and requests. Access all previous AI conversations by selecting **View chat history** from the Copilot panel.
+
+.. tab:: Web/Desktop
+
+  Select the **Copilot** icon in the apps sidebar to open the Copilot panel. 
+
+  .. image:: ../images/copilot-AI-RHS.webp
+    :alt: Privately chat with Copilot inside Mattermost via the right-hand sidebar.
+    :scale: 50
+
+  If your Mattermost workspace has multiple Copilot bots, switch between them by selecting the bot name in the top right corner of the Copilot panel.
+  
+  .. image:: ../images/multi-llm-copilot.png
+    :alt: Switch between multiple bots by selecting the bot name in the top right corner of the Copilot panel.
+    :scale: 50
+
+.. tab:: Mobile
+
+  Start or open a direct message with the Copilot bot. If your administrator has configured multiple bots, switch between them by starting or opening each bot by name.
+
+  .. image:: ../images/mobile-start-a-conversation-with-copilot.gif
+    :alt: Start a new conversation with Copilot in the Mattermost mobile app.
+    :scale: 50
 
 Summarize Mattermost call recordings
 ------------------------------------

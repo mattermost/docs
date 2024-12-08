@@ -80,7 +80,8 @@ JSON data model
 +------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | timestamp  | int64                        | Date/time when event or activity has taken place.                                                                                   |
 |            |                              |                                                                                                                                     |
-|            |                              | Mattermost currently supports three log formats: plain, JSON, and `GELF <https://docs.graylog.org/docs/gelf>`__.                    |
+|            |                              | Mattermost currently supports three log formats: plain, JSON, and                                                                   |
+|            |                              | `GELF <https://go2docs.graylog.org/current/getting_in_log_data/gelf.html>`__.                                                       |
 |            |                              |                                                                                                                                     |
 |            |                              | - Plain log format uses `RFC3339 <https://www.rfc-editor.org/rfc/rfc3339>`__ by default.                                            |
 |            |                              |   See the :ref:`plain log format configuration <manage/logging:plain log format configuration options>` documentation for           |

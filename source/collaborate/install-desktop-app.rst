@@ -10,7 +10,7 @@ The Mattermost desktop app is available for Linux, Mac, and Windows operating sy
 - :doc:`Auto-start Mattermost </preferences/customize-desktop-app-experience>` when a user logs into their machine.
 - :doc:`Add Mattermost </preferences/customize-desktop-app-experience>` to the Windows Start menu, the Taskbar, the Dock, or the System Tray.
 - :doc:`Deep link to the desktop app </preferences/customize-desktop-app-experience>` via the ``mattermost://`` protocol if the app is already installed. (Windows/macOS only)
-- :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/index.php/Desktop_entries>`_. (Linux only)
+- :doc:`Set up Desktop Entry </preferences/customize-desktop-app-experience>` for the application to more easily `integrate into a desktop environment <https://wiki.archlinux.org/title/Desktop_entries>`_. (Linux only)
 
 See the :ref:`desktop app software requirements <install/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.
 
@@ -25,8 +25,8 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-win-x64.msi>`_
-    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.9.0-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
+    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-win-x64.msi>`_
+    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.10.1-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
 
   .. warning:: 
     Mattermost Desktop should always be installed on a local drive. Network Shares are not supported as installation locations.
@@ -56,7 +56,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install from the App Store**
 
-  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/app/mattermost-desktop/id1614666244>`_. When you install through the App Store, your desktop app updates automatically when a new release is available.
+  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_. When you install through the App Store, your desktop app updates automatically when a new release is available.
 
   **Download the Desktop App from GitHub**
 
@@ -64,8 +64,8 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
   
   1. Download the latest version of the Mattermost desktop app:
           
-     - `Intel systems <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-mac-x64.dmg>`_
-     - `M1 systems <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-mac-m1.dmg>`_ (Beta)
+     - `Intel systems <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-mac-x64.dmg>`_
+     - `M1 systems <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-mac-m1.dmg>`_ (Beta)
 
   2. Double-click the download to open the disk image.
 
@@ -102,7 +102,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Snapcraft package**
 
-  A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/core/install>`_ on the Snapcraft website for details.
+  A snap is available for systems that have Snapcraft installed. Snapcraft is installed by default on Ubuntu 16.04 and later, but for most other Linux distributions you can install it manually. To install Snapcraft, see `Install snapd <https://snapcraft.io/docs/installing-snapd>`_ on the Snapcraft website for details.
 
   1. At the command line, execute the following command: 
   
@@ -121,13 +121,13 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Mattermost Desktop App**
 
-  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.9.0-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-x86_64.rpm>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.10.1-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-linux-x86_64.rpm>`_
 
   2. At the command line, execute the following command:
     
     .. code-block:: sh
 
-      sudo rpm -i mattermost-desktop-5.9.0-linux-x86_64.rpm
+      sudo rpm -i mattermost-desktop-5.10.1-linux-x86_64.rpm
 
   3. Run Mattermost as a desktop app.
 
@@ -135,7 +135,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
   
     .. code-block:: sh
 
-      sudo rpm -u mattermost-desktop-5.9.0-linux-x86_64.rpm
+      sudo rpm -u mattermost-desktop-5.10.1-linux-x86_64.rpm
 
   .. tip:: 
     You can review the current version of your desktop app by selecting the **More** |more-icon-vertical| icon located in the top left corner of the desktop app, then selecting **Help > Version...**.
@@ -148,7 +148,7 @@ You can download the `desktop app <https://mattermost.com/apps/>`_ directly from
 
   **Install the Desktop App's compressed tarball**
 
-  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.9.0-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.9.0/mattermost-desktop-5.9.0-linux-x64.tar.gz>`_
+  1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.10.1-linux-x64.tar.gz <https://releases.mattermost.com/desktop/5.10.1/mattermost-desktop-5.10.1-linux-x64.tar.gz>`_
 
   2. Extract the archive to a convenient location, then give ``chrome-sandbox`` in the extracted directory the required ownership and permissions: ``sudo chown root:root chrome-sandbox && sudo chmod 4755 chrome-sandbox``
 
@@ -232,7 +232,7 @@ Desktop App window is black and doesn't load the page
 4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux or **Mattermost > Settings** on macOS, and unselect **Use GPU hardware acceleration**.
 5. If you are using a special video driver, such as Optimus, try disabling it to see if the problem is resolved.
 
-If none of the above steps resolve the issue, please open a new ticket in the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_.
+If none of the above steps resolve the issue, please open a new ticket in the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_.
 
 Desktop App is not visible, but the Mattermost icon is in the Task Bar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -278,7 +278,7 @@ Desktop app not responsive within Citrix Virtual Apps or Desktop Environment
 
 Append ``Mattermost.exe;`` to the Registry Key ``HKLM\SYSTEM\CurrentControlSet\Services\CtxUvi\UviProcessExcludes`` and reboot the system.
 
-For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/pl/default-ask-mattermost-community/>`_.
+For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`_.
 
 Can I uninstall the desktop app I installed using snap on Linux?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

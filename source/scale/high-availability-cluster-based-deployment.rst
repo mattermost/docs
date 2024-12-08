@@ -37,7 +37,7 @@ To ensure your instance and configuration are compatible with a high availabilit
   Back up your Mattermost database and file storage locations before configuring high availability. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
 
 1. Set up a new Mattermost server by following one of our **Install Guides**. This server must use an identical copy of the configuration file, ``config.json``. Verify the servers are functioning by hitting each independent server through its private IP address.
-2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :doc:`high availability cluster-based  deployment configuration settings </configure/high-availability-configuration-settings>` documentation for details.
+2. Modify the ``config.json`` files on both servers to add ``ClusterSettings``. See the :ref:`high availability cluster-based deployment configuration settings <configure/environment-configuration-settings:high availability>` documentation for details.
 3. Verify the configuration files are identical on both servers then restart each machine in the cluster.
 4. Modify your NGINX setup so that it proxies to both servers. For more information about this, see `proxy server configuration`_.
 5. Open **System Console > Environment > High Availability** to verify that each machine in the cluster is communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -149,7 +149,7 @@ Cluster discovery
 
 If you have non-standard (i.e. complex) network configurations, then you may need to use the :ref:`Override Hostname <configure/environment-configuration-settings:override hostname>` setting to help the cluster nodes discover each other. The cluster settings in the config are removed from the config file hash for this reason, meaning you can have ``config.json`` files that are slightly different in high availability mode. The Override Hostname is intended to be different for each clustered node in ``config.json`` if you need to force discovery.
 
-If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://golang.org/pkg/net/#InterfaceAddrs>`__. Otherwise it tries to get the hostname using the `os.Hostname() <https://golang.org/pkg/os/#Hostname>`__ built-in go function.
+If ``UseIpAddress`` is set to ``true``, it attempts to obtain the IP address by searching for the first non-local IP address (non-loop-back, non-localunicast, non-localmulticast network interface). It enumerates the network interfaces using the built-in go function `net.InterfaceAddrs() <https://pkg.go.dev/net#InterfaceAddrs>`_. Otherwise it tries to get the hostname using the `os.Hostname() <https://pkg.go.dev/os#Hostname>`_ built-in go function.
 
 You can also run ``SELECT * FROM ClusterDiscovery`` against your database to see how it has filled in the **Hostname** field. That field will be the hostname or IP address the server will use to attempt contact with other nodes in the cluster. We attempt to make a connection to the ``url Hostname:Port`` and ``Hostname:PortGossipPort``. You must also make sure you have all the correct ports open so the cluster can gossip correctly. These ports are under ``ClusterSettings`` in your configuration.
 

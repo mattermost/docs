@@ -35,7 +35,7 @@ Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 
 
 .. note::
 
-    - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+    - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
     - The minimum content size is 769 x 600 pixels. When the width is 768 pixels or less, the desktop app switches to mobile view. When the height is below 600 pixels, screen elements may become misplaced.
 
@@ -45,10 +45,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v126+", "v126+"
+    "Chrome", "v130+", "v130+"
     "Firefox", "v115+", "v115+"
     "Safari", "v17+", "v17+"
-    "Edge", "v126+", "v126+"
+    "Edge", "v130+", "v130+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -63,7 +63,7 @@ Mobile apps
 
 .. note::
 
-    - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+    - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
     - The minimum and target content size is 320 x 460 pixels, matching the available space when the mobile app is opened in Safari on the minimum supported iOS device.
 
 Mobile web

@@ -1,6 +1,8 @@
 :orphan:
 :nosearch:
 
+.. This page is intentionally not accessible via the LHS navigation pane because it's common content included on other docs pages.
+
 Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. 
 
 We recommend taking a backup of this default config ahead of making changes:

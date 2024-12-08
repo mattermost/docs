@@ -22,7 +22,7 @@ $(document).ready(function () {
     }
 
     // Listen for changes in the theme preference
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function (e) {
         // Only update the theme based on prefers-color-scheme if 'data-theme' is 'auto' or not set
         if (
             !$('body').attr('data-theme') ||
@@ -149,4 +149,18 @@ $(document).ready(function () {
         document.body.classList.toggle('nav-open');
         document.getElementById('navigation').classList.toggle('nav-is-active');
     });
+
+    // Remove classes to close the nav if screen size is larger than 992px
+    function closeNav() {
+        if (window.innerWidth > 992) {
+            document.body.classList.remove('nav-open');
+            document.getElementById('navigation').classList.remove('nav-is-active');
+            hamburger.classList.remove('is-active');
+        }
+    }
+
+    closeNav();
+
+    $(window).on('resize', closeNav);
+
 });

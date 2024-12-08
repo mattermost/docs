@@ -126,9 +126,11 @@ redirects = {
 "about/subscription.html#mattermost-enterprise-cloud":
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "about/mattermost-for-microsoft-teams.html":
-        "https://docs.mattermost.com/maximize-microsoft-investment.html",
+        "https://docs.mattermost.com/about/maximize-microsoft-investment.html",
 "about/install-mattermost-for-microsoft-teams-plugin.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+"about/orchestration.html":
+        "https://docs.mattermost.com/about/use-cases.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -855,6 +857,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions",
 "collaborate/collaborate-within-embedded-microsoft-teams.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+"collaborate/syntax-highlighting.html":
+        "https://docs.mattermost.com/collaborate/format-messages.html#syntax-highlighting",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -866,11 +870,23 @@ redirects = {
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
-	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
+	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
         "https://docs.mattermost.com/enable-copilot.html",
+"configure/common-config-settings-notation.html":
+        "https://docs.mattermost.com/configure/configuration-settings.html",
+"configure/bulk-loading-about.html":
+        "https://docs.mattermost.com/onboard/bulk-loading-data.html",
+"configure/bulk-loading-common-issues.html":
+        "https://docs.mattermost.com/onboard/bulk-loading-data.html",
+"configure/bulk-loading-data-format.html":
+        "https://docs.mattermost.com/onboard/bulk-loading-data.html",
+"configure/bulk-loading-troubleshooting.html":
+        "https://docs.mattermost.com/onboard/bulk-loading-data.html",
+"configure/run-bulk-loading-command.html":
+        "https://docs.mattermost.com/onboard/bulk-loading-data.html",
 
 # Configuration settings redirects
 "configure/configuration-in-mattermost-database.html":
@@ -1492,7 +1508,7 @@ redirects = {
 "configure/configuration-settings.html#user-status-away-timeout":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#user-status-away-timeout",
 "configure/configuration-settings.html#enable-shared-channels":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-shared-channels",
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
@@ -1849,6 +1865,34 @@ redirects = {
         "https://docs.mattermost.com/configure/configuration-in-your-database.html",
 "configure/install-mattermost-for-microsoft-teams-plugin.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html#install-and-configure-the-microsoft-teams-integration-in-mattermost",
+"configure/developer-mode-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#developer",
+"configure/performance-monitoring-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#performance-monitoring",
+"configure/session-lengths-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#session-lengths",
+"configure/logging-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#logging",
+"configure/high-availability-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability",
+"configure/smtp-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp",
+"configure/file-storage-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#file-storage",
+"configure/web-server-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server",
+"configure/image-proxy-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#image-proxy",
+"configure/elasticsearch-configuration-settings.html":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch",
+"configure/database-configuration-settings":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#database",
+"configure/experimental-configuration-settings.html#enable-shared-channels":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
+"configure/experimental-configuration-settings.rst#enable-shared-channels":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-shared-channels-experimental",
+"configure/experimental-configuration-settings.rst#remote-clusters":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-remote-cluster-service-experimental",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2349,9 +2393,9 @@ redirects = {
 "install/outbound-proxy.html":
         "https://docs.mattermost.com/configure/using-outbound-proxy.html",
 "install/prod-docker.html":
-	"https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+	"https://forum.mattermost.com/t/deploy-mattermost-on-docker/12231",
 "install/prod-windows-2012.html":
-	"https://forum.mattermost.org/t/production-install-on-windows-server/12232",
+	"https://forum.mattermost.com/t/production-install-on-windows-server/12232",
 "install/requirements.html":
         "https://docs.mattermost.com/install/software-hardware-requirements.html",
 "install/setting-up-local-machine-using-docker.html":
@@ -2456,11 +2500,39 @@ redirects = {
 "install/install-centos-oracle-scientific":
         "https://docs.mattermost.com/install/install-rhel-8.html",
 
-"integrate/ms-teams-interoperability.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+"install/install-common-intro.html":
+        "https://docs.mattermost.com/install/install-tar.html",
+"install/install-latest-tarball.html":
+        "https://docs.mattermost.com/install/install-tar.html",
+"install/setup-mattermost-server.html":
+        "https://docs.mattermost.com/install/install-tar.html",
+"install/common-prod-deploy-docker.html":
+        "https://docs.mattermost.com/install/install-docker.html",
+"install/common-deploy-faq.html":
+        "https://docs.mattermost.com/install/install-tar.html",
+"install/install-rhel-nginx.html":
+        "https://docs.mattermost.com/install/setup-nginx-proxy.html",
+"install/config-ssl-http2-nginx.html":
+        "https://docs.mattermost.com/install/setup-nginx-proxy.html#configure-nginx-with-ssl-and-http-2",
+"install/config-proxy-nginx.html":
+        "https://docs.mattermost.com/install/setup-nginx-proxy.html",
+"install/install-nginx.html":
+        "https://docs.mattermost.com/install/setup-nginx-proxy.html",
+"install/faq_kubernetes.html":
+        "https://docs.mattermost.com/install/install-kubernetes.html",
+"install/common-prod-deploy-tar.html":
+        "https://docs.mattermost.com/install/install-tar.html",
+"install/common-prod-deploy-omnibus.html":
+        "https://docs.mattermost.com/install/install-tar.html",
+"install/common-local-deploy-docker.html":
+        "https://docs.mattermost.com/install/trial-mattermost-using-docker.html",
+"install/config-mattermost-server.html":
+        "https://docs.mattermost.com/guides/get-started-with-administration.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
+"integrate/ms-teams-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 "integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/cloud-outgoing-webhooks.html":
@@ -2673,6 +2745,8 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "manage/team-channel-members.html#channel-moderation":
         "https://docs.mattermost.com/manage/team-channel-members.html#advanced-access-controls.html",
+"manage/announcement-banner.html":
+        "https://docs.mattermost.com/manage/system-wide-notifications.html",
 "manage/announcement-banner.html#configure-an-announcement-banner":
         "https://docs.mattermost.com/manage/system-wide-notifications.html#configure-system-wide-notifications",
 "manage/announcement-banner.html#announcement-banner":
@@ -2685,7 +2759,10 @@ redirects = {
         "https://docs.mattermost.com/about/cloud-vpc-private-connectivity.html",
 "manage/workspace-usage.html":
         "https://docs.mattermost.com/guides/cloud-workspace-management.html",
-
+"manage/common-support-packet.html":
+        "https://docs.mattermost.com/manage/generating-support-packet.html",
+"manage/bulk-export-data.html":
+        "https://docs.mattermost.com/manage/bulk-export-tool.html",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
@@ -3152,6 +3229,32 @@ redirects = {
         "https://docs.mattermost.com/onboard/delegated-granular-administration.html",
 "onboard/sso-office.html":
         "https://docs.mattermost.com/onboard/sso-entraid.html",
+"onboard/guest-account-access.html":
+        "https://docs.mattermost.com/onboard/guest-accounts.html",
+"onboard/sso-saml-before-you-begin.html":
+        "https://docs.mattermost.com/configure/authentication-configuration-settings.html#saml-2-0",
+"onboard/common-sso-openidconnect.html":
+        "https://docs.mattermost.com/onboard/sso-openidconnect.html",
+"onboard/common-disable-mfa.html":
+        "https://docs.mattermost.com/onboard/multi-factor-authentication.html",
+"onboard/common-sso-google.html":
+        "https://docs.mattermost.com/onboard/sso-google.html",
+"onboard/sso-saml-faq.html":
+        "https://docs.mattermost.com/onboard/sso-saml.html",
+"onboard/common-sso-entraid.html":
+        "https://docs.mattermost.com/onboard/sso-entraid.html",
+"onboard/shared-channels.html":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html",
+"onboard/shared-channels.html#set-up-shared-channels":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#set-up-connected-workspaces",
+"onboard/shared-channels.html#create-a-secure-connection-invitation":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#create-a-secure-connection",
+"onboard/shared-channels.html#accept-a-secure-connection-invitation":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#accept-a-connection-invitation",
+"onboard/shared-channels.html#share-channels-with-secure-connections":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#share-channels-with-secure-connections",
+"onboard/shared-channels.html#frequently-asked-questions":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html#frequently-asked-questions",
 
 # Overview redirects
 "overview/architecture.html":
@@ -3295,6 +3398,10 @@ redirects = {
         "https://docs.mattermost.com/guides/repeatable-processes.html",
 "playbooks/get-started-with-playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
+
+# Preference redirects
+"preferences/manage-your-calls-preferences.html":
+        "https://docs.mattermost.com/preferences/manage-your-plugin-preferences.html",
 
 # Process redirects
 # The process directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to handbook.mm.com.
@@ -3633,9 +3740,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '10.1'
+# version = '10.2'
 # The full version, including alpha/beta/rc tags.
-# release = '10.1'
+# release = '10.2'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -3952,6 +4059,19 @@ rst_prolog = """
     :alt: Offline availability status icon in Mattermost.
 .. |checkmark| image:: /images/check-circle-green.svg
     :alt: Green checkmark icon used to indicate that a given feature is included in a specific package, deployment, or plan.
+.. |pinned-messages| image:: /images/pin-outline_F0931.svg
+    :alt: Pin icon used to indicate when there are pinned messages in a given channel.
+.. |add-user-icon| image:: /images/account-plus-outline_F0801.svg
+    :alt: Account plus outline icon used to add user to a channel.
+    :class: theme-icon
+.. |shared| image:: /images/circle-multiple-outline_F0695.svg
+    :alt: Shared icon indicates channels and their members that are shared across connected Mattermost servers.
+.. |saved-icon| image:: /images/bookmark_F00C0.svg
+    :alt: Saved icon.
+    :class: theme-icon
+.. |edit-icon| image:: /images/pencil-outline_F0CB6.svg
+    :alt: Edit icon.
+    :class: theme-icon
 """
 # rst_epilog = """
 # .. |mm_badge_version| replace:: 7.2
