@@ -8,6 +8,14 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-10)=
 ## Release v5.10
 
+- **v5.10.2, released **
+
+  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
+  - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
+  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
+  - Fixed an issue where the application would not focus the browser window when opening an external link [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
+  - Upgraded to Electron v33.2.0.
+
 - **v5.10.1, released 2024-11-20**
 
   - Fixed an issue where the app would not restore when opened again from cold [MM-61864](https://mattermost.atlassian.net/browse/MM-61864).
@@ -90,6 +98,12 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
 
+- **v5.9.2, released **
+
+  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
+  - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
+  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
+
 - **v5.9.1, released 2024-11-20**
 
   - Fixed a crash in Linux when trying to create a thumbnail from an image [MM-60232](https://mattermost.atlassian.net/browse/MM-60232).
@@ -99,7 +113,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 
   - Original v5.9.0 release
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.9.1)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.9.2)
 
 ```{Note}
 Mattermost v5.9.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
