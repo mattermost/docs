@@ -112,3 +112,18 @@ Upload yor own TLS certificates at this stage to take advantage of all Mattermos
   c. You should be good to go.
 
 Learn more about managing your Mattermost server by visiting the :doc:`Managing Mattermost </guides/self-hosted-administration>` documentation.
+
+Upgrade Mattermost
+-------------------
+
+1. Visit the ``Extensions + Applications`` section of your AKS cluster where your Mattermost installation is deployed.
+2. You can enable minor version auto upgrades since these are not updating Mattermost version
+3. Expand the ``Configurarion Settings`` table and add the below configuration and the version you want to install as a value.
+
+    .. code:: 
+
+      global.azure.mattermost.version
+
+   .. image:: ../images/global-azure-mattermost-version.png
+    :alt: An example of using custom Mattermost version.
+4. Click ``Save`` and wait for the upgrade.
