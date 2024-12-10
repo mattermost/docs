@@ -12,6 +12,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 - **10.3.1, released 2024-12-16**
   - Fixed an issue where user statuses weren't synced properly between servers [MM-61438](https://mattermost.atlassian.net/browse/MM-61438).
+  - Fixed an accessibility problem in the new search input [MM-61234](https://mattermost.atlassian.net/browse/MM-61234).
   - Mattermost v10.3.1 contains no database or functional changes.
 - **10.3.0, released 2024-12-16**
   - Original 10.3.0 release.
@@ -73,7 +74,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Added ``opensearch-project/opensearch-go`` to https://github.com/mattermost/mattermost.
 
 ### Known Issues
- - New search button does not use a button element for accessibility [MM-61234](https://mattermost.atlassian.net/browse/MM-61234).
  - The bottom padding is missing in the edit state of a scheduled messages [MM-61722](https://mattermost.atlassian.net/browse/MM-61722).
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
