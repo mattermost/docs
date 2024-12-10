@@ -279,7 +279,7 @@ If you are using the email login method, users will need to reset their password
 
 **Plugins**
 
-If you’re using plugins that aren’t listed on the Marketplace, they won’t be included in the export and you won’t have access to them going forward. You can view the list of plugins `in the Support knowledgebase <https://support.mattermost.com/hc/en-us/articles/5346624843924>`_.
+If you’re using plugins that aren’t listed on the Marketplace, they won’t be included in the export and you won’t have access to them going forward. You can view the list of plugins `in the Support knowledgebase <https://support.mattermost.com/hc/en-us/articles/5346624843924-Mattermost-Plugin-Marketplace-List-as-of-November-12th-2024>`_.
 
 **Data**
 

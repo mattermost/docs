@@ -31,6 +31,18 @@ Enable plugins
 |                                                                                                                                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLE``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Resource Consumption: Plugins consume system resources such as CPU, memory, and disk. Disabling them frees up these resources, allowing the core Mattermost application to run more efficiently.
+  - Reduced Complexity: Each plugin can add additional logic and processing requirements. By reducing the number of active plugins, you lower the complexity and potential points of failure in the system.
+  - Faster Load Times: Disabling plugins can lead to faster server startup and lower latency during user interactions, as there are fewer components for the system to initialize and manage.
+  - Stability: Some plugins may have bugs or performance issues that can affect the overall performance and stability of the Mattermost instance. Disabling problematic or under-utilized plugins can enhance the stability of the system.
+  - Maintenance and Updates: Managing fewer plugins reduces the overhead associated with maintaining and updating them, which can contribute to smoother operation and less downtime
+  - However, plugins are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+
+
 .. config:setting:: plugins-requiresignature
   :displayname: Require plugin signature (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
@@ -1114,6 +1126,10 @@ MS Teams
   :start-after: :nosearch:
 
 Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
+
+.. tip::
+
+  Download our `Mattermost for Microsoft Teams datasheet <https://mattermost.com/mattermost-for-microsoft-teams-datasheet/>`_ to learn how Mattermost helps your organization get more from your Microsoft tools.
 
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
 

@@ -870,7 +870,7 @@ redirects = {
 
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
-	"https://forum.mattermost.org/t/configuring-apache2-with-ssl-and-http-2/11939",
+	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
@@ -1889,7 +1889,10 @@ redirects = {
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#database",
 "configure/experimental-configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
-
+"configure/experimental-configuration-settings.rst#enable-shared-channels":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-shared-channels-experimental",
+"configure/experimental-configuration-settings.rst#remote-clusters":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-remote-cluster-service-experimental",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2390,9 +2393,9 @@ redirects = {
 "install/outbound-proxy.html":
         "https://docs.mattermost.com/configure/using-outbound-proxy.html",
 "install/prod-docker.html":
-	"https://forum.mattermost.org/t/deploy-mattermost-on-docker/12231",
+	"https://forum.mattermost.com/t/deploy-mattermost-on-docker/12231",
 "install/prod-windows-2012.html":
-	"https://forum.mattermost.org/t/production-install-on-windows-server/12232",
+	"https://forum.mattermost.com/t/production-install-on-windows-server/12232",
 "install/requirements.html":
         "https://docs.mattermost.com/install/software-hardware-requirements.html",
 "install/setting-up-local-machine-using-docker.html":
@@ -2441,7 +2444,7 @@ redirects = {
 "install/install-mattermost-server-tarball.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-rhel-6-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/mattermost-kubernetes-operator.html":
         "https://docs.mattermost.com/install/install-kubernetes.html#mattermost-operator",
 "install/install-ubuntu-2004-server.html":
@@ -2449,7 +2452,7 @@ redirects = {
 "install/heroku.html":
         "https://docs.mattermost.com/guides/deployment.html",
 "install/install-rhel-7-server.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-ubuntu-1804-server.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-ubuntu-1804-postgresql.html":
@@ -2459,43 +2462,43 @@ redirects = {
 "install/install-debian-mysql.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-rhel-8-server.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-ubuntu-1804-mysql.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-debian-server.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-rhel-8-mysql.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-rhel-7-mysql.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-debian-postgresql.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-ubuntu-2004-postgresql.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-rhel-8-postgresql.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/installing-ubuntu-1804-LTS.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-ubuntu-1804-mattermost.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-rhel-8.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-ubuntu-2004-mattermost.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-rhel-7-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-rhel-7-postgresql.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-rhel-8-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-rhel-7.html":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 "install/installing-ubuntu-2004-LTS.html":
         "https://docs.mattermost.com/install/install-ubuntu.html",
 "install/install-debian.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-centos-oracle-scientific":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
+        "https://docs.mattermost.com/install/install-rhel.html",
 
 "install/install-common-intro.html":
         "https://docs.mattermost.com/install/install-tar.html",
@@ -2525,6 +2528,20 @@ redirects = {
         "https://docs.mattermost.com/install/trial-mattermost-using-docker.html",
 "install/config-mattermost-server.html":
         "https://docs.mattermost.com/guides/get-started-with-administration.html",
+"install/install-rhel-8":
+        "https://docs.mattermost.com/install/install-rhel.html",
+"install/install-rhel-8.html#download-the-latest-mattermost-server-tarball":
+        "https://docs.mattermost.com/install/install-rhel.html#download-the-latest-mattermost-server-tarball",
+"install/install-rhel-8.html#install":
+        "https://docs.mattermost.com/install/install-rhel.html#install",
+"install/install-rhel-8.html#setup":
+        "https://docs.mattermost.com/install/install-rhel.html#setup",
+"install/install-rhel-8.html#updates":
+        "https://docs.mattermost.com/install/install-rhel.html#updates",
+"install/install-rhel-8.html#remove-mattermost":
+        "https://docs.mattermost.com/install/install-rhel.html#remove-mattermost",
+"install/install-rhel-8.html#frequently-asked-questions":
+        "https://docs.mattermost.com/install/install-rhel.html#frequently-asked-questions",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.

@@ -8,10 +8,6 @@ Communicate across organizations, as well as external partners and vendors using
 
 Connected workspaces in Mattermost behave like regular public and private channels and offer the same user experience and functionality. All members using secure connections, including local members and remote members, can :doc:`send and receive channel messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`.  Content is synchronized across all participating Mattermost instances.
 
-.. important::
-
-    The ability to create a direct or group message with remote users through connected workspaces isn't supported. However, to maintain backwards compatibility with experimental shared channels functionality available prior to Mattermost v10.2, system admins must enable the ``EnableSharedChannelsDMs`` feature flag to continue creating direct messages with remote users across connected workspaces.
-
 A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Set up connected workspaces
@@ -21,7 +17,7 @@ The process of connecting Mattermost workspaces involves the following 4 steps:
 
 1. Each system admin of a Mattermost instance who wants to connect to another Mattermost workspaces must `enable the connected workflows functionality <#enable-connected-workflows>`__.
 
-2. Using the System Console or slash commands, system admins create a secure and trusted connection with other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
+2. Using the System Console or slash commands, system admins `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
 
 3. Using the System Console or slash commands, a remote system admin receives the invitation and `accepts the invitation <#accept-a-secure-connection-invitation>`__.
 
@@ -41,7 +37,11 @@ System admins must enable connected workspaces functionality for their Mattermos
 - ``ConnectedWorkspacesSettings.EnableRemoteClusterService = true``
 - ``ConnectedWorkspacesSettings.EnableSharedChannels = true``
 
-See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces>` documentation for details.
+See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces (beta)>` documentation for details.
+
+.. note::
+
+    Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces (beta)>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 Create a secure connection
 ---------------------------
@@ -145,6 +145,10 @@ Once a connection is established between two Mattermost servers, system admins c
         This slash command invites the shared connection to the current channel based on its ``connectionID``.
 
         See `Reviewing Secure Connection Status <#review-secure-connection-status>`_ to find the ``connectionID`` for a shared connection.
+
+.. important::
+
+    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in beta there are some known issues that may impact reliability of direct message delivery across servers.
 
 Manage connections and invitations
 ----------------------------------
@@ -268,9 +272,9 @@ When a user is added to a shared channel, member status is synchronized within a
 
 When using Mattermost in a web browser, Mattermost polls the server every minute. Refreshing the browser page triggers immediate synchronization.
 
-By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync>`. 
+By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync (beta)>`. 
 
-Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync>`.
+Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync (beta)>`.
 
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

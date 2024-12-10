@@ -10,7 +10,11 @@ SAML Single Sign-On
 
 Single sign-on (SSO) is a way for users to log into multiple applications with a single user ID and password without having to re-enter their credentials. The SAML standard allows identity providers to pass credentials to service providers. Mattermost can be configured to act as a SAML 2.0 Service Provider. 
 
-Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Single sign-on integration offers the following benefits:
+Mattermost can be configured to act as a SAML 2.0 Service Provider, and Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers.
+
+In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up miniOrange, Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
+
+The SAML Single sign-on integration offers the following benefits:
 
 - **Single sign-on.** Users can log in to Mattermost with their SAML credentials.
 - **Centralized identity management.** Mattermost accounts automatically pull user attributes from SAML upon login, such as full name, email, and username.
@@ -18,15 +22,19 @@ Mattermost can be configured to act as a SAML 2.0 Service Provider. The SAML Sin
 - **Sync groups to predefined roles in Mattermost.** Assign team and channel roles to groups via LDAP Group Sync.
 - **Compliance alignment with administrator management.** Manage Administrator access to Mattermost in the System Console using SAML attributes.
 
-.. warning::
-  SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
-
-For more information about SAML, see `this article from Varonis <https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-saml>`_.
-
-Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identity providers (IDPs), please see links below for more details on how to configure SAML with these providers.
+.. important::
+  - SAML Single sign-on itself does not support periodic updates of user attributes nor automatic deprovisioning. However, SAML with AD/LDAP sync can be configured to support these use cases.
+  - Account creation and updates is influenced by the attributes configured for identification. 
+  
+    - If the email address is used as the unique identifier and it changes, Mattermost might interpret this as a new user. If an ID attribute is not set, or if it's set to use the email address, a new account may be created in Mattermost when the email address changes.
+    - If an ID attribute that doesn't change, such as employeeID, is configured, then Mattermost can use this consistent ID to recognize and match the user account. This allows for updates to other attributes, such as email, without creating a new account. The user details are updated based on the non-changing ID attribute, ensuring continuity and correct user identification without duplicate accounts.
+  
+  - If configuring Mattermost to use the EU-Login system for authentication, please be aware that their `issuerURI` field is what Mattermost calls "Service Provider Identifier".
+  - For more information about SAML, see `this article from Varonis <https://www.varonis.com/blog/what-is-saml/>`_, and `this conceptual example from DUO <https://duo.com/blog/the-beer-drinkers-guide-to-saml>`_.
 
 .. toctree::
   :titlesonly:
+  :hidden:
 
   Okta SAML Configuration <sso-saml-okta>
   Generate self-signed certificates </scripts/generate-certificates/gencert>
@@ -34,11 +42,6 @@ Mattermost officially supports Okta, OneLogin, and Microsoft ADFS as the identit
   Microsoft ADFS SAML Configuration for Windows Server 2012 <sso-saml-adfs>
   Microsoft ADFS SAML Configuration for Windows Server 2016 <sso-saml-adfs-msws2016>
   Keycloak SAML Configuration <sso-saml-keycloak>
-
-In addition to the officially supported identity providers, you can also configure SAML for a custom IdP. For instance, customers have successfully set up miniOrange, Azure AD, DUO, PingFederate, Keycloak, and SimpleSAMLphp as custom IdPs. Because we do not test against these identity providers, it is important that you test new versions of Mattermost in a staging environment to confirm it will work with your identity provider. You can also set up MFA on top of your SAML provider for additional security.
-
-.. note:: 
-    If configuring Mattermost to use the EU-Login system for authentication, please be aware that their `issuerURI` field is what Mattermost calls "Service Provider Identifier".
 
 Using SAML attributes to apply roles
 -------------------------------------
@@ -50,7 +53,7 @@ Username attribute
 
 (Optional) Enter a SAML assertion filter to use when searching for users.
 
-1. Navigate to **System Console > Authentication > SAML 2.0** (or **System Console > SAML** in versions prior to 5.12).
+1. Navigate to **System Console > Authentication > SAML 2.0** (or **System Console > SAML** in versions prior to 5.12).
 2. Complete the **Username Attribute** field.
 3. Choose **Save**.
 
@@ -85,8 +88,7 @@ Existing members that are identified by this attribute will be promoted from mem
 4. Choose **Save**.
 
 .. note:: 
-    If the ``admin`` attribute is set to ``false`` the member's role as system admin is retained. However if the attribute is removed/changed, system admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, system admins can be manually promoted/demoted in **System Console > User Management**.
-
+  If the ``admin`` attribute is set to ``false`` the member's role as system admin is retained. However if the attribute is removed/changed, system admins that were promoted via the attribute will be demoted to members and will not retain access to the System Console. When this attribute is not in use, system admins can be manually promoted/demoted in **System Console > User Management**.
 
 Configuration assistance
 ------------------------
@@ -97,4 +99,4 @@ For technical documentation on SAML, see :doc:`sso-saml-technical`.
 
 To assist with the process of getting a user file for your custom IdP, see this `documentation <https://github.com/icelander/mattermost_generate_user_file>`_.
 
-Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea portal <https://mattermost.com/suggestions/>`_.
+Please note that we may not be able to guarantee that your connection will work with Mattermost, however we will consider improvements to our feature as we are able. You can see more information on getting support `here <https://mattermost.com/support/>`_ and submit requests for official support of a particular provider on our `feature idea portal <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_.

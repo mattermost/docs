@@ -1,7 +1,11 @@
 Incident response collaboration
 ===============================
 
-Teams require collaboration to respond to incidents and outages quickly and effectively. This involves coordinating efforts between developers, operations, and customer support teams to identify and resolve issues, communicate with stakeholders, and implement preventive measures to avoid similar incidents in the future. 
+Teams require collaboration to respond to incidents and outages quickly and effectively. This involves coordinating efforts between developers, operations, and customer support teams to identify and resolve issues, communicate with stakeholders, and implement preventive measures to avoid similar incidents in the future.
+
+.. tip::
+
+  Watch `this on-demand webinar on securing mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>`_ to learn how to overcome key challenges to effective incident response. Then download our `best practices for incident response workflows guide <https://mattermost.com/best-practices-for-improving-incident-response-guide/>`_ to learn how to develop and customize a comprehensive incident response plan.
 
 In an incident response situation, various stakeholders can be involved, each with their own roles and responsibilities.
 
