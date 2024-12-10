@@ -84,9 +84,9 @@ Teams
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Create a new team <collaborate/organize-using-teams:create a team>`                    | |checkmark| | |checkmark| |             |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Get team invite link <collaborate/invite-people:send a team invite link>`              | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Share an invite link </collaborate/invite-people>`                                     | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Add members to team <collaborate/invite-people:add people to your workspace>`          | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Invite people </collaborate/invite-people>`                                            | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :ref:`Manage team members <manage/team-channel-members:teams>`                               | |checkmark| | |checkmark| |             |
 +----------------------------------------------------------------------------------------------+-------------+-------------+-------------+

@@ -12,7 +12,7 @@ For the purposes of this guide, the Mattermost server domain name is ``example.m
 
 .. important::
   - Generating the client certificates in this section is optional if you have already generated them before.
-  - We strongly recommend configuring an SSL certificate (or a self-signed certificate) for security, privacy, compliance, as well as to avoid browser limitations that can prevent Mattermost product features from working that copy data using the user's local clipboard, including :ref:`sharing message links <collaborate/share-links:share message links>` and :ref:`inviting new members to teams <collaborate/invite-people:send a team invite link>`. 
+  - We strongly recommend configuring an SSL certificate (or a self-signed certificate) for security, privacy, compliance, as well as to avoid browser limitations that can prevent Mattermost product features from working that copy data using the user's local clipboard, including :ref:`sharing message links <collaborate/share-links:share message links>` and :doc:`inviting people </collaborate/invite-people>`. 
 
 Set up mutual TLS authentication for the web app
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

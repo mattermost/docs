@@ -1,114 +1,56 @@
-Add people to your workspace
-============================
+Invite people to your workspace
+================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost instance. However, :ref:`team admins <collaborate/learn-about-roles:team admin>` can also invite people, including :doc:`guests </onboard/guest-accounts>`, to a Mattermost team via a `direct invite <#send-a-direct-invite>`__, a `public team invite link <#send-a-team-invite-link>`__.
+Anyone can invite people to Mattermost teams and channels, unless your system admin has :doc:`disabled </onboard/advanced-permissions>` your ability to do so.
 
-All users can add existing Mattermost users to a Mattermost team or channel, unless the system admin has restricted the ability for you to do so.
+1. Select the team name at the top of the channel sidebar, and then select **Invite People**.
 
-- Inviting people to a team sends an email prompting recipients to create a Mattermost account on your Mattermost :doc:`workspace </guides/use-mattermost>`.
-- Adding an existing user to a team or to a channel makes those users team or channel members.
+  .. image:: ../images/invite-people.png
+    :alt: Select the team name in the sidebar and select Invite People.
 
-.. tip::
+2. Select **Copy invite link** to share the invitation link with others.
 
-    - Add users to a channel by selecting the channel name and selecting **Add Members**. 
-    - Add groups of users to a channel or team by :doc:`creating a custom group </collaborate/organize-using-custom-user-groups>` and :doc:`@mentioning </collaborate/mention-people>` the custom group in a channel. 
-
-      - Mattermost prompts to you to add any users who aren't already members of that channel to the channel.
-      - From Mattermost v9.1, you're given the option to add any users who aren't already members of that team to the team, if you have the permissions to do so.
-
-    - A :doc:`guest user </onboard/guest-accounts>` in Mattermost is a special role that is restricted to only the channels they have been invited to. When :ref:`guest access is enabled <configure/authentication-configuration-settings:enable guest access>` by the system admin, you can invite guests or users external to the organization, such as vendors or customers.
-
-      - Once guests are invited to the team, you can add them to the channel.
-
-Send a direct invite
-~~~~~~~~~~~~~~~~~~~~
-
-Direct invites are invitation emails sent from your team's server directly to the invited person's email address. A link within the invitation directs them to an account creation page. Invitation links sent by email expire after 48 hours and can only be used once. 
-
-.. note::
-
-  - A system admin can invalidate all active invitation links via **System Console > Authentication > Signup > Invalidate pending email invites**.
-  - If you can't invite others to the team, contact your system admin for assistance. You may not have sufficent permissions to do so, or :ref:`email invitations may not be enabled <configure/authentication-configuration-settings:enable email invitations>`.
+  .. image:: ../images/copy-invite-link.png
+    :alt: Select Copy Invite Link to share an invitation link with others.
 
 .. tab:: Web/Desktop
 
-  1. Select the team name at the top of the channel sidebar, then select **Invite People**.
-  2. Enter email address recipients for team invitations.
-  3. Specify whether the invited users are members or guests. When adding a guest, you must specify the channels the guest can access.
-  4. Select **Invite**.
-
-  .. tip::
-
-    - If someone you want to add to your team already has an account on the server, you can add them to your team without sending an invitation by entering their username instead of an email address. If the person you want to add isn't visible, you can't invite them. 
-    - System admins can view and add team membership to individual users on the user profile page (via **System Console > Users > User Profile**) by selecting **Add Team**. 
+  - Send an email-based member invitation to people who don't have an account on your Mattermost server by specifying email addresses and selecting **Invite**. 
+  - Add existing workspace users as members of the current team by specifying users by usernames and selecting **Invite**.
+  - Invite someone temporarily as a guest instead of as a member with limited workspace access. See the :doc:`guest accounts </onboard/guest-accounts>` documentation to learn more about guest accounts.
 
 .. tab:: Mobile
 
-  1. Tap the |plus| icon in the top right corner of the screen.
+  1. Tap the |plus| icon in the top right corner of the screen and tap **Invite people to the team**.
 
     .. image:: ../images/direct-mobile-invite-options.jpg
       :alt: When you select +, you can access more options from the popup window.
       :scale: 30
 
-  2. Tap the **Invite people to the team** option.
+    - Send an email-based member invitation to people who don't have an account on your Mattermost server by specifying email addresses and tap **Send**. 
+    - Add existing workspace users as members of the current team by specifying users by usernames and tap **Send**.
 
-    .. image:: ../images/direct-mobile-invite-by-email.jpg
-      :alt: You can invite a user using their email address.
-      :scale: 30
+      .. image:: ../images/direct-mobile-invite-by-email.jpg
+        :alt: You can invite a user using their email address.
+        :scale: 30
 
-    .. image:: ../images/direct-mobile-invite-by-name.jpg
-      :alt: You can invite a user using their name.
-      :scale: 30
+      .. image:: ../images/direct-mobile-invite-by-name.jpg
+        :alt: You can invite a user using their name.
+        :scale: 30
 
-  3. Invite people by:
-
-    - Entering the name of a user on another Mattermost team on the same server.
-    - Entering a user's email address.
-    - Sharing the invitation link with users directly as a `team invitation link <#send-a-team-invite-link>`__.
-
-Send a team invite link
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-You can share a unique URL that takes users to a Mattermost account creation page to join the current team. A team invite link can be used by anyone and doesn't change unless it's re-generated by a system admin or team admin via **Team Settings > General > Invite Code**. For example, the team invite link can be included in a company-wide email to invite all employees to join a Mattermost team.
-
-.. note::
-
-  If you're unable to share links, contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for this functioanlity to work.
-
-.. tab:: Web/Desktop
-
-  1. Select the team name at the top of the channel sidebar, then select **Invite People**.
-  2. Select the **Copy Link** button to save the URL to your clipboard and share it with those you want to invite to the team.
-
-.. tab:: Mobile
-
-  1. Tap the |plus| icon in the top right corner of the screen.
-
-    .. image:: ../images/direct-mobile-invite-options.jpg
-      :alt: When you select +, you can access more options from the popup window.
-      :scale: 30
-
-  2. Tap the **Invite people to the team** option.
-
-    .. image:: ../images/direct-mobile-invite.jpg
-      :alt: You can also invite a user by selecting Share link button.
-      :scale: 30
-
-  3. Tap **Share link**.
-
-    .. image:: ../images/direct-mobile-invite-by-share-link.jpg
-      :alt: You can invite a user by sharing the invite link directly with them.
-      :scale: 30
-
-  4. Share the link with others.
-
-.. note::
+    - Tap **Share link** to share an invitation link with others via apps on your mobile device.
   
-  Users on the same Mattermost server can view the username and full name of other users so they can communicate with them directly, via direct messages, regardless of team membership. 
+      .. image:: ../images/direct-mobile-invite-by-share-link.jpg
+        :alt: You can invite a user by sharing the invite link directly with them.
+        :scale: 30
 
 .. note::
-  - You can't invite someone to a Mattermost team, as a **member**, if that user is already a member of that team. 
-  - You can't invite someone to a Mattermost team, as a **guest**, if that user already has a Mattermost account. Invite them to a team as a **member** instead.
+
+  - Can't share invitation links? Contact your Mattermost system admin for assistance. An :doc:`SSL certificate (or a self-signed certificate) </onboard/ssl-client-certificate>` may be required for link-based invitations to work.
+  - An invite link can be used by anyone and doesn’t change unless it’s re-generated by a system admin or team admin via **Team Settings > General > Invite Code**.
+  - Your system admin must :ref:`enable email invitations <configure/authentication-configuration-settings:enable email invitations>` and configure :ref:`email <configure/environment-configuration-settings:smtp>` for Mattermost to send email-based invitations.
+    - Invitation links sent by email expire after 48 hours and can only be used once.
+  - Your system admin can :ref:`cancel all email invitations <configure/authentication-configuration-settings:invalidate pending email invites>` that haven't yet been accepted within the System Console.
