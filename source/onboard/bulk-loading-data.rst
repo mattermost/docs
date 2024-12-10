@@ -26,6 +26,7 @@ You can import the following data types:
 - Direct messages from a user to themselves
 - Permissions schemes
 - Custom emoji
+- Bot users
 
 Importing additional types of posts is not yet supported.
 
