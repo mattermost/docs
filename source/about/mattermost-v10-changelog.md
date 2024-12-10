@@ -60,7 +60,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to all plans:
  - Under ``ServiceSettings `` in ``config.json``:
-    - Added ``ScheduledPosts`` to add a feature to schedule and send message in the future.
+    - Added ``ScheduledPosts`` to enable the feature to schedule and send message in the future.
 
 ### Go Version
  - v10.3 is built with Go ``v1.22.6``.
