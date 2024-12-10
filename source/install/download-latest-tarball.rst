@@ -9,7 +9,7 @@ Using ``wget``, download the Mattermost Server release you want to install.
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.3.0/mattermost-10.3.0-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.3.1/mattermost-10.3.1-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
