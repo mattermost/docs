@@ -35,6 +35,10 @@ You can manage scheduled messages with the following actions:
     :alt: Once a message is scheduled, you can delete, edit, and reschedule it, copy the message text, or send it immediately.
     :width: 600
 
+.. note::
+
+    Once you schedule a message, file attachments are read-only and can't be changed.
+
 Troubleshoot scheduled messages
 -------------------------------
 
@@ -53,3 +57,7 @@ If a scheduled message fails to send, you'll be alerted 2 ways:
 .. image:: ../images/troubleshoot-scheduled-message.png
     :alt: If a scheduled draft message can't be sent, Mattermost provides context about why it can't be sent on the Scheduled tab under Drafts.
     :width: 600
+
+.. note::
+
+    You can't reschedule a failed message, but you can schedule a new replacement message.
