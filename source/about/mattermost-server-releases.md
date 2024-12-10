@@ -19,7 +19,7 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
-| v10.3 [Download](https://releases.mattermost.com/10.3.0/mattermost-10.3.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.3-feature-release>` | 2024-12-16 | 2025-03-15 |
+| v10.3 [Download](https://releases.mattermost.com/10.3.1/mattermost-10.3.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.3-feature-release>` | 2024-12-16 | 2025-03-15 |
 | v10.2 [Download](https://releases.mattermost.com/10.2.0/mattermost-10.2.0-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.2-feature-release>` | 2024-11-15 | 2025-02-15 |
 | v10.1 [Download](https://releases.mattermost.com/10.1.3/mattermost-10.1.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.1-feature-release>` | 2024-10-16 | 2025-01-15 |
 | v10.0 [Download](https://releases.mattermost.com/10.0.3/mattermost-10.0.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.0-major-release>` | 2024-09-16 | 2024-12-15 |
