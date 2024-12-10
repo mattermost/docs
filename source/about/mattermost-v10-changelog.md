@@ -10,7 +10,11 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.3-feature-release)=
 ## Release v10.3 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release Day: December 16, 2024**
+- **10.3.1, released 2024-12-16**
+  - Fixed an issue where user statuses weren't synced properly between servers [MM-61438](https://mattermost.atlassian.net/browse/MM-61438).
+  - Mattermost v10.3.1 contains no database or functional changes.
+- **10.3.0, released 2024-12-16**
+  - Original 10.3.0 release.
 
 ### Important Upgrade Notes
 
