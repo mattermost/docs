@@ -859,6 +859,10 @@ redirects = {
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 "collaborate/syntax-highlighting.html":
         "https://docs.mattermost.com/collaborate/format-messages.html#syntax-highlighting",
+"collaborate/channel-types.html#direct-messages":
+        "https://docs.mattermost.com/collaborate/channel-types.html#direct-message-channels",
+"collaborate/channel-types.html#group-messages":
+        "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -3958,6 +3962,9 @@ rst_prolog = """
     :class: theme-icon
 .. |lock| image:: /images/lock-outline_F0341.svg
     :alt: Private channels are identified with a Lock icon.
+    :class: theme-icon
+.. |file-box| image:: /images/archive-outline_F120E.svg
+    :alt: Archived channels are identified with a File Box icon.
     :class: theme-icon
 .. |plus| image:: /images/plus_F0415.svg
     :alt: The Plus icon provides access to channel and direct message functionality.

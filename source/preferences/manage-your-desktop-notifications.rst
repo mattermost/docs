@@ -33,7 +33,7 @@ Badge-based notifications
 
 Mattermost desktop app icons display the following types of badges:
 
-- A numbered badge for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. |numbered-badge|
+- A numbered badge for unread :ref:`direct <collaborate/channel-types:direct message channels>` :ref:`group <collaborate/channel-types:group message channels>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. |numbered-badge|
 - A dot badge for unread activity. |dot-badge|
 
 Banner alerts

@@ -7,16 +7,11 @@ Archive and unarchive channels
 Archive a channel
 -----------------
 
-You can delete a channel in Mattermost when it's no longer useful by archiving it. Anyone using Mattermost can archive the public channels or private channels they're a member of, unless the system admin has restricted the permissions to do so. 
+Delete :ref:`public channels <collaborate/channel-types:public channels>` and :ref:`private channels <collaborate/channel-types:private channels>` when they're no longer needed by archiving them. Archiving channels removes them from the channel sidebar and marks them as read-only. Anyone can archive a public or private channel they're a member of, unless your system admin has :doc:`disabled </onboard/advanced-permissions>` your ability to do so.
 
-When a channel is archived, it's deleted from the user interface, but a copy exists on the server in case it's needed for audit reasons in the future, or in case you decide to restore the channel by `unarchiving it <#unarchive-a-channel>`__. 
+.. tip::
 
-.. note::
-
-  - All users are added to the **Off-Topic** and **Town Square** channels automatically. Town Square can't be archived.
-  - System admins can archive channels in the System Console without needing to be a channel member.
-  - Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when :doc:`creating a new channel </collaborate/create-channels>`.
-  - Instead of archiving the channel, you can also leave it open and post a message in the channel saying it's considered archived, such as: ``# This channel is archived.``
+  You can continue to access archived channels, unless your system admin has :ref:`disabled <configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.
 
 .. tab:: Web/Desktop
 
@@ -56,10 +51,18 @@ When a channel is archived, it's deleted from the user interface, but a copy exi
     :alt: Tap on Yes to confirm your choice.
     :scale: 30
 
+.. note::
+
+  - When a Mattermost user is deactivated in the system, your :ref:`direct message channel <collaborate/channel-types:direct message channels>` with that user are archived and marked as read-only. An **Archived** icon |file-box| displays next to archived channels.
+  - :ref:`Group message channels <collaborate/channel-types:group message channels>` can't be archived, but they can be closed to hide them from the channel sidebar.
+  - The default **Town Square** channel can't be archived.
+  - System admins can archive channels without needing to be a channel member by using the System Console.
+  - Because a copy of the channel exists on the server, you can't reuse the URL of an archived channel when :doc:`creating a new channel </collaborate/create-channels>`.
+
 Unarchive a channel
 -------------------
 
-System admins and Team admins can restore archived channels. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on the :ref:`data retention policy <configure/compliance-configuration-settings:data retention policies>`.
+System admins and Team admins can restore archived channels. When a channel is unarchived, channel membership and all its content is restored, unless messages and files have been deleted based on a :ref:`data retention policy <configure/compliance-configuration-settings:data retention policies>`.
 
 .. tab:: Web/Desktop
 

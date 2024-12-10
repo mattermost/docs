@@ -26,7 +26,7 @@ Badge-based notifications
 
 In a web browser, Mattermost icons display the following types of badges:
 
-- Numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
+- Numbered badges for unread :ref:`direct <collaborate/channel-types:direct message channels>` :ref:`group <collaborate/channel-types:group message channels>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
 
 A red dot badge means you have unread @mentions, keywords, direct messages, and group messages. 
 |chrome-mention-badge|
