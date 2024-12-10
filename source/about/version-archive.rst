@@ -13,7 +13,7 @@ Version archive
 
   Mattermost Enterprise Edition v10.2.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.1/mattermost-10.2.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.2.1/mattermost-10.2.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``06b3576df15422aa6faa4bdbfa3f01c3dbe1bc5363aa2d275c2be4fcd196aa67``
+    - SHA-256 Checksum: ``c1b1c3268283d4c5ea946864d6ea8ea48eb722a16d1d94c2f3b48d45d0fb7ce8``
     - GPG Signature: https://releases.mattermost.com/10.2.1/mattermost-10.2.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.1.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.4/mattermost-10.1.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.4/mattermost-10.1.4-linux-amd64.tar.gz``
@@ -393,7 +393,7 @@ Version archive
 
   Mattermost Team Edition v10.2.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-2-feature-release>`__ - `Download <https://releases.mattermost.com/10.2.1/mattermost-team-10.2.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.2.1/mattermost-team-10.2.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``c060ad8bc6d437c54b0badeffc752bc986e16759049a4282a8e49b1bae47d0d1``
+    - SHA-256 Checksum: ``b4b77423ca9afff5042381c0af198742ae3ea9683273c78da0e2b1efa796b4d1``
     - GPG Signature: https://releases.mattermost.com/10.2.1/mattermost-team-10.2.1-linux-amd64.tar.gz.sig
   Mattermost Team Edition v10.1.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.4/mattermost-team-10.1.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.4/mattermost-team-10.1.4-linux-amd64.tar.gz``
