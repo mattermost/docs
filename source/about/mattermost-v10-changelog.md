@@ -10,7 +10,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.2-feature-release)=
 ## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.2.1, released  **
+- **10.2.1, released 2024-12-10**
   - Mattermost v10.2.1 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where plugin settings got wiped if the plugin declared some of its fields as secrets [MM-61441](https://mattermost.atlassian.net/browse/MM-61441).
   - Pre-packaged Calls plugin [v1.3.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.2).
@@ -97,7 +97,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.1-feature-release)=
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.1.4, released **
+- **10.1.4, released 2024-12-10**
   - Mattermost v10.1.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Calls plugin [v1.3.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.2).
   - Mattermost v10.1.4 contains no database or functional changes.
@@ -188,7 +188,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.0-major-release)=
 ## Release v10.0 - [Major Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.0.4, released **
+- **10.0.4, released 2024-12-10**
   - Mattermost v10.0.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Calls plugin [v1.3.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.2).
   - Mattermost v10.0.4 contains no database or functional changes.
