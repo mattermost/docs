@@ -3937,13 +3937,19 @@ linkcheck_ignore = [
     # Ignore localhost
     "http://localhost",
     "http://127.0.0.1",
-    # Ignore anchors on github.com because linkcheck fails on them
+    # Ignore anchors on github.com and Weblate because linkcheck fails on them
     "https://github.com",
+    "https://translate.mattermost.com/",
     # Ignore azuremarketplace because of no server response
     "https://azuremarketplace.microsoft.com/.*",
+    # Ignore Mattermost Support Portal
+    "https://support.mattermost.com",
+    # Ignore BizGov & HIPPA
+    "www.bis.doc.gov",
+    "https://www.hhs.gov/",
 ]
-linkcheck_timeout = 5
-linkcheck_rate_limit_timeout = 1.0
+linkcheck_timeout = 10
+linkcheck_rate_limit_timeout = 10.0
 linkcheck_anchors = False
 
 rst_prolog = """

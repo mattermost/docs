@@ -1017,9 +1017,8 @@ Push notification contents
 |   The notification payload contains no message content. Instead it contains a unique message ID used   |                                                                             |
 |   to fetch message content from the Mattermost server when a push notification is received via a       |                                                                             |
 |   `notification service app extension <https://developer.apple.com/documentation/usernotifications/    |                                                                             |
-|   modifying-content-in-newly-delivered-notifications                                                   |                                                                             |
-|   modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification         |                                                                             |
-|   pattern <https://developer.android.com/develop/ui/views/notifications/expanded>`__ on Android.       |                                                                             |
+|   modifying-content-in-newly-delivered-notifications>`_  on iOS or `an expandable notification         |                                                                             |
+|   pattern <https://developer.android.com/develop/ui/views/notifications/expanded>`_ on Android.        |                                                                             |
 |                                                                                                        |                                                                             |
 |   If the server cannot be reached, a generic push notification is displayed without message            |                                                                             |
 |   content or sender name. For customers who wrap the Mattermost mobile application in a secure         |                                                                             |
