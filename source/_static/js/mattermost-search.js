@@ -635,71 +635,56 @@ class SearchClass {
     }
 
     /**
-     * Update the search status field with the results of the search
+     * Update the search status field with the results of the search.
      * @param {number} numberOfResults
      * @param {number} numberOfConfigSettingResults
      */
-    setPostSearchStatus(numberOfResults, numberOfConfigSettingResults) {
-        // empty the current status
-        this.status.innerText = '';
-        // If there were no results, then display an appropriate message and return
-        if (!numberOfResults && !numberOfConfigSettingResults) {
-            const searchStatusEl = document.getElementById("search-summary");
-            if (searchStatusEl) {
-                this.title.innerText = _('Search Results');
-                searchStatusEl.innerText = "Your search did not match any documents. Please make sure that all words are spelled correctly.";
-            }
-            return;
-        }
-        const prefixSpan = document.createElement('span');
-        prefixSpan.innerText = "Search finished, found ";
-        const postfixSpan = document.createElement('span');
-        postfixSpan.innerText = " matching your search query. Results are sorted by relevance.";
-        let configSettingSpan;
-        let resultSpan;
-        if (numberOfConfigSettingResults) {
-            configSettingSpan = document.createElement('span');
-            configSettingSpan.innerText = String(numberOfConfigSettingResults) + " ";
-            const configSettingLink = document.createElement('a');
-            configSettingLink.text = "configuration setting";
-            if (numberOfConfigSettingResults > 1) {
-                configSettingLink.text += "s";
-            }
-            configSettingLink.href = "#config-setting-results-anchor";
-            configSettingSpan.appendChild(configSettingLink);
-        }
-        if (numberOfResults) {
-            resultSpan = document.createElement('span');
-            if (numberOfConfigSettingResults) {
-                resultSpan.innerText = String(numberOfResults) + " page";
-                resultSpan.innerText += numberOfResults > 1 ? "s of " : " of ";
-                const resultSpanLink = document.createElement('a');
-                resultSpanLink.text = "additional information";
-                resultSpanLink.href = "#search-results-anchor";
-                resultSpan.appendChild(resultSpanLink);
-            } else {
-                resultSpan.innerText = String(numberOfResults) + " document";
-                resultSpan.innerText += numberOfResults > 1 ? "s " : " ";
-            }
-        }
-        const searchStatusEl = document.getElementById("search-summary");
-        if (searchStatusEl) {
-            // prefixSpan + configSettingSpan? + " and "? + resultSpan? + postfixSpan
-            searchStatusEl.appendChild(prefixSpan);
-            if (configSettingSpan) {
-                searchStatusEl.appendChild(configSettingSpan);
-                if (resultSpan) {
-                    const andSpan = document.createElement('span');
-                    andSpan.innerText = " and ";
-                    searchStatusEl.appendChild(andSpan);
-                }
-            }
-            if (resultSpan) {
-                searchStatusEl.appendChild(resultSpan);
-            }
-            searchStatusEl.appendChild(postfixSpan);
-        }
+setPostSearchStatus(numberOfResults, numberOfConfigSettingResults) {
+    // Get the search status element
+    const searchStatusEl = document.getElementById("search-summary");
+
+    // Ensure the status element is available
+    if (!searchStatusEl) {
+        return;
     }
+
+    // Clear previous contents
+    searchStatusEl.innerHTML = '';
+
+    // Handle the case where there are no search results or configuration settings
+    if (!numberOfResults && !numberOfConfigSettingResults) {
+        this.title.innerText = _('Search Results');
+        searchStatusEl.innerText = "Your search did not match any documents. Please make sure that all words are spelled correctly.";
+        return;
+    }
+
+    // Create and append the prefix span
+    const prefixSpan = document.createElement('span');
+    let prefixText = 'Search finished, found ';
+    if (numberOfResults) {
+        prefixText += `${numberOfResults} page${numberOfResults > 1 ? 's' : ''} matching your search query`;
+    }
+    if (numberOfConfigSettingResults) {
+        prefixText += ', and an additional ';
+    } else {
+        prefixText += '.';
+    }
+    prefixSpan.innerText = prefixText;
+    searchStatusEl.appendChild(prefixSpan);
+
+    // Create and append the configuration settings link and period if there are any
+    if (numberOfConfigSettingResults) {
+        const configSettingLink = document.createElement('a');
+        configSettingLink.href = '#config-setting-results-anchor'; // Adjust the anchor as needed
+        configSettingLink.innerText = `${numberOfConfigSettingResults} configuration setting${numberOfConfigSettingResults > 1 ? 's' : ''}`;
+
+        searchStatusEl.appendChild(configSettingLink);
+
+        const postfixSpan = document.createElement('span');
+        postfixSpan.innerText = '.';
+        searchStatusEl.appendChild(postfixSpan);
+    }
+}
 
     /**
      * Display a single config setting search result item
