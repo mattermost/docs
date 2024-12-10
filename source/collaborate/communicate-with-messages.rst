@@ -25,6 +25,7 @@ Learn more about messages and threads:
    Save and pin messages </collaborate/save-pin-messages>
    Set message reminders </collaborate/message-reminders>
    Search for messages </collaborate/search-for-messages>
+   Schedule messages </collaborate/schedule-messages>
 
 * :doc:`Send messages </collaborate/send-messages>` - Send messages to other Mattermost users.
 * :doc:`Reply to messages </collaborate/reply-to-messages>` - Communicate with your team in Mattermost.
@@ -36,6 +37,7 @@ Learn more about messages and threads:
 * :doc:`Save and pin messages </collaborate/save-pin-messages>` - Mark useful messages for easy retrieval in the future.
 * :doc:`Set message reminders </collaborate/message-reminders>` - Set reminders to follow up on messages.
 * :doc:`Search for messages </collaborate/search-for-messages>` - Use search to find messages, replies, and file contents across Mattermost channels.
+* :doc:`Schedule messages </collaborate/schedule-messages>` - Schedule messages to be sent in the future.
 
 Make your messages stand out
 ----------------------------

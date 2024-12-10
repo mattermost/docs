@@ -1377,7 +1377,7 @@ If you upgrade from a release earlier than v7.2, please read the other [Importan
 
 ### Known Issues
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
- - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-MM-46886).
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-46886).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -11706,7 +11706,7 @@ Release date: 2016-09-16
 ### Highlights
 
 #### Zapier Integration
-- Integrate over [700 public cloud applications](https://zapier.com/apps) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/app/login?next=%2Fdeveloper%2Fpublic-invite%2F152128%2F3a3df937fd2e873dd65f4c365d17251c%2F&type=login), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
+- Integrate over [700 public cloud applications](https://zapier.com/apps) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/partner/iframe/login?next=%2Fdeveloper%2Fpublic-invite%2F152128%2F3a3df937fd2e873dd65f4c365d17251c%2F&amp%3Btype=login&type=login), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
 
 #### OAuth 2.0 Service Provider
 - Users with an account on a Mattermost server can securely sign in to third-party applications with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/configure/integrations-configuration-settings.html#integrate-enableoauthserviceprovider) to learn more.
@@ -13148,7 +13148,7 @@ Expected Release date: 2016-01-16
 
 #### Mobile Experience
 
-- iOS reference app [now available from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?ls=1&mt=8), compiled from [open source repo](https://github.com/mattermost/ios)
+- iOS reference app [now available from iTunes](https://apps.apple.com/us/app/mattermost-classic/id984966508?amp%3Bmt=8&ls=1), compiled from [open source repo](https://github.com/mattermost/ios)
 - Date headers now show when scrolling on mobile, so you can quickly see when messages were sent
 - Added "rapid scroll" support for jumping quickily to bottom of channels on mobile
 

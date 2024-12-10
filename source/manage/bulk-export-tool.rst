@@ -25,6 +25,7 @@ You can export the following data types:
 - Direct message and group message channels, including read/unread status
 - Roles
 - Permissions schemes
+- Bot users
 
 .. note::
 
