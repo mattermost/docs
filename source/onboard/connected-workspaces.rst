@@ -8,10 +8,6 @@ Communicate across organizations, as well as external partners and vendors using
 
 Connected workspaces in Mattermost behave like regular public and private channels and offer the same user experience and functionality. All members using secure connections, including local members and remote members, can :doc:`send and receive channel messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`.  Content is synchronized across all participating Mattermost instances.
 
-.. important::
-
-    The ability to create a direct or group message with remote users through connected workspaces isn't supported. However, to maintain backwards compatibility with experimental shared channels functionality available prior to Mattermost v10.2, system admins must enable the ``EnableSharedChannelsDMs`` feature flag to continue creating direct messages with remote users across connected workspaces.
-
 A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Set up connected workspaces
@@ -149,6 +145,10 @@ Once a connection is established between two Mattermost servers, system admins c
         This slash command invites the shared connection to the current channel based on its ``connectionID``.
 
         See `Reviewing Secure Connection Status <#review-secure-connection-status>`_ to find the ``connectionID`` for a shared connection.
+
+.. important::
+
+    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in beta there are some known issues that may impact reliability of direct message delivery across servers.
 
 Manage connections and invitations
 ----------------------------------
