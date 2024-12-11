@@ -2617,6 +2617,48 @@ Amazon S3 exported upload part size
 | **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
+.. config:setting:: file-amazons3storageclass
+  :displayname: Amazon S3 storage class (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3StorageClass
+  :environment: MM_FILESETTINGS_AMAZONS3STORAGECLASS
+  :description: The storage class to use for uploads to S3 compatible storage solutions. Default value is an empty string.
+
+Amazon S3 storage class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------+
+| The storage class to use for uploads to S3 compatible         | - System Config path: **Environment > File Storage**                |
+| storage solutions.                                            | - ``config.json`` setting: ``".FileSettings.AmazonS3StorageClass"`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``    |
+| String value. Default is an empty string.                     |                                                                     |
++---------------------------------------------------------------+---------------------------------------------------------------------+
+| **Note**: Most S3 compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided.    |
+| See https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass for more      |
+| documentation about supported storage classes.                                                                                      |
++---------------------------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: file-exportamazons3storageclass
+  :displayname: Export Amazon S3 storage class (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.ExportAmazonS3StorageClass
+  :environment: MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS
+  :description: The storage class to use for exports to S3 compatible storage solutions. Default value is an empty string.
+
+Amazon S3 export storage class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------+
+| The storage class to use for exports to S3 compatible         | - System Config path: N/A                                                 |
+| storage solutions.                                            | - ``config.json`` setting: ``".FileSettings.ExportAmazonS3StorageClass"`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``    |
+| String value. Default is an empty string.                     |                                                                           |
++---------------------------------------------------------------+---------------------------------------------------------------------------+
+| **Note**: Most S3 compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided.          |
+| See https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass for more            |
+| documentation about supported storage classes.                                                                                            |
++---------------------------------------------------------------+---------------------------------------------------------------------------+
+
 .. config:setting:: file-initialfont
   :displayname: Initial font (File Storage)
   :systemconsole: N/A
