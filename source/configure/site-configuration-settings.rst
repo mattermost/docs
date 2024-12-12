@@ -746,7 +746,7 @@ Enable custom user groups
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**              |
+| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: type it here **Site Configuration > Users and Teams**              |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: N/A                                              |
 | - **false**: Custom user groups cannot be created.                                                | - Environment variable: N/A                                                 |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
