@@ -75,6 +75,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### Known Issues
  - The bottom padding is missing in the edit state of a scheduled messages [MM-61722](https://mattermost.atlassian.net/browse/MM-61722).
+ - An incorrect count is displayed in channels for scheduled messages [MM-62197](https://mattermost.atlassian.net/browse/MM-62197).
+ - The scheduled post channel indicator sometimes ends up in a bad state [MM-62222](https://mattermost.atlassian.net/browse/MM-62222).
+ - The new search modal doesn't autocomplete after a space [MM-62199](https://mattermost.atlassian.net/browse/MM-62199).
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
  - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
