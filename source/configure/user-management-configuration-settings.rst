@@ -256,10 +256,10 @@ Teams
 Find Teams
 ~~~~~~~~~~
 
-You can find a team using the System Console.
+You can find existing teams in your Mattermost instance using the System Console.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Type the name of the team in the **Search** box to find the particular team, if it exists.
+2. Enter the team name in the **Search** box.
 
 .. image:: ../images/find-teams.png
   :alt: Find a Mattermost team using the System Console.
@@ -273,7 +273,7 @@ You can find a team using the System Console.
 Filter team searches
 ~~~~~~~~~~~~~~~~~~~~
 
-You can filter System Console team search to narrow down results based on the team membership type i.e., 'Anyone Can Join', 'Invite Only' or 'Group Sync'.
+Filter your team search to narrow down results based on the team management type (anyone can join, invite only or group sync).
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
 2. Select **Filters** located to the right of the **Search** field to access available filter options.
@@ -285,10 +285,10 @@ You can filter System Console team search to narrow down results based on the te
 Review team configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-View team configuration details using the System Console. Gather information including the team name, team description, team mangement options, groups and members.
+View team configuration details using the System Console. Gather information including the team name, team description, team management options, groups, and members.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list, and browse team configuration details.
+2. Select the team from the list to view its configuration page.
 
 .. image:: ../images/team-configuration-details.png
   :alt: Review team configuration details using the System Console
@@ -302,11 +302,11 @@ Add members
 ^^^^^^^^^^^
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list and tap on it to view its configuration page.
-3. In the **Members** section, tap on **Add Members**.
+2. Select the team from the list to view its configuration page.
+3. In the **Members** section, select **Add Members**.
 4. Select an user or available bot from the list or try using the **Search** to find a specific one.
-5. Click on **Add** to add the user or bot.
-6. Click on **Save** to save the changes to the team.
+5. Select **Add** to add the user or bot.
+6. Select **Save**.
 
 .. image:: ../images/add-members-to-a-team.png
   :alt: Add a member to the team using the System Console.
@@ -315,9 +315,9 @@ Remove members
 ^^^^^^^^^^^^^^
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list and tap on it to view its configuration page.
-3. In the **Members** section, tap on **Remove** for the user or bot that you want to remove.
-4. Click on **Save** to save the changes to the team.
+2. Select the team from the list to view its configuration page.
+3. In the **Members** section, select **Remove** for the user or bot that you want to remove.
+4. Select **Save**.
 
 .. image:: ../images/remove-members-from-a-team.png
   :alt: Remove a member from the team using the System Console.
@@ -328,9 +328,9 @@ Sync group members
 When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list and tap on it to view its configuration page.
+2. Select the team from the list to view its configuration page.
 3. In the **Team Management** section, enable the **Sync Group Members** option.
-4. Click on **Save** to save the changes to the team.
+4. Select **Save**.
 
 .. image:: ../images/sync-group-members-in-a-team.png
   :alt: Enable Sync Group Members for a team using the System Console.
@@ -341,9 +341,9 @@ Anyone can join this team
 This team can be discovered allowing anyone with an account to join this team.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list and tap on it to view its configuration page.
+2. Select the team from the list to view its configuration page.
 3. In the **Team Management** section, enable the **Anyone can join this team** option.
-4. Click on **Save** to save the changes to the team.
+4. Select **Save**.
 
 .. image:: ../images/anyone-can-join-a-team.png
   :alt: Enable Anyone can join this team option for a team using the System Console.
@@ -354,9 +354,9 @@ Only specific email domains can join this team
 Users can only join the team if their email matches one of the specified domains.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list and tap on it to view its configuration page.
-3. In the **Team Management** section, enable the **Only specific email domains can join this team** option.
-4. Click on **Save** to save the changes to the team.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Management** section, enable the **Only specific email domains can join this team** option and add the specific domains.
+4. Select **Save**.
 
 .. image:: ../images/specific-email-domains-can-join-a-team.png
   :alt: Enable Only specific email domains can join this team option for a team using the System Console.
@@ -370,9 +370,9 @@ Archive the team
 ~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
-2. Select the team from the list and tap on it to view its configuration page.
-3. In the **Team Profile** section, tap on **Archive Team**.
-4. Click on **Save** to save the changes to the team.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Profile** section, select **Archive Team**.
+4. Select **Save**.
 
 .. image:: ../images/archive-a-team.png
   :alt: Archive a team using the System Console.
