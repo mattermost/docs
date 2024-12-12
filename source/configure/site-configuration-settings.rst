@@ -748,7 +748,7 @@ Enable custom user groups
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**              |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: N/A                                              |
-| - **false**: Users cannot set custom statuses.                                                    | - Environment variable: N/A                                                 |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: N/A                                                 |
 +---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: users-userstatsupdatetime
