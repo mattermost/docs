@@ -288,10 +288,10 @@ Channels
 Find Channels
 ~~~~~~~~~~~~~
 
-You can find a channel using the System Console.
+You can find existing channels in your Mattermost instance using the System Console.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Type the name of the channel in the **Search** box to find the particular channel, if it exists.
+2. Enter the channel name in the **Search** box.
 
 .. image:: ../images/find-channels.png
   :alt: Find a Mattermost channel using the System Console.
@@ -299,7 +299,7 @@ You can find a channel using the System Console.
 Filter channel searches
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-You can filter System Console channel search to narrow down results based on the channel types (Public, Private or Archived), channel management types (Group Sync or Manual Invites) or the team that they belong to.
+Filter your channel search to narrow down results based on the channel type (as public, private or archived), channel management type (group sync or manual invites) or based on the team the channel belongs to.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
 2. Select **Filters** located to the right of the **Search** field to access available filter options.
@@ -312,10 +312,10 @@ You can filter System Console channel search to narrow down results based on the
 Review channel configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-View channel configuration details using the System Console. Gather information including the channel profile, advanced access controls, channel mangement options, groups and members.
+View channel configuration details using the System Console. Gather information including the channel profile, advanced access controls, channel management options, groups, and members.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list, and browse channel configuration details.
+2. Select a channel from the list to review its channel configuration details.
 
 .. image:: ../images/channel-configuration-details.png
   :alt: Review channel configuration details using the System Console
@@ -323,123 +323,120 @@ View channel configuration details using the System Console. Gather information 
 Advanced Access Control
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Manage the actions available to channel members and guests. Admins can enable or disable permissions for several member and guest actions for the channel.
+Manage the Management actions available to channel members and guests.
 
 Create Posts
 ^^^^^^^^^^^^
 The ability for members and guests to create posts in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Create Posts** section under **Advanced Access Control** tab, tick the checkbox for either **Guests** or **Members** or both to enable those users to post in the channel.
-4. Click on **Save** to save the changes.
+2. Select a channel from the list to view its configuration page.
+3. In the **Create Posts** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to post messages in the channel.
+4. Select **Save**.
 
 .. image:: ../images/allow-create-posts-for-a-channel.png
   :alt: Add Members and Guests to post to the channel using the System Console.
 
 Post Reactions
 ^^^^^^^^^^^^^^
-The ability for members and guests to post reactions.
+The ability for members and guests to react with emojis on messages in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Create Posts** section under **Advanced Access Control** tab, tick the checkbox for either **Guests** or **Members** or both to enable those users to post reactions in the channel.
-4. Click on **Save** to save the changes.
+2. Select a channel from the list to view its configuration page.
+3. In the **Post Reactions** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to react with emojis on messages posted to the channel.
+4. Select **Save**.
 
 .. image:: ../images/allow-post-reactions-for-a-channel.png
   :alt: Add Members and Guests to post reactions to the channel using the System Console.
 
 Manage Members
 ^^^^^^^^^^^^^^
-The ability for members to add and remove people.
+The ability for members to add and remove people from the channels. Guests can't add or remove people from channels.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Manage Members** section under **Advanced Access Control** tab, tick the checkbox for **Members** to enable those users to manage members for the channel.
-4. Click on **Save** to save the changes.
+2. Select a channel from the list to view its configuration page.
+3. In the **Manage Members** section under the **Advanced Access Control** tab, select **Members** to enable those users to manage members for the channel.
+4. Select **Save**.
 
 .. image:: ../images/allow-manage-members-for-a-channel.png
-  :alt: Add Members to post reactions to the channel using the System Console.
-
-.. tip::                                                                                                                                                                
-  - The ability to manage members for the channel is available for **Members** only. **Guests** can't add or remove members from the channel.
+  :alt: Allow Members to add or remove people from the channel using the System Console.
 
 Channel Mentions
 ^^^^^^^^^^^^^^^^
-The ability for members and guests to use **@all**, **@here** and **@channel**.
+The ability for members and guests to use channel mentions, including **@all**, **@here**, and **@channel**, in the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Channel Mentions** section under **Advanced Access Control** tab, tick the checkbox for either **Guests** or **Members** or both to enable those users to use the available channel mentions.
-4. Click on **Save** to save the changes.
+2. Select the channel from the list to view its configuration page.
+3. In the **Channel Mentions** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to use channel mentions.
+4. Select **Save**.
 
 .. image:: ../images/allow-mentions-for-a-channel.png
   :alt: Add Members and Guests to use mentions in a channel using the System Console.
 
 .. tip::                                                                                                                                                                
-  - **Guests** and **Members** can not use channel mentions without the ability to **Create Posts**. To enable this permission, these users must have been granted **Create Posts** permission first.
+  **Guests** and **Members** can't use channel mentions without the ability to **Create Posts**. To enable this permission, these users must have been granted **Create Posts** permission first.
 
 Manage Bookmarks
 ^^^^^^^^^^^^^^^^
-The ability for members and guests to add, delete and sort bookmarks.
+The ability for members to add, delete, and sort bookmarks. Guests can't add, remove, or sort bookmarks for the channel.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Manage Bookmarks** section under **Advanced Access Control** tab, tick the checkbox for **Members** to enable those users to add, sort or remove bookmarks for the channel.
-4. Click on **Save** to save the changes.
+2. Select the channel from the list to view its configuration page.
+3. In the **Manage Bookmarks** section under the **Advanced Access Control** tab, select **Members** to enable those users to add, sort, or remove bookmarks for the channel.
+4. Select **Save**.
 
 .. image:: ../images/allow-manage-bookmarks-for-a-channel.png
-  :alt: Add Members to manage bookmarks for the channel using the System Console.
+  :alt: Allow Members to manage bookmarks for the channel using the System Console.
 
 .. tip::                                                                                                                                                                
-  - The ability to manage bookmarks for the channel is available for **Members** only. **Guests** can't add, remove or sort bookmarks for the channel.
+  The ability to manage bookmarks for the channel is available for **Members** only. **Guests** can't add, remove or sort bookmarks for the channel.
 
 Channel Management
 ~~~~~~~~~~~~~~~~~~
 
-Choose between inviting members manually or syncing members automatically from groups.
+Choose between inviting members manually or sychronizing members automatically from groups.
 
 Sync Group Members
 ^^^^^^^^^^^^^^^^^^
 When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
+2. Select the channel from the list to view its configuration page.
 3. In the **Channel Management** tab, enable the **Sync Group Members** option.
-4. Click on **Save** to save the changes.
+4. Select **Save**.
 
 .. image:: ../images/sync-group-members-in-a-channel.png
   :alt: Enable Sync Group Members for a channel using the System Console.
 
 Public channel or private channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If `public` the channel is discoverable and any user can join, or if `private` invitations are required to join the channel.
+Public channels are discoverable and any user can join. Private channels require invitations to join.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Public channel or private channel** section under **Channel Management** tab, toggle between **Public** or **Private** to change the channel visibility.
-4. Click on **Save** to save the changes.
+2. Select the channel from the list to view its configuration page.
+3. In the **Public channel or private channel** section under the **Channel Management** tab, toggle between **Public** or **Private** to change channel visibility.
+4. Select **Save**.
 
 .. image:: ../images/set-a-channel-to-public-or-private.png
   :alt: Set the channel visibility to either Public or Private using the System Console.
 
 .. tip::                                                                                                                                                                
-  -  When Group Sync is enabled, private channels cannot be converted to public.
+  When Group Sync is enabled, private channels can't be converted to public channels.
 
 Members
 ~~~~~~~
 
-Choose between inviting members manually or syncing members automatically from groups.
+Choose between inviting members manually or synchronizing members automatically from groups.
 
 Add members
 ^^^^^^^^^^^
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Members** section, tap on **Add Members**.
+2. Select the channel from the list to view its configuration page.
+3. In the **Members** section, select **Add Members**.
 4. Use the **Search** box to find a specific user or group to add to the channel.
-5. Click on **Add** to add the user or group as a **Member**.
-6. Click on **Save** to save the changes.
+5. Select **Add** to add the user or group as a **Member**.
+6. Select **Save**.
 
 .. image:: ../images/add-members-to-a-channel.png
   :alt: Add a member to the channel using the System Console.
@@ -448,9 +445,9 @@ Remove members
 ^^^^^^^^^^^^^^
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Members** section, tap on **Remove** for the user that you want to remove.
-4. Click on **Save** to save the changes.
+2. Select the channel from the list to view its configuration page.
+3. In the **Members** section, select **Remove** for the user that you want to remove.
+4. Select **Save**.
 
 .. image:: ../images/remove-members-from-a-channel.png
   :alt: Remove a member from the channel using the System Console.
@@ -459,15 +456,15 @@ Archive a channel
 ~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
-2. Select the channel from the list and tap on it to view its configuration page.
-3. In the **Channel Profile** section, tap on **Archive Channel**.
-4. Click on **Save** to save the changes.
+2. Select the channel from the list to view its configuration page.
+3. In the **Channel Profile** section, select **Archive Channel**.
+4. Select **Save**.
 
 .. image:: ../images/archive-a-channel.png
   :alt: Archive a channel using the System Console.
 
 .. tip::                                                                                                                                                                
-  - Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` tool.
+  Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` tool.
 
 ----
 
