@@ -22,7 +22,7 @@ When you enable notifications, you'll start receiving notifications for all Matt
 Badge-based notifications
 -------------------------
 
-Mattermost mobile app icons display numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` and :ref:`group <collaborate/channel-types:group messages>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
+Mattermost mobile app icons display numbered badges for unread :ref:`direct <collaborate/channel-types:direct message channels>` and :ref:`group <collaborate/channel-types:group message channels>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
 
 |numbered-badge|
 

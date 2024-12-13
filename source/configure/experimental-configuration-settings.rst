@@ -493,6 +493,10 @@ This setting configures the number of milliseconds to wait between fetching user
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Decrease this configuration setting value to increase how often Mattermost checks for and retrieves updated user profile datails. Reducing this value can be particularly helpful to reduce the likelyhood of usernames being displayed in channels as **Someone** due to outdated or missing data.
+
 .. config:setting:: exp-primaryteam
   :displayname: Primary team (Experimental)
   :systemconsole: Experimental > Features
