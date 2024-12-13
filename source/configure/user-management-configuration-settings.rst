@@ -288,7 +288,7 @@ Channels
 Find Channels
 ~~~~~~~~~~~~~
 
-You can find existing channels in your Mattermost instance using the System Console.
+Find existing channels in your Mattermost instance using the System Console.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
 2. Enter the channel name in the **Search** box.
