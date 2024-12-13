@@ -13,7 +13,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
   - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
   - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
   - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
-  - Fixed an issue where the minimize button didn't work on Kubuntu 24.04 [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
+  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
   - Added support for downgrading using the MSI installer [MM-62196](https://mattermost.atlassian.net/browse/MM-62196).
   - Fixed an issue where the application would not focus the browser window when opening an external link [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
   - Upgraded to Electron v33.2.0.
@@ -105,7 +105,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
   - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
   - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
   - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
-  - Fixed an issue where the minimize button didn't work on Kubuntu 24.04 [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
+  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
   - Added support for downgrading using the MSI installer [MM-62196](https://mattermost.atlassian.net/browse/MM-62196).
 
 - **v5.9.1, released 2024-11-20**
