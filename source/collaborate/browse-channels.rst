@@ -4,7 +4,11 @@ Browse channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+Browse available Mattermost channels you can join.
+
 .. tab:: Web/Desktop
+
+  From Mattermost v9.1, filter the list of channels by public, private, or archived channels, and you can hide all channels you're already a member of.
 
   1. Select the **Plus** |plus| icon at the top of the channel sidebar to see all available public channels you can join that you're not already a member of.
   2. Select **Browse Channels**. 
@@ -13,9 +17,13 @@ Browse channels
 
   .. tip::
 
-    From Mattermost v9.1, you can filter the list of channels by public, private, or archived channels, and you can hide all channels you're already a member of.
+    Want to see all of the channels you're already a member of, or can't find a specific private channel? Select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have muted aren't included in results.
 
 .. tab:: Mobile
+
+  .. tip::
+
+    You can filter the list of channels by public, archived, or shared channels.
 
   1. Tap the **Plus** |plus| icon located in the top right corner of the app.
 
@@ -44,19 +52,3 @@ Browse channels
   .. image:: ../images/mobile-browse-public-channels.jpg
       :alt: Tap on the public channel name that you want to join.
       :scale: 30
-
-  .. tip::
-
-    You can filter the list of channels by public, archived, or shared channels.
-
-.. tip:: 
-  
-  Want to see all of the channels you're already a member of, or can't find a specific private channel? Using a browser or the desktop app, select **Find Channel** in the channel sidebar to see all of the channels you're currently a member of across all of your teams, including public and private channels, direct and group messages, channels with unread messages, and threads. Channels you have muted aren't included in results.
-
-Revisit recent channels
------------------------
-
-Using a browser or the desktop app, use the **History** arrows at the top of the sidebar to move back and forth through your channel history. 
-
-- Select the left arrow to go back one page. 
-- Select the right arrow to go forward one page.
