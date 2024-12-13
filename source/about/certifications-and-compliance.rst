@@ -197,7 +197,7 @@ What information is shared when I select **Contact us** on a Mattermost Admin Ad
 Selecting **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
 .. note::
-    :ref:`Mattermost Admin Advisor notices are disabled <manage/in-product-notices:admin advisor notices>` in v5.35 and later.
+    :doc:`Mattermost Admin Advisor notices are disabled </manage/in-product-notices>` in v5.35 and later.
 
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
