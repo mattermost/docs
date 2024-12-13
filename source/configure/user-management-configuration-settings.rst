@@ -294,7 +294,7 @@ View team configuration details using the System Console. Gather information inc
 Manage team membership
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Admins can directly add or remove member from the team. They can also customize how members are added to the team using the System Console.
+Admins can directly add or remove member from the team and customize how members are added to the team using the System Console.
 
 Add members
 ^^^^^^^^^^^
