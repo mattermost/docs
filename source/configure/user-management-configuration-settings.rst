@@ -266,9 +266,7 @@ You can find existing teams in your Mattermost instance using the System Console
 
 .. tip::
 
-  From Mattermost v9.6, you can:
-
-  - Search for specific teams by entering a partial or full team name in the **Search** field and pressing :kbd:`Enter`.
+  From Mattermost v9.6, you can search for specific teams by entering a partial or full team name in the **Search** field and pressing :kbd:`Enter`.
 
 Filter team searches
 ~~~~~~~~~~~~~~~~~~~~
