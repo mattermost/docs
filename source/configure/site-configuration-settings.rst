@@ -733,11 +733,11 @@ Enable last active time
 .. config:setting:: users-enablecustomusergroups
   :displayname: Enable custom user groups (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
-  :configjson: N/A
-  :environment: N/A
+  :configjson: ServiceSettings.EnableCustomGroups
+  :environment: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS
 
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
-  - **false**: Users cannot set custom statuses.
+  - **false**: Custom user groups cannot be created.
 
 Enable custom user groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -745,11 +745,11 @@ Enable custom user groups
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**              |
-|   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true``                                             |
-| - **false**: Custom user groups cannot be created.                                                | - Environment variable: N/A                                                 |
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
+|   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS                      |
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: users-userstatsupdatetime
   :displayname: User statistics update time (Users and Teams)
