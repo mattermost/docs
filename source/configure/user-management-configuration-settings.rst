@@ -271,7 +271,7 @@ You can find existing teams in your Mattermost instance using the System Console
 Filter team searches
 ~~~~~~~~~~~~~~~~~~~~
 
-Filter your team search to narrow down results based on the team management type (anyone can join, invite only or group sync).
+Filter your team search to narrow down results based on the team management type (anyone can join, invite only, or group sync).
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
 2. Select **Filters** located to the right of the **Search** field to access available filter options.
