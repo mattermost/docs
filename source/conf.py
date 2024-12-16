@@ -2504,7 +2504,6 @@ redirects = {
 "install/install-debian.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-centos-oracle-scientific":
-        "https://docs.mattermost.com/install/install-rhel-8.html",
         "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-common-intro.html":
         "https://docs.mattermost.com/install/install-tar.html",
