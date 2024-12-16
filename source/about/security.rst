@@ -107,7 +107,7 @@ Moreover, Mattermost performs a penetration test on the software no less than on
 HIPAA compliance*
 -----------------
 
-Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
+Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
@@ -129,7 +129,7 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
    - Physical Safeguards
    - Organizational requirements and other standards.
 
-To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
+To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
 FINRA compliance*
 ------------------

@@ -18,7 +18,7 @@ Mattermost mobile apps can be configured in your EMM solution using AppConfig wi
 Mattermost AppConfig values
 ---------------------------
 
-The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template <mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
+The following table shows all the configuration options that can be sent from the EMM provider of your choice to the Mattermost mobile apps. You can also :download:`download an XML template </samples/mattermost-specfile.xml>` of the configuration file for use with your EMM provider. 
 
 +------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------+---------------+------------------+-------------+--------------------------+
 | Key                    | Description                                                                                                                                                                                                     | Type   | Default Value | Valid Values     | iOS Support | Android for Work Support |
