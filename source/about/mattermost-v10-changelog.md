@@ -7,6 +7,78 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
+(release-v10.4-feature-release)=
+## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release Day: January 16, 2025**
+
+```{Important}
+If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.4.0).
+ - Improved the handling of Thai script in search terms.
+ - Added tooltips to the buttons shown in the channel info right-hand side.
+ - Downgraded Spanish language to Alpha.
+ - Removed the feature to import themes from Slack.
+
+#### Administration
+ - Redis is now available as an alternative cache backend for all enterprise customers. It can be leveraged to run Mattermost at a very high scale. There is a new section in 
+     - ``config.json`` that can be updated to use Redis.
+     - ``CacheSettings.CacheType``: This can be either ``lru`` or ``redis``. ``lru`` is the default choice which will use the in-memory cache store that we use currently.
+     - ``CacheSettings.RedisAddress``: The hostname of the Redis host.
+     - ``CacheSettings.RedisPassword``: The password of the Redis host (can be left blank if there is no password).
+     - ``CacheSettings.RedisDB``: The database of the Redis host. Typically ``0``.
+     - ``CacheSettings.DisableClientCache``: This can be set to ``true`` if you decide to disable the client-side cache of Redis. Typically there is no need to do this in production, and this is mainly used as a test option.
+ - Plugins are now allowed to add Support Packet data without user interface elements.
+ - Improved the detection of the mobile app operating system as stored in the **Sessions** table.
+
+### Bug Fixes
+ - Fixed an issue where imported replies were missing their reactions.
+ - Fixed an issue with how links in Markdown headings are displayed in the Threads list.
+ - Fixed an issue where marking a channel as read wouldn't persist through a refresh.
+ - Fixed a warning in the Support Packet about an unreadable LDAP server even if LDAP was disabled.
+ - Fixed an issue where multiple timezones were highlighted when selecting certain timezones.
+ - Fixed an issue where unread messages on other teams would not appear after the application reconnected to the server.
+ - Fixed an issue where the scrollbar was not clickable when there was a toaster.
+ - Fixed an issue when pressing **Page Up** or **Page Down** on a long message (scrollable) with the right sidebar open.
+ - Fixed an issue with incorrect reporting in the **Server Updates** section in **System Console > Workspace Optimizations**.
+ - Fixed an issue where EXIF rotated image previews did not have the correct size.
+ - Fixed an issue where the search input field in the emoji picker did not accept uppercase letters.
+ - Fixed an issue where imported replies were missing their reactions.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+- Under ``LocalizationSettings`` in ``config.json``:
+  - Added a new ``EnableExperimentalLocales`` configuration setting that controls whether to allow the selection of experimental (e.g., in progress) languages.
+
+#### Changes to Enterprise plans:
+ - Under ``FileSettings`` in ``config.json``:
+   - Added new ``AmazonS3StorageClass`` and ``ExportAmazonS3StorageClass``, both default to ``""`` to preserve the current behavior. Administrators may configure this storage class to the storage class required by their S3 solution.
+
+### API Changes
+ - Added a new query string to exclude threads that are not part of the team ``GET api/v4/users/{user_id:[A-Za-z0-9]+}/teams/{team_id:[A-Za-z0-9]+}/threads``.
+
+### Websocket Event Changes
+ - Added a new ``server_hostname`` field to the websocket ``HELLO`` event.
+
+### Go Version
+ - v10.4 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+ - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
+ - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
+
+### Contributors
+ - 
+
 (release-v10.3-feature-release)=
 ## Release v10.3 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
