@@ -49,6 +49,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Fixed an issue where EXIF rotated image previews did not have the correct size.
  - Fixed an issue where the search input field in the emoji picker did not accept uppercase letters.
  - Fixed an issue where imported replies were missing their reactions.
+ - Fixed an issue where System Admins could not pull posts from Direct Message channels that they were not in.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
