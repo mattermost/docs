@@ -8,7 +8,7 @@ Overcome information overload and streamline team communication and collaboratio
 
 .. tip::
 
-  Looking for a Mattermost Copilot demo? Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows.
+  Looking for a Mattermost Copilot demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_! Then, watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows.
 
 .. include:: ../_static/badges/academy-copilot-calls.rst
   :start-after: :nosearch:

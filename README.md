@@ -13,7 +13,7 @@ If you have any questions, create an account on the [Mattermost Community server
      * [Use GitHub PR Labels](#use-github-pr-labels)
      * [Comment on Pull Requests](#comment-on-pull-requests)
      * [Review Pull Requests](#review-pull-requests)
- * [Build Mattermost product documentation locally](#build-locally)
+ * [Build locally](#build-locally)
 
 ## Contribute to Mattermost product documentation
 
@@ -57,9 +57,12 @@ Once the review process is complete, and depending on the type of issue it is (e
 
 ## Build locally
 
-If you've downloaded the `mattermost/docs` repository and are editing Mattermost documentation on your local machine, you can generate the HTML files from markdown in the `source` directory. You can review your changes before you commit them or create pull requests.
+If you've downloaded the `mattermost/docs` repository to edit Mattermost documentation on your local machine, you can generate the HTML files from the `source` directory. You can review your changes as a live or static preview before committing them or creating new pull requests.
 
-**Note:** Terminal commands can be executed on Linux, Mac, and Windows (using PowerShell).
+> [!NOTE]
+> You can generate the docs on Linux, Mac, and Windows (using PowerShell); however, builds on Windows are considerably slower because only a single processing core is used.
+> 
+> For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. An Ubuntu VM will use all available processing cores, resulting in faster local builds.
 
 ### Build prerequisites
 
@@ -71,7 +74,7 @@ The following software is required to build the documentation:
 
 ### Build instructions
 
-1. Open a terminal window, then clone a forked copy of the documentation repository:
+1. Open a native or VM terminal window, then clone a forked copy of the documentation repository:
     ```shell
     git clone https://github.com/mattermost/docs.git
     ```
@@ -83,7 +86,7 @@ The following software is required to build the documentation:
 
 3. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
 
-    For Mac users where Homebrew is installed:
+    For Mac users and Ubuntu VM users where Homebrew is installed:
     ```shell
     brew install pipenv
     ```
@@ -105,7 +108,7 @@ The following software is required to build the documentation:
     - Use `make livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE.
 
 > [!NOTE]
-> Windows users require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
+> Windows users who aren't building the docs in an Ubuntu VM also require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
 >
 > 1. Install [chocolatey](https://chocolatey.org/).
 > 2. In a Windows terminal, select the downward chevron, and hold `CTRL` while selecting **PowerShell** to run commands as an admin.
