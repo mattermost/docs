@@ -302,9 +302,9 @@ In a proxy-aware configuration, a pre-proxy relay accepts messages from the `Mat
 See a sample architectural overview below: 
 
 .. image:: ../images/mobile-pre-proxy-relay.png
-   :alt: The Mattermost push notification service is designed to send traffic directly to the Apple Push Notification Service (APNS) and Google Fire Cloud Messaging (FCM) services. However, if your organization requires a corporate proxy to scan and audit all outbound traffic, you can deploy Mattermost in a proxy-aware configuration with a pre-proxy relay. The relay accepts messages from the Mattermost Push Proxy, and forwards them to a corporate proxy that enforces your internal IT requirements before delivering the notification to a mobile device. This configuration requires a trusted root certificate.
+   :alt: The Mattermost push notification service is designed to send traffic directly to the Apple Push Notification Service (APNS) and Google Fire Cloud Messaging (FCM) services. However, if your organization requires a corporate proxy to scan and audit all outbound traffic, you can deploy Mattermost in a proxy-aware configuration with a pre-proxy relay. The relay accepts messages from the Mattermost Push Proxy, and forwards them to a corporate proxy that enforces your internal IT requirements before delivering the notification to a mobile device. This configuration requires a trusted root certificate.
 
-This enables the **pre-proxy relay** to act as the `APNS <https://developer.apple.com/documentation/usernotifications>`_ and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay.
+This enables the **pre-proxy relay** to act as the APNS and to forward the request to its final destination via your corporate proxy, not requiring the APNS traffic to be proxy-aware. The APNS traffic is redirected to the pre-proxy relay via ``/etc/hosts`` entry. The entry uses a trusted CA that signs a certificate for the Mattermost Push Proxy to trust the pre-proxy relay. See the Apple Developer documentation on `user notifications <https://developer.apple.com/documentation/usernotifications>`_ for more information.
 
 Google's `FCM traffic <https://firebase.google.com/docs/cloud-messaging>`_ is proxy-aware via environment variables, so no actions are required for it. 
 
@@ -322,7 +322,7 @@ Ths **post-proxy relay** `can be configured using the Mattermost Push Proxy inst
 In place of a DMZ, you can also host in a trusted cloud environment such as AWS or Azure depending on your internal approvals and policies. 
 
 .. image:: ../images/mobile-post-proxy-relay.png
-   :alt: The Mattermost push notification service is designed to send traffic directly to the Apple Push Notification Service (APNS) and Google Fire Cloud Messaging (FCM) services. However, if your organization doesn't support HTTP/2 requests to send push notifications to mobile devices, you can deploy a post-proxy relay to take messages form the Mattermost server, transform it from the incompatible format, and relay it to its final destination. The post-proxy relay can be configured using connection restrictions to meet your custom security and compliance requirements.
+   :alt: The Mattermost push notification service is designed to send traffic directly to the Apple Push Notification Service (APNS) and Google Fire Cloud Messaging (FCM) services. However, if your organization doesn't support HTTP/2 requests to send push notifications to mobile devices, you can deploy a post-proxy relay to take messages form the Mattermost server, transform it from the incompatible format, and relay it to its final destination. The post-proxy relay can be configured using connection restrictions to meet your custom security and compliance requirements.
 
 Whitelist Mattermost push notification proxy to bypass your corporate proxy server
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -350,7 +350,7 @@ The ``deviceId`` is a identifier provided by a push notification service, such a
 
 When the app starts, if the push notification permissions are enabled, the app will try to connect with the corresponding notification service (APNs for iOS, FCM for Android) to get the ``deviceId``. If there is any change to the ``deviceId``, the app will notify any connected server about this change.
 
-Based on the documentation from `APNs <https://developer.apple.com/documentation/usernotifications/registering-your-app-with-apns?changes=_8>`_ and `FCM <https://firebase.google.com/docs/cloud-messaging/android/client#java_1>`_, the ``deviceId`` only will change in the following cases:
+Based on the `Apple Developer Documentation on registering apps with APNS <https://developer.apple.com/documentation/usernotifications/registering-your-app-with-apns?changes=_8>`_ and the `Google Documentation on FCM <https://firebase.google.com/docs/cloud-messaging/android/client#java_1>`_, the ``deviceId`` only will change in the following cases:
 
 - The app is restored from a backup from a different device
 - The user clears the app data
