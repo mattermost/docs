@@ -34,29 +34,52 @@ Getting people set up with a Mattermost account is typically something that syst
 - :ref:`Migrate user accounts <onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </onboard/bulk-loading-data>` that user data into Mattermost.
 - Connect an authentication service to assist with user provisioning, such as :doc:`AD/LDAP authentication </onboard/ad-ldap>` or :doc:`SAML authentication </onboard/sso-saml>`.
 
+Review user data
+~~~~~~~~~~~~~~~~
+
+From Mattermost v9.6, you can review the following user data in the System Console:
+
+- **Email**: The user's email address.
+- **Member since**: The number of days since the user joined the Mattermost server.
+- **Last login**: The date of the user's last successful login to the server.
+- **Last activity**: The total number of days since the user was last active on the server, which is typically based on the :ref:`user's availability <preferences/set-your-status-availability:set your availability>`.
+- **Last post**: The total number of days since the user's last sent message on the server.
+- **Days active**: (PostgreSQL only) The total number of days in which the user has sent a message in Mattermost.
+- **Messages posted**: (PostgreSQL only) The total number of messages the user has sent on the server.
+
+By default, you see all columns of data and data for all time. 
+
+- Show or hide data all data columns exccept **User details** and **Actions**, as preferred.
+- Filter results to the last 30 days, the previous month, and the last 6 months for **Last post**, **Days active**, and **Messages posted** user data.
+
 Find users
 ~~~~~~~~~~
 
-You can find a user using the System Console.
+Find a user using the System Console.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
-2. Type the name of the user or the username or the user ID in the **Search users** box to find the particular user, if they exist.
+2. Search for specific users by entering a partial or full username, user ID, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
 
 .. image:: ../images/find-users.png
   :alt: Find a Mattermost user using the System Console.
 
-.. tip::
+Filter user searches
+~~~~~~~~~~~~~~~~~~~~
 
-  From Mattermost v9.6, you can:
+Filter System Console user searches to narrow down results based on the team membership, role, and user status.
 
-  - Customize this page by showing or hiding user details, including email address, member duration, last login, activity, or post, number of days active (PostgreSQL only), and number of messages posted (PostgreSQL only). You can also control how many user records display on the page at a time.
-  - Search for specific users by entering a partial or full username, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select **Filters** located to the right of the **Search users** field to access available filter options.
+3. Select **Apply** to filter user search results.
+
+.. image:: ../images/user-search-filters.png
+  :alt: Filter the user list based on team membership, role, and user status using the System Console.
 
 Identify a user's ID
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
-You can identify a user's ID using the System Console, the Mattermost API, or mmctl.
+Identify a user's ID using the System Console, the Mattermost API, or mmctl.
 
 1. Go to **System Console > User Management > Users** to access all user accounts. 
 2. Select a **User** to review their ID in the User Configuration page. 
@@ -69,26 +92,10 @@ Alternatively, identify a user's ID using the Mattermost API or mmctl:
 - Using the Mattermost API, make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``. Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for. The API response contains a JSON object that includes the user's ID among other details.
 - Using mmctl, in a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
 
-Filter user searches
-~~~~~~~~~~~~~~~~~~~~
-
-You can filter System Console user searches to narrow down results based on the team membership, role, and user status.
-
-1. Go to **System Console > User Management > Users** to access all user accounts.
-2. Select **Filters** located to the right of the **Search users** field to access available filter options.
-3. Select **Apply** to filter user search results.
-
-.. image:: ../images/user-search-filters.png
-  :alt: Filter the user list based on team membership, role, and user status using the System Console.
-
-.. tip::
-
-  From Mattermost v9.6, you can also filter users by activity timeframes, including the last 30 days, the previous month, and the last 6 months.
-
 Export user data
 ~~~~~~~~~~~~~~~~~
 
-From Mattermost v9.6, Mattermost Enterprise and Professional system admins can export user data as a CSV report. 
+From Mattermost v9.6, Mattermost Enterprise and Professional customers can export user data as a CSV report. 
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. `Filter <#filter-user-searches>`__ the user data as needed.
