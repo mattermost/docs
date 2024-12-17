@@ -8,7 +8,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-10)=
 ## Release v5.10
 
-- **v5.10.2, released **
+- **v5.10.2, released 2024-12-17**
 
   - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
   - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
@@ -100,7 +100,7 @@ Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgra
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
 
-- **v5.9.2, released **
+- **v5.9.2, released 2024-12-17**
 
   - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
   - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
