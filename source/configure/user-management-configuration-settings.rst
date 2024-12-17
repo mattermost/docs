@@ -559,7 +559,7 @@ Remove members
   :alt: Remove a member from the channel using the System Console.
 
 Archive a channel
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
 2. Select the channel from the list to view its configuration page.
