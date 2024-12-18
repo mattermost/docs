@@ -8,7 +8,7 @@ Code signing is an essential process for ensuring the authenticity and integrity
 
 .. important::
 
-  Code signing helps reduce security warnings from operating systems and ensures smoother, more trustworthy installations. Make sure to follow each operating system's guidelines and best practices for signing applications.
+  Make sure to follow each operating system's guidelines and best practices for signing applications.
 
 Prerequisites
 -------------
