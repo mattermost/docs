@@ -17,7 +17,7 @@ Running Mattermost in Kubernetes requires resources based on your total number o
     - If you’re unsure about which environment you want to use for your Kubernetes cluster, we suggest using a managed service such as as `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.
     - Looking for a quick way to evaluate Mattermost or to try out the latest Mattermost deployment? Learn how to `create your own Mattermost instance on Kubernetes using Minicube <https://medium.com/@Erez.Tamam/create-your-own-mattermost-instance-on-kubernetes-in-10-minutes-d13f576ed794>`_.
     - See the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your production Mattermost deployment.
-    - Encountering issues with your deployment? See the :ref:`deployment troubleshooting <install/troubleshooting:deployment troubleshooting>` or :doc:`high scale troubleshooting </deploy/high-scale-troubleshoot>` documentation for details.
+    - Encountering issues with your deployment? See the :ref:`deployment troubleshooting <install/troubleshooting:deployment troubleshooting>` documentation for details.
 
 Install Mattermost on Kubernetes
 --------------------------------

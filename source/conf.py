@@ -1969,6 +1969,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
 "deploy/configure-app-framework.html":
         "https://developers.mattermost.com/integrate/plugins/",
+"deploy/high-scale-troubleshoot.html":
+        "https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
@@ -2503,7 +2505,6 @@ redirects = {
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-centos-oracle-scientific":
         "https://docs.mattermost.com/install/install-rhel.html",
-
 "install/install-common-intro.html":
         "https://docs.mattermost.com/install/install-tar.html",
 "install/install-latest-tarball.html":
