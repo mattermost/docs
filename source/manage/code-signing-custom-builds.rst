@@ -1,4 +1,4 @@
-Code Signing Custom Builds
+Code signing custom builds
 ==========================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
