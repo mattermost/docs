@@ -74,8 +74,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ### Known Issues
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
- - The Playbooks left-hand sidebar doesn't update when a user is added to a run or playbook without a refresh.
- - If a user isn't a member of a configured broadcast channel, posting a status update might fail without any error feedback. As a temporary workaround, join the configured broadcast channels, or remove those channels from the run configuration.
 
 ### Contributors
  - 
