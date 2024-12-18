@@ -41,7 +41,7 @@ To set up a MySQL database for use by the Mattermost server:
 Back up the database
 --------------------
 
-Back up your Mattermost database using standard procedures depending on your database version. `MySQL backup documentation <https://dev.mysql.com/doc/refman/5.6/en/backup-types.html>`__ is available online. Use the selector on the page to choose your MySQL version.
+Back up your Mattermost database using standard procedures depending on your database version. MySQL backup documentation <https://dev.mysql.com/doc/refman/8.4/en/backup-types.html>`_ is available online. Use the selector on the page to choose your MySQL version.
 
 Upgrade Mattermost
 -------------------
@@ -85,7 +85,7 @@ Upgrade Mattermost
 
   Mattermost v6.0 introduces several database schema changes to improve both database and application performance. The upgrade will run significant database schema changes that can cause an extended startup time depending on the dataset size. We've conducted extensive tests on supported MySQL database drivers, using realistic datasets of more than 10 million posts and more than 72 million posts.
 
-  A migration to v6.0 of 10+ million posts will take approximately 1 hour and 22 minutes to complete for a MySQL database. See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, and test results.
+  A migration to v6.0 of 10+ million posts will take approximately 1 hour and 22 minutes to complete for a MySQL database.
 
   A large migration from v5.39 to v6.0 of 72+ million posts will take approximately 3 hours and 40 minutes to complete for a MySQL database. See the `Migration results analysis <https://gist.github.com/streamer45/868c451164f6e8069d8b398685a31b6e>`__ documentation for test specifications, data sizes, and test results.
 
@@ -97,7 +97,7 @@ Upgrade Mattermost
 
   ``ALTER TABLE Posts MODIFY COLUMN FileIds text;`` (~26 minutes)
 
-  For a complete breakdown of MySQL queries, as well as their impact and duration, see the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#mysql-1>`__ documentation.
+  See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, test results, and a complete breakdown of MySQL queries, as well as their impact and duration.
 
   **MySQL Mitigation Strategies**
 
@@ -107,9 +107,9 @@ Upgrade Mattermost
 
   This limits the time taken to that of a single query of that type.
 
-  **Online migration**: An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries or very big datasets (tens of millions of posts or more). This can be done through an external tool like `pt-online-schema-change <https://www.percona.com/doc/percona-toolkit/LATEST/pt-online-schema-change.html>`__. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
+  **Online migration**: An online migration that avoids locking can be attempted on MySQL installations, especially for particularly heavy queries or very big datasets (tens of millions of posts or more). This can be done through an external tool like `pt-online-schema-change <https://docs.percona.com/percona-toolkit/pt-online-schema-change.html>`_. However, the online migration process can cause a significant spike in CPU usage on the database instance it runs.
 
-  See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`__ documentation for a sample execution and additional caveats.
+  See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055#online-migration-mysql>`_ documentation for a sample execution and additional caveats.
 
 High availabiilty configuration setting recommendations 
 --------------------------------------------------------
@@ -125,7 +125,7 @@ For MySQL, we recommend the following configuration options for high performance
 Encryption-at-rest
 ------------------
 
-Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. See the `MySQL <https://www.percona.com/blog/2016/04/08/mysql-data-at-rest-encryption/>`__ database documentation for details on encryption options at the disk level.
+Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. See the `MySQL <https://www.percona.com/blog/mysql-data-at-rest-encryption/>`_ database documentation for details on encryption options at the disk level.
 
 Use sockets for the database
 ----------------------------

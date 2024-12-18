@@ -24,14 +24,12 @@ Add a bookmark
 
         .. image:: ../images/desktop-bookmark-add.png
             :alt: Using a web browser or the desktop app, select the Plus icon to add a channel bookmark.
-            :scale: 50
     
      - Select **Add a link** to specify the link URL, specify bookmark text, and an optional bookmark icon.
      - Select **Add a file** to select a file, specify bookmark text, and an optional bookmark icon.
 
         .. image:: ../images/desktop-bookmark-add-choice.png
             :alt: Using a web browser or the desktop app, choose whether to add a link or a file.
-            :scale: 50
 
 .. tab:: Mobile
 

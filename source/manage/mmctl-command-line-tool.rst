@@ -2517,7 +2517,7 @@ List export jobs. Export files include the Job ID in the file name.
    --all            Fetch all export jobs. ``--page`` flag will be ignored if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (default 200)
+   --per-page int   Number of export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -2655,7 +2655,7 @@ List content extraction jobs.
    --all            Fetch all export jobs. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (default 200)
+   --per-page int   Number of export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -3277,7 +3277,7 @@ List import jobs
    --all            Fetch all import jobs. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of import jobs
-   --per-page int   Number of import jobs to be fetched (default 200)
+   --per-page int   Number of import jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -3819,7 +3819,7 @@ List LDAP synchronization jobs.
    --all            Fetch all import jobs. The ``--page`` flag will be ignored if provided.
    -h, --help       help for list
    --page int       Page number to fetch for the list of import jobs
-   --per-page int   Number of import jobs to be fetched (default 200)
+   --per-page int   Number of import jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4121,7 +4121,7 @@ List all registered OAuth2 applications.
 
    -h, --help       help for add
    --page int       Page number to fetch for the list of OAuth2 apps
-   --per-page int   Number of OAuth2 apps to be fetched per page (default 200)
+   --per-page int   Number of OAuth2 apps to be fetched per page (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4785,7 +4785,7 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
    -h, --help        help for list
    --local-only      Only retrieve local plugins
    --page int        Page number to fetch for the list of users
-   --per-page int    Number of users to be fetched (default 200)
+   --per-page int    Number of users to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4808,6 +4808,7 @@ Manage posts.
 
    Child Commands
       -  `mmctl post create`_ - Create a post
+      -  `mmctl post delete`_ - Delete a post
       -  `mmctl post list`_ - List posts for a channel
 
 **Options**
@@ -4842,6 +4843,62 @@ Create a post.
    -h, --help              help for create
    -m, --message string    Message for the post
    -r, --reply-to string   Post id to reply to
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl post delete
+~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Mark a post as deleted and remove it and all attachments from the client without permanently deleting it from the database. 
+Permanently delete a post and all attachments using the ``--permanent`` flag.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl post delete [posts] [flags]
+
+**Examples**
+
+Mark post as deleted:
+
+.. code-block:: sh
+
+   mmctl post delete udjmt396tjghi8wnsk3a1qs1sw
+
+Permanently delete a post and its file contents from the database and filestore:
+
+.. code-block:: sh
+
+   mmctl post delete udjmt396tjghi8wnsk3a1qs1sw --permanent
+
+Permanently delete multiple posts and their file contents from the database and filestore:
+
+.. code-block:: sh
+
+   mmctl post delete udjmt396tjghi8wnsk3a1qs1sw 7jgcjt7tyjyyu83qz81wo84w6o --permanent
+
+**Options**
+
+.. code-block:: sh
+
+   --confirm     Confirm you really want to delete the post and a DB backup has been performed
+   -h, --help    help for delete
+   --permanent   Permanently delete the post and its contents from the database
 
 **Options inherited from parent commands**
 
@@ -5362,6 +5419,10 @@ mmctl team
 
 Manage teams.
 
+.. important::
+
+   When specifying team names within mmctl commands, you must use the ``team-URL`` version of the team name, rather than the display name you see in the channel sidebar. Your ``team-URL`` does not contain spaces. Run the `mmctl team list <#mmctl-team-list>`__ command to return a list of all teams on the server in ``team-URL`` format. See the :ref:`team name and URL selection <collaborate/organize-using-teams:team name and url selection>` documentation for details.
+
    Child Commands
       -  `mmctl team archive`_ - Archive some teams
       -  `mmctl team create`_ - Create teams
@@ -5880,7 +5941,7 @@ List the tokens belonging to a user.
    -h, --help       help for list
    --inactive       List only inactive tokens
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200)
+   --per-page int   Number of users to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -6446,7 +6507,7 @@ List all users.
    --all            Fetch all users. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200)
+   --per-page int   Number of users to be fetched (maximum 200)
    --team string    If supplied, only users belonging to this team will be listed
 
 **Options inherited from parent commands**

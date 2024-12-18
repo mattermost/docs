@@ -33,6 +33,10 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
   - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 - **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend a minimum 2GB of free disk space to allow for extraction, copy, and cleanup, and a minimum of twice the size of your Mattermost installation available for the database.
 
+.. tip::
+
+  Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools:mattermost db migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
+
 Upgrade Mattermost Server
 --------------------------
 
@@ -42,15 +46,23 @@ Upgrade Mattermost Server
 
      cd /tmp
 
-2. Download `the latest version of Mattermost Server <https://mattermost.com/deploy/>`__. In the following command, replace ``X.X.X`` with the version that you want to download:
+2. Download `the latest version of Mattermost Server <https://mattermost.com/download/>`__ based on your Mattermost edition.
 
-   .. code-block:: sh
+  .. tab:: Enterprise Edition
 
-     # Enterprise Edition
-     wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+    In the following command, replace ``X.X.X`` with the version that you want to download:
 
-     # Team Edition
-     wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
+    .. code-block:: sh
+
+      wget https://releases.mattermost.com/X.X.X/mattermost-X.X.X-linux-amd64.tar.gz
+
+  .. tab:: Team Edition
+
+    In the following command, replace ``X.X.X`` with the version that you want to download:
+
+    .. code-block:: sh
+
+      wget https://releases.mattermost.com/X.X.X/mattermost-team-X.X.X-linux-amd64.tar.gz
 
 3. Confirm no other Mattermost zip folders exist in your ``/tmp`` directory. If another version's zip file does exist, delete or rename the file.
 

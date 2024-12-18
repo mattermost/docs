@@ -12,7 +12,7 @@ Prerequisites
 - An Active Directory instance where all users have specified email and username attributes. For Mattermost servers running 3.3 and earlier, users must also have their first name and last name attributes specified.
 - A running Microsoft Server. The screenshots used in this guide are from Microsoft Server 2012R2, but similar steps should work for other versions.
 - An SSL certificate to sign your ADFS login page.
-- ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this article <https://msdn.microsoft.com/en-us/library/gg188612.aspx>`__.
+- ADFS installed on your Microsoft Server. You can find a detailed guide for deploying and configuring ADFS in `this Microsoft article <https://learn.microsoft.com/en-us/previous-versions/dynamicscrm-2016/deployment-administrators-guide/gg188612(v=crm.8)?redirectedfrom=MSDN>`_.
 
 On your ADFS installation, open the ADFS console. Select **Service**, then select **Endpoints**. In the **Type** column, search for ``SAML 2.0/WS-Federation`` and note down the value of **URL Path** column. This is also known as the **SAML SSO URL Endpoint** in this guide. If you chose the defaults for the installation, this will be ``/adfs/ls``.
 
@@ -53,7 +53,7 @@ If you would like to set up encryption for your SAML connection, select **Browse
 
 	.. image:: ../../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_008.png
 
-This string must match the **Service Provider Identifier** string. For more information about the Relying party trust identifier and how prefix matching is applied see `this documentation <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/technical-reference/how-uris-are-used-in-ad-fs>`_.
+This string must match the **Service Provider Identifier** string. For more information about the Relying party trust identifier and how prefix matching is applied see `this documentation <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/technical-reference/how-uris-are-used-in-ad-fs>`_.
 
 Add your **SAML 2.0 SSO service URL** using this same process.
 

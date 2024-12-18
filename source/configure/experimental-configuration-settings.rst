@@ -253,11 +253,21 @@ Enable automatic replies
 Enable channel viewed websocket messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
+This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Database Load: When channel_viewed events are disabled, the server no longer needs to log these events in the database. This reduces the number of write and update operations, which can be substantial in a busy server with many users frequently switching channels.
+  - Decreased Network Traffic: Disabling these events means there are fewer messages sent between the server and clients. This reduction in network traffic can lower latency and improve the overall responsiveness of the server, especially for users with slower connections.
+  - Lower Server CPU Usage: Processing channel_viewed events requires CPU resources to handle database transactions and network communication. Without these events, the server's CPU can be utilized more efficiently for other tasks, improving the overall performance.
+  - Improved User Experience: With reduced server load and network traffic, users may experience faster loading times and a more fluid interaction with the application.
+  - However, disabling this configuration setting affects some functionality, such as accurate tracking of read and unread messages in channels. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: exp-enabledefaultchannelleavejoinmessages
   :displayname: Enable default channel leave/join system messages (Experimental)
@@ -437,11 +447,19 @@ Enable onboarding flow
 Enable user typing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
+This setting determines whether "user is typing..." messages are displayed below the message box when using Mattermost in a web browser or the desktop app. 
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Server Load: Typing events generate additional websocket traffic. Disabling them can reduce the amount of data that needs to be handled by the server, improving the overall response time and decreasing server load.
+  - Lower Network Traffic: When typing events are enabled, every keystroke generates a network event. This can lead to a significant amount of network traffic, particularly in busy channels. Disabling these events reduces the amount of information transmitted over the network.
+  - Client Performance: On the client side, processing typing events requires resources. By not having to handle these events, the client can be more responsive and use less memory and CPU.
 
 .. config:setting:: exp-usertypingtimeout
   :displayname: User typing timeout (Experimental)
@@ -474,6 +492,10 @@ This setting configures the number of milliseconds to wait between fetching user
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Decrease this configuration setting value to increase how often Mattermost checks for and retrieves updated user profile datails. Reducing this value can be particularly helpful to reduce the likelyhood of usernames being displayed in channels as **Someone** due to outdated or missing data.
 
 .. config:setting:: exp-primaryteam
   :displayname: Primary team (Experimental)
@@ -598,36 +620,6 @@ This setting defines the number of seconds after which the user's status indicat
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablesharedchannels
-  :displayname: Enable shared channels (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: ExperimentalSettings:EnableSharedChannels, ExperimentalSettings:EnableRemoteClusterService
-  :environment: N/A
-
-  Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
-  Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console. Default value of both settings is **false**.
-
-Enable shared channels
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
-   - System admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
-
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -648,7 +640,7 @@ This setting disables attempts to detect when the computer has woken up and refe
 
 **True**: Mattermost won't attempt to detect when the computer has woken up and refetch data. This might reduce the amount of regular network traffic the app is sending.
 
-**False**: (Default) Mattermost attempts to detect when the computer has woken up and refreshes data.
+**False**: (**Default**) Mattermost attempts to detect when the computer has woken up and refreshes data.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` with options ``true`` and ``false``.   |
@@ -1148,37 +1140,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-remoteclusters
-  :displayname: Remote clusters (Experimental)
-  :systemconsole: N/A
-  :configjson: RemoteClusters
-  :environment: N/A
-
-  - **true**: System admins can manage remote clusters using the System Console.
-  - **false**: **(Default)** Remote cluster management is disabled.
-
-Remote clusters
-~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to add, remove, and view remote clusters for shared channels.
-
-**True**: System admins can manage remote clusters using the System Console.
-
-**False**: Remote cluster management is disabled.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: exp-enableclientcert
   :displayname: Enable client-side certification (Experimental)
   :systemconsole: N/A
@@ -1345,7 +1306,7 @@ Amazon S3 signature v2
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html.
+By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html.
 
 **True**: Use Signature Version 2 Signing Process.
 
@@ -1506,7 +1467,7 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
   :configjson: BlockProfileRate
   :environment: N/A
 
-  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
   To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
   Default is **0**.
 
@@ -1515,7 +1476,7 @@ Block profile rate
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
@@ -1785,11 +1746,22 @@ Enable post search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-If this setting is enabled, users can search messages. Disabling search can result in a performance increase, but users get an error message when they attempt to use the search box.
+If this setting is enabled, users can search for messages in their Mattermost instance.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Database Load: When post search is enabled, every search query adds additional load to the database. Disabling search reduces these queries, leading to better database performance and lower response times for other operations.
+  - Lower Memory Usage: Search functionality often requires indexing of posts, which consumes memory. By disabling search, the memory required for maintaining these indexes is freed up for other uses, improving overall system performance.
+  - Faster Write Operations: When post search is enabled, indexing has to be updated with every new post, edit, or deletion. Disabling search avoids this overhead, allowing for faster write operations.
+  - Performance Consistency: Without the search feature, the application avoids potential performance bottlenecks and can maintain more consistent performance levels, especially under heavy usage scenarios with a high number of posts.
+  - Simplified System Maintenance: Managing search indexes can be complex and resource-intensive. Disabling search simplifies this aspect of system maintenance, potentially reducing the risk of performance issues related to search index corruption or degradation.
+  - However, the ability to search messages in Mattermost is a critical feature for many users, and disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: exp-enablefilesearch
   :displayname: Enable file search (Experimental)
@@ -1803,7 +1775,9 @@ Enable file search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <configure/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+.. important::
+
+  This experimental configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <configure/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
 
 **True**: Supported document types are searchable by their filename.
 
@@ -1812,6 +1786,15 @@ This configuration setting enables users to search documents attached to message
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Less Data to Index: Indexing files in addition to messages adds to the amount of data that needs to be processed and stored in the search index.
+  - Fewer Complex Queries: Searching through files can require more complex queries, which can be more resource-intensive and time-consuming as compared to searching through messages alone.
+  - Lower IO Operations: Searching files can generate more input/output operations, impacting the overall disk performance, especially if the system handles a large volume of file uploads and searches.
+  - However, the ability to search for files in Mattermost is a critical feature for many users, and disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: exp-enableuserstatusupdates
   :displayname: Enable user status updates (Experimental)

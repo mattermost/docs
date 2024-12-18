@@ -93,9 +93,9 @@ Labeled links
 
 Create labeled links by putting the desired text in square brackets ``[ ]`` and the associated link in round brackets ``( )``.
 
-``[Check out Mattermost!](https://about.mattermost.com/)``
+``[Check out Mattermost!](https://.mattermost.com/)``
 
-Renders as: `Check out Mattermost! <https://about.mattermost.com/>`__
+Renders as: `Check out Mattermost! <https://mattermost.com/>`_
 
 Headings
 ~~~~~~~~
@@ -187,7 +187,7 @@ Renders as:
 Code blocks
 ~~~~~~~~~~~
 
-Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files.
+Creating a fixed-width code block is recommended for pasting multi-line blocks of code or other text output because it's easier to read with fixed-width font alignment. Examples include block text snippets, ASCII tables, and log files. Rendered code blocks include a **Copy** option to copy the contents of the code block.
 
 This can be accomplished by placing three backticks ``````` on the line directly above and directly below your code:
 
@@ -645,6 +645,10 @@ Renders as:
 
 .. image:: ../images/markdownTable1.png
    :alt: Markdown Table Sample
+
+.. note::
+
+  Multi-line text in a table cell isn't supported using HTML tags such as ``<br>`` or ``<br/>``.
 
 Math Formulas
 ~~~~~~~~~~~~~

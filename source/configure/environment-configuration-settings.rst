@@ -1097,6 +1097,17 @@ Disable database search
 | - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Database Load: When database search is enabled, every search query executed by users needs to interact with the database, leading to additional load on the database server. By disabling database search, you can avoid these queries, thereby reducing the database load.
+  - Improved Response Time: Database searches can be time-consuming, especially with large datasets. Disabling database search can result in faster response times because the system no longer spends time fetching and processing search results from the database.
+  - Offloading Search to Indexing Services: Disabling database search often means that searches are offloaded to specialized indexing services like Elasticsearch, which are optimized for search operations. These services can provide faster and more efficient search capabilities compared to traditional database searches.
+  - Lower Resource Consumption: Running search queries directly against the database can be resource-intensive (using CPU and memory). With database search disabled, these resources can be allocated to other critical functions, improving overall system performance.
+  - Enhanced Scalability: As the number of users and data volume grow, database search can become less efficient. Specialized search services are designed to scale more effectively, enhancing overall system scalability and performance.
+  - However, the ability to perform database searches in Mattermost is a critical feature for many users, particularly when other search engines aren't enabled. Disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
+
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -1321,7 +1332,7 @@ Replica lag settings
         postgres=# GRANT pg_monitor TO mmuser;
 
 2. Save the config and restart all Mattermost nodes.
-3. Navigate to your Grafana instance monitoring Mattermost and open the `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`__ dashboard.
+3. Navigate to your Grafana instance monitoring Mattermost and open the `Mattermost Performance Monitoring v2 <https://grafana.com/grafana/dashboards/15582-mattermost-performance-monitoring-v2/>`_ dashboard.
 4. The ``QueryTimeLag`` chart is already setup for you utilizing the existing ``Replica Lag`` chart. If using ``QueryAbsoluteLag`` metric clone the ``Replica Lag`` chart and edit the query to use the below absolute lag metrics and modify the title to be ``Replica Lag Absolute``.
 
   .. code-block:: text
@@ -1477,9 +1488,11 @@ CA path
 | certificates for the Elasticsearch server.         | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
-| Leave this setting blank to use the default Certificate Authority certificates for the operating system.                      |
-+----------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  - Available from Mattermost v7.8. The certificate path should be ``/opt/mattermost/data/elasticsearch/`` and configured in the System Console as ``./elasticsearch/cert.pem``.
+  - Can be used in conjunction with basic authentication credentials or can replace them. Leave this setting blank to use the default Certificate Authority certificates for the operating system.
 
 .. config:setting:: elastic-clientcertificatepath
   :displayname: Client certificate path (Elasticsearch)
@@ -2501,7 +2514,7 @@ Amazon S3 signature v2
 | - **true**: Use Signature v2 signing process.                 |                                                                          |
 | - **false**: **(Default)** Use Signature v4 signing process.  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| See the `AWS <https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html>`__ documentation for information about when to     |
+| See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html>`_ documentation for information about when to        |
 | use the Signature v2 signing process.                                                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -4124,7 +4137,7 @@ Disable Customer Portal requests
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable customer portal requests.   | - System Config path: **N/A**                                             |
-|                                               | - ``config.json setting``: ``".CloudSettings.Disable": false",``          |
+|                                               | - ``config.json setting``: ``CloudSettings`` > ``Disable`` > ``false,``   |
 |                                               | - Environment variable: ``MM_CLOUDSETTINGS_DISABLE``                      |
 | - **true**: **(Default)** Server-side         |                                                                           |
 |   requests made to the customer portal are    |                                                                           |
@@ -4134,8 +4147,9 @@ Disable Customer Portal requests
 |   but will always fail in air-gapped and      |                                                                           |
 |   restricted deployment environments.         |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| **Note**: Cloud admins can’t modify this configuration setting.                                                           |
-+-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. note::
+  Cloud admins can’t modify this configuration setting. 
 
 .. config:setting:: exp-enableapiteamdeletion
   :displayname: Enable API team deletion (ServiceSettings)
@@ -4202,3 +4216,19 @@ This setting isn't available in the System Console and can only be set in ``conf
 +----------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableAPIChannelDeletion": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
+
+Enable desktop app developer mode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Desktop App v5.10, this setting enables developer debugging options available by going to the **View > Developer Tools** menu in the Mattermost desktop app. 
+
+This setting isn't available in the System Console and can only be enabled in ``config.json`` by setting the environment variable ``MM_DESKTOP_DEVELOPER_MODE`` to ``true``. This setting is disabled by default.
+
+**True**: Unlocks the following options in the Desktop App for the purposes of troubleshooting and debugging. You should only enable this setting if instructed to by a Mattermost developer:
+
+  * **Browser Mode Only**: Completely disables the preload script and stops web app components from knowing they're in the desktop app. This option should be the best indicator of whether a web app component is causing performance and/or memory retention issues. This option disables notifications, cross-tab navigation, unread/mentions badges, the calls widget, and breaks resizing on macOS.
+  * **Disable Notification Storage**: Turns off maps that hold references to unread notifications until they've been selected & read. This option is good for debugging in cases where Mattermost is holding onto too many references to unused notifications.
+  * **Disable User Activity Monitor**: Turns off the interval that checks whether the user is away or not. This option is good for debugging whether a user's availability status is causing unexpected desktop app behavior.
+  * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
+  * **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
+  * **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.

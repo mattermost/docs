@@ -12,15 +12,26 @@ Moving data from one Mattermost instance into another begins with exporting data
 You can export the following data types:
 
 - Teams
-- Threaded discussions
 - Channels (public, private, and direct)
+- Messages (regular, non-reply, and direct messages)
+- Threaded discussions and message replies
+- Message reactions
 - Users
+- Users' preferences, including pinned and saved messages
 - Users' team memberships
 - Users' channel memberships
-- Users' custom status
-- Direct message and group message channels
-- Direct message and group message channels' read/unread status
-- Posts (messages in public or private channels and replies to those messages)
+- Users' notification preferences
+- Custom emoji
+- Direct message and group message channels, including read/unread status
+- Roles
+- Permissions schemes
+- Bot users
+
+.. note::
+
+   Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
+
+   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://portal.productboard.com/mattermost/33-what-matters-to-you>`_.
 
 Bulk export data
 ----------------
@@ -55,32 +66,7 @@ Bulk export data
 
   3.  Retrieve your file from the location you specified.
 
-At this time, the export supports attributes of the objects listed below. All Mattermost bulk export data files will begin with a ``Version`` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
-
-You can export the following data types:
-
-- Teams
-- Threaded discussions
-- Channels (public, private, and direct)
-- Users
-- Users' team memberships
-- Users' channel memberships
-- Users' notification preferences
-- Posts (regular, non-reply messages)
-- Posts' replies and threads in public or private channels
-- Posts' reactions
-- Custom emoji
-- Direct message and group message channels
-- Direct message and group message channels' read/unread status
-- Direct message posts
-- Roles
-- Permissions schemes
-
-.. note::
-
-   Configuration for data types such as exporting specific areas of the server, exporting additional types of posts, file attachments, webhooks, and bot messages is not yet supported. Deleted objects are also not yet supported.
-
-   For requests to add additional attributes or objects to our exporter, please add a feature request on our `feature idea forum <https://mattermost.com/suggestions/>`__.
+All Mattermost bulk export data files will begin with a ``Version`` object as the first line of the file. This indicates the version of the Mattermost bulk import file format with which the exported data is compatible.
 
 Version object
 --------------

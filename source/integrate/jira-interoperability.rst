@@ -4,19 +4,26 @@ Connect Jira to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
+Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. You control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions. 
 
-.. note::
+.. tip::
 
-  - You can control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments.
-  - Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms are supported, and tested with versions 7 and 8.
-  - Jira Service Management (formally known as Jira Service Desk) isn't supported.
-  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Enterprise and Professional plans, configured using Administrator Slash Commands.
+  Download `this Jira workflows datasheet <https://mattermost.com/mattermost-jira-datasheet/>`_ to learn more about using Mattermost and Jira, including:
+
+  - Key benefits to integrating Jira and Mattermost
+  - Common Jira Workflows on Mattermost
+  - How to get started with the Jira plugin for Mattermost
 
 Setup
 ------
 
 Setup starts in Mattermost, moves to Jira, and finishes in Mattermost.
+
+.. note::
+
+  - Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms are supported, and tested with versions 7 and 8.
+  - Jira Service Management (formally known as Jira Service Desk) isn't supported.
+  - From v3.0 of this integration, support for multiple Jira instances is supported with Mattermost Enterprise and Professional plans, configured using Administrator Slash Commands.
 
 Mattermost configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -106,7 +113,7 @@ If your Mattermost instance can't connect to your Jira instance, you won't be ab
 
 For example, if the team URL is ``contributors``, channel URL is ``town-square``, site URL is ``https://community.mattermost.com``, and the generated webhook secret is ``MYSECRET``, the final webhook URL would be: ``https://community.mattermost.com/plugins/jira/webhook?secret=MYSECRET&team=contributors&channel=town-square``.
 
-4. (Optional) Set a description and a custom JQL query to determine which tickets trigger events. For information on JQL queries, see the `Atlassian help documentation <https://confluence.atlassian.com/jirasoftwarecloud/advanced-searching-764478330.html>`__.
+4. (Optional) Set a description and a custom JQL query to determine which tickets trigger events. For information on JQL queries, see the `Atlassian help documentation <https://support.atlassian.com/jira-software-cloud/docs/what-is-advanced-search-in-jira-cloud/>`_.
 
 5. Set which issue events send messages to Mattermost channels, then select **Save**. The following issue events are supported: issues created, issues deleted, and issues updated (including reopened or resolved when the assignee changes).
 
@@ -295,7 +302,7 @@ Generate a new secret by going to **System Console > Plugins > Jira**. Paste the
 Get help
 --------
 
-Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 

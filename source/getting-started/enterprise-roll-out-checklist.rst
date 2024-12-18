@@ -331,7 +331,7 @@ Now that you have an environment in place, we recommend working through the foll
 
 - Enable additional integrations and plugins to support user workflows
 
- - Resource: https://integrations.mattermost.com/
+ - Resource: https://mattermost.com/marketplace/
 
 - Understand management tools available to support users
 

@@ -13,7 +13,9 @@ There are 6 types of user roles with different permission levels in Mattermost: 
 System admin
 ------------
 
-The first user added to a newly-installed Mattermost system is assigned the system admin role. The system admin is typically a member of the IT staff and has all the privileges of a team admin, along with the following additional privileges:
+The first user added to a newly-installed Mattermost system is assigned the system admin role. System admins are allowed to perform any actions on the system, and only a system admin can make changes to another system admin user account in Mattermost.
+
+The system admin is typically a member of the IT staff and has all the privileges of a team admin, along with the following additional privileges:
 
 - Access to the System Console in any team site.
 - Ability to change any setting on the Mattermost server available in the System Console.
@@ -22,7 +24,7 @@ The first user added to a newly-installed Mattermost system is assigned the syst
 - Ability to deactivate user accounts and to reactivate them.
 - Access to private channels, but only if given the link to the private channel.
 
-A system admin can view and manage users in **System Console > User Management > Users**. They can search users by name, filter users by teams, and filter to view other system admins, guests, as well as activated and deactivated users. Only a system admin can make changes to another system admin user account in Mattermost.
+A system admin can view and manage users in **System Console > User Management > Users**. They can search users by name, filter users by teams, and filter to view other system admins, guests, as well as activated and deactivated users. 
 
 Grant personal access tokens
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

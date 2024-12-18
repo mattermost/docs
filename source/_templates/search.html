@@ -31,19 +31,17 @@ mark.js before anything else #}
 	<h2 id="search-dots" style="float: right"></h2>
 </div>
 <p id="search-summary" class="search-summary"></p>
+<!-- all other results will display here -->
+<div id="search-additional-information-header" style="display: none">
+</div>
+<div id="search-results">
+	<ul class="search" id="search-results-list"></ul>
+</div>
 <!-- configuration setting-specific results will display here -->
 <div id="config-setting-results-section" style="display: none">
 	<h3>Configuration settings</h3>
 	<a id="config-setting-results-anchor"></a>
 	<div class="search" id="config-setting-results-list"></div>
-</div>
-<!-- all other results will display here -->
-<div id="search-additional-information-header" style="display: none">
-	<h3>Additional information</h3>
-	<a id="search-results-anchor"></a>
-</div>
-<div id="search-results">
-	<ul class="search" id="search-results-list"></ul>
 </div>
 {% endblock %} {% block scripts -%} {{ super() }} {# Load the search indexes
 after the DOM has finished loading #}

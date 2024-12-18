@@ -39,7 +39,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 - **Performance:** In a High Availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.nginx.com/>`__. For information on how to install and configure NGINX for your environment, see :doc:`our deployment guides </guides/deployment>`. Mattermost also unofficially supports other proxies including Apache 2.
+Mattermost provides documentation and support for the `NGINX proxy <https://www.f5.com/go/product/welcome-to-nginx>`_. For information on how to install and configure NGINX for your environment, see :doc:`our deployment guides </guides/deployment>`. Mattermost also unofficially supports other proxies including Apache 2.
 
 .. image:: ../images/architecture_with_proxy.png
 
@@ -100,7 +100,7 @@ The following table lists the Mattermost services ports for Mattermost Server, p
 
 **Mobile Clients**
 
-In order to receive push notifications, your network must allow traffic on `port 5223 for iOS devices <https://support.apple.com/en-us/HT203609>`__ and `ports 5228-5230 for Android <https://firebase.google.com/docs/cloud-messaging/concept-options#messaging-ports-and-your-firewall>`__.
+In order to receive push notifications, your network must allow traffic on `port 5223 for iOS devices <https://support.apple.com/en-us/102266>`_ and `ports 5228-5230 for Android <https://firebase.google.com/docs/cloud-messaging/concept-options#messaging-ports-and-your-firewall>`_.
 
 High Availability and scalability
 ---------------------------------
