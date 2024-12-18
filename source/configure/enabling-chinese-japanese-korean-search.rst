@@ -121,7 +121,7 @@ Mattermost で日本語検索をするためにはデータベースの設定変
 ガイド
 ~~~~~~
 
-Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <http://qiita.com/tags/Mattermost>`_ をご覧ください。
+Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <https://qiita.com/tags/mattermost>`_ をご覧ください。
 
 한국어 / Korean
 ---------------

@@ -19,7 +19,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
     Deploy using Omnibus </install/installing-mattermost-omnibus>
     Deploy using Kubernetes </install/install-kubernetes>
     Deploy Mattermost on Azure AKS </install/install-kubernetes-aks>
-    Deploy on Red Hat </install/install-rhel-8>
+    Deploy on Red Hat </install/install-rhel>
     Set up an NGINX proxy </install/setup-nginx-proxy>
     Set up TLS </install/setup-tls>
     Prepare for your Mattermost deployment </guides/prepare-for-your-mattermost-deployment>
@@ -35,7 +35,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 
   * See the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your production deployment.
   
-  * Encountering issues with your deployment? See the :ref:`Deployment Troubleshooting <install/troubleshooting:deployment troubleshooting>` or :doc:`high scale troubleshooting </deploy/high-scale-troubleshoot>` documentation for details.
+  * Encountering issues with your deployment? See the :ref:`Deployment Troubleshooting <install/troubleshooting:deployment troubleshooting>` documentation for details.
 
 * :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL. 
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
@@ -45,7 +45,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Deploy using Omnibus </install/installing-mattermost-omnibus>` - An entire Mattermost installation on a single server.
 * :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.
 * :doc:`Deploy Mattermost on Azure AKS </install/install-kubernetes-aks>` - Deploy Mattermost on Azure AKS.
-* :doc:`Deploy on Red Hat </install/install-rhel-8>` - Support for all current Red Hat Enterprise Linux platforms with a tarball.
+* :doc:`Deploy on Red Hat </install/install-rhel>` - Support for all current Red Hat Enterprise Linux platforms with a tarball.
 * :doc:`Set up NGINX proxy </install/setup-nginx-proxy>` - Learn how to configure Mattermost for HTTPS for deployments of more than 200 users.
 * :doc:`Set up TLS </install/setup-tls>` - Learn how to configure Mattermost for HTTPS for deployments of fewer than 200 concurrent users.
 * :doc:`Deployment guides </guides/deployment-guides>` - for administrators who are ready to integrate Mattermost with their organization’s IT infrastructure.

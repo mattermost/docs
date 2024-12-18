@@ -34,29 +34,52 @@ Getting people set up with a Mattermost account is typically something that syst
 - :ref:`Migrate user accounts <onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </onboard/bulk-loading-data>` that user data into Mattermost.
 - Connect an authentication service to assist with user provisioning, such as :doc:`AD/LDAP authentication </onboard/ad-ldap>` or :doc:`SAML authentication </onboard/sso-saml>`.
 
+Review user data
+~~~~~~~~~~~~~~~~
+
+From Mattermost v9.6, you can review the following user data in the System Console:
+
+- **Email**: The user's email address.
+- **Member since**: The number of days since the user joined the Mattermost server.
+- **Last login**: The date of the user's last successful login to the server.
+- **Last activity**: The total number of days since the user was last active on the server, which is typically based on the :ref:`user's availability <preferences/set-your-status-availability:set your availability>`.
+- **Last post**: The total number of days since the user's last sent message on the server.
+- **Days active**: (PostgreSQL only) The total number of days in which the user has sent a message in Mattermost.
+- **Messages posted**: (PostgreSQL only) The total number of messages the user has sent on the server.
+
+By default, you see all columns of data and data for all time. 
+
+- Show or hide data all data columns exccept **User details** and **Actions**, as preferred.
+- Filter results to the last 30 days, the previous month, and the last 6 months for **Last post**, **Days active**, and **Messages posted** user data.
+
 Find users
 ~~~~~~~~~~
 
-You can find a user using the System Console.
+Find a user using the System Console.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
-2. Type the name of the user or the username or the user ID in the **Search users** box to find the particular user, if they exist.
+2. Search for specific users by entering a partial or full username, user ID, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
 
 .. image:: ../images/find-users.png
   :alt: Find a Mattermost user using the System Console.
 
-.. tip::
+Filter user searches
+~~~~~~~~~~~~~~~~~~~~
 
-  From Mattermost v9.6, you can:
+Filter System Console user searches to narrow down results based on the team membership, role, and user status.
 
-  - Customize this page by showing or hiding user details, including email address, member duration, last login, activity, or post, number of days active (PostgreSQL only), and number of messages posted (PostgreSQL only). You can also control how many user records display on the page at a time.
-  - Search for specific users by entering a partial or full username, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select **Filters** located to the right of the **Search users** field to access available filter options.
+3. Select **Apply** to filter user search results.
+
+.. image:: ../images/user-search-filters.png
+  :alt: Filter the user list based on team membership, role, and user status using the System Console.
 
 Identify a user's ID
-^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~
 
 Users can be specified in Mattermost by username or user ID. Usernames automatically resolve when a match is detected.
-You can identify a user's ID using the System Console, the Mattermost API, or mmctl.
+Identify a user's ID using the System Console, the Mattermost API, or mmctl.
 
 1. Go to **System Console > User Management > Users** to access all user accounts. 
 2. Select a **User** to review their ID in the User Configuration page. 
@@ -69,26 +92,10 @@ Alternatively, identify a user's ID using the Mattermost API or mmctl:
 - Using the Mattermost API, make an HTTP GET request to the following endpoint: ``https://your-mattermost-url/api/v4/users/username/username_here``. Replace ``your-mattermost-url`` with the URL of your Mattermost instance and ``username_here`` with the username you are looking for. The API response contains a JSON object that includes the user's ID among other details.
 - Using mmctl, in a terminal window, use the following command to list all users and their IDs: ``mmctl user list`` to return a list of user IDs.
 
-Filter user searches
-~~~~~~~~~~~~~~~~~~~~
-
-You can filter System Console user searches to narrow down results based on the team membership, role, and user status.
-
-1. Go to **System Console > User Management > Users** to access all user accounts.
-2. Select **Filters** located to the right of the **Search users** field to access available filter options.
-3. Select **Apply** to filter user search results.
-
-.. image:: ../images/user-search-filters.png
-  :alt: Filter the user list based on team membership, role, and user status using the System Console.
-
-.. tip::
-
-  From Mattermost v9.6, you can also filter users by activity timeframes, including the last 30 days, the previous month, and the last 6 months.
-
 Export user data
 ~~~~~~~~~~~~~~~~~
 
-From Mattermost v9.6, Mattermost Enterprise and Professional system admins can export user data as a CSV report. 
+From Mattermost v9.6, Mattermost Enterprise and Professional customers can export user data as a CSV report. 
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. `Filter <#filter-user-searches>`__ the user data as needed.
@@ -226,8 +233,6 @@ View user profile details using the System Console. Gather information including
 .. image:: ../images/user-profile-details.png
   :alt: Review user details using the System Console
 
-
-
 ----
 
 Groups
@@ -255,26 +260,127 @@ Teams
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-+---------------------------------------------------------------+-------------------------------------------------------------+
-| Manage team settings, including group synchronization for     | - System Config path: **User Management > Teams**           |
-| teams.                                                        | - ``config.json setting``: N/A                              |
-|                                                               | - Environment variable: N/A                                 |
-+---------------------------------------------------------------+-------------------------------------------------------------+
+Find Teams
+~~~~~~~~~~
 
-Archive the team
-~~~~~~~~~~~~~~~~~
+You can find existing teams in your Mattermost instance using the System Console.
 
-See the :ref:`archive a team <collaborate/organize-using-teams:archive a team>` documentation for details on archiving teams that are no longer needed.
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Enter the team name in the **Search** box.
+
+.. image:: ../images/find-teams.png
+  :alt: Find a Mattermost team using the System Console.
+
+.. tip::
+
+  From Mattermost v9.6, you can search for specific teams by entering a partial or full team name in the **Search** field and pressing :kbd:`Enter`.
+
+Filter team searches
+~~~~~~~~~~~~~~~~~~~~
+
+Filter your team search to narrow down results based on the team management type (anyone can join, invite only, or group sync).
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select **Filters** located to the right of the **Search** field to access available filter options.
+3. Choose any filter and select **Apply** to filter team search results.
+
+.. image:: ../images/team-search-filters.png
+  :alt: Filter the teams based on team membership types using the System Console.
+
+Review team configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+View team configuration details using the System Console. Gather information including the team name, team description, team management options, groups, and members.
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+
+.. image:: ../images/team-configuration-details.png
+  :alt: Review team configuration details using the System Console
+
+Manage team membership
+~~~~~~~~~~~~~~~~~~~~~~
+
+Admins can directly add or remove member from the team and customize how members are added to the team using the System Console.
+
+Add members
+^^^^^^^^^^^
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Members** section, select **Add Members**.
+4. Select an user or available bot from the list or try using the **Search** to find a specific one.
+5. Select **Add** to add the user or bot.
+6. Select **Save**.
+
+.. image:: ../images/add-members-to-a-team.png
+  :alt: Add a member to the team using the System Console.
+
+Remove members
+^^^^^^^^^^^^^^
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Members** section, select **Remove** for the user or bot that you want to remove.
+4. Select **Save**.
+
+.. image:: ../images/remove-members-from-a-team.png
+  :alt: Remove a member from the team using the System Console.
+
+Sync group members
+^^^^^^^^^^^^^^^^^^
+
+When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Management** section, enable the **Sync Group Members** option.
+4. Select **Save**.
+
+.. image:: ../images/sync-group-members-in-a-team.png
+  :alt: Enable Sync Group Members for a team using the System Console.
+
+Anyone can join this team
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This team can be discovered allowing anyone with an account to join this team.
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Management** section, enable the **Anyone can join this team** option.
+4. Select **Save**.
+
+.. image:: ../images/anyone-can-join-a-team.png
+  :alt: Enable Anyone can join this team option for a team using the System Console.
+
+Only specific email domains can join this team
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Users can only join the team if their email matches one of the specified domains.
+
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Management** section, enable the **Only specific email domains can join this team** option and add the specific domains.
+4. Select **Save**.
+
+.. image:: ../images/specific-email-domains-can-join-a-team.png
+  :alt: Enable Only specific email domains can join this team option for a team using the System Console.
 
 Synchronize team members
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Admins can choose between inviting members to a team manually or synchronizing members automatically from AD/LDAP groups. See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
 
-Who can join the team?
-~~~~~~~~~~~~~~~~~~~~~~~~
+Archive the team
+~~~~~~~~~~~~~~~~
 
-Admins can choose to make the team discoverable by allowing anyone with an account to join the team. Alternatively admins can enable specific email domains to join the team.
+1. Go to **System Console > User Management > Teams** to access all available teams.
+2. Select the team from the list to view its configuration page.
+3. In the **Team Profile** section, select **Archive Team**.
+4. Select **Save**.
+
+.. image:: ../images/archive-a-team.png
+  :alt: Archive a team using the System Console.
 
 ----
 
@@ -285,17 +391,186 @@ Channels
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-+-------------------------------------------------------------------------+-------------------------------------------------------------+
-| Manage channel settings, including group synchronization on channels.   | - System Config path: **User Management > Channels**        |
-|                                                                         | - ``config.json setting``: N/A                              |
-|                                                                         | - Environment variable: N/A                                 |
-+-------------------------------------------------------------------------+-------------------------------------------------------------+
-| **Notes**:                                                                                                                            |
-|                                                                                                                                       |
-| - Channels can be deleted with all content, including posts in the database, using the                                                |
-|   :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` tool.                                             |
-| - You can search for channels by channel name or by channel ID.                                                                       |
-+-------------------------------------------------------------------------+-------------------------------------------------------------+
+Find Channels
+~~~~~~~~~~~~~
+
+Find existing channels in your Mattermost instance using the System Console.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Enter the channel name in the **Search** box.
+
+.. image:: ../images/find-channels.png
+  :alt: Find a Mattermost channel using the System Console.
+
+Filter channel searches
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Filter your channel search to narrow down results based on the channel type (as public, private or archived), channel management type (group sync or manual invites) or based on the team the channel belongs to.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select **Filters** located to the right of the **Search** field to access available filter options.
+3. Choose any filter and select **Apply** to filter channel search results.
+
+.. image:: ../images/channel-search-filters.png
+  :alt: Filter the channels based on channel type, channel membership types or they team that they belong to using the System Console.
+
+
+Review channel configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+View channel configuration details using the System Console. Gather information including the channel profile, advanced access controls, channel management options, groups, and members.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select a channel from the list to review its channel configuration details.
+
+.. image:: ../images/channel-configuration-details.png
+  :alt: Review channel configuration details using the System Console
+
+Advanced Access Control
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Manage the Management actions available to channel members and guests.
+
+Create Posts
+^^^^^^^^^^^^
+The ability for members and guests to create posts in the channel.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select a channel from the list to view its configuration page.
+3. In the **Create Posts** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to post messages in the channel.
+4. Select **Save**.
+
+.. image:: ../images/allow-create-posts-for-a-channel.png
+  :alt: Add Members and Guests to post to the channel using the System Console.
+
+Post Reactions
+^^^^^^^^^^^^^^
+The ability for members and guests to react with emojis on messages in the channel.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select a channel from the list to view its configuration page.
+3. In the **Post Reactions** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to react with emojis on messages posted to the channel.
+4. Select **Save**.
+
+.. image:: ../images/allow-post-reactions-for-a-channel.png
+  :alt: Add Members and Guests to post reactions to the channel using the System Console.
+
+Manage Members
+^^^^^^^^^^^^^^
+The ability for members to add and remove people from the channels. Guests can't add or remove people from channels.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select a channel from the list to view its configuration page.
+3. In the **Manage Members** section under the **Advanced Access Control** tab, select **Members** to enable those users to manage members for the channel.
+4. Select **Save**.
+
+.. image:: ../images/allow-manage-members-for-a-channel.png
+  :alt: Allow Members to add or remove people from the channel using the System Console.
+
+Channel Mentions
+^^^^^^^^^^^^^^^^
+The ability for members and guests to use channel mentions, including **@all**, **@here**, and **@channel**, in the channel.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Channel Mentions** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to use channel mentions.
+4. Select **Save**.
+
+.. image:: ../images/allow-mentions-for-a-channel.png
+  :alt: Add Members and Guests to use mentions in a channel using the System Console.
+
+.. tip::                                                                                                                                                                
+  **Guests** and **Members** can't use channel mentions without the ability to **Create Posts**. To enable this permission, these users must have been granted **Create Posts** permission first.
+
+Manage Bookmarks
+^^^^^^^^^^^^^^^^
+The ability for members to add, delete, and sort bookmarks. Guests can't add, remove, or sort bookmarks for the channel.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Manage Bookmarks** section under the **Advanced Access Control** tab, select **Members** to enable those users to add, sort, or remove bookmarks for the channel.
+4. Select **Save**.
+
+.. image:: ../images/allow-manage-bookmarks-for-a-channel.png
+  :alt: Allow Members to manage bookmarks for the channel using the System Console.
+
+.. tip::                                                                                                                                                                
+  The ability to manage bookmarks for the channel is available for **Members** only. **Guests** can't add, remove or sort bookmarks for the channel.
+
+Channel Management
+~~~~~~~~~~~~~~~~~~
+
+Choose between inviting members manually or sychronizing members automatically from groups.
+
+Sync Group Members
+^^^^^^^^^^^^^^^^^^
+When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Channel Management** tab, enable the **Sync Group Members** option.
+4. Select **Save**.
+
+.. image:: ../images/sync-group-members-in-a-channel.png
+  :alt: Enable Sync Group Members for a channel using the System Console.
+
+Public channel or private channel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Public channels are discoverable and any user can join. Private channels require invitations to join.
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Public channel or private channel** section under the **Channel Management** tab, toggle between **Public** or **Private** to change channel visibility.
+4. Select **Save**.
+
+.. image:: ../images/set-a-channel-to-public-or-private.png
+  :alt: Set the channel visibility to either Public or Private using the System Console.
+
+.. tip::                                                                                                                                                                
+  When Group Sync is enabled, private channels can't be converted to public channels.
+
+Members
+~~~~~~~
+
+Choose between inviting members manually or synchronizing members automatically from groups.
+
+Add members
+^^^^^^^^^^^
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Members** section, select **Add Members**.
+4. Use the **Search** box to find a specific user or group to add to the channel.
+5. Select **Add** to add the user or group as a **Member**.
+6. Select **Save**.
+
+.. image:: ../images/add-members-to-a-channel.png
+  :alt: Add a member to the channel using the System Console.
+
+Remove members
+^^^^^^^^^^^^^^
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Members** section, select **Remove** for the user that you want to remove.
+4. Select **Save**.
+
+.. image:: ../images/remove-members-from-a-channel.png
+  :alt: Remove a member from the channel using the System Console.
+
+Archive a channel
+~~~~~~~~~~~~~~~~~~
+
+1. Go to **System Console > User Management > Channels** to access all available channels.
+2. Select the channel from the list to view its configuration page.
+3. In the **Channel Profile** section, select **Archive Channel**.
+4. Select **Save**.
+
+.. image:: ../images/archive-a-channel.png
+  :alt: Archive a channel using the System Console.
+
+.. tip::                                                                                                                                                                
+  Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` tool.
 
 ----
 
