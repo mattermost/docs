@@ -36,7 +36,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-chang
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
  - Downgraded Traditional Chinese language to Beta.
- - Added a feature to schedule a post for the future.
+ - Added a feature to schedule a message at a future date (Professional and Enterprise plans).
  - Copilot plugin is now installed and enabled by default.
  - Added an option to test notifications.
  - Added a new search interface.
