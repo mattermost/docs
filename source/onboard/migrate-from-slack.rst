@@ -56,6 +56,7 @@ When you download your Slack export zip file, some data will be missing from the
 
 - User emails
 - Uploaded attachment contents
+- Profile pictures
 
 We need to create a Slack app in order to gather these contents. Follow these steps to create a Slack app:
 
@@ -73,23 +74,24 @@ We need to create a Slack app in order to gather these contents. Follow these st
 8. Grant the app permissions when prompted.
 9. Copy the **Bot User OAuth Token** and save it somewhere convenient.
 
-We'll now use **Bot User OAuth Token** with the ``slack-advanced-exporter`` tool to download emails and attachments. Download the latest release of ``slack-advanced-exporter`` for your OS and architecture `here <https://github.com/grundleborg/slack-advanced-exporter/releases/>`__ and extract the executable from the download.
+We'll now use **Bot User OAuth Token** with the ``slack-advanced-exporter`` tool to download emails, attachments and profile pictures. Download the latest release of ``slack-advanced-exporter`` for your OS and architecture `here <https://github.com/wetneb/slack-advanced-exporter/releases/>`__ and extract the executable from the download.
 
 Once you have the program downloaded locally, run the commands below to fetch the emails, and then fetch file attachments. Replace ``<SLACK TOKEN>`` with the Slack token you generated earlier and ``<SLACK EXPORT FILE>`` with the `path <https://www.geeksforgeeks.org/absolute-relative-pathnames-unix/>`__ to your export file.
 
 .. code-block:: sh
 
   ./slack-advanced-exporter --input-archive <SLACK EXPORT FILE> --output-archive export-with-emails.zip fetch-emails --api-token <SLACK TOKEN>
-  ./slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-emails-and-attachments.zip fetch-attachments --api-token <SLACK TOKEN>
+  ./slack-advanced-exporter --input-archive export-with-emails.zip --output-archive export-with-profile-pictures.zip fetch-attachments --api-token <SLACK TOKEN>
+  ./slack-advanced-exporter --input-archive export-with-profile-pictures.zip --output-archive export-with-everything.zip fetch-attachments --api-token <SLACK TOKEN>
 
 .. note::
 
-  - The first command collects all of the user emails and creates the file ``export-with-emails.zip``. The second command fetches attachments and creates the file ``export-with-emails-and-attachments.zip``, which we will use going forward.
+  - The first command collects all of the user emails and creates the file ``export-with-emails.zip``. The second command downloads the profile pictures and creates the file `export-with-profile-pictures.zip`. The third command fetches attachments and creates the file ``export-with-everything.zip``, which we will use going forward.
   - The second command can take a long time if you have a large number of file uploads. If it's interrupted, delete the file generated (if any), and start again.
 
-The file ``export-with-emails-and-attachments.zip`` now contains all the information necessary to be imported into Mattermost.
+The file ``export-with-everything.zip`` now contains all the information necessary to be imported into Mattermost.
 
-It's preferable to fetch e-mails first to avoid copying large attachments around. Make sure you choose different file names at each stage, as the tool does not support in-place modifications.
+It's preferable to fetch attachments last to avoid copying large attachments around. Make sure you choose different file names at each stage, as the tool does not support in-place modifications.
 
 .. important::
 
@@ -98,7 +100,7 @@ It's preferable to fetch e-mails first to avoid copying large attachments around
 4. Convert Slack import to Mattermost's bulk export format
 ----------------------------------------------------------
 
-Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
+Now that you have a Slack export file with emails, profile pictures and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
 
 Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word like "my-team".
 
