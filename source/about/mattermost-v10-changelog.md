@@ -26,13 +26,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Removed the feature to import themes from Slack.
 
 #### Administration
- - Redis is now available as an alternative cache backend for all Enterprise customers. It can be leveraged to run Mattermost at a very high scale. There is a new section in 
-     - ``config.json`` that can be updated to use Redis.
-     - ``CacheSettings.CacheType``: This can be either ``lru`` or ``redis``. ``lru`` is the default choice which will use the in-memory cache store that we use currently.
-     - ``CacheSettings.RedisAddress``: The hostname of the Redis host.
-     - ``CacheSettings.RedisPassword``: The password of the Redis host (can be left blank if there is no password).
-     - ``CacheSettings.RedisDB``: The database of the Redis host. Typically ``0``.
-     - ``CacheSettings.DisableClientCache``: This can be set to ``true`` if you decide to disable the client-side cache of Redis. Typically there is no need to do this in production, and this is mainly used as a test option.
+ - Redis is now available as an alternative cache backend for all Enterprise customers. It can be leveraged to run Mattermost at a very high scale.
  - Plugins are now allowed to add Support Packet data without user interface elements.
  - Improved the detection of the mobile app operating system as stored in the **Sessions** table.
 
@@ -59,6 +53,12 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Added a new ``EnableExperimentalLocales`` configuration setting that controls whether to allow the selection of experimental (e.g., in progress) languages.
 
 #### Changes to Enterprise plans:
+ - Under ``CacheSettings`` in ``config.json``:
+   - Added ``CacheType``: This can be either ``lru`` or ``redis``. ``lru`` is the default choice which will use the in-memory cache store that we use currently.
+   - Added ``RedisAddress``: The hostname of the Redis host.
+   - Added ``RedisPassword``: The password of the Redis host (can be left blank if there is no password).
+   - Added ``RedisDB``: The database of the Redis host. Typically ``0``.
+   - Added ``DisableClientCache``: This can be set to ``true`` if you decide to disable the client-side cache of Redis. Typically there is no need to do this in production, and this is mainly used as a test option.
  - Under ``FileSettings`` in ``config.json``:
    - Added new ``AmazonS3StorageClass`` and ``ExportAmazonS3StorageClass``, both default to ``""`` to preserve the current behavior. Administrators may configure this storage class to the storage class required by their S3 solution.
 
