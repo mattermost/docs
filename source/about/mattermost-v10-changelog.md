@@ -21,12 +21,12 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.4.0).
  - Improved the handling of Thai script in search terms.
- - Added tooltips to the buttons shown in the channel info right-hand side.
+ - Added tooltips to the buttons shown in the channel info in the right pane.
  - Downgraded Spanish language to Alpha.
  - Removed the feature to import themes from Slack.
 
 #### Administration
- - Redis is now available as an alternative cache backend for all enterprise customers. It can be leveraged to run Mattermost at a very high scale. There is a new section in 
+ - Redis is now available as an alternative cache backend for all Enterprise customers. It can be leveraged to run Mattermost at a very high scale. There is a new section in 
      - ``config.json`` that can be updated to use Redis.
      - ``CacheSettings.CacheType``: This can be either ``lru`` or ``redis``. ``lru`` is the default choice which will use the in-memory cache store that we use currently.
      - ``CacheSettings.RedisAddress``: The hostname of the Redis host.
