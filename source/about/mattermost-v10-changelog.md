@@ -20,6 +20,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.4.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.4.0).
+ - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
  - Improved the handling of Thai script in search terms.
  - Added tooltips to the buttons shown in the channel info in the right pane.
  - Downgraded Spanish language to Alpha.
@@ -43,7 +44,8 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Fixed an issue where EXIF rotated image previews did not have the correct size.
  - Fixed an issue where the search input field in the emoji picker did not accept uppercase letters.
  - Fixed an issue where imported replies were missing their reactions.
- - Fixed an issue where System Admins could not pull posts from Direct Message channels that they were not in.
+ - Fixed an issue where System Administrators could not pull posts from Direct Message channels that they were not in.
+ - Fixed an issue by restoring System Administrator access to Direct and Group Messages without being a member.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
