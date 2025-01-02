@@ -20,7 +20,7 @@ Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is aut
 Channel sidebar
 ----------------
 
-In the channel sidebar on the left, you'll find all of the the channels you're a member of as well as useful channel management tools. See the :doc:`channel types <>` to learn about the types of channels available, how they work, and how to identify them in the channel sidebar. Learn how to create channels by visiting the :doc:`create channels </collaborate/create-channels>` documentation.
+In the channel sidebar on the left, you'll find all of the the channels you're a member of as well as useful channel management tools. See the :doc:`channel types </collaborate/channel-types>` to learn about the types of channels available, how they work, and how to identify them in the channel sidebar. Learn how to create channels by visiting the :doc:`create channels </collaborate/create-channels>` documentation.
 
 As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the :doc:`customize your channel sidebar </preferences/customize-your-channel-sidebar>` documentation for details.
 

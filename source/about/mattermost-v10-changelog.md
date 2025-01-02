@@ -31,10 +31,12 @@ If you upgrade from a release earlier than v10.2, please read the other [Importa
 
 ### Improvements
 
+See [this walkthrough video](https://mattermost.com/video/mattermost-v10-3-changelog/) on some of the highlights and improvements in our latest release below.
+
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.3.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.0).
  - Downgraded Traditional Chinese language to Beta.
- - Added a feature to schedule a post for the future.
+ - Added a feature to schedule a message at a future date (Professional and Enterprise plans).
  - Copilot plugin is now installed and enabled by default.
  - Added an option to test notifications.
  - Added a new search interface.
@@ -178,6 +180,12 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.1-feature-release)=
 ## Release v10.1 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.1.6, released 2024-12-20**
+  - Restore system administrator access to DMs and GMs without being a member.
+  - Mattermost v10.1.6 contains no database or functional changes.
+- **10.1.5, released 2024-12-18**
+  - Fixed an issue where System Administrators could not pull posts in from Direct Message channels they were not in [MM-62092](https://mattermost.atlassian.net/browse/MM-62092).
+  - Mattermost v10.1.5 contains no database or functional changes.
 - **10.1.4, released 2024-12-10**
   - Mattermost v10.1.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Calls plugin [v1.3.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.3.2).
