@@ -12,6 +12,7 @@ Other administration resources
     Migration announcement email template </onboard/migration-announcement-email>
     Advanced permissions infrastructure </onboard/advanced-permissions-backend-infrastructure>
     Command line tools </manage/command-line-tools>
+    Code Signing Custom Builds </manage/code-signing-custom-builds>
 
 If the information above doesn’t solve your problem, look at these other resources to find something that meets your needs. Alternatively, you can also :doc:`get help </guides/get-help>` from our community or via premium support services.
 
@@ -21,3 +22,4 @@ If the information above doesn’t solve your problem, look at these other resou
 * :doc:`Migration announcement email template </onboard/migration-announcement-email>` - Use this email template to notify your users about migrating to Mattermost.
 * :doc:`Advanced permissions: backend infrastructure </onboard/advanced-permissions-backend-infrastructure>` - Read our technical guide on modifying self-hosted Mattermost installations to create custom permissions schemes.
 * :doc:`Command line tools </manage/command-line-tools>` - Learn how to use the command line to manage self-hosted Mattermost servers.
+* :doc:`Code signing custom builds </manage/code-signing-custom-builds>` - Learn how to reduce security warnings from operating systems and ensure smoother, more trustworthy installations with Code Signing.
