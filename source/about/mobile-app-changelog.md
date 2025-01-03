@@ -36,7 +36,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 13.4+ are required.
 
 ### Improvements
- - Improved the number field validation on interactive dialogs.
+ - Improve number field validation on Interactive Dialogs
 
 (release-v2-23-0)=
 ## 2.23.0 Release
