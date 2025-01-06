@@ -193,7 +193,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
   - Mattermost v10.1.7 contains no database or functional changes.
 - **10.1.6, released 2024-12-20**
-  - Restore system administrator access to DMs and GMs without being a member.
+  - Fixed an issue by restoring System Administrator access to Direct and Group Messages without being a member.
   - Mattermost v10.1.6 contains no database or functional changes.
 - **10.1.5, released 2024-12-18**
   - Fixed an issue where System Administrators could not pull posts in from Direct Message channels they were not in [MM-62092](https://mattermost.atlassian.net/browse/MM-62092).
