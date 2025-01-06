@@ -2517,7 +2517,7 @@ List export jobs. Export files include the Job ID in the file name.
    --all            Fetch all export jobs. ``--page`` flag will be ignored if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (default 200)
+   --per-page int   Number of export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -2655,7 +2655,7 @@ List content extraction jobs.
    --all            Fetch all export jobs. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (default 200)
+   --per-page int   Number of export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -3277,7 +3277,7 @@ List import jobs
    --all            Fetch all import jobs. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of import jobs
-   --per-page int   Number of import jobs to be fetched (default 200)
+   --per-page int   Number of import jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -3819,7 +3819,7 @@ List LDAP synchronization jobs.
    --all            Fetch all import jobs. The ``--page`` flag will be ignored if provided.
    -h, --help       help for list
    --page int       Page number to fetch for the list of import jobs
-   --per-page int   Number of import jobs to be fetched (default 200)
+   --per-page int   Number of import jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4121,7 +4121,7 @@ List all registered OAuth2 applications.
 
    -h, --help       help for add
    --page int       Page number to fetch for the list of OAuth2 apps
-   --per-page int   Number of OAuth2 apps to be fetched per page (default 200)
+   --per-page int   Number of OAuth2 apps to be fetched per page (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4785,7 +4785,7 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
    -h, --help        help for list
    --local-only      Only retrieve local plugins
    --page int        Page number to fetch for the list of users
-   --per-page int    Number of users to be fetched (default 200)
+   --per-page int    Number of users to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -5941,7 +5941,7 @@ List the tokens belonging to a user.
    -h, --help       help for list
    --inactive       List only inactive tokens
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200)
+   --per-page int   Number of users to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -6507,7 +6507,7 @@ List all users.
    --all            Fetch all users. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200)
+   --per-page int   Number of users to be fetched (maximum 200)
    --team string    If supplied, only users belonging to this team will be listed
 
 **Options inherited from parent commands**

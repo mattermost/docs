@@ -157,14 +157,15 @@ Non-personally Identifiable Diagnostic Information, distinguished by end users a
   - *Commercial License Diagnostics (Enterprise Edition only):* Uploaded an Enterprise license key to the server
   - *Mobile Performance Diagnostics:* Load times for starting the app, switching channels, and switching teams
   - *Permissions Discovery Diagnostics (Enterprise Edition only):* Provides all the permissions configured for each role for the System Scheme and each Team Override Scheme created in the system. Scheme ID; team admin permissions; Team user permissions; channel admin permissions; Channel user permissions; Number of teams the scheme is associated with
-  - *Group Discovery Diagnostics:* Provides information related to AD/LDAP (Enterprise Edition only) and custom groups (Enterprise and Professional Edition only), including number of unique users in groups, number of groups synchronized to Mattermost, teams and channels associated to groups, teams and channels synchronized with groups, and number of group members.
+  - *Group Discovery Diagnostics:* Provides information related to AD/LDAP (Enterprise Edition only) and custom groups (Enterprise and Professional Edition only), including number of unique users in groups, number of groups synchronized to Mattermost, teams and channels associated to groups, teams and channels synchronized with groups, number of group members, custom group @mentions, changes to existing custom groups, and new custom groups created.
   - *System Console Menu Discovery Diagnostics:* Clicks on the hamburger menu items of the System Console, including Administrator's Guide, Troubleshooting Forum, Commercial Support, About Mattermost, and clicks on the left-hand side navigation menu items
   - *In Product Notices Diagnostics:* Notices viewed, and the notices on which an action button was clicked.
   - *Threaded discussions:* Clicks to reply to a thread, reply using the footer element, filter threads by unread, mark as read, access to global threads section.
   - *Custom Groups:* Invite people to a channel by using a custom group, mention a custom group, and modify a custom group.
-  - *Read-Only Channels:* Navigate to a read-only channel, and post a message to a read-only channel.
+  - *Read-Only Channels:* Navigate to a read-only channel, post a message to a read-only channel, and open a read-only channel.
   - *Shared Workspaces:* Navigate to a shared channel, post a message in a shared channel, and mention a remote user.
   - *Guest Accounts:* Mention a guest account, directly message a guest, and add a guest to a channel.
+  - *Passive Keyword Tracking*: Update passive keywords highlighted in channels and threads.
 
 Playbooks telemetry
 --------------------
