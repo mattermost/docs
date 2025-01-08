@@ -657,33 +657,17 @@ setPostSearchStatus(numberOfResults, numberOfConfigSettingResults) {
         searchStatusEl.innerText = "Your search did not match any documents. Please make sure that all words are spelled correctly.";
         return;
     }
+    
+    const listFormatter = new Intl.ListFormat('en-US');
 
-    // Create and append the prefix span
-    const prefixSpan = document.createElement('span');
-    let prefixText = 'Search finished, found ';
-    if (numberOfResults) {
-        prefixText += `${numberOfResults} page${numberOfResults > 1 ? 's' : ''} matching your search query`;
-    }
-    if (numberOfConfigSettingResults) {
-        prefixText += ', and an additional ';
-    } else {
-        prefixText += '.';
-    }
-    prefixSpan.innerText = prefixText;
-    searchStatusEl.appendChild(prefixSpan);
+    // Create and append results message
 
-    // Create and append the configuration settings link and period if there are any
-    if (numberOfConfigSettingResults) {
-        const configSettingLink = document.createElement('a');
-        configSettingLink.href = '#config-setting-results-anchor'; // Adjust the anchor as needed
-        configSettingLink.innerText = `${numberOfConfigSettingResults} configuration setting${numberOfConfigSettingResults > 1 ? 's' : ''}`;
+    const topics = `${numberOfResults} topic page${numberOfResults === 1 ? '' : 's'} matching your search query`;
+    const configs = numberOfConfigSettingResults && `an additional <a href="#config-setting-results-anchor">${numberOfConfigSettingResults} configuration setting${numberOfConfigSettingResults === 1 ? '' : 's'}</a>`;
 
-        searchStatusEl.appendChild(configSettingLink);
+    const results = `Search finished, found ${listFormatter.format([topics, configs].filter(x => x))}.`;
 
-        const postfixSpan = document.createElement('span');
-        postfixSpan.innerText = '.';
-        searchStatusEl.appendChild(postfixSpan);
-    }
+    searchStatusEl.insertAdjacentHTML( 'beforeend', `<span>${results}</span>`);
 }
 
     /**
