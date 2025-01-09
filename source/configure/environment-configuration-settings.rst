@@ -4237,7 +4237,7 @@ Redis address
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The hostname of the Redis host.               | - System Config path: **N/A**                                             |
 |                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisAddress,``          |
-|                                               | - Environment variable: ``MM_CACHESETTINGS_REDISADDRESS``                 |
+| String input.                                 | - Environment variable: ``MM_CACHESETTINGS_REDISADDRESS``                 |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: redis-cache-password
@@ -4253,7 +4253,8 @@ Redis password
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The password of the Redis host.               | - System Config path: **N/A**                                             |
 |                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisPassword,``         |
-| Leave blank if there is no password.          | - Environment variable: ``MM_CACHESETTINGS_REDISPASSWORD``                |
+| String input. Leave blank if there is no      | - Environment variable: ``MM_CACHESETTINGS_REDISPASSWORD``                |
+| password.                                     |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: redis-cache-database
@@ -4269,7 +4270,7 @@ Redis database
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The database of the Redis host.               | - System Config path: **N/A**                                             |
 |                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisDB,``               |
-| Typically set to ``0``                        | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
+| Typically set to ``0``.                       | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: redis-cache-type
