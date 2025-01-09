@@ -2561,7 +2561,7 @@ Enable Amazon S3 debugging
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
-| debugging information in system logs                          | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
+| debugging information in system logs.                         | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3TRACE``                |
 | - **true**: Log additional debugging information is logged    |                                                                          |
 |   to the system logs.                                         |                                                                          |
@@ -2571,6 +2571,42 @@ Enable Amazon S3 debugging
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: file-amazons3storageclass
+  :displayname: Amazon S3 storage class (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AmazonS3StorageClass
+  :environment: MM_FILESETTINGS_AMAZONS3STORAGECLASS
+  :description: Specify the storage class to use for non-AWS S3-compatible storage solutions. Default is ``""``.
+
+Amazon S3 storage class
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Some Amazon S3-compatible storage solutions require the storage class parameter to be present in upload requests, otherwise they will be rejected. Configure this storage class to the storage class required by your S3 solution.
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the storage class to use for non-AWS S3-compatible    | - System Config path: **Environment > File Storage**                     |
+| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.AmazonS3StorageClass: ""``,   |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``         |
+| String input. Select **Test Connection** to test the          |                                                                          |
+| configured connection.                                        |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: file-exportamazons3storageclass
+  :displayname: Export Amazon S3 storage class (File Storage)
+  :systemconsole: N/a
+  :configjson: .FileSettings.ExportAmazonS3StorageClass
+  :environment: MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS
+  :description: Export the storage class to use for non-AWS S3-compatible storage solutions. Default is ``""``.
+
+Export Amazon S3 storage class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| Export the storage class to use for non-AWS S3-compatible     | - System Config path: N/A                                                       |
+| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.ExportAmazonS3StorageClass: "",``    |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``          |
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
 .. config:setting:: file-amazons3requesttimeoutmilliseconds
   :displayname: Amazon S3 request timeout (File Storage)
@@ -2628,6 +2664,23 @@ Amazon S3 exported upload part size
 | **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
+.. config:setting:: file-amazons3requesttimeoutmilliseconds
+  :displayname: Amazon S3 request timeout (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
+
+Amazon S3 request timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
+| Default is 30000 (30 seconds).                                |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
 .. config:setting:: file-initialfont
   :displayname: Initial font (File Storage)
   :systemconsole: N/A
@@ -2649,23 +2702,6 @@ Initial font
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-
-.. config:setting:: file-amazons3requesttimeoutmilliseconds
-  :displayname: Amazon S3 request timeout (File Storage)
-  :systemconsole: N/A
-  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
-  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
-  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
-
-Amazon S3 request timeout 
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
-| Default is 30000 (30 seconds).                                |                                                                                         |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ----
 
