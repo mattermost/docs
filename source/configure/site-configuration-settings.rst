@@ -331,13 +331,6 @@ iOS app download link
 | String input. Default is ``https://about.mattermost.com/mattermost-ios-app/``.                                                                                                                                        |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Customization)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
 .. config:setting:: custom-enabledesktoplandingpage
   :displayname: Enable desktop app landing page (Customization)
   :systemconsole: Site Configuration > Customization
@@ -356,6 +349,13 @@ Enable desktop app landing page
 | - **false**: Doesn't prompt users to use the desktop app.       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
 |                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-appcustomurlschemes
+  :displayname: App custom URL schemes (Customization)
+  :systemconsole: N/A
+  :configjson: .NativeAppSettings.AppCustomURLSchemes
+  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
+  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
 
 App custom URL schemes
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -412,7 +412,7 @@ Access the following configuration settings in the System Console by going to **
   :environment: MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE
   :description: The default language for system messages and logs. Default value is **en**.
 
-
+Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -479,6 +479,36 @@ Available languages
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: localization-enable-wip-locales
+  :displayname: Enable experimental locales (Localization)
+  :systemconsole: Site Configuration > Localization
+  :configjson: EnableExperimentalLocales
+  :environment: MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES
+  :description: nable work in progress languages in Mattermost to review translations and identify translation gaps.
+
+  - **true**: Work in progress languages are available in Mattermost in addition to officially supported languages.
+  - **false**: **(Default)** Only officially supported languages are available in Mattermost.
+
+Enable experimental locales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable work in progress languages in Mattermost to review translations and identify translation gaps.
+
++--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| - **true**: Work in progress languages are available   | - System Config path: **Site Configuration > Localization**                                      |
+|   in Mattermost in addition to officially supported    |  - ``config.json`` setting: ``LocalizationSettings`` > ``EnableExperimentalLocales`` > ``false`` |
+|   languages.                                           | - Environment variable: ``MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES``                     |
+| - **false**: **(Default)** Only officially supported   |                                                                                                  |
+|   languages are available in Mattermost.               |                                                                                                  |
++--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - Cloud system admins can request this configuration setting to be enabled for their instance by contacting their Mattermost Account Manager.
+  - Work in progress languages may be incomplete. Strings missing translations display in US English.
+  - Currently, only web and desktop app product strings are impacted by this configuration setting. Server and mobile product strings aren't impacted by this setting.
+  - See the :ref:`language <preferences/manage-your-display-options:language>` documentation for details on selecting a language preference in Mattermost.
 
 ----
 
@@ -633,7 +663,6 @@ Lock teammate name display for all users
 |                                                                                                               | - ``config.json`` setting: ``TeamSettings`` > ``LockTeammateNameDisplay`` > ``false`` |
 | - **true**: Users **cannot** change the Teammate Name Display.                                                | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``                   |
 | - **false**: **(Default)** Users can change the Teammate Name Display setting.                                |                                                                                       |
-|                                                                                                               |                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: users-viewarchivedchannels
