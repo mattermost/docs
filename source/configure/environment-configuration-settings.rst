@@ -4,14 +4,29 @@ Environment configuration settings
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. tip:: 
+Review and manage the following environmental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Environment**:
 
-  Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
+- `Web server <#web-server>`__
+- `Database <#database>`__
+- `Elasticsearch <#elasticsearch>`__
+- `File storage <#file-storage>`__
+- `Image proxy <#image-proxy>`__
+- `SMTP <#smtp>`__
+- `Push notification server <#push-notification-server>`__
+- `High availaiblity <#high-availability>`__ cluster-based settings
+- `Rate limiting <#rate-limiting>`__
+- `Logging <#logging>`__
+- `Session lengths <#session-lengths>`__
+- `Performance monitoring <#performance-monitoring>`__
+- `Developer <#developer>`__ settings
+- `config.json-only settings <#config-json-only-settings>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
 
   - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
-  - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
-
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Environment**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+  - When working with the ``config.json`` file manually, look for an object such as ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
 Web server
 ----------

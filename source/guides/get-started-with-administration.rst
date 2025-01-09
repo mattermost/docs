@@ -38,6 +38,10 @@ Get started with administration
 
 These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
 
+.. tip::
+
+    As a system admin, access the System Console by selecting the **Product** |product-list| menu and selecting **System Console**.
+
 * **Mattermost feature labels** - Learn what :doc:`Mattermost feature labels </getting-started/feature-labels>`, including :ref:`Experimental <getting-started/feature-labels:experimental>`, :ref:`Beta <getting-started/feature-labels:beta>`, :ref:`General Availability <getting-started/feature-labels:general availability>`, and :ref:`Deprecated <getting-started/feature-labels:deprecated>` mean to the status, maturity, and support level of Mattermost product features and functionality in your Mattermost deployment.
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
 * **Configure your workspace** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
