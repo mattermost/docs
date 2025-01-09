@@ -4190,3 +4190,106 @@ This setting isn't available in the System Console and can only be enabled in ``
   * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
   * **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
   * **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.
+
+Redis cache backend
+~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.4, `Redis <https://redis.io/>`_ (Remote Dictionary Server) can be configured as an alternative cache backend for all Mattermost Enterprise customers. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
+
+Using Redis as a caching solution can help ensure that Mattermost for enterprise-level deployments with high concurrency and large user bases remains performant and efficient, even under heavy usage.
+
+Configure a Redis cache by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+
+.. config:setting:: redis-cache-type
+  :displayname: Define cache type (CacheSettings)
+  :systemconsole: N/A
+  :configjson: CacheType
+  :environment: MM_CACHESETTINGS_CACHETYPE
+
+  - **lru**: **(Default)** Mattermost uses the in-memory cache store.
+  - **redis**: Mattermost uses the configured Redis cache store.
+
+Cache type
+^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| Define the cache type.                        | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``CacheType,`` > ``lru``   |
+| - **lru**: **(Default)** Mattermost uses the  | - Environment variable: ``MM_CACHESETTINGS_CACHETYPE``                    |
+|   in-memory cache store.                      |                                                                           |
+| - **redis**: Mattermost uses the configured   |                                                                           |
+|   Redis cache store.                          |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-address
+  :displayname: Hostname of the Redis host (CacheSettings)
+  :systemconsole: N/A
+  :configjson: RedisAddress
+  :environment: MM_CACHESETTINGS_REDISADDRESS
+  :description: Specify the hostname of the Redis host.
+
+Redis address
+^^^^^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| The hostname of the Redis host.               | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisAddress,``          |
+|                                               | - Environment variable: ``MM_CACHESETTINGS_REDISADDRESS``                 |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-password
+  :displayname: Password of the Redis host (CacheSettings)
+  :systemconsole: N/A
+  :configjson: RedisPassword
+  :environment: MM_CACHESETTINGS_REDISPASSWORD
+  :description: Specify the password of the Redis host.
+
+Redis password
+^^^^^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| The password of the Redis host.               | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisPassword,``         |
+| Leave blank if there is no password.          | - Environment variable: ``MM_CACHESETTINGS_REDISPASSWORD``                |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-database
+  :displayname: Database of the Redis host (CacheSettings)
+  :systemconsole: N/A
+  :configjson: RedisDB
+  :environment: MM_CACHESETTINGS_REDISDB
+  :description: Specify the databse of the Redis host. Typically set to 0.
+
+Redis database
+^^^^^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| The database of the Redis host.               | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisDB,``               |
+| Typically set to ``0``                        | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-type
+  :displayname: Define the cache type (CacheSettings)
+  :systemconsole: N/A
+  :configjson: CacheType
+  :environment: MM_CACHESETTINGS_CACHETYPE
+
+  - **true**: Client-side cache of Redis is disabled. Typically used as a test option, and not in production environments.
+  - **false**: **(Default)** Client-side cache of Redis is enabled.
+
+Disable client cache
+^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+| Disables the client-side cache of Redis.      | - System Config path: **N/A**                                                        |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``DisableClientCache,`` > ``false``   |
+| - **true**: Client-side cache of Redis is     | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                                 |
+|   disabled. Typically used as a test option,  |                                                                                      |
+|   and not in production environments.         |                                                                                      |
+| - **false**: **(Default)** Client-side cache  |                                                                                      |
+|   of Redis is enabled.                        |                                                                                      |
++-----------------------------------------------+--------------------------------------------------------------------------------------+
