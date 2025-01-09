@@ -16,7 +16,7 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `File Sharing and Downloads <#file-sharing-and-downloads>`__
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
-- `Connected Workspaces <#connected-workspaces>`__
+- `Connected Workspaces (Beta) <#connected-workspaces-beta>`__
 
 ----
 
@@ -1802,6 +1802,7 @@ Connected workspaces (Beta)
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
+
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
 .. config:setting:: enable-connected-workspaces
@@ -1814,8 +1815,11 @@ When connected workspaces are enabled, system admins can :doc:`create and manage
 Enable connected workspaces (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel. 
-Both configuration settings are disabled by default and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
+Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel.
+
+Connected workspaces requires Mattermost Enterprise servers running v10.2 or later.
+
+By default, both configuration settings are disabled and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
 
 This feature's two ``config.json`` settings include:
 
