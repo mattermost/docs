@@ -14,6 +14,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
   - Mattermost v9.11.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with the web app status not being updated correctly for the current user [MM-59952](https://mattermost.atlassian.net/browse/MM-59952).
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
+  - Fixed an issue with insertion errors to ``LinkMetadata`` table.
   - Mattermost v9.11.7 contains the following database changes:
     - Fixed an issue where Direct and Group Messages with a ``DeleteAt`` flag in the database could cause issues with some APIs.
 - **9.11.6, released 2024-12-10**
