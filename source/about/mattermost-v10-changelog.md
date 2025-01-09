@@ -10,7 +10,12 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v10.4-feature-release)=
 ## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release Day: January 16, 2025**
+- **10.4.1, released 2025-01-16**
+  - Fixed errors logged by performance telemetry due to certain browser extensions [MM-62371](https://mattermost.atlassian.net/browse/MM-62371).
+  - Fixed an issue with insertion errors to ``LinkMetadata`` table.
+  - Mattermost v10.4.1 contains no database or functional changes.
+- **10.4.0, released 2025-01-16**
+  - Original 10.4.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
