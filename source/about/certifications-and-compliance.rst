@@ -132,7 +132,7 @@ of assets, the denial of export privileges, and suspension or debarment from Gov
 For these reasons, please take the time to familiarize yourself with applicable export (and import) controls in the
 jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order to export Mattermost products.
 
-This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
+This overview is specific to the U.S. Export Administration Regulations (EAR); however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
 
 General information
 ~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +156,7 @@ Mattermost Enterprise Edition (includes Mattermost Professional & Enterprise) is
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
 **Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories with specific prohibitions, such as Crimea, Donetsk, and Luhansk regions of Ukraine, Belarus, Russia, Venezuela, Myanmar/Burma, and Cambodia. Details can be
-located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`_ and `OFAC <https://ofac.treasury.gov/>`_. The countries and their sanctions are subject to change.
+located at `BIS <https://www.bis.gov/>`_. The countries and their sanctions are subject to change.
 
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
 in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736-general-prohibitions/file>`_ of weapons of mass destruction, along with other prohibited end-uses under the U.S. Export Administration Regulations (“EAR”).
