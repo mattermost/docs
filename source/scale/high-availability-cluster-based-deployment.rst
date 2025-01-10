@@ -548,7 +548,7 @@ For example, if you're deploying Mattermost on AWS with Amazon Aurora we recomme
 How to find the hostname of the connected websocket?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enterprise customers running self-hosted deployments can go to the **Product** menu |product-list| and select **About Mattermost** to see the hostname of the node in the cluster running Mattermost.
+From Mattermost v10.4, Enterprise customers running self-hosted deployments can go to the **Product** menu |product-list| and select **About Mattermost** to see the hostname of the node in the cluster running Mattermost.
 
 Troubleshooting
 ---------------
