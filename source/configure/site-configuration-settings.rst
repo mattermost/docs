@@ -497,7 +497,7 @@ Enable work in progress languages in Mattermost to review translations and ident
 
 +--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 | - **true**: Work in progress languages are available   | - System Config path: **Site Configuration > Localization**                                      |
-|   in Mattermost in addition to officially supported    | - ``config.json`` setting: ``LocalizationSettings`` > ``EnableExperimentalLocales`` > ``false`` |
+|   in Mattermost in addition to officially supported    | - ``config.json`` setting: ``LocalizationSettings`` > ``EnableExperimentalLocales`` > ``false``  |
 |   languages.                                           | - Environment variable: ``MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES``                     |
 | - **false**: **(Default)** Only officially supported   |                                                                                                  |
 |   languages are available in Mattermost.               |                                                                                                  |
