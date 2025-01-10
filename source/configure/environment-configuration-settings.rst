@@ -4197,7 +4197,7 @@ Redis cache backend
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v10.4, `Redis <https://redis.io/>`_ (Remote Dictionary Server) can be configured as an alternative cache backend for all Mattermost Enterprise customers. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
+From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
 
 Using Redis as a caching solution can help ensure that Mattermost for enterprise-level deployments with high concurrency and large user bases remains performant and efficient, even under heavy usage.
 
@@ -4262,7 +4262,7 @@ Redis password
   :systemconsole: N/A
   :configjson: RedisDB
   :environment: MM_CACHESETTINGS_REDISDB
-  :description: Specify the databse of the Redis host. Typically set to 0.
+  :description: Specify the databse of the Redis host. Zero-indexed number up to 15. Typically set to 0. Redis allows a maximum of 16 databases.
 
 Redis database
 ^^^^^^^^^^^^^^
@@ -4270,7 +4270,9 @@ Redis database
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | The database of the Redis host.               | - System Config path: **N/A**                                             |
 |                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisDB,``               |
-| Typically set to ``0``.                       | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
+| Zero-indexed number up to 15. Typically set   | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
+| to ``0``. Redis allows a maximum of 16        |                                                                           |
+| databases.                                    |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: redis-cache-type
