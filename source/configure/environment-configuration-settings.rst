@@ -2592,36 +2592,45 @@ Enable Amazon S3 debugging
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3StorageClass
   :environment: MM_FILESETTINGS_AMAZONS3STORAGECLASS
-  :description: Specify the storage class to use for non-AWS S3-compatible storage solutions. Default is ``""``.
+  :description: The storage class to use for uploads to S3-compatible storage solutions. Default is an empty string ``""``.
 
 Amazon S3 storage class
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Some Amazon S3-compatible storage solutions require the storage class parameter to be present in upload requests, otherwise they will be rejected. Configure this storage class to the storage class required by your S3 solution.
+Some Amazon S3-compatible storage solutions require the storage class parameter to be present in upload requests, otherwise they will be rejected. Configure this storage class as the storage class required by your S3-compatible solution.
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Specify the storage class to use for non-AWS S3-compatible    | - System Config path: **Environment > File Storage**                     |
+| The storage class to use for uploads to S3-compatible         | - System Config path: **Environment > File Storage**                     |
 | storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.AmazonS3StorageClass: ""``,   |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``         |
-| String input. Select **Test Connection** to test the          |                                                                          |
-| configured connection.                                        |                                                                          |
+| String input. Default is an empty string ``""``.              |                                                                          |
+| Select **Test Connection** to test the configured connection. |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  Most Amazon S3-compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided. See the `Amazon S3 storage class <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass>`_ documentation for details about supported storage classes.
 
 .. config:setting:: file-exportamazons3storageclass
   :displayname: Export Amazon S3 storage class (File Storage)
   :systemconsole: N/a
   :configjson: .FileSettings.ExportAmazonS3StorageClass
   :environment: MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS
-  :description: Export the storage class to use for non-AWS S3-compatible storage solutions. Default is ``""``.
+  :description: The storage class to use for exports to S3-compatible storage solutions. Default value is an empty string ``""``.
 
 Export Amazon S3 storage class
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
-| Export the storage class to use for non-AWS S3-compatible     | - System Config path: N/A                                                       |
+| The storage class to use for exports to S3-compatible         | - System Config path: N/A                                                       |
 | storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.ExportAmazonS3StorageClass: "",``    |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``          |
+| String input. Default is an empty string ``""``.              |                                                                                 | 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+.. note::
+
+  Most Amazon S3-compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided. See the `Amazon S3 storage class <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass>`_ documentation for details about supported storage classes.
 
 .. config:setting:: file-amazons3requesttimeoutmilliseconds
   :displayname: Amazon S3 request timeout (File Storage)
