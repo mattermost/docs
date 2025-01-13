@@ -31,7 +31,7 @@ VPAT creation process
 
 2. **VPAT Documentation**: A VPAT is created based on the findings from the initial assessment. This document details each accessibility criterion and the level of conformance achieved, along with explanations for any known gaps or alternative solutions.
 
-3. Review and Approval: VPATs are reviewed by our accessibility compliance team to ensure accuracy, completeness, and consistency. Any areas not in full compliance are documented with explanations and, where possible, a roadmap for future improvements.
+3. **Review and Approval**: VPATs are reviewed by our accessibility compliance team to ensure accuracy, completeness, and consistency. Any areas not in full compliance are documented with explanations and, where possible, a roadmap for future improvements.
 
 4. Publishing and Distribution: Once approved, VPATs are made available upon request for customers, partners, and other stakeholders.
 
