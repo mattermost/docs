@@ -33,7 +33,7 @@ VPAT creation process
 
 3. **Review and Approval**: VPATs are reviewed by our accessibility compliance team to ensure accuracy, completeness, and consistency. Any areas not in full compliance are documented with explanations and, where possible, a roadmap for future improvements.
 
-4. Publishing and Distribution: Once approved, VPATs are made available upon request for customers, partners, and other stakeholders.
+4. **Publishing and Distribution**: Once approved, VPATs are made available upon request for customers, partners, and other stakeholders.
 
 Accessibility standards and regulations evolve, and our products and services continue to improve. VPATs will be reviewed and updated on a regular basis, at minimum annually, to reflect the current state of our accessibility compliance.
 
