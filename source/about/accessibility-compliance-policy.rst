@@ -42,7 +42,7 @@ Roles and responsibilities
 
 * **Product Accessibility Team**: Conducts assessments, documents accessibility features, and prepares VPATs.
 * **Legal and Compliance Team**: Reviews VPATs to ensure legal requirements are met and accessibility claims are accurate.
-* Customer Support Team: Handles requests for VPATs and assists customers with accessibility questions.
+* **Customer Support Team**: Handles requests for VPATs and assists customers with accessibility questions.
 
 Customer and partner requests
 -----------------------------
