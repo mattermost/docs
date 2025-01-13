@@ -15,7 +15,7 @@ At Mattermost, we strive to create a fair environment for everyone. We work cont
 * `EN 301 549 <https://www.etsi.org/human-factors-accessibility/en-301-549-v3-the-harmonized-european-standard-for-ict-accessibility>`_ (EU)
 * `Accessibility for Ontarians with Disabilities Act <https://www.ontario.ca/laws/statute/05a11>`_ (AODA) (Canada)
 
-We leverage expert accessibility partners, such as Level Access, to achieve and sustain conformance to accessibility standards. Their digital accessibility platform is used to evaluate our digital properties in accordance with best practices and is supported by a diverse team of accessibility professionals, including users with disabilities.
+We leverage expert accessibility partners, such as `Level Access <https://www.levelaccess.com/>`_, to achieve and sustain conformance to accessibility standards. Their digital accessibility platform is used to evaluate our digital properties in accordance with best practices and is supported by a diverse team of accessibility professionals, including users with disabilities.
 
 To provide feedback about Mattermost’s accessibility, contact us at `accessibility@mattermost.com <mailto:accessibility@mattermost.com>`_.
 
