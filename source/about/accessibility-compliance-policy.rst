@@ -29,7 +29,7 @@ VPAT creation process
 
 1. **Initial Assessment**: Each product is reviewed for accessibility compliance based on the relevant standards. This assessment is conducted by trained accessibility personnel or certified third-party auditors.
 
-2. VPAT Documentation: A VPAT is created based on the findings from the initial assessment. This document details each accessibility criterion and the level of conformance achieved, along with explanations for any known gaps or alternative solutions.
+2. **VPAT Documentation**: A VPAT is created based on the findings from the initial assessment. This document details each accessibility criterion and the level of conformance achieved, along with explanations for any known gaps or alternative solutions.
 
 3. Review and Approval: VPATs are reviewed by our accessibility compliance team to ensure accuracy, completeness, and consistency. Any areas not in full compliance are documented with explanations and, where possible, a roadmap for future improvements.
 
