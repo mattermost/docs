@@ -8,12 +8,7 @@ This policy outlines our commitment to accessibility through the Voluntary Produ
 Policy and commitment
 ---------------------
 
-At Mattermost, we strive to create a fair environment for everyone. We work continuously to ensure our digital products are accessible for all and are committed to following the W3C Web Content Accessibility 2.1 Guidelines and other applicable web accessibility laws including:
-
-* `Section 508 of the Rehabilitation Act <https://www.access-board.gov/ict/>`_ (US)
-* `WCAG 2.1 <https://www.w3.org/TR/WCAG21/>`_ Level AA (W3C)
-* `EN 301 549 <https://www.etsi.org/human-factors-accessibility/en-301-549-v3-the-harmonized-european-standard-for-ict-accessibility>`_ (EU)
-* `Accessibility for Ontarians with Disabilities Act <https://www.ontario.ca/laws/statute/05a11>`_ (AODA) (Canada)
+At Mattermost, we strive to create a fair environment for everyone. We work continuously to ensure our digital products are accessible for all and are committed to following the W3C Web Content Accessibility 2.1 Guidelines and other applicable web accessibility laws including `WCAG 2.1 <https://www.w3.org/TR/WCAG21/>`_ Level AA (W3C).
 
 We leverage expert accessibility partners, such as Level Access, to achieve and sustain conformance to accessibility standards. Their digital accessibility platform is used to evaluate our digital properties in accordance with best practices and is supported by a diverse team of accessibility professionals, including users with disabilities.
 
