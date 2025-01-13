@@ -27,7 +27,7 @@ This policy applies to all products offered by Mattermost, including web applica
 VPAT creation process
 ---------------------
 
-1. Initial Assessment: Each product is reviewed for accessibility compliance based on the relevant standards. This assessment is conducted by trained accessibility personnel or certified third-party auditors.
+1. **Initial Assessment**: Each product is reviewed for accessibility compliance based on the relevant standards. This assessment is conducted by trained accessibility personnel or certified third-party auditors.
 
 2. VPAT Documentation: A VPAT is created based on the findings from the initial assessment. This document details each accessibility criterion and the level of conformance achieved, along with explanations for any known gaps or alternative solutions.
 
