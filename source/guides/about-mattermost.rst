@@ -1,10 +1,10 @@
 :orphan:
 :nosearch:
 
+.. This is NOT the page to update. Go to /overview/index.rst
+
 About Mattermost
 ================
-
-.. This page is intentionally not accessible via the LHS navigation pane.
 
 Mattermost is an open source platform for secure communication, collaboration, and orchestration of work across tools and teams. 
 
@@ -25,6 +25,7 @@ Mattermost’s mission is to make the world safer and more productive by develop
    /about/cloud-subscriptions.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
+   /about/accessibility-compliance-policy.rst
    /about/frequently-asked-questions.rst
 
 This section provides an overview of Mattermost products, features, security, integrations, licensing, subscriptions, releases, authentication, and compliance support.
@@ -39,4 +40,5 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Cloud subscriptions </about/cloud-subscriptions>` - Learn about Mattermost Cloud subscriptions.
 * :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
+* :doc:`Accessibility compliance policy </about/accessibility-compliance-policy>` - Learn about Mattermost's commitment to accessibility.
 * :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
