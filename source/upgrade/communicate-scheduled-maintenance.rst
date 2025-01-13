@@ -13,6 +13,9 @@ Communication strategy
 
 A well-defined communication strategy is essential for informing users before, during, and after maintenance. The key components of this strategy are:
 
+- Define a clear maintenance window in which the self-hosted Mattermost server will be unavailable.
+
+    - Mattermost Cloud deployments have predefined service windows scheduled from 8:00-10:00 UTC on Saturdays only (when applicable) unless an exception has been made and communicated to impacted customers.
 - `Email notifications <#email-templates>`__: Send structured and consistent emails to users at intervals of 7 days, 3 days, and 1 day before the scheduled maintenance window.
 - `Channel-based reminders <#channel-reminder-templates>`__: :doc:`Send messages </collaborate/send-messages>` similar to the emails in relevant Mattermost channels at the same intervals as the email notifications.
 - `Mattermost Banner notification <#banner-notification>`__: Set a :doc:`system-wide notification </manage/system-wide-notifications>` to display at the top of the Mattermost instance ahead of the maintenance window and outage.
@@ -149,6 +152,10 @@ Configure the load balancer to display a notification message during the schedul
 
   - For AWS, navigate to the Load Balancer configurations in the EC2 console.
   - For HAProxy, edit the ``haproxy.cfg`` file.
+
+.. important::
+
+    We strongly recommend adding headers, where needed in your infrastructure, to avoid outdated information being communicated to your users during and following server maintenance.
 
 See the sample message HTML below to use as a starting point:
 
