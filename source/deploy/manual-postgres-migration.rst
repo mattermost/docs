@@ -295,7 +295,7 @@ Use the ``mmctl config migrate`` command to :ref:`migrate your config <manage/mm
 
 .. code-block:: sh
 
-  mmctl config migrate "DB_USER:DB_PASS@tcp(DB_HOST:3306)/DB_NAME?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s&multiStatements=true" /opt/mattermost/config/config.json --local
+  mmctl config migrate "<DB_USER>:<DB_PASS>@tcp(<DB_HOST>:3306)/<DB_NAME>?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s&multiStatements=true" /opt/mattermost/config/config.json --local
 
 Where ``<DB_USER>``, ``<DB_PASS>``, ``<DB_HOST>``, and ``<DB_NAME>`` are replaced with your environment values. Ensure you use ``--local`` when running this command. The first parameters (``<DB_USER>``, ``<DB_PASS>``) is the database the configuration is stored in, the second parameter (``<DB_HOST>``, ``<DB_NAME>``) is the file we are saving the configuration to. 
 
