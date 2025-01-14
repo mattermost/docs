@@ -13,6 +13,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - **10.3.2, released **
   - Mattermost v10.3.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
+  - Fixed an issue with the webhook attachment button style [MM-62400](https://mattermost.atlassian.net/browse/MM-62400).
   - Mattermost v10.3.2 contains no database or functional changes.
 - **10.3.1, released 2024-12-16**
   - Fixed an issue where user statuses weren't synced properly between servers [MM-61438](https://mattermost.atlassian.net/browse/MM-61438).
