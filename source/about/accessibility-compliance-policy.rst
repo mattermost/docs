@@ -44,4 +44,4 @@ Customer and partner requests
 
 Customers and partners may request access to specific VPATs or additional accessibility information. The organization is committed to providing accurate and timely responses and will work to accommodate requests.
 
-To request a VPAT document, contact us at `legal@mattermost.com <mailto:legal@mattermost.com>`_.
+To request a VPAT document, contact us at `accessibility@mattermost.com <mailto:accessibility@mattermost.com>`_.
