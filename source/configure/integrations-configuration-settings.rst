@@ -4,12 +4,19 @@ Integrations configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Integrations**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
+Review and manage the following integration configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Integrations**:
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__
 - `GIF <#gif>`__
 - `CORS <#cors>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``EnableIncomingWebhooks`` value is under ``ServiceSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.EnableIncomingWebhooks'``
+  - When working with the ``config.json`` file manually, look for an object such as ``ServiceSettings``, then within that object, find the key ``EnableIncomingWebhooks``.
 
 ----
 

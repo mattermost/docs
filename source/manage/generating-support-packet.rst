@@ -20,6 +20,7 @@ A Mattermost Support Packet can contain the following files:
 - ``plugins.json``
 - ``sanitized_config.json``
 - ``support_packet.yaml``
+- ``diagnostics.yaml`` (core plugin diagnostics data)
 - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
 - ``warning.txt`` (present when issues are encountered during packet generation)
 
@@ -28,6 +29,7 @@ A Mattermost Support Packet can contain the following files:
    - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file.
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
+   - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
 
 Generate
 ---------
@@ -61,9 +63,11 @@ Generate
 Santitize confidential data
 ---------------------------
 
-When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. Plugins are not sanitized during packet generation.
+When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
 
-Ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+.. important::
+
+   Plugins are not sanitized during packet generation. Ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
 Share the packet with Mattermost
 --------------------------------

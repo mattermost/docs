@@ -23,6 +23,7 @@ Using Mattermost in a web browser or the desktop app, you can customize your sid
 - `Sort channels in each category <#sort-channels-in-categories>`__ manually, alphabetically, or by recent activity
 - `Filter your sidebar to view unread channels only <#group-unread-channels-separately>`__, or choose to group unread messages into an **Unreads** category
 - `Manage your direct messages <#manage-direct-messages>`__ by sorting them alphabetically or by recent activity, and by setting how many to display in your sidebar
+- `Make channel categories work for you <#make-categories-work-for-you>`__ by prefixing category names with emojis, by collapsing and expanding categories, by reordering categories, and by adding direct message conversations to categories.
 
 .. image:: ../images/channel_sidebar_updates.gif
    :alt: Organize your channel sidebar with channel categories.
@@ -38,30 +39,14 @@ Next, type a category name, select **Create**, then drag any channels or direct 
 
 Your custom categories can't be shared with other Mattermost users.
 
-Make categories work for you
-----------------------------
-
-**Categories are collapsible**
-
-- When collapsed, only unread channels display to reduce unnecessary scrolling.
-- When expanded, all channels in the category display, including channels with unread messages.
-
-**You can reorder categories**
-
-- Drag to reorder entire categories to prioritize important conversations. 
-
-**Categories can contain direct message conversations**
-
-- Select and drag direct messages into any category. You can also multi-select direct messages to drag them together as a group.
-
 Rename categories
-~~~~~~~~~~~~~~~~~
+------------------
 
 1. Select the **Category options** icon in the sidebar, then select **Rename Category**.
 2. Type a new category name, then select **Rename**.
 
 Delete categories
-~~~~~~~~~~~~~~~~~
+------------------
 
 1. Select the **Category options** icon in the sidebar, then select **Delete Category**.
 2. Select **Delete** to confirm or select **X** to cancel.
@@ -71,7 +56,7 @@ All channels and direct message conversations in the deleted category move back 
 Organize channels in categories
 -------------------------------
 
-Once you've created categories, you can move channels around to organize your sidebar.
+Once you've created categories, you can move channels around to organize your sidebar by dragging and dropping, or by moving.
 
 Drag and drop selections
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -175,3 +160,33 @@ Choose to show **10**, **15**, **20**, or **40** messages. Once you exceed the n
 
 .. note::
   Direct message conversations that you add to custom categories don't count against the maximum number of conversations shown in the **Direct Messages** category.
+
+Make categories work for you
+----------------------------
+
+Prefix channel category names with emojis
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Channel category names can include emojis. Specify the emoji by its name in the format ``:smile:``. We recommend prefixing channel category names with emojis for the following reasons:
+
+- Emojis can make it easier for users to quickly identify and manage channels and channel categories, particularly in large workspaces with many channels.
+- Sharing the same emoji across channels and categories related to a specific category or function helps maintain organization and consistency across the workspace.
+- Making channel categories more visually distinct with emojis helps users find what they need more quickly and easily at a glance, reducing the time spent searching for the right place to take action.
+- New users can quickly understand the purpose of various channels and channel categories based on their emoji prefixes without needing extensive explanations. 
+- As users grasp channel structure through emojis, the time and effort needed to train new members on navigating the workspace is reduced.
+- A well-organized and visually appealing workspace can encourage users to participate more actively, which can lead to more effective communication and collaboration.
+
+Categories are collapsible
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+When you collapse a channel category, only unread channels display to reduce unnecessary scrolling. When you expand a channel category, all channels in the category display, including channels with unread messages.
+
+Reorder categories
+~~~~~~~~~~~~~~~~~~
+
+Drag to reorder entire categories to prioritize important conversations. 
+
+Categories can contain direct message conversations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Select and drag direct messages into any category. You can also multi-select direct messages to drag them together as a group.

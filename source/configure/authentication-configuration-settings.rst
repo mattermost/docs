@@ -4,14 +4,14 @@ Authentication configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost supports up to four distinct, concurrent methods of **Authentication**:
+Mattermost supports up to 4 distinct, concurrent methods of user authentication:
 
 - An OpenID provider
 - A SAML provider
 - An LDAP instance (e.g., Active Directory, OpenLDAP)
 - Email and Password
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Authentication**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
+Review and manage the following authentication configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Authentication**:
 
 - `Signup <#signup>`__
 - `Email <#email>`__
@@ -22,6 +22,13 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `OAuth 2.0 <#oauth-2-0>`__
 - `OpenID Connect <#openid-connect>`__
 - `Guest Access <#guest-access>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``EnableUserCreation`` value is under ``TeamSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.TeamSettings.EnableUserCreation'``
+  - When working with the ``config.json`` file manually, look for an object such as ``TeamSettings``, then within that object, find the key ``EnableUserCreation``.
 
 ----
 

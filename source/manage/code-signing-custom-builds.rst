@@ -25,7 +25,7 @@ Prerequisites
 
 .. tab:: Mac
 
-   1. **Developer ID Application Certificate**: Obtain from Apple. It requires an `Apple Developer account <https://developer.apple.com/account/>`_.
+   1. **Developer ID Application Certificate**: Obtain from Apple. It requires an Apple Developer account.
    2. **Xcode**: Ensure `Xcode <https://developer.apple.com/xcode/>`_ is installed.
 
 Process

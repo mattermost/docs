@@ -1,7 +1,10 @@
 Experimental configuration settings
 =====================================
 
-Both self-hosted and Cloud admins can access the following configuration settings in the System Console. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Review and manage the following experimental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
@@ -9,15 +12,17 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, one ``LoginButtonColor`` value is under ``LdapSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.LdapSettings.LoginButtonColor'``
+  - When working with the ``config.json`` file manually, look for an object such as ``LdapSettings``, then within that object, find the key ``LoginButtonColor``.
+
 ----
 
 Experimental System Console configuration settings
 --------------------------------------------------
-
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following experimental configuration settings in the System Console by going to **Experimental > Features**.
 
 .. config:setting:: exp-ldaploginbuttoncolor
   :displayname: AD/LDAP login button color (Experimental)
@@ -988,7 +993,7 @@ Output log and audit records to any combination of console, local file, syslog, 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.

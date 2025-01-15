@@ -13,15 +13,17 @@ A channel’s permissions and access continues to be governed by each server sep
 Set up connected workspaces
 ---------------------------
 
-The process of connecting Mattermost workspaces involves the following 4 steps:
+The process of connecting Mattermost workspaces involves the following 5 steps:
 
-1. Each system admin of a Mattermost instance who wants to connect to another Mattermost workspaces must `enable the connected workflows functionality <#enable-connected-workflows>`__.
+1. Ensure that all Mattermost Enterprise servers are running v10.2 or later.
 
-2. Using the System Console or slash commands, system admins `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
+2. `Enable the connected workflows functionality <#enable-connected-workflows>`__ for each Mattermost Enterprise instance you want to connect.
 
-3. Using the System Console or slash commands, a remote system admin receives the invitation and `accepts the invitation <#accept-a-secure-connection-invitation>`__.
+3. System admins must `create a secure and trusted connection <#create-a-secure-connection>`__ with other Mattermost Enterprise instances using the System Console or slash commands. This process involves creating a password-protected, encrypted invitation, creating a strong decryption password, then sending the invitation and password to the system admin of a remote Mattermost instance.
 
-4. Once a trusted relationship is established between 2 Mattermost servers, system admins can `share specific public or private channels <#share-channels-with-secure-connections>`__ with secure connections.
+4. When a remote system admin receives the invitation, they must `accept the invitation <#accept-a-secure-connection-invitation>`__ using the System Console or slash commands.
+
+5. Once a trusted relationship is established between 2 Mattermost servers, system admins can `share specific public or private channels <#share-channels-with-secure-connections>`__ with secure connections.
 
 .. note:: 
 

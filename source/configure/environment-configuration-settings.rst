@@ -4,14 +4,29 @@ Environment configuration settings
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. tip:: 
+Review and manage the following environmental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Environment**:
 
-  Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
+- `Web server <#web-server>`__
+- `Database <#database>`__
+- `Elasticsearch <#elasticsearch>`__
+- `File storage <#file-storage>`__
+- `Image proxy <#image-proxy>`__
+- `SMTP <#smtp>`__
+- `Push notification server <#push-notification-server>`__
+- `High availaiblity <#high-availability>`__ cluster-based settings
+- `Rate limiting <#rate-limiting>`__
+- `Logging <#logging>`__
+- `Session lengths <#session-lengths>`__
+- `Performance monitoring <#performance-monitoring>`__
+- `Developer <#developer>`__ settings
+- `config.json-only settings <#config-json-only-settings>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteURL`` value is under ``ServiceSettings``.
 
   - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
-  - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
-
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Environment**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+  - When working with the ``config.json`` file manually, look for an object such as ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
 Web server
 ----------
@@ -2561,7 +2576,7 @@ Enable Amazon S3 debugging
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
-| debugging information in system logs                          | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
+| debugging information in system logs.                         | - ``config.json`` setting: ``".FileSettings.AmazonS3Trace: false",``     |
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3TRACE``                |
 | - **true**: Log additional debugging information is logged    |                                                                          |
 |   to the system logs.                                         |                                                                          |
@@ -2571,6 +2586,51 @@ Enable Amazon S3 debugging
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. config:setting:: file-amazons3storageclass
+  :displayname: Amazon S3 storage class (File Storage)
+  :systemconsole: Environment > File Storage
+  :configjson: .FileSettings.AmazonS3StorageClass
+  :environment: MM_FILESETTINGS_AMAZONS3STORAGECLASS
+  :description: The storage class to use for uploads to S3-compatible storage solutions. Default is an empty string ``""``.
+
+Amazon S3 storage class
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Some Amazon S3-compatible storage solutions require the storage class parameter to be present in upload requests, otherwise they will be rejected. Configure this storage class as the storage class required by your S3-compatible solution.
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| The storage class to use for uploads to S3-compatible         | - System Config path: **Environment > File Storage**                     |
+| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.AmazonS3StorageClass: ""``,   |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3STORAGECLASS``         |
+| String input. Default is an empty string ``""``.              |                                                                          |
+| Select **Test Connection** to test the configured connection. |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  Most Amazon S3-compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided. See the `Amazon S3 storage class <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass>`_ documentation for details about supported storage classes.
+
+.. config:setting:: file-exportamazons3storageclass
+  :displayname: Export Amazon S3 storage class (File Storage)
+  :systemconsole: N/a
+  :configjson: .FileSettings.ExportAmazonS3StorageClass
+  :environment: MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS
+  :description: The storage class to use for exports to S3-compatible storage solutions. Default value is an empty string ``""``.
+
+Export Amazon S3 storage class
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+| The storage class to use for exports to S3-compatible         | - System Config path: N/A                                                       |
+| storage solutions.                                            | - ``config.json`` setting: ``.FileSettings.ExportAmazonS3StorageClass: "",``    |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3STORAGECLASS``          |
+| String input. Default is an empty string ``""``.              |                                                                                 | 
++---------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+.. note::
+
+  Most Amazon S3-compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided. See the `Amazon S3 storage class <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass>`_ documentation for details about supported storage classes.
 
 .. config:setting:: file-amazons3requesttimeoutmilliseconds
   :displayname: Amazon S3 request timeout (File Storage)
@@ -2628,6 +2688,23 @@ Amazon S3 exported upload part size
 | **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
+.. config:setting:: file-amazons3requesttimeoutmilliseconds
+  :displayname: Amazon S3 request timeout (File Storage)
+  :systemconsole: N/A
+  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
+  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
+  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
+
+Amazon S3 request timeout 
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
+| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
+|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
+| Default is 30000 (30 seconds).                                |                                                                                         |
++---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
 .. config:setting:: file-initialfont
   :displayname: Initial font (File Storage)
   :systemconsole: N/A
@@ -2649,23 +2726,6 @@ Initial font
 | A string with the font file name. Default is                  |                                                                                |
 | **nunito-bold.ttf**.                                          |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-
-.. config:setting:: file-amazons3requesttimeoutmilliseconds
-  :displayname: Amazon S3 request timeout (File Storage)
-  :systemconsole: N/A
-  :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
-  :environment: MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS
-  :description: Amount of time, in milliseconds, before requests to Amazon S3 time out. Default value is 30000 (30 seconds).
-
-Amazon S3 request timeout 
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| The amount of time, in milliseconds, before requests to       | - System Config path: N/A                                                               |
-| Amazon S3 storage time out.                                   | - ``config.json`` setting: ``".FileSettings.AmazonS3RequestTimeoutMilliseconds: 30000`` |
-|                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3REQUESTTIMEOUTMILLISECONDS``          |
-| Default is 30000 (30 seconds).                                |                                                                                         |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ----
 
@@ -4190,3 +4250,109 @@ This setting isn't available in the System Console and can only be enabled in ``
   * **Disable Context Menu**: Turns off the context menu attached to the BrowserViews. This option is good as a library santity check.
   * **Force Legacy Messaging API**: Forces the app to revert back to the old messaging API instead of the newer contextBridge API. This option is a good santity check to confirm whether the new API is responsible for holding onto memory.
   * **Force New Messaging API**: Forces the app to use the contextBridge API and completely disables the legacy one. This option forces off listeners for the legacy API.
+
+Redis cache backend
+~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-selfhosted.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
+
+Using Redis as a caching solution can help ensure that Mattermost for enterprise-level deployments with high concurrency and large user bases remains performant and efficient, even under heavy usage.
+
+Configure a Redis cache by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+
+.. config:setting:: redis-cache-type
+  :displayname: Define cache type (CacheSettings)
+  :systemconsole: N/A
+  :configjson: CacheType
+  :environment: MM_CACHESETTINGS_CACHETYPE
+
+  - **lru**: **(Default)** Mattermost uses the in-memory cache store.
+  - **redis**: Mattermost uses the configured Redis cache store.
+
+Cache type
+^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| Define the cache type.                        | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``CacheType,`` > ``lru``   |
+| - **lru**: **(Default)** Mattermost uses the  | - Environment variable: ``MM_CACHESETTINGS_CACHETYPE``                    |
+|   in-memory cache store.                      |                                                                           |
+| - **redis**: Mattermost uses the configured   |                                                                           |
+|   Redis cache store.                          |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-address
+  :displayname: Hostname of the Redis host (CacheSettings)
+  :systemconsole: N/A
+  :configjson: RedisAddress
+  :environment: MM_CACHESETTINGS_REDISADDRESS
+  :description: Specify the hostname of the Redis host.
+
+Redis address
+^^^^^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| The hostname of the Redis host.               | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisAddress,``          |
+| String input.                                 | - Environment variable: ``MM_CACHESETTINGS_REDISADDRESS``                 |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-password
+  :displayname: Password of the Redis host (CacheSettings)
+  :systemconsole: N/A
+  :configjson: RedisPassword
+  :environment: MM_CACHESETTINGS_REDISPASSWORD
+  :description: Specify the password of the Redis host.
+
+Redis password
+^^^^^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| The password of the Redis host.               | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisPassword,``         |
+| String input. Leave blank if there is no      | - Environment variable: ``MM_CACHESETTINGS_REDISPASSWORD``                |
+| password.                                     |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-database
+  :displayname: Database of the Redis host (CacheSettings)
+  :systemconsole: N/A
+  :configjson: RedisDB
+  :environment: MM_CACHESETTINGS_REDISDB
+  :description: Specify the databse of the Redis host. Zero-indexed number up to 15. Typically set to 0. Redis allows a maximum of 16 databases.
+
+Redis database
+^^^^^^^^^^^^^^
+
++-----------------------------------------------+---------------------------------------------------------------------------+
+| The database of the Redis host.               | - System Config path: **N/A**                                             |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisDB,``               |
+| Zero-indexed number up to 15. Typically set   | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                      |
+| to ``0``. Redis allows a maximum of 16        |                                                                           |
+| databases.                                    |                                                                           |
++-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: redis-cache-type
+  :displayname: Define the cache type (CacheSettings)
+  :systemconsole: N/A
+  :configjson: CacheType
+  :environment: MM_CACHESETTINGS_CACHETYPE
+
+  - **true**: Client-side cache of Redis is disabled. Typically used as a test option, and not in production environments.
+  - **false**: **(Default)** Client-side cache of Redis is enabled.
+
+Disable client cache
+^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+| Disables the client-side cache of Redis.      | - System Config path: **N/A**                                                        |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``DisableClientCache,`` > ``false``   |
+| - **true**: Client-side cache of Redis is     | - Environment variable: ``MM_CACHESETTINGS_REDISDB``                                 |
+|   disabled. Typically used as a test option,  |                                                                                      |
+|   and not in production environments.         |                                                                                      |
+| - **false**: **(Default)** Client-side cache  |                                                                                      |
+|   of Redis is enabled.                        |                                                                                      |
++-----------------------------------------------+--------------------------------------------------------------------------------------+

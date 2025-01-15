@@ -4,7 +4,29 @@ Plugins configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Self-hosted can manage the following configuration settings in **System Console > Plugins** or by editing the ``config.json`` file as described in the following tables. 
+Review and manage the following plugin configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Plugins**:
+
+- `Plugin management <#plugin-management>`__
+- `Calls <#calls>`__
+- `GitLab <#gitlab>`__
+- `GitHub <#github>`__
+- `Jira <#jira>`__
+- `Legal Hold <#legal-hold>`__
+- `Microsoft Calendar <#microsoft-calendar>`__
+- `MS Teams <#ms-teams>`__
+- `Performance metrics <#performance-metrics>`__
+- `Collaborative playbooks <#collaborative-playbooks>`__
+- `User satisfaction surveys <#user-satisfaction-surveys>`__
+- `ServiceNow <#servicenow>`__
+- `Zoom <#zoom>`__
+- `config.json-only settings <#config-json-only-settings>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``Enable`` value is under ``PluginSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.PluginSettings.Enable'``
+  - When working with the ``config.json`` file manually, look for an object such as ``PluginSettings``, then within that object, find the key ``Enable``.
 
 ----
 

@@ -10,7 +10,8 @@ This page describes the Mattermost reference architecture designed for the load 
 - **Database Configuration**: writer, multiple readers
 
 .. note::
-    Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+  - Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+  - From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Using Redis can help ensure that Mattermost remains performant and efficient, even under heavy usage. See the :ref:`Redis cache backend <configure/environment-configuration-settings:redis cache backend>` configuration settings documentation for details.
 
 Requirements
 ------------

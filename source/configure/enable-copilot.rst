@@ -65,7 +65,7 @@ With extensive customization and extensibility options, you can tailor Copilot t
 
 Configure an LLM for your Copilot integration by going to **System Console > Plugins > Copilot** and selecting **Add an AI Bot**. Mattermost supports the following LLMs:
 
-- `OpenAI <https://openai.com/index/openai-api/>`_
+- `OpenAI <https://openai.com/api/>`_
 - `Anthropic (Claude) <https://console.anthropic.com/settings/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
 - `OpenAI-compatible (e.g., LocalAI) <https://github.com/go-skynet/LocalAI>`_

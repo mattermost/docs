@@ -6,7 +6,7 @@ Optimize your Mattermost workspace
 
 With workspace optimizations, system admins can review their workspace health and growth scores, then take advantage of recommended actions for ensuring their workspace is running smoothly and teams are maximizing productivity.
 
-System admins can access their workspace optimization page in the System Console by going to **Reporting > Workspace Optimization**.
+System admins can access their workspace optimization page in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and going to **Reporting > Workspace Optimization**.
 
 .. image:: ../images/workspace-optimization.png
   :alt: Review your workspace health and growth scores, then take advantage of recommended optimizations.

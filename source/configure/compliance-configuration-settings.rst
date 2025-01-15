@@ -4,12 +4,19 @@ Compliance configuration settings
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Compliance**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+Review and manage the following compliance configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Compliance**:
 
 - `Data Retention Policies <#data-retention-policies>`__
 - `Compliance Export <#compliance-export>`__
 - `Compliance Monitoring <#compliance-monitoring>`__
 - `Custom Terms of Service <#custom-terms-of-service>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``MessageRetentionDays`` value is under ``DataRetentionSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.DataRetentionSettings.MessageRetentionDays'``
+  - When working with the ``config.json`` file manually, look for an object such as ``DataRetentionSettings``, then within that object, find the key ``MessageRetentionDays``.
 
 ----
 
