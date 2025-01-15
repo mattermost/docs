@@ -35,8 +35,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 6s devices and later with iOS 13.4+ are required.
 
-### Improvements
- - Improve number field validation on Interactive Dialogs
+### Bug Fixes
+ - Fixed an issue with the number field validation on interactive dialogs.
+ - Fixed an issue with interactive dialogs not showing all the elements.
 
 (release-v2-23-0)=
 ## 2.23.0 Release
