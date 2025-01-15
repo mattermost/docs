@@ -10,7 +10,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **9.11.7, released **
+- **9.11.7, released 2025-01-15**
   - Mattermost v9.11.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue with the web app status not being updated correctly for the current user [MM-59952](https://mattermost.atlassian.net/browse/MM-59952).
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
