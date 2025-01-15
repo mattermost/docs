@@ -4,7 +4,7 @@ Manage channel bookmarks
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can bookmark up to 50 links or files to the top of channels for quick and easy access, unless your system admin has disabled your ability to do so. Bookmarked links and files display in the bookmarks bar located directly below the channel header.
+From Mattermost v10.1, you can bookmark up to 50 links or files to the top of channels for quick and easy access, unless your system admin has disabled your ability to do so. Bookmarked links and files display in the bookmarks bar located directly below the channel header.
 
 .. tip::
 
