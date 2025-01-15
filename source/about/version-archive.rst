@@ -21,7 +21,7 @@ Version archive
     - GPG Signature: https://releases.mattermost.com/10.2.2/mattermost-10.2.2-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.1.7 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.7/mattermost-10.1.7-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.7/mattermost-10.1.7-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``775820409a4ca9542bc99661daeeb9be870a6bb05ee5a84cb652cccec4fa2c5b``
+    - SHA-256 Checksum: ``6a7bfe7370f319d4f3a1a5aa27463af5e9b7851eca5ce7d285a3125a8b91c28d``
     - GPG Signature: https://releases.mattermost.com/10.1.7/mattermost-10.1.7-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.0.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz``
@@ -405,7 +405,7 @@ Version archive
     - GPG Signature: https://releases.mattermost.com/10.2.2/mattermost-team-10.2.2-linux-amd64.tar.gz.sig
   Mattermost Team Edition v10.1.7 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-1-feature-release>`__ - `Download <https://releases.mattermost.com/10.1.7/mattermost-team-10.1.7-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.1.7/mattermost-team-10.1.7-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``ffd8e250b2cd9adf50a3d129a4e50539de4bf9208a2dfb05ee34018edd8a7669``
+    - SHA-256 Checksum: ``baf2f1ec86448938d1ed2879cb19e5034259090cd8282d5bebdb6d495de33a06``
     - GPG Signature: https://releases.mattermost.com/10.1.7/mattermost-team-10.1.7-linux-amd64.tar.gz.sig
   Mattermost Team Edition v10.0.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-0-major-release>`__ - `Download <https://releases.mattermost.com/10.0.4/mattermost-team-10.0.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.0.4/mattermost-team-10.0.4-linux-amd64.tar.gz``
