@@ -4,7 +4,7 @@ Reporting configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-View statistics for your overall deployment and specific teams as well as access server logs by going to **System Console > Reporting**. The following reporting configuration settings are available:
+View the following statistics for your overall deployment and specific teams, as well as access server logs, in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Reporting**:
 
 - `Site statistics <#site-statistics>`__
 - `Team statistics <#team-statistics>`__

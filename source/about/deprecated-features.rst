@@ -20,6 +20,11 @@ Mattermost Server v10.5.0
 Removed features by Mattermost version
 ----------------------------------------
 
+Mattermost Server v10.4.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The ability to import Slack themes as Mattermost themes is no longer supported.
+
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 

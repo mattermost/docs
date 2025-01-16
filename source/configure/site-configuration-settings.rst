@@ -4,7 +4,7 @@ Site configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Site Configuration**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
+Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
@@ -16,7 +16,14 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `File Sharing and Downloads <#file-sharing-and-downloads>`__
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
-- `Connected Workspaces <#connected-workspaces>`__
+- `Connected Workspaces (Beta) <#connected-workspaces-beta>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteName`` value is under ``TeamSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.TeamSettings.SiteName'``
+  - When working with the ``config.json`` file manually, look for an object such as ``TeamSettings``, then within that object, find the key ``SiteName``.
 
 ----
 
@@ -331,13 +338,6 @@ iOS app download link
 | String input. Default is ``https://about.mattermost.com/mattermost-ios-app/``.                                                                                                                                        |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Customization)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
 .. config:setting:: custom-enabledesktoplandingpage
   :displayname: Enable desktop app landing page (Customization)
   :systemconsole: Site Configuration > Customization
@@ -356,6 +356,13 @@ Enable desktop app landing page
 | - **false**: Doesn't prompt users to use the desktop app.       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
 |                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-appcustomurlschemes
+  :displayname: App custom URL schemes (Customization)
+  :systemconsole: N/A
+  :configjson: .NativeAppSettings.AppCustomURLSchemes
+  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
+  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
 
 App custom URL schemes
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -412,7 +419,7 @@ Access the following configuration settings in the System Console by going to **
   :environment: MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE
   :description: The default language for system messages and logs. Default value is **en**.
 
-
+Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -479,6 +486,36 @@ Available languages
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: localization-enable-wip-locales
+  :displayname: Enable experimental locales (Localization)
+  :systemconsole: Site Configuration > Localization
+  :configjson: EnableExperimentalLocales
+  :environment: MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES
+  :description: nable work in progress languages in Mattermost to review translations and identify translation gaps.
+
+  - **true**: Work in progress languages are available in Mattermost in addition to officially supported languages.
+  - **false**: **(Default)** Only officially supported languages are available in Mattermost.
+
+Enable experimental locales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable work in progress languages in Mattermost to review translations and identify translation gaps.
+
++--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| - **true**: Work in progress languages are available   | - System Config path: **Site Configuration > Localization**                                      |
+|   in Mattermost in addition to officially supported    | - ``config.json`` setting: ``LocalizationSettings`` > ``EnableExperimentalLocales`` > ``false``  |
+|   languages.                                           | - Environment variable: ``MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES``                     |
+| - **false**: **(Default)** Only officially supported   |                                                                                                  |
+|   languages are available in Mattermost.               |                                                                                                  |
++--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - Cloud system admins can request this configuration setting to be enabled for their instance by contacting their Mattermost Account Manager.
+  - Work in progress languages may be incomplete. Strings missing translations display in US English.
+  - Currently, only web and desktop app product strings are impacted by this configuration setting. Server and mobile product strings aren't impacted by this setting.
+  - See the :ref:`language <preferences/manage-your-display-options:language>` documentation for details on selecting a language preference in Mattermost.
 
 ----
 
@@ -633,7 +670,6 @@ Lock teammate name display for all users
 |                                                                                                               | - ``config.json`` setting: ``TeamSettings`` > ``LockTeammateNameDisplay`` > ``false`` |
 | - **true**: Users **cannot** change the Teammate Name Display.                                                | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``                   |
 | - **false**: **(Default)** Users can change the Teammate Name Display setting.                                |                                                                                       |
-|                                                                                                               |                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: users-viewarchivedchannels
@@ -1802,6 +1838,7 @@ Connected workspaces (Beta)
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
+
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
 .. config:setting:: enable-connected-workspaces
@@ -1814,8 +1851,11 @@ When connected workspaces are enabled, system admins can :doc:`create and manage
 Enable connected workspaces (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel. 
-Both configuration settings are disabled by default and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
+Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel.
+
+Connected workspaces requires Mattermost Enterprise servers running v10.2 or later.
+
+By default, both configuration settings are disabled and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
 
 This feature's two ``config.json`` settings include:
 
