@@ -6,19 +6,19 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Mobile App v2.25.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- In the Mattermost Mobile App v2.25, Mattermost will stop supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
+- In the Mattermost Mobile App v2.25, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
 
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
-- Mattermost will stop providing official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
-
-Removed features by Mattermost version
-----------------------------------------
+- The Mattermost server has stopped supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
+- Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
 
 Mattermost Server v10.4.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
