@@ -16,6 +16,144 @@ Important Upgrade Notes
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+| v10.5                                              | This migration only creates new tables and indexes, so there is no impact on preexisting data. As part of the Property System Architecture feature, Mattermost   |
+|                                                    | v10.5 is going to run a set of migrations to add new tables to the schema.                                                                                       |
+|                                                    |                                                                                                                                                                  |                                               
+|                                                    | A new table ``PropertyGroups`` is going to be created.                                                                                                           |
+|                                                    |                                                                                                                                                                  |                                               
+|                                                    | A new table ``PropertyFields`` is going to be created.                                                                                                           |
+|                                                    |                                                                                                                                                                  |                                               
+|                                                    | In the case of PostgreSQL, a new enum type ``property_field_type`` is going to be created, to be used in the Type column of the PropertyFields table.            |
+|                                                    |                                                                                                                                                                  |                                               
+|                                                    | The PropertyFields table has a unique constraint that will generate an index in MySQL, and in the case of PostgreSQL, it directly uses a UNIQUE INDEX to enforce |
+|                                                    | this constraint.
+|                                                    |                                                                                                                                                                  |                                             
+|                                                    | A new table PropertyValues is going to be created.                                                                                                               |
+|                                                    |                                                                                                                                                                  |                                             
+|                                                    | The PropertyValues table has a unique constraint that will generate an index in MySQL, and in the case of PostgreSQL, it directly uses a UNIQUE INDEX to enforce |
+|                                                    | this constraint.
+|                                                    |                                                                                                                                                                  |                                             
+|                                                    | A new index idx_propertyvalues_targetid_groupid will be created for the PropertyValues table.
+|                                                    |                                                                                                                                                                  |                                              
+|                                                    | The migration is only creating new tables with no data.                                                                                                          |
+|                                                    |                                                                                                                                                                  |                                             
+|                                                    | Backwards-compatibility - Yes - a previous version of Mattermost can run with the new schema changes 
+|                                                    |                                                                                                                                                                  |
+|                                                    | No table locks or existing operations on the table are impacted by this upgrade.
+|                                                    |                                                                                                                                                                  |
+|                                                    | Zero downtime is possible when upgrading to this release.                                                                                                        |
+|                                                    |                                                                                                                                                                  |
+|                                                    | What are the SQL queries included in the schema changes?                                                                                                         |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL
+|                                                    |                                                                                                                                                                  | 
+|                                                    | CREATE TABLE IF NOT EXISTS PropertyGroups (
+|                                                    | 	ID varchar(26) PRIMARY KEY,
+|                                                    | 	Name varchar(64) NOT NULL,
+|                                                    | 	UNIQUE(Name)
+|                                                    | );
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE TABLE IF NOT EXISTS PropertyFields (
+|                                                    | 	ID varchar(26) PRIMARY KEY,
+|                                                    | 	GroupID varchar(26) NOT NULL,
+|                                                    | 	Name varchar(255) NOT NULL,
+|                                                    | 	Type enum('text', 'select', 'multiselect', 'date', 'user', 'multiuser'),                                                                                        |
+|                                                    | 	Attrs json,
+|                                                    | 	TargetID varchar(255),
+|                                                    | 	TargetType varchar(255),
+|                                                    | 	CreateAt bigint(20),
+|                                                    | 	UpdateAt bigint(20),
+|                                                    | 	DeleteAt bigint(20),
+|                                                    | 	UNIQUE(GroupID, TargetID, Name, DeleteAt)
+|                                                    | );
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE TABLE IF NOT EXISTS PropertyValues (
+|                                                    | 	ID varchar(26) PRIMARY KEY,
+|                                                    | 	TargetID varchar(255) NOT NULL,
+|                                                    | 	TargetType varchar(255) NOT NULL,
+|                                                    | 	GroupID varchar(26) NOT NULL,
+|                                                    | 	FieldID varchar(26) NOT NULL,
+|                                                    | 	Value json,
+|                                                    | 	CreateAt bigint(20),
+|                                                    | 	UpdateAt bigint(20),
+|                                                    | 	DeleteAt bigint(20),
+|                                                    | 	UNIQUE(GroupID, TargetID, FieldID, DeleteAt)
+|                                                    | );
+|                                                    |                                                                                                                                                                  |
+|                                                    | SET @preparedStatement = (SELECT IF(
+|                                                    | 	(
+|                                                    |     	SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS
+|                                                    |     	WHERE table_name = 'PropertyValues'
+|                                                    |     	AND table_schema = DATABASE()
+|                                                    |     	AND index_name = 'idx_propertyvalues_targetid_groupid'
+|                                                    | 	) > 0,
+|                                                    | 	'SELECT 1',
+|                                                    | 	'CREATE INDEX idx_propertyvalues_targetid_groupid ON PropertyValues (TargetID, GroupID);'
+|                                                    | ));
+|                                                    |                                                                                                                                                                  |
+|                                                    | PREPARE createIndexIfNotExists FROM @preparedStatement;
+|                                                    | EXECUTE createIndexIfNotExists;
+|                                                    | DEALLOCATE PREPARE createIndexIfNotExists;                                                                                                                       |
+|                                                    |                                                                                                                                                                  |
+|                                                    | PostgreSQL
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE TABLE IF NOT EXISTS PropertyGroups (
+|                                                    | 	ID varchar(26) PRIMARY KEY,
+|                                                    | 	Name varchar(64) NOT NULL,
+|                                                    | 	UNIQUE(Name)
+|                                                    | );
+|                                                    |                                                                                                                                                                  |
+|                                                    | DO                                                                                                                                                               |
+|                                                    | $$                                                                                                                                                               |
+|                                                    | BEGIN                                                                                                                                                            |
+|                                                    |   IF NOT EXISTS (SELECT * FROM pg_type typ                                                                                                                       |
+|                                                    |                         	INNER JOIN pg_namespace nsp ON nsp.oid = typ.typnamespace
+|                                                    |                     	WHERE nsp.nspname = current_schema()
+|                                                    |                         	AND typ.typname = 'property_field_type') THEN
+|                                                    | 	CREATE TYPE property_field_type AS ENUM (                                                                                                                       |
+|                                                    |     	'text',                                                                                                                                                     |
+|                                                    |     	'select',                                                                                                                                                   |
+|                                                    |     	'multiselect',                                                                                                                                              |
+|                                                    |     	'date',                                                                                                                                                     |
+|                                                    |     	'user',                                                                                                                                                     |
+|                                                    |     	'multiuser'                                                                                                                                                 |
+|                                                    | 	);                                                                                                                                                              |
+|                                                    |   END IF;                                                                                                                                                        |
+|                                                    | END;                                                                                                                                                             |
+|                                                    | $$                                                                                                                                                               |
+|                                                    | LANGUAGE plpgsql;
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE TABLE IF NOT EXISTS PropertyFields (                                                                                                                      |
+|                                                    | 	ID varchar(26) PRIMARY KEY,                                                                                                                                     |
+|                                                    | 	GroupID varchar(26) NOT NULL,                                                                                                                                   |
+|                                                    | 	Name varchar(255) NOT NULL,                                                                                                                                     |
+|                                                    | 	Type property_field_type,                                                                                                                                       |
+|                                                    | 	Attrs jsonb,                                                                                                                                                    |
+|                                                    | 	TargetID varchar(255),                                                                                                                                          |
+|                                                    | 	TargetType varchar(255),                                                                                                                                        |
+|                                                    | 	CreateAt bigint NOT NULL,                                                                                                                                       |
+|                                                    | 	UpdateAt bigint NOT NULL,                                                                                                                                       |
+|                                                    | 	DeleteAt bigint NOT NULL                                                                                                                                        |
+|                                                    | );                                                                                                                                                               |
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE UNIQUE INDEX IF NOT EXISTS idx_propertyfields_unique ON PropertyFields (GroupID, TargetID, Name) WHERE DeleteAt = 0;
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE TABLE IF NOT EXISTS PropertyValues (                                                                                                                      |
+|                                                    | 	ID varchar(26) PRIMARY KEY,                                                                                                                                     |
+|                                                    | 	TargetID varchar(255) NOT NULL,                                                                                                                                 |
+|                                                    | 	TargetType varchar(255) NOT NULL,                                                                                                                               |
+|                                                    | 	GroupID varchar(26) NOT NULL,                                                                                                                                   |
+|                                                    | 	FieldID varchar(26) NOT NULL,                                                                                                                                   |
+|                                                    | 	Value jsonb NOT NULL,                                                                                                                                           |
+|                                                    | 	CreateAt bigint NOT NULL,                                                                                                                                       |
+|                                                    | 	UpdateAt bigint NOT NULL,                                                                                                                                       |
+|                                                    | 	DeleteAt bigint NOT NULL                                                                                                                                        |
+|                                                    | );                                                                                                                                                               |
+|                                                    |                                                                                                                                                                  |
+|                                                    | CREATE UNIQUE INDEX IF NOT EXISTS idx_propertyvalues_unique ON PropertyValues (GroupID, TargetID, FieldID) WHERE DeleteAt = 0;
+|                                                    | CREATE INDEX IF NOT EXISTS idx_propertyvalues_targetid_groupid ON PropertyValues (TargetID, GroupID);
+|                                                    |                                                                                                                                                                  |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+                                                 
 | v10.3                                              | The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the                                                                       |
 |                                                    | `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or                                                                                    |
 |                                                    | `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_. See more details                                                         |
