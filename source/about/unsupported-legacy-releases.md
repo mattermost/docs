@@ -13148,7 +13148,7 @@ Expected Release date: 2016-01-16
 
 #### Mobile Experience
 
-- iOS reference app [now available from iTunes](https://apps.apple.com/us/app/mattermost-classic/id984966508?amp%3Bmt=8&ls=1), compiled from [open source repo](https://github.com/mattermost/ios)
+- iOS reference app now available from iTunes
 - Date headers now show when scrolling on mobile, so you can quickly see when messages were sent
 - Added "rapid scroll" support for jumping quickily to bottom of channels on mobile
 
