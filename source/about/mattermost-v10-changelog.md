@@ -16,6 +16,9 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
+### Compatibility
+ - Updated minimum Safari version to 17.4+ and minimum Firefox version to 119+.
+
 ### Improvements
 
 #### User Interface (UI)
@@ -59,10 +62,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - 
 
 ### API Changes
- - 
-
-### Websocket Event Changes
- - 
+ - ``GetUsersInChannelDuring`` now accepts a slice; added ``GetChannelsWithActivityDuring``.
+ - Two new boolean query parameters were added to the ``api/v4/config`` endpoint:
+    - ``remove_defaults`` (filters out default values).
+    - ``remove_masked`` (removes masked fields). 
 
 ### Go Version
  - v10.5 is built with Go ``v1.22.6``.
