@@ -15,6 +15,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
  - iPhone 6s devices and later with iOS 13.4+ are required.
 
+### Important Notes
+ - In the Mattermost Mobile App v2.25 release, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845).
+
 ### Improvements
  - Added a feature for having a separate tab for **Drafts** on mobile.
  - Added visualization of custom profile attributes in the bottom sheet.
