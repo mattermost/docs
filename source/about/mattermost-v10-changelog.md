@@ -55,11 +55,9 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to all plans:
-- 
-
 #### Changes to Enterprise plans:
- - 
+ - Under ``essageExportSettings`` in ``config.json``:
+   - Added ``ComplianceExportDirectoryFormat``, ``ComplianceExportPath``, ``ComplianceExportPathCLI``, ``ComplianceExportChannelBatchSizeDefault``, and ``ComplianceExportChannelHistoryBatchSizeDefault`` for compliance export overhaul.
 
 ### API Changes
  - ``GetUsersInChannelDuring`` now accepts a slice; added ``GetChannelsWithActivityDuring``.
