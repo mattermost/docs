@@ -12,7 +12,7 @@ Removed features by Mattermost version
 Mattermost Mobile App v2.25.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- In the Mattermost Mobile App v2.25, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
+- In the Mattermost Mobile App v2.25 release, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
 
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
