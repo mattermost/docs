@@ -7,6 +7,74 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
+(release-v10.5-extended-support-release)=
+## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release Day: Februrary 14, 2025**
+
+```{Important}
+If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.5.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.0).
+ - Pre-packaged MS Teams plugin [v2.1.0](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.0).
+ - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+ - Added the ability to modify post attachments during edit.
+ - The channel bookmarks bar is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
+ - Removed the video from the onboarding checklist.
+ - Improved accessibility of many form labels throughout the app.
+
+#### Administration
+ - Added the migrations, store layer and service for the Property System Architecture.
+ - Added the Custom Profile Attribute fields store, app and API endpoints.
+ - Added the **System Console** user interface for managing Custom Profile Attributes (User Properties).
+ - Added a compliance export overhaul. See announcement: <TBD>.
+ - Introduced V2 of the Support Packet, containing improvement diagnosis information for high-availability deployments.
+ - Added a new ``Fallback`` field to ``PluginSettingsSection`` that controls whether the settings defined under the section should still render as fallback when the plugin is disabled.
+ - Improved plugins’ link tooltip component’s internal architecture without any user interface changes.
+ - Updated the library used for tooltips throughout the app to fix a memory leak.
+ - Reduced the volume of unnecessary debug logs generated during scheduled post job execution.
+ - Removed ``form-data`` from @mattermost/client.
+
+### Bug Fixes
+ - Fixed archived filter behavior in System Console > User Management > Channels to restore the ability to exclude archived channels.
+ - Fixed an issue where DMs/GMs with a `DeleteAt` flag in the database might cause issues with a couple APIs.
+ - Fixed an issue where the team sidebar's mention count could be out of sync with the thread count.
+ - Fixed an issue where replies with props could not be imported.
+ - Fixed an issue where ``pluginapi.store.GetReplicaDB`` returned nil if masterDB was not initialized.
+ - Fixed an issue in ``SqlPostStore.PermanentDeletebyUser`` where no error was returned when 10K posts were exceeded.
+ - Fixed an issue where a channel would no longer be exported for Bulk Export workflow if any of the users of a Direct or Group Message channel were permanently deleted.
+ - Fixed an issue where the scroll position reset when custom emojis were requested.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+- 
+
+#### Changes to Enterprise plans:
+ - 
+
+### API Changes
+ - 
+
+### Websocket Event Changes
+ - 
+
+### Go Version
+ - v10.5 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - Setting the license file location through an envvar still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the envvar. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+
+### Contributors
+ - 
+
 (release-v10.4-feature-release)=
 ## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
