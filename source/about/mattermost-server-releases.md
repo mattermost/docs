@@ -19,7 +19,7 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Released on** | **Support ends** | **SBOM Team Edition Download Link** |
 |:---|:---|:---|:---|
-| v10.4 [Download](https://releases.mattermost.com/10.4.1/mattermost-10.4.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.4-feature-release>` | 2025-01-16 | 2025-04-15 | [SBOM](https://github.com/mattermost/mattermost/releases/download/v10.4.1/sbom-mattermost-v10.4.1.json) |
+| v10.4 [Download](https://releases.mattermost.com/10.4.1/mattermost-10.4.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.4-feature-release>` | 2025-01-16 | 2025-04-15 | [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.4.1/sbom-mattermost-v10.4.1.json) |
 | v10.3 [Download](https://releases.mattermost.com/10.3.2/mattermost-10.3.2-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.3-feature-release>` | 2024-12-16 | 2025-03-15 |
 | v10.2 [Download](https://releases.mattermost.com/10.2.2/mattermost-10.2.2-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.2-feature-release>` | 2024-11-15 | 2025-02-15 |
 | v10.1 [Download](https://releases.mattermost.com/10.1.7/mattermost-10.1.7-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.1-feature-release>` | 2024-10-16 | 2025-01-15 |
