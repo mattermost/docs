@@ -21,12 +21,13 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Improvements
  - Added a feature for having a separate tab for **Drafts** on mobile.
  - Android: App logs will now show information from the native side.
- - Added visualization of custom profile attributes (disabled behind a server feature flag).
+ - Added visualization of custom profile attributes. Requires server v10.5 and feature flag enabled.
 
 ### Bug Fixes
  - Fixed reliability issues with threads.
 
 ### Known Issues
+ - Samsung S22 might not display custom profile attributes correctly.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
