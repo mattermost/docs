@@ -26,6 +26,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed reliability issues with threads.
 
+### Open Source Components
+ - Added ``@react-native-community/cli``, ``@react-native-community/cli-platform-android``, and ``@react-native-community/cli-platform-ios`` to https://github.com/mattermost/mattermost-mobile.
+
 ### Known Issues
  - Samsung S22 might not display custom profile attributes correctly.
  - Users are unable to adjust the font size via the OS font size setting.
