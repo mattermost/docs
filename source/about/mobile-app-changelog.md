@@ -20,8 +20,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Added a feature for having a separate tab for **Drafts** on mobile.
- - Added visualization of custom profile attributes in the bottom sheet.
  - Android: App logs will now show information from the native side.
+ - Added visualization of custom profile attributes (disabled behind a server feature flag).
 
 ### Bug Fixes
  - Fixed reliability issues with threads.
