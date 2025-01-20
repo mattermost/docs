@@ -17,7 +17,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Upgrade
  - v10.5 introduces Property System Architecture schema migration. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
- - Improved plugins’ link tooltip component’s internal architecture without any user interface changes.
+ - The internal workings of the ``PluginLinkComponent`` in the webapp have been improved. Plugins that register link tooltips using ``registerLinkTooltipComponent`` will see changes in how tooltip components are managed. Link tooltips are now unmounted from the DOM by default, significantly improving performance. They are only mounted when a link is hovered over or focused. As a result, plugins need to update their components to properly handle mounting and unmounting scenarios.
  - The Mattermost server has stopped supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192).
  - Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498).
 
