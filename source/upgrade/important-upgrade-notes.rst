@@ -110,7 +110,6 @@ Important Upgrade Notes
 |                                                    |  );                                                                                                                                                              |
 |                                                    |                                                                                                                                                                  |
 |                                                    |  DO                                                                                                                                                              |
-|                                                    |  $$                                                                                                                                                              |
 |                                                    |  BEGIN                                                                                                                                                           |
 |                                                    |    IF NOT EXISTS (SELECT * FROM pg_type typ                                                                                                                      |
 |                                                    |                          INNER JOIN pg_namespace nsp ON nsp.oid = typ.typnamespace                                                                               |
@@ -126,7 +125,6 @@ Important Upgrade Notes
 |                                                    |   );                                                                                                                                                             |
 |                                                    |    END IF;                                                                                                                                                       |
 |                                                    |  END;                                                                                                                                                            |
-|                                                    |  $$                                                                                                                                                              |
 |                                                    |  LANGUAGE plpgsql;                                                                                                                                               |
 |                                                    |                                                                                                                                                                  |
 |                                                    |  CREATE TABLE IF NOT EXISTS PropertyFields (                                                                                                                     |
