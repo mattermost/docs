@@ -4,11 +4,14 @@ Prepare your Mattermost database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
   
-You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
+You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` and the `minimum supported version policy <#minimum-supported-version-policy>`__ documentation for version support details, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation to learn more about migrating from MySQL to PostgreSQL.
 
 .. tip::
 
   Looking for information on working with a MySQL database? See the :doc:`prepare your Mattermost MySQL database </install/prepare-mattermost-mysql-database>` documentation for details.
+
+Set up a PostgreSQL database
+----------------------------
 
 To set up a PostgreSQL database for use by the Mattermost server:
 
@@ -206,37 +209,23 @@ When the PostgreSQL database is installed, and the initial setup is complete, yo
   If you are upgrading a major version of Postgres, it is essential that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is necessary to re-populate the ``pg_statistics`` table used to generate optimal query plans. The database performance might suffer if this step is not done.
 
 
-### Policy for Updating the Minimum Supported Postgres Version
+Minimum supported version policy
+---------------------------------
 
-#### Overview of the Challenge
-Currently, Mattermost does not have a clear, documented policy to determine when to update the minimum supported Postgres version. This lack of clarity creates confusion for both the Mattermost team and its customers.
+To make planning easier and ensure your Mattermost deployment remains fast and secure, we are introducing a policy for updating the minimum supported version of Postgres. The oldest supported Postgres version Mattermost supports will match the oldest version supported by the Postgres community. This ensures you benefit from the latest features and security updates.
 
-Challenges include:
-- Limited ability to test Mattermost compatibility with all possible Postgres versions.
-- Gaps in testing actively supported Postgres versions, which may compromise software reliability.
-- Inability to leverage new Postgres features for better performance and functionality.
+This policy change takes effect from Mattermost v10.6, where the minimum Postgres version required will be Postgres 13. This aligns with the Postgres community's support policy, which provides 5 years of support for each major version.
 
-#### Proposed Solution
-Mattermost proposes the following policy for updating the minimum supported Postgres version:
+.. note::
 
-1. **Alignment with Oldest Actively Supported Postgres Version**:
-   - Mattermost will adopt the oldest Postgres version that is still actively maintained.
+  Mattermost v10.6 is not an :ref:`Extended Support Release (ESR) <about/release-policy:extended support releases>`. Going forward, this database version support policy will only apply to ESR releases. When a Postgres version reaches its end of life (EOL), Mattermost will require a newer version starting with the next scheduled ESR release.
 
-2. **Upgrade Timeline**:
-   - When a specific Postgres version (e.g., version X) reaches its end of life (EOL), Mattermost will bump the minimum required version after the next **Extended Support Release (ESR)**.
-   - Example: If version X becomes unsupported before ESR 10.5, the minimum version will update to X+1 in ESR 10.5.
+Customers will have 9 months to plan, test, and upgrade their Postgres version before the new requirement takes effect. If you need more time, extended ESR support may be available on a case-by-case basis. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
 
-3. **Customer Buffer Timeline**:
-   - Since each ESR is supported for 9 months, customers will have a 9-month window to plan, test, and upgrade their Postgres version.
+Frequently asked questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Effect of the Policy**:
-If this proposal is accepted, Mattermost will require Postgres 13 as the minimum version starting with 10.6. We start with 10.6 to kick off the policy, but going forward, it will be only on ESR releases.
+What about MySQL databases?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#### **Frequently Asked Questions (FAQs)**
-
-1. **What about MySQL?**
-   MySQL is being deprecated starting with version 11. No further effort is being allocated to MySQL support.
-
-2. **What if customers cannot upgrade their database in time?**
-   The policy aims to provide customers with a 9-month preparation period for upgrades. If this timeframe is insufficient, extended ESR support may be discussed on a case-by-case basis. The goal is to improve transparency so customers can align with the announced timelines.
-
+Mattermost is :ref:`deprecating support for MySQL <deploy/postgres-migration:why is mattermost dropping support for mysql?>` starting with v11. We aren't actively maintaining or working on MySQL support.
