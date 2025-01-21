@@ -204,3 +204,39 @@ When the PostgreSQL database is installed, and the initial setup is complete, yo
 .. important::
 
   If you are upgrading a major version of Postgres, it is essential that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is necessary to re-populate the ``pg_statistics`` table used to generate optimal query plans. The database performance might suffer if this step is not done.
+
+
+### Policy for Updating the Minimum Supported Postgres Version
+
+#### Overview of the Challenge
+Currently, Mattermost does not have a clear, documented policy to determine when to update the minimum supported Postgres version. This lack of clarity creates confusion for both the Mattermost team and its customers.
+
+Challenges include:
+- Limited ability to test Mattermost compatibility with all possible Postgres versions.
+- Gaps in testing actively supported Postgres versions, which may compromise software reliability.
+- Inability to leverage new Postgres features for better performance and functionality.
+
+#### Proposed Solution
+Mattermost proposes the following policy for updating the minimum supported Postgres version:
+
+1. **Alignment with Oldest Actively Supported Postgres Version**:
+   - Mattermost will adopt the oldest Postgres version that is still actively maintained.
+
+2. **Upgrade Timeline**:
+   - When a specific Postgres version (e.g., version X) reaches its end of life (EOL), Mattermost will bump the minimum required version after the next **Extended Support Release (ESR)**.
+   - Example: If version X becomes unsupported before ESR 10.5, the minimum version will update to X+1 in ESR 10.5.
+
+3. **Customer Buffer Timeline**:
+   - Since each ESR is supported for 9 months, customers will have a 9-month window to plan, test, and upgrade their Postgres version.
+
+**Effect of the Policy**:
+If this proposal is accepted, Mattermost will require Postgres 13 as the minimum version starting with 10.6. We start with 10.6 to kick off the policy, but going forward, it will be only on ESR releases.
+
+#### **Frequently Asked Questions (FAQs)**
+
+1. **What about MySQL?**
+   MySQL is being deprecated starting with version 11. No further effort is being allocated to MySQL support.
+
+2. **What if customers cannot upgrade their database in time?**
+   The policy aims to provide customers with a 9-month preparation period for upgrades. If this timeframe is insufficient, extended ESR support may be discussed on a case-by-case basis. The goal is to improve transparency so customers can align with the announced timelines.
+
