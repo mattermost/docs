@@ -13,7 +13,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - **10.4.2, released **
   - Mattermost v10.4.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
-  - Fixed a panic during LDAP syncing [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
   - Fixed an issue with webhook attachment button styles [MM-62400](https://mattermost.atlassian.net/browse/MM-62400).
   - Mattermost v10.4.2 contains no database or functional changes.
 - **10.4.1, released 2025-01-16**
