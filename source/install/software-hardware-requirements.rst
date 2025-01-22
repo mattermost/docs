@@ -101,7 +101,7 @@ Database software
 
 Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
-See the :ref:`minimum supported version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for minimum Postgres version support details, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation to learn about migrating from MySQL to PostgreSQL.
+See the :ref:`minimum supported version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for minimum PostgreSQL version support details, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation to learn about migrating from MySQL to PostgreSQL.
 
 .. important::
 
