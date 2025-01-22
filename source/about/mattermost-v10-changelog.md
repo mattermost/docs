@@ -191,7 +191,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.2.3, released **
   - Mattermost v10.2.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
-  - Fixed a panic during LDAP syncing [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
   - Mattermost v10.2.3 contains no database or functional changes.
 - **10.2.2, released 2025-01-15**
   - Mattermost v10.2.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
