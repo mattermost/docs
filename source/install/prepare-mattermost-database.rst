@@ -212,7 +212,7 @@ When the PostgreSQL database is installed, and the initial setup is complete, yo
 Minimum supported version policy
 ---------------------------------
 
-To make planning easier and ensure your Mattermost deployment remains fast and secure, we are introducing a policy for updating the minimum supported version of Postgres. The oldest supported Postgres version Mattermost supports will match the oldest version supported by the Postgres community. This ensures you benefit from the latest features and security updates.
+To make planning easier and ensure your Mattermost deployment remains fast and secure, we are introducing a policy for updating the minimum supported version of PostgreSQL. The oldest supported PostgreSQL version Mattermost supports will match the oldest version supported by the PostgreSQL community. This ensures you benefit from the latest features and security updates.
 
 This policy change takes effect from Mattermost v10.6, where the minimum Postgres version required will be Postgres 13. This aligns with the Postgres community's support policy, which provides 5 years of support for each major version.
 
