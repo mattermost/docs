@@ -30,7 +30,8 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls plugin [v1.5.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.0).
+ - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
+ - Pre-packaged Calls plugin [v1.5.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.1).
  - Pre-packaged MS Teams plugin [v2.1.0](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.0).
  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
  - Added the ability to modify post attachments during edit.
@@ -58,7 +59,8 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Fixed an issue in ``SqlPostStore.PermanentDeletebyUser`` where no error was returned when 10K posts were exceeded.
  - Fixed an issue where a channel would no longer be exported for Bulk Export workflow if any of the users of a Direct or Group Message channel were permanently deleted.
  - Fixed an issue where the scroll position reset when custom emojis were requested.
- - Fixed a panic during LDAP syncing.
+ - Fixed a panic during LDAP synchronization.
+ - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
