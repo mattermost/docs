@@ -21,7 +21,7 @@ Important Upgrade Notes
 |                                                    | improving performance. They are only mounted when a link is hovered over or focused. As a result, plugins need to update their components to properly handle     |
 |                                                    | mounting and unmounting scenarios.                                                                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | The Mattermost server has stopped supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies  |
+|                                                    | The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies  |
 |                                                    | the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead  |
 |                                                    | prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`_.        |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+

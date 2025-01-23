@@ -17,7 +17,7 @@ Mattermost Mobile App v2.25.0
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The Mattermost server has stopped supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
+- The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
 - Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
 
 Mattermost Server v10.4.0
