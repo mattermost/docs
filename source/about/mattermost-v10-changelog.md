@@ -87,6 +87,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.4-feature-release)=
 ## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.4.2, released 2025-01-22**
+  - Mattermost v10.4.2 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
+  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed an issue with webhook attachment button styles [MM-62400](https://mattermost.atlassian.net/browse/MM-62400).
+  - Mattermost v10.4.2 contains no database or functional changes.
 - **10.4.1, released 2025-01-16**
   - Fixed errors logged by performance telemetry due to certain browser extensions [MM-62371](https://mattermost.atlassian.net/browse/MM-62371).
   - Fixed an issue with insertion errors to ``LinkMetadata`` table.
@@ -156,6 +163,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.4 is built with Go ``v1.22.6``.
 
 ### Known Issues
+ - Setting the license file location through an envvar still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the envvar. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
 
@@ -165,6 +173,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.3-feature-release)=
 ## Release v10.3 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.3.3, released 2025-01-22**
+  - Mattermost v10.3.3 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
+  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+  - Mattermost v10.3.3 contains no database or functional changes.
 - **10.3.2, released 2025-01-15**
   - Mattermost v10.3.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
@@ -253,6 +268,13 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.2-feature-release)=
 ## Release v10.2 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.2.3, released 2025-01-22**
+  - Mattermost v10.2.3 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
+  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+  - Mattermost v10.2.3 contains no database or functional changes.
 - **10.2.2, released 2025-01-15**
   - Mattermost v10.2.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).

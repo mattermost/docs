@@ -5,6 +5,19 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
+(release-v2-24-1)=
+## 2.24.1 Release
+ - Release Date: January 17, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 13.4+ are required.
+
+### Bug Fixes
+ - Fixed a crash when using certain timezones.
+
 (release-v2-24-0)=
 ## 2.24.0 Release
  - Release Date: January 16, 2025
