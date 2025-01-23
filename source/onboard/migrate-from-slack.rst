@@ -100,7 +100,7 @@ It's preferable to fetch e-mails first to avoid copying large attachments around
 
 Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
 
-Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word like "my-team".
+Next, run the command below to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word and lowercase (i.e. if you named your team "My Team", ``<TEAM-NAME>`` would be "my-team").
 
 .. code-block:: sh
 
