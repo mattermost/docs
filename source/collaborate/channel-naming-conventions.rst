@@ -14,7 +14,7 @@ Basic structure
 - Channel names have a 64-character limit to ensure readability on both desktop and mobile devices.
 - An additional 1024 characters are available for describing the channel's focus in the channel header and channel information pane.
 - An additional 128 characters are available for a **Channel Purpose** that's visible in the channel header and the channel information pane.
-- Channel names can include standard Unicode emojis that are universally supported emojis that look the same (or similar) across platforms. Specify a Unicode emoji by copying and pasting them from another source, such as a Mattermost message, or by using the emoji picker for your operating system.
+- Channel names can include standard Unicode emojis that are universally supported emojis that look the same (or similar) across platforms. Specify a Unicode emoji by using the Unicode emoji picker for your operating system.
 
 We recommend prefixing channel names with emojis for the following reasons:
 
