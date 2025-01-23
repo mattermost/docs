@@ -222,7 +222,7 @@ This policy change takes effect from Mattermost v10.6, where the minimum Postgre
   - When a PostgreSQL version reaches its end of life (EOL), Mattermost will require a newer version starting with the next scheduled ESR release. This means the following future PostgreSQL minimum version increases as follows:
 
    - Mattermost will require PostgreSQL 14 from the Mattermost v10.11 ESR scheduled for August 2025.
-   - Mattermost will require PostgreSQL 15 from the Mattermost v11.5 ESR scheduled for February 2026.
+   - Mattermost will require PostgreSQL 15 from the Mattermost v11.5 ESR forecasted for February 2026.
 
 Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
 
