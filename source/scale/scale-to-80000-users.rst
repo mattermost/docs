@@ -10,25 +10,27 @@ This page describes the Mattermost reference architecture designed for the load 
 - **Database Configuration**: writer, multiple readers
 
 .. note::
-    Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+
+  - Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
+  - While the following specifications may be more than sufficient for some use cases, we have not extensively tested configurations with lower resource allocations for this user scale. If cost optimization is a priority, admins may choose to experiment with smaller configurations, but we recommend starting with the tested specifications to ensure system stability and performance. Keep in mind that under-provisioning can lead to degraded user experience and additional troubleshooting effort.
 
 Requirements
 ------------
 
-+------------------------+-----------+----------------+-------------------+
-| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  |
-|                        |           | Memory (GiB)** |                   |
-+========================+===========+================+===================+
-| Mattermost Application | 4         | 16/32          | c7i.4xlarge       |
-+------------------------+-----------+----------------+-------------------+
-| RDS Writer             | 1         | 16/128         | db.r7g.4xlarge    |
-+------------------------+-----------+----------------+-------------------+
-| RDS Reader             | 3         | 16/128         | db.r7g.4xlarge    |
-+------------------------+-----------+----------------+-------------------+
-| Elasticsearch Node     | 2         | 4/32           | r6g.xlarge.search |
-+------------------------+-----------+----------------+-------------------+
-| Proxy                  | 1         | 16/64          | m7i.4xlarge       |
-+------------------------+-----------+----------------+-------------------+
++------------------------+-----------+----------------+-----------------------+
+| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**      |
+|                        |           | Memory (GiB)** |                       |
++========================+===========+================+=======================+
+| Mattermost Application | 4         | 16/32          | c7i.4xlarge           |
++------------------------+-----------+----------------+-----------------------+
+| RDS Writer             | 1         | 16/128         | db.r7g.4xlarge        |
++------------------------+-----------+----------------+-----------------------+
+| RDS Reader             | 3         | 16/128         | db.r7g.4xlarge        |
++------------------------+-----------+----------------+-----------------------+
+| Elasticsearch Node     | 2         | 4/32           | 4 x r6g.xlarge.search |
++------------------------+-----------+----------------+-----------------------+
+| Proxy                  | 1         | 16/64          | m7i.4xlarge           |
++------------------------+-----------+----------------+-----------------------+
 
 Lifetime storage
 ----------------
