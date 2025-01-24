@@ -53,7 +53,6 @@ gantt
     tickInterval 2month
     
     section 2024
-    v9.5 Extended Support  :crit,    2024-02-16, 2024-11-15
     v9.6                   :done,  2024-03-16, 2024-06-15
     v9.7                   :done,  2024-04-16, 2024-07-15
     v9.8                   :done,  2024-05-15, 2024-08-15
