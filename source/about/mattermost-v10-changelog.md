@@ -17,6 +17,7 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 
 ### Important Upgrade Notes
  - v10.5 introduces Property System Architecture schema migration. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
+ - The Compliance Export system has been overhauled. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
  - The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192).
  - Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498).
 
@@ -43,7 +44,6 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Added the migrations, store layer and service for the Property System Architecture.
  - Added the Custom Profile Attribute fields store, app and API endpoints.
  - Added the **System Console** user interface for managing Custom Profile Attributes (User Properties).
- - Added a compliance export overhaul. See announcement: <TBD>.
  - Introduced V2 of the Support Packet, containing improvement diagnosis information for high-availability deployments.
  - Added a new ``Fallback`` field to ``PluginSettingsSection`` that controls whether the settings defined under the section should still render as fallback when the plugin is disabled.
  - Updated the library used for tooltips throughout the app to fix a memory leak.
