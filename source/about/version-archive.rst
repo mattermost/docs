@@ -403,6 +403,7 @@ Version archive
     - ``https://releases.mattermost.com/10.4.2/mattermost-team-10.4.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``25c4d26bac4065441a3f0a85349a390286ee4a77f5c207d6a10c2497e425b8cc``
     - GPG Signature: https://releases.mattermost.com/10.4.2/mattermost-team-10.4.2-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.4.2/sbom-mattermost-v10.4.2.json
   Mattermost Team Edition v10.3.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-3-feature-release>`__ - `Download <https://releases.mattermost.com/10.3.3/mattermost-team-10.3.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.3.3/mattermost-team-10.3.3-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``ac7dc3a2352ad09cf6568ad10e80f52a7a88a9f00682b68d7dd01728594ff51f``
