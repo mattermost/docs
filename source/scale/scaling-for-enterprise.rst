@@ -25,7 +25,7 @@ The following reference architectures are available as recommended starting poin
 
 .. important::
 
-    Due to constraints in testing, both the proxy instance and the Elasticsearch cluster specifications were fixed for all the tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts, while the Elasticsearch cluster is underspecified for user counts of 30k users or more.
+    Due to constraints in testing, the proxy instance specifications were fixed for all the tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts.
 
 Testing methodology and updates
 --------------------------------
