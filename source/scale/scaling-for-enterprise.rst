@@ -23,6 +23,10 @@ The following reference architectures are available as recommended starting poin
 * :doc:`Scale up to 90000 users </scale/scale-to-90000-users>` - Learn how to scale Mattermost to up to 90000 users.
 * :doc:`Scale up to 100000 users </scale/scale-to-100000-users>` - Learn how to scale Mattermost to up to 100000 users.
 
+.. important::
+
+    Due to constraints in testing, the proxy instance specifications were fixed for all the tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts.
+
 Testing methodology and updates
 --------------------------------
 
