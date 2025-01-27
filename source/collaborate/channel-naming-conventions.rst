@@ -14,7 +14,12 @@ Basic structure
 - Channel names have a 64-character limit to ensure readability on both desktop and mobile devices.
 - An additional 1024 characters are available for describing the channel's focus in the channel header and channel information pane.
 - An additional 128 characters are available for a **Channel Purpose** that's visible in the channel header and the channel information pane.
-- Channel names can include emojis. Specify the emoji by its name in the format ``:smile:``. We recommend prefixing channel names with emojis for the following reasons:
+- Channel names can include standard Unicode emojis that are universally supported emojis that look the same (or similar) across platforms. Specify a Unicode emoji by positioning your cursor in the channel **Display Name** field and accessing the Unicode emoji picker for your operating system, as follows:
+
+ - On Windows press :kbd:`Windows` + :kbd:`.` or :kbd:`;` to open the Unicode emoji picker.
+ - On macOS, press :kbd:`Ctrl` + :kbd:`⌘` + :kbd:`Space` to open the Unicode emoji picker.
+
+We recommend prefixing channel names with emojis for the following reasons:
 
    - Emojis can make it easier for users to quickly identify and manage channels, particularly in large workspaces with many channels.
    - Sharing the same emoji across channels related to a specific category or function helps maintain organization and consistency across the workspace.
