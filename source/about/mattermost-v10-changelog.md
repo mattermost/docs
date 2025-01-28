@@ -22,7 +22,7 @@ Support for Mattermost Server v9.11 [Extended Support Release](https://docs.matt
  - Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498).
 
 ### Breaking Changes
- - The internal workings of the ``PluginLinkComponent`` in the webapp have been improved. Plugins that register link tooltips using ``registerLinkTooltipComponent`` will see changes in how tooltip components are managed. Link tooltips are now unmounted from the DOM by default, significantly improving performance. They are only mounted when a link is hovered over or focused. As a result, plugins need to update their components to properly handle mounting and unmounting scenarios.
+ - The internal workings of the ``PluginLinkComponent`` in the webapp have been improved. Plugins that register link tooltips using ``registerLinkTooltipComponent`` will see changes in how tooltip components are managed. Link tooltips are now unmounted from the DOM by default, significantly improving performance. They are only mounted when a link is hovered over or focused. As a result, plugins may need to update their components to properly handle mounting and unmounting scenarios.
 
 ```{Important}
 If you upgrade from a release earlier than v10.3, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
