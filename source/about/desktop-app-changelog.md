@@ -19,6 +19,7 @@ Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgra
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 132+.
 
 ### Improvements
 
@@ -35,6 +36,10 @@ Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgra
 - Server URLs are now auto-filled when deep-linking into the Desktop App if the server isn't configured.
 - Removed legacy code for older unsupported Mattermost servers.
 - Calls: while the popout window is open, the widget window's visibility will change so that it is not always on top of other windows.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 34.0.1. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
