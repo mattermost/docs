@@ -232,7 +232,7 @@ Now that you have an environment in place, we recommend working through the foll
  - Recommendation: Start with fewer teams in your early roll out
  - Resource: https://docs.mattermost.com/messaging/organizing-channels.html 
 
-- Determine and create key channels to support your users. Town Square and Off-Topic are automatically created channels available on every team
+- Determine and create key channels to support your users. A default Town Square channel is created automatically and available on every team.
 
  - Recommendation: Add a “Support” channel for your users to escalate questions 
 
