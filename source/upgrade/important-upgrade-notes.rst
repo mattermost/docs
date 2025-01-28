@@ -18,7 +18,7 @@ Important Upgrade Notes
 +====================================================+==================================================================================================================================================================+
 | v10.5                                              | The internal workings of the ``PluginLinkComponent`` in the webapp have been improved. Plugins that register link tooltips using                                 |
 |                                                    | ``registerLinkTooltipComponent`` will see changes in how tooltip components are managed. Link tooltips are now unmounted from the DOM by default, significantly  |
-|                                                    | improving performance. They are only mounted when a link is hovered over or focused. As a result, plugins need to update their components to properly handle     |
+|                                                    | improving performance. They are only mounted when a link is hovered over or focused. As a result, plugins may need to update their components to properly handle |
 |                                                    | mounting and unmounting scenarios.                                                                                                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies |
