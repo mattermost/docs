@@ -60,7 +60,8 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Fixed an issue where a channel would no longer be exported for Bulk Export workflow if any of the users of a Direct or Group Message channel were permanently deleted.
  - Fixed an issue where the scroll position reset when custom emojis were requested.
  - Fixed a panic during LDAP synchronization.
- - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+ - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories.
+ - Fixed an issue where archived channels were not searchable with Elasticsearch/OpenSearch if ``TeamSettings.ExperimentalViewArchivedChannels`` was enabled. If there are old channels which were archived before a bulk index was run, users would need to purge indexes, and do bulk index again. Because those old archived channels are removed from the index when a bulk index is run.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
