@@ -36,32 +36,19 @@ Install Mattermost Server on Ubuntu
 
 You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). Using the Mattermost Personal Package Archive (PPA) not only provides the quickest way to install a Mattermost Server, but also provides automatic updates. This install method is used for both single and clustered installations.
 
-.. tip::
+.. include:: common-omnibus-tip.rst
+  :start-after: :nosearch:
 
-  - If you are running the Mattermost Server and database on a single system, we recommend the :doc:`Mattermost Omnibus install method </install/installing-mattermost-omnibus>` as this greatly reduces setup and ongoing maintenance.
+.. include:: common-postgres-database-important.rst
+  :start-after: :nosearch:
 
-  - You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
-
-A Mattermost deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
+This Mattermost deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 Add the Mattermost Server PPA repository
 ----------------------------------------
 
-.. important::
-
-  The GPG public key has changed. You can `import the new public key <https://deb.packages.mattermost.com/pubkey.gpg>`_ or run the automatic Mattermost PPA repository setup script provided below. Depending on your setup, additional steps may also be required, particularly for installations that didn't rely on the repository setup script. We recommend deleting the old key from ``/etc/apt/trusted.gpg.d`` before adding the apt repository.
-
-  - For Ubuntu Focal - 20.04 LTS:
-
-    ``sudo apt-key del A1B31D46F0F3A10B02CF2D44F8F2C31744774B28``
-
-    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo apt-key add``
-
-  - For Ubuntu Jammy - 22.04 LTS and Ubuntu Noble - 24.04 LTS:
-
-    ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
-
-    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg |  gpg --dearmor | sudo tee /usr/share/keyrings/mattermost-archive-keyring.gpg > /dev/null``
+.. include:: common-gpg-public-key-changed.rst
+  :start-after: :nosearch:
 
 In a terminal window, run the following repository setup command to add the Mattermost Server repositories:
 
@@ -80,7 +67,7 @@ Ahead of installing the Mattermost Server, it's good practice to update all your
 
     sudo apt update
 
-After any updates, and any system reboots, are complete, installing the Mattermost Server is now a single command:
+After any updates and system reboots are complete, you can install the Mattermost Server by running:
 
 .. code-block:: sh
 
@@ -105,11 +92,8 @@ Rename this configuration file with correct permissions:
 
   sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 
-Configure the following properties in this file:
-
-* Set ``DriverName`` to ``"postgres"``. This is the default and recommended database for all Mattermost installations.
-* Set ``DataSource`` to ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"`` replacing ``mmuser``, ``<mmuser-password>``, ``<host-name-or-IP>`` and ``mattermost`` with your database name.
-* Set ``"SiteURL"``: The domain name for the Mattermost application (e.g. ``https://mattermost.example.com``).
+.. include:: common-default-config-changes.rst
+  :start-after: :nosearch:
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
 
@@ -132,7 +116,7 @@ When a new Mattermost version is released, run: ``sudo apt update && sudo apt up
 
 .. note::
 
-	When you run the ``sudo apt upgrade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost-server``.
+	When you run the ``sudo apt upgrade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost``.
 
 Remove Mattermost
 ------------------

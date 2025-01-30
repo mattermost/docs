@@ -4,13 +4,13 @@ Prepare your Mattermost database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
   
-You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details on migrating from MySQL to PostgreSQL.
+You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support. Looking for information on migrating from MySQL to PostgreSQL? See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details.
 
 .. tip::
 
-  Looking for information on working with a MySQL database? See the :doc:`prepare your Mattermost MySQL database </install/prepare-mattermost-mysql-database>` documentation for details.
+  We recommend using a managed PostgreSQL database service, such as Amazon RDS, Google Cloud SQL, or Azure Database for PostgreSQL.
 
-To set up a PostgreSQL database for use by the Mattermost server:
+To manually set up a self-managed PostgreSQL database for use by the Mattermost server:
 
 1. Log in to the server that will host the database, and install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/>`__ documentation for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 

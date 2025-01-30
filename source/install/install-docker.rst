@@ -7,45 +7,46 @@ Deploy Mattermost via Docker
 Install Docker
 ---------------
 
-If you don't have Docker installed, follow the instructions below based on your operating system:
+If you don't have Docker installed, follow the instructions below based on your operating system. You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
 
 .. tab:: macOS
 
-  Install `Docker for Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_.
+  Follow the `Install Docker Engine on Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_ documentation.
 
 .. tab:: Windows 10
 
-  Install `Docker for Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_.
+  Follow the `Install Docker Engine on Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_ documentation.
 
 .. tab:: Ubuntu
 
-  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation, or you can use the Docker package from the Ubuntu repositories:
-
-  .. code-block:: sh
-
-    sudo apt update
-    sudo apt install docker.io
-    sudo systemctl start docker
+  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation:
 
 .. tab:: Fedora
 
-  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation, or you can use the Moby package (Moby is the FOSS upstream project to Docker) from the Fedora repositories:
-
-  .. code-block:: sh
-
-    sudo dnf install moby-engine
-    sudo systemctl start docker
+  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation:
 
 .. _Deploy Mattermost on Docker:
 
-Deploy Mattermost on Docker for production use
-----------------------------------------------
+Before you begin
+----------------
 
-You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
+Mattermost's Docker deployment solution is one of the best ways to get started with Mattermost. Before you get begin, think about what type of Mattermost deployment you want to create as the instructions below are designed for different use cases.
+
+- If you're simply looking to try Mattermost out, see the :ref:`Deploy Mattermost on Docker (Quick Start) <install-docker:deploy-mattermost-on-docker-quick-start>` section below.
+- If you're looking to deploy Mattermost on Docker in production, see the :ref:`Deploy Mattermost on Docker for production use <install-docker:deploy-mattermost-on-docker-for-production-use>` section below.
+
+.. note::
+
+   - Intending to deploy Mattermost for production use, with more than 100 users? Consider :ref:`deploying Mattermost on Kubernetes <install/deploy-mattermost-on-kubernetes>` instead.
+
+Deploy Mattermost on Docker (Quick Start)
+-----------------------------------------
+
+This section provides a quick start guide for deploying Mattermost on Docker. Leveraging docker-compose, this deployment solution is designed to get Mattermost up and running quickly. This deployment solution is not recommended for production use. If you are looking to deploy Mattermost on Docker in production, see the :ref:`Deploy Mattermost on Docker for production use <install-docker:deploy-mattermost-on-docker-for-production-use>` section below.
 
 .. important::
 
-   - The production configuration results in two separate containers: one for the database and one for the application. An optional third container results when using NGINX for reverse proxy.
+   - The quick-start configuration results in two separate containers: one for the database and one for the application. An optional third container results when using NGINX for reverse proxy.
    - Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
 
 To deploy Mattermost on Docker:
@@ -104,19 +105,7 @@ To deploy Mattermost on Docker:
             CERT_PATH=./volumes/web/cert/cert.pem
             KEY_PATH=./volumes/web/cert/key-no-password.pem
 
-5. Configure SSO with GitLab *(optional)*. If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
-      
-   To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
 
-   .. code-block:: sh
-  
-      #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
-        
-   Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
-
-   .. code-block:: sh
-
-      # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
 6. Deploy Mattermost.
 
@@ -149,6 +138,90 @@ To deploy Mattermost on Docker:
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
 7. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
+
+Deploy Mattermost on Docker (Production)
+----------------------------------------------
+
+.. important::
+
+   - Mattermost recommends the use of an external, managed PostgreSQL database like AWS RDS, Google Cloud SQL, or Azure Database for production deployments. See the :doc:`Database preparation <install/prepare-mattermost-database>` documentation for details.
+   - Mattermost recommends the use of an external storage solution like AWS S3, Google Cloud Storage, or Azure Blob Storage for production deployments.
+   - Mattermost recommends the use of an external reverse proxy for production deployments.
+   - Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
+
+The Production deployment solution is designed to deploy Mattermost on Docker in a production environment. This deployment solution differs from the :ref:`Deploy Mattermost on Docker (Quick Start) <install-docker:deploy-mattermost-on-docker-quick-start>` section above in that it will deploy a single application container for Mattermost only, expecting an external database, and reverse proxy.
+
+1. In a terminal window, clone the repository and enter the directory.
+
+   .. code-block:: sh
+        
+      git clone https://github.com/mattermost/docker
+      cd docker
+
+2. Create your ``.env`` file by copying and adjusting the ``env.example`` file.
+
+   .. code-block:: sh
+        
+      cp env.example .env
+
+   If you're using an external database as is recommended for production deployments, ensure you've followed the :doc:`Database preparation <install/prepare-mattermost-database>` documentation. When completed you'll need to set the following environment variables in your ``.env`` file: 
+   
+   - ``POSTGRES_USER``
+   - ``POSTGRES_PASSWORD``
+   - ``POSTGRES_HOST``
+   - ``POSTGRES_PORT``
+   - ``POSTGRES_DB``
+   - ``POSTGRES_HOST``
+
+.. important::
+    
+      At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+
+3. Create the required directories and set their permissions. 
+   
+.. important::
+   
+   If you're using an external storage solution, you'll need to mount the storage to the ``volumes`` directory now.
+
+   .. code-block:: sh
+        
+      mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
+      sudo chown -R 2000:2000 ./volumes/app/mattermost
+
+4. Deploy Mattermost.
+
+   .. code-block:: sh
+  
+      sudo docker compose -f docker-compose.yml up -d
+
+   To access your new Mattermost deployment, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
+
+   To shut down your deployment:
+
+   .. code-block:: sh
+  
+      sudo docker compose -f docker-compose.yml down
+
+5. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
+
+
+Configure SSO With Gitlab (Optional)
+-------------------------------------
+
+If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
+      
+   To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
+
+   .. code-block:: sh
+  
+      #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
+        
+   Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
+
+   .. code-block:: sh
+
+      # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+
 
 Upgrade from ``mattermost-docker``
 -----------------------------------
@@ -197,7 +270,7 @@ To remove all data and settings for your Mattermost deployment:
 PostgreSQL
 ~~~~~~~~~~~
 
-You can change the Postgres username and/or password (recommended) in the ``.env`` file.
+For quick start deployments, you can change the Postgres username and/or password (recommended) in the ``.env`` file. If your database is managed externally, you'll need to change the password in your database management tool. Then, update the ``.env`` file with the new credentials.
 
 TLS & NGINX
 ~~~~~~~~~~~~
@@ -212,6 +285,6 @@ If you encounter other problems while installing Mattermost, please refer to our
 Trial Mattermost using Docker Preview
 --------------------------------------
 
-Looking to a way to evaluate Mattermost in a non-production environment using Docker? We recommend using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`_ to install Mattermost in Preview Mode. 
+Looking for a way to evaluate Mattermost in a non-production environment using Docker? We recommend using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`_ to install Mattermost in Preview Mode. 
 
 See the :doc:`trial Mattermost using Docker </install/trial-mattermost-using-docker>` documentation for details.
