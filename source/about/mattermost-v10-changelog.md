@@ -35,6 +35,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Pre-packaged Calls plugin [v1.5.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.1).
  - Pre-packaged MS Teams plugin [v2.1.0](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.0).
  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+ - Pre-packaged Jira plugin [v4.2.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.0).
  - Added the ability to modify post attachments during edit.
  - The channel bookmarks bar is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
  - Removed the video from the onboarding checklist.
