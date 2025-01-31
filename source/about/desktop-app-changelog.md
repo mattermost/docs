@@ -60,6 +60,7 @@ Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgra
 
 - Fixed an issue where autocompleting did not stop while the user was typing `https://`.
 - Fixed an issue preventing the screen sharing selection modal to show when the app was focused on a different tab (e.g. Playbooks, Boards).
+- Fixed an issue trying to download images using right-click > **Save As...**.
 
 ### Known Issues
 
