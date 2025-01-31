@@ -1945,11 +1945,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server.
 
-When not set, every user is added to the ``off-topic`` and ``town-square`` channels by default.
+When not set, every user is added to the ``town-square`` channel by default.
 
 .. note::
 
-   Even if ``town-square`` and ``off-topic`` aren't listed, every user is added to these channels automatically when joining a new team.
+  Even if ``town-square`` isn't listed, every user is added to that channels automatically when joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
