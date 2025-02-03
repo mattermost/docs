@@ -1,0 +1,1 @@
+Support for Mattermost Server v9.5 :ref:`Extended Support Release <about/release-policy:extended support releases>` has come to the end of its life cycle on November 15, 2024. Upgrading to :doc:`Mattermost Server v9.11 or later </about/mattermost-server-releases>` is required.

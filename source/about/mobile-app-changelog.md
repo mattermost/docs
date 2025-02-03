@@ -5,6 +5,10 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
+```{Important}
+```{include} common-esr-support.md
+```
+
 (release-v2-24-1)=
 ## 2.24.1 Release
  - Release Date: January 17, 2025
