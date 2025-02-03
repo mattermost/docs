@@ -16,6 +16,7 @@ Mattermost’s purpose is to accelerate the world’s mission critical work by d
    /about/releases-lifecycle.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
+   /about/accessibility-compliance-policy.rst
    /about/frequently-asked-questions.rst
 
 With Mattermost you can:
@@ -34,4 +35,5 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Mattermost releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
 * :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
+* :doc:`Accessibility compliance policy </about/accessibility-compliance-policy>` - Learn about Mattermost's policy and commitment to accessibility.
 * :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.

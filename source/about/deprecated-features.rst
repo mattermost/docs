@@ -6,19 +6,34 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v10.6.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Support for PostgreSQL v11 and v12 will be removed. The new minimum PostgreSQL version will be v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
+
+Mattermost Mobile App v2.25.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- In the Mattermost Mobile App v2.25, Mattermost will stop supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
+
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - The Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
 - Mattermost will stop providing official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
 
+Removed features by Mattermost version
+----------------------------------------
+
+Mattermost Server v10.4.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The ability to import Slack themes as Mattermost themes is no longer supported.
+
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- As part of our continuous efforts to enhance your user experience, we will be phasing out the Classic Mobile App. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ to continue enjoying our services without interruption. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
-
-Removed features by Mattermost version
-----------------------------------------
+- The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
 
 Mattermost Server v10.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~

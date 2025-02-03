@@ -4,7 +4,7 @@ Site configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in the System Console by going to **Site Configuration**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
+Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
 
 - `Customization <#customization>`__
 - `Localization <#localization>`__
@@ -16,7 +16,14 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `File Sharing and Downloads <#file-sharing-and-downloads>`__
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
-- `Connected Workspaces <#connected-workspaces>`__
+- `Connected Workspaces (Beta) <#connected-workspaces-beta>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``SiteName`` value is under ``TeamSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.TeamSettings.SiteName'``
+  - When working with the ``config.json`` file manually, look for an object such as ``TeamSettings``, then within that object, find the key ``SiteName``.
 
 ----
 
@@ -331,13 +338,6 @@ iOS app download link
 | String input. Default is ``https://about.mattermost.com/mattermost-ios-app/``.                                                                                                                                        |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: exp-appcustomurlschemes
-  :displayname: App custom URL schemes (Customization)
-  :systemconsole: N/A
-  :configjson: .NativeAppSettings.AppCustomURLSchemes
-  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
-  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
-
 .. config:setting:: custom-enabledesktoplandingpage
   :displayname: Enable desktop app landing page (Customization)
   :systemconsole: Site Configuration > Customization
@@ -356,6 +356,13 @@ Enable desktop app landing page
 | - **false**: Doesn't prompt users to use the desktop app.       | - ``config.json`` setting: ``ServiceSettings`` > ``EnableDesktopLandingPage`` > ``true`` |
 |                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. config:setting:: exp-appcustomurlschemes
+  :displayname: App custom URL schemes (Customization)
+  :systemconsole: N/A
+  :configjson: .NativeAppSettings.AppCustomURLSchemes
+  :environment: MM_NativeAppSettings_AppCustomURLSchemes = mmauth:// mmauthbeta://
+  :description: Define valid custom URL schemes for redirect links provided by custom-built mobile Mattermost apps.
 
 App custom URL schemes
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -412,7 +419,7 @@ Access the following configuration settings in the System Console by going to **
   :environment: MM_LOCALIZATIONSETTINGS_DEFAULTSERVERLOCALE
   :description: The default language for system messages and logs. Default value is **en**.
 
-
+Default server language
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
@@ -479,6 +486,36 @@ Available languages
 |                                                                                |                                                                           |
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
+
+.. config:setting:: localization-enable-wip-locales
+  :displayname: Enable experimental locales (Localization)
+  :systemconsole: Site Configuration > Localization
+  :configjson: EnableExperimentalLocales
+  :environment: MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES
+  :description: nable work in progress languages in Mattermost to review translations and identify translation gaps.
+
+  - **true**: Work in progress languages are available in Mattermost in addition to officially supported languages.
+  - **false**: **(Default)** Only officially supported languages are available in Mattermost.
+
+Enable experimental locales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Enable work in progress languages in Mattermost to review translations and identify translation gaps.
+
++--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| - **true**: Work in progress languages are available   | - System Config path: **Site Configuration > Localization**                                      |
+|   in Mattermost in addition to officially supported    | - ``config.json`` setting: ``LocalizationSettings`` > ``EnableExperimentalLocales`` > ``false``  |
+|   languages.                                           | - Environment variable: ``MM_LOCALIZATIONETTINGS_ENABLEEXPERIMENTALLOCALES``                     |
+| - **false**: **(Default)** Only officially supported   |                                                                                                  |
+|   languages are available in Mattermost.               |                                                                                                  |
++--------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - Cloud system admins can request this configuration setting to be enabled for their instance by contacting their Mattermost Account Manager.
+  - Work in progress languages may be incomplete. Strings missing translations display in US English.
+  - Currently, only web and desktop app product strings are impacted by this configuration setting. Server and mobile product strings aren't impacted by this setting.
+  - See the :ref:`language <preferences/manage-your-display-options:language>` documentation for details on selecting a language preference in Mattermost.
 
 ----
 
@@ -633,7 +670,6 @@ Lock teammate name display for all users
 |                                                                                                               | - ``config.json`` setting: ``TeamSettings`` > ``LockTeammateNameDisplay`` > ``false`` |
 | - **true**: Users **cannot** change the Teammate Name Display.                                                | - Environment variable: ``MM_TEAMSETTINGS_LOCKTEAMMATENAMEDISPLAY``                   |
 | - **false**: **(Default)** Users can change the Teammate Name Display setting.                                |                                                                                       |
-|                                                                                                               |                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: users-viewarchivedchannels
@@ -733,11 +769,11 @@ Enable last active time
 .. config:setting:: users-enablecustomusergroups
   :displayname: Enable custom user groups (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
-  :configjson: N/A
-  :environment: N/A
+  :configjson: ServiceSettings.EnableCustomGroups
+  :environment: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS
 
   - **true**: **(Default)** Users with appropriate permissions can create custom user groups, and users can @mention custom user groups in Mattermost conversations.
-  - **false**: Users cannot set custom statuses.
+  - **false**: Custom user groups cannot be created.
 
 Enable custom user groups
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -745,11 +781,11 @@ Enable custom user groups
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**              |
-|   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: N/A                                              |
-| - **false**: Users cannot set custom statuses.                                                    | - Environment variable: N/A                                                 |
-+---------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
+|   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS                      |
++---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: users-userstatsupdatetime
   :displayname: User statistics update time (Users and Teams)
@@ -819,6 +855,14 @@ Enable email notifications
   - Cloud admins can't modify this configuration setting.
   - If this setting is **false**, and the SMTP server is set up, account-related emails (such as authentication messages) will be sent regardless of this setting.
   - Email invitations and account deactivation emails aren't affected by this setting.
+  - If you don't plan on :doc:`configuring Mattermost for email </configure/smtp-email>`, disabling this configuration setting in larger deployments may improve server performance in the following areas, particularly in high-traffic environments where performance is a key concern:
+
+    - Reduced Server Load: Generating and sending emails requires processing power and resources. By disabling email notifications, you reduce the load on the server, which can be reallocated to other tasks.
+    - Decreased I/O Operations: Sending emails involves input/output (I/O) operations, such as writing to logs and databases, and handling communication with the email server. Reducing these I/O operations can improve overall system efficiency.
+    - Lowered Network Traffic: Each email sent contributes to network traffic. Disabling email notifications decreases the amount of data being transmitted, which can lead to better performance, especially in environments with limited bandwidth.
+    - Faster Response Times: With fewer background tasks (like sending emails) to handle, the application can potentially respond to user requests more quickly, improving perceived performance.
+    - Resource Allocation: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
+    - However, disabling email notifications can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: notification-enablepreviewbanner
   :displayname: Enable preview mode banner (Notifications)
@@ -924,6 +968,9 @@ Notification from address
 | String input. Default is ``test@example.com``. This field is required when changing settings in the System Console.   | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKEMAIL``         |
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
+.. note::
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: notification-supportemailaddress
   :displayname: Support email address (Notifications)
   :systemconsole: Site Configuration > Notifications
@@ -1006,9 +1053,8 @@ Push notification contents
 |   The notification payload contains no message content. Instead it contains a unique message ID used   |                                                                             |
 |   to fetch message content from the Mattermost server when a push notification is received via a       |                                                                             |
 |   `notification service app extension <https://developer.apple.com/documentation/usernotifications/    |                                                                             |
-|   modifying-content-in-newly-delivered-notifications                                                   |                                                                             |
-|   modifying_content_in_newly_delivered_notifications>`__ on iOS or `an expandable notification         |                                                                             |
-|   pattern <https://developer.android.com/develop/ui/views/notifications/expanded>`__ on Android.       |                                                                             |
+|   modifying-content-in-newly-delivered-notifications>`_  on iOS or `an expandable notification         |                                                                             |
+|   pattern <https://developer.android.com/develop/ui/views/notifications/expanded>`_ on Android.        |                                                                             |
 |                                                                                                        |                                                                             |
 |   If the server cannot be reached, a generic push notification is displayed without message            |                                                                             |
 |   content or sender name. For customers who wrap the Mattermost mobile application in a secure         |                                                                             |
@@ -1271,6 +1317,10 @@ Threaded discussions
 Message priority
 ~~~~~~~~~~~~~~~~~
 
+.. tip::
+  `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to
+  track that specific, time-sensitive messages have been seen and actioned. See the :doc:`message priority </collaborate/message-priority>` documentation to learn more.
+
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables message priority for all users which      | - System Config path: **Site Configuration > Posts**                             |
 |   enables them to set a visual indiciator for important or urgent root      | - ``config.json`` setting: ``ServiceSettings`` > ``PostPriority`` > ``true``     |
@@ -1280,9 +1330,13 @@ Message priority
 +-----------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. note::
-  `Mattermost Enterprise or Professional <https://mattermost.com/pricing>`__ customers can additionally request message acknowledgements to
-  track that specific, time-sensitive messages have been seen and actioned. See the
-  :doc:`message priority </collaborate/message-priority>` documentation to learn more.
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas, particularly in environments where performance and responsiveness are critical:
+
+  - Simplified Processing: When post priority is enabled, the system has to manage and prioritize posts based on their designated priority levels. This adds additional processing overhead as the system must evaluate and sort posts accordingly. By disabling this feature, all posts are treated equally, which simplifies the processing logic and reduces the computational load.
+  - Reduced Latency: With post priority enabled, there might be delays introduced while the system determines the priority of each post and processes them in the correct order. Disabling post priority can lead to more consistent and potentially quicker handling of posts because the system processes them on a first-come, first-served basis.
+  - Lower Resource Utilization: Managing post priorities can consume additional system resources such as CPU and memory. Disabling this feature can free up these resources, allowing the system to allocate them to other tasks, thereby improving overall performance.
+  - Improved Scalability: In a high-traffic environment, the complexity of managing post priorities can become more pronounced. Disabling this feature simplifies the system's operations, making it easier to scale as the number of users and posts increases.
 
 .. config:setting:: posts-persistentnotifications
   :displayname: Persistent notifications (Posts)
@@ -1365,6 +1419,10 @@ Total number of persistent notifications per post
 Enable website link previews
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. important::
+
+  The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - System Config path: **Site Configuration > Posts**                               |
 | - **false**: **(Default)** All previews are disabled and the server does not request metadata for any links contained in messages.                                                                                                         | - ``config.json`` setting: ``ServiceSettings`` > ``EnableLinkPreviews`` > ``true`` |
@@ -1372,7 +1430,15 @@ Enable website link previews
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
-  The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Network Requests: When link previews are enabled, the system needs to fetch metadata (such as title, description, or image) from the linked webpage. This requires additional network requests, which can slow down the system.
+  - Lower Server Load: Creating link previews involves parsing the content of the linked pages. If many users are sharing links, the server will have to perform numerous network requests and process a lot of additional data, increasing the load on the server.
+  - Less Data Processing: Every link shared needs to be processed to extract the necessary preview information. This processing consumes CPU and memory resources, which can otherwise be reserved for other tasks.
+  - Decreased Client-Side Rendering Time: On the client side, rendering link previews (adding text, images, and layouts) takes time and resources. Disabling link previews means that clients do not need to render these elements, leading to faster message display.
+  - Saved Bandwidth: Link previews often include images and other data from the linked content. By disabling them, you save the bandwidth that would be used to download these additional resources.
+  - However, disabling link previews can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: posts-disablepreviewsperdomain
   :displayname: Disable link previews for specific domains (Posts)
@@ -1407,6 +1473,17 @@ Enable message link previews
 | - **false**: Share links do not generate a preview.                                                                                                                                                         | - ``config.json`` setting: ``ServiceSettings`` > ``EnablePermalinkPreviews`` > ``true`` |
 |                                                                                                                                                                                                             | - Environment variable: ``MM_SERVICESETTINGS_ENABLEPERMALINKPREVIEWS``                  |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas, particularly in environments with high message throughput or limited resources:
+
+  - Reduced Server Load: When permalink previews are enabled, the server has to generate preview summaries for each shared link. This generates additional requests to fetch metadata and may involve parsing web pages, which increases the processing load on the server.
+  - Less Data Transfer: Permalink previews include additional metadata such as images, titles, and descriptions. Disabling previews reduces the amount of data that needs to be transferred, which can decrease bandwidth usage and improve message load times, particularly for channels with a high volume of links.
+  - Faster Message Rendering: On the client-side, rendering messages with multimedia previews takes more time compared to plain text messages. Disabling previews can reduce rendering complexity and improve client performance, especially on devices with limited resources.
+  - Network Latency: Fetching metadata for link previews may introduce network latency, as the server must reach out to external resources. Disabling this can eliminate these delays, ensuring faster message processing and display.
+  - Simplified Message Handling: In the absence of previews, messages are simpler and less resource-intensive to store, retrieve, and display. This can contribute to overall improved system responsiveness and efficiency.
+  - However, disabling permalink previews can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: posts-enablesvg
   :displayname: Enable SVGs (Posts)
@@ -1553,6 +1630,17 @@ Enable server syncing of message drafts
 | - **false**: Draft messages are stored locally       |                                                                                          |
 |   on each device.                                    |                                                                                          |
 +------------------------------------------------------+------------------------------------------------------------------------------------------+
+
+.. note::
+
+  While drafts can be very useful for maintaining work continuity, especially in collaborative environments, disabling draft synchronization across devices can lead to noticeable performance improvements by reducing the computational and data management overhead as follows:
+
+  - Reduced Data Synchronization: When drafts are enabled and synchronized across devices, the system needs to handle those data synchronization operations which can consume significant bandwidth and computing resources. Disabling draft syncing reduces the load on servers and networks.
+  - Lower Storage Usage: Storing drafts requires additional database operations and storage space. Each draft is an extra piece of data that needs to be saved, managed, and retrieved. Without drafts, the system has fewer records to keep, which can streamline database operations.
+  - Decreased Client Processing: On the client side, draft management involves monitoring changes, saving drafts periodically, and handling conflict resolution if multiple drafts are edited from different devices. Disabling drafts reduces these client-side processes, thus freeing up memory and CPU resources.
+  - Simplified Architecture: Maintaining synced drafts often requires complex backend logic to ensure consistency and avoid data conflicts. Simplifying this architecture by removing draft syncing can lead to more efficient and faster backend operations.
+  - Improved User Experience: Users may experience faster load times and reduced latency without the overhead of draft syncing. This can be particularly noticeable in environments with limited or variable internet connectivity.
+  - However, disabling draft synchronization can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: posts-UniqueEmojiReactionLimit
   :displayname: Unique emoji reaction limit (Posts)
@@ -1750,6 +1838,7 @@ Connected workspaces (Beta)
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
+
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
 .. config:setting:: enable-connected-workspaces
@@ -1762,8 +1851,11 @@ When connected workspaces are enabled, system admins can :doc:`create and manage
 Enable connected workspaces (Beta)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel. 
-Both configuration settings are disabled by default and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
+Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel.
+
+Connected workspaces requires Mattermost Enterprise servers running v10.2 or later.
+
+By default, both configuration settings are disabled and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
 
 This feature's two ``config.json`` settings include:
 

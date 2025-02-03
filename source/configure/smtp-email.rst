@@ -109,6 +109,11 @@ For example, if **System Console > Logs** displays the following error, search f
 
   Connection unsuccessful: Failed to add to email address - 554 5.7.1 <unknown[IP-ADDRESS]>: Client host rejected: Access denied
 
+Checking your Notifications settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If an SMTP connection test in the System Console for a self-hosted Mattermost deployment fails with the message ``Connection unsuccessful: Failed to set the to address: 550 5.7.27 <test@example.com>``, go to **System Console > Site Configuration > Notifications** to verify that notification settings are configured correctly, including **Notification Display Name**, **Notification From Address**, **Support Email Address**, and **Notification Reply-To Address**. Cloud administrators can't manage **Notification From Address** or **Notification Reply-To Address**.
+
 Checking your SMTP server is reachable 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

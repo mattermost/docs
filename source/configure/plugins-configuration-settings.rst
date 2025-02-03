@@ -4,7 +4,29 @@ Plugins configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Self-hosted can manage the following configuration settings in **System Console > Plugins** or by editing the ``config.json`` file as described in the following tables. 
+Review and manage the following plugin configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Plugins**:
+
+- `Plugin management <#plugin-management>`__
+- `Calls <#calls>`__
+- `GitLab <#gitlab>`__
+- `GitHub <#github>`__
+- `Jira <#jira>`__
+- `Legal Hold <#legal-hold>`__
+- `Microsoft Calendar <#microsoft-calendar>`__
+- `MS Teams <#ms-teams>`__
+- `Performance metrics <#performance-metrics>`__
+- `Collaborative playbooks <#collaborative-playbooks>`__
+- `User satisfaction surveys <#user-satisfaction-surveys>`__
+- `ServiceNow <#servicenow>`__
+- `Zoom <#zoom>`__
+- `config.json-only settings <#config-json-only-settings>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``Enable`` value is under ``PluginSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.PluginSettings.Enable'``
+  - When working with the ``config.json`` file manually, look for an object such as ``PluginSettings``, then within that object, find the key ``Enable``.
 
 ----
 
@@ -30,6 +52,18 @@ Enable plugins
 | - **false**: Disables plugins on your Mattermost server.                                                                                                                                                                  | - ``config.json`` setting: ``PluginSettings`` > ``Enable`` > ``true`` |
 |                                                                                                                                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLE``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Resource Consumption: Plugins consume system resources such as CPU, memory, and disk. Disabling them frees up these resources, allowing the core Mattermost application to run more efficiently.
+  - Reduced Complexity: Each plugin can add additional logic and processing requirements. By reducing the number of active plugins, you lower the complexity and potential points of failure in the system.
+  - Faster Load Times: Disabling plugins can lead to faster server startup and lower latency during user interactions, as there are fewer components for the system to initialize and manage.
+  - Stability: Some plugins may have bugs or performance issues that can affect the overall performance and stability of the Mattermost instance. Disabling problematic or under-utilized plugins can enhance the stability of the system.
+  - Maintenance and Updates: Managing fewer plugins reduces the overhead associated with maintaining and updating them, which can contribute to smoother operation and less downtime
+  - However, plugins are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+
 
 .. config:setting:: plugins-requiresignature
   :displayname: Require plugin signature (Plugins - Management)
