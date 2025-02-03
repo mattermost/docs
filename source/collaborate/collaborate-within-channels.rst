@@ -9,13 +9,10 @@ Channels are where you connect, collaborate, and communicate with your team abou
 You're added to default channels automatically
 ----------------------------------------------
 
-Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is automatically added to two default public channels: **Town Square** and **Off-Topic**. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
-
-- **Town Square** is great for your team-wide communications, such as announcements.
-- **Off-Topic** is great for fun, social, non-work-related conversations.
+Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is automatically added to the **Town Square** channel. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
 
 .. note::
-  Town Square can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` this default channel.
+  The Town Square channel can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` this default channel.
 
 Channel sidebar
 ----------------
