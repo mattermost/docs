@@ -47,7 +47,7 @@ Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through 
 .. tab:: Mobile
 
   1. Download and install the Mattermost :doc:`iOS mobile app </collaborate/install-ios-app>` or the :doc:`Android mobile app </collaborate/install-android-app>`.
-  2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. Server URLs must begin with either '''http://''' or '''https://'''. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
+  2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. Server URLs must begin with either ``http://`` or ``https://``. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
