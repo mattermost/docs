@@ -10,10 +10,6 @@ Compliance export
 
 Mattermost Enterprise customers can archive history or transfer message data to third-party systems for auditing and compliance purposes with compliance exports. Supported integrations include `Actiance Vantage <#actiance-xml>`__, `Global Relay <#global-relay-eml>`__, and `Proofpoint <#proofpoint>`__. 
 
-.. tip::
-
-   While Mattermost stores all message history by default, system admins can specify a :doc:`custom data retention policy </comply/data-retention-policy>` for how long messages and file uploads are kept in Mattermost channels and direct messages.
-
 From Mattermost v10.5, compliance exports include performance improvements for large daily data sets with changes affecting output formats, system performance, and logic. Compliance exports provide compliance teams complete information to reconstruct the state of a channel, and to determine who had visibility on an initial message, or when the message was edited or deleted. Compliance teams can track a message by its MessageId as it is edited or deleted, and across batches and exports periods.
 
 Overview
@@ -27,9 +23,6 @@ Compliance exports are produced from the System Console, and contain all message
 - Posts from bots/webhooks
 
 Exports include information on channel member history at the time the message was posted.
-
-- Entries for deleted messages and files are included in CSV and Actiance reports. The deleted content is included in the compliance export. 
-- Global Relay reports include file deletion entries but message deletion entries are excluded.
 
 Set up guide
 ------------
@@ -167,45 +160,7 @@ For more information on Global Relay archive system, visit `their website <https
   
    Messages larger than 250 MB will have their attachments removed because they are too large to send to Global Relay. An error is added to the server logs with id ``global_relay_attachments_removed``. It includes the post ID the attachments were removed from, as well as the attachment IDs. A `ticket is queued to better handle large messages <https://mattermost.atlassian.net/browse/MM-10038>`__.
 
-.. tab:: From Mattermost v10.5
-
-   You can review export job status in the System Console. Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system.
-
-   When the daily compliance export job is finished, a parent directory is created named based on when the export was started and the ``startTimestamp`` and ``endTimestamp`` of the export, e.g, ``compliance-export-2024-08-13-05h08m-1723105062492-1723109100075``. That parent directory contains 1 zip file for each batch, named based on the batch number and the start and end timestamps of the messages in that batch, e.g, ``batch001-1723105062492-1723106622163.zip``. Each zip file contains the same information available in previous Mattermost server releases.
-
-   Working from the same example above, the directory would look like this:
-
-   .. code-block:: bash
-
-      compliance-export-2024-08-13-05h08m-1723105062492-1723109100075
-      ├── batch001-1723105062492-1723106622163.zip
-      ├── batch002-1723106622163-1723108196005.zip
-      └── batch003-1723108196005-1723109100075.zip
-
-   And each batch would look like this:
-
-   .. code-block:: bash
-
-      batch001-1723105062492-1723106622163.zip
-      ├── 20240808
-      └── actiance_export.xml
-
-   **Updated Global Relay export fields**
-
-   - ``post_id`` is the unique ``messageId``.
-   - ``sent_time`` For messages, this field is the post's ``CreateAt`` time. For deleted files, this is the fileInfo’s ``createAt`` time.
-   - ``update_time`` This indicates that the message has been updated, and this is the ``updateAt`` time.
-   - ``update_type`` This helps differentiate what kind of update it was, including:
-
-     - ``EditedNewMsg`` This message has been edited, and this is the new message (post-edit) content.
-     - ``EditedOriginalMsg`` This message has been edited, and this the original message (pre-edit) content. This message will have another field ``edited_new_msg_id``, which is the Id of the message which holds the post-edited message contents.
-     - ``UpdatedNoMsgChange`` This message's content hasn't changed, but the post was updated for some reason, such as a reaction, replied-to, a reply was edited, a reply was deleted.
-     - ``Deleted`` This message was deleted.
-     - ``FileDeleted`` This message is recording that a file was deleted.
-
-.. tab:: Prior to Mattermost v10.5
-
-   Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/products/archive-data-compliance/>`_.
+Once you've selected Global Relay EML as your file format, you can set up an integration with Global Relay archive system. For more information, see `Global Relay Archive <https://www.globalrelay.com/products/archive-data-compliance/>`_.
 
 Proofpoint
 ~~~~~~~~~~~
