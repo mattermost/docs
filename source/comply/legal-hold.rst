@@ -174,3 +174,18 @@ How do I enable e-discovery for Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Learn more about extracting data for e-discovery in our :doc:`product documentation </comply/electronic-discovery>`.
+
+How do I manage storage costs and version retention in S3?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The ``legalhold`` directory in your S3 bucket is subject to frequent modifications. This can result in the rapid accumulation of multiple object versions, significantly increasing storage costs and complicating version management over time. 
+
+To address these challenges, we strongly recommend configuring `S3 Lifecycle Rules <https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html>`_ to efficiently manage storage, control costs, and ensure compliance with legal and organizational requirements.
+
+- Targeting only the ``legalhold`` directory ensures that other areas of your S3 bucket remain unaffected by these rules while minimizing the storage footprint and associated costs. Automating version control and cleanup reduces manual intervention, making bucket management more effective and scalable.
+- Review your organization's data retention policies to ensure compliance with legal and operational requirements. Choose appropriate timelines for transitioning and expiring file versions. 
+- If compliance requires data immutability, consider using Amazon S3 Object Lock for write-once-read-many (WORM) protection.
+- Move older versions of files to more cost-effective storage classes, such as S3 Glacier or S3 Intelligent-Tiering, after a specified period (e.g., 7 days).
+- Permanently delete non-current versions that are no longer needed after a defined retention period (e.g., 30 days).
+- Ensure the latest version of each object in the ``legalhold`` directory is excluded from these lifecycle rules to maintain data accessibility and integrity.
+- Regularly review and update your lifecycle configurations to align with evolving business needs and storage practices.
