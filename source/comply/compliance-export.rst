@@ -64,7 +64,8 @@ CSV
    .. code-block:: bash
 
       batch001-1723105062492-1723106622163.zip
-      ├── 20240808
+      ├── files
+      ├── metadata.json
       └── actiance_export.xml
 
    **Updated CSV export fields**
