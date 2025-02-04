@@ -5,10 +5,13 @@ Important Upgrade Notes
 
    
   .. include:: ../about/common-esr-support-rst.rst
+ 
 
-- Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
-   - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
-   - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
+.. note::
+
+  - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
+  - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
+  - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading                                | Then...                                                                                                                                                          |
