@@ -232,17 +232,6 @@ Format
 
     mattermost db version
 
-Example
-  .. code-block:: sh
-
-    bin/mattermost export actiance --exportFrom=1513102632
-
-Options
-  .. code-block:: text
-
-    --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
-    --batchSize int         The number of posts to export. The default of -1 means no limit.
-
 ----
 
 mattermost export
@@ -255,82 +244,26 @@ Description
   Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
 Child Commands
-  -  `mattermost export actiance`_ - Export data from Mattermost in Actiance XML format. Requires a Mattermost Enterprise subscription plan.
+  -  `mattermost export actiance`_ - Deprecated as of MM v10.5. Use `mattermost export schedule`_.
+  -  `mattermost export csv`_ - Deprecated as of MM v10.5.
+  -  `mattermost export global-relay-zip`_ - Deprecated as of MM v10.5.
+  -  `mattermost export schedule`_ - Schedule a compliance export job.
   -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost :doc:`Bulk Import format </onboard/bulk-loading-data>`. Deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>`.
-  -  `mattermost export csv`_ - Export data from Mattermost in CSV format. Requires a Mattermost Enterprise subscription plan.
-  -  `mattermost export global-relay-zip`_ - Export data from Mattermost into a ZIP file containing emails to send to Global Relay for debug and testing purposes only. Requires a Mattermost Enterprise subscription plan.
-  -  `mattermost export schedule`_ - Schedule an export job
 
 mattermost export actiance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Description
-    Export data from Mattermost in Actiance XML format.
-
-Format
-  .. code-block:: sh
-
-    mattermost export actiance
-
-Example
-  .. code-block:: sh
-
-    bin/mattermost export actiance --exportFrom=1513102632
-
-Options
-  .. code-block:: text
-
-    --exportFrom string     Unix timestamp (milliseconds since epoch, UTC) to export data from.
-    --batchSize int         The number of posts to export. The default of -1 means no limit.
-
-mattermost export bulk
-~~~~~~~~~~~~~~~~~~~~~~
-
-From Mattermost v6.0, this command has been deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>` as the supported way to export data out of Mattermost.
+From Mattermost v10.5, this command has been deprecated. It will be added to the mmctl command line tool in a future version. Until then, please use `mattermost export schedule`_. 
 
 mattermost export csv
 ~~~~~~~~~~~~~~~~~~~~~
 
-Description
-  Export data from Mattermost in CSV format.
-
-Format
-  .. code-block:: sh
-
-    mattermost export csv
-
-Example
-  .. code-block:: sh
-
-    bin/mattermost export csv --exportFrom=1513102632
-
-Options
-  .. code-block:: text
-
-    --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-    --batchSize int         The number of posts to export. The default of -1 means no limit.
+From Mattermost v10.5, this command has been deprecated. It will be added to the mmctl command line tool in a future version.
 
 mattermost export global-relay-zip
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Description
-  Export data from Mattermost into a zip file containing emails to send to Global Relay for debug and testing purposes only. This does not archive any information in Global Relay.
-
-Format
-  .. code-block:: sh
-
-    mattermost export global-relay-zip
-
-Example
-  .. code-block:: sh
-
-    bin/mattermost export global-relay-zip --exportFrom=1513102632
-
-Options
-  .. code-block:: text
-
-    --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
-    --batchSize int         The number of posts to export. The default of -1 means no limit.
+From Mattermost v10.5, this command has been deprecated. It will be added to the mmctl command line tool in a future version.
 
 mattermost export schedule
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -346,14 +279,18 @@ Format
 Example
   .. code-block:: sh
 
-    bin/mattermost export schedule --format=actiance --exportFrom=1513102632
+    bin/mattermost export schedule --exportFrom=1513102632
 
 Options
   .. code-block:: text
 
-    --format string         Output file format. Currently, only ``actiance`` is supported.
     --exportFrom string     Unix timestamp (seconds since epoch, UTC) to export data from.
     --timeoutSeconds string Set how long the export should run for before timing out.
+
+mattermost export bulk
+~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v6.0, this command has been deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>` as the supported way to export data out of Mattermost.
 
 ----
 
