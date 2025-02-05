@@ -245,7 +245,7 @@ Description
 
 Child Commands
   -  `mattermost export actiance`_ - Deprecated as of MM v10.5. Use `mattermost export schedule`_.
-  -  `mattermost export csv`_ - Deprecated as of MM v10.5.
+  -  `mattermost export csv`_ - Deprecated from Mattermost v10.5.
   -  `mattermost export global-relay-zip`_ - Deprecated as of MM v10.5.
   -  `mattermost export schedule`_ - Schedule a compliance export job.
   -  `mattermost export bulk`_ - Export data to a file compatible with the Mattermost :doc:`Bulk Import format </onboard/bulk-loading-data>`. Deprecated in favor of :ref:`mmctl export commands <manage/mmctl-command-line-tool:mmctl export>`.
