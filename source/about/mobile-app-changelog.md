@@ -25,6 +25,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed reliability issues with threads.
+ - Fixed certain scenarios where the keyboard area in the channel and thread screen took more space than it should.
 
 ### Open Source Components
  - Added ``@react-native-community/cli``, ``@react-native-community/cli-platform-android``, and ``@react-native-community/cli-platform-ios`` to https://github.com/mattermost/mattermost-mobile.
