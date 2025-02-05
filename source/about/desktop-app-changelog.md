@@ -5,6 +5,10 @@
 
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
+```{Important}
+```{include} common-esr-support.md
+```
+
 (release-v5-10)=
 ## Release v5.10
 
