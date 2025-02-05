@@ -244,7 +244,7 @@ Description
   Commands for exporting data for compliance and for merging multiple Mattermost instances.
 
 Child Commands
-  -  `mattermost export actiance`_ - Deprecated as of MM v10.5. Use `mattermost export schedule`_.
+  -  `mattermost export actiance`_ - Deprecated from Mattermost v10.5 in favor of `mattermost export schedule`_.
   -  `mattermost export csv`_ - Deprecated from Mattermost v10.5.
   -  `mattermost export global-relay-zip`_ - Deprecated from Mattermost v10.5.
   -  `mattermost export schedule`_ - Schedule a compliance export job.
