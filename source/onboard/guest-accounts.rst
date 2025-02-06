@@ -16,7 +16,7 @@ Guest accounts in Mattermost are a way to collaborate with individuals, such as 
   
   - A system admin must :ref:`enable guest access <configure/authentication-configuration-settings:guest access>` before guests can be invited.
   - Mattermost Enterprise and Professional customers can :doc:`control who can invite guests </onboard/advanced-permissions>` in their organization. By default, only system admins can invite guests.
-  - Guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`. However, guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. You must :doc:`invite guests </collaborate/invite-people>` to individual teams and channels manually. Deactivating a guest account reduces your licensed seat count.
+  - Guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`. However, guests aren't automatically added to the default **Town-square** channel when they log in. You must :doc:`invite guests </collaborate/invite-people>` to individual teams and channels manually. Deactivating a guest account reduces your licensed seat count.
   - You'll identify guest users in Mattermost based on their **GUEST** badge next to their name and profile picture. Channels that contain guests also display the message ***This channel has guests** in the channel header.
 
 Guests account limits
