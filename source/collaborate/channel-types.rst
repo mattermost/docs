@@ -21,7 +21,7 @@ There are 5 types of channels in Mattermost:
 Public channels
 ---------------
 
-Public channels are open to everyone on a team and are identified with a **Globe** |globe| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**.
+Public channels are open to everyone on a team and are identified with a **Globe** |globe| icon. New team members are automatically added to the **Town Square**  channel.
 
 See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering, joining, and leaving other channels.
 

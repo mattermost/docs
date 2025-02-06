@@ -10,7 +10,10 @@ You need a PostgreSQL database. See the :ref:`database software <install/softwar
 
   We recommend using a managed PostgreSQL database service, such as Amazon RDS, Google Cloud SQL, or Azure Database for PostgreSQL.
 
-To manually set up a self-managed PostgreSQL database for use by the Mattermost server:
+Set up a PostgreSQL database
+----------------------------
+
+To set up a PostgreSQL database for use by the Mattermost server:
 
 1. Log in to the server that will host the database, and install PostgreSQL. See the `PostgreSQL <https://www.postgresql.org/download/>`__ documentation for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called *postgres* has been created.
 
@@ -204,3 +207,43 @@ When the PostgreSQL database is installed, and the initial setup is complete, yo
 .. important::
 
   If you are upgrading a major version of Postgres, it is essential that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is necessary to re-populate the ``pg_statistics`` table used to generate optimal query plans. The database performance might suffer if this step is not done.
+
+
+Minimum supported version policy
+---------------------------------
+
+To make planning easier and ensure your Mattermost deployment remains fast and secure, we are introducing a policy for updating the minimum supported version of PostgreSQL. The oldest supported PostgreSQL version Mattermost supports will match the oldest version supported by the PostgreSQL community. This ensures you benefit from the latest features and security updates.
+
+This policy change takes effect from Mattermost v10.6, where the minimum PostgreSQL version required will be PostgreSQL 13. This aligns with the PostgreSQL community's support policy, which provides 5 years of support for each major version.
+
+.. note::
+
+  Mattermost v10.6 is not an :ref:`Extended Support Release (ESR) <about/release-policy:extended support releases>`. Going forward, this database version support policy will only apply to ESR releases.
+
+When a PostgreSQL version reaches its end of life (EOL), Mattermost will require a newer version starting with the next scheduled ESR release. This means the following future PostgreSQL minimum version increases as follows:
+
++-----------------------------------------------------------+------------------+--------------------------------+
+| **Mattermost Version**                                    | **Release Date** | **Minimum PostgreSQL Version** |
++===========================================================+==================+================================+
+| :ref:`v9.11 ESR <release-v9-11-extended-support-release>` | 2024-8-15        | 11.x                           |
++-----------------------------------------------------------+------------------+--------------------------------+
+| v10.5 ESR                                                 | 2025-2-15        | 11.x                           |
++-----------------------------------------------------------+------------------+--------------------------------+
+| v10.6                                                     | 2025-3-15        | 13.x                           |
++-----------------------------------------------------------+------------------+--------------------------------+
+| v10.11 ESR                                                | 2025-8-15        | 13.x                           |
++-----------------------------------------------------------+------------------+--------------------------------+
+| v11.5 ESR ``*``                                           | 2026-2-15        | 14.x (EOL 2026-11-12)          |
++-----------------------------------------------------------+------------------+--------------------------------+
+
+``*`` Forcasted release version and date.
+
+Customers will have 9 months to plan, test, and upgrade their PostgreSQL version before the new requirement takes effect. This policy aims to provide clarity and transparency so you can align database upgrades with the Mattermost release schedule. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_. to discuss your options.
+
+Frequently asked questions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+What about MySQL databases?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Mattermost is :ref:`deprecating support for MySQL <deploy/postgres-migration:why is mattermost dropping support for mysql?>` starting with v11. We aren't actively maintaining or working on MySQL support.
