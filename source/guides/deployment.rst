@@ -40,7 +40,7 @@ Learn how to install, deploy, and scale Mattermost for teams and organizations o
 * :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL. 
 * :doc:`Prepare your Mattermost database </install/prepare-mattermost-database>` - Learn how to prepare and configure a database for Mattermost.
 * :doc:`Deploy on Ubuntu </install/install-ubuntu>` - Signed packages direct from Mattermost featuring a single command for install and upgrades.
-* :ref:`Deploy using Docker <install/install-docker:deploy mattermost on docker for production use>` - The fastest way to try Mattermost and a great single server installation option.
+* :ref:`Deploy using Docker <install/install-docker>` - The fastest way to try Mattermost and a great single server installation option.
 * :doc:`Deploy with a tarball </install/install-tar>` - Support for any Linux distribution.
 * :doc:`Deploy using Omnibus </install/installing-mattermost-omnibus>` - An entire Mattermost installation on a single server.
 * :doc:`Deploy using Kubernetes </install/install-kubernetes>` - Install using the Mattermost Helm Chart or Operator and simplified updates.
