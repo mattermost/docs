@@ -498,7 +498,6 @@ The following built-in roles and associated permissions are available:
 - read_public_channel
 - manage_team
 - read_channel
-- convert_private_channel_to_public
 - sysconsole_read_integration
 - read_public_channel_groups
 - list_public_teams
@@ -596,7 +595,6 @@ The following built-in roles and associated permissions are available:
 - convert_public_channel_to_private
 - manage_channel_roles
 - sysconsole_read_user_management_teams
-- convert_private_channel_to_public
 - read_public_channel_groups
 - delete_public_channel
 - remove_user_from_team
@@ -618,7 +616,6 @@ The following built-in roles and associated permissions are available:
 - manage_others_incoming_webhooks
 - manage_channel_roles
 - read_public_channel_groups
-- convert_private_channel_to_public
 - remove_reaction
 - delete_post
 - manage_outgoing_webhooks
