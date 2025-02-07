@@ -39,7 +39,7 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
  - Added the ability to modify post attachments during edit.
  - The channel bookmarks bar is now hidden when there are no bookmarks in the channel. Bookmarks can now be added from the channel menu.
  - Removed the video from the onboarding checklist.
- - Improved accessibility throughout the webapp by fixing several issues around keyboard navigation and screen reader focused on modals, RHS and core chat functionality. 
+ - Improved accessibility throughout the webapp by fixing several issues around keyboard navigation and screen reader focused on modals, right-hand side and core chat functionality. 
 
 #### Administration
  - Added the migrations, store layer and service for the Property System Architecture.
