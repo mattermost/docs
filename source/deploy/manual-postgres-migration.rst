@@ -295,7 +295,7 @@ Use the ``mmctl config migrate`` command to :ref:`migrate your config <manage/mm
 
 .. code-block:: sh
 
-  mmctl config migrate "postgres://<DB_USER>:<DB_PASS>@<DB_HOST>:5432/<DB_NAME>?sslmode=disable&connect_timeout=10" /opt/mattermost/config/config.json --local
+  mmctl config migrate "<DB_USER>:<DB_PASS>@tcp(<DB_HOST>:3306)/<DB_NAME>?charset=utf8mb4,utf8&readTimeout=30s&writeTimeout=30s&multiStatements=true" /opt/mattermost/config/config.json --local
 
 Where ``<DB_USER>``, ``<DB_PASS>``, ``<DB_HOST>``, and ``<DB_NAME>`` are replaced with your environment values. Ensure you use ``--local`` when running this command. The first parameters (``<DB_USER>``, ``<DB_PASS>``) is the database the configuration is stored in, the second parameter (``<DB_HOST>``, ``<DB_NAME>``) is the file we are saving the configuration to. 
 
@@ -421,7 +421,9 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 Compare the data
 ~~~~~~~~~~~~~~~~
 
-We internally developed a tool to simplify the process of comparing the contents of two databases. The ``dbcmp`` tool compares every table and reports whether there is a diversion between two schemas. Note that ``dbcmp`` does not compare individual rows, instead, it calculates the checksum value of given ``page-size`` and compares those values. This means it cannot calculate or provide diffs on individual rows.
+We developed an internal tool called ``dbcmp`` to simplify database comparison. It checks every table in two databases and reports any differences in their schemas. However, ``dbcmp`` does not compare individual rows. Instead, it calculates checksum values based on a specified page-size and compares them. This means it cannot generate row-level diffs.
+
+We recommend using ``dbcmp`` as an additional check to verify data integrity, especially if custom casting rules (beyond the defaults or those provided by us) were used during migration. Otherwise, running this tool is not necessary.
 
 The tool includes a few flags to run a comparison:
 
@@ -432,16 +434,21 @@ The tool includes a few flags to run a comparison:
 
    Flags:
          --exclude strings   exclude tables from comparison, takes comma-separated values.
+         --include strings   include only matching tables for comparison, takes comma-separated values.
      -h, --help              help for dbcmp
          --source string     source database dsn
          --target string     target database dsn
      -v, --version           version for dbcmp
 
+.. note::
+
+  ``--exclude`` and ``--include`` flags are mutually exclusive and they can't be used together.
+
 For our case, we can simply run the following command:
 
 .. code-block:: sh
 
-  dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN} " --exclude="db_migrations,ir_,focalboard,systems"
+  dbcmp --source "${MYSQL_DSN}" --target "${POSTGRES_DSN} " --include="posts,users"
 
 An example command would look like: ``dbcmp --source "user:password@tcp(address:3306)/db_name --target "postgres://user:password@address:5432/db_name``
 

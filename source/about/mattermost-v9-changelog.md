@@ -10,6 +10,23 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.8, released 2025-01-22**
+  - Mattermost v9.11.8 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
+  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+  - Pre-packaged Calls plugin [v0.29.7](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.7).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+  - Fixed an issue where new messages from new channels wouldn't appear in the sidebar after reconnecting the websocket [MM-61361](https://mattermost.atlassian.net/browse/MM-61361).
+  - Mattermost v9.11.8 contains no database or functional changes.
+- **9.11.7, released 2025-01-15**
+  - Mattermost v9.11.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with the web app status not being updated correctly for the current user [MM-59952](https://mattermost.atlassian.net/browse/MM-59952).
+  - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
+  - Fixed an issue with insertion errors to ``LinkMetadata`` table.
+  - Fixed an issue where the scroll position reset when custom emojis were requested [MM-62102](https://mattermost.atlassian.net/browse/MM-62102).
+  - Mattermost v9.11.7 contains the following database changes:
+    - Fixed an issue where Direct and Group Messages with a ``DeleteAt`` flag in the database could cause issues with some APIs.
 - **9.11.6, released 2024-12-10**
   - Mattermost v9.11.6 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - A 200 response is now returned for HEAD requests to a sub-path rather than responding with a 302. This fixes mobile devices trying to connect to a server hosted on a sub-path [MM-58042](https://mattermost.atlassian.net/browse/MM-58042).
