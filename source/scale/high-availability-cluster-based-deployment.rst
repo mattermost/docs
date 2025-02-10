@@ -8,7 +8,7 @@ High availability cluster-based deployment
 
  <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
-A High availability cluster-based deployment enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
+A high availability cluster-based deployment enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
@@ -24,6 +24,10 @@ Update sequence for continuous operation
   You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
 
   **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
+
+.. important::
+
+   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
 
 Deployment guide
 ----------------
@@ -544,6 +548,11 @@ What does Mattermost recommend for disaster recovery of the databases?
 When deploying Mattermost in a high availability configuration, we recommend using a database load balancer between Mattermost and your database. Depending on your deployment this needs more or less consideration.
 
 For example, if you're deploying Mattermost on AWS with Amazon Aurora we recommend utilizing multiple Availability Zones. If you're deploying Mattermost on your own cluster please consult with your IT team for a solution best suited for your existing architecture.
+
+How to find the hostname of the connected websocket?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v10.4, Enterprise customers running self-hosted deployments can go to the **Product** menu |product-list| and select **About Mattermost** to see the hostname of the node in the cluster running Mattermost.
 
 Troubleshooting
 ---------------
