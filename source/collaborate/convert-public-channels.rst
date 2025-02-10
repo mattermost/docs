@@ -53,18 +53,15 @@ You must be a system admin or team admin to convert public channels to private c
 Convert private channels to public channels
 -------------------------------------------
 
-Due to potential security concerns with sharing private channel history, only system admins can convert private channels to public channels. 
+Due to potential security concerns with sharing private channel history, only system admins can convert private channels to public channels using the System Console. 
 
 .. note::
 
-  Team admins may be granted permissions to convert private channels to public channels via the `API <https://api.mattermost.com/#tag/channels/operation/UpdateChannelPrivacy>`_ or :ref:`mmctl channel modify command <manage/mmctl-command-line-tool:mmctl channel modify>` when configured in the :ref:`permission scheme <onboard/advanced-permissions:permissions structure>`.
+  - The ability to convert private channels to public channels using the `API <https://api.mattermost.com/#tag/channels/operation/UpdateChannelPrivacy>`_ or :ref:`mmctl channel modify command <manage/mmctl-command-line-tool:mmctl channel modify>` is limited to system admins, team admins, and users with specific granular admin roles. Team admins have this permission by default, but system admins can restrict it or assign it to other roles. 
+  - Granular roles require permissions for managing User Management Channels and Groups, including ``sysconsole_write_user_management_channels`` and ``sysconsole_write_user_management_groups``. Manage permissions through the :ref:`permission scheme <onboard/advanced-permissions:permissions structure>`.
+  - If :ref:`Sync Group channel management <manage/team-channel-members:channel management>` is enabled, private channels can't be converted to public channels.
 
 1. Go to **System Console > Channels**.
 2. Select **Edit** for an existing private channel. You can also filter the list of channels to private channels only.
 3. Under **Channel Management > Public channel or private channel**, select **Private**. 
 4. Select **Save**.
-
-.. note::
-
-  - If :ref:`Sync Group channel management <manage/team-channel-members:channel management>` is enabled, private channels can't be converted to public channels.
-  - System admins can also convert private channels to public channels using the `API <https://api.mattermost.com/#tag/channels/operation/UpdateChannelPrivacy>`_ or the :ref:`mmctl channel modify command <manage/mmctl-command-line-tool:mmctl channel modify>`.
