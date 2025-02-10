@@ -53,7 +53,9 @@ By default, message drafts are synchronized on the Mattermost server and are acc
 
 .. tab:: Mobile
 
-  When composing a message, you can simply opt to complete it later. The partially composed message is kept in the text field and an **Edit** option |edit-icon| displays next to the channel name.
+  When composing a message, you can simply choose to complete it later. The partially composed message is kept in the text field and an **Edit** option |edit-icon| displays next to the channel name.
+
+  From Mattermost v10.5, you'll find local draft messages under **Drafts**. Drafts synchronized to the Mattermost server will be listed under **Drafts** in a future mobile app release.
 
   .. image:: ../images/mobile-draft-a-message.gif
     :alt: You can sync a daft message by exiting the channel mid-way while composing the message.
