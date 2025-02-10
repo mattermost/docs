@@ -19,8 +19,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - In the Mattermost Mobile App v2.25 release, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845).
 
 ### Improvements
- - Added a feature for having a separate tab for **Drafts** on mobile. The Drafts screen currently only supports local drafts on the device and not server synched drafts. 
- - Android: App logs will now show information from the native side.
+ - Added a feature for having a separate tab for **Drafts** on mobile. The Drafts screen currently only supports local drafts on the device and not drafts synchronized with the server.
+ - Android: App logs now includes enhanced logging for events that happen on the native (device-side) of the app which can be useful for troubleshooting issues related to Mattermost push notifications.
  - Added visualization of custom profile attributes. Requires server v10.5 and feature flag enabled.
 
 ### Bug Fixes
