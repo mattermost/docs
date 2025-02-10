@@ -14,7 +14,7 @@ The :ref:`commercial version of Mattermost <about/editions-and-offerings:matterm
 Does Mattermost support 508 Compliance?
 ---------------------------------------
 
-Yes, please see our :doc:`VPAT </about/vpat>` form for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
+Yes. See the :doc:`accessibility compliance policy </about/accessibility-compliance-policy>` documentation for details. Mattermost Enterprise Edition has been purchased by multiple US public sector organizations, including US federal agencies and the Department of Defense.
 
 What's the largest Mattermost deployment you have?
 --------------------------------------------------

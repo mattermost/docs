@@ -4,7 +4,7 @@ User management configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Manage your Mattermost users including their access permissions, groups, teams, channels, as well as their access to the System Console. Access user management options in the System Console by going to **User Management**:
+Review and manage the following in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **User Management**:
 
 - `Users <#users>`__
 - `Groups <#groups>`__
