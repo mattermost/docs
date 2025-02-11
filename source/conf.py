@@ -2392,8 +2392,6 @@ redirects = {
         "https://docs.mattermost.com/install/install-ubuntu",
 "install/install-ubuntu-2004.html":
         "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
-"install/install-mmte-helm-gitlab-helm.html":
-        "https://docs.mattermost.com/install/installing-team-edition-helm-chart.html",
 "install/mattermost-omnibus.html":
         "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
 "install/outbound-proxy.html":
