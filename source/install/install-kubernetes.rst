@@ -398,3 +398,8 @@ To fix this issue, configure an appropriate buffer size (8k or 16k should be suf
   ...
 
 Use caution when changing the buffer size as it may slightly impact NGINX performance. Exact values are machine-dependent.
+
+Need help?
+----------
+
+If you run into challenges when using or transitioning to the Mattermost Operator for your Kubernetes deployment, `let us know <https://forum.mattermost.com/t/moving-to-the-mattermost-operator-for-kubernetes-deployments/22523>`_. Your feedback helps us improve our tools and documentation for a better customer experience.
