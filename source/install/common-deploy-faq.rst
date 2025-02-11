@@ -6,7 +6,7 @@
 Why doesn't Mattermost start at system boot?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To have the Mattermost Server start at system boot, the systemd until file needs to be enabled. Run the following command:
+To have the Mattermost Server start at system boot, the systemd unit file needs to be enabled. Run the following command:
 
 .. code-block:: sh
 
@@ -29,3 +29,9 @@ Yes. Mattermost binds to 443 instead of 8065. The Mattermost binary requires the
 .. note::
 
   - We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </install/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </install/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.
+
+Where can I access Mattermost Server logs?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost Server logs are located in the ``logs`` directory of wherever you installed Mattermost. By default, this is ``/opt/mattermost/logs``, inside the ``mattermost.log`` file.
+
