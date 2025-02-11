@@ -262,7 +262,7 @@ Built-in roles
 
 The System Scheme is built-in to the product, and its roles are defined as ``BuiltIn: true`` in the ``Roles`` table. You can use the Mattermost API to `retrieve a list of permissions by role name <https://api.mattermost.com/#tag/roles/paths/~1roles~1names/post>`__.
 
-The following built-in roles and associated permissions are available:
+The following built-in roles with default permissions are available:
 
 *channel_admin*
 
