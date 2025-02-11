@@ -14,6 +14,9 @@ We recommend taking a backup of this default config ahead of making changes:
 .. include:: common-default-config-changes.rst
   :start-after: :nosearch:
 
+.. include:: common-configure-support-email.rst
+  :start-after: :nosearch:
+
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
 	
 .. code-block:: sh

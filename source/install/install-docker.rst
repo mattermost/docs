@@ -68,6 +68,9 @@ To deploy Mattermost on Docker:
     
       At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
 
+.. note::
+    We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
+
 3. Create the required directories and set their permissions.
 
    .. code-block:: sh
@@ -176,6 +179,9 @@ The Production deployment solution is designed to deploy Mattermost on Docker in
 .. important::
     
       At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+
+.. note::
+    We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
 
 3. Create the required directories and set their permissions. 
    

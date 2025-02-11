@@ -95,6 +95,9 @@ Rename this configuration file with correct permissions:
 .. include:: common-default-config-changes.rst
   :start-after: :nosearch:
 
+.. include:: common-configure-support-email.rst
+  :start-after: :nosearch:
+
 After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
 
 .. code-block:: sh
