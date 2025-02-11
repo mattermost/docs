@@ -53,6 +53,7 @@ In a terminal window, run the following repository setup command:
   curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
 
 This command sets up all required repositories and configures:
+
 - PostgreSQL database
 - NGINX web server as a proxy
 - Certbot for SSL certificate management
