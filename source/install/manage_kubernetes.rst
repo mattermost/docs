@@ -1,6 +1,10 @@
 Manage the Mattermost Kubernetes Operator
 =========================================
 
+.. important::
+
+  We strongly recommend using the Mattermost Operator with Helm for your Kubernetes deployment. See the :doc:`Deploy Mattermost on Kubernetes </install/install-kubernetes>` product documentation for details. This page is outdated and will be archived soon.
+
 Reviewing Mattermost Resource Status
 ------------------------------------
 
