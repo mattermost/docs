@@ -2292,7 +2292,10 @@ Create an export file including message attachments.
 .. code-block:: sh
 
    --no-attachments              Omit file attachments in the export file.
+   --no-roles-and-schemes        Exclude roles and custom permission schemes from the export file.
    --include-archived-channels   Include archived channels in the export file.
+   --include-profile-pictures    Include profile pictures in the export file.
+   --team string                 Name of the team to restrict the export to.
    -h, --help                    help for create
 
 **Options inherited from parent commands**
