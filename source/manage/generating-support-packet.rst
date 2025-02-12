@@ -91,7 +91,9 @@ When present, the following information is santized during packet generation: ``
 
 .. important::
 
-   Plugins are not sanitized during packet generation. Ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+   - Plugins may not be sanitized during packet generation. 
+     - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
+     - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
 Share the packet with Mattermost
 --------------------------------
