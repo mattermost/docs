@@ -6,6 +6,10 @@ Install Mattermost on Azure AKS
 
 You can use a supported `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`__ to install Mattermost on your existing Azure infrastructure.
 
+.. important::
+
+  You are responsible for Azure costs associated with any infrastructure you spin up to host a Mattermost server, and Azure credits cannot be applied towards the purchase of a Mattermost license.
+
 Infrastructure pre-requisites
 -----------------------------
 
