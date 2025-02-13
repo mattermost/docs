@@ -6,6 +6,10 @@ How to install Mattermost Team Edition Helm Chart in a GitLab Helm Chart deploym
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
+.. important::
+
+  We strongly recommend using the Mattermost Operator with Helm for your Kubernetes deployment. See the :doc:`Deploy Mattermost on Kubernetes </install/install-kubernetes>` product documentation for details. This page is outdated and will be archived soon.
+
 This document describes how to use Mattermost Team Edition Helm Chart in proximity with an existing GitLab Helm Chart deployment. Once the Mattermost Team Edition Helm Chart is installed, GitLab SSO integration is configured which utilizes shared configurations to streamline authentication, storage, encryption, and traffic routing.
 
 As the Mattermost Helm Chart is installed in a separate namespace, it is recommended that ``cert-manager`` and ``nginx-ingress`` be configured to manage cluster-wide ingress and certificate resources.
