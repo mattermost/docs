@@ -7,6 +7,11 @@ Support for Mattermost Server v9.5 [Extended Support Release](https://docs.matte
 - See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
 ```
 
+(release-v10.5-extended-support-release)=
+## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+ - **Note:** The v10.5 release is currently delayed due to ongoing investigations on performance issues and file upload bugs [MM-62960](https://mattermost.atlassian.net/browse/MM-62960), [MM-62944](https://mattermost.atlassian.net/browse/MM-62944).
+
 (release-v10.4-feature-release)=
 ## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
