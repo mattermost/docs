@@ -86,7 +86,7 @@ Restrict account creation to specified email domains
 | String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: signup-enableopenserver
+.. config:setting:: signup-enable-open-server
   :displayname: Enable open server (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .TeamSettings.EnableOpenServer
@@ -104,7 +104,7 @@ Enable open server
 |                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``             | 
 +--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: signup-enableemailinvitations
+.. config:setting:: signup-enable-email-invitations
   :displayname: Enable email invitations (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .ServiceSettings.EnableEmailInvitations
