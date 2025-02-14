@@ -2780,7 +2780,7 @@ OpenID Connect (other) settings
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. config:setting:: oidc-enable
+.. config:setting:: openid-enable
   :displayname: Enable (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Enable
@@ -2846,7 +2846,7 @@ OpenID Connect (other) Button color
 | String input.                                                                                                                | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONCOLOR``       |
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: oidc-discoveryendpoint
+.. config:setting:: openid-discovery-endpoint
   :displayname: Discovery endpoint (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.DiscoveryEndpoint
@@ -2876,7 +2876,7 @@ OpenID Connect (other) Discovery endpoint
   custom admin roles to limit access to modifying these settings. See the 
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.
 
-.. config:setting:: oidc-clientid
+.. config:setting:: openid-client-id
   :displayname: Client ID (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Id
@@ -2898,7 +2898,7 @@ OpenID Connect (other) Client ID
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-.. config:setting:: oidc-clientsecret
+.. config:setting:: openid-client-secret
   :displayname: Client secret (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Secret
