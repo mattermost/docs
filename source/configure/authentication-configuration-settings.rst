@@ -2462,7 +2462,7 @@ Enable OpenID Connect authentication with GitLab
 .. note::
   See the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
 
-.. config:setting:: oidc-gitlabsiteurl
+.. config:setting:: gitlab-openid-site-url
   :displayname: GitLab site URL (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
@@ -2486,7 +2486,7 @@ GitLab OpenID site URL
 .. note::
   See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
 
-.. config:setting:: oidc-gitlabdiscoveryendpoint
+.. config:setting:: gitlab-openid-discovery-endpoint
   :displayname: Discovery endpoint (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GitLabSettings.DiscoveryEndpoint
@@ -2510,7 +2510,7 @@ GitLab OpenID Discovery endpoint
 .. note::
   See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
 
-.. config:setting:: oidc-gitlabclientid
+.. config:setting:: gitlab-openid-client-id
   :displayname: Client ID (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GitLabSettings.Id
