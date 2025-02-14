@@ -11,11 +11,6 @@ Mattermost Server v10.6.0
 
 - Support for PostgreSQL v11 and v12 will be removed. The new minimum PostgreSQL version will be v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
 
-Mattermost Mobile App v2.25.0
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-- In the Mattermost Mobile App v2.25, Mattermost will stop supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
-
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -24,6 +19,11 @@ Mattermost Server v10.5.0
 
 Removed features by Mattermost version
 ----------------------------------------
+
+Mattermost Mobile App v2.25.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- In the Mattermost Mobile App v2.25, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
 
 Mattermost Server v10.4.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
