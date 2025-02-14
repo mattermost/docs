@@ -226,13 +226,22 @@ On macOS Catalina, this dialog can be triggered if the Mac Archive Utility is th
 Desktop App window is black and doesn't load the page
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. First, make sure you have installed the latest desktop app version.
+1. Ensure you have installed the latest desktop app version available.
 2. Clear your cache and reload the app from **View > Clear Cache and Reload** or press :kbd:`Ctrl` :kbd:`Shift` :kbd:`R` on Windows or Linux, or :kbd:`⌘` :kbd:`⇧` :kbd:`R` on Mac.
 3. Quit the app and restart it to see if the issue clears.
-4. Disable GPU hardware acceleration from **File > Settings** on Windows and Linux or **Mattermost > Settings** on macOS, and unselect **Use GPU hardware acceleration**.
+4. Disable GPU hardware acceleration.
+
+  - On Windows or Linux, select **File > Settings** and clear the **Use GPU hardware acceleration** option.
+  - On macOS, select **Mattermost > Settings** and clear the **Use GPU hardware acceleration** option.
+
 5. If you are using a special video driver, such as Optimus, try disabling it to see if the problem is resolved.
 
-If none of the above steps resolve the issue, please open a new ticket in the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_.
+Desktop App window is white and doesn't load the page
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Ensure you have installed the latest desktop app version available.
+2. Delete the ``%userprofile%\AppData\Roaming\Mattermost`` directory on your local machine.
+3. Reinstall the desktop app.
 
 Desktop App is not visible, but the Mattermost icon is in the Task Bar
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
