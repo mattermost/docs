@@ -423,7 +423,7 @@ AD/LDAP
 
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
 
-.. config:setting:: ldap-enablesignin
+.. config:setting:: ldap-enable-sign-in
   :displayname: Enable sign-in with AD/LDAP (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.Enable
@@ -445,7 +445,7 @@ Enable sign-in with AD/LDAP
 |                                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLE``                        |
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: ldap-enablesync
+.. config:setting:: ldap-enable-sync
   :displayname: Enable synchronization with AD/LDAP (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EnableSync
@@ -474,7 +474,7 @@ Enable synchronization with AD/LDAP
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` 
   documentation for details.
 
-.. config:setting:: ldap-loginfieldname
+.. config:setting:: ldap-login-field-name
   :displayname: Login field name (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LoginFieldName
@@ -574,7 +574,7 @@ Connection security
 |   to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``    |                                                                               |
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: ldap-skipcertverification
+.. config:setting:: ldap-skip-certificate-verification
   :displayname: Skip certificate verification (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.SkipCertificateVerification
@@ -596,7 +596,7 @@ Skip certificate verification
 |                                                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION``                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
-.. config:setting:: ldap-privatekey
+.. config:setting:: ldap-private-key
   :displayname: Private key (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PrivateKeyFile
@@ -616,7 +616,7 @@ Private key
 | String input.                                                                                                                                               | - Environment variable: ``MM_LDAPSETTINGS_PRIVATEKEYFILE``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: ldap-publiccert
+.. config:setting:: ldap-public-certificate
   :displayname: Public certificate (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PublicCertificateFile
