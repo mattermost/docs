@@ -541,7 +541,7 @@ AD/LDAP port
 | Numerical input. Default is **389**.                               | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``                 |
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: ldap-connectionsecurity
+.. config:setting:: ldap-connection-security
   :displayname: Connection security (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.ConnectionSecurity
@@ -636,7 +636,7 @@ Public certificate
 | String input.                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: ldap-bindusername
+.. config:setting:: ldap-bind-username
   :displayname: Bind username (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BindUsername
@@ -668,7 +668,7 @@ Bind username
 .. note::
   This field is required. Anonymous bind is not currently supported.
 
-.. config:setting:: ldap-bindpassword
+.. config:setting:: ldap-bind-password
   :displayname: Bind password (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BindPassword
@@ -688,7 +688,7 @@ Bind password
 | String input.                                                                 | - Environment variable: ``MM_LDAPSETTINGS_BINDPASSWORD``       |
 +-------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-.. config:setting:: ldap-basedn
+.. config:setting:: ldap-base-dn
   :displayname: Base DN (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BaseDN
@@ -708,7 +708,7 @@ Base DN
 | String input.                                                                                                                | - Environment variable: ``MM_LDAPSETTINGS_BASEDN``       |
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: ldap-userfilter
+.. config:setting:: ldap-user-filter
   :displayname: User filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.UserFilter
@@ -733,7 +733,7 @@ User filter
 .. note::
   This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
 
-.. config:setting:: ldap-groupfilter
+.. config:setting:: ldap-group-filter
   :displayname: Group filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupFilter
@@ -759,7 +759,7 @@ Group filter
 .. note::
   This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.
 
-.. config:setting:: ldap-enableadminfilter
+.. config:setting:: ldap-enable-admin-filter
   :displayname: Enable admin filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EnableAdminFilter
@@ -784,7 +784,7 @@ Enable admin filter
 .. note::
   If this setting is ``false``, no additional users are designated as system admins by the filter. Users that were previously designated as system admins retain this role unless the filter is changed or removed.
 
-.. config:setting:: ldap-adminfilter
+.. config:setting:: ldap-admin-filter
   :displayname: Admin filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.AdminFilter
@@ -806,7 +806,7 @@ Admin filter
 | String input.                                                                                                                                                                            |                                                               |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: ldap-guestfilter
+.. config:setting:: ldap-guest-filter
   :displayname: Guest filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GuestFilter
@@ -1095,7 +1095,7 @@ Group ID attribute
 .. note::
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
 
-.. config:setting:: ldap-syncinterval
+.. config:setting:: ldap-sync-interval
   :displayname: Synchronization interval (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.SyncIntervalMinutes
@@ -1124,7 +1124,7 @@ Synchronization interval (minutes)
 .. note::
   LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
 
-.. config:setting:: ldap-maxpagesize
+.. config:setting:: ldap-max-page-size
   :displayname: Maximum page size (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.MaxPageSize
@@ -1148,7 +1148,7 @@ Maximum page size
 | Numerical input. Default is **0**.                                                                                           |                                                                       |
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: ldap-querytimeout
+.. config:setting:: ldap-query-timeout
   :displayname: Query timeout (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.QueryTimeout
@@ -2956,7 +2956,7 @@ Enable guest access
   For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
   deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`.
 
-.. config:setting:: guest-whitelistdomains
+.. config:setting:: guest-whitelist-domains
   :displayname: Whitelisted guest domains (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.RestrictCreationToDomains
@@ -2976,7 +2976,7 @@ Whitelisted guest domains
 | String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-.. config:setting:: guest-enforcemultifactorauth
+.. config:setting:: guest-enforce-multifactor-auth
   :displayname: Enforce multi-factor authentication (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.EnforceMultifactorAuthentication
@@ -3001,7 +3001,7 @@ Enforce multi-factor authentication
 .. note::
   This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.
 
-.. config:setting:: guest-showtag
+.. config:setting:: guest-show-tag
   :displayname: Show guest tag (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.HideTags
