@@ -2730,7 +2730,7 @@ Entra ID OpenID Discovery endpoint
 | String input. Default is ``https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration``                                                                                                |                                                                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: oidc-o365clientid
+.. config:setting:: entraid-openid-client-id
   :displayname: Client ID (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.Id
