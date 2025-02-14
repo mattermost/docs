@@ -14,7 +14,8 @@ Support for Mattermost Server v9.11 [Extended Support Release](https://docs.matt
   - Mattermost v10.5.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Boards plugin [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
   - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
-  - Mattermost v10.5.1 contains no database or functional changes.
+  - Mattermost v10.5.1 contains the following functional changes:
+      - A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
 - **10.5.0, released 2025-02-14**
   - Original 10.5.0 release.
 
