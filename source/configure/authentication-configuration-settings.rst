@@ -1978,7 +1978,7 @@ GitLab OAuth 2.0 settings
 .. note::
    For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
 
-.. config:setting:: oauth-gitlabenable
+.. config:setting:: gitlab-oauth-enable
   :displayname: Enable OAuth 2.0 authentication with GitLab (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.Enable
@@ -1996,7 +1996,7 @@ Enable OAuth 2.0 authentication with GitLab
 |                                                                                                                                           | - Environment variable: ``MM_GITLABSETTINGS_ENABLE``                       |
 +-------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: oauth-gitlabappid
+.. config:setting:: gitlab-oauth-application-id
   :displayname: GitLab OAuth 2.0 Application ID (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.Id
@@ -2020,7 +2020,7 @@ GitLab OAuth 2.0 Application ID
 .. note::
   GitLab provides the `Application Secret Key <#gitlab-oauth-2-0-application-secret-key>`__ along with the the ID.
 
-.. config:setting:: oauth-gitlabappsecretkey
+.. config:setting:: gitlab-oauth-application-secret-key
   :displayname: GitLab OAuth 2.0 Application secret key (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.Secret
