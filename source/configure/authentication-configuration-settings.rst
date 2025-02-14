@@ -187,7 +187,7 @@ Require email verification
 |   skipping the verification process.                                          |                                                                                         |
 +-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: email-enablesigninwithemail
+.. config:setting:: email-enable-sign-in-with-email
   :displayname: Enable sign-in with email (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignInWithEmail
@@ -210,7 +210,7 @@ Enable sign-in with email
   To provide users with only a single email sign in option on the login page, ensure that the
   `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**. 
 
-.. config:setting:: email-enablesigninwithusername
+.. config:setting:: email-enable-sign-in-with-username
   :displayname: Enable sign-in with username (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignInWithUsername
@@ -243,7 +243,7 @@ Password
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
-.. config:setting:: password-minimumlength
+.. config:setting:: password-minimum-length
   :displayname: Minimum password length (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.MinimumLength
