@@ -58,7 +58,7 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 6s devices and later with iOS 13.4+"
+    "iOS", "iPhone 6s devices and later with iOS 15.1+"
     "Android", "Android devices with Android 7+"
 
 .. note::
@@ -72,7 +72,7 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 13.4+ with Safari 17+ or Chrome 132+"
+    "iOS", "iOS 15.1+ with Safari 17+ or Chrome 132+"
     "Android", "Android 7+ with Chrome 132+"
 
 Email client
