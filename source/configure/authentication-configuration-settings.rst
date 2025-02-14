@@ -263,28 +263,28 @@ Minimum password length
 | Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: password-lowercase
+.. config:setting:: password-require-lowercase
   :displayname: Password requirements - At least one lowercase letter (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.Lowercase
   :environment: MM_PASSWORDSETTINGS_LOWERCASE
   :description: This setting controls password character requirements. When **true**, passwords must contain at least one lowercase letter. Default is **false**.
 
-.. config:setting:: password-uppercase
+.. config:setting:: password-require-uppercase
   :displayname: Password requirements - At least one uppercase letter (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.Uppercase
   :environment: MM_PASSWORDSETTINGS_UPPERCASE
   :description: This setting controls password character requirements. When **true**, passwords must contain at least one uppercase letter. Default is **false**.
 
-.. config:setting:: password-number
+.. config:setting:: password-require-number
   :displayname: Password requirements - At least one number (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.Number
   :environment: MM_PASSWORDSETTINGS_NUMBER
   :description: This setting controls password character requirements. When **true**, passwords must contain at least one number. Default is **false**.
 
-.. config:setting:: password-symbol
+.. config:setting:: password-require-symbol
   :displayname: Password requirements - At least one symbol (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.Symbol
