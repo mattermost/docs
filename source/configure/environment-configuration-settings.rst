@@ -36,7 +36,7 @@ Web server
 
 Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: web-siteurl
+.. config:setting:: site-url
   :displayname: Site URL (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.SiteURL
@@ -69,7 +69,7 @@ Site URL
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: max-url-length
+.. config:setting:: maximum-url-length
   :displayname: Maximum URL length (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.MaximumURLLength
@@ -87,7 +87,7 @@ Maximum URL length
 | Numeric value. Default is **2048** characters.                |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: web-listenaddress
+.. config:setting:: web-server-listen-address
   :displayname: Web server listen address (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ListenAddress
@@ -114,7 +114,7 @@ Web server listen address
 | permissions to bind to that port.                             |                                                                  |
 +---------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: web-forwardinsecure
+.. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.Forward80To443
@@ -140,7 +140,7 @@ Forward port 80 to 443
 |   and should be set to false.                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: web-connectionsecurity
+.. config:setting:: web-server-connection-security
   :displayname: Web server connection security (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ConnectionSecurity
@@ -167,7 +167,7 @@ Web server connection security
 |   Mattermost </install/config-tls-mattermost>` for more details.      |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: web-tlscertificatefile
+.. config:setting:: tls-certificate-file
   :displayname: TLS certificate file (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.TLSCertFile
@@ -188,7 +188,7 @@ TLS certificate file
 | String input.                                          |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: web-tlskeyfile
+.. config:setting:: tls-key-file
   :displayname: TLS key file (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.TLSKeyFile
@@ -209,7 +209,7 @@ TLS key file
 | String input.                                          |                                                               |
 +--------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: web-useletsencrypt
+.. config:setting:: use-lets-encrypt
   :displayname: Use Let's Encrypt (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.UseLetsEncrypt
@@ -239,7 +239,7 @@ Use Let's Encrypt
 |   above.                                                                                      |                                                                          |
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: web-letsencryptcache
+.. config:setting:: lets-encrypt-certificate-cache-file
   :displayname: Let's Encrypt certificate cache file (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.LetsEncryptCertificateCacheFile
@@ -260,7 +260,7 @@ Let's Encrypt certificate cache file
 | File path input.                                       |                                                                                    |
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: web-readtimeout
+.. config:setting:: read-timeout
   :displayname: Read timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ReadTimeout
@@ -281,7 +281,7 @@ Read timeout
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-writetimeout
+.. config:setting:: write-timeout
   :displayname: Write timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.WriteTimeout
@@ -308,7 +308,7 @@ Write timeout
 | Numerical input in seconds. Default is **300** seconds.  |                                                                             |
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: web-idletimeout
+.. config:setting:: idle-timeout
   :displayname: Idle timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.IdleTimeout
@@ -330,7 +330,7 @@ Idle timeout
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-webservermode
+.. config:setting:: webserver-mode
   :displayname: Webserver mode (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.WebserverMode
@@ -361,7 +361,7 @@ Webserver mode
 | - **Disabled**: The Mattermost server will not serve static files.  |                                                                        |
 +---------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: web-insecureoutgoingconnections
+.. config:setting:: enable-insecure-outgoing-connections
   :displayname: Enable insecure outgoing connections (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.EnableInsecureOutgoingConnections
@@ -391,7 +391,7 @@ Enable insecure outgoing connections
 | **Security note**: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.                                                  |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
-.. config:setting:: web-managedresourcepaths
+.. config:setting:: managed-resource-paths
   :displayname: Managed resource paths (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ManagedResourcePaths
@@ -466,7 +466,7 @@ Purge all caches
 | to purge all the servers in the cluster                                                                                  |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: web-websocketurl
+.. config:setting:: websocket-url
   :displayname: Websocket URL (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.WebsocketURL
@@ -490,7 +490,7 @@ Websocket URL
 | setting.                                                                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-licensefilelocation
+.. config:setting:: license-file-location
   :displayname: License file location (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.LicenseFileLocation
@@ -517,7 +517,7 @@ License file location
 | relative to the ``mattermost`` directory.              |                                                                            |
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: web-tlsminimumversion
+.. config:setting:: tls-minimum-version
   :displayname: TLS minimum version (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSMinVer
@@ -540,7 +540,7 @@ TLS minimum version
 | layer, such as NGINX.                                                                                                        |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-trustedproxyipheader
+.. config:setting:: trusted-proxy-ip-header
   :displayname: Trusted proxy IP header (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TrustedProxyIPHeader
@@ -574,7 +574,7 @@ Trusted proxy IP header
 |                                                                                                                                       |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: web-enablehsts
+.. config:setting:: enable-strict-transport-security-hsts
   :displayname: Enable Strict Transport Security (HSTS) (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSStrictTransport
@@ -602,7 +602,7 @@ Enable Strict Transport Security (HSTS)
 | documentation for details.                                                                                                             |
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: web-securetlstransportexpiry
+.. config:setting:: secure-tls-transport-expiry
   :displayname: Secure TLS transport expiry (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSStrictTransportMaxAge
@@ -628,7 +628,7 @@ Secure TLS transport expiry
 | documentation for details.                                                                                                                      |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-.. config:setting:: web-tlscipheroverwrites
+.. config:setting:: tls-cipher-overwrites
   :displayname: TLS cipher overwrites (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSOverwriteCiphers
@@ -661,7 +661,7 @@ TLS cipher overwrites
 |   <https://github.com/mattermost/mattermost/blob/master/server/public/model/config.go>`__ for a list of ciphers considered secure.   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: web-goroutinehealththreshold
+.. config:setting:: goroutine-health-threshold
   :displayname: Goroutine health threshold (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.GoroutineHealthThreshold
@@ -687,7 +687,7 @@ Goroutine health threshold
 | checking for the threshold.                            |                                                                                  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: web-allowcookiesforsubdomains
+.. config:setting:: allow-cookies-for-subdomains
   :displayname: Allow cookies for subdomains (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.AllowCookiesForSubdomains
@@ -710,7 +710,7 @@ Allow cookies for subdomains
 | - **false**: Cookies not allowed for subdomains.       |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: web-clusterlogtimeout
+.. config:setting:: cluster-log-timeout
   :displayname: Cluster log timeout (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.ClusterLogTimeoutMilliseconds
@@ -738,7 +738,7 @@ Cluster log timeout
 | See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: service-maxpayloadsize
+.. config:setting:: maximum-payload-size
   :displayname: Maximum payload size (File Storage)
   :systemconsole: N/A
   :configjson: .ServiceSettings.MaximumPayloadSizeBytes
