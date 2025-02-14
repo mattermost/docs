@@ -2876,7 +2876,7 @@ OpenID Connect (other) Discovery endpoint
   custom admin roles to limit access to modifying these settings. See the 
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.
 
-.. config:setting:: other-openid-client-id
+.. config:setting:: other-openid-other-client-id
   :displayname: Client ID (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Id
