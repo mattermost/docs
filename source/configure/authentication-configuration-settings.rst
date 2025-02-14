@@ -2826,7 +2826,7 @@ OpenID Connect (other) Button name
 | String input.                                         | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONTEXT``       |
 +-------------------------------------------------------+----------------------------------------------------------------+
 
-.. config:setting:: openid-button-color
+.. config:setting:: openid-connect-other-button-color
   :displayname: Button color
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.ButtonColor
