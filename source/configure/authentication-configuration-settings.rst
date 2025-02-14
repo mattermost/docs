@@ -2806,7 +2806,7 @@ Enable OpenID Connect authentication with other service providers
 | See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions.                              |                                                                        |
 +---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: oidc-buttonname
+.. config:setting:: openid-button-name
   :displayname: Button name (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.ButtonText
@@ -2826,7 +2826,7 @@ OpenID Connect (other) Button name
 | String input.                                         | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONTEXT``       |
 +-------------------------------------------------------+----------------------------------------------------------------+
 
-.. config:setting:: oidc-buttoncolor
+.. config:setting:: openid-button-color
   :displayname: Button color
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.ButtonColor
