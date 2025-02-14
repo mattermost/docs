@@ -2054,7 +2054,7 @@ GitLab OAuth 2.0 site URL
 |                                                                                                                                                       | - Environment variable: N/A                                      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: oauth-gitlabuserapiendpoint
+.. config:setting:: gitlab-oauth-user-api-endpoint
   :displayname: GitLab OAuth 2.0 User API endpoint (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.UserAPIEndpoint
@@ -2072,7 +2072,7 @@ GitLab OAuth 2.0 User API endpoint
 | String input.                                                                                                                                                               |                                                                       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: oauth-gitlabauthendpoint
+.. config:setting:: gitlab-oauth-auth-endpoint
   :displayname: GitLab OAuth 2.0 Auth endpoint (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.AuthEndpoint
@@ -2090,7 +2090,7 @@ GitLab OAuth 2.0 Auth endpoint
 | String input.                                                                                                                                                               |                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: oauth-gitlabtokenendpoint
+.. config:setting:: gitlab-oauth-token-endpoint
   :displayname: GitLab OAuth 2.0 Token endpoint (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.TokenEndpoint
