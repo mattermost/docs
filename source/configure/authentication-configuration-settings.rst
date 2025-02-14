@@ -2686,7 +2686,7 @@ Enable OpenID Connect authentication with Entra ID
 | See :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` implementation instructions.                               |                                                                           |
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: oidc-o365directoryid
+.. config:setting:: entraid-openid-directory-id
   :displayname: Directory ID (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.DirectoryId
