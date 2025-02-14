@@ -2534,7 +2534,7 @@ GitLab OpenID Client ID
 .. note::
   See **Step 2** of the :doc:`GitLab Single Sign-On </onboard/sso-gitlab>` documentation for details.
 
-.. config:setting:: oidc-gitlabclientsecret
+.. config:setting:: gitlab-openid-client-secret
   :displayname: Client secret (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .GitLabSettings.Secret
