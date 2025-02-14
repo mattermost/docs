@@ -2663,7 +2663,7 @@ Entra ID OpenID settings
 .. note::
    In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-.. config:setting:: oidc-o365enable
+.. config:setting:: entraid-openid-enable
   :displayname: Enable Entra ID Settings (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.Enable
