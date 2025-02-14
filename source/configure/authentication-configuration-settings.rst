@@ -2708,7 +2708,7 @@ Entra ID OpenID Directory (tenant) ID
 | String input.                                                                                                        |                                                                    |
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
-.. config:setting:: oidc-o365discoveryendpoint
+.. config:setting:: entraid-openid-discovery-endpoint
   :displayname: Discovery endpoint (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.DiscoveryEndpoint
@@ -2752,7 +2752,7 @@ Entra ID Client ID
 | String input.                                                                                                        |                                                           |
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-.. config:setting:: oidc-entra-id-clientsecret
+.. config:setting:: entraid-client-secret
   :displayname: Client secret (OpenID Connect - Entra ID)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .Office365Settings.Secret
