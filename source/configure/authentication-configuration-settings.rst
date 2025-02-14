@@ -2956,7 +2956,7 @@ Enable guest access
   For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
   deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`.
 
-.. config:setting:: guest-whitelist-domains
+.. config:setting:: whitelisted-guest-domains
   :displayname: Whitelisted guest domains (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.RestrictCreationToDomains
@@ -2976,7 +2976,7 @@ Whitelisted guest domains
 | String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-.. config:setting:: guest-enforce-multifactor-auth
+.. config:setting:: enforce-multi-factor-authentication
   :displayname: Enforce multi-factor authentication (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.EnforceMultifactorAuthentication
@@ -3001,7 +3001,7 @@ Enforce multi-factor authentication
 .. note::
   This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.
 
-.. config:setting:: guest-show-tag
+.. config:setting:: show-guest-tag
   :displayname: Show guest tag (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.HideTags
