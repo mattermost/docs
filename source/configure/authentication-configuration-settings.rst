@@ -2054,7 +2054,7 @@ GitLab OAuth 2.0 site URL
 |                                                                                                                                                       | - Environment variable: N/A                                      |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: gitlab-oauth-user-api-endpoint
+.. config:setting:: gitlab-oauth-2-0-user-api-endpoint
   :displayname: GitLab OAuth 2.0 User API endpoint (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.UserAPIEndpoint
