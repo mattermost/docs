@@ -40,7 +40,7 @@ Signup
 
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
 
-.. config:setting:: signup-enableaccountcreation
+.. config:setting:: signup-enable-account-creation
   :displayname: Enable account creation (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .TeamSettings.EnableUserCreation
@@ -65,7 +65,7 @@ Enable account creation
    LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this
    configuration setting is enabled.
    
-.. config:setting:: signup-restrictcreationtodomains
+.. config:setting:: signup-restrict-account-creation-to-domains
   :displayname: Restrict account creation to specified email domains (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .TeamSettings.RestrictCreationToDomains
