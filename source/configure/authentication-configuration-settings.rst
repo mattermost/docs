@@ -2806,7 +2806,7 @@ Enable OpenID Connect authentication with other service providers
 | See :doc:`OpenID Connect Single Sign-On </onboard/sso-openidconnect>` implementation instructions.                              |                                                                        |
 +---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: openid-button-name
+.. config:setting:: openid-connect-other-button-name
   :displayname: Button name (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.ButtonText
