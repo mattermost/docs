@@ -2265,7 +2265,7 @@ Enable OAuth 2.0 Authentication with Entra ID
 .. note::
   See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
 
-.. config:setting:: oauth-entra-id-appid
+.. config:setting:: entraid-oauth-application-id
   :displayname: Application ID (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.Id
@@ -2288,7 +2288,7 @@ Entra ID OAuth 2.0 Application ID
 .. note::
   See the :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` documentation for details.
 
-.. config:setting:: oauth-entra-id-appsecret
+.. config:setting:: entraid-oauth-application-secret
   :displayname: Application secret password (OAuth - Entra ID)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: .Office365Settings.Secret
