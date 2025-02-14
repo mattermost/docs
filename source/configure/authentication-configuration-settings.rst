@@ -2846,7 +2846,7 @@ OpenID Connect (other) Button color
 | String input.                                                                                                                | - Environment variable: ``MM_OPENIDSETTINGS_BUTTONCOLOR``       |
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: openid-discovery-endpoint
+.. config:setting:: other-openid-discovery-endpoint
   :displayname: Discovery endpoint (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.DiscoveryEndpoint
@@ -2876,7 +2876,7 @@ OpenID Connect (other) Discovery endpoint
   custom admin roles to limit access to modifying these settings. See the 
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.
 
-.. config:setting:: openid-client-id
+.. config:setting:: other-openid-client-id
   :displayname: Client ID (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Id
@@ -2898,7 +2898,7 @@ OpenID Connect (other) Client ID
 | String input.                                                                                                                   |                                                           |
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 
-.. config:setting:: openid-client-secret
+.. config:setting:: other-openid-client-secret
   :displayname: Client secret (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: .OpenIdSettings.Secret
