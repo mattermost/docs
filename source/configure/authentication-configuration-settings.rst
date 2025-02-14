@@ -145,9 +145,9 @@ Email
 
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
 
-.. config:setting:: email-enableaccountcreation
+.. config:setting:: signup-enable-account-creation
   :displayname: Enable account creation with email (Email)
-  :systemconsole: Authentication > Email
+  :systemconsole: Authentication > Email  
   :configjson: .EmailSettings.EnableSignUpWithEmail
   :environment: MM_EMAILSETTINGS_ENABLESIGNUPWITHEMAIL
 
