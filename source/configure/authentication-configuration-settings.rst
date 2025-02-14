@@ -166,7 +166,7 @@ Enable account creation with email
 .. note::
   Cloud admins can't modify this configuration setting.
 
-.. config:setting:: email-requireverification
+.. config:setting:: email-require-verification
   :displayname: Require email verification (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.RequireEmailVerification
