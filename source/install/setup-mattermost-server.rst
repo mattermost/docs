@@ -11,11 +11,11 @@ We recommend taking a backup of this default config ahead of making changes:
         
     sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
 
-Configure the following properties in this file:
+.. include:: common-default-config-changes.rst
+  :start-after: :nosearch:
 
-* Set ``DriverName`` to ``"postgres"``. This is the default and recommended database for all Mattermost installations.
-* Set ``DataSource`` to ``"postgres://mmuser:<mmuser-password>@<host-name-or-IP>:5432/mattermost?sslmode=disable&connect_timeout=10"`` replacing ``mmuser``, ``<mmuser-password>``, ``<host-name-or-IP>``, and ``mattermost`` with your database name.
-* Set your ``"SiteURL"``: The domain name for the Mattermost application (e.g. ``https://mattermost.example.com``).
+.. include:: common-configure-support-email.rst
+  :start-after: :nosearch:
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
 	
