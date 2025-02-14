@@ -311,7 +311,7 @@ Password requirements
 | The default for all boxes is unchecked. The default for all settings in ``config.json`` is ``false``.             |                                                                                                                                                                                                                              |
 +-------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: password-maximumloginattempts
+.. config:setting:: password-maximum-login-attempts
   :displayname: Maximum login attempts (Password)
   :systemconsole: Authentication > Password
   :configjson: .ServiceSettings.MaximumLoginAttempts
@@ -327,7 +327,7 @@ Maximum login attempts
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``                |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: password-forgotpasswordlink
+.. config:setting:: password-forgot-password-link
   :displayname: Enable forgot password link (Password)
   :systemconsole: Authentication > Password
   :configjson: .ServiceSettings.ForgotPasswordLink
@@ -362,7 +362,7 @@ Access the following configuration settings in the System Console by going to **
 
 We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
 
-.. config:setting:: mfa-enablemfa
+.. config:setting:: mfa-enable-mfa
   :displayname: Enable multi-factor authentication (MFA)
   :systemconsole: Authentication > MFA
   :configjson: .ServiceSettings.EnableMultifactorAuthentication
@@ -380,7 +380,7 @@ Enable multi-factor authentication
 | - **false**: **(Default)** Disables multi-factor authentication.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``                   |
 +------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
-.. config:setting:: mfa-enforcemfa
+.. config:setting:: mfa-enforce-mfa
   :displayname: Enforce multi-factor authentication (MFA)
   :systemconsole: Authentication > MFA
   :configjson: .ServiceSettings.EnforceMultifactorAuthentication
@@ -1219,7 +1219,7 @@ Access the following configuration settings in the System Console by going to **
 
   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-.. config:setting:: saml-enablelogin
+.. config:setting:: saml-enable-login
   :displayname: Enable login with SAML (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.Enable
@@ -1244,7 +1244,7 @@ Enable login with SAML
 |                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENABLE``                   |
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-enablesyncwithldap
+.. config:setting:: saml-enable-sync-with-ldap
   :displayname: Enable synchronizing SAML accounts with AD/LDAP (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EnableSyncWithLdap
@@ -1270,7 +1270,7 @@ Enable synchronizing SAML accounts with AD/LDAP
 | See :doc:`AD/LDAP Setup </onboard/ad-ldap>` to learn more.                                                                                                                                                                                                                                                                                                 |                                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: saml-ignoreguestsldapsync
+.. config:setting:: saml-ignore-guests-ldap-sync
   :displayname: Ignore guest users when synchronizing with AD/LDAP (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IgnoreGuestsLdapSync
@@ -1296,7 +1296,7 @@ Ignore guest users when synchronizing with AD/LDAP
 | For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` for details.                                                                                                                                               |                                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: saml-overridebindwithldap
+.. config:setting:: saml-override-bind-with-ldap
   :displayname: Override SAML bind data with AD/LDAP information (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EnableSyncWithLdapIncludeAuth
@@ -1326,7 +1326,7 @@ Override SAML bind data with AD/LDAP information
   - This setting should be **false** unless LDAP sync is enabled. Changing this setting from **true** to **false** will disable the override.
   - SAML IDs must match LDAP IDs when the override is enabled.
 
-.. config:setting:: saml-providermetadataurl
+.. config:setting:: saml-provider-metadata-url
   :displayname: Identity provider metadata URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpMetadataURL
@@ -1349,7 +1349,7 @@ Identity provider metadata URL
 | String input.                                                                            | - Environment variable: ``MM_SAMLSETTINGS_IDPMETADATAURL``           |
 +------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-ssourl
+.. config:setting:: saml-sso-url
   :displayname: SAML SSO URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpURL
@@ -1372,7 +1372,7 @@ SAML SSO URL
 | String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``       |
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: saml-providerissuerurl
+.. config:setting:: saml-provider-issuer-url
   :displayname: Identity provider issuer URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpDescriptorURL
@@ -1395,7 +1395,7 @@ Identity provider issuer URL
 | String input.                                                               | - Environment variable: ``MM_SAMLSETTINGS_IDPDESCRIPTORURL``           |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: saml-providerpubliccert
+.. config:setting:: saml-provider-public-certificate
   :displayname: Identity provider public certificate (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpCertificateFile
@@ -1418,7 +1418,7 @@ Identity provider public certificate
 | String input.                                                           | - Environment variable: ``MM_SAMLSETTINGS_IDPCERTIFICATEFILE``           |
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: saml-verifysignature
+.. config:setting:: saml-verify-signature
   :displayname: Verify signature (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.Verify
@@ -1443,7 +1443,7 @@ Verify signature
 |                                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_VERIFY``                  |
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: saml-providerloginurl
+.. config:setting:: saml-provider-login-url
   :displayname: Service provider login URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.AssertionConsumerServiceURL
@@ -1470,7 +1470,7 @@ Service provider login URL
 | This setting is also known as the Assertion Consumer Service URL.                                                      |                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
-.. config:setting:: saml-provideridentifier
+.. config:setting:: saml-provider-identifier
   :displayname: Service provider identifier (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.ServiceProviderIdentifier
@@ -1518,7 +1518,7 @@ Enable encryption
 |                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENCRYPT``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-providerprivatekey
+.. config:setting:: saml-provider-private-key
   :displayname: Service provider private key (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.PrivateKeyFile
@@ -1541,7 +1541,7 @@ Service provider private key
 | String input.                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PRIVATEKEYFILE``           |
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-serviceproviderpubliccert
+.. config:setting:: saml-service-provider-public-certificate
   :displayname: Service provider public certificate (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.PublicCertificateFile
@@ -1564,7 +1564,7 @@ Service provider public certificate
 | String input.                                                                                                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: saml-signrequest
+.. config:setting:: saml-sign-request
   :displayname: Sign request (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.SignRequest
@@ -1589,7 +1589,7 @@ Sign request
 |                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNREQUEST``         |
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: saml-signaturealgo
+.. config:setting:: saml-signature-algorithm
   :displayname: Signature algorithm
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.SignatureAlgorithm
@@ -1612,7 +1612,7 @@ Signature algorithm
 | String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: saml-canonicalalgo
+.. config:setting:: saml-canonical-algorithm
   :displayname: Canonical algorithm (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.CanonicalAlgorithm
@@ -1641,7 +1641,7 @@ Canonical algorithm
 | String input.                                                                                                                                                                                                                              |                                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
-.. config:setting:: saml-emailattribute
+.. config:setting:: saml-email-attribute
   :displayname: Email attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EmailAttribute
@@ -1666,7 +1666,7 @@ Email attribute
 | String input.                                                                                                                                              |                                                                      |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-usernameattribute
+.. config:setting:: saml-username-attribute
   :displayname: Username attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.UsernameAttribute
@@ -1691,7 +1691,7 @@ Username attribute
 | String input.                                                                                                                                                                                                                                            |                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-idattribute
+.. config:setting:: saml-id-attribute
   :displayname: Id attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdAttribute
@@ -1714,7 +1714,7 @@ Id attribute
 | String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-.. config:setting:: saml-guestattribute
+.. config:setting:: saml-guest-attribute
   :displayname: Guest attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.GuestAttribute
@@ -1739,7 +1739,7 @@ Guest attribute
 | String input.                                                                                                            |                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: saml-enableadminattribute
+.. config:setting:: saml-enable-admin-attribute
   :displayname: Enable admin attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EnableAdminAttribute
@@ -1764,7 +1764,7 @@ Enable admin attribute
 |                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``                   |
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: saml-adminattribute
+.. config:setting:: saml-admin-attribute
   :displayname: Admin attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.AdminAttribute
@@ -1791,7 +1791,7 @@ Admin attribute
 | String input.                                                                                                                 |                                                                      |
 +-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-firstnameattribute
+.. config:setting:: saml-firstname-attribute
   :displayname: First name attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.FirstNameAttribute
@@ -1815,7 +1815,7 @@ First name attribute
 | String input.                                                                                                         |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: saml-lastnameattribute
+.. config:setting:: saml-lastname-attribute
   :displayname: Last name attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.LastNameAttribute
@@ -1839,7 +1839,7 @@ Last name attribute
 | String input.                                                                                                        |                                                                         |
 +----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-nicknameattribute
+.. config:setting:: saml-nickname-attribute
   :displayname: Nickname attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.NicknameAttribute
@@ -1863,7 +1863,7 @@ Nickname attribute
 | String input.                                                                                                       |                                                                         |
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-positionattribute
+.. config:setting:: saml-position-attribute
   :displayname: Position atribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.PositionAttribute
@@ -1887,7 +1887,7 @@ Position attribute
 | String input.                                                                                                                                      |                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-localeattribute
+.. config:setting:: saml-locale-attribute
   :displayname: Preferred language attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.LocaleAttribute
@@ -1911,7 +1911,7 @@ Preferred language attribute
 | String input.                                                                                                                  |                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: saml-loginbuttontext
+.. config:setting:: saml-login-button-text
   :displayname: Login button text (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.LoginButtonText
