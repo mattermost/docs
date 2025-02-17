@@ -12,8 +12,7 @@ Copilot is designed to handle context efficiently, ensuring that only necessary 
 .. note::
   **Ensuring Data Privacy**
 
-  To prevent any sensitive data—including personally identifiable information (PII) and message content—from being shared with an external LLM hosting vendor, it is advisable to run the LLM locally. This setup ensures that data privacy is maintained while still leveraging Copilot’s capabilities. Because Copilot relies on sharing specific user details and other PII (such as message content) with the LLM to function effectively, hosting the model on-premises is the only suitable option for customers with strict data privacy requirements.
-
+  To prevent sensitive data, including personally identifiable information (PII) and message content, from being shared with an external LLM hosting vendor, running the LLM locally is recommended. This ensures data privacy while enabling Copilot’s functionality, making it the only viable option for customers with strict privacy requirements.
 
 Direct Messages to the Copilot Bot
 ------------------------------------
