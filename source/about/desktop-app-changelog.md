@@ -65,7 +65,7 @@ Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgra
 
 ### Known Issues
 
-- Users with servers running Mattermost versions 9.3 and before are not supported by this upgrade.
+- Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
 - Boards is not using the new Desktop API, causing issues in v5.11+ [MM-61745](https://mattermost.atlassian.net/browse/MM-61745). Users of v5.11 will need to upgrade their Boards plugin version to v9.1.0+ avoid the issue.
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
 - Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
