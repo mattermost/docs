@@ -98,16 +98,16 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-            mkdir -p ./volumes/web/cert
-            cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
-            cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
+      mkdir -p ./volumes/web/cert
+      cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
+      cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
 
    To include the certificate and key, ensure the following lines in your ``.env`` file points to the appropriate files.
 
    .. code-block:: sh
   
-            CERT_PATH=./volumes/web/cert/cert.pem
-            KEY_PATH=./volumes/web/cert/key-no-password.pem
+      CERT_PATH=./volumes/web/cert/cert.pem
+      KEY_PATH=./volumes/web/cert/key-no-password.pem
 
 6. Deploy Mattermost.
 
@@ -176,27 +176,25 @@ The production deployment solution is designed to deploy Mattermost on Docker in
    - ``POSTGRES_HOST``
 
 .. important::
-    
-      At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
 
-.. note::
-    We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
+   - At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+   - We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
 
 3. Create the required directories and set their permissions. 
    
 .. important::
-   
+
    If you're using an external storage solution, you'll need to mount the storage to the ``volumes`` directory now.
 
    .. code-block:: sh
-        
+
       mkdir -p ./volumes/app/mattermost/{config,data,logs,plugins,client/plugins,bleve-indexes}
       sudo chown -R 2000:2000 ./volumes/app/mattermost
 
 4. Deploy Mattermost.
 
    .. code-block:: sh
-  
+
       sudo docker compose -f docker-compose.yml up -d
 
    To access your new Mattermost deployment, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
@@ -204,28 +202,27 @@ The production deployment solution is designed to deploy Mattermost on Docker in
    To shut down your deployment:
 
    .. code-block:: sh
-  
+
       sudo docker compose -f docker-compose.yml down
 
 5. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
 
-
-Configure SSO With GitLab (Optional)
+Configure SSO with GitLab (Optional)
 -------------------------------------
 
 If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
       
 To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
 
-   .. code-block:: sh
+.. code-block:: sh
 
-      #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
-        
+   #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
+
 Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
 
-   .. code-block:: sh
+.. code-block:: sh
 
-      # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+   # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
 Upgrade from ``mattermost-docker``
 -----------------------------------
