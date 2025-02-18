@@ -1,31 +1,27 @@
-Copilot Context Management
-=========================
-
+Copilot context management
+===========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-
-Copilot is designed to handle context efficiently, ensuring that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses. This document outlines how Copilot processes and includes relevant context. The company name, the server name and the time are always passed to the LLM to ensure accurate and contextually relevant responses.
-
+Copilot is designed to handle context efficiently, ensuring that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses. This document outlines how Copilot processes and includes relevant context. The company name, the server name, and the time are always passed to the LLM to ensure accurate and contextually relevant responses.
 
 .. note::
-  **Ensuring Data Privacy**
+  **Ensure data privacy**
 
-  To prevent sensitive data, including personally identifiable information (PII) and message content, from being shared with an external LLM hosting vendor, running the LLM locally is recommended. This ensures data privacy while enabling Copilot’s functionality, making it the only viable option for customers with strict privacy requirements.
+  We recommend that customers with strict privacy requirements run the LLM locally to prevent sensitive data, including personally identifiable information (PII) and message content, from being shared with an external LLM hosting vendor. This ensures data privacy while enabling Copilot’s functionality.
 
-Direct Messages to the Copilot Bot
+Direct messages to the Copilot Bot
 ------------------------------------
 
 When you send a direct message to the Copilot bot, the context sent to the LLM includes:
 
-- The profile information of the user sending the prompt
-- Chat messages exchanged between the user and the bot
+- The profile information of the user sending the prompt.
+- Chat messages exchanged between the user and the bot.
 
+**Additional context in direct messages**
 
-**Additional Context in Direct Messages**
-
-When the "Enable Tools" bot configuration option is enabled (default: true), additional context may be sent to the LLM, depending on the prompt. This includes:
+By default, some tool use is enabled to allow for features such as integrations with JIRA, and additional context may be sent to the LLM, depending on the prompt that includes:
 
 - Jira tickets (public tickets)
 
@@ -39,36 +35,34 @@ When the "Enable Tools" bot configuration option is enabled (default: true), add
 
   - Example: What is @Bob's position?
 
-
-@-Mentions in Channels
+@-Mentions in channels
 ------------------------
 
-For @-mentions in channels, the context includes:
+When you @-mention another user in a channel, the context sent to the LLM includes:
 
-**Standalone Messages (@-mentions in a channel)**
+**Standalone messages (@-mentions in a channel)**
 
-- The post containing the @-mention, including any attachments
-- The channel name and display name
-- The team name and display name
-- The profile information of the user sending the prompt
+- The message containing the @-mention, including any attachments.
+- The channel name and display name.
+- The team name and display name.
+- The profile information of the user sending the prompt.
 
-**Threaded Messages (@-mentions in a thread)**
+**Threaded messages (@-mentions in a thread)**
 
-- Everything sent when used in a standalone message
-- Messages within the thread, including the usernames of the users involved, as well as any attachments and their filenames
+- Everything sent when used in a standalone message.
+- Messages within the thread, including the usernames of the users involved, as well as any attachments and their filenames.
 
-**Differences Between Standalone and Threaded Messages:**
+**Context differences between standalone and threaded messages:**
 
-- For @-mentions in standalone messages, the context includes only the mentioned post
-- For @-mentions in threads, the entire thread's messages are included, along with usernames of the authors of the messages
+- For @-mentions in standalone messages, the context includes only the mentioned message.
+- For @-mentions in threads, the entire thread's messages are included, along with usernames of the authors of the messages.
 
-
-Built-in Ways to Trigger Copilot
+Built-in ways to trigger Copilot
 ---------------------------------
 
-In addition to regular chat interactions, Copilot provides specialized features where extra context is sent to the LLM. Each one provides specialized context tailored to the task being performed. Below are the scenarios where extra context is sent to the LLM:
+In addition to regular chat interactions, Copilot provides specialized features where extra context is sent to the LLM. Each feature provides specialized context tailored to the task being performed. Below are the scenarios where extra context is sent to the LLM:
 
-- **Thread Summarization**: Includes thread messages and the usernames of the authors
-- **Meeting Summar**: Incorporates transcriptions from calls
-- **Channel Summary Since Last Visit Feature**: Uses channel posts along with their authors to create summaries.
-- **Finding Action Items & Open Questions Features**: Analyzes thread and channel messages to identify action items or open questions
+- **Thread summarization**: Includes thread messages and the usernames of the authors
+- **Meeting summayu**: Incorporates transcriptions from calls
+- **Channel summary since last visit**: Uses channel posts along with their authors to create summaries.
+- **Finding action items & open questions**: Analyzes thread and channel messages to identify action items or open questions.
