@@ -1,5 +1,10 @@
 import re
+import sys
 from pathlib import Path
+
+if len(sys.argv) != 2:
+    print("Usage: python fix_config_settings.py <rst_file_path>")
+    sys.exit(1)
 
 def to_slug(text):
     # Convert text to lowercase and replace spaces with hyphens
@@ -36,5 +41,5 @@ def process_file(filepath):
         f.write(content)
 
 if __name__ == '__main__':
-    filepath = 'source/configure/environment-configuration-settings.rst'
+    filepath = sys.argv[1]
     process_file(filepath)
