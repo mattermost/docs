@@ -38,7 +38,7 @@ By default, some tool use is enabled to allow for features such as integrations 
 @-Mentions in channels
 ------------------------
 
-When you @-mention another user in a channel, the context sent to the LLM includes:
+When you @-mention Copilot in a channel, the context sent to the LLM includes:
 
 **Standalone messages (@-mentions in a channel)**
 
