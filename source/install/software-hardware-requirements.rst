@@ -46,8 +46,8 @@ PC web
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
     "Chrome", "v132+", "v132+"
-    "Firefox", "v115+", "v115+"
-    "Safari", "v17+", "v17+"
+    "Firefox", "v119+", "v119+"
+    "Safari", "v17.4+", "v17.4+"
     "Edge", "v132+", "v132+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
@@ -72,7 +72,7 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 15.1+ with Safari 17+ or Chrome 132+"
+    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 132+"
     "Android", "Android 7+ with Chrome 132+"
 
 Email client
@@ -123,6 +123,10 @@ Search limitations on MySQL:
 
 MySQL 8 Support
 ::::::::::::::::
+
+.. important::
+
+    MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
 
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password``. Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
