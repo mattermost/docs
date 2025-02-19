@@ -4,8 +4,7 @@
 ```
 
 ```{Important}
-- Support for Mattermost Server v9.11 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 or later is recommended.
-- We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
+```{include} common-esr-support.md
 ```
 
 ## Frequency
@@ -13,6 +12,10 @@
 Mattermost releases a new mobile app version every month. Mattermost tests the latest mobile app release against the [latest server version](/about/mattermost-server-releases).
 
 See the [Mobile app changelog](/about/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
+
+```{Important}
+We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
+```
 
 ## Latest releases
 
