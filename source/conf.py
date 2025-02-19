@@ -8,7 +8,42 @@ import os
 from sphinx.application import Sphinx
 
 
+def find_duplicate_redirects(redirects):
+    # Track sources that map to the same target
+    target_to_sources = {}
+    # Track duplicate sources
+    duplicate_sources = {}
+    
+    for source, target in redirects.items():
+        # Check for duplicate sources
+        if source in duplicate_sources:
+            duplicate_sources[source].append(target)
+        else:
+            duplicate_sources[source] = [target]
+            
+        # Track sources mapping to same target
+        if target in target_to_sources:
+            target_to_sources[target].append(source)
+        else:
+            target_to_sources[target] = [source]
+    
+    # Print duplicate sources (should be none in a valid config)
+    for source, targets in duplicate_sources.items():
+        if len(targets) > 1:
+            print(f"\nDuplicate source found:")
+            print(f"Source: {source}")
+            print(f"Maps to multiple targets: {targets}")
+            
+    # Print sources that map to the same target
+    for target, sources in target_to_sources.items():
+        if len(sources) > 1:
+            print(f"\nMultiple sources map to same target:")
+            print(f"Target: {target}")
+            print(f"Sources: {sources}")
+
 def setup(_: Sphinx):
+    # Check for duplicate redirects when Sphinx builds
+    find_duplicate_redirects(redirects)
     return
 
 
