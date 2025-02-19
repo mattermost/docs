@@ -57,6 +57,10 @@ We strongly recommend that you:
 - Keep a backup of your database to ensure you can load a previous database snapshot if necessary.
 - Upgrade your instance of Mattermost to the latest :doc:`Extended Support Release (ESR) </about/mattermost-server-releases>` first before attempting to run the Mattermost v6.0 upgrade.
 
+.. important::
+
+  Support for Mattermost Server v9.11 :doc:`Extended Support Release </about/mattermost-server-releases>` is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 Extended Support Release or later is recommended. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
