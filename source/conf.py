@@ -14,29 +14,35 @@ def find_duplicate_redirects(redirects):
     # Track duplicate sources 
     duplicate_sources = {}
     
-    for source, target in redirects.items():
-        # Check for duplicate sources
-        if source in duplicate_sources:
-            print(f"\nDuplicate redirect found:")
-            print(f"Source: {source}")
-            print(f"Already maps to: {duplicate_sources[source]}")
-            print(f"Also maps to: {target}")
-        else:
-            duplicate_sources[source] = target
-            
-        # Track sources mapping to same target
-        if target in target_to_sources:
-            target_to_sources[target].append(source)
-        else:
-            target_to_sources[target] = [source]
+    # Open warnings log file
+    with open("warnings.log", "w") as log:
+        for source, target in redirects.items():
+            # Check for duplicate sources
+            if source in duplicate_sources:
+                warning = f"\nDuplicate redirect found:\n"
+                warning += f"Source: {source}\n"
+                warning += f"Already maps to: {duplicate_sources[source]}\n"
+                warning += f"Also maps to: {target}\n"
+                log.write(warning)
+                print(warning)
+            else:
+                duplicate_sources[source] = target
+                
+            # Track sources mapping to same target
+            if target in target_to_sources:
+                target_to_sources[target].append(source)
+            else:
+                target_to_sources[target] = [source]
 
-    # Print sources that map to the same target
-    for target, sources in target_to_sources.items():
-        if len(sources) > 1:
-            print(f"\nMultiple sources map to same target:")
-            print(f"Target: {target}")
-            print(f"Sources: {sources}")
-            
+        # Log sources that map to the same target
+        for target, sources in target_to_sources.items():
+            if len(sources) > 1:
+                warning = f"\nMultiple sources map to same target:\n"
+                warning += f"Target: {target}\n" 
+                warning += f"Sources: {sources}\n"
+                log.write(warning)
+                print(warning)
+                
     return len(duplicate_sources) == len(redirects)
 
 def setup(_: Sphinx):
