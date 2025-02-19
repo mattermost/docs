@@ -17,7 +17,7 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
 ```
 
 ### Important Upgrade Notes
- - Bump postgres version.
+ - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
 
 ### Improvements
 
@@ -51,8 +51,9 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
-- A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
-- Removed ``EnableOpenTracing``. Removed the unused ``opentracing`` support. 
+- Under ``ServiceSettings`` in ``conig.json``:
+  - Adede a new configuration setting ``EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
+- Removed ``EnableOpenTracing`` to remove the unused ``opentracing`` support. 
 
 ### API Changes
  - Added audit logging to the ``SearchPosts`` API.
