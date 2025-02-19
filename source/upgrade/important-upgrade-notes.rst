@@ -50,7 +50,7 @@ Important Upgrade Notes
 |                                                    | Changes specific to each Export Type - The export output formats have been changed. Some fields’ semantic meaning has been clarified, and there are a number of  |
 |                                                    | new fields. Our goal was to maintain backwards compatibility while fixing the logic bugs.                                                                        |
 |                                                    |                                                                                                                                                                  |
-|                                                    | See the :doc:`compliance export </comply/compliance-export> product documentation for details.                                                                   |
+|                                                    | See the :doc:`compliance export </comply/compliance-export>` product documentation for details.                                                                  |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | As part of the Property System Architecture feature, Mattermost v10.5 is going to run a set of migrations to add new tables to the schema. This migration only   |
 |                                                    | creates new tables and indexes, so there is no impact on preexisting data.                                                                                       |
