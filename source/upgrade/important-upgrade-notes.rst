@@ -16,6 +16,7 @@ Important Upgrade Notes
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+v10.6 
 | v10.5                                              | The internal workings of the `PluginLinkComponent` in the web app have been changed to unmount link tooltips from the DOM by default, significantly improving    |
 |                                                    | performance. Plugins that register link tooltips using `registerLinkTooltipComponent` will experience changes in how tooltip components are managed—they are     |
 |                                                    | now only mounted when a link is hovered over or focused. As a result, plugins may need to update their components to properly handle mounting and unmounting     |
