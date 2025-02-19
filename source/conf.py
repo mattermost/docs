@@ -14,8 +14,8 @@ def find_duplicate_redirects(redirects):
     # Track duplicate sources 
     duplicate_sources = {}
     
-    # Open warnings log file
-    with open("warnings.log", "w") as log:
+    # Open warnings log file in build directory
+    with open("build/warnings.log", "w") as log:
         for source, target in redirects.items():
             # Check for duplicate sources
             if source in duplicate_sources:
