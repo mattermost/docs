@@ -53,7 +53,9 @@ By default, message drafts are synchronized on the Mattermost server and are acc
 
 .. tab:: Mobile
 
-  When composing a message, you can simply opt to complete it later. The partially composed message is kept in the text field and an **Edit** option |edit-icon| displays next to the channel name.
+  When composing a message, you can simply choose to complete it later. The partially composed message is kept in the text field and an **Edit** option |edit-icon| displays next to the channel name.
+
+  From Mattermost v10.5, you'll find local draft messages under **Drafts**. Drafts synchronized to the Mattermost server will be listed under **Drafts** in a future mobile app release.
 
   .. image:: ../images/mobile-draft-a-message.gif
     :alt: You can sync a daft message by exiting the channel mid-way while composing the message.
@@ -62,9 +64,9 @@ By default, message drafts are synchronized on the Mattermost server and are acc
 Edit messages
 --------------
 
-.. tab:: Web/Desktop
+All users can edit their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
 
-  All users can edit their own sent messages, unless the system admin has :doc:`restricted the ability to do so </onboard/advanced-permissions>`.
+.. tab:: Web/Desktop
 
   1. Using Mattermost in a web browser or the desktop app, select the **More** |more-icon| icon next to a message that you've sent.
 
@@ -72,6 +74,10 @@ Edit messages
       :alt: Select the More option to edit or delete a sent message.
 
   2. Select **Edit** to edit your own messages. Editing a message won't trigger new :doc:`@mention notifications </collaborate/mention-people>`, or :doc:`desktop notifications </preferences/manage-your-notifications>`.
+
+  .. tip::
+
+    From Mattermost v10.5, using a web browser or the Mattermost Desktop app, you can also change or remove message attachments when editing your sent messages.
 
 .. tab:: Mobile
 
