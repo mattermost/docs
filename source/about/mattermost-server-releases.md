@@ -5,7 +5,7 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
+ Support for Mattermost Server v9.11 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 or later is recommended.
 - Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
 ```
 
@@ -19,6 +19,7 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
+| v10.5 [Download](https://releases.mattermost.com/10.5.1/mattermost-10.5.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.5-extended-support-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.5.1/sbom-mattermost-v10.5.1.json) | 2025-02-16 | 2025-11-15 {ref}`EXTENDED <release-types>` |
 | v10.4 [Download](https://releases.mattermost.com/10.4.3/mattermost-10.4.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.4-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.4.3/sbom-mattermost-v10.4.3.json) | 2025-01-16 | 2025-04-15 |
 | v10.3 [Download](https://releases.mattermost.com/10.3.4/mattermost-10.3.4-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.3-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.3.4/sbom-mattermost-v10.3.4.json) | 2024-12-16 | 2025-03-15 |
 | v10.2 [Download](https://releases.mattermost.com/10.2.3/mattermost-10.2.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.2-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.2.3/sbom-mattermost-v10.2.3.json) | 2024-11-15 | 2025-02-15 |
