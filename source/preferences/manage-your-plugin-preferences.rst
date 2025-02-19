@@ -12,9 +12,7 @@ Microsoft Teams plugin preferences
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Select **MS Teams** to connect your Mattermost and Microsoft Teams accounts, and manage notification preferences for Microsoft Teams chats and group chats. 
-
-See the :ref:`manage notifications <collaborate/collaborate-within-connected-microsoft-teams:manage notification settings>` documentation for details.
+Select **MS Teams** to connect your Mattermost and Microsoft Teams accounts, and manage notification preferences for Microsoft Teams chats and group chats. See the :ref:`connect your account <collaborate/collaborate-within-connected-microsoft-teams:connect your mattermost account to your microsoft teams account>`.
 
 .. tip::
 
