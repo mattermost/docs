@@ -69,3 +69,4 @@ source/developer/localization.md
 # Generated PKI files
 *.key
 *.crt
+.aider*

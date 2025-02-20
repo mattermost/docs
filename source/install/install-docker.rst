@@ -94,16 +94,16 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-            mkdir -p ./volumes/web/cert
-            cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
-            cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
+      mkdir -p ./volumes/web/cert
+      cp <PATH-TO-PRE-EXISTING-CERT>.pem ./volumes/web/cert/cert.pem
+      cp <PATH-TO-PRE-EXISTING-KEY>.pem ./volumes/web/cert/key-no-password.pem
 
    To include the certificate and key, ensure the following lines in your ``.env`` file points to the appropriate files.
 
    .. code-block:: sh
   
-            CERT_PATH=./volumes/web/cert/cert.pem
-            KEY_PATH=./volumes/web/cert/key-no-password.pem
+      CERT_PATH=./volumes/web/cert/cert.pem
+      KEY_PATH=./volumes/web/cert/key-no-password.pem
 
 6. Deploy Mattermost.
 
@@ -144,15 +144,15 @@ If you want to use SSO with GitLab, and you're using a self-signed certificate, 
       
 To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
 
-   .. code-block:: sh
+.. code-block:: sh
 
-      #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
-        
+   #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
+
 Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
 
-   .. code-block:: sh
+.. code-block:: sh
 
-      # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
+   # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
 Upgrade from ``mattermost-docker``
 -----------------------------------
