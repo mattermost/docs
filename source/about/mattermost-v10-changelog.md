@@ -24,6 +24,7 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
 #### User Interface (UI)
  - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1). 
  - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
+ - Pre-packaged Copilot plugin version [v1.1.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v1.1.1).
  - Upgraded Ukrainian language to official.
 
 #### Administration
