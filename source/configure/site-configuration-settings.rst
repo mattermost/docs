@@ -35,7 +35,7 @@ Customization
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Customization**.
 
-.. config:setting:: custom-name
+.. config:setting:: site-name
   :displayname: Site name (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .TeamSettings.SiteName
@@ -51,7 +51,7 @@ Site name
 | String input. Maximum 30 characters. Default is ``Mattermost`` | - Environment variable: ``MM_TEAMSETTINGS_SITENAME``            |
 +----------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: custom-description
+.. config:setting:: site-description
   :displayname: Site description (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .TeamSettings.CustomDescriptionText
@@ -67,7 +67,7 @@ Site description
 | String input.                                                                              | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMDESCRIPTIONTEXT``           |
 +--------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: custom-enablecustombranding
+.. config:setting:: enable-custom-branding
   :displayname: Enable custom branding (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .TeamSettings.EnableCustomBrand
@@ -92,7 +92,7 @@ Enable custom branding
 | branding options.                                                              |                                                                                  |
 +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: custom-custombrandimage
+.. config:setting:: custom-brand-image
   :displayname: Custom brand image (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: N/A
@@ -108,7 +108,7 @@ Custom brand image
 | `Enable custom branding <#enable-custom-branding>`__ must be set to **true** to display the image.                                                                                   | - Environment variable: N/A                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-.. config:setting:: custom-custombrandtext
+.. config:setting:: custom-brand-text
   :displayname: Custom brand text (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .TeamSettings.CustomBrandText
@@ -124,7 +124,7 @@ Custom brand text
 | String input. Maximum 500 characters. `Enable custom branding <#enable-custom-branding>`__ must be set to **true** to display the text.                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_CUSTOMBRANDTEXT``       |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-.. config:setting:: custom-enableaskcommunitylink
+.. config:setting:: enable-ask-community-link
   :displayname: Enable Ask Community link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.EnableAskCommunityLink
@@ -143,7 +143,7 @@ Enable Ask Community link
 |  The link does not display on mobile apps.                                                                                                                                                                      |                                                                                         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: custom-helplink
+.. config:setting:: help-link
   :displayname: Help link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.HelpLink
@@ -164,7 +164,7 @@ Help link
 .. note::
   If this value is empty, the Help link is hidden on the login and sign up pages. However, the **Help Resources** link remains available under the **Help** menu.
 
-.. config:setting:: custom-termsofuselink
+.. config:setting:: terms-of-use-link
   :displayname: Terms of Use link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.TermsOfServiceLink
@@ -190,7 +190,7 @@ Terms of Use link
 .. note::
   This setting doesn't change the **Terms of Use** link in the **About Mattermost** window.
 
-.. config:setting:: custom-privacypolicylink
+.. config:setting:: privacy-policy-link
   :displayname: Privacy Policy link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.PrivacyPolicyLink
@@ -214,7 +214,7 @@ Privacy Policy link
 .. note::
   This setting does not change the **Privacy Policy** link in the **About Mattermost** window. 
 
-.. config:setting:: custom-aboutlink
+.. config:setting:: about-link
   :displayname: About link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.AboutLink
@@ -235,7 +235,7 @@ About link
 | String input. Default is ``https://about.mattermost.com/default-about/``.                                                                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_ABOUTLINK``      |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: custom-forgotpasswordurl
+.. config:setting:: forgot-password-custom-link
   :displayname: Forgot Password custom link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ForgetPasswordCustomLink
@@ -256,7 +256,7 @@ Forgot Password custom link
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. You can control whether the **Forgot Password** link is visible or hidden in clients by going to **Authentication > Password > Enable Forgot Password Link**. See the :ref:`configuration <configure/authentication-configuration-settings:enable forgot password link>` documentation for details.
 
 
-.. config:setting:: custom-reportaproblemlink
+.. config:setting:: report-a-problem-link
   :displayname: Report a Problem link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemLink
@@ -275,7 +275,7 @@ Report a Problem link
 | String input. Default is ``https://about.mattermost.com/default-report-a-problem``.                                                             | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: custom-appdownloadlink
+.. config:setting:: mattermost-apps-download-page-link
   :displayname: Mattermost apps download page link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.AppDownloadLink
@@ -296,7 +296,7 @@ Mattermost apps download page link
 | String input. Default is ``https://about.mattermost.com/downloads/``.                                                         |                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: custom-androiddownloadlink
+.. config:setting:: android-app-download-link
   :displayname: Android app download link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.AndroidAppDownloadLink
@@ -317,7 +317,7 @@ Android app download link
 | String input. Default is ``https://about.mattermost.com/mattermost-android-app/``.                                                                                                                                                   |                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: custom-iosdownloadlink
+.. config:setting:: ios-app-download-link
   :displayname: iOS app download link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.IosAppDownloadLink
@@ -338,7 +338,7 @@ iOS app download link
 | String input. Default is ``https://about.mattermost.com/mattermost-ios-app/``.                                                                                                                                        |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: custom-enabledesktoplandingpage
+.. config:setting:: enable-desktop-app-landing-page
   :displayname: Enable desktop app landing page (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: N/A
@@ -357,7 +357,7 @@ Enable desktop app landing page
 |                                                                 | - Environment variable: ``MM_SERVICESETTINGS_ENABLEDESKTOPLANDINGPAGE``                  |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-appcustomurlschemes
+.. config:setting:: app-custom-url-schemes
   :displayname: App custom URL schemes (Customization)
   :systemconsole: N/A
   :configjson: .NativeAppSettings.AppCustomURLSchemes
@@ -382,7 +382,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
 | - Via mmctl: ``mmctl config set NativeAppSettings.AppCustomURLSchemes "mmauth://" "mmauthbeta://"``                                            |
 +------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: custom-mobileexternalbrowser
+.. config:setting:: mobile-external-browser
   :displayname: Mobile external browser (Customization)
   :systemconsole: N/A
   :configjson: NativeAppSettings.MobileExternalBrowser
@@ -412,7 +412,7 @@ Localization
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Localization**. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: l10n-defaultserverlanguage
+.. config:setting:: default-server-language
   :displayname: Default server language (Localization)
   :systemconsole: Site Configuration > Localization
   :configjson: .LocalizationSettings.DefaultServerLocale
@@ -437,7 +437,7 @@ Default server language
   Changing this configuration setting changes the default server language for users who haven't set a language preference via **Settings**.        
   Mattermost applies the user's language preference when specified. 
 
-.. config:setting:: l10n-defaultclientlanguage
+.. config:setting:: default-client-language
   :displayname: Default client language (Localization)
   :systemconsole: Site Configuration > Localization
   :configjson: .LocalizationSettings.DefaultClientLocale
@@ -461,7 +461,7 @@ Default client language
 .. note::
   Changing this configuration setting changes the default client language for users who haven't set a language preference via **Settings**. Mattermost applies the user's language preference when specified.
 
-.. config:setting:: l10n-availablelanguages
+.. config:setting:: available-languages
   :displayname: Available languages (Localization)
   :systemconsole: Site Configuration > Localization
   :configjson: .LocalizationSettings.AvailableLocales
@@ -487,7 +487,7 @@ Available languages
 | Default is ``"en"``.                                                           |                                                                           |
 +--------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: localization-enable-wip-locales
+.. config:setting:: enable-experimental-locales
   :displayname: Enable experimental locales (Localization)
   :systemconsole: Site Configuration > Localization
   :configjson: EnableExperimentalLocales
@@ -527,7 +527,7 @@ Users and teams
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Users and Teams**.
 
-.. config:setting:: users-maxusersperteam
+.. config:setting:: max-users-per-team
   :displayname: Max users per team (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.MaxUsersPerTeam
@@ -555,7 +555,7 @@ Max users per team
 | for Cloud deployments.                                                       |                                                                             |
 +------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: users-maxchannelsperteam
+.. config:setting:: max-channels-per-team
   :displayname: Max channels per team (Users and teams)
   :systemconsole: Site Configuration > Users and teams
   :configjson: .TeamSettings.MaxChannelsPerTeam
@@ -572,7 +572,7 @@ Max channels per team
 | for Cloud deployments.                                                                |                                                                                 |
 +---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
-.. config:setting:: users-enablejoinleavemessages
+.. config:setting:: enable-joinleave-messages-by-default
   :displayname: Enable join/leave messages by default (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableJoinLeaveMessageByDefault
@@ -596,7 +596,7 @@ Enable join/leave messages by default
 | Enable Join/Leave Messages**.                                                         |                                                                                              |
 +---------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
-.. config:setting:: users-restrictdirectmessage
+.. config:setting:: enable-users-to-open-direct-message-channels-with
   :displayname: Enable users to open direct message channels with (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.RestrictDirectMessage
@@ -617,7 +617,7 @@ Enable users to open direct message channels with
 | - **Any member of the team**: The **Direct Messages > More** menu only allows direct messages to users on the same team. Pressing :kbd:`Ctrl` :kbd:`K` on Windows or Linux, or :kbd:`⌘` :kbd:`K` on Mac, only lists other users on the team currently being viewed. A user who is a member of multiple teams can only send direct messages to the team that is being viewed. However, the user can receive messages from other teams, regardless of the team currently being viewed. ``config.json`` setting: ``"team"`` |                                                                        |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: users-teammatenamedisplay
+.. config:setting:: teammate-name-display
   :displayname: Teammate name display (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.TeammateNameDisplay
@@ -649,7 +649,7 @@ Teammate name display
 |   attributes are configured. ``config.json`` option: ``"full_name"``.                           |                                                                                      |
 +-------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-.. config:setting:: users-lockteammatenamedisplay
+.. config:setting:: lock-teammate-name-display-for-all-users
   :displayname: Lock teammate name display for all users (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.LockTeammateNameDisplay
@@ -672,7 +672,7 @@ Lock teammate name display for all users
 | - **false**: **(Default)** Users can change the Teammate Name Display setting.                                |                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
-.. config:setting:: users-viewarchivedchannels
+.. config:setting:: allow-users-to-view-archived-channels
   :displayname: Allow users to view archived channels (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.ExperimentalViewArchivedChannels
@@ -693,7 +693,7 @@ Allow users to view archived channels
 .. note::
   Cloud admins can't modify this configuration setting.
 
-.. config:setting:: users-showemailaddress
+.. config:setting:: show-email-address
   :displayname: Show email address (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .PrivacySettings.ShowEmailAddress
@@ -712,7 +712,7 @@ Show email address
 |   (users/teams/channels/groups etc).                                                        |                                                                                  |
 +---------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: users-showfullname
+.. config:setting:: show-full-name
   :displayname: Show full name (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .PrivacySettings.ShowFullName
@@ -730,7 +730,7 @@ Show full name
 |                                                                                                                  | - Environment variable: ``MM_PRIVACYSETTINGS_SHOWFULLNAME``                  |
 +------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: users-enablecustomstatuses
+.. config:setting:: enable-custom-user-statuses
   :displayname: Enable custom user statuses (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableCustomUserStatuses
@@ -748,7 +748,7 @@ Enable custom user statuses
 |                                                                                                   | - Environment variable: ``MM_TEAMSETTINGS_ENABLECUSTOMUSERSTATUSES``                  |
 +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
-.. config:setting:: users-enablelastactivetime
+.. config:setting:: enable-last-active-time
   :displayname: Enable last active time (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.EnableLastActiveTime
@@ -766,7 +766,7 @@ Enable last active time
 | - **false**: Users can't see when deactivated users were last online.                             | - Environment variable: ``MM_TEAMSETTINGS_ENABLELASTACTIVETIME``                      |
 +---------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
-.. config:setting:: users-enablecustomusergroups
+.. config:setting:: enable-custom-user-groups
   :displayname: Enable custom user groups (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: ServiceSettings.EnableCustomGroups
@@ -787,7 +787,7 @@ Enable custom user groups
 | - **false**: Custom user groups cannot be created.                                                | - Environment variable: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS                      |
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: users-userstatsupdatetime
+.. config:setting:: user-statistics-update-time
   :displayname: User statistics update time (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .ServiceSettings.RefreshPostStatsRunTime
@@ -815,7 +815,7 @@ Notifications
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notifications**.
 
-.. config:setting:: notification-confirmtochannel
+.. config:setting:: show-channel-all-or-here-confirmation-dialog
   :displayname: Show @channel, @all, or @here confirmation dialog (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .TeamSettings.EnableConfirmNotificationsToChannel
@@ -833,7 +833,7 @@ Show @channel, @all, or @here confirmation dialog
 |                                                                                                                                                     | - Environment variable: ``MM_TEAMSETTINGS_ENABLECONFIRMNOTIFICATIONSTOCHANNEL``                  |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
-.. config:setting:: notification-enableemail
+.. config:setting:: enable-email-notifications
   :displayname: Enable email notifications (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.SendEmailNotifications
@@ -864,7 +864,7 @@ Enable email notifications
     - Resource Allocation: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
     - However, disabling email notifications can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
-.. config:setting:: notification-enablepreviewbanner
+.. config:setting:: enable-preview-mode-banner
   :displayname: Enable preview mode banner (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.EnablePreviewModeBanner
@@ -887,7 +887,7 @@ Enable preview mode banner
 .. note::
   Cloud admins can't modify this configuration setting.
 
-.. config:setting:: notification-enableemailbatching
+.. config:setting:: enable-email-batching
   :displayname: Enable email batching (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.EnableEmailBatching
@@ -911,7 +911,7 @@ Enable email batching
   - The :ref:`Site Url <configure/environment-configuration-settings:site url>` and :ref:`SMTP Email Server <configure/environment-configuration-settings:smtp server>` must be configured to allow email batching.
   - Email batching in :ref:`High Availability Mode <configure/environment-configuration-settings:enable high availability mode>` is planned, but not yet supported.
 
-.. config:setting:: notification-emailcontents
+.. config:setting:: email-notification-contents
   :displayname: Email notification contents (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.EmailNotificationContentsType
@@ -936,7 +936,7 @@ Email notification contents
 | - **Send generic description with only sender name**: Only the name of the sender and team name are included in email notifications. Use this option if Mattermost contains confidential information and policy dictates it cannot be stored in email. ``config.json`` setting: ``"generic"`` | - Environment variable: ``MM_EMAILSETTINGS_EMAILNOTIFICATIONCONTENTSTYPE``       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: notification-displayname
+.. config:setting:: notification-display-name
   :displayname: Notification display name (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.FeedbackName
@@ -952,7 +952,7 @@ Notification display name
 | String input. No default setting. This field is required when changing settings in the System Console. | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKNAME``         |
 +--------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-.. config:setting:: notification-fromaddress
+.. config:setting:: notification-from-address
   :displayname: Notification from address (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.FeedbackEmail
@@ -971,7 +971,7 @@ Notification from address
 .. note::
   Cloud admins can't modify this configuration setting.
 
-.. config:setting:: notification-supportemailaddress
+.. config:setting:: support-email-address
   :displayname: Support email address (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .SupportSettings.SupportEmail
@@ -987,7 +987,7 @@ Support email address
 | String input. Default is ``feedback@mattermost.com``. This field is required when changing settings in the System Console.                                                                                                                                                            | - Environment variable: ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``       |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
-.. config:setting:: notification-replytoaddress
+.. config:setting:: notification-reply-to-address
   :displayname: Notification reply-to address (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.ReplyToAddress
@@ -1003,7 +1003,7 @@ Notification reply-to address
 | String input. Default is ``test@example.com``.                                                                                                             | - Environment variable: ``MM_EMAILSETTINGS_REPLYTOADDRESS``         |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: notification-feedbackorganization
+.. config:setting:: notification-footer-mailing-address
   :displayname: Notification footer mailing address (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.FeedbackOrganization
@@ -1019,7 +1019,7 @@ Notification footer mailing address
 | String input.                                                                                                                                  | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKORGANIZATION``         |
 +------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: notification-pushnotificationcontents
+.. config:setting:: push-notification-contents
   :displayname: Push notification contents (Notifications)
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.PushNotificationContents
@@ -1066,7 +1066,7 @@ Push notification contents
 |   Google's notification service. ``config.json`` setting: ``"id_loaded"``                              |                                                                             |
 +--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: perf-enablenotificationmonitoring
+.. config:setting:: enable-notification-monitoring
   :displayname: Enable notification monitoring (Notification Monitoring)
   :systemconsole: Site Configuration > Notifications
   :configjson: .MetricsSettings.EnableNotificationMetrics
@@ -1103,7 +1103,7 @@ System-wide notifications
 
 Access the following configuration settings in the System Console by going to **Site Configuration > System-wide notifications**.
 
-.. config:setting:: systemwide-notifications-enable
+.. config:setting:: enable-system-wide-notifications
   :displayname: System-wide notifications
   :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.SystemWideNotifications
@@ -1121,7 +1121,7 @@ Enable system-wide notifications
 | - **false**: **(Default)** Disable system-wide notifications.         | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_SYSTEMWIDENOTIFICATIONS``                   |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
-.. config:setting:: system-wide-notification-text
+.. config:setting:: banner-text
   :displayname: Banner text (System-wide notifications)
   :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.BannerText
@@ -1153,7 +1153,7 @@ Banner color
 | String input of a CSS color value.                  | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERCOLOR``                       |
 +-----------------------------------------------------+---------------------------------------------------------------------------------------+
 
-.. config:setting:: banner-textcolor
+.. config:setting:: banner-text-color
   :displayname: Banner text color (System-wide notifications)
   :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.BannerTextColor
@@ -1169,7 +1169,7 @@ Banner text color
 | String input of a CSS color value.                   | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_BANNERTEXTCOLOR``                       |
 +------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
-.. config:setting:: banner-allowdismissal
+.. config:setting:: allow-banner-dismissal
   :displayname: Allow banner dismissal (System-wide notifications)
   :systemconsole: Site Configuration > System-wide notifications
   :configjson: .AnnouncementSettings.AllowBannerDismissal
@@ -1199,7 +1199,7 @@ Emoji
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Emoji**.
 
-.. config:setting:: emoji-enablepicker
+.. config:setting:: enable-emoji-picker
   :displayname: Enable emoji picker (Emoji)
   :systemconsole: Site Configuration > Emoji
   :configjson: .ServiceSettings.EnableEmojiPicker
@@ -1217,7 +1217,7 @@ Enable emoji picker
 |                                                                                                      | - Environment variable: ``MM_SERVICESETTINGS_ENABLEEMOJIPICKER``                  |
 +------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
-.. config:setting:: emoji-enablecustom
+.. config:setting:: enable-custom-emoji
   :displayname: Enable custom emoji (Emoji)
   :systemconsole: Site Configuration > Emoji
   :configjson: .ServiceSettings.EnableCustomEmoji
@@ -1249,7 +1249,7 @@ Posts
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Posts**.
 
-.. config:setting:: posts-automaticallyfollowthreads
+.. config:setting:: automatically-follow-threads
   :displayname: Automatically follow threads (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.ThreadAutoFollow
@@ -1277,7 +1277,7 @@ Automatically follow threads
   - Enabling this setting does not automatically follow threads based on previous user actions.
     For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned
     in the thread.
-.. config:setting:: posts-threadeddiscussions
+.. config:setting:: threaded-discussions
   :displayname: Threaded discussions (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.ThreadedDiscussions
@@ -1305,7 +1305,7 @@ Threaded discussions
 | - **Disabled**: Users cannot enable threaded discussions. ``config.json`` setting: ``"disabled"``             |                                                                           |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: posts-messagepriority
+.. config:setting:: message-priority
   :displayname: Message priority (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PostPriority
@@ -1338,7 +1338,7 @@ Message priority
   - Lower Resource Utilization: Managing post priorities can consume additional system resources such as CPU and memory. Disabling this feature can free up these resources, allowing the system to allocate them to other tasks, thereby improving overall performance.
   - Improved Scalability: In a high-traffic environment, the complexity of managing post priorities can become more pronounced. Disabling this feature simplifies the system's operations, making it easier to scale as the number of users and posts increases.
 
-.. config:setting:: posts-persistentnotifications
+.. config:setting:: persistent-notifications
   :displayname: Persistent notifications (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.AllowPersistentNotifications
@@ -1356,7 +1356,7 @@ Persistent notifications
 | - **false**: Disables the ability to send repeating notifications.       | - Environment variable: ``MM_SERVICESETTINGS_ALLOWPERSISTENTNOTIFICATIONS``                   |
 +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
-.. config:setting:: posts-maxnumberofrecipientsforpersistentnotifications
+.. config:setting:: maximum-number-of-recipients-for-persistent-notifications
   :displayname: Maximum number of recipients for persistent notifications (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PersistentNotificationMaxRecipients
@@ -1373,7 +1373,7 @@ Maximum number of recipients for persistent notifications
 | Numerical input. Default is **5**.                            |                                                                                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
-.. config:setting:: posts-frequencyofpersistentnotifications
+.. config:setting:: frequency-of-persistent-notifications
   :displayname: Frequency of persistent notifications (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PersistentNotificationIntervalMinutes
@@ -1390,7 +1390,7 @@ Frequency of persistent notifications
 | Numerical input. Default is **5**. Minimum is **2**.          |                                                                                                     |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 
-.. config:setting:: posts-totalnumberofpersistentnotificationsperpost
+.. config:setting:: total-number-of-persistent-notifications-per-post
   :displayname: Total number of persistent notifications per post (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PersistentNotificationMaxCount
@@ -1407,7 +1407,7 @@ Total number of persistent notifications per post
 | Numerical input. Default is **6**.                          |                                                                                              |
 +-------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
-.. config:setting:: posts-enablelinkpreviews
+.. config:setting:: enable-website-link-previews
   :displayname: Enable website link previews (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableLinkPreviews
@@ -1440,7 +1440,7 @@ Enable website link previews
   - Saved Bandwidth: Link previews often include images and other data from the linked content. By disabling them, you save the bandwidth that would be used to download these additional resources.
   - However, disabling link previews can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
-.. config:setting:: posts-disablepreviewsperdomain
+.. config:setting:: disable-link-previews-for-specific-domains
   :displayname: Disable link previews for specific domains (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.RestrictLinkPreviews
@@ -1456,7 +1456,7 @@ Disable link previews for specific domains
 | String input of a comma-separated list of domains, for example: ``"mattermost.com, images.example.com"`` | - Environment variable: ``MM_SERVICESETTINGS_RESTRICTLINKPREVIEWS``         |
 +----------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: posts-enablemessagelinkpreviews
+.. config:setting:: enable-message-link-previews
   :displayname: Enable message link previews (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnablePermalinkPreviews
@@ -1485,7 +1485,7 @@ Enable message link previews
   - Simplified Message Handling: In the absence of previews, messages are simpler and less resource-intensive to store, retrieve, and display. This can contribute to overall improved system responsiveness and efficiency.
   - However, disabling permalink previews can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
-.. config:setting:: posts-enablesvg
+.. config:setting:: enable-svgs
   :displayname: Enable SVGs (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableSVGs
@@ -1506,7 +1506,7 @@ Enable SVGs
 .. warning::
   Enabling SVGs is not recommended in environments where not all users are trusted.
 
-.. config:setting:: posts-enablelatex
+.. config:setting:: enable-latex-code-block-rendering
   :displayname: Enable LaTeX code block rendering (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableLatex
@@ -1527,7 +1527,7 @@ Enable LaTeX code block rendering
 .. warning::
   Enabling LaTeX rendering is not recommended in environments where not all users are trusted.
 
-.. config:setting:: posts-enableinlinelatex
+.. config:setting:: enable-inline-latex-rendering
   :displayname: Enable inline LaTeX rendering (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.EnableInlineLatex
@@ -1548,7 +1548,7 @@ Enable inline LaTeX rendering
 .. warning::
   Enabling LaTeX rendering isn't recommended in environments where not all users are trusted.
 
-.. config:setting:: posts-customurlschemes
+.. config:setting:: custom-url-schemes
   :displayname: Custom URL schemes (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .DisplaySettings.CustomURLSchemes
@@ -1564,7 +1564,7 @@ Custom URL schemes
 | ``config.json`` setting: an array of strings                                                                                                                                                             | - Environment variable: ``MM_DISPLAYSETTINGS_CUSTOMURLSCHEMES``                 |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
-.. config:setting:: posts-maxmarkdownnodes
+.. config:setting:: maximum-markdown-nodes
   :displayname: Maximum Markdown nodes (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .DisplaySettings.MaxMarkdownNodes
@@ -1586,7 +1586,7 @@ Maximum Markdown nodes
 .. note::
   This limit applies to all Mattermost clients, including web, desktop app, and mobile app.
   
-.. config:setting:: posts-googleapikey
+.. config:setting:: google-api-key
   :displayname: Google API key (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.GoogleDeveloperKey
@@ -1608,7 +1608,7 @@ Google API key
 .. note::
   This key is used in client-side Javascript, and must have the YouTube Data API added as a service.
 
-.. config:setting:: posts-AllowSyncedDrafts
+.. config:setting:: enable-server-syncing-of-message-drafts
   :displayname: Enable server syncing of message drafts (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.AllowSyncedDrafts
@@ -1642,7 +1642,7 @@ Enable server syncing of message drafts
   - Improved User Experience: Users may experience faster load times and reduced latency without the overhead of draft syncing. This can be particularly noticeable in environments with limited or variable internet connectivity.
   - However, disabling draft synchronization can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
-.. config:setting:: posts-UniqueEmojiReactionLimit
+.. config:setting:: unique-emoji-reaction-limit
   :displayname: Unique emoji reaction limit (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.UniqueEmojiReactionLimitPerPost
@@ -1670,7 +1670,7 @@ File sharing and downloads
 
 Access the following configuration settings in the System Console by going to **Site Configuration > File Sharing and Downloads**.
 
-.. config:setting:: fileshare-allowfilesharing
+.. config:setting:: allow-file-sharing
   :displayname: Allow file sharing (File sharing)
   :systemconsole: Site Configuration > File Sharing and Downloads
   :configjson: .FileSettings.EnableFileAttachments
@@ -1688,7 +1688,7 @@ Allow file sharing
 |                                                                                                                                                         | - Environment variable: ``MM_FILESETTINGS_ENABLEFILEATTACHMENTS``                   |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: fileshare-allowuploadsonmobile
+.. config:setting:: allow-file-uploads-on-mobile
   :displayname: Allow file uploads on mobile (File sharing)
   :systemconsole: Site Configuration > File Sharing and Downloads
   :configjson: .FileSettings.EnableMobileUpload
@@ -1713,7 +1713,7 @@ Allow file uploads on mobile
 |                                                                                                   | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEUPLOAD``                       |
 +---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-.. config:setting:: fileshare-allowdownloadsonmobile
+.. config:setting:: allow-file-downloads-on-mobile
   :displayname: Allow file downloads on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
   :configjson: .FileSettings.EnableMobileDownload
@@ -1748,7 +1748,7 @@ Public Links
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Public Links**.
 
-.. config:setting:: publink-enable
+.. config:setting:: enable-public-file-links
   :displayname: Enable public file links (Public links)
   :systemconsole: Site Configuration > Public Links
   :configjson: .FileSettings.EnablePublicLink
@@ -1769,7 +1769,7 @@ Enable public file links
 .. note::
   When set to **false**, anyone who tries to visit a previously created public link will receive an error message. If the setting is returned to **true**, previously created links will be accessible, unless the **Public link salt** has been regenerated.
 
-.. config:setting:: publink-salt
+.. config:setting:: public-link-salt
   :displayname: Public link salt (Public links)
   :systemconsole: Site Configuration > Public Links
   :configjson: .FileSettings.EnablePublicLink
@@ -1795,7 +1795,7 @@ Notices
 
 Access the following configuration settings in the System Console by going to **Site Configuration > Notices**.
 
-.. config:setting:: notices-enableadminnotices
+.. config:setting:: enable-admin-notices
   :displayname: Enable admin notices (Notices)
   :systemconsole: Site Configuration > Notices
   :configjson: .AnnouncementSettings.AdminNoticesEnabled
@@ -1813,7 +1813,7 @@ Enable admin notices
 | - **false**: System admins will not receive specific notices. Admins will still receive notices for all users (see **Enable end user notices**)                                             | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_ADMINNOTICESENABLED``                    |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
-.. config:setting:: notices-enableendusernotices
+.. config:setting:: enable-end-user-notices
   :displayname: Enable end user notices (Notices)
   :systemconsole: Site Configuration > Notices
   :configjson: .AnnouncementSettings.UserNoticesEnabled
@@ -1841,7 +1841,7 @@ The following settings aren't available in the System Console and can only be se
 
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
-.. config:setting:: enable-connected-workspaces
+.. config:setting:: enable-connected-workspaces-beta
   :displayname: Enable connected workspaces (Beta)
   :systemconsole: Site Configuration > Connected Workspaces (Beta)
   :configjson: ConnectedWorkspacesSettings.EnableSharedChannels, ConnectedWorkspacesSettings.EnableRemoteClusterService 
@@ -1868,7 +1868,7 @@ This feature's two ``config.json`` settings include:
   - System admins for Cloud deployments can submit a request to have these required configuration settings enabled for their Cloud deployment instance.
   - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to connected workspace configuration settings in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
-.. config:setting:: disable-status-sync
+.. config:setting:: disable-shared-channel-status-sync-beta
   :displayname: Disable shared channel status sync (Beta)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
@@ -1888,7 +1888,7 @@ Disable member status and availability synchronization between connected workspa
 |                                                                                                                            | - Environment variable: N/A                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: default-maxpostspersync
+.. config:setting:: default-maximum-posts-per-sync-beta
   :displayname: Default maximum posts per sync (Beta)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DefaultMaxPostsPerSync
