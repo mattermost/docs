@@ -12,12 +12,12 @@ Support for Mattermost Server v9.11 [Extended Support Release](https://docs.matt
 
 **Release day: 2025-03-14**
 
+### Important Upgrade Notes
+ - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
+
 ```{Important}
 If you upgrade from a release earlier than v10.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
-
-### Important Upgrade Notes
- - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
 
 ### Improvements
 
