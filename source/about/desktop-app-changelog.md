@@ -16,6 +16,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
   - Mattermost Desktop App v5.11.1 contains a high severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where the server dropdown wouldn't render properly on first load [MM-62781](https://mattermost.atlassian.net/browse/MM-62781).
+  - Updated the error page with new visuals [MM-62724](https://mattermost.atlassian.net/browse/MM-62724).
 
 - **v5.11.0, released 2025-02-14**
 
