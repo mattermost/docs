@@ -30,21 +30,15 @@ If you don't have Docker installed, follow the instructions below based on your 
 
 .. _Deploy Mattermost on Docker:
 
-Before you begin
-----------------
-
-This Docker deployment solution uses Docker Compose to get Mattermost up and running quickly.
-
-.. note::
-   Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
-
 Deploy Mattermost on Docker (Quick Start)
 -----------------------------------------
 
 This section provides a quick start guide for deploying Mattermost on Docker. Leveraging `Docker Compose <https://docs.docker.com/compose/install/>`_, this deployment solution is designed to get Mattermost up and running quickly. 
 
 .. note::
-   The deployment configuration results in two separate containers: a container for the database and a container for the application. An optional third container results when using NGINX for reverse proxy.
+
+   - The deployment configuration results in two separate containers: a container for the database and a container for the application. An optional third container results when using NGINX for reverse proxy.
+   - Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
 
 To deploy Mattermost on Docker:
 
@@ -62,11 +56,9 @@ To deploy Mattermost on Docker:
       cp env.example .env
 
 .. important::
-    
-      At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
 
-.. note::
-    We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
+   - At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+   - We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
 
 3. Create the required directories and set their permissions.
 
