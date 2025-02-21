@@ -14,6 +14,7 @@ Support for Mattermost Server v9.11 [Extended Support Release](https://docs.matt
 
 ### Important Upgrade Notes
  - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
+ - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. It is also non-blocking. Note that there is no migration for MySQL installation because this optimization is only applicable for PostgreSQL.
 
 ```{Important}
 If you upgrade from a release earlier than v10.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -30,8 +31,7 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
 #### Administration
  - The performance of the site statistics section in the System Console has been significantly improved for PostgreSQL installations. The ``AnalyticsSettings.MaxUsersForStatistics`` configuration setting now just disables only the ``user_counts_with_posts chart``. There are no performance issues with any other chart or statistic. We use a materialized view to refresh the statistics every day, so the post count/file count/total file count might not be perfectly accurate for the current timestamp. This is by design and intentional. We defer loading advanced statistics to a collapsed section, where users have to click it to open the line charts and plugin statistics. To keep things simple, we have removed checking the ``AnalyticsSettings.MaxUsersForStatistics`` setting for MySQL installations in places where it is not checking for PostgreSQL. This would make performance worse for MySQL. But since MySQL is anyways deprecated for new installations, we urge customers to move to PostgreSQL as soon as feasible. Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. It is also non-blocking. Note that there is no migration for MySQL installation because this optimization is only applicable for PostgreSQL. 
  - Updated user limits to 2.5K for soft limits (admin dismissible banner) and to 5K for hard limit (admin non-dismissible banner and no additional users can be added) for unlicensed servers. 
- - Removed the automatic Elasticsearch/OpenSearch channel index schema check and admin alerts for the same. 
- - Migrated scheme store SELECT * queries to use structured query builder with explicit column definitions.
+ - Removed the automatic Elasticsearch/OpenSearch channel index schema check and admin alerts for the same.
 
 ### Bug Fixes
  - Fixed an issue where the email address in Mattermost would not get updated if the one in SAML changed. 
