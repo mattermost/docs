@@ -9,7 +9,7 @@ Configure rate limiting settings by going to **System Console > Environment > Ra
 
   Mattermost rate limiting configuration settings are intended for small deployments of Mattermost up to a few hundred users, and is not intended for larger, Enterprise-scale deployments.
 
-.. config:setting:: ratelimit-enableratelimiting
+.. config:setting:: enable-rate-limiting
   :displayname: Enable rate limiting (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.Enable
@@ -35,7 +35,7 @@ Enable rate limiting
 | - **false**: **(Default)** API access isn’t throttled.         |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-maxpersecond
+.. config:setting:: maximum-queries-per-second
   :displayname: Maximum queries per second (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.PerSec
@@ -60,7 +60,7 @@ Maximum queries per second
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-maxburst
+.. config:setting:: maximum-burst-size
   :displayname: Maximum burst size (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.MaxBurst
@@ -87,7 +87,7 @@ Maximum burst size
 |                                                                 |                                                                          |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-memorystoresize
+.. config:setting:: memory-store-size
   :displayname: Memory store size (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.MemoryStoreSize
@@ -116,7 +116,7 @@ Memory store size
 | too frequently.                                                 |                                                                            |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-varybyremoteaddress
+.. config:setting:: vary-rate-limit-by-remote-address
   :displayname: Vary rate limit by remote address (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.VaryByRemoteAddr
@@ -142,7 +142,7 @@ Vary rate limit by remote address
 | - **false**: Rate limiting does not vary by IP address.         |                                                                            |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-varybyuser
+.. config:setting:: vary-rate-limit-by-user
   :displayname: Vary rate limit by user (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.VaryByUser
@@ -169,7 +169,7 @@ Vary rate limit by user
 |   authentication token.                                         |                                                                            |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-varybyhttpheader
+.. config:setting:: vary-rate-limit-by-http-header
   :displayname: Vary rate limit by HTTP header (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.VaryByHeader
