@@ -6,13 +6,13 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Server v10.6.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Support for PostgreSQL v11 and v12 will be removed. The new minimum PostgreSQL version will be v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
-
-Removed features by Mattermost version
-----------------------------------------
+- Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
 
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
