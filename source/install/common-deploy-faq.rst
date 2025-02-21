@@ -10,7 +10,7 @@ To have the Mattermost Server start at system boot, the systemd unit file needs 
 
 .. code-block:: sh
 
-    sudo systemctl enable mattermost.service
+  sudo systemctl enable mattermost.service
 
 Why does Mattermost fail to start at system boot?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,11 +24,11 @@ Yes. Mattermost binds to 443 instead of 8065. The Mattermost binary requires the
 
 .. code-block:: sh
 
-    sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
+  sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 
 .. note::
 
-  - We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </install/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </install/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.
+  We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </install/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </install/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.
 
 Where can I access Mattermost Server logs?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

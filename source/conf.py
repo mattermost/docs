@@ -2555,7 +2555,10 @@ redirects = {
         "https://docs.mattermost.com/install/install-kubernetes.html",
 "install/install-kubernetes.html#does-the-mattermost-operator-replace-the-mattermost-helm-chart":
         "https://docs.mattermost.com/install/install-kubernetes.html#frequently-asked-questions",
-
+"install/install-docker.html#deploy-mattermost-on-docker-for-production-use":
+        "https://docs.mattermost.com/install/install-docker.html#deploy-mattermost-on-docker-quick-start",
+"install/install-docker.html#installing-a-different-version-of-mattermost":
+        "https://docs.mattermost.com/install/install-docker.html#install-a-different-version-of-mattermost",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.

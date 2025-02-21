@@ -5,14 +5,16 @@ Deploy Mattermost on Kubernetes
  :start-after:
  :nosearch:
 
-This document provides a guide to deploying Mattermost on Kubernetes using the Mattermost Kubernetes Operator.
+This document provides a guide to deploying Mattermost on Kubernetes using the Mattermost Kubernetes Operator. This guide will primarily focus on the recommended approach of using S3-compatible storage and a managed database service. If you choose to use self-managed components, you will need to adapt the instructions accordingly, pointing to your internal services instead.
 
 Intended outcome and deployment recommendations
 -------------------------------------------------
 
 The goal of this documentation is to enable you to quickly and reliably deploy a production-ready Mattermost instance. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments. This typically involves leveraging:
 
-While this guide focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions.  For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage. While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them. This guide will primarily focus on the recommended approach of using S3-compatible storage and a managed database service.  If you choose to use self-managed components, you will need to adapt the instructions accordingly, pointing to your internal services instead.
+While this guide focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions.  For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage. 
+
+While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them. 
 
 Prerequisites
 -------------
@@ -26,9 +28,9 @@ Before you begin, ensure you have the following:
 
 .. tip::
 
-    *   If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.
-    *   To customize your production deployment, refer to the :doc:`configuration settings documentation </configure/configuration-settings>`.
-    *   If you encounter issues during deployment, consult the :ref:`deployment troubleshooting guide <install/troubleshooting:deployment troubleshooting>`.
+  *   If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.
+  *   To customize your production deployment, refer to the :doc:`configuration settings documentation </configure/configuration-settings>`.
+  *   If you encounter issues during deployment, consult the :ref:`deployment troubleshooting guide <install/troubleshooting:deployment troubleshooting>`.
 
 Installation Steps
 ------------------
@@ -287,19 +289,19 @@ Apply the Installation Manifest
 
 With the manifest files prepared, you can now deploy Mattermost to your Kubernetes cluster. Ensure you are connected to the correct cluster using `kubectl`.
 
-a. Create the Mattermost Namespace:
+1. Create the Mattermost Namespace:
 
   .. code-block:: sh
 
     kubectl create ns mattermost
 
-b. Apply the License Secret (Mattermost Enterprise only):
+2. Apply the License Secret (Mattermost Enterprise only):
 
   .. code-block:: sh
 
     kubectl apply -n mattermost -f <path-to-license-secret> # Replace with the actual path
 
-c. Apply the Mattermost Installation Manifest:
+3. Apply the Mattermost Installation Manifest:
 
   .. code-block:: sh
 
@@ -320,19 +322,19 @@ Access Mattermost
 
 Once the deployment is complete, you can access your Mattermost instance.
 
-a. Get the Ingress Address:
+1. Get the Ingress Address:
 
   .. code-block:: sh
 
     kubectl -n mattermost get ingress
 
-b. Connect to Mattermost: Copy the address from the ``ADDRESS`` column of the ingress output. Open your web browser and navigate to this address.
+2. Connect to Mattermost: Copy the address from the ``ADDRESS`` column of the ingress output. Open your web browser and navigate to this address.
 
-c. Configure DNS (Recommended):
+3. Configure DNS (Recommended):
 
 For production environments, configure your DNS to point your domain (specified in the `ingress.host` field of your manifest) to the ingress address obtained in the previous step. This is typically done through your domain registrar or cloud DNS provider (e.g., Route53 on AWS).
 
-d. Local Testing (Optional): If you are testing locally and haven't configured DNS, you can use port-forwarding to access Mattermost:
+4. Local Testing (Optional): If you are testing locally and haven't configured DNS, you can use port-forwarding to access Mattermost:
 
   .. code-block:: sh
 

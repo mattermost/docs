@@ -97,7 +97,7 @@ To deploy Mattermost on Docker:
       CERT_PATH=./volumes/web/cert/cert.pem
       KEY_PATH=./volumes/web/cert/key-no-password.pem
 
-6. Deploy Mattermost.
+5. Deploy Mattermost.
 
    **Without using the included NGINX:**
 
@@ -127,7 +127,7 @@ To deploy Mattermost on Docker:
   
       sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
-7. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
+6. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
 
 Configure SSO With GitLab (Optional)
 -------------------------------------
