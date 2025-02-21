@@ -57,12 +57,11 @@ endif
 linkcheck:
 ifeq ($(OS),Windows_NT)
 	@CMD /C IF NOT EXIST $(BUILDDIR) MD $(BUILDDIR)
-	@CMD /C $(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
+	@CMD /C $(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) -w "$(WARNINGSFILE)" 2>NUL
 else
 	@mkdir -p "$(BUILDDIR)"
-	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
+	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
 endif
-
 
 # Download the latest Compass Icon assets.
 compass-icons:
