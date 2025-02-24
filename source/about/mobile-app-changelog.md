@@ -20,7 +20,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Added a "component library" debug menu for servers that have developer settings enabled. 
+ - Added a "component library" debug menu for servers that have developer settings enabled.
+ - Native logs will now appear on iOS.
 
 ### Bug Fixes
  - Fixed an issue with image resize when the Tablet screen was resized.
