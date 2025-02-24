@@ -18,7 +18,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Enterprise Edition v10.5.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.1/mattermost-10.5.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.1/mattermost-10.5.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``7dc8400f27958f7be545088c343deecda40c754c4f4e13e97205fa75b2ddc1e7``
+    - SHA-256 Checksum: ``95af0556d64525bbda4354eab91e36087026b751c3c895622d7e0dddd2cd7ee6``
     - GPG Signature: https://releases.mattermost.com/10.5.1/mattermost-10.5.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.4.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-4-feature-release>`__ - `Download <https://releases.mattermost.com/10.4.3/mattermost-10.4.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.4.3/mattermost-10.4.3-linux-amd64.tar.gz``
@@ -410,7 +410,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Team Edition v10.5.1 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.1/mattermost-team-10.5.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.1/mattermost-team-10.5.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``25c4d26bac4065441a3f0a85349a390286ee4a77f5c207d6a10c2497e425b8cc``
+    - SHA-256 Checksum: ``0b552d835ed91c54998e12fcc5727bfc23c09231b4e60911db22bbb8862e8bf9``
     - GPG Signature: https://releases.mattermost.com/10.5.1/mattermost-team-10.5.1-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.5.1/sbom-mattermost-v10.5.1.json
   Mattermost Team Edition v10.4.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-4-feature-release>`__ - `Download <https://releases.mattermost.com/10.4.3/mattermost-team-10.4.3-linux-amd64.tar.gz?src=arc>`__

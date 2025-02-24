@@ -34,30 +34,17 @@ Install Mattermost Omnibus
 
   </div>
 
+Mattermost Omnibus packages together all required components: the Enterprise Edition of Mattermost (free version), PostgreSQL database, and NGINX as the application proxy. It uses a custom CLI (``mmomni``) and ansible recipes to configure and connect these components.
+
 .. note::
 
  Omnibus supports Ubuntu distributions only.
 
-Mattermost Omnibus packages the free, unlicensed Mattermost Enterprise version of Mattermost, a PostgreSQL database, and when required, NGINX as the application proxy. A custom CLI (``mmomni``) and ansible recipes link the components together and configures them. Mattermost Omnibus is only supported on Ubuntu distributions.
-
 Add the Mattermost PPA repositories
 -----------------------------------
 
-.. important::
-
-  The GPG public key has changed. You can `import the new public key <https://deb.packages.mattermost.com/pubkey.gpg>`_ or run the automatic Mattermost PPA repository setup script provided below. Depending on your setup, additional steps may also be required, particularly for installations that didn't rely on the repository setup script. We recommend deleting the old key from ``/etc/apt/trusted.gpg.d`` before adding the apt repository.
-
-  - For Ubuntu Focal - 20.04 LTS:
-
-    ``sudo apt-key del A1B31D46F0F3A10B02CF2D44F8F2C31744774B28``
-
-    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo apt-key add``
-
-  - For Ubuntu Jammy - 22.04 LTS, Ubuntu Noble - 24.04 LTS:
-
-    ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
-
-    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg |  gpg --dearmor | sudo tee /usr/share/keyrings/mattermost-archive-keyring.gpg > /dev/null``
+.. include:: common-gpg-public-key-changed.rst
+  :start-after: :nosearch:
 
 In a terminal window, run the following repository setup command:
 
@@ -65,26 +52,37 @@ In a terminal window, run the following repository setup command:
 
   curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash
 
-This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost Omnibus repository so that you can run the install command.
+This command sets up all required repositories and configures:
+
+- PostgreSQL database
+- NGINX web server as a proxy
+- Certbot for SSL certificate management
+- Mattermost Omnibus repository
 
 Install Mattermost Omnibus
 ---------------------------
 
-In a terminal window, run the following command to install Omnibus.
+When installing Mattermost Omnibus, SSL is enabled by default to provide a secure connection between the Mattermost server and the Mattermost client. To install with SSL, run the following command:
 
 .. code-block:: sh
 
+  // Install Mattermost Omnibus with SSL enabled
   sudo apt install mattermost-omnibus -y
 
-.. note::
+You're prompted to specify a domain name and email address that will be used to generate the SSL certificate, and deliver related communications.
 
-  We recommend installing and configuring Omnibus with SSL enabled; however, you can run the following command to disable SSL: ``sudo MMO_HTTPS=false apt install mattermost-omnibus``.
+Just looking to try out Mattermost? Run the following command to install Omnibus without SSL:
 
-You're prompted to specify a domain name and email address to issue the certificate. This information is used to generate the certificate and deliver any related communications. After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server.
+.. code-block:: sh
+
+  // Install Mattermost Omnibus without SSL
+  sudo MMO_HTTPS=false apt install mattermost-omnibus -y
+
+After all the packages are installed, Omnibus runs ansible scripts that configure all the platform components and starts the server.
 
 Next steps:
 
-1. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server’s IP address if you’re not using a domain name.
+1. Open a browser and navigate to your Mattermost domain either by domain name (e.g. ``mymattermostserver.com``), or by the server's IP address if you're not using a domain name.
 
 2. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
 
@@ -95,17 +93,17 @@ Configure Mattermost Omnibus
 
   Plugin uploads, local mode, and HTTPS are enabled by default. These settings are modified in the ``yaml`` file as described below.
 
-With Mattermost Omnibus, the Mattermost ``config.json`` file isn't used because Omnibus stores configuration in the database. The Omnibus platform itself requires a configuration of its own stored in ``/etc/mattermost/mmomni.yml``. This file contains the data that Omnibus needs to configure the platform, and connect all the services together.
+Unlike traditional Mattermost installations, Omnibus stores its configuration directly in a database, eliminating the need for a ``config.json`` file. However, Omnibus itself requires a configuration file located at ``/etc/mattermost/mmomni.yml`` to manage its own settings and service interconnections.
 
-You’ll need to use ``mmctl`` to make changes to your Mattermost server configuration using ``mmctl --local config edit``. See the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl config edit>` documentation for additional command details.
+To modify Mattermost server settings within an Omnibus environment (with the exception of those listed below), you'll need to utilize the ``mmctl`` command-line tool. Specifically, the ``mmctl --local config edit`` command allows you to make the necessary adjustments. For detailed instructions and options, refer to the :doc:`mmctl </manage/mmctl-command-line-tool>` documentation.
 
-For Omnibus to work properly, some configuration parameters must remain unchanged, such as the port that Mattermost uses to run.
+Please note that certain configuration parameters, such as the Mattermost server port, must remain unchanged to ensure optimal Omnibus functionality.
 
 The following parameters must be configured directly using the ``mmomni.yml`` file:
 
 * ``db_user``: The PostgreSQL database user. This value is generated during the Omnibus installation and should not be changed.
 * ``db_password``: The PostgreSQL database password. This value is generated during the Omnibus installation and should not be changed.
-* ``fqdn``: The domain name for the Mattermost application. This is the value you're prompted for during the install process, and it’s used to populate the ``ServiceSettings.SiteURL`` Mattermost configuration property, as well as to retrieve and configure the SSL certificate for the server.
+* ``fqdn``: The domain name for the Mattermost application. This is the value you're prompted for during the install process, and it's used to populate the ``ServiceSettings.SiteURL`` Mattermost configuration property, as well as to retrieve and configure the SSL certificate for the server.
 * ``email``: The email address used for certificate communications. This is the value you're prompted for during the install process, and it won't used if HTTPS is disabled.
 * ``https``: This indicates whether the platform should be configured to use HTTPS or HTTP with values ``true`` or ``false``. The recommended way to install Mattermost is to use HTTPS, but you can disable it if necessary.
 * ``data_directory``: This is the directory where Mattermost stores its data.
@@ -113,7 +111,7 @@ The following parameters must be configured directly using the ``mmomni.yml`` fi
 * ``enable_local_mode``: This setting can be ``true`` or ``false`` and is used to configure the ``ServiceSettings.EnableLocalMode`` Mattermost configuration property.
 * ``nginx_template``: Optional path to a custom NGINX template.
 
-After modifying the ``mmomni.yml`` configuration file, you need to run ``mmomni reconfigure`` for Omnibus to apply the changes, and then you need to restart the Mattermost server.
+After modifying the ``mmomni.yml`` configuration file, run ``mmomni reconfigure`` to apply the changes, and then restart the Mattermost server with ``systemctl restart mattermost``.
 
 Update Mattermost Omnibus
 -------------------------
@@ -126,12 +124,12 @@ Mattermost Omnibus is integrated with the apt package manager. When a new Matter
 
 .. note::
 
-  When you run the ``sudo apt upgrade`` command, mattermost-server will be updated along with any other packages. Before running the ``apt`` command, we strongly recommend stopping the Mattermost server by running the command ``sudo systemctl stop mattermost-server``.
+  When you run the ``sudo apt upgrade`` command, Mattermost will be updated along with any other packages. Before running the ``apt`` command, we strongly recommend stopping the Mattermost server by running the command ``sudo systemctl stop mattermost``.
 
 Backup and restore
 ------------------
 
-The Mattermost Omnibus CLI tool ``mmomni`` is used for both backups and restores. Server and domain migration, as well as backup and restore, is now much easier. You can take snapshots of all content in your Mattermost server. This includes all content, users, plugins, configurations, and databases. You can restore on the same server, or move to another server at any time.
+The Mattermost Omnibus CLI tool ``mmomni`` simplifies server and domain migration, as well as backup and restore. You can easily create snapshots of your entire Mattermost server, including all content, users, plugins, configurations, and databases. These snapshots can be restored to the same server or a different one.
 
 To back up the contents of your Mattermost server, run the following command:
 
