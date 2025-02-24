@@ -61,6 +61,11 @@ Mattermost Cloud subscriptions are offered as an annual subscription. Contact a 
 
 If you’re currently using a Mattermost Cloud trial, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to upgrade to Mattermost Enterprise. Your plan immediately changes to your upgraded plan. You will be invoiced as specified in your sales agreement.
 
+What is the minimum number of users I can purhcase on a subscription? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The minimum purchase for a Mattermost license subscription is 100 users, with no set maximum—you can buy as many as needed. 
+
 Is Mattermost Cloud subject to taxes?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
