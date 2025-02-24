@@ -13,8 +13,8 @@ Support for Mattermost Server v9.11 [Extended Support Release](https://docs.matt
 **Release day: 2025-03-14**
 
 ### Important Upgrade Notes
- - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
- - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. It is also non-blocking. Note that there is no migration for MySQL installation because this optimization is only applicable for PostgreSQL.
+ - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/install/prepare-mattermost-database#minimum-supported-version-policy] documentation for details.
+ - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-blocking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL.
 
 ```{Important}
 If you upgrade from a release earlier than v10.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -30,7 +30,7 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
 
 #### Administration
  - The performance of the site statistics section in the System Console has been significantly improved for PostgreSQL installations. The ``AnalyticsSettings.MaxUsersForStatistics`` configuration setting now just disables only the ``user_counts_with_posts chart``. There are no performance issues with any other chart or statistic. We use a materialized view to refresh the statistics every day, so the post count/file count/total file count might not be perfectly accurate for the current timestamp. This is by design and intentional. We defer loading advanced statistics to a collapsed section, where users have to click it to open the line charts and plugin statistics. To keep things simple, we have removed checking the ``AnalyticsSettings.MaxUsersForStatistics`` setting for MySQL installations in places where it is not checking for PostgreSQL. This would make performance worse for MySQL. But since MySQL is anyways deprecated for new installations, we urge customers to move to PostgreSQL as soon as feasible. Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. It is also non-blocking. Note that there is no migration for MySQL installation because this optimization is only applicable for PostgreSQL. 
- - Updated user limits to 2.5K for soft limits (admin dismissible banner) and to 5K for hard limit (admin non-dismissible banner and no additional users can be added) for unlicensed servers. 
+ - Unlicensed server limits have been updated: a soft limit of 2500 users now results in a banner notification visible by admins, and a 5K hard limit that prevents the creation or activation of users until the user count is reduced below the hard limit.
  - Removed the automatic Elasticsearch/OpenSearch channel index schema check and admin alerts for the same.
 
 ### Bug Fixes
@@ -44,16 +44,16 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
  - Fixed an issue where the channel file count was incorrect due to files not actually being submitted as part of a post. 
  - Fixed a nil pointer dereference in the Interaction Action system. 
  - Fixed an issue with having the currently selected thread in the Unreads pane. 
- - Fixed an issue with mmctl preventing logging a harmless debug-level "error" to the logs. 
+ - Fixed an issue with mmctl preventing the logging of a harmless debug-level "error". 
  - Fixed an issue where the unread count in your team sidebar may be out of sync when following/unfollowing threads. 
- - Fixed an issue with Bulk Export -- Exports will no longer stop when they encounter a missing file. 
+ - Fixed an issue with Bulk Export: Exports will no longer stop when they encounter a missing file. 
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
 - Under ``ServiceSettings`` in ``conig.json``:
-  - Adede a new configuration setting ``EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
+  - Adede a new configuration setting ``EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. We don't recommended turning this on unless you have at least 200,000 concurrent users actively using Mattermost.
 - Removed ``EnableOpenTracing`` to remove the unused ``opentracing`` support. 
 
 ### API Changes
@@ -67,7 +67,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.6 is built with Go ``v1.22.6``.
 
 ### Known Issues
- - Setting the license file location through an envvar still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the envvar. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
 
