@@ -29,7 +29,7 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
  - Upgraded Ukrainian language to official.
 
 #### Administration
- - The performance of the site statistics section in the System Console has been significantly improved for PostgreSQL installations. The ``AnalyticsSettings.MaxUsersForStatistics`` configuration setting now just disables only the ``user_counts_with_posts chart``. There are no performance issues with any other chart or statistic. We use a materialized view to refresh the statistics every day, so the post count/file count/total file count might not be perfectly accurate for the current timestamp. This is by design and intentional. We defer loading advanced statistics to a collapsed section, where users have to click it to open the line charts and plugin statistics. To keep things simple, we have removed checking the ``AnalyticsSettings.MaxUsersForStatistics`` setting for MySQL installations in places where it is not checking for PostgreSQL. This would make performance worse for MySQL. But since MySQL is anyways deprecated for new installations, we urge customers to move to PostgreSQL as soon as feasible. Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. It is also non-blocking. Note that there is no migration for MySQL installation because this optimization is only applicable for PostgreSQL. 
+ - System Console statistics now perform faster on PostgreSQL. The ``MaxUsersForStatistics`` configuration setting now only disables the **User counts with posts** chart, while all other stats remain unaffected. They remain unaffected because that configuration value is no longer needed to disable the other queries. Post and file counts update daily, so they may not always reflect real-time data. Advanced stats, such as line charts and plugin data, are now hidden until clicked, reducing load time. No performance improvements apply to MySQL since it's scheduled for full deprecation in v11. We recommend migrating to PostgreSQL for better performance and long-term support. The migration process for PostgreSQL is quick (around 15 seconds for large systems) and non-blocking. If you're on MySQL, no migration is needed, but transitioning to PostgreSQL is strongly encouraged.
  - Unlicensed server limits have been updated: a soft limit of 2500 users now results in a banner notification visible by admins, and a 5K hard limit that prevents the creation or activation of users until the user count is reduced below the hard limit.
  - Removed the automatic Elasticsearch/OpenSearch channel index schema check. As a result, admins will no longer receive Direct Message alerts to notify that their ``elasticsearch`` channel index is out of date.
 
@@ -42,8 +42,8 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
  - Fixed "An error has occurred" bar being shown with developer mode disabled. 
  - Fixed an issue where deleted threads would get stuck in the thread viewer. 
  - Fixed an issue where the channel file count was incorrect due to files not actually being submitted as part of a post. 
- - Fixed a nil pointer dereference in the Interaction Action system. 
- - Fixed an issue with having the currently selected thread in the Unreads pane. 
+ - Fixed a crash issue in the integration action system. 
+ - Fixed an issue where a currently selected thread was shown in the **Unreads** pane.
  - Fixed an issue with mmctl preventing the logging of a harmless debug-level "error". 
  - Fixed an issue where the unread count in your team sidebar may be out of sync when following/unfollowing threads. 
  - Fixed an issue with Bulk Export: Exports will no longer stop when they encounter a missing file. 
