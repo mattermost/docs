@@ -19,7 +19,7 @@ Important Upgrade Notes
 | v10.6                                              | Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+.                                                                |
 |                                                    | See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.     |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-blocking. Note that there is no migration   |
+|                                                    | Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration    |
 |                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL.                                                                               |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.5                                              | The internal workings of the `PluginLinkComponent` in the web app have been changed to unmount link tooltips from the DOM by default, significantly improving    |
