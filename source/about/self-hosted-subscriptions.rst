@@ -69,7 +69,7 @@ Frequently asked questions
 What is the minimum number of users I can purhcase on a subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The minimum purchase for a Mattermost license subscription is 10 users, with no set maximum—you can buy as many as needed. 
+The minimum purchase for a Mattermost license subscription is 10 users, with no set maximum. You can buy as many user seats as needed. 
 
 What is a true-up report and why is the true-up notice necessary? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
