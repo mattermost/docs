@@ -64,7 +64,7 @@ If you’re currently using a Mattermost Cloud trial, contact a `Mattermost Expe
 What is the minimum number of users I can purhcase on a subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The minimum purchase for a Mattermost license subscription is 100 users, with no set maximum—you can buy as many as needed. 
+The minimum purchase for a Mattermost license subscription is 100 users, with no set maximum. You can buy as many user seats as needed. 
 
 Is Mattermost Cloud subject to taxes?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
