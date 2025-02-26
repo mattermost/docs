@@ -26,12 +26,9 @@ Once the integration is installed and configured by a System Administrator, you 
 2. In any channel, run the ``/msteams connect`` slash command, and select the resulting link.
 3. Authenticate with Microsoft Teams using the email address matching your account in Mattermost.
 
-Mattermost will confirm when your account is connected, and prompt you to enable notifications.
+Mattermost will confirm when your account is connected.
 
-Enable notifications
-----------------------
-
-Once you've connected your Mattermost account to your Microsoft Teams account, Mattermost prompts you to enable notifications. When enabled and you're offline or away from Teams, any messages you receive in a chat or group chat in Microsoft Teams will display in Mattermost as a notification, with a link to open the chat in Microsoft Teams and continue the conversation. These notifications won't appear if you've been recently active in Teams.
+Once you've connected your Mattermost account to your Microsoft Teams account, when you're offline or away from Microsoft Teams, any messages you receive in a chat or group chat in Microsoft Teams will display in Mattermost as a notification and include a link to open the chat in Microsoft Teams to continue the conversation. These notifications won't appear if you've been recently active in Teams.
 
 .. image:: ../images/microsoft-teams-chat-notifications.png
    :alt: An example of a chat message notification.
@@ -39,7 +36,7 @@ Once you've connected your Mattermost account to your Microsoft Teams account, M
 Manage notification settings
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can enable or disable notification settings for the Microsoft Teams integration at any time in **Settings** > **Plugin Preferences**
+Manage your Mattermost notification settings for the Microsoft Teams integration at any time in **Settings** > **Plugin Preferences**
 
 .. image:: ../images/teams_plugin_notification_settings.png
    :alt: Manage notification settings for the Microsoft Teams integration in Account Settings > Plugin Preferences
@@ -59,10 +56,10 @@ Frequently asked questions
 How does the integration determine when to send chat notifications?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ 
 
-Chat notifications are sent in real-time whenever you're not active in Microsoft Teams and receive a chat or group chat; however, Mattermost uses your online status in Teams to determine if a chat notification should be delivered. Mattermost delivers notifications if you appear **Away** or **Offline** in Microsoft Teams, so the default behavior for when notifications will be delivered depends on the client you typically use to access Microsoft Teams:
+Chat notifications are sent in real-time whenever you're not active in Microsoft Teams and receive a chat or group chat. Mattermost uses your online status in Teams to determine if a chat notification should be delivered. Mattermost delivers notifications if you appear **Away** or **Offline** in Microsoft Teams, so the default behavior for when notifications will be delivered depends on the client you typically use to access Microsoft Teams:
 
-- Web browser: Mattermost delivers notifications when you've not had activity in your Microsoft Teams browser tab for 5 minutes or more, or when the browser tab is closed.  
-- Desktop app: Mattermost delivers notifications when you've not had activity at your computer for 5 minutes or more, or when the Microsoft Teams desktop app is closed.
+- Web browser: Mattermost delivers notifications when you've not had activity in your Microsoft Teams browser tab for 5 minutes or more, when the browser tab is closed, or when you mark yourself as **Offline** in Microsoft Teams.
+- Desktop app: Mattermost delivers notifications when you've not had activity at your computer for 5 minutes or more, when the Microsoft Teams desktop app is closed, or when you mark yourself as **Offline** in Microsoft Teams.
 
 In order to avoid double notifications, Mattermost won't deliver chat notifications when your availability is set to **Available**, **Busy**, **Do not disturb**, or **Be right back** in Microsoft Teams.
 
