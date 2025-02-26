@@ -2431,8 +2431,6 @@ redirects = {
         "https://docs.mattermost.com/install/install-ubuntu",
 "install/install-ubuntu-2004.html":
         "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
-"install/install-mmte-helm-gitlab-helm.html":
-        "https://docs.mattermost.com/install/installing-team-edition-helm-chart.html",
 "install/mattermost-omnibus.html":
         "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
 "install/outbound-proxy.html":
@@ -2586,6 +2584,20 @@ redirects = {
         "https://docs.mattermost.com/install/install-rhel.html#remove-mattermost",
 "install/install-rhel-8.html#frequently-asked-questions":
         "https://docs.mattermost.com/install/install-rhel.html#frequently-asked-questions",
+"install/install-rhel-8.html#set-the-correct-contexts-for-opt-mattermost":
+        "https://docs.mattermost.com/install/install-rhel.html#set-bin-contexts-for-opt-mattermost-bin",
+"install/install-kubernetes.html#install-mattermost-on-kubernetes":
+        "https://docs.mattermost.com/install/install-kubernetes.html#intended-outcome-and-deployment-recommendations",
+"install/install-kubernetes.html#install-the-operators":
+        "https://docs.mattermost.com/install/install-kubernetes.html#installation-steps",
+"install/install-kubernetes.html#mattermost-cloudnative-bootstrapper-sneak-peek":
+        "https://docs.mattermost.com/install/install-kubernetes.html",
+"install/install-kubernetes.html#does-the-mattermost-operator-replace-the-mattermost-helm-chart":
+        "https://docs.mattermost.com/install/install-kubernetes.html#frequently-asked-questions",
+"install/install-docker.html#deploy-mattermost-on-docker-for-production-use":
+        "https://docs.mattermost.com/install/install-docker.html#deploy-mattermost-on-docker-quick-start",
+"install/install-docker.html#installing-a-different-version-of-mattermost":
+        "https://docs.mattermost.com/install/install-docker.html#install-a-different-version-of-mattermost",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
