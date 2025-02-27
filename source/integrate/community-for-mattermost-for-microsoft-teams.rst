@@ -1,17 +1,17 @@
-Community for Mattermost for Microsoft 365
+Mattermost Community Hub for Microsoft 365
 ==========================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Connect with the Community for Mattermost for seamless collaboration.
+Join the Mattermost Community — Right from your Microsoft 365, Microsoft Outlook, or Microsoft Teams instance!
 
-The Community for Mattermost app for Microsoft 365 provides seamless access to the public Mattermost Community instance from inside the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
+Use the Mattermost Community Hub for Microsoft 365 to stay connected with thousands of users, contributors, and Mattermost staff directly from the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
 
 .. image:: ../images/mattermost_community_for_microsoft_365.png
   :alt: Community for Mattermost for Microsoft 365, available in the Microsoft App Store.
 
-Key Features
+Key features
 ------------
 
 - **Direct Access**: Access the Community for Mattermost directly from a tab without switching applications or opening a browser.
@@ -27,10 +27,10 @@ This app is designed to work with Microsoft 365, Outlook, and Microsoft Teams.
 Setup
 -----
 
-Install the Community for Mattermost for Microsoft 365 application
+Install the Mattermost Community Hub for Microsoft 365 application
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Any Microsoft 365 user can complete the steps below to access the Community for Mattermost within their Microsoft environment.
+Any Microsoft 365 user can complete the steps below to access the Mattermost Community Hub for Microsoft 365 within their Microsoft environment:
 
 1. Sign in to your Microsoft Teams account from a `web browser <https://teams.microsoft.com/v2/?clientexperience=t2>`_ or the desktop application.
 
@@ -42,7 +42,7 @@ Any Microsoft 365 user can complete the steps below to access the Community for 
 
 5. Once the Community for Mattermost app is installed, you'll be connected to the public Mattermost Community instance.
 
-Getting Started with the Community for Mattermost
+Getting Started with the Mattermost Community Hub
 -------------------------------------------------
 
 Once you've installed the app, here are some ways to get started:
@@ -58,7 +58,7 @@ Once you've installed the app, here are some ways to get started:
 FAQ
 ---
 
-Where can I get support for the Community for Mattermost for Microsoft 365 app?
+Where can I get support for the Mattermost Community Hub for Microsoft 365 app?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can browse existing open issues or submit a new issue for support `in GitHub <https://github.com/mattermost/mattermost-teams-tab/issues>`_.
