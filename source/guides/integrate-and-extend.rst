@@ -9,6 +9,7 @@ Integrate and extend Mattermost
     GitHub interoperability </integrate/github-interoperability>
     GitLab interoperability </integrate/gitlab-interoperability>
     Jira interoperability </integrate/jira-interoperability>
+    Mattermost Community for Microsoft 365 </integrate/community-for-mattermost-for-microsoft-teams>
     Mattermost Playbooks for Microsoft Teams </integrate/playbooks-for-microsoft-teams>
     Microsoft Calendar interoperability </integrate/microsoft-calendar-interoperability>
     Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>
@@ -26,6 +27,7 @@ Your Mattermost deployment comes with the following integrations you can configu
 * :doc:`GitHub interoperability </integrate/github-interoperability>` - Connect your GitHub instance to your Mattermost instance to subscribe to repositiories, and to stay current with reviews, assignments, and more.
 * :doc:`GitLab interoperability </integrate/gitlab-interoperability>` - Connect your GitLab instance to your Mattermost instance to subscribe to repositories, use GitLab events as Mattermost action triggers, and more.
 * :doc:`Jira interoperability </integrate/jira-interoperability>` - Connect your Jira instance to your Mattermost instance to create Jira tickets from messages in Mattermost, and to get notified of important Jira updates in Mattermost.
+* :doc:`Mattermost Community for Microsoft 365 </integrate/community-for-mattermost-for-microsoft-teams>` - Access the Mattermost Community directly from a tab in Microsoft Teams without switching applications or opening a browser.
 * :doc:`Mattermost Playbooks for Microsoft Teams </integrate/playbooks-for-microsoft-teams>` - Improve cross-organizational alignment and awareness by enabling access to your active, repeatable processes and status updates in Mattermost directly in Microsoft Teams.
 * :doc:`Microsoft Calendar interoperability </integrate/microsoft-calendar-interoperability>` - Connect your Microsoft O365 Calendar to your Mattermost instance to receive daily sumamryies of calendar events, synchronize your Microsoft O365 status in Mattermost, and accept or decline calendar invites without leaving Mattermost.
 * :doc:`Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>` - Connect your Microsoft Teams instance to your Mattermost instance to forward real-time chat notifications from Teams to Mattermost.
