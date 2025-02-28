@@ -1,10 +1,7 @@
 # v10 changelog
 
 ```{Important}
-Support for Mattermost Server v9.11 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 or later is recommended.
-- Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
-- See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
-- See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
+```{include} common-esr-support-upgrade.md
 ```
 
 (release-v10.6-feature-release)=
@@ -119,8 +116,8 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 
 #### Administration
  - Added the migrations, store layer and service for the Property System Architecture.
+ - Added Custom Profile Attributes, an experimental Enterprise-only feature. This feature is disabled by default. To enable this feature, set the feature flag `CustomProfileAttributes`. Once enabled, administrators can access the System Properties section in the System Console to create and manage custom user profile fields. The initial release supports text fields only.
  - Added the Custom Profile Attribute fields store, app and API endpoints.
- - Added the **System Console** user interface for managing Custom Profile Attributes (User Properties).
  - Introduced V2 of the Support Packet, containing improvement diagnosis information for high-availability deployments.
  - Added a new ``Fallback`` field to ``PluginSettingsSection`` that controls whether the settings defined under the section should still render as fallback when the plugin is disabled.
  - Updated the library used for tooltips throughout the app to fix a memory leak.
