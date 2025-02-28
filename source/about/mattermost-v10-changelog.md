@@ -24,6 +24,7 @@ If you upgrade from a release earlier than v10.5, please read the other [Importa
  - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
  - Pre-packaged Copilot plugin version [v1.1.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v1.1.1).
  - Pre-packaged MS Teams plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.1).
+ - Pre-packaged Jira plugin version [v4.2.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.1).
  - Upgraded Ukrainian language to official.
 
 #### Administration
