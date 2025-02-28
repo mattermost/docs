@@ -1,16 +1,18 @@
 Important Upgrade Notes
 =======================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 .. important::
-   - Support for Mattermost Server v9.11 :ref:`Extended Support Release <about/release-policy:extended support releases>` is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 or later is recommended.
-   - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
-   - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
-   - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
-   - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use go 1.22.2 or newer instead.
-   - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
+   
+  .. include:: ../about/common-esr-support-rst.rst
+ 
+
+.. note::
+
+  - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
+  - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
+  - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
+  - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
+  - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading                                | Then...                                                                                                                                                          |
@@ -25,11 +27,11 @@ Important Upgrade Notes
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies |
 |                                                    | the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead  |
-|                                                    | prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`_.        |
+|                                                    | prepackage the plugin bundles. See `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__ for details.           |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server    |
 |                                                    | installations to use the official Linux builds. See more details in                                                                                              |
-|                                                    | `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`_.                                                |
+|                                                    | `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.                                               |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | v10.5 introduces updates to the Compliance Export functionality, which will modify how exported data is structured, stored and processed. These changes          |
 |                                                    | primarily affect System Administrators and the main changes are outlined below. See more details in                                                              |
@@ -45,7 +47,7 @@ Important Upgrade Notes
 |                                                    | Changes specific to each Export Type - The export output formats have been changed. Some fields’ semantic meaning has been clarified, and there are a number of  |
 |                                                    | new fields. Our goal was to maintain backwards compatibility while fixing the logic bugs.                                                                        |
 |                                                    |                                                                                                                                                                  |
-|                                                    | See the :doc:`compliance export </comply/compliance-export> product documentation for details.                                                                   |
+|                                                    | See the :doc:`compliance export </comply/compliance-export>` product documentation for details.                                                                  |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | As part of the Property System Architecture feature, Mattermost v10.5 is going to run a set of migrations to add new tables to the schema. This migration only   |
 |                                                    | creates new tables and indexes, so there is no impact on preexisting data.                                                                                       |

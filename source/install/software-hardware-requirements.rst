@@ -124,6 +124,10 @@ Search limitations on MySQL:
 MySQL 8 Support
 ::::::::::::::::
 
+.. important::
+
+    MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
+
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password``. Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 
   .. code-block:: text
