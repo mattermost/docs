@@ -13,7 +13,6 @@ By using one of the secure identity mechanisms listed below and enforcing least-
 - `SAML <https://docs.mattermost.com/onboard/sso-saml.html>`_: Enables seamless Single Sign-On, ensuring secure, centralized authentication to verify every user's identity.
 - `LDAP <https://docs.mattermost.com/onboard/ad-ldap.html>`_: Facilitates integration with enterprise directories to tightly control user access, adhering to granular identity verification.
 - `OpenID Connect <https://docs.mattermost.com/configure/authentication-configuration-settings.html#openid-connect>`_: Provides secure, standards-based user authentication to verify identities and enforce secure access.
-- `Entra ID OAuth 2.0 <https://docs.mattermost.com/configure/authentication-configuration-settings.html#entra-id-oauth-2-0-settings>`_: Supports access via verified identity providers, ensuring strict authentication and access control.
 - `Session Management <https://docs.mattermost.com/configure/environment-configuration-settings.html#session-lengths>`_: Enhances security by limiting session lifetimes and enforcing strict session policies, reducing the risk of unauthorized access.
 
 Authorized users can seamlessly be added and removed from channels utilizing the native AD/LDAP integration based on group memberships:  
