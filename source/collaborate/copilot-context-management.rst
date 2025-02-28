@@ -63,6 +63,6 @@ Built-in ways to trigger Copilot
 In addition to regular chat interactions, Copilot provides specialized features where extra context is sent to the LLM. Each feature provides specialized context tailored to the task being performed. Below are the scenarios where extra context is sent to the LLM:
 
 - **Thread summarization**: Includes thread messages and the usernames of the authors
-- **Meeting summayu**: Incorporates transcriptions from calls
+- **Meeting summary**: Incorporates transcriptions from calls
 - **Channel summary since last visit**: Uses channel posts along with their authors to create summaries.
 - **Finding action items & open questions**: Analyzes thread and channel messages to identify action items or open questions.
