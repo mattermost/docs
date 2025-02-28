@@ -28,7 +28,7 @@ Segmenting and isolating sensitive resources is vital in minimizing lateral move
 Access control and permissions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Ensure precise and role-based access to sensitive resources:  
+Ensure precise and role-based access to sensitive resources in order to minimize the risk of unauthorized access and potential data breaches:
 
 - `Guest Accounts <https://docs.mattermost.com/onboard/guest-accounts.html>`_: Enables secure, scoped access for external parties, ensuring least privilege principles are maintained.
 - `Advanced Access Controls <https://docs.mattermost.com/manage/team-channel-members.html#advanced-access-controls>`_: Enforces specific permissions configurations to restrict access based on roles.
