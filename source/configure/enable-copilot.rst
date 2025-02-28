@@ -8,7 +8,10 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 
 .. tip::
 
-  Looking for a Mattermost Copilot demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_! Then, watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows, and download the `Mattermost Copilot datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
+  - Looking for a Mattermost Copilot demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_!
+  - Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows.
+  - Download the `Mattermost Copilot datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
+  - See the :doc:`Copilot context management </collaborate/copilot-context-management>` documentation to learn how Copilot manages LLM context and how to ensure data privacy.
 
 .. include:: ../_static/badges/academy-copilot-setup.rst
   :start-after: :nosearch:
