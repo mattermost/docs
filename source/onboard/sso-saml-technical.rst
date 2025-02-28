@@ -146,5 +146,5 @@ Yes. If you're integrating Mattermost with a provider that doesn't already do so
 How can I troubleshoot the SAML logon process?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The most useful tool that we've found for troubleshooting SAML connection issues is the [SAML Chrome Panel](https://chromewebstore.google.com/detail/paijfdbeoenhembfhkhllainmocckace?utm_source=item-share-cp) Chrome extension.  
+The most useful tool that we've found for troubleshooting SAML connection issues is the :doc:`SAML Chrome Panel <https://chromewebstore.google.com/detail/paijfdbeoenhembfhkhllainmocckace?utm_source=item-share-cp>` Chrome extension.  
 We're not aware of similar tools for other browsers, but this tool justifies installing Chrome!
