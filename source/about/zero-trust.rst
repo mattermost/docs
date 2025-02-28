@@ -7,7 +7,7 @@ For security teams, Mattermost’s zero-trust-first approach ensures consistent 
 
 Unlike traditional security approaches, Zero Trust assumes every user and system may be a potential threat. Mattermost implements this paradigm by offering customizable, secure solutions that protect sensitive communication workflows from both internal and external risks.
 
-This document outlines how Mattermost supports the core tenets of Zero Trust, for organizations of different sizes, including `Identity and access management <#identity-and-access-management>`__, `Micro-segmentation <#micro-segmentation>`__, `Continuous monitoring <#continuous-monitoring>`__, `Multi-factor authentication <#multi-factor-authentication-mfa>`__, `Encryption <#encryption>`__, `Data retention <#data-management>`__, and `Incident response <#incident-response>`__. Links to detailed configuration documentation resources are provided below.
+This document outlines how Mattermost supports the core tenets of Zero Trust, for organizations of different sizes, including `Identity and access management <#identity-and-access-management>`__, `Continuous monitoring <#continuous-monitoring>`__, `Deployment and host control <#deployment-and-host-control>`__, `Encryption <#encryption>`__, `Micro-segmentation <#micro-segmentation>`__,  `Multi-factor authentication <#multi-factor-authentication-mfa>`__,  `Data management <#data-management>`__, and `Incident response <#incident-response>`__. Links to detailed documentation resources are provided below.
 
 Identity and access management
 ------------------------------
