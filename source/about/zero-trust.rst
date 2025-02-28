@@ -43,7 +43,7 @@ Organizational design and user management
 Administrative controls
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Enforce logical segmentation through team-level and group-level management:  
+Enforce logical segmentation through team-level and group-level management, enhancing productivity and security by aligning user access with their specific roles:
 
 - `Delegated Granular Administration <https://docs.mattermost.com/onboard/delegated-granular-administration.html>`_: Ensures operational security by enabling controlled management access based on responsibilities.
 - `Custom Terms of Service <https://docs.mattermost.com/comply/custom-terms-of-service.html>`_: Reinforces compliance and accountability by requiring acknowledgment of security policies before access.
