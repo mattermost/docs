@@ -29,7 +29,12 @@ Mattermost notifies you of new activity you're directly involved in. How you're 
 .. include:: ../_static/badges/academy-notifications.rst
   :start-after: :nosearch:
 
-Missing notifications? Visit our :doc:`troubleshoot notifications </preferences/troubleshoot-notifications>` documentation for guidance on ensuring notification delivery.
+.. tip::
+
+  **Missing notifications?**
+
+  - You may need to grant permissions in the Mattermost client to show notifications. Learn how to grant permissions within the :ref:`web browser <preferences/manage-your-web-notifications:enable notifications>`, :ref:`desktop app <preferences/manage-your-desktop-notifications:enable notifications>`, or :ref:`mobile app <preferences/manage-your-mobile-notifications:enable notifications>` based on your preferred Mattermost client.
+  - In addition, visit our :doc:`troubleshoot notifications </preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
 
 You're in control
 ------------------
