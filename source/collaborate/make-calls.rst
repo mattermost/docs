@@ -138,7 +138,7 @@ A chat thread is created automatically for every new call.
 
 .. tab:: Web/Desktop
 
-  Open the chat thread in the widget by selecting |gear| and there click on "Show chat thread". Alternative expand the call window using the arrows in the top-right of the call widget. From there, select the chat icon to access the chat thread.
+  Open the chat thread in the widget by selecting the **Gear** |gear| icon, then select **Show chat thread**. Alternatively, expand the call window using the arrows in the top-right of the call widget. From there, select the chat icon to access the chat thread.
 
 .. tab:: Mobile
   
