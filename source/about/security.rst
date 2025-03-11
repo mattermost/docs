@@ -84,6 +84,11 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
 - Optionally add :ref:`advanced passwords requirements <configure/authentication-configuration-settings:password requirements>` with minimum numbers of symbols, numbers, lower, and uppercase letters.
 - Optionally restrict :doc:`creation, renaming, archiving of channels, Private channels, and integrations to team admins, system admins, or end users </onboard/advanced-permissions>` (Mattermost Enterprise and Mattermost Professional).
 
+Copilot context management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the :doc:`Copilot context management </collaborate/copilot-context-management>` documentation to learn how Copilot manages LLM context and how to ensure data privacy.
+
 Security updates
 -----------------
 
@@ -91,11 +96,13 @@ Security updates address newly discovered attacks reported to Mattermost, Inc. b
 
 For more information, please see:
 
-- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`__
-   - A summary of security updates made based on past and on-going security analysis and penetration testing.
+- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`_
 
-- `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__
-   - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
+  - A summary of security updates made based on past and on-going security analysis and penetration testing.
+
+- `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_
+ 
+  - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
 
 Security policies
 -----------------
@@ -111,23 +118,23 @@ Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a d
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
-   - :ref:`Integrity Controls <about/security:integrity and audit controls>`
-   - :ref:`Access Control <about/security:access control policy>`
-   - :ref:`Transmission Security <about/security:transmission security>`
-   - :ref:`Audit Controls <about/security:integrity and audit controls>`
+  - :ref:`Integrity Controls <about/security:integrity and audit controls>`
+  - :ref:`Access Control <about/security:access control policy>`
+  - :ref:`Transmission Security <about/security:transmission security>`
+  - :ref:`Audit Controls <about/security:integrity and audit controls>`
 
 - HIPAA-compliant deployments commonly consider the following:
 
-   - Omitting the contents of messages from mobile push and email notifications:
+  - Omitting the contents of messages from mobile push and email notifications:
 
-      - If your :ref:`Push Notifications Contents <configure/site-configuration-settings:push notification contents>` option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
-      - Similarly, setting :ref:`Email Notifications Contents <configure/site-configuration-settings:email notification contents>` to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
+   - If your :ref:`Push Notifications Contents <configure/site-configuration-settings:push notification contents>` option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
+   - Similarly, setting :ref:`Email Notifications Contents <configure/site-configuration-settings:email notification contents>` to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
 
 - Beyond Technical Safeguards, HIPAA compliance deployments also require:
 
-   - Administrative Safeguards
-   - Physical Safeguards
-   - Organizational requirements and other standards.
+  - Administrative Safeguards
+  - Physical Safeguards
+  - Organizational requirements and other standards.
 
 To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
