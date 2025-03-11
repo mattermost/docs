@@ -36,7 +36,7 @@ Web server
 
 Configure the network environment in which Mattermost is deployed by going to **System Console > Environment > Web Server**, or by updating the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: web-siteurl
+.. config:setting:: site-url
   :displayname: Site URL (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.SiteURL
@@ -69,7 +69,7 @@ Site URL
 |   - Plugins may not work as expected.                                                                                         |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: max-url-length
+.. config:setting:: maximum-url-length
   :displayname: Maximum URL length (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.MaximumURLLength
@@ -87,7 +87,7 @@ Maximum URL length
 | Numeric value. Default is **2048** characters.                |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: web-listenaddress
+.. config:setting:: web-server-listen-address
   :displayname: Web server listen address (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ListenAddress
@@ -114,7 +114,7 @@ Web server listen address
 | permissions to bind to that port.                             |                                                                  |
 +---------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: web-forwardinsecure
+.. config:setting:: forward-port-80-to-443
   :displayname: Forward port 80 to 443 (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.Forward80To443
@@ -140,7 +140,7 @@ Forward port 80 to 443
 |   and should be set to false.                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: web-connectionsecurity
+.. config:setting:: web-server-connection-security
   :displayname: Web server connection security (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ConnectionSecurity
@@ -167,7 +167,7 @@ Web server connection security
 |   Mattermost </install/config-tls-mattermost>` for more details.      |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: web-tlscertificatefile
+.. config:setting:: tls-certificate-file
   :displayname: TLS certificate file (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.TLSCertFile
@@ -188,7 +188,7 @@ TLS certificate file
 | String input.                                          |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: web-tlskeyfile
+.. config:setting:: tls-key-file
   :displayname: TLS key file (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.TLSKeyFile
@@ -209,7 +209,7 @@ TLS key file
 | String input.                                          |                                                               |
 +--------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: web-useletsencrypt
+.. config:setting:: use-lets-encrypt
   :displayname: Use Let's Encrypt (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.UseLetsEncrypt
@@ -239,7 +239,7 @@ Use Let's Encrypt
 |   above.                                                                                      |                                                                          |
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: web-letsencryptcache
+.. config:setting:: lets-encrypt-certificate-cache-file
   :displayname: Let's Encrypt certificate cache file (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.LetsEncryptCertificateCacheFile
@@ -260,7 +260,7 @@ Let's Encrypt certificate cache file
 | File path input.                                       |                                                                                    |
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: web-readtimeout
+.. config:setting:: read-timeout
   :displayname: Read timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ReadTimeout
@@ -281,7 +281,7 @@ Read timeout
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-writetimeout
+.. config:setting:: write-timeout
   :displayname: Write timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.WriteTimeout
@@ -308,7 +308,7 @@ Write timeout
 | Numerical input in seconds. Default is **300** seconds.  |                                                                             |
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: web-idletimeout
+.. config:setting:: idle-timeout
   :displayname: Idle timeout (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.IdleTimeout
@@ -330,7 +330,7 @@ Idle timeout
 | Numerical input in seconds. Default is **300** seconds. |                                                                     |
 +---------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-webservermode
+.. config:setting:: webserver-mode
   :displayname: Webserver mode (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.WebserverMode
@@ -361,7 +361,7 @@ Webserver mode
 | - **Disabled**: The Mattermost server will not serve static files.  |                                                                        |
 +---------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: web-insecureoutgoingconnections
+.. config:setting:: enable-insecure-outgoing-connections
   :displayname: Enable insecure outgoing connections (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.EnableInsecureOutgoingConnections
@@ -391,7 +391,7 @@ Enable insecure outgoing connections
 | **Security note**: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.                                                  |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
-.. config:setting:: web-managedresourcepaths
+.. config:setting:: managed-resource-paths
   :displayname: Managed resource paths (Web Server)
   :systemconsole: Environment > Web Server
   :configjson: .ServiceSettings.ManagedResourcePaths
@@ -466,7 +466,7 @@ Purge all caches
 | to purge all the servers in the cluster                                                                                  |
 +----------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: web-websocketurl
+.. config:setting:: websocket-url
   :displayname: Websocket URL (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.WebsocketURL
@@ -490,7 +490,7 @@ Websocket URL
 | setting.                                                                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-licensefilelocation
+.. config:setting:: license-file-location
   :displayname: License file location (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.LicenseFileLocation
@@ -517,7 +517,7 @@ License file location
 | relative to the ``mattermost`` directory.              |                                                                            |
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: web-tlsminimumversion
+.. config:setting:: tls-minimum-version
   :displayname: TLS minimum version (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSMinVer
@@ -540,7 +540,7 @@ TLS minimum version
 | layer, such as NGINX.                                                                                                        |
 +--------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: web-trustedproxyipheader
+.. config:setting:: trusted-proxy-ip-header
   :displayname: Trusted proxy IP header (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TrustedProxyIPHeader
@@ -574,7 +574,7 @@ Trusted proxy IP header
 |                                                                                                                                       |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: web-enablehsts
+.. config:setting:: enable-strict-transport-security-hsts
   :displayname: Enable Strict Transport Security (HSTS) (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSStrictTransport
@@ -602,7 +602,7 @@ Enable Strict Transport Security (HSTS)
 | documentation for details.                                                                                                             |
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: web-securetlstransportexpiry
+.. config:setting:: secure-tls-transport-expiry
   :displayname: Secure TLS transport expiry (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSStrictTransportMaxAge
@@ -628,7 +628,7 @@ Secure TLS transport expiry
 | documentation for details.                                                                                                                      |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-.. config:setting:: web-tlscipheroverwrites
+.. config:setting:: tls-cipher-overwrites
   :displayname: TLS cipher overwrites (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.TLSOverwriteCiphers
@@ -661,7 +661,7 @@ TLS cipher overwrites
 |   <https://github.com/mattermost/mattermost/blob/master/server/public/model/config.go>`__ for a list of ciphers considered secure.   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: web-goroutinehealththreshold
+.. config:setting:: goroutine-health-threshold
   :displayname: Goroutine health threshold (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.GoroutineHealthThreshold
@@ -687,7 +687,7 @@ Goroutine health threshold
 | checking for the threshold.                            |                                                                                  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: web-allowcookiesforsubdomains
+.. config:setting:: allow-cookies-for-subdomains
   :displayname: Allow cookies for subdomains (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.AllowCookiesForSubdomains
@@ -710,7 +710,7 @@ Allow cookies for subdomains
 | - **false**: Cookies not allowed for subdomains.       |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: web-clusterlogtimeout
+.. config:setting:: cluster-log-timeout
   :displayname: Cluster log timeout (Web Server)
   :systemconsole: N/A
   :configjson: .ServiceSettings.ClusterLogTimeoutMilliseconds
@@ -738,7 +738,7 @@ Cluster log timeout
 | See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: service-maxpayloadsize
+.. config:setting:: maximum-payload-size
   :displayname: Maximum payload size (File Storage)
   :systemconsole: N/A
   :configjson: .ServiceSettings.MaximumPayloadSizeBytes
@@ -771,7 +771,7 @@ Configure the database environment in which Mattermost is deployed by going to *
 .. include:: ../_static/badges/academy-mattermost-database.rst
   :start-after: :nosearch:
 
-.. config:setting:: database-drivername
+.. config:setting:: driver-name
   :displayname: Driver name (Database)
   :systemconsole: N/A
   :configjson: .SqlSettings.DriverName
@@ -792,7 +792,7 @@ Driver name
 | - **postgres**: Enables driver to PostgreSQL database.        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: database-datasource
+.. config:setting:: data-source
   :displayname: Data source (Database)
   :systemconsole: N/A
   :configjson: .SqlSettings.DataSource
@@ -914,7 +914,7 @@ Data source
 | for details.                                                                                                                             |
 +------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: database-maxopenconnections
+.. config:setting:: maximum-open-connections
   :displayname: Maximum open connections (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.MaxOpenConns
@@ -936,7 +936,7 @@ Maximum open connections
 | deployments, and **100** for Cloud deployments.        |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: database-querytimeout
+.. config:setting:: query-timeout
   :displayname: Query timeout (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.QueryTimeout
@@ -958,7 +958,7 @@ Query timeout
 | Numerical input in seconds. Default is **30** seconds. |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: database-maxconnectionlifetime
+.. config:setting:: maximum-connection-lifetime
   :displayname: Maximum connection lifetime (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.ConnMaxLifetimeMilliseconds
@@ -982,7 +982,7 @@ Maximum connection lifetime
 | **3600000** milliseconds (1 hour).                     |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: database-connmaxidletime
+.. config:setting:: maximum-connection-idle-timeout
   :displayname: Maximum connection idle timeout (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.ConnMaxIdleTimeMilliseconds
@@ -1004,7 +1004,7 @@ Maximum connection idle timeout
 | (5 minutes).                                           |                                                                                     |
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: database-minhashtaglength
+.. config:setting:: minimum-hashtag-length
   :displayname: Minimum hashtag length (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.MinimumHashtagLength
@@ -1027,7 +1027,7 @@ Minimum hashtag length
 | `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`__ for details.                                       |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: database-sqltrace
+.. config:setting:: sql-statement-logging
   :displayname: SQL statement logging (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.Trace
@@ -1076,7 +1076,7 @@ Recycle database connections
 | Connections**.                                         |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: database-disablesearch
+.. config:setting:: disable-database-search
   :displayname: Disable database search (Database)
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.DisableDatabaseSearch
@@ -1133,7 +1133,7 @@ Applied schema migrations
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
 
 
-.. config:setting:: database-activesearchbackend
+.. config:setting:: active-search-backend
   :displayname: Active search backend (Database)
   :systemconsole: Environment > Database
   :configjson: N/A
@@ -1145,7 +1145,7 @@ Active Search Backend
 
 Read-only display of the currently active backend used for search. Values can include ``none``, ``database``, ``elasticsearch``, or ``bleve``.
 
-.. config:setting:: database-readreplicas
+.. config:setting:: read-replicas
   :displayname: Read replicas (Database)
   :systemconsole: N/A
   :configjson: .SqlSettings.DataSourceReplicas
@@ -1180,7 +1180,7 @@ Read replicas
 | documentation for details.                                                                                                     |
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: database-searchreplicas
+.. config:setting:: search-replicas
   :displayname: Search replicas (Database)
   :systemconsole: N/A
   :configjson: .SqlSettings.DataSourceSearchReplicas
@@ -1218,7 +1218,7 @@ Search replicas
 | documentation for details.                                                                                                           |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: database-replicalagsettings
+.. config:setting:: replica-lag-settings
   :displayname: Replica lag settings (Database)
   :systemconsole: N/A
   :configjson: .SqlSettings.ReplicaLagSettings
@@ -1362,7 +1362,7 @@ Replica lag settings
     :alt: A screenshot showing the specific edits to make to the cloned grafana chart.
 
 
-.. config:setting:: database-replicamonitorintervalseconds
+.. config:setting:: replica-monitor-interval-seconds
   :displayname: Replica monitor interval (Database)
   :systemconsole: N/A
   :configjson: .SqlSettings.ReplicaMonitorIntervalSeconds
@@ -1396,7 +1396,7 @@ Elasticsearch provides enterprise-scale deployments with optimized search perfor
 
 You can configure the Elasticsearch environment in which Mattermost is deployed in **System Console > Environment > Elasticsearch**. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: elastic-enableindexing
+.. config:setting:: enable-elasticsearch-indexing
   :displayname: Enable Elasticsearch indexing (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.EnableIndexing
@@ -1431,7 +1431,7 @@ Enable Elasticsearch indexing
 | - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.        |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-backendtype
+.. config:setting:: backend-type
   :displayname: Elasticsearch backend type (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Backend
@@ -1468,7 +1468,7 @@ Backend type
     4. Change the default ``ElasticsearchSettings.Backend`` configuration value from ``elasticsearch`` to ``opensearch`` using :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>`, or by editing the ``config.json`` file manually. This value cannot be changed using the System Console. See the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` documentation for additional details.
     5. Restart the Mattermost server.
 
-.. config:setting:: elastic-serverconnectionaddress
+.. config:setting:: server-connection-address
   :displayname: Server connection address (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.ConnectionUrl
@@ -1488,7 +1488,7 @@ Server connection address
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-CApath
+.. config:setting:: ca-path
   :displayname: CA path (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.CA
@@ -1509,7 +1509,7 @@ CA path
   - Available from Mattermost v7.8. The certificate path should be ``/opt/mattermost/data/elasticsearch/`` and configured in the System Console as ``./elasticsearch/cert.pem``.
   - Can be used in conjunction with basic authentication credentials or can replace them. Leave this setting blank to use the default Certificate Authority certificates for the operating system.
 
-.. config:setting:: elastic-clientcertificatepath
+.. config:setting:: client-certificate-path
   :displayname: Client certificate path (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.ClientCert
@@ -1527,7 +1527,7 @@ Client certificate path
 | **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-clientcertificatekeypath
+.. config:setting:: client-certificate-key-path
   :displayname: Client certificate key path (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.ClientKey
@@ -1545,7 +1545,7 @@ Client certificate key path
 | **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-skiptlsverification
+.. config:setting:: skip-tls-verification
   :displayname: Skip TLS verification (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.SkipTLSVerification
@@ -1571,7 +1571,7 @@ Skip TLS verification
 |   certificate verification.                                   |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-serverusername
+.. config:setting:: server-username
   :displayname: Server username (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.UserName
@@ -1592,7 +1592,7 @@ Server username
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-serverpassword
+.. config:setting:: server-password
   :displayname: Server password (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Password
@@ -1613,7 +1613,7 @@ Server password
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-enablesniffing
+.. config:setting:: enable-cluster-sniffing
   :displayname: Enable cluster sniffing (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Sniff
@@ -1641,7 +1641,7 @@ Enable cluster sniffing
 | Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.   |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-bulkindexing
+.. config:setting:: bulk-indexing
   :displayname: Bulk indexing (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: N/A
@@ -1668,7 +1668,7 @@ Bulk indexing
 | - If an in-progress indexing job is canceled, the index and search results will be incomplete.                                           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-rebuildchannelsindex
+.. config:setting:: rebuild-channels-index
   :displayname: Rebuild channels index (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: N/A
@@ -1688,7 +1688,7 @@ Rebuild channels index
 | During indexing, channel auto-complete is available, but search results may be incomplete until the indexing job is complete. |
 +---------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: elastic-purgeindexes
+.. config:setting:: purge-indexes
   :displayname: Purge indexes (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: N/A
@@ -1711,7 +1711,7 @@ Purge indexes
 | After purging the index, create a new index by selecting the **Index Now** button.                      |
 +-------------------------------------------+-------------------------------------------------------------+
 
-.. config:setting:: elastic-indexestoskipwhilepurging
+.. config:setting:: indexes-to-skip-while-purging
   :displayname: Indexes to skip while purging (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.IgnoredPurgeIndexes
@@ -1729,7 +1729,7 @@ Indexes to skip while purging
 | characters.                                                   |                                                                           |
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: elastic-enablesearch
+.. config:setting:: enable-elasticsearch-for-search-queries
   :displayname: Enable Elasticsearch for search queries (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.EnableSearching
@@ -1766,7 +1766,7 @@ Enable Elasticsearch for search queries
 | **Note**: If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results. |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-enableautocomplete
+.. config:setting:: enable-elasticsearch-for-autocomplete-queries
   :displayname: Enable Elasticsearch for autocomplete queries (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.EnableAutocomplete
@@ -1795,7 +1795,7 @@ Enable Elasticsearch for autocomplete queries
 | **Note**: Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.                     |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-postindexreplicas
+.. config:setting:: post-index-replicas
   :displayname: Post index replicas (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.PostIndexReplicas
@@ -1823,7 +1823,7 @@ Post index replicas
 |   `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.   |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-postindexshards
+.. config:setting:: post-index-shards
   :displayname: Post index shards (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.PostIndexShards
@@ -1847,7 +1847,7 @@ Post index shards
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 
-.. config:setting:: elastic-channelindexreplicas
+.. config:setting:: channel-index-replicas
   :displayname: Channel index replicas (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.ChannelIndexReplicas
@@ -1871,7 +1871,7 @@ Channel index replicas
 | `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.                                                                 |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-channelindexshards
+.. config:setting:: channel-index-shards
   :displayname: Channel index shards (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.ChannelIndexShards
@@ -1891,7 +1891,7 @@ Channel index shards
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXSHARDS``          |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-userindexreplicas
+.. config:setting:: user-index-replicas
   :displayname: User index replicas (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.UserIndexReplicas
@@ -1915,7 +1915,7 @@ User index replicas
 | `Channel Index Replicas <#channel-index-replicas>`__ must also be updated accordingly.                                                        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-userindexshards
+.. config:setting:: user-index-shards
   :displayname: User index shards (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.UserIndexShards
@@ -1935,7 +1935,7 @@ User index shards
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXSHARDS``             |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-aggregatesearchindexes
+.. config:setting:: aggregate-search-indexes
   :displayname: Aggregate search indexes (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.AggregatePostsAfterDays
@@ -1960,7 +1960,7 @@ Aggregate search indexes
 | :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.                                      |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-postaggregatorstarttime
+.. config:setting:: post-aggregator-start-time
   :displayname: Post aggregator start time (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.PostsAggregatorJobStartTime
@@ -1983,7 +1983,7 @@ Post aggregator start time
 | Default is **03:00** (3 AM)                                   |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-indexprefix
+.. config:setting:: index-prefix
   :displayname: Index prefix (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.IndexPrefix
@@ -2006,7 +2006,7 @@ Index prefix
 | prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.                   |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: elastic-liveindexingbatchsize
+.. config:setting:: live-indexing-batch-size
   :displayname: Live indexing batch size (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.LiveIndexingBatchSize
@@ -2094,7 +2094,7 @@ Live indexing batch size
 
 4. Restart the Mattermost server.
 
-.. config:setting:: elastic-batchsize
+.. config:setting:: batch-size
   :displayname: Batch size (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.BatchSize
@@ -2111,7 +2111,7 @@ Batch size
 | Numerical input. Default is **10000**.    |                                                                           |
 +-------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: elastic-requesttimeout
+.. config:setting:: request-timeout
   :displayname: Request timeout (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.RequestTimeoutSeconds
@@ -2131,7 +2131,7 @@ Request timeout
 | Numerical input in seconds. Default is **30** seconds.        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: elastic-trace
+.. config:setting:: trace
   :displayname: Trace (Elasticsearch)
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.Trace
@@ -2179,7 +2179,7 @@ Configure file storage settings by going to **System Console > Environment > Fil
 
   Mattermost currently supports storing files on the local filesystem and Amazon S3 or S3-compatible containers. We have tested Mattermost with `MinIO <https://min.io/>`__ and `Digital Ocean Spaces <https://docs.digitalocean.com/products/spaces/>`__ products, but not all S3-compatible containers on the market. If you are looking to use other S3-compatible containers, we recommend completing your own testing.
 
-.. config:setting:: file-storagesystem
+.. config:setting:: file-storage-system
   :displayname: File storage system (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.DriverName
@@ -2208,7 +2208,7 @@ File storage system
 |   and Digital Ocean Spaces.                                   |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-localstoragedirectory
+.. config:setting:: local-storage-directory
   :displayname: Local storage directory (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.Directory
@@ -2234,7 +2234,7 @@ Local storage directory
 | **Note**: When **File storage system** is set to **amazons3**, this setting has no effect.                                               |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-maxfilesize
+.. config:setting:: maximum-file-size
   :displayname: Maximum file size (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.MaxFileSize
@@ -2269,7 +2269,7 @@ Maximum file size
 |  - For Apache use ``LimitRequestBody``.                                                                                                      |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-enabledocsearchbycontent
+.. config:setting:: enable-document-search-by-content
   :displayname: Enable document search by content (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.ExtractContent
@@ -2313,7 +2313,7 @@ Enable document search by content
 | Any documents that can’t be extracted are skipped and logged so that content extraction can proceed.                                                |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. config:setting:: file-enabledocsearchwithinzipfile
+.. config:setting:: enable-searching-content-of-documents-within-zip-files
   :displayname: Enable searching content of documents within ZIP files (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.ArchiveRecursion
@@ -2347,7 +2347,7 @@ Enable searching content of documents within ZIP files
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
-.. config:setting:: file-s3bucket
+.. config:setting:: amazon-s3-bucket
   :displayname: Amazon S3 bucket (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Bucket
@@ -2368,7 +2368,7 @@ Amazon S3 bucket
 | A string with the S3-compatible bucket name.                  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3pathprefix
+.. config:setting:: amazon-s3-path-prefix
   :displayname: Amazon S3 path prefix (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.AmazonS3PathPrefix
@@ -2388,7 +2388,7 @@ Amazon S3 path prefix
 | A string containing the path prefix.                          | - Environment variable: ``MM_FILESETTINGS_AMAZONS3PATHPREFIX``           |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3region
+.. config:setting:: amazon-s3-region
   :displayname: Amazon S3 region (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Region
@@ -2414,7 +2414,7 @@ Amazon S3 region
 | **Note**: For MinIO or Digital Ocean Spaces, leave this setting empty.                                                                   |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3accesskeyid
+.. config:setting:: amazon-s3-access-key-id
   :displayname: Amazon S3 access key ID (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3AccessKeyId
@@ -2438,7 +2438,7 @@ Amazon S3 access key ID
 | Amazon S3.                                                                                                                               |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3endpoint
+.. config:setting:: amazon-s3-endpoint
   :displayname: Amazon S3 endpoint (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Endpoint
@@ -2462,7 +2462,7 @@ Amazon S3 endpoint
 | for the region you selected when setting up the Space. It can be **nyc3**, **ams3**, or **sgp1**.                                                  |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: file-s3secretaccesskey
+.. config:setting:: amazon-s3-secret-access-key
   :displayname: Amazon S3 secret access key (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3SecretAccessKey
@@ -2484,7 +2484,7 @@ Amazon S3 secret access key
 | storage instance.                                             |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3secureconnection
+.. config:setting:: enable-secure-amazon-s3-connections
   :displayname: Enable secure Amazon S3 connections (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3SSL
@@ -2506,7 +2506,7 @@ Enable secure Amazon S3 connections
 | - **false**: Allows insecure connections to Amazon S3.        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3signv2
+.. config:setting:: amazon-s3-signature-v2
   :displayname: Amazon S3 signature v2 (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.AmazonS3SignV2
@@ -2533,7 +2533,7 @@ Amazon S3 signature v2
 | use the Signature v2 signing process.                                                                                                    |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3sse
+.. config:setting:: enable-server-side-encryption-for-amazon-s3
   :displayname: Enable server-side encryption for Amazon S3 (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3SSE
@@ -2558,7 +2558,7 @@ Enable server-side encryption for Amazon S3
 |   Amazon S3.                                                  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-s3trace
+.. config:setting:: enable-amazon-s3-debugging
   :displayname: Enable Amazon S3 debugging (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3Trace
@@ -2587,7 +2587,7 @@ Enable Amazon S3 debugging
 | Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: file-amazons3storageclass
+.. config:setting:: amazon-s3-storage-class
   :displayname: Amazon S3 storage class (File Storage)
   :systemconsole: Environment > File Storage
   :configjson: .FileSettings.AmazonS3StorageClass
@@ -2611,7 +2611,7 @@ Some Amazon S3-compatible storage solutions require the storage class parameter 
 
   Most Amazon S3-compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided. See the `Amazon S3 storage class <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass>`_ documentation for details about supported storage classes.
 
-.. config:setting:: file-exportamazons3storageclass
+.. config:setting:: export-amazon-s3-storage-class
   :displayname: Export Amazon S3 storage class (File Storage)
   :systemconsole: N/a
   :configjson: .FileSettings.ExportAmazonS3StorageClass
@@ -2632,7 +2632,7 @@ Export Amazon S3 storage class
 
   Most Amazon S3-compatible storage solutions assign a default storage class of ``STANDARD`` when no storage class is provided. See the `Amazon S3 storage class <https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html#AmazonS3-PutObject-request-header-StorageClass>`_ documentation for details about supported storage classes.
 
-.. config:setting:: file-amazons3requesttimeoutmilliseconds
+.. config:setting:: amazon-s3-request-timeout
   :displayname: Amazon S3 request timeout (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
@@ -2649,7 +2649,7 @@ Amazon S3 request timeout
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: file-amazons3uploadpartsizebytes
+.. config:setting:: amazon-s3-upload-part-size
   :displayname: Amazon S3 upload part size (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.AmazonS3UploadPartSizeBytes
@@ -2669,7 +2669,7 @@ Amazon S3 upload part size
 | being allocated.                                                                                                                                      |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
-.. config:setting:: file-exportamazons3uploadpartsizebytes
+.. config:setting:: amazon-s3-exported-upload-part-size
   :displayname: Export Amazon S3 upload part size (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.ExportAmazonS3UploadPartSizeBytes
@@ -2688,7 +2688,7 @@ Amazon S3 exported upload part size
 | **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
-.. config:setting:: file-amazons3requesttimeoutmilliseconds
+.. config:setting:: amazon-s3-request-timeout
   :displayname: Amazon S3 request timeout (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.AmazonS3RequestTimeoutMilliseconds
@@ -2705,7 +2705,7 @@ Amazon S3 request timeout
 | Default is 30000 (30 seconds).                                |                                                                                         |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: file-initialfont
+.. config:setting:: initial-font
   :displayname: Initial font (File Storage)
   :systemconsole: N/A
   :configjson: .FileSettings.InitialFont
@@ -2737,7 +2737,7 @@ Image proxy
 
 An image proxy is used by Mattermost apps to prevent them from connecting directly to remote self-hosted servers. Configure an image proxy by going to **System Console > Environment > Image Proxy**, or by editing the ``config.json`` file as described in the following tables.
 
-.. config:setting:: image-enableproxy
+.. config:setting:: enable-image-proxy
   :displayname: Enable image proxy (Image Proxy)
   :systemconsole: Environment > Image Proxy
   :configjson: .ImageProxySettings.Enable
@@ -2764,7 +2764,7 @@ Enable image proxy
 | See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                       |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: image-proxytype
+.. config:setting:: image-proxy-type
   :displayname: Image proxy type (Image Proxy)
   :systemconsole: Environment > Image Proxy
   :configjson: .ImageProxySettings.ImageProxyType
@@ -2791,7 +2791,7 @@ Image proxy type
 | See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: image-remoteimageproxyurl
+.. config:setting:: remote-image-proxy-url
   :displayname: Remote image proxy URL (Image Proxy)
   :systemconsole: Environment > Image Proxy
   :configjson: .ImageProxySettings.RemoteImageProxyURL
@@ -2811,7 +2811,7 @@ Remote image proxy URL
 |                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYURL``     |
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: image-remoteimageproxyoptions
+.. config:setting:: remote-image-proxy-options
   :displayname: Remote image proxy options (Image Proxy)
   :systemconsole: Environment > Image Proxy
   :configjson: .ImageProxySettings.RemoteImageProxyOptions
@@ -2863,7 +2863,7 @@ SMTP server
 |                                                                 | - Environment variable: ``MM_EMAILSETTINGS_SMTPSERVER``       |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: smtp-port
+.. config:setting:: smtp-server-port
   :displayname: SMTP server port (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPPort
@@ -2883,7 +2883,7 @@ SMTP server port
 | Numerical input.                                                | - Environment variable: ``MM_EMAILSETTINGS_SMTPPORT``         |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: smtp-enableauth
+.. config:setting:: enable-smtp-authentication
   :displayname: Enable SMTP authentication (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.EnableSMTPAuth
@@ -2908,7 +2908,7 @@ Enable SMTP authentication
 |   authenticate to the SMTP server.                              |                                                                           |
 +-----------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: smtp-username
+.. config:setting:: smtp-server-username
   :displayname: SMTP server username (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPUsername
@@ -2928,7 +2928,7 @@ SMTP server username
 | String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPUSERNAME``     |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: smtp-password
+.. config:setting:: smtp-server-password
   :displayname: SMTP server password (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPPassword
@@ -2948,7 +2948,7 @@ SMTP server password
 | String input.                                                   | - Environment variable: ``MM_EMAILSETTINGS_SMTPPASSWORD``     |
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: smtp-connectionsecurity
+.. config:setting:: smtp-connection-security
   :displayname: SMTP connection security (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.ConnectionSecurity
@@ -2976,7 +2976,7 @@ SMTP connection security
 |   connection to a secure connection using TLS.                  |                                                                       |
 +-----------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: smtp-skipservercertverification
+.. config:setting:: skip-server-certificate-verification
   :displayname: Skip server certificate verification (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SkipServerCertificateVerification
@@ -3001,7 +3001,7 @@ Skip server certificate verification
 |   server certificate.                                                 |                                                                                              |
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
-.. config:setting:: smtp-enablesecurityalerts
+.. config:setting:: enable-security-alerts
   :displayname: Enable security alerts (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .ServiceSettings.EnableSecurityFixAlert
@@ -3028,7 +3028,7 @@ Enable security alerts
 | See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.                                               |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: smtp-servertimeout
+.. config:setting:: smtp-server-timeout
   :displayname: SMTP server timeout (SMTP)
   :systemconsole: Environment > SMTP
   :configjson: .EmailSettings.SMTPServerTimeout
@@ -3073,7 +3073,7 @@ You can configure Mattermost as a :doc:`high availability cluster-based deployme
 
 In a Mattermost high availability cluster-based deployment, the System Console is set to read-only, and settings can only be changed by editing the ``config.json`` file directly. However, to test a high availability cluster-based environment, you can disable ``ClusterSettings.ReadOnlyConfig`` in the ``config.json`` file by setting it to ``false``. This allows changes applied using the System Console to be saved back to the configuration file.
 
-.. config:setting:: ha-enable
+.. config:setting:: enable-high-availability-mode
   :displayname: Enable high availability mode (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.Enable
@@ -3101,7 +3101,7 @@ Enable high availability mode
 |   is disabled.                                                  |                                                            |
 +-----------------------------------------------------------------+------------------------------------------------------------+
 
-.. config:setting:: ha-clustername
+.. config:setting:: cluster-name
   :displayname: Cluster name (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.ClusterName
@@ -3123,7 +3123,7 @@ Cluster name
 | to the same database.                                                        |                                                                 |
 +------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: ha-overridehostname
+.. config:setting:: override-hostname
   :displayname: Override hostname (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.OverrideHostname
@@ -3149,7 +3149,7 @@ Override hostname
 | See the :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` documentation for details. |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: ha-useipaddress
+.. config:setting:: use-ip-address
   :displayname: Use IP address (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.UseIPAddress
@@ -3175,7 +3175,7 @@ Use IP address
 |   hostname.                                                                  |                                                                        |
 +------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: ha-usegossip
+.. config:setting:: enable-experimental-gossip-encryption
   :displayname: Use gossip (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.UseExperimentalGossip
@@ -3206,7 +3206,7 @@ Enable experimental gossip encryption
 | Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.                                                              |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
-.. config:setting:: ha-gossipcompression
+.. config:setting:: enable-gossip-compression
   :displayname: Enable gossip compression (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.EnableGossipCompression
@@ -3236,7 +3236,7 @@ Enable gossip compression
 |                                                                 |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: ha-gossipport
+.. config:setting:: gossip-port
   :displayname: Gossip port (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.GossipPort
@@ -3257,7 +3257,7 @@ Gossip port
 | Numerical input. Default is **8074**.                           |                                                                     |
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ha-readonlyconfig
+.. config:setting:: read-only-config
   :displayname: Read only config (High Availability)
   :systemconsole: N/A
   :configjson: .ClusterSettings.ReadOnlyConfig
@@ -3278,7 +3278,7 @@ Read only config
 |   are written to ``config.json``.                               |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: ha-networkinterface
+.. config:setting:: network-interface
   :displayname: Network interface (High Availability)
   :systemconsole: N/A
   :configjson: .ClusterSettings.NetworkInterface
@@ -3299,7 +3299,7 @@ Network interface
 | String input.                                                   |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: ha-bindaddress
+.. config:setting:: bind-address
   :displayname: Bind address (High Availability)
   :systemconsole: N/A
   :configjson: .ClusterSettings.BindAddress
@@ -3325,7 +3325,7 @@ Bind address
 | String input.                                                   |                                                                    |
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 
-.. config:setting:: ha-advertiseaddress
+.. config:setting:: advertise-address
   :displayname: Advertise address (High Availability)
   :systemconsole: N/A
   :configjson: .ClusterSettings.AdvertiseAddress
@@ -3372,7 +3372,7 @@ Configure logging by going to **System Console > Environment > Logging**, or by 
   
   You can manage additional logging configuration within the ``config.json`` file specifically for Mattermost notifications under ``NotificationLogSettings``. These settings are equivalent to the configuration settings available under ``LogSettings``.
 
-.. config:setting:: log-enableconsole
+.. config:setting:: output-logs-to-console
   :displayname: Output logs to console (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.EnableConsole
@@ -3401,7 +3401,7 @@ Output logs to console
 |   written to the console.                     |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-consolelevel
+.. config:setting:: console-log-level
   :displayname: Console log level (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.ConsoleLevel
@@ -3432,7 +3432,7 @@ Console log level
 |   initialization.                             |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-consolejson
+.. config:setting:: output-console-logs-as-json
   :displayname: Output console logs as JSON (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.ConsoleJson
@@ -3461,7 +3461,7 @@ Output console logs as JSON
 | **Note**: Typically set to **true** in a production environment.                                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-enableplaintextcolor
+.. config:setting:: colorize-plain-text-console-logs
   :displayname: Colorize plain text console logs (Logging)
   :systemconsole: N/A
   :configjson: .LogSettings.EnableColor
@@ -3485,7 +3485,7 @@ Colorize plain text console logs
 |   details aren't colorized in the console.    |                                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: log-enablefile
+.. config:setting:: output-logs-to-file
   :displayname: Output logs to file (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.EnableFile
@@ -3520,7 +3520,7 @@ Output logs to file
 | Logs**.                                                                                                             |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-filelocation
+.. config:setting:: file-log-directory
   :displayname: File log directory (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.FileLocation
@@ -3543,7 +3543,7 @@ File log directory
 | **Note**: The path you configure must exist, and Mattermost must have write permissions for this directory.         |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-filelevel
+.. config:setting:: file-log-level
   :displayname: File log level (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.FileLevel
@@ -3573,7 +3573,7 @@ File log level
 |   and initialization.                         |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-filejson
+.. config:setting:: output-file-logs-as-json
   :displayname: Output file logs as JSON (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.FileJson
@@ -3602,7 +3602,7 @@ Output file logs as JSON
 | **Note**: Typically set to **true** in a production environment.                                                    |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: log-enablewebhookdebug
+.. config:setting:: enable-webhook-debugging
   :displayname: Enable webhook debugging (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.EnableWebhookDebugging
@@ -3634,7 +3634,7 @@ Enable webhook debugging
 | the request body of incoming webhooks in logs.                                                                               |
 +-----------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: log-multipletargetoutput
+.. config:setting:: output-logs-to-multiple-targets
   :displayname: Output logs to multiple targets (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.AdvancedLoggingJSON
@@ -3668,7 +3668,7 @@ Output logs to multiple targets
 | **Note**: See the :doc:`Mattermost logging </manage/logging>` documentation for details.                                  |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: log-maxfieldsize
+.. config:setting:: maximum-field-size
   :displayname: Maximum field size (Logging)
   :systemconsole: N/A
   :configjson: .LogSettings.MaxFieldSize
@@ -3685,7 +3685,7 @@ Maximum field size
 | Numerical value. Default is **2048**.         |                                                                      |
 +-----------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: log-enablediagnostics
+.. config:setting:: enable-diagnostics-and-error-reporting
   :displayname: Enable diagnostics and error reporting (Logging)
   :systemconsole: Environment > Logging
   :configjson: .LogSettings.EnableDiagnostics
@@ -3722,7 +3722,7 @@ Session lengths
 
 User sessions are cleared when a user tries to log in, and sessions are cleared every 24 hours from the sessions database table. Configure session lengths by going to **System Console > Environment > Session Lengths**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: sessionlength-extendwithactivity
+.. config:setting:: extend-session-length-with-activity
   :displayname: Extend session length with activity (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.ExtendSessionLengthWithActivity
@@ -3753,7 +3753,7 @@ Extend session length with activity
 |   `session idle timeout <#session-idle-timeout>`__ configured. |                                                                                         |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: sessionlength-TerminateSessionsOnPasswordChange
+.. config:setting:: terminate-sessions-on-password-change
   :displayname: Terminate sessions on password change (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.TerminateSessionsOnPasswordChange
@@ -3782,7 +3782,7 @@ Terminate sessions on password change
 |   password, none of the user's sessions are revoked.           |                                                                                           |
 +----------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
-.. config:setting:: sessionlength-webinhours
+.. config:setting:: session-length-for-adldap-and-email
   :displayname: Session length for AD/LDAP and email (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionLengthWebInHours
@@ -3809,7 +3809,7 @@ Session length for AD/LDAP and email
 | **Note**: After changing this setting, the new session length takes effect after the next time the user enters their credentials.               |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
-.. config:setting:: sessionlength-mobileinhours
+.. config:setting:: session-length-for-mobile
   :displayname: Session length for mobile (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionLengthMobileInHours
@@ -3833,7 +3833,7 @@ Session length for mobile
 | **Note**: After changing this setting, the new session length takes effect after the next time the user enters their credentials.                  |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
-.. config:setting:: sessionlength-ssoinhours
+.. config:setting:: session-length-for-sso
   :displayname: Session length for SSO (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionLengthSSOInHours
@@ -3864,7 +3864,7 @@ Session length for SSO
 |   in to SAML, GitLab, or with OAuth 2.0.                                                                                                          |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: sessionlength-sessioncache
+.. config:setting:: session-cache
   :displayname: Session cache (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionCacheInMinutes
@@ -3884,7 +3884,7 @@ Session cache
 | Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSONCACHEINMINUTES``         |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: sessionlength-sessionidletimeout
+.. config:setting:: session-idle-timeout
   :displayname: Session idle timeout (Session Lengths)
   :systemconsole: N/A
   :configjson: .ServiceSettings.SessionIdleTimeoutInMinutes
@@ -3928,7 +3928,7 @@ Performance monitoring
 
 Configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: perf-enablemonitoring
+.. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
   :configjson: .MetricsSettings.Enable
@@ -3957,7 +3957,7 @@ Enable performance monitoring
 | to learn more.                                                                                                      |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: perf-listenaddress
+.. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
   :configjson: .MetricsSettings.ListenAddress
@@ -3988,7 +3988,7 @@ Developer
 
 Configure developer mode by going to **System Console > Environment > Developer**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: dev-enabletesting
+.. config:setting:: enable-testing-commands
   :displayname: Enable testing commands (Developer)
   :systemconsole: Environment > Developer
   :configjson: .ServiceSettings.EnableTesting
@@ -4015,7 +4015,7 @@ Enable testing commands
 |   disabled.                                       |                                                                          |
 +---------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: dev-enabledeveloper
+.. config:setting:: enable-developer-mode
   :displayname: Enable developer mode (Developer)
   :systemconsole: Environment > Developer
   :configjson: .ServiceSettings.EnableDeveloper
@@ -4043,7 +4043,7 @@ Enable developer mode
 |   Javascript errors.                          |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: dev-enableclientdebugging
+.. config:setting:: enable-client-debugging
   :displayname: Enable client debugging (Developer)
   :systemconsole: Environment > Developer
   :configjson: .ServiceSettings.EnableClientPerformanceDebugging
@@ -4073,7 +4073,7 @@ Enable client debugging
 | See the :ref:`client debugging <preferences/manage-advanced-options:performance debugging>` documentation to learn more.                        |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 
-.. config:setting:: dev-allowuntrustedinternalconnections
+.. config:setting:: allow-untrusted-internal-connections
   :displayname: Allow untrusted internal connections (Developer)
   :systemconsole: Environment > Developer
   :configjson: .ServiceSettings.AllowedUntrustedInternalConnections
@@ -4169,7 +4169,7 @@ Disable Customer Portal requests
 .. note::
   Cloud admins can’t modify this configuration setting. 
 
-.. config:setting:: exp-enableapiteamdeletion
+.. config:setting:: enable-api-team-deletion
   :displayname: Enable API team deletion (ServiceSettings)
   :systemconsole: N/A
   :configjson: EnableAPITeamDeletion
@@ -4191,7 +4191,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPITeamDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableapiuserdeletion
+.. config:setting:: enable-api-user-deletion
   :displayname: Enable API user deletion (ServiceSettings)
   :systemconsole: N/A
   :configjson: EnableAPIUserDeletion
@@ -4213,7 +4213,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableAPIUserDeletion": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableapichanneldeletion
+.. config:setting:: enable-api-channel-deletion
   :displayname: Enable API channel deletion (ServiceSettings)
   :systemconsole: N/A
   :configjson: EnableAPIChannelDeletion

@@ -4,11 +4,11 @@ Prepare your Mattermost database
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
   
-You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` and the `minimum supported version policy <#minimum-supported-version-policy>`__ documentation for version support details, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation to learn more about migrating from MySQL to PostgreSQL.
+You need a PostgreSQL database. See the :ref:`database software <install/software-hardware-requirements:database software>` documentation for details on database version support. Looking for information on migrating from MySQL to PostgreSQL? See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for details.
 
 .. tip::
 
-  Looking for information on working with a MySQL database? See the :doc:`prepare your Mattermost MySQL database </install/prepare-mattermost-mysql-database>` documentation for details.
+  We recommend using a managed PostgreSQL database service, such as Amazon RDS, Google Cloud SQL, or Azure Database for PostgreSQL.
 
 Set up a PostgreSQL database
 ----------------------------
@@ -227,7 +227,7 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +===========================================================+==================+================================+
 | :ref:`v9.11 ESR <release-v9-11-extended-support-release>` | 2024-8-15        | 11.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
-| v10.5 ESR                                                 | 2025-2-15        | 11.x                           |
+| :ref:`v10.5 ESR <release-v10.5-extended-support-release>` | 2025-2-15        | 11.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
 | v10.6                                                     | 2025-3-15        | 13.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+

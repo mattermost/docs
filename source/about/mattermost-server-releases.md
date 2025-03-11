@@ -5,8 +5,7 @@
 ```
 
 ```{Important}
- Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is required.
-- Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
+```{include} common-esr-support-upgrade.md
 ```
 
 ## Frequency
@@ -19,12 +18,13 @@ Mattermost releases a new server version on the 16th of each month in [binary fo
 
 | **Release** | **Released on** | **Support ends** |
 |:---|:---|:---|
-| v10.4 [Download](https://releases.mattermost.com/10.4.2/mattermost-10.4.2-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.4-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.4.2/sbom-mattermost-v10.4.2.json) | 2025-01-16 | 2025-04-15 |
-| v10.3 [Download](https://releases.mattermost.com/10.3.3/mattermost-10.3.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.3-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.3.3/sbom-mattermost-v10.3.3.json) | 2024-12-16 | 2025-03-15 |
+| v10.5 [Download](https://releases.mattermost.com/10.5.1/mattermost-10.5.1-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.5-extended-support-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.5.1/sbom-mattermost-v10.5.1.json) | 2025-02-16 | 2025-11-15 {ref}`EXTENDED <release-types>` |
+| v10.4 [Download](https://releases.mattermost.com/10.4.3/mattermost-10.4.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.4-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.4.3/sbom-mattermost-v10.4.3.json) | 2025-01-16 | 2025-04-15 |
+| v10.3 [Download](https://releases.mattermost.com/10.3.4/mattermost-10.3.4-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.3-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.3.4/sbom-mattermost-v10.3.4.json) | 2024-12-16 | 2025-03-15 |
 | v10.2 [Download](https://releases.mattermost.com/10.2.3/mattermost-10.2.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.2-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.2.3/sbom-mattermost-v10.2.3.json) | 2024-11-15 | 2025-02-15 |
 | v10.1 [Download](https://releases.mattermost.com/10.1.7/mattermost-10.1.7-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.1-feature-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.1.7/sbom-mattermost-v10.1.7.json) | 2024-10-16 | 2025-01-15 |
 | v10.0 [Download](https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz) \| {ref}`Changelog <release-v10.0-major-release>` \| [SBOM download](https://github.com/mattermost/mattermost/releases/download/v10.0.4/sbom.json) | 2024-09-16 | 2024-12-15 |
-| v9.11 [Download](https://releases.mattermost.com/9.11.8/mattermost-9.11.8-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-11-extended-support-release>` | 2024-08-16 | 2025-05-15 {ref}`EXTENDED <release-types>` |
+| v9.11 [Download](https://releases.mattermost.com/9.11.9/mattermost-9.11.9-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-11-extended-support-release>` | 2024-08-16 | 2025-05-15 {ref}`EXTENDED <release-types>` |
 | v9.10 [Download](https://releases.mattermost.com/9.10.3/mattermost-9.10.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-10-feature-release>` | 2024-07-16 | 2024-10-15 |
 | v9.9 [Download](https://releases.mattermost.com/9.9.3/mattermost-9.9.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-9-feature-release>` | 2024-06-14 | 2024-09-15 |
 | v9.8 [Download](https://releases.mattermost.com/9.8.3/mattermost-9.8.3-linux-amd64.tar.gz) \| {ref}`Changelog <release-v9-8-feature-release>` | 2024-05-16 | 2024-08-15 |

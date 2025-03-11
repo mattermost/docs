@@ -6,19 +6,24 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v11.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Starting in September 2025, Mattermost will deprecate the ``TeamSettings.ExperimentalViewArchivedChannels`` setting in favor of a new setting, ``TeamSettings.BrowseArchivedPublicChannels``. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
+
 Mattermost Server v10.6.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Support for PostgreSQL v11 and v12 will be removed. The new minimum PostgreSQL version will be v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
 
+Removed features by Mattermost version
+----------------------------------------
+
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
-- Mattermost will stop providing official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
-
-Removed features by Mattermost version
-----------------------------------------
+- The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
+- Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
 
 Mattermost Mobile App v2.25.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
