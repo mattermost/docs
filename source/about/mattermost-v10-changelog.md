@@ -11,6 +11,7 @@
   - Mattermost v10.5.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.1).
   - Pre-packaged Jira plugin version [v4.2.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.1).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
   - Mattermost v10.5.2 contains no database or functional changes.
 - **10.5.1, released 2025-02-19**
   - Mattermost v10.5.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -103,6 +104,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 - **10.4.4, released **
   - Mattermost v10.4.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
   - Mattermost v10.4.4 contains no database or functional changes.
 - **10.4.3, released 2025-02-19**
   - Mattermost v10.4.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -200,6 +202,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 - **10.3.5, released **
   - Mattermost v10.3.5 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
   - Mattermost v10.3.5 contains no database or functional changes.
 - **10.3.4, released 2025-02-19**
   - Mattermost v10.3.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
