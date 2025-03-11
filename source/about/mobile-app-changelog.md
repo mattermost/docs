@@ -5,6 +5,52 @@
 
 This changelog summarizes updates to Mattermost mobile apps releases for [Mattermost](https://mattermost.com).
 
+```{Important}
+```{include} common-esr-support.md
+```
+
+(release-v2-25-1)=
+## 2.25.1 Release
+ - Release Date: February 21, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+Note: Mattermost Mobile App v2.25.1 contains a medium level security fix. Updating is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the Mattermost Responsible Disclosure Policy.
+
+(release-v2-25-0)=
+## 2.25.0 Release
+ - Release Date: February 14, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Breaking Changes
+ - In the Mattermost Mobile App v2.25 release, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer before February 14, 2025. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845).
+
+### Improvements
+ - Added a feature for having a separate tab for **Drafts** on mobile. The Drafts screen currently only supports local drafts on the device and not drafts synchronized with the server.
+ - Android: App logs now includes enhanced logging for events that happen on the native (device-side) of the app which can be useful for troubleshooting issues related to Mattermost push notifications.
+ - Added visualization of custom profile attributes. Requires server v10.5 and feature flag enabled.
+
+### Bug Fixes
+ - Fixed reliability issues with threads.
+ - Fixed certain scenarios where the keyboard area in the channel and thread screen took more space than it should.
+
+### Open Source Components
+ - Added ``@react-native-community/cli``, ``@react-native-community/cli-platform-android``, and ``@react-native-community/cli-platform-ios`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Samsung S22 might not display custom profile attributes correctly.
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-24-1)=
 ## 2.24.1 Release
  - Release Date: January 17, 2025

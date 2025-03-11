@@ -3,7 +3,7 @@
 
 Configure Mattermost to enable push notifications to Mattermost clients by going to **System Console > Environment > Push Notification Server**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
-.. config:setting:: push-enablenotifications
+.. config:setting:: enable-push-notifications
   :displayname: Enable push notifications (Push Notifications)
   :systemconsole: Environment > Push Notification Server
   :configjson: .EmailSettings.SendPushNotifications
@@ -52,7 +52,7 @@ Enable push notifications
     - Simplified Error Handling: Push notification services can sometimes fail or have latency issues, requiring additional error handling. Disabling these notifications simplifies the system's operations.
     - However, disabling push notifications can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
-.. config:setting:: push-serverlocation
+.. config:setting:: push-notification-server-location
   :displayname: Push notification server location (Push Notifications)
   :systemconsole: Environment > Push Notification Server
   :configjson: .EmailSettings.PushNotificationServer
@@ -75,7 +75,7 @@ Push notification server location
 | field server URL.                                               |                                                                                |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
-.. config:setting:: push-maxnotificationsperchannel
+.. config:setting:: maximum-notifications-per-channel
   :displayname: Maximum notifications per channel (Push Notifications)
   :systemconsole: Environment > Push Notification Server
   :configjson: .TeamSettings.MaxNotificationsPerChannel
