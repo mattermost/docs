@@ -138,7 +138,7 @@ A chat thread is created automatically for every new call.
 
 .. tab:: Web/Desktop
 
-  Expand the call window using the arrows in the top-right of the call widget. From there, select the emoji icon to access frequently-used emojis or select additional emojis from the emoji picker.
+  Open the chat thread in the widget by selecting |gear| and there click on "Show chat thread". Alternative expand the call window using the arrows in the top-right of the call widget. From there, select the chat icon to access the chat thread.
 
 .. tab:: Mobile
   
