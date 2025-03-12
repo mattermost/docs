@@ -4356,3 +4356,29 @@ Disable client cache
 | - **false**: **(Default)** Client-side cache  |                                                                                      |
 |   of Redis is enabled.                        |                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-webhub-channel-iteration
+  :displayname: Enable webhub channel iteration
+  :systemconsole: N/A
+  :configjson: EnableWebHubChannelIteration
+  :environment: MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION
+
+  - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
+  - **false**: **(Default)** Websocket broadcasting performance in channels is disabled.
+
+Enable webhub channel iteration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| Control the performance of websocket broadcasting in | - System Config path: **N/A**                                                                    |
+| channels.                                            | - ``config.json setting``: ``ServiceSettings`` > ``EnableWebHubChannelIteration,`` > ``false``   |
+|                                                      | - Environment variable: ``MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION``                      |
+| When enabled, improves websocket broadcasting        |                                                                                                  |
+| performance; however, performance may decrease       |                                                                                                  |
+| when users join or leave a channel.                  |                                                                                                  |
+|                                                      |                                                                                                  |
+| Not recommended unless you have at least 200,000     |                                                                                                  |
+| concurrent users actively using Mattermost.          |                                                                                                  |
+|                                                      |                                                                                                  |
+| Disabled by default.                                 |                                                                                                  |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
