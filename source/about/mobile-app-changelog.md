@@ -28,6 +28,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue with the share feedback screen layout.
  - Fixed a layout issue when there was an error with the playback of a video. 
  - Fixed the style of ephemeral messages that prompted the user to add mentioned people to a channel.
+ - Fixed an issue where the keyboard blocked the text input.
+ - Fixed a blank space between the content and the keyboard on Android.
 
 ### Known Issues
  - Samsung S22 might not display custom profile attributes correctly.
