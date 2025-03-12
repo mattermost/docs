@@ -12,11 +12,11 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-11)=
 ## Release v5.11 (Extended Support Release)
 
-- **v5.11.2, released **2025-03-12**
+- **v5.11.2, released 2025-03-12**
 
   - Fixed an issue where the incompatible server screen showed by default when the server info was not present.
 
-- **v5.11.1, released **2025-03-01**
+- **v5.11.1, released 2025-03-01**
 
   - Mattermost Desktop App v5.11.1 contains a high severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Added a server incompatible version screen [MM-63224](https://mattermost.atlassian.net/browse/MM-63224). Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
