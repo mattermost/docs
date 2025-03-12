@@ -2598,6 +2598,8 @@ redirects = {
         "https://docs.mattermost.com/install/install-docker.html#deploy-mattermost-on-docker-quick-start",
 "install/install-docker.html#installing-a-different-version-of-mattermost":
         "https://docs.mattermost.com/install/install-docker.html#install-a-different-version-of-mattermost",
+"install/manage_kubernetes.html":
+        "https://docs.mattermost.com/install/install-kubernetes.html",
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
