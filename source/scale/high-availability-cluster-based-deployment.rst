@@ -357,7 +357,7 @@ The database can be configured for high availability and transparent failover us
 Recommended configuration settings for PostgreSQL
 ``````````````````````````````````````````````````
 
-If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL 11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
+If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL v11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
 
 **Config for Postgres Primary or Writer node**
 
