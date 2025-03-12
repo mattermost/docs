@@ -242,7 +242,7 @@ Important Upgrade Notes
 | v9.5                                               | We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are    |
-|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. :doc:`ERROR_SAFETY_LIMITS_EXCEEDED </manage/error-codes>`.                 |
+|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. :doc:`ERROR_SAFETY_LIMITS_EXCEEDED </manage/user-limits>`.                 |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.2                                               | Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to "keep-forever". Before     |
 |                                                    | this fix, the enabled custom data retention policies wouldn't run as long as the global data retention policy was set to "keep-forever" or was disabled. After   |

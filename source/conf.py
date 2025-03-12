@@ -2833,6 +2833,8 @@ redirects = {
         "https://docs.mattermost.com/manage/generating-support-packet.html",
 "manage/bulk-export-data.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
+"manage/error-codes.html":
+        "https://docs.mattermost.com/manage/user-limits.html",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
