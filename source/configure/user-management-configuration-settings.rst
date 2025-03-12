@@ -18,10 +18,6 @@ Review and manage the following in the System Console by selecting the **Product
 Users
 -----
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 Mattermost system admins can provision and manage user accounts, team membership, roles and permissions, and update user email addresses.
 
 Provision users
@@ -238,10 +234,6 @@ View user profile details using the System Console. Gather information including
 Groups
 ------
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------+-------------------------------------------------------------+
 | Manage default teams and channels by linking AD/LDAP groups   | - System Config path: **User Management > Groups**          |
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
@@ -255,10 +247,6 @@ Groups
 
 Teams
 -----
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Find Teams
 ~~~~~~~~~~
@@ -386,10 +374,6 @@ Archive the team
 
 Channels
 --------
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Find Channels
 ~~~~~~~~~~~~~
@@ -580,10 +564,6 @@ Permissions
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------------+-------------------------------------------------------------+
 | Restrict actions in Mattermost to authorized users only.            | - System Config path: **User Management > Permissions**     |
 |                                                                     | - ``config.json setting``: N/A                              |
@@ -596,10 +576,6 @@ Permissions
 
 System roles
 ------------
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------+------------------------------------------------------------+
 | Restrict System Console access to authorized users only.             | - System Config path: **User Management > System Roles**   |

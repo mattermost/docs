@@ -45,10 +45,6 @@ Access the following configuration settings in the System Console by going to **
 Global retention policy for messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for messages <configure/compliance-configuration-settings:global retention policy for messages>` configuration setting to be set to ``true``.
 
 By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
@@ -70,10 +66,6 @@ By default, messages are kept forever. If **Hours**, **Days**, or **Years** is c
 
 Global retention policy for files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. Requires the :ref:`global retention policy for files <configure/compliance-configuration-settings:global retention policy for files>` configuration setting to be set to ``true``.
 
@@ -97,10 +89,6 @@ By default, files are kept forever. If **Hours**, **Days**, or **Years** is chos
 Custom retention policy
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy.
 
 .. config:setting:: data-deletion-time
@@ -113,10 +101,6 @@ Set how long Mattermost keeps messages and files across specific teams and chann
 Data deletion time
 ~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Set the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
 
 This setting is based on the local time of the server.
@@ -127,10 +111,6 @@ This setting is based on the local time of the server.
 
 Run deletion job now
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Start a Data Retention deletion job immediately. You can monitor the status of the job in the data deletion job table within the Policy Log section.
 
@@ -156,8 +136,6 @@ Access the following configuration settings in the System Console by going to **
 Enable compliance export
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 **True**: Mattermost will generate a compliance export file that contains all messages that were posted in the last 24 hours. The export task is scheduled to run once per day. See the :doc:`documentation to learn more </comply/compliance-export>`.
 
 **False**: Mattermost doesn't generate a compliance export file.
@@ -175,8 +153,6 @@ Enable compliance export
 
 Compliance export time
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available as an add-on to legacy Enterprise Edition E20*
 
 Set the start time of the daily scheduled compliance export job. Choose a time when fewer people are using your system. Must be a 24-hour time stamp in the form ``HH:MM``.
 
@@ -196,8 +172,6 @@ This setting is based on the local time of the server.
 Export file format
 ~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 File format of the compliance export. Corresponds to the system that you want to import the data into.
 
 Currently supported formats are CSV, Actiance XML, and Global Relay EML.
@@ -213,8 +187,6 @@ If Global Relay is chosen, the following options will be presented:
 
 Global Relay customer account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available as an add-on to legacy Enterprise Edition E20*
 
 Type of Global Relay customer account your organization has. Can be one of: ``A9/Type 9``, ``A10/Type 10``, or ``Custom``.
 
@@ -232,8 +204,6 @@ Type of Global Relay customer account your organization has. Can be one of: ``A9
 Global Relay SMTP username
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 The username for authenticating to the Global Relay SMTP server.
 
 +-------------------------------------------------------------------------------------+
@@ -250,8 +220,6 @@ The username for authenticating to the Global Relay SMTP server.
 Global Relay SMTP password
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 The password associated with the Global Relay SMTP username.
 
 +-------------------------------------------------------------------------------------+
@@ -267,8 +235,6 @@ The password associated with the Global Relay SMTP username.
 
 Global Relay email address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available as an add-on to legacy Enterprise Edition E20*
 
 The email address your Global Relay server monitors for incoming compliance exports.
 
@@ -311,8 +277,6 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 Run compliance export job now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 This button initiates a compliance export job immediately. You can monitor the status of the job in the compliance export job table.
 
 ----
@@ -339,8 +303,6 @@ Access the following configuration settings in the System Console by going to **
 Enable compliance reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 **True**: Compliance reporting is enabled in Mattermost.
 
 **False**: Compliance reporting is disabled.
@@ -358,8 +320,6 @@ Enable compliance reporting
 
 Compliance report directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available as an add-on to legacy Enterprise Edition E20*
 
 Sets the directory where compliance reports are written.
 
@@ -379,8 +339,6 @@ Sets the directory where compliance reports are written.
 Enable daily report
 ~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 **True**: Mattermost generates a daily compliance report.
 
 **False**: Daily reports are not generated.
@@ -398,8 +356,6 @@ Enable daily report
 
 Batch size
 ~~~~~~~~~~
-
-*Available as an add-on to legacy Enterprise Edition E20*
 
 Set the size of the batches in which posts will be read from the database to generate the compliance report. This setting is currently not available in the System Console and can only be set in ``config.json``.
 
@@ -429,8 +385,6 @@ Access the following configuration settings in the System Console by going to **
 Enable custom terms of service
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 .. note::
   This configuration setting can only be modified using the System Console user interface.
 
@@ -448,8 +402,6 @@ Enable custom terms of service
 Custom terms of service text
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
 
 .. config:setting:: re-acceptance-period
@@ -461,8 +413,6 @@ Text that will appear in your custom Terms of Service. Supports Markdown-formatt
 
 Re-acceptance period
 ~~~~~~~~~~~~~~~~~~~~
-
-*Available as an add-on to legacy Enterprise Edition E20*
 
 The number of days before Terms of Service acceptance expires, and the terms must be re-accepted.
 

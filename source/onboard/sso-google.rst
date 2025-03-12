@@ -4,10 +4,6 @@ Google Single Sign-On
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Configuring Google Apps as a Single Sign-On (SSO) service
 ---------------------------------------------------------
 

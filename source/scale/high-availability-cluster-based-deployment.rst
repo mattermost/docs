@@ -4,10 +4,6 @@ High availability cluster-based deployment
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 A high availability cluster-based deployment enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.

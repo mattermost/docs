@@ -460,7 +460,7 @@ Permission policy settings
 
 .. note::
 
-   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
+   From Mattermost v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -829,10 +829,6 @@ Other deprecated settings
 Disable Post Metadata
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
@@ -845,10 +841,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Enable AD/LDAP group sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 **True**: Enables AD/LDAP Group Sync configurable under **User Management > Groups**.
 

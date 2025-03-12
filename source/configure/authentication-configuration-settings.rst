@@ -253,10 +253,6 @@ Access the following configuration settings in the System Console by going to **
 Minimum password length
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This setting determines the minimum number of characters in passwords. It must be a whole number greater than or equal to 5 and less than or equal to 72. | - System Config path: **Authentication > Password**                 |
 |                                                                                                                                                           | - ``config.json`` setting: ``PasswordSettings`` > ``MinimumLength`` |
@@ -293,10 +289,6 @@ Minimum password length
 
 Password requirements
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This setting controls password character requirements. By checking the corresponding box, passwords must contain: | - System Config path: **Authentication > Password**                                                                                                                                                                          |
@@ -396,10 +388,6 @@ Enforce multi-factor authentication
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | - **true**: Requires `multi-factor authentication (MFA)                          | - System Config path: **Authentication > MFA**                                                    |
 |   <https://docs.mattermost.com/onboard/multi-factor-authentication.html>`__      | - ``config.json`` setting: ``ServiceSettings`` > ``EnforceMultifactorAuthentication`` > ``false`` |
@@ -435,10 +423,6 @@ Access the following configuration settings in the System Console by going to **
 Enable sign-in with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **true**: Allows sign-in with AD/LDAP.                                      | - System Config path: **Authentication > AD/LDAP**                        |
 | - **false**: **(Default)** Disables sign-in with AD/LDAP.                     | - ``config.json`` setting: ``LdapSettings`` > ``Enable`` > ``false``      |
@@ -456,10 +440,6 @@ Enable sign-in with AD/LDAP
 
 Enable synchronization with AD/LDAP
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | - **true**: Mattermost periodically syncs users from AD/LDAP. | - System Config path: **Authentication > AD/LDAP**                       |
@@ -484,10 +464,6 @@ Enable synchronization with AD/LDAP
 Login field name
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. | - System Config path: **Authentication > AD/LDAP**               |
 |                                                                                                                                                          | - ``config.json`` setting: ``LdapSettings`` > ``LoginFieldName`` |
@@ -503,10 +479,6 @@ Login field name
 
 AD/LDAP server
 ~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------+-----------------------------------------------------------------------+
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**                    |
@@ -531,10 +503,6 @@ AD/LDAP server
 AD/LDAP port
 ~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 | This is the port Mattermost uses to connect to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**                   |
 |                                                                    | - ``config.json`` setting: ``LdapSettings`` > ``LdapPort`` > ``389`` |
@@ -555,10 +523,6 @@ AD/LDAP port
 
 Connection security
 ~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | This setting controls the type of security Mattermost uses to                | - System Config path: **Authentication > AD/LDAP**                            |
@@ -586,10 +550,6 @@ Connection security
 Skip certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 | - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing. **Do not use** this option when TLS is required in production. | - System Config path: **Authentication > AD/LDAP**                                        |
 | - **false**: **(Default)** Enables certification verification.                                                                                                                       | - ``config.json`` setting: ``LdapSettings`` > ``SkipCertificateVerification`` > ``false`` |
@@ -606,10 +566,6 @@ Skip certificate verification
 Private key
 ~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | Use this setting to upload the private key file from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.| - System Config path: **Authentication > AD/LDAP**               |
 |                                                                                                                                                             | - ``config.json`` setting: ``LdapSettings`` > ``PrivateKeyFile`` |
@@ -625,10 +581,6 @@ Private key
 
 Public certificate
 ~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Use this setting to upload the public TLS certificate from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism. | - System Config path: **Authentication > AD/LDAP**                      |
@@ -650,10 +602,6 @@ Public certificate
 
 Bind username
 ~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost. | - System Config path: **Authentication > AD/LDAP**             |
@@ -678,10 +626,6 @@ Bind username
 Bind password
 ~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the password for the username given in the **Bind Username** setting. | - System Config path: **Authentication > AD/LDAP**             |
 |                                                                               | - ``config.json`` setting: ``LdapSettings`` > ``BindPassword`` |
@@ -698,10 +642,6 @@ Bind password
 Base DN
 ~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 | This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users. | - System Config path: **Authentication > AD/LDAP**       |
 |                                                                                                                              | - ``config.json`` setting: ``LdapSettings`` > ``BaseDN`` |
@@ -717,10 +657,6 @@ Base DN
 
 User filter
 ~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost. For example, to filter out disabled users, the filter is: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.              | - System Config path: **Authentication > AD/LDAP**           |
@@ -746,10 +682,6 @@ Group filter
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for group objects. Only the groups selected by the query can access Mattermost.| - System Config path: **Authentication > AD/LDAP**            |
 |                                                                                                                                                                                                                                                  | - ``config.json`` setting: ``LdapSettings`` > ``GroupFilter`` |
@@ -771,10 +703,6 @@ Group filter
 Enable admin filter
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | - **true**: Enables the **Admin Filter** setting that designates system admins using an AD/LDAP filter.                                                                                                                     | - System Config path: **Authentication > AD/LDAP**                              |
 | - **false**: **(Default)** Disables the **Admin Filter** setting.                                                                                                                                                           | - ``config.json`` setting: ``LdapSettings`` > ``EnableAdminFilter`` > ``false`` |
@@ -794,10 +722,6 @@ Enable admin filter
 Admin filter
 ~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting accepts an AD/LDAP filter that designates the selected users as system admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync. | - System Config path: **Authentication > AD/LDAP**            |
 |                                                                                                                                                                                          | - ``config.json`` setting: ``LdapSettings`` > ``AdminFilter`` |
@@ -816,10 +740,6 @@ Admin filter
 Guest filter
 ~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests. | - System Config path: **Authentication > AD/LDAP**            |
 |                                                                                                                                                                                      | - ``config.json`` setting: ``LdapSettings`` > ``GuestFilter`` |
@@ -837,10 +757,6 @@ Guest filter
 
 ID attribute
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost.                                                                                              | - System Config path: **Authentication > AD/LDAP**                                                                               |
@@ -863,10 +779,6 @@ ID attribute
 Login ID attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that is used for signing-in to Mattermost. This is normally the same as the **Username Attribute**.                         | - System Config path: **Authentication > AD/LDAP**                 |
 |                                                                                                                                                                         | - ``config.json`` setting: ``LdapSettings`` > ``LoginIdAttribute`` |
@@ -884,10 +796,6 @@ Login ID attribute
 
 Username attribute
 ~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the username field in Mattermost.                                                                                                                                                                       | - System Config path: **Authentication > AD/LDAP**                  |
@@ -909,10 +817,6 @@ Username attribute
 Email attribute
 ~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This is the attribute in AD/LDAP server that populates the email address field in Mattermost.                                  | - System Config path: **Authentication > AD/LDAP**              |
 |                                                                                                                                | - ``config.json`` setting ``LdapSettings`` > ``EmailAttribute`` |
@@ -930,10 +834,6 @@ Email attribute
 
 First name attribute
 ~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                     | - System Config path: **Authentication > AD/LDAP**                   |
@@ -955,10 +855,6 @@ First name attribute
 Last name attribute
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**                  |
 |                                                                                                                           | - ``config.json`` setting: ``LdapSettings`` > ``LastNameAttribute`` |
@@ -978,10 +874,6 @@ Last name attribute
 
 Nickname attribute
 ~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**                  |
@@ -1003,10 +895,6 @@ Nickname attribute
 Position attribute
 ~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**                  |
 |                                                                                                                          | - ``config.json`` setting: ``LdapSettings`` > ``PositionAttribute`` |
@@ -1026,10 +914,6 @@ Position attribute
 
 Profile picture attribute
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that syncs and locks the profile picture in Mattermost. | - System Config path: **Authentication > AD/LDAP**                 |
@@ -1054,10 +938,6 @@ Group display name attribute
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+
 | This is the AD/LDAP Group Display name attribute that populates the Mattermost group name field. | - System Config path: **Authentication > AD/LDAP**                                                                                          |
 |                                                                                                  | - ``config.json`` setting: ``LdapSettings`` > ``GroupDisplayNameAttribute``                                                                 |
@@ -1080,10 +960,6 @@ Group ID attribute
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------+
 | This is an AD/LDAP Group ID attribute that sets a unique identifier for groups.                              | - System Config path: **Authentication > AD/LDAP**                                                                              |
 |                                                                                                              | - ``config.json`` setting: ``LdapSettings`` > ``GroupIdAttribute``                                                              |
@@ -1104,10 +980,6 @@ Group ID attribute
 
 Synchronization interval (minutes)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 | This value determines how often Mattermost syncs with the AD/LDAP server by setting the number of minutes between each sync. | - System Config path: **Authentication > AD/LDAP**                             |
@@ -1134,10 +1006,6 @@ Synchronization interval (minutes)
 Maximum page size
 ~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. | - System Config path: **Authentication > AD/LDAP**                    |
 |                                                                                                                              | - ``config.json`` setting: ``LdapSettings`` > ``MaxPageSize`` > ``0`` |
@@ -1158,10 +1026,6 @@ Maximum page size
 Query timeout (seconds)
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This setting determines the timeout period, in seconds, for AD/LDAP queries. Increase this value to avoid timeout errors when querying a slow server. | - System Config path: **Authentication > AD/LDAP**                      |
 |                                                                                                                                                       | - ``config.json`` setting: ``LdapSettings`` > ``QueryTimeout`` > ``60`` |
@@ -1170,10 +1034,6 @@ Query timeout (seconds)
 
 AD/LDAP test
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------+
 | Use this button to test the connection to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP** |
@@ -1185,10 +1045,6 @@ AD/LDAP test
 
 AD/LDAP synchronize now
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
 | Use this button to immediately sync with the AD/LDAP server.                                              | - System Config path: **Authentication > AD/LDAP** |
@@ -1234,10 +1090,6 @@ Enable login with SAML
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | - **true**: Enables sign-in with SAML. See :doc:`SAML Single Sign-On </onboard/sso-saml>` to learn more.                              | - System Config path: **Authentication > SAML 2.0**                  |
 | - **false**: **(Default)** Disables sign-in with SAML.                                                                                | - ``config.json`` setting: ``SamlSettings`` > ``Enable`` > ``false`` |
@@ -1258,10 +1110,6 @@ Enable synchronizing SAML accounts with AD/LDAP
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 | - **true**: Mattermost updates configured Mattermost user attributes (ex. FirstName, Position, Email) with their values from AD/LDAP. This synchronization may deactivate Mattermost users or remove them from groups, teams, or channels. AD/LDAP synchronization must be enabled and configured through the settings under **Authentication > AD/LDAP**. | - System Config path: **Authentication > SAML 2.0**                              |
@@ -1285,10 +1133,6 @@ Ignore guest users when synchronizing with AD/LDAP
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: When syncing with the AD/LDAP server, Mattermost does not sync any information about SAML-authenticated Guest Users from the AD/LDAP server. Manage guest deactivation manually via **System Console > Users**.  | - System Config path: **Authentication > SAML 2.0**                                |
 | - **false**: **(Default)** Syncing Mattermost with the AD/LDAP server updates Guest User attributes and deactivates and removes SAML-authenticated accounts for Guest Users that are no longer active on the AD/LDAP server. | - ``config.json`` setting: ``SamlSettings`` > ``IgnoreGuestsLdapSync`` > ``false`` |
@@ -1310,10 +1154,6 @@ Override SAML bind data with AD/LDAP information
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | - **true**: If the SAML ID attribute is configured, Mattermost overrides the SAML ID attribute with the AD/LDAP ID attribute. If the SAML ID attribute is not present, Mattermost overrides the SAML Email attribute with the AD/LDAP Email attribute. | - System Config path: **Authentication > SAML 2.0**                                         |
@@ -1339,10 +1179,6 @@ Identity provider metadata URL
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting is the URL from which Mattermost requests setup metadata from the provider. | - System Config path: **Authentication > SAML 2.0**                  |
 |                                                                                          | - ``config.json`` setting: ``SamlSettings`` > ``IdpMetadataURL``     |
@@ -1361,10 +1197,6 @@ SAML SSO URL
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------+
 | This setting is the URL where Mattermost sends a SAML request to start the login sequence. | - System Config path: **Authentication > SAML 2.0**      |
@@ -1385,10 +1217,6 @@ Identity provider issuer URL
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 | This setting is the issuer URL for the Identity Provider for SAML requests. | - System Config path: **Authentication > SAML 2.0**                    |
 |                                                                             | - ``config.json`` setting: ``SamlSettings`` > ``IdpDescriptorURL``     |
@@ -1407,10 +1235,6 @@ Identity provider public certificate
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | The public authentication certificate issued by your Identity Provider. | - System Config path: **Authentication > SAML 2.0**                      |
@@ -1433,10 +1257,6 @@ Verify signature
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | - **true**: **(Default)** Mattermost checks that the SAML Response signature matches the Service Provider Login URL.      | - System Config path: **Authentication > SAML 2.0**                 |
 | - **false**: The signature is not verified. This is **not recommended** for production. Use this option for testing only. | - ``config.json`` setting: ``SamlSettings`` > ``Verify`` > ``true`` |
@@ -1457,10 +1277,6 @@ Service provider login URL
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | Enter the URL of your Mattermost server, followed by ``/login/sso/saml``, i.e. ``https://example.com/login/sso/saml``. | - System Config path: **Authentication > SAML 2.0**                               |
@@ -1483,10 +1299,6 @@ Service provider identifier
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | This setting is the unique identifier for the Service Provider, which in most cases is the same as the Service Provider Login URL. In ADFS, this must match the Relying Party Identifier. | - System Config path: **Authentication > SAML 2.0**                             |
 |                                                                                                                                                                                           | - ``config.json`` setting: ``SamlSettings`` > ``ServiceProviderIdentifier``     |
@@ -1508,10 +1320,6 @@ Enable encryption
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | - **true**: **(Default)** Mattermost will decrypt SAML Assertions that are encrypted with your Service Provider Public Certificate.   | - System Config path: **Authentication > SAML 2.0**                  |
 | - **false**: Mattermost does not decrypt SAML Assertions. Use this option for testing only. It is **not recommended** for production. | - ``config.json`` setting: ``SamlSettings`` > ``Encrypt`` > ``true`` |
@@ -1531,10 +1339,6 @@ Service provider private key
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting stores the private key used to decrypt SAML Assertions from the Identity Provider. | - System Config path: **Authentication > SAML 2.0**                  |
 |                                                                                                 | - ``config.json`` setting: ``SamlSettings`` > ``PrivateKeyFile``     |
@@ -1553,10 +1357,6 @@ Service provider public certificate
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | This setting stores the certificate file used to sign a SAML request to the Identity Provider for a SAML login when Mattermost is initiating the login as the Service Provider. | - System Config path: **Authentication > SAML 2.0**                         |
@@ -1579,10 +1379,6 @@ Sign request
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | - **true**: Mattermost signs the SAML request with the Service Provider Private Key. | - System Config path: **Authentication > SAML 2.0**             |
 | - **false**: Mattermost does not sign the SAML request.                              | - ``config.json`` setting: ``SamlSettings`` > ``SignRequest``   |
@@ -1601,10 +1397,6 @@ Signature algorithm
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This setting determines the signature algorithm used to sign the SAML request. Options are: ``RSAwithSHA1``, ``RSAwithSHA256``, ``RSAwithSHA512``. | - System Config path: **Authentication > SAML 2.0**                      |
@@ -1628,10 +1420,6 @@ Canonical algorithm
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | This setting determines the canonicalization algorithm. With these options:                                                                                                                                                                | - System Config path: **Authentication > SAML 2.0**                             |
 |                                                                                                                                                                                                                                            | - ``config.json`` setting: ``SamlSettings`` > ``CanonicalAlgorithm``            |
@@ -1654,10 +1442,6 @@ Email attribute
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting determines the attribute from the SAML Assertion that populates the user email address field in Mattermost.                                   | - System Config path: **Authentication > SAML 2.0**                  |
 |                                                                                                                                                            | - ``config.json`` setting: ``SamlSettings`` > ``EmailAttribute``     |
@@ -1678,10 +1462,6 @@ Username attribute
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This setting determines the SAML Assertion attribute that populates the username field in the Mattermost UI.                                                                                                                                             | - System Config path: **Authentication > SAML 2.0**                     |
@@ -1704,10 +1484,6 @@ Id attribute
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to bind users from SAML to users in Mattermost. | - System Config path: **Authentication > SAML 2.0**          |
 |                                                                                                                      | - ``config.json`` setting: ``SamlSettings`` > ``IdAttribute``|
@@ -1726,10 +1502,6 @@ Guest attribute
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute used to apply a Guest role to users in Mattermost.       | - System Config path: **Authentication > SAML 2.0**             |
@@ -1754,10 +1526,6 @@ Enable admin attribute
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: System admin status is determined by the SAML Assertion attribute set in **Admin attribute**. | - System Config path: **Authentication > SAML 2.0**                                |
 | - **false**: **(Default)** System admin status is **not** determined by the SAML Assertion attribute.     | - ``config.json`` setting: ``SamlSettings`` > ``EnableAdminAttribute`` > ``false`` |
@@ -1776,10 +1544,6 @@ Admin attribute
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | (Optional) This setting determines the attribute in the SAML Assertion for designating system admins.                         | - System Config path: **Authentication > SAML 2.0**                  |
@@ -1804,10 +1568,6 @@ First name attribute
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the first name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                      |
 |                                                                                                                       | - ``config.json`` setting: ``SamlSettings`` > ``FirstNameAttribute``     |
@@ -1827,10 +1587,6 @@ Last name attribute
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the last name of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                     |
@@ -1852,10 +1608,6 @@ Nickname attribute
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the nickname of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                     |
 |                                                                                                                     | - ``config.json`` setting: ``SamlSettings`` > ``NicknameAttribute``     |
@@ -1875,10 +1627,6 @@ Position attribute
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the position (job title or role at company) of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**                     |
@@ -1900,10 +1648,6 @@ Preferred language attribute
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | (Optional) This setting determines the SAML Assertion attribute that populates the language preference of users in Mattermost. | - System Config path: **Authentication > SAML 2.0**              |
 |                                                                                                                                | - ``config.json`` setting: ``SamlSettings`` > ``LocaleAttribute``|
@@ -1923,10 +1667,6 @@ Login button text
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------+-------------------------------------------------------------------+
 | (Optional) The text that appears in the login button on the sign-in page. | - System Config path: **Authentication > SAML 2.0**               |
@@ -1955,10 +1695,6 @@ Use these settings to configure OAuth 2.0 for account creation and login.
 
 Select OAuth 2.0 service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------+
 | Use this setting to enable OAuth and specify the service provider, with these options:                                                         | - System Config path: **Authentication > OAuth 2.0** |
@@ -2143,10 +1879,6 @@ Enable OAuth 2.0 authentication with Google
 Google OAuth 2.0 Client ID
 ''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------+
 | This setting stores the OAuth Client ID from Google. Generate the ID by going to the **Credentials** section of the Google Cloud Platform APIs & Services menu and selecting **Create Credentials > OAuth client ID**. | - System Config path: **Authentication > OAuth 2.0**  |
 |                                                                                                                                                                                                                        | - ``config.json`` setting: ``GoogleSettings`` > ``Id``|
@@ -2165,10 +1897,6 @@ Google OAuth 2.0 Client ID
 Google OAuth 2.0 Client secret
 ''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------+
 | This setting stores the OAuth Client Secret from Google. The Secret is generated at the same time as the Client ID. | - System Config path: **Authentication > OAuth 2.0**       |
 |                                                                                                                     | - ``config.json`` setting: ``GoogleSettings`` > ``Secret`` |
@@ -2184,10 +1912,6 @@ Google OAuth 2.0 Client secret
 
 Google OAuth 2.0 User API endpoint
 ''''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | We recommend ``https://people.googleapis.com/v1/people/me?personFields=names,emailAddresses,nicknames,metadata`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the API server. | - System Config path: **Authentication > OAuth 2.0**                |
@@ -2205,10 +1929,6 @@ Google OAuth 2.0 User API endpoint
 Google OAuth 2.0 Auth endpoint
 ''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | We recommend ``https://accounts.google.com/o/oauth2/v2/auth`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**             |   
 |                                                                                                                                                                                            | - ``config.json`` setting: ``GoogleSettings`` > ``AuthEndpoint`` |
@@ -2224,10 +1944,6 @@ Google OAuth 2.0 Auth endpoint
 
 Google OAuth 2.0 Token endpoint
 '''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 | We recommend ``https://www.googleapis.com/oauth2/v4/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with HTTP, or HTTPS, if available on the server. | - System Config path: **Authentication > OAuth 2.0**              |
@@ -2275,10 +1991,6 @@ Enable OAuth 2.0 Authentication with Entra ID
 Entra ID OAuth 2.0 Application ID
 '''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting holds the **Application ID** generated when configuring Entra ID as a Single Sign-On service through the Microsoft Azure Portal.   | - System Config path: **Authentication > OAuth 2.0**      |
 |                                                                                                                                                 | - ``config.json`` setting: ``Office365Settings`` > ``Id`` |
@@ -2297,10 +2009,6 @@ Entra ID OAuth 2.0 Application ID
 
 Entra ID OAuth 2.0 Application secret password
 ''''''''''''''''''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting holds the **Application Secret Password** generated when configuring Entra ID as a Single Sign-On service through the Microsoft Azure Portal.   | - System Config path: **Authentication > OAuth 2.0**          |
@@ -2321,10 +2029,6 @@ Entra ID OAuth 2.0 Application secret password
 Entra ID OAuth 2.0 Directory (tenant) ID
 ''''''''''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This setting holds the **Directory (tenant) ID** set for Mattermost through the Azure Portal. | - System Config path: **Authentication > OAuth 2.0**               |
 |                                                                                               | - ``config.json`` setting: ``Office365Settings`` > ``DirectoryId`` |
@@ -2344,10 +2048,6 @@ Entra ID OAuth 2.0 Directory (tenant) ID
 Entra ID OAuth 2.0 User API endpoint
 ''''''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | We recommend ``https://graph.microsoft.com/v1.0/me`` as the User API Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**                   |
 |                                                                                                                                                                                               | - ``config.json`` setting: ``Office365Settings`` > ``UserAPIEndpoint`` |
@@ -2364,10 +2064,6 @@ Entra ID OAuth 2.0 User API endpoint
 Entra ID OAuth 2.0 Auth endpoint
 ''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/authorize`` as the Auth Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**                |
 |                                                                                                                                                                                                                      | - ``config.json`` setting: ``Office365Settings`` > ``AuthEndpoint`` |
@@ -2383,10 +2079,6 @@ Entra ID OAuth 2.0 Auth endpoint
 
 Entra ID OAuth 2.0 Token endpoint
 '''''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | We recommend ``https://login.microsoftonline.com/common/oauth2/v2.0/token`` as the Token Endpoint. Otherwise, enter a custom endpoint in ``config.json`` with ``http``, or ``https``, if available on the server. | - System Config path: **Authentication > OAuth 2.0**                 |
@@ -2413,10 +2105,6 @@ Access the following configuration settings in the System Console by going to **
 
 Select OpenID Connect service provider
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------+-----------------------------------------------------------+
 | Use this setting to enable OpenID Connect, with these options:                   | - System Config path: **Authentication > OpenID Connect** |
@@ -2449,10 +2137,6 @@ GitLab OpenID settings
 Enable OpenID Connect authentication with GitLab
 ''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: Allows team and account creation using GitLab OpenID Connect authentication. | - System Config path: **Authentication > OpenID Connect**              |
 | - **false**: **(Default)** Disables GitLab OpenID Connect authentication.                | - ``config.json`` setting: ``GitLabSettings`` > ``Enable`` > ``false`` |
@@ -2471,10 +2155,6 @@ Enable OpenID Connect authentication with GitLab
 
 GitLab OpenID site URL
 ''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the URL of your GitLab instance, e.g. **https://example.com:3000**. | - System Config path: **Authentication > OpenID Connect** |
@@ -2496,10 +2176,6 @@ GitLab OpenID site URL
 GitLab OpenID Discovery endpoint
 ''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This setting is prepopulated with the Discovery Endpoint for GitLab OpenID Connect. | - System Config path: **Authentication > OpenID Connect**            |
 |                                                                                     | - ``config.json`` setting: ``GitLabSettings`` > ``DiscoveryEndpoint``|
@@ -2520,10 +2196,6 @@ GitLab OpenID Discovery endpoint
 GitLab OpenID Client ID
 '''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 | This setting stores the **Application ID** generated by GitLab. | - System Config path: **Authentication > OpenID Connect**                |
 |                                                                 | - ``config.json`` setting: ``GitLabSettings`` > ``Id``                   |
@@ -2543,10 +2215,6 @@ GitLab OpenID Client ID
 
 GitLab OpenID Client secret
 '''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting stores the **Application Secret Key** generated by GitLab. | - System Config path: **Authentication > OpenID Connect**        |
@@ -2577,10 +2245,6 @@ Enable OpenID Connect authentication with Google
   - **true**: Allow team creation and account signup using Google OpenID Connect.
   - **false**: **(Default)** Google OpenID Connect cannot be used for team creation or account signup.
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: Allows team and account creation using Google OpenID authentication.                                 | - System Config path: **Authentication > OpenID Connect**              |
 | - **false**: **(Default)** Disables Google OpenID authentication.                                                | - ``config.json`` setting: ``GoogleSettings`` > ``Enable`` > ``false`` |
@@ -2597,10 +2261,6 @@ Enable OpenID Connect authentication with Google
 
 Google OpenID Discovery endpoint
 ''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | This setting is prepopulated with the Discovery Endpoint for Google OpenID Connect.                                                                     | - System Config path: **Authentication > OpenID Connect**             |
@@ -2620,10 +2280,6 @@ Google OpenID Discovery endpoint
 Google OpenID Client ID
 '''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client ID generated by Google.                                                           | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                  | - ``config.json`` setting: ``GoogleSettings`` > ``Id``    |
@@ -2641,10 +2297,6 @@ Google OpenID Client ID
 
 Google OpenID Client secret
 '''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client Secret generated by Google.                                                        | - System Config path: **Authentication > OpenID Connect** |
@@ -2675,10 +2327,6 @@ Entra ID OpenID settings
 Enable OpenID Connect authentication with Entra ID
 ''''''''''''''''''''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +----------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **true**: Allows team and account creation using Entra ID OpenID Connect authentication.                           | - System Config path: **Authentication > OpenID Connect**                 |
 | - **false**: **(Default)** Disables Entra ID OpenID Connect authentication.                                          | - ``config.json`` setting: ``Office365Settings`` > ``Enable`` > ``false`` |
@@ -2695,10 +2343,6 @@ Enable OpenID Connect authentication with Entra ID
 
 Entra ID OpenID Directory (tenant) ID
 '''''''''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This setting holds the Directory (tenant) ID set for Mattermost through the Microsoft Azure Portal.                  | - System Config path: **Authentication > OpenID Connect**          |
@@ -2718,10 +2362,6 @@ Entra ID OpenID Directory (tenant) ID
 Entra ID OpenID Discovery endpoint
 ''''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | This setting is prepopulated with the Discovery Endpoint for Entra ID OpenID Connect.                                                                                                                      | - System Config path: **Authentication > OpenID Connect**                                                          |
 |                                                                                                                                                                                                            | - ``config.json`` setting: ``Office365Settings`` > ``DiscoveryEndpoint``                                           |
@@ -2740,10 +2380,6 @@ Entra ID OpenID Discovery endpoint
 Entra ID Client ID
 ''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +----------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the **Application (client) ID** generated through the Microsoft Azure Portal.                    | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                      | - ``config.json`` setting: ``Office365Settings`` > ``Id`` |
@@ -2761,10 +2397,6 @@ Entra ID Client ID
 
 Entra ID Client secret
 ''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +----------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This setting stores the **Client Secret** generated through the Microsoft Azure Portal.                              | - System Config path: **Authentication > OpenID Connect**      |
@@ -2795,10 +2427,6 @@ Enable OpenID Connect authentication with other service providers
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: Allows team and account creation using other OpenID Connect service providers.                                      | - System Config path: **Authentication > OpenID Connect**              |
 | - **false**: **(Default)** Disables OpenID Connect authentication with other service providers.                                 | - ``config.json`` setting: ``OpenIdSettings`` > ``Enable`` > ``false`` |
@@ -2816,10 +2444,6 @@ Enable OpenID Connect authentication with other service providers
 OpenID Connect (other) Button name
 ''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-------------------------------------------------------+----------------------------------------------------------------+
 | This setting is the text for the OpenID login button. | - System Config path: **Authentication > OpenID Connect**      | 
 |                                                       | - ``config.json`` setting: ``OpenIdSettings`` > ``ButtonText`` |
@@ -2836,10 +2460,6 @@ OpenID Connect (other) Button name
 OpenID Connect (other) Button color
 '''''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This setting is the color of the OpenID login button. Use a hex code with a #-sign before the code, for example ``#145DBF``. | - System Config path: **Authentication > OpenID Connect**       |
 |                                                                                                                              | - ``config.json`` setting: ``OpenIdSettings`` > ``ButtonColor`` |
@@ -2855,10 +2475,6 @@ OpenID Connect (other) Button color
 
 OpenID Connect (other) Discovery endpoint
 '''''''''''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | This setting stores the Discovery Endpoint URL from the OpenID provider.                               | - System Config path: **Authentication > OpenID Connect**             |
@@ -2886,10 +2502,6 @@ OpenID Connect (other) Discovery endpoint
 OpenID Connect (other) Client ID
 ''''''''''''''''''''''''''''''''
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client ID from the OpenID provider.                                                                     | - System Config path: **Authentication > OpenID Connect** |
 |                                                                                                                                 | - ``config.json`` setting: ``OpenIdSettings`` > ``Id``    |
@@ -2907,10 +2519,6 @@ OpenID Connect (other) Client ID
 
 OpenID Connect (other) Client secret
 ''''''''''''''''''''''''''''''''''''
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------+
 | This setting stores the Client Secret from the OpenID provider.                                                                 | - System Config path: **Authentication > OpenID Connect** |
@@ -2942,10 +2550,6 @@ Access the following configuration settings in the System Console by going to **
 Enable guest access
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+-------------------------------------------------------------------------------+
 | - **true**: Enables the guest account feature.                 | - System Config path: **Authentication > Guest Access**                       |
 | - **false**: **(Default)** Disables the guest account feature. | - ``config.json`` setting: ``GuestAccountsSettings`` > ``Enable`` > ``false`` |
@@ -2966,10 +2570,6 @@ Enable guest access
 Whitelisted guest domains
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | Use this setting to restrict the creation of guest accounts. When set, guest accounts require a verified email address from one of the listed domains. | - System Config path: **Authentication > Guest Access**                              |
 |                                                                                                                                                        | - ``config.json`` setting: ``GuestAccountsSettings`` > ``RestrictCreationToDomains`` |
@@ -2987,10 +2587,6 @@ Whitelisted guest domains
 
 Enforce multi-factor authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------+
 | - **true**: Guests must use MFA. Guests without MFA are redirected to the setup page until MFA is configured. | - System Config path: **Authentication > Guest Access**                                                 |
