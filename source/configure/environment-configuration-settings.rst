@@ -4134,6 +4134,58 @@ Allow untrusted internal connections
 |   but not ``10.0.16.20``.                                                                                                                     |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
+Mobile Security
+---------------
+
+.. config:setting:: mobile-security-enabled
+  :displayname: Enable Biometric Authentication
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileEnableBiometrics
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEENABLEBIOMETRICS
+  :description: Enforces biometric authentication (with PIN/passcode fallback) before accessing the app. Users will be prompted based on session activity and server switching rules.
+
+    - **true**: Biometric authentication is enabled.
+    - **false**: **(Default)** Biometric authentication is disabled.
+
+
+Enable Biometric Authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+.. config:setting:: mobile-security-enabled
+  :displayname: Enable Jailbreak/Root Protection
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileJailbreakProtection
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION
+  :description: Prevents access to the app on devices detected as jailbroken or rooted. If a device fails the security check, users will be denied access or prompted to switch to a compliant server.
+
+    - **true**: Jailbreak/Root protection is enabled.
+    - **false**: **(Default)** Jailbreak/Root protection is disabled.
+
+Enable Jailbreak/Root Protection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+.. config:setting:: mobile-security-enabled
+  :displayname: Prevent Screen Capture
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobilePreventScreenCapture
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE
+  :description: Blocks screenshots and screen recordings when using the mobile app. Screenshots will appear blank, and screen recordings will blur (iOS) or show a black screen (Android). Also applies when switching apps.
+
+    - **true**: Prevent screen capture is enabled.
+    - **false**: **(Default)** Prevent screen capture is disabled.
+
+Prevent Screen Capture
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
 config.json-only settings
 -------------------------
 
