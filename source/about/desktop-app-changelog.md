@@ -12,7 +12,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-11)=
 ## Release v5.11 (Extended Support Release)
 
-- **v5.11.2, released **
+- **v5.11.2, released **2025-03-12**
 
   - Fixed an issue where the incompatible server screen showed by default when the server info was not present.
 
