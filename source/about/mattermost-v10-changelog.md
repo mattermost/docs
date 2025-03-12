@@ -54,8 +54,8 @@ If you upgrade from a release earlier than v10.3, please read the other [Importa
 
 #### Administration
  - Added the migrations, store layer and service for the Property System Architecture.
+ - Added Custom Profile Attributes, an experimental Enterprise-only feature. This feature is disabled by default. To enable this feature, set the feature flag `CustomProfileAttributes`. Once enabled, administrators can access the System Properties section in the System Console to create and manage custom user profile fields. The initial release supports text fields only.
  - Added the Custom Profile Attribute fields store, app and API endpoints.
- - Added the **System Console** user interface for managing Custom Profile Attributes (User Properties).
  - Introduced V2 of the Support Packet, containing improvement diagnosis information for high-availability deployments.
  - Added a new ``Fallback`` field to ``PluginSettingsSection`` that controls whether the settings defined under the section should still render as fallback when the plugin is disabled.
  - Updated the library used for tooltips throughout the app to fix a memory leak.
