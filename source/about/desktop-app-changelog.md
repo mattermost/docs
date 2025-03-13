@@ -5,6 +5,96 @@
 
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
+```{Important}
+```{include} common-esr-support.md
+```
+
+(release-v5-11)=
+## Release v5.11 (Extended Support Release)
+
+- **v5.11.2, released 2025-03-12**
+
+  - Fixed an issue where the incompatible server screen showed by default when the server info was not present.
+
+- **v5.11.1, released 2025-03-01**
+
+  - Mattermost Desktop App v5.11.1 contains a high severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a server incompatible version screen [MM-63224](https://mattermost.atlassian.net/browse/MM-63224). Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
+  - Fixed an issue where the server drop-down wouldn't render properly on first load [MM-62781](https://mattermost.atlassian.net/browse/MM-62781).
+  - Updated the error page with new visuals [MM-62724](https://mattermost.atlassian.net/browse/MM-62724).
+
+- **v5.11.0, released 2025-02-14**
+
+  - Original v5.11.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+```{Note}
+Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 132+.
+
+### Improvements
+
+#### Linux
+
+- Modified rpm-digest to utilize sha256 instead of md5 to all for rpm installation on FIPS mode enabled Enterprise Linux systems.
+
+#### All Platforms
+
+- Added two menu items to help users forcibly clear out cache and session data.
+- Improved the help options in the **Help** menu.
+- Updated the styling of the **Downloads** menu to improve text fitting and to prevent text overlap.
+- Refreshed loading and welcome screens.
+- Server URLs are now auto-filled when deep-linking into the Desktop App if the server isn't configured.
+- Removed legacy code for older unsupported Mattermost servers.
+- Calls: while the popout window is open, the widget window's visibility will change so that it is not always on top of other windows.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 34.0.1. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### macOS
+
+- Fixed an issue where the MAS migration from DMG would always fail, fixed a potential crash case.
+
+#### Windows
+
+- Fixed an issue with per-server permission checks for GPO-configured servers on Windows.
+- Fixed an issue where the app could crash loading a thumbnail on Windows.
+
+#### Linux
+
+- Fixed an issue for Linux users where the app could crash when trying to add the first server.
+
+#### All Platforms
+
+- Fixed an issue where autocompleting did not stop while the user was typing `https://`.
+- Fixed an issue preventing the screen sharing selection modal to show when the app was focused on a different tab (e.g. Playbooks, Boards).
+- Fixed an issue trying to download images using right-click > **Save As...**.
+- Fixed an issue where the URL view would trap focus when tabbing over a link.
+
+### Known Issues
+
+- Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
+- Boards is not using the new Desktop API, causing issues in v5.11+ [MM-61745](https://mattermost.atlassian.net/browse/MM-61745). Users of v5.11 will need to upgrade their Boards plugin version to v9.1.0+ avoid the issue.
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+### Contributors
+
+- [andr-sokolov](https://github.com/andr-sokolov), [devinbinnie](https://github.com/devinbinnie), [jonathan-dove](https://github.com/jonathan-dove), [pvev](https://github.com/pvev), [s1Sharp](https://github.com/s1Sharp), [streamer45](https://github.com/streamer45).
+
 (release-v5-10)=
 ## Release v5.10
 
