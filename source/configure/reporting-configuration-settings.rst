@@ -23,7 +23,7 @@ Site statistics
 | View statistics on a wide variety of activities in Mattermost, | - System Config path: **Reporting > Site Statistics**               |
 | including: users, seats, teams, channels, posts, calls,        | - ``config.json setting``: N/A                                      |
 | sessions, commands, webhooks, websocket and database           | - Environment variable: N/A                                         |
-| connections, and collaborative playbooks,                      |                                                                     |
+| connections, and collaborative playbooks.                      |                                                                     |
 +----------------------------------------------------------------+---------------------------------------------------------------------+
 | **Notes**:                                                                                                                           |
 |                                                                                                                                      |
