@@ -51,16 +51,351 @@ Recovering from a failure using a backup is typically a manual process and will 
 High Availability deployment 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deploying Mattermost in :doc:`High Availability mode </scale/high-availability-cluster-based-deployment>` allows for fast, automated recovery from component failure, such as a specific server running out of disk space or having a hardware issue, by running on redundant servers. Options include:
+Enterprise customers who use Mattermost for mission-critical environments must ensure continuous availability and operational resilience. A robust disaster recovery strategy is essential to mitigate risks associated with data center failures, ensuring that users can access Mattermost seamlessly, even in the event of unexpected outages.
 
-- Deploying redundant Mattermost servers, to protect against failures in the Mattermost server.
-- Deploying redundant databases, to protect against failures in the database.
-- Deploying redundant web proxies, to protect against failures in the web proxies.
-- Deploying redundant infrastructure in a separate physical data center, to protect against failures in the primary data center.
+In this section, we go through the various steps needed to set up Mattermost in a disaster recovery mode, and how to failover from one data center to another.
 
-A properly deployed High Availability deployment automatically switches over to a redundant system should a single server fail. High Availability does not protect against failures such as data corruption, since errors would propagate to redundant systems.
+**Setting up in one data center**
 
-A "complete" disaster recovery solution would protect against both real-time hardware failures using High Availability, data corruption failures using automation, and failures of the primary data center by offering both offsite backup and offsite redundant infrastructure. Because the complexity of a full disaster recovery solution is high, it is common for customers to consider trade-offs in cost and complexity relative to the anticipated risks and target recovery times.
+As a first step, set up Mattermost in a single data center. At a very basic high level, this would be something like below:
+
+.. image:: ../images/dr1.png
+   :alt: The above diagram has a single proxy, forwarding traffic to 2 nodes. And then we have a database with single writer + n readers. An S3 bucket and ES/OS using AWS Opensearch service.
+
+The above diagram has a single proxy, forwarding traffic to 2 nodes. And then we have a database with single writer + n readers. An S3 bucket and ES/OS using AWS Opensearch service.
+
+At this stage, we are ignoring other details like LDAP/SAML, SMTP etc.
+
+.. tip::
+  The following architecture is to be implemented for when an entire region goes down. This does not cover the case when a single server/service goes down.
+
+  For example:
+  If a single app node goes down, follow best practices to provision a new node.
+  If a DB replica node goes down, create a new replica from AWS console. Or set a policy to do it automatically.
+
+**Replicating Database**
+
+The first task would be to create a global AWS Cluster. This can be done by clicking the RDS instance in the AWS Console, and expand the “Actions“ menu and click “Add AWS Region“. In the next page, choose the secondary region, and fill up the other details.
+
+.. warning::
+
+  Ensure to tick the “Enable write forwarding“ on the secondary cluster. This will help to forward write operations from secondary to primary. ``Link`` (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-write-forwarding-apg.html#aurora-global-database-write-forwarding-enabling-apg).
+
+  Also check for the PG version and ensure it allows “write forwarding“. Not all PG versions allow that. ``Link`` (https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-write-forwarding-apg.html#aurora-global-database-write-forwarding-regions-versions-apg).
+
+At the end, you should have a global cluster like this:
+
+.. image:: ../images/dr2.png
+   :alt: The above diagram is a screenshot of the AWS console with a global RDS cluster with primary cluster is us-west-1 and secondary cluster in us-east-1.
+
+We can see we have a global cluster with the primary cluster in us-west-1, and the secondary cluster in us-east-1.
+
+**Replicating S3 bucket**
+
+- Create a new S3 bucket in the secondary region.
+
+- Back in the original bucket, go to Properties tab, and enable “Bucket versioning”.
+
+- Go to the Management tab, scroll down to Replication Rules, and create a Replication rule.
+
+- In the rule, select the source bucket. And then choose “Apply to all objects in the bucket” to replicate everything in the bucket.
+
+- Then choose the destination bucket.
+
+- For the IAM role, select “Create new role“.
+
+.. warning::
+
+  Ensure to select “Replica modification sync” for the bucket as well. This will help us keep the replica and source buckets in sync with each other.
+
+Then click Save. It will prompt you whether to kick off a job to replicate any existing objects to the secondary bucket or not. Click Yes.
+
+Do the same thing all over again on the secondary bucket as well.
+
+Now we have bi-directional replication working between the two S3 buckets.
+
+**Replicating ES/OS storage**
+
+To replicate ES/OS storage, we need to set up CCR (cross-cluster replication) for AWS Opensearch.
+
+Note that there are some requirements for this:
+
+- Elasticsearch 7.10 or OpenSearch 1.1 or later
+
+- Fine-grained access control enabled
+
+- Node-to-node encryption enabled
+
+#3 is automatically enabled once you enable #2. So all that’s needed is a recent OpenSearch version with fine-grained access control enabled.
+
+You would also need to add the `CrossClusterGet` permission on the IAM policy for the OS cluster. We recommend the following as per AWS, but feel free to fine-tune as necessary.
+
+```
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "es:ESHttp*",
+      "Resource": "arn:aws:es:<region>:<acc_num>:domain/<domain_name>/*"
+    },
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": "es:ESCrossClusterGet",
+      "Resource": "arn:aws:es:<region>:<acc_num>:domain/<domain_name>"
+    }
+  ]
+}
+```
+
+This can be set under the “Security Configuration“ tab for your OS domain.
+
+To recap:
+
+- Use Opensearch 2.x.
+
+- Enable fine-grained access control.
+
+- Create the master user, And note the user/pass.
+
+- Set the IAM policy as above.
+
+.. warning::
+
+  Note that after you create the master user, IP based access to OS might not work from MM app nodes. So you might need to update the ElasticSearchSettings section in config.json to update the username/password.
+
+Now create a new OS cluster in the secondary region. Follow the same steps again for this cluster.
+
+After that, we need to begin replication from the primary to secondary region.
+
+.. warning::
+
+  At this stage, ensure that you have all indices populated with data in the primary region. Run a “bulk index“ to do that if you haven’t already.
+
+To set up replication, first we need to create a connection from secondary to primary. Note that replication in OS works in a “pull“ model. So the secondary site, pulls data from the primary.
+
+- In the Amazon OpenSearch Service console, select the secondary domain, go to the Connections tab, and choose Request.
+
+- For Connection alias, enter a name for your connection.
+
+- And then choose “connect to a domain in another AWS account or region“, and enter the ARN of the primary domain.
+
+- Click “Request“.
+
+This will send a permission request to the primary domain. Open the primary domain, and you will see the incoming request under the “Connections“ tab. Click “Accept“.
+
+Now we need to set up the replication rules for indices.
+
+For this, SSH into an app node in the secondary region. We will set up an auto-follow rule for the posts* indices because of the daily naming scheme and monthly aggregation. And for the other indices, we will replicate each of them. We could also set up a rule with * to replicate everything. But that would also include the hidden and system indices which we don’t want.
+
+First, let’s set up the auto-follow for posts* indices
+
+```
+curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/_autofollow?pretty' -d '
+{
+   "leader_alias" : "<LEADER_ALIAS>",
+   "name": "autofollow-rule",
+   "pattern": "posts*",
+   "use_roles":{
+      "leader_cluster_role": "all_access",
+      "follower_cluster_role": "all_access"
+   }
+}'
+```
+
+
+Check the status of the auto-follow rule by:
+
+```
+curl -H 'Content-Type: application/json' -u 'username/password'  'https://<>/_plugins/_replication/autofollow_stats?pretty'
+{
+  "num_success_start_replication" : 2,
+  "num_failed_start_replication" : 0,
+  "num_failed_leader_calls" : 0,
+  "failed_indices" : [ ],
+  "autofollow_stats" : [
+    {
+      "name" : "autofollow-rule",
+      "pattern" : "posts*",
+      "num_success_start_replication" : 2,
+      "num_failed_start_replication" : 0,
+      "num_failed_leader_calls" : 0,
+      "failed_indices" : [ ],
+      "last_execution_time" : 1737699113927
+    }
+  ]
+}
+```
+
+Next, set up replication for the other indices
+
+```
+curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_start?pretty' -d '
+{
+   "leader_alias": "<LEADER_ALIAS>",
+   "leader_index": "channels",
+   "use_roles":{
+      "leader_cluster_role": "all_access",
+      "follower_cluster_role": "all_access"
+   }
+}'
+
+curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_start?pretty' -d '
+{
+   "leader_alias": "<LEADER_ALIAS>",
+   "leader_index": "users",
+   "use_roles":{
+      "leader_cluster_role": "all_access",
+      "follower_cluster_role": "all_access"
+   }
+}'
+
+curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_start?pretty' -d '
+{
+   "leader_alias": "<LEADER_ALIAS>",
+   "leader_index": "files",
+   "use_roles":{
+      "leader_cluster_role": "all_access",
+      "follower_cluster_role": "all_access"
+   }
+}'
+```
+
+Check the status of the replication rules by:
+
+```
+curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_status?pretty'
+curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_status?pretty'
+curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_status?pretty'
+curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
+curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
+Sample output:
+{
+  "status" : "SYNCING",
+  "reason" : "User initiated",
+  "leader_alias" : "<LEADER_ALIAS>",
+  "leader_index" : "<INDEX>",
+  "follower_index" : "<INDEX>",
+  "syncing_details" : {
+    "leader_checkpoint" : 16,
+    "follower_checkpoint" : 16,
+    "seq_no" : 17
+  }
+}
+```
+
+Now we can check for indices. We should be able to see all the indices from the primary domain in our secondary domain.
+
+```
+curl -s -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_cat/indices?pretty'
+```
+
+**Replicating Job servers**
+
+If the job scheduler is left running in the secondary region, it will pick up jobs and start running them. Therefore, we need to set JobSettings.RunScheduler to false on all nodes in the secondary region. When a failover happens, we need to enable it for the new primary region, and deactivate it for the new secondary region.
+
+**Test the secondary region**
+
+With the above steps complete, we have a fully functioning secondary region. We can replicate the same setup of nodes and a proxy server like the primary region. Only thing to note is that, the app nodes in the secondary region won’t be able to come up in the first time because Mattermost will try to run some DDL statements which are not allowed with write-forwarding. So it will be stuck in a loop trying to connect.
+
+.. warning::
+
+  Ensure to have separate ClusterNames for the different clusters in two regions. This will allow us to use the same database across 2 clusters.
+
+But once we failover the region, it will start working. And the primary region will still be readable, and any periodic writes will be forwarded to the secondary (now primary).
+
+**Failing Over RDS to secondary**
+
+To perform the failover, go to the RDS global cluster, and under “Actions“, select “Switchover or Failover global database“. Then select “switchover“ if you want to switch over without any data loss. This takes more time, but is safer. Or choose “failover“ for a quicker failover, at the expense of data-loss. If the entire region is unavailable anyways, then “failover“ is no worse than “switchover“.
+
+After this is done, the app nodes which were stuck trying to connect should move forward and everything should be functional. You can read/write, upload images and everything should be replicated. Everything except Opensearch data.
+
+**Failing over OS to secondary**
+
+ES/OS does not allow multi-writer for a single index. You can only write to one index at one time. Therefore, we need to perform some manual steps to reverse the replication direction. And start replicating from secondary to primary.
+
+For simplicity, let’s say site1 is primary, and site2 is secondary. Therefore, OS in site1 is the leader domain, and in site2 is the follower. And follower pulls from the leader. Now we need to switch the direction where site2 becomes leader, and site1 becomes follower.
+
+1. Remove the rule from site1 → site 2 in AWS Console. This will auto-pause the replication. But the indices in site2 will still be read-only. We need to remove the replication rules for that.
+
+2. Remove auto-follow rule.
+
+```
+curl -XDELETE -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/_autofollow?pretty' -d '
+{
+   "leader_alias" : "<LEADER_ALIAS>",
+   "name": "autofollow-rule"
+}'
+```
+
+3. Check the status of the auto-follow rule as mentioned before.
+
+4. Remove replication rules:
+
+```
+curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_stop?pretty' -d '{}'
+curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_stop?pretty' -d '{}'
+curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_stop?pretty' -d '{}'
+```
+
+5. Check the status of replication rules as mentioned before.
+
+6. Now indices will become writable
+
+7. Add rule from site2 → site1 in AWS console.
+
+8. Now back in site1, we need to make all the indices as followers. This cannot simply be done without deleting all indices first unfortunately.
+
+9. Delete all indices.
+
+```
+curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/posts*?pretty'
+curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/channels?pretty'
+curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/files?pretty'
+curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/users?pretty'
+```
+
+10. Refresh indices:
+
+```
+curl -XPOST -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_refresh?pretty'
+```
+
+11. Confirm that everything is deleted:
+
+```
+curl -s -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_cat/indices?pretty'
+```
+
+12. Now we have to add the auto-follow rule, add replication rules. Follow the same steps as before.
+
+13. List the indices again to confirm that replication has started, and indices are available.
+
+**S3 Bucket is auto-replicated both ways**
+
+There’s nothing to do for that.
+
+**Testing everything**
+
+Once the failover has happened, and the ES/OS replication direction has been swapped, the new site can be used normally.
+
+This becomes the final architecture:
+
+.. image:: ../images/dr3.png
+   :alt: The above diagram shows the final architecture with MM set up in two data centers.
+
+One can use DNS to easily switch between PRIMARY to SECONDARY during a failover.
+
+.. tip::
+  Note that websockets will still point to the old data center even if you have switched DNS. So you would need to roll over each app node gradually to move those connections to the new data center. Or in case all your nodes are down, no action is necessary and the clients will automatically re-connect to the new data center.
+
+Note that, the S3 bucket is replicated bi-directionally. But the DB and ES/OS is replicated uni-directionally.
 
 Failover from Single Sign-On outage 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
