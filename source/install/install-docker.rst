@@ -103,7 +103,7 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
+      docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
 
    To access your new Mattermost deployment, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
 
@@ -111,13 +111,13 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
+      docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
 
    **Using the included NGINX:**
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+      docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 
    To access your new Mattermost deployment via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
 
@@ -125,7 +125,7 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
+      docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
 6. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
 
