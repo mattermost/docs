@@ -26,6 +26,7 @@ You can import the following data types:
 - Direct messages from a user to themselves
 - Permissions schemes
 - Custom emoji
+- Bot users
 
 Importing additional types of posts is not yet supported.
 
@@ -858,7 +859,7 @@ Fields of the User object
       <td valign="middle">email_interval</td>
       <td valign="middle">string</td>
       <td>Specify an email batching interval during bulk import. Can have one of the following values:<br>
-          <kbd>"immediate"</kbd> - Emails are sent immediately.  <br>
+          <kbd>"immediately"</kbd> - Emails are sent immediately.  <br>
           <kbd>"fifteen"</kbd> - Emails are batched and sent every 15 minutes.<br>
           <kbd>"hour"</kbd> - Emails are batched and sent every hour.<br> </td>
       <td align="center" valign="middle">Yes</td>

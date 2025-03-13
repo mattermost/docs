@@ -20,7 +20,7 @@ Mattermost Legal Hold can be combined with :doc:`eDiscovery </comply/electronic-
 Legal Hold demo (Sneak Peek)
 ----------------------------
 
-Check out this `YouTube sneak peek demo <https://youtu.be/86c8NoOxlQw>`_ to learn about Mattermost's Legal Hold workflow.
+Check out this `YouTube sneak peek demo <https://www.youtube.com/watch?v=86c8NoOxlQw&feature=youtu.be>`_ to learn about Mattermost's Legal Hold workflow.
 
 .. raw:: html
   
@@ -174,3 +174,10 @@ How do I enable e-discovery for Mattermost?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Learn more about extracting data for e-discovery in our :doc:`product documentation </comply/electronic-discovery>`.
+
+How do I manage storage costs and version retention in S3?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you plan to use an existing S3 bucket for Legal Hold data storage, and your existing S3 bucket has versioning enabled, we strongly recommend using a dedicated S3 bucket with versioning disabled. 
+
+The Legal Hold plugin frequently modifies files in the ``legalhold`` directory, and when S3 bucket versioning is enabled, each modification creates a new version. This can result in a rapid accumulation of object versions, increased storage costs, potential performance impact, higher S3 API usage, and complicating version management over time. See the `S3 Lifecycle Rules <https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html>`_ documentation for additional details.

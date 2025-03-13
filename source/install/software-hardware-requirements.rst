@@ -35,7 +35,7 @@ Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 
 
 .. note::
 
-    - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+    - `*` Integrated Windows Authentication is not supported by Mattermost desktop apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
     - The minimum content size is 769 x 600 pixels. When the width is 768 pixels or less, the desktop app switches to mobile view. When the height is below 600 pixels, screen elements may become misplaced.
 
@@ -45,10 +45,10 @@ PC web
 .. csv-table::
     :header: "Browser", "Self-Hosted Technical Requirement", "Cloud Technical Requirement"
 
-    "Chrome", "v126+", "v126+"
-    "Firefox", "v115+", "v115+"
-    "Safari", "v17+", "v17+"
-    "Edge", "v126+", "v126+"
+    "Chrome", "v132+", "v132+"
+    "Firefox", "v119+", "v119+"
+    "Safari", "v17.4+", "v17.4+"
+    "Edge", "v132+", "v132+"
 
 `*` Internet Explorer (IE11) is no longer supported. We recommend using the `Mattermost desktop app <https://mattermost.com/apps/>`_ or another supported browser. See `this forum post <https://forum.mattermost.com/t/mattermost-is-dropping-support-for-internet-explorer-ie11-in-v5-16/7575>`__ to learn more.
 
@@ -58,12 +58,12 @@ Mobile apps
 .. csv-table::
     :header: "Operating System", "Technical Requirement"
 
-    "iOS", "iPhone 6s devices and later with iOS 13.4+"
+    "iOS", "iPhone 6s devices and later with iOS 15.1+"
     "Android", "Android devices with Android 7+"
 
 .. note::
 
-    - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+    - `*` Integrated Windows Authentication is not supported by Mattermost mobile apps. If you use ADFS we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
     - The minimum and target content size is 320 x 460 pixels, matching the available space when the mobile app is opened in Safari on the minimum supported iOS device.
 
 Mobile web
@@ -72,8 +72,8 @@ Mobile web
 .. csv-table::
     :header: "Browser", "Technical Requirement"
 
-    "iOS", "iOS 13.4+ with Safari 17+ or Chrome 126+"
-    "Android", "Android 7+ with Chrome 126+"
+    "iOS", "iOS 15.1+ with Safari 17.4+ or Chrome 132+"
+    "Android", "Android 7+ with Chrome 132+"
 
 Email client
 ^^^^^^^^^^^^
@@ -101,9 +101,11 @@ Database software
 
 Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
 
-See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation for details on migrating from MySQL to PostgreSQL.
+See the :ref:`minimum supported version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for minimum PostgreSQL version support details, and see the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` product documentation to learn about migrating from MySQL to PostgreSQL.
 
-MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
+.. important::
+
+    MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
 
 Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost/issues/2033#issuecomment-183872616>`__ for details.
 
@@ -120,7 +122,11 @@ Search limitations on MySQL:
 - The migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
 
 MySQL 8 Support
-^^^^^^^^^^^^^^^^
+::::::::::::::::
+
+.. important::
+
+    MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
 
 In MySQL 8.0.4, the default authentication plugin was changed from ``mysql_native_password`` to ``caching_sha2_password``. Therefore, you will need to enable ``mysql_native_password`` by adding the following entry in your MySQL configuration file:
 

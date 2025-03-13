@@ -109,10 +109,15 @@ For example, if **System Console > Logs** displays the following error, search f
 
   Connection unsuccessful: Failed to add to email address - 554 5.7.1 <unknown[IP-ADDRESS]>: Client host rejected: Access denied
 
+Checking your Notifications settings
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If an SMTP connection test in the System Console for a self-hosted Mattermost deployment fails with the message ``Connection unsuccessful: Failed to set the to address: 550 5.7.27 <test@example.com>``, go to **System Console > Site Configuration > Notifications** to verify that notification settings are configured correctly, including **Notification Display Name**, **Notification From Address**, **Support Email Address**, and **Notification Reply-To Address**. Cloud administrators can't manage **Notification From Address** or **Notification Reply-To Address**.
+
 Checking your SMTP server is reachable 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Attempt to Telnet to the email service to make sure the server is reachable. For additional information, visit https://docs.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019. If you're using an earlier version than Exchange Server 2019, select your version from the left-hand navigation menu.
+- Attempt to Telnet to the email service to make sure the server is reachable. For additional information, visit https://learn.microsoft.com/en-us/exchange/mail-flow/test-smtp-with-telnet?view=exchserver-2019. If you're using an earlier version than Exchange Server 2019, select your version from the left-hand navigation menu.
 - You must run the following commands from the same machine or virtual instance where ``mattermost/bin/mattermost`` is located.
 - Telnet to the email server with ``telnet mail.example.com 25``. If the command works you should see something like:
 
@@ -134,4 +139,4 @@ Checking your SMTP server is reachable
 .. note:: 
 
   - Telnet isn't included in official Mattermost Docker images, so you either need to use ``ping`` on those, or install Telnet yourself either directly or by modifying the Dockerfile.
-  - For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`_.
+  - For further assistance, review the `Troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ for previously reported errors, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`_.

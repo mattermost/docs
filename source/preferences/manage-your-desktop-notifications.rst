@@ -22,18 +22,19 @@ From Mattermost v9.9 and desktop app v5.5, Mattermost prompts you to enable noti
   :scale: 50
 
 - When you select **Allow**, you won't be asked again. You'll start receiving notifications in the desktop app for all Mattermost activity with `badges <#badge-based-notifications>`__, `banner alerts <#banner-alerts>`__ and `sounds <#notification-sounds>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity in the desktop app.
-- If you select **Deny** or **Deny Permanently**, you won't be asked again. You won't receive Mattermost notifications in the web browser. You can change this preference by :ref:`editing the server connection <preferences/connect-multiple-workspaces:edit a server>` to :ref:`manage your notification permissions <preferences/connect-multiple-workspaces:manage system permissions>`.
+- If you dismiss this prompt, you won't receive Mattermost notifications in the desktop app, and you'll be prompted again the next time you open Mattermost in the desktop app, or go to **Settings > Notifications > Desktop and mobile notifications**.
+- If you select **Deny** or **Deny Permanently**, you won't be asked again. You won't receive Mattermost notifications in the desktop app. You can change this preference by :ref:`editing the server connection <preferences/connect-multiple-workspaces:edit a server>` to :ref:`manage your notification permissions <preferences/connect-multiple-workspaces:manage system permissions>`.
 
 .. note::
 
-  - You may also need to enable notifications in Windows, macOS, or Linux for Mattermost by changing your System Preferences.
+  You may also need to enable notifications in Windows, macOS, or Linux for Mattermost by changing your System Preferences.
 
 Badge-based notifications
 -------------------------
 
 Mattermost desktop app icons display the following types of badges:
 
-- A numbered badge for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. |numbered-badge|
+- A numbered badge for unread :ref:`direct <collaborate/channel-types:direct message channels>` :ref:`group <collaborate/channel-types:group message channels>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching. |numbered-badge|
 - A dot badge for unread activity. |dot-badge|
 
 Banner alerts

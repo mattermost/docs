@@ -4,11 +4,12 @@ Configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-System admins for both self-hosted and Cloud Mattermost deployments can manage Mattermost configuration using the System Console. For self-hosted deployments, admins can additionally edit the ``config.json`` file. 
+System admins for both self-hosted and Cloud Mattermost deployments can manage Mattermost configuration using the System Console by selecting the **Product** |product-list| menu and selecting **System Console**. 
 
 .. note::
   
-  Mattermost requires write permissions to the ``config.json`` file; otherwise, configuration changes made within the System Console will have no effect.
+  - In self-hosted Mattermost deployments, configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory, or :doc:`stored in the database </configure/configuration-in-your-database>`. System admins managing self-hosted deployments can also modify the ``config.json`` file directly using a text editor.
+  - Mattermost requires write permissions to the ``config.json`` file; otherwise, configuration changes made within the System Console will have no effect.
 
 Mattermost configuration settings are organized into the following categories within the System Console:
 
@@ -23,8 +24,6 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Integrations configuration settings </configure/integrations-configuration-settings>`
 - :doc:`Compliance configuration settings </configure/compliance-configuration-settings>`
 - :doc:`Experimental configuration settings </configure/experimental-configuration-settings>`
-
-In self-hosted Mattermost deployments, configuration settings are maintained in the ``config.json`` configuration file, located in the ``mattermost/config`` directory, or :doc:`stored in the database </configure/configuration-in-your-database>`. System admins managing self-hosted deployments can also modify the ``config.json`` file directly using a text editor.
 
 Configuration in database
 --------------------------

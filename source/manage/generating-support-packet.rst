@@ -15,19 +15,45 @@ Contents of a Support Packet
 
 A Mattermost Support Packet can contain the following files:
 
-- `metadata.yaml <#metadata>`__
-- ``mattermost.log``
-- ``plugins.json``
-- ``sanitized_config.json``
-- ``support_packet.yaml``
-- `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
-- ``warning.txt`` (present when issues are encountered during packet generation)
+.. tab:: v10.5 and later
+
+   .. note::
+
+      From v10.5, the following support packet data has changed:
+
+      - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
+      - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
+      - Field names are normalized.
+      - New data includes server statistics, permission details, and extended job list details.
+
+   - `metadata.yaml <#metadata>`__
+   - ``mattermost.log`` (Mattermost logs)
+   - ``plugins.json`` (all active and inactive plugins)
+   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
+   - ``stats.yaml`` (Mattermost usage statistics)
+   - ``jobs.yaml`` (last runs of important jobs)
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``permissions.yaml`` (role & scheme information)
+   - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+
+.. tab:: Prior to v10.5
+
+   - `metadata.yaml <#metadata>`__
+   - ``mattermost.log``
+   - ``plugins.json``
+   - ``sanitized_config.json``
+   - ``support_packet.yaml``
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
+   - ``warning.txt`` (present when issues are encountered during packet generation)
 
 .. note:: 
 
-   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file.
+   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file and advanced logging files, if present.
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
+   - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
 
 Generate
 ---------
@@ -61,9 +87,13 @@ Generate
 Santitize confidential data
 ---------------------------
 
-When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. Plugins are not sanitized during packet generation.
+When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
 
-Ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+.. important::
+
+   - Plugins may not be sanitized during packet generation. 
+     - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
+     - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
 Share the packet with Mattermost
 --------------------------------
@@ -138,6 +168,6 @@ The Support Packet contains 3 go runtime profiling files:
 - ``heap.prof`` contains a heap profile
 - ``goroutines`` contains a dump of all the running go routines
 
-These files can be read using `pprof <https://golang.google.cn/pkg/cmd/pprof/>`__.
+These files can be read using `pprof <https://golang.google.cn/cmd/pprof/>`_.
 
 Use ``go tool pprof -web X`` to open a visualization of the profile in your browser, replacing ``X`` with the profile's file name.

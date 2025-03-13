@@ -1,7 +1,10 @@
 Experimental configuration settings
 =====================================
 
-Both self-hosted and Cloud admins can access the following configuration settings in the System Console. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Review and manage the following experimental configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Experimental > Features**:
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
@@ -9,17 +12,19 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, one ``LoginButtonColor`` value is under ``LdapSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.LdapSettings.LoginButtonColor'``
+  - When working with the ``config.json`` file manually, look for an object such as ``LdapSettings``, then within that object, find the key ``LoginButtonColor``.
+
 ----
 
 Experimental System Console configuration settings
 --------------------------------------------------
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Access the following experimental configuration settings in the System Console by going to **Experimental > Features**.
-
-.. config:setting:: exp-ldaploginbuttoncolor
+.. config:setting:: adldap-login-button-color
   :displayname: AD/LDAP login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
@@ -35,7 +40,7 @@ Specify the color of the AD/LDAP login button for white labeling purposes. Use a
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-ldaploginbuttonbordercolor
+.. config:setting:: adldap-login-button-border-color
   :displayname: AD/LDAP login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
@@ -54,7 +59,7 @@ Specify the color of the AD/LDAP login button border for white labeling purposes
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-ldaploginbuttontextcolor
+.. config:setting:: adldap-login-button-text-color
   :displayname: AD/LDAP login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
@@ -73,7 +78,7 @@ Specify the color of the AD/LDAP login button text for white labeling purposes. 
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableauthenticationtransfer
+.. config:setting:: change-authentication-method
   :displayname: Change authentication method (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableAuthenticationTransfer
@@ -96,7 +101,7 @@ Change authentication method
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-linkmetadatatimeout
+.. config:setting:: link-metadata-timeout
   :displayname: Link metadata timeout (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LinkMetadataTimeoutMilliseconds
@@ -112,7 +117,7 @@ Adds a configurable timeout for requests made to return link metadata. If the me
 | This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds``: 5000`` with numerical input.                    |
 +---------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-emailbatchbuffersize
+.. config:setting:: email-batching-buffer-size
   :displayname: Email batching buffer size (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EmailBatchingBufferSize
@@ -133,7 +138,7 @@ Specify the maximum number of notifications batched into a single email.
 | This feature's ``config.json`` setting is ``EmailBatchingBufferSize``: 256`` with numerical input.                       |
 +--------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-emailbatchinterval
+.. config:setting:: email-batching-interval
   :displayname: Email batching interval (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EmailBatchingInterval
@@ -155,7 +160,7 @@ Specify the maximum frequency, in seconds, which the batching job checks for new
 | This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with numerical input.                        |
 +-----------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-emailloginbuttoncolor
+.. config:setting:: email-login-button-color
   :displayname: Email login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
@@ -171,7 +176,7 @@ Specify the color of the email login button for white labeling purposes. Use a h
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-emailloginbuttonbordercolor
+.. config:setting:: email-login-button-border-color
   :displayname: Email login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
@@ -187,7 +192,7 @@ Specify the color of the email login button border for white labeling purposes. 
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-emailloginbuttontextcolor
+.. config:setting:: email-login-button-text-color
   :displayname: Email login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
@@ -203,7 +208,7 @@ Specify the color of the email login button text for white labeling purposes. Us
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableaccountdeactivation
+.. config:setting:: enable-account-deactivation
   :displayname: Enable account deactivation (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableUserDeactivation
@@ -223,7 +228,7 @@ Enable account deactivation
 | This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableautoreplies
+.. config:setting:: enable-automatic-replies
   :displayname: Enable automatic replies
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableAutomaticReplies
@@ -243,7 +248,7 @@ Enable automatic replies
 | This feature's ``config.json`` setting is ``"ExperimentalEnableAutomaticReplies": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablechannelviewedmessages
+.. config:setting:: enable-channel-viewed-websocket-messages
   :displayname: Enable channel viewed websocket messages (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableChannelViewedMessages
@@ -253,13 +258,23 @@ Enable automatic replies
 Enable channel viewed websocket messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices. Disabling the setting in larger deployments may improve server performance.
+This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices.
 
 +------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enabledefaultchannelleavejoinmessages
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Database Load: When channel_viewed events are disabled, the server no longer needs to log these events in the database. This reduces the number of write and update operations, which can be substantial in a busy server with many users frequently switching channels.
+  - Decreased Network Traffic: Disabling these events means there are fewer messages sent between the server and clients. This reduction in network traffic can lower latency and improve the overall responsiveness of the server, especially for users with slower connections.
+  - Lower Server CPU Usage: Processing channel_viewed events requires CPU resources to handle database transactions and network communication. Without these events, the server's CPU can be utilized more efficiently for other tasks, improving the overall performance.
+  - Improved User Experience: With reduced server load and network traffic, users may experience faster loading times and a more fluid interaction with the application.
+  - However, disabling this configuration setting affects some functionality, such as accurate tracking of read and unread messages in channels. It’s important to balance performance improvements with the needs of your organization and users.
+
+.. config:setting:: enable-default-channel-leavejoin-system-messages
   :displayname: Enable default channel leave/join system messages (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableDefaultChannelLeaveJoinMessages
@@ -282,7 +297,7 @@ This setting determines whether team leave/join system messages are posted in th
 | This feature's ``config.json`` setting is ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-hardenedmode
+.. config:setting:: enable-hardened-mode
   :displayname: Enable hardened mode (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableHardenedMode
@@ -310,7 +325,7 @@ Changes made when hardened mode is enabled:
 | This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablethemeselection
+.. config:setting:: enable-theme-selection
   :displayname: Enable theme selection (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableThemeSelection
@@ -337,7 +352,7 @@ Enable theme selection
 | This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-allowcustomthemes
+.. config:setting:: allow-custom-themes
   :displayname: Allow custom themes (Experimental)
   :systemconsole: Experimental > Features
   :configjson: AllowCustomThemes
@@ -364,7 +379,7 @@ Allow custom themes
 | This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-defaulttheme
+.. config:setting:: default-theme
   :displayname: Default theme (Experimental)
   :systemconsole: Experimental > Features
   :configjson: DefaultTheme
@@ -387,7 +402,7 @@ Set a default theme that applies to all new users on the system.
 | This feature's ``config.json`` setting is ``"DefaultTheme": "default"`` with options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enabletutorial
+.. config:setting:: enable-tutorial
   :displayname: Enable tutorial (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableTutorial
@@ -407,7 +422,7 @@ Enable tutorial
 | This feature's ``config.json`` setting is ``"ServiceSettings.EnableTutorial": true`` with options ``true`` and ``false``.                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableonboardingflow
+.. config:setting:: enable-onboarding-flow
   :displayname: Enable onboarding flow (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableOnboardingFlow
@@ -427,7 +442,7 @@ Enable onboarding flow
 | This feature's ``config.json`` setting is ``"ServiceSettings.EnableOnboardingFlow": true`` with options ``true`` and ``false``.            |
 +--------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableusertypingmessages
+.. config:setting:: enable-user-typing-messages
   :displayname: Enable user typing messages (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableUserTypingMessages
@@ -437,13 +452,21 @@ Enable onboarding flow
 Enable user typing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether "user is typing..." messages are displayed below the message box. Disabling the setting in larger deployments may improve server performance.
+This setting determines whether "user is typing..." messages are displayed below the message box when using Mattermost in a web browser or the desktop app. 
 
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableUserTypingMessages": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-usertypingtimeout
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Server Load: Typing events generate additional websocket traffic. Disabling them can reduce the amount of data that needs to be handled by the server, improving the overall response time and decreasing server load.
+  - Lower Network Traffic: When typing events are enabled, every keystroke generates a network event. This can lead to a significant amount of network traffic, particularly in busy channels. Disabling these events reduces the amount of information transmitted over the network.
+  - Client Performance: On the client side, processing typing events requires resources. By not having to handle these events, the client can be more responsive and use less memory and CPU.
+
+.. config:setting:: user-typing-timeout
   :displayname: User typing timeout (Experimental)
   :systemconsole: Experimental > Features
   :configjson: TimeBetweenUserTypingUpdatesMilliseconds
@@ -459,7 +482,7 @@ This setting defines how frequently "user is typing..." messages are updated, me
 | This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-user-status-profile-fetching-poll-interval
+.. config:setting:: users-status-and-profile-fetching-poll-interval
   :displayname: User's status and profile fetching poll interval (Experimental)
   :systemconsole: Experimental > Features
   :configjson: UsersStatusAndProfileFetchingPollIntervalMilliseconds
@@ -475,7 +498,11 @@ This setting configures the number of milliseconds to wait between fetching user
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-primaryteam
+.. note::
+
+  Decrease this configuration setting value to increase how often Mattermost checks for and retrieves updated user profile datails. Reducing this value can be particularly helpful to reduce the likelyhood of usernames being displayed in channels as **Someone** due to outdated or missing data.
+
+.. config:setting:: primary-team
   :displayname: Primary team (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalPrimaryTeam
@@ -493,7 +520,7 @@ If the team URL of the primary team is ``https://example.mattermost.com/myteam/`
 | This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
 +-----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-samlloginbuttoncolor
+.. config:setting:: saml-login-button-color
   :displayname: SAML login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
@@ -516,7 +543,7 @@ Specify the color of the SAML login button for white labeling purposes. Use a he
 | This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-samlloginbuttonbordercolor
+.. config:setting:: saml-login-button-border-color
   :displayname: SAML login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
@@ -539,7 +566,7 @@ Specify the color of the SAML login button border for white labeling purposes. U
 | This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-samlloginbuttontextcolor
+.. config:setting:: saml-login-button-text-color
   :displayname: SAML login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
@@ -562,7 +589,7 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 | This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-usechannelinemailnotifications
+.. config:setting:: use-channel-name-in-email-notifications
   :displayname: Use channel name in email notifications (Experimental)
   :systemconsole: Experimental > Features
   :configjson: UseChannelInEmailNotifications
@@ -582,7 +609,7 @@ Use channel name in email notifications
 | This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-userstatusawaytimeout
+.. config:setting:: user-status-away-timeout
   :displayname: User status away timeout (Experimental)
   :systemconsole: Experimental > Features
   :configjson: UserStatusAwayTimeout
@@ -597,36 +624,6 @@ This setting defines the number of seconds after which the user's status indicat
 +--------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
 +--------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enablesharedchannels
-  :displayname: Enable shared channels (Experimental)
-  :systemconsole: Experimental > Features
-  :configjson: ExperimentalSettings:EnableSharedChannels, ExperimentalSettings:EnableRemoteClusterService
-  :environment: N/A
-
-  Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel.
-  Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console. Default value of both settings is **false**.
-
-Enable shared channels
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-selfhosted-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-Shared channels enables the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where secure connections can participate as they would in any public and private channel. Enabling shared channels functionality requires a server restart.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's two ``config.json`` settings include ``"ExperimentalSettings:EnableSharedChannels": false`` with options ``true`` or ``false``, and ``"ExperimentalSettings:EnableRemoteClusterService": false`` with options ``true`` or ``false``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-   - Both configuration settings must be enabled in order to share channels with secure connections. Only the **Enable Shared Channels** configuration option is available through the System Console.
-   - System admins for Cloud deployments can submit a request to have the ``EnableRemoteClusterService`` configuration setting enabled in their Cloud instance.
 
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -648,7 +645,7 @@ This setting disables attempts to detect when the computer has woken up and refe
 
 **True**: Mattermost won't attempt to detect when the computer has woken up and refetch data. This might reduce the amount of regular network traffic the app is sending.
 
-**False**: (Default) Mattermost attempts to detect when the computer has woken up and refreshes data.
+**False**: (**Default**) Mattermost attempts to detect when the computer has woken up and refreshes data.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` with options ``true`` and ``false``.   |
@@ -724,7 +721,7 @@ Experimental Bleve configuration settings
 
 Access the following configuration settings in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file as described in the following tables:
 
-.. config:setting:: exp-bleveenable
+.. config:setting:: enable-bleve-indexing
   :displayname: Enable Bleve indexing (Experimental)
   :systemconsole: Experimental > Bleve
   :configjson: EnableIndexing
@@ -744,7 +741,7 @@ Enable Bleve indexing
 | This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-bleveindexdir
+.. config:setting:: index-directory
   :displayname: Index directory (Experimental)
   :systemconsole: Experimental > Bleve
   :configjson: IndexDir
@@ -774,7 +771,7 @@ Purge indexes
 
 Select **Purge Index** to remove the contents of the Bleve index directory. Search results may be incomplete until a bulk index of the existing database is rebuilt.
 
-.. config:setting:: exp-bleveenablesearch
+.. config:setting:: enable-bleve-indexingsearch
   :displayname: Enable Bleve for search queries (Experimental)
   :systemconsole: Experimental > Bleve
   :configjson: EnableSearching
@@ -794,7 +791,7 @@ Enable Bleve for search queries
 | This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
 +--------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-bleveenableautocomplete
+.. config:setting:: enable-bleve-indexingautocomplete
   :displayname: Enable Bleve for autocomplete queries (Experimental)
   :systemconsole: Experimental > Bleve
   :configjson: EnableAutocomplete
@@ -825,7 +822,7 @@ Enable the following settings to output audit events in the System Console by go
   
   The ability to configure audit logging in the System Console requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
 
-.. config:setting:: exp-advlogging
+.. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
   :systemconsole: Experimental > Features
   :configjson: AdvancedLoggingJSON
@@ -840,7 +837,7 @@ Advanced logging
 
 Output log and audit records to any combination of console, local file, syslog, and TCP socket targets for a Mattermost Cloud deployment. See the :ref:`advanced logging <manage/logging:advanced logging>` documentation for details about logging options.
 
-.. config:setting:: exp-enableauditlogging
+.. config:setting:: enable-audit-logging
   :displayname: Enable audit logging (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileEnabled
@@ -863,7 +860,7 @@ When audit logging is enabled in a self-hosted instance, you can specify size, b
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileEnabled": false",`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-auditlogfilename
+.. config:setting:: file-name
   :displayname: File name (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileName
@@ -882,7 +879,7 @@ Specify the path to the audit file for a self-hosted deployment.
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-filemaxsize
+.. config:setting:: max-file-size
   :displayname: File max size MB (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxSizeMB
@@ -901,7 +898,7 @@ This is the maximum size, in megabytes, that the file can grow before triggering
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-filemaxage
+.. config:setting:: max-file-age
   :displayname: File max age days (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxAgeDays
@@ -920,7 +917,7 @@ This is the maximum age, in days, a file can reach before triggering rotation fo
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-filemaxbackups
+.. config:setting:: maximum-file-backups
   :displayname: File max backups (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxBackups
@@ -939,7 +936,7 @@ This is the maximum number of rotated files kept for a self-hosted deployment. T
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-filecompress
+.. config:setting:: file-compression
   :displayname: File compress (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileCompress
@@ -958,7 +955,7 @@ When ``true``, rotated files are compressed using ``gzip`` in a self-hosted depl
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-filemaxqueuesize
+.. config:setting:: maximum-file-queue
   :displayname: File max queue size (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxQueueSize
@@ -978,7 +975,7 @@ This setting can be left as default unless you are seeing audit write failures i
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
 +-------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-advlogging
+.. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: AdvancedLoggingJSON
@@ -996,7 +993,7 @@ Output log and audit records to any combination of console, local file, syslog, 
 Experimental configuration settings for self-hosted deployments only
 --------------------------------------------------------------------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 Access the following self-hosted configuration settings by editing the ``config.json`` file as described in the following tables. These configuration settings are not accessible through the System Console.
@@ -1008,7 +1005,7 @@ Access the following self-hosted configuration settings by editing the ``config.
   - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.SiteURL'``
   - When working with the ``config.json`` file manually, look for the key ``ServiceSettings``, then within that object, find the key ``SiteURL``.
 
-.. config:setting:: exp-allowedthemes
+.. config:setting:: allowed-themes
   :displayname: Allowed themes (Experimental)
   :systemconsole: N/A
   :configjson: AllowedThemes
@@ -1033,7 +1030,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-maxusersforstatistics
+.. config:setting:: maximum-users-for-statistics
   :displayname: Maximum users for statistics (Experimental)
   :systemconsole: N/A
   :configjson: MaxUsersForStatistics
@@ -1060,7 +1057,7 @@ This setting is used to maximize performance for large Enterprise deployments.
 | This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
 +---------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-batchsize
+.. config:setting:: batch-size
   :displayname: Batch size (Experimental)
   :systemconsole: N/A
   :configjson: BatchSize
@@ -1085,7 +1082,7 @@ Determines how many new posts are batched together to a compliance export file.
 | This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input. |
 +----------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-filelocation
+.. config:setting:: file-location
   :displayname: File location (Experimental)
   :systemconsole: N/A
   :configjson: FileLocation
@@ -1110,7 +1107,7 @@ Set the file location of the compliance exports. By default, they are written to
 | This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-pushnotificationbuffer
+.. config:setting:: push-notification-buffer
   :displayname: Push notification buffer (Experimental)
   :systemconsole: N/A
   :configjson: PushNotificationBuffer
@@ -1128,7 +1125,7 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 | This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableauditfiles
+.. config:setting:: restrict-system-admin
   :displayname: File configuration settings (Beta)
   :systemconsole: N/A
   :configjson: FileEnabled
@@ -1148,38 +1145,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-remoteclusters
-  :displayname: Remote clusters (Experimental)
-  :systemconsole: N/A
-  :configjson: RemoteClusters
-  :environment: N/A
-
-  - **true**: System admins can manage remote clusters using the System Console.
-  - **false**: **(Default)** Remote cluster management is disabled.
-
-Remote clusters
-~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Enable this setting to add, remove, and view remote clusters for shared channels.
-
-**True**: System admins can manage remote clusters using the System Console.
-
-**False**: Remote cluster management is disabled.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RemoteClusters": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
-
-.. config:setting:: exp-enableclientcert
+.. config:setting:: enable-client-side-certification
   :displayname: Enable client-side certification (Experimental)
   :systemconsole: N/A
   :configjson: ClientSideCertEnable
@@ -1206,7 +1172,7 @@ Enable client-side certification
 | This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-clientcertcheck
+.. config:setting:: client-side-certification-login-method
   :displayname: Client-side certification login method (Experimental)
   :systemconsole: N/A
   :configjson: ClientSideCertCheck
@@ -1235,7 +1201,7 @@ Used in combination with the ``ClientSideCertEnable`` configuration setting.
 | This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
 +----------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-outputdirectory
+.. config:setting:: export-output-directory
   :displayname: Export output directory (Experimental)
   :systemconsole: N/A
   :configjson: .ExportSettings.Directory
@@ -1253,7 +1219,7 @@ The directory where the exported files are stored. The path is relative to the `
 | This feature's ``config.json`` setting under the ``ExportSettings`` section is ``Directory: ./export`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-exportretentiondays
+.. config:setting:: export-retention-days
   :displayname: Export retention days (Experimental)
   :systemconsole: N/A
   :configjson: .ExportSettings.RetentionDays
@@ -1271,7 +1237,7 @@ The number of days to retain the exported files before deleting them.
 | This feature's ``config.json`` setting under the ``ExportSettings`` section is ``RetentionDays: 30`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-maximageresolution
+.. config:setting:: maximum-image-resolution
   :displayname: Maximum image resolution (Experimental)
   :systemconsole: N/A
   :configjson: MaxImageResolution
@@ -1289,7 +1255,7 @@ Maximum image resolution size for message attachments in pixels.
 | This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
 +--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-maximagedecoderconcurrency
+.. config:setting:: maximum-image-decoder-concurrency
   :displayname: Maximum image decoder concurrency (Experimental)
   :systemconsole: N/A
   :configjson: MaxImageDecoderConcurrency
@@ -1313,7 +1279,7 @@ Indicates how many images can be decoded concurrently at once. The default value
 | This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
 +--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-initialfont
+.. config:setting:: initial-font
   :displayname: Initial font (Experimental)
   :systemconsole: N/A
   :configjson: InitialFont
@@ -1331,7 +1297,7 @@ Font used in auto-generated profile pics with colored backgrounds.
 | This feature's ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input. |
 +-----------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-amazons3signv2
+.. config:setting:: amazon-s3-signature-v2
   :displayname: Amazon S3 signature v2 (Experimental)
   :systemconsole: N/A
   :configjson: AmazonS3SignV2
@@ -1345,7 +1311,7 @@ Amazon S3 signature v2
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/general/latest/gr/signature-version-2.html.
+By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html.
 
 **True**: Use Signature Version 2 Signing Process.
 
@@ -1355,7 +1321,7 @@ By default, Mattermost uses Signature V4 to sign API calls to AWS, but under som
 | This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-amazons3pathprefix
+.. config:setting:: amazon-s3-path
   :displayname: Amazon S3 path (Experimental)
   :systemconsole: N/A
   :configjson: AmazonS3PathPrefix
@@ -1373,7 +1339,7 @@ Allows using the same S3 bucket for multiple deployments.
 | This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix: ""`` with string input.                   |
 +------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-gitlabscope
+.. config:setting:: gitlab-scope
   :displayname: GitLab scope (Experimental)
   :systemconsole: N/A
   :configjson: Scope
@@ -1391,7 +1357,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": ""`` with string input. |
 +------------------------------------------------------------------------------+
 
-.. config:setting:: exp-globalrelaysmtptimeout
+.. config:setting:: global-relay-smtp-server-timeout
   :displayname: Global relay SMTP server timeout (Experimental)
   :systemconsole: N/A
   :configjson: GlobalRelaySettings.SMTPServerTimeout
@@ -1414,7 +1380,7 @@ The number of seconds that can elapse before the connection attempt to the SMTP 
 | This feature's ``config.json`` setting is ``"GlobalRelaySettings.SMTPServerTimeout": "1800"`` with numerical input.   |
 +-----------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-googlescope
+.. config:setting:: google-scope
   :displayname: Google scope (Experimental)
   :systemconsole: N/A
   :configjson: Scope
@@ -1439,7 +1405,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "profile email"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-importinputdirectory
+.. config:setting:: import-input-directory
   :displayname: Import input directory (Experimental)
   :systemconsole: N/A
   :configjson: ImportSettings.Directory
@@ -1457,7 +1423,7 @@ The directory where the imported files are stored. The path is relative to the `
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-importretentiondays
+.. config:setting:: import-retention-days
   :displayname: Import retention days (Experimental)
   :systemconsole: N/A
   :configjson: ImportSettings.RetentionDays
@@ -1475,7 +1441,7 @@ The number of days to retain the imported files before deleting them.
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``RetentionDays: 30`` with numerical input. |
 +----------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-exportfromtimestamp
+.. config:setting:: export-from-timestamp
   :displayname: Export from timestamp (Experimental)
   :systemconsole: N/A
   :configjson: ExportFromTimestamp
@@ -1500,13 +1466,13 @@ Set the Unix timestamp (seconds since epoch, UTC) to export data from.
 | This feature's ``config.json`` setting is ``"ExportFromTimestamp": 0`` with numerical input. |
 +----------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-blockprofilerate
+.. config:setting:: block-profile-rate
   :displayname: Block profile rate (Experimental)
   :systemconsole: N/A
   :configjson: BlockProfileRate
   :environment: N/A
 
-  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+  Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
   To include every blocking event in the profile, set the rate to ``1``. To turn off profiling entirely, set the rate to ``0``.
   Default is **0**.
 
@@ -1515,7 +1481,7 @@ Block profile rate
 
 This setting isn't available in the System Console and can only be set in ``config.json``. Changes to this setting require a server restart before taking effect.
 
-Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://golang.org/pkg/runtime/#SetBlockProfileRate>`__.
+Value that controls the `fraction of goroutine blocking events reported in the blocking profile <https://pkg.go.dev/runtime#SetBlockProfileRate>`_.
 
 The profiler aims to sample an average of one blocking event per rate nanoseconds spent blocked.
 
@@ -1525,7 +1491,7 @@ To include every blocking event in the profile, set the rate to ``1``. To turn o
 | This feature's ``config.json`` setting is ``"BlockProfileRate": 0`` with options ``0`` and ``1``. |
 +---------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-o365scope
+.. config:setting:: entra-id-scope
   :displayname: Entra ID scope (Experimental)
   :systemconsole: N/A
   :configjson: Scope
@@ -1550,7 +1516,7 @@ Standard setting for OAuth to determine the scope of information shared with OAu
 | This feature's ``config.json`` setting is ``"Scope": "User.Read"`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablepluginuploads
+.. config:setting:: enable-plugin-uploads
   :displayname: Enable plugin uploads (Experimental)
   :systemconsole: N/A
   :configjson: EnableUploads
@@ -1572,7 +1538,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-allowinsecuredownloadurl
+.. config:setting:: allow-insecure-download-url
   :displayname: Allow insecure download URL (Experimental)
   :systemconsole: N/A
   :configjson: AllowInsecureDownloadUrl
@@ -1594,7 +1560,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablepluginhealthcheck
+.. config:setting:: enable-plugin-health-check
   :displayname: Enable plugin health check (Experimental)
   :systemconsole: N/A
   :configjson: EnableHealthCheck
@@ -1616,7 +1582,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"EnableHealthCheck": true`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-plugindirectory
+.. config:setting:: plugin-directory
   :displayname: Plugin directory (Experimental)
   :systemconsole: N/A
   :configjson: Directory
@@ -1634,7 +1600,7 @@ The location of the plugin files. If blank, they are stored in the ``./plugins``
 | This feature's ``config.json`` setting is ``"Directory": "./plugins"`` with string input.                       |
 +-----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-clientplugindirectory
+.. config:setting:: client-plugin-directory
   :displayname: Client plugin directory (Experimental)
   :systemconsole: N/A
   :configjson: ClientDirectory
@@ -1652,7 +1618,7 @@ The location of client plugin files. If blank, they are stored in the ``./client
 | This feature's ``config.json`` setting is ``"ClientDirectory": "./client/plugins"`` with string input.          |
 +-----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-scopingidpproviderid
+.. config:setting:: scoping-idp-provider-id
   :displayname: Scoping IDP provider ID (Experimental)
   :systemconsole: N/A
   :configjson: ScopingIDPProviderId
@@ -1677,7 +1643,7 @@ Allows an authenticated user to skip the initial login page of their federated A
 | This feature's ``config.json`` setting is ``"ScopingIDPProviderId": ""`` with string input. |
 +---------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-scopingidpprovidername
+.. config:setting:: scoping-idp-provider-name
   :displayname: Scoping IDP provider name (Experimental)
   :systemconsole: N/A
   :configjson: ScopingIDPName
@@ -1702,7 +1668,7 @@ Adds the name associated with a user's Scoping Identity Provider ID.
 | This feature's ``config.json`` setting is ``"ScopingIDPName": ""`` with string input. |
 +---------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-groupunreadchannels
+.. config:setting:: group-unread-channels
   :displayname: Group unread channels (Experimental)
   :systemconsole: N/A
   :configjson: ExperimentalGroupUnreadChannels
@@ -1726,7 +1692,7 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-strictcsrftoken
+.. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
   :systemconsole: N/A
   :configjson: ExperimentalStrictCSRFEnforcement
@@ -1748,7 +1714,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 | This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-developerflags
+.. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)
   :systemconsole: N/A
   :configjson: DeveloperFlags
@@ -1773,7 +1739,7 @@ This configuration setting is disabled by default and requires :ref:`developer m
 | This feature's ``config.json`` setting is ``"DeveloperFlags": ""`` with string input.  |
 +----------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablepostsearch
+.. config:setting:: enable-post-search
   :displayname: Enable post search (Experimental)
   :systemconsole: N/A
   :configjson: EnablePostSearch
@@ -1785,13 +1751,24 @@ Enable post search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-If this setting is enabled, users can search messages. Disabling search can result in a performance increase, but users get an error message when they attempt to use the search box.
+If this setting is enabled, users can search for messages in their Mattermost instance.
 
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablefilesearch
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Database Load: When post search is enabled, every search query adds additional load to the database. Disabling search reduces these queries, leading to better database performance and lower response times for other operations.
+  - Lower Memory Usage: Search functionality often requires indexing of posts, which consumes memory. By disabling search, the memory required for maintaining these indexes is freed up for other uses, improving overall system performance.
+  - Faster Write Operations: When post search is enabled, indexing has to be updated with every new post, edit, or deletion. Disabling search avoids this overhead, allowing for faster write operations.
+  - Performance Consistency: Without the search feature, the application avoids potential performance bottlenecks and can maintain more consistent performance levels, especially under heavy usage scenarios with a high number of posts.
+  - Simplified System Maintenance: Managing search indexes can be complex and resource-intensive. Disabling search simplifies this aspect of system maintenance, potentially reducing the risk of performance issues related to search index corruption or degradation.
+  - However, the ability to search messages in Mattermost is a critical feature for many users, and disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
+
+.. config:setting:: enable-file-search
   :displayname: Enable file search (Experimental)
   :systemconsole: N/A
   :configjson: EnableFileSearch
@@ -1803,7 +1780,9 @@ Enable file search
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-This configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <configure/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
+.. important::
+
+  This experimental configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <configure/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
 
 **True**: Supported document types are searchable by their filename.
 
@@ -1813,7 +1792,16 @@ This configuration setting enables users to search documents attached to message
 | This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enableuserstatusupdates
+.. note::
+
+  Disabling this experimental configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Less Data to Index: Indexing files in addition to messages adds to the amount of data that needs to be processed and stored in the search index.
+  - Fewer Complex Queries: Searching through files can require more complex queries, which can be more resource-intensive and time-consuming as compared to searching through messages alone.
+  - Lower IO Operations: Searching files can generate more input/output operations, impacting the overall disk performance, especially if the system handles a large volume of file uploads and searches.
+  - However, the ability to search for files in Mattermost is a critical feature for many users, and disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
+
+.. config:setting:: enable-user-status-updates
   :displayname: Enable user status updates (Experimental)
   :systemconsole: N/A
   :configjson: EnableUserStatuses
@@ -1831,7 +1819,7 @@ Turn status updates off to improve performance. When status updates are off, use
 | This feature's ``config.json`` setting is ``"EnableUserStatuses": true`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-websocketsecureport
+.. config:setting:: websocket-secure-port
   :displayname: Websocket secure port (Experimental)
   :systemconsole: N/A
   :configjson: WebsocketSecurePort
@@ -1852,7 +1840,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 .. note::
    This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
-.. config:setting:: exp-websocketport
+.. config:setting:: websocket-port
   :displayname: Websocket port (Experimental)
   :systemconsole: N/A
   :configjson: WebsocketPort
@@ -1873,7 +1861,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 .. note::
    This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
-.. config:setting:: exp-enableopentracing
+.. config:setting:: enable-opentracing
   :displayname: Enable OpenTracing (Experimental)
   :systemconsole: N/A
   :configjson: EnableOpenTracing
@@ -1897,7 +1885,7 @@ By default, in order to avoid leaking sensitive information, no method parameter
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-enablelocalmode
+.. config:setting:: enable-local-mode-for-mmctl
   :displayname: Enable local mode for mmctl (Experimental)
   :systemconsole: N/A
   :configjson: EnableLocalMode
@@ -1923,7 +1911,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 
   When trying to use local mode with mmctl, ensure you're using the same user when running the server and mmctl, or clean up the socket file before switching to a new user. If you encounter an error like ``socket file "/var/tmp/mattermost_local.socket" doesn't exists, please check the server configuration for local mode``, this can be resolved by setting this configuration setting to ``true``.
 
-.. config:setting:: exp-localmodesocketlocation
+.. config:setting:: enable-local-mode-socket-location
   :displayname: Enable local mode socket location (Experimental)
   :systemconsole: N/A
   :configjson: LocalModeSocketLocation
@@ -1943,7 +1931,7 @@ If nothing is specified, the default path that both the server and mmctl assumes
 | This feature's ``config.json`` setting is ``"LocalModeSocketLocation": "/var/tmp/mattermost_local.socket"`` with string input. |
 +--------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-defaultchannels
+.. config:setting:: default-channels
   :displayname: Default channels (Experimental)
   :systemconsole: N/A
   :configjson: ExperimentalDefaultChannels
@@ -1957,11 +1945,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Default channels every user is added to automatically after joining a new team. Only applies to Public channels, but affects all teams on the server.
 
-When not set, every user is added to the ``off-topic`` and ``town-square`` channels by default.
+When not set, every user is added to the ``town-square`` channel by default.
 
 .. note::
 
-   Even if ``town-square`` and ``off-topic`` aren't listed, every user is added to these channels automatically when joining a new team.
+  Even if ``town-square`` isn't listed, every user is added to that channels automatically when joining a new team.
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalDefaultChannels": []`` with string array input consisting of channel names, such as ``["announcement", "developers"]``. |
@@ -1981,7 +1969,7 @@ When running Mattermost on a single machine, both ``RunJobs`` and ``RunScheduler
 
 When running Mattermost in High Availability mode, ``RunJobs`` should be enabled on one or more servers while ``RunScheduler`` should be enabled on all servers under normal circumstances. A High Availability cluster-based deployment will have one Scheduler and one or more Workers. See the below sections for more information.
 
-.. config:setting:: exp-runjobs
+.. config:setting:: run-jobs
   :displayname: Run jobs (Experimental)
   :systemconsole: N/A
   :configjson: RunJobs
@@ -2001,7 +1989,7 @@ When running Mattermost in :doc:`High Availablity mode </scale/high-availability
 | This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
 +------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-runscheduler
+.. config:setting:: run-scheduler
   :displayname: Run scheduler (Experimental)
   :systemconsole: N/A
   :configjson: RunScheduler
@@ -2025,7 +2013,7 @@ When running Mattermost in :doc:`High Availablity mode </scale/high-availability
 | This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
 +-----------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-cleanupjobs
+.. config:setting:: clean-up-old-database-jobs
   :displayname: Clean up old database jobs (Experimental)
   :systemconsole: N/A
   :configjson: .JobSettings.CleanupJobsThresholdDays
@@ -2043,7 +2031,7 @@ Defines the threshold in days beyond which older completed database jobs are rem
 | This feature's ``config.json`` setting is ``"JobSettings.CleanupJobsThresholdDays": -1`` with numerical input.     |
 +--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: exp-cleanupdatabaseentries
+.. config:setting:: clean-up-outdated-database-entries
   :displayname: Clean up outdated database entries (Experimental)
   :systemconsole: N/A
   :configjson: .JobSettings.CleanupConfigThresholdDays

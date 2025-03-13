@@ -84,6 +84,11 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
 - Optionally add :ref:`advanced passwords requirements <configure/authentication-configuration-settings:password requirements>` with minimum numbers of symbols, numbers, lower, and uppercase letters.
 - Optionally restrict :doc:`creation, renaming, archiving of channels, Private channels, and integrations to team admins, system admins, or end users </onboard/advanced-permissions>` (Mattermost Enterprise and Mattermost Professional).
 
+Copilot context management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the :doc:`Copilot context management </collaborate/copilot-context-management>` documentation to learn how Copilot manages LLM context and how to ensure data privacy.
+
 Security updates
 -----------------
 
@@ -91,11 +96,13 @@ Security updates address newly discovered attacks reported to Mattermost, Inc. b
 
 For more information, please see:
 
-- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`__
-   - A summary of security updates made based on past and on-going security analysis and penetration testing.
+- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`_
 
-- `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__
-   - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
+  - A summary of security updates made based on past and on-going security analysis and penetration testing.
+
+- `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_
+ 
+  - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
 
 Security policies
 -----------------
@@ -107,42 +114,42 @@ Moreover, Mattermost performs a penetration test on the software no less than on
 HIPAA compliance*
 -----------------
 
-Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
+Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
-   - :ref:`Integrity Controls <about/security:integrity and audit controls>`
-   - :ref:`Access Control <about/security:access control policy>`
-   - :ref:`Transmission Security <about/security:transmission security>`
-   - :ref:`Audit Controls <about/security:integrity and audit controls>`
+  - :ref:`Integrity Controls <about/security:integrity and audit controls>`
+  - :ref:`Access Control <about/security:access control policy>`
+  - :ref:`Transmission Security <about/security:transmission security>`
+  - :ref:`Audit Controls <about/security:integrity and audit controls>`
 
 - HIPAA-compliant deployments commonly consider the following:
 
-   - Omitting the contents of messages from mobile push and email notifications:
+  - Omitting the contents of messages from mobile push and email notifications:
 
-      - If your :ref:`Push Notifications Contents <configure/site-configuration-settings:push notification contents>` option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
-      - Similarly, setting :ref:`Email Notifications Contents <configure/site-configuration-settings:email notification contents>` to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
+   - If your :ref:`Push Notifications Contents <configure/site-configuration-settings:push notification contents>` option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
+   - Similarly, setting :ref:`Email Notifications Contents <configure/site-configuration-settings:email notification contents>` to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
 
 - Beyond Technical Safeguards, HIPAA compliance deployments also require:
 
-   - Administrative Safeguards
-   - Physical Safeguards
-   - Organizational requirements and other standards.
+  - Administrative Safeguards
+  - Physical Safeguards
+  - Organizational requirements and other standards.
 
-To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
+To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
 FINRA compliance*
 ------------------
 
-Mattermost Enterprise features help users to meet the `cybersecurity requirements of the United States Financial Industry Regulatory Authority (FINRA) <http://www.finra.org/industry/cybersecurity>`__ as part of a customer's existing operational systems, including technology governance, system change management, risk assessments, technical controls, incident response, vendor management, data loss prevention, and staff training.
+Mattermost Enterprise features help users to meet the `cybersecurity requirements of the United States Financial Industry Regulatory Authority (FINRA) <https://www.finra.org/rules-guidance/key-topics/cybersecurity>`_ as part of a customer's existing operational systems, including technology governance, system change management, risk assessments, technical controls, incident response, vendor management, data loss prevention, and staff training.
 
 FINRA reviews a firm’s ability to protect the confidentiality, integrity, and availability of sensitive customer information. This includes reviewing each firm’s compliance with SEC regulations, including:
 
-- Regulation `S-P (17 CFR §248.30) <https://www.ecfr.gov/cgi-bin/text-idx?SID=226b4b62d8bf25d29cc88df5039cddde&mc=true&node=se17.4.248_130&rgn=div8>`__, which requires firms to adopt written policies and procedures to protect customer information against cyber-attacks and other forms of unauthorized access.
+- Regulation `S-P (17 CFR §248.30) <https://www.ecfr.gov/current/title-17/chapter-II/part-248/subpart-A/subject-group-ECFR83262a0bce5ffaa/section-248.30>`_, which requires firms to adopt written policies and procedures to protect customer information against cyber-attacks and other forms of unauthorized access.
 
-- Regulation `S-ID (17 CFR §248.201-202) <https://www.ecfr.gov/cgi-bin/text-idx?SID=5621786ec1a831400e4b64f3e92198bd&mc=true&node=pt17.4.248&rgn=div5#sp17.4.248.c>`__, which outlines a firm's duties regarding the detection, prevention, and mitigation of identity theft.
+- Regulation `S-ID (17 CFR §248.201-202) <https://www.ecfr.gov/current/title-17/chapter-II/part-248>`_, which outlines a firm's duties regarding the detection, prevention, and mitigation of identity theft.
 
-- The `Securities Exchange Act of 1934 (17 CFR §240.17a-4(f)) <https://www.ecfr.gov/cgi-bin/text-idx?SID=b6b7a79d18d000a733725e88d333ddb5&mc=true&node=pt17.4.240&rgn=div5#se17.4.240_117a_64>`__, which requires firms to preserve electronically stored records in a non-rewriteable, non-erasable format.
+- The `Securities Exchange Act of 1934 (17 CFR §240.17a-4(f)) <https://www.ecfr.gov/current/title-17/chapter-II/part-240>`_, which requires firms to preserve electronically stored records in a non-rewriteable, non-erasable format.
 
 Mattermost supports FINRA compliance as part of a customer's integrated operations in the following ways:
 

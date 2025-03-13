@@ -93,7 +93,7 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` (Ubuntu) or  ``/etc/nginx/conf.d/mattermost`` (RHEL 8) as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
 
-SSL and HTTP/2 with server push are enabled in the provided configuration example.
+SSL and HTTP/2 are enabled in the provided configuration example.
 
   .. note::
 
@@ -119,8 +119,6 @@ SSL and HTTP/2 with server push are enabled in the provided configuration exampl
        listen 443 ssl http2;
        listen [::]:443 ssl http2;
        server_name    mattermost.example.com;
-
-       http2_push_preload on; # Enable HTTP/2 Server Push
 
        ssl_certificate /etc/letsencrypt/live/{domain-name}/fullchain.pem;
        ssl_certificate_key /etc/letsencrypt/live/{domain-name}/privkey.pem;

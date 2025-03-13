@@ -24,32 +24,32 @@ Enterprises can choose between dedicated and shared infrastructure based on your
 Compare offerings
 -----------------
 
-+-------------------------------+---------------+------------+
-| **Resource**                  | **Dedicated** | **Shared** |
-+===============================+===============+============+
-| Mattermost High Availability  |      YES      |     YES    |
-| cluster-based deployment      |               |            |
-+-------------------------------+---------------+------------+
-| Network policy                |      YES      |     YES    |
-+-------------------------------+---------------+------------+
-| Namespace                     |      YES      |     YES    |
-+-------------------------------+---------------+------------+
-| Network                       |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Kubernetes High Availability  |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Database High Availability    |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Object storage                |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Encryption keys               |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| Custom backup schedule        |      YES      |     NO     |
-+-------------------------------+---------------+------------+
-| IP Filtering                  |      YES      |     YES    |
-+-------------------------------+---------------+------------+
-| Bring your own key            |      YES      |     NO     |
-+-------------------------------+---------------+------------+
++-------------------------------+---------------+-------------+
+| **Resource**                  | **Dedicated** | **Shared**  |
++===============================+===============+=============+
+| Mattermost High Availability  | |checkmark|   | |checkmark| |
+| cluster-based deployment      |               |             |
++-------------------------------+---------------+-------------+
+| Network policy                | |checkmark|   | |checkmark| |
++-------------------------------+---------------+-------------+
+| Namespace                     | |checkmark|   | |checkmark| |
++-------------------------------+---------------+-------------+
+| Network                       | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Kubernetes High Availability  | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Database High Availability    | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Object storage                | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Encryption keys               | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| Custom backup schedule        | |checkmark|   |             |
++-------------------------------+---------------+-------------+
+| IP Filtering                  | |checkmark|   | |checkmark| |
++-------------------------------+---------------+-------------+
+| Bring your own key            | |checkmark|   |             |
++-------------------------------+---------------+-------------+
 
 Frequently asked questions about Mattermost Cloud
 -------------------------------------------------
@@ -60,6 +60,11 @@ How do I buy a Mattermost Cloud subscription?
 Mattermost Cloud subscriptions are offered as an annual subscription. Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to buy a new subscription, or to renew, change, or cancel your existing subscription.
 
 If you’re currently using a Mattermost Cloud trial, contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to upgrade to Mattermost Enterprise. Your plan immediately changes to your upgraded plan. You will be invoiced as specified in your sales agreement.
+
+What is the minimum number of users I can purhcase on a subscription? 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The minimum purchase for a Mattermost license subscription is 100 users, with no set maximum. You can buy as many user seats as needed. 
 
 Is Mattermost Cloud subject to taxes?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

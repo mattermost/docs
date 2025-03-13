@@ -61,7 +61,7 @@ Who's eligible?
 Organizations applying for a non-profit license must meet **ALL** of the following requirements:
 
 - Be able to provide documentation that establishes the organization as a recognized nonprofit status.
-- Have no affiliation with government, academic, commercial, religious, or political entities.
+- Have no affiliation with government, academic, commercial, religious, or political entities in regions we're able to serve.
 - Be unable to afford a commercial Mattermost license.
 - Be willing to let us use their logo for promotional purposes.
 - Be willing to pay a $250 processing fee for a three-year, self-hosted Professional license contract for up to 1000 users.
@@ -126,7 +126,7 @@ How is a user defined for subscriptions?
 
 For the purpose of billing, a “user” is any account created in Mattermost that does not show as **Deactivated** in **System Console > User Management > Users**. Guests are also defined as users.
 
-Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`shared channels users </onboard/shared-channels>`, aren't counted towards the total number of activated users.
+Bots, deactivated users, and synthetic users in :doc:`Microsoft Teams integrations </collaborate/collaborate-within-connected-microsoft-teams>` and :doc:`connected workspace </onboard/connected-workspaces>` users aren't counted towards the total number of activated users.
 
 You can review your user count, for billing purposes, by going to **System Console > Site Statistics**, under **Total Activated Users**.
 

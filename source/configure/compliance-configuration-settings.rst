@@ -4,12 +4,19 @@ Compliance configuration settings
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Compliance**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables. 
+Review and manage the following compliance configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Compliance**:
 
 - `Data Retention Policies <#data-retention-policies>`__
 - `Compliance Export <#compliance-export>`__
 - `Compliance Monitoring <#compliance-monitoring>`__
 - `Custom Terms of Service <#custom-terms-of-service>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``MessageRetentionDays`` value is under ``DataRetentionSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.DataRetentionSettings.MessageRetentionDays'``
+  - When working with the ``config.json`` file manually, look for an object such as ``DataRetentionSettings``, then within that object, find the key ``MessageRetentionDays``.
 
 ----
 
@@ -28,7 +35,7 @@ Changes to properties in this section require a server restart before taking eff
 
 Access the following configuration settings in the System Console by going to **Compliance > Data Retention Policies**.
 
-.. config:setting:: dataretention-globalmessagepolicy
+.. config:setting:: global-retention-policy-for-messages
   :displayname: Global retention policy for messages (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.MessageRetentionDays
@@ -54,7 +61,7 @@ By default, messages are kept forever. If **Hours**, **Days**, or **Years** is c
 
   From Mattermost v9.5, when a ``MessageRetentionHours`` value is configured, the ``MessageRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``MessageRetentionDays`` value is configured, the ``MessageRetentionHours`` value must be ``0``.
 
-.. config:setting:: dataretention-globalfilepolicy
+.. config:setting:: global-retention-policy-for-files
   :displayname: Global retention policy for files (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.FileRetentionDays
@@ -80,7 +87,7 @@ By default, files are kept forever. If **Hours**, **Days**, or **Years** is chos
 
   From Mattermost v9.5, when a ``FileRetentionHours`` value is configured, the ``FileRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``FileRetentionDays`` value is configured, the ``FileRetentionHours`` value must be ``0``.
 
-.. config:setting:: dataretention-customretentionpolicy
+.. config:setting:: custom-retention-policy
   :displayname: Custom retention policy (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.DeletionJobStartTime
@@ -96,7 +103,7 @@ Custom retention policy
 
 Set how long Mattermost keeps messages and files across specific teams and channels by specifying a name for the custom retention policy, setting a duration value in days or years, and specifying the teams and channels that will follow this policy.
 
-.. config:setting:: dataretention-deletiontime
+.. config:setting:: data-deletion-time
   :displayname: Data deletion time (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
   :configjson: .DataRetentionSettings.DeletionJobStartTime
@@ -137,7 +144,7 @@ Compliance export
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Export**.
 
-.. config:setting:: compliance-exportenable
+.. config:setting:: enable-compliance-export
   :displayname: Enable compliance export (Compliance Export)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.EnableExport
@@ -159,7 +166,7 @@ Enable compliance export
 | This feature's ``config.json`` setting is ``"EnableExport": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exporttime
+.. config:setting:: compliance-export-time
   :displayname: Compliance export time (Compliance Export)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.DailyRunTime
@@ -179,7 +186,7 @@ This setting is based on the local time of the server.
 | This feature's ``config.json`` setting is ``"DailyRunTime": 01:00`` with 24-hour timestamp input in the form ``"HH:MM"``. |
 +---------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exportformat
+.. config:setting:: export-file-format
   :displayname: Export file format (Compliance Export)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.ExportFormat
@@ -197,7 +204,7 @@ Currently supported formats are CSV, Actiance XML, and Global Relay EML.
 
 If Global Relay is chosen, the following options will be presented:
 
-.. config:setting:: compliance-exportglobalrelaycustomertype
+.. config:setting:: global-relay-customer-account
   :displayname: Global Relay customer account (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.CustomerType
@@ -215,7 +222,7 @@ Type of Global Relay customer account your organization has. Can be one of: ``A9
 | This feature's ``config.json`` setting is ``"CustomerType": "A9"`` with options ``"A9``, ``"A10"``, and ``CUSTOM``. |
 +---------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exportglobalrelaysmtpuser
+.. config:setting:: global-relay-smtp-username
   :displayname: Global Relay SMTP username (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.SmtpUsername
@@ -233,7 +240,7 @@ The username for authenticating to the Global Relay SMTP server.
 | This feature's ``config.json`` setting is ``"SmtpUsername": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exportglobalrelaysmtppassword
+.. config:setting:: global-relay-smtp-password
   :displayname: Global Relay SMTP password (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.SMTPPassword
@@ -251,7 +258,7 @@ The password associated with the Global Relay SMTP username.
 | This feature's ``config.json`` setting is ``"SmtpPassword": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exportglobalrelayemail
+.. config:setting:: global-relay-email-address
   :displayname: Global Relay email address (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.EmailAddress
@@ -269,7 +276,7 @@ The email address your Global Relay server monitors for incoming compliance expo
 | This feature's ``config.json`` setting is ``"EmailAddress": ""`` with string input. |
 +-------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exportglobalrelaysmtpserver
+.. config:setting:: smtp-server-name
   :displayname: SMTP server name (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.CustomSMTPServerName
@@ -285,7 +292,7 @@ The SMTP server name URL that will receive your Global Relay EML file when a `cu
 | This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPServerName": ""`` with string input. |
 +----------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-exportglobalrelaysmtpport
+.. config:setting:: smtp-server-port
   :displayname: SMTP server port (Compliance Export - Global Relay EML)
   :systemconsole: Compliance > Compliance Export
   :configjson: .MessageExportSettings.GlobalRelaySettings.CustomSMTPPort
@@ -320,7 +327,7 @@ Settings used to enable and configure Mattermost compliance reports.
 
 Access the following configuration settings in the System Console by going to **Compliance > Compliance Monitoring**.
 
-.. config:setting:: compliance-monitorenable
+.. config:setting:: enable-compliance-reporting
   :displayname: Enable compliance reporting (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
   :configjson: .ComplianceSettings.Enable
@@ -342,7 +349,7 @@ Enable compliance reporting
 | This feature's ``config.json`` setting is ``"Enable": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-monitordirectory
+.. config:setting:: compliance-report-directory
   :displayname: Compliance report directory (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
   :configjson: .ComplianceSettings.Directory
@@ -360,7 +367,7 @@ Sets the directory where compliance reports are written.
 | This feature's ``config.json`` setting is ``"Directory": "./data/"`` with string input. |
 +-----------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-monitorenabledaily
+.. config:setting:: enable-compliance-reportingdaily
   :displayname: Enable daily report (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
   :configjson: .ComplianceSettings.EnableDaily
@@ -382,7 +389,7 @@ Enable daily report
 | This feature's ``config.json`` setting is ``"EnableDaily": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: compliance-monitorbatchsize
+.. config:setting:: batch-size
   :displayname: Batch size (Compliance Monitoring)
   :systemconsole: Compliance > Compliance Monitoring
   :configjson: .ComplianceSettings.BatchSize
@@ -410,7 +417,7 @@ Custom terms of service
 
 Access the following configuration settings in the System Console by going to **Compliance > Custom Terms of Service**.
 
-.. config:setting:: compliance-ctosenable
+.. config:setting:: enable-custom-terms-of-service
   :displayname: Enable custom terms of service (Custom Terms of Service)
   :systemconsole: Compliance > Custom Terms of Service
   :configjson: .SupportSettings.CustomTermsOfServiceEnabled
@@ -431,7 +438,7 @@ Enable custom terms of service
 
 **False**: During account creation or login, users can review Terms of Service by accessing the link configured via **System Console > Legal and Support > Terms of Service link**.
 
-.. config:setting:: compliance-ctostext
+.. config:setting:: custom-terms-of-service-text
   :displayname: Custom terms of service text (Custom Terms of Service)
   :systemconsole: Compliance > Custom Terms of Service
   :configjson: N/A
@@ -445,7 +452,7 @@ Custom terms of service text
 
 Text that will appear in your custom Terms of Service. Supports Markdown-formatted text.
 
-.. config:setting:: compliance-ctosreacceptanceperiod
+.. config:setting:: re-acceptance-period
   :displayname: Re-acceptance period (Custom Terms of Service)
   :systemconsole: Compliance > Custom Terms of Service
   :configjson: .SupportSettings.CustomTermsOfServiceReAcceptancePeriod

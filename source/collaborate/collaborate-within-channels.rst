@@ -4,30 +4,22 @@ Collaborate within channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Channels are where you connect, collaborate, and communicate with your team about various topics or projects. Use channels to organize conversations across different topics. :doc:`Sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <collaborate/organize-conversations:start or reply to threads>` are important ways to keep conversations active with your team.
+Channels are where you connect, collaborate, and communicate with your team about various topics or projects. Use channels to organize conversations across different topics. as you're :doc:`sending messages </collaborate/send-messages>`, :doc:`replying to messages </collaborate/reply-to-messages>`, and :ref:`participating in conversation threads <collaborate/organize-conversations:start or reply to threads>`.
 
 You're added to default channels automatically
 ----------------------------------------------
 
-Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is automatically added to two default public channels: **Town Square** and **Off-Topic**. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
-
-- **Town Square** is great for your team-wide communications, such as announcements.
-- **Off-Topic** is great for fun, social, non-work-related conversations.
+Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is automatically added to the **Town Square** channel. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
 
 .. note::
-  All users are added to the **Off-Topic** and **Town Square** channels automatically. Town Square can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` the Town Square channel.
+  The Town Square channel can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` this default channel.
 
 Channel sidebar
 ----------------
 
-In the channel sidebar on the left, you'll find all of the the channels you're a member of as well as useful channel management tools. As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the :doc:`customize your channel sidebar </preferences/customize-your-channel-sidebar>` documentation for details.
+In the channel sidebar on the left, you'll find all of the the channels you're a member of as well as useful channel management tools. See the :doc:`channel types </collaborate/channel-types>` to learn about the types of channels available, how they work, and how to identify them in the channel sidebar. Learn how to create channels by visiting the :doc:`create channels </collaborate/create-channels>` documentation.
 
-Mattermost offers four types of channels: **public channels**, **private channels**, **direct messages**, and **group messages**. See the :doc:`Channel Types </collaborate/channel-types>` documentation for more information. :doc:`Create channels </collaborate/create-channels>`, or start a new direct or group message by selecting the **Plus** |plus| icon.
-
-- **Public** channels are identified with a **Globe** |globe| icon. Anyone on the team can join a public channel.
-- **Private** channels are typically used for sensitive topics, and are identified with a **Lock** |lock| icon. You must be invited to private channels by another channel member.
-- **Direct messages** are private conversations between two people.
-- **Group messages** are private conversations for small groups of up to seven people. For larger group conversations, use a private channel instead.
+As your channel sidebar fills up with channels you've joined, you can organize your channels into categories based on how you work. See the :doc:`customize your channel sidebar </preferences/customize-your-channel-sidebar>` documentation for details.
 
 Learn more
 ----------
@@ -55,7 +47,6 @@ Learn more about collaborating within Mattermost channels:
   Mark channels as unread </collaborate/mark-channels-unread>
   Archive and unarchive channels </collaborate/archive-unarchive-channels>
 
-* :doc:`Channel types </collaborate/channel-types>` - Learn more about the types of channels available in Mattermost.
 * :doc:`Channel naming conventions </collaborate/channel-naming-conventions>` - Learn why channel names are important.
 * :doc:`Communicate a channel's focus and scope </collaborate/channel-header-purpose>` - Learn how to communicate a channel's scope and focus.
 * :doc:`Browse channels </collaborate/browse-channels>` - Browse all available public channels you can join, and all channels you're a member of.

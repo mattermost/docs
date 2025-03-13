@@ -6,6 +6,10 @@ Install Mattermost on Azure AKS
 
 You can use a supported `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`__ to install Mattermost on your existing Azure infrastructure.
 
+.. important::
+
+  You are responsible for Azure costs associated with any infrastructure you spin up to host a Mattermost server, and Azure credits cannot be applied towards the purchase of a Mattermost license.
+
 Infrastructure pre-requisites
 -----------------------------
 
@@ -112,3 +116,18 @@ Upload yor own TLS certificates at this stage to take advantage of all Mattermos
   c. You should be good to go.
 
 Learn more about managing your Mattermost server by visiting the :doc:`Managing Mattermost </guides/self-hosted-administration>` documentation.
+
+Upgrade Mattermost
+-------------------
+
+1. Visit the ``Extensions + Applications`` section of your AKS cluster where your Mattermost installation is deployed.
+2. You can enable minor version auto upgrades since these are not updating Mattermost version
+3. Expand the ``Configurarion Settings`` table and add the below configuration and the version you want to install as a value.
+
+    .. code:: 
+
+      global.azure.mattermost.version
+
+   .. image:: ../images/global-azure-mattermost-version.png
+    :alt: An example of using custom Mattermost version.
+4. Click ``Save`` and wait for the upgrade.

@@ -134,7 +134,7 @@ The Active Directory Object-Guid attribute (LDAP display name ``objectGUID``) is
 
 2. The `LDAP Golang package Mattermost uses <https://github.com/go-ldap/ldap>`_ emits the value as hexidecimal (base 16) array, with each byte separated by a backslash: ``\1e\bc\ff\1e\a3\4a\9d\4f\a5\08\d4\d8\1f\1f\58\73``
 
-  - You can remove the backslashes (``1ebcff1ea34a9d4fa508d4d81f1f5873``) and parse it with `Golang like this <https://play.golang.org/p/9b8iDPuz0Nm>`_. The snippets prints the base 10 representation of each value: ``[30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115]``
+  - You can remove the backslashes (``1ebcff1ea34a9d4fa508d4d81f1f5873``) and parse it with `Golang like this <https://go.dev/play/p/9b8iDPuz0Nm>`_. The snippets prints the base 10 representation of each value: ``[30 188 255 30 163 74 157 79 165 8 212 216 31 31 88 115]``
 
 3. Windows Powershell displays the value like this: ``1effbc1e-4aa3-4f9d-a508-d4d81f1f5873``
 
@@ -142,3 +142,9 @@ Does ``relaystate`` need to be passed back to the client from the identity provi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. If you're integrating Mattermost with a provider that doesn't already do so by default, ensure that ``relaystate`` is enabled. See the PingIdentity `SAML RelayState <https://support.pingidentity.com/s/article/SAML-RelayState-and-PingFederate#:~:text=RelayState%20is%20an%20optional%20parameter,the%20SAML%202.0%20bindings%20specification>`_ documentation for details.
+
+How can I troubleshoot the SAML logon process?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The most useful tool that we've found for troubleshooting SAML connection issues is the `SAML Chrome Panel <https://chromewebstore.google.com/detail/paijfdbeoenhembfhkhllainmocckace?utm_source=item-share-cp>`_ Chrome extension.  
+We're not aware of similar tools for other browsers, but this tool justifies installing Chrome!

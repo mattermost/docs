@@ -10,7 +10,7 @@ Depending on the type of error or problem you're experiencing, refer to the sect
 
 If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` or :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>`, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
-Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot>`__ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
+Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
 
 Important notes
 ---------------
@@ -25,13 +25,11 @@ Deployment troubleshooting
 Docker deployments
 ~~~~~~~~~~~~~~~~~~
 
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <install/install-docker:deploy mattermost on docker for production use>`, then skip the following command:
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, re-create the required directories and set their permissions, then skip the following command because it causes the deploy to stop working.
 
 .. code-block:: sh
 
    sudo chown -R 2000:2000 ./volumes/app/mattermost
-
-On M1 systems, this permission change causes the deploy to stop working, so we recommend skipping this step altogether.
 
 If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
@@ -99,14 +97,16 @@ You can find more on logging settings :ref:`here <configure/environment-configur
 Mattermost Desktop App logs
 ---------------------------
 
-The desktop app log file can be found in the user directory:
+Access desktop app logs by going to **Help > Show logs** from the menu bar.
+
+Alternatively, you can access desktop app log files in the following directory:
 
 - **Windows:** ``%userprofile%\AppData\Roaming\Mattermost\logs``
 - **Linux:** ``~/.local/share/Mattermost/logs`` OR ``~/.config/Mattermost/logs``
-- **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation)
+- **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation only)
 
-Mattermost Browser App logs
----------------------------
+Mattermost web logs
+--------------------
 
 The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser for action history. 
 
@@ -121,11 +121,13 @@ Review Mattermost environment
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
 
 - If the problem occurred subsequent to some period of normal operation, did anything change in the environment?
+
     - Was the client, host, or server upgraded?
     - Was an operating system update applied?
     - Did the network environment change? For example, was a server moved or a domain migrated?
     - Did the system (client or server) recently fail or abnormally terminate?
 - How many users are impacted?
+
     - Is this problem affecting one, some, or all users?
     - Is the problem occurring only for a user who was recently added to the environment, such as a new employee?
     - Do differences exist between the users who are affected and the users who are not affected?
@@ -417,11 +419,11 @@ Press :kbd:`Ctrl` :kbd:`Shift` :kbd:`S` to open the snipping tool to take a scre
 
 **iOS**
 
-Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-or-screen-recording-iphc872c0115/ios>`__.
+Take a screenshot or screen recording `on iPhone <https://support.apple.com/guide/iphone/take-a-screenshot-iphc872c0115/ios>`_.
 
 **Android**
 
-Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`__.
+Take a screenshot or record your screen on your `Android device <https://support.google.com/android/answer/9075928?hl=en>`_.
 
 Appendix
 --------

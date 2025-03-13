@@ -1,15 +1,46 @@
 # v9 changelog
 
+
 ```{Important}
-Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
-- Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
-- See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) documentation for details on upgrading to a newer release.
-- See the [changelog in progress](https://bit.ly/2nK3cVf) for details about the upcoming release.
+```{include} common-esr-support-upgrade.md
 ```
+
 
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.9, released 2025-02-19**
+  - Mattermost v9.11.9 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
+  - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
+  - Mattermost v9.11.9 contains no database or functional changes.
+- **9.11.8, released 2025-01-22**
+  - Mattermost v9.11.8 contains critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.0.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.5).
+  - Pre-packaged Channel Export plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-channel-export/releases/tag/v1.2.1).
+  - Pre-packaged Calls plugin [v0.29.7](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.7).
+  - Fixed a panic during LDAP synchronization [MM-61239](https://mattermost.atlassian.net/browse/MM-61239).
+  - Fixed an issue where the bulk export retention job would accidentally delete non-bulk export files and directories [MM-60888](https://mattermost.atlassian.net/browse/MM-60888).
+  - Fixed an issue where new messages from new channels wouldn't appear in the sidebar after reconnecting the websocket [MM-61361](https://mattermost.atlassian.net/browse/MM-61361).
+  - Mattermost v9.11.8 contains no database or functional changes.
+- **9.11.7, released 2025-01-15**
+  - Mattermost v9.11.7 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue with the web app status not being updated correctly for the current user [MM-59952](https://mattermost.atlassian.net/browse/MM-59952).
+  - Pre-packaged Boards plugin [v9.0.2](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.0.2).
+  - Fixed an issue with insertion errors to ``LinkMetadata`` table.
+  - Fixed an issue where the scroll position reset when custom emojis were requested [MM-62102](https://mattermost.atlassian.net/browse/MM-62102).
+  - Mattermost v9.11.7 contains the following database changes:
+    - Fixed an issue where Direct and Group Messages with a ``DeleteAt`` flag in the database could cause issues with some APIs.
+- **9.11.6, released 2024-12-10**
+  - Mattermost v9.11.6 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - A 200 response is now returned for HEAD requests to a sub-path rather than responding with a 302. This fixes mobile devices trying to connect to a server hosted on a sub-path [MM-58042](https://mattermost.atlassian.net/browse/MM-58042).
+  - Pre-packaged Calls plugin [v0.29.6](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.6).
+  - Fixed an issue with incorrect reporting in the **Server Updates** section in **System Console > Workspace Optimizations** [MM-62030](https://mattermost.atlassian.net/browse/MM-62030).
+  - Mattermost v9.11.6 contains no database or functional changes.
+- **9.11.5, released 2024-11-14**
+  - Mattermost v9.11.5 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin [v0.29.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.4).
+  - Mattermost v9.11.5 contains no database or functional changes.
 - **9.11.4, released 2024-10-28**
   - Mattermost v9.11.4 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where users would not see channels they were added to/messages from those channels in clustered environments [MM-59911](https://mattermost.atlassian.net/browse/MM-59911).
@@ -610,7 +641,7 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 #### User Interface (UI)
  - Pre-packaged Calls version [v0.24.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.24.0).
  - Pre-packaged GitLab plugin version [v1.8.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.8.0).
- - Added the [Outgoing OAuth Connections](https://mattermost.com/pl/outgoing-oauth-connections) integration type.
+ - Added the [Outgoing OAuth Connections](https://developers.mattermost.com/integrate/slash-commands/outgoing-oauth-connections/) integration type.
  - Re-designed the **System Console > User Management** screen, and added the ability to batch export users in CSV format (Professional and Enterprise plans). On MySQL, users cannot view live results of the batch export in the user interface.
  - Improved the appearance of profile/account menus.
  - Added support for checkbox types in the **System Console** settings.
@@ -668,6 +699,10 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.13, released 2024-11-14**
+  - Mattermost v9.5.13 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin [v0.29.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.4).
+  - Mattermost v9.5.13 contains no database or functional changes.
 - **9.5.12, released 2024-10-28**
   - Mattermost v9.5.12 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed desyncing issues with unreads between the team sidebar and the title bar [MM-54021](https://mattermost.atlassian.net/browse/MM-54021).
@@ -1310,7 +1345,7 @@ If you upgrade from a release earlier than v8.1, please read the other [Importan
  - Accelerate mission-critical workflows that keep your team aligned and your data secure on [the Mattermost and Atlassian platforms](https://mattermost.com/atlassian/).
 
 #### Air-Gapped, Edge-Ready Generative AI with Defense Unicorn's LeapfrogAI
- - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://www.defenseunicorns.com/leapfrogai).
+ - Deploy and utilize local GenAI models in edge, air-gapped, and zero-trust environments with [LeapfrogAI and Mattermost](https://defenseunicorns.com/leapfrogai).
 
 #### AI-Accelerated Collaboration
  - Mattermost partner Mobius Logic has enhanced the MS Teams Connector for the Microsoft 365 platform by embedding Mattermost directly inside [Microsoft Teams](https://docs.mattermost.com/about/mattermost-for-microsoft-teams.html).

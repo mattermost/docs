@@ -5,6 +5,10 @@ Mattermost's Secure Command and Control solution is designed to provide fast and
 
 The solution provides easy-to-use collaboration for technical teams, including team messaging, file sharing, audio and screen-share, and process automation directly from your mobile device on iOS or Android. The solution is specifically designed to address the challenges of enterprise-scale secure mobile communications.
 
+.. tip::
+
+    Download `this guide to out-of-band communications <https://mattermost.com/out-of-band-communications/>`_ to learn more about maintaining business continuity, and `this Mattermost for Security Team Operations datasheet <https://mattermost.com/mattermost-security-team-ops-datasheet/>`_ to learn how Mattermost helps increase cyber resilience with faster detection, response, and remediation workflows with collaboration purpose-built for security team operations.
+
 Features include:
 
 * :doc:`Private mobile communications </deploy/mobile-overview>` to provide secure mobile apps via encryption keys and certifications with custom mobile applications.

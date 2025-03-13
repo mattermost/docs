@@ -98,7 +98,7 @@ Below is additional information on how to configure the database for different l
 
     未尽事宜，可以参考以下链接：
 
-    - `SCWS 官方文档 <www.xunsearch.com/scws/docs.php>`_
+    - SCWS 官方文档
     - `Zhparser 官方文档 <https://github.com/amutu/zhparser/blob/master/README.md>`_
     - `Mattermost 建表语句 <https://github.com/mattermost/mattermost/tree/master/server/channels/db/migrations/postgres>`_
 
@@ -121,7 +121,7 @@ Mattermost で日本語検索をするためにはデータベースの設定変
 ガイド
 ~~~~~~
 
-Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <http://qiita.com/tags/Mattermost>`_ をご覧ください。
+Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <https://qiita.com/tags/mattermost>`_ をご覧ください。
 
 한국어 / Korean
 ---------------
@@ -148,7 +148,7 @@ MySQL 해결 방법
 
     [mysqld]
     ft_min_word_len = 2
-    innodb_ft_min_word_len = 2
+    innodb_ft_min_token_size = 2
 
 3. 데이터베이스를 재시작합니다. (이 과정은 반드시 필요합니다.)
 

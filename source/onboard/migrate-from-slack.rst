@@ -6,7 +6,7 @@ Migrate from Slack
 
 .. note::
 
-  `Slack's data control policies may change at any time <https://twitter.com/Austen/status/1752064934970896626>`_. Also, Slack may choose to change its export capabilities, and/or charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
+  `Slack's data control policies may change at any time <https://x.com/Austen/status/1752064934970896626>`_. Also, Slack may choose to change its export capabilities, and/or charge fees to customers for exporting data stored in Slack. Support for negotiating export of customer IP from Slack Enterprise can be requested by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
 Migrating from Slack to Mattermost involves the following steps:
 
@@ -28,10 +28,10 @@ Make sure you are running on a supported version of :doc:`Mattermost </about/mat
 2. Generate a Slack import
 --------------------------
 
-Slack offers two ways to `export your data from their product <https://get.slack.help/hc/en-us/articles/201658943-Export-your-workspace-data>`_.
+Slack offers two ways to `export your data from their product <https://slack.com/help/articles/201658943-Export-your-workspace-data>`_.
 
 1. Regular export - Contains only public channel posts. This does not include private channels, DMs, or group conversations. This can be generated from **Slack > Administration > Workspace settings > Import/Export Data > Export > Start Export**.
-2. Corporate export - Contains all posts. This includes public channels, private channels, DMs and group messages. You must `request this export type from Slack directly <https://slack.com/help/articles/1500001548241-Request-to-export-all-conversations>`__.
+2. Corporate export - Contains all posts. This includes public channels, private channels, DMs and group messages. You must `request this export type from Slack directly <https://slack.com/help/articles/1500001548241-Request-to-export-additional-data-from-your-workspace-or-Enterprise-Grid-org>`_.
 
 You will receive a zip file containing the following contents:
 
@@ -100,7 +100,7 @@ It's preferable to fetch e-mails first to avoid copying large attachments around
 
 Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
 
-Next, run the following command to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word like "my-team".
+Next, run the command below to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word and lowercase (i.e. if you named your team ``My Team``, ``<TEAM-NAME>`` would be ``my-team``).
 
 .. code-block:: sh
 

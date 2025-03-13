@@ -4,8 +4,7 @@
 ```
 
 ```{Important}
-- Support for Mattermost Server v9.5 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) is coming to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 or later is recommended.
-- We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
+```{include} common-esr-support.md
 ```
 
 ## Frequency
@@ -14,11 +13,19 @@ Mattermost releases a new mobile app version every month. Mattermost tests the l
 
 See the [Mobile app changelog](/about/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
 
+```{Important}
+We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
+```
+
 ## Latest releases
 
 | **Release** | **Released on** | **Support ends** | **Compatible with** |
 |:---|:---|:---|:---|
-| v2.21 {ref}`FEATURE <release-v2-21-0>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.21.0) \| {ref}`Changelog <release-v2-21-0>` | 2024-10-16 | 2024-11-15 | {ref}`v10.1 <release-v10.1-feature-release>`, `v10.0 <release-v10.0-major-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>`, {ref}`v9.10 <release-v9-10-feature-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
+| v2.25 {ref}`FEATURE <release-v2-25-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.25.1) \| {ref}`Changelog <release-v2-25-1>` | 2025-02-16 | 2025-03-15 | {ref}`v10.5 <release-v10.5-extended-support-release>`, {ref}`v10.4 <release-v10.4-feature-release>`, {ref}`v10.3 <release-v10.3-feature-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>` |
+| v2.24 {ref}`FEATURE <release-v2-24-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.24.1) \| {ref}`Changelog <release-v2-24-1>` | 2025-01-16 | 2025-02-15 | {ref}`v10.4 <release-v10.4-feature-release>`, {ref}`v10.3 <release-v10.3-feature-release>`, {ref}`v10.2 <release-v10.2-feature-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>` |
+| v2.23 {ref}`FEATURE <release-v2-23-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.23.1) \| {ref}`Changelog <release-v2-23-1>` | 2024-12-16 | 2025-01-15 | {ref}`v10.3 <release-v10.3-feature-release>`, {ref}`v10.2 <release-v10.2-feature-release>`, {ref}`v10.1 <release-v10.1-feature-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>` |
+| v2.22 {ref}`FEATURE <release-v2-22-0>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.22.0) \| {ref}`Changelog <release-v2-22-0>` | 2024-11-15 | 2024-12-15 | {ref}`v10.2 <release-v10.2-feature-release>`, {ref}`v10.1 <release-v10.1-feature-release>`, {ref}`v10.0 <release-v10.0-major-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
+| v2.21 {ref}`FEATURE <release-v2-21-0>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.21.0) \| {ref}`Changelog <release-v2-21-0>` | 2024-10-16 | 2024-11-15 | {ref}`v10.1 <release-v10.1-feature-release>`, {ref}`v10.0 <release-v10.0-major-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>`, {ref}`v9.10 <release-v9-10-feature-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
 | v2.20 {ref}`FEATURE <release-v2-20-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.20.1) \| {ref}`Changelog <release-v2-20-1>` | 2024-09-16 | 2024-10-15 | {ref}`v10.0 <release-v10.0-major-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>`, {ref}`v9.10 <release-v9-10-feature-release>`, {ref}`v9.9 <release-v9-9-feature-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
 | v2.19 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.19.2) \| {ref}`Changelog <release-v2-19-2>` | 2024-08-16 | 2024-09-15 | {ref}`v9.11 <release-v9-11-extended-support-release>`, {ref}`v9.10 <release-v9-10-feature-release>`, {ref}`v9.9 <release-v9-9-feature-release>`, {ref}`v9.8 <release-v9-8-feature-release>`, {ref}`v9.5 <release-v9-5-extended-support-release>` |
 | v2.18 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.18.1) \| {ref}`Changelog <release-v2-18-1>` | 2024-07-16 | 2024-08-15 | {ref}`v9.10 <release-v9-10-feature-release>` |
@@ -30,7 +37,7 @@ See the [Mobile app changelog](/about/mobile-app-changelog) for release details,
 | v2.12 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.12.2) \| {ref}`Changelog <release-v2-12-2>` | 2024-01-16 | 2024-02-15 | {ref}`v9.4 <release-v9-4-feature-release>` |
 | v2.11 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.11.0) \| {ref}`Changelog <release-v2-11-0>` | 2023-12-16 | 2024-01-15 | {ref}`v9.3 <release-v9-3-feature-release>` |
 | v2.10 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.10.1) \| {ref}`Changelog <release-v2-10-1>` | 2023-11-16 | 2023-12-15 | {ref}`v9.2 <release-v9-2-feature-release>` |
-| v2.9 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.9.1) \| {ref}`Changelog <release-v2-9-1>` | 2023-10-16 | 2023-11-15 | {ref}`v9.1 <release-v9-1-feature-release>` |
+| v2.9 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.9.0) \| {ref}`Changelog <release-v2-9-1>` | 2023-10-16 | 2023-11-15 | {ref}`v9.1 <release-v9-1-feature-release>` |
 | v2.8 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.8.2) \| {ref}`Changelog <release-v2-8-2>` | 2023-09-15 | 2023-10-15 | {ref}`v9.0 <release-v9-0-major-release>` |
 | v2.7 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.7.0) \| {ref}`Changelog <release-v2-7-0>` | 2023-08-16 | 2023-09-14 | {ref}`v8.1 <release-v8-1-extended-support-release>` |
 | v2.6 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.6.0) \| {ref}`Changelog <release-v2-6-0>` | 2023-07-16 | 2023-08-15 | {ref}`v8.0 <release-v8-0-major-release>` |

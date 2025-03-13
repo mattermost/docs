@@ -1,7 +1,7 @@
 Calls self-hosted deployment
 ============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
@@ -449,7 +449,7 @@ This is a sample diagram showing how the ``rtcd`` standalone service can be depl
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
 
-If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the :ref:`Kubernetes operator guide <install/install-kubernetes:mattermost operator>`.
+If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, see the :doc:`Deploy Mattermost on Kubernetes </install/install-kubernetes>` documentation.
 
 Helm Charts
 ~~~~~~~~~~~

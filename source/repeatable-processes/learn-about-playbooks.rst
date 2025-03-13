@@ -4,7 +4,14 @@ Learn about collaborative playbooks
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. Using collaborative playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
+A collaborative playbook is a repeatable process that is measured and refined over time. For example, the steps you follow when dealing with an outage, a software release, or welcoming a new member of your team can all be made into a playbook. 
+
+.. tip::
+
+  Looking to optimize team productivity? Learn how to automate repeatable workflows with `this on-demand webinar <https://mattermost.com/webinar/4-strategies-to-improve-technical-teams-productivity/>`_, then download our `Mattermost Playbooks datasheet <https://mattermost.com/mattermost-playbooks-datasheet/>`_.
+
+
+Using collaborative playbooks, development teams can orchestrate prescribed workflows and define, streamline, and document complex, recurring operations.
 
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Collaborative playbooks are made up of:
 
@@ -41,7 +48,7 @@ Create a welcome message so that when members join your run, it's easy for them 
 Tasks and checklists
 --------------------
 
-Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible, so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call. When you're setting up these tasks, you can add slash commands, at-mentions, and integrations with tools such as Zoom to make the initiation as seamless as possible.
+Tasks and checklists are the foundation of a template and a workflow. In an incident, it's critical to get stakeholders together as soon as possible, so one of the first tasks is to add the on-call engineer to the channel, followed by starting a bridge call. When you're setting up these tasks, you can add slash commands, @mentions, and integrations with tools such as Zoom to make the initiation as seamless as possible.
 
 Status updates
 --------------

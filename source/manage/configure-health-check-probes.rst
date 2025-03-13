@@ -27,7 +27,7 @@ A sample request is included below. The endpoint checks if the server is up and 
 - If ``GoRoutineHealthThreshold`` and the number of goroutines on the server exceeds that threshold, the server is considered unhealthy.
 - If ``GoRoutineHealthThreshold`` is not set or the number of goroutines is below the threshold the server is considered healthy.
 
-This endpoint can also be provided to schedulers like `Kubernetes <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/#before-you-begin>`_.
+This endpoint can also be provided to schedulers like `Kubernetes <https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/>`_.
 
 .. code-block:: go
 

@@ -4,7 +4,29 @@ Plugins configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Self-hosted can manage the following configuration settings in **System Console > Plugins** or by editing the ``config.json`` file as described in the following tables. 
+Review and manage the following plugin configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Plugins**:
+
+- `Plugin management <#plugin-management>`__
+- `Calls <#calls>`__
+- `GitLab <#gitlab>`__
+- `GitHub <#github>`__
+- `Jira <#jira>`__
+- `Legal Hold <#legal-hold>`__
+- `Microsoft Calendar <#microsoft-calendar>`__
+- `MS Teams <#ms-teams>`__
+- `Performance metrics <#performance-metrics>`__
+- `Collaborative playbooks <#collaborative-playbooks>`__
+- `User satisfaction surveys <#user-satisfaction-surveys>`__
+- `ServiceNow <#servicenow>`__
+- `Zoom <#zoom>`__
+- `config.json-only settings <#config-json-only-settings>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``Enable`` value is under ``PluginSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.PluginSettings.Enable'``
+  - When working with the ``config.json`` file manually, look for an object such as ``PluginSettings``, then within that object, find the key ``Enable``.
 
 ----
 
@@ -13,7 +35,7 @@ Plugin management
 
 Access the following configuration settings in the System Console by going to **Plugins > Plugin Management**.
 
-.. config:setting:: plugins-enable
+.. config:setting:: enable-plugins
   :displayname: Enable plugins (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.Enable
@@ -31,7 +53,19 @@ Enable plugins
 |                                                                                                                                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLE``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: plugins-requiresignature
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Resource Consumption: Plugins consume system resources such as CPU, memory, and disk. Disabling them frees up these resources, allowing the core Mattermost application to run more efficiently.
+  - Reduced Complexity: Each plugin can add additional logic and processing requirements. By reducing the number of active plugins, you lower the complexity and potential points of failure in the system.
+  - Faster Load Times: Disabling plugins can lead to faster server startup and lower latency during user interactions, as there are fewer components for the system to initialize and manage.
+  - Stability: Some plugins may have bugs or performance issues that can affect the overall performance and stability of the Mattermost instance. Disabling problematic or under-utilized plugins can enhance the stability of the system.
+  - Maintenance and Updates: Managing fewer plugins reduces the overhead associated with maintaining and updating them, which can contribute to smoother operation and less downtime
+  - However, plugins are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+
+
+.. config:setting:: require-plugin-signature
   :displayname: Require plugin signature (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.RequirePluginSignature
@@ -56,7 +90,7 @@ Require plugin signature
   - Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.
   - Enabling this configuration will result in `plugin file uploads <#upload-plugin>`__ being disabled in the System Console.
 
-.. config:setting:: plugins-automaticprepackagedplugins
+.. config:setting:: automatic-prepackaged-plugins
   :displayname: Automatic prepackaged plugins (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.AutomaticPrepackagedPlugins
@@ -74,7 +108,7 @@ Automatic prepackaged plugins
 |                                                                                                                                                                                 | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-upload
+.. config:setting:: upload-plugin
   :displayname: Upload Plugin (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: EnableUploads
@@ -101,7 +135,7 @@ Upload Plugin
     may also be required.
   - The ability to upload plugin files is disabled when the `Require plugin signature <#require-plugin-signature>`__ configuration setting is enabled.
 
-.. config:setting:: plugins-enablemarketplace
+.. config:setting:: enable-pluginsmarketplace
   :displayname: Enable marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.EnableMarketplace
@@ -119,7 +153,7 @@ Enable Marketplace
 |                                                                                                           | - Environment variable: ``MM_PLUGINSETTINGS_ENABLEMARKETPLACE``                  |
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-enableremotemarketplace
+.. config:setting:: enable-pluginsremotemarketplace
   :displayname: Enable remote marketplace (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.EnableRemoteMarketplace
@@ -143,7 +177,7 @@ Enable remote Marketplace
   - For Mattermost v9.0, the ``MM_FEATUREFLAGS_STREAMLINEDMARKETPLACE`` feature flag must be set to ``false``, and this configuration setting must be set to ``true`` to access a configured remote marketplace URL.
   - Each Mattermost host must have network access to the endpoint set in MarketplaceURL.
 
-.. config:setting:: plugins-marketplaceurl
+.. config:setting:: marketplace-url
   :displayname: Marketplace URL (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.MarketplaceURL
@@ -159,7 +193,7 @@ Marketplace URL
 | String input. Default is **https://api.integrations.mattermost.com** | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``       |
 +----------------------------------------------------------------------+--------------------------------------------------------------------+
 
-.. config:setting:: plugins-installedpluginstates
+.. config:setting:: installed-plugin-state
   :displayname: Installed plugin state (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.PluginStates
@@ -175,7 +209,7 @@ Installed plugin state
 | The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: plugins-pluginsettings
+.. config:setting:: plugin-settings
   :displayname: Plugin settings (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
   :configjson: .PluginSettings.Plugins
@@ -201,7 +235,7 @@ Calls
 
 Access the following configuration settings in the System Console by going to **Plugins > Calls**.
 
-.. config:setting:: plugins-callsenable
+.. config:setting:: enable-plugin
   :displayname: Enable plugin (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.PluginStates.com.mattermost.calls.Enable
@@ -219,7 +253,7 @@ Enable plugin
 |                                                                                | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES_COM_MATTERMOST_CALLS``                          |
 +--------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsrtcserveraddress
+.. config:setting:: rtc-server-address-udp
   :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserveraddress
@@ -242,7 +276,7 @@ RTC server address (UDP)
 .. note::
   This setting is only applicable when not running calls through the standalone ``rtcd`` service.
 
-.. config:setting:: plugins-callsrtcserveraddress
+.. config:setting:: rtc-server-address-udp
   :displayname: RTC server port (TCP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserveraddress
@@ -265,7 +299,7 @@ RTC server address (TCP)
 .. note::
   This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
-.. config:setting:: plugins-callsrtcserverportudp
+.. config:setting:: rtc-server-port-udp
   :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserverport
@@ -290,7 +324,7 @@ RTC server port (UDP)
 .. note::
   This setting is only applicable when not running calls through the standalone ``rtcd`` service.
 
-.. config:setting:: plugins-callsrtcserverporttcp
+.. config:setting:: rtc-server-port-tcp
   :displayname: RTC server port (TCP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserverport
@@ -315,7 +349,7 @@ RTC server port (TCP)
 .. note::
   This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
-.. config:setting:: plugins-enableonspecificchannels
+.. config:setting:: enable-pluginsonspecificchannels
   :displayname: Enable on specific channels (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.allowenablecalls
@@ -336,7 +370,7 @@ Enable on specific channels
 |                                                                                                                                        | - Environment variable: N/A                                                                                     |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-testmode
+.. config:setting:: test-mode
   :displayname: Test mode (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.defaultenabled
@@ -360,7 +394,7 @@ Test mode
 .. note::
   Use this setting as a system admin to confirm calls work as expected. When **false**, users attempting to start calls are prompted to contact a system admin, and system admins are prompted to confirm that calls are working as expected before switching to live mode.
 
-.. config:setting:: plugins-callsicehost
+.. config:setting:: ice-host-override
   :displayname: ICE host override (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostoverride
@@ -391,7 +425,7 @@ ICE host override
 
 .. |ice_host_override_link| replace:: :ref:`ICE Host Override <configure/plugins-configuration-settings:ice host override>`
 
-.. config:setting:: plugins-callsicehostportoverride
+.. config:setting:: ice-host-overrideportoverride
   :displayname: ICE host port override (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostportoverride
@@ -416,7 +450,7 @@ ICE host port override
 .. note::
   This value will apply to both UDP and TCP host candidates.
 
-.. config:setting:: plugins-callsrtcdserviceurl
+.. config:setting:: rtcd-service-url
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
@@ -442,7 +476,7 @@ RTCD service URL
   - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
   - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``
 
-.. config:setting:: plugins-callsmaxcallparticipants
+.. config:setting:: max-call-participants
   :displayname: Max call participants (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
@@ -465,7 +499,7 @@ Max call participants
 .. note::
   This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.
 
-.. config:setting:: plugins-callsiceservers
+.. config:setting:: ice-servers-configurations
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs
@@ -523,7 +557,7 @@ ICE servers configurations
 .. note::
   To get TURN generated credentials to work you must provide a secret through the *TURN static auth secret* setting below.
 
-.. config:setting:: plugins-callsturnauthsecret
+.. config:setting:: turn-static-auth-secret
   :displayname: TURN static auth secret (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.turnstaticauthsecret
@@ -542,7 +576,7 @@ TURN static auth secret
 | This is an optional field.                                                 | - Environment variable: N/A                                                                                                      |
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsturncredentialsexpiration
+.. config:setting:: turn-credentials-expiration
   :displayname: TURN credentials expiration (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.turncredentialsexpirationminutes
@@ -562,7 +596,7 @@ TURN credentials expiration
 | Default is **1440** (one day).                                                         |                                                                                                                                              |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsserversideturn
+.. config:setting:: server-side-turn
   :displayname: Server side TURN (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.serversideturn
@@ -584,7 +618,7 @@ Server side TURN
 | Changing this setting requires a plugin restart to take effect.                                      |                                                                                                                            |
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsallowscreensharing
+.. config:setting:: allow-screen-sharing
   :displayname: Allow screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.allowscreensharing
@@ -606,7 +640,7 @@ Allow screen sharing
 | Changing this setting requires a plugin restart to take effect.        |                                                                                                                                |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsenablesimulcast
+.. config:setting:: enable-pluginsimulcast
   :displayname: (Experimental) Enable simulcast for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
@@ -632,7 +666,7 @@ Enable simulcast for screen sharing (Experimental)
   - Calls plugin version >= v0.16.0 
   - ``rtcd`` version >= v0.10.0 (if in use)
 
-.. config:setting:: plugins-enablecallrecordings
+.. config:setting:: enable-pluginscallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablerecordings
@@ -656,7 +690,7 @@ Enable call recordings
 | Changing this setting requires a plugin restart to take effect.                                                                                       |                                                                                                                              |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-jobserviceurl
+.. config:setting:: job-service-url
   :displayname: Job service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.jobserviceurl
@@ -682,7 +716,7 @@ Job service URL
   - As of Calls v0.25 it's possible to override the site URL used by jobs to connect by setting the ``MM_CALLS_RECORDER_SITE_URL`` or ``MM_CALLS_TRANSCRIBER_SITE_URL`` environment variables respectively. This can be helpful to avoid the jobs
     from connecting through the public Site URL configured in Mattermost and thus potentially bypass the public network.
 
-.. config:setting:: plugins-maximumcallrecordingduration
+.. config:setting:: maximum-call-recording-duration
   :displayname: Maximum call recording duration (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxrecordingduration
@@ -702,7 +736,7 @@ Maximum call recording duration
 | The default is **60**. The maximum is **180**. This is a required value.                                                    |                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-recordingquality
+.. config:setting:: call-recording-quality
   :displayname: Call recording quality (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.recordingquality
@@ -724,7 +758,7 @@ Call recording quality
 .. note::
   The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
 
-.. config:setting:: plugins-enablecalltranscriptions
+.. config:setting:: enable-pluginscalltranscriptions
   :displayname: Enable call transcriptions (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enabletranscriptions
@@ -749,7 +783,7 @@ Enable call transcriptions (Beta)
 .. note::
   This setting is available starting in plugin version 0.22. Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. 
 
-.. config:setting:: plugins-transcribermodelsize
+.. config:setting:: transcriber-model-size
   :displayname: Call transcriber model size (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize
@@ -771,7 +805,7 @@ Transcriber model size
 .. note::
   This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
 
-.. config:setting:: plugins-transcribernumthreads
+.. config:setting:: call-transcriber-threads
   :displayname: Call transcriber threads (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribernumthreads
@@ -793,7 +827,7 @@ Call transcriber threads
 .. note::
   The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
 
-.. config:setting:: plugins-enablelivecaptions
+.. config:setting:: enable-pluginslivecaptions
   :displayname: (Experimental) Enable live captions (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
@@ -821,7 +855,7 @@ Enable live captions (Beta)
 .. note::
   This setting is available starting in plugin version 0.26.2. Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` to be enabled.
 
-.. config:setting:: plugins-livecaptionsmodelsize
+.. config:setting:: live-captions-model-size
   :displayname: Live captions: Model size (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsmodelsize
@@ -843,7 +877,7 @@ Live captions: Model size
 .. note::
   This setting is available starting in plugin version 0.26.2. The model size setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
 
-.. config:setting:: plugins-livecaptionsnumtranscribers
+.. config:setting:: live-captions-number-of-transcribers-used-per-call
   :displayname: Live captions: Number of transcribers used per call (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumtranscribers
@@ -865,7 +899,7 @@ Live captions: Number of transcribers used per call
 .. note::
   This setting is available starting in plugin version 0.26.2. The live captions number of transcribers setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information.
 
-.. config:setting:: plugins-livecaptionsnumthreadspertranscriber
+.. config:setting:: live-captions-number-of-threads-per-transcriber
   :displayname: Live captions: Number of threads per transcriber (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumthreadspertranscriber
@@ -887,7 +921,7 @@ Live captions: Number of threads per transcriber
 .. note::
   This setting is available starting in plugin version 0.26.2. The live captions number of threads per transcriber setting will affect the performance of the job service. Refer to the `performance and scalability recommendations <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`_ documentation for more information
 
-.. config:setting:: plugins-livecaptionslanguage
+.. config:setting:: live-captions-language
   :displayname: Live captions language (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionslanguage
@@ -906,7 +940,7 @@ Live captions language
 | If blank, the lange will be set to 'en' (English) as default.                                                       |                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-callsenableipv6
+.. config:setting:: enable-pluginipv6
   :displayname: (Experimental) Enable IPv6 (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enableipv6
@@ -931,7 +965,7 @@ Live captions language
 .. note::
   This setting is available starting in plugin version 0.17, and is only applicable when not running calls through the standalone ``rtcd`` service.
 
-.. config:setting:: plugins-enablecallringing
+.. config:setting:: enable-pluginscallringing
   :displayname: Enable call ringing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enableringing
@@ -949,7 +983,7 @@ Enable call ringing
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                                              |
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-enableav1
+.. config:setting:: enable-pluginsav1
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enableav1
@@ -974,7 +1008,7 @@ Enable AV1 (Experimental)
   :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.
 
 
-.. config:setting:: plugins-enabledcsignaling
+.. config:setting:: enable-pluginsdcsignaling
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling
@@ -999,7 +1033,7 @@ Enable DC signaling (Experimental)
 
 ----
 
-.. config:setting:: integrations-gitlab
+.. config:setting:: gitlab
   :displayname: GitLab interoperability (Plugins)
   :systemconsole: Plugins > GitHub
   :configjson: gitlab
@@ -1016,7 +1050,7 @@ See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>`
 
 ----
 
-.. config:setting:: integrations-github
+.. config:setting:: github
   :displayname: GitHub interoperability (Plugins > GitHub)
   :systemconsole: Plugins > GitHub
   :configjson: github
@@ -1033,7 +1067,7 @@ See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>`
 
 ----
 
-.. config:setting:: integrations-jira
+.. config:setting:: jira
   :displayname: Jira interoperability (Plugins > Jira)
   :systemconsole: Plugins > Jira
   :configjson: jira
@@ -1050,7 +1084,7 @@ See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` pro
 
 ----
 
-.. config:setting:: integrations-legalhold
+.. config:setting:: legal-hold
   :displayname: Perform legal holds (Plugins > Legal Hold)
   :systemconsole: Plugins > Legal Hold
   :configjson: legal-hold
@@ -1067,7 +1101,7 @@ See the :doc:`Legal holds </comply/legal-hold>` product documentation for detail
 
 ----
 
-.. config:setting:: plugins-msteamscalendar
+.. config:setting:: microsoft-calendar
   :displayname: Microsoft Calendar interoperability (Plugins > Microsoft Calendar)
   :systemconsole: Plugins > Microsoft Calendar
   :configjson: N/A
@@ -1084,7 +1118,7 @@ See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-cal
 
 ----
 
-.. config:setting:: plugins-msteamsmeeting
+.. config:setting:: microsoft-teams-meetings
   :displayname: Microsoft Teams Meetings interoperability (Plugins > MS Teams Meetings)
   :systemconsole: Plugins >  MS Teams Meetings
   :configjson: N/A
@@ -1115,12 +1149,16 @@ MS Teams
 
 Mattermost for Microsoft Teams enables you to break through siloes in a mixed Mattermost and Teams environment by forwarding real-time chat notifications from Teams to Mattermost.
 
+.. tip::
+
+  Download our `Mattermost for Microsoft Teams datasheet <https://mattermost.com/mattermost-for-microsoft-teams-datasheet/>`_ to learn how Mattermost helps your organization get more from your Microsoft tools.
+
 Access the following configuration settings in the System Console by going to **Plugins > MS Teams**.
 
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
-.. config:setting:: plugins-msteamsenable
+.. config:setting:: enable-plugin
   :displayname: Enable plugin (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1144,7 +1182,7 @@ Enable plugin
   Use the `Enabled Teams <#enabled-teams>`__ configuration option to specify which Mattermost teams synchronize
   direct and group messages with Microsoft Teams chats.
 
-.. config:setting:: plugins-msteamstenantid
+.. config:setting:: tenant-id
   :displayname: Tenant ID (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1160,7 +1198,7 @@ Tenant ID
 |                                                                        | - Environment variable: N/A                       |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamsclientid
+.. config:setting:: client-id
   :displayname: Client ID (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1176,7 +1214,7 @@ Client ID
 |                                                                        | - Environment variable: N/A                       |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamsclientsecret
+.. config:setting:: client-secret
   :displayname: Client secret (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1192,7 +1230,7 @@ Client secret
 | Alpha-numeric value.                                                    | - Environment variable: N/A                       |
 +-------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamsgenerateatrestencryptionkey
+.. config:setting:: at-rest-encryption-key
   :displayname: At rest encryption key (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1212,7 +1250,7 @@ At rest encryption key
 .. note::
   Select **Regenerate** to generate a new key. 
 
-.. config:setting:: plugins-msteamsgeneratewebhooksecret
+.. config:setting:: webhook-secret
   :displayname: Webhook secret (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1231,7 +1269,7 @@ Webhook secret
 .. note::
   Select **Regenerate** to generate a new key.
 
-.. config:setting:: plugins-msteamsuseevaluationapipaymodel
+.. config:setting:: use-the-evaluation-api-pay-model
   :displayname: Use the evaluation API pay model (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1252,7 +1290,7 @@ Use the evaluation API pay model
 | - **false**: **(Default)** Disables the evaluation API pay model.      |                                                   |
 +------------------------------------------------------------------------+---------------------------------------------------+
 
-.. config:setting:: plugins-msteamssyncnotifications
+.. config:setting:: sync-notifications
   :displayname: Sync Notifications
   :systemconsole: Plugins > MS Teams (Plugins - MS Teams)
   :configjson: N/A
@@ -1274,7 +1312,7 @@ Sync notifications
 | - **false**: Do not sync notifications.                                |                                                    |
 +------------------------------------------------------------------------+----------------------------------------------------+
 
-.. config:setting:: plugins-msteamsmaxsizeattachments
+.. config:setting:: maximum-size-of-attachments-to-support-complete-one-time-download
   :displayname: Maximum size of attachments to support complete one time download (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1292,7 +1330,7 @@ Maximum size of attachments to support complete one time download
 | Numerical value. Default is **20** MiB.                             |                                                          |
 +---------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: plugins-msteamsbuffer
+.. config:setting:: buffer-size-for-streaming-files
   :displayname: Buffer size for streaming files (Plugins - MS Teams)
   :systemconsole: Plugins > MS Teams
   :configjson: N/A
@@ -1331,7 +1369,7 @@ Use collaborative playbooks in Mattermost to provide structure, monitoring and a
 
 Access the following configuration settings in the System Console by going to **Plugins > Collaborative playbooks**.
 
-.. config:setting:: plugins-playbooksenable
+.. config:setting:: enable-plugin
   :displayname: Enable plugin (Plugins - Collaborative playbooks)
   :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
@@ -1349,7 +1387,7 @@ Enable plugin
 |                                                                                                   | - Environment variable:                                     |
 +---------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
-.. config:setting:: plugins-playbooksenabledteams
+.. config:setting:: enable-plugindteams
   :displayname: Enabled teams (Plugins - Collaborative playbooks)
   :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
@@ -1365,7 +1403,7 @@ Enabled teams
 |                                                                                            | - Environment variable:                                     |
 +--------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
-.. config:setting:: plugins-playbooksexperimentalfeatures
+.. config:setting:: enable-experimental-features
   :displayname: Enable experimental features (Plugins - Collaborative playbooks)
   :systemconsole: Plugins > Collaborative playbooks
   :configjson: 
@@ -1395,7 +1433,7 @@ This plugin enables Mattermost to send user satisfaction surveys to gather feedb
 
 Access the following configuration settings in the System Console by going to **Plugins > User Satisfaction Surveys**.
 
-.. config:setting:: plugins-surveysenable
+.. config:setting:: enable-plugin
   :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
   :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
@@ -1413,7 +1451,7 @@ Enable plugin
 |                                                                                                               | - Environment variable: N/A                                                                  |
 +---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-surveysenablesend
+.. config:setting:: enable-pluginsend
   :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
   :systemconsole: Plugins > User Satisfaction Surveys
   :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
@@ -1435,7 +1473,7 @@ Enable user satisfaction survey
 
 ----
 
-.. config:setting:: integrations-servicenow
+.. config:setting:: servicenow
   :displayname: ServiceNow interoperability (Plugins)
   :systemconsole: Plugins > ServiceNow
   :configjson: servicenow
@@ -1453,7 +1491,7 @@ See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interopera
 
 ----
 
-.. config:setting:: integrations-zoom
+.. config:setting:: zoom
   :displayname: Zoom interoperability (Plugins)
   :systemconsole: Plugins > Zoom
   :configjson: zoom
@@ -1476,7 +1514,7 @@ config.json-only settings
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-.. config:setting:: plugins-sigpublickeyfile
+.. config:setting:: signature-public-key-files
   :displayname: Signature public key file (Plugins)
   :systemconsole: N/A
   :configjson: SignaturePublicKeyFiles
@@ -1494,7 +1532,7 @@ In addition to the Mattermost plugin signing key built into the server, each pub
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: plugins-chimeraoauthproxyurl
+.. config:setting:: chimera-oauth-proxy-url
   :displayname: Chimera OAuth proxy URL (Plugins)
   :systemconsole: N/A
   :configjson: ChimeraOAuthProxyUrl

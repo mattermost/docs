@@ -4,11 +4,11 @@ Connect GitLab to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
+Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. You control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews, and many more. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
 
-.. note::
-  - You can also control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews, and many more.
-  - Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
+.. tip::
+
+  Watch `this on-demand webinar on release management with Mattermost and GitLab <https://mattermost.com/webinar/release-management-with-gitlab/>`_ to learn how to streamline and standardize your release processes, while reducing the amount of effort required to ship your latest releases.
 
 .. image:: ../images/gitlab_mattermost.png
   :alt: An example of the GitLab integration for Mattermost.
@@ -17,6 +17,10 @@ Setup
 ------
 
 Setup starts in GitLab and configuration ends in Mattermost.
+
+.. note::
+
+  Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
 
 Register an OAuth app in GitLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -61,7 +65,7 @@ Notify your teams that they can `connect their GitLab accounts to Mattermost <#c
 Upgrade
 -------
 
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-gitlab/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-gitlab/releases>`__ for the latest release, available releases, and compatibility considerations.
 
 Usage
 -----
@@ -75,14 +79,14 @@ Connect a GitLab account to Mattermost
 
 Run the ``/gitlab connect`` slash account in any Mattermost channel to link your Mattermost account with your GitLab account.
 
-Disconnect a GitLab account by running the ``/gitlab disconnect`` slash comamnd. Run the ``/gitlab me`` slash command to review which account is connected to GitLab.
+Disconnect a GitLab account by running the ``/gitlab disconnect`` slash command. Run the ``/gitlab me`` slash command to review which account is connected to GitLab.
 
 Once connected, run the ``/gitlab help`` slash command to see what you can do.
 
 Get started
 ~~~~~~~~~~~
 
-Run the  ``/gitlab todo`` slash command to get a list of todos, assigned issues, assigned merge requests and merge requests awaiting your review. Alternatively, use the options located in the left sidebar.
+Run the  ``/gitlab todo`` slash command to get a list of to-do's, assigned issues, assigned merge requests and merge requests awaiting your review. Alternatively, use the options located in the left sidebar.
 
 Run the ``/gitlab webhook`` slash command to have GitLab send events to Mattermost. For example: ``/gitlab webhook add group[/project]``
 
@@ -118,9 +122,9 @@ Run the ``/gitlab settings [setting] [value]`` slash command to update your pref
 Get help
 --------
 
-Mattermost customers can open a `Mattermost support case <https://mattermost.zendesk.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost GitLab plugin repository <https://github.com/mattermost/mattermost-plugin-gitlab>`_.
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost GitLab plugin repository <https://github.com/mattermost/mattermost-plugin-gitlab>`_.
 
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+For questions, feedback, and assistance, join our public `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Customize
 ---------

@@ -5,12 +5,209 @@
 
 This changelog summarizes updates to Mattermost desktop app releases for [Mattermost](https://mattermost.com).
 
+```{Important}
+```{include} common-esr-support.md
+```
+
+(release-v5-11)=
+## Release v5.11 (Extended Support Release)
+
+- **v5.11.2, released 2025-03-12**
+
+  - Fixed an issue where the incompatible server screen showed by default when the server info was not present.
+
+- **v5.11.1, released 2025-03-01**
+
+  - Mattermost Desktop App v5.11.1 contains a high severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Added a server incompatible version screen [MM-63224](https://mattermost.atlassian.net/browse/MM-63224). Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
+  - Fixed an issue where the server drop-down wouldn't render properly on first load [MM-62781](https://mattermost.atlassian.net/browse/MM-62781).
+  - Updated the error page with new visuals [MM-62724](https://mattermost.atlassian.net/browse/MM-62724).
+
+- **v5.11.0, released 2025-02-14**
+
+  - Original v5.11.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+```{Note}
+Mattermost Desktop App v5.11.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 132+.
+
+### Improvements
+
+#### Linux
+
+- Modified rpm-digest to utilize sha256 instead of md5 to all for rpm installation on FIPS mode enabled Enterprise Linux systems.
+
+#### All Platforms
+
+- Added two menu items to help users forcibly clear out cache and session data.
+- Improved the help options in the **Help** menu.
+- Updated the styling of the **Downloads** menu to improve text fitting and to prevent text overlap.
+- Refreshed loading and welcome screens.
+- Server URLs are now auto-filled when deep-linking into the Desktop App if the server isn't configured.
+- Removed legacy code for older unsupported Mattermost servers.
+- Calls: while the popout window is open, the widget window's visibility will change so that it is not always on top of other windows.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 34.0.1. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### macOS
+
+- Fixed an issue where the MAS migration from DMG would always fail, fixed a potential crash case.
+
+#### Windows
+
+- Fixed an issue with per-server permission checks for GPO-configured servers on Windows.
+- Fixed an issue where the app could crash loading a thumbnail on Windows.
+
+#### Linux
+
+- Fixed an issue for Linux users where the app could crash when trying to add the first server.
+
+#### All Platforms
+
+- Fixed an issue where autocompleting did not stop while the user was typing `https://`.
+- Fixed an issue preventing the screen sharing selection modal to show when the app was focused on a different tab (e.g. Playbooks, Boards).
+- Fixed an issue trying to download images using right-click > **Save As...**.
+- Fixed an issue where the URL view would trap focus when tabbing over a link.
+
+### Known Issues
+
+- Users with servers running Mattermost v9.3 and earlier versions are not supported by this upgrade. Mattermost v9.4 or later is required.
+- Boards is not using the new Desktop API, causing issues in v5.11+ [MM-61745](https://mattermost.atlassian.net/browse/MM-61745). Users of v5.11 will need to upgrade their Boards plugin version to v9.1.0+ avoid the issue.
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+### Contributors
+
+- [andr-sokolov](https://github.com/andr-sokolov), [devinbinnie](https://github.com/devinbinnie), [jonathan-dove](https://github.com/jonathan-dove), [pvev](https://github.com/pvev), [s1Sharp](https://github.com/s1Sharp), [streamer45](https://github.com/streamer45).
+
+(release-v5-10)=
+## Release v5.10
+
+- **v5.10.2, released 2024-12-17**
+
+  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
+  - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
+  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
+  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
+  - Added support for downgrading using the MSI installer [MM-62196](https://mattermost.atlassian.net/browse/MM-62196).
+  - Fixed an issue where the application would not focus the browser window when opening an external link [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
+  - Upgraded to Electron v33.2.0.
+
+- **v5.10.1, released 2024-11-20**
+
+  - Fixed an issue where the app would not restore when opened again from cold [MM-61864](https://mattermost.atlassian.net/browse/MM-61864).
+  - Fixed an issue where deep linking from cold didn't work on Linux.
+
+- **v5.10.0, released 2024-11-15**
+
+  - Original v5.10.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+
+```{Note}
+Mattermost Desktop App v5.10.0 contains a low severity level security fix. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+```
+
+### Compatibility
+
+- Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 130+.
+
+### Improvements
+
+#### Windows
+
+- Started using ``titleBarOverlay`` for Windows instead of the buttons that were baked-in to the app.
+
+#### Linux
+
+- Full screen mode is now disabled on Linux. This decision was made for a number of reasons outlined at https://github.com/mattermost/desktop/pull/3151#issue-2539440389.
+
+#### All Platforms
+
+- Implemented a ``performanceMonitor`` to collect and send anonymous usage data to server dashboards.
+- Plugins are now allowed to open ``about:blank`` popup windows using ``window.open()``.
+- Added support for plugins to ask for desktop source for screen sharing through the ``desktopAPI.getDesktopSources`` call.
+- Added ``Developer Mode`` settings to help debug performance issues.
+- Upgraded ``electron-log`` and turned on async logging.
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 33.0.2. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### macOS
+
+- Fixed an issue with resizing the app when the welcome screen was open on macOS, and forced the button to always appear on the welcome screen.
+
+#### Linux
+
+- Fixed a crash in Linux when trying to create a thumbnail from an image.
+
+#### All Platforms
+
+- Fixed a potential crash where the app menu could regenerate when ``currentServerId`` wasn't set.
+- Fixed an issue with dark-mode style for download location in settings.
+- Fixed an issue where logging out from the Boards/Playbooks tabs and trying to navigate after logging back in would force an unexpected logout.
+- Fixed an issue with the Download button being hidden on Windows/Linux.
+- Fixed an issue where pre-defined servers couldn't edit permissions, and the dropdown would not show badges.
+- Fixed issues with loading the app from cold when deep linking.
+
+### Open Source Components
+
+- Added ``@emotion/react`` to https://github.com/mattermost/desktop.
+
+### Known Issues
+
+- Clicking on links does not put the Desktop app in the background to show the external browser [MM-61406](https://mattermost.atlassian.net/browse/MM-61406).
+- Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
+- Sometimes during installation you may see this message: ``Warning 1946. Property 'System.AppUserModel.ID' for shortcut 'Mattermost.Ink' could not be set``. This message can be safely ignored.
+- Users seeing an endless "Loading..." screen when attempting to log in to the app may need to manually delete their cache directory. For macOS it is located in `/Users/<username>/Library/Containers/Mattermost/Data/Library/Application Support/Mattermost`, for Windows in `Users/<username>/AppData/Roaming/Mattermost` and for Linux in `~/config/Mattermost` (where `~` is the home directory).
+- On Linux, a left-click on the Mattermost tray icon doesn't open the app window but opens the tray menu.
+- Crashes might be be experienced in some Linux desktop clients due to an upstream bug in the `libnotifyapp` library. A recommended workaround is to disable the Mattermost system tray icon via Desktop Settings.
+- On apps using GPO configurations, when adding a second server tab, it's possible to drag and drop tabs, but they'll jump back to the original position when releasing the mouse.
+
+### Contributors
+
+- [devinbinnie](https://github.com/devinbinnie), [streamer45](https://github.com/streamer45), [theaino](https://github.com/theaino).
+
 (release-v5-9)=
 ## Release v5.9 (Extended Support Release)
 
-**Release Date: 2024-08-16**
+- **v5.9.2, released 2024-12-17**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
+  - Fixed an issue where the new MSI installer would not uninstall versions before v5.9 installed via MSI [MM-61994](https://mattermost.atlassian.net/browse/MM-61994).
+  - Fixed an issue where the MSI kept auto-update on for per-machine installation [MM-62029](https://mattermost.atlassian.net/browse/MM-62029).
+  - Fixed a potential error thrown by the MSI when trying to uninstall the EXE [MM-60416](https://mattermost.atlassian.net/browse/MM-60416).
+  - Fixed an issue where minimizing on Linux would cause the window to re-appear immediately [MM-60233](https://mattermost.atlassian.net/browse/MM-60233).
+  - Added support for downgrading using the MSI installer [MM-62196](https://mattermost.atlassian.net/browse/MM-62196).
+
+- **v5.9.1, released 2024-11-20**
+
+  - Fixed a crash in Linux when trying to create a thumbnail from an image [MM-60232](https://mattermost.atlassian.net/browse/MM-60232).
+  - Fixed an issue with the **Download** button being hidden on Windows/Linux [MM-60605](https://mattermost.atlassian.net/browse/MM-60605).
+
+- **v5.9.0, released 2024-08-16**
+
+  - Original v5.9.0 release
+
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/v5.9.2)
 
 ```{Note}
 Mattermost v5.9.0 contains low to medium severity level security fixes. Upgrading is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -197,7 +394,7 @@ Mattermost v5.8.0 contains low to medium severity level security fixes. Upgradin
 
 **Release Date: December 15, 2023**
 
-**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v5.6.0>)
+**Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/tag/v5.6.0)
 
 ### Compatibility
 
@@ -557,7 +754,7 @@ Mattermost v5.1.0 contains a low severity level security fix. Upgrading is highl
 
 #### macOS
 
-- Mattermost can now be installed on the [Mac App Store](https://apps.apple.com/app/mattermost-desktop/id1614666244). Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
+- Mattermost can now be installed on the [Mac App Store](https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12). Even if you’re already using Mattermost desktop on Mac, you can download and install it via the Mac App Store to access future automatic updates.
 
 #### Linux
 
@@ -1324,7 +1521,7 @@ Release date: May 16, 2018
 
 - Updated design for loading animation icon.
 - Improved appearance of server tabs.
-- Enabled [Certificate Transparency](https://www.certificate-transparency.org/what-is-ct) verification in HTTPS.
+- Enabled [Certificate Transparency](https://certificate.transparency.dev/) verification in HTTPS.
 
 #### Windows
 
@@ -1807,7 +2004,7 @@ Version number updated to 3.4 to make numbering consistent with Mattermost serve
 
 - Added an option to flash taskbar icon when a new message is received
 - Added a badge to count mentions on the taskbar icon (for Unity)
-- Added a script, `create_desktop_file.sh` to create `Mattermost.desktop` desktop entry to help [integrate the application into a desktop environment](https://wiki.archlinux.org/index.php/Desktop_entries) more easily
+- Added a script, `create_desktop_file.sh` to create `Mattermost.desktop` desktop entry to help [integrate the application into a desktop environment](https://wiki.archlinux.org/title/Desktop_entries) more easily
 - Added access to the settings menu from the system tray icon
 - Only one instance of the desktop application will now load at a time
 

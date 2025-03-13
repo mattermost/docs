@@ -18,6 +18,7 @@ Get started with administration
     Authentication configuration settings </configure/authentication-configuration-settings>
     Plugins configuration settings </configure/plugins-configuration-settings>
     Enable Copilot </configure/enable-copilot>
+    Product limits </manage/product-limits>
     Manage user surveys </configure/manage-user-surveys>
     Integrations configuration settings </configure/integrations-configuration-settings>
     Compliance configuration settings </configure/compliance-configuration-settings>
@@ -25,39 +26,34 @@ Get started with administration
     Deprecated configuration settings </configure/deprecated-configuration-settings>
     Environment variables </configure/environment-variables>
     Provisioning workflows </onboard/user-provisioning-workflows>
-    Multi-factor authentication </onboard/multi-factor-authentication>
     Active Directory/LDAP </onboard/ad-ldap>
     GitLab SSO </onboard/sso-gitlab>
     OpenID SSO </onboard/sso-openidconnect>
     Google SSO </onboard/sso-google>
     Entra ID SSO </onboard/sso-entraid>
     Advanced permissions </onboard/advanced-permissions>
-    Delegated granular administration </onboard/delegated-granular-administration>
     Manage team and channel members </manage/team-channel-members>
     Custom branding tools </configure/custom-branding-tools>
-    Export channel data </comply/export-mattermost-channel-data>
-    eDiscovery </comply/electronic-discovery>
-    Compliance monitoring </comply/compliance-monitoring>
-    Compliance export </comply/compliance-export>
-    Legal hold </comply/legal-hold>
-    Data retention tools </comply/data-retention-policy>
-    Custom terms of service </comply/custom-terms-of-service>
     Notify Admin </upgrade/notify-admin>
 
 These resources will help you get started with your Mattermost self-hosted or Cloud workspace.
+
+.. tip::
+
+    As a system admin, access the System Console by selecting the **Product** |product-list| menu and selecting **System Console**.
 
 * **Mattermost feature labels** - Learn what :doc:`Mattermost feature labels </getting-started/feature-labels>`, including :ref:`Experimental <getting-started/feature-labels:experimental>`, :ref:`Beta <getting-started/feature-labels:beta>`, :ref:`General Availability <getting-started/feature-labels:general availability>`, and :ref:`Deprecated <getting-started/feature-labels:deprecated>` mean to the status, maturity, and support level of Mattermost product features and functionality in your Mattermost deployment.
 * **Optimize your workspace** - Review health and growth scores for your Mattermost workspace, and take necessary action using the :doc:`workspace optimization </configure/optimize-your-workspace>` page in the System Console.
 * **Configure your workspace** - Mattermost offers extensive configuration options for both :doc:`self-hosted Mattermost servers and Mattermost Cloud workspaces </configure/configuration-settings>`, and provides a list of :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` no longer supported.
 * **Enable Copilot** - Learn how to :doc:`enable Copilot in Mattermost </configure/enable-copilot>`
+* **Product Limits** - Learn about Mattermost :doc:`product limits </manage/product-limits>`.
 * **Manage user surveys** - Learn how to :doc:`create, manage, and export data from user surveys </configure/manage-user-surveys>` in your self-hosted Mattermost deployment.
 * **Environment variables** - Learn how to use :doc:`environment variables </configure/environment-variables>` to manage configuration for a self-hosted deployment.
 * **Provisioning workflows** - Learn how to :doc:`provision </onboard/user-provisioning-workflows>` and de-provision user accounts.
 * **User authentication** - All versions of Mattermost provide basic authentication and offer :doc:`multi-factor authentication </onboard/multi-factor-authentication>` out of the box. Enterprise and Professional versions of Mattermost also include :doc:`Active Directory/LDAP </onboard/ad-ldap>` and SSO for :doc:`GitLab SSO </onboard/sso-gitlab>`, :doc:`OpenID </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Entra ID </onboard/sso-entraid>`.
-* **User permissions** - All versions of Mattermost offer standard user permissions control. Enterprise and Professional versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions, and :doc:`Delegated granular administration </onboard/delegated-granular-administration>` to grant admins from your organization access to specific areas of the Mattermost System Console.
+* **User permissions** - All versions of Mattermost offer standard user permissions control. Enterprise and Professional versions also include :doc:`advanced permissions control </onboard/advanced-permissions>` to customize which users can perform specific actions.
 * **Manage team and channel members** - :doc:`Manage team and channel members </manage/team-channel-members>` synchronization, moderation, and membership settings.
 * **Customize branding** - Change Mattermost branding, site name, and description with :doc:`custom branding tools </configure/custom-branding-tools>`.
-* **Compliance tools** - Migrate channel data between systems or back data up for operational continuity with :doc:`channel export </comply/export-mattermost-channel-data>`, extract data from Mattermost for :doc:`eDiscovery </comply/electronic-discovery>` use in legal cases, carry out a :doc:`legal hold </comply/legal-hold>`, create :doc:`compliance monitoring </comply/compliance-monitoring>` reports for query and download actions, or :doc:`compliance export </comply/compliance-export>` reports for channel history actions, set custom :doc:`data retention policies </comply/data-retention-policy>`, and set :doc:`custom terms of service </comply/custom-terms-of-service>` for team members.
 * **Notify admin** - Keep track of your users' :doc:`feature requirement needs </upgrade/notify-admin>`.
 
 Advanced user management
@@ -67,13 +63,11 @@ Advanced user management
     :maxdepth: 1
     :hidden:
 
-    AD/LDAP groups </onboard/ad-ldap-groups-synchronization>
     Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
     Guest accounts </onboard/guest-accounts>
     SAML Single Sign-On </onboard/sso-saml>
     SAML Single-Sign-On: technical documentation </onboard/sso-saml-technical>
 
-* :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` - Sync AD/LDAP groups with Mattermost roles and teams.
 * :doc:`Use AD/LDAP synchronized groups to manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Synchronize your AD/LDAP group with private Mattermost channels and teams.
 * :doc:`Guest accounts </onboard/guest-accounts>` - Create guest accounts to collaborate with individuals outside your organization.
 * :doc:`SAML Single Sign-On </onboard/sso-saml>` - Configure Mattermost to be a SAML 2.0 service provider.
@@ -86,14 +80,14 @@ Advanced workspace management
     :maxdepth: 1
     :hidden:
 
-    Shared channels </onboard/shared-channels>
+    Connected workspaces </onboard/connected-workspaces>
     Statistics </manage/statistics>
     In-product notices </manage/in-product-notices>
     User satisfaction surveys </manage/user-satisfaction-surveys>
     System-wide notifications </manage/system-wide-notifications>
     Bulk export tool </manage/bulk-export-tool>
 
-* :doc:`Shared channels </onboard/shared-channels>` - Connect channels from multiple Mattermost servers in a federated architecture.
+* :doc:`Connected workspaces </onboard/connected-workspaces>` - Connect channels from multiple Mattermost servers in a federated architecture.
 * :doc:`Statistics </manage/statistics>` - Get statistics about your Mattermost server usage.
 * :doc:`In-product notices </manage/in-product-notices>` - Get notified about Mattermost updates via in-app notices.
 * :doc:`User satisfaction surveys </manage/user-satisfaction-surveys>` - Learn about Mattermost user satisfaction surveys and how to configure their operation.

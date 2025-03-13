@@ -15,7 +15,7 @@ Please note that the apps cannot connect to servers with self-signed certificate
 Login with ADFS/Office365 is not working
 ----------------------------------------
 
-In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
+In line with Microsoft guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_. 
 
 I see a “Connecting…” bar that does not go away
 -----------------------------------------------
@@ -83,7 +83,7 @@ See our :ref:`Configuration Settings <configure/environment-configuration-settin
 None of these solve my problem!
 -------------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://mattermost.zendesk.com/hc/en-us/requests/new>`_.
+For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot/16>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/hc/en-us/requests/new>`_.
 
 To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
 

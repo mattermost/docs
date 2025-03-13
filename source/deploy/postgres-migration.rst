@@ -4,7 +4,7 @@ Migration guidelines from MySQL to PostgreSQL
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v8.0, PostgreSQL is our database of choice for Mattermost to enhance the platform’s performance and capabilities. Recognizing the importance of supporting the community members who are interested in migrating from a MySQL database, we have taken proactive measures to provide guidance and best practices.
+From Mattermost v8.0, :ref:`PostgreSQL <install/software-hardware-requirements:database software>` is our database of choice for Mattermost to enhance the platform’s performance and capabilities. Recognizing the importance of supporting the community members who are interested in migrating from a MySQL database, we have taken proactive measures to provide guidance and best practices.
 
 .. toctree::
    :maxdepth: 1
@@ -20,29 +20,52 @@ From Mattermost v8.0, PostgreSQL is our database of choice for Mattermost to enh
 Frequently asked questions
 ------------------------------
 
-1. Can the migration-assist be run on the mattermost server?
+Why is Mattermost dropping support for MySQL?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  Technically, yes. The ``migration-assist`` tool can be run on the Mattermost server. However, it is recommended to run the tool on a separate server to avoid any performance issues. We advise running the migration against a copy of the MySQL database to ensure that the migration process does not impact the production environment.
+Mattermost has decided to drop support for MySQL databases to streamline development and focus on delivering more efficient and optimized features. By supporting only PostgreSQL, which is generally considered more advanced and better-suited for enterprise environments, Mattermost can reduce complexity, improve performance, and better allocate resources to enhance the product. This change helps ensure more consistent, robust, and scalable database interactions for all Mattermost deployments.
 
-2. How large should the PostgreSQL server be?
+Is migrating to PostgreSQL before upgrading Mattermost recommended?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  The size of the PostgreSQL server should match that of the MySQL server initially. We recommend monitoring the performance of the PostgreSQL server and adjusting the resources as needed.
+Yes. We also recommend upgrading to Mattermost server v8.x or later before migrating to PostgreSQL.
 
-3. How large should the server running ``migration-assist`` server be?
+Can the migration-assist be run on the Mattermost server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient for default configurations. However, you may need to adjust the resources based on the size of the MySQL database, your downtime limitations, and the configuration of ``pgloader``.
+Technically, yes. The ``migration-assist`` tool can be run on the Mattermost server. However, it is recommended to run the tool on a separate server to avoid any performance issues. We advise running the migration against a copy of the MySQL database to ensure that the migration process does not impact the production environment.
 
-4. Do we/will we bundle pgloader or is that a separate install?
+How large should the PostgreSQL server be?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  We do not bundle pgloader with the Mattermost server. You will need to install pgloader separately. For more information, see the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation.
+The size of the PostgreSQL server should match that of the MySQL server initially. We recommend monitoring the performance of the PostgreSQL server and adjusting the resources as needed.
 
-5. Are there any other migrations available for plugins, or just Boards, Playbooks and Calls?
-  
-  We are working on providing migrations for other plugins as well such as NPS-plugin. Please stay tuned for updates.
+How large should the server running ``migration-assist`` server be?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-6. Does these processes support AWS RDS databases?
+The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient for default configurations. However, you may need to adjust the resources based on the size of the MySQL database, your downtime limitations, and the configuration of ``pgloader``.
 
-  Yes, the processes support AWS RDS databases. However, you may need to adjust the security group settings to allow the migration process to access the databases.
+Do we/will Mattermost bundle pgloader or is that a separate install?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost doesn't bundle pgloader with the Mattermost server. You will need to install pgloader separately. For more information, see the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation.
+
+Are there any other migrations available for plugins, or just Boards, Playbooks, and Calls?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We're developing migrations for other plugins, such as NPS-plugin. Please stay tuned for updates.
+
+Do these processes support AWS RDS databases?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes, the processes support AWS RDS databases. However, you may need to adjust the security group settings to allow the migration process to access the databases.
+
+Does Mattermost support MariaDB? If not, why not?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost does not support MariaDB. The primary reason for this decision is to streamline development and maintenance by focusing on a single database technology. By standardizing on PostgreSQL, Mattermost can deliver optimized features, improved performance, and a more focused engineering effort. PostgreSQL is well-regarded for its robustness, advanced features, and suitability for enterprise use, making it the chosen database for Mattermost. 
+
+MariaDB, while compatible with MySQL to a large extent, introduces additional complexity and potential inconsistency, which the Mattermost development team aims to avoid by limiting database support.
 
 Troubleshooting
 ---------------
@@ -50,7 +73,7 @@ Troubleshooting
 Unsupported authentication for MySQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`_ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
+If you are facing an error due to authentication with MySQL v8, it may be related to a `known issue <https://github.com/dimitri/pgloader/issues/782>`__ with pgloader. The fix is to set the default authentication method to ``mysql_native_password`` in your MySQL configuration. To do so, add the ``default-authentication-plugin=mysql_native_password`` value to your ``mysql.cnf`` file. Also, do not forget to update your user to use this authentication method.
 
 .. code-block:: sql
 
@@ -104,7 +127,7 @@ If you receive an error message similar to the following:
 
    ERROR mysql: 76 fell through ECASE expression.
 
-It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`_ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
+It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`__ with pgloader. You can fix this issue by either compiling ``pgloader`` from source or simply avoid this by running ``pgloader`` with our docker image. See: :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` for more information.  
 
 .. note::
 

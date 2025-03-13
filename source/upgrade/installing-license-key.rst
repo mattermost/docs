@@ -31,7 +31,7 @@ You can use the System Console or the mmctl tools to add or change a Mattermost 
 Change an existing license key
 -------------------------------
 
-You don't need to wait for your current license key to expire before replacing it with a new license from Mattermost. However, ensure your new license is for a seat count that's greater than or equal to your current total number of Mattermost users. 
+You don't need to wait for your current license key to expire before replacing it with a new license from Mattermost. The server only checks for seat count and license end date, not the start date, so you can apply a new license as soon as you receive it. However, ensure your new license is for a seat count that's greater than or equal to your current total number of Mattermost users.
 
 .. tip::
     

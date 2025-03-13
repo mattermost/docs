@@ -4,11 +4,11 @@ Manage channel bookmarks
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can bookmark up to 50 links or files to the top of channels for quick and easy access, unless your system admin has disabled your ability to do so. Bookmarked links and files display in the bookmarks bar located directly below the channel header.
+From Mattermost v10.1, you can bookmark up to 50 links or files to the top of channels for quick and easy access, unless your system admin has disabled your ability to do so. Bookmarks display directly under channel headers.
 
 .. tip::
 
-    Any file added as a channel bookmark is also searchable in Mattermost.
+    Any file added as a channel bookmark is also :doc:`searchable </collaborate/search-for-messages>` in Mattermost.
 
 Open a bookmark
 ---------------
@@ -20,22 +20,14 @@ Add a bookmark
 
 .. tab:: Web/Desktop
 
-    1. In the bookmarks bar, select **Add a bookmark**.
-
-        .. image:: ../images/desktop-bookmark-add.png
-            :alt: Using a web browser or the desktop app, select the Plus icon to add a channel bookmark.
-            :scale: 50
+    1. From Mattermost v10.5, select the channel name at the top of the center pane to access the drop-down menu, and select **Bookmarks Bar** to add a link or attach a file. In Mattermost versions prior to v10.5, select **Add a bookmark** in the bookmarks bar instead.
     
      - Select **Add a link** to specify the link URL, specify bookmark text, and an optional bookmark icon.
-     - Select **Add a file** to select a file, specify bookmark text, and an optional bookmark icon.
-
-        .. image:: ../images/desktop-bookmark-add-choice.png
-            :alt: Using a web browser or the desktop app, choose whether to add a link or a file.
-            :scale: 50
+     - Select **Attach a file** to select a file, specify bookmark text, and an optional bookmark icon.
 
 .. tab:: Mobile
 
-    The bookmarks bar is hidden by default when a channel has no bookmarks. 
+    The bookmarks bar is hidden when a channel has no bookmarks.
     
     1. In a channel, select the **More** |more-icon-vertical| icon.
 

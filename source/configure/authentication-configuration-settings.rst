@@ -4,14 +4,14 @@ Authentication configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost supports up to four distinct, concurrent methods of **Authentication**:
+Mattermost supports up to 4 distinct, concurrent methods of user authentication:
 
 - An OpenID provider
 - A SAML provider
 - An LDAP instance (e.g., Active Directory, OpenLDAP)
 - Email and Password
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Authentication**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
+Review and manage the following authentication configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Authentication**:
 
 - `Signup <#signup>`__
 - `Email <#email>`__
@@ -23,6 +23,13 @@ Both self-hosted and Cloud admins can access the following configuration setting
 - `OpenID Connect <#openid-connect>`__
 - `Guest Access <#guest-access>`__
 
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``EnableUserCreation`` value is under ``TeamSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.TeamSettings.EnableUserCreation'``
+  - When working with the ``config.json`` file manually, look for an object such as ``TeamSettings``, then within that object, find the key ``EnableUserCreation``.
+
 ----
 
 Signup
@@ -33,7 +40,7 @@ Signup
 
 Access the following configuration settings in the System Console by going to **Authentication > Signup**.
 
-.. config:setting:: signup-enableaccountcreation
+.. config:setting:: enable-account-creation
   :displayname: Enable account creation (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .TeamSettings.EnableUserCreation
@@ -58,7 +65,7 @@ Enable account creation
    LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this
    configuration setting is enabled.
    
-.. config:setting:: signup-restrictcreationtodomains
+.. config:setting:: restrict-account-creation-to-specified-email-domains
   :displayname: Restrict account creation to specified email domains (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .TeamSettings.RestrictCreationToDomains
@@ -79,7 +86,7 @@ Restrict account creation to specified email domains
 | String input of a comma-separated list of domains, i.e. ``corp.mattermost.com, mattermost.com``                                                                                                                                                                                                                                    | - Environment variable: ``MM_TEAMSETTINGS_RESTRICTCREATIONTODOMAINS``        |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------+
 
-.. config:setting:: signup-enableopenserver
+.. config:setting:: enable-open-server
   :displayname: Enable open server (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .TeamSettings.EnableOpenServer
@@ -97,7 +104,7 @@ Enable open server
 |                                                                                                  | - Environment variable: ``MM_TEAMSETTINGS_ENABLEOPENSERVER``             | 
 +--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: signup-enableemailinvitations
+.. config:setting:: enable-email-invitations
   :displayname: Enable email invitations (Signup)
   :systemconsole: Authentication > Signup
   :configjson: .ServiceSettings.EnableEmailInvitations
@@ -138,7 +145,7 @@ Email
 
 Access the following configuration settings in the System Console by going to **Authentication > Email**.
 
-.. config:setting:: email-enableaccountcreation
+.. config:setting:: enable-account-creation-with-email
   :displayname: Enable account creation with email (Email)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignUpWithEmail
@@ -159,7 +166,7 @@ Enable account creation with email
 .. note::
   Cloud admins can't modify this configuration setting.
 
-.. config:setting:: email-requireverification
+.. config:setting:: require-email-verification
   :displayname: Require email verification (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.RequireEmailVerification
@@ -180,7 +187,7 @@ Require email verification
 |   skipping the verification process.                                          |                                                                                         |
 +-------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-.. config:setting:: email-enablesigninwithemail
+.. config:setting:: enable-sign-in-with-email
   :displayname: Enable sign-in with email (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignInWithEmail
@@ -203,7 +210,7 @@ Enable sign-in with email
   To provide users with only a single email sign in option on the login page, ensure that the
   `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**. 
 
-.. config:setting:: email-enablesigninwithusername
+.. config:setting:: enable-sign-in-with-username
   :displayname: Enable sign-in with username (Signup)
   :systemconsole: Authentication > Email
   :configjson: .EmailSettings.EnableSignInWithUsername
@@ -236,7 +243,7 @@ Password
 
 Access the following configuration settings in the System Console by going to **Authentication > Password**.
 
-.. config:setting:: password-minimumlength
+.. config:setting:: minimum-password-length
   :displayname: Minimum password length (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.MinimumLength
@@ -256,7 +263,7 @@ Minimum password length
 | Numerical input. Default is **5**.                                                                                                                        | - Environment variable: ``MM_PASSWORDSETTINGS_MINIMUMLENGTH``       |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: password-lowercase
+.. config:setting:: password-requirements
   :displayname: Password requirements - At least one lowercase letter (Password)
   :systemconsole: Authentication > Password
   :configjson: .PasswordSettings.Lowercase
@@ -304,7 +311,7 @@ Password requirements
 | The default for all boxes is unchecked. The default for all settings in ``config.json`` is ``false``.             |                                                                                                                                                                                                                              |
 +-------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: password-maximumloginattempts
+.. config:setting:: maximum-login-attempts
   :displayname: Maximum login attempts (Password)
   :systemconsole: Authentication > Password
   :configjson: .ServiceSettings.MaximumLoginAttempts
@@ -320,7 +327,7 @@ Maximum login attempts
 | Numerical input. Default is **10**.                                                                                                                         | - Environment variable: ``MM_SERVICESETTINGS_MAXIMUMLOGINATTEMPTS``                |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: password-forgotpasswordlink
+.. config:setting:: enable-forgot-password-link
   :displayname: Enable forgot password link (Password)
   :systemconsole: Authentication > Password
   :configjson: .ServiceSettings.ForgotPasswordLink
@@ -355,7 +362,7 @@ Access the following configuration settings in the System Console by going to **
 
 We recommend deploying Mattermost within your own private network, and using VPN clients for mobile access, so that Mattermost is secured with your existing protocols. If you choose to run Mattermost outside your private network, bypassing your existing security protocols, we recommend adding a multi-factor authentication service specifically for accessing Mattermost.
 
-.. config:setting:: mfa-enablemfa
+.. config:setting:: enable-multi-factor-authentication
   :displayname: Enable multi-factor authentication (MFA)
   :systemconsole: Authentication > MFA
   :configjson: .ServiceSettings.EnableMultifactorAuthentication
@@ -373,7 +380,7 @@ Enable multi-factor authentication
 | - **false**: **(Default)** Disables multi-factor authentication.                                                       | - Environment variable: ``MM_SERVICESETTINGS_ENABLEMULTIFACTORAUTHENTICATION``                   |
 +------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
-.. config:setting:: mfa-enforcemfa
+.. config:setting:: enforce-multi-factor-authentication
   :displayname: Enforce multi-factor authentication (MFA)
   :systemconsole: Authentication > MFA
   :configjson: .ServiceSettings.EnforceMultifactorAuthentication
@@ -416,7 +423,7 @@ AD/LDAP
 
 Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
 
-.. config:setting:: ldap-enablesignin
+.. config:setting:: enable-sign-in-with-adldap
   :displayname: Enable sign-in with AD/LDAP (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.Enable
@@ -438,7 +445,7 @@ Enable sign-in with AD/LDAP
 |                                                                               | - Environment variable: ``MM_LDAPSETTINGS_ENABLE``                        |
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
-.. config:setting:: ldap-enablesync
+.. config:setting:: enable-synchronization-with-adldap
   :displayname: Enable synchronization with AD/LDAP (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EnableSync
@@ -467,7 +474,7 @@ Enable synchronization with AD/LDAP
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` 
   documentation for details.
 
-.. config:setting:: ldap-loginfieldname
+.. config:setting:: login-field-name
   :displayname: Login field name (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LoginFieldName
@@ -487,7 +494,7 @@ Login field name
 | String input. Default is ``AD/LDAP Username``.                                                                                                           | - Environment variable: ``MM_LDAPSETTINGS_LOGINFIELDNAME``       | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: ldap-server
+.. config:setting:: adldap-server
   :displayname: AD/LDAP server (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LdapServer
@@ -514,7 +521,7 @@ AD/LDAP server
   :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>`
   documentation for details.
 
-.. config:setting:: ldap-port
+.. config:setting:: adldap-port
   :displayname: AD/LDAP port (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LdapPort
@@ -534,7 +541,7 @@ AD/LDAP port
 | Numerical input. Default is **389**.                               | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``                 |
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: ldap-connectionsecurity
+.. config:setting:: connection-security
   :displayname: Connection security (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.ConnectionSecurity
@@ -567,7 +574,7 @@ Connection security
 |   to a secure connection with TLS. ``config.json`` option: ``"STARTTLS"``    |                                                                               |
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
-.. config:setting:: ldap-skipcertverification
+.. config:setting:: skip-certificate-verification
   :displayname: Skip certificate verification (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.SkipCertificateVerification
@@ -589,7 +596,7 @@ Skip certificate verification
 |                                                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION``                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
-.. config:setting:: ldap-privatekey
+.. config:setting:: private-key
   :displayname: Private key (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PrivateKeyFile
@@ -609,7 +616,7 @@ Private key
 | String input.                                                                                                                                               | - Environment variable: ``MM_LDAPSETTINGS_PRIVATEKEYFILE``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: ldap-publiccert
+.. config:setting:: public-certificate
   :displayname: Public certificate (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PublicCertificateFile
@@ -629,7 +636,7 @@ Public certificate
 | String input.                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: ldap-bindusername
+.. config:setting:: bind-username
   :displayname: Bind username (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BindUsername
@@ -661,7 +668,7 @@ Bind username
 .. note::
   This field is required. Anonymous bind is not currently supported.
 
-.. config:setting:: ldap-bindpassword
+.. config:setting:: bind-password
   :displayname: Bind password (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BindPassword
@@ -681,7 +688,7 @@ Bind password
 | String input.                                                                 | - Environment variable: ``MM_LDAPSETTINGS_BINDPASSWORD``       |
 +-------------------------------------------------------------------------------+----------------------------------------------------------------+
 
-.. config:setting:: ldap-basedn
+.. config:setting:: base-dn
   :displayname: Base DN (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BaseDN
@@ -701,7 +708,7 @@ Base DN
 | String input.                                                                                                                | - Environment variable: ``MM_LDAPSETTINGS_BASEDN``       |
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: ldap-userfilter
+.. config:setting:: user-filter
   :displayname: User filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.UserFilter
@@ -726,7 +733,7 @@ User filter
 .. note::
   This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
 
-.. config:setting:: ldap-groupfilter
+.. config:setting:: group-filter
   :displayname: Group filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupFilter
@@ -752,7 +759,7 @@ Group filter
 .. note::
   This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.
 
-.. config:setting:: ldap-enableadminfilter
+.. config:setting:: enable-admin-filter
   :displayname: Enable admin filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EnableAdminFilter
@@ -777,7 +784,7 @@ Enable admin filter
 .. note::
   If this setting is ``false``, no additional users are designated as system admins by the filter. Users that were previously designated as system admins retain this role unless the filter is changed or removed.
 
-.. config:setting:: ldap-adminfilter
+.. config:setting:: admin-filter
   :displayname: Admin filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.AdminFilter
@@ -799,7 +806,7 @@ Admin filter
 | String input.                                                                                                                                                                            |                                                               |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: ldap-guestfilter
+.. config:setting:: guest-filter
   :displayname: Guest filter (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GuestFilter
@@ -821,7 +828,7 @@ Guest filter
 | String input.                                                                                                                                                                        |                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-.. config:setting:: ldap-idattribute
+.. config:setting:: id-attribute
   :displayname: ID attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.IdAttribute
@@ -846,7 +853,7 @@ ID attribute
 .. note::
   If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.
 
-.. config:setting:: ldap-loginidattribute
+.. config:setting:: login-id-attribute
   :displayname: Login ID attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LoginIdAttribute
@@ -868,7 +875,7 @@ Login ID attribute
 | String input.                                                                                                                                                           |                                                                    |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
-.. config:setting:: ldap-usernameattribute
+.. config:setting:: username-attribute
   :displayname: Username attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.UsernameAttribute
@@ -892,7 +899,7 @@ Username attribute
 | String input.                                                                                                                                                                                                                                                      |                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ldap-emailattribute
+.. config:setting:: email-attribute
   :displayname: Email attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EmailAttribute
@@ -914,7 +921,7 @@ Email attribute
 | String input.                                                                                                                  |                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: ldap-firstnameattribute
+.. config:setting:: first-name-attribute
   :displayname: First name attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.FirstNameAttribute
@@ -938,7 +945,7 @@ First name attribute
 | String input.                                                                                                      |                                                                      |
 +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: ldap-lastnameattribute
+.. config:setting:: last-name-attribute
   :displayname: Last name attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LastNameAttribute
@@ -962,7 +969,7 @@ Last name attribute
 | String input.                                                                                                             |                                                                     |
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ldap-nicknameattribute
+.. config:setting:: nickname-attribute
   :displayname: Nickname attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.NicknameAttribute
@@ -986,7 +993,7 @@ Nickname attribute
 | String input.                                                                                                            |                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ldap-positionattribute
+.. config:setting:: position-attribute
   :displayname: Position attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PositionAttribute
@@ -1010,7 +1017,7 @@ Position attribute
 | String input.                                                                                                            |                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: ldap-profilepictureattribute
+.. config:setting:: profile-picture-attribute
   :displayname: Profile picture attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PictureAttribute
@@ -1034,7 +1041,7 @@ Profile picture attribute
 | String input.                                                                                       |                                                                    |
 +-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
-.. config:setting:: ldap-groupdisplaynameattribute
+.. config:setting:: group-display-name-attribute
   :displayname: Group display name attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupDisplayNameAttribute
@@ -1060,7 +1067,7 @@ Group display name attribute
 .. note::
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
 
-.. config:setting:: ldap-groupidattribute
+.. config:setting:: group-id-attribute
   :displayname: Group ID attribute
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupIdAttribute
@@ -1088,7 +1095,7 @@ Group ID attribute
 .. note::
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
 
-.. config:setting:: ldap-syncinterval
+.. config:setting:: synchronization-interval-minutes
   :displayname: Synchronization interval (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.SyncIntervalMinutes
@@ -1117,7 +1124,7 @@ Synchronization interval (minutes)
 .. note::
   LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
 
-.. config:setting:: ldap-maxpagesize
+.. config:setting:: maximum-page-size
   :displayname: Maximum page size (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.MaxPageSize
@@ -1141,7 +1148,7 @@ Maximum page size
 | Numerical input. Default is **0**.                                                                                           |                                                                       |
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-.. config:setting:: ldap-querytimeout
+.. config:setting:: query-timeout-seconds
   :displayname: Query timeout (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.QueryTimeout
@@ -1210,9 +1217,9 @@ Access the following configuration settings in the System Console by going to **
 
 .. important::
 
-  In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
+  In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
-.. config:setting:: saml-enablelogin
+.. config:setting:: enable-login-with-saml
   :displayname: Enable login with SAML (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.Enable
@@ -1237,7 +1244,7 @@ Enable login with SAML
 |                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENABLE``                   |
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-enablesyncwithldap
+.. config:setting:: enable-synchronizing-saml-accounts-with-adldap
   :displayname: Enable synchronizing SAML accounts with AD/LDAP (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EnableSyncWithLdap
@@ -1263,7 +1270,7 @@ Enable synchronizing SAML accounts with AD/LDAP
 | See :doc:`AD/LDAP Setup </onboard/ad-ldap>` to learn more.                                                                                                                                                                                                                                                                                                 |                                                                                  |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
-.. config:setting:: saml-ignoreguestsldapsync
+.. config:setting:: ignore-guest-users-when-synchronizing-with-adldap
   :displayname: Ignore guest users when synchronizing with AD/LDAP (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IgnoreGuestsLdapSync
@@ -1289,7 +1296,7 @@ Ignore guest users when synchronizing with AD/LDAP
 | For more information, see :doc:`AD/LDAP Setup </onboard/ad-ldap>` for details.                                                                                                                                               |                                                                                    |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: saml-overridebindwithldap
+.. config:setting:: override-saml-bind-data-with-adldap-information
   :displayname: Override SAML bind data with AD/LDAP information (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EnableSyncWithLdapIncludeAuth
@@ -1319,7 +1326,7 @@ Override SAML bind data with AD/LDAP information
   - This setting should be **false** unless LDAP sync is enabled. Changing this setting from **true** to **false** will disable the override.
   - SAML IDs must match LDAP IDs when the override is enabled.
 
-.. config:setting:: saml-providermetadataurl
+.. config:setting:: identity-provider-metadata-url
   :displayname: Identity provider metadata URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpMetadataURL
@@ -1342,7 +1349,7 @@ Identity provider metadata URL
 | String input.                                                                            | - Environment variable: ``MM_SAMLSETTINGS_IDPMETADATAURL``           |
 +------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-ssourl
+.. config:setting:: saml-sso-url
   :displayname: SAML SSO URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpURL
@@ -1365,7 +1372,7 @@ SAML SSO URL
 | String input.                                                                              | - Environment variable: ``MM_SAMLSETTINGS_IDPURL``       |
 +--------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
-.. config:setting:: saml-providerissuerurl
+.. config:setting:: identity-provider-issuer-url
   :displayname: Identity provider issuer URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpDescriptorURL
@@ -1388,7 +1395,7 @@ Identity provider issuer URL
 | String input.                                                               | - Environment variable: ``MM_SAMLSETTINGS_IDPDESCRIPTORURL``           |
 +-----------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: saml-providerpubliccert
+.. config:setting:: identity-provider-public-certificate
   :displayname: Identity provider public certificate (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdpCertificateFile
@@ -1411,7 +1418,7 @@ Identity provider public certificate
 | String input.                                                           | - Environment variable: ``MM_SAMLSETTINGS_IDPCERTIFICATEFILE``           |
 +-------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: saml-verifysignature
+.. config:setting:: verify-signature
   :displayname: Verify signature (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.Verify
@@ -1436,7 +1443,7 @@ Verify signature
 |                                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_VERIFY``                  |
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
-.. config:setting:: saml-providerloginurl
+.. config:setting:: service-provider-login-url
   :displayname: Service provider login URL (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.AssertionConsumerServiceURL
@@ -1463,7 +1470,7 @@ Service provider login URL
 | This setting is also known as the Assertion Consumer Service URL.                                                      |                                                                                   |
 +------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------+
 
-.. config:setting:: saml-provideridentifier
+.. config:setting:: service-provider-identifier
   :displayname: Service provider identifier (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.ServiceProviderIdentifier
@@ -1486,7 +1493,7 @@ Service provider identifier
 | String input.                                                                                                                                                                             | - Environment variable: ``MM_SAMLSETTINGS_SERVICEPROVIDERIDENTIFIER``           | 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
-.. config:setting:: saml-encryption
+.. config:setting:: enable-encryption
   :displayname: Enable encryption (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.Encrypt
@@ -1511,7 +1518,7 @@ Enable encryption
 |                                                                                                                                       | - Environment variable: ``MM_SAMLSETTINGS_ENCRYPT``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-providerprivatekey
+.. config:setting:: service-provider-private-key
   :displayname: Service provider private key (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.PrivateKeyFile
@@ -1534,7 +1541,7 @@ Service provider private key
 | String input.                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PRIVATEKEYFILE``           |
 +-------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-serviceproviderpubliccert
+.. config:setting:: service-provider-public-certificate
   :displayname: Service provider public certificate (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.PublicCertificateFile
@@ -1557,7 +1564,7 @@ Service provider public certificate
 | String input.                                                                                                                                                                   | - Environment variable: ``MM_SAMLSETTINGS_PUBLICCERTIFICATEFILE``           |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-.. config:setting:: saml-signrequest
+.. config:setting:: sign-request
   :displayname: Sign request (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.SignRequest
@@ -1582,7 +1589,7 @@ Sign request
 |                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNREQUEST``         |
 +--------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: saml-signaturealgo
+.. config:setting:: signature-algorithm
   :displayname: Signature algorithm
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.SignatureAlgorithm
@@ -1605,7 +1612,7 @@ Signature algorithm
 | String input.                                                                                                                                      | - Environment variable: ``MM_SAMLSETTINGS_SIGNATUREALGORITHM``           |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: saml-canonicalalgo
+.. config:setting:: canonical-algorithm
   :displayname: Canonical algorithm (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.CanonicalAlgorithm
@@ -1634,7 +1641,7 @@ Canonical algorithm
 | String input.                                                                                                                                                                                                                              |                                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 
-.. config:setting:: saml-emailattribute
+.. config:setting:: email-attribute
   :displayname: Email attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EmailAttribute
@@ -1659,7 +1666,7 @@ Email attribute
 | String input.                                                                                                                                              |                                                                      |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-usernameattribute
+.. config:setting:: username-attribute
   :displayname: Username attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.UsernameAttribute
@@ -1684,7 +1691,7 @@ Username attribute
 | String input.                                                                                                                                                                                                                                            |                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-idattribute
+.. config:setting:: id-attribute
   :displayname: Id attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.IdAttribute
@@ -1707,7 +1714,7 @@ Id attribute
 | String input.                                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_IDATTRIBUTE``      |
 +----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 
-.. config:setting:: saml-guestattribute
+.. config:setting:: guest-attribute
   :displayname: Guest attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.GuestAttribute
@@ -1732,7 +1739,7 @@ Guest attribute
 | String input.                                                                                                            |                                                                 |
 +--------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
-.. config:setting:: saml-enableadminattribute
+.. config:setting:: enable-admin-attribute
   :displayname: Enable admin attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.EnableAdminAttribute
@@ -1757,7 +1764,7 @@ Enable admin attribute
 |                                                                                                           | - Environment variable: ``MM_SAMLSETTINGS_ENABLEADMINATTRIBUTE``                   |
 +-----------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
-.. config:setting:: saml-adminattribute
+.. config:setting:: admin-attribute
   :displayname: Admin attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.AdminAttribute
@@ -1784,7 +1791,7 @@ Admin attribute
 | String input.                                                                                                                 |                                                                      |
 +-------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
-.. config:setting:: saml-firstnameattribute
+.. config:setting:: first-name-attribute
   :displayname: First name attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.FirstNameAttribute
@@ -1808,7 +1815,7 @@ First name attribute
 | String input.                                                                                                         |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: saml-lastnameattribute
+.. config:setting:: last-name-attribute
   :displayname: Last name attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.LastNameAttribute
@@ -1832,7 +1839,7 @@ Last name attribute
 | String input.                                                                                                        |                                                                         |
 +----------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-nicknameattribute
+.. config:setting:: nickname-attribute
   :displayname: Nickname attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.NicknameAttribute
@@ -1856,7 +1863,7 @@ Nickname attribute
 | String input.                                                                                                       |                                                                         |
 +---------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-positionattribute
+.. config:setting:: position-attribute
   :displayname: Position atribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.PositionAttribute
@@ -1880,7 +1887,7 @@ Position attribute
 | String input.                                                                                                                                      |                                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: saml-localeattribute
+.. config:setting:: preferred-language-attribute
   :displayname: Preferred language attribute (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.LocaleAttribute
@@ -1904,7 +1911,7 @@ Preferred language attribute
 | String input.                                                                                                                  |                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: saml-loginbuttontext
+.. config:setting:: login-button-text
   :displayname: Login button text (SAML)
   :systemconsole: Authentication > SAML 2.0
   :configjson: .SamlSettings.LoginButtonText
@@ -1939,7 +1946,7 @@ Access the following configuration settings in the System Console by going to **
 
 Use these settings to configure OAuth 2.0 for account creation and login.
 
-.. config:setting:: oauth-selectprovider
+.. config:setting:: select-oauth-20-service-provider
   :displayname: Select OAuth 2.0 service provider (OAuth)
   :systemconsole: Authentication > OAuth 2.0
   :configjson: N/A
@@ -1971,7 +1978,7 @@ GitLab OAuth 2.0 settings
 .. note::
    For Enterprise subscriptions, GitLab settings can be found under **OAuth 2.0**
 
-.. config:setting:: oauth-gitlabenable
+.. config:setting:: openid-connect
   :displayname: Enable OAuth 2.0 authentication with GitLab (OAuth - GitLab)
   :systemconsole: Authentication > OAuth 2.0 (or GitLab)
   :configjson: .GitLabSettings.Enable
@@ -2235,7 +2242,7 @@ Entra ID OAuth 2.0 settings
   :start-after: :nosearch:
 
 .. note::
-   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`__.
+   In line with Microsoft ADFS guidance we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 .. config:setting:: oauth-entra-id-enable
   :displayname: Enable (OAuth - Entra ID)
@@ -2397,7 +2404,7 @@ OpenID Connect
 
 Access the following configuration settings in the System Console by going to **Authentication > OpenID Connect**.
 
-.. config:setting:: oidc-selectprovider
+.. config:setting:: select-openid-connect-service-provider
   :displayname: Select OpenID Connect service provider (OpenID Connect)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
@@ -2430,7 +2437,7 @@ GitLab OpenID settings
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. config:setting:: oidc-gitlab-enable
+.. config:setting:: guest-access
   :displayname: Enable (OpenID Connect - GitLab)
   :systemconsole: Authentication > OpenID Connect
   :configjson: N/A
@@ -2654,7 +2661,7 @@ Entra ID OpenID settings
   :start-after: :nosearch:
 
 .. note::
-   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://docs.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
+   In line with Microsoft ADFS guidance, we recommend `configuring intranet forms-based authentication for devices that do not support WIA <https://learn.microsoft.com/en-us/windows-server/identity/ad-fs/operations/configure-intranet-forms-based-authentication-for-devices-that-do-not-support-wia>`_.
 
 .. config:setting:: oidc-o365enable
   :displayname: Enable Entra ID Settings (OpenID Connect - Entra ID)
@@ -2923,7 +2930,7 @@ Guest access
 
 Access the following configuration settings in the System Console by going to **Authentication > Guest Access**.
 
-.. config:setting:: guest-enable
+.. config:setting:: enable-guest-access
   :displayname: Enable guest access (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.Enable
@@ -2949,7 +2956,7 @@ Enable guest access
   For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is
   deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`.
 
-.. config:setting:: guest-whitelistdomains
+.. config:setting:: whitelisted-guest-domains
   :displayname: Whitelisted guest domains (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.RestrictCreationToDomains
@@ -2969,7 +2976,7 @@ Whitelisted guest domains
 | String input of one or more domains, separated by commas.                                                                                              | - Environment variable: ``MM_GUESTACCOUNTSSETTINGS_RESTRICTCREATIONTODOMAINS``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 
-.. config:setting:: guest-enforcemultifactorauth
+.. config:setting:: enforce-multi-factor-authentication
   :displayname: Enforce multi-factor authentication (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.EnforceMultifactorAuthentication
@@ -2994,7 +3001,7 @@ Enforce multi-factor authentication
 .. note::
   This setting defaults to false and cannot be changed if MFA isn't enforced for non-guest users.
 
-.. config:setting:: guest-showtag
+.. config:setting:: show-guest-tag
   :displayname: Show guest tag (Guest Access)
   :systemconsole: Authentication > Guest Access
   :configjson: .GuestAccountsSettings.HideTags

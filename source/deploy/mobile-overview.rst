@@ -6,26 +6,26 @@ Deploy Mattermost mobile apps
 
 This documentation provides foundational information you need when developing a plan for an enterprise mobile application deployment. It’s intended for business leaders, system administrators, and mobile app developers responsible for deploying Mattermost in their organization.
 
-This documentation provides information to help you: 
+This documentation provides information to help you determine the ideal mobile deployment model for your organization, understand what’s required to build your own Mattermost Mobile Apps, and deploy Mattermost mobile apps.
 
-- Determine the ideal mobile deployment model for your organization.
-- Understand what’s required to build your own Mattermost Mobile Apps.
-- Deploy Mattermost mobile apps.
+.. tip::
 
-.. note::
-
-  - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
-  - Some features described in this guide are available only in Mattermost Enterprise Edition.
+  Download `this Mattermost mobile datasheet <https://mattermost.com/mattermost-mobile-datasheet/>`_ to learn more about key features and use cases for the Mattermost mobile app.
 
 Decision summary
 ----------------
 
 When planning for a mobile app deployment, you have two important decisions to make: 
 
-- What app will you deploy - a pre-built app or your own custom build?
+- What app will you deploy? A pre-built app or your own custom build?
 - How will you deploy it?
 
-Mattermost provides official mobile apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`__ and the `Google Play Store <https://play.google.com/store>`__. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See :doc:`Using Mattermost’s Pre-Built Apps </deploy/use-prebuilt-mobile-apps>` to learn more about using Mattermost pre-built apps.
+.. note::
+
+  - Mattermost Cloud customers must use Mattermost pre-built public apps for mobile deployment. 
+  - Some features described in this guide are available only in Mattermost Enterprise Edition.
+
+Mattermost provides official mobile apps through public app stores including the `Apple App Store <https://www.apple.com/ca/app-store>`_ and the `Google Play Store <https://play.google.com/store/games>`_. These apps are referred to throughout this documentation as Mattermost's pre-built mobile apps. Using Mattermost's pre-built apps is the easiest and fastest approach since your users can download the apps from public app stores, or you can use an EMM provider to maintain full control over the distribution process or enforce or restrict specific security policies. See :doc:`Using Mattermost’s Pre-Built Apps </deploy/use-prebuilt-mobile-apps>` to learn more about using Mattermost pre-built apps.
 
 If you want to control the app's look and feel, or host your own push proxy server, you can build your own mobile apps and manage your own app distribution. See :doc:`Building and Distributing Your Own Custom Mattermost Mobile Apps </deploy/build-custom-mobile-apps>` to learn more about working with custom built apps.
 
@@ -82,6 +82,6 @@ If you need assistance, please reach out using one or more of the following meth
 
 - **Community:** Join our Mattermost community and post your specific questions in the `Developers: Mobile <https://community-daily.mattermost.com/core/channels/native-mobile-apps>`__ channel.
 - **Documentation:** We link to a lot of mobile-specific documentation within this guide, but we encourage you to visit all of our `product documentation </>`__.
-- **Forums:** For more troubleshooting help, `open a new topic in our forum <https://forum.mattermost.com/c/trouble-shoot>`__ and include the steps to reproduce your issue so we can test on our side.
+- **Forums:** For more troubleshooting help, `open a new topic in our forum <https://forum.mattermost.com/c/trouble-shoot/16>`__ and include the steps to reproduce your issue so we can test on our side.
 - **GitHub:** `Visit us on GitHub <https://github.com/mattermost/>`__ to create issues in any of our repositories.
 - **Enterprise Support:** If you're a Mattermost Enterprise Edition subscriber, open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/>`__.
