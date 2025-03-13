@@ -130,29 +130,28 @@ Note that there are some requirements for this:
 
 You would also need to add the `CrossClusterGet` permission on the IAM policy for the OS cluster. We recommend the following as per AWS, but feel free to fine-tune as necessary.
 
-```
-{
-  "Version": "2012-10-17",
-  "Statement": [
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
+.. code-block:: sh
+  {
+    "Version": "2012-10-17",
+    "Statement": [
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "*"
+        },
+        "Action": "es:ESHttp*",
+        "Resource": "arn:aws:es:<region>:<acc_num>:domain/<domain_name>/*"
       },
-      "Action": "es:ESHttp*",
-      "Resource": "arn:aws:es:<region>:<acc_num>:domain/<domain_name>/*"
-    },
-    {
-      "Effect": "Allow",
-      "Principal": {
-        "AWS": "*"
-      },
-      "Action": "es:ESCrossClusterGet",
-      "Resource": "arn:aws:es:<region>:<acc_num>:domain/<domain_name>"
-    }
-  ]
-}
-```
+      {
+        "Effect": "Allow",
+        "Principal": {
+          "AWS": "*"
+        },
+        "Action": "es:ESCrossClusterGet",
+        "Resource": "arn:aws:es:<region>:<acc_num>:domain/<domain_name>"
+      }
+    ]
+  }
 
 This can be set under the “Security Configuration“ tab for your OS domain.
 
@@ -196,105 +195,100 @@ For this, SSH into an app node in the secondary region. We will set up an auto-f
 
 First, let’s set up the auto-follow for posts* indices
 
-```
-curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/_autofollow?pretty' -d '
-{
-   "leader_alias" : "<LEADER_ALIAS>",
-   "name": "autofollow-rule",
-   "pattern": "posts*",
-   "use_roles":{
-      "leader_cluster_role": "all_access",
-      "follower_cluster_role": "all_access"
-   }
-}'
-```
+.. code-block:: sh
+  curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/_autofollow?pretty' -d '
+  {
+     "leader_alias" : "<LEADER_ALIAS>",
+     "name": "autofollow-rule",
+     "pattern": "posts*",
+     "use_roles":{
+        "leader_cluster_role": "all_access",
+        "follower_cluster_role": "all_access"
+     }
+  }'
 
 
 Check the status of the auto-follow rule by:
 
-```
-curl -H 'Content-Type: application/json' -u 'username/password'  'https://<>/_plugins/_replication/autofollow_stats?pretty'
-{
-  "num_success_start_replication" : 2,
-  "num_failed_start_replication" : 0,
-  "num_failed_leader_calls" : 0,
-  "failed_indices" : [ ],
-  "autofollow_stats" : [
-    {
-      "name" : "autofollow-rule",
-      "pattern" : "posts*",
-      "num_success_start_replication" : 2,
-      "num_failed_start_replication" : 0,
-      "num_failed_leader_calls" : 0,
-      "failed_indices" : [ ],
-      "last_execution_time" : 1737699113927
-    }
-  ]
-}
-```
+.. code-block:: sh
+  curl -H 'Content-Type: application/json' -u 'username/password'  'https://<>/_plugins/_replication/autofollow_stats?pretty'
+  {
+    "num_success_start_replication" : 2,
+    "num_failed_start_replication" : 0,
+    "num_failed_leader_calls" : 0,
+    "failed_indices" : [ ],
+    "autofollow_stats" : [
+      {
+        "name" : "autofollow-rule",
+        "pattern" : "posts*",
+        "num_success_start_replication" : 2,
+        "num_failed_start_replication" : 0,
+        "num_failed_leader_calls" : 0,
+        "failed_indices" : [ ],
+        "last_execution_time" : 1737699113927
+      }
+    ]
+  }
 
 Next, set up replication for the other indices
 
-```
-curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_start?pretty' -d '
-{
-   "leader_alias": "<LEADER_ALIAS>",
-   "leader_index": "channels",
-   "use_roles":{
-      "leader_cluster_role": "all_access",
-      "follower_cluster_role": "all_access"
-   }
-}'
+.. code-block:: sh
+  curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_start?pretty' -d '
+  {
+     "leader_alias": "<LEADER_ALIAS>",
+     "leader_index": "channels",
+     "use_roles":{
+        "leader_cluster_role": "all_access",
+        "follower_cluster_role": "all_access"
+     }
+  }'
 
-curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_start?pretty' -d '
-{
-   "leader_alias": "<LEADER_ALIAS>",
-   "leader_index": "users",
-   "use_roles":{
-      "leader_cluster_role": "all_access",
-      "follower_cluster_role": "all_access"
-   }
-}'
+  curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_start?pretty' -d '
+  {
+     "leader_alias": "<LEADER_ALIAS>",
+     "leader_index": "users",
+     "use_roles":{
+        "leader_cluster_role": "all_access",
+        "follower_cluster_role": "all_access"
+     }
+  }'
 
-curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_start?pretty' -d '
-{
-   "leader_alias": "<LEADER_ALIAS>",
-   "leader_index": "files",
-   "use_roles":{
-      "leader_cluster_role": "all_access",
-      "follower_cluster_role": "all_access"
-   }
-}'
-```
+  curl -XPUT -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_start?pretty' -d '
+  {
+     "leader_alias": "<LEADER_ALIAS>",
+     "leader_index": "files",
+     "use_roles":{
+        "leader_cluster_role": "all_access",
+        "follower_cluster_role": "all_access"
+     }
+  }'
 
 Check the status of the replication rules by:
 
-```
-curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_status?pretty'
-curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_status?pretty'
-curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_status?pretty'
-curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
-curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
-Sample output:
-{
-  "status" : "SYNCING",
-  "reason" : "User initiated",
-  "leader_alias" : "<LEADER_ALIAS>",
-  "leader_index" : "<INDEX>",
-  "follower_index" : "<INDEX>",
-  "syncing_details" : {
-    "leader_checkpoint" : 16,
-    "follower_checkpoint" : 16,
-    "seq_no" : 17
+.. code-block:: sh
+  curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_status?pretty'
+  curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_status?pretty'
+  curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_status?pretty'
+  curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
+  curl -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/posts_<DATE>/_status?pretty'
+  Sample output:
+  {
+    "status" : "SYNCING",
+    "reason" : "User initiated",
+    "leader_alias" : "<LEADER_ALIAS>",
+    "leader_index" : "<INDEX>",
+    "follower_index" : "<INDEX>",
+    "syncing_details" : {
+      "leader_checkpoint" : 16,
+      "follower_checkpoint" : 16,
+      "seq_no" : 17
+    }
   }
-}
-```
 
 Now we can check for indices. We should be able to see all the indices from the primary domain in our secondary domain.
 
-```
-curl -s -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_cat/indices?pretty'
-```
+.. code-block:: sh
+  curl -s -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_cat/indices?pretty'
 
 **Replicating Job servers**
 
@@ -326,23 +320,21 @@ For simplicity, let’s say site1 is primary, and site2 is secondary. Therefore,
 
 2. Remove auto-follow rule.
 
-```
-curl -XDELETE -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/_autofollow?pretty' -d '
-{
-   "leader_alias" : "<LEADER_ALIAS>",
-   "name": "autofollow-rule"
-}'
-```
+.. code-block:: sh
+  curl -XDELETE -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/_autofollow?pretty' -d '
+  {
+     "leader_alias" : "<LEADER_ALIAS>",
+     "name": "autofollow-rule"
+  }'
 
 3. Check the status of the auto-follow rule as mentioned before.
 
 4. Remove replication rules:
 
-```
-curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_stop?pretty' -d '{}'
-curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_stop?pretty' -d '{}'
-curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_stop?pretty' -d '{}'
-```
+.. code-block:: sh
+  curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/channels/_stop?pretty' -d '{}'
+  curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/files/_stop?pretty' -d '{}'
+  curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'https://<HOSTNAME>/_plugins/_replication/users/_stop?pretty' -d '{}'
 
 5. Check the status of replication rules as mentioned before.
 
@@ -354,24 +346,21 @@ curl -XPOST -H 'Content-Type: application/json' -u '<USERNAME>:<PASSWORD>'  'htt
 
 9. Delete all indices.
 
-```
-curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/posts*?pretty'
-curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/channels?pretty'
-curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/files?pretty'
-curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/users?pretty'
-```
+.. code-block:: sh
+  curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/posts*?pretty'
+  curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/channels?pretty'
+  curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/files?pretty'
+  curl -XDELETE -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/users?pretty'
 
 10. Refresh indices:
 
-```
-curl -XPOST -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_refresh?pretty'
-```
+.. code-block:: sh
+  curl -XPOST -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_refresh?pretty'
 
 11. Confirm that everything is deleted:
 
-```
-curl -s -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_cat/indices?pretty'
-```
+.. code-block:: sh
+  curl -s -u '<USERNAME>:<PASSWORD>' 'https://<HOSTNAME>/_cat/indices?pretty'
 
 12. Now we have to add the auto-follow rule, add replication rules. Follow the same steps as before.
 
