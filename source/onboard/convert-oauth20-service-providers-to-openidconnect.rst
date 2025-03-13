@@ -4,10 +4,6 @@ Converting OAuth 2.0 Service Providers to OpenID Connect
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 .. include:: common-converting-oauth-to-openidconnect.rst
   :start-after: :nosearch:
 

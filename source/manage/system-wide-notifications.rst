@@ -4,10 +4,6 @@ System-wide notifications
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 System admins can configure system-wide notifications visibile in all channels for all users across all teams.
 
 .. image:: ../images/announcement-banner.png
