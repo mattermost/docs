@@ -97,8 +97,8 @@ From Mattermost v9.6, Mattermost Enterprise and Professional customers can expor
 2. `Filter <#filter-user-searches>`__ the user data as needed.
 3. Select **Export** located in the top right corner of the System Console interface, and then select **Export data**. You'll receive the report in CSV format as a direct message in Mattermost.
 
-Activate or deactivate users
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Deactivate users
+~~~~~~~~~~~~~~~~~
 
 To delete a user from your Mattermost deployment, you can deactivate the user's account. Deactivated users have an deactivated status, are logged out of Mattermost as soon as they are deactivated, and deactivated users can no longer log back in. You can manage the user's role, password, and email address while a user's account is deactivated.
 
@@ -114,10 +114,9 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 .. image:: ../images/deactivate-user.png
   :alt: Deactivate a user in Mattermost using the System Console.
 
-You can re-activate a deactivated user by selecting **Activate**.
+.. tip::
 
-.. image:: ../images/activate-user.png
-  :alt: Activate a user in Mattermost using the System Console.
+  Re-activate a deactivated user by selecting **Activate**.
 
 What happens to deactivated user integrations?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
