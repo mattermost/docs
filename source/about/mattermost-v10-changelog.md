@@ -10,7 +10,7 @@
 **Release day: 2025-03-14**
 
 ### Important Upgrade Notes
- - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/install/prepare-mattermost-database#minimum-supported-version-policy] documentation for details.
+ - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/install/prepare-mattermost-database#minimum-supported-version-policy) documentation for details.
  - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL.
 
 ```{Important}

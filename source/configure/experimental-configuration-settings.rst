@@ -1861,29 +1861,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 .. note::
    This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
-.. config:setting:: enable-opentracing
-  :displayname: Enable OpenTracing (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableOpenTracing
-  :environment: N/A
-
-  - **true**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
-  - **false**: **(Default)** OpenTracing is not enabled.
-
-Enable OpenTracing
-~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers. Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
-
-By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported.
-
-**False**: OpenTracing is not enabled.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-local-mode-for-mmctl
   :displayname: Enable local mode for mmctl (Experimental)
