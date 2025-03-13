@@ -460,7 +460,7 @@ Permission policy settings
 
 .. note::
 
-   From v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
+   From Mattermost v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

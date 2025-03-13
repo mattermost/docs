@@ -662,9 +662,9 @@ Enable simulcast for screen sharing (Experimental)
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This functionality has the following requirements:
-  - Calls plugin version >= v0.16.0 
-  - ``rtcd`` version >= v0.10.0 (if in use)
+
+  - This functionality requires Calls plugin version >= v0.16.0 and ``rtcd`` version >= v0.10.0 (when in use).
+  - Avoid enabling both this experimental configuration setting and the `Enable AV1 <#enable-av1-experimental>`__ experimental configuration setting at the same time. 
 
 .. config:setting:: enable-pluginscallrecordings
   :displayname: Enable call recordings (Plugins - Calls)
@@ -1004,9 +1004,8 @@ Enable AV1 (Experimental)
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is ignored when
-  :ref:`simulcast is enabled for screen sharing <configure/plugins-configuration-settings:enable simulcast for screen sharing (experimental)>`.
 
+  Avoid enabling both this experimental configuration setting and the `Enable simulcast for screen sharing <#enable-simulcast-for-screen-sharing-experimental>`__ experimental configuration setting at the same time. 
 
 .. config:setting:: enable-pluginsdcsignaling
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)
@@ -1029,7 +1028,9 @@ Enable DC signaling (Experimental)
 +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  Version v0.18.0 or higher of the |rtcd_service| is required for this functionality to work when hosting calls through the dedicated WebRTC service.
+
+  - Version v0.18.0 or higher of the |rtcd_service| is required for this functionality to work when hosting calls through the dedicated WebRTC service.
+  - Use caution when enabling this experimental configuration setting since it determines how the system handles part of the setup for WebRTC-based calls. Enabling this configuration setting may make the call setup a bit faster or more reliable in certain situations.
 
 ----
 
