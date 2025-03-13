@@ -24,6 +24,9 @@ If you don't have Docker installed, follow the instructions below based on your 
 
   Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation.
 
+  .. important::
+     Please ensure that you follow the post-installation steps when installing Docker on Ubuntu!
+
 .. tab:: Fedora
 
   Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation.
