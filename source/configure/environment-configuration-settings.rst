@@ -3703,6 +3703,10 @@ Enable jailbreak/root protection
 |   protection is disabled.                     |                                                                                        |
 +-----------------------------------------------+----------------------------------------------------------------------------------------+
 
+.. note::
+
+  See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
+
 .. config:setting:: mobile-security-enabled
   :displayname: Prevent Screen Capture
   :systemconsole: Environment > Mobile Security
