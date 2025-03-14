@@ -25,8 +25,8 @@ You can use the System Console or the mmctl tools to add or change a Mattermost 
 
     - Removing a Mattermost Enterprise or Professional license key won't remove the configuration for Enterprise settings; however, these features won't function until an Enterprise or Professional license key is applied.
     - When you're using :doc:`High Availability </scale/high-availability-cluster-based-deployment>`, it's critical to ensure that all servers in the cluster have same Enterprise license properly installed to prevent multi-node clusters from failing. An Enterprise license is required for High Availability to work.
-    - When you apply an Enterprise license key to a server previously licensed for Professional (or legacy Enterprise Edition E10), Professional features retain their configuration settings in Enterprise. 
-    - When you apply a Professional license to a server previously licensed for Enterprise, (or legacy Enterprise Edition E20), Enterprise features retain their configuration but will no longer be accessible for use.
+    - When you apply an Enterprise license key to a server previously licensed for Professional, Professional features retain their configuration settings in Enterprise. 
+    - When you apply a Professional license to a server previously licensed for Enterprise, Enterprise features retain their configuration but will no longer be accessible for use.
 
 Change an existing license key
 -------------------------------

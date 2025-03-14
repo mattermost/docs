@@ -4,10 +4,6 @@ Generate a Support Packet
 .. include:: ../_static/badges/ent-pro-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
 
 Contents of a Support Packet
@@ -25,6 +21,7 @@ A Mattermost Support Packet can contain the following files:
       - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
       - Field names are normalized.
       - New data includes server statistics, permission details, and extended job list details.
+      - Mattermost-supported plugin diagnostic data is included where applicable.
 
    - `metadata.yaml <#metadata>`__
    - ``mattermost.log`` (Mattermost logs)
@@ -36,6 +33,18 @@ A Mattermost Support Packet can contain the following files:
    - ``permissions.yaml`` (role & scheme information)
    - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
    - ``warning.txt`` (present when issues are encountered during packet generation)
+   - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
+
+   The following additional plugin diagnostic data is included in the generated support packet when the plugin is enabled and operational:
+
+   - GitHub: ``/github/diagnostics.yaml``
+   - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
+   - Jira: ``/jira/diagnostics.yaml``
+   - Calls: ``/com.mattermost.calls/diagnostics.yaml``
+   - Boards: ``/focalboard/diagnostics.yaml``
+   - Playbooks: ``/playbooks/diagnostics.yaml``
+   - MSCalendar: ``/com.mattermost.mscalendar/diagnostics.yaml``
+   - Google Calendar: ``/com.mattermost.gcal/diagnostics.yaml``
 
 .. tab:: Prior to v10.5
 

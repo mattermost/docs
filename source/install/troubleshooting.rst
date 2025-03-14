@@ -343,7 +343,7 @@ Because of this, having a complete picture of the servers and network that the M
 - Server OS and version (e.g. RHEL7, Ubuntu 20.04)
 - Any orchestration/automation used like Docker or Kubernetes
 - Reverse proxy and version (e.g. NGINX 1.16)
-- Database type and version (e.g. PostgreSQL 12.4)
+- Database type and version (e.g. PostgreSQL 13)
 - SAML provider (e.g. Windows Server 2012 Active Directory, Okta, KeyCloak)
 - LDAP provider (e.g. Windows Server 2016 Active Directory, Okta, OpenLDAP)
 - The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
@@ -363,7 +363,7 @@ Mattermost server
 Database server
 
  - Internal hostname: postgresql.lan
- - PostgreSQL v12
+ - PostgreSQL v13
  - LDAP Provider - 192.168.1.102
  - Internal hostname: ldap.lan
  - OpenLDAP 2.4.54 (Docker container)
@@ -388,7 +388,7 @@ Database servers
  - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
  - Primary: db1.local.lan
  - Read-Only: db2.local.lan, db3.local.lan  
- - PostgreSQL v12
+ - PostgreSQL v13
 
 Elasticsearch server
 

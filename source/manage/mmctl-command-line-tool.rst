@@ -4204,10 +4204,6 @@ mmctl permissions add
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 **Description**
 
 Add one or more permissions to an existing role.
@@ -4250,10 +4246,6 @@ mmctl permissions remove
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4298,10 +4290,6 @@ mmctl permissions reset
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 **Description**
 
 Reset the given role's permissions to the default settings and overwrite custom settings.
@@ -4344,10 +4332,6 @@ mmctl permissions role assign
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 

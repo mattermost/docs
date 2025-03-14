@@ -139,23 +139,6 @@ Features include:
 
 See a complete list of features `here <https://mattermost.com/pricing>`_.
 
-Other Mattermost plans
-----------------------
-
-Mattermost introduced a new pricing and packaging structure on October 13, 2021. The plans listed below reached end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new plans. We honored existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ with questions.
-
-Mattermost Enterprise Edition E10
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features included: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user login; encrypted push notifications with service level agreements (SLAs) via HPNS; advanced access control policy; next business day support via online ticketing system; scale to handle hundreds of users per team.
-
-Mattermost Enterprise Edition E20
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional, and High Availability and compliance features are offered in Mattermost Enterprise.
-
-Features included: Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user login; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
-
 Product decisions
 -----------------
 
