@@ -11,7 +11,7 @@ Upgrade Mattermost
 
     Important upgrade notes </upgrade/important-upgrade-notes>
     Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>
-    Communicate scheduled maintenance </upgrade/communicate-scheduled-maintenance>
+    Communicate scheduled maintenance best practices </upgrade/communicate-scheduled-maintenance>
     Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
     Enterprise install and upgrade </install/enterprise-install-upgrade>
     Install a license key </upgrade/installing-license-key>
@@ -20,7 +20,7 @@ Upgrade Mattermost
 Stay up to date with the latest features and improvements.
 
 * :doc:`Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>` - Learn how to prepare for a Mattermost upgrade.
-* :doc:`Communicate scheduled mainenance  </upgrade/communicate-scheduled-maintenance>` - Learn best practices for communicating scheduled server mainenance in advance of a service maintenance window.
+* :doc:`Communicate scheduled mainenance best practices </upgrade/communicate-scheduled-maintenance>` - Learn best practices for communicating scheduled server mainenance in advance of a service maintenance window.
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Enterprise install and upgrade </install/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
 * :doc:`Install a license key </upgrade/installing-license-key>` - Learn how to add or change a Mattermost license key.

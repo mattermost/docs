@@ -63,7 +63,7 @@ Channels
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 | :doc:`Rename channels </collaborate/rename-channels>`                                                    | |checkmark| | |checkmark| | |checkmark| |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Deactivate members <configure/user-management-configuration-settings:activate or deactivate users>`| |checkmark| | |checkmark| |             |
+| :ref:`Deactivate members <configure/user-management-configuration-settings:deactivate users>`            | |checkmark| | |checkmark| |             |
 +----------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Teams
