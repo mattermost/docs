@@ -13,12 +13,13 @@ Review and manage the following environmental configuration options in the Syste
 - `Image proxy <#image-proxy>`__
 - `SMTP <#smtp>`__
 - `Push notification server <#push-notification-server>`__
-- `High availaiblity <#high-availability>`__ cluster-based settings
+- `High availaiblity <#high-availability>`__
 - `Rate limiting <#rate-limiting>`__
 - `Logging <#logging>`__
 - `Session lengths <#session-lengths>`__
 - `Performance monitoring <#performance-monitoring>`__
-- `Developer <#developer>`__ settings
+- `Developer <#developer>`__
+- `Mobile security <#mobile-security>`__ 
 - `config.json-only settings <#config-json-only-settings>`__
 
 .. tip::
@@ -3643,10 +3644,15 @@ Allow untrusted internal connections
 |   but not ``10.0.16.20``.                                                                                                                     |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 
-Mobile Security
+Mobile security
 ---------------
 
-.. config:setting:: mobile-security-enabled
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+
+.. config:setting:: enable-biometric-authentication
   :displayname: Enable Biometric Authentication
   :systemconsole: Environment > Mobile Security
   :configjson: .NativeAppSettings.MobileEnableBiometrics
@@ -3656,44 +3662,72 @@ Mobile Security
     - **true**: Biometric authentication is enabled.
     - **false**: **(Default)** Biometric authentication is disabled.
 
-
-Enable Biometric Authentication
+Enable biometric authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
++-----------------------------------------------+-------------------------------------------------------------------------------------+
+| Enforce biometric authentication, with        | - System Config path: **Environment > Mobile Security**                             |
+| PIN/passcode fallback, before accessing       | - ``config.json setting``: ``".NativeAppSettings.MobileEnableBiometrics": false",`` |
+| the app. Users will be prompted based on      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLEBIOMETRICS``             |
+| session activity and server switching rules.  |                                                                                     |
+|                                               |                                                                                     |
+| - **true**: Biometric authentication is       |                                                                                     |
+|   enabled.                                    |                                                                                     |
+| - **false**: **(Default)** Biometric          |                                                                                     |
+|   authentication is disabled.                 |                                                                                     |
++-----------------------------------------------+-------------------------------------------------------------------------------------+
 
 .. config:setting:: mobile-security-enabled
   :displayname: Enable Jailbreak/Root Protection
   :systemconsole: Environment > Mobile Security
   :configjson: .NativeAppSettings.MobileJailbreakProtection
   :environment: MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION
-  :description: Prevents access to the app on devices detected as jailbroken or rooted. If a device fails the security check, users will be denied access or prompted to switch to a compliant server.
+  :description: Prevent access to the app on devices detected as jailbroken or rooted. If a device fails the security check, users will be denied access or prompted to switch to a compliant server.
 
     - **true**: Jailbreak/Root protection is enabled.
     - **false**: **(Default)** Jailbreak/Root protection is disabled.
 
-Enable Jailbreak/Root Protection
+Enable jailbreak/root protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
++-----------------------------------------------+----------------------------------------------------------------------------------------+
+| Prevent access to the app on devices          | - System Config path: **Environment > Mobile Security**                                |
+| detected as jailbroken or rooted. If a        | - ``config.json setting``: ``".NativeAppSettings.MobileJailbreakProtection": false",`` |
+| device fails the security check, users will   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION``             |
+| be denied access or prompted to switch to a   |                                                                                        |
+| compliant server.                             |                                                                                        |
+|                                               |                                                                                        |
+| - **true**: Jailbreak/Root protection is      |                                                                                        |
+|   enabled.                                    |                                                                                        |
+| - **false**: **(Default)** Jailbreak/Root     |                                                                                        |
+|   protection is disabled.                     |                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. config:setting:: mobile-security-enabled
   :displayname: Prevent Screen Capture
   :systemconsole: Environment > Mobile Security
   :configjson: .NativeAppSettings.MobilePreventScreenCapture
   :environment: MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE
-  :description: Blocks screenshots and screen recordings when using the mobile app. Screenshots will appear blank, and screen recordings will blur (iOS) or show a black screen (Android). Also applies when switching apps.
+  :description: Block screenshots and screen recordings when using the mobile app. Screenshots will appear blank, and screen recordings will blur (iOS) or show a black screen (Android). Also applies when switching apps.
 
-    - **true**: Prevent screen capture is enabled.
-    - **false**: **(Default)** Prevent screen capture is disabled.
+    - **true**: Screen capture blocking is enabled.
+    - **false**: **(Default)** Screen capture blocking is disabled.
 
-Prevent Screen Capture
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Prevent screen capture
+~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Block screenshots and screen recordings when  | - System Config path: **Environment > Mobile Security**                                 |
+| using the mobile app. Screenshots will        | - ``config.json setting``: ``".NativeAppSettings.MobilePreventScreenCapture": false",`` |
+| appear blank, and screen recordings will      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE``             |
+| blur (iOS) or show a black screen (Android).  |                                                                                         |
+| Also applies when switching apps.             |                                                                                         |
+|                                               |                                                                                         |
+| - **true**: Screen capture blocking is        |                                                                                         |
+|   enabled.                                    |                                                                                         |
+| - **false**: **(Default)** Screen capture     |                                                                                         |
+|   blocking is disabled.                       |                                                                                         |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
 
 config.json-only settings
 -------------------------
