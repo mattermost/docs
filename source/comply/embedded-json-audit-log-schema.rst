@@ -4,10 +4,6 @@ Audit Log JSON Schema
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 The audit log JSON schema functions as a standardized blueprint or schematic that consistently defines how a single event should appear when being written to the audit log, including: field names, data types, objects, and structure.
 
 An outline of the JSON audit logging schema is provided below. See the `JSON data model <#json-data-model>`__ for additional details.

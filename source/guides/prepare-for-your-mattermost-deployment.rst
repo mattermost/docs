@@ -7,7 +7,6 @@ Prepare for your Mattermost deployment
   :titlesonly:
 
     Software and hardware requirements </install/software-hardware-requirements>
-    Manage the Mattermost Kubernetes Operator </install/manage_kubernetes>
     Administrator tasks </getting-started/admin-onboarding-tasks>
     Architecture overview </getting-started/architecture-overview>
     Plan your Mattermost implementation </getting-started/implementation-plan>
@@ -18,7 +17,6 @@ These guides will help you prepare for your Mattermost deployment.
 
 * :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` - Learn how to migrate from MySQL to PostgreSQL.
 * :doc:`Software and hardware requirements </install/software-hardware-requirements>` - Confirm software and hardware requirements for your Mattermost deployment.
-* :doc:`Manage the Mattermost Kubernetes Operator </install/manage_kubernetes>` - Learn how to manage and monitor your Mattermost installation and deployment process in the CLI.
 * :doc:`Administrator tasks </getting-started/admin-onboarding-tasks>` - Learn about the standard configurations and settings you’ll encounter.
 * :doc:`Architecture overview </getting-started/architecture-overview>` - Learn the basics of user authentication, notifications, data management services, network connectivity, and high availability.
 * :doc:`Plan your Mattermost implementation </getting-started/implementation-plan>` - Get a detailed breakdown of the technical requirements to deploy Mattermost for your team or organization.

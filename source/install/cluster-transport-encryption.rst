@@ -4,10 +4,6 @@ Configuring cluster transport encryption
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Mattermost is able to encrypt the messages sent within the cluster of a deployment using SSH tunneling. The guide walks through the deployment of this solution on Ubuntu 20.04, but it can be adapted for any Linux operating system.
 
 While this document only describes the configuration of a three-node cluster, it is by no means limited to that number.
