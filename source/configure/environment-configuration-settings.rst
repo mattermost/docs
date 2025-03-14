@@ -46,10 +46,6 @@ Configure the network environment in which Mattermost is deployed by going to **
 Site URL
 ~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+---------------------------------------------------------------+
 | The URL that users use to access Mattermost.                  | - System Config path: **Environment > Web Server**            |
 | The port number is required if it’s not a standard port,      | - ``config.json`` setting: ``.ServiceSettings.SiteURL",``     |
@@ -99,10 +95,6 @@ Maximum URL length
 Web server listen address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+------------------------------------------------------------------+
 | The address and port to which to bind and listen.             | - System Config path: **Environment > Web Server**               |
 | Specifying ``:8065`` will bind to all network interfaces.     | - ``config.json`` setting: ``".ServiceSettings.ListenAddress",`` |
@@ -125,10 +117,6 @@ Web server listen address
 
 Forward port 80 to 443
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Forward insecure traffic from port 80 to port 443.            | - System Config path: **Environment > Web Server**                       |
@@ -153,10 +141,6 @@ Forward port 80 to 443
 Web server connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 | Connection security between Mattermost clients and the server.        | - System Config path: **Environment > Web Server**                    |
 |                                                                       | - ``config.json`` setting: ``".ServiceSettings.ConnectionSecurity",`` |
@@ -177,10 +161,6 @@ Web server connection security
 TLS certificate file
 ~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The path to the certificate file to use for TLS        | - System Config path: **Environment > Web Server**               |
 | connection security.                                   | - ``config.json`` setting: ``".ServiceSettings.TLSCertFile",``   |
@@ -197,10 +177,6 @@ TLS certificate file
 
 TLS key file
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+---------------------------------------------------------------+
 | The path to the TLS key file to use for TLS            | - System Config path: **Environment > Web Server**            |
@@ -221,10 +197,6 @@ TLS key file
 
 Use Let's Encrypt
 ~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
@@ -249,10 +221,6 @@ Use Let's Encrypt
 Let's Encrypt certificate cache file
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+------------------------------------------------------------------------------------+
 | The path to the file where certificates and other data | - System Config path: **Environment > Web Server**                                 |
 | about the Let’s Encrypt service will be stored.        | - ``config.json`` setting: ``".ServiceSettings.LetsEncryptCertificateCacheFile",`` |
@@ -269,10 +237,6 @@ Let's Encrypt certificate cache file
 
 Read timeout
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Maximum time allowed from when the connection is        | - System Config path: **Environment > Web Server**                  |
@@ -294,10 +258,6 @@ Read timeout
 Write timeout
 ~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------+-----------------------------------------------------------------------------+
 | - If using HTTP (insecure), this is the maximum time     | - System Config path: **Environment > Web Server**                          |
 |   allowed from the end of reading the request headers    | - ``config.json`` setting: ``".ServiceSettings.WriteTimeout: 300",``        |
@@ -317,10 +277,6 @@ Write timeout
 
 Idle timeout
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------+---------------------------------------------------------------------+
 | Set an explicit idle timeout in the HTTP server.        | - System Config path: **Environment > Web Server**                  |
@@ -342,10 +298,6 @@ Idle timeout
 
 Webserver mode
 ~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------------+------------------------------------------------------------------------+
 | We recommend gzip to improve performance unless your                | - System Config path: **Environment > Web Server**                     |
@@ -373,10 +325,6 @@ Webserver mode
 Enable insecure outgoing connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Configure Mattermost to allow insecure outgoing connections.  | - System Config path: **Environment > Web Server**                                          |
 |                                                               | - ``config.json`` setting: ``".ServiceSettings.EnableInsecureOutgoingConnections: false",`` |
@@ -400,10 +348,6 @@ Enable insecure outgoing connections
 
 Managed resource paths
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | A comma-separated list of paths within the Mattermost  | - System Config path: **Environment > Web Server**                      |
@@ -431,10 +375,6 @@ Reload configuration from disk
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------+---------------------------------------------------------------+
 | You must change the database line in the ``config.json`` | - System Config path: **Environment > Web Server**            |
 | file, and then reload configuration to fail over         | - ``config.json`` setting: N/A                                |
@@ -449,10 +389,6 @@ Reload configuration from disk
 
 Purge all caches
 ~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------+---------------------------------------------------------------+
 | Purge all in-memory caches for sessions, accounts,       | - System Config path: **Environment > Web Server**            |
@@ -475,10 +411,6 @@ Purge all caches
 
 Websocket URL
 ~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | You can configure the server to instruct clients       | - System Config path: N/A                                           |
@@ -503,10 +435,6 @@ License file location
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+----------------------------------------------------------------------------+
 | The path and filename of the license file on disk.     | - System Config path: N/A                                                  |
 | On startup, if Mattermost can't find a valid license   | - ``config.json`` setting: ``".ServiceSettings.LicenseFileLocation: "",``  |
@@ -527,10 +455,6 @@ License file location
 TLS minimum version
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+---------------------------------------------------------------------+
 | The minimum TLS version used by the Mattermost server. | - System Config path: N/A                                           |
 |                                                        | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   |
@@ -549,10 +473,6 @@ TLS minimum version
 
 Trusted proxy IP header
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------------------+
 | Specified headers that will be checked, one by one,    | - System Config path: N/A                                                    |
@@ -586,10 +506,6 @@ Trusted proxy IP header
 Enable Strict Transport Security (HSTS)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
 | - **true**: Adds the Strict Transport Security (HSTS)  | - System Config path: N/A                                                     |
 |   header to all responses, forcing the browser to      | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransport: false",``  |
@@ -612,10 +528,6 @@ Enable Strict Transport Security (HSTS)
 Secure TLS transport expiry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
 | The time, in seconds, that the browser remembers a     | - System Config path: N/A                                                              |
 | site is only to be accessed using HTTPS. After this    | - ``config.json`` setting: ``".ServiceSettings.TLSStrictTransportMaxAge: 63072000",``  |
@@ -637,10 +549,6 @@ Secure TLS transport expiry
 
 TLS cipher overwrites
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set TLS ciphers overwrites to meet requirements from   | - System Config path: N/A                                                   |
@@ -671,10 +579,6 @@ TLS cipher overwrites
 Goroutine health threshold
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set a threshold on the number of goroutines when the   | - System Config path: N/A                                                        |
 | Mattermost system is considered to be in a healthy     | - ``config.json`` setting: ``".ServiceSettings.GoroutineHealthThreshold: -1",``  |
@@ -699,10 +603,6 @@ Goroutine health threshold
 Allow cookies for subdomains
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows cookies for           | - System Config path: N/A                                                           |
 |   subdomains by setting the domain parameter on        | - ``config.json`` setting: ``".ServiceSettings.AllowCookiesForSubdomains: true",``  |
@@ -722,10 +622,6 @@ Cluster log timeout
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Define the frequency, in milliseconds, of cluster      | - System Config path: N/A                                                               |
@@ -781,10 +677,6 @@ Configure the database environment in which Mattermost is deployed by going to *
 Driver name
 ~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of database. Can be either:                          | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".SqlSettings.DriverName",``                |
@@ -801,10 +693,6 @@ Driver name
 
 Data source
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The connection string to the master database.                 | - System Config path: N/A                                                |
@@ -924,10 +812,6 @@ Data source
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
 | database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
@@ -946,10 +830,6 @@ Maximum open connections
 Query timeout
 ~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The amount of time to wait, in seconds, for a response | - System Config path: **Environment > Database**                 |
 | from the database after opening a connection and       | - ``config.json`` setting: ``".SqlSettings.QueryTimeout: 30",``  |
@@ -967,10 +847,6 @@ Query timeout
 
 Maximum connection lifetime
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum lifetime for a connection to the database,     | - System Config path: **Environment > Database**                                    |
@@ -992,10 +868,6 @@ Maximum connection lifetime
 Maximum connection idle timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Maximum time a database connection can remain idle,    | - System Config path: **Environment > Database**                                    |
 | in milliseconds.                                       | - ``config.json`` setting: ``".SqlSettings.ConnMaxIdleTimeMilliseconds: 300000",``  |
@@ -1013,10 +885,6 @@ Maximum connection idle timeout
 
 Minimum hashtag length
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Minimum number of characters in a hashtag.                           | - System Config path: **Environment > Database**                        |
@@ -1039,10 +907,6 @@ Minimum hashtag length
 SQL statement logging
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Executed SQL statements can be written to the log for         | - System Config path: **Environment > Database**                         |
 | development.                                                  | - ``config.json`` setting: ``".SqlSettings.Trace: false",``              |
@@ -1057,10 +921,6 @@ Recycle database connections
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | Select the **Recycle Database Connections** button to  | - System Config path: **Environment > Database**                 |
@@ -1087,10 +947,6 @@ Recycle database connections
 
 Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 | When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
@@ -1126,10 +982,6 @@ Disable database search
 Applied schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 A list of all migrations that have been applied to the data store based on the version information available in the ``db_migrations`` table. Select **About Mattermost** from the product menu to review the current database schema version applied to your deployment.
 
 
@@ -1157,10 +1009,6 @@ Read replicas
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +--------------------------------------------------------+-----------------------------------------------------------------------+
 | Specifies the connection strings for the read replica  | - System Config path: N/A                                             |
@@ -1195,10 +1043,6 @@ Search replicas
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
 | Specifies the connection strings for the search        | - System Config path: N/A                                                   |
 | replica databases. A search replica is similar to a    | - ``config.json`` setting: ``".SqlSettings.DataSourceSearchReplicas": []``  |
@@ -1230,10 +1074,6 @@ Replica lag settings
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
 | String array input specifies a connection string and   | - System Config path: N/A                                                        |
@@ -1409,10 +1249,6 @@ You can configure the Elasticsearch environment in which Mattermost is deployed 
 Enable Elasticsearch indexing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
@@ -1477,10 +1313,6 @@ Backend type
 
 Server connection address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | The address of the Elasticsearch server.           | - System Config path: **Environment > Elasticsearch**                    |
@@ -1558,10 +1390,6 @@ Client certificate key path
 Skip TLS verification
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | The certificate step for TLS connections can be skipped.      | - System Config path: **Environment > Elasticsearch**                               |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.SkipTLSVerification: false",`` |
@@ -1581,10 +1409,6 @@ Skip TLS verification
 Server username
 ~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The username to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
 | Elasticsearch server.                                         | - ``config.json`` setting: ``".Elasticsearchsettings.UserName",``        |
@@ -1601,10 +1425,6 @@ Server username
 
 Server password
 ~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The password to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
@@ -1626,10 +1446,6 @@ Server password
 Enable cluster sniffing
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Configure Mattermost to automatically find and connect to      | - System Config path: **Environment > Elasticsearch**                    |
 | all data nodes in a cluster.                                   | - ``config.json`` setting: ``".Elasticsearchsettings.Sniff: false",``    |
@@ -1650,10 +1466,6 @@ Enable cluster sniffing
 
 Bulk indexing
 ~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Configure Mattermost to start a bulk index of all existing    | - System Config path: **Environment > Elasticsearch**                    |
@@ -1698,10 +1510,6 @@ Rebuild channels index
 Purge indexes
 ~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-------------------------------------------+-------------------------------------------------------------+
 | Purge the entire Elasticsearch index.     | - System Config path: **Environment > Elasticsearch**       |
 |                                           | - ``config.json`` setting: N/A                              |
@@ -1742,10 +1550,6 @@ Indexes to skip while purging
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 .. important::
 
   - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that scale, enabling Elasticsearch for search queries is highly recommended.
@@ -1779,10 +1583,6 @@ Enable Elasticsearch for search queries
 Enable Elasticsearch for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Configure Mattermost to use Elasticsearch for all             | - System Config path: **Environment > Elasticsearch**                              |
 | autocompletion queries on users and channels using the        | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
@@ -1804,10 +1604,6 @@ Enable Elasticsearch for autocomplete queries
 
 Post index replicas
 ~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each post index.            | - System Config path: N/A                                                     |
@@ -1833,10 +1629,6 @@ Post index replicas
 Post index shards
 ~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of shards to use for each post index.              | - System Config path: N/A                                                     |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
@@ -1856,10 +1648,6 @@ Post index shards
 
 Channel index replicas
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of replicas to use for each channel index.         | - System Config path: N/A                                                        |
@@ -1881,10 +1669,6 @@ Channel index replicas
 Channel index shards
 ~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each channel index.           | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexShards: 1",``   |
@@ -1900,10 +1684,6 @@ Channel index shards
 
 User index replicas
 ~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The number of replicas to use for each user index.            | - System Config path: N/A                                                     |
@@ -1925,10 +1705,6 @@ User index replicas
 User index shards
 ~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
 | The number of shards to use for each user index.              | - System Config path: N/A                                                        |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexShards: 1",``      |
@@ -1944,10 +1720,6 @@ User index shards
 
 Aggregate search indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Elasticsearch indexes older than the age specified by this    | - System Config path: N/A                                                              |
@@ -1970,10 +1742,6 @@ Aggregate search indexes
 Post aggregator start time
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
 | The start time of the daily scheduled aggregator job.         | - System Config path: N/A                                                                   |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostsAggregatorJobStartTime: 03:00",`` |
@@ -1993,10 +1761,6 @@ Post aggregator start time
 Index prefix
 ~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix added to the Elasticsearch index name.             | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
@@ -2015,10 +1779,6 @@ Index prefix
 
 Live indexing batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | The number of new posts needed before those posts are added   | - System Config path: N/A                                                         |
@@ -2121,10 +1881,6 @@ Batch size
 Request timeout
 ~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | The timeout, in seconds, for Elasticsearch calls.             | - System Config path: N/A                                                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
@@ -2144,10 +1900,6 @@ Request timeout
 
 Trace
 ~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Options for printing Elasticsearch trace errors.              | - System Config path: N/A                                                |
@@ -2192,10 +1944,6 @@ Configure file storage settings by going to **System Console > Environment > Fil
 File storage system
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The type of file storage system used.                         | - System Config path: **Environment > File Storage**                     |
 | Can be either Local File System or Amazon S3.                 | - ``config.json`` setting: ``".FileSettings.DriverName:  local”,``       |
@@ -2218,10 +1966,6 @@ File storage system
 Local storage directory
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The local directory to which files are written when the       | - System Config path: **Environment > File Storage**                     |
 | **File storage system** is set to **local**.                  | - ``config.json`` setting: ``".FileSettings.Directory”,``                |
@@ -2243,10 +1987,6 @@ Local storage directory
 
 Maximum file size
 ~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
 | The maximum file size for message attachments and plugin          | - System Config path: **Environment > File Storage**                     |
@@ -2281,10 +2021,6 @@ Maximum file size
 
 Enable document search by content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | Enable users to search the contents of documents attached     | - System Config path: **Environment > File Storage**                                |
@@ -2326,10 +2062,6 @@ Enable document search by content
 Enable searching content of documents within ZIP files
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | Enables users to search the contents of compressed ZIP files  | - System Config path: **Environment > File Storage**                                   |
 | attached to messages.                                         | - ``config.json`` setting: ``".FileSettings.ArchiveRecursion: false",``                |
@@ -2357,10 +2089,6 @@ Enable searching content of documents within ZIP files
 Amazon S3 bucket
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The name of the bucket for your S3-compatible object          | - System Config path: **Environment > File Storage**                     |
 | storage instance.                                             | - ``config.json`` setting: ``".FileSettings.AmazonS3Bucket",``           |
@@ -2378,10 +2106,6 @@ Amazon S3 bucket
 Amazon S3 path prefix
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The prefix you selected for your **Amazon S3 bucket** in AWS. | - System Config path: N/A                                                |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3PathPrefix",``       |
@@ -2397,10 +2121,6 @@ Amazon S3 path prefix
 
 Amazon S3 region
 ~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The AWS region you selected when creating your                | - System Config path: **Environment > File Storage**                     |
@@ -2424,10 +2144,6 @@ Amazon S3 region
 Amazon S3 access key ID
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | A string with the access key for the S3-compatible storage    | - System Config path: **Environment > File Storage**                     |
 | instance. Your EC2 administrator can supply you with the      | - ``config.json`` setting: ``".FileSettings.AmazonS3AccessKeyId",``      |
@@ -2447,10 +2163,6 @@ Amazon S3 access key ID
 
 Amazon S3 endpoint
 ~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 | The hostname of your S3-compatible instance.                  | - System Config path: **Environment > File Storage**                               |
@@ -2472,10 +2184,6 @@ Amazon S3 endpoint
 Amazon S3 secret access key
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | The secret access key associated with your Amazon S3          | - System Config path: **Environment > File Storage**                     |
 | Access Key ID.                                                | - ``config.json`` setting: ``".FileSettings.AmazonS3SecretAccessKey",``  |
@@ -2493,10 +2201,6 @@ Amazon S3 secret access key
 
 Enable secure Amazon S3 connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable secure Amazon S3 connections.               | - System Config path: **Environment > File Storage**                     |
@@ -2517,10 +2221,6 @@ Enable secure Amazon S3 connections
 
 Amazon S3 signature v2
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Not available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | By default, Mattermost uses Signature v4 to sign API calls    | - System Config path: N/A                                                |
@@ -2545,10 +2245,6 @@ Amazon S3 signature v2
 Enable server-side encryption for Amazon S3
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable server-side encryption for Amazon S3.                  | - System Config path: **Environment > File Storage**                     |
 |                                                               | - ``config.json`` setting: ``".FileSettings.AmazonS3SSE: false",``       |
@@ -2569,10 +2265,6 @@ Enable server-side encryption for Amazon S3
 
 Enable Amazon S3 debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable Amazon S3 debugging to capture additional   | - System Config path: **Environment > File Storage**                     |
@@ -2665,9 +2357,10 @@ Amazon S3 upload part size
 |                                                               | - Environment variable: ``MM_FILESETTINGS_AMAZONS3UPLOADPARTSIZEBYTES``               |
 | Numeric value. Default is 5242880 (5MB).                      |                                                                                       |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------+
-| **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory              |
-| being allocated.                                                                                                                                      |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------+
+
+.. note::
+
+  A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.
 
 .. config:setting:: amazon-s3-exported-upload-part-size
   :displayname: Export Amazon S3 upload part size (File Storage)
@@ -2685,8 +2378,10 @@ Amazon S3 exported upload part size
 |                                                               | - Environment variable: ``MM_FILESETTINGS_EXPORTAMAZONS3UPLOADPARTSIZEBYTES``              |
 | Numeric value. Default is 104857600 (100MB).                  |                                                                                            |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
-| **Note**: A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.  |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+
+  A smaller part size can result in more requests and an increase in latency, while a larger part size can result in more memory being allocated.
 
 .. config:setting:: amazon-s3-request-timeout
   :displayname: Amazon S3 request timeout (File Storage)
@@ -2714,10 +2409,6 @@ Amazon S3 request timeout
 
 Initial font
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 | The font used in auto-generated profile pictures with colored | - System Config path: N/A                                                      |
@@ -2749,10 +2440,6 @@ An image proxy is used by Mattermost apps to prevent them from connecting direct
 Enable image proxy
 ~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 | An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                 |
 | prevents them from accessing insecure content.                | - ``config.json setting``: ``".ImageProxySettings.Enable": true",`` |
@@ -2777,10 +2464,6 @@ Enable image proxy
 Image proxy type
 ~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The type of image proxy used by Mattermost.                   | - System Config path: **Environment > Image Proxy**                           |
 |                                                               | - ``config.json setting``: ``".ImageProxySettings.ImageProxyType": "local",`` |
@@ -2801,10 +2484,6 @@ Image proxy type
 Remote image proxy URL
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------------------+---------------------------------------------------------------------------+
 | The URL of the atmos/camo proxy. This setting isn't needed    | - System Config path: **Environment > Image Proxy**                       |
 | when using the **local** image proxy.                         | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyURL",`` |
@@ -2820,10 +2499,6 @@ Remote image proxy URL
 
 Remote image proxy options
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 | The URL signing key passed to an atmos/camo image proxy.      | - System Config path: **Environment > Image Proxy**                           |
@@ -2853,10 +2528,6 @@ Configure SMTP email server settings by going to **System Console > Environment 
 SMTP server
 ~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The location of the SMTP email server used for email            | - System Config path: **Environment > SMTP**                  |
 | notifications.                                                  | - ``config.json setting``: ``".EmailSettings.SMTPServer",``   |
@@ -2872,10 +2543,6 @@ SMTP server
 
 SMTP server port
 ~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The port of SMTP email server.                                  | - System Config path: **Environment > SMTP**                  |
@@ -2894,10 +2561,6 @@ SMTP server port
 
 Enable SMTP authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable SMTP authentication.                          | - System Config path: **Environment > SMTP**                              |
@@ -2918,10 +2581,6 @@ Enable SMTP authentication
 SMTP server username
 ~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The username for authenticating to the SMTP server.             | - System Config path: **Environment > SMTP**                  |
 |                                                                 | - ``config.json setting``: ``".EmailSettings.SMTPUsername",`` |
@@ -2937,10 +2596,6 @@ SMTP server username
 
 SMTP server password
 ~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+---------------------------------------------------------------+
 | The password associated with the SMTP username.                 | - System Config path: **Environment > SMTP**                  |
@@ -2960,10 +2615,6 @@ SMTP server password
 
 SMTP connection security
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+-----------------------------------------------------------------------+
 | Specify connection security for emails sent using SMTP.         | - System Config path: **Environment > SMTP**                          |
@@ -2988,10 +2639,6 @@ SMTP connection security
 Skip server certificate verification
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Configure Mattermost to skip the verification of the email server     | - System Config path: **Environment > SMTP**                                                 |
 | certificate.                                                          | - ``config.json setting``: ``".EmailSettings.SkipServerCertificateVerification": false",``   |
@@ -3013,10 +2660,6 @@ Skip server certificate verification
 Enable security alerts
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------+
 | Enable or disable security alerts.                              | - System Config path: **Environment > SMTP**                                       |
 |                                                                 | - ``config.json setting``: ``".ServiceSettings.EnableSecurityFixAlert": true",``   |
@@ -3037,10 +2680,6 @@ Enable security alerts
 
 SMTP server timeout
 ~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------+
 | The maximum amount of time, in seconds, allowed for             | - System Config path: **Environment > SMTP**                         |
@@ -3085,10 +2724,6 @@ In a Mattermost high availability cluster-based deployment, the System Console i
 Enable high availability mode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------+------------------------------------------------------------+
 | You can enable high availability mode.                          | - System Config path: **Environment > High Availability**  |
 |                                                                 | - ``config.json`` setting: ``".ClusterSettings.Enable",``  |
@@ -3111,10 +2746,6 @@ Enable high availability mode
 Cluster name
 ~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | The cluster to join by name in a high availability cluster-based deployment. | - System Config path: **Environment > High Availability**       |
 |                                                                              | - ``config.json`` setting: ``".ClusterSettings.ClusterName",``  |
@@ -3132,10 +2763,6 @@ Cluster name
 
 Override hostname
 ~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | You can override the hostname of this server.                   | - System Config path: **Environment > High Availability**              |
@@ -3161,10 +2788,6 @@ Override hostname
 Use IP address
 ~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +------------------------------------------------------------------------------+------------------------------------------------------------------------+
 | You can configure your high availability cluster-based deployment to         | - System Config path: **Environment > High Availability**              |
 | communicate using the hostname instead of the IP address.                    | - ``config.json`` setting: ``".ClusterSettings.UseIPAddress: true",``  |
@@ -3187,10 +2810,6 @@ Use IP address
 Enable experimental gossip encryption
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availability**                                    |
 | configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableExperimentalGossipEncryption: false”,`` |
@@ -3202,9 +2821,10 @@ Enable experimental gossip encryption
 |   All communication using gossip protocol remains unchanged.    |                                                                                              |
 |   protocol remains unencrypted.                                 |                                                                                              |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| **Note**: Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64.      |
-| Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.                                                              |
-+-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
 
 .. config:setting:: enable-gossip-compression
   :displayname: Enable gossip compression (High Availability)
@@ -3217,10 +2837,6 @@ Enable experimental gossip encryption
 
 Enable gossip compression
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | We recommend that you disable this configuration                | - System Config path: **Environment > High Availability**                        |
@@ -3246,10 +2862,6 @@ Enable gossip compression
 Gossip port
 ~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------+---------------------------------------------------------------------+
 | The port used for the gossip protocol. Both UDP and TCP         | - System Config path: **Environment > High Availability**           |
 | should be allowed on this port.                                 | - ``config.json`` setting: ``".ClusterSettings.GossipPort: 8074”,`` |
@@ -3266,10 +2878,6 @@ Gossip port
 
 Read only config
 ~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | - **true**: **(Default)** Changes made to settings in the       | - System Config path: N/A                                              |
@@ -3288,10 +2896,6 @@ Read only config
 Network interface
 ~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | An IP address used to identify the device that does automatic   | - System Config path: N/A                                              |
 | IP detection in high availability cluster-based deployments.    | - ``config.json`` setting: ``".ClusterSettings.NetworkInterface: "",`` |
@@ -3308,10 +2912,6 @@ Network interface
 
 Bind address
 ~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+--------------------------------------------------------------------+
 | An IP address used to bind cluster traffic to a specific        | - System Config path: N/A                                          |
@@ -3334,10 +2934,6 @@ Bind address
 
 Advertise address
 ~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
 | The IP address used to access the server from other nodes.      | - System Config path: N/A                                              |
@@ -3384,10 +2980,6 @@ Configure logging by going to **System Console > Environment > Logging**, or by 
 Output logs to console
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output logs to the    | - System Config path: **Environment > Logging**                     |
 | console.                                      | - ``config.json setting``: ``".LogSettings.EnableConsole": true",`` |
@@ -3415,10 +3007,6 @@ Output logs to console
 Console log level
 ~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------+---------------------------------------------------------------------+
 | The level of detail in log events written     | - System Config path: **Environment > Logging**                     |
 | when Mattermost outputs log messages to the   | - ``config.json setting``: ``".LogSettings.ConsoleLevel": DEBUG",`` |
@@ -3444,10 +3032,6 @@ Console log level
 
 Output console logs as JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output console logs   | - System Config path: **Environment > Logging**                     |
@@ -3498,10 +3082,6 @@ Colorize plain text console logs
 Output logs to file
 ~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output console logs   | - System Config path: **Environment > Logging**                     |
 | to a file.                                    | - ``config.json setting``: ``".LogSettings.EnableFile": true",``    |
@@ -3515,10 +3095,10 @@ Output logs to file
 | - **false**: Logged events aren’t written to  |                                                                     |
 |   a file.                                     |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| **Note**: Typically set to **true** in a production environment. When enabled, you can download the                 |
-| ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download  |
-| Logs**.                                                                                                             |
-+-----------------------------------------------+---------------------------------------------------------------------+
+
+.. note::
+
+  Typically set to **true** in a production environment. When enabled, you can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
 
 .. config:setting:: file-log-directory
   :displayname: File log directory (Logging)
@@ -3529,10 +3109,6 @@ Output logs to file
 
 File log directory
 ~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | The location of the log files.                | - System Config path: **Environment > Logging**                     |
@@ -3556,10 +3132,6 @@ File log directory
 
 File log level
 ~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------+
 | The level of detail in log events when        | - System Config path: **Environment > Logging**                     |
@@ -3586,10 +3158,6 @@ File log level
 Output file logs as JSON
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Configure Mattermost to output file logs as   | - System Config path: **Environment > Logging**                     |
 | JSON.                                         | - ``config.json setting``: ``".LogSettings.FileJson": true",``      |
@@ -3614,10 +3182,6 @@ Output file logs as JSON
 
 Enable webhook debugging
 ~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+------------------------------------------------------------------------------+
 | Configure Mattermost to capture the contents  | - System Config path: **Environment > Logging**                              |
@@ -3644,10 +3208,6 @@ Enable webhook debugging
 Output logs to multiple targets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Configure Mattermost to allow any combination | - System Config path: **Environment > Logging**                           |
 | of console, local file, syslog, and TCP       | - ``config.json setting``: ``".LogSettings.AdvancedLoggingJSON":: "",``   |
@@ -3658,15 +3218,14 @@ Output logs to multiple targets
 | another configuration file, a database DSN,   |                                                                           |
 | or JSON.                                      |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| **Notes**:                                                                                                                |
-|                                                                                                                           |
-| - These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools,      |
-|   without needing additional software installed.                                                                          |
-| - Logs are recorded asynchronously to reduce latency to the caller.                                                       |
-| - Advanced logging supports hot-reloading of logger configuration.                                                        |
+| See the :doc:`Mattermost logging </manage/logging>` documentation for details.                                            |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| **Note**: See the :doc:`Mattermost logging </manage/logging>` documentation for details.                                  |
-+-----------------------------------------------+---------------------------------------------------------------------------+
+
+.. note::
+
+  - These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.                                                                          |
+  - Logs are recorded asynchronously to reduce latency to the caller.
+  - Advanced logging supports hot-reloading of logger configuration.
 
 .. config:setting:: maximum-field-size
   :displayname: Maximum field size (Logging)
@@ -3695,10 +3254,6 @@ Maximum field size
 Enable diagnostics and error reporting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------+-------------------------------------------------------------------------+
 | Whether or not diagnostics and error reports | - System Config path: **Environment > Logging**                         |
 | are sent to Mattermost, Inc.                 | - ``config.json setting``: ``".LogSettings.EnableDiagnostics": "",``    |
@@ -3708,9 +3263,10 @@ Enable diagnostics and error reporting
 | - **false**: Diagnostics and error reports   |                                                                         |
 |   aren't sent.                               |                                                                         |
 +----------------------------------------------+-------------------------------------------------------------------------+
-| **Note**: See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for       |
-| details on the information Mattermost collects.                                                                        |
-+----------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for details on the information Mattermost collects.
 
 ----
 
@@ -3733,10 +3289,6 @@ User sessions are cleared when a user tries to log in, and sessions are cleared 
 
 Extend session length with activity
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Improves the user experience by extending sessions and keeping | - System Config path: **Environment > Session Lengths**                                 |
@@ -3794,10 +3346,6 @@ Terminate sessions on password change
 Session length for AD/LDAP and email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                        |
 | entered their credentials into the web app or the desktop      | - ``config.json`` setting: ``".ServiceSettings.SessionLengthWebInHours: 720,`` |
@@ -3806,8 +3354,10 @@ Session length for AD/LDAP and email
 |                                                                |                                                                                |
 | Numerical input in hours. Default is **720** hours.            |                                                                                |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Note**: After changing this setting, the new session length takes effect after the next time the user enters their credentials.               |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. note::
+
+  After changing this setting, the new session length takes effect after the next time the user enters their credentials.
 
 .. config:setting:: session-length-for-mobile
   :displayname: Session length for mobile (Session Lengths)
@@ -3819,10 +3369,6 @@ Session length for AD/LDAP and email
 Session length for mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                           |
 | entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthMobileInHours: 720,`` |
@@ -3830,8 +3376,10 @@ Session length for mobile
 |                                                                |                                                                                   |
 | Numerical input in hours. Default is **720** hours.            |                                                                                   |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| **Note**: After changing this setting, the new session length takes effect after the next time the user enters their credentials.                  |
-+----------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. note::
+
+  After changing this setting, the new session length takes effect after the next time the user enters their credentials.
 
 .. config:setting:: session-length-for-sso
   :displayname: Session length for SSO (Session Lengths)
@@ -3843,10 +3391,6 @@ Session length for mobile
 Session length for SSO
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set the number of hours from the last time a user entered      | - System Config path: **Environment > Session Lengths**                          |
 | their SSO credentials to the expiry of the user’s session.     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthSSOInHours: 720,``   |
@@ -3857,12 +3401,11 @@ Session length for SSO
 | Numbers as decimals are also valid values for this             |                                                                                  |
 | configuration setting.                                         |                                                                                  |
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                        |
-|                                                                                                                                                   |
-| - After changing this setting, the new session length takes effect after the next time the user enters their credentials.                         |
-| - If the authentication method is SAML, GitLab, or OAuth 2.0, users may automatically be logged back in to Mattermost if they are already logged  |
-|   in to SAML, GitLab, or with OAuth 2.0.                                                                                                          |
-+----------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. note::
+
+  - After changing this setting, the new session length takes effect after the next time the user enters their credentials.
+  - If the authentication method is SAML, GitLab, or OAuth 2.0, users may automatically be logged back in to Mattermost if they are already logged in to SAML, GitLab, or with OAuth 2.0.
 
 .. config:setting:: session-cache
   :displayname: Session cache (Session Lengths)
@@ -3873,10 +3416,6 @@ Session length for SSO
 
 Session cache
 ~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                     |
@@ -3896,10 +3435,6 @@ Session cache
 Session idle timeout
 ~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | The number of minutes from the last time a user was active     | - System Config path: N/A                                                            |
 | on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``".ServiceSettings.SessionIdleTimeoutInMinutes: 43200,`` |
@@ -3909,14 +3444,12 @@ Session idle timeout
 | Minimum value is **5** minutes, and a value of **0** sets      |                                                                                      |
 | the time as unlimited.                                         |                                                                                      |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                            |
-|                                                                                                                                                       |
-| - This setting has no effect when `extend session length with activity <#extend-session-length-with-activity>`__ is set to **true**.                  |
-| - This setting applies to the webapp and the desktop app. For mobile apps, use an                                                                     |
-|   :doc:`EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` to lock the app when not in use.                                                |
-| - In :doc:`high availability mode </scale/high-availability-cluster-based-deployment>`, enable IP hash load balancing for reliable                    |
-|   timeout measurement.                                                                                                                                |
-+----------------------------------------------------------------+--------------------------------------------------------------------------------------+
+
+.. note::
+
+  - This setting has no effect when `extend session length with activity <#extend-session-length-with-activity>`__ is set to **true**.
+  - This setting applies to the webapp and the desktop app. For mobile apps, use an :doc:`EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` to lock the app when not in use.                                                |
+  - In :doc:`high availability mode </scale/high-availability-cluster-based-deployment>`, enable IP hash load balancing for reliable timeout measurement.
 
 ----
 
@@ -3941,10 +3474,6 @@ Configure performance monitoring by going to **System Console > Environment > Pe
 Enable performance monitoring
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 +-----------------------------------------------+---------------------------------------------------------------------+
 | Enable or disable performance monitoring.     | - System Config path: **Environment > Performance Monitoring**      |
 |                                               | - ``config.json setting``: ``".MetricsSettings.Enable": false",``   |
@@ -3966,10 +3495,6 @@ Enable performance monitoring
 
 Listen address for performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |
@@ -4001,10 +3526,6 @@ Configure developer mode by going to **System Console > Environment > Developer*
 Enable testing commands
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable the ``/test`` slash command.    | - System Config path: **Environment > Developer**                        |
 |                                                   | - ``config.json setting``: ``".ServiceSettings.EnableTesting": true",``  |
@@ -4027,10 +3548,6 @@ Enable testing commands
 
 Enable developer mode
 ~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+---------------------------------------------------------------------------+
 | Enable or disable developer mode.             | - System Config path: **Environment > Developer**                         |
@@ -4056,10 +3573,6 @@ Enable developer mode
 Enable client debugging
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
 | Enable or disable client-side debugging settings  | - System Config path: **Environment > Developer**                                           |
 | found in **Settings > Advanced > Debugging**      | - ``config.json setting``: ``".ServiceSettings.EnableClientPerformanceDebugging": false",`` |
@@ -4082,10 +3595,6 @@ Enable client debugging
 
 Allow untrusted internal connections
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 | Limit the ability for the Mattermost server   | - System Config path: **Environment > Developer**                                             |
@@ -4356,3 +3865,29 @@ Disable client cache
 | - **false**: **(Default)** Client-side cache  |                                                                                      |
 |   of Redis is enabled.                        |                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-webhub-channel-iteration
+  :displayname: Enable webhub channel iteration
+  :systemconsole: N/A
+  :configjson: EnableWebHubChannelIteration
+  :environment: MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION
+
+  - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
+  - **false**: **(Default)** Websocket broadcasting performance in channels is disabled.
+
+Enable webhub channel iteration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+| Control the performance of websocket broadcasting in | - System Config path: **N/A**                                                                    |
+| channels.                                            | - ``config.json setting``: ``ServiceSettings`` > ``EnableWebHubChannelIteration,`` > ``false``   |
+|                                                      | - Environment variable: ``MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION``                      |
+| When enabled, improves websocket broadcasting        |                                                                                                  |
+| performance; however, performance may decrease       |                                                                                                  |
+| when users join or leave a channel.                  |                                                                                                  |
+|                                                      |                                                                                                  |
+| Not recommended unless you have at least 200,000     |                                                                                                  |
+| concurrent users actively using Mattermost.          |                                                                                                  |
+|                                                      |                                                                                                  |
+| Disabled by default.                                 |                                                                                                  |
++------------------------------------------------------+--------------------------------------------------------------------------------------------------+

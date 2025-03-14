@@ -1,5 +1,5 @@
-Communicate scheduled maintenance
-==================================
+Communicate scheduled maintenance best practices
+================================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:

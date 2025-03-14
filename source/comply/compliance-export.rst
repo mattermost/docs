@@ -4,10 +4,6 @@ Compliance export
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Mattermost Enterprise customers can archive history or transfer message data to third-party systems for auditing and compliance purposes with compliance exports. Supported integrations include `Actiance Vantage <#actiance-xml>`__, `Global Relay <#global-relay-eml>`__, and `Proofpoint <#proofpoint>`__. 
 
 From Mattermost v10.5, compliance exports include performance improvements for large daily data sets with changes affecting output formats, system performance, and logic. Compliance exports provide compliance teams complete information to reconstruct the state of a channel, and to determine who had visibility on an initial message, or when the message was edited or deleted. Compliance teams can track a message by its MessageId as it is edited or deleted, and across batches and exports periods.

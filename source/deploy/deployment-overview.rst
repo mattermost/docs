@@ -164,10 +164,6 @@ High Availability
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Large organizations needing sophisticated, large scale, High Availability configurations can set up a :doc:`highly available, horizontally scalable </scale/high-availability-cluster-based-deployment>` deployment. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance on configuring and sizing Mattermost to support your specific needs.
 
 Data stores
@@ -186,10 +182,6 @@ Multiple read replicas
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 For enterprise deployments, the Mattermost database can be configured with a master and multiple read replicas. The read replicas can be configured as a redundant backup to the active server, so that during hardware failures operation can be diverted to the read replica server without interrupting service. 
 
 The safest configuration is to size the disk space on the read replica used for failover two to three times larger than storage available on master, so that if the master fails because it runs out of disk space it will fail over to a read replica with enough extra space to run smoothly until the master is corrected.
@@ -200,10 +192,6 @@ Search replicas
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 You can configure one or more search replicas to isolate search queries. A search replica is similar to a read replica, but is used only for handling search queries.
 
 Global deployments 
@@ -211,10 +199,6 @@ Global deployments
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Enterprise customers with deployments spanning many time zones can talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for guidance on advanced configurations to minimize latency by:
 

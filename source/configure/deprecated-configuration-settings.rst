@@ -460,7 +460,7 @@ Permission policy settings
 
 .. note::
 
-   Permission policy settings are available in Enterprise Edition E10 and E20. From v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
+   From Mattermost v5.0, these settings are found in the :doc:`Advanced Permissions </onboard/advanced-permissions>` page instead of configuration settings.
 
 Enable sending team invites from
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -829,10 +829,6 @@ Other deprecated settings
 Disable Post Metadata
 ~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 **True**: Disabling post metadata is only recommended if you are experiencing a significant decrease in performance around channel and post load times.
@@ -845,10 +841,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Enable AD/LDAP group sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 **True**: Enables AD/LDAP Group Sync configurable under **User Management > Groups**.
 
@@ -874,4 +866,21 @@ This configuration setting disables the ability to send inactivity email notific
 Disable Apps Bar
 ~~~~~~~~~~~~~~~~
 
-This setting is enabled for all customers by default from Mattermost v8.0. This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header. 
+This setting is enabled for all customers by default from Mattermost v8.0. This setting disables the Apps Bar and moves all Mattermost integration icons from the vertical pane on the far right back to the channel header.
+
+Enable OpenTracing (Experimental)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Removed in March 16, 2025 release*
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+**True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers. Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
+
+By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported.
+
+**False**: OpenTracing is not enabled.
+
++---------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
