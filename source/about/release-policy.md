@@ -41,7 +41,7 @@ To install extended support releases, follow our [install](/guides/deployment) o
 
 ```{Important}
 - We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for a list of database, API, and `config.json` updates for all v9.x releases.
-- Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy E10/E20 license.
+- Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy license.
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
 ```
 

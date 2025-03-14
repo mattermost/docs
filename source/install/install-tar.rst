@@ -20,7 +20,7 @@ Install Mattermost Server using the tarball
       <h3>Minimum system requirements:</h3>
       <ul>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v12+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
