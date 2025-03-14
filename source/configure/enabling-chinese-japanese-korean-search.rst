@@ -148,7 +148,7 @@ MySQL 해결 방법
 
     [mysqld]
     ft_min_word_len = 2
-    innodb_ft_min_word_len = 2
+    innodb_ft_min_token_size = 2
 
 3. 데이터베이스를 재시작합니다. (이 과정은 반드시 필요합니다.)
 

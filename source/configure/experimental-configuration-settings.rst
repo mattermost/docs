@@ -340,10 +340,6 @@ Enable theme selection
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 **True**: Enables the **Display > Theme** tab in **Settings** so users can select their theme.
 
 **False**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
@@ -367,10 +363,6 @@ Allow custom themes
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 **True**: Enables the **Display > Theme > Custom Theme** section in **Settings**.
 
 **False**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
@@ -391,10 +383,6 @@ Default theme
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 Set a default theme that applies to all new users on the system.
 
@@ -533,10 +521,6 @@ SAML login button color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -556,10 +540,6 @@ SAML login button border color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -578,10 +558,6 @@ SAML login button text color
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
 
@@ -1018,10 +994,6 @@ Allowed themes
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
@@ -1042,10 +1014,6 @@ Maximum users for statistics
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1070,10 +1038,6 @@ Batch size
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Determines how many new posts are batched together to a compliance export file.
@@ -1094,10 +1058,6 @@ File Location
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1160,10 +1120,6 @@ Enable client-side certification
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 **True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </onboard/certificate-based-authentication>` to learn more.
 
 **False**: Client-side certification is disabled.
@@ -1186,10 +1142,6 @@ Client-side certification login method
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Used in combination with the ``ClientSideCertEnable`` configuration setting.
 
@@ -1370,8 +1322,6 @@ Global relay SMTP server timeout
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-*Available as an add-on to legacy Enterprise Edition E20*
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds. This setting is currently not available in the System Console and can only be set in ``config.json``.
@@ -1392,10 +1342,6 @@ Google scope
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1454,10 +1400,6 @@ Export from timestamp
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Set the Unix timestamp (seconds since epoch, UTC) to export data from.
@@ -1503,10 +1445,6 @@ Entra ID Scope
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1631,10 +1569,6 @@ Scoping IDP provider ID
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 Allows an authenticated user to skip the initial login page of their federated Azure AD server, and only require a password to log in.
@@ -1655,10 +1589,6 @@ Scoping IDP provider name
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -1861,29 +1791,6 @@ This setting isn't available in the System Console and can only be set in ``conf
 .. note::
    This is a client only override that doesn't affect the listening port of the server process which is controlled by the :ref:`Web server listen address <configure/environment-configuration-settings:web server listen address>` setting.
 
-.. config:setting:: enable-opentracing
-  :displayname: Enable OpenTracing (Experimental)
-  :systemconsole: N/A
-  :configjson: EnableOpenTracing
-  :environment: N/A
-
-  - **true**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers.
-  - **false**: **(Default)** OpenTracing is not enabled.
-
-Enable OpenTracing
-~~~~~~~~~~~~~~~~~~
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-**True**: A Jaeger client is instantiated and is used to trace each HTTP request as it goes through App and Store layers. Context is added to App and Store and is passed down the layer chain to create OpenTracing 'spans'.
-
-By default, in order to avoid leaking sensitive information, no method parameters are reported to OpenTracing. Only the name of the method is reported.
-
-**False**: OpenTracing is not enabled.
-
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: enable-local-mode-for-mmctl
   :displayname: Enable local mode for mmctl (Experimental)

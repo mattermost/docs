@@ -4,10 +4,6 @@ Elasticsearch
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Elasticsearch provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. Mattermost's implementation uses `Elasticsearch <https://www.elastic.co>`_ as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </scale/high-availability-cluster-based-deployment>`.
 
 .. important::

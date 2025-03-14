@@ -4,10 +4,6 @@ Mattermost performance alerting guide
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Mattermost recommends using `Prometheus <https://prometheus.io/>`_ and `Grafana <https://grafana.com/>`_ to track performance metrics of the Mattermost application servers. The purpose of this guide is to help you set up alerts on your Grafana dashboard once you've :doc:`set up system health tracking </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
 .. note:: 
