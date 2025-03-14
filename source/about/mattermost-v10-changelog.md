@@ -13,7 +13,8 @@
  - Updated minimum Edge and Chrome versions to 132+.
 
 ### Important Upgrade Notes
- - 
+ - Added a new column ``BannerInfo``` in `Channels`` table for storing metadata for an upcoming feature. 
+ - Added support for cursor-based pagination on the property architecture tables, including SQL migration to create indices. 
 
 ```{Important}
 If you upgrade from a release earlier than v10.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -55,11 +56,17 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
-- Added a new configuration setting under the ``NativeAppSettings`` settings to enable mobile biometric authentication prompt, jailbreak / root detection and to prevent screen captures. The settings are: MobileEnableBiometrics (default: false), MobilePreventScreenCapture (default: false), MobileJailbreakProtection (default: false) 
-- A new configuration setting ``MetricsSettings.ClientSideUserIds`` was added where users can set the user IDs that they want to track for client side webapp metrics. Note that the total number of userIDs have been capped to 5 for performance reasons. Otherwise Prometheus gets overwhelmed with high label cardinality. It is recommended not to keep changing this list too often to track different sets of users, otherwise Prometheus might start to have poor performance. 
-- A new configuration setting ``CacheSettings.RedisCachePrefix`` has been added which can be used to add a prefix to all Redis cache keys. 
-- Added a new configuration setting ``FrameAncestors``. 
-- Added a new configuration setting `` LdapSettingsDefaultMaximumLoginAttempts``. 
+ - Under ``MetricsSettings`` in ``config.json``:
+    - Added ``ClientSideUserIds`` where users can set the user IDs that they want to track for client side webapp metrics. Note that the total number of userIDs have been capped to 5 for performance reasons. Otherwise Prometheus gets overwhelmed with high label cardinality. It is recommended not to keep changing this list too often to track different sets of users, otherwise Prometheus might start to have poor performance. 
+ - Under ``CacheSettings`` in ``config.json``:
+    - Added ``RedisCachePrefix`` has been added which can be used to add a prefix to all Redis cache keys. 
+ - Under ``ServiceSettings`` in ``config.json``:
+    - Added a new configuration setting ``FrameAncestors`` to allow frame ancestor domains to be specified when embedding Mattermost in other web sites. 
+
+#### Changes to Enterprise plans:
+ - Under ``NativeAppSettings`` in ``config.json``:
+    - Added new settings to enable mobile biometric authentication prompt, jailbreak / root detection and to prevent screen captures. The settings are: ``MobileEnableBiometrics`` (default: false), ``MobilePreventScreenCapture`` (default: false), ``MobileJailbreakProtection`` (default: false).
+ - Added a new configuration setting ``LdapSettingsDefaultMaximumLoginAttempts``.
 
 ### API Changes
  - Added new ``pluginapi`` methods for managing groups, a new group source type called GroupSourcePluginPrefix and added a new URL parameter called include_syncable_sources to GET /api/v4/groups.
