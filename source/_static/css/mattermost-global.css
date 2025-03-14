@@ -2005,3 +2005,18 @@ mark {
     background-color: var(--color-background-secondary);
     padding: 0rem 1rem 1rem 1rem;
 }
+
+/* TABLE CUTOFF FIX */
+.content {
+    overflow: hidden;
+}
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    word-wrap: break-word;
+}
+
+td, th {
+    white-space: normal;
+}
