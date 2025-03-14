@@ -7,7 +7,11 @@
 (release-v10.6-feature-release)=
 ## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release day: 2025-03-14**
+- **10.6.1, released **
+  - Mattermost v10.6.1 contains the following functional changes:
+      - Added a new System Console page called ``Embedding`` which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list. Added a new configuration setting ``FrameAncestors``.
+- **10.6.0, released 2025-03-14**
+  - Original 10.6.0 release.
 
 ### Important Upgrade Notes
  - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/install/prepare-mattermost-database#minimum-supported-version-policy) documentation for details.
