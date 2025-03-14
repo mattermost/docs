@@ -67,7 +67,7 @@ gantt
     v10.4                  :active,  2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
     v10.6                  :active, 2025-03-16, 2025-06-15
-    v10.7                  :upcoming, 2025-03-16, 2025-06-15
+    v10.7                  :active, 2025-04-16, 2025-07-15
 ```
 
 (esr-notifications)=
