@@ -13,7 +13,7 @@
  - Updated minimum Edge and Chrome versions to 132+.
 
 ### Important Upgrade Notes
- - Added a new column ``BannerInfo``` in `Channels`` table for storing metadata for an upcoming feature. 
+ - Added a new column ``BannerInfo`` in ``Channels`` table for storing metadata for an upcoming feature. 
  - Added support for cursor-based pagination on the property architecture tables, including SQL migration to create indices. 
 
 ```{Important}
