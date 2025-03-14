@@ -28,7 +28,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - ``https://releases.mattermost.com/10.4.4/mattermost-10.4.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``5f4939f79180715beb82293160c0af9f37990ff38eb22e9fe5e669bdda941987``
     - GPG Signature: https://releases.mattermost.com/10.4.4/mattermost-10.4.4-linux-amd64.tar.gz.sig
-  Mattermost Enterprise Edition v10.3.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-3-feature-release>`__ - `Download <https://releases.mattermost.com/10.3.5/mattermost-10.3.5-linux-amd64.tar.gz?src=arc>`__
+  Mattermost Enterprise Edition v10.3.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-3-feature-release>`__ - `Download <https://releases.mattermost.com/10.3.4/mattermost-10.3.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.3.4/mattermost-10.3.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``9fcb1474697dcb4d93b6c6bf191929b0d2b977198de1df4692dacf560752c2a8``
     - GPG Signature: https://releases.mattermost.com/10.3.4/mattermost-10.3.4-linux-amd64.tar.gz.sig
@@ -427,7 +427,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``5c3e0d10a76fefd3c0674c19a62962a2b9d27b5f556da04908ac739e77c9f1d5``
     - GPG Signature: https://releases.mattermost.com/10.4.4/mattermost-team-10.4.4-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.4.4/sbom-mattermost-v10.4.4.json
-  Mattermost Team Edition v10.3.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-3-feature-release>`__ - `Download <https://releases.mattermost.com/10.3.5/mattermost-team-10.3.5-linux-amd64.tar.gz?src=arc>`__
+  Mattermost Team Edition v10.3.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-3-feature-release>`__ - `Download <https://releases.mattermost.com/10.3.4/mattermost-team-10.3.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.3.4/mattermost-team-10.3.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``17f8554512d6a79f865075dfd8f7d9fddae6c5f1af49ea9b3cfd713f7e652dfe``
     - GPG Signature: https://releases.mattermost.com/10.3.4/mattermost-team-10.3.4-linux-amd64.tar.gz.sig
