@@ -6,10 +6,6 @@ Custom terms of service
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Increase clarity on legal Mattermost expectations for internal employees and guests with the ability to set custom Terms of Service (“ToS”) agreements and re-acceptable periods.
 
 Configuring terms of service

@@ -4,10 +4,6 @@ Data retention policy
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Mattermost stores all message history providing an unlimited search history to system admins and end users. 
 
 Mattermost Enterprise customers can set a global retention policy as well as custom retention policies to manage how long messages and file uploads are kept in Mattermost channels and direct messages in order to meet data retention compliance requirements. 
