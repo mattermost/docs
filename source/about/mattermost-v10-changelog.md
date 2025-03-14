@@ -50,7 +50,8 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
  - Fixed an issue where a system bot reply to a command entered in a thread was also posted in the channel.
  - Fixed an issue where the channel member menu might open in the wrong direction.
  - Fixed an issue where the edit post textbox sized incorrectly with the Grammarly browser extension installed.
- - Fixed an issue where onclick was missing in the channel header text, thus enabling hashtag, link, and mention clicks. 
+ - Fixed an issue where onclick was missing in the channel header text, thus enabling hashtag, link, and mention clicks.
+ - Fixed an issue with jobs in an High Availability environment, where two job servers would take the same job.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
