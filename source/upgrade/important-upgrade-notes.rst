@@ -57,54 +57,54 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    |  DEALLOCATE PREPARE addColumnIfNotExists;                                                                                                                        |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-|                                                    | Added support for cursor-based pagination on the property architecture tables, including SQL migration to create indices. The migration is fully 
-|                                                    | backwards-compatible, non-locking, and zero downtime is possible. Below are the SQL queries included in the schema changes:
+|                                                    | Added support for cursor-based pagination on the property architecture tables, including SQL migration to create indices. The migration is fully                 |
+|                                                    | backwards-compatible, non-locking, and zero downtime is possible. Below are the SQL queries included in the schema changes:                                      |
 |                                                    |                                                                                                                                                                  |
-|                                                    | MySQL: 
-                                                                                                                                                                                                                        |
+|                                                    | MySQL:                                                                                                                                                           |
+|                                                    |                                                                                                                                                                  |                                                                                                                                                                                                                        
 |                                                    | .. code-block:: sql                                                                                                                                              |
-|                                                                                                                                                                  
+|                                                    |                                                                                                                                                                  |                                                                                                                                                                  
 |                                                    |  SET @preparedStatement = (SELECT IF(                                                                                                                            |
-|                                                    |      (
-|                                                    |          SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS
-|                                                    |          WHERE table_name = 'PropertyValues'
-|                                                    |          AND table_schema = DATABASE()
-|                                                    |          AND index_name = 'idx_propertyvalues_create_at_id'
-|                                                    |      ) > 0,
-|                                                    |      'SELECT 1',
-|                                                    |      'CREATE INDEX idx_propertyvalues_create_at_id ON PropertyValues(CreateAt, ID);'
-|                                                    |  ));
-|                                                    |  
-|                                                    |  PREPARE createIndexIfNotExists FROM @preparedStatement;
+|                                                    |      (                                                                                                                                                           |
+|                                                    |          SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS                                                                                                      |                                               
+|                                                    |          WHERE table_name = 'PropertyValues'                                                                                                                     |
+|                                                    |          AND table_schema = DATABASE()                                                                                                                           |
+|                                                    |          AND index_name = 'idx_propertyvalues_create_at_id'                                                                                                      |
+|                                                    |      ) > 0,                                                                                                                                                      |
+|                                                    |      'SELECT 1',                                                                                                                                                 |                                                                                                                                           
+|                                                    |      'CREATE INDEX idx_propertyvalues_create_at_id ON PropertyValues(CreateAt, ID);'                                                                             |
+|                                                    |  ));                                                                                                                                                             |
+|                                                    |                                                                                                                                                                  |  
+|                                                    |  PREPARE createIndexIfNotExists FROM @preparedStatement;                                                                                                         |
 |                                                    |  EXECUTE createIndexIfNotExists;                                                                                                                                 |
-|                                                    |  DEALLOCATE PREPARE createIndexIfNotExists;
-
-|                                                    | .. code-block:: sql 
-|
-|                                                    |  SET @preparedStatement = (SELECT IF(
-|                                                    |      (
-|                                                    |          SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS
-|                                                    |          WHERE table_name = 'PropertyFields'
-|                                                    |          AND table_schema = DATABASE()
-|                                                    |          AND index_name = 'idx_propertyfields_create_at_id'
-|                                                    |      ) > 0,
-|                                                    |      'SELECT 1',
-|                                                    |      'CREATE INDEX idx_propertyfields_create_at_id ON PropertyFields(CreateAt, ID);'
-|                                                    |  ));
-|                                                    |  
-|                                                    |  PREPARE createIndexIfNotExists FROM @preparedStatement;
-|                                                    |  EXECUTE createIndexIfNotExists;
-|                                                    |  DEALLOCATE PREPARE createIndexIfNotExists;
+|                                                    |  DEALLOCATE PREPARE createIndexIfNotExists;                                                                                                                      |
 |                                                    |                                                                                                                                                                  |
-|                                                    | PostgreSQL: 
-|                                                    |          
-|                                                    | .. code-block:: sql 
+|                                                    | .. code-block:: sql                                                                                                                                              |
 |                                                    |                                                                                                                                                                  |
-|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyvalues_create_at_id ON PropertyValues(CreateAt, ID)
+|                                                    |  SET @preparedStatement = (SELECT IF(                                                                                                                            |
+|                                                    |      (                                                                                                                                                           | 
+|                                                    |          SELECT COUNT(*) FROM INFORMATION_SCHEMA.STATISTICS                                                                                                      |                                 
+|                                                    |          WHERE table_name = 'PropertyFields'                                                                                                                     |
+|                                                    |          AND table_schema = DATABASE()                                                                                                                           |
+|                                                    |          AND index_name = 'idx_propertyfields_create_at_id'                                                                                                      |
+|                                                    |      ) > 0,                                                                                                                                                      |
+|                                                    |      'SELECT 1',                                                                                                                                                 |
+|                                                    |      'CREATE INDEX idx_propertyfields_create_at_id ON PropertyFields(CreateAt, ID);'                                                                             |
+|                                                    |  ));                                                                                                                                                             |
+|                                                    |                                                                                                                                                                  |                                                     
+|                                                    |  PREPARE createIndexIfNotExists FROM @preparedStatement;                                                                                                         |
+|                                                    |  EXECUTE createIndexIfNotExists;                                                                                                                                 |
+|                                                    |  DEALLOCATE PREPARE createIndexIfNotExists;                                                                                                                      |
+|                                                    |                                                                                                                                                                  |
+|                                                    | PostgreSQL:                                                                                                                                                      |
+|                                                    |                                                                                                                                                                  |                                                             
+|                                                    | .. code-block:: sql                                                                                                                                              |
+|                                                    |                                                                                                                                                                  |
+|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyvalues_create_at_id ON PropertyValues(CreateAt, ID)                                                         |                                                        
 |                                                    |                                                                                                                                                                  |                
-|                                                    | .. code-block:: sql 
+|                                                    | .. code-block:: sql                                                                                                                                              |
 |                                                    |                                                                                                                                                                  |
-|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyfields_create_at_id ON PropertyFields(CreateAt, ID)
+|                                                    |  CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_propertyfields_create_at_id ON PropertyFields(CreateAt, ID)                                                         | 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.6                                              | Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+.                                                                |
 |                                                    | See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.     |
