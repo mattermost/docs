@@ -4,6 +4,82 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.7-feature-release)=
+## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2025-04-16**
+
+### Compatibility
+ - Updated minimum Edge and Chrome versions to 132+.
+
+### Important Upgrade Notes
+ - 
+
+```{Important}
+If you upgrade from a release earlier than v10.6, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin version [v1.6.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.6.0). 
+ - Webapp plugin loading and footer are now disabled if ``MMEMBED`` cookie is set.
+ - Updated the ``marked`` package which includes full-width punctuation intervals for Unicode characters fix.
+ - Added a minor change in the message priority checkbox menu item; the description width is now smaller than in previous versions.
+ - Updated the library used for controlling and positioning the emoji picker.
+ - Added a browser window title to the Scheduled Posts tab. The title is ``Scheduled - <team name>``, same pattern as in the Drafts tab.
+
+#### Administration
+ - Added a new System Console page called **Embedding** which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list.
+ - The Channel Export plugin is removed from the transitional package list as it is now pre-packaged.
+ - Removed unnecessary log messages by checking the license before calling to retrieve groups.
+ - Made configuration location in the Support Packet human-readable.
+ - Added advanced audit and notifications logs to the Support Packet.
+ - Upgraded ``react-select`` from v3.0.3 to v5.9.0.
+
+### Bug Fixes
+ - Fixed an issue with the alignment of the draft list when scheduled posts was disabled.
+ - Fixed an issue where threads created by users were auto-followed on reply by the creator when they left the channel.
+ - Fixed an issue where muted channels in other teams would show their mentions in the title bar.
+ - Fixed an issue where messages from new channels in other teams wouldn't show up until a refresh.
+ - Fixed an issue with the scrolling behavior when navigating the Direct Message list using UP/DOWN arrow keys.
+ - Fixed a few minor bugs with websocket reconnection logic in the webapp.
+ - Fixed an issue where DND statuses did not expire at the expiry time displayed in the app.
+ - Fixed an issue where the group mentions permission was missing.
+ - Fixed an issue where a system bot reply to a command entered in a thread was also posted in the channel.
+ - Fixed an issue where the channel member menu might open in the wrong direction.
+ - Fixed an issue where the edit post textbox sized incorrectly with the Grammarly browser extension installed.
+ - Fixed an issue where onclick was missing in the channel header text, thus enabling hashtag, link, and mention clicks. 
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+- Added a new configuration setting under the ``NativeAppSettings`` settings to enable mobile biometric authentication prompt, jailbreak / root detection and to prevent screen captures. The settings are: MobileEnableBiometrics (default: false), MobilePreventScreenCapture (default: false), MobileJailbreakProtection (default: false) 
+- A new configuration setting ``MetricsSettings.ClientSideUserIds`` was added where users can set the user IDs that they want to track for client side webapp metrics. Note that the total number of userIDs have been capped to 5 for performance reasons. Otherwise Prometheus gets overwhelmed with high label cardinality. It is recommended not to keep changing this list too often to track different sets of users, otherwise Prometheus might start to have poor performance. 
+- A new configuration setting ``CacheSettings.RedisCachePrefix`` has been added which can be used to add a prefix to all Redis cache keys. 
+- Added a new configuration setting ``FrameAncestors``. 
+- Added a new configuration setting `` LdapSettingsDefaultMaximumLoginAttempts``. 
+
+### API Changes
+ - Added new ``pluginapi`` methods for managing groups, a new group source type called GroupSourcePluginPrefix and added a new URL parameter called include_syncable_sources to GET /api/v4/groups.
+ - Added ``Client4.createPostEphemeral`` method.
+
+### Websocket Event Changes
+ - Added Custom Profile Attributes websocket support.
+ - Added websocket messages to the Custom Profile Attributes operations.
+
+### Go Version
+ - v10.7 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+
+### Contributors
+ - 
+
 (release-v10.6-feature-release)=
 ## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
