@@ -171,7 +171,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.4-feature-release)=
 ## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.4.4, released **
+- **10.4.4, released 2025-03-17**
   - Mattermost v10.4.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
   - Mattermost v10.4.4 contains no database or functional changes.
