@@ -1,0 +1,38 @@
+Breaking changes
+
+The internal workings of the PluginLinkComponent in the web app have been changed to unmount link tooltips from the DOM by default, significantly improving performance. Plugins that register link tooltips using registerLinkTooltipComponent will experience changes in how tooltip components are managed—they are now only mounted when a link is hovered over or focused. As a result, plugins may need to update their components to properly handle mounting and unmounting scenarios. For example, changes were made in mattermost-plugin-jira, where componentDidUpdate lifecycle hook was replaced with componentDidMount. If your plugin’s tooltip component is a functional React component, there is a high chance that this behavior will be handled automatically, as it would be managed by useEffect with an empty dependency array.
+
+The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server’s working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See this forum post for details.
+
+Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in this forum post.
+
+v10.5 introduces updates to the Compliance Export functionality, which will modify how exported data is structured, stored and processed. These changes primarily affect System Administrators and the main changes are outlined below. See more details in the Compliance Export documentation.
+
+Output files and directories have changed - Previously we were exporting a single zip containing all the batch directories. Now we will export a single directory, and under that directory each batch will be its own zip.
+
+Compliance exports performance improvements - Compliance exports should now be at least 50% faster, and possibly more.
+
+Logic improvements - We’ve made improvements and fixed bugs that we found.
+
+Changes specific to each Export Type - The export output formats have been changed. Some fields’ semantic meaning has been clarified, and there are a number of new fields. Our goal was to maintain backwards compatibility while fixing the logic bugs.
+
+See the compliance export product documentation for details.
+
+Database migrations
+As part of the Property System Architecture feature, Mattermost v10.5 is going to run a set of migrations to add new tables to the schema. This migration only creates new tables and indexes, so there is no impact on preexisting data.
+
+New tables PropertyGroups, PropertyFields and PropertyValues are going to be created.
+
+In the case of PostgreSQL, a new enum type property_field_type is going to be created, to be used in the Type column of the PropertyFields table.
+
+The PropertyFields and PropertyValues tables have a unique constraint that will generate an index in MySQL, and in the case of PostgreSQL, they directly use a UNIQUE INDEX to enforce this constraint.
+
+A new index idx_propertyvalues_targetid_groupid will be created for the PropertyValues table.
+
+The migration is only creating new tables with no data. The migration is backwards-compatible, and a previous version of Mattermost can run with the new schema changes. No table locks or existing operations on the table are impacted by this upgrade. Zero downtime is possible when upgrading to this release.
+
+Below are the SQL queries included in the schema changes:
+
+
+
+Deprecated features
