@@ -9,6 +9,7 @@
 
 - **10.6.1, released 2025-03-17**
   - Fixed an issue with jobs in an High Availability environment, where two job servers would take the same job [MM-63314](https://mattermost.atlassian.net/browse/MM-63314).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
   - Mattermost v10.6.1 contains the following functional changes:
       - Added a new System Console page called ``Embedding`` which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list. Added a new configuration setting ``FrameAncestors`` [MM-63327](https://mattermost.atlassian.net/browse/MM-63327).
 - **10.6.0, released 2025-03-14**
