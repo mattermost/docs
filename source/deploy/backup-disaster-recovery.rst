@@ -123,7 +123,7 @@ Replicate ES/OS storage
 
 1. To replicate ES/OS storage, set up CCR (cross-cluster replication) for AWS Opensearch with the following requirements:
 
-  - Elasticsearch 7.10 or OpenSearch 1.1 or later
+  - Elasticsearch 7.10 or OpenSearch 2.x
   - Fine-grained access control enabled
   - Node-to-node encryption enabled
 
@@ -316,7 +316,7 @@ To perform the failover, go to the RDS global cluster, and under **Actions**, se
 
 After this is done, the app nodes which were stuck trying to connect should move forward and everything should be functional. You can read/write, upload images and everything should be replicated. Everything except Opensearch data.
 
-Failover OS to secondary
+Failover ES/OS to secondary
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 ES/OS does not allow multi-writer for a single index. You can only write to 1 index at one time. Therefore, you need to perform some manual steps to reverse the replication direction, and start replicating from secondary to primary.
