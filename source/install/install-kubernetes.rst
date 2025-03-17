@@ -151,7 +151,8 @@ Deploy Mattermost
         name: my-postgres-connection
       type: Opaque
 
-    Example for AWS Aurora with PostgreSQL:
+    
+  Example for AWS Aurora with PostgreSQL:
 
   .. code-block:: yaml
 
