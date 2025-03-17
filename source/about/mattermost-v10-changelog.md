@@ -7,7 +7,7 @@
 (release-v10.6-feature-release)=
 ## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.6.1, released **
+- **10.6.1, released 2025-03-17**
   - Fixed an issue with jobs in an High Availability environment, where two job servers would take the same job [MM-63314](https://mattermost.atlassian.net/browse/MM-63314).
   - Mattermost v10.6.1 contains the following functional changes:
       - Added a new System Console page called ``Embedding`` which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list. Added a new configuration setting ``FrameAncestors`` [MM-63327](https://mattermost.atlassian.net/browse/MM-63327).
