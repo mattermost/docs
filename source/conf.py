@@ -81,7 +81,8 @@ extensions = [
     "sphinx_copybutton",
     "compass-icons",
     "config-setting-v2",
-    "sphinx_inline_tabs"
+    "sphinx_inline_tabs",
+    "sphinx-design"
 ]
 
 sphinx_tabs_disable_tab_closing = True
