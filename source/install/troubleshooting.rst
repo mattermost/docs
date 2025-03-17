@@ -25,13 +25,11 @@ Deployment troubleshooting
 Docker deployments
 ~~~~~~~~~~~~~~~~~~
 
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, :ref:`re-create the required directories and set their permissions <install/install-docker:deploy mattermost on docker for production use>`, then skip the following command:
+If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, re-create the required directories and set their permissions, then skip the following command because it causes the deploy to stop working.
 
 .. code-block:: sh
 
    sudo chown -R 2000:2000 ./volumes/app/mattermost
-
-On M1 systems, this permission change causes the deploy to stop working, so we recommend skipping this step altogether.
 
 If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
 
@@ -345,7 +343,7 @@ Because of this, having a complete picture of the servers and network that the M
 - Server OS and version (e.g. RHEL7, Ubuntu 20.04)
 - Any orchestration/automation used like Docker or Kubernetes
 - Reverse proxy and version (e.g. NGINX 1.16)
-- Database type and version (e.g. PostgreSQL 12.4)
+- Database type and version (e.g. PostgreSQL 13)
 - SAML provider (e.g. Windows Server 2012 Active Directory, Okta, KeyCloak)
 - LDAP provider (e.g. Windows Server 2016 Active Directory, Okta, OpenLDAP)
 - The type and version of any proxies or VPNs on the network that the Mattermost server is connecting through
@@ -365,7 +363,7 @@ Mattermost server
 Database server
 
  - Internal hostname: postgresql.lan
- - PostgreSQL v12
+ - PostgreSQL v13
  - LDAP Provider - 192.168.1.102
  - Internal hostname: ldap.lan
  - OpenLDAP 2.4.54 (Docker container)
@@ -390,7 +388,7 @@ Database servers
  - Hostnames: db1.local.lan, db2.local.lan, db3.local.lan
  - Primary: db1.local.lan
  - Read-Only: db2.local.lan, db3.local.lan  
- - PostgreSQL v12
+ - PostgreSQL v13
 
 Elasticsearch server
 

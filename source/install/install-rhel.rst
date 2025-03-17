@@ -21,7 +21,7 @@ Install Mattermost on RHEL
       <ul>
         <li>Operating System: Enterprise Linux 7+, Oracle Linux  6+, Oracle Linux 7+
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v12+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
@@ -38,7 +38,7 @@ Install Mattermost on RHEL
 
   You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
 
-A Mattermost deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
+This Mattermost deployment includes 4 steps: `download <#download>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
 
 Download the latest Mattermost Server tarball
 ---------------------------------------------
@@ -66,6 +66,9 @@ Setup
 
 .. include:: setup-mattermost-server.rst
     :start-after: :nosearch:
+  
+.. important::
+  If you don't receive an error when starting Mattermost after the previous step, you are good to go. If you did receive an error, continue on
 
 Modify SELinux settings
 -----------------------
@@ -74,7 +77,28 @@ When deploying Mattermost from RHEL9, which has SELinux running with enforceing 
 
 First, ensure that SELinux is enabled and in enforcing mode by running the ``sestatus`` command. If it's ``enforcing``, you'll need to configure it properly.
 
-Set the correct contexts for ``/opt/mattermost``
+Set bin contexts for ``/opt/mattermost/bin``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+SELinux enforces security contexts for binaries. To label the Mattermost binaries as safe, you'll need to set them to the below SELinux context.
+
+.. code-block:: sh
+
+  sudo semanage fcontext -a -t bin_t "/opt/mattermost/bin(/.*)?"
+  sudo restorecon -RF /opt/mattermost/bin
+
+Now, try starting Mattermost again with 
+
+.. code-block:: sh
+
+  sudo systemctl start mattermost
+
+If you don't receive an error, verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that's returned by the Mattermost Server. You're all set!
+
+.. important::
+  If on starting Mattermost you receive an error, before moving on, check for the existence of a file in ``/opt/mattermost/logs`` - if ``mattermost.log`` exists in that directory, it's more likely you're dealing with a configuration issue in  ``config.json``. Double check the previous steps before continuing
+
+Try different contexts for ``/opt/mattermost``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 SELinux enforces security contexts for files and directories. To label your Mattermost directory as safe, you'll need to set an appropriate SELinux context.

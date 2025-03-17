@@ -20,7 +20,7 @@ Install Mattermost Server using the tarball
       <h3>Minimum system requirements:</h3>
       <ul>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v12+</a></li>
+        <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network:
           <ul>
             <li>Application 80/443, TLS, TCP Inbound</li>
@@ -38,15 +38,13 @@ You can install the Mattermost Server on any 64-bit Linux system using the tarba
 .. include:: ../_static/badges/academy-tarball-deployment.rst
   :start-after: :nosearch:
 
-.. tip::
+.. include:: common-omnibus-tip.rst
+  :start-after: :nosearch:
 
-  If you are running the Mattermost Server and database on a single system, we recommend the :doc:`Mattermost Omnibus install method </install/installing-mattermost-omnibus>` as this greatly reduces setup and ongoing maintenance, and uses the Mattermost PPA for updates. More modern installation methods such as the Mattermost Helm Chart or Kubernetes Operator are available and are highly recommended.
+.. include:: common-postgres-database-important.rst
+  :start-after: :nosearch:
 
-.. note::
-
-  You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
-
-A Mattermost deployment includes 3 steps: `download <#download>`__, `install <#install>`__, and `setup <#setup>`__.
+This Mattermost deployment includes 3 steps: `download <#download>`__, `install <#install>`__, and `setup <#setup>`__.
 
 Download
 --------
@@ -78,7 +76,7 @@ If you wish to remove the Mattermost Server for any reason, you must stop the Ma
 
 .. code-block:: sh
 
-   sudo rm /opt/mattermost
+   sudo rm - rf /opt/mattermost
 
 .. note::
 
