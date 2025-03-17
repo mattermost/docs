@@ -16,10 +16,10 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
-  Mattermost Enterprise Edition v10.6.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.0/mattermost-10.6.0-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.6.0/mattermost-10.6.0-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``e70c16f0358e68e819008f82766a39f66e0dd70a6ff19dd369ff7634c5f454c2``
-    - GPG Signature: https://releases.mattermost.com/10.6.0/mattermost-10.6.0-linux-amd64.tar.gz.sig
+  Mattermost Enterprise Edition v10.6.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.1/mattermost-10.6.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.6.1/mattermost-10.6.1-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``0a8b1d7d89f669857ed438fcf5827d9f739bff93056470a1b803a696e04389fd``
+    - GPG Signature: https://releases.mattermost.com/10.6.1/mattermost-10.6.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.5.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.2/mattermost-10.5.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.2/mattermost-10.5.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``8ec34aa9dfc0aac7d1ce4707bfb3b66fba776f34bdc2275ddb0966919a14b03c``
@@ -412,11 +412,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v10.6.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.0/mattermost-team-10.6.0-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.6.0/mattermost-team-10.6.0-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``c0c3f3a4d559fdeff1d8d9376cc92b2d68ca7e76a45d07d98dbf7a2e653e4184``
-    - GPG Signature: https://releases.mattermost.com/10.6.0/mattermost-team-10.6.0-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.0/sbom-mattermost-v10.6.0.json
+  Mattermost Team Edition v10.6.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.1/mattermost-team-10.6.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.6.1/mattermost-team-10.6.1-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``4fcc6417c31634b23b1acf2785838019ea7a2c482b4a59b36cff9f94e383c7a4``
+    - GPG Signature: https://releases.mattermost.com/10.6.1/mattermost-team-10.6.1-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.1/sbom-mattermost-v10.6.1.json
   Mattermost Team Edition v10.5.2 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.2/mattermost-team-10.5.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.2/mattermost-team-10.5.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``c056165585bca0043ba997933d1ef49507a489193667608fd8cd87eceac1d8e4``
