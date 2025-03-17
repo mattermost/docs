@@ -190,7 +190,7 @@ The location of the Mattermost desktop app configuration file depends on the pla
 
 - Windows: ``Users\<username>\AppData\Roaming\Mattermost``
 - macOS installer: ``/Users/<username>/Library/Application Support/Mattermost``
-- macOS App Store: ``/Users/<username>/Library/Containers/Mattermost.desktop/Data/Library/Application Support/Mattermost``
+- macOS App Store: ``/Users/<username>/Library/Containers/Mattermost.Desktop/Data/Library/Application Support/Mattermost``
 - Linux: ``~/.config/Mattermost``
 
 .. note::
