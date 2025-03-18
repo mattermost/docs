@@ -170,6 +170,9 @@ redirects = {
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
 "about/orchestration.html":
         "https://docs.mattermost.com/about/use-cases.html",
+"about/subscription.html#mattermost-nonprofit-license-program":
+        "https://docs.mattermost.com/about/non-profit-subscriptions.html",
+
 
 # Administration redirects
 "administration/announcement-banner.html":
