@@ -4,7 +4,299 @@ Important Upgrade Notes
 .. important::
    
   .. include:: ../about/common-esr-support-rst.rst
- 
+
+.. raw:: html
+
+  <script>
+    function updateNotes() {
+        const currentVersion = document.getElementById("current-version").value;
+        const targetVersion = document.getElementById("target-version").value;
+
+        // Hide all upgrade notes
+        document.querySelectorAll(".upgrade-notes").forEach(note => note.style.display = "none");
+
+        // Show the relevant upgrade notes
+        const notesId = `${currentVersion}-to-${targetVersion}`;
+        if (document.getElementById(notesId)) {
+          document.getElementById(notesId).style.display = "block";
+        }
+    }
+  </script>
+
+  <label for="current-version">Current Version:</label>
+  <select id="current-version" onchange="updateNotes()">
+    <option value="v9.0">v9.0</option>
+    <option value="v9.1">v9.1</option>
+    <option value="v9.2">v9.2</option>
+    <option value="v9.5">v9.5</option>
+    <option value="v9.11">v9.11</option>
+    <option value="v10.0">v10.0</option>
+    <option value="v10.1">v10.1</option>
+    <option value="v10.2">v10.2</option>
+    <option value="v10.3">v10.3</option>
+    <option value="v10.4">v10.4</option>
+    <option value="v10.5">v10.5</option>
+  </select>
+
+  <label for="target-version">Target Version:</label>
+  <select id="target-version" onchange="updateNotes()">
+    <option value="v9.5">v9.5</option>
+    <option value="v9.11">v9.11</option>
+    <option value="v10.5">v10.5</option>
+  </select>
+
+  <!-- Upgrade Notes -->
+
+  <div id="v9.0-to-v9.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v9.0 to v9.5</h3>
+    <ul>
+        <li><strong>v9.5</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Support for MySQL v5.7 has been discontinued due to its end of life. Customers are urged to upgrade their MySQL instance as soon as possible.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> A safety limit error message has been added for compiled Team Edition and Enterprise Edition deployments. This occurs when enterprise-scale and access control automation features are unavailable, and the count of registered (but not deactivated) users exceeds 10,000. Refer to the error documentation: <code>ERROR_SAFETY_LIMITS_EXCEEDED</code>.</li>
+          </ul>
+        </li>
+        <li><strong>v9.0</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> The deprecated Insights feature has been completely removed.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> Mattermost Boards and various other plugins are now fully community supported. For more details, refer to this <a href="https://forum.mattermost.com/t/upcoming-product-changes-to-boards-and-various-plugins/16669" target="_blank">forum post</a>.</li>
+              <li><strong>Other Considerations:</strong> The <code>channel_viewed</code> WebSocket event has been updated to <code>multiple_channels_viewed</code>. This event now only triggers for channels with unread messages.</li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v9.1-to-v9.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v9.1 to v9.5</h3>
+    <ul>
+        <li><strong>v9.5</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Support for MySQL v5.7 has been discontinued due to its end of life. Customers are urged to upgrade their MySQL instance as soon as possible.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> A safety limit error message has been added for compiled Team Edition and Enterprise Edition deployments. This occurs when enterprise-scale and access control automation features are unavailable, and the count of registered (but not deactivated) users exceeds 10,000. Refer to the error documentation: <code>ERROR_SAFETY_LIMITS_EXCEEDED</code>.</li>
+          </ul>
+        </li>
+        <li><strong>v9.1</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Minimum supported Desktop App version is now v5.3. OAuth/SAML flows were updated to include <code>desktop_login</code>, making earlier versions incompatible.</li>
+              <li><strong>Database Updates:</strong> A new table migration was introduced for handling retention IDs:
+                <ul>
+                    <li><strong>MySQL:</strong>
+                      <pre>
+  CREATE TABLE IF NOT EXISTS RetentionIdsForDeletion (
+    Id VARCHAR(26) NOT NULL,
+    TableName VARCHAR(64),
+    Ids JSON,
+    PRIMARY KEY (Id),
+    KEY idx_retentionidsfordeletion_tablename (TableName)
+  ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+                      </pre>
+                    </li>
+                    <li><strong>PostgreSQL:</strong>
+                      <pre>
+  CREATE TABLE IF NOT EXISTS retentionidsfordeletion (
+    id VARCHAR(26) PRIMARY KEY,
+    tablename VARCHAR(64),
+    ids VARCHAR(26)[]
+  );
+  CREATE INDEX IF NOT EXISTS idx_retentionidsfordeletion_tablename 
+  ON retentionidsfordeletion (tablename);
+                      </pre>
+                    </li>
+                </ul>
+              </li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong>
+                <ul>
+                    <li>Improved performance on data retention <code>DeleteOrphanedRows</code> queries.</li>
+                    <li>Hard deleting a user or channel now also cleans up associated reactions.</li>
+                    <li>Removed the <code>DataRetentionConcurrencyEnabled</code> feature flag. Data retention now runs without concurrency to prevent performance issues.</li>
+                    <li>Added new configuration setting <code>DataRetentionSettings.RetentionIdsBatchSize</code> to control the number of ID batches fetched at a time during deletion (default: 100).</li>
+                </ul>
+              </li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v9.2-to-v9.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v9.2 to v9.5</h3>
+    <ul>
+        <li><strong>v9.5</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Support for MySQL v5.7 has been discontinued due to its end of life. Customers are urged to upgrade their MySQL instance as soon as possible.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> A safety limit error message has been added for compiled Team Edition and Enterprise Edition deployments. This occurs when enterprise-scale and access control automation features are unavailable, and the count of registered (but not deactivated) users exceeds 10,000. Refer to the error documentation: <code>ERROR_SAFETY_LIMITS_EXCEEDED</code>.</li>
+          </ul>
+        </li>
+        <li><strong>v9.2</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Fixed data retention behavior for jobs. Custom retention policies will now automatically run even when the global data retention policy is set to "keep-forever". Posts may unintentionally be deleted if this is not adjusted before the upgrade. Admins should disable all custom data retention policies prior to the upgrade and re-enable them afterward.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> No other considerations in this release.</li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v9.5-to-v9.11" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v9.5 to v9.11</h3>
+    <ul>
+        <li><strong>v9.11</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Added support for Elasticsearch v8 and Beta support for Opensearch v1.x and v2.x. The new configuration setting <code>ElasticsearchSettings.Backend</code> differentiates between Elasticsearch and Opensearch, with a default value of <code>elasticsearch</code>. This breaks support for AWS Elasticsearch v7.10.x, as the official v8 client only works with Elasticsearch v7.11+.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong>
+                <ul>
+                    <li>For AWS customers on Opensearch:
+                      <ul>
+                          <li>You must modify Mattermost configuration from <code>elasticsearch</code> to <code>opensearch</code> and disable compatibility mode. See the <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html" target="_blank">Opensearch documentation</a> for upgrade details.</li>
+                          <li>After upgrading the Mattermost server, use <code>mmctl</code> or manually edit the configuration, then restart the Mattermost server.</li>
+                          <li>If using Opensearch, you <strong>must</strong> set the backend to <code>opensearch</code>, or Mattermost will not function.</li>
+                      </ul>
+                    </li>
+                    <li>If you are using Elasticsearch v8:
+                      <ul>
+                          <li>Set <code>action.destructive_requires_name</code> to <code>false</code> in <code>elasticsearch.yml</code> to allow wildcard operations to work.</li>
+                      </ul>
+                    </li>
+                </ul>
+              </li>
+          </ul>
+        </li>
+        <li><strong>v9.5</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Support for MySQL v5.7 has been discontinued due to its end of life. Customers are urged to upgrade their MySQL instance as soon as possible.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> A safety limit error message has been added for compiled Team Edition and Enterprise Edition deployments. This occurs when enterprise-scale and access control automation features are unavailable, and the count of registered (but not deactivated) users exceeds 10,000. Refer to the error documentation: <code>ERROR_SAFETY_LIMITS_EXCEEDED</code>.</li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v10.0-to-v10.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v10.0 to v10.5</h3>
+    <ul>
+        <li><strong>v10.0:</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong>
+                <ul>
+                    <li>We no longer support new installations using MySQL starting in v10. All new customers and/or deployments will only be supported with PostgreSQL. End of support for MySQL is targeted for Mattermost v11.</li>
+                    <li>Apps Framework is deprecated for new installations. Please extend Mattermost using webhooks, slash commands, OAuth2 apps, and plugins.</li>
+                </ul>
+              </li>
+              <li><strong>Database Updates:</strong> Removed deprecated configuration fields:
+                <ul>
+                    <li><code>Config.ProductSettings</code></li>
+                    <li><code>LdapSettings.Trace</code></li>
+                    <li><code>AdvancedLoggingConfig</code></li>
+                    <li>Removed the deprecated <code>pageSize</code> query parameter from most API endpoints.</li>
+                </ul>
+              </li>
+              <li><strong>Feature Deprecations:</strong>
+                <ul>
+                    <li>The experimental Strict CSRF token enforcement is deprecated and will be fully removed in Mattermost v11.</li>
+                    <li>The <code>/api/v4/image</code> endpoint is fully deprecated when the image proxy is disabled.</li>
+                </ul>
+              </li>
+              <li><strong>Other Considerations:</strong>
+                <ul>
+                    <li>Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. Professional SKU customers may continue using Playbooks v1, which will remain supported until September 2025, followed by a grandfathering strategy. More details can be found <a href="https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563" target="_blank">here</a>.</li>
+                    <li>Renamed the following areas for better clarity:
+                      <ul>
+                          <li>"Channel Moderation" to "Advanced Access Control" in the channel management section of the **System Console**.</li>
+                          <li>Announcement banner feature to "System-Wide Notifications".</li>
+                          <li>"Collapsed Reply Threads" to "Threaded Discussions" in the System Console.</li>
+                          <li>"System Roles" to "Delegated Granular Administration" in the System Console.</li>
+                          <li>"Office 365" to "Entra ID" for SSO logins.</li>
+                      </ul>
+                    </li>
+                    <li>Pre-packaged <a href="https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.0.1">Calls Plugin v1.0.1</a>, which includes breaking changes:
+                      <ul>
+                          <li>Group calls are no longer supported on unlicensed servers to focus quality and supportability on licensed servers.</li>
+                          <li>Unlicensed servers can continue using Calls in direct message channels, which represents the majority of activity.</li>
+                      </ul>
+                    </li>
+                </ul>
+              </li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v10.1-to-v10.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v10.1 to v10.5</h3>
+    <ul>
+        <li><strong>No significant changes introduced in v10.1.</strong></li>
+    </ul>
+  </div>
+
+  <div id="v10.2-to-v10.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v10.2 to v10.5</h3>
+    <ul>
+        <li><strong>v10.2:</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> Docker Content Trust (DCT) for signing Docker image artifacts has been replaced by Sigstore Cosign in v10.2 (November 2024). If you rely on artifact verification using DCT, please <a href="https://edu.chainguard.dev/open-source/sigstore/cosign/how-to-install-cosign/" target="_blank">transition to using Cosign</a>. See the <a href="https://forum.mattermost.com/t/upcoming-dct-deprecation/19275" target="_blank">Upcoming DCT Deprecation</a> Mattermost forum post for more details.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> No other considerations in this release.</li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v10.3-to-v10.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v10.3 to v10.5</h3>
+    <ul>
+        <li><strong>v10.3:</strong>
+          <ul>
+              <li><strong>Breaking Changes:</strong> The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the <a href="https://apps.apple.com/us/app/mattermost/id1257222717" target="_blank">Apple App Store</a> or the <a href="https://play.google.com/store/apps/details?id=com.mattermost.rn" target="_blank">Google Play Store</a>. See more details in the <a href="https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703" target="_blank">Classic Mobile App Deprecation</a> Mattermost forum post.</li>
+              <li><strong>Database Updates:</strong> No database updates in this release.</li>
+              <li><strong>Feature Deprecations:</strong> No feature deprecations in this release.</li>
+              <li><strong>Other Considerations:</strong> No other considerations in this release.</li>
+          </ul>
+        </li>
+    </ul>
+  </div>
+
+  <div id="v10.4-to-v10.5" class="upgrade-notes" style="display:none;">
+    <h3>Upgrade Notes: v10.4 to v10.5</h3>
+    <ul>
+        <li><strong>No significant changes introduced in v10.4.</strong></li>
+    </ul>
+  </div>
+
+-------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .. note::
 
