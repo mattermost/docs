@@ -36,6 +36,7 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
  - Removed unnecessary log messages by checking the license before calling to retrieve groups.
  - Made configuration location in the Support Packet human-readable.
  - Added advanced audit and notifications logs to the Support Packet.
+ - Added log information to LDAP sync about ``include_removed_members`` option.
  - Upgraded ``react-select`` from v3.0.3 to v5.9.0.
 
 ### Bug Fixes
