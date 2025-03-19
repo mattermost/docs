@@ -4,7 +4,58 @@ Generate a Support Packet
 .. include:: ../_static/badges/ent-pro-selfhosted.rst
   :start-after: :nosearch:
 
-Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
+The Support Packet is used to help customers diagnose and troubleshoot issues. Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a zip file that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
+
+Generate
+---------
+
+.. important::
+   
+   Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
+
+.. tab:: Web/Desktop
+
+   1. Go to the System Console, and select **Commercial Support** from the System Console menu. 
+
+      .. image:: ../images/system-console-commercial-support.png
+         :alt: Example of available System Console menu options.
+
+   2. Select **Download Support Packet**. A zip file is downloaded to the local machine. You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
+
+.. tab:: mmctl
+
+   Run the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate and download a Support Packet to share with Mattermost Support.
+
+   .. code-block:: sh
+
+    go run ./cmd/mmctl system supportpacket
+
+   .. code-block:: text
+
+    Downloading Support Packet
+    Downloaded Support Packet to mattermost_support_packet_.zip
+
+Santitize confidential data
+---------------------------
+
+Please sanitize any confidential data you wish to exclude before sharing the packet with Mattermost. 
+
+When present, the following information is automatically santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
+
+.. important::
+
+   - Plugins may not be sanitized during packet generation. 
+     - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
+     - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+
+Share the packet with Mattermost
+--------------------------------
+
+Add the generated Support Packet to a `standard support request <https://support.mattermost.com/hc/en-us/requests/new>`_, or share with with the Mattermost team you're working with.
+
+.. important::
+
+   Disable debug logging once you've generated the Support Packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
 
 Contents of a Support Packet
 ----------------------------
@@ -63,55 +114,6 @@ A Mattermost Support Packet can contain the following files:
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
    - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
-
-Generate
----------
-
-.. important::
-   
-   Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
-
-.. tab:: Web/Desktop
-
-   1. Go to the System Console, and select **Commercial Support** from the System Console menu. 
-
-      .. image:: ../images/system-console-commercial-support.png
-         :alt: Example of available System Console menu options.
-
-   2. Select **Download Support Packet**. A zip file is downloaded to the local machine. You'll be notified if any packet files are unavailable during packet generation. See the ``warning.txt`` file for details.
-
-.. tab:: mmctl
-
-   Run the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate and download a Support Packet to share with Mattermost Support.
-
-   .. code-block:: sh
-
-    go run ./cmd/mmctl system supportpacket
-
-   .. code-block:: text
-
-    Downloading Support Packet
-    Downloaded Support Packet to mattermost_support_packet_.zip
-
-Santitize confidential data
----------------------------
-
-When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
-
-.. important::
-
-   - Plugins may not be sanitized during packet generation. 
-     - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
-     - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
-
-Share the packet with Mattermost
---------------------------------
-
-Add the generated Support Packet to a `standard support request <https://support.mattermost.com/hc/en-us/requests/new>`_, or share with with the Mattermost team you're working with.
-
-.. important::
-
-   Disable debug logging once you've generated the Support Packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
 
 Metadata
 ---------

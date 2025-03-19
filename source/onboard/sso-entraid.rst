@@ -91,7 +91,8 @@ Instead of using the System Console, you can add the Entra ID settings directly 
 
 .. code-block:: text
 
-  "Enable": false,
+  "Office365Settings": {
+        "Enable": false,
         "Secret": "i.hddd6Pu3--5dg~cRddddqOrBdd1a",
         "Id": "28ddd714-1f2f-4f9c-9486-90b8dddd27",
         "Scope": "profile openid email",
