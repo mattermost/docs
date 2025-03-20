@@ -49,11 +49,11 @@ Estimated storage per user, per month
 Example
 ~~~~~~~
 
-A 100000-person team with medium usage (with a safety factor of 2x) would require between 10.56TB :sup:`1` and 52.8TB :sup:`2` of free space per annum.
+A 200000-person team with medium usage (with a safety factor of 2x) would require between 21.12TB :sup:`1` and 105.6TB :sup:`2` of free space per annum.
 
-:sup:`1` 100000 users * 5 MB * 12 months * 2x safety factor
+:sup:`1` 200000 users * 5 MB * 12 months * 2x safety factor
 
-:sup:`2` 100000 users * 25 MB * 12 months * 2x safety factor
+:sup:`2` 200000 users * 25 MB * 12 months * 2x safety factor
 
 We strongly recommend that you review storage utilization at least quarterly to ensure adequate free space is available.
 
