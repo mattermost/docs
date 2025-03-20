@@ -8,6 +8,9 @@ Mattermost supports the creation and customization of system administration role
 
 These admin roles permit granular access to specific areas of the System Console and related API endpoints. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. These system roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
 
+.. warning::
+  Even when a role is set to **No Access** or **Read Only** for a System Console page, granting **Can Edit** on any System Console page enables access to the underlying configuration endpoint (``PUT /api/v4/config/patch``). This means a user with write access in one area can modify configuration values across all areas. Administrators should assign **Can Edit** permissions with caution.
+
 Available roles
 ----------------
 
