@@ -78,7 +78,8 @@ Instead of using the System Console, you can add the Google settings directly to
 
 .. code-block:: text
 
-  "Enable": true,
+  "GoogleSettings": {
+        "Enable": true,
         "Secret": "P-k9R-7E7ayX9LdddddWdXVg",
         "Id": "1022ddddd5846-bkddddd4a1ddddd9d88j1kb6eqc.apps.googleusercontent.com",
         "Scope": "profile openid email",

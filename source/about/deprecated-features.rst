@@ -10,6 +10,7 @@ Mattermost Server v11.0.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - Starting in September 2025, Mattermost will deprecate the ``TeamSettings.ExperimentalViewArchivedChannels`` setting in favor of a new setting, ``TeamSettings.BrowseArchivedPublicChannels``. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
+- Beginning in Mattermost v11 (estimated in September 2025), Playbooks will be unsupported for Free Edition and Professional customers. Professional customers using Playbooks can contact their Customer Success Manager to discuss potential upgrade options with discounting applied as appropriate. Additional details can be found in the `Clarification on Playbooks in Mattermost v10 <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`__ article on the Mattermost Discussion Forums.
 
 Removed features by Mattermost version
 ----------------------------------------
