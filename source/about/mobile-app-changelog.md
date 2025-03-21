@@ -31,7 +31,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue with scrolling lists inside the bottom menu.
 
 ### Known Issues
- - Samsung S22 might not display custom profile attributes correctly.
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
