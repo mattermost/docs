@@ -34,6 +34,19 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
+(release-v2-26-1)=
+## 2.26.1 Release
+ - Release Date: March 21, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Bug Fixes
+ - Fixed issues where app bindings and message attachments would not show properly.
+
 (release-v2-26-0)=
 ## 2.26.0 Release
  - Release Date: March 14, 2025
