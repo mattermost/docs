@@ -20,7 +20,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - (Enterprise) Added the ability to configure per-server prompting for biometric authentication, preventing the use of the app if the device is jailbroken / rooted, and the ability to prevent screen captures. 
+ - (Enterprise) Added the ability to configure per-server prompting for biometric authentication, to prevent the use of the app if the device is jailbroken / rooted, and to prevent screen captures. 
  - Updated empty state images to align with new branding style. 
  - Added the ability to play and download audios on the chat. 
  - Added custom profile attributes to the edit profile screen. Requires server v10.5+ with an Enterprise license and feature flag enabled.
