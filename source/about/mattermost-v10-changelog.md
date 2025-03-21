@@ -28,7 +28,7 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
  - Updated the ``marked`` package which includes full-width punctuation intervals for Unicode characters fix.
  - Added a minor change in the message priority checkbox menu item; the description width is now smaller than in previous versions.
  - Updated the library used for controlling and positioning the emoji picker.
- - Added a browser window title to the Scheduled Posts tab. The title is ``Scheduled - <team name>``, same pattern as in the Drafts tab.
+ - Added a browser window title to the **Scheduled Posts** tab. The title is **Scheduled - <team name>**, using the same pattern as the **Drafts** tab.
 
 #### Administration
  - Added a new System Console page called **Embedding** which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list.
@@ -40,7 +40,7 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
  - Upgraded ``react-select`` from v3.0.3 to v5.9.0.
 
 ### Bug Fixes
- - Fixed an issue with the alignment of the draft list when scheduled posts was disabled.
+ - Fixed an issue with the alignment of the draft list when scheduled posts are disabled.
  - Fixed an issue where threads created by users were auto-followed on reply by the creator when they left the channel.
  - Fixed an issue where muted channels in other teams would show their mentions in the title bar.
  - Fixed an issue where messages from new channels in other teams wouldn't show up until a refresh.
@@ -49,7 +49,7 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
  - Fixed an issue where DND statuses did not expire at the expiry time displayed in the app.
  - Fixed an issue where the group mentions permission was missing.
  - Fixed an issue where a system bot reply to a command entered in a thread was also posted in the channel.
- - Fixed an issue where the channel member menu might open in the wrong direction.
+ - Fixed an issue where the channel member menu could open in the wrong direction.
  - Fixed an issue where the edit post textbox sized incorrectly with the Grammarly browser extension installed.
  - Fixed an issue where onclick was missing in the channel header text, thus enabling hashtag, link, and mention clicks.
  - Fixed an issue with jobs in a High Availability environment, where two job servers would take the same job.
@@ -59,7 +59,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to all plans:
  - Under ``MetricsSettings`` in ``config.json``:
-    - Added ``ClientSideUserIds`` where users can set the user IDs that they want to track for client side webapp metrics. Note that the total number of userIDs have been capped to 5 for performance reasons. Otherwise Prometheus gets overwhelmed with high label cardinality. It is recommended not to keep changing this list too often to track different sets of users, otherwise Prometheus might start to have poor performance. 
+    - Added ``ClientSideUserIds`` where users can set the user IDs that they want to track for client-side webapp metrics. The total number of userIDs have been capped to 5 for performance reasons, otherwise Prometheus gets overwhelmed with high label cardinality. We recommend modifying this list infrequently to ensure Prometheus performance. 
  - Under ``CacheSettings`` in ``config.json``:
     - Added ``RedisCachePrefix`` has been added which can be used to add a prefix to all Redis cache keys. 
  - Under ``ServiceSettings`` in ``config.json``:
