@@ -29,7 +29,6 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Bug Fixes
  - Fixed an issue with scrolling lists inside the bottom menu.
- - Fixed issues where app bindings and message attachments would not show properly.
 
 ### Known Issues
  - Samsung S22 might not display custom profile attributes correctly.
