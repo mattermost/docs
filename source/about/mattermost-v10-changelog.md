@@ -58,7 +58,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to all plans:
 - Under ``ServiceSettings`` in ``conig.json``:
-  - Adede a new configuration setting ``EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. We don't recommended turning this on unless you have at least 200,000 concurrent users actively using Mattermost.
+  - A new configuration setting ``EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. We don't recommended turning this on unless you have at least 200,000 concurrent users actively using Mattermost.
 - Removed ``EnableOpenTracing`` to remove the unused ``opentracing`` support. 
 
 ### API Changes
