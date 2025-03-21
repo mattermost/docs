@@ -28,7 +28,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added a client-side ping to the websocket to detect broken connections more quickly. 
 
 ### Bug Fixes
- - Fixed an issue with scrolling lists inside the bottom sheet.
+ - Fixed an issue with scrolling lists inside the bottom menu.
  - Fixed issues where app bindings and message attachments would not show properly.
 
 ### Known Issues
