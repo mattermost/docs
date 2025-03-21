@@ -1,6 +1,3 @@
-AWS Elastic Beanstalk Docker setup
-==================================
-
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 

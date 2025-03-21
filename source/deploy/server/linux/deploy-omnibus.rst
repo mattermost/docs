@@ -1,17 +1,14 @@
-Install Mattermost Omnibus
-==========================
-
 .. raw:: html
 
   <div class="mm-badge mm-badge--combo">
 
     <div class="mm-plans-badge block">
       <p>
-        <img src="../_static/images/badges/flag_icon.svg" alt="" />
+        <img src="../../_static/images/badges/flag_icon.svg" alt="" />
         <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
       </p>
       <p>
-        <img src="../_static/images/badges/deployment_icon.svg" alt="" />
+        <img src="../../_static/images/badges/deployment_icon.svg" alt="" />
         <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
       </p>
     </div>
@@ -211,4 +208,4 @@ What ``mmomni`` commands are available?
 Where can I get help?
 ~~~~~~~~~~~~~~~~~~~~~
 
-If you have any problems installing Mattermost Omnibus, see the :doc:`troubleshooting guide </install/troubleshooting>` for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`__.
+If you have any problems installing Mattermost Omnibus, see the :doc:`troubleshooting guide </install/troubleshooting>` for common error messages, or `join the Mattermost user community for troubleshooting help <https://mattermost.com/community/>`__. 

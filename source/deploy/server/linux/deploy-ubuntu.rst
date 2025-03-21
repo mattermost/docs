@@ -1,17 +1,14 @@
-Install Mattermost Server on Ubuntu
-===================================
-
 .. raw:: html
 
     <div class="mm-badge mm-badge--combo">
 
     <div class="mm-plans-badge block">
       <p>
-        <img src="../_static/images/badges/flag_icon.svg" alt="" />
+        <img src="../../_static/images/badges/flag_icon.svg" alt="" />
         <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
       </p>
       <p>
-        <img src="../_static/images/badges/deployment_icon.svg" alt="" />
+        <img src="../../_static/images/badges/deployment_icon.svg" alt="" />
         <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
       </p>
     </div>
@@ -104,7 +101,7 @@ After modifying the ``config.json`` configuration file, you can now start the Ma
 
   sudo systemctl start mattermost
 
-Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
+Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that's returned by the Mattermost Server.
 
 The final step, depending on your requirements, is to run ``sudo systemctl enable mattermost.service`` so that Mattermost will start on system boot.
 
@@ -134,4 +131,4 @@ Frequently asked questions
 --------------------------
 
 .. include:: common-deploy-faq.rst
-  :start-after: :nosearch:
+  :start-after: :nosearch: 

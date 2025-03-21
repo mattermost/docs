@@ -1,6 +1,3 @@
-Deploy Mattermost via Docker
-==============================
-
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 

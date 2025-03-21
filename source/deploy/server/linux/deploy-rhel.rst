@@ -1,17 +1,14 @@
-Install Mattermost on RHEL
-==========================
-
 .. raw:: html
 
     <div class="mm-badge mm-badge--combo">
 
     <div class="mm-plans-badge block">
       <p>
-        <img src="../_static/images/badges/flag_icon.svg" alt="" />
+        <img src="../../_static/images/badges/flag_icon.svg" alt="" />
         <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
       </p>
       <p>
-        <img src="../_static/images/badges/deployment_icon.svg" alt="" />
+        <img src="../../_static/images/badges/deployment_icon.svg" alt="" />
         <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
       </p>
     </div>
@@ -49,7 +46,7 @@ Download the latest Mattermost Server tarball
 Install
 -------
 
-Ahead of installing the Mattermost Server, it’s good practice to update all your repositories and, where required, update existing packages by running the following commands:
+Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages by running the following commands:
 
 .. code-block:: sh
 
@@ -137,10 +134,10 @@ Restart Mattermost to confirm the configuation works as expected by running ``su
 
 See the following SELinux resources for additional details:
 
-- `SELinux User’s and Administrator’s Guide <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index>`_
+- `SELinux User's and Administrator's Guide <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index>`_
 - `SELinux Project Wiki <https://selinuxproject.org/page/Main_Page>`_
 - `Introduction to SELinux <https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/>`_
-- `A Sysadmin’s Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
+- `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
 - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
 
 Updates
@@ -167,4 +164,4 @@ Frequently asked questions
 --------------------------
 
 .. include:: common-deploy-faq.rst
-  :start-after: :nosearch:
+  :start-after: :nosearch: 

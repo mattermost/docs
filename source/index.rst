@@ -16,9 +16,9 @@ Mattermost product documentation
    :glob:
 
    About Mattermost <overview/index>
-   Deploy Mattermost <guides/deployment>
-   Manage Mattermost <guides/administration>
-   Use Mattermost <guides/use-mattermost>
+   User Guide <guides/use-mattermost>
+   Deployment Guide <deploy/overview>
+   Administration Guide <guides/administration>
    Integrate and extend <guides/integrate-and-extend>
    Develop with Mattermost <https://developers.mattermost.com/>
    Get help with Mattermost <guides/get-help>
