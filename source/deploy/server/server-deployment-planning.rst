@@ -1,4 +1,4 @@
-Server Deployment Planning
+Server deployment planning
 ==========================
 
 .. toctree::
@@ -14,8 +14,8 @@ Server Deployment Planning
 
 This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
 
-Core Technology Stack
--------------------
+Core technology stack
+----------------------
 
 Mattermost's architecture is built on modern, reliable technologies:
 
@@ -26,8 +26,8 @@ Mattermost's architecture is built on modern, reliable technologies:
 * **File Storage**: Local filesystem or cloud storage (S3, MinIO) for media and attachments
 * **Caching**: Built-in support for Redis for enhanced performance
 
-Deployment Options
-----------------
+Deployment options
+-------------------
 
 Mattermost offers several deployment options to suit your organization's needs:
 
@@ -56,7 +56,7 @@ Mattermost offers several deployment options to suit your organization's needs:
    * Situations where containers aren't preferred
 
 Prerequisites
-------------
+--------------
 
 Before deploying Mattermost, ensure you have:
 
@@ -68,11 +68,10 @@ Before deploying Mattermost, ensure you have:
 * Network access and firewall configurations
 * System requirements met based on expected user load
 
-
-Planning Your Deployment
+Plan your deployment
 ----------------------
 
-When planning your Mattermost deployment, consider:
+When planning your Mattermost deployment, consider the following when choosing the deployment method that best aligns with your organization's requirements, technical expertise, and infrastructure capabilities:
 
 * Expected user count and growth
 * High availability requirements
@@ -81,4 +80,4 @@ When planning your Mattermost deployment, consider:
 * Security and compliance requirements
 * Monitoring and maintenance strategy
 
-Choose the deployment method that best aligns with your organization's requirements, technical expertise, and infrastructure capabilities. The following sections provide detailed instructions for each deployment approach.
+The following server, desktop, and mobile application sections provide detailed instructions for each deployment approach.

@@ -8,7 +8,7 @@ Mattermost offers a :doc:`Mattermost Push Notification Service (MPNS) </deploy/d
 Test Push Notifications Service (TPNS)
 --------------------------------------
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
@@ -31,7 +31,7 @@ See our :doc:`Testing Push Notifications </deploy/mobile-testing-notifications>`
 Hosted Push Notifications Service (HPNS)
 ----------------------------------------
 
-.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Hosted Push Notification Service (HPNS). The HPNS offers:
@@ -67,7 +67,7 @@ Configuring your existing Mattermost instance to use the Mattermost HPNS is a si
   - United States: ``https://push.mattermost.com``
   - Germany: ``https://hpns-de.mattermost.com``
 
-.. image:: ../images/mobile_hpns.png
+.. image:: ../../images/mobile_hpns.png
    :alt: Configure a licensed self-hosted Mattermost deployment to use the Mattermost Hosted Push Notification Server (HPNS) in the System Console by going to Environment > Push Notification Server. Select the HPNS option, then specify the server URL.
    
 5. Review the Mattermost Terms of Service and the Mattermost Privacy Policy, then select the box "I understand and accept the Mattermost Hosted Push Notification Service Terms of Service and Privacy Policy" to acknowledge that you understand the terms of use.
@@ -79,7 +79,7 @@ After setup, test push notifications to confirm they are working.
 ID-only push notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Admins can enable mobile notifications to be fully private to protect a Mattermost customer against breaches in iOS and Android notification infrastructure by limiting the data sent to Apple and Google through a Mattermost configuration setting.

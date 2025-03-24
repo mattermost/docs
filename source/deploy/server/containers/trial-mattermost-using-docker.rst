@@ -1,7 +1,7 @@
 Trial Mattermost using Docker
 =============================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 .. tip::

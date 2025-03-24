@@ -1,7 +1,7 @@
 Deploying mobile apps using an EMM provider
 ===========================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Admins can enhance mobile security by deploying with `Enterprise Mobility Management (EMM) <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`__ and :doc:`Mattermost AppConfig </deploy/mobile-appconfig>` compatibility to secure mobile endpoints with management application configuration.

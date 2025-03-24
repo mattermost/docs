@@ -1,5 +1,5 @@
 Deploy Mattermost using Containers
-================================
+==================================
 
 Mattermost can be deployed using container technologies, providing flexibility and portability for your deployment. This guide covers deployment options using Docker and AWS Elastic Beanstalk.
 

@@ -33,10 +33,10 @@
 
 You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). Using the Mattermost Personal Package Archive (PPA) not only provides the quickest way to install a Mattermost Server, but also provides automatic updates. This install method is used for both single and clustered installations.
 
-.. include:: common-omnibus-tip.rst
+.. include:: ../../common-omnibus-tip.rst
   :start-after: :nosearch:
 
-.. include:: common-postgres-database-important.rst
+.. include:: ../../common-postgres-database-important.rst
   :start-after: :nosearch:
 
 This Mattermost deployment includes 4 steps: `add the PPA repository <#add-the-mattermost-server-ppa-repository>`__, `install <#install>`__, `setup <#setup>`__, and `update <#updates>`__.
@@ -44,7 +44,7 @@ This Mattermost deployment includes 4 steps: `add the PPA repository <#add-the-m
 Add the Mattermost Server PPA repository
 ----------------------------------------
 
-.. include:: common-gpg-public-key-changed.rst
+.. include:: ../../common-gpg-public-key-changed.rst
   :start-after: :nosearch:
 
 In a terminal window, run the following repository setup command to add the Mattermost Server repositories:
@@ -89,10 +89,10 @@ Rename this configuration file with correct permissions:
 
   sudo install -C -m 600 -o mattermost -g mattermost /opt/mattermost/config/config.defaults.json /opt/mattermost/config/config.json
 
-.. include:: common-default-config-changes.rst
+.. include:: ../../common-default-config-changes.rst
   :start-after: :nosearch:
 
-.. include:: common-configure-support-email.rst
+.. include:: ../../common-configure-support-email.rst
   :start-after: :nosearch:
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost Server:
@@ -130,5 +130,5 @@ If you wish to remove the Mattermost Server for any reason, you can run this com
 Frequently asked questions
 --------------------------
 
-.. include:: common-deploy-faq.rst
+.. include:: ../../common-deploy-faq.rst
   :start-after: :nosearch: 

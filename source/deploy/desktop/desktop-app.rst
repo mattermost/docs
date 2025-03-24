@@ -1,7 +1,7 @@
 Desktop App deployment guide
 =============================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost desktop applications are available for Windows, macOS, and Linux operating systems.

@@ -1,4 +1,7 @@
-.. include:: ../_static/badges/allplans-selfhosted.rst
+Deploy Mattermost with AWS Beanstalk
+=====================================
+
+.. include:: ../../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 The following instructions use Docker to install Mattermost in *Preview Mode* for exploring product functionality. This configuration should not
@@ -30,4 +33,4 @@ See :doc:`Configuration Settings </configure/configuration-settings>` documentat
 
 The default Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. To see the product's full functionality, enabling SMTP email is recommended.
 
-.. include:: ../configure/smtp-email.rst
+.. include:: ../../../configure/smtp-email.rst

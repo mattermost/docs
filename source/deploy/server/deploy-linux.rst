@@ -1,5 +1,5 @@
 Deploy Mattermost on Linux
-=======================
+==========================
 
 Mattermost can be deployed on various Linux distributions, providing a flexible and robust platform for your team communication needs. This guide covers deployment options for major Linux distributions and installation methods.
 

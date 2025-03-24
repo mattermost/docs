@@ -1,16 +1,16 @@
-Preparing Your Mattermost Server Environment
-=========================================
+Prepare your Mattermost Server environment
+===========================================
 
-This guide outlines the key preparation steps required before installing Mattermost Server, focusing on setting up your database and file storage systems.
+This guide outlines the key preparation steps required before installing the Mattermost Server, focusing on setting up the database and file storage systems.
 
-Database Preparation
-------------------
+Database preparation
+--------------------
 
-Mattermost requires a PostgreSQL database (version 12 or higher). While MySQL was previously supported, PostgreSQL is now the recommended and preferred database.
+Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL was previously supported, PostgreSQL is now the recommended and preferred database.
 
 .. important::
 
-    PostgreSQL v12+ is required for Mattermost server installations. MySQL support is being deprecated starting with Mattermost v11.
+    PostgreSQL v13+ is required for Mattermost server installations. MySQL support is being deprecated starting with Mattermost v11.
 
 
 1. Create an PostgreSQL server instance:
@@ -104,13 +104,16 @@ Mattermost requires a PostgreSQL database (version 12 or higher). While MySQL wa
 
          host all all {mattermost-server-IP}/32 md5
 
-File Storage Preparation
-----------------------
+File storage preparation
+-------------------------
 
-Mattermost requires a file storage system for storing user files, images, and attachments. You have several options:
+Mattermost requires a file storage system for storing user files, images, and attachments. You have several options, including:
 
-Local File Storage
-~~~~~~~~~~~~~~~~
+- local file storage
+- S3-compatibile object storage (recommended)
+
+Local file storage
+~~~~~~~~~~~~~~~~~~
 
 For simple deployments, you can use local file storage. However, this is not recommended for production environments or multi-node deployments.
 
@@ -126,8 +129,8 @@ For simple deployments, you can use local file storage. However, this is not rec
 
       sudo chown -R mattermost:mattermost /opt/mattermost/data
 
-S3-Compatible Object Storage (Recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+S3-compatible object storage (Recommended)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For production environments, we recommend using S3-compatible object storage such as:
 
@@ -148,8 +151,8 @@ When using S3 storage, you'll need:
    - Secret Key
    - Endpoint URL (for non-AWS S3 services)
 
-Network Preparation
------------------
+Network preparation
+--------------------
 
 Ensure the following ports are available:
 
@@ -157,23 +160,24 @@ Ensure the following ports are available:
 - Database port: 5432 (TCP) for PostgreSQL
 - SMTP port: 10025 (TCP/UDP) for outbound email
 
-System Requirements
------------------
+System requirements
+--------------------
 
 Ensure your system meets these minimum requirements:
 
 - Operating System: 64-bit Linux distribution
 - Hardware: 1 vCPU/core with 2GB RAM (supports up to 1,000 users)
 - Storage: Minimum 10GB available space
-- Database: PostgreSQL v12+
+- Database: PostgreSQL v13+
 - Network: Reliable internet connection with sufficient bandwidth
 
-Next Steps
----------
+See the :doc:`software and hardware requirements </install/software-hardware-requirements>` documentation for additional requirements.
+
+Next steps
+-----------
 
 Once you've completed these preparation steps, you can proceed with installing the Mattermost server. Choose your preferred installation method:
 
-- :doc:`Install using Docker </deploy/server/containers/install-docker>`
-- :doc:`Install on Ubuntu </deploy/server/virtual-machines/install-ubuntu>`
-- :doc:`Install on RHEL </deploy/server/virtual-machines/install-rhel>`
-- :doc:`Install using Kubernetes </deploy/server/kubernetes/install-kubernetes>` 
+- :doc:`Deploy with Kubernetes </deploy/server/deploy-kubernetes>`
+- :doc:`Deploy with Linux </deploy/server/deploy-linux>`
+- :doc:`Deploy with Containers </deploy/server/deploy-containers>`

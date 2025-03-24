@@ -9,11 +9,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment overview
 -------------------
 
-Please see the :doc:`Mattermost Deployment Overview </deploy/deployment-overview>` documentation for a summary of software systems whose requirements are described in this document.
-
-.. image:: ../images/network-diagram.svg
-   :alt: Mattermost network diagram shows how the components can be deployed. Includes optional configurations for scaling for larger enterprise organizations.
-   :class: bg-white
+Please see the :doc:`Application architecture </deploy/architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
 
 Software requirements
 ---------------------

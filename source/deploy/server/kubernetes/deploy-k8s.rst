@@ -1,4 +1,4 @@
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
  :start-after: :nosearch:
 
 This document provides a guide to deploying Mattermost on Kubernetes using the Mattermost Kubernetes Operator. This guide will primarily focus on the recommended approach of using S3-compatible storage and a managed database service. If you choose to use self-managed components, you will need to adapt the instructions accordingly, pointing to your internal services instead.

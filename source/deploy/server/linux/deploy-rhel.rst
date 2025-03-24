@@ -40,7 +40,7 @@ This Mattermost deployment includes 4 steps: `download <#download>`__, `install 
 Download the latest Mattermost Server tarball
 ---------------------------------------------
 
-.. include:: download-latest-tarball.rst
+.. include:: ../../download-latest-tarball.rst
     :start-after: :nosearch:
 
 Install
@@ -55,13 +55,13 @@ Ahead of installing the Mattermost Server, it's good practice to update all your
 
 After any updates, and any system reboots, are complete, install the Mattermost Server.
 
-.. include:: install-mattermost-server-tarball.rst
+.. include:: ../../install-mattermost-server-tarball.rst
     :start-after: :nosearch:
 
 Setup
 -----
 
-.. include:: setup-mattermost-server.rst
+.. include:: ../../setup-mattermost-server.rst
     :start-after: :nosearch:
   
 .. important::
@@ -163,5 +163,5 @@ You may also remove the Mattermost systemd unit file and the user/group created 
 Frequently asked questions
 --------------------------
 
-.. include:: common-deploy-faq.rst
+.. include:: ../../common-deploy-faq.rst
   :start-after: :nosearch: 

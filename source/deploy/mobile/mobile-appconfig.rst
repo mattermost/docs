@@ -1,7 +1,7 @@
 AppConfig for EMM solutions with Mattermost mobile apps
 =======================================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 What is AppConfig?
