@@ -46,7 +46,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - GPG Signature: https://releases.mattermost.com/10.0.4/mattermost-10.0.4-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.11.11 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.11/mattermost-9.11.11-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.11.11/mattermost-9.11.11-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``028123da2327187b09548c98a5910263c7a7cdce01ea9b45ce8d12440c73386c``
+    - SHA-256 Checksum: ``3600fe3c024969df41a15bd56d56ba7828d503abd0e58c4a231b81c97501e985``
     - GPG Signature: https://releases.mattermost.com/9.11.11/mattermost-9.11.11-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.3/mattermost-9.10.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.3/mattermost-9.10.3-linux-amd64.tar.gz``
@@ -449,7 +449,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.0.4/sbom.json
   Mattermost Team Edition v9.11.11 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-11-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.11.11/mattermost-team-9.11.11-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.11.11/mattermost-team-9.11.11-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``311eb3ea406b9940eb0c9520fd18ad03d73550b59d1dc6090fc8924660b6efe9``
+    - SHA-256 Checksum: ``8c57f6c3c345db5b59c32043d8e3996b72f3cbaa3d036cc90dd8213a66504e71``
     - GPG Signature: https://releases.mattermost.com/9.11.11/mattermost-team-9.11.11-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.10.3 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-10-feature-release>`__ - `Download <https://releases.mattermost.com/9.10.3/mattermost-team-9.10.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.10.3/mattermost-team-9.10.3-linux-amd64.tar.gz``
