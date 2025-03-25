@@ -2,17 +2,6 @@
 
     <div class="mm-badge mm-badge--combo">
 
-    <div class="mm-plans-badge block">
-      <p>
-        <img src="../../_static/images/badges/flag_icon.svg" alt="" />
-        <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
-      </p>
-      <p>
-        <img src="../../_static/images/badges/deployment_icon.svg" alt="" />
-        <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
-      </p>
-    </div>
-
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>

@@ -1,6 +1,3 @@
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 You can use a supported `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`__ to install Mattermost on your existing Azure infrastructure.
 
 .. important::

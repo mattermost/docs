@@ -1,6 +1,3 @@
-.. include:: ../../_static/badges/allplans-selfhosted.rst
- :start-after: :nosearch:
-
 You can use the Mattermost Kubernetes Operator to deploy Mattermost on Kubernetes using S3-compatible storage and a managed database service. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments.
 
 .. note::
@@ -215,3 +212,30 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
 4. If you are using Amazon S3, it's recommended to enable server-side encryption (SSE) and SSL. Add the following environment variables to the ``mattermostEnv`` section: 
 
 TBD
+
+
+**Review Mattermost Resource Status**
+
+After a Mattermost installation has been created with the Operator, you can review its status with the following:
+
+.. code-block:: sh
+
+  kubectl -n [namespace] get mattermost
+
+The ``kubectl describe`` command can be used to obtain more information about the Mattermost server pods:
+
+.. code-block:: sh
+
+  kubectl -n [namespace] describe pod
+
+**Follow logs**
+
+The following command can be used to follow logs on any kubernetes pod:
+
+.. code-block:: sh
+
+  kubectl -n [namespace] logs -f [pod name]
+
+If the ``-n [namespace]`` is omitted, then the default namespace of the current context is used. We recommend specifying the namespace based on your deployment.
+
+This command can be used to review the Mattermost Operator or Mattermost server logs as needed.

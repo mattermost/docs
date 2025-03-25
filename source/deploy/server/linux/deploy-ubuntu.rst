@@ -2,17 +2,6 @@
 
     <div class="mm-badge mm-badge--combo">
 
-    <div class="mm-plans-badge block">
-      <p>
-        <img src="../../_static/images/badges/flag_icon.svg" alt="" />
-        <span>Available on <a href="https://mattermost.com/pricing/">all plans</a></span>
-      </p>
-      <p>
-        <img src="../../_static/images/badges/deployment_icon.svg" alt="" />
-        <span><a href="https://mattermost.com/download/">Self-hosted</a> deployments</span>
-      </p>
-    </div>
-
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
@@ -35,7 +24,7 @@ You can install the Mattermost Server using our ``.deb`` signed packages using t
 
 .. note::
 
-  - If you are running the Mattermost Server and database on a single system, we recommend the :doc:`Mattermost Omnibus install method </install/installing-mattermost-omnibus>` as this greatly reduces setup and ongoing maintenance.
+  - If you are running the Mattermost Server and database on a single system, we recommend the **Omnibus Package** method instead as it greatly reduces setup and ongoing maintenance.
   - You need a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
   - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
 

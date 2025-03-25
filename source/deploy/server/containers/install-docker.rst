@@ -1,11 +1,7 @@
-Deploy Mattermost using Docker
-===============================
-
-.. include:: ../../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 .. important::
-   This deployment method is not recommended for production environments. If you're looking to deploy a production Mattermost instance, we recommend using managed container services like AWS ECS, Azure Container Apps, or Google Cloud Run. These services provide better scalability, reliability, and maintenance features suited for production workloads.
+   - This deployment method isn't recommended for production environments. 
+   - If you're looking to deploy a production Mattermost instance, we recommend using managed container services like AWS ECS, Azure Container Apps, or Google Cloud Run. These services provide better scalability, reliability, and maintenance features suited for production workloads.
+   - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
 
 Install Docker
 ---------------
@@ -22,28 +18,20 @@ If you don't have Docker installed, follow the instructions below based on your 
 
 .. tab:: Ubuntu
 
-  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation.
-
-  .. important::
-     Please ensure that you follow the `optional post-installation steps <https://docs.docker.com/engine/install/linux-postinstall/>`_ when installing Docker on Ubuntu!
+  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation. Ensure that you follow the `optional post-installation steps <https://docs.docker.com/engine/install/linux-postinstall/>`_ when installing Docker on Ubuntu!
 
 .. tab:: Fedora
 
   Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation.
 
-.. _Deploy Mattermost on Docker:
+**Deploy Mattermost on Docker (Quick Start)**
 
-Deploy Mattermost on Docker (Quick Start)
------------------------------------------
-
-This section provides a quick start guide for deploying Mattermost on Docker. Leveraging `Docker Compose <https://docs.docker.com/compose/install/>`_, this deployment solution is designed to get Mattermost up and running quickly. 
+This section provides a quick start guide for deploying Mattermost on Docker by leveraging `Docker Compose <https://docs.docker.com/compose/install/>`_.
 
 .. note::
 
    - The deployment configuration results in two separate containers: a container for the database and a container for the application. An optional third container results when using NGINX for reverse proxy.
    - Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
-
-To deploy Mattermost on Docker:
 
 1. In a terminal window, clone the repository and enter the directory.
 
@@ -132,38 +120,31 @@ To deploy Mattermost on Docker:
       
 6. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
 
-Configure SSO With GitLab (Optional)
--------------------------------------
+**Configure SSO With GitLab (Optional)**
 
-If you want to use SSO with GitLab, and you're using a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
-      
-To add the PKI chain, uncomment this line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
+To use SSO with GitLab with a self-signed certificate, you have to add the PKI chain for your authority. This is required to avoid the ``Token request failed: certificate signed by unknown authority`` error.
+
+To add the PKI chain, uncomment the following line in your ``.env`` file, and ensure it points to your ``pki_chain.pem`` file:
 
 .. code-block:: sh
 
    #GITLAB_PKI_CHAIN_PATH=<path_to_your_gitlab_pki>/pki_chain.pem
 
-Then uncomment this line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
+Then uncomment the following line in your ``docker-compose.yml`` file, and ensure it points to the same ``pki_chain.pem`` file:
 
 .. code-block:: sh
 
    # - ${GITLAB_PKI_CHAIN_PATH}:/etc/ssl/certs/pki_chain.pem:ro
 
-Upgrade from ``mattermost-docker``
------------------------------------
+**Upgrade from mattermost-docker**
 
-Visit the `mattermost/docker <https://github.com/mattermost/docker>`_ GitHub repository to access the official Docker deployment solution for Mattermost.
-
-.. note::
-
-   The `mattermost-docker <https://github.com/mattermost/mattermost-docker>`__ GitHub repository is deprecated. 
+The `mattermost-docker <https://github.com/mattermost/mattermost-docker>`__ GitHub repository is deprecated. Visit the `mattermost/docker <https://github.com/mattermost/docker>`_ GitHub repository to access the official Docker deployment solution for Mattermost.
 
 To migrate from an existing ``mattermost/mattermost-prod-app`` image, we recommend migrating to either ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support PostgreSQL v11+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
 
 For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 
-Install a different version of Mattermost
---------------------------------------------
+**Install a different version of Mattermost**
 
 1. Shut down your deployment.
 
@@ -173,11 +154,7 @@ Install a different version of Mattermost
 
 4. Redeploy Mattermost.
 
-Troubleshooting deployment
---------------------------
-
-Docker
-~~~~~~
+**Troubleshooting your Docker deployment**
 
 If deploying on an M1 Mac and encountering permission issues in the Docker container, `redo the third step <#create-the-required-directores-and-set-their-permissions>`__ and skip this command:
 
@@ -197,24 +174,55 @@ To remove all data and settings for your Mattermost deployment:
 
   sudo rm -rf ./volumes
 
-PostgreSQL
-~~~~~~~~~~~
+**Troubleshooting PostgreSQL**
 
 For quick start deployments, you can change the Postgres username and/or password (recommended) in the ``.env`` file. If your database is managed externally, you'll need to change the password in your database management tool. Then, update the ``.env`` file with the new credentials.
 
-TLS & NGINX
-~~~~~~~~~~~~
+**Troubleshooting TLS & NGINX**
 
 For an in-depth guide to configuring the TLS certificate and key for Nginx, please refer to `this document in the repository <https://github.com/mattermost/docker/blob/main/docs/issuing-letsencrypt-certificate.md>`__.
 
-Further help
-~~~~~~~~~~~~~
+**Trial Mattermost using Docker Preview**
 
-If you encounter other problems while installing Mattermost, please refer to our :doc:`troubleshooting guide </install/troubleshooting>`.
+Looking for a way to evaluate Mattermost on a single local machine using Docker? We recommend using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`_ to install Mattermost in Preview Mode.
 
-Trial Mattermost using Docker Preview
---------------------------------------
+.. important::
 
-Looking for a way to evaluate Mattermost in using Docker? We recommend using the `Mattermost Docker Preview Image <https://github.com/mattermost/mattermost-docker-preview>`_ to install Mattermost in Preview Mode. 
+   - This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your trial deployment.
+   - **Preview Mode** shouldn't be used in a production environment, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. 
+   - If you are planning to use the calling functionality in **Preview Mode** on a non-local environment, you should ensure that the server is running on a secure (HTTPs) connection and that the :ref:`network requirements <configure/calls-deployment:network>` to run calls are met.
 
-See the :doc:`trial Mattermost using Docker </install/trial-mattermost-using-docker>` documentation for details.
+1. Install `Docker <https://www.docker.com/get-started/>`__.
+
+2. Once you have Docker, run the following command in a terminal window:
+
+  .. code-block:: sh
+
+   docker run --name mattermost-preview -d --publish 8065:8065 --publish 8443:8443 mattermost/mattermost-preview
+
+3. When Docker is done fetching the image, navigate to ``http://localhost:8065/`` in your browser to preview Mattermost.
+4. Select **Don't have an account** in the top right corner of the screen to create an account for your preview instance. If you don't see this option, ensure that the :ref:`Enable open server <configure/authentication-configuration-settings:enable open server>` configuration setting is enabled. This setting is disabled for self-hosted Mattermost deployments by default.
+5. Log in to your preview instance with your user credentials.
+
+**Troubleshooting your preview deployment**
+
+The **Preview Mode** Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. See the :doc:`Configuration Settings </configure/configuration-settings>` documentation to customize your deployment.
+
+To update your Mattermost preview image and container, you must first stop and delete your existing **mattermost-preview** container by running the following commands:
+
+.. code-block:: sh
+
+  docker pull mattermost/mattermost-preview
+  docker stop mattermost-preview
+  docker rm mattermost-preview
+
+Once the new image is pulled and the container is stopped and deleted you need to run the ``docker run`` command from above.
+
+.. important::
+  On Linux, include ``sudo`` in front of all ``docker`` commands.
+
+To access a shell inside the container, run the following command:
+
+.. code-block:: sh
+
+   docker exec -ti mattermost-preview /bin/bash
