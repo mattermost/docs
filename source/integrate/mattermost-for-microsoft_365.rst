@@ -1,12 +1,12 @@
-Community for Mattermost for Microsoft 365
-==========================================
+Mattermost for Microsoft 365
+==============================
 
 Join the Mattermost Community directly from your Microsoft 365, Microsoft Outlook, or Microsoft Teams instance!
 
-Use the Community for Mattermost for Microsoft 365 to stay connected with thousands of users, contributors, and Mattermost staff directly from the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
+Use the Mattermost for Microsoft 365 to stay connected with thousands of users, contributors, and Mattermost staff directly from the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
 
-.. image:: ../images/mattermost_community_for_microsoft_365.png
-  :alt: Community for Mattermost for Microsoft 365, available in the Microsoft App Store.
+.. image:: ../images/mattermost-for-microsoft_365.png
+  :alt: Mattermost for Microsoft 365 is available in the Microsoft App Store.
 
 Key features
 ------------
@@ -24,23 +24,23 @@ This app is designed to work with Microsoft 365, Outlook, and Microsoft Teams.
 Setup
 -----
 
-Install the Community for Mattermost for Microsoft 365 application
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Install the Mattermost for Microsoft 365 application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Any Microsoft 365 user can complete the steps below to access the Community for Mattermost for Microsoft 365 within their Microsoft environment:
+Any Microsoft 365 user can complete the steps below to access the Mattermost for Microsoft 365 within their Microsoft environment:
 
 1. Sign in to your Microsoft Teams account from a `web browser <https://teams.microsoft.com/v2/?clientexperience=t2>`_ or the desktop application.
 
 2. Select the **[+] Apps** button in the Teams sidebar.
 
-3. Search for **Community for Mattermost** and then select **Add** to install the application.
+3. Search for **Mattermost for Microsoft 365** and then select **Add** to install the application.
 
 4. (Optional) Pin the Mattermost app to your Teams sidebar by right-clicking on it and selecting **Pin**.
 
-5. Once the Community for Mattermost app is installed, you'll be connected to the public Mattermost Community instance.
+5. Once the Mattermost app is installed, you'll be connected to the public Mattermost Community instance.
 
-Getting Started with the Community for Mattermost
--------------------------------------------------
+Getting started
+----------------
 
 Once you've installed the app, here are some ways to get started:
 
@@ -55,8 +55,8 @@ Once you've installed the app, here are some ways to get started:
 FAQ
 ---
 
-Where can I get support for the Community for Mattermost for Microsoft 365 app?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Where can I get support for the Mattermost for Microsoft 365 app?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can browse existing open issues or submit a new issue for support `in GitHub <https://github.com/mattermost/mattermost-teams-tab/issues>`_.
 
