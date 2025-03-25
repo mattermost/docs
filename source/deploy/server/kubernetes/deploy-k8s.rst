@@ -6,7 +6,7 @@ This document provides a guide to deploying Mattermost on Kubernetes using the M
 Intended outcome and deployment recommendations
 -------------------------------------------------
 
-The goal of this documentation is to enable you to quickly and reliably deploy a production-ready Mattermost instance. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments. This typically involves leveraging:
+The goal of this documentation is to enable you to quickly and reliably deploy a production-ready Mattermost instance. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments.
 
 While this guide focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions.  For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage. 
 
@@ -147,9 +147,10 @@ Deploy Mattermost
         name: my-postgres-connection
       type: Opaque
 
-    Example for AWS Aurora with PostgreSQL:
+    
+  Example for AWS Aurora with PostgreSQL:
 
-    .. code-block:: yaml
+  .. code-block:: yaml
 
       apiVersion: v1
       data:

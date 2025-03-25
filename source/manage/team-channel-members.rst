@@ -4,10 +4,6 @@ Manage team and channel members
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 System admins can manage channel configuration in the System Console, including:
 
 - **Management:** Manage synchronization, moderation, and membership settings.
@@ -103,10 +99,6 @@ Advanced access controls
 
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
 
 Advanced access control settings enable system admins to restrict actions within specific channels. These actions include:
 

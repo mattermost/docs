@@ -4,13 +4,94 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.6-feature-release)=
+## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+- **10.6.1, released 2025-03-17**
+  - Fixed an issue with jobs in an High Availability environment, where two job servers would take the same job [MM-63314](https://mattermost.atlassian.net/browse/MM-63314).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
+  - Mattermost v10.6.1 contains the following functional changes:
+      - Added a new System Console page called ``Embedding`` which allows frame ancestor domains to be specified when embedding Mattermost in other web sites. Note, ``teams.microsoft.com`` is no longer added automatically to the frame ancestors list. Added a new configuration setting ``FrameAncestors`` [MM-63327](https://mattermost.atlassian.net/browse/MM-63327).
+- **10.6.0, released 2025-03-14**
+  - Original 10.6.0 release.
+
+### Important Upgrade Notes
+ - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/install/prepare-mattermost-database#minimum-supported-version-policy) documentation for details.
+ - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL.
+
+```{Important}
+If you upgrade from a release earlier than v10.5, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1). 
+ - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
+ - Pre-packaged Copilot plugin version [v1.1.1](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v1.1.1).
+ - Pre-packaged MS Teams plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.1).
+ - Pre-packaged Jira plugin version [v4.2.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.1).
+ - Upgraded Ukrainian language to official.
+
+#### Administration
+ - System Console statistics now perform faster on PostgreSQL. The ``MaxUsersForStatistics`` configuration setting now only disables the **User counts with posts** chart, while all other stats remain unaffected. The other stats remain unaffected because that configuration value is no longer needed to disable the other queries since they are always fast now. Post and file counts update daily, so they may not always reflect real-time data. Advanced stats, such as line charts and plugin data, are now hidden until clicked, reducing load time. No performance improvements apply to MySQL since it's scheduled for full deprecation in v11. We recommend migrating to PostgreSQL for better performance and long-term support. The migration process for PostgreSQL is quick (around 15 seconds for large systems) and non-blocking. If you're on MySQL, no migration is needed, but transitioning to PostgreSQL is strongly encouraged.
+ - Unlicensed server limits have been updated: a soft limit of 2500 users now results in a banner notification visible by admins, and a 5K hard limit that prevents the creation or activation of users until the user count is reduced below the hard limit.
+ - Removed the automatic Elasticsearch/OpenSearch channel index schema check. As a result, admins will no longer receive Direct Message alerts to notify that their ``elasticsearch`` channel index is out of date.
+
+### Bug Fixes
+ - Fixed an issue where the email address in Mattermost would not get updated if the one in SAML changed. 
+ - Fixed an issue where deleted messages would still show thread replies in the channel. 
+ - Fixed an error that could occur when navigating away from the threads screen. 
+ - Fixed an issue where INFO level logging for ``DoActionRequest POST`` requests was missing. 
+ - Fixed an issue where users did not have the ability to toggle the switcher menu in the global header using the **SPACE** and **ENTER** keys while the product branding was in focus. 
+ - Fixed "An error has occurred" bar being shown with developer mode disabled. 
+ - Fixed an issue where deleted threads would get stuck in the thread viewer. 
+ - Fixed an issue where the channel file count was incorrect due to files not actually being submitted as part of a post. 
+ - Fixed a crash issue in the integration action system. 
+ - Fixed an issue where a currently selected thread was shown in the **Unreads** pane.
+ - Fixed an issue with mmctl preventing the logging of a harmless debug-level "error". 
+ - Fixed an issue where the unread count in your team sidebar may be out of sync when following/unfollowing threads. 
+ - Fixed an issue with Bulk Export: Exports will no longer stop when they encounter a missing file. 
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+- Under ``ServiceSettings`` in ``conig.json``:
+  - A new configuration setting ``EnableWebHubChannelIteration`` was added, which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. We don't recommended turning this on unless you have at least 200,000 concurrent users actively using Mattermost.
+- Removed ``EnableOpenTracing`` to remove the unused ``opentracing`` support. 
+
+### API Changes
+ - Added audit logging to the ``SearchPosts`` API.
+ - Added a ``metrics`` tag to ``client_perf`` endpoint.
+
+### Open Source Components
+ - Added and removed several components.
+
+### Go Version
+ - v10.6 is built with Go ``v1.22.6``.
+
+### Known Issues
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Aryakoste](https://github.com/Aryakoste), [ayush-chauhan233](https://github.com/ayush-chauhan233), [BenCookie95](https://github.com/BenCookie95), [bshumylo](https://github.com/bshumylo), [calebroseland](https://github.com/calebroseland), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [darkcircle](https://translate.mattermost.com/user/darkcircle), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [dgwhited](https://github.com/dgwhited), [Eleferen](https://translate.mattermost.com/user/Eleferen), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [equalsgibson](https://github.com/equalsgibson), [esarafianou](https://github.com/esarafianou), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [henrique](https://translate.mattermost.com/user/henrique), [hereje](https://github.com/hereje), [hmhealey](https://github.com/hmhealey), [hpflatorre](https://github.com/hpflatorre), [ifoukarakis](https://github.com/ifoukarakis), [isacikgoz](https://github.com/isacikgoz), [jespino](https://github.com/jespino), [jlandells](https://github.com/jlandells), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kayazeren](https://github.com/kayazeren), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [liul8258](https://github.com/liul8258), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [mvitale1989](https://github.com/mvitale1989), [natalie-hub](https://github.com/natalie-hub), [nathanaelhoun](https://github.com/nathanaelhoun), [NCPSNetworks](https://github.com/NCPSNetworks), [nickmisasi](https://github.com/nickmisasi), [panoramix360](https://github.com/panoramix360), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [Ricky-Tigg](https://github.com/Ricky-Tigg), [robregonm](https://github.com/robregonm), [SaurabhSharma-884](https://github.com/SaurabhSharma-884), [sbishel](https://github.com/sbishel), [SorenHolm](https://translate.mattermost.com/user/SorenHolm), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [svelle](https://github.com/svelle), [ThrRip](https://github.com/ThrRip), [tnir](https://translate.mattermost.com/user/tnir), [toninis](https://github.com/toninis), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [willypuzzle](https://github.com/willypuzzle), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
+
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.5.2, released 2025-03-17**
+  - Mattermost v10.5.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged MS Teams plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.1.1).
+  - Pre-packaged Jira plugin version [v4.2.1](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.2.1).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
+  - Mattermost v10.5.2 contains no database or functional changes.
 - **10.5.1, released 2025-02-19**
   - Mattermost v10.5.1 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
-  - Pre-packaged Playbooks plugin [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
+  - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
+  - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
   - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
   - Mattermost v10.5.1 contains the following functional changes:
       - A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.
@@ -96,10 +177,14 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.4-feature-release)=
 ## Release v10.4 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.4.4, released 2025-03-17**
+  - Mattermost v10.4.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Calls plugin version [v1.5.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.5.2).
+  - Mattermost v10.4.4 contains no database or functional changes.
 - **10.4.3, released 2025-02-19**
   - Mattermost v10.4.3 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
-  - Pre-packaged Playbooks plugin [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
+  - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
+  - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
   - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
   - Fixed an issue where the bulk export retention job could accidentally delete non-bulk export files and directories [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
   - Mattermost v10.4.3 contains the following functional changes:
@@ -192,8 +277,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 - **10.3.4, released 2025-02-19**
   - Mattermost v10.3.4 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
-  - Pre-packaged Playbooks plugin [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
+  - Pre-packaged Boards plugin version [v9.1.1](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.1).
+  - Pre-packaged Playbooks plugin version [v2.1.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.1.1).
   - Fixed an issue in Compliance Exports whereby a missing file attachment in S3 could prevent the export run from completing [MM-62527](https://mattermost.atlassian.net/browse/MM-62527).
   - Mattermost v10.3.4 contains the following functional changes:
       - A new configuration setting ``ServiceSettings.EnableWebHubChannelIteration`` was added which allows a user to control the performance of websocket broadcasting. By default, this setting is turned off. If it is turned on, it improves the websocket broadcasting performance at the expense of poor performance when users join/leave a channel. It is not recommended to turn it on unless you have atleast 200,000 concurrent users actively using Mattermost.

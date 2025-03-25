@@ -19,9 +19,23 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
 2. Access PostgreSQL by running:
 
-  .. code-block:: sh
+ .. code-block:: sh
 
-    sudo -u postgres psql
+  sudo -u postgres psql
+
+3. Create the Mattermost database by running:
+
+  .. tab:: Ubuntu
+
+    .. code-block:: SQL
+
+      CREATE DATABASE mattermost;
+
+  .. tab:: Red Hat
+
+    .. code-block:: SQL
+
+      CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
 
 3. Create the Mattermost database by running:
 
@@ -57,12 +71,11 @@ To set up a PostgreSQL database for use by the Mattermost server:
 
       GRANT ALL PRIVILEGES ON DATABASE mattermost to mmuser;
                   
-
   b. Grant the user to change the owner of a database to a user ``mmuser`` by running:
 
-     .. code-block:: SQL
+    .. code-block:: SQL
 
-       ALTER DATABASE mattermost OWNER TO mmuser;
+      ALTER DATABASE mattermost OWNER TO mmuser;
 
   c. Grant access to objects contained in the specified schema by running: 
 
@@ -199,7 +212,6 @@ To set up a PostgreSQL database for use by the Mattermost server:
   .. note::
 
     You might have to install the PostgreSQL client software to use the command.
-
 The PostgreSQL interactive terminal starts. To exit the PostgreSQL interactive terminal, type ``\q`` and press :kbd:`Enter` on Windows or Linux, or :kbd:`↵` on Mac.
 
 When the PostgreSQL database is installed, and the initial setup is complete, you can install the Mattermost server.
@@ -229,7 +241,7 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 +-----------------------------------------------------------+------------------+--------------------------------+
 | :ref:`v10.5 ESR <release-v10.5-extended-support-release>` | 2025-2-15        | 11.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
-| v10.6                                                     | 2025-3-15        | 13.x                           |
+| :ref:`v10.6 <release-v10.6-feature-release>`              | 2025-3-15        | 13.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
 | v10.11 ESR                                                | 2025-8-15        | 13.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+

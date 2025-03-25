@@ -24,6 +24,9 @@ If you don't have Docker installed, follow the instructions below based on your 
 
   Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation.
 
+  .. important::
+     Please ensure that you follow the `optional post-installation steps <https://docs.docker.com/engine/install/linux-postinstall/>`_ when installing Docker on Ubuntu!
+
 .. tab:: Fedora
 
   Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation.
@@ -103,7 +106,7 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
+      docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
 
    To access your new Mattermost deployment, navigate to ``http://<YOUR_MM_DOMAIN>:8065/`` in your browser.
 
@@ -111,13 +114,13 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
+      docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
 
    **Using the included NGINX:**
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+      docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 
    To access your new Mattermost deployment via HTTPS, navigate to ``https://<YOUR_MM_DOMAIN>/`` in your browser.
 
@@ -125,7 +128,7 @@ To deploy Mattermost on Docker:
 
    .. code-block:: sh
   
-      sudo docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
+      docker compose -f docker-compose.yml -f docker-compose.nginx.yml down
       
 6. Create your first Mattermost system admin user, :doc:`invite more users </collaborate/manage-channel-members>`, and explore the Mattermost platform. 
 
@@ -155,7 +158,7 @@ Visit the `mattermost/docker <https://github.com/mattermost/docker>`_ GitHub rep
 
    The `mattermost-docker <https://github.com/mattermost/mattermost-docker>`__ GitHub repository is deprecated. 
 
-To migrate from an existing ``mattermost/mattermost-prod-app`` image, we recommend migrating to either ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support PostgreSQL 11+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
+To migrate from an existing ``mattermost/mattermost-prod-app`` image, we recommend migrating to either ``mattermost/mattermost-enterprise-edition`` or ``mattermost/mattermost-team-edition`` images, which are the official images supported by Mattermost. These images support PostgreSQL v11+ databases, which we know has been a long-running challenge for the community, and you will not lose any features or functionality by moving to these new images.
 
 For additional help or questions, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
 

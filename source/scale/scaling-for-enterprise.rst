@@ -22,6 +22,7 @@ The following reference architectures are available as recommended starting poin
 * :doc:`Scale up to 80000 users </scale/scale-to-80000-users>` - Learn how to scale Mattermost to up to 80000 users.
 * :doc:`Scale up to 90000 users </scale/scale-to-90000-users>` - Learn how to scale Mattermost to up to 90000 users.
 * :doc:`Scale up to 100000 users </scale/scale-to-100000-users>` - Learn how to scale Mattermost to up to 100000 users.
+* :doc:`Scale up to 200000 users </scale/scale-to-200000-users>` - Learn how to scale Mattermost to up to 200000 users.
 
 .. important::
 
@@ -32,9 +33,11 @@ Testing methodology and updates
 
 All tests were executed with the custom load test tool built by the Mattermost development teams to determine supported users for each deployment size. Over time, this guide will be updated with new deployment sizes, deployment architectures, and newer versions of the Mattermost Server will be tested using an ESR. 
 
-At a high level, each deployment size was fixed (Mattermost server node count/sizing, database reader/writer count/sizing), and unbounded tests were used to report the maximum numbers of concurrent users the deployment can support. Each test included populated PostgreSQL v14 databases and a post table history of 100 million posts, ~3000 users, 20 teams, and ~720000 channels to provide a test simulation of a production Mattermost deployment. 
+At a high level, each deployment size was fixed (Mattermost server node count/sizing, database reader/writer count/sizing), and unbounded tests were used to report the maximum numbers of concurrent users the deployment can support. Each test included populated PostgreSQL v14 databases and a post table history of 100 million posts, ~200000 users, 20 teams, and ~720000 channels to provide a test simulation of a production Mattermost deployment.
 
 Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions) where the coordinator metrics define a health system under load. Tests were performed using the Mattermost v9.5 Extended Support Release (ESR). Job servers weren't used. All tests with more than a single app node had an NGINX proxy running in front of them.
+
+For the last test of 200K users, further infrastructure changes were made. Elasticsearch nodes were added. A Redis instance was added, and multiple NGINX proxies were used to distribute traffic evenly across all nodes in the cluster. More details can be found in the `page </scale/scale-to-200000-users>`.
 
 Full testing methodology, configuration, and setup is available, incluidng a `fixed database dump with 100 million posts <https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#/resources/arn%3Aaws%3Ards%3Aus-east-1%3A729462591288%3Acluster%3Adb-pg-100m-posts-v9-5-5>`_. Visit the `Mattermost Community <https://community.mattermost.com/>`_ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`_ for details.
 

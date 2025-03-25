@@ -4,56 +4,7 @@ Generate a Support Packet
 .. include:: ../_static/badges/ent-pro-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
-Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a Mattermost Support Packet that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
-
-Contents of a Support Packet
-----------------------------
-
-A Mattermost Support Packet can contain the following files:
-
-.. tab:: v10.5 and later
-
-   .. note::
-
-      From v10.5, the following support packet data has changed:
-
-      - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
-      - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
-      - Field names are normalized.
-      - New data includes server statistics, permission details, and extended job list details.
-
-   - `metadata.yaml <#metadata>`__
-   - ``mattermost.log`` (Mattermost logs)
-   - ``plugins.json`` (all active and inactive plugins)
-   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
-   - ``stats.yaml`` (Mattermost usage statistics)
-   - ``jobs.yaml`` (last runs of important jobs)
-   - ``diagnostics.yaml`` (core plugin diagnostics data)
-   - ``permissions.yaml`` (role & scheme information)
-   - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
-   - ``warning.txt`` (present when issues are encountered during packet generation)
-
-.. tab:: Prior to v10.5
-
-   - `metadata.yaml <#metadata>`__
-   - ``mattermost.log``
-   - ``plugins.json``
-   - ``sanitized_config.json``
-   - ``support_packet.yaml``
-   - ``diagnostics.yaml`` (core plugin diagnostics data)
-   - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
-   - ``warning.txt`` (present when issues are encountered during packet generation)
-
-.. note:: 
-
-   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file and advanced logging files, if present.
-   - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
-   - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
-   - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
+The Support Packet is used to help customers diagnose and troubleshoot issues. Use the System Console or the :ref:`mmctl system supportpacket <manage/mmctl-command-line-tool:mmctl system supportpacket>` command to generate a zip file that includes configuration information, logs, plugin details, and data on external dependencies across all nodes in a high-availability cluster. Confidential data, such as passwords, are automatically stripped.
 
 Generate
 ---------
@@ -87,7 +38,9 @@ Generate
 Santitize confidential data
 ---------------------------
 
-When present, the following information is santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
+Please sanitize any confidential data you wish to exclude before sharing the packet with Mattermost. 
+
+When present, the following information is automatically santized during packet generation: ``LdapSettings.BindPassword``, ``FileSettings.PublicLinkSalt``, ``FileSettings.AmazonS3SecretAccessKey``, ``EmailSettings.SMTPPassword``, ``GitLabSettings.Secret``, ``GoogleSettings.Secret``, ``Office365Settings.Secret``, ``OpenIdSettings.Secret``, ``SqlSettings.DataSource``, ``SqlSettings.AtRestEncryptKey``, ``ElasticsearchSettings.Password``, ``All SqlSettings.DataSourceReplicas``, ``All SqlSettings.DataSourceSearchReplicas``, ``MessageExportSettings.GlobalRelaySettings.SmtpPassword``, and ``ServiceSettings.SplitKey``. 
 
 .. important::
 
@@ -103,6 +56,64 @@ Add the generated Support Packet to a `standard support request <https://support
 .. important::
 
    Disable debug logging once you've generated the Support Packet. Debug logging can cause log files to expand substantially, and may adversely impact server performance. We recommend enabling it temporarily, or in development environments, but not production enviornments.
+
+Contents of a Support Packet
+----------------------------
+
+A Mattermost Support Packet can contain the following files:
+
+.. tab:: v10.5 and later
+
+   .. note::
+
+      From v10.5, the following support packet data has changed:
+
+      - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
+      - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
+      - Field names are normalized.
+      - New data includes server statistics, permission details, and extended job list details.
+      - Mattermost-supported plugin diagnostic data is included where applicable.
+
+   - `metadata.yaml <#metadata>`__
+   - ``mattermost.log`` (Mattermost logs)
+   - ``plugins.json`` (all active and inactive plugins)
+   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
+   - ``stats.yaml`` (Mattermost usage statistics)
+   - ``jobs.yaml`` (last runs of important jobs)
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``permissions.yaml`` (role & scheme information)
+   - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+   - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
+
+   The following additional plugin diagnostic data is included in the generated support packet when the plugin is enabled and operational:
+
+   - GitHub: ``/github/diagnostics.yaml``
+   - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
+   - Jira: ``/jira/diagnostics.yaml``
+   - Calls: ``/com.mattermost.calls/diagnostics.yaml``
+   - Boards: ``/focalboard/diagnostics.yaml``
+   - Playbooks: ``/playbooks/diagnostics.yaml``
+   - MSCalendar: ``/com.mattermost.mscalendar/diagnostics.yaml``
+   - Google Calendar: ``/com.mattermost.gcal/diagnostics.yaml``
+
+.. tab:: Prior to v10.5
+
+   - `metadata.yaml <#metadata>`__
+   - ``mattermost.log``
+   - ``plugins.json``
+   - ``sanitized_config.json``
+   - ``support_packet.yaml``
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - `Go performance metrics <#go-performance-metrics>`__, including: ``cpu.prof``, ``heap.prof``, and ``goroutines``
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+
+.. note:: 
+
+   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file and advanced logging files, if present.
+   - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
+   - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
+   - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
 
 Metadata
 ---------
