@@ -3,8 +3,7 @@
    - If you're looking to deploy a production Mattermost instance, we recommend using managed container services like AWS ECS, Azure Container Apps, or Google Cloud Run. These services provide better scalability, reliability, and maintenance features suited for production workloads.
    - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
 
-Install Docker
----------------
+**Step 1: Install Docker**
 
 If you don't have Docker installed, follow the instructions below based on your operating system. You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
 
