@@ -57,23 +57,28 @@ Roadmap: Upcoming Features for Microsoft Teams Integration
 
 We are continually enhancing the integration experience between Mattermost and Microsoft Teams. Here's a glimpse of what's coming next:
 
-1. **Entra-Based SSO**: 
+1. **Entra-Based SSO**:
+
    - Seamless and secure single sign-on for organizations using Microsoft Entra ID.
    - Benefits: Simplifies user authentication and enhances security with enterprise-grade identity management.
 
-2. **Activity Feed Notifications for Mentions in Mattermost**: 
+2. **Activity Feed Notifications for Mentions in Mattermost**:
+
    - Stay updated with real-time notifications in your Microsoft Teams activity feed whenever someone mentions you in Mattermost.
    - Benefits: Ensures you never miss critical updates, even while collaborating within Microsoft Teams.
 
 3. **Support for Multiple Mattermost Instances in Teams Tabs**: 
+
    - View and access multiple Mattermost instances directly from different tabs in Microsoft Teams.
    - Benefits: Streamlined workflows for organizations with multiple Mattermost deployments or diverse team setups.
 
 4. **Unread Badge and Unread Counter Badge**: 
+
    - Easily identify unread messages from Mattermost and see a numeric indicator of the unread message count directly in the Teams app.
    - Benefits: Saves time and ensures you're always aware of unread communication.
 
 5. **Unread Counter Badge**: 
+
    - Get a numeric indicator of the number of unread messages.
    - Benefits: Saves time and ensures you're always aware of unread communication, with clarity on the actual volume of pending messages.
 
