@@ -10,7 +10,7 @@ Server deployment planning
     Deploy with Kubernetes </deploy/server/deploy-kubernetes>
     Deploy with Linux </deploy/server/deploy-linux>
     Deploy with Containers </deploy/server/deploy-containers>
-    Architecture Reference </deploy/server/architecture>
+    Architecture Reference </deploy/server/server-architecture>
 
 This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
 
@@ -31,7 +31,7 @@ Deployment options
 
 Mattermost offers several deployment options to suit your organization's needs:
 
-1. **Kubernetes (Recommended)**
+1. :doc:`Kubernetes (Recommended) </deploy/server/deploy-kubernetes>`
    The recommended approach for production deployments, offering:
    
    * Scalability and high availability
@@ -40,7 +40,7 @@ Mattermost offers several deployment options to suit your organization's needs:
    * Built-in monitoring and logging
    * Easy integration with existing DevOps workflows
 
-2. **Container-Based Deployment**
+2. :doc:`Container-Based Deployment </deploy/server/deploy-containers>`
    Using Docker containers for:
    
    * Simplified installation and updates
@@ -48,7 +48,7 @@ Mattermost offers several deployment options to suit your organization's needs:
    * Easy dependency management
    * Suitable for smaller deployments
 
-3. **Traditional Linux Installation**
+3. :doc:`Traditional Linux Installation </deploy/server/deploy-linux>`
    Direct installation on Linux servers for:
    
    * Simple, straightforward setup
@@ -58,10 +58,10 @@ Mattermost offers several deployment options to suit your organization's needs:
 Prerequisites
 --------------
 
-Before deploying Mattermost, ensure you have:
+Before deploying Mattermost, ensure you have reviewed the :doc:`software and hardware requirements </deploy/server/software-hardware-requirements>`, and have:
 
 * A supported Linux distribution
-* Database server (PostgreSQL 12+)
+* Database server (PostgreSQL 13+)
 * Reverse proxy (NGINX recommended)
 * SSL/TLS certificates for secure communication
 * Adequate storage for files and database

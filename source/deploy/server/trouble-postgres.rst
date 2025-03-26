@@ -25,3 +25,8 @@ CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_posts_message_txt_spanish ON posts U
 DROP INDEX CONCURRENTLY IF EXISTS idx_posts_message_txt;
 ALTER INDEX idx_posts_message_txt_spanish RENAME TO idx_posts_message_txt;
 ```
+
+Change the PostgreSQL username and password
+--------------------------------------------
+
+We recommend changing the PostgreSQL username and password in the ``.env`` file.

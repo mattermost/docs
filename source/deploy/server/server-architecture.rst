@@ -1,4 +1,4 @@
-Server architecture
-=========================
+Server architecture reference
+==============================
 
 TBD

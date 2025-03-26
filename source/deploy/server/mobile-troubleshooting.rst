@@ -1,5 +1,5 @@
-Troubleshooting mobile apps
-===========================
+Mobile deployment troubleshooting
+==================================
 
 I keep getting a message "Cannot connect to the server. Please check your server URL and internet connection."
 --------------------------------------------------------------------------------------------------------------
@@ -80,21 +80,71 @@ For example:
 
 See our :ref:`Configuration Settings <configure/environment-configuration-settings:data source>` documentation for details on configuring the connection string to the master database.
 
-None of these solve my problem!
--------------------------------
+Testing mobile push notifications
+----------------------------------
 
-For more troubleshooting help, `open a new topic in our forums <https://forum.mattermost.com/c/trouble-shoot/16>`__ with steps to reproduce your issue. If you're an Enterprise Edition subscriber, you may open a support ticket in the `Enterprise Edition Support portal <https://support.mattermost.com/hc/en-us/requests/new>`_.
+Make sure to configure push notifications for your :doc:`pre-built mobile apps </deploy/use-prebuilt-mobile-apps>`, or for :doc:`your custom built mobile apps </deploy/build-custom-mobile-apps>`. 
 
-To help us narrow down whether it’s a server configuration issue, device specific issue, or an issue with the app, please try the following things and include the results in your support request:
+Then use the following instructions to confirm push notifications are working properly.
 
-**Connect to another server**
+1. Log in to your mobile app with an account on your Mattermost Server, which we’ll refer to as “Account A”.
 
-1. Create an account at https://community.mattermost.com
-2. Erase your mobile application and reinstall it
-3. In your mobile app, enter the server URL https://community.mattermost.com and then your login credentials to see if the connection is working
+2. (iOS) When the app asks whether you wish to receive notifications, **confirm you want to receive notifications**.
 
-**Connect with another device**
+  .. image:: ../../images/mobile_push_prompt.png
+    :alt: Mattermost prompts you to confirm whether you want to allow mobile push notifications. To test mobile push notifications, you must select Allow.
+    :width: 300 px
 
-If you have another mobile device available, try connecting with that to see if your issue still reproduces.
+3. Confirm push notifications are enabled for “Account A”.
 
-If you don’t have another device available, check with other teammates to see if they are having the same issue.
+  A. Go to the notification settings menu in the mobile app.
+
+  .. image:: ../../images/mobile_notification_settings.gif
+    :alt: Access notification settings by selecting your profile picture to access Settings > Notifications.
+    :width: 300 px
+
+  B. Check that the mobile push notifications are set to send.
+
+  .. image:: ../../images/mobile_push_send_for.png
+    :alt: Select Push Notifications to confirm when mobile push notifications will be sent.
+    :width: 300 px
+
+  .. image:: ../../images/mobile_push_send_when.png
+    :alt: Specify whether all new messages or only mentions and direct messages send push notifications. 
+    :width: 300 px
+
+4. Have “Account A” put the app to background or close the app.
+
+5. Using a browser, log in to “Account B” on the same Mattermost Server.
+
+6. Open a direct message with “Account A”, and send a message.
+
+7. A push notification with the message should appear on the mobile device of “Account A”. If the push notification does not appear, follow :doc:`troubleshooting steps <mobile-troubleshoot-notifications>` to look for issues.
+
+Troubleshooting push notifications
+----------------------------------
+
+If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
+
+1. In **System Console > Environment > Logging > File Log Level**, select **DEBUG** in order to watch for push notifications in the server log.
+
+2. Delete your mobile application, and reinstall it.
+
+3. Log in with "Account A" and **confirm you want to receive push notifications** when prompted by the mobile app.
+
+4. Go to **Profile** > **Security** > **View and Logout of Active Sessions** to confirm that there is a session for the native mobile app matching your login time.
+
+5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
+
+6. If no push notification displays, go to **System Console** > **Server Logs**, then select **Reload**. Look at the bottom of the logs for a message similar to:
+
+``[2016/04/21 03:16:44 UTC] [DEBG] Sending push notification to 608xyz0... wi msg of '@accountb: Hello'``
+
+  - If the log message displays, it means a message was sent to the HPNS server and was not received by your mobile app. Please `create a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`_ with the subject "HPNS issue" for help from Mattermost's Support team.
+  - If the log message does not display, it means no mobile push notification was sent to “Account A”. Please repeat the process starting at step 2 and double-check each step.
+
+.. important::
+
+  To conserve disk space, once your push notification issue is resolved, go to  **System Console > Environment > Logging > File Log Level**, then select **ERROR** to switch your logging detail level from **DEBUG** to **Errors Only**.
+
+If push notifications are not being delivered on the mobile device, confirm that you're logged in to the **Native** mobile app session through **Profile > Security > View and Log Out of Active Sessions**. Otherwise, the `DeviceId` won't get registered in the `Sessions` table and notifications won't be delivered.

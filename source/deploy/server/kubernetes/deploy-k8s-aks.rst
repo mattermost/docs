@@ -33,17 +33,17 @@ The installation process includes deploying Mattermost and updating the server.
 
 2. Choose the **Resource Group** and the **Region** of your installed AKS and PostgreSQL database.
 
-  .. image:: ../../_static/images/azure/basics.png
+  .. image:: /_static/images/azure/basics.png
     :alt: An example of the Azure AKS Project details screen.
 
 3. Choose your AKS cluster.
 
-  .. image:: ../../_static/images/azure/aks-cluster.png
+  .. image:: /_static/images/azure/aks-cluster.png
     :alt: An example of the Azure AKS cluster setup screen.
 
 4. Fill in the details for your PostgreSQL database.
 
-  .. image:: ../../_static/images/azure/postgreSQL.png
+  .. image:: /_static/images/azure/postgreSQL.png
     :alt: An example of the Azure AKS Database setup screen.
 
 .. note::
@@ -53,7 +53,7 @@ The installation process includes deploying Mattermost and updating the server.
 
 5. Adjust deployment details.
 
-  .. image:: ../../_static/images/azure/deployment-details.png
+  .. image:: /_static/images/azure/deployment-details.png
     :alt: An example of the Azure AKS Deployment Details setup screen.
 
 .. note:: 
@@ -68,7 +68,7 @@ The installation process includes deploying Mattermost and updating the server.
   
 7. Upload yor own TLS certificates at this stage to take advantage of all Mattermost features.
 
-  .. image:: ../../_static/images/azure/networking-details.png
+  .. image:: /_static/images/azure/networking-details.png
     :alt: An example of the Azure AKS Networking Details setup screen.
 
 8. Ensure that everything is running. You should be able to check the installed plugin from the **AKS Extensions + Applications** page under the **Settings** menu.
@@ -94,7 +94,7 @@ Learn more about managing your Mattermost server by visiting the :doc:`Managing 
 
     global.azure.mattermost.version
 
-   .. image:: ../../images/global-azure-mattermost-version.png
+   .. image:: /_static/images/global-azure-mattermost-version.png
     :alt: An example of using custom Mattermost version.
 
 4. Select **Save** and wait for the upgrade.

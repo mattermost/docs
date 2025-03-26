@@ -68,10 +68,10 @@ This command sets up all required repositories and configures:
 
   Just looking to try out Mattermost? Run the following command to install Omnibus without SSL:
 
-    .. code-block:: sh
+  .. code-block:: sh
 
-      // Install Mattermost Omnibus without SSL
-      sudo MMO_HTTPS=false apt install mattermost-omnibus -y
+    // Install Mattermost Omnibus without SSL
+    sudo MMO_HTTPS=false apt install mattermost-omnibus -y
 
 2. You're prompted to specify a domain name and email address that will be used to generate the SSL certificate, and deliver related communications.
 

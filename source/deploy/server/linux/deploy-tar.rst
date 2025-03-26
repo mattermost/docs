@@ -27,7 +27,7 @@ You can install the Mattermost Server on any 64-bit Linux system using the tarba
   - You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
   - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
 
-.. include:: ../../_static/badges/academy-tarball-deployment.rst
+.. include:: /_static/badges/academy-tarball-deployment.rst
   :start-after: :nosearch:
 
 This Mattermost deployment includes 3 steps: download, install Mattermost server, and set up the server.

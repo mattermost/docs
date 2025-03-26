@@ -1,78 +1,31 @@
-Troubleshooting Mattermost issues
-=================================
+General deployment troubleshooting
+===================================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+This document summarizes common deployment troubleshooting issues and resolutions. Some of these suggestions can be done directly, and others may need consultation from your network administrator.
 
-This document summarizes common troubleshooting issues and techniques.
+Start Mattermost at system boot
+-------------------------------
 
-Depending on the type of error or problem you're experiencing, refer to the sections below for troubleshooting guidance. If you're a new user, it might help to go over the installation steps again to confirm the process.
-
-If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` or :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>`, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
-
-Additionally, peer-to-peer support is available for all Mattermost users in our `troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ and on our `community server <https://community.mattermost.com/core/channels/peer-to-peer-help>`_. 
-
-Important notes
----------------
-
-- Do not manipulate the Mattermost database directly. Mattermost is designed to stop working if data integrity is compromised.
-- Any manipulation of the database must be done using the built in command line tools.
-- Start simple with the step-by-step install guides for your operating system.
-
-Deployment troubleshooting
---------------------------
-
-Docker deployments
-~~~~~~~~~~~~~~~~~~
-
-If you're deploying the Mattermost server using Docker on an M1 Mac and encountering permission issues in the Docker container, re-create the required directories and set their permissions, then skip the following command because it causes the deploy to stop working.
+To have the Mattermost Server start at system boot, the systemd unit file needs to be enabled. Run the following command:
 
 .. code-block:: sh
 
-   sudo chown -R 2000:2000 ./volumes/app/mattermost
+  sudo systemctl enable mattermost.service
 
-If you're experiencing issues deploying on Docker generally, ensure the docker daemon is enabled and running:
+If your database is on the same system as your Mattermost Server, we recommend editing the default ``/lib/systemd/system/mattermost.service`` systemd unit file to add ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section.
+
+Run Mattermost without a proxy
+------------------------------
+
+Mattermost binds to 443 instead of 8065. The Mattermost binary requires the correct permissions to do that binding. You must activate the ``CAP_NET_BIND_SERVICE`` capability to allow the new Mattermost binary to bind to ports lower than 1024 by running the following command:
 
 .. code-block:: sh
-  
-   sudo systemctl enable --now docker
 
-To remove all data and settings for your Mattermost deployment:
+  sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost
 
-.. code-block:: sh
+.. note::
 
-   sudo rm -rf ./volumes
-
-Postgres issues
-~~~~~~~~~~~~~~~
-
-You can change the Postgres username and/or password (recommended) in the ``.env`` file.
-
-TLS and NGINX issues
-~~~~~~~~~~~~~~~~~~~~~
-
-For an in-depth guide to configuring the TLS certificate and key for NGINX, please refer to `this document in the repository <https://github.com/mattermost/docker/blob/main/docs/issuing-letsencrypt-certificate.md>`__.
-
-Install a different version of Mattermost
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Shut down your deployment.
-
-2. Run ``git pull`` to fetch any recent changes to the repository, paying attention to any potential ``env.example`` changes.
-
-3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
-
-4. Redeploy Mattermost.
-
-Upgrading from ``mattermost-docker``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-For an in-depth guide to upgrading from the deprecated `mattermost-docker repository <https://github.com/mattermost/mattermost-docker>`__, please refer to `this document <https://github.com/mattermost/docker/blob/main/scripts/UPGRADE.md>`__. For additional help, please refer to `this issue <https://github.com/mattermost/mattermost-docker/issues/489>`__.
-
-General troubleshooting
------------------------
-
-Some of these suggestions can be done directly, and others may need consultation from your network administrator.
+  We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </install/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </install/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.
 
 Review Mattermost logs
 ----------------------
