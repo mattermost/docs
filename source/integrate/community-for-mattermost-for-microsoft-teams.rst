@@ -57,13 +57,13 @@ Roadmap for Community for Mattermost and Microsoft Teams Integration
 
 We are continuously improving the integration between Mattermost and Microsoft Teams to provide better connectivity and communication. Below are the upcoming features planned for this integration:
 
-1. **Activity Feed Notifications**  
+1. **Activity Feed Notifications**:
    - Get notified in Microsoft Teams when users mention you in Mattermost Community channels. This feature ensures that important interactions flow seamlessly across platforms, helping you stay updated.
 
-2. **Access to Your Organization’s Mattermost Instance**  
+2. **Access to Your Organization’s Mattermost Instance**:
    - Connect the integration directly to your own Mattermost instance, making collaboration seamless and more intuitive for your organization.
 
-3. **Unread Badge and Unread Counter Badge**  
+3. **Unread Badge and Unread Counter Badge**:
    - Quickly identify unread messages and notifications with visual indicators such as unread badges and counters. This lets you prioritize and focus on what needs your immediate attention.
 
 Stay tuned for updates on these features as we continue to enhance the Mattermost for Community experience.
