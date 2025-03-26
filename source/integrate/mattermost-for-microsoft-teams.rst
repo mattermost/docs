@@ -1,9 +1,9 @@
-Community for Mattermost for Microsoft 365
-==========================================
+Mattermost for Microsoft Teams
+==============================
 
 Join the Mattermost Community directly from your Microsoft 365, Microsoft Outlook, or Microsoft Teams instance!
 
-Use the Mattermost for Microsoft 365 integration to stay connected with thousands of users, contributors, and Mattermost staff directly from the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
+Use the Mattermost for Microsoft Teams integration to stay connected with thousands of users, contributors, and Mattermost staff directly from the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
 
 .. image:: ../images/mattermost-for-microsoft_365.png
   :alt: Mattermost for Microsoft 365 is available in the Microsoft App Store.
@@ -52,20 +52,30 @@ Once you've installed the app, here are some ways to get started:
 
 - **Share feedback**: Your ideas and feedback are valuable! Share your thoughts in the `~user-feedback <https://community.mattermost.com/core/channels/user-feedback>`_ channel.
 
-Roadmap for Community for Mattermost and Microsoft Teams Integration
--------------------------------------------------------------------
+Roadmap: Upcoming Features for Microsoft Teams Integration
+----------------------------------------------------------
 
-We are continuously improving the integration between Mattermost and Microsoft Teams to provide better connectivity and communication. Below are the upcoming features planned for this integration:
+We are continually enhancing the integration experience between Mattermost and Microsoft Teams. Here's a glimpse of what's coming next:
 
-1. **Activity Feed Notifications**: Get notified in Microsoft Teams when users mention you in Mattermost Community channels. This feature ensures that important interactions flow seamlessly across platforms, helping you stay updated.
+1. **Entra-Based SSO**:
 
-2. **Access to Your Organization’s Mattermost Instance**: Connect the integration directly to your own Mattermost instance, making collaboration seamless and more intuitive for your organization.
+   - Seamless and secure single sign-on for organizations using Microsoft Entra ID.
+   - Benefits: Simplifies user authentication and enhances security with enterprise-grade identity management.
 
-3. **Unread Badge and Unread Counter Badge**: Quickly identify unread messages and notifications with visual indicators such as unread badges and counters. This lets you prioritize and focus on what needs your immediate attention.
+2. **Activity Feed Notifications for Mentions in Mattermost**:
 
-4. **Content Moderation for Mattermost AI Bots**: Implement tools for advanced content moderation to ensure responsible and ethical use of Mattermost Community AI bots. 
+   - Stay updated with real-time notifications in your Microsoft Teams activity feed whenever someone mentions you in Mattermost.
+   - Benefits: Ensures you never miss critical updates, even while collaborating within Microsoft Teams.
 
-Stay tuned for updates on these features as we continue to enhance the Mattermost for Community experience.
+3. **Support for Multiple Mattermost Instances in Teams Tabs**: 
+
+   - View and access multiple Mattermost instances directly from different tabs in Microsoft Teams.
+   - Benefits: Streamlined workflows for organizations with multiple Mattermost deployments or diverse team setups.
+
+4. **Unread Badge and Unread Counter Badge**: 
+
+   - Easily identify unread messages from Mattermost and see a numeric indicator of the unread message count directly in the Teams app.
+   - Benefits: Saves time and ensures you're always aware of unread communication.
 
 FAQ
 ---
