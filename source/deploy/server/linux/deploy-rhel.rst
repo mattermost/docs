@@ -20,12 +20,7 @@
 
   </div>
 
-.. note::
-
-  - You need a PostgreSQL database. See the :doc:`database preparation </install/prepare-mattermost-database>` documentation for details on this prerequisite.
-  - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
-
-This Mattermost deployment includes 4 steps: download, install Matermost server, set up the server, and update the server.
+You can install the Mattermost Server using our ``rpm`` signed packages available through the Mattermost Yum repository. This Mattermost deployment includes 4 steps: download, install Matermost server, set up the server, and update the server.
 
 **Step 1: Download the latest Mattermost Server tarball**
 

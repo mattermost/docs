@@ -36,7 +36,7 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
          sudo apt update
          sudo apt install postgresql
 
-   .. tab:: Red Hat/CentOS
+   .. tab:: RHEL/CentOS
    
       .. code-block:: sh
 
@@ -78,7 +78,7 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 
 3. Configure PostgreSQL for remote connections (if database is on a separate server):
 
-   a. Edit postgresql.conf to allow remote connections:
+   a. Edit ``postgresql.conf`` to allow remote connections:
       
       .. tab:: Ubuntu/Debian
       
@@ -88,7 +88,7 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 
             listen_addresses = '*'
 
-      .. tab:: Red Hat/CentOS
+      .. tab:: RHEL/CentOS
       
          Edit ``/var/lib/pgsql/{version}/data/postgresql.conf``:
          
@@ -96,9 +96,9 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 
             listen_addresses = '*'
 
-   b. Configure client authentication by editing pg_hba.conf:
+   b. Configure client authentication by editing ``pg_hba.conf``:
       
-      Add the following line, replacing {mattermost-server-IP}:
+      Add the following line, replacing ``{mattermost-server-IP}``:
       
       .. code-block:: text
 
@@ -109,25 +109,8 @@ File storage preparation
 
 Mattermost requires a file storage system for storing user files, images, and attachments. You have several options, including:
 
-- local file storage
 - S3-compatibile object storage (recommended)
-
-Local file storage
-~~~~~~~~~~~~~~~~~~
-
-For simple deployments, you can use local file storage. However, this is not recommended for production environments or multi-node deployments.
-
-1. Create a directory for file storage:
-
-   .. code-block:: sh
-
-      sudo mkdir -p /opt/mattermost/data
-
-2. Set appropriate permissions:
-
-   .. code-block:: sh
-
-      sudo chown -R mattermost:mattermost /opt/mattermost/data
+- local file storage
 
 S3-compatible object storage (Recommended)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -145,11 +128,29 @@ When using S3 storage, you'll need:
 2. Access credentials (Access Key and Secret Key)
 3. Appropriate bucket policies configured
 4. The following information for configuration:
+
    - Bucket name
    - Region (if applicable)
    - Access Key
    - Secret Key
    - Endpoint URL (for non-AWS S3 services)
+
+Local file storage
+~~~~~~~~~~~~~~~~~~
+
+For simple deployments, you can use local file storage. However, we don't recommend this for production environments or multi-node deployments.
+
+1. Create a directory for file storage:
+
+   .. code-block:: sh
+
+      sudo mkdir -p /opt/mattermost/data
+
+2. Set appropriate permissions:
+
+   .. code-block:: sh
+
+      sudo chown -R mattermost:mattermost /opt/mattermost/data
 
 Network preparation
 --------------------

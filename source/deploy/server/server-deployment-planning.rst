@@ -32,8 +32,9 @@ Deployment options
 Mattermost offers several deployment options to suit your organization's needs:
 
 1. :doc:`Kubernetes (Recommended) </deploy/server/deploy-kubernetes>`
-   The recommended approach for production deployments, offering:
-   
+
+   Our recommended approach for production deployments offers:
+
    * Scalability and high availability
    * Automated updates and rollbacks
    * Infrastructure as code
@@ -41,7 +42,8 @@ Mattermost offers several deployment options to suit your organization's needs:
    * Easy integration with existing DevOps workflows
 
 2. :doc:`Container-Based Deployment </deploy/server/deploy-containers>`
-   Using Docker containers for:
+
+   Use Docker containers for:
    
    * Simplified installation and updates
    * Consistent environments
@@ -49,7 +51,8 @@ Mattermost offers several deployment options to suit your organization's needs:
    * Suitable for smaller deployments
 
 3. :doc:`Traditional Linux Installation </deploy/server/deploy-linux>`
-   Direct installation on Linux servers for:
+
+   A direct installation on Linux servers for:
    
    * Simple, straightforward setup
    * Full control over the installation
