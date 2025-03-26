@@ -39,7 +39,7 @@ def setup(app: Sphinx) -> dict[str, Any]:
     :return: A dict of Sphinx extension options
     """
     app.add_config_value("site_url", default=None, rebuild="")
-    app.add_config_value("sitemap_url_scheme", default="{lang}{link}", rebuild="")
+    app.add_config_value("sitemap_url_scheme", default="{link}", rebuild="")
     app.add_config_value("sitemap_locales", default=None, rebuild="")
     app.add_config_value("sitemap_filename", default="sitemap.xml", rebuild="")
 
