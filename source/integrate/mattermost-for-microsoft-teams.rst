@@ -77,11 +77,6 @@ We are continually enhancing the integration experience between Mattermost and M
    - Easily identify unread messages from Mattermost and see a numeric indicator of the unread message count directly in the Teams app.
    - Benefits: Saves time and ensures you're always aware of unread communication.
 
-5. **Unread Counter Badge**: 
-
-   - Get a numeric indicator of the number of unread messages.
-   - Benefits: Saves time and ensures you're always aware of unread communication, with clarity on the actual volume of pending messages.
-
 FAQ
 ---
 
