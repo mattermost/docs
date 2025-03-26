@@ -63,6 +63,8 @@ We are continuously improving the integration between Mattermost and Microsoft T
 
 3. **Unread Badge and Unread Counter Badge**: Quickly identify unread messages and notifications with visual indicators such as unread badges and counters. This lets you prioritize and focus on what needs your immediate attention.
 
+4. **Content Moderation for Mattermost AI Bots**: Implement tools for advanced content moderation to ensure responsible and ethical use of Mattermost Community AI bots. 
+
 Stay tuned for updates on these features as we continue to enhance the Mattermost for Community experience.
 
 FAQ
