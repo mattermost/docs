@@ -20,7 +20,9 @@
 
   </div>
 
-You can install the Mattermost Server using our ``rpm`` signed packages available through the Mattermost Yum repository. This Mattermost deployment includes 4 steps: download, install Matermost server, set up the server, and update the server.
+You can deploy Mattermost Server using our ``rpm`` signed packages available through the Mattermost Yum repository.
+
+This Mattermost deployment includes 4 steps: download, install Matermost server, set up the server, and update the server.
 
 **Step 1: Download the latest Mattermost Server tarball**
 

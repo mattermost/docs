@@ -1,15 +1,9 @@
 Deploy Mattermost on Linux
 ==========================
 
-Mattermost can be deployed on various Linux distributions, providing a flexible and robust platform for your team communication needs. This guide covers deployment options for major Linux distributions and installation methods.
+Mattermost Server can be deployed on various Linux distributions, providing a flexible and robust platform for smaller teams and non-commercial customers. We don't recommend deploying Mattermost Server and database on a single system for production use, but it is a good option for development and testing purposes.
 
-Choose your preferred platform below for specific deployment instructions:
-
-.. note::
-
-  - If you are running the Mattermost Server and database on a single system, we recommend the **Omnibus Package** method as it greatly reduces setup and ongoing maintenance.
-  - You need a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
-  - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
+This page covers deployment options for major Linux distributions and installation methods. Choose your preferred platform below for specific deployment instructions:
 
 .. tab:: Ubuntu
 
@@ -26,3 +20,8 @@ Choose your preferred platform below for specific deployment instructions:
 .. tab:: Omnibus Package
 
   .. include:: linux/deploy-omnibus.rst
+
+.. note::
+
+  - Your Mattermost Server deployments requires a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
+  - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.

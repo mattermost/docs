@@ -251,8 +251,6 @@ Migrate from Bitnami to a self-hosted Mattermost deployment
 
 If you're planning a migration from Bitnami to a self-hosted Mattermost installation with a MySQL database, read these notes in our migration guide: :ref:`Migrating from Bitnami <onboard/migrating-to-mattermost:migrate from bitnami>`.
 
-
-
 Downgrade Mattermost v6.0 to v5.38
 -----------------------------------
 

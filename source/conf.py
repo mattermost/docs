@@ -2405,7 +2405,7 @@ redirects = {
 "install/config-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/deploy-bitnami.html":
-        "https://docs.mattermost.com/install/deploying-team-edition-on-bitnami.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/desktop.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
 "install/desktop-managed-resources.html":

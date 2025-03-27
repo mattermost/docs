@@ -8,9 +8,9 @@ Server deployment planning
 
     Preparations </deploy/server/preparations>
     Deploy with Kubernetes </deploy/server/deploy-kubernetes>
-    Deploy with Linux </deploy/server/deploy-linux>
     Deploy with Containers </deploy/server/deploy-containers>
-    Architecture Reference </deploy/server/server-architecture>
+    Deploy with Linux </deploy/server/deploy-linux>
+    Architecture reference </deploy/server/server-architecture>
 
 This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
 
@@ -43,20 +43,19 @@ Mattermost offers several deployment options to suit your organization's needs:
 
 2. :doc:`Container-Based Deployment </deploy/server/deploy-containers>`
 
-   Use Docker containers for:
-   
+   Docker containers are suitable for smaller deployments that offer:
+
    * Simplified installation and updates
    * Consistent environments
    * Easy dependency management
-   * Suitable for smaller deployments
 
 3. :doc:`Traditional Linux Installation </deploy/server/deploy-linux>`
 
-   A direct installation on Linux servers for:
-   
+   A direct installation on Linux servers offers:
+
    * Simple, straightforward setup
    * Full control over the installation
-   * Situations where containers aren't preferred
+   * For situations where containers aren't preferred
 
 Prerequisites
 --------------

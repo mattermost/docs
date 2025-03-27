@@ -1,7 +1,4 @@
-.. important::
-   - This deployment method isn't recommended for production environments. 
-   - If you're looking to deploy a production Mattermost instance, we recommend using managed container services like AWS ECS, Azure Container Apps, or Google Cloud Run. These services provide better scalability, reliability, and maintenance features suited for production workloads.
-   - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
+We don't recommend deploying Mattermost server with Docker in production environments. This method is best suited for development and testing purposes. For production deployments, consider using managed container services like AWS ECS, Azure Container Apps, or Google Cloud Run, which offer better scalability and reliability.
 
 **Step 1: Install Docker**
 
@@ -225,3 +222,7 @@ To access a shell inside the container, run the following command:
 .. code-block:: sh
 
    docker exec -ti mattermost-preview /bin/bash
+
+.. note::
+
+   See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.

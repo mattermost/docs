@@ -180,5 +180,5 @@ Next steps
 Once you've completed these preparation steps, you can proceed with installing the Mattermost server. Choose your preferred installation method:
 
 - :doc:`Deploy with Kubernetes </deploy/server/deploy-kubernetes>`
-- :doc:`Deploy with Linux </deploy/server/deploy-linux>`
 - :doc:`Deploy with Containers </deploy/server/deploy-containers>`
+- :doc:`Deploy on Linux </deploy/server/deploy-linux>`

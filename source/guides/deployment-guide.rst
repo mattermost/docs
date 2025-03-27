@@ -15,14 +15,12 @@ Whether you’re deploying the server application, desktop application, or mobil
     /deploy/desktop/desktop-overview.rst
     /deploy/mobile/mobile-overview.rst
     /guides/deployment-troubleshooting.rst
-    /guides/additional-server-installation-guides.rst
 
 * :doc:`Application architecture </deploy/application-architecture>` - An overview of Mattermost's architecture and components.
 * :doc:`Server application </deploy/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
 * :doc:`Desktop application </deploy/desktop/desktop-overview>` - Installation procedures for Mattermost’s desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
 * :doc:`Mobile application </deploy/mobile/mobile-overview>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Best practices for diagnosing and resolving common deployment issues.
-* :doc:`Additional server installation guides </guides/additional-server-installation-guides>` - Learn how to deploy Mattermost using Bitnami, AWS Elastic Beanstalk, and other open-source components.
 
 How to use this guide
 ----------------------

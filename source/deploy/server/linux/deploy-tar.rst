@@ -19,7 +19,9 @@
 
   </div>
 
-You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, typically favored by advanced system administrators. This Mattermost deployment includes 3 steps: download, install Mattermost server, and set up the server.
+You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, typically favored by advanced system administrators. 
+
+This Mattermost deployment includes 3 steps: download, install Mattermost server, and set up the server.
 
 **Step 1: Download**
 

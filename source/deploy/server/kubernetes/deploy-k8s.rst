@@ -1,11 +1,5 @@
 You can use the Mattermost Kubernetes Operator to deploy Mattermost on Kubernetes using S3-compatible storage and a managed database service. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments.
 
-.. note::
-
-  - While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage.
-  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them. 
-  - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
-
 **Prerequisites**
 
 Before you begin, ensure you have the following:
@@ -14,12 +8,6 @@ Before you begin, ensure you have the following:
 * The `kubectl` command-line tool installed on your local machine (see the `kubectl installation guide <https://kubernetes.io/docs/reference/kubectl/>`__).
 * A fundamental understanding of Kubernetes concepts, such as deployments, pods, and applying manifests.
 * Sufficient Kubernetes resources allocated based on your expected user load. Consult the `Mattermost Kubernetes Operator <#install-the-mattermost-operator>`__ documentation for resource requirements at different scales.
-
-.. tip::
-
-  * If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.
-  * To customize your production deployment, refer to the :doc:`configuration settings documentation </configure/configuration-settings>`.
-  * If you encounter issues during deployment, consult the :ref:`deployment troubleshooting guide <install/troubleshooting:deployment troubleshooting>`.
 
 **Installation steps**
 
@@ -239,3 +227,11 @@ The following command can be used to follow logs on any kubernetes pod:
 If the ``-n [namespace]`` is omitted, then the default namespace of the current context is used. We recommend specifying the namespace based on your deployment.
 
 This command can be used to review the Mattermost Operator or Mattermost server logs as needed.
+
+.. note::
+
+  - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.- While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage.
+  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them. 
+  - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
+  - To customize your production deployment, refer to the :doc:`configuration settings documentation </configure/configuration-settings>`.
+  - If you encounter issues during deployment, consult the :ref:`deployment troubleshooting guide <install/troubleshooting:deployment troubleshooting>`.

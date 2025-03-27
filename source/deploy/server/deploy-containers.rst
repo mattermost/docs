@@ -1,11 +1,7 @@
 Deploy Mattermost using Containers
 ==================================
 
-Mattermost can be deployed using container technologies, providing flexibility and portability for your deployment. This guide covers deployment options using **Docker** and **AWS Elastic Beanstalk**.
-
-.. important::
-
-   Container deployments are recommended for professional deployments only, as they don't support High Availability (HA) configurations out of the box. For production environments requiring HA, consider using :doc:`Kubernetes </deploy/server/deploy-kubernetes>` or a :doc:`traditional Linux installation </deploy/server/deploy-linux>`.
+You can deploy Mattermost Server using container technologies for exploring functionality, testing, and development purposes, as it allows you to quickly set up a Mattermost instance without needing to manage the underlying infrastructure. This deployment method shouldn't be used in production environments as it doesn't support clustered deployments or High Availability (HA) configurations out-of-the-box.
 
 Choose your preferred container platform below for specific deployment instructions:
 

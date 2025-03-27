@@ -20,7 +20,11 @@
 
   </div>
 
-You can install the Mattermost Server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). This is the quickest way to install a Mattermost Server that provides automatic updates. This install method is used for both single and clustered installations.
+You can deploy Mattermost server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). This is the quickest way to install a Mattermost Server that provides automatic updates. This install method is used for both single and clustered installations, as you can tools like Packer for a clustered deployment.
+
+.. tip::
+
+  Alternatively, an **Omnibus Package** deployment bundles together all required components to greatly reduce setup and ongoing maintenance, including Mattermost Server, a PostgreSQL database, NGINX as the application proxy, a custom CLI, and ansible recipes to configure and connect these components.
 
 This Mattermost deployment includes 4 steps: add the PPA repository, install Mattermost server, configure the server, and update the server.
 
