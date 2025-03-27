@@ -1,10 +1,11 @@
-Desktop MSI installer and group policy installation guides 
-==================================================================
+Desktop MSI installer and group policy guide
+=============================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
+This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v5.11.2>`_. 
 
-This guide provides steps to install the MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v5.11.2>`_. 
+.. tip::
+
+   Want to :doc:`distribute the official Windows desktop app silently </deploy/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
 Download group policy and MSI installer files
 ----------------------------------------------
