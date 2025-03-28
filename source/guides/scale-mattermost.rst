@@ -15,6 +15,7 @@ Scale Mattermost
     Scale up to 80000 users </scale/scale-to-80000-users>
     Scale up to 90000 users </scale/scale-to-90000-users>
     Scale up to 100000 users </scale/scale-to-100000-users>
+    Scale up to 200000 users </scale/scale-to-200000-users>
     High availability cluster-based deployment </scale/high-availability-cluster-based-deployment>
     Elasticsearch </scale/elasticsearch>
     Collect performance metrics </scale/collect-performance-metrics>
@@ -36,6 +37,7 @@ Scale and monitor your Mattermost deployment.
  * :doc:`Scale up to 80000 users </scale/scale-to-80000-users>` - Learn how to scale Mattermost to up to 80000 users.
  * :doc:`Scale up to 90000 users </scale/scale-to-90000-users>` - Learn how to scale Mattermost to up to 90000 users.
  * :doc:`Scale up to 100000 users </scale/scale-to-100000-users>` - Learn how to scale Mattermost to up to 100000 users.
+ * :doc:`Scale up to 200000 users </scale/scale-to-200000-users>` - Learn how to scale Mattermost to up to 200000 users.
 
 * :doc:`High availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` - Learn how to run Mattermost at scale with all the config tweaks needed.
 * :doc:`Elasticsearch </scale/elasticsearch>` - Enhance search performance with Elasticsearch.
