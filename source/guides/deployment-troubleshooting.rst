@@ -6,14 +6,18 @@ Deployment troubleshooting
   :hidden:
   :titlesonly:
 
-    General troubleshooting </install/troubleshooting>
-    Troubleshooting mobile applications </deploy/mobile-troubleshoot>
-    PostgreSQL installation troubleshooting </install/trouble-postgres>
-    MySQL installation troubleshooting </install/trouble_mysql>
+  General deployment troubleshooting </deploy/server/troubleshooting>
+  Docker deployment troubleshooting </deploy/server/docker-troubleshooting>
+  Desktop app troubleshooting </deploy/desktop/desktop-troubleshooting>
+  Mobile app troubleshooting </deploy/mobile/mobile-troubleshooting>
+  PostgreSQL installation troubleshooting </deploy/server/trouble-postgres>
+  MySQL installation troubleshooting </deploy/server/trouble_mysql>
 
 These guides will help you troubleshoot aspects of your Mattermost deployment.
 
-* :doc:`General deployment troubleshooting </install/troubleshooting>`
-* :doc:`Mobile applications troubleshooting </deploy/mobile-troubleshoot>`
-* :doc:`PostgreSQL installation troubleshooting </install/trouble-postgres>`
-* :doc:`MySQL installation troubleshooting </install/trouble_mysql>`
+* :doc:`General deployment troubleshooting </deploy/server/troubleshooting>`
+* :doc:`Docker deployment troubleshooting </deploy/server/docker-troubleshooting>`
+* :doc:`Desktop app installation troubleshooting </deploy/desktop/desktop-troubleshooting>`
+* :doc:`Mobile applications troubleshooting </deploy/mobile/mobile-troubleshooting>`
+* :doc:`PostgreSQL installation troubleshooting </deploy/server/trouble-postgres>`
+* :doc:`MySQL installation troubleshooting </deploy/server/trouble_mysql>`
