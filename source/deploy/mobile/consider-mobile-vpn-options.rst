@@ -1,14 +1,7 @@
-Consider mobile VPN options
-===========================
+Mobile VPN options
+===================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-
-Connect to your private network Mattermost instance
----------------------------------------------------
-
-You need to set up a way to connect to your private network Mattermost instance, using an external proxy with encrypted transport through HTTPS and WSS network connections.
+To connect to your private network Mattermost instance, you need to set up a way to connect to your private network Mattermost instance, using an external proxy with encrypted transport through HTTPS and WSS network connections.
 
 Depending on your security policies, we recommend deploying Mattermost behind a VPN and using a `per-app VPN <#id3>`_ with your EMM provider, or a mobile VPN client.
 

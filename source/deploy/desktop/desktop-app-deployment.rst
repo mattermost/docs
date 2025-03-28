@@ -1,4 +1,4 @@
-Desktop App deployment
+Desktop app deployment
 =======================
 
 .. include:: ../../_static/badges/allplans-selfhosted.rst
@@ -11,7 +11,7 @@ Learn more about desktop app :ref:`software requirements <deploy/server/software
 Download
 ---------
 
-Download the Mattermost desktop app directly from the `Mattermost website <https://mattermost.com/apps>`_. Additional :doc:`desktop installation options </deploy/additional-desktop-installs>` are also available.
+Mattermost users can download the Mattermost desktop app directly from the `Mattermost website <https://mattermost.com/apps>`_. Additional :doc:`desktop installation options </deploy/desktop/additional-desktop-installs>` are also available.
 
 Log in
 ~~~~~~

@@ -12,14 +12,14 @@ Whether you’re deploying the server application, desktop application, or mobil
 
     /deploy/application-architecture.rst
     /deploy/server/server-deployment-planning.rst
-    /deploy/desktop/desktop-overview.rst
-    /deploy/mobile/mobile-overview.rst
+    /deploy/desktop/desktop-app-deployment.rst
+    /deploy/mobile/mobile-app-deployment.rst
     /guides/deployment-troubleshooting.rst
 
 * :doc:`Application architecture </deploy/application-architecture>` - An overview of Mattermost's architecture and components.
 * :doc:`Server application </deploy/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
-* :doc:`Desktop application </deploy/desktop/desktop-overview>` - Installation procedures for Mattermost’s desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
-* :doc:`Mobile application </deploy/mobile/mobile-overview>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
+* :doc:`Desktop application </deploy/desktop/desktop-app-deployment>` - Installation procedures for Mattermost’s desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
+* :doc:`Mobile application </deploy/mobile/mobile-app-deployment>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Best practices for diagnosing and resolving common deployment issues.
 
 How to use this guide
