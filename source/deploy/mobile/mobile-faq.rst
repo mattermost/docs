@@ -1,27 +1,10 @@
 Mobile apps FAQ
 ===============
 
-What versions of Mattermost support the mobile v2 app?
-------------------------------------------------------
-
-We strongly recommend running the latest version of the Mattermost Server and the Mattermost Push Notification Service (MPNS) as they contain the most recent features and applicable security updates. If this isn’t possible, we encourage you to be on the most recent :ref:`Extended Support Release version <about/release-policy:release types>` of Mattermost Server. The extended support releases contain critical feature updates that will ensure compatibility in a number of areas, including, but not limited to, the Mattermost Push Notification Service (MPNS).
-
-See our :ref:`Supported Devices/Mobile Device Requirements <install/software-hardware-requirements:mobile apps>` documentation for basic mobile device requirements, and our :doc:`Supported Mattermost Server Versions </about/mobile-app-changelog>` documentation for details on Mattermost Server minimum requirements.
-
 Can I connect to multiple Mattermost servers using the mobile apps?
 -------------------------------------------------------------------
 
-Yes when using Mattermost mobile app v2.0. Mobile v1.x only supports connecting to one server at a time.
-
-Is there a tablet version of the mobile apps?
----------------------------------------------
-
-Mattermost Classic mobile apps support tablets.
-
-Can the permanent sidebar on tablet devices be disabled?
---------------------------------------------------------
-
-The permanent sidebar is on by default for tablet-sized devices, but can be disabled from **Settings > Display > Sidebar > Permanent Sidebar**. When disabled, the sidebar behaves similarly to mobile devices where the user must open it using the button in the top-left corner of the screen.
+Yes, using Mattermost mobile app v2.0. Mobile v1.x only supports connecting to one server at a time.
 
 How is data handled on mobile devices after a user account is deactivated?
 --------------------------------------------------------------------------
@@ -31,7 +14,7 @@ App data is wiped from the device when a user logs out of the app. If the user i
 Do I need to compile the mobile apps to host my own push notification server?
 ------------------------------------------------------------------------------
 
-Yes. To host your own push notification server, you'll need to compile the mobile apps. See :doc:`documentation </deploy/build-custom-mobile-apps>` to learn how to compile your own mobile apps.
+Yes. To host your own push notification server, you'll need to compile the mobile apps. See :doc:`documentation </deploy/mobile/distribute-custom-mobile-apps>` to learn how to compile your own mobile apps.
 
 .. _push-faq:
 
@@ -60,7 +43,7 @@ This means if you use the Mattermost apps from the Apple App Store or Google Pla
 4. Either APNS or FCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android device to be displayed.
 
 .. note:: 
-  
+
   The use of push notifications with iOS and Android applications will require a moment where the contents of push notifications are visible and unencrypted by a server controlled by either Apple or Google. This is standard for any iOS or Android app. For this reason, there is an option available in Mattermost Enterprise to omit the contents of Mattermost messages from push notifications, or to configure message contents to be fetched from the server when notifications reach the device. See our :ref:`Configuration Settings <configure/site-configuration-settings:push notification contents>` documentation for details.
 
 Is TLS v1.3 supported?

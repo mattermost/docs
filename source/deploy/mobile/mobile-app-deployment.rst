@@ -3,7 +3,7 @@ Mobile app deployment
 
 The Mattermost mobile app is available for iPhone and Android devices, and provides a native experience on the go, ensuring you can stay connected and productive from anywhere.
 
-Learn more about :ref:`mobile app software requirements <deploy/server/software-hardware-requirements:mobile apps>`, :doc:`available releases and server compatibility </about/mattermost-mobile-releases>`, and :doc:`what's changed across releases </about/mobile-app-changelog>`.
+Learn more about :ref:`mobile app software requirements <deploy/server/software-hardware-requirements:mobile apps>`, :doc:`available releases and server compatibility </about/mattermost-mobile-releases>`, :doc:`what's changed across releases </about/mobile-app-changelog>`, and :doc:`commonly asked questions </deploy/mobile/mobile-faq>`.
 
 Download
 --------
@@ -24,17 +24,20 @@ The first time you log in to Mattermost using the mobile app, connect to a Matte
 Deployment options
 ------------------
 
-Learn what’s required to build and deploy your own Mattermost mobile apps.
+Learn what’s required to build and deploy Mattermost mobile apps.
 
 .. toctree::
     :maxdepth: 2
     :hidden:
     :titlesonly:
 
+    /deploy/mobile/deploy-mobile-apps-using-emm-provider.rst
     /deploy/mobile/distribute-custom-mobile-apps.rst
     /deploy/mobile/host-your-own-push-proxy-service.rst
     /deploy/mobile/consider-mobile-vpn-options.rst
+    /deploy/mobile/mobile-faq.rst
 
 * :doc:`Distribute custom mobile apps </deploy/mobile/distribute-custom-mobile-apps>`
 * :doc:`Host your own push proxy service </deploy/mobile/host-your-own-push-proxy-service>`
 * :doc:`Mobile VPN options </deploy/mobile/consider-mobile-vpn-options>`
+* :doc:`Mobile apps FAQ </deploy/mobile/mobile-faq>`
