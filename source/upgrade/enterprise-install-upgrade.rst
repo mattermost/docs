@@ -1,9 +1,7 @@
-..  _ee-install:
-
 Enterprise install and upgrade
 ===============================
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost Enterprise Edition is free to use in "team mode" without Enterprise features enabled. Mattermost offers two subscription plans, including Enterprise and Professional. You can `compare their features online <https://mattermost.com/pricing/>`_.

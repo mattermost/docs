@@ -10,8 +10,8 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 
 .. important::
 
-    PostgreSQL v13+ is required for Mattermost server installations. MySQL support is being deprecated starting with Mattermost v11.
-
+   - PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepar-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/server/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
+   - Learn how to :doc:`use sockets to set up the database </deploy/server/setting-up-socket-based-mattermost-database>`.
 
 1. Create an PostgreSQL server instance:
 
@@ -55,7 +55,7 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 
       .. code-block:: sql
 
-         CREATE DATABASE mattermost;
+         CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
 
    c. Create the Mattermost user with a secure password:
 
@@ -103,6 +103,10 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
       .. code-block:: text
 
          host all all {mattermost-server-IP}/32 md5
+
+.. important::
+
+  If you are upgrading a major version of Postgres, ensure that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is required to re-populate the ``pg_statistics`` table used to generate optimal query plans. Database performance may suffer if this step is skipped.
 
 File storage preparation
 -------------------------

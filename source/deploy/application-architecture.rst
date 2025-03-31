@@ -88,3 +88,62 @@ The backend infrastructure provides the storage and data handling capabilities r
 - **Email Integration**: Provides regular notifications when users are offline or inactive.
 
 These services ensure continuous engagement and communication.
+
+Communication protocols
+~~~~~~~~~~~~~~~~~~~~~~~
+
+There are also communication protocols (HTTPS and WS) that define the type of connection the user makes with the Mattermost server.
+
+**HTTPS Connection** (Secure Hypertext Transfer Protocol)
+
+- HTTPS connections to the Mattermost server render pages and provide access to core platform functionality, but do not include real-time interactivity (which is enabled by WSS connections).
+- HTTPS is a secure, encrypted protocol and is highly recommended for production. Unencrypted HTTP connections may be used in initial testing and configuration, but should never be used in a production environment.
+
+**WSS Connection** (Secure WebSocket Protocol)
+
+Secure WebSocket (WSS) connections to the Mattermost Server enable real-time updates and notifications between clients and the server.
+
+If a WSS connection is not available and HTTPS is substituted, the system will appear to work but real-time updates and notifications will not. In this mode of operation, updates will only appear on a page refresh. WSS has a persistent connection to the Mattermost server when a client is connected, while HTTPS has an intermittent connection and only connects to the server when a page or file is requested.
+
+.. image:: ../images/architecture_with_protocol.png
+
+Mattermost services ports
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following table lists the Mattermost services ports for Mattermost Server, push proxy, and mobile app clients. System admins with clients that need to speak to the Mattermost server without a proxy can open specific firewall ports as needed.
+
+**Mattermost Server**
+
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Service Name                                                | Config Setting                        | Port (default)                    | Protocol  | Direction  | Info                                                          |
++=============================================================+=======================================+===================================+===========+============+===============================================================+
+| HTTP/Websocket                                              | ServiceSettings.ListenAddress         | 8065/80/443 (TLS)                 | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+ Usually this requires port 80 and 443 when running HTTPS.     |
+|                                                             |                                       |                                   |           |            |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Cluster                                                     | ClusterSettings.GossipPort            | 8074                              | TCP/UDP   | Inbound    | Internal                                                      |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Metrics                                                     | MetricsSettings.ListenAddress         | 8067                              | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Database                                                    | SqlSettings.DataSource                | 5432 (PostgreSQL) / 3306 (MySQL)  | TCP       | Outbound   | Usually internal (recommended)                                |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| LDAP                                                        | LdapSettings.LdapPort                 | 389                               | TCP/UDP   | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| S3 Storage                                                  | FileSettings.AmazonS3Endpoint         | 443 (TLS)                         | TCP       | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| SMTP                                                        | EmailSettings.SMTPPort                | 10025                             | TCP/UDP   | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Push Notifications                                          | EmailSettings.PushNotificationServer  | 443 (TLS)                         | TCP       | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+
+**Push Proxy**
+
++---------------+-----------------+-----------------+-----------+------------+----------------------------------------------+
+| Service Name  | Config Setting  | Port (default)  | Protocol  | Direction  | Info                                         |
++===============+=================+=================+===========+============+==============================================+
+| Push Proxy    | ListenAddress   | 8066            | TCP       | Inbound    | External (no proxy) / Internal (with proxy)  |
++---------------+-----------------+-----------------+-----------+------------+----------------------------------------------+
+
+**Mobile Clients**
+
+In order to receive push notifications, your network must allow traffic on `port 5223 for iOS devices <https://support.apple.com/en-us/102266>`_ and `ports 5228-5230 for Android <https://firebase.google.com/docs/cloud-messaging/concept-options#messaging-ports-and-your-firewall>`_.

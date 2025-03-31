@@ -4,21 +4,11 @@ Access your workspace
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the :doc:`desktop app </collaborate/install-desktop-app>`, the :doc:`mobile app for iOS </collaborate/install-ios-app>`, or the :doc:`mobile app for Android </collaborate/install-android-app>`.
+Access Mattermost using a web browser, the desktop app, or the mobile app for iOS or Android. You can log in using your email address, username, or single sign-on (SSO) credentials, depending on how your system admin has configured Mattermost.
 
 .. tip::
 
   Can't find your Mattermost link? Ask your company's IT department or your Mattermost system admin for your organization's **Mattermost Site URL**. It'll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
-
-.. toctree::
-  :maxdepth: 1
-  :hidden:
-  :titlesonly:
-
-  Install the desktop app </collaborate/install-desktop-app>
-  Install the iOS mobile app </collaborate/install-ios-app>
-  Install the Android mobile app </collaborate/install-android-app>
-  Log out of Mattermost </collaborate/log-out>
 
 .. tab:: Web/Desktop
 
@@ -30,12 +20,12 @@ Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through 
 
   .. tip::
 
-    - We recommend bookmarking the Mattermost URL in your browser of choice so logging into Mattermost is easy in the future.
+    - We recommend bookmarking the Mattermost URL in your web browser of choice so logging into Mattermost is easy in the future.
     - The credentials you use to log in depend on how your system admin has configured Mattermost. You may be prompted for an `email address or username <#email-address-or-username>`__ and a password, or you may be able to `log in using other credentials <#single-sign-on-sso>`__. Contact your system admin for more information.
   
   **Desktop app**
 
-  1. Download and install the Mattermost :doc:`desktop app </collaborate/install-desktop-app>`.
+  1. Download and install the Mattermost desktop app.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
@@ -52,7 +42,7 @@ Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
   .. tip::
-    
+
     The credentials you use to log in depend on how your system admin has configured Mattermost. You may be prompted for an email address or username and a password, or you may be able to log in using other credentials. Contact your system admin for details.
 
 Reset your password

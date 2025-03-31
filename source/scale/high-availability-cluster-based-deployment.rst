@@ -8,6 +8,25 @@ A high availability cluster-based deployment enables a Mattermost system to main
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
+Mattermost Enterprise supports:
+
+1. Clustered Mattermost servers, which minimize latency by:
+
+- Storing static assets over a global CDN.
+- Deploying multiple Mattermost servers to host API communication closer to the location of end users.
+
+They can also be used to handle scale and failure handoffs in disaster recovery scenarios.
+
+2. Database read replicas, where replicas can be:
+
+- Configured as a redundant backup to the active database server.
+- Used to scale up the number of concurrent users.
+- Deployed closer to the location of end users, reducing latency.
+
+Moreover, search replicas are also supported to handle search queries.
+
+.. image:: ../images/architecture_high_availability.png
+
 Requirements for continuous operation
 -------------------------------------
 

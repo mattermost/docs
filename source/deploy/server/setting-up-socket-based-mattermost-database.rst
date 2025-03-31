@@ -1,28 +1,24 @@
 Using sockets for database
 ==========================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost requires a database back-end, and PostgreSQL is our database of choice. In this document let's understand how
-you can use sockets for setting up the database.
-
-- Install and configure PostgreSQL.
-- Choose between TCP or UNIX Socket, and jump to the corresponding section.
+You can use sockets for setting up the database. Choose between TCP or UNIX Socket.
 
 With TCP socket
 ---------------
 
-- Create the new user while connecting to the server as ``postgres`` user
+1. Create the new user while connecting to the server as ``postgres`` user
   (you will be prompted for a password for the new user):
 
   ``sudo -u postgres createuser -P mmuser``
 
-- Create the Mattermost database, owned by ``mmuser`` user:
+2. Create the Mattermost database, owned by ``mmuser`` user:
 
   ``sudo -u postgres createdb -O mmuser mattermostdb``
 
-- In the connections and authentications section, set the ``listen_address`` list
+3. In the connections and authentications section, set the ``listen_address`` list
   line per your needs:
 
    .. code-block:: sh
@@ -32,7 +28,7 @@ With TCP socket
 
   You can use '*' to listen on all available addresses.
 
-- Then add a line like the following to the authentication config:
+4. Then add a line like the following to the authentication config:
 
   .. code-block:: sh
 
@@ -41,7 +37,7 @@ With TCP socket
      # IPv4 local connections:
      host    all             all             ip_address/32   md5
 
-- Run the setup using:
+5. Run the setup using:
 
   .. code-block:: sh
 
@@ -50,27 +46,27 @@ With TCP socket
 With Unix socket
 ----------------
 
-- Create the new user while connecting to the server as ``postgres`` user:
+1. Create the new user while connecting to the server as ``postgres`` user:
 
   .. code-block:: sh
 
      sudo -u postgres createuser mattermost
 
-- Create the Mattermost database, owned by ``mattermost`` user:
+2. Create the Mattermost database, owned by ``mattermost`` user:
 
   .. code-block:: sh
 
      sudo -u postgres createdb -O mattermost mattermostdb
 
-- Setup the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
+3. Set up the Unix socket by adding the following line to ``/var/lib/postgres/data/pg_hba.conf``:
 
   .. code-block:: sh
 
      local    mattermostdb    mattermost    peer
 
-- Restart postgresql.service.
+4. Restart postgresql.service.
 
-- Run the setup using:
+5. Run the setup using:
 
   .. code-block:: sh
 
@@ -79,12 +75,11 @@ With Unix socket
 Configuring Mattermost
 ----------------------
 
-- Mattermost is configured in ``/etc/webapps/mattermost/config.json``.
-  Strings need to be quoted.
+Mattermost is configured in ``/etc/webapps/mattermost/config.json``. Strings need to be quoted.
 
 - Set ``DriverName`` to ``postgres``.
 
-  Set ``DataSource``:
+- Set ``DataSource``:
 
   - TCP socket: ``postgres://mmuser:mmuser_password@127.0.0.1:5432/mattermostdb?sslmode=disable&connect_timeout=10``    
   - Unix socket: ``postgres:///mattermostdb?host=/run/postgresql``, where ``mattermostdb`` is the name of the database and ``/run/postgresql`` is the directory containing the Unix socket.

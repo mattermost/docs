@@ -1,8 +1,18 @@
 Set up an NGINX proxy
 =====================
 
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
+
+A proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. Mattermost recommends using a proxy in front of Mattermost to increase security, performance and the ability to monitor and shape traffic connecting to Mattermost:
+
+- **Security:** A proxy server can manage Secure Socket Layer (TLS/SSL) encryption and set policy on how network traffic will be routed to the Mattermost server.
+- **Performance:** In a High Availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
+- **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost server logging process.
+
+Mattermost provides documentation and support for the `NGINX proxy <https://www.f5.com/go/product/welcome-to-nginx>`_
+
+.. image:: ../images/architecture_with_proxy.png
 
 Install NGINX server
 --------------------
