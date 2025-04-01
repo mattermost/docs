@@ -1,25 +1,23 @@
 Set up an NGINX proxy
 =====================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
-  :start-after: :nosearch:
-
 A proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. Mattermost recommends using a proxy in front of Mattermost to increase security, performance and the ability to monitor and shape traffic connecting to Mattermost:
 
 - **Security:** A proxy server can manage Secure Socket Layer (TLS/SSL) encryption and set policy on how network traffic will be routed to the Mattermost server.
 - **Performance:** In a High Availability configuration, the proxy server balances the network load across multiple Mattermost servers for optimized performance. A hardware proxy with dedicated devices for processing SSL encryption and decryption can also be used to increase performance.
 - **Monitoring**: A proxy server can monitor connection traffic and record traffic in standard audit logs that common monitoring tools like Kibana and Splunk can consume and report on. Some of the events that can be captured include file uploads and downloads, which are not tracked by the Mattermost server logging process.
 
-Mattermost provides documentation and support for the `NGINX proxy <https://www.f5.com/go/product/welcome-to-nginx>`_
+Mattermost supports the `NGINX proxy <https://www.f5.com/go/product/welcome-to-nginx>`_
 
 .. image:: ../images/architecture_with_proxy.png
+  :alt: Mattermost architecture with NGINX proxy
 
 Install NGINX server
 --------------------
 
 NGINX is a popular web server and is responsible for hosting some of the largest and highest-traffic sites on the internet. It's more resource-friendly than Apache in most cases, and can be used as a web server or reverse proxy.
 
-In a production setting, we recommend using a proxy server for greater security and performance of Mattermost.
+In a production setting, we recommend using a proxy server for greater security and performance of Mattermost:
 
 -  SSL termination
 -  HTTP to HTTPS redirect
@@ -34,7 +32,6 @@ Install NGINX on Ubuntu Server
 2. Install NGINX.
 
   Because NGINX is available in Ubuntu's default repositories, it's possible to install it from these repositories using the ``apt`` packaging system. First, update your local ``apt`` package index for access to the most recent package listings. Then, install ``nginx``:
-
 
   .. code-block:: sh
 
@@ -75,11 +72,11 @@ Now that you have your web server up and running, let's review some basic manage
 To stop your web server, use: ``sudo systemctl stop nginx``
 
 To start the web server when it's stopped, use: ``sudo systemctl start nginx``
- 
+
 To stop and then start the service again, use: ``sudo systemctl restart nginx``
- 
+
 If you're simply making configuration changes, NGINX can often reload without dropping connections. To do this, use: ``sudo systemctl reload nginx``
- 
+
 By default, NGINX is configured to start automatically when the server boots. If this isn't what you want, you can disable this behavior using: ``sudo systemctl disable nginx``
  
 To re-enable the service to start up at boot, use: ``sudo systemctl enable nginx``
@@ -105,12 +102,12 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 
 SSL and HTTP/2 are enabled in the provided configuration example.
 
-  .. note::
+.. note::
 
-    - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the :ref:`NGINX HTTP/2 and SSL product documentation <install/setup-nginx-proxy:configure nginx with ssl and http/2>` for details.
-    - You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
-    - Note that the IP address included in the examples in this documentation may not match your network configuration.
-    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
+  - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the :ref:`NGINX HTTP/2 and SSL product documentation <install/setup-nginx-proxy:configure nginx with ssl and http/2>` for details.
+  - You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
+  - Note that the IP address included in the examples in this documentation may not match your network configuration.
+  - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
 
   .. code-block:: text
 
@@ -206,9 +203,7 @@ SSL and HTTP/2 are enabled in the provided configuration example.
 
 6. Restart NGINX by running ``sudo systemctl restart nginx``.
 
-7. Verify that you can see Mattermost through the proxy by running ``curl https://localhost``.
-
-  If everything is working, you will see the HTML for the Mattermost signup page.
+7. Verify that you can see Mattermost through the proxy by running ``curl https://localhost``. If everything is working, you will see the HTML for the Mattermost signup page.
 
 8. Restrict access to port 8065.
 
@@ -229,7 +224,7 @@ You can use any certificate that you want, but these instructions show you how t
 
 .. note::
 
-   If Let’s Encrypt is enabled, forward port 80 through a firewall, with :ref:`Forward80To443 <configure/environment-configuration-settings:forward port 80 to 443>` ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
+  If Let’s Encrypt is enabled, forward port 80 through a firewall, with :ref:`Forward80To443 <configure/environment-configuration-settings:forward port 80 to 443>` ``config.json`` setting set to ``true`` to complete the Let’s Encrypt certification. See the `Let's Encrypt/Certbot documentation <https://certbot.eff.org>`_ for additional assistance.
 
 1. Log in to the server that hosts NGINX and open a terminal window.
 
@@ -237,10 +232,10 @@ You can use any certificate that you want, but these instructions show you how t
 
   .. note::
 
-   - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
-   - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
-   - The IP address included in the examples in this documentation may not match your network configuration.
-   - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
+    - On Ubuntu this file is located at ``/etc/nginx/sites-available/``. If you don't have this file, run ``sudo touch /etc/nginx/sites-available/mattermost``.
+    - On CentOS/RHEL this file is located at ``/etc/nginx/conf.d/``. If you don't have this file, run ``sudo touch /etc/nginx/conf.d/mattermost``.
+    - The IP address included in the examples in this documentation may not match your network configuration.
+    - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.
 
   .. code-block:: text
 
