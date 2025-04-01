@@ -31,6 +31,9 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed an issue with scrolling lists inside the bottom menu.
 
 ### Known Issues
+ - (Android) Autocomplete suggestions are not available for at-mentions for out of channel members (as well as in-channel members) [MM-63594](https://mattermost.atlassian.net/browse/MM-63594).
+ - (Android) Autocomplete does not show up when typing ``+:taco`` in "write to" input box [MM-63592](https://mattermost.atlassian.net/browse/MM-63592).
+ - Custom themes cannot be applied on mobile [MM-63596](https://mattermost.atlassian.net/browse/MM-63596).
  - Users are unable to adjust the font size via the OS font size setting.
  - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
 
