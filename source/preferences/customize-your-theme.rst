@@ -144,20 +144,6 @@ Want this theme? Copy and paste the following code into Mattermost:
 
 	{"sidebarBg":"#21252b","sidebarText":"#abb2bf","sidebarUnreadText":"#abb2bf","sidebarTextHoverBg":"#3a3f4b","sidebarTextActiveBorder":"#4d78cc","sidebarTextActiveColor":"#d7dae0","sidebarHeaderBg":"#282c34","sidebarHeaderTextColor":"#abb2bf","onlineIndicator":"#98c379","awayIndicator":"#d19a66","dndIndicator":"#be5046","mentionBg":"#98c379","mentionColor":"#ffffff","centerChannelBg":"#282c34","centerChannelColor":"#abb2bf","newMessageSeparator":"#c67add","linkColor":"#61afef","buttonBg":"#4d78cc","buttonColor":"#ffffff","errorTextColor":"#f44747","mentionHighlightBg":"#525a69","mentionHighlightLink":"#61afef","codeTheme":"monokai","mentionBg":"#98c379"}
 
-Discord Dark Theme
-^^^^^^^^^^^^^^^^^^
-
-.. image:: ../images/DiscordDarkTheme.png
-  :alt: Discord Dark Theme
-
-`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__.
-
-Want this theme? Copy and paste the following code into Mattermost:
-
-.. code-block:: json
-
-	{"sidebarBg":"#2f3136","sidebarText":"#ffffff","sidebarUnreadText":"#ffffff","sidebarTextHoverBg":"#33363c","sidebarTextActiveBorder":"#66cfa0","sidebarTextActiveColor":"#ffffff","sidebarHeaderBg":"#27292c","sidebarHeaderTextColor":"#ffffff","onlineIndicator":"#43b581","awayIndicator":"#faa61a","dndIndicator":"#f04747","mentionBg":"#6e84d2","mentionBg":"#6e84d2","mentionColor":"#ffffff","centerChannelBg":"#36393f","centerChannelColor":"#dddddd","newMessageSeparator":"#6e84d2","linkColor":"#2095e8","buttonBg":"#43b581","buttonColor":"#ffffff","errorTextColor":"#ff6461","mentionHighlightBg":"#3d414f","mentionHighlightLink":"#6e84d2","codeTheme":"monokai"}
-
 Discord New Dark Theme
 ^^^^^^^^^^^^^^^^^^
 
@@ -172,6 +158,20 @@ Want this theme? Copy and paste the following code into Mattermost:
 
 {"sidebarBg": "#121214", "sidebarText": "#ffffff", "sidebarUnreadText": "#ffffff", "sidebarTextHoverBg": "#1d1d1e", "sidebarTextActiveBorder": "#ffffff", "sidebarTextActiveColor": "#ffffff", "sidebarHeaderBg": "#121214", "sidebarHeaderTextColor": "#ffffff", "sidebarTeamBarBg": "#121214", "onlineIndicator": "#43a25a", "awayIndicator": "#ca9654", "dndIndicator": "#d83a42", "mentionBg": "#6e84d2", "mentionBj": "#6e84d2", "mentionColor": "#ffffff", "centerChannelBg": "#1a1a1e", "centerChannelColor": "#efeff0", "newMessageSeparator": "#ff4d4d", "linkColor": "#2095e8", "buttonBg": "#5865f2", "buttonColor": "#ffffff", "errorTextColor": "#ff6461", "mentionHighlightBg": "#a4850f", "mentionHighlightLink": "#a4850f", "codeTheme": "monokai"}
 
+
+Discord Dark Theme (old)
+^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/DiscordDarkTheme.png
+  :alt: Discord Dark Theme
+
+`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__.
+
+Want this theme? Copy and paste the following code into Mattermost:
+
+.. code-block:: json
+
+	{"sidebarBg":"#2f3136","sidebarText":"#ffffff","sidebarUnreadText":"#ffffff","sidebarTextHoverBg":"#33363c","sidebarTextActiveBorder":"#66cfa0","sidebarTextActiveColor":"#ffffff","sidebarHeaderBg":"#27292c","sidebarHeaderTextColor":"#ffffff","onlineIndicator":"#43b581","awayIndicator":"#faa61a","dndIndicator":"#f04747","mentionBg":"#6e84d2","mentionBg":"#6e84d2","mentionColor":"#ffffff","centerChannelBg":"#36393f","centerChannelColor":"#dddddd","newMessageSeparator":"#6e84d2","linkColor":"#2095e8","buttonBg":"#43b581","buttonColor":"#ffffff","errorTextColor":"#ff6461","mentionHighlightBg":"#3d414f","mentionHighlightLink":"#6e84d2","codeTheme":"monokai"}
 
 Night Owl Dark Theme
 ^^^^^^^^^^^^^^^^^^^^
