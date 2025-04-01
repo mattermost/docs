@@ -163,7 +163,7 @@ Discord Dark Theme (old)
 ^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/DiscordDarkTheme.png
-  :alt: Discord Dark Theme
+  :alt: Discord Dark Theme (old)
 
 `Visit the mattermost-discord-dark GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__.
 
