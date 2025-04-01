@@ -1,26 +1,16 @@
-We don't recommend deploying Mattermost server with Docker in production environments. This method is best suited for development and testing purposes. For production deployments, consider using managed container services like AWS ECS, Azure Container Apps, or Google Cloud Run, which offer better scalability and reliability.
+This guide provides step-by-step instructions for deploying Mattermost using Docker containers. Docker deployments are officially supported on Linux operating systems, while macOS and Windows Docker deployments are supported for 
+testing and development purposes only.
 
 **Step 1: Install Docker**
 
 If you don't have Docker installed, follow the instructions below based on your operating system. You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
 
-.. tab:: macOS
+.. warning::
 
-  Follow the `Install Docker Engine on Mac <https://docs.docker.com/desktop/setup/install/mac-install/>`_ documentation.
+   - Mattermost server deployment using Docker is officially supported on Linux operating systems only.
+   - macOS and Windows Docker deployments are supported for testing and development purposes only.
 
-.. tab:: Windows 10
-
-  Follow the `Install Docker Engine on Windows <https://docs.docker.com/desktop/setup/install/windows-install/>`_ documentation.
-
-.. tab:: Ubuntu
-
-  Follow the `Install Docker Engine on Ubuntu <https://docs.docker.com/engine/install/ubuntu/>`_ documentation. Ensure that you follow the `optional post-installation steps <https://docs.docker.com/engine/install/linux-postinstall/>`_ when installing Docker on Ubuntu!
-
-.. tab:: Fedora
-
-  Follow the `Install Docker Engine on Fedora <https://docs.docker.com/engine/install/fedora/>`_ documentation.
-
-**Deploy Mattermost on Docker (Quick Start)**
+**Step 2: Deploy Mattermost on Docker**
 
 This section provides a quick start guide for deploying Mattermost on Docker by leveraging `Docker Compose <https://docs.docker.com/compose/install/>`_.
 

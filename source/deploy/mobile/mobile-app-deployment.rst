@@ -1,4 +1,4 @@
-Mobile app deployment
+Mobile App Deployment
 ======================
 
 The Mattermost mobile app is available for iPhone and Android devices, and provides a native experience on the go, ensuring you can stay connected and productive from anywhere.

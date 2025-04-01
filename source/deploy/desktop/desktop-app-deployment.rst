@@ -1,4 +1,4 @@
-Desktop app deployment
+Desktop App Deployment
 =======================
 
 .. include:: ../../_static/badges/allplans-selfhosted.rst
