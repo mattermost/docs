@@ -102,6 +102,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Updated minimum Safari version to 17.4+ and minimum Firefox version to 119+.
 
 ### Important Upgrade Notes
+ - Both Mattermost v10.5.0 and v10.5.1 come bundled with a Jira plugin version that contains a bug causing the plugin configuration to disappear. We strongly discourage upgrading to these versions to avoid this issue. If you have already upgraded to 10.5.0 or 10.5.1, we recommend downgrading the Jira plugin to a stable version.
  - v10.5 introduces Property System Architecture schema migration. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
  - The Compliance Export system has been overhauled. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
  - The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192).
@@ -167,7 +168,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.5 is built with Go ``v1.22.6``.
 
 ### Known Issues
- - Both Mattermost v10.5.0 and v10.5.1 come bundled with a Jira plugin version that contains a bug causing the plugin configuration to disappear. We strongly discourage upgrading to these versions to avoid this issue. If you have already upgraded to 10.5.0 or 10.5.1, we recommend downgrading the Jira plugin to a stable version.
  - Setting the license file location through an envvar still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the envvar. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
  - Slack import through the CLI fails if email notifications are enabled.
