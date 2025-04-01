@@ -102,6 +102,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - Updated minimum Safari version to 17.4+ and minimum Firefox version to 119+.
 
 ### Important Upgrade Notes
+ - Mattermost versions v10.5.0 and v10.5.1 include a bundled Jira plugin (v4.2.0) that contains a bug which may cause plugin configuration settings to disappear. We strongly advise against upgrading to these versions to avoid potential disruption.  
+If you have already upgraded to v10.5.0 or v10.5.1, we recommend updating the Jira plugin to version v4.2.1, or preferably, upgrading both Mattermost and the Jira plugin to their latest available versions.
  - v10.5 introduces Property System Architecture schema migration. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
  - The Compliance Export system has been overhauled. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for details.
  - The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in [this forum post](https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192).
