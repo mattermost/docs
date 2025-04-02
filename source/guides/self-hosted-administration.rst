@@ -12,8 +12,6 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     :hidden:
     :titlesonly:
 
-    Mattermost self-hosted billing </manage/self-hosted-billing>
-    Mattermost error codes </manage/error-codes>
     Request a server Health Check </manage/request-server-health-check>
     Store configuration in your database </configure/configuration-in-your-database>
     Bulk loading data </onboard/bulk-loading-data>
@@ -31,8 +29,6 @@ This section of the guide is for system admins of self-hosted Mattermost servers
     Manage telemetry </manage/telemetry>
     Configure health check probes </manage/configure-health-check-probes>
 
-* :doc:`Mattermost self-hosted billing </manage/self-hosted-billing>` - Manage your Mattermost subscription.
-* :doc:`Mattermost error codes </manage/error-codes>` - Learn more about the error code you're encountering in Mattermost.
 * :doc:`Request a server Health Check </manage/request-server-health-check>` - Learn how to request a detailed analysis of your current system health, actionable recommendations to enhance performance, reliability, and security, and guidance on best practices for future system maintenance as an Enterprise customer.
 * :doc:`Store configuration in your Mattermost database </configure/configuration-in-your-database>` - Store Mattermost configuration information in your database rather than as a JSON file. We recommend this for High Availability environments.
 * :doc:`Bulk loading data </onboard/bulk-loading-data>` - Import bulk data into Mattermost for teams, channels, users, post content, and more.

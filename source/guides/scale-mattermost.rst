@@ -6,15 +6,6 @@ Scale Mattermost
    :hidden:
    :titlesonly:
 
-    Scale for Enterprise </scale/scaling-for-enterprise>
-    Scale up to 200 users </scale/scale-to-200-users>
-    Scale up to 2000 users </scale/scale-to-2000-users>
-    Scale up to 15000 users </scale/scale-to-15000-users>
-    Scale up to 30000 users </scale/scale-to-30000-users>
-    Scale up to 50000 users </scale/scale-to-50000-users>
-    Scale up to 80000 users </scale/scale-to-80000-users>
-    Scale up to 90000 users </scale/scale-to-90000-users>
-    Scale up to 100000 users </scale/scale-to-100000-users>
     High availability cluster-based deployment </scale/high-availability-cluster-based-deployment>
     Elasticsearch </scale/elasticsearch>
     Collect performance metrics </scale/collect-performance-metrics>

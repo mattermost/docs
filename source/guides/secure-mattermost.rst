@@ -8,7 +8,7 @@ Mattermost ships with several security features that can help organizations safe
   :hidden:
   :titlesonly:
 
-    Encryption options  </deploy/encryption-options>
+    Encryption options </deploy/encryption-options>
     Multi-factor authentication </onboard/multi-factor-authentication>
     Delegated granular administration </onboard/delegated-granular-administration>
     Custom terms of service </comply/custom-terms-of-service>
@@ -18,8 +18,8 @@ Mattermost ships with several security features that can help organizations safe
 
 * :doc:`Encryption options </deploy/encryption-options>` - Setup encryption for data in transit and at rest.
 * :doc:`Multi-factor authentication </onboard/multi-factor-authentication>` - Require users to provide a secure one-time code in addition to their username and password to log in to Mattermost.
-* :ref:`ID-only push notifications <deploy/mobile-hpns:id-only push notifications>` - Enable fully private mobile notifications to protect against iOS and Android notification infrastructure breaches.
-* :doc:`Enterprise mobility management </deploy/deploy-mobile-apps-using-emm-provider>` - Secure mobile endpoints with management application configuration.
+* :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` - Enable fully private mobile notifications to protect against iOS and Android notification infrastructure breaches.
+* :doc:`Enterprise mobility management </deploy/mobile/deploy-mobile-apps-using-emm-provider>` - Secure mobile endpoints with management application configuration.
 * :doc:`Delegated granular administration </onboard/delegated-granular-administration>` - Grant user access to specific areas of the Mattermost System Console.
 * :doc:`Custom terms of service </comply/custom-terms-of-service>` - Increase clarity on legal Mattermost expectations for internal employees and guests.
 * :ref:`Manage session length <configure/environment-configuration-settings:session lengths>` - Control how long user sessions remain active.
