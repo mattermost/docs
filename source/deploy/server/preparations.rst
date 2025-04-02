@@ -16,28 +16,28 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 1. Create an PostgreSQL server instance:
 
    .. tab:: AWS
-   
+
       .. code-block:: sh
 
          sudo apt update
          sudo apt install postgresql
     
    .. tab:: Azure
-   
+
       .. code-block:: sh
 
          sudo apt update
          sudo apt install postgresql
-    
+
    .. tab:: Ubuntu/Debian
-   
+
       .. code-block:: sh
 
          sudo apt update
          sudo apt install postgresql
 
    .. tab:: RHEL/CentOS
-   
+
       .. code-block:: sh
 
          sudo dnf install postgresql-server
@@ -79,27 +79,27 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 3. Configure PostgreSQL for remote connections (if database is on a separate server):
 
    a. Edit ``postgresql.conf`` to allow remote connections:
-      
+
       .. tab:: Ubuntu/Debian
-      
+
          Edit ``/etc/postgresql/{version}/main/postgresql.conf``:
-         
+
          .. code-block:: text
 
             listen_addresses = '*'
 
       .. tab:: RHEL/CentOS
-      
+
          Edit ``/var/lib/pgsql/{version}/data/postgresql.conf``:
-         
+
          .. code-block:: text
 
             listen_addresses = '*'
 
    b. Configure client authentication by editing ``pg_hba.conf``:
-      
+
       Add the following line, replacing ``{mattermost-server-IP}``:
-      
+
       .. code-block:: text
 
          host all all {mattermost-server-IP}/32 md5
@@ -148,13 +148,13 @@ For simple deployments, you can use local file storage. However, we don't recomm
 
    .. code-block:: sh
 
-      sudo mkdir -p /opt/mattermost/data
+         sudo mkdir -p /opt/mattermost/data
 
 2. Set appropriate permissions:
 
    .. code-block:: sh
 
-      sudo chown -R mattermost:mattermost /opt/mattermost/data
+         sudo chown -R mattermost:mattermost /opt/mattermost/data
 
 Network preparation
 --------------------

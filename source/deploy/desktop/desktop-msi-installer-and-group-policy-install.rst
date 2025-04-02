@@ -30,6 +30,19 @@ Download group policy and MSI installer files
 Install group policy files locally
 -----------------------------------
 
+The following group policies are available supporting a state option of Not Configured, Enabled, or Disabled:
+
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Group policy             | Description                                                | Mattermost release   | Setting                    |
+  +==========================+============================================================+======================+============================+
+  | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` |
+  |                          | app settings are disabled.                                 |                      |                            |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+  | Automatic Updates        | If disabled, automatic desktop app updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
+  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
+
 1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.11.2.zip`` file in place.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
@@ -59,6 +72,10 @@ Install group policy files locally
 
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions`` can be used instead of ``C:\Windows\PolicyDefinitions`` if available.
    * ``\\FQDNDomain\sysvol\FQDNDomain\Policies\PolicyDefinitions\en-US`` can be used instead of ``C:\Windows\PolicyDefinitions\en-US`` if available.
+
+**Disable automatic updates**
+
+Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, configuring supported group policies, and performing silent MSI installations. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
 Configure Mattermost using group policy settings
 -------------------------------------------------

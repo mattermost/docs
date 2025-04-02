@@ -2571,8 +2571,6 @@ redirects = {
         "https://docs.mattermost.com/install/install-tar.html",
 "install/common-local-deploy-docker.html":
         "https://docs.mattermost.com/install/trial-mattermost-using-docker.html",
-"install/config-mattermost-server.html":
-        "https://docs.mattermost.com/guides/get-started-with-administration.html",
 "install/install-rhel-8":
         "https://docs.mattermost.com/install/install-rhel.html",
 "install/install-rhel-8.html#download-the-latest-mattermost-server-tarball":

@@ -11,16 +11,11 @@ Learn more about desktop app :ref:`software requirements <deploy/server/software
 Download
 ---------
 
-Mattermost users can download the Mattermost desktop app directly from the `Mattermost website <https://mattermost.com/apps>`_. Additional :doc:`desktop installation options </deploy/desktop/additional-desktop-installs>` are also available.
+Download and install the Mattermost desktop app from the App Store (macOS), Microsoft Store (Windows), or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`. When new desktop app releases become available, your desktop app is automatically updated.
 
-Log in
-~~~~~~
+We strongly recommend installing the desktop app on a local drive. Network shares aren't supported. 
 
-The first time you log in to Mattermost using the desktop app, select **Get Started** to connect to a Mattermost server, and enter a **Server URL** and **Server display name**, then select **Connect**.
-
-.. tip::
-
-  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+If you prefer to manage distribution of the mobile app to your users, see the deployment options below.
 
 Deployment options
 ------------------
@@ -32,13 +27,12 @@ Learn about installation, configuration, and management options for deploying th
     :hidden:
     :titlesonly:
 
-    /deploy/desktop/additional-desktop-installs.rst
+    /deploy/desktop/linux-desktop-install.rst
     /deploy/desktop/distribute-a-custom-desktop-app.rst
     /deploy/desktop/silent-windows-desktop-distribution.rst
     /deploy/desktop/desktop-msi-installer-and-group-policy-install.rst
     /deploy/desktop/desktop-custom-dictionaries.rst
 
-* :doc:`Additional desktop app installation options </deploy/desktop/additional-desktop-installs>`
 * :doc:`Distribute a custom desktop app </deploy/desktop/distribute-a-custom-desktop-app>`
 * :doc:`Silent Windows desktop distribution </deploy/desktop/silent-windows-desktop-distribution>`
 * :doc:`MSI installer and group policy guide </deploy/desktop/desktop-msi-installer-and-group-policy-install>`

@@ -8,18 +8,9 @@ Learn more about :ref:`mobile app software requirements <deploy/server/software-
 Download
 --------
 
-Mattermost users can download the Mattermost mobile app directly from the `Mattermost website <https://mattermost.com/apps/>`_. 
+Download and install the Mattermost mobile app from the Apple App Store (iOS) or Google Play Store (Android). When new mobile app releases become available, your mobile app is automatically updated.
 
-We recommend using an :doc:`EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to maintain full control over the distribution process, as well as enforce or restrict specific security policies.
-
-Log in
-~~~~~~ 
-
-The first time you log in to Mattermost using the mobile app, connect to a Mattermost server by entering a **Server URL** and **Server display name**, then select **Connect**.
-
-.. tip::
-
-  Can't find your Mattermost server URL? Ask your company’s IT department or your Mattermost system admin for your organization’s **Mattermost Site URL**. It’ll look something like ``https://example.com/company/mattermost``, ``mattermost.yourcompanydomain.com``, or ``chat.yourcompanydomain.com``. These URLs could also end in ``.net``.
+If you prefer to manage distribution of the mobile app to your users, we recommend using an :doc:`EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to maintain full control over the distribution process, as well as enforce or restrict specific security policies. See the deployment options below for details.
 
 Deployment options
 ------------------

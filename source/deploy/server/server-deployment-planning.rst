@@ -11,6 +11,7 @@ Server deployment planning
     Deploy with Containers </deploy/server/deploy-containers>
     Deploy with Linux </deploy/server/deploy-linux>
     Architecture reference </deploy/server/server-architecture>
+    Scale for enterprise </scale/scaling-for-enterprise>
 
 This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
 

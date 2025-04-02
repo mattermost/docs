@@ -27,23 +27,6 @@ Moreover, search replicas are also supported to handle search queries.
 
 .. image:: ../images/architecture_high_availability.png
 
-Requirements for continuous operation
--------------------------------------
-
-To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
-
-Redundancy at anticipated scale
-  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
-
-Update sequence for continuous operation
-  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
-
-  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
-
-.. important::
-
-   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
-
 Deployment guide
 ----------------
 
@@ -548,6 +531,23 @@ All cluster nodes must use a single protocol
 All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no longer be disabled <configure/deprecated-configuration-settings:use gossip>`.
 
 When upgrading a high availability cluster-based deployment, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete this type of upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
+
+Requirements for continuous operation
+-------------------------------------
+
+To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
+
+Redundancy at anticipated scale
+  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
+
+Update sequence for continuous operation
+  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
+
+  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
+
+.. important::
+
+   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
 
 Frequently asked questions (FAQ)
 ---------------------------------

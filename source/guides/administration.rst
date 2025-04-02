@@ -9,7 +9,6 @@ Manage Mattermost
   :hidden:
   :titlesonly:
 
-  Get started </guides/get-started-with-administration>
   Cloud workspace management </guides/cloud-workspace-management>
   Self-hosted administration </guides/self-hosted-administration>
   Other resources </guides/other-administration-resources>
@@ -20,7 +19,6 @@ As a system admin, access the System Console by selecting the **Product** |produ
 
 This administrative guide is divided into 4 parts:
 
-* :doc:`Get started </guides/get-started-with-administration>` - An overview of standard configurations and features for both self-hosted and Cloud deployments.
 * :doc:`Cloud workspace management </guides/cloud-workspace-management>` - Detailed information about admin capabilities of Mattermost Cloud deployments.
 * :doc:`Self-hosted administration </guides/self-hosted-administration>` - Detailed information about admin capabilities of self-hosted Mattermost servers.
 * :doc:`Other resources </guides/other-administration-resources>` - Additional migration, conversion, and troubleshooting resources.

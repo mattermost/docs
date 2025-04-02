@@ -9,7 +9,7 @@ A proxy server is a server (a computer system or an application) that acts as an
 
 Mattermost supports the `NGINX proxy <https://www.f5.com/go/product/welcome-to-nginx>`_
 
-.. image:: ../images/architecture_with_proxy.png
+.. image:: ../../images/architecture_with_proxy.png
   :alt: Mattermost architecture with NGINX proxy
 
 Install NGINX server

@@ -1,62 +1,7 @@
-Additional desktop app installations
-====================================
+Install desktop app on Linux
+=============================
 
-This page describes additional ways to install the Mattermost desktop app.
-
-.. tab:: Windows
-
-  Windows 10+ is required. Automatic app updates are supported and enabled. When a new version of the desktop app is released, your app updates automatically.
-
-  **Install the Mattermost Desktop App**
-
-    1. Download the latest version of the Mattermost desktop app for the `64-bit version of Windows <https://releases.mattermost.com/desktop/5.11.2/mattermost-desktop-5.11.2-win-x64.msi>`_
-    2. From the **\Downloads** folder, right-click on the file ``mattermost-desktop-setup-5.11.2-win.exe``, then select **Open** to start an installer for the app. Once finished, the Mattermost desktop app opens automatically.
-
-  .. warning:: 
-    Mattermost Desktop should always be installed on a local drive. Network Shares are not supported as installation locations.
-
-  **MSI Installer and group policies**
-
-  The following group policies are available supporting a state option of Not Configured, Enabled, or Disabled:
-
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-  | Group policy             | Description                                                | Mattermost release   | Setting                    |
-  +==========================+============================================================+======================+============================+
-  | Enable Server Management | If disabled, management of servers in the                  | v4.3 or later        | ``EnableServerManagement`` |
-  |                          | app settings are disabled.                                 |                      |                            |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-  | Default Server List      | Define one or more default, permanent servers.             | v4.3 or later        | ``DefaultServerList``      |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-  | Automatic Updates        | If disabled, automatic desktop app updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
-  +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
-
-  **Disable automatic updates**
-  
-  Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, configuring supported group policies, and performing silent MSI installations. Changes to group policies require you to restart Mattermost for those changes to take effect.
-
-.. tab:: macOS
-
-  MacOS 11+ is required. You have two ways to install the desktop app, and how you install the app determines whether it updates automatically.
-
-  **Install from the App Store**
-
-  We recommend that you install the desktop app from the `App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_. When you install through the App Store, your desktop app updates automatically when a new release is available.
-
-  **Download the Desktop App from GitHub**
-
-  You can download the `desktop app <https://mattermost.com/apps/>`_ directly from the Downloads page. However, when you install the desktop app this way, you can't manually check for updates, and updates won't be installed automatically.
-  
-  1. Download the latest version of the Mattermost desktop app:
-          
-     - `Intel systems <https://releases.mattermost.com/desktop/5.11.2/mattermost-desktop-5.11.2-mac-x64.dmg>`_
-     - `M1 systems <https://releases.mattermost.com/desktop/5.11.2/mattermost-desktop-5.11.2-mac-m1.dmg>`_ (Beta)
-
-  2. Double-click the download to open the disk image.
-
-  3. Drag the Mattermost application to the **Applications** folder.
-
-  .. tip:: 
-    You can review the current version of your desktop app by selecting **Mattermost > About Mattermost** from the macOS menu bar. 
+This page describes how to install the Mattermost desktop app on Linux.
 
 .. tab:: Ubuntu/Debian
 

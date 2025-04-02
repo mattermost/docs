@@ -17,9 +17,9 @@ Whether you're deploying the server application, desktop application, or mobile 
     Deployment Troubleshooting </guides/deployment-troubleshooting>
 
 * :doc:`Application architecture </deploy/application-architecture>` - An overview of Mattermost's architecture and components.
-* :doc:`Server application </deploy/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
-* :doc:`Desktop application </deploy/desktop/desktop-app-deployment>` - Installation procedures for Mattermost's desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
-* :doc:`Mobile application </deploy/mobile/mobile-app-deployment>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
+* :doc:`Server deployment </deploy/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
+* :doc:`Desktop deployment </deploy/desktop/desktop-app-deployment>` - Installation procedures for Mattermost's desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
+* :doc:`Mobile deployment </deploy/mobile/mobile-app-deployment>` - How to set up push notifications using Mattermost's notification service and troubleshooting tips.
 * :doc:`Deployment troubleshooting </guides/deployment-troubleshooting>` - Best practices for diagnosing and resolving common deployment issues.
 
 How to use this guide
@@ -33,6 +33,10 @@ If you are new to Mattermost, we recommend starting with the Preparations sectio
 
   - Mattermost server deployment is officially supported on Linux operating systems only.
   - macOS and Windows deployments are supported for testing and development purposes only.
-  - If you encounter issues that are not covered in this documentation, please consult the Mattermost community forums, or reach out to Mattermost support for assistance. For advanced customization or integrations, refer to the Open source components section for details about extending Mattermost functionality.
+  - If you encounter issues that aren't covered in this documentation:
+  
+    - Non-commercial customers: Reference the `Mattermost community forums <https://forum.mattermost.com/>`_
+    - Commercial customers: See the `Mattermost Support Knowledge Base <https://support.mattermost.com/hc/en-us>`_, or `contact Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ for assistance. 
+    - For advanced customization or integrations, refer to the :doc:`Open source components </upgrade/open-source-components>` documentation for details about extending Mattermost functionality.
 
 Enjoy deploying Mattermost with confidence!

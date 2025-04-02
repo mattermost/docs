@@ -1,14 +1,14 @@
-This guide provides step-by-step instructions for deploying Mattermost using Docker containers. Docker deployments are officially supported on Linux operating systems, while macOS and Windows Docker deployments are supported for 
-testing and development purposes only.
-
-**Step 1: Install Docker**
-
-If you don't have Docker installed, follow the instructions below based on your operating system. You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
+This guide provides step-by-step instructions for deploying Mattermost using Docker containers.
 
 .. warning::
 
    - Mattermost server deployment using Docker is officially supported on Linux operating systems only.
    - macOS and Windows Docker deployments are supported for testing and development purposes only.
+   - Docker is not ideal for High Availability (HA) because it lacks key features including automatic failover, shared storage, and load balancing. Docker also has challenges managing multiple nodes and recovering from failures. We recommend :doc:`deploying on Kubernetes </deploy/server/deploy-kubernetes>` for HA for these features to ensure reliability.
+
+**Step 1: Install Docker**
+
+If you don't have Docker installed, follow the instructions below based on your operating system. You'll need `Docker Engine <https://docs.docker.com/engine/install/>`__ and `Docker Compose <https://docs.docker.com/compose/install/>`_ (release 1.28 or later).
 
 **Step 2: Deploy Mattermost on Docker**
 
@@ -32,10 +32,10 @@ This section provides a quick start guide for deploying Mattermost on Docker by 
         
       cp env.example .env
 
-.. important::
+   .. important::
 
-   - At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
-   - We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
+      - At a minimum, you must edit the ``DOMAIN`` value in the ``.env`` file to correspond to the domain for your Mattermost server.
+      - We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ via ``MM_SUPPORTSETTINGS_SUPPORTEMAIL``. This is the email address your users will contact when they need help.
 
 3. Create the required directories and set their permissions.
 
