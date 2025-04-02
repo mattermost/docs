@@ -53,7 +53,7 @@ If you upgrade from a release earlier than v10.6, please read the other [Importa
  - Fixed an issue where the edit post textbox sized incorrectly with the Grammarly browser extension installed.
  - Fixed an issue where onclick was missing in the channel header text, thus enabling hashtag, link, and mention clicks.
  - Fixed an issue with jobs in a High Availability environment, where two job servers would take the same job.
- - Fixed an issue where there was inconsistent behaviour on removing non-group members from group synced teams.
+ - Fixed an issue where there was inconsistent behaviour on removing non-group members from group synced teams and channels.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
