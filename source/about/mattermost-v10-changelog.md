@@ -83,6 +83,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.7 is built with Go ``v1.22.6``.
 
 ### Known Issues
+ - Tooltip and highlight of icon for sidebar expansion appear after pressing **Enter** on a search [MM-63640](https://mattermost.atlassian.net/browse/MM-63640).
  - Shortcut keys to open the right-hand side from the last post in a channel are causing blue borders to be shown in the right-hand side header [MM-63562](https://mattermost.atlassian.net/browse/MM-63562).
  - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
  - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
