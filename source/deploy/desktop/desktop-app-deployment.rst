@@ -23,7 +23,7 @@ Deployment options
 Learn about installation, configuration, and management options for deploying the desktop app in your environment.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
     :titlesonly:
 

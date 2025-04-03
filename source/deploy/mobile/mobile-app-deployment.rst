@@ -18,7 +18,7 @@ Deployment options
 Learn what’s required to build and deploy Mattermost mobile apps.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
     :titlesonly:
 

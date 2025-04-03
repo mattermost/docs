@@ -12,7 +12,7 @@ System admins for both self-hosted and Cloud Mattermost deployments can manage M
   - Mattermost requires write permissions to the ``config.json`` file; otherwise, configuration changes made within the System Console will have no effect.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
     :titlesonly:
 

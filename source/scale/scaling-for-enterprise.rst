@@ -13,7 +13,7 @@ Available reference architectures
 ---------------------------------
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
     :titlesonly:
 

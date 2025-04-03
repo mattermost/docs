@@ -4,13 +4,13 @@ Important Upgrade Notes
 .. important::
 
   .. include:: ../about/common-esr-support-rst.rst
- 
+
 
 .. note::
 
   - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
   - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
-  - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/install/install-ubuntu.html.
+  - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/deploy/server/deploy-linux.
   - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
   - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
 
@@ -19,8 +19,8 @@ Important Upgrade Notes
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
 | v10.6                                              | Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+.                                                                |
-|                                                    | See the :ref:`minimum supported PostgreSQL version policy :ref:`minimum supported PostgreSQL version policy                                                      |
-|                                                    | <deploy/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.                                                   |
+|                                                    | See the                                                                                                                                                          |
+|                                                    | :ref:`minimum supported PostgreSQL version policy <deploy/software-hardware-requirements:minimum postgresql database support policy>` documentation for details. |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration    |
 |                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL.                                                                               |

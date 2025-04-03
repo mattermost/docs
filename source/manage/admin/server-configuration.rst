@@ -4,7 +4,7 @@ Server configuration
 Intro here
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
     :titlesonly:
 
