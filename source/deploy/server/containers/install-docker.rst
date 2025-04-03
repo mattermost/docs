@@ -17,7 +17,7 @@ This section provides a quick start guide for deploying Mattermost on Docker by 
 .. note::
 
    - The deployment configuration results in two separate containers: a container for the database and a container for the application. An optional third container results when using NGINX for reverse proxy.
-   - Encountering issues with your Docker deployment? See the :ref:`Docker deployment troubleshooting <install/troubleshooting:docker deployments>` documentation for details.
+   - Encountering issues with your Docker deployment? See the :doc:`Docker deployment troubleshooting </deploy/server/docker-troubleshooting>` documentation for details.
 
 1. In a terminal window, clone the repository and enter the directory.
 

@@ -1,7 +1,7 @@
 PostgreSQL installation troubleshooting
 =======================================
 
-From Mattermost v8.0, :ref:`PostgreSQL <install/software-hardware-requirements:database software>` is our database of choice for Mattermost to enhance the platform’s performance and capabilities.
+From Mattermost v8.0, :ref:`PostgreSQL <deploy/software-hardware-requirements:database software>` is our database of choice for Mattermost to enhance the platform’s performance and capabilities.
 
 PostgreSQL v15 introduces changes that may affect compatibility with previous releases. If you're deploying a fresh installation of PostgreSQL v15, run this command: ``GRANT CREATE ON SCHEMA public TO PUBLIC`` to ensure that you can use Mattermost.
 

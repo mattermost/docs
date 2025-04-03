@@ -82,7 +82,7 @@ The installation process includes deploying Mattermost and updating the server.
   b. Get the resulting IP address from the ``ADDRESS`` column, and use your domain registration service to create a DNS record.
   c. You should be good to go.
 
-Learn more about managing your Mattermost server by visiting the :doc:`Managing Mattermost </guides/self-hosted-administration>` documentation.
+Learn more about managing your Mattermost server by visiting the :doc:`Managing Mattermost </manage/admin/server-maintenance>` documentation.
 
 **Step 2: Upgrade Mattermost**
 

@@ -1,7 +1,7 @@
 Configuring transport encryption
 =================================
 
-.. include:: ../../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
 The components of the Mattermost setup are shown in the following diagram, including the transport encryption used. Aside from the encryption between the nodes of the Mattermost cluster, all transports rely on TLS encryption.

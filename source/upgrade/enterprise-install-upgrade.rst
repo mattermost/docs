@@ -11,7 +11,7 @@ Once you've downloaded and installed Mattermost, start an Enterprise trial via *
 Installing Enterprise Edition
 -----------------------------
 
-See the :doc:`Deploy Mattermost </guides/deployment>` page to install Mattermost Enterprise Edition.
+See the :doc:`Deploy Mattermost </guides/deployment-guide>` page to install Mattermost Enterprise Edition.
 
 Upgrading to Mattermost Enterprise Edition
 --------------------------------------------

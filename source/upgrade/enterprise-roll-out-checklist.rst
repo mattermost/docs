@@ -57,8 +57,6 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Resource: https://mattermost.com/blog/27-things-enterprises-can-learn-startups-increase-productivity/
  
 - Define success criteria, goals and metrics to measure success
-
- - Resource: https://docs.mattermost.com/getting-started/implementation-plan.html
   
 - Create a Project Charter to document goals, tasks, deliverables, and decisions 
 
@@ -116,8 +114,8 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
 
- - Resource: https://docs.mattermost.com/getting-started/architecture-overview.html
- - Resource: https://docs.mattermost.com/deploy/deployment-overview.html 
+ - Resource: https://docs.mattermost.com/deploy/application-architecture.html
+ - Resource: https://docs.mattermost.com/deploy/deployment-guide.html 
  - Resource: https://docs.mattermost.com/scale/scaling-for-enterprise.html 
  - Resource: https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html
 
@@ -133,13 +131,13 @@ Much of the preparation work is focused on ensuring the environment is deployed 
   - Install the number of nodes based on your high availability requirements outlined in your production environment design
   - Recommendation: Use Kubernetes and the Mattermost Operator, with external supported external database and file storage solutions. This will also provide blue/green deployment, rolling upgrades, and canary builds
 
-   - Resource: https://docs.mattermost.com/install/install-kubernetes.html
+   - Resource: https://docs.mattermost.com/deploy/server/install-kubernetes.html
 
  - Install and configure database
 
   - Install the number of read and search replicas based on your high availability requirements outlined in your production environment design
 
-   - Resource: https://docs.mattermost.com/getting-started/architecture-overview.html#database-with-vips
+   - Resource: https://docs.mattermost.com/deploy/server/server-architecture.html#database-with-virtual-ips
 
   - (Optional) Set up configuration management via the database instead of a config file for high available environments
 
@@ -147,7 +145,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 
  - Install and configure File Storage
 
-  - Resource: https://docs.mattermost.com/deploy/deployment-overview.html#file-store
+  - Resource: https://docs.mattermost.com/deploy/server/preparations.html#file-storage-preparation
 
  - Install and configure proxy or load balancers
 
@@ -286,14 +284,14 @@ Now that you have an environment in place, we recommend working through the foll
  - Resource: https://docs.mattermost.com/deploy/desktop-app.html
  - (Optional) Use the MSI installer to install on Windows machines
 
-  - Resource: https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html
+  - Resource: https://docs.mattermost.com/deploy/desktop/desktop-msi-installer-and-group-policy-install.html
 
 - Roll out mobile app
 
  - Resource: https://docs.mattermost.com/deploy/mobile-overview.html
  - (Optional) Use an EMM provider
 
-  - Resource: https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html 
+  - Resource: https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html 
 
 5. Roll out to groups of users
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

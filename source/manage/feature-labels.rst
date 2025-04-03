@@ -22,7 +22,3 @@ Deprecated
 -----------
 
 Feature is officially marked for removal from the product. It is no longer supported or actively maintained by the development team. If the feature is still in use in your deployed version, we recommend users discontinue its use and migrate to alternative functionalities.
-
-
-
-

@@ -10,7 +10,7 @@ If the server URL is correct, there could be an issue with the SSL certificate c
 
 To check your SSL certificate set up, test it by visiting a site such as `SSL Labs <https://www.ssllabs.com/ssltest/index.html>`__. If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-Please note that the apps cannot connect to servers with self-signed certificates, consider using :ref:`Let's Encrypt <install/setup-nginx-proxy:configure nginx with ssl and http/2>` instead.
+Please note that the apps cannot connect to servers with self-signed certificates, consider using :ref:`Let's Encrypt <deploy/server/setup-nginx-proxy:configure nginx with ssl and http/2>` instead.
 
 Login with ADFS/Office365 is not working
 ----------------------------------------
@@ -22,12 +22,7 @@ I see a “Connecting…” bar that does not go away
 
 If your app is working properly, you should see a grey “Connecting…” bar that clears or says “Connected” after the app reconnects.
 
-If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for :ref:`supporting the websocket connection for APIv4 endpoints <install/setup-nginx-proxy:configure nginx as a proxy for mattermost server>`.
-
-I’m not receiving push notifications on my device
--------------------------------------------------
-
-Please see our documentation on :doc:`troubleshooting push notifications <mobile-troubleshoot-notifications>`.
+If you are seeing this message all the time, and your internet connection seems fine, ask your server administrator if the server uses NGINX or another webserver as a reverse proxy. If so, they should check that it is configured correctly for :ref:`supporting the websocket connection for APIv4 endpoints <deploy/server/setup-nginx-proxy:configure nginx as a proxy for mattermost server>`.
 
 All my outbound connections need to go through a proxy. How can I connect to the Mattermost Hosted Push Notification Service?
 -----------------------------------------------------------------------------------------------------------------------------
@@ -39,7 +34,9 @@ You can set up an internal server to proxy the connection out of their network t
 3. In Mattermost set **System Console** > **Notification Settings** > **Mobile Push** > **Enable Push Notifications** in prior versions or **System Console > Environment > Push Notification Server > Enable Push Notifications** in versions after 5.12 to "Manually enter Push Notification Service location"
 4. Enter the URL of your proxy in the **Push Notification Server** field.
 
-.. Note:: Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
+.. Note:: 
+
+  Depending on how your proxy is configured you may need to add a port number and create a URL like ``https://push.internalproxy.com:8000`` mapped to ``https://push.mattermost.com``
 
 Build gets stuck at ``bundleReleaseJsAndAssets``
 ------------------------------------------------
@@ -83,7 +80,7 @@ See our :ref:`Configuration Settings <configure/environment-configuration-settin
 Testing mobile push notifications
 ----------------------------------
 
-Make sure to configure push notifications for your :doc:`pre-built mobile apps </deploy/use-prebuilt-mobile-apps>`, or for :doc:`your custom built mobile apps </deploy/build-custom-mobile-apps>`. 
+Make sure to configure push notifications for your :doc:`pre-built mobile apps </deploy/mobile/mobile-app-deployment>`, or for :doc:`your custom built mobile apps </deploy/mobile/distribute-custom-mobile-apps>`. 
 
 Then use the following instructions to confirm push notifications are working properly.
 
@@ -119,12 +116,12 @@ Then use the following instructions to confirm push notifications are working pr
 
 6. Open a direct message with “Account A”, and send a message.
 
-7. A push notification with the message should appear on the mobile device of “Account A”. If the push notification does not appear, follow :doc:`troubleshooting steps <mobile-troubleshoot-notifications>` to look for issues.
+7. A push notification with the message should appear on the mobile device of “Account A”.
 
 Troubleshooting push notifications
 ----------------------------------
 
-If you did not receive a push notification when :doc:`testing push notifications <mobile-testing-notifications>`, use the following procedure to troubleshoot:
+If you did not receive a push notification when testing push notifications, use the following procedure to troubleshoot:
 
 1. In **System Console > Environment > Logging > File Log Level**, select **DEBUG** in order to watch for push notifications in the server log.
 
@@ -134,7 +131,7 @@ If you did not receive a push notification when :doc:`testing push notifications
 
 4. Go to **Profile** > **Security** > **View and Logout of Active Sessions** to confirm that there is a session for the native mobile app matching your login time.
 
-5. Repeat the procedure for :doc:`testing push notifications <mobile-testing-notifications>`.
+5. Retest push notifications.
 
 6. If no push notification displays, go to **System Console** > **Server Logs**, then select **Reload**. Look at the bottom of the logs for a message similar to:
 

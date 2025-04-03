@@ -3,6 +3,21 @@ Prepare your Mattermost Server environment
 
 This guide outlines the key preparation steps required before installing the Mattermost Server, focusing on setting up the database and file storage systems.
 
+.. toctree::
+  :maxdepth: 1
+  :hidden:
+  :titlesonly:
+
+   Review software and hardware requirements </deploy/software-hardware-requirements>
+   (Recommended) Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
+   (Recommended) Configure Mattermost Calls </configure/calls-deployment>
+   (Recommended) Enable Mattermost Copilot </configure/enable-copilot>
+   (Optional) Set up TLS </deploy/server/setup-tls>
+   (Optional) Use an image proxy </deploy/server/image-proxy>
+   (Optional) Configure CloudFront to host Mattermost static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>
+   (Optional) Use an outbound proxy </configure/using-outbound-proxy>
+   (Optional) Use sockets to set up the database </deploy/server/setting-up-socket-based-mattermost-database>
+
 Database preparation
 --------------------
 
@@ -10,7 +25,7 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
 
 .. important::
 
-   - PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepar-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/server/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
+   - PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
    - Learn how to :doc:`use sockets to set up the database </deploy/server/setting-up-socket-based-mattermost-database>`.
 
 1. Create an PostgreSQL server instance:
@@ -156,6 +171,13 @@ For simple deployments, you can use local file storage. However, we don't recomm
 
          sudo chown -R mattermost:mattermost /opt/mattermost/data
 
+(Optional) Use an image proxy
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using an :doc:`image proxy </deploy/server/image-proxy>` means that all requests for images made by Mattermost clients will go through the proxy instead of contacting third-party servers directly. This helps protect user privacy by preventing third-party servers from tracking who views an image. This also prevents the use of tracking pixels (invisible images that do the same thing without the user even seeing an image).
+
+Certain proxy servers also provide a layer of caching which can make loading images faster and more reliable. This caching also helps preserve posts by protecting them from dead images.
+
 Network preparation
 --------------------
 
@@ -176,7 +198,7 @@ Ensure your system meets these minimum requirements:
 - Database: PostgreSQL v13+
 - Network: Reliable internet connection with sufficient bandwidth
 
-See the :doc:`software and hardware requirements </install/software-hardware-requirements>` documentation for additional requirements.
+See the :doc:`software and hardware requirements </deploy/software-hardware-requirements>` documentation for additional requirements.
 
 Next steps
 -----------

@@ -1,7 +1,7 @@
 Software and hardware requirements
 ==================================
 
-.. include:: ../../_static/badges/allplans-selfhosted.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 This guide outlines minimum software and hardware requirements for deploying Mattermost. Requirements may vary based on utilization and observing performance of pilot projects is recommended prior to scale out.
@@ -9,7 +9,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment overview
 -------------------
 
-Please see the :doc:`Application architecture </deploy/architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
+Please see the :doc:`Application architecture </deploy/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
 
 Software requirements
 ---------------------

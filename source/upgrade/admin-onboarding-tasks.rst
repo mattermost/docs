@@ -31,7 +31,7 @@ These settings can also be set in the ``config.json`` file.  Please see our :doc
 - Users can be pre-provisioned with migration and bulk loading data processes based on prior collaboration systems. Please see our :ref:`migration guide <onboard/migrating-to-mattermost:migration guide>` and :doc:`bulk loading documentation </onboard/bulk-loading-data>` for additional details.
 - :doc:`AD/LDAP authentication </onboard/ad-ldap>` and :doc:`SAML authentication </onboard/sso-saml>` are available for some subscription plans, providing identity management, single sign-on, and automatic account provisioning.
 
-If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our :doc:`Enterprise roll out checklist </getting-started/enterprise-roll-out-checklist>`.
+If your organization requires more structure and project management artifacts for the implementation of Mattermost, please see our :doc:`Enterprise roll out checklist </upgrade/enterprise-roll-out-checklist>`.
 
 Important administration notes 
 ------------------------------
@@ -115,7 +115,7 @@ Enable full content push notifications, including the sender’s name, the chann
 
 .. note::
 
-  - Mattermost subscription plans allow you to :ref:`enable HPNS <deploy/mobile-hpns:hosted push notifications service (hpns)>` that includes production-level uptime SLAs.
+  - Mattermost subscription plans allow you to enable HPNS that includes production-level uptime SLAs.
 
   - Mattermost Enterprise customers can :ref:`enable ID-Only push notifications <configure/site-configuration-settings:push notification contents>` so push notification content is not passed through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before reaching the device. The ID-only push notification setting `offers a high level of privacy <https://mattermost.com/blog/id-only-push-notifications/>`__ while allowing team members to benefit from mobile push notifications.
 

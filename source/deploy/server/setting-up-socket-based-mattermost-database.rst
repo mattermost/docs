@@ -1,5 +1,5 @@
-Using sockets for database
-==========================
+(Optional) Using sockets for database
+======================================
 
 .. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
@@ -9,8 +9,7 @@ You can use sockets for setting up the database. Choose between TCP or UNIX Sock
 With TCP socket
 ---------------
 
-1. Create the new user while connecting to the server as ``postgres`` user
-  (you will be prompted for a password for the new user):
+1. Create the new user while connecting to the server as ``postgres`` user (you will be prompted for a password for the new user):
 
   ``sudo -u postgres createuser -P mmuser``
 
@@ -18,8 +17,7 @@ With TCP socket
 
   ``sudo -u postgres createdb -O mmuser mattermostdb``
 
-3. In the connections and authentications section, set the ``listen_address`` list
-  line per your needs:
+3. In the connections and authentications section, set the ``listen_address`` list line per your needs:
 
    .. code-block:: sh
 

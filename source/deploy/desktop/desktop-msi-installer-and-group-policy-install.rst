@@ -75,7 +75,7 @@ The following group policies are available supporting a state option of Not Conf
 
 **Disable automatic updates**
 
-Automatic desktop app updates can be disabled by configuring the supported group policy. See the :doc:`MSI installer and group policy documentation </install/desktop-msi-installer-and-group-policy-install>` for instructions on installing the Mattermost Desktop App via an MSI installer, configuring supported group policies, and performing silent MSI installations. Changes to group policies require you to restart Mattermost for those changes to take effect.
+Automatic desktop app updates can be disabled by configuring the supported group policy. Changes to group policies require you to restart Mattermost for those changes to take effect.
 
 Configure Mattermost using group policy settings
 -------------------------------------------------
@@ -180,8 +180,8 @@ Use the ``ALLUSERS`` parameter to install the MSI for all users:
 ``msiexec /i mattermost-desktop-v5.11.2-x64.msi ALLUSERS=1``
 
 .. note::
-   - Installing the MSI for all users :ref:`disables automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` for the desktop app on Windows.
-   - To :ref:`disable automatic updates <collaborate/install-desktop-app:install and update the mattermost desktop app>` on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.11.2-x64.msi DISABLEAUTOUPDATE=1``
+   - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
+   - To disable automatic updates on a per-user basis, use the ``DISABLEAUTOUPDATE`` parameter: ``msiexec /i mattermost-desktop-v5.11.2-x64.msi DISABLEAUTOUPDATE=1``
 
 Specify an install directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

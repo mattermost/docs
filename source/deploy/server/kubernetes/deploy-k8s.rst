@@ -234,4 +234,4 @@ This command can be used to review the Mattermost Operator or Mattermost server 
   - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them. 
   - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
   - To customize your production deployment, refer to the :doc:`configuration settings documentation </configure/configuration-settings>`.
-  - If you encounter issues during deployment, consult the :ref:`deployment troubleshooting guide <install/troubleshooting:deployment troubleshooting>`.
+  - If you encounter issues during deployment, consult the :doc:`deployment troubleshooting guide </guides/deployment-troubleshooting>`.

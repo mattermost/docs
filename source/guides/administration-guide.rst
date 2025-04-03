@@ -11,7 +11,8 @@ Intro here
     Self-hosted billing </manage/admin/self-hosted-billing>
     Cloud workspace management </guides/cloud-workspace-management>
     Server maintenance </manage/admin/server-maintenance>
-    Server configuration </configure/configuration-settings>
+    Server configuration </manage/admin/server-configuration>
+    Configuration settings </configure/configuration-settings>
     User provisioning </manage/admin/user-provisioning>
     User management </manage/admin/user-management>
     Monitoring and performance </manage/admin/monitoring-and-performance>
@@ -21,7 +22,8 @@ Intro here
 * :doc:`Self-hosted billing </manage/admin/self-hosted-billing>` - Information about billing and payment options for Mattermost.
 * :doc:`Cloud workspace management </guides/cloud-workspace-management>` - Information about managing cloud workspaces in Mattermost.
 * :doc:`Server maintenance </manage/admin/server-maintenance>` - Information about server maintenance and best practices.
-* :doc:`Server configuration </configure/configuration-settings>` - Information about server configuration and settings.
+* :doc:`Server configuration </manage/admin/server-configuration>` - Information about server configuration and settings.
+* :doc:`Configuration settings </configure/configuration-settings>` - Information about configuration settings for Mattermost.
 * :doc:`User provisioning </manage/admin/user-provisioning>` - Information about user provisioning and management.
 * :doc:`User management </manage/admin/user-management>` - Information about user management and best practices.
 * :doc:`Monitoring and performance </manage/admin/monitoring-and-performance>` - Information about monitoring and performance optimization.

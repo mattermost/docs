@@ -9,22 +9,24 @@ Intro here
     :titlesonly:
 
     Elasticsearch </scale/elasticsearch>
+    Store configuration in your database </configure/configuration-in-your-database>
     Server configuration options </configure/configuration-settings>
     Environment variables </configure/environment-variables>
-    Customize the server </guides/customize-server>
-    Configure CloudFront to host static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>
-    Using an outbound proxy </configure/using-outbound-proxy>
+    Customize the server </manage/admin/customize-branding>
+    SMTP email setup </configure/smtp-email>
+    Email templates </configure/email-templates>
     Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>
     SSL client certificate setup </onboard/ssl-client-certificate>
     Connected workspaces </onboard/connected-workspaces>
     Telemetry </manage/telemetry>
 
 * :doc:`Elasticsearch </scale/elasticsearch>` - Information about configuring Elasticsearch for Mattermost.
+* :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Information about storing configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </configure/configuration-settings>` - Information about server configuration options for Mattermost.
 * :doc:`Environment variables </configure/environment-variables>` - Information about environment variables for Mattermost.
-* :doc:`Customize the server </guides/customize-server>` - Information about customizing the Mattermost server.
-* :doc:`Configure CloudFront to host static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>` - Information about configuring CloudFront to host Mattermost static assets.
-* :doc:`Using an outbound proxy </configure/using-outbound-proxy>` - Information about using an outbound proxy for Mattermost.
+* :doc:`Customize the server </manage/admin/customize-branding>` - Information about customizing the Mattermost server.
+* :doc:`SMTP email setup </configure/smtp-email>` - Information about setting up SMTP email for Mattermost.
+* :doc:`Email templates </configure/email-templates>` - Information about customizing email templates for Mattermost.
 * :doc:`Chinese, Japanese, and Korean search </configure/enabling-chinese-japanese-korean-search>` - Information about enabling Chinese, Japanese, and Korean search for Mattermost.
 * :doc:`SSL client certificate setup </onboard/ssl-client-certificate>` - Information about setting up SSL client certificates for Mattermost.
 * :doc:`Connected workspaces </onboard/connected-workspaces>` - Information about connected workspaces in Mattermost.

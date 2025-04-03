@@ -17,6 +17,7 @@ Intro here
     Mattermost error codes </manage/admin/error-codes>
     mmctl </manage/mmctl-command-line-tool>
     CLI </manage/command-line-tools>
+    Feature labels </manage/feature-labels>
 
 * :doc:`Install a license key </manage/admin/installing-license-key>` - Information about installing a license key for Mattermost.
 * :doc:`Generate a support packet </manage/admin/generating-support-packet>` - Information about generating a support packet for Mattermost.
@@ -27,3 +28,4 @@ Intro here
 * :doc:`Mattermost error codes </manage/admin/error-codes>` - Information about Mattermost error codes and troubleshooting.
 * :doc:`mmctl </manage/mmctl-command-line-tool>` - Information about the mmctl command line tool for Mattermost.
 * :doc:`CLI </manage/command-line-tools>` - Information about command line tools for Mattermost.
+* :doc:`Feature labels </manage/feature-labels>` - Information about Mattermost feature labels and their meanings.

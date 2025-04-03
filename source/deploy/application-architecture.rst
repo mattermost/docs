@@ -121,6 +121,19 @@ High availability for WSS connections can be achieved through clustering Matterm
 
 By incorporating high availability strategies into communication protocols, the platform ensures secure, scalable, and reliable connections for both regular user interactions (via HTTPS) and real-time updates (via WSS). These measures are critical for mission-critical environments and distributed deployments where continuous communication is necessary.
 
+**Behind a VPN**
+
+Mattermost is intended to be installed within a private network which can offer multiple factors of authentication, including secure access to computing devices and physical locations. If outside access is required, a virtual private network client (VPN), such as `OpenVPN <https://openvpn.net/>`__, with additional authentication used to connect to Mattermost for web, desktop, and mobile experiences, is recommended.
+
+**Non-VPN setup**
+
+If Mattermost is accessible from the open internet, the following is recommended:
+
+1. An IT admin should be assigned to set up appropriate network security, subscribe to `the Mattermost security bulletin <https://mattermost.com/security-updates/#sign-up>`__, and :doc:`apply new security updates </upgrade/upgrading-mattermost-server>`.
+2. The organization enables :doc:`SAML Single Sign-on </onboard/sso-saml>` or enable :doc:`MFA </onboard/multi-factor-authentication>`.
+
+If Mattermost is accessible from the open internet with no VPN or MFA set up, we recommended using it only for non-confidential, unimportant conversations where impact of a compromised system is not essential.
+
 Mattermost services ports
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 

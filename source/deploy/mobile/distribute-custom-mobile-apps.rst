@@ -1,7 +1,7 @@
 Distribute a custom mobile app
 ================================
 
-To control the look and feel of the Mattermost mobile app requires building your own mobile apps, :ref:`hosting your own push proxy service <deploy/mobile-hpns:host your own push proxy service>`, and managing your own app distribution.
+To control the look and feel of the Mattermost mobile app requires building your own mobile apps, :doc:`hosting your own push proxy service </deploy/mobile/host-your-own-push-proxy-service>`, and managing your own app distribution.
 
 .. note::
 

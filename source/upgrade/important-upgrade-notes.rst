@@ -2,7 +2,7 @@ Important Upgrade Notes
 =======================
 
 .. important::
-   
+
   .. include:: ../about/common-esr-support-rst.rst
  
 
@@ -20,7 +20,7 @@ Important Upgrade Notes
 +====================================================+==================================================================================================================================================================+
 | v10.6                                              | Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+.                                                                |
 |                                                    | See the :ref:`minimum supported PostgreSQL version policy :ref:`minimum supported PostgreSQL version policy                                                      |
-|                                                    | <deploy/server/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.                                            |
+|                                                    | <deploy/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.                                                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration    |
 |                                                    | for MySQL deployments because this optimization is only applicable for PostgreSQL.                                                                               |
@@ -243,7 +243,7 @@ Important Upgrade Notes
 | v9.5                                               | We have stopped supporting MySQL v5.7 since it's at the end of life. We urge customers to upgrade their MySQL instance at their earliest convenience.            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Added safety limit error message in compiled Team Edition and Enterprise Edition deployments when enterprise scale and access control automation features are    |
-|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. :doc:`ERROR_SAFETY_LIMITS_EXCEEDED </manage/error-codes>`.                 |
+|                                                    | unavailable and count of users who are registered and not deactivated exceeds 10,000. :doc:`ERROR_SAFETY_LIMITS_EXCEEDED </manage/admin/error-codes>`.           |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v9.2                                               | Fixed data retention policies to run jobs when any custom retention policy is enabled even when the global retention policy is set to "keep-forever". Before     |
 |                                                    | this fix, the enabled custom data retention policies wouldn't run as long as the global data retention policy was set to "keep-forever" or was disabled. After   |
@@ -824,7 +824,7 @@ Important Upgrade Notes
 |                                                    | conditions. Customers are requested to check for these values in their config and set them to nil if necessary. See more details                                 |
 |                                                    | :ref:`here <configure/environment-configuration-settings:trusted proxy ip header>`.                                                                              |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v6.2                                               | Channel results in the channel autocomplete will include private channels. Customers using :doc:`Bleve </deploy/bleve-search>` or                                |
+| v6.2                                               | Channel results in the channel autocomplete will include private channels. Customers using :doc:`Bleve </configure/bleve-search>` or                             |
 |                                                    | :doc:`Elasticsearch </scale/elasticsearch>` for autocomplete will have to reindex their data to get the new results. Since this can                              |
 |                                                    | take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete.                       |
 |                                                    |                                                                                                                                                                  |
@@ -1013,7 +1013,7 @@ Important Upgrade Notes
 | v5.29.0                                            | A new configuration setting ``ThreadAutoFollow`` has been added to support `Collapsed Reply Threads                                                              |
 |                                                    | <https://docs.google.com/presentation/d/1QSrPws3N8AMSjVyOKp15FKT7O0fGMSx8YidjSDS4Wng/edit#slide=id.g2f0aecc189_0_245>`__ releasing in beta in Q1 2021. This      |
 |                                                    | setting is enabled by default and may affect server performance. It is recommended to review our :ref:`documentation on hardware requirements                    |
-|                                                    | <install/software-hardware-requirements:hardware requirements>` to ensure your servers are appropriately scaled for the size of your user base.                  |
+|                                                    | <deploy/software-hardware-requirements:hardware requirements>` to ensure your servers are appropriately scaled for the size of your user base.                   |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.                                                                    |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1191,7 +1191,7 @@ Important Upgrade Notes
 |                                                    | :ref:`See documentation <configure/environment-configuration-settings:allow untrusted internal connections>` for additional information.                         |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.8.0                                             | The local image proxy has been added, and images displayed within the client are now affected by the ``AllowUntrustedInternalConnections`` setting.              |
-|                                                    | :ref:`See documentation <deploy/image-proxy:local image proxy>` for more details if you have trouble loading images.                                             |
+|                                                    | :ref:`See documentation <deploy/server/image-proxy:local image proxy>` for more details if you have trouble loading images.                                      |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v5.6.0                                             | Built-in WebRTC is removed. See `here for more details <https://forum.mattermost.com/t/built-in-webrtc-video-and-audio-calls-removed-in-v5-6-                    |
 |                                                    | in-favor-of-open-source-plugins/5998>`__.                                                                                                                        |

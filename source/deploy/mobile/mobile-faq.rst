@@ -6,17 +6,50 @@ Can I connect to multiple Mattermost servers using the mobile apps?
 
 Yes, using Mattermost mobile app v2.0. Mobile v1.x only supports connecting to one server at a time.
 
-How is data handled on mobile devices after a user account is deactivated?
---------------------------------------------------------------------------
+What data is stored?
+---------------------
+
+The data that can be found on the device depends solely on whether or not the user is logged in to the Mattermost server, and is independent of the state of the device's connection or the state of the app. While logged in, anything that the user is normally allowed to see is eligible for storage on the device, which includes the following content:
+
+- Messages
+- Files and images that are attached to messages
+- Profile pictures, usernames, and email addresses of people in the currently open channel
+
+In addition, metadata that the app uses for keeping track of its operations is also cached. The metadata includes user IDs, channel IDs, team IDs, and message IDs.
+  
+Currently, cache cannot be reset remotely on connected mobile devices.
+
+What about push notifications?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Push notification storage is managed by the operating system on the device. Mattermost can be configured to send limited amounts of information that does not include the message text or channel name, and it can also be configured to not send push notifications at all.
+
+Where is the data stored and how is that data protected?
+---------------------------------------------------------
+
+The data is stored in the app's local storage. It's protected by the security measures that a device normally provides to the apps that are installed on it.
+
+How long is the data stored?
+----------------------------
+
+Data is stored until the user logs out, or until it is purged during normal cache management. Deactivating a user account forces a logout and subsequent purging of data from the device.
+
+How is data handled after a user account is deactivated?
+--------------------------------------------------------
 
 App data is wiped from the device when a user logs out of the app. If the user is logged in when the account is deactivated, then within one minute of deactivation the system logs the user out. Thereafter all app data is wiped from the device.
+
+If file attachments are enabled on the server, users can download files that are attached to messages and store them on their local file system. After they are downloaded, the files are outside the control of the app and can remain on the device indefinitely.
+
+Are messages pre-loaded?
+-------------------------
+
+No. Messages are sent to the device on demand. They are not pre-loaded in anticipation of users scrolling up or switching channels.
 
 Do I need to compile the mobile apps to host my own push notification server?
 ------------------------------------------------------------------------------
 
 Yes. To host your own push notification server, you'll need to compile the mobile apps. See :doc:`documentation </deploy/mobile/distribute-custom-mobile-apps>` to learn how to compile your own mobile apps.
-
-.. _push-faq:
 
 How do push notifications work?
 -------------------------------
@@ -150,7 +183,7 @@ The following options are available for securing your push notification service:
 
 .. note:: 
 
-  For configuration details, see guides for :doc:`deploying the Mattermost App Store and Google Play apps </deploy/use-prebuilt-mobile-apps>` and :doc:`deploying your own version of the apps </deploy/build-custom-mobile-apps>`. 
+  For configuration details, see guides for :doc:`deploying the Mattermost mobile app </deploy/mobile/mobile-app-deployment>` and :doc:`deploying your own version of the apps </deploy/mobile/distribute-custom-mobile-apps>`. 
 
 Why do I sometimes see a delay in receiving a push notification?
 ----------------------------------------------------------------
@@ -171,14 +204,14 @@ How do I deploy Mattermost with Enterprise Mobility Management (EMM) providers?
 
 Mattermost enables customers with high privacy and custom security requirements to deploy mobile app and push notification services using keys that they alone control.
 
-:doc:`Learn more about using AppConfig for EMM providers <mobile-appconfig>`.
+:doc:`Learn more about using AppConfig for EMM providers </deploy/mobile/deploy-mobile-apps-using-emm-provider>`.
 
 How do I host the Mattermost push notification service?
 -------------------------------------------------------
 
-First, you can use the :doc:`Mattermost Hosted Push Notification Service (HPNS) <configure/environment-configuration-settings:enable push notifications>`. Organizations can also `host their own push proxy server instead <https://developers.mattermost.com/contribute/mobile/push-notifications/service/>`_. This is applicable when you want to:
+First, you can use the :ref:`Mattermost Hosted Push Notification Service (HPNS) <configure/environment-configuration-settings:enable push notifications>`. Organizations can also :doc:`host their own push proxy server </deploy/mobile/host-your-own-push-proxy-service>` instead. This is applicable when you want to:
 
-1. Customize the `Mattermost mobile apps <https://developers.mattermost.com/contribute/mobile/build-your-own/>`_;
+1. Customize the Mattermost mobile apps;
 2. Deploy your own push notification service, or
 3. Repackage the mobile apps with BlueCedar or AppDome (both of which are not officially supported but have been successfully deployed by some organizations).
 
@@ -320,11 +353,11 @@ You will need to `whitelist one subdomain and one port from Apple <https://devel
 Run App Store versions of the Mattermost mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with the :doc:`Mattermost Hosted Push Notification Service (HPNS) </deploy/mobile-hpns>` through your corporate proxy.
+You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) </configure/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
 
 .. note::
   
- The use of hosted applications by Mattermost :doc:`can be deployed with Enterprise Mobility Management solutions via AppConfig </deploy/mobile-appconfig>` but wrapping is not supported. See the :ref:`product documentation <deploy/deploy-mobile-apps-using-emm-provider:manage app configuration using appconfig>` for details.
+ The use of hosted applications by Mattermost :doc:`can be deployed with Enterprise Mobility Management solutions via AppConfig </deploy/mobile/deploy-mobile-apps-using-emm-provider>` but wrapping is not supported. See the :ref:`product documentation <deploy/mobile/deploy-mobile-apps-using-emm-provider:manage app configuration using appconfig>` for details.
 
 How the ``deviceId`` behaves
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -6,7 +6,7 @@ Desktop App Deployment
 
 The Mattermost desktop app is available for Windows, macOS, and Linux operating systems, and offers :doc:`additional functionality </preferences/customize-desktop-app-experience>` beyond the web-based experience.
 
-Learn more about desktop app :ref:`software requirements <deploy/server/software-hardware-requirements:desktop apps>`, :doc:`releases and server compatibility </about/mattermost-desktop-releases>` as well as the :doc:`what's changed across releases </about/desktop-app-changelog>`.
+Learn more about desktop app :ref:`software requirements <deploy/software-hardware-requirements:desktop apps>`, :doc:`releases and server compatibility </about/mattermost-desktop-releases>` as well as the :doc:`what's changed across releases </about/desktop-app-changelog>`.
 
 Download
 ---------
@@ -32,8 +32,10 @@ Learn about installation, configuration, and management options for deploying th
     /deploy/desktop/silent-windows-desktop-distribution.rst
     /deploy/desktop/desktop-msi-installer-and-group-policy-install.rst
     /deploy/desktop/desktop-custom-dictionaries.rst
+    /deploy/desktop/desktop-app-managed-resources.rst
 
 * :doc:`Distribute a custom desktop app </deploy/desktop/distribute-a-custom-desktop-app>`
 * :doc:`Silent Windows desktop distribution </deploy/desktop/silent-windows-desktop-distribution>`
 * :doc:`MSI installer and group policy guide </deploy/desktop/desktop-msi-installer-and-group-policy-install>`
 * :doc:`Custom dictionaries for Windows and Linux </deploy/desktop/desktop-custom-dictionaries>`
+* :doc:`Managed resources for the desktop app </deploy/desktop/desktop-app-managed-resources>`

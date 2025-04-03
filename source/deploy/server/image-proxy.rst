@@ -1,14 +1,8 @@
-.. _image-proxy:
+(Optional) Use an Image proxy
+==============================
 
-Image proxy
-===========
-
-.. include:: ../_static/badges/allplans-selfhosted.rst
+.. include:: ../../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
-
-Using an image proxy means that all requests for images made by Mattermost clients will go through the proxy instead of contacting third-party servers directly. This helps protect user privacy by preventing third-party servers from tracking who views an image. This also prevents the use of tracking pixels (invisible images that do the same thing without the user even seeing an image).
-
-Certain proxy servers also provide a layer of caching which can make loading images faster and more reliable. This caching also helps preserve posts by protecting them from dead images.
 
 When enabled, the image proxy needs to be publicly accessible to both the Mattermost client and server.
 
@@ -40,6 +34,6 @@ For example, if the image proxy is located at ``https://image-proxy.mattermost.c
  - **Remote Image Proxy URL**: ``https://image-proxy.mattermost.com``
  - **Remote Image Proxy Options**: ``CAMO_KEY``, which is the secret string used for the sample ``atmos/camo`` deployment.
 
-.. image:: ../images/image-proxy.png
+.. image:: ../../images/image-proxy.png
    :alt: Enable and configure an atmos/camo image proxy in the System Console by going to Environment > Image Proxy, specifying atmos/camo as the proxy type, providing the URL of the remote image proxy server, and by specifying the CAMO_KEY secret string.
   

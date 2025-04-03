@@ -21,7 +21,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
 
   **Web browser**
 
-  1. Open a supported :ref:`web browser <install/software-hardware-requirements:pc web>`.
+  1. Open a supported :ref:`web browser <deploy/software-hardware-requirements:pc web>`.
   2. Copy and paste the Mattermost server link into the browser's address field.
   3. Enter your user credentials to log into Mattermost.
   4. Bookmark the Mattermost URL in your web browser of choice so logging into Mattermost is easy in the future.

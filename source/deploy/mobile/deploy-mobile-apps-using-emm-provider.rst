@@ -1,7 +1,7 @@
 Deploy using an EMM provider
 =============================
 
-You can enhance mobile security by deploying the Mattermost mobile app with `Enterprise Mobility Management (EMM) <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`__ and :doc:`Mattermost AppConfig </deploy/mobile-appconfig>` compatibility to secure mobile endpoints with management application configuration.
+You can enhance mobile security by deploying the Mattermost mobile app with `Enterprise Mobility Management (EMM) <https://en.wikipedia.org/wiki/Enterprise_mobility_management>`__ and :doc:`Mattermost AppConfig </deploy/mobile/deploy-mobile-apps-using-emm-provider>` compatibility to secure mobile endpoints with management application configuration.
 
 You can use an EMM to:
 

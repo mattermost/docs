@@ -25,7 +25,7 @@ Mattermost binds to 443 instead of 8065. The Mattermost binary requires the corr
 
 .. note::
 
-  We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </install/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </install/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.
+  We highly recommend using a proxy in front of Mattermost server for up to 200 concurrent users. If you have fewer than 200 concurrent users, you can :doc:`set up TLS </deploy/server/setup-tls>`. If you're exceeding 200 concurrent users, you'll need :doc:`a proxy </deploy/server/setup-nginx-proxy>`, such as NGINX, in front of Mattermost to manage the traffic.
 
 Review Mattermost logs
 ----------------------
@@ -33,7 +33,7 @@ Review Mattermost logs
 You can access logs for Mattermost and use them for troubleshooting. These steps assume that you have appropriate :doc:`system admin permissions </onboard/advanced-permissions>` to do so.
 
 Mattermost Server logs 
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 - Ensure that log files are being created: Navigate to **System Console > Environment > Logging**, confirm that **Output logs to file** is set to **true**.
 - You can obtain the path for the log files in **System Console > Environment > Logging > File Log Directory**.
@@ -48,7 +48,7 @@ If filesystem access is not possible, navigate to **System Console > Reporting >
 You can find more on logging settings :ref:`here <configure/environment-configuration-settings:logging>`.
 
 Mattermost Desktop App logs
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Access desktop app logs by going to **Help > Show logs** from the menu bar.
 
@@ -59,17 +59,17 @@ Alternatively, you can access desktop app log files in the following directory:
 - **MacOS:** ``~/Library/Logs/Mattermost`` (DMG installation) OR ``~Library/Containers/Mattermost.Desktop/Data/Library/Logs/Mattermost`` (Appstore installation only)
 
 Mattermost web logs
---------------------
+~~~~~~~~~~~~~~~~~~~~
 
 The browser-based app does not produce additional log files. If the app has to be debugged, use the development tools integrated in your browser for action history. 
 
 Mattermost Push Notification Service logs
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Logging for the Mattermost Push Notification Service is handled via system log with logger and is appended to ``/var/log/syslog``.
 
 Review Mattermost environment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-----------------------------
 
 Put together a timeline to eliminate events prior to the error/problem occurring. For example, if you recently reconfigured your firewall and are now having connection issues it might be worth reviewing the settings or rolling back to see whether that resolves the problem.
 

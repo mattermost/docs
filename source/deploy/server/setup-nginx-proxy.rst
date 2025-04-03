@@ -1,5 +1,5 @@
-Set up an NGINX proxy
-=====================
+(Recommended) Set up an NGINX proxy
+===================================
 
 A proxy server is a server (a computer system or an application) that acts as an intermediary for requests from clients seeking resources from other servers. Mattermost recommends using a proxy in front of Mattermost to increase security, performance and the ability to monitor and shape traffic connecting to Mattermost:
 
@@ -104,7 +104,7 @@ SSL and HTTP/2 are enabled in the provided configuration example.
 
 .. note::
 
-  - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the :ref:`NGINX HTTP/2 and SSL product documentation <install/setup-nginx-proxy:configure nginx with ssl and http/2>` for details.
+  - If you're going to use Let's Encrypt to manage your SSL certificate, stop at step 3 and see the :ref:`NGINX HTTP/2 and SSL product documentation <deploy/server/setup-nginx-proxy:configure nginx with ssl and http/2>` for details.
   - You'll need valid SSL certificates in order for NGINX to pin the certificates properly. Additionally, your browser must have permissions to accept the certificate as a valid CA-signed certificate.
   - Note that the IP address included in the examples in this documentation may not match your network configuration.
   - If you're running NGINX on the same machine as Mattermost, and NGINX resolves ``localhost`` to more than one IP address (IPv4 or IPv6), we recommend using ``127.0.0.1`` instead of ``localhost``.

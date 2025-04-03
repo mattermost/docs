@@ -61,7 +61,7 @@ Mattermost offers several deployment options to suit your organization's needs:
 Prerequisites
 --------------
 
-Before deploying Mattermost, ensure you have reviewed the :doc:`software and hardware requirements </deploy/server/software-hardware-requirements>`, and have:
+Before deploying Mattermost, ensure you have reviewed the :doc:`software and hardware requirements </deploy/software-hardware-requirements>`, and have:
 
 * A supported Linux distribution
 * Database server (PostgreSQL 13+)

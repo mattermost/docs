@@ -45,10 +45,10 @@ The Mattermost mobile apps can be customized if you choose to build the apps you
 
 To brand the mobile apps: 
 
-1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repository
-2. Replace the name, images, and any key text strings
-3. :doc:`Compile the apps <../deploy/build-custom-mobile-apps>`
-4. Deploy the apps to an app store
+1. Fork the `mattermost-mobile <https://github.com/mattermost/mattermost-mobile>`_ repository.
+2. Replace the name, images, and any key text strings.
+3. Compile the custom apps.
+4. Deploy the apps to an app store.
 
 While most organizations deploy to internal enterprise app stores, you are welcome to deploy to iTunes and Google Play as long as the branding is not confusable with official Mattermost products.
 

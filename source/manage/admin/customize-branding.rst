@@ -1,5 +1,5 @@
-Customize Mattermost server
-============================
+Customize branding
+===================
 
 Intro here
 
@@ -8,10 +8,10 @@ Intro here
     :hidden:
     :titlesonly:
 
-    Customize Mattermost </configure/customizing-mattermost>
+    Customize Mattermost </configure/customize-mattermost>
     Custom branding tools </configure/custom-branding-tools>
     Code signing custom builds </manage/code-signing-custom-builds>
 
-* :doc:`Customize Mattermost </configure/customizing-mattermost>` - Information about customizing the Mattermost server.
+* :doc:`Customize Mattermost </configure/customize-mattermost>` - Information about customizing the Mattermost server.
 * :doc:`Custom branding tools </configure/custom-branding-tools>` - Information about custom branding tools for Mattermost.
 * :doc:`Code signing custom builds </manage/code-signing-custom-builds>` - Information about code signing custom builds of Mattermost.

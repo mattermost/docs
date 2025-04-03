@@ -1,5 +1,5 @@
-Set up TLS
-==========
+(Optional) Set up TLS
+======================
 
 You have two options if you want users to connect with HTTPS:
 
