@@ -160,7 +160,7 @@ Want this theme? Copy and paste the following code into Mattermost:
 
 
 Discord Dark Theme (old)
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/DiscordDarkTheme.png
   :alt: Discord Dark Theme (old)
