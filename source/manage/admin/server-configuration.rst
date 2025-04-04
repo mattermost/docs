@@ -9,6 +9,7 @@ Intro here
     :titlesonly:
 
     Elasticsearch </scale/elasticsearch>
+    High availability </scale/high-availability-cluster-based-deployment> 
     Store configuration in your database </configure/configuration-in-your-database>
     Server configuration options </configure/configuration-settings>
     Environment variables </configure/environment-variables>
@@ -21,6 +22,7 @@ Intro here
     Telemetry </manage/telemetry>
 
 * :doc:`Elasticsearch </scale/elasticsearch>` - Information about configuring Elasticsearch for Mattermost.
+* :doc:`High availability </scale/high-availability-cluster-based-deployment>` - Information about configuring high availability for Mattermost.
 * :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Information about storing configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </configure/configuration-settings>` - Information about server configuration options for Mattermost.
 * :doc:`Environment variables </configure/environment-variables>` - Information about environment variables for Mattermost.
