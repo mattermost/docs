@@ -2444,9 +2444,9 @@ Enable image proxy
 | An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                 |
 | prevents them from accessing insecure content.                | - ``config.json setting``: ``".ImageProxySettings.Enable": true",`` |
 |                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_ENABLE``            |
-| - **true**: Enables an image proxy for loading  |                                                                     |
+| - **true**: Enables an image proxy for loading                |                                                                     |
 |   external images.                                            |                                                                     |
-| - **false**: **(Default)** Disables the image proxy.                        |                                                                     |
+| - **false**: **(Default)** Disables the image proxy.          |                                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 | See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                       |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
