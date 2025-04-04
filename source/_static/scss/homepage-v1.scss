@@ -18,14 +18,25 @@ body {
         .sidebar-sticky {
             padding-top: 120px;
         }
+        .sidebar-sticky-local {
+            padding-top: 0;
+        }
 
         .masthead {
             padding-top: 160px;
+            &.masthead-local {
+                padding-top: 0;
+            }
         }
 
         .sidebar-sticky {
             @media (max-width: 770px) {
                 padding-top: 110px;
+            }
+        }
+        .sidebar-sticky-local {
+            @media (max-width: 770px) {
+                padding-top: 0;
             }
         }
 

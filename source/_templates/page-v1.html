@@ -14,7 +14,9 @@
     <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
-{% include "custom-nav.html" %}
+{% if webdocs %}
+  {% include "custom-nav.html" %}
+{% endif %}
 
 {% if theme_announcement -%}
 <div class="announcement">
@@ -65,7 +67,8 @@
     <aside class="sidebar-drawer">
         <div class="sidebar-container">
             {% block left_sidebar %}
-            <div class="sidebar-sticky">
+            <div class="{% if webdocs %}sidebar-sticky{% else %}sidebar-sticky-local{% endif %}">
+
                 {%- for sidebar_section in sidebars %}
                 {%- include sidebar_section %}
                 {%- endfor %}
@@ -115,7 +118,9 @@
                     {% block content %}{{ body }}{% endblock %}
                 </article>
             </div>
+            {% if webdocs %}
             <div class="docs-feedback-block">{% include "feedback.html" %}</div>
+            {% endif %}
             <footer>
                 {% block footer %}
                 <div class="related-pages">
