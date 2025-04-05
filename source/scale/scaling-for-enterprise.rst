@@ -12,6 +12,21 @@ Server requirements vary based on usage and we highly recommend that you run a p
 Available reference architectures
 ---------------------------------
 
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+    :titlesonly:
+
+    Scale up to 200 users </scale/scale-to-200-users>
+    Scale up to 2000 users </scale/scale-to-2000-users>
+    Scale up to 15000 users </scale/scale-to-15000-users>
+    Scale up to 30000 users </scale/scale-to-30000-users>
+    Scale up to 50000 users </scale/scale-to-50000-users>
+    Scale up to 80000 users </scale/scale-to-80000-users>
+    Scale up to 90000 users </scale/scale-to-90000-users>
+    Scale up to 100000 users </scale/scale-to-100000-users>
+    Scale up to 200000 users </scale/scale-to-200000-users>
+
 The following reference architectures are available as recommended starting points for your self-hosted Mattermost deployment, where user counts refer to the number of concurrent users for a given deployment. The number of concurrent numbers is commonly lower than the total number of user accounts.
 
 * :doc:`Scale up to 200 users </scale/scale-to-200-users>` - Learn how to scale Mattermost to up to 200 users.

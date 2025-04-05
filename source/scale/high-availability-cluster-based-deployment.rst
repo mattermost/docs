@@ -8,22 +8,24 @@ A high availability cluster-based deployment enables a Mattermost system to main
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
-Requirements for continuous operation
--------------------------------------
+Mattermost Enterprise supports:
 
-To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
+1. Clustered Mattermost servers, which minimize latency by:
 
-Redundancy at anticipated scale
-  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
+- Storing static assets over a global CDN.
+- Deploying multiple Mattermost servers to host API communication closer to the location of end users.
 
-Update sequence for continuous operation
-  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
+They can also be used to handle scale and failure handoffs in disaster recovery scenarios.
 
-  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
+2. Database read replicas, where replicas can be:
 
-.. important::
+- Configured as a redundant backup to the active database server.
+- Used to scale up the number of concurrent users.
+- Deployed closer to the location of end users, reducing latency.
 
-   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
+Moreover, search replicas are also supported to handle search queries.
+
+.. image:: ../images/architecture_high_availability.png
 
 Deployment guide
 ----------------
@@ -54,7 +56,7 @@ Remove a server from the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Back up your Mattermost database and the file storage location. See the :doc:`backup </deploy/backup-disaster-recovery>` documentation for details.
-2. Modify your NGINX setup to remove the server. For information about this, see :ref:`proxy server configuration <install/setup-nginx-proxy:manage the nginx process>` documentation for details.
+2. Modify your NGINX setup to remove the server. For information about this, see :ref:`proxy server configuration <deploy/server/setup-nginx-proxy:manage the nginx process>` documentation for details.
 3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and compatibility
@@ -530,6 +532,23 @@ All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no lon
 
 When upgrading a high availability cluster-based deployment, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete this type of upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
+Requirements for continuous operation
+-------------------------------------
+
+To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
+
+Redundancy at anticipated scale
+  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
+
+Update sequence for continuous operation
+  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
+
+  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
+
+.. important::
+
+   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
+
 Frequently asked questions (FAQ)
 ---------------------------------
 
@@ -562,7 +581,7 @@ You may be asked to provide this data to Mattermost for analysis and troubleshoo
 
 .. note::
 
-  - Ensure that server log files are being created. You can find more on working with Mattermost logs :ref:`here <install/troubleshooting:review mattermost logs>`.
+  - Ensure that server log files are being created. You can find more on working with Mattermost logs :ref:`here <deploy/server/troubleshooting:review mattermost logs>`.
   - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
   - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster-based deployment.
 

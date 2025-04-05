@@ -52,8 +52,8 @@ Once you've installed the app, here are some ways to get started:
 
 - **Share feedback**: Your ideas and feedback are valuable! Share your thoughts in the `~user-feedback <https://community.mattermost.com/core/channels/user-feedback>`_ channel.
 
-Roadmap for Community for Mattermost and Microsoft Teams Integration
--------------------------------------------------------------------
+Roadmap for Community for Mattermost and Microsoft Teams integration
+----------------------------------------------------------------------
 
 We are continuously improving the integration between Mattermost and Microsoft Teams to provide better connectivity and communication. Below are the upcoming features planned for this integration:
 

@@ -5,7 +5,7 @@ About Mattermost
 Mattermost’s purpose is to accelerate the world’s mission critical work by developing and delivering secure, open core collaboration software providing unrivaled focus, adaptability and resilience to our customers. You’ll find an overview of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support below.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
 
    /about/product.rst

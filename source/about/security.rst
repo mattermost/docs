@@ -13,9 +13,9 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of :ref:`VPN clients on PC and mobile devices <deploy/deployment-overview:behind a vpn>` so that Mattermost can be used outside your private network.
-- Mattermost mobile apps can be deployed to an :doc:`internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider>` by using source code available for Mattermost mobile apps and push notification service. 
-- Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled :doc:`iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns>` (Mattermost Enterprise and Mattermost Professional).
+- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of :ref:`VPN clients on PC and mobile devices <deploy/application-architecture:communication protocols>` so that Mattermost can be used outside your private network.
+- Mattermost mobile apps can be deployed to an :doc:`internal Enterprise App Store </deploy/mobile/deploy-mobile-apps-using-emm-provider>` by using source code available for Mattermost mobile apps and push notification service. 
+- Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. (Mattermost Enterprise and Mattermost Professional).
 - User sessions across web, PC, and mobile can be :doc:`remotely revoked through profile settings </preferences/manage-your-security-preferences>`, or via the System Console by deactivating accounts.
 - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 

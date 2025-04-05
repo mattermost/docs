@@ -41,8 +41,8 @@ Flexibility and control to host Mattermost securely to minimize the risk of vuln
 
 Mattermost's self-hosting enables tailored configurations for on-premises systems with specialized security needs, while cloud IP filtering ensures scalable control for remote or hybrid teams operating across distributed environments:
 
-- `Self-hosting Mattermost <https://docs.mattermost.com/guides/deployment.html>`_: Enforces stricter data sovereignty requirements, and complete control over deployment environments, enabling organizations to implement custom Zero Trust security measures.
-- `Cloud IP Filtering <https://docs.mattermost.com/manage/cloud-ip-filtering.html#cloud-ip-filtering>`_: Prevents untrusted entities from gaining initial access, restricting platform access to trusted network ranges, enforcing an evaluation of every connection.
+- :doc:`Self-hosting Mattermost </guides/deployment-guide>`: Enforces stricter data sovereignty requirements, and complete control over deployment environments, enabling organizations to implement custom Zero Trust security measures.
+- :ref:`Cloud IP Filtering <manage/cloud-ip-filtering:cloud ip filtering>`: Prevents untrusted entities from gaining initial access, restricting platform access to trusted network ranges, enforcing an evaluation of every connection.
 
 Encryption
 ----------

@@ -3238,7 +3238,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ### Compatibility
  - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and [multi-factor authentication](https://docs.mattermost.com/onboard/multi-factor-authentication.html) is enabled, ensure your users have upgraded to mobile app version 1.17 or later. See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - If you are using an EMM provider via AppConfig, make sure to add two new settings, `useVPN` and `timeoutVPN`, to your AppConfig file. The settings were added for EMM connections using VPN on-demand - one to indicate if every request should wait for the VPN connection to be established, and another to set the timeout in seconds. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
+ - If you are using an EMM provider via AppConfig, make sure to add two new settings, `useVPN` and `timeoutVPN`, to your AppConfig file. The settings were added for EMM connections using VPN on-demand - one to indicate if every request should wait for the VPN connection to be established, and another to set the timeout in seconds. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html#mattermost-appconfig-values) for VPN support.
  - Mobile App v1.13+ is required for Mattermost Server v5.4+.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
@@ -3247,7 +3247,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - iOS Share Extension now supports large file sizes and improved performance
 
 ### Bug Fixes
- - Fixed support for EMM connections using VPN on-demand. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
+ - Fixed support for EMM connections using VPN on-demand. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html#mattermost-appconfig-values) for VPN support.
  - Fixed several Android app crash / fatal error issues.
  - Fixed an issue on Android where the app crashed intermittently when selecting a link.
  - Fixed an issue where email notifications setting was out of sync with the webapp until the setting was edited.

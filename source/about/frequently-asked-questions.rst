@@ -2,7 +2,7 @@ Frequently asked questions (FAQ)
 =================================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
 
     General questions <faq-general>

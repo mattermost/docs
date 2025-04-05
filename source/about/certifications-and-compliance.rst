@@ -56,7 +56,7 @@ Data management
 
 - **Data Retention:** Use :doc:`data retention </comply/data-retention-policy>` to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
 - **Profile Deletion:** Delete a user’s personal information via :ref:`mmctl user delete <manage/mmctl-command-line-tool:mmctl user delete>`. This permanently deletes all user information including messages created by the user.
-- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile-overview>` to learn more.
+- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile/mobile-app-deployment>` to learn more.
 
 Data portability
 ^^^^^^^^^^^^^^^^^
