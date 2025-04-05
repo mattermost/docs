@@ -45,7 +45,7 @@ def find_duplicate_redirects(redirects):
                 
     return len(duplicate_sources) == len(redirects)
 
-def setup(_: Sphinx):
+def setup(app: Sphinx):
     # Check for duplicate redirects when Sphinx builds
     find_duplicate_redirects(redirects)
     return
@@ -3917,7 +3917,9 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/compass-icons.css"
+    "css/compass-icons.css",
+    "css/version-filter.css",
+    "css/changelog-filter.css"
 ]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
@@ -3927,6 +3929,8 @@ html_js_files = [
     "js/jquery.js",
     "js/thermometer.js",
     "js/myscript-v1.js",
+    "js/version-filter.js",
+    "js/changelog-filter.js"
 ]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
