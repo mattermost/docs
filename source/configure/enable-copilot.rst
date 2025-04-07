@@ -1,5 +1,5 @@
-Enable Copilot
-==============
+(Recommended) Enable Copilot
+============================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -8,7 +8,10 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 
 .. tip::
 
-  Looking for a Mattermost Copilot demo? Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows, then download the `Mattermost Copilot datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
+  - Looking for a Mattermost Copilot demo? `Try it yourself <https://mattermost.com/demo/copilot/>`_!
+  - Watch this `AI-Enhanced Collaboration on-demand webinar <https://mattermost.com/webinar/copilot-demo-ai-enhanced-collaboration/>`_ to learn how Copilot can enhance your mission-critical workflows.
+  - Download the `Mattermost Copilot datasheet <https://mattermost.com/mattermost-copilot-datasheet/>`_ to learn more about integrating with industry-leading large language models (LLMs).
+  - See the :doc:`Copilot context management </collaborate/copilot-context-management>` documentation to learn how Copilot manages LLM context and how to ensure data privacy.
 
 .. include:: ../_static/badges/academy-copilot-setup.rst
   :start-after: :nosearch:
@@ -16,36 +19,56 @@ Signficantly increase team productivity and decision-making speed by enhancing y
 Setup
 ------
 
-From Mattermost v9.7, you can install Mattermost Copilot from the in-product Mattermost Marketplace by selecting the **Product** |product-list| icon and selecting **App Marketplace**. Search for **Copilot** and select **Install**.
-
 You must be a Mattermost system admin to `enable <#enable>`__ and `configure  <#mattermost-configuration>`__ it using the System Console.
 
-.. note::
-  If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. For an optimized user experience and compatibility, we recommend using Mattermost Copilot with Mattermost v9.7 and later.
-  
-  The Copilot integration is compatible with the following Mattermost Server versions:
+From Mattermost v10.3
+~~~~~~~~~~~~~~~~~~~~~
 
-  - v9.6 or later
-  - v9.5.2+ (Extended Support Release - ESR)
-  - v9.4.4+
-  - v9.3.3+
-  - v8.1.11+ (Extended Support Release - ESR)
+From Mattermost v10.3, Copilot is installed automatically and ready for you to `configure a large language model (LLM) <#mattermost-configuration>`__. When no LLMs are configured, the :doc:`Copilot panel </collaborate/chat-with-copilot>` prompts users to configure one.
+
+From Mattermost v9.7
+~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v9.7, you can install Mattermost Copilot from the in-product Mattermost Marketplace by selecting the **Product** |product-list| icon and selecting **App Marketplace**. Search for **Copilot** and select **Install**, then `configure an LLM <#mattermost-configuration>`__.
+
+Mattermost v9.6 or earlier
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. important::
+
+  For an optimized user experience and compatibility, we recommend using Mattermost Copilot with Mattermost v9.7 and later.
+
+If you're running Mattermost Server v9.6 or earlier, AI Copilot must be installed using the `latest binary available for download from the plugin repository <https://github.com/mattermost/mattermost-plugin-ai/releases>`_. 
+
+Copilot is compatible with the following Mattermost Server versions:
+
+- v9.6 or later
+- v9.5.2+ (Extended Support Release - ESR)
+- v9.4.4+
+- v9.3.3+
+- v8.1.11+ (Extended Support Release - ESR)
 
 Enable
 ------
 
-Go to **System Console > Plugins > Copilot** to enable this feature.
+From Mattermost v10.3
+~~~~~~~~~~~~~~~~~~~~~
 
-Once the integration is installed and enabled, complete configuration in the System Console as described below, then notify your teams that they can use the Copilot in any Mattermost team or channel.
+From Mattermost v10.3, Copilot is enabled automatically and is ready for `LLM configuration <#mattermost-configuration>`__.
+
+From Mattermost v9.6
+~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v9.6, you must Copilot by going to **System Console > Plugins > Copilot** and setting **Enable Plugin** to **True**, then `complete configuration <#mattermost-configuration>`__ in the System Console.
 
 Mattermost configuration
 -------------------------
 
 With extensive customization and extensibility options, you can tailor Copilot to meet your specific needs, whether it's integrating with internal systems, customizing AI responses based on the team or project needs, or developing new capabilities that are unique to your operational requirements. You can also create custom integrations, workflows, and bots that leverage AI to meet your unique business needs.
 
-Configure a large language model (LLM) for your Copilot integration by going to **System Console > Plugins > Copilot** and selecting **Add an AI Bot**. Mattermost supports the following LLMs:
+Configure an LLM for your Copilot integration by going to **System Console > Plugins > Copilot** and selecting **Add an AI Bot**. Mattermost supports the following LLMs:
 
-- `OpenAI <https://openai.com/index/openai-api/>`_
+- `OpenAI <https://openai.com/api/>`_
 - `Anthropic (Claude) <https://console.anthropic.com/settings/keys>`_
 - `Azure OpenAI <https://learn.microsoft.com/en-us/azure/ai-services/openai/overview>`_
 - `OpenAI-compatible (e.g., LocalAI) <https://github.com/go-skynet/LocalAI>`_
@@ -128,12 +151,12 @@ Integrations
 Currently integrations are limited to direct messages between users and the bots. The integrations won't operate from within public, private, or group message channels.
 
 Jira
------
+~~~~~
 
 Issues with public Jira instances can be fetched. No configuration is required for this integration.
 
 GitHub
--------
+~~~~~~~
 
 If you have the Mattermost GitHub plugin enabled, you can use the integration to fetch issues and PRs from your public and private GitHub repositories. The user must be logged in to their GitHub account through the Mattermost GitHub plugin.
 
@@ -147,4 +170,4 @@ Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-ai/rel
 Usage
 -----
 
-See the :doc:`chat with Copilot </collaborate/chat-with-copilot>` documentation for details on using Copilot to overcome information overload and streamline communication and collaboration.
+When Copilot is configured, notify your teams that they can use the Copilot in any Mattermost team or channel, and direct users to the :doc:`chat with Copilot </collaborate/chat-with-copilot>` documentation for details on using Copilot to overcome information overload and streamline communication and collaboration.

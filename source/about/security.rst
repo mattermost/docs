@@ -13,9 +13,9 @@ Mattermost offers a host of features to help keep your private cloud communicati
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of :ref:`VPN clients on PC and mobile devices <deploy/deployment-overview:behind a vpn>` so that Mattermost can be used outside your private network.
-- Mattermost mobile apps can be deployed to an :doc:`internal Enterprise App Store </deploy/deploy-mobile-apps-using-emm-provider>` by using source code available for Mattermost mobile apps and push notification service. 
-- Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled :doc:`iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. </deploy/mobile-hpns>` (Mattermost Enterprise and Mattermost Professional).
+- Mattermost can run entirely behind your firewall as a single Linux binary, as a Docker container, or on your Kubernetes cluster with a PostgreSQL database. Remote access can be enabled through the use of :ref:`VPN clients on PC and mobile devices <deploy/application-architecture:communication protocols>` so that Mattermost can be used outside your private network.
+- Mattermost mobile apps can be deployed to an :doc:`internal Enterprise App Store </deploy/mobile/deploy-mobile-apps-using-emm-provider>` by using source code available for Mattermost mobile apps and push notification service. 
+- Optionally, the provided Mattermost Mobile Apps can be used when the Mattermost server is reachable through the internet on port 443. In this configuration, you have the option of using compiled iOS and Android applications in iTunes and Google Play provided by Mattermost, Inc. (Mattermost Enterprise and Mattermost Professional).
 - User sessions across web, PC, and mobile can be :doc:`remotely revoked through profile settings </preferences/manage-your-security-preferences>`, or via the System Console by deactivating accounts.
 - Mattermost apps can be packaged into leading Enterprise Mobility Management solutions including AirWatch and Blackberry through `AppDome <https://www.appdome.com/>`__.
 
@@ -84,6 +84,11 @@ Mattermost undergoes extensive penetration testing, security reviews, and `secur
 - Optionally add :ref:`advanced passwords requirements <configure/authentication-configuration-settings:password requirements>` with minimum numbers of symbols, numbers, lower, and uppercase letters.
 - Optionally restrict :doc:`creation, renaming, archiving of channels, Private channels, and integrations to team admins, system admins, or end users </onboard/advanced-permissions>` (Mattermost Enterprise and Mattermost Professional).
 
+Copilot context management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the :doc:`Copilot context management </collaborate/copilot-context-management>` documentation to learn how Copilot manages LLM context and how to ensure data privacy.
+
 Security updates
 -----------------
 
@@ -91,11 +96,13 @@ Security updates address newly discovered attacks reported to Mattermost, Inc. b
 
 For more information, please see:
 
-- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`__
-   - A summary of security updates made based on past and on-going security analysis and penetration testing.
+- `Mattermost Security Updates Disclosures <https://mattermost.com/security-updates/>`_
 
-- `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`__
-   - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
+  - A summary of security updates made based on past and on-going security analysis and penetration testing.
+
+- `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_
+ 
+  - An overview of how security issues are confidentially reported to and addressed by Mattermost, Inc.
 
 Security policies
 -----------------
@@ -107,29 +114,29 @@ Moreover, Mattermost performs a penetration test on the software no less than on
 HIPAA compliance*
 -----------------
 
-Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`__.
+Deploying Mattermost as part of a HIPAA-compliant IT infrastructure requires a deployment team trained on `HIPAA-compliance requirements and standards <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
 - Mattermost offers HIPAA-relevant **Technical Safeguards** including:
 
-   - :ref:`Integrity Controls <about/security:integrity and audit controls>`
-   - :ref:`Access Control <about/security:access control policy>`
-   - :ref:`Transmission Security <about/security:transmission security>`
-   - :ref:`Audit Controls <about/security:integrity and audit controls>`
+  - :ref:`Integrity Controls <about/security:integrity and audit controls>`
+  - :ref:`Access Control <about/security:access control policy>`
+  - :ref:`Transmission Security <about/security:transmission security>`
+  - :ref:`Audit Controls <about/security:integrity and audit controls>`
 
 - HIPAA-compliant deployments commonly consider the following:
 
-   - Omitting the contents of messages from mobile push and email notifications:
+  - Omitting the contents of messages from mobile push and email notifications:
 
-      - If your :ref:`Push Notifications Contents <configure/site-configuration-settings:push notification contents>` option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
-      - Similarly, setting :ref:`Email Notifications Contents <configure/site-configuration-settings:email notification contents>` to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
+   - If your :ref:`Push Notifications Contents <configure/site-configuration-settings:push notification contents>` option is set to ``Send full message snippet`` there is a chance Personal Health Information (PHI) contained in messages could be displayed on a user's locked phone as a notification. To avoid this, set the option to ``Send generic description with user and channel names`` or ``Send generic description with only sender name``.
+   - Similarly, setting :ref:`Email Notifications Contents <configure/site-configuration-settings:email notification contents>` to ``Send generic description with only sender name`` will only send the team name and name of the person who sent the message, with no information about channel name or message contents included in email notifications.
 
 - Beyond Technical Safeguards, HIPAA compliance deployments also require:
 
-   - Administrative Safeguards
-   - Physical Safeguards
-   - Organizational requirements and other standards.
+  - Administrative Safeguards
+  - Physical Safeguards
+  - Organizational requirements and other standards.
 
-To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <http://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
+To learn more, please review `HIPAA requirements from the US Department of Health and Human Services <https://www.hhs.gov/hipaa/for-professionals/security/laws-regulations/>`_.
 
 FINRA compliance*
 ------------------

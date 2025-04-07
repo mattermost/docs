@@ -4,39 +4,43 @@ Delegated granular administration
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Mattermost supports the creation and customization of system administration roles with specific granular permissions and System Console access. This allows senior administrators in large organizations to delegate and de-centralize specialized administration and administrative tasks with specific admin roles.
 
 These admin roles permit granular access to specific areas of the System Console and related API endpoints. These roles enable users to perform certain administrative tasks without requiring access to all system administration areas. These system roles never supersede the user's original role or the user's permissions configured by the Permissions scheme.
 
+.. warning::
+  Even when a role is set to **No Access** or **Read Only** for a System Console page, granting **Can Edit** on any System Console page enables access to the underlying configuration endpoint (``PUT /api/v4/config/patch``). This means a user with write access in one area can modify configuration values across all areas. Administrators should assign **Can Edit** permissions with caution.
+
 Available roles
 ----------------
 
-A system admin can set up the following delegated granular administration in the System Console:
+A system admin can configure the following delegated granular administration roles in the System Console. Each role has a set of default permissions, which can be adjusted as needed.
 
-- **System Manager:** This role has read/write permissions for management areas, such as user management and integrations, but not user permissions. This role has read only access to authentication, reporting, and licensing.
-- **User Manager:** This role is able to read/write to all the user management areas, but not user permissions, and read-only access to authentication.
+- **System Manager:** This role can be configured to have read/write permissions in different management areas.
+- **User Manager:** This role can be configured to have read/write to all the user management areas and to authentication
 - **Custom Group Manager** This role has permissions to :doc:`create, edit, restore, and delete custom user groups </collaborate/organize-using-custom-user-groups>`. This role can be used to assign individual users the ability to manage custom groups when **Custom Groups** permissions are removed for **All Members** via **System Console > Permissions > Edit Scheme > Custom Groups**.
-- **Viewer:** The Viewer role can view all areas of the System Console, but has no write access.
+- **Viewer:** The Viewer role can view all areas of the System Console, and can be configured with write access where needed.
 
-When a user is assigned a system role, they have role-based access to the System Console and the API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
+When a user is assigned a system role, they have role-based access to the System Console and the underlying API endpoints. Each role has a different set of default permissions, and what users can access or view depends on the role they've been assigned.
+
+The table below lists the default permissions for each role. Admins should carefully review and configure these settings to align with their organization's needs. Particular caution should be exercised with Permissions write access, as it enables modifications to the permissions of any role, except for the delegated granular administrator roles.
 
 +----------------------+-----------------------+---------------------------------------+
 | **System role**      | **Read/Write access** | **Read Only access**                  |
 +----------------------+-----------------------+---------------------------------------+
-| System Manager       | - User Management     | - (User Management) Permissions       |
-|                      | - Environment         | - Edition/License                     |
-|                      | - Site Configuration  | - Reporting                           |
-|                      | - Integrations        | - Authentication                      |
-|                      |                       | - Plugins                             |
+| System Manager       | - User Management     | - Edition/License                     |
+|                      |   - Groups            | - Reporting                           |
+|                      |   - Teams             | - Authentication                      |
+|                      |   - Channels          | - Plugins                             |
+|                      |   - Permissions       |                                       |
+|                      | - Environment         |                                       |
+|                      | - Site Configuration  |                                       |
+|                      | - Integrations        |                                       |
 +----------------------+-----------------------+---------------------------------------+
 | User Manager         | - User Management     | - (User Management) Permissions       |
-|                      | - Groups              | - Authentication                      |
-|                      | - Teams               |                                       |
-|                      | - Channels            |                                       |
+|                      |   - Groups            | - Authentication                      |
+|                      |   - Teams             |                                       |
+|                      |   - Channels          |                                       |
 +----------------------+-----------------------+---------------------------------------+
 | Custom Group Manager | Custom User Groups    | N/A                                   |
 +----------------------+-----------------------+---------------------------------------+
@@ -48,76 +52,78 @@ Assign admin roles
 
 There are two ways to assign roles:
 
-1. In the System Console under **User Management > System Roles**.
+1. In the System Console under **User Management > Delegated Granular Administration**.
 2. Using the :doc:`mmctl tool </manage/mmctl-command-line-tool>`. This can be done either locally or remotely.
 
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| **You want to**                                   | **Using the System Console**                                                                                  | **Using mmctl**                                                                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Assign roles                                      | Go to **System Console > User Management > System Roles > Assigned People**                                   | ``mmctl permissions role assign [role_name] [username...]``                         |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant the System Manager role to a user           | 1. Go to **System Console > User Management > System Roles**, then select the **System Manager** role.        | ``mmctl permissions role assign system_manager user-name``                          |
-|                                                   | 2. Under **Assigned People**, select **Add People**.                                                          |                                                                                     |
-|                                                   | 3. Search for and select the user name, then select **Add** to grant the System Manager role to that user.    |                                                                                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant the User Manager role to two users          | 1. Go to **System Console > User Management > System Roles**, then select the **User Manager** role.          | ``mmctl permissions role assign system_user_manager user-name1 user-name2``         |
-|                                                   | 2. Under **Assigned People**, select **Add People**.                                                          |                                                                                     |
-|                                                   | 3. Search for and select the two users, then select **Add** to grant the User Manager role to those users.    |                                                                                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant the Viewer role to a user                   | 1. Go to **System Console > User Management > System Roles**, then select the **Viewer** role.                | ``mmctl permissions role assign system_read_only_admin user-name``                  |
-|                                                   | 2. Under **Assigned People**, select **Add People**.                                                          |                                                                                     |
-|                                                   | 3. Search for and select the user name, then select **Add** to grant the Viewer role to that user.            |                                                                                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant the Custom Group Manager role to two users  | 1. Go to **System Console > User Management > System Roles**, then select the **Custom Group Manager**        | ``mmctl permissions role assign system_custom_group_admin user-name1 user-name2``   |
-|                                                   |    role.                                                                                                      |                                                                                     |
-|                                                   | 2. Under **Assigned People**, select **Add People**.                                                          |                                                                                     |
-|                                                   | 3. Search for and select the two users, then select **Add** to grant the Custom Group Manager role to those   |                                                                                     |
-|                                                   |    users.                                                                                                     |                                                                                     |
-|                                                   | 4. All users have the ability to create custom user groups by default. When you assign users to the           |                                                                                     |
-|                                                   |    Custom Group Manager role, you must manually remove these permissions from all users by going to           |                                                                                     |
-|                                                   |    **System Console > User Management > Permissions > Edit Scheme**. Under **All Members**, clear all of      |                                                                                     |
-|                                                   |    the **Custom Groups** permissions, including **Create**, **Manage members**, **Edit**, and **Delete**.     |                                                                                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Remove the System Manager role from a single user | 1. Go to **System Console > User Management > System Roles**, then select the **System Manager** role.        | ``mmctl permissions role unassign system_manager bob-smith``                        |
-|                                                   | 2. Under **Assigned People**, search for the user, then select **Remove**.                                    |                                                                                     |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| **You want to**                                   | **Using the System Console**                                                                                                       | **Using mmctl**                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Assign roles                                      | Go to **System Console > User Management > Delegated Granular Administration > Assigned People**                                   | ``mmctl permissions role assign [role_name] [username...]``                         |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Grant the System Manager role to a user           | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **System Manager** role.        | ``mmctl permissions role assign system_manager user-name``                          |
+|                                                   | 2. Under **Assigned People**, select **Add People**.                                                                               |                                                                                     |
+|                                                   | 3. Search for and select the user name, then select **Add** to grant the System Manager role to that user.                         |                                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Grant the User Manager role to two users          | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **User Manager** role.          | ``mmctl permissions role assign system_user_manager user-name1 user-name2``         |
+|                                                   | 2. Under **Assigned People**, select **Add People**.                                                                               |                                                                                     |
+|                                                   | 3. Search for and select the two users, then select **Add** to grant the User Manager role to those users.                         |                                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Grant the Viewer role to a user                   | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **Viewer** role.                | ``mmctl permissions role assign system_read_only_admin user-name``                  |
+|                                                   | 2. Under **Assigned People**, select **Add People**.                                                                               |                                                                                     |
+|                                                   | 3. Search for and select the user name, then select **Add** to grant the Viewer role to that user.                                 |                                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Grant the Custom Group Manager role to two users  | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **Custom Group Manager**        | ``mmctl permissions role assign system_custom_group_admin user-name1 user-name2``   |
+|                                                   |    role.                                                                                                                           |                                                                                     |
+|                                                   | 2. Under **Assigned People**, select **Add People**.                                                                               |                                                                                     |
+|                                                   | 3. Search for and select the two users, then select **Add** to grant the Custom Group Manager role to those                        |                                                                                     |
+|                                                   |    users.                                                                                                                          |                                                                                     |
+|                                                   | 4. All users have the ability to create custom user groups by default. When you assign users to the                                |                                                                                     |
+|                                                   |    Custom Group Manager role, you must manually remove these permissions from all users by going to                                |                                                                                     |
+|                                                   |    **System Console > User Management > Permissions > Edit Scheme**. Under **All Members**, clear all of                           |                                                                                     |
+|                                                   |    the **Custom Groups** permissions, including **Create**, **Manage members**, **Edit**, and **Delete**.                          |                                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Remove the System Manager role from a single user | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **System Manager** role.        | ``mmctl permissions role unassign system_manager bob-smith``                        |
+|                                                   | 2. Under **Assigned People**, search for the user, then select **Remove**.                                                         |                                                                                     |
++---------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Edit privileges of admin roles (advanced)
 ------------------------------------------
 
-System admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager role. 
+System admins can grant read/write access to other areas of the System Console, as well as remove read/write access (including default access), for all system roles except the Custom Group Manager role.
 
 There are two ways to assign roles:
 
-1. In the System Console under **User Management > System Roles**.
+1. In the System Console under **User Management > Delegated Granular Administration**.
 2. Using the :doc:`mmctl tool </manage/mmctl-command-line-tool>`. This can be done either locally or remotely.
 
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| **You want to**                                  | **Using the System Console**                                                                                  | **Using mmctl**                                                                     |                                                              
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Edit role privileges                             | 1. Go to **System Console > User Management > System Roles**, then select the **System Manager**,             | ``mmctl permissions add [role_name] [permission...]``                               |
-|                                                  |    **User Manager**, or **Viewer** role.                                                                      |                                                                                     |                                                                                                                    
-|                                                  | 2. For each set of privileges, select the access level as **Can edit**, **Read only**, or **No access**.      |                                                                                     |
-|                                                  |                                                                                                               |                                                                                     |
-|                                                  | **Note**: If you set privilege subsections to different access levels, then the privilege access level        |                                                                                     |
-|                                                  | displays as **Mixed Access**.                                                                                 |                                                                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant write access to the Authentication section | 1. Go to **System Console > User Management > System Roles**, then select the **User Manager** role.          | ``mmctl permissions add system_user_manager sysconsole_write_authentication``       |
-| of the System Console for all users with the     | 2. Under **Privileges > Authentication** select **Can edit**, then select **Save**.                           |                                                                                     |         
-| User Manager role                                |                                                                                                               |                                                                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Grant read-only access to the Authentication     | 1. Go to **System Console > User Management > System Roles**. then select the **User Manager** role.          | ``mmctl permissions remove system_user_manager sysconsole_read_authentication``     |
-| section of the System Console for all users      | 2. Under **Privileges > Authentication** select **Read only**, then select **Save**.                          |                                                                                     |
-| with the User Manager role                       |                                                                                                               |                                                                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Remove write access to the Authentication        | 1. Go to **System Console > User Management > System Roles**, then select the **User Manager** role.          | ``mmctl permissions remove system_user_manager sysconsole_write_authentication``    |
-| section of the System Console for all users with | 2. Under **Privileges > Authentication** select **No access**, then choose **Save**.                          |                                                                                     |
-| the User Manager role                            |                                                                                                               |                                                                                     |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
-| Reset a role to its default set of permissions   | This is completed using the mmctl tool only.                                                                  | ``mmctl permissions reset [role_name]``                                             |
-|                                                  |                                                                                                               | For example, to reset the permissions of the ``system_read_only_admin`` role:       |
-|                                                  |                                                                                                               | ``mmctl permissions reset system_read_only_admin``                                  |
-+--------------------------------------------------+---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| **You want to**                                  | **Using the System Console**                                                                                                       | **Using mmctl**                                                                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Edit role privileges                             | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **System Manager**,             | ``mmctl permissions add [role_name] [permission...]``                               |
+|                                                  |    **User Manager**, or **Viewer** role.                                                                                           | ``mmctl permissions reset system_read_only_admin``                                  |
+|                                                  | 2. For each set of privileges, select the access level as **Can edit**, **Read only**, or **No access**.                           |                                                                                     |
+|                                                  |                                                                                                                                    |                                                                                     |
+|                                                  | .. note::                                                                                                                          |                                                                                     |
+|                                                  |                                                                                                                                    |                                                                                     |
+|                                                  |   If you set privilege subsections to different access levels, then the privilege access level displays as **Mixed Access**.       |                                                                                     |
+|                                                  |                                                                                                                                    |                                                                                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Grant write access to the Authentication section | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **User Manager** role.          | ``mmctl permissions add system_user_manager sysconsole_write_authentication``       |
+| of the System Console for all users with the     | 2. Under **Privileges > Authentication** select **Can edit**, then select **Save**.                                                |                                                                                     |
+| User Manager role                                |                                                                                                                                    |                                                                                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Grant read-only access to the Authentication     | 1. Go to **System Console > User Management > Delegated Granular Administration**. then select the **User Manager** role.          | ``mmctl permissions remove system_user_manager sysconsole_read_authentication``     |
+| section of the System Console for all users      | 2. Under **Privileges > Authentication** select **Read only**, then select **Save**.                                               |                                                                                     |
+| with the User Manager role                       |                                                                                                                                    |                                                                                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Remove write access to the Authentication        | 1. Go to **System Console > User Management > Delegated Granular Administration**, then select the **User Manager** role.          | ``mmctl permissions remove system_user_manager sysconsole_write_authentication``    |
+| section of the System Console for all users with | 2. Under **Privileges > Authentication** select **No access**, then choose **Save**.                                               |                                                                                     |
+| the User Manager role                            |                                                                                                                                    |                                                                                     |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
+| Reset a role to its default set of permissions   | This is completed using the mmctl tool only.                                                                                       | ``mmctl permissions reset [role_name]``                                             |
+|                                                  |                                                                                                                                    | For example, to reset the permissions of the ``system_read_only_admin`` role:       |
+|                                                  |                                                                                                                                    | ``mmctl permissions reset system_read_only_admin``                                  |
++--------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
 Admin roles and privileges
 ---------------------------
@@ -224,76 +230,76 @@ Privileges
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_ENVIRONMENT_DEVELOPER                     |
 +------------------------+--------------------------------------------------------------------------+
 | Site Configuration     | **Customization**                                                        |
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_CUSTOMIZATION                         | 
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_CUSTOMIZATION                        |   
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_CUSTOMIZATION                         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_CUSTOMIZATION                        |
 |                        |                                                                          |
 |                        | **Localization**                                                         |
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_LOCALIZATION                          | 
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_LOCALIZATION                         |   
-|                        |                                                                          |   
-|                        | **Users and Teams**                                                      | 
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_USERS_AND_TEAMS                       |   
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_USERS_AND_TEAMS                      | 
-|                        |                                                                          | 
-|                        | **Notifications**                                                        |   
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_NOTIFICATIONS                         |   
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_NOTIFICATIONS                        |  
-|                        |                                                                          |   
-|                        | **Announcement Banner**                                                  |    
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_ANNOUNCEMENT_BANNER                   |    
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_ANNOUNCEMENT_BANNER                  |  
-|                        |                                                                          | 
-|                        | **Emoji**                                                                |     
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_EMOJI                                 |  
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_LOCALIZATION                          |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_LOCALIZATION                         |
+|                        |                                                                          |
+|                        | **Users and Teams**                                                      |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_USERS_AND_TEAMS                       |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_USERS_AND_TEAMS                      |
+|                        |                                                                          |
+|                        | **Notifications**                                                        |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_NOTIFICATIONS                         |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_NOTIFICATIONS                        |
+|                        |                                                                          |
+|                        | **Announcement Banner**                                                  |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_ANNOUNCEMENT_BANNER                   |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_ANNOUNCEMENT_BANNER                  |
+|                        |                                                                          |
+|                        | **Emoji**                                                                |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_EMOJI                                 |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_EMOJI                                |
-|                        |                                                                          | 
+|                        |                                                                          |
 |                        | **Posts**                                                                |
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_POSTS                                 |  
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_POSTS                                |    
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_POSTS                                 |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_POSTS                                |
 |                        |                                                                          |
 |                        | **File Sharing and Downloads**                                           |
 |                        |  - PERMISSION_SYSCONSOLE_READ_SITE_FILE_SHARING_AND_DOWNLOADS            |
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_FILE_SHARING_AND_DOWNLOADS           | 
-|                        |                                                                          |  
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_FILE_SHARING_AND_DOWNLOADS           |
+|                        |                                                                          |
 |                        | **Public Links**                                                         |
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_PUBLIC_LINKS                          | 
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_PUBLIC_LINKS                         |    
-|                        |                                                                          |     
-|                        | **Notices**                                                              |      
-|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_NOTICES                               |   
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_NOTICES                              |    
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_PUBLIC_LINKS                          |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_PUBLIC_LINKS                         |
+|                        |                                                                          |
+|                        | **Notices**                                                              |
+|                        |  - PERMISSION_SYSCONSOLE_READ_SITE_NOTICES                               |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_SITE_NOTICES                              |
 +------------------------+--------------------------------------------------------------------------+
 | Authentication         | **Signup**                                                               |
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SIGNUP                      |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SIGNUP                     |
 |                        |                                                                          |
 |                        | **Email**                                                                |
-|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_EMAIL                       | 
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_EMAIL                      |  
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_EMAIL                       |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_EMAIL                      |
 |                        |                                                                          |
-|                        | **Password**                                                             |   
+|                        | **Password**                                                             |
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_PASSWORD                    |
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_PASSWORD                   |   
-|                        |                                                                          |    
-|                        | **MFA**                                                                  |     
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_PASSWORD                   |
+|                        |                                                                          |
+|                        | **MFA**                                                                  |
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_MFA                         |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA                        |
 |                        |                                                                          |
 |                        | **AD/LDAP**                                                              |
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_MFA                         |
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA                        |     
-|                        |                                                                          |    
-|                        | **SAML 2.0**                                                             |     
-|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SAML                        |   
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SAML                       | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_MFA                        |
 |                        |                                                                          |
-|                        | **OpenID Connect**                                                       | 
+|                        | **SAML 2.0**                                                             |
+|                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_SAML                        |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_SAML                       |
+|                        |                                                                          |
+|                        | **OpenID Connect**                                                       |
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_OPENID                      |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_OPENID                     |
 |                        |                                                                          |
-|                        | **Guest Access**                                                         | 
+|                        | **Guest Access**                                                         |
 |                        |  - PERMISSION_SYSCONSOLE_READ_AUTHENTICATION_GUEST_ACCESS                |
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_GUEST_ACCESS               | 
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_AUTHENTICATION_GUEST_ACCESS               |
 +------------------------+--------------------------------------------------------------------------+
 | Plugin                 |  - PERMISSION_SYSCONSOLE_READ_PLUGINS                                    |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_PLUGINS                                   |
@@ -302,17 +308,17 @@ Privileges
 |                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_INTEGRATION_MANAGEMENT        |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_INTEGRATION_MANAGEMENT       |
 |                        |                                                                          |
-|                        | **Bot Accounts**                                                         |   
+|                        | **Bot Accounts**                                                         |
 |                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_BOT_ACCOUNTS                  |
 |                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_BOT_ACCOUNTS                 |
 |                        |                                                                          |
-|                        | **GIF (Beta)**                                                           | 
-|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_GIF                           |   
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_GIF                          | 
-|                        |                                                                          |       
+|                        | **GIF (Beta)**                                                           |
+|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_GIF                           |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_GIF                          |
+|                        |                                                                          |
 |                        | **CORS**                                                                 |
-|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_CORS                          | 
-|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_CORS                         |                       
+|                        |  - PERMISSION_SYSCONSOLE_READ_INTEGRATIONS_CORS                          |
+|                        |  - PERMISSION_SYSCONSOLE_WRITE_INTEGRATIONS_CORS                         |
 +------------------------+--------------------------------------------------------------------------+
 | Compliance             | **Data Retention Policy**                                                |
 |                        |  - PERMISSION_SYSCONSOLE_READ_COMPLIANCE_DATA_RETENTION_POLICY           |
@@ -349,9 +355,9 @@ Frequently Asked Questions
 Can a User Manager or System Manager reset an administrator’s email or password without their knowledge?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is not possible with the default privileges of these roles. The ability to reset passwords or email addresses of administrators is limited to system admins.  
+This is not possible with the default privileges of these roles. The ability to reset passwords or email addresses of administrators is limited to system admins.
 
-Can a User Manager or System Manager access the configuration file? 
+Can a User Manager or System Manager access the configuration file?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. However, they will only have access to read actual values and modify values in accordance with their permissions. If appropriate read permissions do not exist, the default key values will be displayed.
@@ -371,10 +377,10 @@ Can any of the new roles view API keys/passwords or other sensitive information 
 
 No, password information is only visible to system admins and is obfuscated for other roles.
 
-If download links for compliance exports are enabled in the System Console, can a Read Only Admin download the reports? 
+If download links for compliance exports are enabled in the System Console, can a Read Only Admin download the reports?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Only roles that are explicitly granted access to **System Console > Compliance** have access to download compliance reports. 
+Only roles that are explicitly granted access to **System Console > Compliance** have access to download compliance reports.
 
 Can any of the new roles force-join Private channels?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -61,7 +61,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </scale/elasticsearch>`.
 - :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </onboard/ad-ldap-groups-synchronization>`.
 - :doc:`eDiscovery and compliance export automation </comply/compliance-export>`.
-- :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile-appconfig>`.
+- :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile/deploy-mobile-apps-using-emm-provider>`.
 - :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service>`.
 - :ref:`Private mobility with ID-only push notifications <configure/site-configuration-settings:push notification contents>`.
 - :doc:`Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy>`.
@@ -89,7 +89,7 @@ Mattermost Professional
 
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated technical workflows across multiple cross-functional teams to deliver mission-critical software.
 
-* *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see :doc:`deployment guides </guides/deployment>`), who purchase the appropriate subscription license key through a `channel reseller <https://mattermost.com/partners/#resellers>`_ or by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated in-product (**System Console > Edition and License > Start trial**).
+* *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see :doc:`deployment guides </guides/deployment-guide>`), who purchase the appropriate subscription license key through a `channel reseller <https://mattermost.com/partners/#resellers>`_ or by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated in-product (**System Console > Edition and License > Start trial**).
 
 This offering includes all the features of `Mattermost Free <#mattermost-free>`__, plus: 
 
@@ -138,23 +138,6 @@ Features include:
 - `Community support <https://mattermost.com/support/>`_.
 
 See a complete list of features `here <https://mattermost.com/pricing>`_.
-
-Other Mattermost plans
-----------------------
-
-Mattermost introduced a new pricing and packaging structure on October 13, 2021. The plans listed below reached end-of-life on October 31, 2023. We're no longer selling these products to new customers. For existing customers, we highly recommend working with your Mattermost Account team to plan for a migration to our new plans. We honored existing pricing and features for renewals and expansions of E10/20 until October 31, 2022. Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ with questions.
-
-Mattermost Enterprise Edition E10
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost E10 was offered as a commercial enterprise messaging solution for teams, groups, and departments working on multiple projects scaling from hundreds to thousands of users. Many E10 features are now offered in Mattermost Professional. Features included: Active Directory/LDAP Single Sign-on; OAuth 2.0 authentication for team creation, account creation, and user login; encrypted push notifications with service level agreements (SLAs) via HPNS; advanced access control policy; next business day support via online ticketing system; scale to handle hundreds of users per team.
-
-Mattermost Enterprise Edition E20
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost Enterprise E20 was offered as a commercial enterprise-grade messaging system that scales from hundreds to tens of thousands of users. Enterprise Edition E20 authentication features are now offered in Mattermost Professional, and High Availability and compliance features are offered in Mattermost Enterprise.
-
-Features included: Advanced SAML 2.0 authentication with Okta, OneLogin, and Active Directory Federation Services; Active Directory/LDAP group synchronization; OpenID Connect authentication for team creation, account creation, and user login; compliance exports of message histories with oversight protection; custom retention policies for messages and files; high availability support with multi-node database deployment; horizontal scaling through cluster-based deployment; Elasticsearch support for highly efficient database searches in a cluster environment; advanced performance monitoring; eligibility for Premier Support add-on.
 
 Product decisions
 -----------------

@@ -40,10 +40,6 @@ Team override scheme
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 On systems with multiple :ref:`Mattermost teams <collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 
 When you use this permission scheme:

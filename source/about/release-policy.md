@@ -37,11 +37,11 @@ We strongly recommend planning ahead for upgrades before the end of an ESR's lif
 
 ESRs don’t include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
 
-To install extended support releases, follow our [install](/guides/deployment) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/about/mattermost-server-releases).
+To install extended support releases, follow our [install](/guides/deployment-guide) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/about/mattermost-server-releases).
 
 ```{Important}
 - We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for a list of database, API, and `config.json` updates for all v9.x releases.
-- Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy E10/E20 license.
+- Your license key is decoupled from the Mattermost server version, so you can upgrade to the latest ESR using a legacy license.
 We highly recommend working with your Mattermost Account Team to plan for a migration to our new plans, and to access the latest features such as persistent notifications, advanced compliance features, call recordings, and more.
 ```
 
@@ -53,21 +53,21 @@ gantt
     tickInterval 2month
     
     section 2024
-    v9.5 Extended Support  :crit,    2024-02-16, 2024-11-15
     v9.6                   :done,  2024-03-16, 2024-06-15
     v9.7                   :done,  2024-04-16, 2024-07-15
     v9.8                   :done,  2024-05-15, 2024-08-15
     v9.9                   :done,  2024-06-16, 2024-09-15
     v9.10                  :done,  2024-07-16, 2024-10-15
     v9.11 & Desktop App v5.9 Extended Support :crit,    2024-08-16, 2025-05-15
-    v10.0                  :active,    2024-09-16, 2024-12-15
-    v10.1                  :active,    2024-10-16, 2025-01-15
-    v10.2                  :active,    2024-11-15, 2025-02-15
-    v10.3                  :upcoming,    2024-12-16, 2025-03-15
+    v10.0                  :done,    2024-09-16, 2024-12-15
+    v10.1                  :done,    2024-10-16, 2025-01-15
+    v10.2                  :active,  2024-11-15, 2025-02-15
+    v10.3                  :active,  2024-12-16, 2025-03-15
 
     section 2025
-    v10.4                  :upcoming,    2025-01-16, 2025-04-15
+    v10.4                  :active,  2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
+    v10.6                  :upcoming, 2025-03-16, 2025-06-15
 ```
 
 (esr-notifications)=

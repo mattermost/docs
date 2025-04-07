@@ -1826,6 +1826,7 @@ Configuration settings.
 
    Child Commands
       -  `mmctl config edit`_ - Edit the configuration settings
+      -  `mmctl config export`_ - Export the server configuration
       -  `mmctl config get`_ - Get the value of a configuration setting
       -  `mmctl config migrate`_ - Migrate existing configuration between backends
       -  `mmctl config patch`_ - Patch the configuration
@@ -1865,6 +1866,47 @@ Open the editor defined in the EDITOR environment variable to modify the server'
 .. code-block:: sh
 
    -h, --help   help for edit
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl config export
+~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Use this command to export the server configuration, which can then be imported into another server or environment. Masked values are only exported when the tool is running in `local mode <#local-mode>`__.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl config export [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl config export --remove-masked --remove-defaults
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help              help for export
+       --remove-defaults   remove default values from the exported configuration
+       --remove-masked     remove masked values from the exported configuration (default true)
 
 **Options inherited from parent commands**
 
@@ -2517,7 +2559,7 @@ List export jobs. Export files include the Job ID in the file name.
    --all            Fetch all export jobs. ``--page`` flag will be ignored if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (default 200)
+   --per-page int   Number of export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -2655,7 +2697,7 @@ List content extraction jobs.
    --all            Fetch all export jobs. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (default 200)
+   --per-page int   Number of export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -3277,7 +3319,7 @@ List import jobs
    --all            Fetch all import jobs. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of import jobs
-   --per-page int   Number of import jobs to be fetched (default 200)
+   --per-page int   Number of import jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -3819,7 +3861,7 @@ List LDAP synchronization jobs.
    --all            Fetch all import jobs. The ``--page`` flag will be ignored if provided.
    -h, --help       help for list
    --page int       Page number to fetch for the list of import jobs
-   --per-page int   Number of import jobs to be fetched (default 200)
+   --per-page int   Number of import jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4121,7 +4163,7 @@ List all registered OAuth2 applications.
 
    -h, --help       help for add
    --page int       Page number to fetch for the list of OAuth2 apps
-   --per-page int   Number of OAuth2 apps to be fetched per page (default 200)
+   --per-page int   Number of OAuth2 apps to be fetched per page (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -4161,10 +4203,6 @@ mmctl permissions add
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4209,10 +4247,6 @@ mmctl permissions remove
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 **Description**
 
 Remove one or more permissions from an existing role.
@@ -4256,10 +4290,6 @@ mmctl permissions reset
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 **Description**
 
 Reset the given role's permissions to the default settings and overwrite custom settings.
@@ -4302,10 +4332,6 @@ mmctl permissions role assign
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 **Description**
 
@@ -4785,7 +4811,7 @@ Get all plugins available from the Plugin Marketplace server, merging data from 
    -h, --help        help for list
    --local-only      Only retrieve local plugins
    --page int        Page number to fetch for the list of users
-   --per-page int    Number of users to be fetched (default 200)
+   --per-page int    Number of users to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -5941,7 +5967,7 @@ List the tokens belonging to a user.
    -h, --help       help for list
    --inactive       List only inactive tokens
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200)
+   --per-page int   Number of users to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -6507,7 +6533,7 @@ List all users.
    --all            Fetch all users. --page flag will be ignore if provided
    -h, --help       help for list
    --page int       Page number to fetch for the list of users
-   --per-page int   Number of users to be fetched (default 200)
+   --per-page int   Number of users to be fetched (maximum 200)
    --team string    If supplied, only users belonging to this team will be listed
 
 **Options inherited from parent commands**

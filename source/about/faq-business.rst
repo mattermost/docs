@@ -10,7 +10,7 @@ For example, the Mattermost server source code is and always has been made avail
 
 For clarity, this license information regarding forking the source specifically refers to the use (and compilation) of the Mattermost source code by third parties. Third parties are obligated to comply with the open source licenses referenced above in connection with their derivative works. Compiled versions and derivative works of Mattermost prepared by third parties may not be made available under any license other than those under which the applicable source code is made available.
 
-In contrast, Mattermost, as the copyright holder to the collection of the Mattermost source code, has exercised its exclusive right to make compiled versions of the Mattermost source code available under various other licenses (such as the MIT license and the Mattermost Commercial Enterprise License, as more specifically made clear in the table here: https://docs.mattermost.com/about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy).
+In contrast, Mattermost, as the copyright holder to the collection of the Mattermost source code, has exercised its exclusive right to make compiled versions of the Mattermost source code available under various other licenses (such as the MIT license and the Mattermost Commercial Enterprise License, as more specifically made clear in the table here: https://docs.mattermost.com/about/faq-license.html).
 
 How can I create an open source derivative work of Mattermost?
 --------------------------------------------------------------
@@ -54,7 +54,7 @@ Why does Mattermost have a discount for certain kinds of non-profits but not for
 
 While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion and public promotion of solutions, among many other factors.
 
-See our :ref:`License and Subscription <about/subscription:mattermost nonprofit license program>` documentation for details.
+See our :doc:`non-profit subscriptions </about/non-profit-subscriptions>` documentation for details.
 
 Can I create a derivative work of the Mattermost /mattermost repository that is not open source?
 -------------------------------------------------------------------------------------------------------

@@ -4,46 +4,67 @@ Channel types
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Channels are used to organize conversations across different topics. Find available channels in the left-hand panel. There are four types of channels: public channels, private channels, direct messages, and group messages. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read only channels>`.
+Channels are used to organize conversations across different topics. The channels you're a member of display in the left pane. Learn how to create channels by visiting the :doc:`create channels </collaborate/create-channels>` documentation.
 
-Sending messages, replying to messages, and participating in conversation threads are important ways to keep conversations active with your team. See the following topics to learn more about working with channels.
+There are 5 types of channels in Mattermost: 
+
+- `Public channels <#public-channels>`__
+- `Private channels <#private-channels>`__
+- `Direct message channels <#direct-message-channels>`__
+- `Group message channels <#group-message-channels>`__
+- `Archived channels <#archived-channels>`__
+
+.. tip::
+  
+  Enterprise customers can additionally configure :ref:`read-only <onboard/advanced-permissions:read only channels>` broadcast channels.
 
 Public channels
 ---------------
 
-Public channels are open to everyone on a team and are identified with a **Globe** |globe| icon. New team members are automatically added to two public channels when they sign up: **Town Square** and **Off-Topic**.
+Public channels are open to everyone on a team and are identified with a **Globe** |globe| icon. New team members are automatically added to the **Town Square**  channel.
 
-See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering and joining other channels.
+See the :doc:`Join and leave channels </collaborate/join-leave-channels>` documentation for details on discovering, joining, and leaving other channels.
 
 Private channels
 ----------------
 
-Private channels are for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock| icon. In Team Edition, any member of a private channel can add or remove other members from private channels, but in other Mattermost versions these permissions can be restricted to the channel admins and system admins.
+Private channels are channels for sensitive topics and are only visible to selected team members. Private channels are identified with a **Lock** |lock| icon. Channel members can choose to leave private channels at any time.
 
-Channel members can choose to leave private channels at any time.
+.. note::
 
-Direct messages
----------------
+  - Mattermost Enterprise and Professional customers can restrict channel management to system and channel admins.
+  - In a Mattermost Team Edition instance, any member of a private channel can add or remove other members from private channels.
 
-Direct messages conversations between 2 people. You can start a direct message with people on other teams :ref:`unless the system admin has disabled your ability to do so <configure/site-configuration-settings:enable users to open direct message channels with>`. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user. 
+Direct message channels
+-----------------------
 
-Direct messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. See the :doc:`notification documentation </preferences/manage-your-notifications>` for details on customizing notifications based on your preferences.
+Direct message channels are for conversations between 2 people. Only members of the conversation can see direct messages and channel heading information, including the last active status of the other user.
+
+You can start a direct message with people on other teams :ref:`unless the system admin has disabled your ability to do so <configure/site-configuration-settings:enable users to open direct message channels with>`.  
+
+Direct messages update the numbered badge count and trigger a notification unless the direct message is muted, or your notifications are disabled. See the :doc:`notification documentation </preferences/manage-your-notifications>` for details on customizing notifications based on your preferences.
 
 .. note::
 
   - From Mattermost v10, when sending a direct message, Mattermost warns you that the recipient's availability is set to :ref:`Do Not Disturb <preferences/set-your-status-availability:set your availability>`, and when the recipient's local time is outside of regular business hours (between 10PM and 6AM). This warning displays directly above the message text field.
-  
-  - Any message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
+  - When a Mattermost user is deactivated in the system, your :ref:`direct message channel <collaborate/channel-types:direct message channels>` with that user are `archived <#archived-channels>`__ and marked as read-only. An **Archived** icon |file-box| displays next to archived channels.
 
-Group messages
---------------
+Group message channels
+----------------------
 
-Group messages are conversations between 3 to 7 people. You can also start a group message with people on other teams when :ref:`unless the system admin has disabled your ability to do so <configure/site-configuration-settings:enable users to open direct message channels with>`. Only members of the conversation can see group messages. Group messages always display a new message badge.
+Group message channels are for conversations between 3 to 7 people. Only members of the conversation can see group messages. Group messages always display a new message badge.
 
-From Mattermost v9.1, group messages increment the numbered badge and trigger a notification unless the direct message is muted, or your notifications are disabled. You can control how you're notified about group message conversations by going to **Settings > Notifications**. See the :doc:`notification documentation </preferences/manage-your-notifications>` to learn more.
+Want to have a group conversation with more than 7 people? :doc:`Create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert group messages to a private channel </collaborate/convert-group-messages>`.
 
 .. note::
 
-   - Want to have a group conversation with more than 7 people? You can :doc:`create a private channel </collaborate/create-channels>`. Alternatively, from Mattermost v9.1, you can :doc:`convert the group message to a private channel </collaborate/convert-group-messages>`.
-  
-   - Any group message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
+  - You can start a group message with people on other teams when :ref:`unless the system admin has disabled your ability to do so <configure/site-configuration-settings:enable users to open direct message channels with>`.
+  - From Mattermost v9.1, group messages increase the numbered badge count and trigger a notification unless the direct message is muted, or your notifications are disabled. Control how you're notified about group message conversations by going to **Settings > Notifications**. See the :doc:`notification documentation </preferences/manage-your-notifications>` to learn more.
+  - Any group message history you have with a deactivated user remains available :ref:`unless your system admin disables your ability to do so <configure/site-configuration-settings:allow users to view archived channels>`.
+
+Archived channels
+-----------------
+
+Archived channels are deactivated public, private, direct message, or group message channels that are no longer used. Archived channels are identified with a **File Box** |file-box| icon. 
+
+:ref:`Archiving a channel <collaborate/archive-unarchive-channels:archive a channel>` marks it read-only to prevent new messages from being sent and preserve channel history. You can continue to access archived channels, unless your system admin has :ref:`disabled <configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.

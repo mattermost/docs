@@ -19,14 +19,15 @@ From Mattermost v9.10, Mattermost prompts you to grant permission to your web br
   :alt: From Mattermost v9.10, you're prompted to enable notifications.
 
 - When you select **Enable notifications**, you won't be asked again. You'll start receiving notifications in your web browser for all Mattermost activity with `badges <#badge-based-notifications>`__ and `sounds <#notification-sounds>`__. See the section below on `customizing your notifications <#customize-your-notifications>`__ based on how you prefer to be notified about Mattermost activity in a web browser.
-- If you dismiss this prompt, you won't receive Mattermost notifications in the web browser, and you'll prompted again the next time you open Mattermost in a web browser.
+- If you dismiss this prompt, you won't receive Mattermost notifications in the web browser, and you'll be prompted again the next time you open Mattermost in a web browser, or go to **Settings > Notifications > Desktop and mobile notifications**.
+- If you select **Deny** or **Deny Permanently**, you won't be asked again. You won't receive Mattermost notifications in the web browser. You can change this preference by granting notification permissions for Mattermost in the web browser.
 
 Badge-based notifications
 -------------------------
 
 In a web browser, Mattermost icons display the following types of badges:
 
-- Numbered badges for unread :ref:`direct <collaborate/channel-types:direct messages>` :ref:`group <collaborate/channel-types:group messages>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
+- Numbered badges for unread :ref:`direct <collaborate/channel-types:direct message channels>` :ref:`group <collaborate/channel-types:group message channels>` messages, :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, and :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching.
 
 A red dot badge means you have unread @mentions, keywords, direct messages, and group messages. 
 |chrome-mention-badge|

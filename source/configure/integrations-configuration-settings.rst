@@ -4,12 +4,19 @@ Integrations configuration settings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Both self-hosted and Cloud admins can access the following configuration settings in **System Console > Integrations**. Self-hosted admins can also edit the ``config.json`` file as described in the following tables.
+Review and manage the following integration configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Integrations**:
 
 - `Integrations management <#integrations-management>`__
 - `Bot Accounts <#bot-acocunts>`__
 - `GIF <#gif>`__
 - `CORS <#cors>`__
+
+.. tip::
+
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``EnableIncomingWebhooks`` value is under ``ServiceSettings``.
+
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.ServiceSettings.EnableIncomingWebhooks'``
+  - When working with the ``config.json`` file manually, look for an object such as ``ServiceSettings``, then within that object, find the key ``EnableIncomingWebhooks``.
 
 ----
 
@@ -21,7 +28,7 @@ Integrations management
 
 Access the following configuration settings in the System Console by going to **Integrations > Integration Management**.
 
-.. config:setting:: integrate-enableincomingwebhooks
+.. config:setting:: enable-incoming-webhooks
   :displayname: Enable incoming webhooks (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnableIncomingWebhooks
@@ -46,7 +53,7 @@ Developers building integrations can create webhook URLs for public channels and
 | This feature's ``config.json`` setting is ``"EnableIncomingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-enableoutgoingwebhooks
+.. config:setting:: enable-outgoing-webhooks
   :displayname: Enable outgoing webhooks (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnableOutgoingWebhooks
@@ -71,7 +78,18 @@ Developers building integrations can create webhook tokens for public channels. 
 | This feature's ``config.json`` setting is ``"EnableOutgoingWebhooks": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-enablecustomslashcommands
+.. note::
+
+  Disabling this configuration setting in larger deployments may improve server performance in the following areas:
+
+  - Reduced Network Traffic: Outgoing webhooks generate network requests to external services. Disabling them reduces the amount of traffic and resource usage related to those requests.
+  - Decreased Load on Server: Handling webhook events and managing connections to external services uses server resources. By disabling outgoing webhooks, the server workload is reduced, allowing it to allocate more resources to other important tasks.
+  - Improved Response Time: When outgoing webhooks are enabled, the server waits for the external services to return responses, potentially slowing down the performance if the external services are slow or unresponsive. Disabling them removes this dependency, leading to faster response times for user requests.
+  - Lower Memory Usage: Webhooks need memory to process and store data about the requests and responses. Disabling them can free up memory which can be used to improve overall server performance.
+  - Simplified Error Handling: Managing errors and retries for outgoing webhook failures can add complexity and overhead. Disabling outgoing webhooks can simplify error handling and reduce the processing overhead associated with it.
+  - However, outgoing webhooks are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+
+.. config:setting:: enable-custom-slash-commands
   :displayname: Enable custom slash commands (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnableCommands
@@ -93,7 +111,7 @@ Slash commands send events to external integrations that send a response back to
 | This feature's ``config.json`` setting is ``"EnableCommands": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-enableoauthserviceprovider
+.. config:setting:: enable-oauth-20-service-provider
   :displayname: Enable OAuth 2.0 service provider (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnableOAuthServiceProvider
@@ -117,7 +135,7 @@ Enable OAuth 2.0 service provider
 
   Cloud admins can't modify this configuration setting.
 
-.. config:setting:: integrate-request-timeout
+.. config:setting:: integration-request-timeout
   :displayname: Integration request timeout (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.OutgoingIntegrationRequestsDefaultTimeout
@@ -133,7 +151,7 @@ The number of seconds to wait for external integration HTTP requests, before tim
 | This feature's ``config.json`` setting is ``"OutgoingIntegrationRequestsDefaultTimeout": 3``.  |
 +------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-enableusernameoverride
+.. config:setting:: enable-integrations-to-override-usernames
   :displayname: Enable integrations to override usernames (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnablePostUsernameOverride
@@ -153,7 +171,7 @@ Enable integrations to override usernames
 | This feature's ``config.json`` setting is ``"EnablePostUsernameOverride": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-enableiconoverride
+.. config:setting:: enable-integrations-to-override-profile-picture-icons
   :displayname: Enable integrations to override profile picture icons (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnablePostIconOverride
@@ -173,7 +191,7 @@ Enable integrations to override profile picture icons
 | This feature's ``config.json`` setting is ``"EnablePostIconOverride": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-enableuseraccesstokens
+.. config:setting:: enable-personal-access-tokens
   :displayname: Enable personal access tokens (Integrations)
   :systemconsole: Integrations > Integration Management
   :configjson: .ServiceSettings.EnableUserAccessTokens
@@ -205,7 +223,7 @@ Bot accounts
 
 Access the following configuration settings in the System Console by going to **Integrations > Bot Accounts**.
 
-.. config:setting:: integrate-enablebotaccounts
+.. config:setting:: enable-bot-account-creation
   :displayname: Enable bot account creation (Integrations)
   :systemconsole: Integrations > Bot Accounts
   :configjson: .ServiceSettings.EnableBotAccountCreation
@@ -225,7 +243,7 @@ Enable bot account creation
 | This feature's ``config.json`` setting is ``"EnableBotAccountCreation": false`` with options ``true`` and ``false``. |
 +----------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-disablebotswhenownerisdeactivated
+.. config:setting:: disable-bot-accounts-when-owner-is-deactivated
   :displayname: Disable bot accounts when owner is deactivated (Integrations)
   :systemconsole: Integrations > Bot Accounts
   :configjson: .ServiceSettings.DisableBotsWhenOwnerIsDeactivated
@@ -255,7 +273,7 @@ GIF
 
 Access the following configuration settings in the System Console by going to **Integrations > GIF**.
 
-.. config:setting:: integrate-enablegifpicker
+.. config:setting:: enable-gif-picker
   :displayname: Enable GIF picker (Integrations)
   :systemconsole: Integrations > GIF
   :configjson: .ServiceSettings.EnableGifPicker
@@ -288,7 +306,7 @@ CORS
 
 Access the following configuration settings in the System Console by going to **Integrations > CORS**.
 
-.. config:setting:: integrate-allowcorsfrom
+.. config:setting:: enable-cross-origin-requests-from
   :displayname: Enable cross-origin requests from (Integrations)
   :systemconsole: Integrations > CORS
   :configjson: .ServiceSettings.AllowCorsFrom
@@ -313,7 +331,7 @@ Enable HTTP cross-origin requests from specific domains.
 | This feature's ``config.json`` setting is ``"AllowCorsFrom": ""`` with string input. |
 +--------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-corsexposedheaders
+.. config:setting:: cors-exposed-headers
   :displayname: CORS exposed headers (Integrations)
   :systemconsole: Integrations > CORS
   :configjson: .ServiceSettings.CorsExposedHeaders
@@ -329,7 +347,7 @@ Whitelist of headers that will be accessible to the requester.
 | This feature's ``config.json`` setting is ``"CorsExposedHeaders": ""`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-corsallowcredentials
+.. config:setting:: cors-allow-credentials
   :displayname: CORS allow credentials (Integrations)
   :systemconsole: Integrations > CORS
   :configjson: .ServiceSettings.CorsAllowCredentials
@@ -349,7 +367,7 @@ CORS allow credentials
 | This feature's ``config.json`` setting is ``"CorsAllowCredentials": false`` with options ``true`` and ``false``. |
 +------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: integrate-corsdebug
+.. config:setting:: cors-debug
   :displayname: CORS debug (Integrations)
   :systemconsole: Integrations > CORS
   :configjson: .ServiceSettings.CorsDebug

@@ -4,7 +4,7 @@ Prepare to upgrade Mattermost
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In most cases, you can :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from. When planning an upgrade, it's worth confirming that your current database and operating system version are still supported. Details can be found on our :ref:`software and hardware requirements <install/software-hardware-requirements:server software>` page.
+In most cases, you can :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from. When planning an upgrade, it's worth confirming that your current database and operating system version are still supported. Details can be found on our :ref:`software and hardware requirements <deploy/software-hardware-requirements:server software>` page.
 
 Upgrade Best Practices
 ----------------------
@@ -59,7 +59,7 @@ We strongly recommend that you:
 
 .. important::
 
-  Support for Mattermost Server v9.5 :doc:`Extended Support Release </about/mattermost-server-releases>` has come to the end of its life cycle on November 15, 2024. Upgrading to Mattermost Server v9.11 Extended Support Release or later is required. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Upgrading from v5.31 to v5.37 should take roughly the same amount of time as upgrading from v5.31 to v5.35, then upgrading v5.35 to 5.37. However, an upgrade directly from v5.31 to v5.37 could potentially take hours due to the database schema migrations required for v5.35. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
+  Support for Mattermost Server v9.11 :doc:`Extended Support Release </about/mattermost-server-releases>` is coming to the end of its life cycle on May 15, 2025. Upgrading to Mattermost Server v10.5 Extended Support Release or later is recommended. Upgrading from a previous Extended Support Release to the latest Extended Support Release is supported. Review the :doc:`important-upgrade-notes` for all intermediate versions in between to ensure you’re aware of the possible migrations that could affect your upgrade.
 
 v6.0 database schema migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

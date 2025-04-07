@@ -6,7 +6,14 @@ Troubleshoot notifications
 
 The Mattermost notifications you receive depend on your `Mattermost preferences <#check-your-mattermost-preferences>`__, the `Mattermost client <#check-your-mattermost-client-settings>`__ you're using, and the `operating system (OS) <#check-your-operating-system-settings>`__ you're running Mattermost on.
 
-If you’re having trouble receiving Mattermost notifications, see the following sections for troubleshooting steps you can follow to ensure you're receiving the notifications you want.
+Send yourself a test notification
+----------------------------------
+
+From Mattermost v10.3, you can send yourself a test notification by selecting **Settings** |gear|, and going to the **Notifications** options.
+
+Under **Troubleshooting notifications** select the **Send a test notification** option. If notifications are working, you'll receive a system-bot direct message in Mattermost confirming that notifications are working. 
+
+If you don't receive a system-bot direct message, see the following sections for troubleshooting steps you can follow to ensure you're receiving the notifications you want.
 
 Check your Mattermost preferences
 ----------------------------------

@@ -8,7 +8,7 @@ Chinese, Japanese and Korean search
 
 Enabling search for Chinese, Japanese and Korean (CJK) requires special configuration, since these languages do not contain spaces.
 
-See :doc:`database requirements documentation </install/software-hardware-requirements>` for how to set up search for these languages.
+See :doc:`database requirements documentation </deploy/software-hardware-requirements>` for how to set up search for these languages.
 
 Below is additional information on how to configure the database for different languages.
 
@@ -112,16 +112,16 @@ Below is additional information on how to configure the database for different l
 
 Mattermost で日本語検索をするためにはデータベースの設定変更が必要です
 
-- :ref:`MySQL <install/software-hardware-requirements:database software>`
+- :ref:`MySQL <deploy/software-hardware-requirements:database software>`
 
-- :ref:`Postgres <install/software-hardware-requirements:database software>`
+- :ref:`Postgres <deploy/software-hardware-requirements:database software>`
 
 日本語(CJK)検索設定のドキュメントの改善にご協力ください
 
 ガイド
 ~~~~~~
 
-Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <http://qiita.com/tags/Mattermost>`_ をご覧ください。
+Qiita上で Mattermost のインストールおよび構成のガイドを提供しています。詳細については、`こちら <https://qiita.com/tags/mattermost>`_ をご覧ください。
 
 한국어 / Korean
 ---------------
@@ -148,7 +148,7 @@ MySQL 해결 방법
 
     [mysqld]
     ft_min_word_len = 2
-    innodb_ft_min_word_len = 2
+    innodb_ft_min_token_size = 2
 
 3. 데이터베이스를 재시작합니다. (이 과정은 반드시 필요합니다.)
 

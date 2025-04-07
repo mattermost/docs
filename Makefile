@@ -42,7 +42,11 @@ endif
 
 # Put it first so that "make" without argument is like "make help".
 help:
+ifeq ($(OS),Windows_NT)
+	@CMD /C $(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+else
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+endif
 
 # Install necessary dependencies for the CI build pipeline.
 # NOTE: if the version of Python used to build the docs changes, update the `pipenv` command below accordingly.
@@ -74,7 +78,6 @@ else
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ -D exclude_patterns=archive/*,process/* "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O) 2>>"$(WARNINGSFILE)"
 endif
-
 
 # Download the latest Compass Icon assets.
 compass-icons:

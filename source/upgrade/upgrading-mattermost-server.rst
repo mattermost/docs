@@ -16,7 +16,7 @@ Before you begin
 
 **Read these instructions carefully from start to finish.** 
 
-Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost>`, familiarize yourself with all :doc:`software and hardware requirements </install/software-hardware-requirements>`, read the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
+Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/prepare-to-upgrade-mattermost>`, familiarize yourself with all :doc:`software and hardware requirements </deploy/software-hardware-requirements>`, read the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` and that you understand each step of the upgrade process documented below before starting a Mattermost upgrade. If you have questions or concerns, you can ask on the Mattermost forum at https://forum.mattermost.com/.
 
 **Gather the following information before starting the upgrade:**
 
@@ -32,6 +32,10 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
   - If you don't know its location, open the System Console and go to **Environment > File Storage**, then read the value in **Local Storage Directory**. 
   - Paths are relative to the ``mattermost`` directory. For example, if the local storage directory is ``./data/`` then the absolute path is ``{install-path}/mattermost/data``.
 - **Database disk space**: If you're upgrading a Mattermost deployment on the same server as your database, we recommend a minimum 2GB of free disk space to allow for extraction, copy, and cleanup, and a minimum of twice the size of your Mattermost installation available for the database.
+
+.. tip::
+
+  Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools:mattermost db migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
 
 Upgrade Mattermost Server
 --------------------------
@@ -127,7 +131,7 @@ Upgrade Mattermost Server
 
           sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
 
-     d. If you're using :doc:`Bleve search </deploy/bleve-search>`, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
+     d. If you're using :doc:`Bleve search </configure/bleve-search>`, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
 
         - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
         - You can then store that directory or re-index as preferred. 

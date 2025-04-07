@@ -6,10 +6,6 @@ SAML Single Sign-On: technical documentation
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Security Assertion Markup Language (SAML) is an open standard that allows identity providers (IdP), like OneLogin, to pass authorization credentials to service providers (SP), like Mattermost.
 
 In simpler terms, it means you can use one set of credentials to log in to many different sites. With a SAML identity provider account, you can log in to Mattermost and other sites securely with the same account.
@@ -142,3 +138,9 @@ Does ``relaystate`` need to be passed back to the client from the identity provi
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. If you're integrating Mattermost with a provider that doesn't already do so by default, ensure that ``relaystate`` is enabled. See the PingIdentity `SAML RelayState <https://support.pingidentity.com/s/article/SAML-RelayState-and-PingFederate#:~:text=RelayState%20is%20an%20optional%20parameter,the%20SAML%202.0%20bindings%20specification>`_ documentation for details.
+
+How can I troubleshoot the SAML logon process?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The most useful tool that we've found for troubleshooting SAML connection issues is the `SAML Chrome Panel <https://chromewebstore.google.com/detail/paijfdbeoenhembfhkhllainmocckace?utm_source=item-share-cp>`_ Chrome extension.  
+We're not aware of similar tools for other browsers, but this tool justifies installing Chrome!

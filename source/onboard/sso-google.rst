@@ -4,10 +4,6 @@ Google Single Sign-On
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Configuring Google Apps as a Single Sign-On (SSO) service
 ---------------------------------------------------------
 
@@ -82,7 +78,8 @@ Instead of using the System Console, you can add the Google settings directly to
 
 .. code-block:: text
 
-  "Enable": true,
+  "GoogleSettings": {
+        "Enable": true,
         "Secret": "P-k9R-7E7ayX9LdddddWdXVg",
         "Id": "1022ddddd5846-bkddddd4a1ddddd9d88j1kb6eqc.apps.googleusercontent.com",
         "Scope": "profile openid email",

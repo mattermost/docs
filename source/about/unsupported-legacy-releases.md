@@ -4,8 +4,7 @@
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
 ```{Important}
-- Support for Mattermost Server v8.1 [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) has come to the end of its life cycle on May 15, 2024. [Upgrading Mattermost Server](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) is required.
-- Upgrading from ESR-to-ESR (``major`` -> ``major_next``) is fully supported and tested. However, upgrading from ESR-to-ESR (``major`` to ``major+2``) is supported, but not tested. If you plan to upgrade across multiple releases, we strongly recommend upgrading from an ESR to another ESR. For example, if you're upgrading from the v8.1 ESR, upgrade to the [v9.5 ESR](https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release) or the v9.11 ESR.
+```{include} common-esr-support-upgrade.md
 ```
 
 - **8.1.13, released 2024-04-25**
@@ -1223,7 +1222,7 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
- - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/admin/generating-support-packet.html) using the Desktop App.
  - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
  - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
@@ -1377,7 +1376,7 @@ If you upgrade from a release earlier than v7.2, please read the other [Importan
 
 ### Known Issues
  - The new Insights feature has some performance costs that we are working to optimize. This feature can be disabled by setting the ``MM_FEATUREFLAGS_INSIGHTSENABLED`` environment variable to ``false``.
- - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-MM-46886).
+ - On larger screens, the Insights widgets are pushed to the side when the right-hand side is open [MM-46886](https://mattermost.atlassian.net/browse/MM-46886).
  - Adding an @mention at the start of a post draft and pressing the left or right arrow key can clear the post draft and the undo history [MM-33823](https://mattermost.atlassian.net/browse/MM-33823).
  - Google login fails on the Classic mobile apps.
  - Status may sometimes get stuck as **Away** or **Offline** in High Availability mode with IP Hash turned off.
@@ -2461,7 +2460,7 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
   - Mattermost v6.2.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
- -  Channel results in the channel autocomplete will include private channels. Customers using [Bleve](https://docs.mattermost.com/deploy/bleve-search.html) or [Elasticsearch](https://docs.mattermost.com/scale/elasticsearch.html) for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete. Note that only channel members will see private channel names in autocomplete results.
+ -  Channel results in the channel autocomplete will include private channels. Customers using [Bleve](https://docs.mattermost.com/configure/bleve-search.html) or [Elasticsearch](https://docs.mattermost.com/scale/elasticsearch.html) for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete. Note that only channel members will see private channel names in autocomplete results.
  -  [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html), available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling [``ThreadAutoFollow``](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) and [``CollapsedThreads``](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta) until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276-What-to-expect-when-enabling-Collapsed-Reply-Threads-Beta).
 
 ```{Important}
@@ -9376,7 +9375,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added message buttons to support user interactions with posts made by incoming webhooks and custom slash commands.
 
 #### Mobile Support for AppConfig
-- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/deploy/mobile-appconfig.html) to learn more.
+- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html) to learn more.
 
 ### Improvements
 
@@ -11415,7 +11414,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
  - Added server-side in-memory caching to reduce DB reads/writes.
 
 #### Connection Security
-- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/config-tls-mattermost.html).
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/deploy/server/setup-tls.html).
 - Support for automatically fetching certificates through Let's Encrypt.
 
 #### Minio File Storage
@@ -11706,7 +11705,7 @@ Release date: 2016-09-16
 ### Highlights
 
 #### Zapier Integration
-- Integrate over [700 public cloud applications](https://zapier.com/apps) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/app/login?next=%2Fdeveloper%2Fpublic-invite%2F152128%2F3a3df937fd2e873dd65f4c365d17251c%2F&type=login), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
+- Integrate over [700 public cloud applications](https://zapier.com/apps) using [Zapier](https://zapier.com), with full support for Markdown formatting. To start, [click here to accept an invitation to Zapier](https://zapier.com/partner/iframe/login?next=%2Fdeveloper%2Fpublic-invite%2F152128%2F3a3df937fd2e873dd65f4c365d17251c%2F&amp%3Btype=login&type=login), then [follow the setup guide](https://docs.mattermost.com/integrations/zapier.html).
 
 #### OAuth 2.0 Service Provider
 - Users with an account on a Mattermost server can securely sign in to third-party applications with an OAuth 2.0 protocol. See [documentation](https://docs.mattermost.com/configure/integrations-configuration-settings.html#integrate-enableoauthserviceprovider) to learn more.
@@ -12770,7 +12769,7 @@ Release date: 2016-04-16
 
 #### TPNS and EAS options
 
-- [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+- [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/configure/push-notification-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
 
 ### Languages
 
@@ -13148,7 +13147,7 @@ Expected Release date: 2016-01-16
 
 #### Mobile Experience
 
-- iOS reference app [now available from iTunes](https://itunes.apple.com/us/app/mattermost/id984966508?ls=1&mt=8), compiled from [open source repo](https://github.com/mattermost/ios)
+- iOS reference app now available from iTunes
 - Date headers now show when scrolling on mobile, so you can quickly see when messages were sent
 - Added "rapid scroll" support for jumping quickily to bottom of channels on mobile
 

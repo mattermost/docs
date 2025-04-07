@@ -4,26 +4,28 @@ High availability cluster-based deployment
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
-A High availability cluster-based deployment enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
+A high availability cluster-based deployment enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers. The failure of any one of these components does not interrupt operation of the system.
 
-Requirements for continuous operation
--------------------------------------
+Mattermost Enterprise supports:
 
-To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
+1. Clustered Mattermost servers, which minimize latency by:
 
-Redundancy at anticipated scale
-  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
+- Storing static assets over a global CDN.
+- Deploying multiple Mattermost servers to host API communication closer to the location of end users.
 
-Update sequence for continuous operation
-  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
+They can also be used to handle scale and failure handoffs in disaster recovery scenarios.
 
-  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
+2. Database read replicas, where replicas can be:
+
+- Configured as a redundant backup to the active database server.
+- Used to scale up the number of concurrent users.
+- Deployed closer to the location of end users, reducing latency.
+
+Moreover, search replicas are also supported to handle search queries.
+
+.. image:: ../images/architecture_high_availability.png
 
 Deployment guide
 ----------------
@@ -45,7 +47,7 @@ To ensure your instance and configuration are compatible with a high availabilit
 Add a server to the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:`../deploy/backup-disaster-recovery`.
+1. Back up your Mattermost database and the file storage location. See the :doc:`backup </deploy/backup-disaster-recovery>` documentation for details.
 2. Set up a new Mattermost server. This server must use an identical copy of the configuration file, ``config.json``. Verify the server is functioning by hitting the private IP address.
 3. Modify your NGINX setup to add the new server.
 4. Open **System Console > Environment > High Availability** to verify that all the machines in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
@@ -53,8 +55,8 @@ Add a server to the cluster
 Remove a server from the cluster
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Back up your Mattermost database and the file storage location. For more information about backing up, see :doc:` the documentation </deploy/backup-disaster-recovery>`.
-2. Modify your NGINX setup to remove the server. For information about this, see :ref:`proxy server configuration <install/setup-nginx-proxy:manage the nginx process>` documentation for details.
+1. Back up your Mattermost database and the file storage location. See the :doc:`backup </deploy/backup-disaster-recovery>` documentation for details.
+2. Modify your NGINX setup to remove the server. For information about this, see :ref:`proxy server configuration <deploy/server/setup-nginx-proxy:manage the nginx process>` documentation for details.
 3. Open **System Console > Environment > High Availability** to verify that all the machines remaining in the cluster are communicating as expected with green status indicators. If not, investigate the log files for any extra information.
 
 Configuration and compatibility
@@ -353,7 +355,7 @@ The database can be configured for high availability and transparent failover us
 Recommended configuration settings for PostgreSQL
 ``````````````````````````````````````````````````
 
-If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL 11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
+If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL v11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
 
 **Config for Postgres Primary or Writer node**
 
@@ -530,6 +532,23 @@ All cluster traffic uses the gossip protocol. :ref:`Gossip clustering can no lon
 
 When upgrading a high availability cluster-based deployment, you can't upgrade other nodes in the cluster when one node isn't using the gossip protocol. You must use gossip to complete this type of upgrade. Alternatively you can shut down all nodes and bring them all up individually following an upgrade.
 
+Requirements for continuous operation
+-------------------------------------
+
+To enable continuous operation at all times, including during server updates and server upgrades, you must make sure that the redundant components are properly sized and that you follow the correct sequence for updating each of the system's components.
+
+Redundancy at anticipated scale
+  Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
+
+Update sequence for continuous operation
+  You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. See the `upgrade guide`_ for instructions on how to do this.
+
+  **Exception:** Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around five seconds. For a database schema update, downtime can be up to 30 seconds.
+
+.. important::
+
+   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
+
 Frequently asked questions (FAQ)
 ---------------------------------
 
@@ -545,6 +564,11 @@ When deploying Mattermost in a high availability configuration, we recommend usi
 
 For example, if you're deploying Mattermost on AWS with Amazon Aurora we recommend utilizing multiple Availability Zones. If you're deploying Mattermost on your own cluster please consult with your IT team for a solution best suited for your existing architecture.
 
+How to find the hostname of the connected websocket?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v10.4, Enterprise customers running self-hosted deployments can go to the **Product** menu |product-list| and select **About Mattermost** to see the hostname of the node in the cluster running Mattermost.
+
 Troubleshooting
 ---------------
 
@@ -557,7 +581,7 @@ You may be asked to provide this data to Mattermost for analysis and troubleshoo
 
 .. note::
 
-  - Ensure that server log files are being created. You can find more on working with Mattermost logs :ref:`here <install/troubleshooting:review mattermost logs>`.
+  - Ensure that server log files are being created. You can find more on working with Mattermost logs :ref:`here <deploy/server/troubleshooting:review mattermost logs>`.
   - When investigating and replicating issues, we recommend opening **System Console > Environment > Logging** and setting **File Log Level** to **DEBUG** for more complete logs. Make sure to revert to **INFO** after troubleshooting to save disk space. 
   - Each server has its own server log file, so make sure to provide server logs for all servers in your High Availability cluster-based deployment.
 

@@ -6,11 +6,17 @@ Guest accounts
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
+Guest accounts in Mattermost are a way to collaborate with individuals, such as vendors and contractors, outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
 
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
+.. important::
+  
+  - A system admin must :ref:`enable guest access <configure/authentication-configuration-settings:guest access>` before guests can be invited.
+  - Mattermost Enterprise and Professional customers can :doc:`control who can invite guests </onboard/advanced-permissions>` in their organization. By default, only system admins can invite guests.
+  - Guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`. However, guests aren't automatically added to the default **Town-square** channel when they log in. You must :doc:`invite guests </collaborate/invite-people>` to individual teams and channels manually. Deactivating a guest account reduces your licensed seat count.
+  - You'll identify guest users in Mattermost based on their **GUEST** badge next to their name and profile picture. Channels that contain guests also display the message ***This channel has guests** in the channel header.
 
-Guest accounts are a way to collaborate with individuals, such as vendors and contractors, outside of your organization by controlling their access to channels and team members. For example, guest accounts can be used to collaborate with customers on a support issue or work on a website project with resources from an external design firm.
+Guests account limits
+---------------------
 
 Guests can:
 
@@ -28,22 +34,6 @@ Guests cannot:
 - Create direct messages or group messages with members who aren’t within the same channel
 - Invite people
 
-.. important::
-
-  For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.This means that guest accounts count as a paid user in your Mattermost :doc:`workspace </guides/use-mattermost>`. However, guests aren't automatically added to the default **Town-square** and **Off-topic** channels when they log in. Guests must be invited/added to these channels manually.
-
-Enable guest accounts
-----------------------
-
-1. Go to **System Console > Authentication > Guest Access**.
-2. Set **Enable Guest Access** to **true**.
-3. (Optional) Specify the **Whitelisted Guest Domains** that are acceptable for guest access. This allows the system admin to set a list of approved guest domains.
-4. (Optional) Set **Enforce Multi-factor Authentication** to **true**. If you're enforcing MFA for your users, you can optionally choose to also enforce MFA for your guest users.
- 
-.. note::
-
-  If you have team domain restrictions, you also need to add your guest domain in **System Console > User Management > Teams**. Select a team, then enable **Only specific email domains can join this team**.
-
 Guest authentication
 ---------------------
 
@@ -53,28 +43,8 @@ Before you proceed, ensure that the authentication method you wish to use is cor
 
 Converting a member user to a guest won't change the channels they are in. However, they will be restricted from discovering additional channels and are unable to direct message/group message users outside of the channels they are in. They can be added to channels by system admins and other roles that have the correct permissions to invite guests.
 
-Invite guests to the Mattermost server via email
--------------------------------------------------
-
-Guests can be invited into one or more Mattermost channels within a team by system admins and other roles that have the correct permission to invite guests. A guest can be invited into channels on multiple teams.
-
-.. note::
-  
-  Guest invitations are revoked after 48 hours per the member email invitation process. If your guest has not accepted the invitation within that period, please follow the steps below to resend an invitation to the guest.
-
-To invite guests into one or more Mattermost channels:
-
-1. Go to **System Console > Signup > Enable Email Invitations** to enable email invites.
-2. Select your team's name at the top of the channel sidebar and choose **Invite People**.
-3. Select **Invite Guests**.
-4. Enter the guest’s email address.
-5. Choose the channels the guest can join (excluding managed teams).
-6. (Optional) Enter a custom message.
-
-.. image:: ../images/Guest_Invite_Screen.png
-
 Configure AD/LDAP authentication
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first login instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
@@ -88,7 +58,7 @@ If a Mattermost guest user has the ``guest`` role removed in the AD/LDAP system,
 When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost system admin. 
 
 Configure SAML 2.0 authentication
-----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 When enabled, the **Guest Attribute** in Mattermost identifies external users whose SAML assertion is guest and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first login instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
@@ -101,39 +71,18 @@ If a Mattermost guest user has the guest role removed in the SAML system, the sy
 
 When a guest logs in without having any channels assigned to their account, they're advised to talk to a Mattermost system admin.
 
-Guest permission settings
--------------------------
-
-In Mattermost Enterprise and Professional, you can control which users can invite guests. By default, only the system admins can invite guests.
-
-There are :doc:`additional permissions </onboard/advanced-permissions>` in Mattermost Enterprise that can be adjusted under **System Console > User Management > Permissions > System Scheme** to control a guest’s ability to:
-
- - Edit posts
- - Delete posts
- - Post reactions
- - Create private channels with members they are allowed to collaborate with
-
-Guest identification
----------------------
-
-Guests are identified with a **Guest** badge unless your system admin has :ref:`disabled guest badges <configure/authentication-configuration-settings:guest access>`. When visible, this badge is visible in various places in the Mattermost interface, such as on a guest’s profile and next to their name on user lists, including @mentions. Additionally, when badges are visible, and guests are added to a channel, a system message notifies other channel members that the added user is a guest.
-
-Additionally, when guest badges are visible, channels containing guests display the message: *This channel has guests*.
-
-.. image:: ../images/Guest_Badges.png
-
 Manage guests
 --------------
 
-Add guests to additional channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+See the following documentation to learn more about managing guests:
 
-Users with the permissions to invite guests can **Invite Guests** to additional channels. A system message will be posted in the channels to let other members know a guest user has been added.
+- :doc:`invite people </collaborate/invite-people>` to teams and channels
+- :ref:`manage channel members <collaborate/manage-channel-members:remove other members from a channel>`
+- :ref:`remove people from teams <collaborate/organize-using-teams:remove people from teams>`
 
-Remove guests from channels and teams
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. tip:: 
 
-Guests can be removed from a channel through **Manage members**, or by using the ``/kick`` or ``/remove`` slash commands.
+  You can also use the ``/kick`` or ``/remove`` slash commands to remove a guest from a channel.
 
 When a guest has been removed from all channels within a team, and if they belong to other teams, they will default into the last channel on the last team they have accessed. If they are removed from all channels on all teams, they'll be taken to a screen letting them know they have no channels assigned.
 
@@ -151,7 +100,7 @@ System admins can also promote a guest to member by updating their role in **Sys
   You can filter the list in **System Console > User Management > Users** to view all guests in the system.
 
 Disable guest accounts
------------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 To disable the guest accounts feature, go to **System Console > Authentication > Guest Access**, then set **Enable Guest Access** to **False**. To deactivate individual guest accounts, go to **System Console > User Management > Users**. Select a user, then select **Deactivate**. You can re-activate individual guest accounts by selecting **Activate**.
 
@@ -162,7 +111,7 @@ To disable the guest accounts feature, go to **System Console > Authentication >
 You can disable individual guest accounts in **System Console > User Management** via **Manage Members**. When a single guest account is disabled or the feature is disabled, the guest will be marked as ``deactivated``, be logged out of Mattermost, and all their sessions will be revoked.
 
 Reinstate guest accounts
--------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 When guest access is re-enabled for AD/LDAP, the ``guest`` filter is reinstated. 
 

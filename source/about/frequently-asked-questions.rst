@@ -2,15 +2,16 @@ Frequently asked questions (FAQ)
 =================================
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
 
-    faq-general.rst
+    General questions <faq-general>
     Community questions <faq-community>
     Notifications questions <faq-notifications>
     Video, audio, and screen sharing questions <faq-video-audio-screensharing>
     Enterprise questions <faq-enterprise>
     License questions <faq-license>
+    Mattermost source available iicense questions <faq-mattermost-source-available-license>
     Integration questions <faq-integrations>
     Use cases <faq-use-cases>
     Product questions <faq-product>
@@ -27,6 +28,7 @@ The following pages will answer many of your frequently asked questions about Ma
 * :doc:`Video, audio, and screen sharing questions <faq-video-audio-screensharing>` - What's available for video and audio calling and screen sharing?
 * :doc:`Enterprise questions <faq-enterprise>` - Learn about Mattermost Enterprise Edition.
 * :doc:`License questions <faq-license>` - Learn more about Mattermost licenses.
+* :doc:`Mattermost source available iicense questions <faq-mattermost-source-available-license>` - Learn what the Mattermost source available license offers.
 * :doc:`Integration questions <faq-integrations>` - Can messaging functionality be added to a propietary SaaS service? 
 * :doc:`Use cases <faq-use-cases>` - Learn how Mattermost supports various use cases.
 * :doc:`Product questions <faq-product>` - Which features are available on different Mattermost clients?

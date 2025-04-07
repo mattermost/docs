@@ -56,7 +56,7 @@ Data management
 
 - **Data Retention:** Use :doc:`data retention </comply/data-retention-policy>` to automatically erase data after a set period of time, a feature that meets the Right to Erasure principle. In Team Edition, you can use database scripts to achieve the same result.
 - **Profile Deletion:** Delete a user’s personal information via :ref:`mmctl user delete <manage/mmctl-command-line-tool:mmctl user delete>`. This permanently deletes all user information including messages created by the user.
-- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile-overview>` to learn more.
+- **Self-Hosted Push Notification Service:** Self-host your own push notification service, or deploy mobile apps with any EMM provider that supports `AppConfig <https://www.appconfig.org/>`_ to meet security and compliance policies. See :doc:`our Mobile App deployment documentation </deploy/mobile/mobile-app-deployment>` to learn more.
 
 Data portability
 ^^^^^^^^^^^^^^^^^
@@ -67,9 +67,11 @@ Data portability
 Accessibility compliance
 -------------------------
 
+See the :doc:`accessibility compliance policy </about/accessibility-compliance-policy>` documentation for details.
+
 Adherence with accessibility standards is assisted in the following ways:
 
-- **508 Compliance:** For U.S. public sector organizations seeking to confirm 508 compliance, Mattermost publicly shares its :doc:`Voluntary Product Accessibility Template (VPAT) online </about/vpat>`.
+- **508 Compliance:** VPATs are made available upon request for customers, partners, and other stakeholder seeking to confirm 508 compliance.
 - **WCAG 2.0L:** For meeting Web Contact Accessibility Guidelines 2.0 (WCAG), Mattermost has received a third-party "A" rating and is working towards an "AA" rating.
 - **ADA:** Mattermost compliance with the Americans with Disabilities Act (ADA) is achieved by offering the accessibility support detailed in the VPAT and WCAG 2.0 guidelines with Mattermost's online experience as the interface to accessibility tools.
 - **Remediation:** Any technical issue in a current or future product release that would prevent compliance with accessibility ratings stated in product documentation would be considered a product defect and Mattermost would welcome the `public filing of an issue report against the defect <https://developers.mattermost.com/contribute/why-contribute/#youve-found-a-bug>`_ so that it may be resolved.
@@ -132,7 +134,7 @@ of assets, the denial of export privileges, and suspension or debarment from Gov
 For these reasons, please take the time to familiarize yourself with applicable export (and import) controls in the
 jurisdictions in which you operate. Although Mattermost cannot provide advice on export matters, this web page provides the information needed in order to export Mattermost products.
 
-This overview is specific to the `U.S. Export Administration Regulations <https://www.bis.doc.gov/index.php/regulations/export-administration-regulations-ear>`_ (EAR), however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
+This overview is specific to the U.S. Export Administration Regulations (EAR); however, business operations may subject you to other regulations such as the `International Traffic in Arms Regulations <https://www.pmddtc.state.gov/regulations_laws?id=ddtc_kb_article_page&sys_id=24d528fddbfc930044f9ff621f961987>`_.
 
 General information
 ~~~~~~~~~~~~~~~~~~~~
@@ -156,7 +158,7 @@ Mattermost Enterprise Edition (includes Mattermost Professional & Enterprise) is
 The other key areas to be aware of for an export of Mattermost software or technology are:
 
 **Sanctions**: There are comprehensive sanctions to Cuba, Iran, North Korea, Syria, and other countries/territories with specific prohibitions, such as Crimea, Donetsk, and Luhansk regions of Ukraine, Belarus, Russia, Venezuela, Myanmar/Burma, and Cambodia. Details can be
-located at `BIS <https://www.bis.doc.gov/index.php/forms-documents/regulations-docs/federal-register-notices/federal-register-2014/1063-746-1/file>`_ and `OFAC <https://ofac.treasury.gov/>`_. The countries and their sanctions are subject to change.
+located at `BIS <https://www.bis.gov/>`_. The countries and their sanctions are subject to change.
 
 **WMD (Weapons of Mass Destruction)**: Mattermost, its customers and its business partners may not export to parties involved
 in `proliferation <https://www.bis.doc.gov/index.php/documents/regulation-docs/413-part-736-general-prohibitions/file>`_ of weapons of mass destruction, along with other prohibited end-uses under the U.S. Export Administration Regulations (“EAR”).
@@ -197,7 +199,7 @@ What information is shared when I select **Contact us** on a Mattermost Admin Ad
 Selecting **Contact us** in the Mattermost Admin Advisor will send some information to us. This may include the email address and name associated with your Mattermost account as well as the number of registered users on your system, the site URL, and a Mattermost diagnostic server ID number. This information is used to contact you as requested and to help us better understand your needs.
 
 .. note::
-    :ref:`Mattermost Admin Advisor notices are disabled <manage/in-product-notices:admin advisor notices>` in v5.35 and later.
+    :doc:`Mattermost Admin Advisor notices are disabled </manage/in-product-notices>` in v5.35 and later.
 
 Are the server access logs containing IP addresses a GDPR compliance issue?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -216,7 +218,7 @@ We are in the process of acquiring Authority to Operate (ATO) and Certificate of
 How do you ensure personal data stays within European Union?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-When the customer’s installation of Mattermost is self-hosted, Mattermost does not process any personal data under the jurisdiction of the data privacy laws governing within the European Union. The Mattermost support team leverages Zendesk customer service software, which hosts Mattermost information within the United States. For more information on Zendesk, please see their `Privacy and Data Protection <https://www.zendesk.com/company/privacy-and-data-protection/#gdpr-sub>`_ page.
+When the customer’s installation of Mattermost is self-hosted, Mattermost does not process any personal data under the jurisdiction of the data privacy laws governing within the European Union. The Mattermost support team leverages Zendesk customer service software, which hosts Mattermost information within the United States. For more information on Zendesk, please see their `Privacy and Data Protection <https://www.zendesk.com/trust-center/>`_ page.
 
 Zendesk privacy and data protection safeguards notwithstanding, the provision of support services is part of the contractual obligations between Mattermost and its customers. In order for Mattermost to provide such support, a customer must be able to identify as a licensed user, therefore requiring the user to provide personal data to the support agent. Regardless of where the support agent is located, the personal data will indeed be hosted outside of the EU.
 
@@ -234,6 +236,4 @@ We plan to add IPv6 compliance for :doc:`Audio & Screen Sharing </configure/call
 Are you 508 compliant?
 ~~~~~~~~~~~~~~~~~~~~~~
 
-Yes, the Mattermost platform is compliant with 508.
-
-Learn more about our :doc:`VPAT Template for 508 compliance </about/vpat>`, and `how Mattermost approaches accessibility in product development <https://mattermost.com/blog/mattermost-accessibility-for-the-visually-impaired/>`_.
+Yes, the Mattermost platform is compliant with 508. See the :doc:`accessibility compliance policy </about/accessibility-compliance-policy>` documentation for details.

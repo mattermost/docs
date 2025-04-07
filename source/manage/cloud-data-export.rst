@@ -4,7 +4,7 @@ Mattermost workspace migration
 .. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
 
-This document outlines the process for migrating an existing Mattermost instance `from self-hosted to Cloud <#migrate-from-self-hosted-to-cloud>`, and `from Cloud to self-hosted <#migrate-from-cloud-to-self-hosted>`.
+This document outlines the process for migrating an existing Mattermost instance `from self-hosted to Cloud <#migrate-from-self-hosted-to-cloud>`__, and `from Cloud to self-hosted <#migrate-from-cloud-to-self-hosted>`__.
 
 .. note::
    
@@ -104,7 +104,7 @@ You can migrate your Cloud workspace data to a self-hosted deployment at any tim
 How does the process work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before you export and migrate your data, you must :doc:`install Mattermost </guides/deployment>` on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
+Before you export and migrate your data, you must :doc:`install Mattermost </guides/deployment-guide>` on the server you’ll be using to run Mattermost. The migration is done using the mmctl CLI tool, which is a remote CLI tool for Mattermost that's installed locally and uses the Mattermost API. ``mmctl`` is pre-installed.
 
 The :ref:`mmctl usage notes <manage/mmctl-command-line-tool:mmctl usage notes>` provide some additional context and information which you can reference before and during the process.
 

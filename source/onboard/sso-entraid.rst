@@ -4,10 +4,6 @@ Entra ID Single Sign-On
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E20</p>
-
 Configuring EntraID as a Single Sign-On (SSO) service
 --------------------------------------------------------
 
@@ -72,7 +68,7 @@ Step 3: Configure Mattermost for Entra ID SSO
 Note about Microsoft Active Directory Tenants
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Entra ID. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. You can learn more about `getting an Azure AD tenant here <https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`_.
+A Microsoft Active Directory (AD) tenant is a dedicated instance of Azure Active Directory (Azure AD) that you own and would have received when signing up for a Microsoft cloud service, such as Azure or Entra ID. Tenants are commonly used by organizations who want to store information about their users, such as passwords, user profile data, and permissions. See the Microsoft Entra ID <https://learn.microsoft.com/en-us/entra/identity-platform/quickstart-create-new-tenant>`_ documentation to learn more about getting an Azure AD tenant.
 
 To allow your Azure AD users to log in to Mattermost using Entra ID SSO, you must register Mattermost in the Microsoft Azure AD tenant that contains the users' information. The registration can be done from the `Microsoft Azure portal <https://portal.azure.com>`__. The steps to register the Mattermost account in the tenant should be similar to those provided above, and you can find more information about `integrating apps with Azure AD here <https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-create-new-tenant>`_.
 
@@ -95,7 +91,8 @@ Instead of using the System Console, you can add the Entra ID settings directly 
 
 .. code-block:: text
 
-  "Enable": false,
+  "Office365Settings": {
+        "Enable": false,
         "Secret": "i.hddd6Pu3--5dg~cRddddqOrBdd1a",
         "Id": "28ddd714-1f2f-4f9c-9486-90b8dddd27",
         "Scope": "profile openid email",

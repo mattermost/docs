@@ -9,7 +9,7 @@ Configure rate limiting settings by going to **System Console > Environment > Ra
 
   Mattermost rate limiting configuration settings are intended for small deployments of Mattermost up to a few hundred users, and is not intended for larger, Enterprise-scale deployments.
 
-.. config:setting:: ratelimit-enableratelimiting
+.. config:setting:: enable-rate-limiting
   :displayname: Enable rate limiting (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.Enable
@@ -21,10 +21,6 @@ Configure rate limiting settings by going to **System Console > Environment > Ra
 Enable rate limiting
 ~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable or disable rate limiting to throttle APIs to a          | - System Config path: **Environment > Rate Limiting**                    |
 | specified number of requests per second.                       | - ``config.json`` setting: ``".RateLimitSettings.Enable: false”,``       |
@@ -35,7 +31,7 @@ Enable rate limiting
 | - **false**: **(Default)** API access isn’t throttled.         |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-maxpersecond
+.. config:setting:: maximum-queries-per-second
   :displayname: Maximum queries per second (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.PerSec
@@ -44,10 +40,6 @@ Enable rate limiting
 
 Maximum queries per second
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Throttle the API at this number of requests per second when   | - System Config path: **Environment > Rate Limiting**                    |
@@ -60,7 +52,7 @@ Maximum queries per second
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-maxburst
+.. config:setting:: maximum-burst-size
   :displayname: Maximum burst size (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.MaxBurst
@@ -71,10 +63,6 @@ Maximum queries per second
 Maximum burst size
 ~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 | The maximum number of requests allowed beyond the per second    | - System Config path: **Environment > Rate Limiting**                    |
 | query limit when `rate limiting <#enable-rate-limiting>`__      | - ``config.json`` setting: ``".RateLimitSettings.MaxBurst: 100,``        |
@@ -84,23 +72,17 @@ Maximum burst size
 |                                                                 |                                                                          |
 | Increase this value to allow for more concurrent requests to be |                                                                          |
 | handled, and decrease this value to limit this capacity.        |                                                                          |
-|                                                                 |                                                                          |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-memorystoresize
+.. config:setting:: memory-store-size
   :displayname: Memory store size (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.MemoryStoreSize
   :environment: MM_RATELIMITSETTINGS_MEMORYSTORESIZE
   :description: The maximum number of user sessions connected to the system as determined by vary rate limit settings when `rate limiting <#enable-rate-limiting>`__ is enabled. Default is **10000** sessions.
 
-
 Memory store size
 ~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | The maximum number of user sessions connected to the system as  | - System Config path: **Environment > Rate Limiting**                      |
@@ -116,7 +98,7 @@ Memory store size
 | too frequently.                                                 |                                                                            |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-varybyremoteaddress
+.. config:setting:: vary-rate-limit-by-remote-address
   :displayname: Vary rate limit by remote address (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.VaryByRemoteAddr
@@ -129,10 +111,6 @@ Memory store size
 Vary rate limit by remote address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
-
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | Configure Mattermost to rate limit API access by IP address     | - System Config path: **Environment > Rate Limiting**                      |
 | when `rate limiting <#enable-rate-limiting>`__ is enabled.      | - ``config.json`` setting: ``".RateLimitSettings.VaryByRemoteAddr: true,`` |
@@ -142,7 +120,7 @@ Vary rate limit by remote address
 | - **false**: Rate limiting does not vary by IP address.         |                                                                            |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-varybyuser
+.. config:setting:: vary-rate-limit-by-user
   :displayname: Vary rate limit by user (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.VaryByUser
@@ -153,10 +131,6 @@ Vary rate limit by remote address
 
 Vary rate limit by user
 ~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | Configure Mattermost to rate limit API access by authentication | - System Config path: **Environment > Rate Limiting**                      |
@@ -169,7 +143,7 @@ Vary rate limit by user
 |   authentication token.                                         |                                                                            |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 
-.. config:setting:: ratelimit-varybyhttpheader
+.. config:setting:: vary-rate-limit-by-http-header
   :displayname: Vary rate limit by HTTP header (Rate Limiting)
   :systemconsole: Environment > Rate Limiting
   :configjson: .RateLimitSettings.VaryByHeader
@@ -178,10 +152,6 @@ Vary rate limit by user
 
 Vary rate limit by HTTP header
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. raw:: html
-
- <p class="mm-label-note">Also available in legacy Mattermost Enterprise Edition E10 or E20</p>
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------+
 | Configure Mattermost to vary rate limiting API access           | - System Config path: **Environment > Rate Limiting**                      |

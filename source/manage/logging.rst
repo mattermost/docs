@@ -453,7 +453,7 @@ TCP target configuration options
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-The TCP socket targets can be configured with an IP address or domain name, port, and optional TLS certificate. TCP socket target support requires Mattermost Enterprise.
+The TCP socket targets can be configured with an IP address or domain name, port, and optional TLS certificate. TCP socket target support requires Mattermost Enterprise. You can :download:`download a sample JSON file </samples/sample-logger-config.json>` of the configuration to use as a starting point.
 
 +----------+----------+--------------------------------------------------------------------------------------------------------------------------+
 | **Key**  | **Type** | **Description**                                                                                                          |

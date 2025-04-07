@@ -6,19 +6,42 @@ This page describes features that are removed from support for Mattermost, or wi
 Removed features in upcoming versions
 -------------------------------------
 
+Mattermost Server v11.0.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Starting in September 2025, Mattermost will deprecate the ``TeamSettings.ExperimentalViewArchivedChannels`` setting in favor of a new setting, ``TeamSettings.BrowseArchivedPublicChannels``. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
+- Beginning in Mattermost v11 (estimated in September 2025), Playbooks will be unsupported for Free Edition and Professional customers. Professional customers using Playbooks can contact their Customer Success Manager to discuss potential upgrade options with discounting applied as appropriate. Additional details can be found in the `Clarification on Playbooks in Mattermost v10 <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`__ article on the Mattermost Discussion Forums.
+- Mattermost v11 will retire experimental Bleve Search functionality as it no longer aligns with our vision for streamlined search solutions. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
+- End of support for MySQL is targeted for Mattermost v11. See `this document <https://docs.mattermost.com/deploy/postgres-migration.html>`__ for migration guidelines from MySQL to PostgreSQL.
+
+Removed features by Mattermost version
+----------------------------------------
+
+Mattermost Server v10.6.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <deploy/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.
+
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The Mattermost server will stop supporting manual plugin deployment. Plugins are deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
-- Mattermost will stop providing official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
+- The Mattermost server has stopped supporting manual plugin deployment. Plugins were deployed manually when an administrator or some deployment automation copies the contents of a plugin bundle into the server's working directory. If a manual or automated deployment workflow is still required, administrators can instead prepackage the plugin bundles. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-manual-plugin-deployment/21192>`__.
+- Mattermost has stopped official Mattermost server builds for the Microsoft Windows operating system. Administrators should migrate existing Mattermost server installations to use the official Linux builds. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-server-builds-for-microsoft-windows/21498>`__.
+
+Mattermost Mobile App v2.25.0
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- In the Mattermost Mobile App v2.25, Mattermost has stopped supporting iOS versions 13 and 14. Users should update their iOS version to v15.1 or newer. See more details in `this forum post <https://forum.mattermost.com/t/deprecation-notice-ios-13-and-14-versions/21845>`__.
+
+Mattermost Server v10.4.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- The ability to import Slack themes as Mattermost themes is no longer supported.
 
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- As part of our continuous efforts to enhance your user experience, we will be phasing out the Classic Mobile App. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ to continue enjoying our services without interruption. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
-
-Removed features by Mattermost version
-----------------------------------------
+- The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
 
 Mattermost Server v10.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
