@@ -45,7 +45,7 @@ def find_duplicate_redirects(redirects):
                 
     return len(duplicate_sources) == len(redirects)
 
-def setup(app: Sphinx):
+def setup(_: Sphinx):
     # Check for duplicate redirects when Sphinx builds
     find_duplicate_redirects(redirects)
     return

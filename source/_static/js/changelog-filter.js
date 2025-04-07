@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    // Only run on the v10 changelog page
+    // Only run on the changelog pages.
     if (!window.location.pathname.includes('/about/mattermost-v10-changelog') && !window.location.pathname.includes('/about/mattermost-v9-changelog')) {
         return;
     }
