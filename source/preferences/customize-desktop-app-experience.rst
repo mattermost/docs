@@ -8,7 +8,7 @@ Additional customization options are available to you when using the Mattermost 
 
 .. tab:: Linux
 
-    When you :ref:`install the Mattermost desktop app <collaborate/install-desktop-app:install and update the mattermost desktop app>`, you can access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the desktop app by selecting **File > Settings...**
+    When you :doc:`install the Mattermost desktop app </collaborate/install-desktop-app>`, you can access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the desktop app by selecting **File > Settings...**
 
     .. image:: ../images/desktop-app-settings.jpg
         :alt: Access Desktop App customization settings by selecting More in the top left corner, then selecting File > Settings.
@@ -56,7 +56,7 @@ Additional customization options are available to you when using the Mattermost 
 
 .. tab:: Mac
 
-    When you :ref:`install the Mattermost desktop app <collaborate/install-desktop-app:install and update the mattermost desktop app>`, you can access additional Desktop App customization settings by selecting **Mattermost > Preferences** from the menu bar.
+    When you :doc:`install the Mattermost desktop app </collaborate/install-desktop-app>`, you can access additional Desktop App customization settings by selecting **Mattermost > Preferences** from the menu bar.
 
     .. image:: ../images/mac-desktop-app-settings.png
         :alt: Access Desktop App customization settings by selecting Mattermost from the menu bar, then selecting Preferences.
@@ -92,7 +92,7 @@ Additional customization options are available to you when using the Mattermost 
 
 .. tab:: Windows
 
-    When you :ref:`install the Mattermost desktop app <collaborate/install-desktop-app:install and update the mattermost desktop app>`, you can access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the desktop app by selecting **File > Settings...**
+    When you :doc:`install the Mattermost desktop app </collaborate/install-desktop-app>`, you can access additional Desktop App customization settings from the **More** |more-icon-vertical| icon located in the top left corner of the desktop app by selecting **File > Settings...**
 
     .. image:: ../images/desktop-app-settings.jpg
         :alt: Access Desktop App customization settings by selecting More in the top left corner, then selecting File > Settings.
