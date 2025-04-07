@@ -38,6 +38,8 @@ With file attachments, you can share additional information that helps your team
 
   You can share files with other Mattermost users or entire channels by tapping the **Attachment** |attachments-icon| icon under the message input box when composing a message.
 
+  From Mattermost v10.7 and mobile v2.27, you can play and download audio files directly from the message thread.
+
   .. image:: ../images/mobile-attach-a-file-to-send-in-a-channel.gif
       :alt: Tap on attachment icon to attach a file and send it in the channel.
       :scale: 50
