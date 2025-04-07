@@ -29,7 +29,7 @@ You can also use the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl license>`
 Mattermost not yet installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you haven't yet installed and deployed a Mattermost instance, visit the :doc:`Deployment Guide </deploy/deployment-overview>` to get started. For information on creating a system admin account, visit our :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the :doc:`Deployment Guide </guides/deployment-guide>` to get started. For information on creating a system admin account, visit our :doc:`Administrator Tasks </upgrade/admin-onboarding-tasks>` documentation.
 
 Add more users to your subscription
 -----------------------------------
