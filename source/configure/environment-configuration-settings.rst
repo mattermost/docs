@@ -3677,6 +3677,15 @@ Enable biometric authentication
 |   authentication is disabled.                 |                                                                                     |
 +-----------------------------------------------+-------------------------------------------------------------------------------------+
 
+.. note::
+
+  Users must authenticate in the following situations:
+
+  - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
+  - Opening the mobile app: At app launch when the active server requires authentication.
+  - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
+  - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
+
 .. config:setting:: mobile-security-enabled
   :displayname: Enable Jailbreak/Root Protection
   :systemconsole: Environment > Mobile Security
