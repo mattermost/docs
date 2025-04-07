@@ -37,6 +37,10 @@ Application layer
 
 The Mattermost Server is the heart of the platform and responsible for processing all user and system operations. It's composed of multiple modular elements as follows:
 
+.. image:: ../images/architecture_basics.png
+   :alt: Mattermost architecture basics
+   :class: bg-white
+
 **RESTful JSON Web Service**: Handles all incoming API requests (from web clients, apps, and integrations) and ensures that responses are formatted in JSON. Acts as the communication bridge between the clients (Access Layer) and backend systems. To ensure high availability, this layer can be distributed across multiple servers and load-balanced, preventing service disruptions due to high traffic or server failure.
 
 **Authentication client**: Manages user authentication, ensuring secure login sessions. Integrates with traditional username/password-based authentication or enterprise-grade solutions like SSO (Single Sign-On) through Active Directory/LDAP. High availability is maintained through redundant authentication nodes and failover mechanisms, ensuring uninterrupted access even if a primary authentication service fails.
