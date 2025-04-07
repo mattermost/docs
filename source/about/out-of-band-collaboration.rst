@@ -22,7 +22,7 @@ We recommend one of the following self-hosted deployment options:
 Cloud
 ~~~~~
 
-If you’d prefer a turnkey out-of-band solution that requires minimal IT overhead, we recommend Mattermost’s :doc:`Cloud SaaS offering </about/cloud-subscriptions>` for your out-of-band solution. Mattermost can provision and manage dedicated infrastructure for your instance, or you can provide your own AWS, Azure, or GCP account — maintaining complete ownership of the infrastructure — and Mattermost manages the SaaS platform within your environment.  
+If you’d prefer a turnkey out-of-band solution that requires minimal IT overhead, we recommend Mattermost’s :doc:`Cloud SaaS offering </about/cloud-subscriptions>` for your out-of-band solution. Mattermost can provision and manage dedicated infrastructure for your instance, and Mattermost manages the SaaS platform within your environment.  
 
 Why Mattermost is ideal for OOB
 -------------------------------
