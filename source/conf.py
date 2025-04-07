@@ -429,6 +429,8 @@ redirects = {
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
 "administration/upgrade.html#upgrade-guide":
         "https://docs.mattermost.com/guides/upgrade-mattermost.html",
+"administration/release-lifecycle.html":
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -2358,6 +2360,10 @@ redirects = {
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
 "guides/changelogs.html":
         "https://docs.mattermost.com/about/releases-lifecycle.html",
+"guides/administration.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/deployment.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
