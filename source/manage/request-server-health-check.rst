@@ -27,7 +27,7 @@ Get started
 
 Getting started with a Mattermost Health Check is simple and involves 3 steps:
 
-1. :doc:`Generate a Support Packet </manage/generating-support-packet>`: The Mattermost Support Packet contains critical information about your Mattermost environment, including logs, configurations, and usage data.
+1. :doc:`Generate a Support Packet </manage/admin/generating-support-packet>`: The Mattermost Support Packet contains critical information about your Mattermost environment, including logs, configurations, and usage data.
 
 2. Submit Your Support Packet: Once you’ve generated the Support Packet, submit it through our Support System as a `standard support request <https://support.mattermost.com/hc/en-us/requests/new>`_. Please include “Health Check Provided” in the subject line.
 

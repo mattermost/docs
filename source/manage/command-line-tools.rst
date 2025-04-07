@@ -36,7 +36,7 @@ Use the CLI
 
 .. tab:: Via Mattermost 
 
-  To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard :doc:`installation process </guides/deployment>`, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
+  To run the CLI commands, you must be in the Mattermost root directory. On a default installation of Mattermost, the root directory is ``/opt/mattermost``. If you followed our standard :doc:`installation process </guides/deployment-guide>`, you must run the commands as the user ``mattermost``. The name of the executable is ``mattermost``, and it can be found in the ``/opt/mattermost/bin`` directory.
 
   For example, to get the Mattermost version on a default installation of Mattermost:
 
