@@ -13,7 +13,7 @@ Review and manage the following environmental configuration options in the Syste
 - `Image proxy <#image-proxy>`__
 - `SMTP <#smtp>`__
 - `Push notification server <#push-notification-server>`__
-- `High availaiblity <#high-availability>`__ cluster-based settings
+- `High availability <#high-availability>`__ cluster-based settings
 - `Rate limiting <#rate-limiting>`__
 - `Logging <#logging>`__
 - `Session lengths <#session-lengths>`__
@@ -2825,7 +2825,8 @@ Enable experimental gossip encryption
 
 .. note::
 
-  Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
+  - The Gossip protocol is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_.
+  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
 
 .. config:setting:: enable-gossip-compression
   :displayname: Enable gossip compression (High Availability)

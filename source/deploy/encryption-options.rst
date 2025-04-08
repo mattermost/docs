@@ -24,9 +24,9 @@ Connections to calls are secured with a combination of:
 Gossip encryption (experimental)
 --------------------------------
 
-In a High Availability mode, Mattermost supports encryption of cluster data in-transit when using the gossip protocol.  
+In a High Availability mode, Mattermost supports encryption of cluster data in-transit when using the gossip protocol, which is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_.
 
-The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the ``Systems`` table for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It can be set to a length of 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
+The encryption uses AES-256 by default, and it is not configurable. However, it is possible to manually set the value in the ``Systems`` table for the ``ClusterEncryptionKey`` row. A key is a byte array converted to base64. It can be set to a length of 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively.
 
 Encryption-at-rest
 ------------------
