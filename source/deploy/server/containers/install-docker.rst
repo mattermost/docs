@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 This guide provides step-by-step instructions for deploying Mattermost using Docker containers.
 
 .. warning::
