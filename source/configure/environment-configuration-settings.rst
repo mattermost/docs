@@ -3867,14 +3867,34 @@ Disable client cache
 |   of Redis is enabled.                        |                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 
+.. config:setting:: redis-cache-prefix
+  :displayname: Redis cache prefix (CacheSettings)
+  :systemconsole: N/A
+  :configjson: CacheSettings.RedisCachePrefix
+  :environment: MM_CACHESETTINGS_REDISCACHEPREFIX
+  :description: Adds a prefix to all Redis cache keys. Blank by default.
+
+Redis cache prefix
+^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+| Adds a prefix to all Redis cache keys.        | - System Config path: **N/A**                                                        |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisCachePrefix``                  |
+|                                               | - Environment variable: ``MM_CACHESETTINGS_REDISCACHEPREFIX``                        |
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+
+.. tip::
+
+  Adding a prefix to all Redis cache keys reduces key collisions, simplifies debugging, isolates data, and provides a clear structure for managing and scaling Redis-based systems. In environments where multiple systems or tenants use the same Redis instance, prefixes become critical for maintaining data integrity and operational efficiency.
+
 .. config:setting:: enable-webhub-channel-iteration
   :displayname: Enable webhub channel iteration
   :systemconsole: N/A
   :configjson: EnableWebHubChannelIteration
   :environment: MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION
 
-  - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
-  - **false**: **(Default)** Websocket broadcasting performance in channels is disabled.
+    - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
+    - **false**: **(Default)** Websocket broadcasting performance in channels is disabled.
 
 Enable webhub channel iteration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
