@@ -412,3 +412,7 @@ Enter a space-separated list of domains that are allowed to embed the Mattermost
 +---------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"FrameAncestors". |
 +---------------------------------------------------------------+
+
+.. note::
+
+  Embedding Mattermost via an iFrame can provide seamless integration for collaboration into an organization’s existing tools and workflows. However, you must ensure that correct configurations are in place to allow communication between the iframe and the parent domain without violating security.
