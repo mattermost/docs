@@ -2563,7 +2563,7 @@ redirects = {
 "install/mattermost-omnibus.html":
         "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
 "install/outbound-proxy.html":
-        "https://docs.mattermost.com/configure/using-outbound-proxy.html",
+        "https://docs.mattermost.com/deploy/server/preparations.html#outbound-proxy-configuration",
 "install/prod-docker.html":
 	"https://forum.mattermost.com/t/deploy-mattermost-on-docker/12231",
 "install/prod-windows-2012.html":
