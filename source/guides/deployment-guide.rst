@@ -6,11 +6,11 @@ Welcome to deployment guidance for Mattermost. This guide is organized into sect
 Whether you're deploying the server application, desktop application, or mobile application, or troubleshooting deployments, this guide has you covered. Use the navigation below to access detailed information about each topic.
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
     :hidden:
     :titlesonly:
 
-    Try Mattermost <deploy/try-mattermost>
+    Try Mattermost </deploy/try-mattermost>
     Application Architecture </deploy/application-architecture>
     Server Deployment </deploy/server/server-deployment-planning>
     Desktop App Deployment </deploy/desktop/desktop-app-deployment>

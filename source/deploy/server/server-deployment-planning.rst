@@ -7,7 +7,6 @@ Server deployment planning
     :titlesonly:
 
     Preparations </deploy/server/preparations>
-    Application Architecture </deploy/application-architecture>
     Deploy with Kubernetes </deploy/server/deploy-kubernetes>
     Deploy with Linux </deploy/server/deploy-linux>
     Deploy with Containers </deploy/server/deploy-containers>

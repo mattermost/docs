@@ -1,5 +1,5 @@
 Try Mattermost
-=============
+===============
 
 This guide provides instructions for quickly trying out Mattermost using either Docker or Azure Marketplace. These options are ideal for testing and evaluation purposes as they allow you to quickly get a Mattermost instance up and running
 for exploration and testing.
