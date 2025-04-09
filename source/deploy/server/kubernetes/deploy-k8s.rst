@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 You can use the Mattermost Kubernetes Operator to deploy Mattermost on Kubernetes using S3-compatible storage and a managed database service. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments.
 
 **Prerequisites**
