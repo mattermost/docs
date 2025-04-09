@@ -1,3 +1,6 @@
+:orphan:
+:nosearch:
+
 .. raw:: html
 
   <div class="mm-badge mm-badge--combo">
