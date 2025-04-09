@@ -24,7 +24,7 @@ This document provides information on how to successfully make the Calls plugin 
 
 ### Server
 
-- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the [config TLS](https://docs.mattermost.com/install/config-tls-mattermost.html) section for more info.
+- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the [config TLS](https://docs.mattermost.com/deploy/server/setup-tls.html) section for more info.
 - See [network requirements](#network) below.
 
 ### Client
