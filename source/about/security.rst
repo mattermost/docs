@@ -1,14 +1,22 @@
-Security overview
+Security Guide
 ==================
 
 Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
 
 Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features.
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+   :titlesonly:
+
+   /about/zero-trust.rst
+   /about/certifications-and-compliance.rst
+
 Security features
 ------------------
 
-Mattermost offers a host of features to help keep your private cloud communications secure.
+Mattermost offers a host of features to help keep your private cloud communications secure. Learn more about :doc:`Zero Trust with Mattermost </about/zero-trust>` and :doc:`certifications and compliance </about/certifications-and-compliance>` with Mattermost.
 
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
