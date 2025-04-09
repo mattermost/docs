@@ -1,3 +1,8 @@
+.. meta::
+   :name: robots
+   :content: noindex
+
+:orphan:
 :nosearch:
 
 Configure SAML synchronization with AD/LDAP
