@@ -1,9 +1,6 @@
 Install the Mattermost Android mobile app
 =========================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Take Mattermost wherever you go by installing the Mattermost mobile app on your Android mobile device running Android 7.0 or later.
 
 1. On your device, visit the Play Store.
