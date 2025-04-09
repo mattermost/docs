@@ -12,6 +12,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 
     Elasticsearch </scale/elasticsearch>
     High availability </scale/high-availability-cluster-based-deployment> 
+    Enable Copilot </configure/enable-copilot>
     Store configuration in your database </configure/configuration-in-your-database>
     Server configuration options </configure/configuration-settings>
     Environment variables </configure/environment-variables>
@@ -25,6 +26,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 
 * :doc:`Elasticsearch </scale/elasticsearch>` - Learn how to configure Elasticsearch for Mattermost.
 * :doc:`High availability </scale/high-availability-cluster-based-deployment>` - Learn how to configure high availability for Mattermost.
+* :doc:`Enable Copilot </configure/enable-copilot>` - Learn how to enable Mattermost Copilot for your deployment.
 * :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </configure/configuration-settings>` - Learn about server configuration options for Mattermost.
 * :doc:`Environment variables </configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
