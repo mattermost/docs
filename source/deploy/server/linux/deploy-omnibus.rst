@@ -28,7 +28,7 @@
   </div>
 
 .. warning::
-   Mattermost Omnibus will be deprecated and phased out in the upcoming months. We recommend using the standard :doc:`Ubuntu deployment </deploy/server/linux/deploy-ubuntu>` or :doc:`RHEL/CentOS deployment </deploy/server/linux/deploy-rhel>` instead, which provides more flexibility and better maintainability.
+   Mattermost Omnibus will be deprecated and phased out in the upcoming months. We recommend using the standard Ubuntu deployment or RHEL/CentOS deployment instead, which provides more flexibility and better maintainability.
 
 Mattermost Omnibus packages together all required components: the :ref:`free version Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise edition>`, a PostgreSQL database, and NGINX as the application proxy. It uses a custom CLI (``mmomni``) and ansible recipes to configure and connect these components. **Omnibus supports Ubuntu distributions only.**
 
