@@ -404,7 +404,7 @@ Mobile external browser
 |   perform SSO authentication.                                                         |                                                                             |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-Enable this setting in cases when security requires a specific browser, such as Safari on iOS or Google Chrome on Android.
+Enable this setting in cases when security requires a specific browser other than Safari on iOS or Google Chrome on Android.
 
 ----
 
