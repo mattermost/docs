@@ -1,7 +1,5 @@
-.. _config-cloudfront:
-
-Configuring CloudFront to host Mattermost static assets
-=======================================================
+(Optional) Configuring CloudFront to host Mattermost static assets
+==================================================================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:

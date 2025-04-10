@@ -130,7 +130,7 @@ Before a manual migration
   - Confirm your Mattermost version. See the **About** modal for details. 
   - Schedule the migration window. This process requires you to stop the Mattermost Server during the migration.
   - See the `schema-diffs <#schema-diffs>`__ section to ensure data compatibility between schemas.
-  - Prepare your PostgreSQL environment by creating a database and user. See the :doc:`database </install/prepare-mattermost-database>` documentation for details.
+  - Prepare your PostgreSQL environment by creating a database and user. See the :doc:`database </deploy/server/preparations>` documentation for details.
   - On `newer versions <https://www.postgresql.org/docs/release/15.0/>`_ of PostgreSQL, newly created users do not have access to ``public`` schema. The access should be explicitly granted by running ``GRANT ALL ON SCHEMA public to mmuser``.
 
 Schema diffs

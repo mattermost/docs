@@ -11,7 +11,7 @@ Encryption is not required for GDPR, although it can be used as an additional sa
 Encryption-in-transit
 ---------------------
 
-Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or install a proxy such as NGINX and set up TLS on the proxy. Refer to our :doc:`configuration guide for more details </install/config-tls-mattermost>`.
+Mattermost supports TLS encryption including AES-256 with 2048-bit RSA on all data transmissions between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or install a proxy such as NGINX and set up TLS on the proxy. Refer to our :doc:`configuration guide for more details </deploy/server/setup-tls>`.
 
 Connections to Active Directory/LDAP can :ref:`optionally be secured with TLS or stunnel <configure/authentication-configuration-settings:ad/ldap port>`.
 
