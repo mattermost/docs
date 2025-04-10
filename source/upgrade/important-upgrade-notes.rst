@@ -1,8 +1,6 @@
 Important Upgrade Notes
 =======================
 
-.. important::
-
   .. include:: ../about/common-esr-support-rst.rst
 
 
