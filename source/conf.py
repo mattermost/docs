@@ -924,7 +924,7 @@ redirects = {
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
-        "https://docs.mattermost.com/enable-copilot.html",
+        "https://docs.mattermost.com/configure/enable-copilot.html",
 "configure/common-config-settings-notation.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "configure/bulk-loading-about.html":
