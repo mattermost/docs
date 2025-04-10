@@ -1,5 +1,5 @@
-(Recommended) Enable Copilot
-============================
+Enable Copilot
+===============
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
