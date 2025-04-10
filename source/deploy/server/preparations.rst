@@ -11,7 +11,6 @@ This guide outlines the key preparation steps required before installing the Mat
    Review software and hardware requirements </deploy/software-hardware-requirements>
    (Recommended) Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
    (Recommended) Configure Mattermost Calls </configure/calls-deployment>
-   (Recommended) Enable Mattermost Copilot </configure/enable-copilot>
    (Optional) Set up TLS </deploy/server/setup-tls>
    (Optional) Use an image proxy </deploy/server/image-proxy>
    (Optional) Configure CloudFront to host Mattermost static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>
