@@ -10,7 +10,7 @@ Whether you're deploying the server application, desktop application, or mobile 
     :hidden:
     :titlesonly:
 
-    Try Mattermost </deploy/try-mattermost>
+    Quick Start Evaluation </deploy/quick-start-evaluation>
     Application Architecture </deploy/application-architecture>
     Server Deployment </deploy/server/server-deployment-planning>
     Desktop App Deployment </deploy/desktop/desktop-app-deployment>
@@ -18,7 +18,7 @@ Whether you're deploying the server application, desktop application, or mobile 
     Deployment Troubleshooting </guides/deployment-troubleshooting>
 
 
-* :doc:`Try Mattermost </deploy/try-mattermost>` - A quick start guide to help you get started with Mattermost.
+* :doc:`Quick Start Evaluation </deploy/quick-start-evaluation>` - A quick start guide to help you get started with Mattermost.
 * :doc:`Application architecture </deploy/application-architecture>` - An overview of Mattermost's architecture and components.
 * :doc:`Server deployment </deploy/server/server-deployment-planning>` - Pre-deployment checks, security considerations, hardware recommendations, software prerequisites, and step-by-step guidance to deploying Mattermost server.
 * :doc:`Desktop deployment </deploy/desktop/desktop-app-deployment>` - Installation procedures for Mattermost's desktop applications across Windows, macOS, and Linux, and large-scale, enterprise-wide deployments.
