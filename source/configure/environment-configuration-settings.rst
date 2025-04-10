@@ -54,16 +54,16 @@ Site URL
 | Select the **Test Live URL** button in the System Console     |                                                               |
 | to validate the Site URL.                                     |                                                               |
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| **Notes**:                                                                                                                    |
-|                                                                                                                               |
-| - The URL may contain a subpath, such as ``https://example.com/company/mattermost``.                                          |
-| - If you change the Site URL value, log out of the Desktop App, and sign back in using the new domain.                        |
-| - If Site URL is not set:                                                                                                     |
-|                                                                                                                               |
-|   - Email notifications will contain broken links, and email batching will not work.                                          |
-|   - Authentication via OAuth 2.0, including GitLab, Google, and Entra ID, will fail.                                          |
-|   - Plugins may not work as expected.                                                                                         |
-+-------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - The URL may contain a subpath, such as ``https://example.com/company/mattermost``.
+  - If you change the Site URL value, log out of the Desktop App, and sign back in using the new domain.
+  - If Site URL is not set:
+
+    - Email notifications will contain broken links, and email batching will not work.
+    - Authentication via OAuth 2.0, including GitLab, Google, and Entra ID, will fail.
+    - Plugins may not work as expected.
 
 .. config:setting:: maximum-url-length
   :displayname: Maximum URL length (Web Server)
@@ -337,8 +337,10 @@ Enable insecure outgoing connections
 | - **false**: **(Default)** Only secure HTTPS requests are     |                                                                                             |
 |   allowed.                                                    |                                                                                             |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
-| **Security note**: Enabling this feature makes these connections susceptible to man-in-the-middle attacks.                                                  |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. warning::
+
+  Enabling this feature makes these connections susceptible to man-in-the-middle attacks. 
 
 .. config:setting:: managed-resource-paths
   :displayname: Managed resource paths (Web Server)
@@ -364,11 +366,10 @@ Managed resource paths
 | ``https://mymattermost.com/conference`` to open in a   |                                                                         |
 | new window.                                            |                                                                         |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
-| **Note:**                                                                                                                        |
-| When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of   |
-| in a browser. See the :doc:`desktop managed resources </deploy/desktop/desktop-app-managed-resources>`                           |
-| documentation for details.                                                                                                       |
-+--------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of in a browser. See the :doc:`desktop managed resources </deploy/desktop/desktop-app-managed-resources>` documentation for details.
 
 Reload configuration from disk
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -398,10 +399,10 @@ Purge all caches
 | Select the **Purge All Caches** button in the System     |                                                               |
 | Console to purge all caches.                             |                                                               |
 +----------------------------------------------------------+---------------------------------------------------------------+
-| **Note**: Purging the caches may adversely impact performance.                                                           |
-| :doc:`high availability cluster-based deployments </scale/high-availability-cluster-based-deployment>` will attempt      |
-| to purge all the servers in the cluster                                                                                  |
-+----------------------------------------------------------+---------------------------------------------------------------+
+
+.. note::
+
+  Purging the caches may adversely impact performance. :doc:`high availability cluster-based deployments </scale/high-availability-cluster-based-deployment>` will attempt to purge all the servers in the cluster.
 
 .. config:setting:: websocket-url
   :displayname: Websocket URL (Web Server)
@@ -419,9 +420,10 @@ Websocket URL
 |                                                        | - Environment variable: ``MM_SERVICESETTINGS_WEBSOCKETURL``         |
 | String input.                                          |                                                                     |
 +--------------------------------------------------------+---------------------------------------------------------------------+
-| **Note**: We strongly recommend configuring a single websocket URL that matches the `Site URL <#site-url>`_ configuration    |
-| setting.                                                                                                                     |
-+--------------------------------------------------------+---------------------------------------------------------------------+
+
+.. note::
+
+  We strongly recommend configuring a single websocket URL that matches the `Site URL <#site-url>`_ configuration setting.
 
 .. config:setting:: license-file-location
   :displayname: License file location (Web Server)
@@ -461,9 +463,10 @@ TLS minimum version
 |                                                        | - ``config.json`` setting: ``".ServiceSettings.TLSMinVer: 1.2",``   |
 | String input. Default is **1.2**.                      | - Environment variable: ``MM_SERVICESETTINGS_TLSMINVER``            |
 +--------------------------------------------------------+---------------------------------------------------------------------+
-| **Note**: This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy |
-| layer, such as NGINX.                                                                                                        |
-+--------------------------------------------------------+---------------------------------------------------------------------+
+
+.. note::
+
+  This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer, such as NGINX.
 
 .. config:setting:: trusted-proxy-ip-header
   :displayname: Trusted proxy IP header (Web Server)
@@ -483,17 +486,12 @@ Trusted proxy IP header
 | String array input consisting of header names,         |                                                                              |
 | such as ``["X-Forwarded-For", "X-Real-Ip"]``.          |                                                                              |
 +--------------------------------------------------------+------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                            |
-|                                                                                                                                       |
-| - The default value of ``[]`` means that no header will be trusted. Prior to v5.12, the absence of this configuration setting entry   |
-|   will have it set to ``["X-Forwarded-For", "X-Real-Ip"]`` on upgrade to maintain backwards compatibility.                            |
-| - We recommend keeping the default setting when Mattermost is running without a proxy to avoid the client sending the headers and     |
-|   bypassing rate limiting and/or the audit log.                                                                                       |
-| - For environments that use a reverse proxy, this issue does not exist, provided that the headers are set by the reverse proxy.       |
-|   In those environments, only explicitly whitelist the header set by the reverse proxy and no additional values.                      |
-|                                                                                                                                       |
-|                                                                                                                                       |
-+--------------------------------------------------------+------------------------------------------------------------------------------+
+
+.. note::
+
+  - The default value of ``[]`` means that no header will be trusted.
+  - We recommend keeping the default setting when Mattermost is running without a proxy to avoid the client sending the headers and bypassing rate limiting and/or the audit log.
+  - For environments that use a reverse proxy, this issue does not exist, provided that the headers are set by the reverse proxy. In those environments, only explicitly whitelist the header set by the reverse proxy and no additional values.
 
 .. config:setting:: enable-strict-transport-security-hsts
   :displayname: Enable Strict Transport Security (HSTS) (Web Server)
@@ -515,9 +513,8 @@ Enable Strict Transport Security (HSTS)
 |   transport. Strict Transport Security (HSTS) header   |                                                                               |
 |   isn't added to responses.                            |                                                                               |
 +--------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__            |
-| documentation for details.                                                                                                             |
-+--------------------------------------------------------+-------------------------------------------------------------------------------+
+
+See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__ documentation for details.
 
 .. config:setting:: secure-tls-transport-expiry
   :displayname: Secure TLS transport expiry (Web Server)
@@ -537,9 +534,8 @@ Secure TLS transport expiry
 |                                                        |                                                                                        |
 | Numerical input. Default is **63072000** (2 years).    |                                                                                        |
 +--------------------------------------------------------+----------------------------------------------------------------------------------------+
-| See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__                     |
-| documentation for details.                                                                                                                      |
-+--------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+See the `Strict-Transport-Security <https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security>`__ documentation for details.
 
 .. config:setting:: tls-cipher-overwrites
   :displayname: TLS cipher overwrites (Web Server)
@@ -562,13 +558,11 @@ TLS cipher overwrites
 |                                                        |                                                                             |
 | String array input.                                    |                                                                             |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
-| **Notes**:                                                                                                                           |
-|                                                                                                                                      |
-| - This setting only takes effect if you are using the built-in server binary directly, and not using a reverse proxy layer, such     |
-|   as NGINX.                                                                                                                          |
-| - See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go                                                                |
-|   <https://github.com/mattermost/mattermost/blob/master/server/public/model/config.go>`__ for a list of ciphers considered secure.   |
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+
+  - This setting only takes effect if you are using the built-in server binary directly and not using a reverse proxy layer, such as NGINX.
+  - See the ``ServerTLSSupportedCiphers`` variable in `/model/config.go <https://github.com/mattermost/mattermost/blob/master/server/public/model/config.go>`__ for a list of ciphers considered secure.
 
 .. config:setting:: goroutine-health-threshold
   :displayname: Goroutine health threshold (Web Server)
@@ -632,8 +626,8 @@ Cluster log timeout
 | Numerical input. Default is **2000** milliseconds      |                                                                                         |
 | (2 seconds).                                           |                                                                                         |
 +--------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.                   |
-+--------------------------------------------------------+-----------------------------------------------------------------------------------------+
+
+See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation for details.
 
 .. config:setting:: maximum-payload-size
   :displayname: Maximum payload size (File Storage)
@@ -701,107 +695,104 @@ Data source
 | String input.                                                 | - Environment variable: ``MM_SQLSETTINGS_DATASOURCE``                    |
 |                                                               |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **PostgreSQL databases**                                                                                                                 |
-|                                                                                                                                          |
-| When **Driver Name** is set to ``postgres``, use a connection string in the form of:                                                     |
-| ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test?sslmode=disable&connect_timeout=10``                                    |
-|                                                                                                                                          |
-| **To use TLS with PostgreSQL databases**                                                                                                 |
-|                                                                                                                                          |
-| The parameter to encrypt connection against a PostgreSQL server is ``sslmode``. The library used to interact with PostgreSQL server is   |
-| `pq <https://pkg.go.dev/github.com/lib/pq>`__. Currently, it's not possible to use all the values that you could pass to a standard      |
-| PostgreSQL Client ``psql "sslmode=value"`` See the `SSL Mode Descriptions <https://www.postgresql.org/docs/current/libpq-ssl.html>`__    |
-| documentation for details.                                                                                                               |
-|                                                                                                                                          |
-| Your database admin must configure the functionality according to the supported values described below:                                  |
-|                                                                                                                                          |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | Short description of the ``sslmode``   | Value           | Example of a data source name                                             | |
-| | parameter                              |                 |                                                                           | |
-| +========================================+=================+===========================================================================+ |
-| | Don't use TLS / SSL encryption against | ``disable``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
-| | the PostgreSQL server.                 |                 | ?sslmode=disable&connect_timeout=10``                                     | |
-| |                                        |                 |                                                                           | |
-| | Default value in file ``config.json``  |                 |                                                                           | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | The data is encrypted and the network  | ``require``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
-| | is trusted.                            |                 | ?sslmode=require&connect_timeout=10``                                     | |
-| |                                        |                 |                                                                           | |
-| | Default value is ``sslmode`` when      |                 |                                                                           | |
-| | omitted.                               |                 |                                                                           | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | The data is encrypted when connecting  | ``verify-ca``   | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
-| | to a trusted server.                   |                 | ?sslmode=verify-ca&connect_timeout=10``                                   | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | The data is encrypted when connecting  | ``verify-full`` | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          | |
-| | to a trusted server.                   |                 | ?sslmode=verify-full&connect_timeout=10``                                 | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-|                                                                                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **MySQL databases**                                                                                                                      |
-|                                                                                                                                          |
-| When **Driver Name** is set to ``mysql``, we recommend using ``collation`` over using ``charset``.                                       |
-|                                                                                                                                          |
-| To specify collation:                                                                                                                    |
-|                                                                                                                                          |
-| .. code-block:: text                                                                                                                     |
-|                                                                                                                                          |
-|   "SqlSettings": {                                                                                                                       |
-|       "DataSource":                                                                                                                      |
-|   "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",                             |
-|       [...]                                                                                                                              |
-|    }                                                                                                                                     |
-|                                                                                                                                          |
-| If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:                                                          |
-|                                                                                                                                          |
-| .. code-block:: text                                                                                                                     |
-|                                                                                                                                          |
-|   "SqlSettings": {                                                                                                                       |
-|       "DataSource": "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8",                                        |
-|       [...]                                                                                                                              |
-|    }                                                                                                                                     |
-|                                                                                                                                          |
-| **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our                       |
-| :doc:`Database Software Requirements </deploy/software-hardware-requirements>` documentation for details on MySQL 8.0 support.           |
-|                                                                                                                                          |
-| **To use TLS with MySQL databases**                                                                                                      |
-|                                                                                                                                          |
-| The parameter to encrypt connection against a MySQL server is ``tls``.                                                                   |
-| The library used to interact with MySQL is `Go-MySQL-Driver <https://pkg.go.dev/github.com/go-sql-driver/mysql>`__.                      |
-| For the moment, it's not possible to use all the values that you could pass to a standard MySQL Client ``mysql --ssl-mode=value``.       |
-| See `Connection-Encryption Option Summary <https://dev.mysql.com/doc/refman/8.0/en/connection-options.html #option_general_ssl-mode>`__  |
-| documentation for a version 8.0 example.                                                                                                 |
-|                                                                                                                                          |
-| Your database admin must configure the functionality according to supported values described below:                                      |
-|                                                                                                                                          |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | Short description of the ``tls``       | Value           | Example of a data source name                                             | |
-| | parameter                              |                 |                                                                           | |
-| +========================================+=================+===========================================================================+ |
-| | Don't use TLS / SSL encryption against | ``false``       | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
-| | MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                       | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | Use TLS / SSL encryption against       | ``true``        | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
-| | MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                        | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | Use TLS / SSL encryption with a self-  | ``skip-verify`` | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
-| | signed certificate against             |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                 | |
-| | MySQL server.                          |                 |                                                                           | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-| | Use TLS / SSL encryption if server     | ``preferred``   | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             | |
-| | advertises a possible fallback;        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``                   | |
-| | unencrypted if it's not advertised.    |                 |                                                                           | |
-| +----------------------------------------+-----------------+---------------------------------------------------------------------------+ |
-|                                                                                                                                          |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+
-| **AWS High Availablity RDS cluster deployments**                                                                                         |
-|                                                                                                                                          |
-| For an AWS High Availability RDS cluster deployment, point this configuration setting to the write/read endpoint at the **cluster**      |
-| level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node.             |
-| Mattermost doesn't need to manage this. See the                                                                                          |
-| :ref:`high availablility database configuration <scale/high-availability-cluster-based-deployment:database configuration>` documentation |
-| for details.                                                                                                                             |
-+------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+PostgreSQL databases
+^^^^^^^^^^^^^^^^^^^^
+
+When **Driver Name** is set to postgres, use a connection string in the form of:
+``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test?sslmode=disable&connect_timeout=10``
+
+**To use TLS with PostgreSQL databases**
+
+The parameter to encrypt connection against a PostgreSQL server is sslmode. The library used to interact with PostgreSQL server is `pq <https://pkg.go.dev/github.com/lib/pq>`__. Currently, it's not possible to use all the values that you could pass to a standard PostgreSQL Client ``psql "sslmode=value"`` See the `SSL Mode Descriptions <https://www.postgresql.org/docs/current/libpq-ssl.html>`__ documentation for details.
+
+Your database admin must configure the functionality according to the supported values described below.
+
++----------------------------------------+-----------------+---------------------------------------------------------------------------+ 
+| Short description of the ``sslmode``   | Value           | Example of a data source name                                             |
+| parameter                              |                 |                                                                           |
++========================================+=================+===========================================================================+
+| Don't use TLS / SSL encryption against | ``disable``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          |
+| the PostgreSQL server.                 |                 | ?sslmode=disable&connect_timeout=10``                                     |
+|                                        |                 |                                                                           |
+| Default value in file ``config.json``  |                 |                                                                           |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| The data is encrypted and the network  | ``require``     | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          |
+| is trusted.                            |                 | ?sslmode=require&connect_timeout=10``                                     |
+|                                        |                 |                                                                           |
+| Default value is ``sslmode`` when      |                 |                                                                           |
+| omitted.                               |                 |                                                                           |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| The data is encrypted when connecting  | ``verify-ca``   | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          |
+| to a trusted server.                   |                 | ?sslmode=verify-ca&connect_timeout=10``                                   |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| The data is encrypted when connecting  | ``verify-full`` | ``postgres://mmuser:password@hostname_or_IP:5432/mattermost_test          |
+| to a trusted server.                   |                 | ?sslmode=verify-full&connect_timeout=10``                                 |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+
+MySQL Databases
+^^^^^^^^^^^^^^^
+
+When Driver Name is set to mysql, we recommend using collation over using charset.
+
+To specify collation:  
+
+.. code-block:: text
+
+  "SqlSettings": {
+      "DataSource": "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8&collation=utf8mb4_general_ci",
+      [...]
+  }
+
+If collation is omitted, the default collation, ``utf8mb4_general_ci`` is used:
+
+.. code-block:: text
+
+  "SqlSettings": {
+    "DataSource": "<mmuser:password>@tcp(hostname or IP:3306)/mattermost?charset=utf8mb4,utf8",
+    [...]
+  }
+
+.. note::
+
+  If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our :doc:`Database Software Requirements </deploy/software-hardware-requirements>` documentation for details on MySQL 8.0 support.
+
+**To use TLS with MySQL Databases**
+
+The parameter to encrypt connection against a MySQL server is ``tls``.
+
+The library used to interact with MySQL is `Go-MySQL-Driver <https://pkg.go.dev/github.com/go-sql-driver/mysql>`__.
+
+For the moment, it's not possible to use all the values that you could pass to a standard MySQL Client ``mysql --ssl-mode=value``.
+See `Connection-Encryption Option Summary <https://dev.mysql.com/doc/refman/8.0/en/connection-options.html#option_general_ssl-mode>`__ documentation for a version 8.0 example.
+
+Your database admin must configure the functionality according to supported values described below.
+
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| Short description of the ``tls``       | Value           | Example of a data source name                                             |
+| parameter                              |                 |                                                                           |
++========================================+=================+===========================================================================+
+| Don't use TLS / SSL encryption against | ``false``       | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
+| MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=false"``                       |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| Use TLS / SSL encryption against       | ``true``        | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
+| MySQL server.                          |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=true"``                        |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| Use TLS / SSL encryption with a self-  | ``skip-verify`` | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
+| signed certificate against             |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=skip-verify"``                 |
+| MySQL server.                          |                 |                                                                           |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+
+| Use TLS / SSL encryption if server     | ``preferred``   | ``"<mmuser:password>@tcp(hostname or IP:3306)/mattermost_test             |
+| advertises a possible fallback;        |                 | ?charset=utf8mb4,utf8&writeTimeout=30s&tls=preferred"``                   |
+| unencrypted if it's not advertised.    |                 |                                                                           |
++----------------------------------------+-----------------+---------------------------------------------------------------------------+ 
+
+AWS High Availablity RDS cluster deployments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For an AWS High Availability RDS cluster deployment, point this configuration setting to the write/read endpoint at the **cluster**
+level to benefit from the AWS failover handling. AWS takes care of promoting different database nodes to be the writer node.
+Mattermost doesn't need to manage this. See the :ref:`high availablility database configuration <scale/high-availability-cluster-based-deployment:database configuration>` documentation for details.
 
 .. config:setting:: maximum-open-connections
   :displayname: Maximum open connections (Database)
@@ -892,9 +883,10 @@ Minimum hashtag length
 | This value must be greater than or equal to **2**.                   | - ``config.json`` setting: ``".SqlSettings.MinimumHashtagLength: 3",``  |
 |                                                                      | - Environment variable: ``MM_SQLSETTINGS_MINIMUMHASHTAGLENGTH``         |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
-| **Note**: MySQL databases must be configured to support searching strings shorter than three characters. See the                               |
-| `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`__ for details.                                       |
-+----------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  MySQL databases must be configured to support searching strings shorter than three characters. See the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/fulltext-fine-tuning.html>`__ for details.
 
 .. config:setting:: sql-statement-logging
   :displayname: SQL statement logging (Database)
@@ -960,14 +952,13 @@ Disable database search
 |   results.                                                    |                                                                              |
 | - **false**: **(Default)** Database search isn't disabled.    |                                                                              |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
-| Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
-|                                                                                                                                              |
-| - When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.                                          |
-| - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </configure/bleve-search>`, if enabled. If this occurs,  |
-|   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
-| - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
-| - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
-+---------------------------------------------------------------+------------------------------------------------------------------------------+
+
+Search behavior in Mattermost depends on which search engines are enabled:
+
+- When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.
+- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
+- If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
+- If all of the above methods fail or are disabled, the search results will be empty.
 
 .. note::
 
@@ -1016,18 +1007,16 @@ Read replicas
 | databases.                                             | - ``config.json`` setting: ``".SqlSettings.DataSourceReplicas": []``  |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_DATASOURCEREPLICAS``         |
 +--------------------------------------------------------+-----------------------------------------------------------------------+
-| **Note**: Each database connection string in the array must be in the same form used for the                                   |
-| `Data source <#data-source>`__ setting.                                                                                        |
-+--------------------------------------------------------+-----------------------------------------------------------------------+
-| **AWS High Availablity RDS cluster deployments**                                                                               |
-|                                                                                                                                |
-| For an AWS High Availability RDS cluster deployment, point this configuration setting directly to the underlying read-only     |
-| node endpoint within the RDS cluster to circumvent the failover/load balancing that AWS/RDS takes care of (except for the      |
-| write traffic). Mattermost has its own method of balancing the read-only connections, and can also balance those queries to    |
-| the data source/write+read connection should those nodes fail. See the                                                         |
-| :ref:`high availablility database configuration <scale/high-availability-cluster-based-deployment:database configuration>`     |
-| documentation for details.                                                                                                     |
-+--------------------------------------------------------+-----------------------------------------------------------------------+
+
+.. note::
+
+  - Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__ setting.
+  - Space separate multiple read replicas in the array to allow Mattermost to load balance read queries across multiple database instances. For example, ``MM_SQLSETTINGS_DATASOURCEREPLICAS=dc-1 dc-2``
+
+AWS High Availability RDS cluster deployments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For an AWS High Availability RDS cluster deployment, point this configuration setting directly to the underlying read-only node endpoint within the RDS cluster to circumvent the failover/load balancing that AWS/RDS takes care of (except for the write traffic). Mattermost has its own method of balancing the read-only connections and can also balance those queries to the data source/write+read connection should those nodes fail. See the :ref:`high availablility database configuration <scale/high-availability-cluster-based-deployment:database configuration>` documentation for details.
 
 .. config:setting:: search-replicas
   :displayname: Search replicas (Database)
@@ -1050,18 +1039,15 @@ Search replicas
 | read replica, but is used only for handling search     | - Environment variable: ``MM_SQLSETTINGS_DATASOURCESEARCHREPLICAS``         |
 | queries.                                               |                                                                             |
 +--------------------------------------------------------+-----------------------------------------------------------------------------+
-| **Note**: Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__          |
-| setting.                                                                                                                             |
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
-| **AWS High Availablity RDS cluster deployments**                                                                                     |
-|                                                                                                                                      |
-| For an AWS High Availability RDS cluster deployment, point this configuration setting directly to the underlying read-only           |
-| node endpoint within the RDS cluster to circumvent the failover/load balancing that AWS/RDS takes care of (except for the            |
-| write traffic). Mattermost has its own method of balancing the read-only connections, and can also balance those queries to          |
-| the data source/write+read connection should those nodes fail. See the                                                               |
-| :ref:`high availablility database configuration <scale/high-availability-cluster-based-deployment:database configuration>`           |
-| documentation for details.                                                                                                           |
-+--------------------------------------------------------+-----------------------------------------------------------------------------+
+
+.. note::
+
+  Each database connection string in the array must be in the same form used for the `Data source <#data-source>`__ setting.
+
+AWS High Availability RDS cluster deployments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For an AWS High Availability RDS cluster deployment, point this configuration setting directly to the underlying read-only node endpoint within the RDS cluster to circumvent the failover/load balancing that AWS/RDS takes care of (except for the write traffic). Mattermost has its own method of balancing the read-only connections and can also balance those queries to the data source/write+read connection should those nodes fail. See the :ref:`high availablility database configuration <scale/high-availability-cluster-based-deployment:database configuration>` documentation for details.
 
 .. config:setting:: replica-lag-settings
   :displayname: Replica lag settings (Database)
@@ -1100,12 +1086,11 @@ Replica lag settings
 |   column must be the value of the lag used to measure  |                                                                                  |
 |   the time lag.                                        |                                                                                  |
 +--------------------------------------------------------+----------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                |
-|                                                                                                                                           |
-| - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.                                                         |
-| - To properly monitor this, you must setup :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`    |
-|   for Mattermost.                                                                                                                         |
-+--------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. note::
+
+  - The ``QueryAbsoluteLag`` and ``QueryTimeLag`` queries must return a single row.
+  - To properly monitor this, you must set up :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` for Mattermost.
 
 1. Configure the replica lag metric based on your database type. See the following tabs for details on configuring this for each database type.
 
@@ -1257,16 +1242,13 @@ Enable Elasticsearch indexing
 | - **false**: **(Default)** Elasticsearch indexing is disabled |                                                                                |
 |   and new messages aren't indexed.                            |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                     |
-|                                                                                                                                                |
-| - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that     |
-|   scale, `enabling Elasticsearch for search queries <#enable-elasticsearch-for-search-queries>`__ is highly recommended                        |
-| - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for      |
-|   optimum search performance **before** reaching 3 million posts.                                                                              |
-| - For deployments with over 3 million posts, Elasticsearch is required to avoid significant performance issues, such as timeouts, with         |
-|   :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.                               |
-| - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.        |
-+---------------------------------------------------------------+--------------------------------------------------------------------------------+
+
+.. note::
+
+  - Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, enabling `enabling Elasticsearch for search queries <#enable-elasticsearch-for-search-queries>`__ for search queries is highly recommended.
+  - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for optimum search performance before reaching 3 million posts.
+  - For deployments with over 3 million posts, Elasticsearch is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
+  - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.
 
 .. config:setting:: backend-type
   :displayname: Elasticsearch backend type (Elasticsearch)
@@ -1352,12 +1334,12 @@ CA path
 Client certificate path
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.
+
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional client certificate for the connection to  | - System Config path: **Environment > Elasticsearch**                    |
 | the Elasticsearch server in the PEM format.        | - ``config.json`` setting: ``".Elasticsearchsettings.ClientCert",``      |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTCERT``          |
-+----------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: client-certificate-key-path
@@ -1370,12 +1352,12 @@ Client certificate path
 Client certificate key path
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.
+
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional key for the client certificate in the PEM | - System Config path: **Environment > Elasticsearch**                    |
 | format.                                            | - ``config.json`` setting: ``".Elasticsearchsettings.ClientKey",``       |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTKEY``           |
-+----------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: Available from Mattermost v7.8. Can be used in conjunction with basic auth credentials or to replace them.          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: skip-tls-verification
@@ -1455,8 +1437,8 @@ Enable cluster sniffing
 |   in your cluster automatically.                               |                                                                          |
 | - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
-| Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.   |
-+----------------------------------------------------------------+--------------------------------------------------------------------------+
+
+Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.
 
 .. config:setting:: bulk-indexing
   :displayname: Bulk indexing (Elasticsearch)
@@ -1473,13 +1455,13 @@ Bulk indexing
 | posts in the database, from oldest to newest.                 | - ``config.json`` setting: N/A                                           |
 |                                                               | - Environment variable: N/A                                              |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Notes**:                                                                                                                               |
-|                                                                                                                                          |
-| - Always `purge indexes <#purge-indexes>`__ before bulk indexing.                                                                        |
-| - Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.       |
-| - Elasticsearch is available during indexing, but search results may be incomplete until the indexing job is complete.                   |
-| - If an in-progress indexing job is canceled, the index and search results will be incomplete.                                           |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  - Always `purge indexes <#purge-indexes>`__ before bulk indexing.
+  - Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.
+  - Elasticsearch is available during indexing, but search results may be incomplete until the indexing job is complete.
+  - If an in-progress indexing job is canceled, the index and search results will be incomplete.
 
 .. config:setting:: rebuild-channels-index
   :displayname: Rebuild channels index (Elasticsearch)
@@ -1496,10 +1478,8 @@ Rebuild channels index
 | database, from oldest to newest.                              | - ``config.json`` setting: N/A                                |
 |                                                               | - Environment variable: N/A                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------+
-| Select the **Rebuild Channels Index** button in the System Console to purge the channels index.                               |
-| Ensure no other indexing jobs are in progress via the **Bulk Indexing** table before starting this process.                   |
-| During indexing, channel auto-complete is available, but search results may be incomplete until the indexing job is complete. |
-+---------------------------------------------------------------+---------------------------------------------------------------+
+
+Select the **Rebuild Channels Index** button in the System Console to purge the channels index. Ensure no other indexing jobs are in progress via the **Bulk Indexing** table before starting this process. During indexing, channel auto-complete is available, but search results may be incomplete until the indexing job is complete.
 
 .. config:setting:: purge-indexes
   :displayname: Purge indexes (Elasticsearch)
@@ -1516,9 +1496,8 @@ Purge indexes
 |                                           | - ``config.json`` setting: N/A                              |
 |                                           | - Environment variable: N/A                                 |
 +-------------------------------------------+-------------------------------------------------------------+
-| Select the **Purge Indexes** button in the System Console to purge the index.                           |
-| After purging the index, create a new index by selecting the **Index Now** button.                      |
-+-------------------------------------------+-------------------------------------------------------------+
+
+Select the **Purge Indexes** button in the System Console to purge the index. After purging the index, create a new index by selecting the **Index Now** button.
 
 .. config:setting:: indexes-to-skip-while-purging
   :displayname: Indexes to skip while purging (Elasticsearch)
@@ -1568,8 +1547,8 @@ Enable Elasticsearch for search queries
 | - **false**: **(Default)** Database search is used for        |                                                                                 |
 |   search queries.                                             |                                                                                 |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
-| **Note**: If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results. |
-+---------------------------------------------------------------+---------------------------------------------------------------------------------+
+
+If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.
 
 .. config:setting:: enable-elasticsearch-for-autocomplete-queries
   :displayname: Enable Elasticsearch for autocomplete queries (Elasticsearch)
@@ -1593,8 +1572,8 @@ Enable Elasticsearch for autocomplete queries
 |   queries on users and channels using the latest index.       |                                                                                    |
 | - **false**: **(Default)** Database autocomplete is used.     |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| **Note**: Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.                     |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+Autocompletion results may be incomplete until a bulk index of the existing users and channels database is finished.
 
 .. config:setting:: post-index-replicas
   :displayname: Post index replicas (Elasticsearch)
@@ -1611,14 +1590,12 @@ Post index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important notes**:                                                                                                                          |
-|                                                                                                                                               |
-| - If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to existing indexes,       |
-|   purge and rebuild the index after changing this setting.                                                                                    |
-| - If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``.                                           |
-| - If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as                                          |
-|   `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.   |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
+  - If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``.
+  - If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: post-index-shards
   :displayname: Post index shards (Elasticsearch)
@@ -1635,10 +1612,10 @@ Post index shards
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.PostIndexShards: 1",``   |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_POSTINDEXSHARDS``          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Important note**: If this configuration setting is changed, the changed configuration only applies to newly-created indexes.                |
-| To apply the change to existing indexes, purge and rebuild the index after changing this setting.                                             |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
+.. note::
+
+  If this configuration setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
 
 .. config:setting:: channel-index-replicas
   :displayname: Channel index replicas (Elasticsearch)
@@ -1655,10 +1632,10 @@ Channel index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.ChannelIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CHANNELINDEXREPLICAS``        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------+
-| **Note**: If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an         |
-| Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and                           |
-| `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.                                                                 |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. note::
+
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
 
 .. config:setting:: channel-index-shards
   :displayname: Channel index shards (Elasticsearch)
@@ -1691,10 +1668,10 @@ User index replicas
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.UserIndexReplicas: 1",`` |
 | Numerical input. Default is **1**.                            | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERINDEXREPLICAS``        |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| **Note**: If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an      |
-| Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-replicas>`__ and                      |
-| `Channel Index Replicas <#channel-index-replicas>`__ must also be updated accordingly.                                                        |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
 
 .. config:setting:: user-index-shards
   :displayname: User index shards (Elasticsearch)
@@ -1729,9 +1706,10 @@ Aggregate search indexes
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| **Note**: If you’re using :doc:`data retention </comply/data-retention-policy>` and                                                                    |
-| :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.                                      |
-+---------------------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+  If you’re using :doc:`data retention </comply/data-retention-policy>` and :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.
 
 .. config:setting:: post-aggregator-start-time
   :displayname: Post aggregator start time (Elasticsearch)
@@ -1767,9 +1745,10 @@ Index prefix
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_INDEXPREFIX``         |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different        |
-| prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.                   |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.
 
 .. config:setting:: live-indexing-batch-size
   :displayname: Live indexing batch size (Elasticsearch)
@@ -1793,19 +1772,16 @@ Live indexing batch size
 | Numerical input. Default is **1**. Every post is indexed      |                                                                                   |
 | synchronously as they are created.                            |                                                                                   |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
-| **Note**: It may be necessary to increase this value to avoid hitting the rate limit or resource limit of your Elasticsearch cluster              |
-| on installs handling more than 1 post per second.                                                                                                 |
-|                                                                                                                                                   |
-| **What exactly happens when I increase this value?**                                                                                              |
-| The primary impact is that a post will be indexed into Elasticsearch after the threshold of posts is met which then makes the posts searchable    |
-| within Mattermost. So, if you set this based on our recommendations for larger servers, and you make a post, you cannot find it via search        | 
-| for ~ 10-20 seconds, on average. Realistically, no users should see or feel this impact due to the limited amount of users who are actively       |
-| **searching** for a post this quickly. You can set this value to a lower average or higher average as well, depending on your Elasticsearch       |
-| server specifications.                                                                                                                            |
-|                                                                                                                                                   |
-| During busy periods, this delay will be faster as more traffic is happening, causing more posts and a quicker time to hit the index number.       |
-| During slow times, expect the reverse.                                                                                                            |
-+---------------------------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. note::
+
+  It may be necessary to increase this value to avoid hitting the rate limit or resource limit of your Elasticsearch cluster on installs handling more than 1 post per second.
+
+**What exactly happens when I increase this value?**
+
+The primary impact is that a post will be indexed into Elasticsearch after the threshold of posts is met, which then makes the posts searchable within Mattermost. So, if you set this based on recommendations for larger servers, and you make a post, you cannot find it via search for ~10–20 seconds, on average. Realistically, no users should see or feel this impact due to the limited number of users who are actively **searching** for a post this quickly. You can set this value to a lower or higher average depending on your Elasticsearch server specifications.
+
+During busy periods, this delay will be faster as more traffic is occurring, causing more posts and a quicker time to hit the index number. During slower periods, expect the reverse.
 
 **How to find the right number for your server**
 
@@ -1976,8 +1952,8 @@ Local storage directory
 |                                                               |                                                                          |
 | Defaults to **./data/**.                                      |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: When **File storage system** is set to **amazons3**, this setting has no effect.                                               |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+When **File storage system** is set to **amazons3**, this setting has no effect.
 
 .. config:setting:: maximum-file-size
   :displayname: Maximum file size (File Storage)
@@ -1996,19 +1972,15 @@ Maximum file size
 |                                                                   |                                                                          |
 | The default is ``104857600`` bytes (**100** mebibytes).           |                                                                          |
 +-------------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Warning**: Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed           |
-| uploads due to network disruptions.                                                                                                          |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Notes**:                                                                                                                                   |
-|                                                                                                                                              |
-| - When :ref:`uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invlaid response from            |
-|   the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy        |
-|   settings may not be sufficient.                                                                                                            |
-| - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:                     |
-|                                                                                                                                              |
-|  - For NGINX, use ``client_max_body_size``.                                                                                                  |
-|  - For Apache use ``LimitRequestBody``.                                                                                                      |
-+-------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  - Verify server memory can support your setting choice. Large file sizes increase the risk of server crashes and failed uploads due to network disruptions.
+  - When :ref:`uploading plugin files <configure/plugins-configuration-settings:upload plugin>`, a ``Received invalid response from the server`` error typically indicates that ``MaxFileSize`` isn't large enough to support the plugin file upload, and/or that proxy settings may not be sufficient.
+  - If you use a proxy or load balancer in front of Mattermost, the following proxy settings must be adjusted accordingly:
+
+    - For NGINX, use ``client_max_body_size``.
+    - For Apache, use ``LimitRequestBody``.
 
 .. config:setting:: enable-document-search-by-content
   :displayname: Enable document search by content (File Storage)
@@ -2132,8 +2104,8 @@ Amazon S3 region
 | appropriate region from AWS, and sets it to **us-east-1**     |                                                                          |
 | if none found.                                                |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: For MinIO or Digital Ocean Spaces, leave this setting empty.                                                                   |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+For MinIO or Digital Ocean Spaces, leave this setting empty.
 
 .. config:setting:: amazon-s3-access-key-id
   :displayname: Amazon S3 access key ID (File Storage)
@@ -2150,10 +2122,10 @@ Amazon S3 access key ID
 | instance. Your EC2 administrator can supply you with the      | - ``config.json`` setting: ``".FileSettings.AmazonS3AccessKeyId",``      |
 | Access Key ID.                                                | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ACCESSKEYID``          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| **Note**: This is required for access unless you are using an                                                                            |
-| `Amazon S3 IAM Role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`__ with       |
-| Amazon S3.                                                                                                                               |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  This is required for access unless you are using an `Amazon S3 IAM Role <https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html>`__ with Amazon S3.
 
 .. config:setting:: amazon-s3-endpoint
   :displayname: Amazon S3 endpoint (File Storage)
@@ -2171,9 +2143,10 @@ Amazon S3 endpoint
 | A string with the hostname of the S3-compatible storage       | - Environment variable: ``MM_FILESETTINGS_AMAZONS3ENDPOINT``                       |
 | instance. Defaults to **s3.amazonaws.com**.                   |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| **Note**: For Digital Ocean Spaces, the hostname should be set to **<region>.digitaloceanspaces.com**, where **<region>** is the abbreviation      |
-| for the region you selected when setting up the Space. It can be **nyc3**, **ams3**, or **sgp1**.                                                  |
-+---------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. note::
+
+  For Digital Ocean Spaces, the hostname should be set to **<region>.digitaloceanspaces.com**, where **<region>** is the abbreviation for the region you selected when setting up the Space. It can be **nyc3**, **ams3**, or **sgp1**.
 
 .. config:setting:: amazon-s3-secret-access-key
   :displayname: Amazon S3 secret access key (File Storage)
@@ -2230,9 +2203,8 @@ Amazon S3 signature v2
 | - **true**: Use Signature v2 signing process.                 |                                                                          |
 | - **false**: **(Default)** Use Signature v4 signing process.  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html>`_ documentation for information about when to        |
-| use the Signature v2 signing process.                                                                                                    |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+See the `AWS <https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html>`_ documentation for information about when to use the Signature v2 signing process.
 
 .. config:setting:: enable-server-side-encryption-for-amazon-s3
   :displayname: Enable server-side encryption for Amazon S3 (File Storage)
@@ -2277,8 +2249,8 @@ Enable Amazon S3 debugging
 |   is included in the system logs. Typically set to **false**  |                                                                          |
 |   in production.                                              |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+Select the **Test Connection** button in the System Console to validate the settings and ensure the user can access the server.
 
 .. config:setting:: amazon-s3-storage-class
   :displayname: Amazon S3 storage class (File Storage)
@@ -2449,8 +2421,8 @@ Enable image proxy
 |   external images.                                            |                                                                     |
 | - **false**: **(Default)** Disables the image proxy.          |                                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.                                                |
-+---------------------------------------------------------------+---------------------------------------------------------------------+
+
+See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.
 
 .. config:setting:: image-proxy-type
   :displayname: Image proxy type (Image Proxy)
@@ -2472,8 +2444,8 @@ Image proxy type
 |   as the image proxy.                                         |                                                                               |
 | - **atmos/camo**: An external atmos/camo image proxy is used. |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.                                                          |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.
 
 .. config:setting:: remote-image-proxy-url
   :displayname: Remote image proxy URL (Image Proxy)
@@ -2506,8 +2478,8 @@ Remote image proxy options
 | This setting isn't needed when using the **local** image      | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyOptions",`` |
 | proxy type.                                                   | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS``     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.                                                          |
-+---------------------------------------------------------------+-------------------------------------------------------------------------------+
+
+See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.
 
 ----
 
@@ -2669,8 +2641,8 @@ Enable security alerts
 |   to be enabled.                                                |                                                                                    |
 | - **false**: Security alerts are disabled.                      |                                                                                    |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------+
-| See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.                                               |
-+-----------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+See the :ref:`Telemetry <manage/telemetry:security update check feature>` documentation to learn more.
 
 .. config:setting:: smtp-server-timeout
   :displayname: SMTP server timeout (SMTP)
@@ -2774,8 +2746,8 @@ Override hostname
 | - If left blank, Mattermost attempts to get the hostname from   |                                                                        |
 |   the operating system or uses the IP address.                  |                                                                        |
 +-----------------------------------------------------------------+------------------------------------------------------------------------+
-| See the :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` documentation for details. |
-+-----------------------------------------------------------------+------------------------------------------------------------------------+
+
+See the :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` documentation for details.
 
 .. config:setting:: use-ip-address
   :displayname: Use IP address (High Availability)
@@ -2851,7 +2823,6 @@ Enable gossip compression
 | - **false**: **(Default for Cloud deployments)**                |                                                                                  |
 |   All communication using the gossip protocol remains           |                                                                                  |
 |   uncompressed.                                                 |                                                                                  |
-|                                                                 |                                                                                  |
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: gossip-port
@@ -3044,8 +3015,8 @@ Output console logs as JSON
 | - **false**: Logged events are written in     |                                                                     |
 |   plain text.                                 |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| **Note**: Typically set to **true** in a production environment.                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------+
+
+Typically set to **true** in a production environment.
 
 .. config:setting:: colorize-plain-text-console-logs
   :displayname: Colorize plain text console logs (Logging)
@@ -3118,8 +3089,10 @@ File log directory
 | String input. If left blank, log files are    | - Environment variable: ``MM_LOGSETTINGS_FILELOCATION``             |
 | stored in the ``./logs`` directory.           |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| **Note**: The path you configure must exist, and Mattermost must have write permissions for this directory.         |
-+-----------------------------------------------+---------------------------------------------------------------------+
+
+.. note::
+
+  The path you configure must exist, and Mattermost must have write permissions for this directory.
 
 .. config:setting:: file-log-level
   :displayname: File log level (Logging)
@@ -3169,8 +3142,8 @@ Output file logs as JSON
 | - **false**: Logged events are written in     |                                                                     |
 |   plain text.                                 |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| **Note**: Typically set to **true** in a production environment.                                                    |
-+-----------------------------------------------+---------------------------------------------------------------------+
+
+Typically set to **true** in a production environment.
 
 .. config:setting:: enable-webhook-debugging
   :displayname: Enable webhook debugging (Logging)
@@ -3196,9 +3169,10 @@ Enable webhook debugging
 | - **false**: The contents of incoming         |                                                                              |
 |   webhooks aren’t printed to log files.       |                                                                              |
 +-----------------------------------------------+------------------------------------------------------------------------------+
-| **Note**: Enable debug logs by changing the :ref:`file log level <manage/logging:file logs>` to ``DEBUG`` to include         |
-| the request body of incoming webhooks in logs.                                                                               |
-+-----------------------------------------------+------------------------------------------------------------------------------+
+
+.. note::
+
+  Enable debug logs by changing the :ref:`file log level <manage/logging:file logs>` to ``DEBUG`` to include the request body of incoming webhooks in logs.
 
 .. config:setting:: output-logs-to-multiple-targets
   :displayname: Output logs to multiple targets (Logging)
@@ -3220,12 +3194,10 @@ Output logs to multiple targets
 | another configuration file, a database DSN,   |                                                                           |
 | or JSON.                                      |                                                                           |
 +-----------------------------------------------+---------------------------------------------------------------------------+
-| See the :doc:`Mattermost logging </manage/logging>` documentation for details.                                            |
-+-----------------------------------------------+---------------------------------------------------------------------------+
 
 .. note::
 
-  - These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.                                                                          |
+  - See the :doc:`Mattermost logging </manage/logging>` documentation for details. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
   - Logs are recorded asynchronously to reduce latency to the caller.
   - Advanced logging supports hot-reloading of logger configuration.
 
@@ -3487,6 +3459,8 @@ Enable performance monitoring
 |   performance monitoring is disabled.         |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
+See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more.
+
 .. config:setting:: enable-client-performance-monitoring
   :displayname: Enable client performance monitoring (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
@@ -3627,8 +3601,8 @@ Enable client debugging
 | - **false**: **(Default)** Those settings are     |                                                                                             |
 |   hidden and disabled.                            |                                                                                             |
 +---------------------------------------------------+---------------------------------------------------------------------------------------------+
-| See the :ref:`client debugging <preferences/manage-advanced-options:performance debugging>` documentation to learn more.                        |
-+---------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+See the :ref:`client debugging <preferences/manage-advanced-options:performance debugging>` documentation to learn more.
 
 .. config:setting:: allow-untrusted-internal-connections
   :displayname: Allow untrusted internal connections (Developer)
