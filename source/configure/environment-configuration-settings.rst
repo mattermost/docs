@@ -3463,6 +3463,8 @@ Performance monitoring
 
 Configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring.
+
 .. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
@@ -3484,9 +3486,49 @@ Enable performance monitoring
 | - **false**: **(Default)** Mattermost         |                                                                     |
 |   performance monitoring is disabled.         |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
-| See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation   |
-| to learn more.                                                                                                      |
-+-----------------------------------------------+---------------------------------------------------------------------+
+
+.. config:setting:: enable-client-performance-monitoring
+  :displayname: Enable client performance monitoring (Performance Monitoring)
+  :systemconsole: Environment > Performance Monitoring
+  :configjson: .MetricsSettings.EnableClientMetrics
+  :environment: MM_METRICSSETTINGS_ENABLECLIENTMETRICS
+  :description: Enable or disable client performance monitoring.
+
+  - **true**: Client performance monitoring data collection and profiling is enabled.
+  - **false**: **(Default)** Mattermost client performance monitoring is disabled.
+
+Enable client performance monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+----------------------------------------------------------------------------------+
+| Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                   |
+|                                                      | - ``config.json setting``: ``".MetricsSettings.EnableClientMetrics": false",``   |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                            |
+|   collection and profiling is enabled.               |                                                                                  |
+| - **false**: **(Default)** Mattermost                |                                                                                  |
+|   client performance monitoring is disabled.         |                                                                                  |
++------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: client-side-user-ids
+  :displayname: Client side user ids (Performance Monitoring)
+  :systemconsole: Environment > Performance Monitoring
+  :configjson: .MetricsSettings.ClientSideUserIds
+  :environment: MM_METRICSSETTINGS_CLIENTSIDEUSERIDS
+  :description: A list of comma-separated user ids you want to track for client side webapp metrics. Limited to 5. Blank by default.
+
+Client side user ids
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------+
+| A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
+| client-side webapp metrics.                                   | - ``config.json setting``: ``".MetricsSettings.ClientSideUserIds"``     |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
+| Limited to 5 user IDs. Blank by default.                      |                                                                         |
++---------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
 
 .. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
@@ -3495,8 +3537,8 @@ Enable performance monitoring
   :environment: MM_METRICSSETTINGS_LISTENADDRESS
   :description: The port the Mattermost server will listen on to expose performance metrics, when enabled. Default is port **8067**.
 
-Listen address for performance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listen address
+~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |
