@@ -13,7 +13,7 @@ Review and manage the following environmental configuration options in the Syste
 - `Image proxy <#image-proxy>`__
 - `SMTP <#smtp>`__
 - `Push notification server <#push-notification-server>`__
-- `High availaiblity <#high-availability>`__ cluster-based settings
+- `High availability <#high-availability>`__ cluster-based settings
 - `Rate limiting <#rate-limiting>`__
 - `Logging <#logging>`__
 - `Session lengths <#session-lengths>`__
@@ -2797,7 +2797,8 @@ Enable experimental gossip encryption
 
 .. note::
 
-  Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
+  - The Gossip protocol is based on principles outlined in the `SWIM protocol developed by researchers at Cornell University <https://www.cs.cornell.edu/projects/Quicksilver/public_pdfs/SWIM.pdf>`_. The gossip protocol is a communication mechanism in distributed systems where nodes randomly exchange information to ensure data consistency across the network. It is decentralized, scalable, and fault-tolerant, making it ideal for systems with numerous nodes. Information is spread in a manner similar to social gossip, with nodes periodically "gossiping" updates to random peers until the network converges to a consistent state. Widely used in distributed databases, blockchain networks, and peer-to-peer systems, the protocol is simple to implement and resilient to node failures. However, it can suffer from redundancy and propagation delays in large networks.
+  - Alternatively, you can manually set the ``ClusterEncryptionKey`` row value in the **Systems** table. A key is a byte array converted to base64. Set this value to either 16, 24, or 32 bytes to select AES-128, AES-192, or AES-256 respectively. 
 
 .. config:setting:: enable-gossip-compression
   :displayname: Enable gossip compression (High Availability)
@@ -3434,6 +3435,8 @@ Performance monitoring
 
 Configure performance monitoring by going to **System Console > Environment > Performance Monitoring**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
+See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more about setting up performance monitoring.
+
 .. config:setting:: enable-performance-monitoring
   :displayname: Enable performance monitoring (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
@@ -3458,6 +3461,49 @@ Enable performance monitoring
 
 See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more.
 
+.. config:setting:: enable-client-performance-monitoring
+  :displayname: Enable client performance monitoring (Performance Monitoring)
+  :systemconsole: Environment > Performance Monitoring
+  :configjson: .MetricsSettings.EnableClientMetrics
+  :environment: MM_METRICSSETTINGS_ENABLECLIENTMETRICS
+  :description: Enable or disable client performance monitoring.
+
+  - **true**: Client performance monitoring data collection and profiling is enabled.
+  - **false**: **(Default)** Mattermost client performance monitoring is disabled.
+
+Enable client performance monitoring
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------+----------------------------------------------------------------------------------+
+| Enable or disable client performance monitoring.     | - System Config path: **Environment > Performance Monitoring**                   |
+|                                                      | - ``config.json setting``: ``".MetricsSettings.EnableClientMetrics": false",``   |
+| - **true**: Client performance monitoring data       | - Environment variable: ``MM_METRICSSETTINGS_ENABLE``                            |
+|   collection and profiling is enabled.               |                                                                                  |
+| - **false**: **(Default)** Mattermost                |                                                                                  |
+|   client performance monitoring is disabled.         |                                                                                  |
++------------------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: client-side-user-ids
+  :displayname: Client side user ids (Performance Monitoring)
+  :systemconsole: Environment > Performance Monitoring
+  :configjson: .MetricsSettings.ClientSideUserIds
+  :environment: MM_METRICSSETTINGS_CLIENTSIDEUSERIDS
+  :description: A list of comma-separated user ids you want to track for client side webapp metrics. Limited to 5. Blank by default.
+
+Client side user ids
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+-------------------------------------------------------------------------+
+| A list of comma-separated user IDs you want to track for      | - System Config path: **Environment > Performance Monitoring**          |
+| client-side webapp metrics.                                   | - ``config.json setting``: ``".MetricsSettings.ClientSideUserIds"``     |
+|                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
+| Limited to 5 user IDs. Blank by default.                      |                                                                         |
++---------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  The total number of user IDs is limited to 5 to ensure performance. Adding more IDs can overwhelm Prometheus due to high label cardinality. To avoid performance issues, we recommend minimizing changes to this list.
+
 .. config:setting:: listen-address-for-performance
   :displayname: Listen address for performance (Performance Monitoring)
   :systemconsole: Environment > Performance Monitoring
@@ -3465,8 +3511,8 @@ See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-perfo
   :environment: MM_METRICSSETTINGS_LISTENADDRESS
   :description: The port the Mattermost server will listen on to expose performance metrics, when enabled. Default is port **8067**.
 
-Listen address for performance
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Listen address
+~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 | The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |
@@ -3838,14 +3884,34 @@ Disable client cache
 |   of Redis is enabled.                        |                                                                                      |
 +-----------------------------------------------+--------------------------------------------------------------------------------------+
 
+.. config:setting:: redis-cache-prefix
+  :displayname: Redis cache prefix (CacheSettings)
+  :systemconsole: N/A
+  :configjson: CacheSettings.RedisCachePrefix
+  :environment: MM_CACHESETTINGS_REDISCACHEPREFIX
+  :description: Adds a prefix to all Redis cache keys. Blank by default.
+
+Redis cache prefix
+^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+| Adds a prefix to all Redis cache keys.        | - System Config path: **N/A**                                                        |
+|                                               | - ``config.json setting``: ``CacheSettings`` > ``RedisCachePrefix``                  |
+|                                               | - Environment variable: ``MM_CACHESETTINGS_REDISCACHEPREFIX``                        |
++-----------------------------------------------+--------------------------------------------------------------------------------------+
+
+.. tip::
+
+  Adding a prefix to all Redis cache keys reduces key collisions, simplifies debugging, isolates data, and provides a clear structure for managing and scaling Redis-based systems. In environments where multiple systems or tenants use the same Redis instance, prefixes become critical for maintaining data integrity and operational efficiency.
+
 .. config:setting:: enable-webhub-channel-iteration
   :displayname: Enable webhub channel iteration
   :systemconsole: N/A
   :configjson: EnableWebHubChannelIteration
   :environment: MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION
 
-  - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
-  - **false**: **(Default)** Websocket broadcasting performance in channels is disabled.
+    - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
+    - **false**: **(Default)** Websocket broadcasting performance in channels is disabled.
 
 Enable webhub channel iteration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
