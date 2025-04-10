@@ -383,7 +383,10 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :systemconsole: N/A
   :configjson: NativeAppSettings.MobileExternalBrowser
   :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
-  :description: This setting configures the mobile app to perform SSO Authentication using the external default browser.
+  :description: Configure the mobile app top use the default mobile browser to perform SSO authentication.
+
+  - **true**:  The mobile app uses the default mobile browser to perform SSO authentication.
+  - **false**: **(Default)** The mobile doesn't use the default mobile browser to perform SSO authentication.
 
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -395,8 +398,13 @@ Mobile external browser
 | From Mattermost v10.2 and Mobile v2.2.1, this setting configures the mobile app       | - System Config path: N/A                                                   |
 | to perform SSO Authentication using the external default browser.                     | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
 |                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
-| String input.                                                                         |                                                                             |
+| - **true**:  The mobile app uses the default mobile browser to perform SSO            |                                                                             |
+|   authentication.                                                                     |                                                                             |
+| - **false**: **(Default)** The mobile doesn't use the default mobile browser to       |                                                                             |
+|   perform SSO authentication.                                                         |                                                                             |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Enable this setting in cases when security requires a specific browser beyond mobile default browsers, such as Safari on iOS or Google Chrome on Android.
 
 ----
 
