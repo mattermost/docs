@@ -11,6 +11,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     :titlesonly:
 
     Elasticsearch </scale/elasticsearch>
+    Redis </scale/redis>
     High availability </scale/high-availability-cluster-based-deployment> 
     Enable Copilot </configure/enable-copilot>
     Store configuration in your database </configure/configuration-in-your-database>
@@ -25,6 +26,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Telemetry </manage/telemetry>
 
 * :doc:`Elasticsearch </scale/elasticsearch>` - Learn how to configure Elasticsearch for Mattermost.
+* :doc:`Redis </scale/redis>` - Learn how to configure Redis for improved cache performance in Mattermost.
 * :doc:`High availability </scale/high-availability-cluster-based-deployment>` - Learn how to configure high availability for Mattermost.
 * :doc:`Enable Copilot </configure/enable-copilot>` - Learn how to enable Mattermost Copilot for your deployment.
 * :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
