@@ -383,7 +383,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :systemconsole: N/A
   :configjson: NativeAppSettings.MobileExternalBrowser
   :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
-  :description: Configure the mobile app to use the default mobile browser to perform SSO authentication.
+  :description: Configure the mobile app to use the default mobile browser to perform SSO authentication. It should be enabled when there are issues with the mobile app SSO redirect flow.
 
   - **true**:  The mobile app uses the default internal mobile browser to perform SSO authentication.
   - **false**: **(Default)** The mobile uses an external mobile browser to perform SSO authentication.
