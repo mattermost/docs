@@ -386,7 +386,7 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :description: Configure the mobile app to use the default mobile browser to perform SSO authentication. It should be enabled when there are issues with the mobile app SSO redirect flow. Disabled by default.
 
   - **true**:  The mobile app uses the default internal mobile browser to perform SSO authentication.
-  - **false**: **(Default)** The mobile uses an external mobile browser to perform SSO authentication.
+  - **false**: **(Default)** The mobile app uses an external mobile browser to perform SSO authentication.
 
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -400,11 +400,11 @@ Mobile external browser
 |                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
 | - **true**:  The mobile app uses the default internal mobile browser to perform SSO   |                                                                             |
 |   authentication.                                                                     |                                                                             |
-| - **false**: **(Default)** The mobile uses an external mobile browser to              |                                                                             |
+| - **false**: **(Default)** The mobile app uses an external mobile browser to          |                                                                             |
 |   perform SSO authentication.                                                         |                                                                             |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
-Enable this setting in cases when security requires a specific browser other than Safari on iOS or Google Chrome on Android.
+Enable this configuration setting when there are issues with the mobile app SSO redirect flow.
 
 ----
 
