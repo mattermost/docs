@@ -1,4 +1,4 @@
-Editions and offerings 
+Editions and Offerings 
 ======================
 
 Mattermost is an open core platform. 

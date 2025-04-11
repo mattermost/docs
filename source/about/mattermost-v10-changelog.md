@@ -1,4 +1,4 @@
-# v10 changelog
+# v10 Changelog
 
 ```{Important}
 ```{include} common-esr-support-upgrade.md
