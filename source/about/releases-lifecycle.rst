@@ -1,4 +1,4 @@
-Releases and life cycle
+Releases and Life Cycle
 =======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst

@@ -1,4 +1,4 @@
-Secure command and control
+Secure Command and Control
 ============================
 
 Mattermost's Secure Command and Control solution is designed to provide fast and secure mobile communications for technical teams. It addresses the pain points of data leakage to unsecured channels, like SMS and WhatsApp, and the lack of control and compliance from vendor-hosted mobile applications that leaves technical teams struggling to collaborate securely.

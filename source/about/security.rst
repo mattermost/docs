@@ -11,12 +11,11 @@ Multiple rounds of penetration testing and security analysis, in addition to int
    :titlesonly:
 
    /about/zero-trust.rst
-   /about/certifications-and-compliance.rst
 
 Security features
 ------------------
 
-Mattermost offers a host of features to help keep your private cloud communications secure. Learn more about :doc:`Zero Trust with Mattermost </about/zero-trust>` and :doc:`certifications and compliance </about/certifications-and-compliance>` with Mattermost.
+Mattermost offers a host of features to help keep your private cloud communications secure. Learn more about :doc:`Zero Trust with Mattermost </about/zero-trust>`.
 
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
