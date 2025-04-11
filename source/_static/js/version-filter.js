@@ -11,8 +11,10 @@ $(document).ready(function () {
     $('table.docutils tr').each(function (index) {
         if (index === 0) return; // Skip header row
 
-        const firstCell = $(this).find('td').first();
-        if (firstCell.length) {
+        const cells = $(this).find('td');
+        // Check if this is a version header row
+        if (cells.length > 1) {
+            const firstCell = cells.first();
             const versionText = firstCell.text().trim();
             const versionMatch = versionText.match(/v(\d+\.\d+)/);
 
@@ -29,14 +31,15 @@ $(document).ready(function () {
                     row: $(this),
                     version: version
                 });
-            } else if (lastVersion) {
-                // If no version in this row but we have a previous version
-                // This is a continuation row for the last version
-                rows.push({
-                    row: $(this),
-                    version: lastVersion
-                });
+                return
             }
+        }
+        // This is a continuation row for the last version
+        if (lastVersion) {
+            rows.push({
+                row: $(this),
+                version: lastVersion
+            });
         }
     });
 
