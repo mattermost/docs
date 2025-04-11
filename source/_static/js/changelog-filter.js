@@ -98,6 +98,9 @@ $(document).ready(function () {
         const sourceVersion = $('#changelog-source-version').val();
         const targetVersion = $('#changelog-target-version').val();
 
+        // Clear any previous error messages
+        $('.changelog-filter-error').remove();
+
         if (sourceVersion === 'all' && targetVersion === 'all') {
             // Show all sections and TOC items
             sections.forEach(item => {
@@ -111,9 +114,21 @@ $(document).ready(function () {
         }
 
         // Use the global parseVersion function
-
         const sourceV = parseVersion(sourceVersion);
         const targetV = parseVersion(targetVersion);
+
+        // If both are specific versions, validate that target >= source
+        if (targetV.major < sourceV.major ||
+            (targetV.major === sourceV.major && targetV.minor < sourceV.minor)) {
+            // Display error message
+            $('.changelog-filters').append(
+                '<div class="changelog-filter-error">' +
+                'Error: Target version must be greater than or equal to source version.' +
+                '</div>'
+            );
+            return; // Don't apply the filter
+        }
+
 
         // Filter logic
         sections.forEach(item => {

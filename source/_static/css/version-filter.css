@@ -28,3 +28,12 @@
 .docutils tr.filtered {
     display: none;
 }
+
+.version-filter-error {
+    color: #e74c3c;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #fadbd8;
+    border-radius: 4px;
+    border-left: 4px solid #e74c3c;
+}
