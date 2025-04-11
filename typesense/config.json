@@ -1,0 +1,54 @@
+{
+  "index_name": "mm_product_docs",
+  "allowed_domains": [
+    "localhost",
+    "sphinx"
+  ],
+  "start_urls": [
+    {
+      "url": "http://localhost:8000",
+      "tags": []
+    }
+  ],
+  "sitemap_urls": [
+    "http://localhost:8000/sitemap.xml"
+  ],
+  "selectors": {
+    "lvl1": {
+      "selector": "article h1",
+      "type": "css"
+    },
+    "lvl2": {
+      "selector": "article h2",
+      "type": "css"
+    },
+    "lvl3": {
+      "selector": "article h3",
+      "type": "css"
+    },
+    "lvl4": {
+      "selector": "article h4",
+      "type": "css"
+    },
+    "lvl5": {
+      "selector": "article h5",
+      "type": "css"
+    },
+    "text": {
+      "selector": "article p, article li",
+      "type": "css"
+    }
+  },
+  "custom_settings": {
+    "token_separators": [
+      "-"
+    ],
+    "symbols_to_index": [
+      "@"
+    ]
+  },
+  "strip_chars": " .,;:#",
+  "stop_urls": [],
+  "scrape_start_urls": false,
+  "nb_hits": 64729
+}

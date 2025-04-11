@@ -2,6 +2,7 @@ $(document).ready(function () {
     // Function to set the custom theme attribute based on the current theme
     function setCustomTheme(theme) {
         $('body').attr('data-custom-theme', theme);
+        $('html').attr('data-theme', theme);
     }
 
     // Check for a manually set theme

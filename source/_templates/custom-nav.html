@@ -1,3 +1,19 @@
+<script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4.0"></script>
+<script>
+	window.addEventListener('load', () => {
+		docsearch({
+			container: '.sidebar-search-container',
+			typesenseCollectionName: 'mm_product_docs',
+			typesenseServerConfig: {
+				nodes: [{ host: 'h0agqxfpir543j9lp-1.a1.typesense.net', port: '443', protocol: 'https' }],
+				// nodes: [{ host: 'localhost', port: '8108', protocol: 'http' }],
+				apiKey: 'ZOLa3xKupe9e7DRPhkv56g8VUoCygd00' // read-only key. will eventually expose via env var
+			},
+			typesenseSearchParams: {}
+		});
+	});
+</script>
+
 <div data-swiftype-index=false class="notification-bar sticky-top">
     <div class="notification-bar__content">
         <a class="notification-bar__close" data-ol-has-click-handler="">
@@ -69,7 +85,7 @@
 											<a href="https://mattermost.com/channels/">
 												Channels
 											</a>
-										</li>	
+										</li>
 										<li class="sub-menu__links--single">
 											<a href="https://mattermost.com/playbooks/">
 												Playbooks
@@ -127,7 +143,7 @@
 											<a href="https://mattermost.com/enterprise/cloud/">
 											Cloud
 											</a>
-										</li>	
+										</li>
 									</ul>
 								</div>
 							</div>
@@ -173,7 +189,7 @@
 											<a href="https://mattermost.com/solutions/use-cases/integrated-security-operations/">
 											Integrated Security Operations
 											</a>
-										</li>	
+										</li>
 										<li class="sub-menu__links--single">
 											<a href="https://mattermost.com/solutions/use-cases/out-of-band-incident-response/">
 											Out-of-Band Incident Response
@@ -384,7 +400,7 @@
 									<div class="sub-menu__dev-link-col">
 										<p class="sub-menu__link-col-header sub-menu__link-col-header-space">Documentation</p>
 										<ul>
-											
+
 											<li class="sub-menu__links--single">
 												<a href="https://academy.mattermost.com/">
 												Academy
@@ -429,7 +445,7 @@
 												<a href="https://mattermost.com/community/">
 													Join Community
 												</a>
-											</li>	
+											</li>
 											<li class="sub-menu__links--single">
 												<a href="https://mattermost.com/contribute/">
 													Contribute
