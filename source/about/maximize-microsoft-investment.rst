@@ -1,4 +1,4 @@
-Maximize your Microsoft investment
+Maximize Your Microsoft Investment
 ===================================
 
 Supplement existing investments in Microsoft Teams, M365, and Entra ID with Mattermost for Microsoft Teams v10 for everyday collaboration with Mattermost’s specialized workflow platform for technical and operational teams needing advanced customization, toolchain integration, and deployment to segregated networks.
