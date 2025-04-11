@@ -9,7 +9,7 @@ Redis is an open-source, in-memory data structure store used as a database, cach
 Deployment guide
 ----------------
 
-Deploying Redis with Mattermost includes the following two steps: `setting up the Redis server <#set-up-a-redis-server>`_, and `configuring Redis in Mattermost <#configure-redis-in-mattermost>`_.
+Deploying Redis with Mattermost includes the following two steps: `setting up the Redis server <#set-up-a-redis-server>`__, and `configuring Redis in Mattermost <#configure-redis-in-mattermost>`__.
 
 Set up a Redis server
 ~~~~~~~~~~~~~~~~~~~~~
@@ -107,4 +107,3 @@ When running Redis with Mattermost, monitor the following metrics:
 - Cache hit ratio
 - Operation latency
 - Mattermost's ``mattermost_db_cache_time`` Grafana metric with labels of ``cache_name`` and ``operation``, which can be used to further monitor the performance of Redis
-
