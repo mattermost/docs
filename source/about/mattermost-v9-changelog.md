@@ -11,6 +11,7 @@
 
 - **9.11.12, released **
   - Mattermost v9.11.12 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
   - Mattermost v9.11.12 contains no database or functional changes.
 - **9.11.11, released 2025-03-24**
   - Mattermost v9.11.11 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
