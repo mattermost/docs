@@ -1,4 +1,4 @@
-Non-profit subscriptions
+Non-Profit Subscriptions
 ========================
 
 The Mattermost Nonprofit License enables nonprofit and open-source organizations who are unable to afford our commercial licenses to apply the benefits of the self-hosted :ref:`Mattermost Professional offering <about/editions-and-offerings:mattermost professional>` towards advancing their missions with special nonprofit pricing.

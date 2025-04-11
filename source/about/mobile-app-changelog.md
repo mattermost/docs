@@ -1,4 +1,4 @@
-# Mobile apps changelog
+# Mobile Apps Changelog
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```
