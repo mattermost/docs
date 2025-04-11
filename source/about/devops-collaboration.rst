@@ -1,5 +1,5 @@
-DevOps collaboration
-====================
+DevSecOps Collaboration
+========================
 
 In DevOps, teams work together to accelerate software development and deployment processes, reduce costs, and ensure their organization remains competitive in the fast-paced digital marketplace.
 
