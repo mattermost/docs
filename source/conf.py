@@ -3917,7 +3917,8 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/compass-icons.css"
+    "css/compass-icons.css",
+    "https://cdn.jsdelivr.net/npm/typesense-docsearch-css@0.3.0",
 ]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
