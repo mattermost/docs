@@ -282,7 +282,7 @@ On large deployments, also consider using the :ref:`search replicas <configure/e
 
 .. note::
 
-  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting directly to the underlying read-only node endpoints within the RDS cluster. We recommend circumventing the failover/load balancing that AWS/RDS takes care of (except for the write traffic), and populate the `DataSourceReplicas` array with the RDS reader node endpoints. Mattermost has its own method of balancing the read-only connections, and can also balance those queries to the DataSource/write+read connection should those nodes fail.
+  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting directly to the underlying read-only node endpoints within the RDS cluster. We recommend circumventing the failover/load balancing that AWS/RDS takes care of (except for the write traffic), and populating the ``DataSourceReplicas`` array with the RDS reader node endpoints. Mattermost has its own method of balancing the read-only connections, and can also balance those queries to the DataSource/write+read connection should those nodes fail.
 
 Mattermost distributes queries as follows:
 
