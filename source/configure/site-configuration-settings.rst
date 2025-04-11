@@ -396,7 +396,7 @@ Mobile external browser
 
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | From Mattermost v10.2 and Mobile v2.2.1, this setting configures the mobile app       | - System Config path: N/A                                                   |
-| to use the default mobile browser to perform SSO authentication.                      | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
+| to use an external mobile browser to perform SSO authentication.                      | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
 |                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
 | - **true**:  The mobile app uses the default internal mobile browser to perform SSO   |                                                                             |
 |   authentication.                                                                     |                                                                             |
