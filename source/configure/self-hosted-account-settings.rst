@@ -22,6 +22,6 @@ You can also review and manage the following aspects of your self-hosted deploym
 
 - View the :doc:`edition </about/editions-and-offerings>` of your Mattermost self-hosted deployment.
 - Manage your :doc:`product subscription </about/self-hosted-subscriptions>`.
-- :doc:`Upload a new license </upgrade/installing-license-key>`.
+- :doc:`Upload a new license </manage/admin/installing-license-key>`.
 - Remove a license to :doc:`downgrade the server </upgrade/downgrading-mattermost-server>`.
 - Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ for assistance.

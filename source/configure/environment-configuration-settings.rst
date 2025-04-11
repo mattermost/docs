@@ -13,12 +13,13 @@ Review and manage the following environmental configuration options in the Syste
 - `Image proxy <#image-proxy>`__
 - `SMTP <#smtp>`__
 - `Push notification server <#push-notification-server>`__
-- `High availaiblity <#high-availability>`__ cluster-based settings
+- `High availaiblity <#high-availability>`__
 - `Rate limiting <#rate-limiting>`__
 - `Logging <#logging>`__
 - `Session lengths <#session-lengths>`__
 - `Performance monitoring <#performance-monitoring>`__
-- `Developer <#developer>`__ settings
+- `Developer <#developer>`__
+- `Mobile security <#mobile-security>`__ 
 - `config.json-only settings <#config-json-only-settings>`__
 
 .. tip::
@@ -148,7 +149,7 @@ Web server connection security
 |   connection.                                                         |                                                                       |
 | - **TLS**: Encrypts the communication between Mattermost              |                                                                       |
 |   clients and your server. See the :doc:`configuring TLS on           |                                                                       |
-|   Mattermost </install/config-tls-mattermost>` for more details.      |                                                                       |
+|   Mattermost </deploy/server/setup-tls>` for details.                 |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: tls-certificate-file
@@ -200,7 +201,8 @@ Use Let's Encrypt
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
-| See the :doc:`configuring TLS on Mattermost documentation </install/config-tls-mattermost>`   | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
+| See the :doc:`configuring TLS on Mattermost documentation                                     | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
+| </deploy/server/setup-tls>`                                                                   |                                                                          |
 | for more details on setting up Let’s Encrypt.                                                 | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 |                                                                                               |                                                                          |
 | - **true**: The certificate will be retrieved when a client                                   |                                                                          |
@@ -365,7 +367,7 @@ Managed resource paths
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 | **Note:**                                                                                                                        |
 | When using the Mattermost Desktop App, additional configuration is required to open the link within the Desktop App instead of   |
-| in a browser. See the :doc:`desktop managed resources </install/desktop-app-managed-resources>`                                  |
+| in a browser. See the :doc:`desktop managed resources </deploy/desktop/desktop-app-managed-resources>`                           |
 | documentation for details.                                                                                                       |
 +--------------------------------------------------------+-------------------------------------------------------------------------+
 
@@ -761,7 +763,7 @@ Data source
 |    }                                                                                                                                     |
 |                                                                                                                                          |
 | **Note**: If you’re using MySQL 8.0 or later, the default collation has changed to ``utf8mb4_0900_ai_ci``. See our                       |
-| :doc:`Database Software Requirements </install/software-hardware-requirements>` documentation for details on MySQL 8.0 support.          |
+| :doc:`Database Software Requirements </deploy/software-hardware-requirements>` documentation for details on MySQL 8.0 support.           |
 |                                                                                                                                          |
 | **To use TLS with MySQL databases**                                                                                                      |
 |                                                                                                                                          |
@@ -962,7 +964,7 @@ Disable database search
 | Search behavior in Mattermost depends on which search engines are enabled.                                                                   |
 |                                                                                                                                              |
 | - When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.                                          |
-| - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </deploy/bleve-search>`, if enabled. If this occurs,     |
+| - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </configure/bleve-search>`, if enabled. If this occurs,  |
 |   you will see the warning ``Encountered error on SearchPostsInTeamForUser.``                                                                |
 | - If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.                |
 | - If all of the above methods fail or are disabled, the search results will be empty.                                                        |
@@ -2075,7 +2077,7 @@ Enable searching content of documents within ZIP files
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 | **Note**: Document content search within ZIP files is available, with mobile support coming soon.                                                      |
 | Searching document contents adds load to your server. For large deployments, or teams that share many large, text-heavy documents,                     |
-| we recommend you review our :ref:`hardware requirements <install/software-hardware-requirements:hardware requirements>`,                               |
+| we recommend you review our :ref:`hardware requirements <deploy/software-hardware-requirements:hardware requirements>`,                                |
 | and test enabling this feature in a staging environment before enabling it in a production environment.                                                |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -2434,8 +2436,8 @@ An image proxy is used by Mattermost apps to prevent them from connecting direct
   :configjson: .ImageProxySettings.Enable
   :environment: MM_IMAGEPROXYSETTINGS_ENABLE
 
-  - **true**: **(Default)** Enables an image proxy for loading external images.
-  - **false**: Disables the image proxy.
+  - **true**: Enables an image proxy for loading external images.
+  - **false**: **(Default)** Disables the image proxy.
 
 Enable image proxy
 ~~~~~~~~~~~~~~~~~~
@@ -2444,11 +2446,11 @@ Enable image proxy
 | An image proxy anonymizes Mattermost app connections and      | - System Config path: **Environment > Image Proxy**                 |
 | prevents them from accessing insecure content.                | - ``config.json setting``: ``".ImageProxySettings.Enable": true",`` |
 |                                                               | - Environment variable: ``MM_IMAGEPROXYSETTINGS_ENABLE``            |
-| - **true**: **(Default)** Enables an image proxy for loading  |                                                                     |
+| - **true**: Enables an image proxy for loading                |                                                                     |
 |   external images.                                            |                                                                     |
-| - **false**: Disables the image proxy.                        |                                                                     |
+| - **false**: **(Default)** Disables the image proxy.          |                                                                     |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                       |
+| See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.                                                |
 +---------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: image-proxy-type
@@ -2471,7 +2473,7 @@ Image proxy type
 |   as the image proxy.                                         |                                                                               |
 | - **atmos/camo**: An external atmos/camo image proxy is used. |                                                                               |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                                 |
+| See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.                                                          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: remote-image-proxy-url
@@ -2505,7 +2507,7 @@ Remote image proxy options
 | This setting isn't needed when using the **local** image      | - ``config.json setting``: ``".ImageProxySettings.RemoteImageProxyOptions",`` |
 | proxy type.                                                   | - Environment variable: ``MM_IMAGEPROXYSETTINGS_REMOTEIMAGEPROXYOPTIONS``     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
-| See the :doc:`image proxy </deploy/image-proxy>` documentation to learn more.                                                                 |
+| See the :doc:`image proxy </deploy/server/image-proxy>` documentation to learn more.                                                          |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 ----
@@ -3448,7 +3450,7 @@ Session idle timeout
 .. note::
 
   - This setting has no effect when `extend session length with activity <#extend-session-length-with-activity>`__ is set to **true**.
-  - This setting applies to the webapp and the desktop app. For mobile apps, use an :doc:`EMM provider </deploy/deploy-mobile-apps-using-emm-provider>` to lock the app when not in use.                                                |
+  - This setting applies to the webapp and the desktop app. For mobile apps, use an :doc:`EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to lock the app when not in use.                                                |
   - In :doc:`high availability mode </scale/high-availability-cluster-based-deployment>`, enable IP hash load balancing for reliable timeout measurement.
 
 ----
@@ -3612,7 +3614,7 @@ Allow untrusted internal connections
 |                                                                                                                                               |
 | - Integrations using webhooks, slash commands, or message actions. This prevents them from requesting endpoints within the local network.     |
 | - Link previews. When a link to a local network address is posted in a chat message, this prevents a link preview from being displayed.       |
-| - The local :doc:`image proxy </deploy/image-proxy>`. If the local image proxy is enabled, images located on                                  |
+| - The local :doc:`image proxy </deploy/server/image-proxy>`. If the local image proxy is enabled, images located on                           |
 |   the local network cannot be used by integrations or posted in chat messages.                                                                |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
 |                                                                                                                                               |
@@ -3642,6 +3644,104 @@ Allow untrusted internal connections
 |   ``https://webhooks.internal.example.com/webhook`` can be whitelisted using ``webhooks.internal.example.com``, or ``10.0.16.16/28``,         |
 |   but not ``10.0.16.20``.                                                                                                                     |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+Mobile security
+---------------
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+
+.. config:setting:: enable-biometric-authentication
+  :displayname: Enable Biometric Authentication
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileEnableBiometrics
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEENABLEBIOMETRICS
+  :description: Enforces biometric authentication (with PIN/passcode fallback) before accessing the app. Users will be prompted based on session activity and server switching rules.
+
+    - **true**: Biometric authentication is enabled.
+    - **false**: **(Default)** Biometric authentication is disabled.
+
+Enable biometric authentication
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+-------------------------------------------------------------------------------------+
+| Enforce biometric authentication, with        | - System Config path: **Environment > Mobile Security**                             |
+| PIN/passcode fallback, before accessing       | - ``config.json setting``: ``".NativeAppSettings.MobileEnableBiometrics": false",`` |
+| the app. Users will be prompted based on      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLEBIOMETRICS``             |
+| session activity and server switching rules.  |                                                                                     |
+|                                               |                                                                                     |
+| - **true**: Biometric authentication is       |                                                                                     |
+|   enabled.                                    |                                                                                     |
+| - **false**: **(Default)** Biometric          |                                                                                     |
+|   authentication is disabled.                 |                                                                                     |
++-----------------------------------------------+-------------------------------------------------------------------------------------+
+
+.. note::
+
+  Users must authenticate in the following situations:
+
+  - Adding a new server: When a new server is added to the mobile app and biometric authentication is enabled.
+  - Opening the mobile app: At app launch when the active server requires authentication.
+  - Returning after background use: After the app has been in the background for 5 minutes or more and the active server requires authentication.
+  - Using multiple servers: When accessing a server for the first time, after 5 minutes of inactivity on a server, and when the last authentication attempt fails.
+
+.. config:setting:: mobile-security-enabled
+  :displayname: Enable Jailbreak/Root Protection
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileJailbreakProtection
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION
+  :description: Prevent access to the app on devices detected as jailbroken or rooted. If a device fails the security check, users will be denied access or prompted to switch to a compliant server.
+
+    - **true**: Jailbreak/Root protection is enabled.
+    - **false**: **(Default)** Jailbreak/Root protection is disabled.
+
+Enable jailbreak/root protection
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+----------------------------------------------------------------------------------------+
+| Prevent access to the app on devices          | - System Config path: **Environment > Mobile Security**                                |
+| detected as jailbroken or rooted. If a        | - ``config.json setting``: ``".NativeAppSettings.MobileJailbreakProtection": false",`` |
+| device fails the security check, users will   | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEJAILBREAKPROTECTION``             |
+| be denied access or prompted to switch to a   |                                                                                        |
+| compliant server.                             |                                                                                        |
+|                                               |                                                                                        |
+| - **true**: Jailbreak/Root protection is      |                                                                                        |
+|   enabled.                                    |                                                                                        |
+| - **false**: **(Default)** Jailbreak/Root     |                                                                                        |
+|   protection is disabled.                     |                                                                                        |
++-----------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+  See the `Expo SDK documentation <https://docs.expo.dev/versions/latest/sdk/device/#deviceisrootedexperimentalasync>`_ to learn more about how checks are performed for this functionality.
+
+.. config:setting:: mobile-security-enabled
+  :displayname: Prevent Screen Capture
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobilePreventScreenCapture
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE
+  :description: Block screenshots and screen recordings when using the mobile app. Screenshots will appear blank, and screen recordings will blur (iOS) or show a black screen (Android). Also applies when switching apps.
+
+    - **true**: Screen capture blocking is enabled.
+    - **false**: **(Default)** Screen capture blocking is disabled.
+
+Prevent screen capture
+~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
+| Block screenshots and screen recordings when  | - System Config path: **Environment > Mobile Security**                                 |
+| using the mobile app. Screenshots will        | - ``config.json setting``: ``".NativeAppSettings.MobilePreventScreenCapture": false",`` |
+| appear blank, and screen recordings will      | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEPREVENTSCREENCAPTURE``             |
+| blur (iOS) or show a black screen (Android).  |                                                                                         |
+| Also applies when switching apps.             |                                                                                         |
+|                                               |                                                                                         |
+| - **true**: Screen capture blocking is        |                                                                                         |
+|   enabled.                                    |                                                                                         |
+| - **false**: **(Default)** Screen capture     |                                                                                         |
+|   blocking is disabled.                       |                                                                                         |
++-----------------------------------------------+-----------------------------------------------------------------------------------------+
 
 config.json-only settings
 -------------------------

@@ -19,4 +19,4 @@ Learn more about:
 * :doc:`Desktop releases </about/mattermost-desktop-releases>`
 * :doc:`Desktop changelog </about/desktop-app-changelog>`
 
-See the :ref:`desktop app software requirements <install/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.
+See the :ref:`desktop app software requirements <deploy/software-hardware-requirements:desktop apps>` for details on supported operating systems and releases.
