@@ -1,4 +1,4 @@
-Version archive
+Version Archive
 ================
 
 .. include:: ../_static/badges/allplans-selfhosted.rst

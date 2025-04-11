@@ -1,4 +1,4 @@
-# v9 changelog
+# v9 Changelog
 
 
 ```{Important}
