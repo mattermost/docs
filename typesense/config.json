@@ -2,41 +2,44 @@
   "index_name": "mm_product_docs",
   "allowed_domains": [
     "localhost",
-    "sphinx"
+    "sphinx",
+    "mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com"
   ],
   "start_urls": [
     {
-      "url": "http://localhost:8000",
+      "url": "http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/7877",
       "tags": []
     }
   ],
   "sitemap_urls": [
-    "http://localhost:8000/sitemap.xml"
+    "http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/7877/sitemap.xml"
   ],
   "selectors": {
-    "lvl1": {
-      "selector": "article h1",
-      "type": "css"
-    },
-    "lvl2": {
-      "selector": "article h2",
-      "type": "css"
-    },
-    "lvl3": {
-      "selector": "article h3",
-      "type": "css"
-    },
-    "lvl4": {
-      "selector": "article h4",
-      "type": "css"
-    },
-    "lvl5": {
-      "selector": "article h5",
-      "type": "css"
-    },
-    "text": {
-      "selector": "article p, article li",
-      "type": "css"
+    "default": {
+      "lvl1": {
+        "selector": "article h1",
+        "type": "css"
+      },
+      "lvl2": {
+        "selector": "article h2",
+        "type": "css"
+      },
+      "lvl3": {
+        "selector": "article h3",
+        "type": "css"
+      },
+      "lvl4": {
+        "selector": "article h4",
+        "type": "css"
+      },
+      "lvl5": {
+        "selector": "article h5",
+        "type": "css"
+      },
+      "text": {
+        "selector": "article p, article li",
+        "type": "css"
+      }
     }
   },
   "custom_settings": {
