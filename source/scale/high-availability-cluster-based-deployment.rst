@@ -427,7 +427,7 @@ Performance of a Postgres database is particularly sensitive to `vacuuming and a
 
   SELECT relname, n_tup_ins as inserts,n_tup_upd as updates,n_tup_del as deletes, n_live_tup as live_tuples, n_dead_tup as dead_tuples, n_mod_since_analyze, last_autovacuum, last_autoanalyze, autovacuum_count, autoanalyze_count FROM pg_stat_user_tables order by dead_tuples desc LIMIT 10;
 
-The output of this query will indicate which tables have accumulated the most dead tuples, and you can also look at the last_autovacuum and last_autoanalyze columns to see when did the last autovacuum or autoanalyze run.
+The output of this query will indicate which tables have accumulated the most dead tuples. You can also look at the ``last_autovacuum`` and ``last_autoanalyze`` columns to see when the last autovacuum or autoanalyze ran.
 
 Depending on those values, you can choose to tune table-specific values for autovacuum or autoanalyze thresholds. For example, if you see more than 50,000 dead tuples on a table, and it hasn't been vacuumed or analyzed in the last 6 months, there's a good chance that it would benefit from more aggressive vacuuming. In that case, you can run this to tune your tables:
 
