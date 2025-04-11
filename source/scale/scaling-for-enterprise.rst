@@ -7,7 +7,17 @@ Mattermost is designed to scale from small teams hosted on a single server to la
 - **Databases supported**: PostgreSQL, Amazon RDS for PostgreSQL
 - **Storage supported**: Amazon S3 or a local filestore
 
-Server requirements vary based on usage and we highly recommend that you run a pilot before an enterprise-wide deployment in order to estimate full scale usage based on your specific organizational needs. 
+Server requirements vary based on usage and we highly recommend that you run a pilot before an enterprise-wide deployment in order to estimate full scale usage based on your specific organizational needs.
+
+Elasticsearch
+--------------
+
+:doc:`Elasticsearch </scale/elasticsearch>` provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results.
+
+High availability
+-----------------
+
+A :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 Available reference architectures
 ---------------------------------
@@ -17,6 +27,8 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
+    Elasticsearch </scale/elasticsearch>
+    High availability </scale/high-availability-cluster-based-deployment> 
     Scale up to 200 users </scale/scale-to-200-users>
     Scale up to 2000 users </scale/scale-to-2000-users>
     Scale up to 15000 users </scale/scale-to-15000-users>
@@ -41,7 +53,7 @@ The following reference architectures are available as recommended starting poin
 
 .. important::
 
-    Due to constraints in testing, the proxy instance specifications were fixed for all the tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts.
+    Due to constraints in testing, the proxy instance specifications were fixed for all the scaling tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts.
 
 Testing methodology and updates
 --------------------------------
