@@ -1,4 +1,4 @@
-Incident response collaboration
+Incident Response Collaboration
 ===============================
 
 Teams require collaboration to respond to incidents and outages quickly and effectively. This involves coordinating efforts between developers, operations, and customer support teams to identify and resolve issues, communicate with stakeholders, and implement preventive measures to avoid similar incidents in the future.

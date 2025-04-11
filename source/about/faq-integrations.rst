@@ -1,5 +1,5 @@
-Integration questions
-=====================
+Integrations
+=============
 
 What integrations come pre-packaged with Mattermost Server?
 ------------------------------------------------------------
