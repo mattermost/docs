@@ -16,13 +16,13 @@ Manage your notifications
   :hidden:
   :titlesonly:
 
-    Troubleshoot notifications </preferences/troubleshoot-notifications>
-    Manage your web notifications </preferences/manage-your-web-notifications>
-    Manage your desktop notifications </preferences/manage-your-desktop-notifications>
-    Manage your mobile notifications </preferences/manage-your-mobile-notifications>
-    Manage your thread reply notifications </preferences/manage-your-thread-reply-notifications>
-    Manage your @mention & keyword notifications </preferences/manage-your-mentions-keywords-notifications>
-    Manage your channel-specific notifications </preferences/manage-your-channel-specific-notifications>
+    Troubleshoot notifications </use/preferences/troubleshoot-notifications>
+    Manage your web notifications </use/preferences/manage-your-web-notifications>
+    Manage your desktop notifications </use/preferences/manage-your-desktop-notifications>
+    Manage your mobile notifications </use/preferences/manage-your-mobile-notifications>
+    Manage your thread reply notifications </use/preferences/manage-your-thread-reply-notifications>
+    Manage your @mention & keyword notifications </use/preferences/manage-your-mentions-keywords-notifications>
+    Manage your channel-specific notifications </use/preferences/manage-your-channel-specific-notifications>
 
 Mattermost notifies you of new activity you're directly involved in. How you're notified depends on what Mattermost client you're using, the type of Mattermost activity you're being notified about, and how you prefer to be notified.
 
@@ -33,8 +33,8 @@ Mattermost notifies you of new activity you're directly involved in. How you're 
 
   **Missing notifications?**
 
-  - You may need to grant permissions in the Mattermost client to show notifications. Learn how to grant permissions within the :ref:`web browser <preferences/manage-your-web-notifications:enable notifications>`, :ref:`desktop app <preferences/manage-your-desktop-notifications:enable notifications>`, or :ref:`mobile app <preferences/manage-your-mobile-notifications:enable notifications>` based on your preferred Mattermost client.
-  - In addition, visit our :doc:`troubleshoot notifications </preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
+  - You may need to grant permissions in the Mattermost client to show notifications. Learn how to grant permissions within the :ref:`web browser </use/preferences/manage-your-web-notifications:enable notifications>`, :ref:`desktop app </use/preferences/manage-your-desktop-notifications:enable notifications>`, or :ref:`mobile app </use/preferences/manage-your-mobile-notifications:enable notifications>` based on your preferred Mattermost client.
+  - In addition, visit our :doc:`troubleshoot notifications </use/preferences/troubleshoot-notifications>` documentation for guidance on ensuring you receive Mattermost notifications.
 
 You're in control
 ------------------
@@ -53,7 +53,7 @@ See the `Default notifications <#default-notifications>`__ table below for detai
 Default notifications
 ------------------------
 
-Mattermost notifies you of new activity, including unread activity, :ref:`direct <collaborate/channel-types:direct message channels>` and :ref:`group <collaborate/channel-types:group message channels>` messages, and :doc:`@mentions </preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </preferences/manage-your-mentions-keywords-notifications>` you're actively watching, :doc:`thread replies </preferences/manage-your-thread-reply-notifications>`, and unread activity in :doc:`specific channels </preferences/manage-your-channel-specific-notifications>`.
+Mattermost notifies you of new activity, including unread activity, :ref:`direct <collaborate/channel-types:direct message channels>` and :ref:`group <collaborate/channel-types:group message channels>` messages, and :doc:`@mentions </use/preferences/manage-your-mentions-keywords-notifications>`, :doc:`keywords </use/preferences/manage-your-mentions-keywords-notifications>` you're actively watching, :doc:`thread replies </use/preferences/manage-your-thread-reply-notifications>`, and unread activity in :doc:`specific channels </use/preferences/manage-your-channel-specific-notifications>`.
 
 The table below lists the types of notifications you can expect to see and hear in Mattermost. Select your preferred Mattermost clients to learn more about notifications for that client.
 
@@ -82,7 +82,7 @@ The table below lists the types of notifications you can expect to see and hear 
 Email notifications
 ~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost notifications are sent to you via email for :doc:`@mentions </collaborate/mention-people>` and :ref:`direct messages <collaborate/channel-types:direct message channels>` when you are :ref:`offline or away <preferences/set-your-status-availability:set your availability>` from Mattermost for more than 5 minutes. 
+By default, Mattermost notifications are sent to you via email for :doc:`@mentions </collaborate/mention-people>` and :ref:`direct messages <collaborate/channel-types:direct message channels>` when you are :ref:`offline or away <use/preferences/set-your-status-availability:set your availability>` from Mattermost for more than 5 minutes. 
 
 You can disable email notifications by going to **Settings > Notifications > Email notifications** and changing **Immediately** to **Never**.
 
