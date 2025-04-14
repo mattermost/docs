@@ -1,5 +1,5 @@
-Illicit use questions
-=====================
+Illicit Use
+============
 
 How do I report illicit use of Mattermost software? 
 ---------------------------------------------------

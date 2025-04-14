@@ -1,4 +1,4 @@
-Subscription overview
+Subscription Overview
 =====================
 
 .. toctree::
@@ -6,15 +6,14 @@ Subscription overview
    :hidden:
    :titlesonly:
 
-   Cloud subscriptions </about/cloud-subscriptions>
-   Self-hosted subscriptions </about/self-hosted-subscriptions>
-   Non-profit subscriptions </about/non-profit-subscriptions>
-   Editions and offerings </about/editions-and-offerings>
+   Self-Hosted </about/self-hosted-subscriptions>
+   Cloud </about/cloud-subscriptions>
+   Non-Profit </about/non-profit-subscriptions>
 
 Mattermost offers the following types of subscriptions:
 
-* :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
 * :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for secure enterprise collaboration with full control over your data.
+* :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
 * :doc:`Non-profit subscriptions </about/non-profit-subscriptions>` for nonprofit and open-source organizations who are unable to afford commercial licenses.
 
 Learn more about Mattermost's commerial :doc:`editions and offerings </about/editions-and-offerings>`.

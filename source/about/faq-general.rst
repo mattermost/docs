@@ -1,5 +1,5 @@
-General Mattermost questions
-============================
+General Mattermost
+===================
 
 Why was Mattermost created?
 ---------------------------
