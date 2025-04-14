@@ -439,7 +439,7 @@ Depending on those values, you can choose to tune table-specific values for auto
     autovacuum_vacuum_cost_limit = 1000 -- default is 200
   );
 
-Feel free to choose different values as necessary. Refer to https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM for more information on how does Postgres calculate when to run vacuuming. Re-run the SQL query from time to time and adjust values accordingly.
+Feel free to choose different values as necessary. Refer to https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM for more information on how does Postgres calculate when to run vacuuming. Re-run the initial SQL query from time to time and adjust values accordingly.
 
 Leader election
 ^^^^^^^^^^^^^^^^
