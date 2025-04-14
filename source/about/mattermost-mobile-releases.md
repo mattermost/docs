@@ -9,12 +9,12 @@
 
 ## Frequency
 
-Mattermost releases a new mobile app version every month. Mattermost tests the latest mobile app release against the [latest server version](/about/mattermost-server-releases).
+Mattermost releases a new mobile app version every month.
 
 See the [Mobile app changelog](/about/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
 
 ```{Important}
-We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
+We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are compatible with and tested against all currently supported Mattermost server and extended support releases. Refer to [this table](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases) as a guideline.
 ```
 
 ## Latest releases
