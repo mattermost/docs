@@ -1,5 +1,5 @@
-Cloud subscriptions
-===================
+Cloud
+======
 
 .. include:: ../_static/badges/ent-cloud-only.rst
   :start-after: :nosearch:

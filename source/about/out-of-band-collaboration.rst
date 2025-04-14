@@ -1,4 +1,4 @@
-Out-of-Band collaboration
+Out-of-Band Collaboration
 ==========================
 
 Out-of-Band (OOB) collaboration is a method of communication that occurs outside an organization’s primary business systems on a separate communications channel. 

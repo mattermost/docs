@@ -10,11 +10,9 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     :hidden:
     :titlesonly:
 
-    Elasticsearch </scale/elasticsearch>
-    High availability </scale/high-availability-cluster-based-deployment> 
-    Enable Copilot </configure/enable-copilot>
     Store configuration in your database </configure/configuration-in-your-database>
     Server configuration options </configure/configuration-settings>
+    Enable Copilot </configure/enable-copilot>
     Environment variables </configure/environment-variables>
     Customize the server </manage/admin/customize-branding>
     SMTP email setup </configure/smtp-email>
@@ -24,11 +22,9 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Connected workspaces </onboard/connected-workspaces>
     Telemetry </manage/telemetry>
 
-* :doc:`Elasticsearch </scale/elasticsearch>` - Learn how to configure Elasticsearch for Mattermost.
-* :doc:`High availability </scale/high-availability-cluster-based-deployment>` - Learn how to configure high availability for Mattermost.
-* :doc:`Enable Copilot </configure/enable-copilot>` - Learn how to enable Mattermost Copilot for your deployment.
 * :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </configure/configuration-settings>` - Learn about server configuration options for Mattermost.
+* :doc:`Enable Copilot </configure/enable-copilot>` - Learn how to enable Mattermost Copilot for your deployment.
 * :doc:`Environment variables </configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
 * :doc:`Customize the server </manage/admin/customize-branding>` - Learn about customizing branding for Mattermost server.
 * :doc:`SMTP email setup </configure/smtp-email>` - Learn how to set up SMTP email for Mattermost.
