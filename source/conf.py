@@ -1943,6 +1943,11 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-shared-channels-experimental",
 "configure/experimental-configuration-settings.rst#remote-clusters":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-remote-cluster-service-experimental",
+"configure/configuring-cloudfront-to-host-mattermost-static-assets.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+"configure/using-outbound-proxy.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2051,6 +2056,8 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "deploy/server/linux/deploy-rhel.html":
         "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"deploy/server/setting-up-socket-based-mattermost-database.html":
+        "https://docs.mattermost.com/deploy/server/preparations.html",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
