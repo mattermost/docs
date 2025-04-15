@@ -1,3 +1,9 @@
+.. meta::
+   :name: robots
+   :content: noindex
+
+:orphan:
+:nosearch:
 
 About Mattermost
 ================

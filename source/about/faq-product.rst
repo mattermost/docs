@@ -1,5 +1,5 @@
-Product questions
-=================
+Product
+========
 
 What features are available on different Mattermost clients?
 ------------------------------------------------------------

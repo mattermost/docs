@@ -1,4 +1,4 @@
-# Release policy
+# Release Policy
 
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```

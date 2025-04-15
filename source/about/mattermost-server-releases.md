@@ -1,5 +1,5 @@
 (mattermost-server-releases)=
-# Server releases
+# Server Releases
 
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```

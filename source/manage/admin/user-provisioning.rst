@@ -6,6 +6,7 @@ User provisioning
    :hidden:
    :titlesonly:
 
+    Corporate directory integrations </about/corporate-directory-integration>
     Provisioning workflows </onboard/user-provisioning-workflows>
     AD/LDAP setup </onboard/ad-ldap>
     AD/LDAP manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>
@@ -15,6 +16,7 @@ User provisioning
     Entra ID SSO </onboard/sso-entraid>
     Convert OAuth 2.0 providers to OpenID </onboard/convert-oauth20-service-providers-to-openidconnect>
 
+* :doc:`Corporate directory integrations </about/corporate-directory-integration>` - Mattermost integrates with all major account providers via Active Directory, SAML, and OAuth.
 * :doc:`Provisioning workflows </onboard/user-provisioning-workflows>` - Learn about provisioning workflows in Mattermost.
 * :doc:`AD/LDAP setup </onboard/ad-ldap>` - Learn how to set up AD/LDAP in Mattermost.
 * :doc:`AD/LDAP manage team or private channel membership </onboard/managing-team-channel-membership-using-ad-ldap-sync-groups>` - Learn how to manage team or private channel membership using AD/LDAP sync groups in Mattermost.
