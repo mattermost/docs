@@ -147,8 +147,8 @@ The ``migration-assist`` tool contains all necessary files for migration, removi
 
 5. Follow `step 3 <#step-3-generate-a-pgloader-configuration>`__ through `step 7 <#step-7-configure-mattermost-to-utilize-the-new-postgresql-database>`__ above to complete the migration process using the ``migration-assist`` tool.
 
-Compile the migration-assist tool
----------------------------------
+Tool commands
+--------------
 
 The ``migration-assist`` tool offers 3 core utility commands:
 
@@ -163,6 +163,9 @@ The ``migration-assist`` tool offers 3 core utility commands:
 3. ``migration-assist pgloader``
 
    Generates a pgloader configuration from DSN values, ensuring accurate data transfer. See the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation for details on installing the pgloader tool.
+
+Compile the migration-assist tool
+---------------------------------
 
 You can download and compile the ``migration-assist`` tool with the `Go <https://go.dev/>`__ toolchain. The tool requires at least ``v1.22`` of the Go compiler.
 
