@@ -52,12 +52,14 @@ We strongly recommend using the latest mobile app release available that contain
 
 ## Future releases
 
+Note that the below versions have not yet been tested. The information below is subject to change.
+
 | **Release** | **Releasing on** | **Support ends** | **Compatible with** |
 |:---|:---|:---|:---|
-| v2.32 | {ref}`Changelog <release-v2-26-2>` | 2025-10-16 | 2025-11-15 | v11.1, v11.0, v10.11, v10.5 |
-| v2.31 | {ref}`Changelog <release-v2-25-1>` | 2025-09-16 | 2025-10-15 | v11.0, v10.11, v10.0, v10.5 |
-| v2.31 | {ref}`Changelog <release-v2-24-1>` | 2025-08-16 | 2025-09-15 | v10.11, v10.10, v10.9, v10.5 |
-| v2.30 | {ref}`Changelog <release-v2-23-1>` | 2025-07-16 | 2025-08-15 | v10.10, v10.9, v10.8, v10.5 |
-| v2.29 | {ref}`Changelog <release-v2-22-0>` | 2025-06-15 | 2025-07-15 | v10.9, v10.8, v10.7, v10.5 |
-| v2.28 | {ref}`Changelog <release-v2-21-0>` | 2025-05-16 | 2025-06-15 | v10.8, v10.7, v10.6, v10.5 |
+| v2.33 | 2025-10-16 | 2025-11-15 | v11.1, v11.0, v10.11, v10.5 |
+| v2.32 | 2025-09-16 | 2025-10-15 | v11.0, v10.11, v10.0, v10.5 |
+| v2.31 | 2025-08-16 | 2025-09-15 | v10.11, v10.10, v10.9, v10.5 |
+| v2.30 | 2025-07-16 | 2025-08-15 | v10.10, v10.9, v10.8, v10.5 |
+| v2.29 | 2025-06-15 | 2025-07-15 | v10.9, v10.8, v10.7, v10.5 |
+| v2.28 | 2025-05-16 | 2025-06-15 | v10.8, v10.7, v10.6, v10.5 |
 
