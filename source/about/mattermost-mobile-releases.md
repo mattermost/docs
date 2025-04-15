@@ -49,3 +49,15 @@ We strongly recommend using the latest mobile app release available that contain
 | v2.1 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.1.0) \| {ref}`Changelog <release-v2-1-0>` | 2023-02-16 | 2023-03-16 | {ref}`v7.8 <release-v7-8-extended-support-release>` |
 | v2.0 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.0.1) \| {ref}`Changelog <release-v2-0-1>` | 2023-01-16 | 2023-02-15 | {ref}`v7.7 <release-v7-7-feature-release>` |
 |  |  |  |  |
+
+## Future releases
+
+| **Release** | **Releasing on** | **Support ends** | **Compatible with** |
+|:---|:---|:---|:---|
+| v2.32 | {ref}`Changelog <release-v2-26-2>` | 2025-10-16 | 2025-11-15 | v11.1, v11.0, v10.11, v10.5 |
+| v2.31 | {ref}`Changelog <release-v2-25-1>` | 2025-09-16 | 2025-10-15 | v11.0, v10.11, v10.0, v10.5 |
+| v2.31 | {ref}`Changelog <release-v2-24-1>` | 2025-08-16 | 2025-09-15 | v10.11, v10.10, v10.9, v10.5 |
+| v2.30 | {ref}`Changelog <release-v2-23-1>` | 2025-07-16 | 2025-08-15 | v10.10, v10.9, v10.8, v10.5 |
+| v2.29 | {ref}`Changelog <release-v2-22-0>` | 2025-06-15 | 2025-07-15 | v10.9, v10.8, v10.7, v10.5 |
+| v2.28 | {ref}`Changelog <release-v2-21-0>` | 2025-05-16 | 2025-06-15 | v10.8, v10.7, v10.6, v10.5 |
+
