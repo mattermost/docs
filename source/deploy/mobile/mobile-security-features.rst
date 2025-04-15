@@ -1,4 +1,4 @@
-Mobile Security Features
+Mobile security features
 ========================
 
 .. include:: ../../_static/badges/ent-cloud-selfhosted.rst
