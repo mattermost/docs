@@ -1,13 +1,20 @@
 <script src="https://cdn.jsdelivr.net/npm/typesense-docsearch.js@3.4.0"></script>
 <script>
 	window.addEventListener('load', () => {
+		const options = location.hostname === 'localhost' ? {
+			node: { host: 'localhost', port: '8108', protocol: 'http' },
+			apiKey: 'test_api_key',
+		} : {
+			node: { host: 'h0agqxfpir543j9lp-1.a1.typesense.net', port: '443', protocol: 'https' },
+			apiKey: 'ZOLa3xKupe9e7DRPhkv56g8VUoCygd00',
+		};
+
 		docsearch({
 			container: '.sidebar-search-container',
 			typesenseCollectionName: 'mm_product_docs',
 			typesenseServerConfig: {
-				nodes: [{ host: 'h0agqxfpir543j9lp-1.a1.typesense.net', port: '443', protocol: 'https' }],
-				// nodes: [{ host: 'localhost', port: '8108', protocol: 'http' }],
-				apiKey: 'ZOLa3xKupe9e7DRPhkv56g8VUoCygd00' // read-only key. will eventually expose via env var
+				nodes: [options.node],
+				apiKey: options.apiKey
 			},
 			typesenseSearchParams: {}
 		});
