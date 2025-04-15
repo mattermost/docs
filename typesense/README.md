@@ -38,3 +38,11 @@ The scripts mentioned above support the following environment variables for conf
 - `TYPESENSE_HOSTNAME` - Defaults to `localhost`
 - `TYPESENSE_PORT` - Defaults to `8108`
 - `TYPESENSE_PROTOCOL` - Defaults to `http`
+
+To view your local Typesense instance in an admin dashboard, you can use this docker image:
+
+```sh
+docker run -d -p 8001:80 ghcr.io/bfritscher/typesense-dashboard:latest
+```
+
+You can then access the dashboard at http://localhost:8001
