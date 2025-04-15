@@ -2,44 +2,26 @@
   "index_name": "mm_product_docs",
   "allowed_domains": [
     "localhost",
-    "sphinx",
     "mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com"
   ],
   "start_urls": [
     {
-      "url": "http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/7877",
+      "url": "http://localhost:8000",
       "tags": []
     }
   ],
   "sitemap_urls": [
-    "http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/7877/sitemap.xml"
+    "http://localhost:8000/sitemap.xml"
   ],
   "selectors": {
     "default": {
-      "lvl1": {
-        "selector": "article h1",
-        "type": "css"
-      },
-      "lvl2": {
-        "selector": "article h2",
-        "type": "css"
-      },
-      "lvl3": {
-        "selector": "article h3",
-        "type": "css"
-      },
-      "lvl4": {
-        "selector": "article h4",
-        "type": "css"
-      },
-      "lvl5": {
-        "selector": "article h5",
-        "type": "css"
-      },
-      "text": {
-        "selector": "article p, article li",
-        "type": "css"
-      }
+      "lvl0": "article h1",
+      "lvl1": "article h2",
+      "lvl2": "article h3",
+      "lvl3": "article h4",
+      "lvl4": "article h5",
+      "lvl5": "article h6",
+      "text": "article p, article li"
     }
   },
   "custom_settings": {
@@ -53,5 +35,5 @@
   "strip_chars": " .,;:#",
   "stop_urls": [],
   "scrape_start_urls": false,
-  "nb_hits": 64729
+  "nb_hits": 64205
 }
