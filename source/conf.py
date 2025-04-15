@@ -924,7 +924,7 @@ redirects = {
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
-        "https://docs.mattermost.com/enable-copilot.html",
+        "https://docs.mattermost.com/configure/enable-copilot.html",
 "configure/common-config-settings-notation.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "configure/bulk-loading-about.html":
@@ -2368,6 +2368,10 @@ redirects = {
         "https://docs.mattermost.com/guides/administration-guide.html",
 "guides/deployment.html":
         "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/deploy.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/admin.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -4102,7 +4106,7 @@ html_extra_path = ["_static/robots.txt"]
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
-html_additional_pages = {"index": "custom-index.html", "404": "404.html"}
+html_additional_pages = {"404": "404.html"}
 
 # If false, no module index is generated.
 # html_domain_indices = True
