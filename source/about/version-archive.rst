@@ -16,7 +16,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Enterprise Edition v10.6.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.2/mattermost-10.6.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.6.2/mattermost-10.6.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``0a8b1d7d89f669857ed438fcf5827d9f739bff93056470a1b803a696e04389fd``
+    - SHA-256 Checksum: ``c7bd7fdbafd28c65d2f91dae9ad38a649cfe74c37c190f381d96ff3a977285e2``
     - GPG Signature: https://releases.mattermost.com/10.6.2/mattermost-10.6.2-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.5.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.3/mattermost-10.5.3-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.3/mattermost-10.5.3-linux-amd64.tar.gz``
@@ -412,7 +412,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Team Edition v10.6.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.2/mattermost-team-10.6.2-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.6.2/mattermost-team-10.6.2-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``4fcc6417c31634b23b1acf2785838019ea7a2c482b4a59b36cff9f94e383c7a4``
+    - SHA-256 Checksum: ``5d5b21bfbeb4b49d2725c2cf5961119f56b59730947cd44e4d04f5b9a7085827``
     - GPG Signature: https://releases.mattermost.com/10.6.2/mattermost-team-10.6.2-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.2/sbom-mattermost-v10.6.2.json
   Mattermost Team Edition v10.5.3 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.3/mattermost-team-10.5.3-linux-amd64.tar.gz?src=arc>`__
