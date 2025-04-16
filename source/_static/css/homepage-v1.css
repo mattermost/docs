@@ -104,7 +104,12 @@ body:not([data-custom-theme=light]) .site-header {
   color: #1C58D9;
 }
 
+.DocSearch-Container {
+  margin-top: 55px;
+}
+
 .sidebar-search {
+  display: none;
   border-radius: 4px;
   border: 1px solid rgba(63, 67, 80, 0.16);
   background: #FFF;
@@ -118,6 +123,7 @@ body:not([data-custom-theme=light]) .sidebar-search::selection {
 }
 
 .sidebar-search-container:before {
+  height: 0px;
   left: 32px;
   z-index: 20;
   background-color: currentColor;
