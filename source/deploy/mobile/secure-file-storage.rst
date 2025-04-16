@@ -160,6 +160,6 @@ The playbook below aims to test and confirm that files stored in the Mattermost 
 
 6. **Repeat across multiple apps and devices**
 
-The steps above use the Files app of Google and iOS. Repeat these tests using each suggested app on different devices and OS versions (both Android and iOS) to ensure that the private cache folder remains inaccessible under all conditions.
+   The steps above use the Files app of Google and iOS. Repeat these tests using each suggested app on different devices and OS versions (both Android and iOS) to ensure that the private cache folder remains inaccessible under all conditions.
 
 The documented testing procedures confirm that the app’s file storage remains inaccessible to unauthorized third-party applications, thereby maintaining a strong security posture. Coupled with strong authentication and native OS encryption, the Mattermost mobile app provides a robust framework that keeps sensitive data on mobile devices confined to authorized users while addressing key access control and risk mitigation requirements.
