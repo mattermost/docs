@@ -97,9 +97,6 @@ Deployment options
     Access your Mattermost deployment via the DNS name from your Public IP
     resource. Use the admin email and password you set in Step 3 to log in.
 
-    **Image Placeholder:** Screenshot of the Mattermost login page with the
-    username and password fields highlighted.
-
     Congratulations! You’ve successfully deployed Mattermost via the Azure
     Marketplace Solution Template. You’re now ready to start managing your team
     collaboration using Mattermost.
