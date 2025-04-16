@@ -4,6 +4,11 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.8-feature-release)=
+## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2025-05-16**
+
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
