@@ -138,13 +138,13 @@ The playbook below aims to test and confirm that files stored in the Mattermost 
 
 4. **Attempt unauthorized access to a specific file in Mattermost’s private cache**
 
-- **Android:**
-  - Use the search functionality in Files by Google to search for a known file name from the Mattermost cache.
-  - Verify that the file does not appear in search results.
+   - **Android:**
+      - Use the search functionality in Files by Google to search for a known file name from the Mattermost cache.
+      - Verify that the file does not appear in search results.
 
-- **iOS:**
-  - Use the Files app’s search capability to look for a specific file name from the Mattermost cache.
-  - Confirm that the file does not appear in search results.
+   - **iOS:**
+      - Use the Files app’s search capability to look for a specific file name from the Mattermost cache.
+      - Confirm that the file does not appear in search results.
 
 5. **Attempt authorized access to downloaded file**
 
