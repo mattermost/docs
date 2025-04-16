@@ -128,13 +128,13 @@ The playbook below aims to test and confirm that files stored in the Mattermost 
 
 3. **Attempt unauthorized access to Mattermost’s private cache**
 
-- **Android:**
-  - In Files by Google, try navigating through the directory structure to identify files of the Mattermost application.
-  - Verify that you cannot access private directories such as Mattermost app’s private cache folder.
+   - **Android:**
+      - In Files by Google, try navigating through the directory structure to identify files of the Mattermost application.
+      - Verify that you cannot access private directories such as Mattermost app’s private cache folder.
 
-- **iOS:**
-  - Open the Files app.
-  - Verify that the Mattermost app’s private cache folder does not appear under “On My iPhone/iPad.”
+   - **iOS:**
+      - Open the Files app.
+      - Verify that the Mattermost app’s private cache folder does not appear under “On My iPhone/iPad.”
 
 4. **Attempt unauthorized access to a specific file in Mattermost’s private cache**
 
