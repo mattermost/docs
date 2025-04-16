@@ -16,11 +16,11 @@ Files uploaded or accessed via the Mattermost mobile app are stored in the app�
 iOS – app sandbox
 ~~~~~~~~~~~~~~~~~~
 
-- **Sandboxing & Storage:**
+- **Sandboxing & storage:**
 
   iOS employs a rigorous sandboxing model that relies on containerized file systems and strict process isolation. Each app operates within its own sandbox, with its home directory randomly assigned during installation. As a result, files stored within the Mattermost app’s cache folder remain accessible only to the app unless explicitly shared by the user.
 
-- **Secure File Viewing:**
+- **Secure file viewing:**
 
   - Non-image and non-video files are rendered using secure frameworks such as QLPreviewController. This controller displays file previews within the app’s sandbox, ensuring that raw file data isn’t exposed to external processes.
   - Supported image and video files are previewed directly within the app, with the files downloaded to the app's cache folder located within its secure sandbox. For unsupported image and video formats, the Mattermost mobile app uses the QLPreviewController framework, just as it does for other file types.
@@ -53,7 +53,9 @@ Additionally, both platforms may clear cached data automatically (e.g., under lo
 Differentiating file handling: downloading, in-app previewing, and handing off to external applications
 --------------------------------------------------------------------------------------------------------
 
-- **Previewing files:** File previewing follows the secure viewing practices described above in the “Secure File Viewing” sections for iOS and Android. All files prior to being previewed are stored in the cache folder of the Mattermost app sandbox. Images and videos with supported formats are previewed directly within the Mattermost mobile app. Non‑image and non‑video files are also previewed in-app in iOS but are handed off to an external application in Android while the raw data remains securely stored in the app’s cache. Previewing non-image/non-video files is possible only if mobile downloads are enabled on the server side.
+- **Previewing files:** 
+
+  File previewing follows the secure viewing practices described above in the “Secure File Viewing” sections for iOS and Android. All files prior to being previewed are stored in the cache folder of the Mattermost app sandbox. Images and videos with supported formats are previewed directly within the Mattermost mobile app. Non‑image and non‑video files are also previewed in-app in iOS but are handed off to an external application in Android while the raw data remains securely stored in the app’s cache. Previewing non-image/non-video files is possible only if mobile downloads are enabled on the server side.
 
 - **Downloading files:**
 
@@ -83,9 +85,9 @@ Mattermost is designed to protect sensitive data—such as CUI and HIPAA-regulat
 Core defense pillars
 ~~~~~~~~~~~~~~~~~~~~~
 
-- **Robust Authentication:** Mattermost requires user authentication through SSO (e.g., SAML, LDAP, OpenID Connect) or traditional username/password logins. This authentication is managed by server-side identity controls, ensuring that only verified users can access the app and its data. For more details, see the `Mattermost Security Overview <https://docs.mattermost.com/about/security.html#authentication-safeguards>`_.
+- **Robust authentication:** Mattermost requires user authentication through SSO (e.g., SAML, LDAP, OpenID Connect) or traditional username/password logins. This authentication is managed by server-side identity controls, ensuring that only verified users can access the app and its data. For more details, see the `Mattermost Security Overview <https://docs.mattermost.com/about/security.html#authentication-safeguards>`_.
 
-- **Server-Side Access Controls:** Administrators can enforce policies through the System Console to restrict file downloads, sharing, and public link generation. Currently, policies are applied at the server level. For more details, see `Configuration Settings - File Sharing and Downloads <https://docs.mattermost.com/configure/site-configuration-settings.html#file-sharing-and-downloads>`_.
+- **Server-side access controls:** Administrators can enforce policies through the System Console to restrict file downloads, sharing, and public link generation. Currently, policies are applied at the server level. For more details, see `Configuration Settings - File Sharing and Downloads <https://docs.mattermost.com/configure/site-configuration-settings.html#file-sharing-and-downloads>`_.
 
 - **Sandbox isolation:** As discussed earlier, Mattermost’s mobile apps store files in a sandboxed environment. This isolation ensures that even if a device is shared or compromised, other apps cannot access the cached files without explicit user action.
 
