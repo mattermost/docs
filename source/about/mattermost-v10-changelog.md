@@ -19,11 +19,23 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.0). 
- - 
+ - Pre-packaged Calls plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.0).
+ - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
+ - Added an improved channel menu. 
+ - Updated email notification settings to provide clearer wording and descriptions for both batched and non-batched scenarios. The settings dialog now reflects the selected status more accurately in both collapsed and expanded views, enhancing consistency and usability.
+ - Added the ability to display the nickname or full name in Threads based on settings.
+ - Improved the error message for failed file copies. 
 
 #### Administration
- - 
+ - Added Custom Profile Attribute field type, visibility, and related options in **System Console -> System Properties**.
+ - Introduced Premium SKU in code and removed usages of E10 and E20 licenses.
+ - Stopped building and packaging Windows and MacOS releases. 
+ - ``EnableLocalMode`` is now automatically enabled during development. 
+ - Log messages are now added if post props are invalid. 
+ - Stopped logging websocket PING events received by the server. 
+ - Errors from Support Packet generation are now shown in the **System Console**. 
+ - Added a client-side ping to the websocket to detect broken connections more quickly.
+ - Removed the feature flag and added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature. 
 
 ### Bug Fixes
  - Fixed ``GET /groups endpoint`` documentation. 
@@ -42,16 +54,15 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
 #### Changes to all plans:
- - Under 
+ - Added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature. 
+ - A new configuration setting ``ElasticsearchSettings.GlobalSearchPrefix`` is added which can be used to search across multiple indices having a common prefix. This is useful in a scenario with multiple Elasticsearch instances, where multiple instances are writing to different indices with different prefixes using the ``ElasticsearchSettings.IndexPrefix`` setting. 
+ - Added ``EnableAttributeBasedAccessControl`` and ``EnableChannelScopeAccessContro`` under ``AccessControlSettings``. 
 
 #### Changes to Enterprise plans:
  - Under 
 
 ### API Changes
- - 
-
-### Websocket Event Changes
- - 
+ - Added a new API endpoint to retrieve the Custom Profile Attributes group data. 
 
 ### Open Source Components
  - Added ``bep/imagemeta`` and removed ``rwcarlsen/goexif`` from https://github.com/mattermost/mattermost.
