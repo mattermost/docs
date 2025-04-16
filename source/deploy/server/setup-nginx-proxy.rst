@@ -96,6 +96,7 @@ NGINX is configured using a file in the ``/etc/nginx/sites-available`` directory
 2. Create a configuration file for Mattermost by running the following command:
 
   ``sudo touch /etc/nginx/sites-available/mattermost`` on Ubuntu
+
   ``sudo touch /etc/nginx/conf.d/mattermost`` on RHEL 8
 
 3. Open the file ``/etc/nginx/sites-available/mattermost`` (Ubuntu) or  ``/etc/nginx/conf.d/mattermost`` (RHEL 8) as *root* user in a text editor and replace its contents, if any, with the following lines. Make sure that you use your own values for the Mattermost server IP address and FQDN for *server_name*.
