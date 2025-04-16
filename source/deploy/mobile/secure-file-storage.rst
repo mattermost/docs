@@ -148,15 +148,15 @@ The playbook below aims to test and confirm that files stored in the Mattermost 
 
 5. **Attempt authorized access to downloaded file**
 
-- **Android:**
-  - Confirm that mobile downloads are enabled on the server.
-  - Download a file using the Mattermost mobile app.
-  - Open the Files by Google app and verify that the downloaded file is visible and opens correctly.
+   - **Android:**
+      - Confirm that mobile downloads are enabled on the server.
+      - Download a file using the Mattermost mobile app.
+      - Open the Files by Google app and verify that the downloaded file is visible and opens correctly.
 
-- **iOS:**
-  - Confirm that mobile downloads are enabled on the server.
-  - Download a file using the Mattermost mobile app.
-  - Open the iOS Files app and verify that the downloaded file appears and can be opened successfully.
+   - **iOS:**
+      - Confirm that mobile downloads are enabled on the server.
+      - Download a file using the Mattermost mobile app.
+      - Open the iOS Files app and verify that the downloaded file appears and can be opened successfully.
 
 6. **Repeat across multiple apps and devices**
 
