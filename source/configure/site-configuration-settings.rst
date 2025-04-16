@@ -1421,7 +1421,7 @@ Enable website link previews
 
 .. important::
 
-  The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
+  The server must be connected to the internet to generate previews. This connection can be established through a :ref:`firewall or outbound proxy <deploy/server/preparations:outbound proxy configuration>` if necessary.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - System Config path: **Site Configuration > Posts**                               |
