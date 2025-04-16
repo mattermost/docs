@@ -114,17 +114,17 @@ The playbook below aims to test and confirm that files stored in the Mattermost 
    
 2. **Control test: Verify public directory accessibility**
 
-- **Android:**
-  - Open Files by Google.
-  - Navigate to a known public directory (e.g., Downloads/).
-  - Confirm that files in this location are visible and can be opened.
+   - **Android:**
+      - Open Files by Google.
+      - Navigate to a known public directory (e.g., Downloads/).
+      - Confirm that files in this location are visible and can be opened.
 
-- **iOS:**
-  - Open the Files app.
-  - Browse to an accessible directory (e.g., iCloud Drive or “On My iPhone” public folders).
-  - Confirm these files are accessible.
+   - **iOS:**
+      - Open the Files app.
+      - Browse to an accessible directory (e.g., iCloud Drive or “On My iPhone” public folders).
+      - Confirm these files are accessible.
 
-This step demonstrates that allowed directories can be accessed, setting a baseline for comparison.
+   This step demonstrates that allowed directories can be accessed, setting a baseline for comparison.
 
 3. **Attempt unauthorized access to Mattermost’s private cache**
 
