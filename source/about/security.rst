@@ -10,12 +10,13 @@ Multiple rounds of penetration testing and security analysis, in addition to int
    :hidden:
    :titlesonly:
 
-   /about/zero-trust.rst
+   /about/security/zero-trust.rst
+   /about/security/mobile-security.rst
 
 Security features
 ------------------
 
-Mattermost offers a host of features to help keep your private cloud communications secure. Learn more about :doc:`Zero Trust with Mattermost </about/zero-trust>`.
+Mattermost offers a host of features to help keep your private cloud communications secure. Learn more about :doc:`Zero Trust with Mattermost </about/security/zero-trust>` and :doc:`mobile security </about/security/mobile-security>`.
 
 Private Cloud deployment with secure mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

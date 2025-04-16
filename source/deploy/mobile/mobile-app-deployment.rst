@@ -3,7 +3,7 @@ Mobile App Deployment
 
 The Mattermost mobile app is available for iPhone and Android devices, and provides a native experience on the go, ensuring you can stay connected and productive from anywhere.
 
-Learn more about :doc:`mobile security </deploy/mobile/mobile-security>`, :ref:`mobile app software requirements <deploy/software-hardware-requirements:mobile apps>`, :doc:`available releases and server compatibility </about/mattermost-mobile-releases>`, :doc:`what's changed across releases </about/mobile-app-changelog>`, and :doc:`commonly asked questions </deploy/mobile/mobile-faq>`.
+Learn more about :ref:`mobile app software requirements <deploy/software-hardware-requirements:mobile apps>`, :doc:`available releases and server compatibility </about/mattermost-mobile-releases>`, :doc:`what's changed across releases </about/mobile-app-changelog>`, and :doc:`commonly asked questions </deploy/mobile/mobile-faq>`.
 
 Download
 --------
