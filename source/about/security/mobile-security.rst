@@ -15,22 +15,31 @@ As the mobile app evolves with future enhancements like file sharing restriction
     Mobile security features </about/security/mobile-security-features>
     Secure mobile file storage </about/security/secure-mobile-file-storage>
 
+FIPS 140-2 Cryptography and STIG container
+-------------------------------------------
+
+Mattermost v10.5 ESR includes a FIPS-compliant Docker image built using `Chainguard's FIPS-certified base containers <https://images.chainguard.dev/directory/image/go-openssl/versions>`. These images help meet stringent security requirements, ensuring compliance with cryptography standards set forth by the Federal Information Processing Standards (FIPS).
+
+This Docker image is compliant with the U.S. Government Security Technical Implementation Guides (STIG) – specifically the General Purpose Operating System (GPOS) Security Requirements Guide (SRG) — an SRG that specifies security requirements for general purpose operating systems running in a network. 
+
 Jailbreak and root detection
 -----------------------------
 
-Jailbreaking or rooting a device disables many built-in security measures, making the device prone to malware and unauthorized access. Additionally, a rooted device may stop checking for software updates and security patches, and it might not be able to install them because the kernel is no longer properly signed. 
+Jailbreaking or rooting a device disables many built-in security measures, making the device prone to malware and unauthorized access. This protection enables Mattermost administrators to deny access to any mobile device that appears to have been tampered with or is running a non-standard version of the operating system. Additionally, a rooted device may stop checking for software updates and security patches, and it might not be able to install them because the kernel is no longer properly signed. 
 
-By detecting such devices, Mattermost ensures that only secure, uncompromised devices can access sensitive data. If enabled by the system admin, this proactive measure minimizes risk in environments where personal device security cannot be guaranteed. Learn more about Mattermost mobile :ref:`jailbreak and root detection <about/security/mobile-security-features:jailbreak and root detection>`.
+By detecting such devices, Mattermost ensures that only secure, uncompromised devices can access sensitive data. When enabled by the system admin, this proactive measure ensures the underlying mobile platform operates reliably and performs the expected kernel and operating system security protections before sending any customer data to the Mattermost application, and minimizes risk in environments where personal device security cannot be guaranteed. Learn more about Mattermost mobile :ref:`jailbreak and root detection <about/security/mobile-security-features:jailbreak and root detection>`.
 
 Biometric authentication
 ------------------------
 
-Biometric authentication significantly enhances security by ensuring that even if a device is lost or stolen, only an authorized user can access the application. It leverages the strengths of hardware-level security, making it far more challenging for attackers to bypass compared to traditional passwords. Biometrics add a layer of security that is both user-friendly and resistant to unauthorized access, especially in a mobile context. Learn more about Mattermost mobile :ref:`biometric authentication <about/security/mobile-security-features:biometric authentication>`.
+Native biometric authentication of the user ensures only the authorized device owner is allowed to open the Mattermost application. Biometric authentication uses hardware-level security to significantly enhance data security. 
+
+Biometric authentication significantly enhances security by ensuring that even if a device is lost or stolen, only an authorized user can access the application. It leverages the strengths of hardware-level security, making it far more challenging for attackers to bypass compared to traditional passwords. Biometrics add a layer of security that is both user-friendly and resistant to unauthorized access, especially in a mobile context. Administrators can require the hardware biometric to authenticate the user each time they attempt to access the Mattermost application. This adds another layer of protection to Mattermost customer data, substantially containing the risk from lost or stolen devices. Learn more about Mattermost mobile :ref:`biometric authentication <about/security/mobile-security-features:biometric authentication>`.
 
 Screenshot and screen recording prevention
 -------------------------------------------
 
-Preventing screenshots and screen recordings protects sensitive information from being inadvertently or maliciously shared. This control is essential in ensuring that confidential communications and data remain within the secure confines of the app. By blocking unauthorized screen captures, Mattermost significantly reduces the risk of data leakage via visual content. Learn more about Mattermost :ref:`mobile screenshot and screen recording prevention <about/security/mobile-security-features:screenshot and screen recording prevention>`.
+Preventing screenshots and screen recordings protects sensitive information from being inadvertently or maliciously shared. This control is essential in ensuring that confidential communications and data remain within the secure confines of the app. By blocking unauthorized screen captures, Mattermost significantly reduces the risk of data leakage via visual content. users from taking screenshots or recording their screens on the mobile device. This feature ensures that users can not intentionally or inadvertently capture an image of any information shared in Mattermost. Learn more about Mattermost :ref:`mobile screenshot and screen recording prevention <about/security/mobile-security-features:screenshot and screen recording prevention>`.
 
 App sandboxing and secure data storage
 ---------------------------------------

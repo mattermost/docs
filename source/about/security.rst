@@ -1,9 +1,7 @@
 Security Guide
 ==================
 
-Security in Mattermost software is continually reviewed by developers, IT administrators, and security researchers accountable for deploying the software in their organizations.
-
-Multiple rounds of penetration testing and security analysis, in addition to internal reviews, have produced a long list of safeguards, processes, policies, and compliance features.
+Mattermost has implemented a comprehensive set of security features to protect information in its mobile applications. These features, ranging from encryption and authentication to device management and user education, provide a secure environment for team collaboration and communication. By prioritizing security, Mattermost ensures that customers can trust the mobile application to safeguard their data and privacy. 
 
 .. toctree::
    :maxdepth: 1
@@ -12,6 +10,114 @@ Multiple rounds of penetration testing and security analysis, in addition to int
 
    /about/security/zero-trust.rst
    /about/security/mobile-security.rst
+
+Data-in-transit encryption
+---------------------------
+
+Mattermost uses Transport Layer Security (TLS) to encrypt data transmitted over the network. TLS provides a secure channel for data exchange, protecting it from eavesdropping and tampering during transmission. This encryption ensures that only the intended recipients can access the content, preventing unauthorized parties from intercepting or reading the information.
+
+Mattermost allows administrators to configure access settings for private and public networks. This feature ensures that mobile devices connected to secure networks can safely access the application while restricting access from untrusted networks. Learn more about Mattermost :ref:`data-in-transit encryption <deploy/encryption-options:encryption in transit>`.
+
+Data-at-rest encryption
+------------------------
+
+The Mattermost mobile app for Apple iOS and Android devices uses the native OS security architecture to encrypt data-at-rest on mobile devices, ensuring that stored information remains secure even if the device is lost or stolen. This encryption protects sensitive data, such as messages and files, from unauthorized access. Learn more about Mattermost `data-at-rest encryption <deploy/encryption-options:encryption in transit>`.
+
+Data stored by the Mattermost mobile app only resides within the app’s private storage container. This storage location is isolated by each platform’s rigorous sandboxing model. Learn more about :doc:`secure file storage </about/security/secure-mobile-file-storage>` for Mattermost mobile applications.
+
+Authentication and access control
+---------------------------------
+
+Mattermost supports multi-factor authentication, adding an extra layer of security beyond the traditional username and password. Customers can enable MFA to protect their accounts from unauthorized access, even if their login credentials are compromised. 
+
+Single Sign-On (SSO)
+~~~~~~~~~~~~~~~~~~~~
+
+The mobile application integrates with Single Sign-On providers, allowing users to authenticate using their existing credentials from other trusted systems. This reduces the risk of password-related security breaches and streamlines the login process. Learn more about Mattermost :doc:`SSO </manage/admin/user-provisioning>`.
+
+Role-Based Access Control (ABAC)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Administrators can set granular permissions to control access to sensitive information within the application. This feature ensures that users only have access to the data necessary for their roles, minimizing the risk of accidental or intentional data exposure. Learn more about Mattermost :doc:`role-based access control </collaborate/learn-about-roles>`.
+
+Mobile Device Management (MDM)
+------------------------------
+
+Mattermost supports the ability for an EMM provider to push Mattermost Mobile apps to EMM-enrolled devices. This approach is recommended for organizations that typically use EMM solutions to deploy Mobile apps to meet security and compliance policies. Learn more about :doc:`deploying Mattermost mobile using an EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider``>.
+
+Remote Wipe Capability
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Administrators can remotely wipe Mattermost data from mobile devices in case of loss or theft. This capability prevents unauthorized access to sensitive information by ensuring that data is erased from compromised devices. 
+
+Compliance Policies
+~~~~~~~~~~~~~~~~~~~~
+
+Mattermost can be integrated with mobile device management solutions to enforce compliance policies. These policies ensure that mobile devices accessing the application adhere to security standards, such as encryption, password complexity, and device integrity. Learm more about `compliance with Mattermost </guides/compliance-with-mattermost>`.
+
+Mobile Access Platforms
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost mobile applications can be operated under the protection of mobile access platforms like Hypori.
+
+Audit Logs and Monitoring
+-------------------------
+
+Mattermost write logs to both the console and to a log file in a machine-readable JSON format. Commercial customers can additional log directly to syslog and TCP socket destination targets. Learn more about Mattermost :doc:`logging </manage/logging>`.
+
+Activity Monitoring
+~~~~~~~~~~~~~~~~~~~~
+
+The Mattermost mobile app generates audit logs that record user activities and system events. These logs enable administrators to monitor access and identify potential security threats, ensuring timely detection and response to suspicious behavior. 
+
+Alerts and Notifications
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost can send alerts and notifications to administrators when security-related events occur. This feature ensures that potential issues are promptly addressed, minimizing the impact of security incidents on the organization. Learn about :doc:`managing Mattermost notifications </preferences/manage-your-notifications>`.
+
+Regular Security Updates
+------------------------
+
+Patch Management
+~~~~~~~~~~~~~~~~~
+
+Mattermost regularly releases security updates to address vulnerabilities and enhance the application's security posture. Users are encouraged to keep their mobile applications up to date to benefit from the latest security improvements. Learn more about Mattermost :doc:`releases and the release life cycle </about/releases-lifecycle>`.
+
+Community and Expert Contributions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Being an open-core platform, Mattermost benefits from contributions from the security community and experts. These contributions help identify and mitigate potential security risks, ensuring that the mobile application remains robust and secure. Learn more about `contributing to Mattermost <https://mattermost.com/contribute/>`_.
+
+User Education and Training
+---------------------------
+
+Security Awareness
+~~~~~~~~~~~~~~~~~~~
+
+Mattermost provides resources and training materials to educate users about security best practices. These resources help users understand the importance of security measures and how to implement them effectively within the mobile application. Visit `Mattermost Academy <https://academy.mattermost.com/>`_ to learn more. 
+
+Incident Response
+~~~~~~~~~~~~~~~~~~
+
+Mattermost offers guidance on how to respond to security incidents, including steps to take in case of a data breach or compromise. This training ensures that users are prepared to handle security challenges and protect sensitive information proactively. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Security features
 ------------------
