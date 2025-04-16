@@ -4,6 +4,80 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.8-feature-release)=
+## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2025-05-16**
+
+### Important Upgrade Notes
+ - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is possible.
+
+```{Important}
+If you upgrade from a release earlier than v10.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.0).
+ - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
+ - Added an improved channel menu. 
+ - Updated email notification settings to provide clearer wording and descriptions for both batched and non-batched scenarios. The settings dialog now reflects the selected status more accurately in both collapsed and expanded views, enhancing consistency and usability.
+ - Added the ability to display the nickname or full name in Threads based on settings.
+ - Improved the error message for failed file copies. 
+
+#### Administration
+ - Added Custom Profile Attribute field type, visibility, and related options in **System Console -> System Properties**.
+ - Introduced Premium SKU in code and removed usages of E10 and E20 licenses.
+ - Stopped building and packaging Windows and MacOS releases. 
+ - ``EnableLocalMode`` is now automatically enabled during development. 
+ - Log messages are now added if post props are invalid. 
+ - Stopped logging websocket PING events received by the server. 
+ - Errors from Support Packet generation are now shown in the **System Console**. 
+ - Added a client-side ping to the websocket to detect broken connections more quickly.
+ - Removed the feature flag and added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature. 
+
+### Bug Fixes
+ - Fixed ``GET /groups endpoint`` documentation. 
+ - Fixed an issue with group mentions overlay and details after an update. 
+ - Fixed an issue with showing local hours on bot users. 
+ - Fixed an issue where replies appeared as part of the wrong thread when Collapsed Reply Threads were disabled. 
+ - Fixed an issue with keyboard input not working on new menus when the menu was opened using the mouse. 
+ - Fixed an issue with keyboard navigation with the channel switcher. 
+ - Fixed an issue with link previews when using angle brackets for autolinking. 
+ - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens. 
+ - Fixed an issue where there were invalid restrictions on local mode administration (e.g. via mmctl). 
+ - Fixed an issue where users were not able to escape emoticon formatting by prefixing with a backslash. 
+ - Fixed an issue with post links trapping focus when hovered or focused using the keyboard. 
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise plans:
+ - Under ``AccessControlSettings`` in ``config.json``:
+   - Added ``EnableAttributeBasedAccessControl`` and ``EnableChannelScopeAccessControl`` configuration settings. 
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature.
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+   - Added a new configuration setting ``GlobalSearchPrefix`` which can be used to search across multiple indices having a common prefix. This is useful in a scenario with multiple Elasticsearch instances, where multiple instances are writing to different indices with different prefixes using the ``ElasticsearchSettings.IndexPrefix`` setting. 
+
+### API Changes
+ - Added a new API endpoint to retrieve the Custom Profile Attributes group data. 
+
+### Open Source Components
+ - Added ``bep/imagemeta`` and removed ``rwcarlsen/goexif`` from https://github.com/mattermost/mattermost.
+
+### Go Version
+ - v10.8 is built with Go ``v1.23.7``.
+
+### Known Issues
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+
+### Contributors
+ - 
+
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
