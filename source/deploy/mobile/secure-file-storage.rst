@@ -46,7 +46,7 @@ Android – scoped storage
 
 - **Official reference:**
 
-  `Scoped Storage <https://developer.android.com/about/versions/10/privacy/changes#scoped-storage>`_
+  - `Scoped Storage <https://developer.android.com/about/versions/10/privacy/changes#scoped-storage>`_
 
 Additionally, both platforms may clear cached data automatically (e.g., under low storage conditions or upon user logout), thereby reducing the risk of sensitive information like CUI remaining on the device.
 
