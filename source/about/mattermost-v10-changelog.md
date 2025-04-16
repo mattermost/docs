@@ -53,13 +53,13 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to all plans:
- - Added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature. 
- - A new configuration setting ``ElasticsearchSettings.GlobalSearchPrefix`` is added which can be used to search across multiple indices having a common prefix. This is useful in a scenario with multiple Elasticsearch instances, where multiple instances are writing to different indices with different prefixes using the ``ElasticsearchSettings.IndexPrefix`` setting. 
- - Added ``EnableAttributeBasedAccessControl`` and ``EnableChannelScopeAccessContro`` under ``AccessControlSettings``. 
-
 #### Changes to Enterprise plans:
- - Under 
+ - Under ``AccessControlSettings`` in ``config.json``:
+   - Added ``EnableAttributeBasedAccessControl`` and ``EnableChannelScopeAccessControl`` configuration settings. 
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature.
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+   - Added a new configuration setting ``GlobalSearchPrefix`` which can be used to search across multiple indices having a common prefix. This is useful in a scenario with multiple Elasticsearch instances, where multiple instances are writing to different indices with different prefixes using the ``ElasticsearchSettings.IndexPrefix`` setting. 
 
 ### API Changes
  - Added a new API endpoint to retrieve the Custom Profile Attributes group data. 
