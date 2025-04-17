@@ -11,7 +11,7 @@ Jailbreak and root detection
 
 Mattermost leverages built-in checks from the Expo framework to identify jailbroken (iOS) and rooted (Android) devices:
 
-- On **Android**, the app looks for the presence of known jailbreak/root binaries —such as the "su" binary in /system/xbin/su, which is a common indicator that the device has been rooted to allow unauthorized elevated access. 
+- On **Android**, the app looks for the presence of known jailbreak/root binaries, such as the ``su`` binary in ``/system/xbin/su``, which is a common indicator that the device has been rooted to allow unauthorized elevated access. 
 - On **iOS**, the detection process involves checking for unusual apps (e.g., Cydia), modified system paths, and testing whether the app can alter protected system files—all signs that the device may be jailbroken.
 
 See the :ref:`jailbreak/root protection configuration setting <configure/environment-configuration-settings:enable jailbreak/root protection>` documentation for details on enabling this feature.
@@ -70,7 +70,7 @@ Security measures
 
   - On **Android**, the application explicitly disables backups (using the appropriate manifest settings), ensuring that all Mattermost files remain strictly on-device. 
 
-  - On **iOS**, although the operating system automatically backs up files stored in the app's "Documents" folder, Mattermost intentionally stores its files in the "Library/Caches" directory, which is excluded from iCloud backups. 
+  - On **iOS**, although the operating system automatically backs up files stored in the app's ``Documents`` folder, Mattermost intentionally stores its files in the ``Library/Caches`` directory, which is excluded from iCloud backups. 
 
 - **Controlled data export**: Data only leaves Mattermost through explicit user actions such as: 
 

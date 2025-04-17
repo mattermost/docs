@@ -31,6 +31,10 @@ The encryption uses AES-256 by default, and it is not configurable. However, it 
 Encryption-at-rest
 ------------------
 
+Encryption-at-rest is available for messages via hardware and software disk encryption solutions applied to the Mattermost database, which resides on its own server within your infrastructure. To enable end user search and compliance reporting of message histories, Mattermost does not offer encryption within the database.
+
+Additionally, encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server used for local storage or storage via MinIO.
+
 Database
 ~~~~~~~~
 

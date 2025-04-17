@@ -24,7 +24,7 @@ iOS – app sandbox
 
   - Non-image and non-video files are rendered using secure frameworks such as QLPreviewController. This controller displays file previews within the app’s sandbox, ensuring that raw file data isn’t exposed to external processes.
   - Supported image and video files are previewed directly within the app, with the files downloaded to the app's cache folder located within its secure sandbox. For unsupported image and video formats, the Mattermost mobile app uses the QLPreviewController framework, just as it does for other file types.
-  - If the file format is also unsupported by QLPreviewController and mobile downloads are enabled on the server, users can download the file to a location of their choosing. However, if mobile downloads are disabled, these files become unavailable to the user.
+  - If the file format is also unsupported by QLPreviewController and :ref:`mobile downloads are enabled <configure/site-configuration-settings:allow file downloads on mobile>` on the server, users can download the file to a location of their choosing. However, if mobile downloads are disabled, these files become unavailable to the user.
 
 - **Official references:**
 
@@ -41,7 +41,8 @@ Android – scoped storage
 
 - **Secure file viewing:**
 
-  - When users attempt to view non-image/video files, Mattermost uses an ``Intent.ACTION_VIEW`` to open the file. This intent delegates rendering to an external app only if the user explicitly triggers the action, while the file remains securely stored within Mattermost’s cache folder. *Note:* Viewing non-image/video files is available only if mobile downloads are enabled on the server side.
+  - When users attempt to view non-image/video files, Mattermost uses an ``Intent.ACTION_VIEW`` to open the file. This intent delegates rendering to an external app only if the user explicitly triggers the action, while the file remains securely stored within Mattermost’s cache folder.
+  - Viewing non-image/video files is available only if :ref:`mobile downloads are enabled <configure/site-configuration-settings:allow file downloads on mobile>` on the server.
   - Image and video files with supported formats are previewed directly within the app, with the files downloaded to the app's cache folder located within its secure sandbox. For unsupported image and video formats, the Mattermost mobile app uses ``Intent.ACTION_VIEW`` to open the file with an external application, just as it does for other file types.
 
 - **Official reference:**
@@ -55,7 +56,7 @@ Differentiating file handling: downloading, in-app previewing, and handing off t
 
 - **Previewing files:** 
 
-  File previewing follows the secure viewing practices described above in the “Secure File Viewing” sections for iOS and Android. All files prior to being previewed are stored in the cache folder of the Mattermost app sandbox. Images and videos with supported formats are previewed directly within the Mattermost mobile app. Non‑image and non‑video files are also previewed in-app in iOS but are handed off to an external application in Android while the raw data remains securely stored in the app’s cache. Previewing non-image/non-video files is possible only if mobile downloads are enabled on the server side.
+  File previewing follows the secure viewing practices described above in the “Secure File Viewing” sections for iOS and Android. All files prior to being previewed are stored in the cache folder of the Mattermost app sandbox. Images and videos with supported formats are previewed directly within the Mattermost mobile app. Non‑image and non‑video files are also previewed in-app in iOS but are handed off to an external application in Android while the raw data remains securely stored in the app’s cache. Previewing non-image/non-video files is possible only if :ref:`mobile downloads are enabled <configure/site-configuration-settings:allow file downloads on mobile>` on the server side.
 
 - **Downloading files:**
 
@@ -65,7 +66,7 @@ Differentiating file handling: downloading, in-app previewing, and handing off t
     - The built-in sandboxing ensures that the downloaded files remain inaccessible to other apps unless the user explicitly shares or saves them through the system’s file sharing mechanisms. Once downloaded, the file appears in the gallery.
     - If the server has the download setting enabled, the user has two options:
 
-      1. Download the file: Opens the Files app, allowing the user to save the file to any permitted location, including iCloud.
+      1. Download the file: Opens the **Files** app, allowing the user to save the file to any permitted location, including iCloud.
       2. Share the file: Launches the native share sheet, enabling the user to share the file with other compatible applications.
 
   - On **Android** devices, the app employs the system’s file picker. This allows the end-user to select a preferred storage location. Once saved, the file becomes accessible to other apps based on the chosen location and the device’s file sharing permissions.

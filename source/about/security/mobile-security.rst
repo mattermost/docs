@@ -1,7 +1,7 @@
 Mobile Security
 ================
 
-Mattermost Mobile is built with a robust security framework to protect user data and prevent unauthorized access. The Mattermost Mobile app's comprehensive security framework ensures that user data remains protected against unauthorized access.
+Mattermost mobile is built with a robust security framework to protect user data and prevent unauthorized access. The Mattermost Mobile app's comprehensive security framework ensures that user data remains protected against unauthorized access.
 
 Continuous compliance through :ref:`secure SDLC practices and proactive vulnerability management <about/security/mobile-security-features:security compliance>` further reinforces the platform’s resilience.
 
@@ -14,13 +14,6 @@ As the mobile app evolves with future enhancements like file sharing restriction
 
     Mobile security features </about/security/mobile-security-features>
     Secure mobile file storage </about/security/secure-mobile-file-storage>
-
-FIPS 140-2 Cryptography and STIG container
--------------------------------------------
-
-Mattermost v10.5 ESR includes a FIPS-compliant Docker image built using `Chainguard's FIPS-certified base containers <https://images.chainguard.dev/directory/image/go-openssl/versions>`. These images help meet stringent security requirements, ensuring compliance with cryptography standards set forth by the Federal Information Processing Standards (FIPS).
-
-This Docker image is compliant with the U.S. Government Security Technical Implementation Guides (STIG) – specifically the General Purpose Operating System (GPOS) Security Requirements Guide (SRG) — an SRG that specifies security requirements for general purpose operating systems running in a network. 
 
 Jailbreak and root detection
 -----------------------------
@@ -48,3 +41,16 @@ Sandboxing is a critical defense that isolates the application’s data from oth
 
 Learn more about how Mattermost leverages robust sandboxing mechanisms on both iOS and Android to :doc:`securely store files </about/security/secure-mobile-file-storage>` in its cache folder within the application container, ensuring isolation from unauthorized third-party apps.
 
+Push notification message visibility
+------------------------------------
+
+Push notifications are a convenient way to stay updated, but they can also pose security risks if sensitive information is displayed. Mattermost provides options to :ref:`control the visibility of message content in push notifications <configure/site-configuration-settings:push notification contents>`, ensuring that sensitive information is not inadvertently exposed through locked mobile screens and via relay servers from Apple and Google when sending notifications to iOS or Android mobile apps.
+
+Disable downloads
+-----------------
+
+Environments with strict data loss prevention (DLP) policies or where sensitive information must not be stored on mobile devices can benefit from disabling file uploads and downloads on mobile devices. 
+
+Disabling file uploads adds an additional layer of security by reducing the risk of malware or malicious files being introduced into the system, ensuring tighter control over sensitive corporate data, and preventing accidental leaks from unsecure mobile networks. 
+
+Similarly, by disabling downloads, Mattermost ensures that files cannot be saved locally on the device, reducing the risk of unauthorized access or data leakage. Learn more about :ref:`disabling mobile uploads <configure/site-configuration-settings:allow file downloads on mobile>` and :ref:`disabling mobile downloads <configure/site-configuration-settings:allow file uploads on mobile>` in the Mattermost mobile app.
