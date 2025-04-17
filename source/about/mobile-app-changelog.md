@@ -20,7 +20,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Added a feature to support scheduled posts in mobile. 
+ - Added a feature to support scheduled posts on mobile. 
  - Added the ability to display channel banners in the mobile app. 
  - Added autofill on the email/password fields on the login screen. 
  - Upgraded forked ``commonmark`` to v0.31.2-0. 
