@@ -32,7 +32,7 @@ The Mattermost mobile app for Apple iOS and Android devices uses the native OS s
 
 Encryption-at-rest also available for files stored in Amazon's proprietary S3 system using server-side encryption with :ref:`Amazon S3-managed keys <configure/environment-configuration-settings:enable server-side encryption for amazon s3>` (Mattermost Enterprise) when users choose not to use open source options.
 
-Data stored by the Mattermost mobile app only resides within the app’s private storage container. This storage location is isolated by each platform’s rigorous sandboxing model. Learn more about :doc:`secure file storage </about/security/secure-mobile-file-storage>` for Mattermost mobile applications.
+Data stored by the Mattermost mobile app only resides within the app’s private storage container. This storage location is isolated by each platform’s rigorous sandboxing model. Learn more about :doc:`secure file storage </deploy/mobile/secure-mobile-file-storage>` for Mattermost mobile applications.
 
 Authentication and access control
 ---------------------------------
