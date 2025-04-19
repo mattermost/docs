@@ -1,7 +1,7 @@
-TYPESENSE_HOST="${TYPESENSE_HOST:-http://localhost:8108}"
+TYPESENSE_ORIGIN="${TYPESENSE_ORIGIN:-http://localhost:8108}"
 TYPESENSE_API_KEY="${TYPESENSE_API_KEY:-test_api_key}"
 
-curl "${TYPESENSE_HOST}/collections" \
+curl "${TYPESENSE_ORIGIN}/collections" \
        -X POST \
        -H "Content-Type: application/json" \
        -H "X-TYPESENSE-API-KEY: ${TYPESENSE_API_KEY}" \

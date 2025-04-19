@@ -10,8 +10,15 @@ services:
     volumes:
       - typesense-data:/data
 
+  typesense-dashboard:
+    image: ghcr.io/bfritscher/typesense-dashboard:latest
+    ports:
+      - "8001:80"
+
   scraper:
     image: typesense/docsearch-scraper
+    profiles:
+      - optional
     volumes:
       - ./config.json:/app/config.json
     network_mode: "host"

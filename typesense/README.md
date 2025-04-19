@@ -2,10 +2,13 @@
 
 With 3 terminals open, and run the following in the first two:
 - `make livehtml` - Run Sphinx docs server
-- `cd typesense && docker compose up typesense` - Run Typesense server
+- `cd typesense && docker compose` - Run Typesense server and Typesense dashboard. You can access the Typesense dashboard at http://localhost:8001
 
 After those are up and running, run this in the third terminal:
-- `cd typesense && docker compose up scraper` - Run scraper to populate Typesense. The process will exit once complete.
+- `cd typesense && docker compose --profile optional up scraper` - Run scraper to populate Typesense. The process will exit once complete.
+
+After running the scraper, we need to do some processing to make search result urls relative to the docs site.
+- `cd typesense && ./post-process-typesense-data.sh`
 
 If you'd like to re-index the Typesense collection, you can run:
 
@@ -16,7 +19,7 @@ cd typesense
 ./scripts/reset-typesense-collection.sh
 
 # Re-run scraper to populate Typesense
-docker compose up scraper
+docker compose --profile optional up scraper
 ```
 
 To export the index into a jsonl file, run:
@@ -34,15 +37,7 @@ The output of the command will be a `documents.jsonl` file in the current direct
 The scripts mentioned above support the following environment variables for configuration:
 
 - `TYPESENSE_API_KEY` - Defaults to `test_api_key`
-- `TYPESENSE_HOST` - Defaults to `http://localhost:8108`
+- `TYPESENSE_ORIGIN` - Defaults to `http://localhost:8108`
 - `TYPESENSE_HOSTNAME` - Defaults to `localhost`
 - `TYPESENSE_PORT` - Defaults to `8108`
 - `TYPESENSE_PROTOCOL` - Defaults to `http`
-
-To view your local Typesense instance in an admin dashboard, you can use this docker image:
-
-```sh
-docker run -d -p 8001:80 ghcr.io/bfritscher/typesense-dashboard:latest
-```
-
-You can then access the dashboard at http://localhost:8001
