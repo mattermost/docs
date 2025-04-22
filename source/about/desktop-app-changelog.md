@@ -23,6 +23,7 @@ Mattermost Desktop App v5.12.0 contains a medium severity level security fix. Up
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 134+.
 
 ### Improvements
 
@@ -33,6 +34,10 @@ Mattermost Desktop App v5.12.0 contains a medium severity level security fix. Up
 - Added a changelog link for when the app auto-updates. 
 - Updated the certificate error message. 
 - Removed bootstrap and dependencies. 
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 35.2.0. Electron is the underlying technology used to build the Desktop App.
 
 ### Open Source Components
 
