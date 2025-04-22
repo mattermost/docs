@@ -7,6 +7,7 @@
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+1
 **Release day: 2025-04-16**
 
 ### Compatibility
