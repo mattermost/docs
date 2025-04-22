@@ -7,8 +7,11 @@
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-1
-**Release day: 2025-04-16**
+- **10.7.1, released **
+  - 
+  - Mattermost v10.7.1 contains no database or functional changes.
+- **10.7.0, released 2025-04-16**
+  - Original 10.7.0 release.
 
 ### Compatibility
  - Updated minimum Edge and Chrome versions to 132+.
