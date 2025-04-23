@@ -98,7 +98,9 @@ It's preferable to fetch e-mails first to avoid copying large attachments around
 4. Convert Slack import to Mattermost's bulk export format
 ----------------------------------------------------------
 
-Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. Download the latest release of ``mmetl`` for your `OS and architecture <https://github.com/mattermost/mmetl/releases/>`__. Run ``mmetl help`` to learn more about using the tool.
+Now that you have a Slack export file with emails and attachments, let's convert this information into Mattermost's bulk import format using the import preparation tool ``mmetl``. 
+
+`Download the latest release of mmetl <https://github.com/mattermost/mmetl/releases/>`__ for your OS and architecture. Run ``mmetl help`` to learn more about using the tool.
 
 Next, run the command below to create a Mattermost bulk import file. Replace ``<TEAM-NAME>`` with the name of your team in Mattermost. Note that the name needs to be one word and lowercase (i.e. if you named your team ``My Team``, ``<TEAM-NAME>`` would be ``my-team``).
 
@@ -162,7 +164,7 @@ You can use the ``mmctl import job show`` command to view any relevant errors th
 Additional tools
 ^^^^^^^^^^^^^^^^
 
-* `mm-emoji <https://github.com/maxwellpower/mm-emoji>`__ - Designed to smoothly transition emojis from a Slack instance to Mattermost.
+* `mm-emoji <https://github.com/users/maxwellpower/packages/container/package/mm-emoji>`__ - Designed to smoothly transition emojis from a Slack instance to Mattermost.
 * `mm-importjs <https://github.com/mickmister/mmimportjs>`__ - Breaks up large import files into smaller ones, as well as automatically remove null characters in post content when importing data to Mattermost.
 * `slack-migrate-pinned-posts <https://github.com/svelle/slack-migrate-pinned-posts>`__ - Migrates pinned posts from Slack to Mattermost.
 

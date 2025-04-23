@@ -144,13 +144,28 @@ Want this theme? Copy and paste the following code into Mattermost:
 
 	{"sidebarBg":"#21252b","sidebarText":"#abb2bf","sidebarUnreadText":"#abb2bf","sidebarTextHoverBg":"#3a3f4b","sidebarTextActiveBorder":"#4d78cc","sidebarTextActiveColor":"#d7dae0","sidebarHeaderBg":"#282c34","sidebarHeaderTextColor":"#abb2bf","onlineIndicator":"#98c379","awayIndicator":"#d19a66","dndIndicator":"#be5046","mentionBg":"#98c379","mentionColor":"#ffffff","centerChannelBg":"#282c34","centerChannelColor":"#abb2bf","newMessageSeparator":"#c67add","linkColor":"#61afef","buttonBg":"#4d78cc","buttonColor":"#ffffff","errorTextColor":"#f44747","mentionHighlightBg":"#525a69","mentionHighlightLink":"#61afef","codeTheme":"monokai","mentionBg":"#98c379"}
 
-Discord Dark Theme
-^^^^^^^^^^^^^^^^^^
+Discord Dark Theme (New)
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. image:: ../images/DiscordNewDarkTheme.png
+  :alt: Discord New Dark Theme
+
+`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/melroy89/mattermost-discord-dark>`__.
+
+Want this theme? Copy and paste the following code into Mattermost:
+
+.. code-block:: json
+
+  {"sidebarBg": "#121214", "sidebarText": "#ffffff", "sidebarUnreadText": "#ffffff", "sidebarTextHoverBg": "#1d1d1e", "sidebarTextActiveBorder": "#ffffff", "sidebarTextActiveColor": "#ffffff", "sidebarHeaderBg": "#121214", "sidebarHeaderTextColor": "#ffffff", "sidebarTeamBarBg": "#121214", "onlineIndicator": "#43a25a", "awayIndicator": "#ca9654", "dndIndicator": "#d83a42", "mentionBg": "#6e84d2", "mentionBj": "#6e84d2", "mentionColor": "#ffffff", "centerChannelBg": "#1a1a1e", "centerChannelColor": "#efeff0", "newMessageSeparator": "#ff4d4d", "linkColor": "#2095e8", "buttonBg": "#5865f2", "buttonColor": "#ffffff", "errorTextColor": "#ff6461", "mentionHighlightBg": "#a4850f", "mentionHighlightLink": "#a4850f", "codeTheme": "monokai"}
+
+
+Discord Dark Theme (Old)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. image:: ../images/DiscordDarkTheme.png
-  :alt: Discord Dark Theme
+  :alt: Discord Dark Theme (old)
 
-`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__.
+`Visit the mattermost-discord-dark-old GitHub repository online: <https://github.com/melroy89/mattermost-discord-dark>`__
 
 Want this theme? Copy and paste the following code into Mattermost:
 
