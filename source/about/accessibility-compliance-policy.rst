@@ -1,4 +1,4 @@
-Accessibility compliance policy
+Accessibility Compliance Policy
 ================================
 
 Digital accessibility removes barriers to ensure full participation with digital experiences. People with disabilities may use assistive technology like screen readers or alternative input devices. We prioritize accessibility to deliver an experience that works for everyone, involving accessible designs, compatible code, and a logical, functional user interface for all.
