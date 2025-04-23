@@ -5917,7 +5917,7 @@ Generate token for a user.
 
 .. code-block:: sh
 
-   mmctl generate testuser test-token
+   mmctl token generate testuser test-token
 
 **Options**
 
