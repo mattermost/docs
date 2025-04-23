@@ -9,7 +9,7 @@ This page describes how to install the Mattermost desktop app on Linux.
 
   .. important::
 
-    The GPG public key has changed. If you had previously set up the repository on your system, you'll need to download the new key. You can set the ``UPDATE_GPG_KEY=yes`` environment variable when running the setup script to configure it to overwrite the previous key on your system with the new one. The first step of installation then becomes: ``curl -fsS -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo UPDATE_GPG_KEY=yes bash``. Depending on your setup, additional steps may also be required, particularly for installations that don't rely on the repository setup script.
+    The GPG public key has changed. If you had previously set up the repository on your system, you'll need to `download the new key <https://deb.packages.mattermost.com/pubkey.gpg>`_. You can set the ``UPDATE_GPG_KEY=yes`` environment variable when running the setup script to configure it to overwrite the previous key on your system with the new one. The first step of installation then becomes: ``curl -fsS -o- https://deb.packages.mattermost.com/setup-repo.sh | sudo UPDATE_GPG_KEY=yes bash``. Depending on your setup, additional steps may also be required, particularly for installations that don't rely on the repository setup script.
 
   1. At the command line, set up the Mattermost repository on your system: 
 
