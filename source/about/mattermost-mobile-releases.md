@@ -9,12 +9,12 @@
 
 ## Frequency
 
-Mattermost releases a new mobile app version every month. Mattermost tests the latest mobile app release against the [latest server version](/about/mattermost-server-releases).
+Mattermost releases a new mobile app version every month.
 
 See the [Mobile app changelog](/about/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
 
 ```{Important}
-We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are tested against all generally available Mattermost server and extended support releases.
+We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are compatible with and tested against [supported Mattermost server and extended support releases](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases).
 ```
 
 ## Latest releases
@@ -50,3 +50,17 @@ We strongly recommend using the latest mobile app release available that contain
 | v2.1 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.1.0) \| {ref}`Changelog <release-v2-1-0>` | 2023-02-16 | 2023-03-16 | {ref}`v7.8 <release-v7-8-extended-support-release>` |
 | v2.0 {ref}`FEATURE <release-types>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.0.1) \| {ref}`Changelog <release-v2-0-1>` | 2023-01-16 | 2023-02-15 | {ref}`v7.7 <release-v7-7-feature-release>` |
 |  |  |  |  |
+
+## Future releases
+
+Note that the below versions have not yet been tested. The information below is subject to change.
+
+| **Release** | **Releasing on** | **Support ends** | **Compatible with** |
+|:---|:---|:---|:---|
+| v2.33 | 2025-10-16 | 2025-11-15 | v11.1, v11.0, v10.11, v10.5 |
+| v2.32 | 2025-09-16 | 2025-10-15 | v11.0, v10.11, v10.0, v10.5 |
+| v2.31 | 2025-08-16 | 2025-09-15 | v10.11, v10.10, v10.9, v10.5 |
+| v2.30 | 2025-07-16 | 2025-08-15 | v10.10, v10.9, v10.8, v10.5 |
+| v2.29 | 2025-06-15 | 2025-07-15 | v10.9, v10.8, v10.7, v10.5 |
+| v2.28 | 2025-05-16 | 2025-06-15 | v10.8, v10.7, v10.6, v10.5 |
+
