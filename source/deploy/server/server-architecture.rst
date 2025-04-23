@@ -1,16 +1,13 @@
-Server architecture reference
-==============================
+Reference Architecture for Mattermost Server
+=============================================
 
 The following diagrams detail suggested architecture configurations of :ref:`high availability Mattermost deployments <scale/high-availability-cluster-based-deployment:deployment guide>` at different scales. Hardware and infrastructure requirements will vary significantly based on usage and policies. See the :doc:`scaling for enterprise </scale/scaling-for-enterprise>` documentation for reference architecture guidance at scale, including hardware and infrastructure requirements.
 
-Reference architectures
-------------------------
-
 High availability in Mattermost consists of running redundant Mattermost application servers, redundant database servers, and redundant load balancers so that failure of any one of these components does not interrupt operation of the system. Upon failure of one component, the remaining application servers, database servers, and load balancers must be sized and configured to carry the full load of the system. If this requirement is not met, an outage of one component can result in an overload of the remaining components, causing a complete system outage.
 
-.. important
+.. important::
 
-    Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
+   Mattermost does not support high availability deployments spanning multiple datacenters. All nodes in a high availability cluster must reside within the same datacenter to ensure proper functionality and performance.
 
 You can apply most configuration changes and dot release security updates without interrupting service, provided that you update the system components in the correct sequence. Changes to configuration settings that require a server restart, and server version upgrades that involve a change to the database schema, require a short period of downtime. Downtime for a server restart is around 5 seconds. For a database schema update, downtime can be up to 30 seconds.
 
