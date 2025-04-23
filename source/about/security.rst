@@ -21,7 +21,7 @@ This Docker image is compliant with the U.S. Government Security Technical Imple
 Data-in-transit encryption
 ---------------------------
 
-Mattermost uses Transport Layer Security (TLS) to encrypt data transmitted over the network. TLS provides a secure channel for data exchange, protecting it from eavesdropping and tampering during transmission. This encryption ensures that only the intended recipients can access the content, preventing unauthorized parties from intercepting or reading the information.
+Mattermost can be configured to use Transport Layer Security (TLS) to encrypt data transmitted over the network. TLS provides a secure channel for data exchange, protecting it from eavesdropping and tampering during transmission. This encryption ensures that only the intended recipients can access the content, preventing unauthorized parties from intercepting or reading the information.
 
 Mattermost allows administrators to configure access settings for private and public networks. This feature ensures that mobile devices connected to secure networks can safely access the application while restricting access from untrusted networks. Learn more about Mattermost :ref:`data-in-transit encryption <deploy/encryption-options:encryption-in-transit>`.
 
