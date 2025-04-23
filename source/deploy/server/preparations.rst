@@ -9,21 +9,15 @@ This guide outlines the key preparation steps required before installing the Mat
   :titlesonly:
 
    Review software and hardware requirements </deploy/software-hardware-requirements>
-   (Recommended) Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
-   (Recommended) Configure Mattermost Calls </configure/calls-deployment>
-   (Recommended) Enable Mattermost Copilot </configure/enable-copilot>
-   (Optional) Set up TLS </deploy/server/setup-tls>
-   (Optional) Use an image proxy </deploy/server/image-proxy>
+   Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
+   Configure Mattermost Calls </configure/calls-deployment>
+   Set up TLS </deploy/server/setup-tls>
+   Use an image proxy </deploy/server/image-proxy>
 
 Database preparation
 --------------------
 
-Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL was previously supported, PostgreSQL is now the recommended and preferred database.
-
-.. important::
-
-   - PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
-   - Learn how to :doc:`use sockets to set up the database </deploy/server/setting-up-socket-based-mattermost-database>`.
+PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
 1. Create an PostgreSQL server instance:
 
@@ -238,7 +232,7 @@ If your deployment requires using an outbound proxy, you can configure Mattermos
 
    When using an HTTPS proxy, ensure your Mattermost server has the proxy's root certificate configured to avoid connection issues.
 
-.. dropdown:: Example systemd Service Configuration
+   Example systemd Service Configuration
 
    .. code-block:: ini
 

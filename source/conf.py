@@ -924,7 +924,7 @@ redirects = {
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
-        "https://docs.mattermost.com/enable-copilot.html",
+        "https://docs.mattermost.com/configure/enable-copilot.html",
 "configure/common-config-settings-notation.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "configure/bulk-loading-about.html":
@@ -1943,6 +1943,11 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-shared-channels-experimental",
 "configure/experimental-configuration-settings.rst#remote-clusters":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-remote-cluster-service-experimental",
+"configure/configuring-cloudfront-to-host-mattermost-static-assets.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+"configure/using-outbound-proxy.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2047,6 +2052,12 @@ redirects = {
         "https://developers.mattermost.com/integrate/plugins/",
 "deploy/high-scale-troubleshoot.html":
         "https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting",
+"deploy/server/kubernetes/deploy-k8s-aks.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"deploy/server/linux/deploy-rhel.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"deploy/server/setting-up-socket-based-mattermost-database.html":
+        "https://docs.mattermost.com/deploy/server/preparations.html",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
@@ -2364,6 +2375,10 @@ redirects = {
         "https://docs.mattermost.com/guides/administration-guide.html",
 "guides/deployment.html":
         "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/deploy.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/admin.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -2483,7 +2498,7 @@ redirects = {
 "install/install-docker.html":
         "https://docs.mattermost.com/deploy/server/containers/install-docker.html",
 "install/installing-mattermost-omnibus.html":
-        "https://docs.mattermost.com/deploy/server/linux/deploy-omnibus.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/prepare-mattermost-mysql-database.html":
         "https://docs.mattermost.com/deploy/server/prepare-mattermost-mysql-database.html",
 "install/prepare-mattermost-database.html":
@@ -2505,15 +2520,15 @@ redirects = {
 "install/software-hardware-requirements.html":
         "https://docs.mattermost.com/deploy/software-hardware-requirements.html",
 "install/install-rhel.html":
-        "https://docs.mattermost.com/deploy/server/linux/deploy-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-tar.html":
-        "https://docs.mattermost.com/deploy/server/linux/deploy-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu.html":
-        "https://docs.mattermost.com/deploy/server/linux/deploy-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-kubernetes.html":
-        "https://docs.mattermost.com/deploy/server/kubernetes/deploy-k8s.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes-aks.html":
-        "https://docs.mattermost.com/deploy/server/kubernetes/deploy-k8s-aks.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/cluster-transport-encryption.html":
         "https://docs.mattermost.com/deploy/transport-encryption.html",
 "install/database-transport-encryption.html":
@@ -2539,7 +2554,7 @@ redirects = {
 "install/desktop-msi-gpo.html":
         "https://docs.mattermost.com/deploy/desktop/desktop-msi-installer-and-group-policy-install.html",
 "install/docker-ebs.html":
-        "https://docs.mattermost.com/deploy/server/containers/install-aws-beanstalk.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/docker-local-machine.html":
         "https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html",
 "install/ee-install.html":
@@ -2551,17 +2566,17 @@ redirects = {
 "install/installing-mattermost-desktop-app.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
 "install/install-kubernetes-cluster.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes-mattermost":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes-operator.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-ubuntu-1804.html":
-        "https://docs.mattermost.com/install/install-ubuntu",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004.html":
-        "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/mattermost-omnibus.html":
-        "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/outbound-proxy.html":
         "https://docs.mattermost.com/deploy/server/preparations.html#outbound-proxy-configuration",
 "install/prod-docker.html":
@@ -2585,7 +2600,7 @@ redirects = {
 "install/transport-encryption/config-mattermost.html":
         "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
 "install/use-kubernetes-mattermost.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/deploy-cloudron.html":
         "https://forum.mattermost.com/",
 "install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
@@ -2614,73 +2629,73 @@ redirects = {
 "install/deprecated-features.html":
 	"https://docs.mattermost.com/about/deprecated-features.html",
 "install/install-mattermost-server-tarball.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-6-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/mattermost-kubernetes-operator.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html#mattermost-operator",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-ubuntu-2004-server.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/heroku.html":
-        "https://docs.mattermost.com/guides/deployment.html",
+        "https://docs.mattermost.com/guides/deployment-guide.html",
 "install/install-rhel-7-server.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-server.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-postgresql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004-mysql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian-mysql.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-server.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-mysql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian-server.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-mysql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7-mysql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian-postgresql.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004-postgresql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-postgresql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/installing-ubuntu-1804-LTS.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-mattermost.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004-mattermost.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7-postgresql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/installing-ubuntu-2004-LTS.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-centos-oracle-scientific":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-common-intro.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-latest-tarball.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/setup-mattermost-server.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/common-prod-deploy-docker.html":
-        "https://docs.mattermost.com/deploy/server/containers/install-docker.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/common-deploy-faq.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-nginx.html":
         "https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html",
 "install/config-ssl-http2-nginx.html":
@@ -2692,41 +2707,56 @@ redirects = {
 "install/faq_kubernetes.html":
         "https://docs.mattermost.com/deploy/server/kubernetes/deploy-k8s.html",
 "install/common-prod-deploy-tar.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/common-prod-deploy-omnibus.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/common-local-deploy-docker.html":
-        "https://docs.mattermost.com/install/trial-mattermost-using-docker.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/install-rhel-8":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#download-the-latest-mattermost-server-tarball":
-        "https://docs.mattermost.com/install/install-rhel.html#download-the-latest-mattermost-server-tarball",
+        "hhttps://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#install":
-        "https://docs.mattermost.com/install/install-rhel.html#install",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#setup":
-        "https://docs.mattermost.com/install/install-rhel.html#setup",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#updates":
-        "https://docs.mattermost.com/install/install-rhel.html#updates",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#remove-mattermost":
-        "https://docs.mattermost.com/install/install-rhel.html#remove-mattermost",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#frequently-asked-questions":
-        "https://docs.mattermost.com/install/install-rhel.html#frequently-asked-questions",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#set-the-correct-contexts-for-opt-mattermost":
-        "https://docs.mattermost.com/install/install-rhel.html#set-bin-contexts-for-opt-mattermost-bin",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-kubernetes.html#install-mattermost-on-kubernetes":
-        "https://docs.mattermost.com/install/install-kubernetes.html#intended-outcome-and-deployment-recommendations",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#install-the-operators":
-        "https://docs.mattermost.com/install/install-kubernetes.html#installation-steps",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#mattermost-cloudnative-bootstrapper-sneak-peek":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#does-the-mattermost-operator-replace-the-mattermost-helm-chart":
-        "https://docs.mattermost.com/install/install-kubernetes.html#frequently-asked-questions",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-docker.html#deploy-mattermost-on-docker-for-production-use":
-        "https://docs.mattermost.com/deploy/server/containers/install-docker.html#deploy-mattermost-on-docker-quick-start",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/install-docker.html#installing-a-different-version-of-mattermost":
-        "https://docs.mattermost.com/deploy/server/containers/install-docker.html#install-a-different-version-of-mattermost",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/manage_kubernetes.html":
-        "https://docs.mattermost.com/deploy/server/kubernetes/deploy-k8s.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/trial-mattermost-using-docker.html":
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
+"install/install-docker.html":
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
+"install/install-kubernetes.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/install-kubernetes-aks.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/install-ubuntu.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/install-rhel.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/installing-mattermost-omnibus.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
@@ -3947,9 +3977,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '10.6'
+# version = '10.7'
 # The full version, including alpha/beta/rc tags.
-# release = '10.6'
+# release = '10.7'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -3966,7 +3996,7 @@ author = "Mattermost"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ["archive/*", "process/*", "/about/common-esr-support.md", "/about/common-esr-support-upgrade.md"]
+exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -4049,7 +4079,9 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/compass-icons.css"
+    "css/compass-icons.css",
+    "css/version-filter.css",
+    "css/changelog-filter.css"
 ]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
@@ -4059,6 +4091,8 @@ html_js_files = [
     "js/jquery.js",
     "js/thermometer.js",
     "js/myscript-v1.js",
+    "js/version-filter.js",
+    "js/changelog-filter.js"
 ]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
@@ -4083,7 +4117,7 @@ html_extra_path = ["_static/robots.txt"]
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
-html_additional_pages = {"index": "custom-index.html", "404": "404.html"}
+html_additional_pages = {"404": "404.html"}
 
 # If false, no module index is generated.
 # html_domain_indices = True

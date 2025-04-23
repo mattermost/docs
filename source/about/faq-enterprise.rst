@@ -1,5 +1,5 @@
-Enterprise Edition questions
-============================
+Enterprise Edition
+===================
 
 What is Mattermost Enterprise Edition?
 --------------------------------------

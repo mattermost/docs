@@ -1,3 +1,10 @@
+.. meta::
+   :name: robots
+   :content: noindex
+
+:orphan:
+:nosearch:
+
 You can deploy Mattermost server in **Preview Mode** on AWS Elastic Beanstalk using a Docker container. This is a great option for exploring functionality, testing, and development purposes, as it allows you to quickly set up a Mattermost instance without needing to manage the underlying infrastructure. This deployment method shouldn't be used in production environments.
 
 The Elastic Beanstalk application creation process below combines Application and Environment creation in a single workflow:

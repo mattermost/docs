@@ -282,7 +282,7 @@ On large deployments, also consider using the :ref:`search replicas <configure/e
 
 .. note::
 
-  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting directly to the underlying read-only node endpoints within the RDS cluster. We recommend circumventing the failover/load balancing that AWS/RDS takes care of (except for the write traffic). Mattermost has its own method of balancing the read-only connections, and can also balance those queries to the DataSource/write+read connection should those nodes fail. 
+  For an AWS High Availability RDS cluster deployment, don't hard-code the IP addresses. Point this configuration setting directly to the underlying read-only node endpoints within the RDS cluster. We recommend circumventing the failover/load balancing that AWS/RDS takes care of (except for the write traffic), and populating the ``DataSourceReplicas`` array with the RDS reader node endpoints. Mattermost has its own method of balancing the read-only connections, and can also balance those queries to the DataSource/write+read connection should those nodes fail.
 
 Mattermost distributes queries as follows:
 
@@ -355,7 +355,7 @@ The database can be configured for high availability and transparent failover us
 Recommended configuration settings for PostgreSQL
 ``````````````````````````````````````````````````
 
-If you're using PostgreSQL as the choice of database, we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance of PostgreSQL v11.7. There are also some general optimizations mentioned which requires servers with higher specifications.
+For the Postgres service we recommend the following configuration optimizations on your Mattermost server. These configurations were tested on an AWS Aurora r5.xlarge instance. There are also some general optimizations mentioned which requires servers with higher specifications.
 
 **Config for Postgres Primary or Writer node**
 
@@ -418,6 +418,28 @@ Copy all the above settings to the read replica, and modify or add only the belo
   # https://www.postgresql.org/docs/current/hot-standby.html#HOT-STANDBY-CONFLICT
   hot_standby = on
   hot_standby_feedback = on
+
+**A note on vacuuming**
+
+Performance of a Postgres database is particularly sensitive to `vacuuming and analyzing <https://www.postgresql.org/docs/current/sql-vacuum.html>`__. A good way to check how frequently tables are vacuumed is with this query:
+
+.. code-block:: sql
+
+  SELECT relname, n_tup_ins as inserts,n_tup_upd as updates,n_tup_del as deletes, n_live_tup as live_tuples, n_dead_tup as dead_tuples, n_mod_since_analyze, last_autovacuum, last_autoanalyze, autovacuum_count, autoanalyze_count FROM pg_stat_user_tables order by dead_tuples desc LIMIT 10;
+
+The output of this query will indicate which tables have accumulated the most dead tuples. You can also look at the ``last_autovacuum`` and ``last_autoanalyze`` columns to see when the last autovacuum or autoanalyze ran.
+
+Depending on those values, you can choose to tune table-specific values for autovacuum or autoanalyze thresholds. For example, if you see more than 50,000 dead tuples on a table, and it hasn't been vacuumed or analyzed in the last 6 months, there's a good chance that it would benefit from more aggressive vacuuming. In that case, you can run this to tune your tables:
+
+.. code-block:: sql
+
+  ALTER TABLE <table> SET (
+    autovacuum_vacuum_scale_factor = 0.1, -- default is 0.2
+    autovacuum_analyze_scale_factor = 0.05, -- default is 0.1
+    autovacuum_vacuum_cost_limit = 1000 -- default is 200
+  );
+
+Feel free to choose different values as necessary. Refer to https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM for more information on how does Postgres calculate when to run vacuuming. Re-run the initial SQL query from time to time and adjust values accordingly.
 
 Leader election
 ^^^^^^^^^^^^^^^^
