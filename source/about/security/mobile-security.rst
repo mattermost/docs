@@ -10,7 +10,7 @@ As the mobile app evolves with future enhancements like file sharing restriction
 Jailbreak and root detection
 -----------------------------
 
-Jailbreaking or rooting a device disables many built-in security measures, making the device prone to malware and unauthorized access. This protection enables Mattermost administrators to deny access to any mobile device that appears to have been tampered with or is running a non-standard version of the operating system. Additionally, a rooted device may stop checking for software updates and security patches, and it might not be able to install them because the kernel is no longer properly signed. 
+Jailbreaking or rooting a device disables many built-in security measures, making the device prone to malware and unauthorized access. This protection enables Mattermost administrators to deny access from any mobile device that appears to have been tampered with or is running a non-standard version of the operating system. Additionally, a rooted device may stop checking for software updates and security patches, and it might not be able to install them because the kernel is no longer properly signed. 
 
 By detecting such devices, Mattermost ensures that only secure, uncompromised devices can access sensitive data. When enabled by the system admin, this proactive measure ensures the underlying mobile platform operates reliably and performs the expected kernel and operating system security protections before sending any customer data to the Mattermost application, and minimizes risk in environments where personal device security cannot be guaranteed. Learn more about Mattermost mobile :ref:`jailbreak and root detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`.
 
