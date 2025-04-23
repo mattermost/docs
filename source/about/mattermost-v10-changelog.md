@@ -7,8 +7,10 @@
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.7.1, released **
-  - 
+- **10.7.1, released 2025-04-23**
+  - Fixed an issue by removing logic to disable plugins when Mattermost is embedded [MM-63507](https://mattermost.atlassian.net/browse/MM-63507).
+  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
+  - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
   - Mattermost v10.7.1 contains no database or functional changes.
 - **10.7.0, released 2025-04-16**
   - Original 10.7.0 release.
