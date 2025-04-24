@@ -164,7 +164,7 @@ You can use the ``mmctl import job show`` command to view any relevant errors th
 Additional tools
 ^^^^^^^^^^^^^^^^
 
-* `mm-emoji <https://github.com/maxwellpower/mm-emoji>`__ - Designed to smoothly transition emojis from a Slack instance to Mattermost.
+* `mm-emoji <https://github.com/users/maxwellpower/packages/container/package/mm-emoji>`__ - Designed to smoothly transition emojis from a Slack instance to Mattermost.
 * `mm-importjs <https://github.com/mickmister/mmimportjs>`__ - Breaks up large import files into smaller ones, as well as automatically remove null characters in post content when importing data to Mattermost.
 * `slack-migrate-pinned-posts <https://github.com/svelle/slack-migrate-pinned-posts>`__ - Migrates pinned posts from Slack to Mattermost.
 
