@@ -17,7 +17,7 @@ Important Upgrade Notes
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
 | v10.8                                              | New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero       |
-|                                                    | downtime is possible.                                                                                                                                            |
+|                                                    | downtime is expected.                                                                                                                                            |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.7                                              | Added new column ``BannerInfo`` in the ``Channels`` table for storing metadata for an upcoming licensed feature. The migration is fully backwards-compatible,    |
 |                                                    | non-locking, and zero downtime is possible. Below are the SQL queries included in the schema changes:                                                            |
