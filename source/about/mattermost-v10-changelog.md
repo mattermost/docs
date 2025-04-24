@@ -10,7 +10,7 @@
 **Release day: 2025-05-16**
 
 ### Important Upgrade Notes
- - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is possible.
+ - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
 
 ```{Important}
 If you upgrade from a release earlier than v10.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
