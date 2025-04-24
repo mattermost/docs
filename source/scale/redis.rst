@@ -89,7 +89,9 @@ Frequently asked questions (FAQ)
 Do I need to use Redis?
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-While Redis is not required for smaller Mattermost deployments, it is highly recommended for large-scale installations, especially those with more than 100,000 users. Redis significantly improves performance by reducing database load and optimizing common operations.
+While Redis is not required for smaller Mattermost deployments, it is highly recommended for large-scale installations.
+- If your installation has more than 100K users, Redis is highly recommended. Redis significantly improves performance by reducing database load and optimizing common operations.
+- If your installation has less than 100K users, Redis is not recommended.
 
 Should I install Redis on the same machine as Mattermost Server?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
