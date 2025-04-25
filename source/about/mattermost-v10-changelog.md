@@ -182,6 +182,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 - **10.5.4, released **
   - Mattermost v10.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens [MM-63582](https://mattermost.atlassian.net/browse/MM-63582).
+  - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
   - Mattermost v10.5.4 contains no database or functional changes.
 - **10.5.3, released 2025-04-15**
   - Mattermost v10.5.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
