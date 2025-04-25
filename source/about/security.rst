@@ -98,7 +98,7 @@ Mattermost writes logs to both the console and to a log file in a machine-readab
 Activity monitoring
 ~~~~~~~~~~~~~~~~~~~~
 
-Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for deleting messages and channels only removes the data from the user interface; the data is retained within your database. If your compliance guidelines require it, you can disable users' ability to edit and delete their messages after they are posted. Learn more about :doc:`Mattermost permissions </onboard/advanced-permissions>`.
+Mattermost stores a complete history of messages, including edits and deletes, along with all files uploaded. User interface actions for deleting messages and channels only remove the data from the user interface; the data is retained within your database. If your compliance guidelines require it, you can disable users' ability to edit and delete their messages after they are posted. Learn more about :doc:`Mattermost permissions </onboard/advanced-permissions>`.
 
 The Mattermost mobile app generates audit logs that record user activities and system events. These logs enable administrators to monitor access and identify potential security threats, ensuring timely detection and response to suspicious behavior.
 
