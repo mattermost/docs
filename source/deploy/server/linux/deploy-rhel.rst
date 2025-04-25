@@ -221,7 +221,7 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
     See the following SELinux resources for additional details:
 
       - `SELinux User's and Administrator's Guide <https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide/index>`_
-      - `SELinux Project Wiki <https://selinuxproject.org/page/Main_Page>`_
+      - `SELinux Project Wiki <https://github.com/SELinuxProject/selinux>`_
       - `Introduction to SELinux <https://github.blog/developer-skills/programming-languages-and-frameworks/introduction-to-selinux/>`_
       - `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
       - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
