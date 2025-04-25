@@ -9,7 +9,7 @@
 
 - **10.7.1, released 2025-04-23**
   - Mattermost v10.7.1 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Fixed an issue by removing logic to disable plugins when Mattermost is embedded [MM-63507](https://mattermost.atlassian.net/browse/MM-63507).
+  - Fixed an issue where plugins were disabled when Mattermost was embedded [MM-63507](https://mattermost.atlassian.net/browse/MM-63507).
   - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
   - Stopped logging websocket PING events received by the server [MM-63693](https://mattermost.atlassian.net/browse/MM-63693).
   - Mattermost v10.7.1 contains no database or functional changes.
