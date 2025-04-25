@@ -11,13 +11,6 @@ Mattermost offers a comprehensive set of security features to protect informatio
    /about/security/zero-trust.rst
    /about/security/mobile-security.rst
 
-FIPS 140-2 Cryptography and STIG container
--------------------------------------------
-
-From the Mattermost v10.5 extended support release, FIPS-compliant Docker images are built using `Chainguard's FIPS-certified base containers <https://images.chainguard.dev/directory/image/go-openssl/versions>`_. These images help meet stringent security requirements, ensuring compliance with cryptography standards set forth by the Federal Information Processing Standards (FIPS).
-
-This Docker image is compliant with the U.S. Government Security Technical Implementation Guides (STIG) – specifically the General Purpose Operating System (GPOS) Security Requirements Guide (SRG) — an SRG that specifies security requirements for general purpose operating systems running in a network. 
-
 Data-in-transit encryption
 ---------------------------
 

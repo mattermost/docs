@@ -5,21 +5,19 @@ Mattermost mobile is built with a robust security framework to protect user data
 
 Continuous compliance through :ref:`secure SDLC practices and proactive vulnerability management <deploy/mobile/mobile-security-features:security compliance>` further reinforces the platform’s resilience.
 
-As the mobile app evolves with future enhancements like file sharing restrictions, Mattermost is committed to delivering a secure, reliable mobile experience.
-
 Jailbreak and root detection
 -----------------------------
 
 Jailbreaking or rooting a device disables many built-in security measures, making the device prone to malware and unauthorized access. This protection enables Mattermost administrators to deny access from any mobile device that appears to have been tampered with or is running a non-standard version of the operating system. Additionally, a rooted device may stop checking for software updates and security patches, and it might not be able to install them because the kernel is no longer properly signed. 
 
-By detecting such devices, Mattermost ensures that only secure, uncompromised devices can access sensitive data. When enabled by the system admin, this proactive measure ensures the underlying mobile platform operates reliably and performs the expected kernel and operating system security protections before sending any customer data to the Mattermost application, and minimizes risk in environments where personal device security cannot be guaranteed. Learn more about Mattermost mobile :ref:`jailbreak and root detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`.
+By detecting such devices, Mattermost ensures that only secure, uncompromised devices can access sensitive data. When enabled by the system admin, this proactive measure ensures the underlying mobile platform operates reliably and performs the expected kernel and operating system security protections before sending any customer data to the Mattermost application, and minimizes risk in environments where personal device security cannot be guaranteed. Learn more about Mattermost :ref:`mobile jailbreak and root detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`.
 
 Biometric authentication
 ------------------------
 
-Native biometric authentication of the user ensures only the authorized device owner is allowed to open the Mattermost application. Biometric authentication uses hardware-level security to significantly enhance data security. 
+Native biometric authentication ensures only the authorized device owner can access the Mattermost application. By utilizing hardware-level security, biometrics significantly enhance data protection, especially in cases of lost or stolen devices. This advanced security measure is far more robust and user-friendly compared to traditional passwords, adding a resilient layer of protection against unauthorized access.
 
-Biometric authentication significantly enhances security by ensuring that even if a device is lost or stolen, only an authorized user can access the application. It leverages the strengths of hardware-level security, making it far more challenging for attackers to bypass compared to traditional passwords. Biometrics add a layer of security that is both user-friendly and resistant to unauthorized access, especially in a mobile context. Administrators can require the hardware biometric to authenticate the user each time they attempt to access the Mattermost application. This adds another layer of protection to Mattermost customer data, substantially containing the risk from lost or stolen devices. Learn more about Mattermost mobile :ref:`biometric authentication <deploy/mobile/mobile-security-features:biometric authentication>`.
+Administrators can mandate biometric authentication each time users attempt to open the Mattermost application, further safeguarding customer data and mitigating risks. Learn more about Mattermost :ref:`mobile biometric authentication <deploy/mobile/mobile-security-features:biometric authentication>`, and the :ref:`user workflows in which users must authenticate <configure/environment-configuration-settings:enable biometric authentication>`, when biometric authentication is enabled.
 
 Screenshot and screen recording prevention
 -------------------------------------------

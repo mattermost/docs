@@ -25,7 +25,7 @@ Biometric authentication
 
 Mattermost integrates with iOS Face ID/Touch ID and Android’s Biometric API. When enabled by the server administrator, biometric checks are required before accessing specific servers, and the Mattermost mobile app mandates that a device PIN or biometric lock is active.
 
-See the :ref:`biometric authentication configuration setting <configure/environment-configuration-settings:enable biometric authentication>` documentation for details on enabling this feature.
+See the :ref:`biometric authentication configuration setting <configure/environment-configuration-settings:enable biometric authentication>` documentation for details on enabling this feature and the user workflows in which users must authenticate.
 
 .. note::
 
