@@ -48,7 +48,8 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
  - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens. 
  - Fixed an issue where there were invalid restrictions on local mode administration (e.g. via mmctl). 
  - Fixed an issue where users were not able to escape emoticon formatting by prefixing with a backslash. 
- - Fixed an issue with post links trapping focus when hovered or focused using the keyboard. 
+ - Fixed an issue with post links trapping focus when hovered or focused using the keyboard.
+ - Fixed an issue where plugins were disabled when Mattermost was embedded.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
