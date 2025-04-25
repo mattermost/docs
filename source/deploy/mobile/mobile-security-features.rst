@@ -46,14 +46,20 @@ See the :ref:`prevent screen capture configuration setting <configure/environmen
 
   This feature prevents screen recording and screenshot capture on the mobile device where the Mattermost app is running. It cannot control or prevent recording from external devices, such as another phone or camera pointed at the screen. Mattermost provides these protections through mobile OS-level capabilities but cannot guarantee absolute prevention of visual data capture through other means.  
 
-App sandboxing and secure data storage
----------------------------------------
+Mobile data isolation
+------------------------
+
+Mattermost mobile applications are designed to ensure that sensitive data is stored securely and isolated from other applications on the device. This isolation is achieved through a combination of OS-level security features, app sandboxing, and secure data storage practices.
 
 Mattermost stores 3 types of data within the mobile app: 
 
 - **SQLite Database**: For offline access to posts and channels that the user has viewed.
 - **Cached Files**: For temporary storage (e.g., PDFs) of viewed files. They are periodically purged. 
 - **Logs**: Minimal logs kept for troubleshooting purposes.
+
+The Mattermost mobile app for Apple iOS and Android devices uses the native OS security architecture to encrypt data-at-rest on mobile devices, ensuring that stored information remains secure even if the device is lost or stolen. This encryption protects sensitive data, such as messages and files, from unauthorized access. 
+
+Data stored by the Mattermost mobile app only resides within the app’s private storage container. This storage location is isolated by each platform’s rigorous sandboxing model. Learn more about :doc:`secure file storage </deploy/mobile/secure-mobile-file-storage>` for Mattermost mobile applications.
 
 Security measures
 ~~~~~~~~~~~~~~~~~~

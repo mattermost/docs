@@ -16,85 +16,79 @@ Data-in-transit encryption
 
 Mattermost can be configured to use Transport Layer Security (TLS) to encrypt data transmitted over the network. TLS provides a secure channel for data exchange, protecting it from eavesdropping and tampering during transmission. This encryption ensures that only the intended recipients can access the content, preventing unauthorized parties from intercepting or reading the information.
 
-Mattermost allows administrators to configure access settings for private and public networks. This feature ensures that mobile devices connected to secure networks can safely access the application while restricting access from untrusted networks. Learn more about Mattermost :ref:`data-in-transit encryption <deploy/encryption-options:encryption-in-transit>`.
+Mattermost administrators who wish to configure access settings for private and public networks can do so with 3rd party infrastructure using a :doc:`reverse proxy </deploy/server/setup-tls>`. This ensures that devices connected to secure networks can safely access the application while restricting access from untrusted networks. Learn more about Mattermost :ref:`data-in-transit encryption <deploy/encryption-options:encryption-in-transit>`.
 
 Data-at-rest encryption
 ------------------------
 
-The Mattermost mobile app for Apple iOS and Android devices uses the native OS security architecture to encrypt data-at-rest on mobile devices, ensuring that stored information remains secure even if the device is lost or stolen. This encryption protects sensitive data, such as messages and files, from unauthorized access. Learn more about Mattermost :ref:`data-at-rest encryption <deploy/encryption-options:encryption-at-rest>`.
+Encryption-at-rest ensures that messages, files, and other data stored in the Mattermost database and file storage are protected from unauthorized access by safeguarding data on physical storage media (e.g., disks) by encrypting it, making it inaccessible without the appropriate encryption keys. Learn more about Mattermost :ref:`data-at-rest encryption <deploy/encryption-options:encryption-at-rest>`.
 
 Encryption-at-rest also available for files stored in Amazon's proprietary S3 system using server-side encryption with :ref:`Amazon S3-managed keys <configure/environment-configuration-settings:enable server-side encryption for amazon s3>` (Mattermost Enterprise) when users choose not to use open source options.
 
-Data stored by the Mattermost mobile app only resides within the app’s private storage container. This storage location is isolated by each platform’s rigorous sandboxing model. Learn more about :doc:`secure file storage </deploy/mobile/secure-mobile-file-storage>` for Mattermost mobile applications.
+We strongly recommend regularly rotating and securely storing encryption keys using tools, enabling logging and monitoring for access to encrypted data, and ensuring that backup data is encrypted.
 
 Authentication and access control
 ---------------------------------
-
-Multi-Factor Authentication (MFA)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-An additional layer of security beyond username and password. Customers can :doc:`enable and enforce MFA </onboard/multi-factor-authentication>` to protect accounts from unauthorized access, even if login credentials are compromised.
-
-Protection against brute force attacks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-System administrators can :doc:`rate limit Mattermost APIs </configure/environment-configuration-settings>` based on query frequency, memory store size, remote address, and headers. Session fixation attacks are mitigated as Mattermost sets a new session cookie with each login.
-
-Session management
-~~~~~~~~~~~~~~~~~~
-
-System administrators can configure session management settings, including session length, session cache, and idle timeout to ensure user sessions are managed effectively and securely. Learn more about :ref:`session management configuration settings <configure/environment-configuration-settings:session lengths>`.
-
-Remote session revocation & password reset
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-System administrators can remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and desktop apps.
-User passwords can be remotely :ref:`reset <configure/user-management-configuration-settings:reset user's password>` to enhance security. Admins can also enforce re-login after a specified period of time.
-
-Cross-origin requests control
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Choose whether to restrict or enable :ref:`cross-origin requests <configure/integrations-configuration-settings:enable cross-origin requests from>` for enhanced control.
-
-Public Link Management
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Public links for account creation, file, and image shares can be invalidated by :ref:`regenerating salts <configure/site-configuration-settings:public link salt>` to ensure security.
 
 Single Sign-On (SSO)
 ~~~~~~~~~~~~~~~~~~~~
 
 The mobile application integrates with Single Sign-On providers, allowing users to authenticate using their existing credentials from other trusted systems. This reduces the risk of password-related security breaches and streamlines the login process. Learn more about Mattermost :doc:`SSO </manage/admin/user-provisioning>`.
 
+Multi-Factor Authentication (MFA)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An additional layer of security beyond username and password. Customers can :doc:`enable and enforce MFA </onboard/multi-factor-authentication>` to protect accounts from unauthorized access, even if login credentials are compromised.
+
+User password requirements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System administrators can configure user password settings to help safeguard the platform against a range of common attack vectors while maintaining usability and compliance with enterprise security policies:
+
+- Enforcing longer passwords ensures a baseline level of strength for every user's credentials. Learn more about configuring a :ref:`minimum password length <configure/authentication-configuration-settings:minimum password length>`.
+- Enforcing character complexity protects against attackers exploiting weak or overly simple passwords by enforcing passwords that resist dictionary attachs and common password vulnerabilities. Learn more about configuring :ref:`password requirements <configure/authentication-configuration-settings:password requirements>`.
+- Limiting the number of failed authentication attempts before locking the account temporarily or permanently mitigates brute-force and credential-stuffing attacks, where attackers attempt to guess passwords by repeatedly entering potential combinations. Learn more about configuring the :ref:`maximum number of login attempts <configure/authentication-configuration-settings:maximum login attempts>`.
+- Enabling the forgot password flow adds a layer of convenience by ensuring users can reset their password when needed while preventing users from being locked out due to legitimate loss of credentials. Learn more about :ref:`enabling a password reset workflow <configure/authentication-configuration-settings:enable forgot password link>`.
+
+Session management
+~~~~~~~~~~~~~~~~~~
+
+System administrators can configure session management settings, including session length, session cache, and idle timeout to ensure user sessions are managed effectively and securely. Session fixation attacks are mitigated as Mattermost sets a new session cookie with each login. Learn more about :ref:`session management configuration settings <configure/environment-configuration-settings:session lengths>`.
+
+Protection against brute force attacks
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System administrators can :doc:`rate limit Mattermost APIs </configure/environment-configuration-settings>` based on query frequency, memory store size, remote address, and headers.
+
+Remote session revocation & password reset
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System administrators can remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and desktop apps.
+User passwords can be remotely :ref:`reset <configure/user-management-configuration-settings:reset user's password>` to enhance security. 
+
+Admins can also enforce re-login after a specified period of time by defining :ref:`session lengths <configure/environment-configuration-settings:session lengths>` and by :ref:`revoking user sessions <configure/user-management-configuration-settings:revoke a user's session>` to force users to log back into the system immediately.
+
 Role-Based Access Control (ABAC)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Administrators can set granular permissions to control access to sensitive information within the application. This feature ensures that users only have access to the data necessary for their roles, minimizing the risk of accidental or intentional data exposure. Learn more about Mattermost :doc:`role-based access control </collaborate/learn-about-roles>`.
 
-Copilot context management
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Cross-origin requests control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Learn how Mattermost :doc:`Copilot manages LLM context </collaborate/copilot-context-management>` and how to ensure data privacy.
+Choose whether to restrict or enable :ref:`cross-origin requests <configure/integrations-configuration-settings:enable cross-origin requests from>` for enhanced control.
 
-Mobile Device Management (MDM)
-------------------------------
+Public link management
+----------------------
 
-Mattermost supports the ability for an EMM provider to push Mattermost Mobile apps to EMM-enrolled devices. This approach is recommended for organizations that typically use EMM solutions to deploy Mobile apps to meet security and compliance policies. Learn more about :doc:`deploying Mattermost mobile using an EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider>`.
+Public links for account creation, file, and image shares can be invalidated by :ref:`regenerating salts <configure/site-configuration-settings:public link salt>` to ensure security.
 
-Remote wipe capability
-~~~~~~~~~~~~~~~~~~~~~~~
+Public links can also be disabled by setting the :ref:`public link salt <configure/site-configuration-settings:public link salt>` to an empty string. This prevents the creation of new public links and invalidates existing ones.
 
-Administrators can remotely wipe Mattermost data from mobile devices in case of loss or theft. This capability prevents unauthorized access to sensitive information by ensuring that data is erased from compromised devices. 
+LLM context management
+-----------------------
 
-Compliance policies
-~~~~~~~~~~~~~~~~~~~~
-
-Mattermost can be integrated with mobile device management solutions to enforce compliance policies. These policies ensure that mobile devices accessing the application adhere to security standards, such as encryption, password complexity, and device integrity. Learm more about :doc:`compliance with Mattermost </guides/compliance-with-mattermost>`.
-
-Mobile access platforms
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost mobile applications can be operated under the protection of mobile access platforms like `Hypori <https://www.hypori.com/>`_.
+Mattermost Copilot is designed to ensure that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses in Mattermost. Learn how Mattermost :doc:`Copilot manages LLM context </collaborate/copilot-context-management>` and how to ensure data privacy.
 
 Audit logs and monitoring
 -------------------------
@@ -108,11 +102,6 @@ Mattermost stores a complete history of messages, including edits and deletes, a
 
 The Mattermost mobile app generates audit logs that record user activities and system events. These logs enable administrators to monitor access and identify potential security threats, ensuring timely detection and response to suspicious behavior.
 
-Alerts and notifications
-~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost can send alerts and notifications to administrators when security-related events occur. This feature ensures that potential issues are promptly addressed, minimizing the impact of security incidents on the organization. Learn about :doc:`managing Mattermost notifications </preferences/manage-your-notifications>`.
-
 Regular security updates
 ------------------------
 
@@ -125,34 +114,6 @@ Community and expert contributions
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Being an open-core platform, Mattermost benefits from contributions from the security community and experts. These contributions help identify and mitigate potential security risks, ensuring that the mobile application remains robust and secure. Learn more about `contributing to Mattermost <https://mattermost.com/contribute/>`_.
-
-User education and training
----------------------------
-
-Security awareness
-~~~~~~~~~~~~~~~~~~~
-
-Mattermost provides resources and training materials to educate users about security best practices. These resources help users understand the importance of security measures and how to apply them effectively within the mobile application.
-
-Security updates
-^^^^^^^^^^^^^^^^^
-
-Visit `Mattermost Security Updates & Disclosures <https://mattermost.com/security-updates/>`_ for details on updates based on ongoing security analysis and penetration testing. Security issues are reported confidentially under the `Mattermost Responsible Disclosure Policy <https://mattermost.com/security-vulnerability-report/>`_, ensuring updates are provided prior to public disclosure.
-
-Penetration testing
-^^^^^^^^^^^^^^^^^^^^
-
-Mattermost conducts penetration tests at least once every 12 months. Customers may request penetration test results within 5 days' written notice, limited to one request per 12-month period.
-
-Internal security policies
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For information on internal security guidelines, policies, development standards, and enterprise-related FAQs, refer to the `Security Policies Documentation <https://handbook.mattermost.com/operations/operations/company-policies/security-policies>`_ in the Mattermost Handbook.
-
-Incident response
-~~~~~~~~~~~~~~~~~~
-
-Mattermost offers guidance on how to :doc:`respond to security incidents </about/incident-response-collaboration>`, including steps to take in case of a data breach or compromise. This training ensures that users are prepared to handle security challenges and protect sensitive information proactively.
 
 HIPAA compliance*
 -----------------

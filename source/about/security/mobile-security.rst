@@ -5,6 +5,26 @@ Mattermost mobile is built with a robust security framework to protect user data
 
 Continuous compliance through :ref:`secure SDLC practices and proactive vulnerability management <deploy/mobile/mobile-security-features:security compliance>` further reinforces the platform’s resilience.
 
+Mobile Device Management (MDM)
+------------------------------
+
+Mattermost supports the ability for an EMM provider to push Mattermost Mobile apps to EMM-enrolled devices. This approach is recommended for organizations that typically use EMM solutions to deploy Mobile apps to meet security and compliance policies. Learn more about :doc:`deploying Mattermost mobile using an EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider>`.
+
+Remote wipe capability
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Administrators can remotely wipe Mattermost data from mobile devices in case of loss or theft. This capability prevents unauthorized access to sensitive information by ensuring that data is erased from compromised devices. 
+
+Compliance policies
+~~~~~~~~~~~~~~~~~~~~
+
+Mattermost can be integrated with mobile device management solutions to enforce compliance policies. These policies ensure that mobile devices accessing the application adhere to security standards, such as encryption, password complexity, and device integrity. Learm more about :doc:`compliance with Mattermost </guides/compliance-with-mattermost>`.
+
+Mobile access platforms
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost mobile applications can be operated under the protection of mobile access platforms like `Hypori <https://www.hypori.com/>`_. These platforms provide an additional layer of security by creating a virtualized environment for mobile applications, ensuring that sensitive data is isolated from the device's operating system. This approach enhances data protection and minimizes the risk of data leakage or unauthorized access.
+
 Jailbreak and root detection
 -----------------------------
 
@@ -27,7 +47,7 @@ Preventing screenshots and screen recordings protects sensitive information from
 App sandboxing and secure data storage
 ---------------------------------------
 
-Sandboxing is a critical defense that isolates the application’s data from other apps—even if malicious software is present on the device. This isolation helps maintain user privacy and data integrity by ensuring that only Mattermost has access to its stored data. Learn more about Mattermost :ref:`mobile app sandboxing and secure data storage <deploy/mobile/mobile-security-features:app sandboxing and secure data storage>`.
+Sandboxing is a critical defense that isolates the application’s data from other apps—even if malicious software is present on the device. This isolation helps maintain user privacy and data integrity by ensuring that only Mattermost has access to its stored data. Learn more about Mattermost :ref:`mobile app sandboxing and secure data storage <deploy/mobile/mobile-security-features:mobile data isolation>`.
 
 Learn more about how Mattermost leverages robust sandboxing mechanisms on both iOS and Android to :doc:`securely store files </deploy/mobile/secure-mobile-file-storage>` in its cache folder within the application container, ensuring isolation from unauthorized third-party apps.
 
