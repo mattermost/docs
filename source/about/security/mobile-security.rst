@@ -42,7 +42,7 @@ Administrators can mandate biometric authentication each time users attempt to o
 Screenshot and screen recording prevention
 -------------------------------------------
 
-Preventing screenshots and screen recordings protects sensitive information from being inadvertently or maliciously shared. This control is essential in ensuring that confidential communications and data remain within the secure confines of the app. By blocking unauthorized screen captures, Mattermost significantly reduces the risk of data leakage via visual content. users from taking screenshots or recording their screens on the mobile device. This feature ensures that users can not intentionally or inadvertently capture an image of any information shared in Mattermost. Learn more about Mattermost :ref:`mobile screenshot and screen recording prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`.
+Preventing screenshots and screen recordings protects sensitive information from being inadvertently or maliciously shared. This control is essential in ensuring that confidential communications and data remain within the secure confines of the app. By blocking unauthorized screen captures, Mattermost significantly reduces the risk of data leakage via visual content by preventing users from taking screenshots or recording their screens on the mobile device. This feature ensures that users can not intentionally or inadvertently capture an image of any information shared in Mattermost. Learn more about Mattermost :ref:`mobile screenshot and screen recording prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`.
 
 App sandboxing and secure data storage
 ---------------------------------------
