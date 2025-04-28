@@ -9,7 +9,7 @@ Redis is an open-source, in-memory data structure store used as a database, cach
 Deployment guide
 ----------------
 
-Deploying Redis with Mattermost includes the following two steps: `setting up the Redis server <#set-up-a-redis-server>`__, and `configuring Redis in Mattermost <#configure-redis-in-mattermost>`__.
+Deploying Redis with Mattermost includes the following 2 steps: `setting up the Redis server <#set-up-a-redis-server>`__, and `configuring Redis in Mattermost <#configure-redis-in-mattermost>`__.
 
 Set up a Redis server
 ~~~~~~~~~~~~~~~~~~~~~
