@@ -165,4 +165,14 @@ The playbook below aims to test and confirm that files stored in the Mattermost 
 
    The steps above use the Files app of Google and iOS. Repeat these tests using each suggested app on different devices and OS versions (both Android and iOS) to ensure that the private cache folder remains inaccessible under all conditions.
 
+Test Execution & Findings
+--------------------------
+
+Mattermost  executed the playbook above — including scanning for hidden files — both during normal operation and after forcing the app to stop or crash—and observed the following:
+
+- **Devices Tested**: iPhone 12, iOS 18.4, Android 11 
+- **Apps Used**: Adobe Reader, Google Files app, Android’s native Files app, iOS Files app, Files Media Manager, Hidden Files Finder, Hidden Files Finder & Recover
+- **Results**: Third-party file browsers and recovery tools consistently failed to access the Mattermost app’s cache folder or its contents. Access was only possible when files were explicitly downloaded or shared via Mattermost’s controlled functionality by an authorized user.  
+- **Outcome**: Files remain isolated within the app container, adhering to platform security guidelines and protecting against unauthorized access.  
+
 The documented testing procedures confirm that the app’s file storage remains inaccessible to unauthorized third-party applications, thereby maintaining a strong security posture. Coupled with strong authentication and native OS encryption, the Mattermost mobile app provides a robust framework that keeps sensitive data on mobile devices confined to authorized users while addressing key access control and risk mitigation requirements.
