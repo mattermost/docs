@@ -943,10 +943,9 @@ Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
-| When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
-| :doc:`Elasticsearch </scale/elasticsearch>`,                  | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| the database can be disabled to perform searches.             | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
-|                                                               |                                                                              |
+| When `enterprise-scale search </scale/enterprise-search>`,    | - System Config path: **Environment > Database**                             |
+| database search can be disabled from performing searches.     | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
+|                                                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | - **true**: Disables the use of the database to perform       |                                                                              |
 |   searches. If another search engine isn't configured,        |                                                                              |
 |   setting this value to ``true`` will result in empty search  |                                                                              |
@@ -956,20 +955,20 @@ Disable database search
 
 Search behavior in Mattermost depends on which search engines are enabled:
 
-- When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.
+- When :doc:`Elasticsearch </scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
 - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
-- If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
+- If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
 
 .. note::
 
   Disabling this configuration setting in larger deployments may improve server performance in the following areas:
 
-  - Reduced Database Load: When database search is enabled, every search query executed by users needs to interact with the database, leading to additional load on the database server. By disabling database search, you can avoid these queries, thereby reducing the database load.
-  - Improved Response Time: Database searches can be time-consuming, especially with large datasets. Disabling database search can result in faster response times because the system no longer spends time fetching and processing search results from the database.
-  - Offloading Search to Indexing Services: Disabling database search often means that searches are offloaded to specialized indexing services like Elasticsearch, which are optimized for search operations. These services can provide faster and more efficient search capabilities compared to traditional database searches.
-  - Lower Resource Consumption: Running search queries directly against the database can be resource-intensive (using CPU and memory). With database search disabled, these resources can be allocated to other critical functions, improving overall system performance.
-  - Enhanced Scalability: As the number of users and data volume grow, database search can become less efficient. Specialized search services are designed to scale more effectively, enhancing overall system scalability and performance.
+  - **Reduced Database Load**: When database search is enabled, every search query executed by users needs to interact with the database, leading to additional load on the database server. By disabling database search, you can avoid these queries, thereby reducing the database load.
+  - **Improved Response Time**: Database searches can be time-consuming, especially with large datasets. Disabling database search can result in faster response times because the system no longer spends time fetching and processing search results from the database.
+  - **Offloading Search to Indexing Services**: Disabling database search often means that searches are offloaded to specialized indexing services like Elasticsearch, which are optimized for search operations. These services can provide faster and more efficient search capabilities compared to traditional database searches.
+  - **Lower Resource Consumption**: Running search queries directly against the database can be resource-intensive (using CPU and memory). With database search disabled, these resources can be allocated to other critical functions, improving overall system performance.
+  - **Enhanced Scalability**: As the number of users and data volume grow, database search can become less efficient. Specialized search services are designed to scale more effectively, enhancing overall system scalability and performance.
   - However, the ability to perform database searches in Mattermost is a critical feature for many users, particularly when other search engines aren't enabled. Disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
 
 Applied schema migrations
@@ -1219,7 +1218,7 @@ Elasticsearch
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`Elasticsearch </scale/elasticsearch>` in our product documentation.
+Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`Elasticsearch </scale/elasticsearch-setup>` in our product documentation.
 
 You can configure the Elasticsearch environment in which Mattermost is deployed in **System Console > Environment > Elasticsearch**. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
@@ -1256,7 +1255,7 @@ Enable Elasticsearch indexing
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Backend
   :environment: MM_ELASTICSEARCHSETTINGS_BACKEND
-  :description: Set the type of search backend as either Elasticsearch or Opensearch.
+  :description: Set the type of search backend as either Elasticsearch or OpenSearch.
 
 Backend type
 ~~~~~~~~~~~~~
@@ -1265,28 +1264,11 @@ Backend type
 | The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                             |
 |                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.Backend: elasticsearch",``   |
 | - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                      |
-| - ``opensearch`` - Required for AWS Opensearch     |                                                                                   |
+| - ``opensearch`` - Required for AWS OpenSearch     |                                                                                   |
 |   customers.                                       |                                                                                   |
 +----------------------------------------------------+-----------------------------------------------------------------------------------+
 
-.. important::
-
-  Mattermost v9.11 introduces support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ and beta support for `Opensearch v1.x and v2.x <https://opensearch.org/>`_.
-
-  - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
-  - Customers using Elasticsearch v8 must set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to enable wildcard operations.
-
-  **AWS Elasticsearch Customers**
-
-  The official AWS Elasticsearch v8 client only works from Elasticsearch v7.11 and later. This is a breaking change for customers using AWS Elasticsearch v7.10.x. If you're using AWS Elasticsearch, you must upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
-
-  If you're using AWS Elasticsearch, you must:
-
-    1. Upgrade to AWS Opensearch for future compatibility. Refer to the `Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
-    2. Disable "compatibility mode" in Opensearch.
-    3. Upgrade the Mattermost server.
-    4. Change the default ``ElasticsearchSettings.Backend`` configuration value from ``elasticsearch`` to ``opensearch`` using :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>`, or by editing the ``config.json`` file manually. This value cannot be changed using the System Console. See the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` documentation for additional details.
-    5. Restart the Mattermost server.
+Learn more about :ref:`enterprise search version support <scale/enterprise-search:supported paths>`.
 
 .. config:setting:: server-connection-address
   :displayname: Server connection address (Elasticsearch)
@@ -1710,7 +1692,7 @@ Aggregate search indexes
 
 .. note::
 
-  If you’re using :doc:`data retention </comply/data-retention-policy>` and :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.
+  If you’re using :doc:`data retention </comply/data-retention-policy>` and :doc:`Elasticsearch </scale/elasticsearch-setup>`, configure this with a value greater than your data retention policy.
 
 .. config:setting:: post-aggregator-start-time
   :displayname: Post aggregator start time (Elasticsearch)
