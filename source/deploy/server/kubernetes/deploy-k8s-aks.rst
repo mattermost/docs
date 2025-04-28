@@ -69,7 +69,7 @@ The installation process includes deploying Mattermost and updating the server.
 
   a. Enforcing a minimum TLS version (e.g., TLS 1.2).  
   b. Deploying a Web Application Firewall (WAF) for additional protection, if supported by your ingress controller.  
-  c.  Limiting access using Kubernetes Network Policies. 
+  c. Limiting access using Kubernetes Network Policies. 
 
   .. image:: /_static/images/azure/networking-details.png
     :alt: An example of the Azure AKS Networking Details setup screen.
