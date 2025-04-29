@@ -180,7 +180,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Upload your valid Enterprise License under Edition and License
  - Ensure site URL is set appropriately for your production, dev and staging environments
  - Add your database configuration to **System Console > Environment > Database**
- - Add your Elasticsearch configuration to **System Console > Environment > Elasticsearch**
+ - Add your Elasticsearch or AWS OpenSearch configuration to **System Console > Environment > Elasticsearch**
  - Add your file storage system configuration to **System Console > Environment > File Storage** 
  - Add your proxy configuration to **System Console > Environment > Image Proxy** 
  - Add your SMTP configuration to **System Console > Environment > SMTP**

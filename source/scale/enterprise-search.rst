@@ -6,9 +6,9 @@ Enterprise search
 
 Mattermost database search starts to show performance degradation at around 2 million posts, on a server with 32 GB RAM and 4 CPUs. If you anticipate your Mattermost server reaching more than 2.5 million posts, we recommend enabling `Elasticsearch <#elasticsearch>`__ or `AWS OpenSearch Service <#aws-opensearch-service>`__ for optimum search performance **before** reaching 3 million posts. Both tools are highly capable and can handle enterprise-scale workloads. The choice between them depends on the following factors:
 
-- **Licensing and cost**: OpenSearch may be preferable for organizations avoiding proprietary licensing or opting for cost-effective solutions.
+- **Licensing and cost**: AWS OpenSearch may be preferable for organizations avoiding proprietary licensing or opting for cost-effective solutions.
 - **Feature requirements**: Elasticsearch's proprietary features (e.g., advanced analytics, security suites) may be preferred by organizations needing powerful out-of-the-box functionality.
-- **Infrastructure alignment**: OpenSearch aligns well with AWS-centric environments, while Elasticsearch offers broader integrations.
+- **Infrastructure alignment**: AWS OpenSearch aligns well with AWS-centric environments, while Elasticsearch offers broader integrations.
 
 .. toctree::
     :maxdepth: 1
@@ -40,8 +40,6 @@ Review the following support paths for enterprise search based on the version yo
 .. tab:: Elasticsearch v8
 
     `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. While Mattermost supports Elasticsearch v7.17+, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
-
-    When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
 .. tab:: AWS OpenSearch Service
 

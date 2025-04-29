@@ -1947,7 +1947,8 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
-
+"configure/environment-configuration-settings.html#elasticsearch":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
