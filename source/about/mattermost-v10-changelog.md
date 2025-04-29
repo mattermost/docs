@@ -96,7 +96,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.6-feature-release)=
 ## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.6.3, released **
+- **10.6.3, released 2025-04-29**
   - Mattermost v10.6.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.6.3 contains no database or functional changes.
 - **10.6.2, released 2025-04-15**
@@ -179,7 +179,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.5.4, released **
+- **10.5.4, released 2025-04-29**
   - Mattermost v10.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens [MM-63582](https://mattermost.atlassian.net/browse/MM-63582).
   - Fixed an issue with post links trapping focus when hovered or focused using the keyboard [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
