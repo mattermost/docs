@@ -1520,7 +1520,7 @@ Enable Elasticsearch for search queries
 | - **true**: Elasticsearch or AWS OpenSearch is used for all   |                                                                                 |
 |   search queries using the latest index. Search results may   |                                                                                 |
 |   be incomplete until a bulk index of the existing message    |                                                                                 |
-|    database is completed.                                     |                                                                                 |
+|   database is completed.                                      |                                                                                 |
 | - **false**: **(Default)** Database search is used for        |                                                                                 |
 |   search queries.                                             |                                                                                 |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
