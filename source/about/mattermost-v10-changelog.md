@@ -19,7 +19,7 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged Calls plugin version [v1.7.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.0).
+ - Pre-packaged Calls plugin version [v1.7.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.1).
  - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
  - Added an improved channel menu. 
  - Updated email notification settings to provide clearer wording and descriptions for both batched and non-batched scenarios. The settings dialog now reflects the selected status more accurately in both collapsed and expanded views, enhancing consistency and usability.
