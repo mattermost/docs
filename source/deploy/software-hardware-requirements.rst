@@ -136,11 +136,19 @@ Customers will have 9 months to plan, test, and upgrade their PostgreSQL version
 Database Search limitations
 :::::::::::::::::::::::::::::
 
+Common limitations:
+
+- Only the initial **1 MB** of the file content is available for search, even though much bigger files can be uploaded.
+
 Search limitations on PostgreSQL:
 
 - Email addresses do not return results.
 - Hashtags or recent mentions of usernames containing a dash do not return search results.
 - Terms containing a dash return incorrect results as dashes are ignored in the search query.
+- Limitations set by `PostgreSQL itself <https://www.postgresql.org/docs/current/textsearch-limitations.html>`_:
+
+  - One of them is: ``The length of a tsvector (lexemes + positions) must be less than 1 megabyte``, which means that, based on the file content, even files with content less than 1 MB won't be searchable if they hit the ``tsvector`` limit of 1 MB.
+
 - If any of the above is an issue, you can either enable the :doc:`Elasticsearch feature </scale/elasticsearch>` or install MySQL instead.
 
 Search limitations on MySQL:
