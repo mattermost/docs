@@ -14,6 +14,9 @@ This page describes the Mattermost reference architecture designed for a minimum
 
 Requirements
 ------------
+```{tip}
+Scroll horizontally to see additional columns in the table below.
+```
 
 +------------------------+-----------+----------------+-------------------+-------------------+
 | **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  | **Azure Instance**|
