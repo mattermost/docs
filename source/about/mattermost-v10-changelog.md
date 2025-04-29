@@ -117,7 +117,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Original 10.6.0 release.
 
 ### Important Upgrade Notes
- - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deploy/software-hardware-requirements#minimum-postgresql-database-support-policy) documentation for details.
+ - Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the [minimum supported PostgreSQL version policy](https://docs.mattermost.com/deploy/software-hardware-requirements.html#minimum-postgresql-database-support-policy) documentation for details.
  - Migration times: On a system with 12M posts, and 1M fileinfo entries, the migration takes 15s. This migration is non-locking. Note that there is no migration for MySQL deployments because this optimization is only applicable for PostgreSQL.
 
 ```{Important}
