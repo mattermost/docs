@@ -206,8 +206,7 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
 
 4. If you are using Amazon S3, it's recommended to enable server-side encryption (SSE) and SSL. Add the following environment variables to the ``mattermostEnv`` section: 
 
-TBD
-
+<TBD>
 
 **Review Mattermost Resource Status**
 

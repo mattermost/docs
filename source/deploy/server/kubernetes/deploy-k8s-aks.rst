@@ -7,8 +7,7 @@
 
 You can use a supported `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`__ to install Mattermost on your existing Azure infrastructure.
 
-Before you begin
-----------------
+**Before you begin**
 
 Before deploying, make sure you have the following: 
 
@@ -24,14 +23,12 @@ Before deploying, make sure you have the following:
 
 - **License Key**: Trial or Enterprise license to test high availability and other Enterprise features. 
 
-
-Installation steps
-------------------
+**Installation steps**
 
 The installation process includes deploying Mattermost and updating the server.
 
 **Step 1: Deploy Mattermost**
-  
+
 1. Deploy Mattermost from the `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`_ and select **Get it now**. 
 
   - Alternatively, you can go to the ``Extensions + Applications`` section of your AKS cluster and install the Mattermost offering from there. Visit the `Microsoft cluster extensions documentation <https://learn.microsoft.com/en-gb/azure/aks/cluster-extensions?tabs=azure-cli>`_ to learn more.
@@ -58,12 +55,13 @@ The installation process includes deploying Mattermost and updating the server.
     :alt: An example of the Azure AKS Deployment Details setup screen.
 
 6. Configure Mattermost installation hostname and Ingress details. The AGIC add-on is used in the following example to show the ingress annotations required.
+
   a. You can use any pre-installed Ingress Controller in your cluster as long as it supports Kubernetes Ingress and TLS termination.
 
-  .. code-block:: yaml
+    .. code-block:: yaml
 
-    kubernetes.io/ingress.class: azure/application-gateway
-    appgw.ingress.kubernetes.io/ssl-redirect: "true"
+      kubernetes.io/ingress.class: azure/application-gateway
+      appgw.ingress.kubernetes.io/ssl-redirect: "true"
   
 7. Additionally, we recommend considering:   
 
@@ -86,10 +84,9 @@ The installation process includes deploying Mattermost and updating the server.
 
 10. Access your working Mattermost installation at the URL you’ve determined in your DNS record.
 
-Learn more about administrating your Mattermost server by visiting the :doc:`Administration Guide </source/guides/administration-guide>`.
+Learn more about administrating your Mattermost server by visiting the :doc:`Administration Guide </guides/administration-guide>`.
 
-Upgrade Mattermost via your AKS cluster
----------------------------------------
+**Step 2: Upgrade Mattermost via your AKS cluster**
 
 1. Visit the ``Extensions + Applications`` section of your AKS cluster where your Mattermost installation is deployed.
 2. You can enable minor version auto upgrades since these are not updating Mattermost version
