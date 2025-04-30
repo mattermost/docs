@@ -33,11 +33,17 @@ Mattermost Desktop App v5.12.0 contains a medium severity level security fix. Up
 - Refreshed all built-in dialogs with new designs. 
 - Added a changelog link for when the app auto-updates. 
 - Updated the certificate error message. 
-- Removed bootstrap and dependencies. 
+- Removed bootstrap and dependencies.
 
 ### Architectural Changes
 
 - Major version upgrade of Electron to 35.2.0. Electron is the underlying technology used to build the Desktop App.
+
+### Bug Fixes
+
+#### All Platforms
+
+- Fixed an issue where server loading was blocked on contact with each configured server.
 
 ### Open Source Components
 
