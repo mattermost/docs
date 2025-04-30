@@ -23,9 +23,9 @@
 
 5. Select **Build Index** to build the post index of existing posts. This process can take up to a few hours depending on the size of the post database and number of messages. The progress percentage can be seen as the index is created. To avoid downtime, set **Enable Elasticsearch for search queries** to ``false`` so that database search is available during the indexing process.
 
-  .. important::
+.. important::
 
-    Complete bulk indexing before enabling Elasticsearch or AWS OpenSearch in the next step. Otherwise, search results will be incomplete.
+  Complete bulk indexing before enabling Elasticsearch or AWS OpenSearch in the next step. Otherwise, search results will be incomplete.
 
 6. Enable enterprise search by setting **Enable Elasticsearch for search queries** to ``true``, and setting **Enable Elasticsearch for autocomplete** to ``true``. 
 

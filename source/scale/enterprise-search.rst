@@ -39,7 +39,7 @@ Review the following support paths for enterprise search based on the version yo
 
 .. tab:: Elasticsearch v8
 
-    `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. While Mattermost supports Elasticsearch v7.17+, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
+    `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ is supported from Mattermost v9.11. While Mattermost supports Elasticsearch v7.17+, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for upgrade details, and see the :doc:`Elasticsearch setup </scale/elasticsearch-setup>` documentation for details on configuring your Mattermost deployment to use Elasticsearch.
 
 .. tab:: AWS OpenSearch Service
 
