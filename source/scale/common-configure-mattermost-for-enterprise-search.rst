@@ -11,9 +11,9 @@
 4. Set the server connection details for Elasticsearch or AWS OpenSearch:
 
   a. Enter **Server Connection Address** for the enterprise search server you set up earlier.
-  b. (Optional) Enter **Server Username** used to access the enterprise search server. For AWS Elasticsearch, leave this field blank.
-  c. (Optional) Enter **Server Password** associated with the username. For AWS Elasticsearch, leave this field blank.
-  d. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically. For AWS Elasticsearch, this field should be set to ``false``.
+  b. (Optional) Enter **Server Username** used to access the enterprise search server.
+  c. (Optional) Enter **Server Password** associated with the username.
+  d. Set **Enable Cluster Sniffing** (Optional). Sniffing finds and connects to all data nodes in your cluster automatically.
 
 .. tip::
 
