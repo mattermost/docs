@@ -4,460 +4,184 @@ Calls self-hosted deployment
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and also provides the deployment guidelines for the recording and transcription service.
+This document provides an overview of Mattermost Calls deployment options for self-hosted environments, including deployment architectures, key requirements, and important considerations.
 
-- `Terminology <#terminology>`__
-- `Plugin components <#plugin-components>`__
-- `Requirements <#requirements>`__
-- `Limitations <#limitations>`__
-- `Configuration <#configuration>`__
-- `Performance <#performance>`__
-- `RTCD Service <#the-rtcd-service>`__
-- `Configure recording and transcriptions <#configure-recording-and-transcriptions>`__
-- `Kubernetes deployments <#kubernetes-deployments>`__
-- `Frequently asked questions <#frequently-asked-questions>`__
-- `Troubleshooting <#troubleshooting>`__
+Quick Links
+----------
+
+For detailed information on specific topics, please refer to these specialized guides:
+
+- `RTCD Setup and Configuration <calls-rtcd-setup.html>`__: Comprehensive guide for setting up the dedicated RTCD service
+- `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
+- `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__: Guide to monitoring Calls performance using metrics and observability
+
+About Mattermost Calls
+---------------------
+
+Mattermost Calls provides integrated audio calling and screen sharing capabilities within Mattermost channels. It's built on WebRTC technology and can be deployed either:
+
+1. **Integrated mode**: Built into the Calls plugin (simpler, suitable for smaller deployments)
+2. **RTCD mode**: Using a dedicated service for improved performance and scalability (recommended for production environments)
 
 Terminology
 -----------
 
-- `WebRTC <https://bloggeek.me/webrtcglossary/webrtc-2/>`__: The set of underlying protocols/specifications on top of which calls are implemented.
-- **RTC (Real Time Connection)**: The real-time connection. This is the channel used to send media tracks (audio/video/screen).
-- **WS (WebSocket)**: The WebSocket connection. This is the channel used to set up a connection (signaling process).
-- `NAT (Network Address Translation) <https://bloggeek.me/webrtcglossary/nat/>`__: A networking technique to map IP addresses.
-- `STUN (Session Traversal Utilities for NAT) <https://bloggeek.me/webrtcglossary/stun/>`__: A protocol/service used by WebRTC clients to help traversing NATs. On the server side it's mainly used to figure out the public IP of the instance.
-- `TURN (Traversal Using Relays around NAT) <https://bloggeek.me/webrtcglossary/turn/>`__: A protocol/service used to help WebRTC clients behind strict firewalls connect to a call through media relay.
+- `WebRTC <https://bloggeek.me/webrtcglossary/webrtc-2/>`__: The set of protocols on which calls are built
+- **RTC**: Real-Time Connection channel used for media (audio/video/screen)
+- **WS**: WebSocket connection used for signaling and connection setup
+- **SFU**: Selective Forwarding Unit, routes media between participants
+- `NAT <https://bloggeek.me/webrtcglossary/nat/>`__: Network Address Translation for mapping IP addresses
+- `STUN <https://bloggeek.me/webrtcglossary/stun/>`__: Protocol used by WebRTC clients to help traverse NATs
+- `TURN <https://bloggeek.me/webrtcglossary/turn/>`__: Protocol to relay media for clients behind strict firewalls
 
-Plugin components
------------------
+Key Components
+-------------
 
-- **Calls plugin**: This is the main entry point and a requirement to enable channel calls.
+- **Calls plugin**: The main plugin that enables calls functionality
+- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature)
+- **calls-offloader**: Service for call recording and transcription (if enabled)
 
-- **rtcd**: This is an optional service that can be deployed to offload all the functionality and data processing involved with the WebRTC connections. Read more about when and why to use `rctd <#the-rtcd-service>`__ below.
+Network Requirements
+------------------
 
-Requirements
-------------
+The following network connectivity is required:
 
-Server
-~~~~~~
++-------------------+--------+-----------------+-------------------------+------------------------+
+| Service           | Ports  | Protocols       | Source                  | Target                 |
++===================+========+=================+=========================+========================+
+| Calls plugin API  | 80,443 | TCP (incoming)  | Mattermost clients      | Mattermost server      |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| RTC media         | 8443   | UDP (incoming)  | Mattermost clients      | Mattermost or RTCD     |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| RTC media         | 8443   | TCP (incoming)  | Mattermost clients      | Mattermost or RTCD     |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| RTCD API          | 8045   | TCP (incoming)  | Mattermost server       | RTCD service           |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| STUN              | 3478   | UDP (outgoing)  | Mattermost or RTCD      | STUN servers           |
++-------------------+--------+-----------------+-------------------------+------------------------+
 
-- Run Mattermost server on a secure (HTTPs) connection. This is a necessary requirement on the client to allow capturing devices (e.g., microphone, screen). See the `config TLS </install/config-tls-mattermost.html>`__ section for more info.
-- See `network requirements </configure/calls-deployment.html#network>`__ below.
-
-Client
-~~~~~~
-
-- Clients need to be able to connect (send and receive data) to the instance hosting the calls through the UDP port configured as ``RTC Server Port``. If this is not possible a TURN server should be used to achieve connectivity.
-- Depending on the platform or operating system, clients may need to grant additional permissions to the application (e.g., browser, desktop app) to  allow them to capture audio inputs or share the screen.
-
-Network
-~~~~~~~
-
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| Service                         | Ports  | Protocols       | Source                                                     | Target                                   | Purpose                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| API (Calls plugin)              | 80,443 | TCP (incoming)  | Mattermost clients (web/desktop/mobile)                    | Mattermost instance (Calls plugin)       | To allow for HTTP and WebSocket connectivity from clients to Calls plugin. This API is exposed on the same connection as Mattermost, so there’s likely no need to change anything.                                                                                                                                                                                                                                                                                                          |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RTC (Calls plugin or ``rtcd``)  | 8443   | UDP (incoming)  | Mattermost clients (Web/Desktop/Mobile)                    | Mattermost instance or ``rtcd`` service  | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or ``rtcd``) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).                                                                                                                                                            |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| RTC (Calls plugin or ``rtcd``)  | 8443   | TCP (incoming)  | Mattermost clients (Web/Desktop/Mobile)                    | Mattermost instance or ``rtcd`` service  | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or ``rtcd``) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires ``rtcd`` version >= v0.11 and Calls version >= v0.17.    |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| API (``rtcd``)                  | 8045   | TCP (incoming)  | Mattermost instance(s) (Calls plugin)                      | ``rtcd`` service                         | To allow for HTTP/WebSocket connectivity from Calls plugin to ``rtcd`` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server.                                                                                                                                                                                                                                                                                        |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| STUN (Calls plugin or ``rtcd``) | 3478   | UDP (outgoing)  | Mattermost Instance(s) (Calls plugin) or ``rtcd`` service  | Configured STUN servers                  | (Optional) To allow for either Calls plugin or ``rtcd`` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the |ice_host_override_link| config option.                                                                                                                                                                                                             |
-+---------------------------------+--------+-----------------+------------------------------------------------------------+------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-.. |ice_host_override_link| replace:: `ICE Host Override <plugins-configuration-settings.html#ice-host-override>`__
+For complete network requirements, see the `RTCD Setup and Configuration <calls-rtcd-setup.html>`__ guide.
 
 Limitations
 -----------
 
 - In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources. For more details, refer to the `performance section </configure/calls-deployment.html#performance>`__ below.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. 
+- You can configure the maximum participants in **System Console > Plugin Management > Calls > Max call participants**.
 
 Configuration
 -------------
 
 For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the `System Console </configure/plugins-configuration-settings.html#calls>`__.
 
-Modes of operation
-------------------
+Deployment Architecture Options
+-----------------------------
 
-Depending on how the Mattermost server is running, there are several modes under which the Calls plugin can operate. Please refer to the section below on `the rtcd service <#the-rtcd-service>`__ to learn about the ``rtcd`` and the Selective Forwarding Unit (SFU).
+Mattermost Calls can be deployed in several configurations:
 
-============================ =============== =================
- Mattermost deployment       SFU             SFU deployment
-============================ =============== =================
- Single instance             integrated
- Single instance             rtcd
- High availability cluster   integrated      clustered
- High availability cluster   integrated      single handler
- High availability cluster   rtcd
-============================ =============== =================
-
-Single instance
-~~~~~~~~~~~~~~~
-
-Integrated
-^^^^^^^^^^
-
-This is the default mode when first installing the plugin on a single Mattermost instance setup. The WebRTC service is integrated in the plugin itself and runs alongside the Mattermost server.
+Single Instance Deployments
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/calls-deployment-image3.png
   :alt: A diagram of the integrated configuration model of a single instance.
+  :width: 600px
 
-rtcd
-^^^^
-
-An external, dedicated and scalable WebRTC service (``rtcd``) is used to handle all calls media routing.
+**Integrated mode**: The WebRTC service runs within the Calls plugin on the Mattermost server.
 
 .. image:: ../images/calls-deployment-image7.png
   :alt: A diagram of a Web RTC deployment configuration.
+  :width: 600px
 
-High availability cluster
-~~~~~~~~~~~~~~~~~~~~~~~~~
+**RTCD mode**: A dedicated RTCD service handles media routing, reducing load on the Mattermost server.
 
-Clustered
-^^^^^^^^^
-
-This is the default mode when running the plugin in a high availability cluster. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
+High Availability Deployments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/calls-deployment-image4.png
-  :alt: A diagram of a single handler deployment.
-
-Single handler
-^^^^^^^^^^^^^^
-
-This is a fallback mode to only let one node in the cluster to host calls. While the plugin would still run on all nodes, all calls will be routed through the handler node. This mode must be enabled by running the instance with a special environment variable set (MM_CALLS_IS_HANDLER=true).
-
-.. image:: ../images/calls-deployment-image5.png
   :alt: A diagram of a clustered calls deployment.
+  :width: 600px
 
-rtcd (HA)
-^^^^^^^^^^
+**Clustered mode**: Each Mattermost node runs an instance of the plugin with its own WebRTC service.
 
 .. image:: ../images/calls-deployment-image2.png
   :alt: A diagram of an rtcd deployment.
+  :width: 600px
 
-Performance
------------
+**RTCD with HA**: Dedicated RTCD services handle media routing for high availability.
 
-Calls performance primarily depends on two resources: CPU and bandwidth (both network latency and overall throughput). The final consumption exhibits quadratic growth with the number of clients transmitting and receiving media.
-
-As an example, a single call with 10 participants of which two are unmuted (transmitting voice data) will generally consume double the resources than the same call with a single participant unmuted. What ultimately counts towards performance is the overall number of concurrent media flows (in/out) across the server.
-
-Benchmarks
-~~~~~~~~~~
-
-Here are some results from internally conducted performance tests on a dedicated ``rtcd`` instance:
-
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| Calls | Users/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out) | Instance (EC2) |
-+=======+============+==============+================+===========+==============+====================+================+
-| 100   | 8          | 2            | no             | 60%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 100   | 8          | 2            | no             | 30%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 100   | 8          | 2            | yes            | 86%       | 0.7GB        | 280Mbps / 2.2Gbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | no             | 35%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | no             | 16%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | yes            | 90%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 10    | 50         | 2            | yes            | 45%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | no             | 65%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.xlarge     |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | no             | 30%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-| 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
-+-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-
-Dedicated service
-~~~~~~~~~~~~~~~~~
-
-For Enterprise customers we offer a way to offload performance costs through a `dedicated service <https://github.com/mattermost/rtcd>`__ that can be used to further scale up calls.
-
-Load testing
-~~~~~~~~~~~~
-
-We provide a `load-test tool <https://github.com/mattermost/mattermost-plugin-calls/tree/main/lt>`__ that can be used to simulate and measure the performance impact of calls.
-
-Monitoring
-~~~~~~~~~~
-
-Both the plugin and the external ``rtcd`` service expose some Prometheus metrics to monitor performance. We provide an `official dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ that can be imported in Grafana. You can refer to `Performance monitoring </scale/performance-monitoring.html>`__ for more information on how to set up Prometheus and visualize metrics through Grafana.
-
-Calls plugin metrics
-^^^^^^^^^^^^^^^^^^^^
-
-Metrics for the calls plugin are exposed through the public ``/plugins/com.mattermost.calls/metrics`` API endpoint.
-
-**Process**
-
-- ``mattermost_plugin_calls_process_cpu_seconds_total``: Total user and system CPU time spent in seconds.
-- ``mattermost_plugin_calls_process_max_fds``: Maximum number of open file descriptors.
-- ``mattermost_plugin_calls_process_open_fds``: Number of open file descriptors.
-- ``mattermost_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
-- ``mattermost_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
-
-**WebRTC connection**
-
-- ``mattermost_plugin_calls_rtc_conn_states_total``: Total number of RTC connection state changes.
-- ``mattermost_plugin_calls_rtc_errors_total``: Total number of RTC errors.
-- ``mattermost_plugin_calls_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
-
-  - Note: removed as of v0.16.0
-
-- ``mattermost_plugin_calls_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
-
-  - Note: removed as of v0.16.0
-
-- ``mattermost_plugin_calls_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
-
-  - Note: added as of v0.16.0
-
-- ``mattermost_plugin_calls_rtc_sessions_total``: Total number of active RTC sessions.
-
-**Database**
-
-- ``mattermost_plugin_calls_store_ops_total``: Total number of db store operations.
-
-**WebSocket**
-
-- ``mattermost_plugin_calls_websocket_connections_total``: Total number of active WebSocket connections.
-- ``mattermost_plugin_calls_websocket_events_total``: Total number of WebSocket events.
-
-WebRTC service metrics
-^^^^^^^^^^^^^^^^^^^^^^
-
-Metrics for the ``rtcd`` service are exposed through the ``/metrics`` API endpoint.
-
-**Process**
-
-- ``rtcd_process_cpu_seconds_total``:  Total user and system CPU time spent in seconds.
-- ``rtcd_plugin_calls_process_max_fds``: Maximum number of open file descriptors.
-- ``rtcd_plugin_calls_process_open_fds``: Number of open file descriptors.
-- ``rtcd_plugin_calls_process_resident_memory_bytes``: Resident memory size in bytes.
-- ``rtcd_plugin_calls_process_virtual_memory_bytes``: Virtual memory size in bytes.
-
-**WebRTC Connection**
-
-- ``rtcd_rtc_conn_states_total``: Total number of RTC connection state changes.
-- ``rtcd_rtc_errors_total``: Total number of RTC errors.
-- ``rtcd_rtc_rtp_bytes_total``: Total number of sent/received RTP packets in bytes.
-
-  - Note: removed as of v0.10.0
-
-- ``rtcd_rtc_rtp_packets_total``: Total number of sent/received RTP packets.
-
-  - Note: removed as of v0.10.0
-
-- ``rtcd_rtc_rtp_tracks_total``: Total number of incoming/outgoing RTP tracks.
-
-  - Note: added as of v0.10.0
-
-- ``rtcd_rtc_sessions_total``: Total number of active RTC sessions.
-
-**WebSocket**
-
-- ``rtcd_ws_connections_total``: Total number of active WebSocket connections.
-- ``rtcd_ws_messages_total``: Total number of received/sent WebSocket messages.
-
-System tunings
-~~~~~~~~~~~~~~
-
-If you want to host many calls or calls with a large number of participants, take a look at the following platform specific (Linux) tunings (this is the only officially supported target for the plugin right now):
-
-.. code::
-
-  # Setting the maximum buffer size of the receiving UDP buffer to 16MB
-  net.core.rmem_max = 16777216
-
-  # Setting the maximum buffer size of the sending UDP buffer to 16MB
-  net.core.wmem_max = 16777216
-
-  # Allow to allocate more memory as needed for more control messages that need to be sent for each socket connected
-  net.core.optmem_max = 16777216
-
-The rtcd service
-----------------
-
-.. include:: ./calls-rtcd-ent-only.rst
-  :start-after: :nosearch:
-
-The Calls plugin has a built-in `Selective Forwarding Unit (SFU) <https://bloggeek.me/webrtcglossary/sfu/>`__ to route audio and screensharing data. This is the ``integrated`` option described in the `<#modes-of-operation>`__ section above. But this SFU functionality can be deployed separately as an external ``rtcd`` instance.
-
-Reasons to use the ``rtcd`` service
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This section will help you understand when and why your organization would want to use ``rtcd``.
-
-.. note::
-
-  ``rtcd`` is a standalone service, which adds operational complexity, maintenance costs, and requires an enterprise licence. For those who are evaluating  Calls, and for many small instances of Mattermost, the integrated SFU (the one included in the Calls plugin) may be sufficient initially.
-
-The ``rtcd`` service is the recommended way to host Calls for the following reasons:
-
-- **Performance of the main Mattermost server(s).** When the Calls plugin runs the SFU, calls traffic is added to the processing load of the server running the rest of your Mattermost services. If Calls traffic spikes, it can negatively affect the responsiveness of these services. Using an rtcd service isolates the calls traffic processing to those rtcd instances, and also reduces costs by minimizing CPU usage spikes.
-
-- **Performance, scalability, and stability of the Calls product.** If Calls traffic spikes, or more overall capacity is needed, ``rtcd`` servers can be added to balance the load. As an added benefit, if the Mattermost traffic spikes, or if a Mattermost instance needs to be restarted, those people in a current call will not be affected - current calls won't be dropped.
-
-Some caveats apply here. Web socket events (for example: emoji reactions, hand raising, muting/unmuting) will not be transmitted while the main Mattermost server is down. But the call itself will continue while the main server restarts.
-
-- **Kubernetes deployments.** In a Kubernetes deployment, ``rtcd`` is strongly recommended; it is currently the only officially supported way to run Calls.
-- **Technical benefits.** The dedicated ``rtcd`` service has been optimized and tuned at the system/network level for real-time audio/video traffic, where latency is generally more important than throughput.
-
-In general, ``rtcd`` is the preferred solution for a performant and scalable deployment. With ``rtcd``, the Mattermost server will be minimally impacted when hosting a high number of calls.
-
-Horizontal scalability
-~~~~~~~~~~~~~~~~~~~~~~
-
-The supported way to enable horizontal scalability for Calls is through a form of DNS based load balancing. This can be achieved regardless of how the ``rtcd`` service is deployed (bare bone instance, Kubernetes, or an alternate way).
-
-In order for this to work, the `RTCD Service URL <plugins-configuration-settings.html#rtcd-service-url>`__ should point to a hostname that resolves to multiple IP addresses, each pointing to a running ``rtcd`` instance. The Mattermost Calls plugin will then automatically distribute calls amongst the available hosts.
-
-The expected requirements are the following:
-
-- When a new ``rtcd`` instance is deployed, it should be added to the DNS record. The plugin side will then be able to pick it up and start assigning calls to the new host.
-
-- If a ``rtcd`` instance goes down, it should be removed from the DNS record. The plugin side can then detect the change and stop assigning new calls to that host.
-
-.. note::
-   Load balancing is done at the call level. This means that a single call will always live on a single ``rtcd`` instance.
-   There's currently no support for spreading sessions belonging to the same call across a fleet of instances.
-
-Configure recording and transcriptions
---------------------------------------
-
-Before you can start recording and transcribing calls, you need to configure the ``calls-offloader`` job service. You can read about how to do that `here <https://github.com/mattermost/calls-offloader/blob/master/docs/getting_started.md>`__. Performance and scalability recommendations related to this service can be found in `here <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
-
-.. note::
-  If deploying the service in a Kubernetes cluster, refer to the later section on `Helm charts <#helm-charts>`__.
-
-Once the ``calls-offloader`` service is running, recordings should be explicitly enabled through the `Enable call recordings <plugins-configuration-settings.html#enable-call-recordings-beta>`__ config setting and the service's URL should be configured using `Job service URL <plugins-configuration-settings.html#job-service-url>`__.
-
-
-Call transcriptions can be enabled through the `Enable call transcriptions <plugins-configuration-settings.html#enable-call-transcriptions-experimental>`__ config setting.
-
-.. note::
-  The call transcriptions functionality is available starting in Calls version v0.22.0
-
-Kubernetes deployments
-----------------------
-
-The Calls plugin has been designed to integrate well with Kubernetes to offer improved scalability and control over the deployment.
-
-This is a sample diagram showing how the ``rtcd`` standalone service can be deployed in a Kubernetes cluster:
+Kubernetes Deployments
+~~~~~~~~~~~~~~~~~~~~
 
 .. image:: ../images/calls-deployment-kubernetes.png
   :alt: A diagram of calls deployed in a Kubernetes cluster.
+  :width: 600px
 
-If Mattermost isn't deployed in a Kubernetes cluster, and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
+For Kubernetes deployments, the RTCD service is strongly recommended and is the only officially supported approach.
 
-Helm Charts
-~~~~~~~~~~~
-
-The recommended way to deploy Calls related components and services in a Kubernetes deployment is to use the officially provided Helm charts. Related documentation including detailed information on how to deploy these services can be found in our ``mattermost-helm`` repository:
+For Kubernetes deployments, the recommended approach is to use the officially provided Helm charts:
 
 - `rtcd Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__
-
 - `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
 
-Frequently asked questions
---------------------------
+When to Use RTCD
+--------------
 
-Is there encryption?
-~~~~~~~~~~~~~~~~~~~~
+The dedicated RTCD service (available with Enterprise license) is recommended for:
 
-Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
+- **Production environments**: Isolates call traffic from other Mattermost services
+- **Performance optimization**: Dedicated service tuned for real-time media
+- **Scalability**: Add RTCD instances as call volume grows
+- **Call stability**: Calls continue even if Mattermost server needs to restart
+- **Kubernetes deployments**: Required for officially supported Kubernetes deployments
 
-Are there any third-party services involved?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For detailed RTCD setup instructions, see the `RTCD Setup and Configuration <calls-rtcd-setup.html>`__ guide.
 
-The only external service used is a Mattermost official STUN server (``stun.global.calls.mattermost.com``) which is configured as default. This is primarily used to find the public address of the Mattermost instance if none is provided through the |ice_host_override_link| option. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in cases where the |ice_host_override_link| setting is provided.
+Call Recording and Transcription
+------------------------------
 
-Is using UDP a requirement?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For call recording and transcription, you need to:
 
-Yes, UDP is the recommended protocol to serve real-time media as it allows for the lowest latency between peers. However, there are a couple of possible solutions to cover clients that due to limitations or strict firewalls are unable to use UDP:
+1. Deploy the ``calls-offloader`` service
+2. Configure the service URL in the System Console
+3. Enable call recordings and/or transcriptions in the plugin settings
 
-- Since plugin version 0.17 and ``rtcd`` version 0.11 the RTC service will listen for TCP connections in addition to UDP ones. If configured correctly (e.g. using commonly allowed ports such as 80 or 443) it's possible to have clients connect directly through TCP when unable to do it through the preferred UDP channel.
+Performance Considerations
+------------------------
 
-- Run calls through an external TURN server that listens on TCP and relays all media traffic between peers. However, this is a sub-optimal solution that should be avoided if possible as it will introduce extra latency along with added infrastructural cost.
+Calls performance primarily depends on:
 
-Do I need a TURN server?
-~~~~~~~~~~~~~~~~~~~~~~~~
+- **CPU resources**: More participants require more processing power
+- **Network bandwidth**: Both incoming and outgoing traffic increases with participant count
+- **Active speakers**: Unmuted participants require significantly more resources 
 
-TURN becomes necessary when you expect to have clients that are unable to connect through the configured UDP port. This can happen due to very restrictive firewalls that either block non standard ports even in the outgoing direction or don't allow the use of the UDP protocol altogether (e.g. some corporate firewalls). In such cases TURN is needed to allow connectivity.
+For detailed performance metrics, benchmarks, and monitoring guidance, see the `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__ guide.
 
-We officially support and recommend using `coturn <https://github.com/coturn/coturn>`__ for a stable and performant TURN service implementation.
+Frequently Asked Questions
+------------------------
 
-How will this work with an existing reverse proxy sitting in front of Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Is calls traffic encrypted?**  
+Yes, using WebRTC security standards (DTLS/SRTP). Traffic is encrypted in transit.
 
-Generally clients should connect directly to either Mattermost or, if deployed, the dedicated ``rtcd`` service through the configured UDP port . However, it's also possible to route the traffic through an existing load balancer as long as this has support for routing the UDP protocol (e.g. nginx). Of course this will require additional configuration and potential changes to how the plugin is run as it won't be possible to load balance the UDP flow across multiple instances like it happens for HTTP.
+**Are there any third-party services involved?**  
+Only a Mattermost STUN server (``stun.global.calls.mattermost.com``) is used by default. This can be removed if you set the ICE Host Override configuration.
 
-Do calls require a dedicated server to work or can they run alongside Mattermost?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Is using UDP a requirement?**  
+UDP is recommended for best performance, but TCP fallback is supported since plugin version 0.17 and RTCD version 0.11.
 
-The plugin can function in different modes. By default calls are handled completely by the plugin which runs as part of Mattermost. It's also possible to use a dedicated service to offload the computational and bandwidth costs and scale further (Enterprise only).
+**Do I need a TURN server?**  
+Only if clients are behind restrictive firewalls that block UDP. We recommend `coturn <https://github.com/coturn/coturn>`__ if needed.
 
-Can the traffic between Mattermost and ``rtcd``  be kept internal or should it be opened to the public?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
+**Can RTCD traffic be kept internal?**  
+Yes, and it's recommended. Only the media ports need to be accessible to end-users.
 
 Troubleshooting
 ---------------
 
-Connectivity issues
-~~~~~~~~~~~~~~~~~~~
+For comprehensive troubleshooting steps and debugging techniques, please refer to the `Calls Troubleshooting <calls-troubleshooting.html>`__ guide.
 
-If calls are failing to connect or timing out, it's likely there could be a misconfiguration at either the plugin config or networking level.
+Next Steps
+---------
 
-For example, the `RTC Server Port (UDP) <plugins-configuration-settings.html#rtc-server-port-udp>`__ or the `RTC Server Port (TCP) <plugins-configuration-settings.html#rtc-server-port-tcp>`__ may not be open or forwarded correctly.
-
-
-Connectivity checks
-^^^^^^^^^^^^^^^^^^^
-
-An easy way to check whether data can go through is to perform some tests using the ``netcat`` command line tool.
-
-On the host running Calls (could be the Mattermost instance itself or the one running ``rtcd`` depending on the chosen setup), run the following:
-
-.. code-block:: bash
-
-   nc -l -u -p 8443
-
-On the client side (i.e., the machine you would normally use to run the Mattermost desktop app or browser), run the following:
-
-.. code-block:: bash
-
-   nc -v -u HOST_IP 8443
-
-If connection succeeds, you should be able to send and receive text messages by typing and hitting enter on either side.
-
-.. note::
-   ``HOST_IP`` should generally be the public (client facing) IP of the Mattermost
-   (or ``rtcd``) instance hosting the calls. When set, it should be the value of the |ice_host_override_link|
-   config setting.
-
-   ``8443`` should be changed with the port configured in `RTC Server Port <plugins-configuration-settings.html#rtc-server-port-udp>`__.
-
-   The same checks can be performed to test connectivity through the TCP port using the same commands with ``-u`` flag removed.
-
-Network packets debugging
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A more advanced way to debug networking issues is to use the ``tcpdump`` command line utility to temporaily monitor network packets flowing in and out of the instance hosting calls.
-
-On the server side, run the following:
-
-.. code-block:: bash
-
-   sudo tcpdump -n port 8443
-
-This command will output information (i.e. source and destination addresses) for all the network packets being sent or received through port ``8443``. This is a good way to check whether data is getting in and out of the instance and can be used to quickly identify network configuration issues.
+1. For detailed setup instructions, see `RTCD Setup and Configuration <calls-rtcd-setup.html>`__
+2. For monitoring guidance, see `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__
+3. If you encounter issues, see `Calls Troubleshooting <calls-troubleshooting.html>`__
