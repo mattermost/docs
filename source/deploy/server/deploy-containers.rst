@@ -9,10 +9,12 @@ Choose your preferred container platform below for specific deployment instructi
 .. tab:: Docker
 
   .. include:: containers/install-docker.rst
+    :start-after: :nosearch:
 
 .. tab:: AWS Elastic Beanstalk
 
   .. include:: containers/install-aws-beanstalk.rst
+    :start-after: :nosearch:
 
 Secure your Mattermost deployment
 ---------------------------------

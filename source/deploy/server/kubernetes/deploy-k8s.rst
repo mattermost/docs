@@ -1,3 +1,10 @@
+.. meta::
+   :name: robots
+   :content: noindex
+
+:orphan:
+:nosearch:
+
 You can use the Mattermost Kubernetes Operator to deploy Mattermost on Kubernetes using S3-compatible storage and a managed database service. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments.
 
 **Prerequisites**
@@ -199,7 +206,12 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
 
 4. If you are using Amazon S3, it's recommended to enable server-side encryption (SSE) and SSL. Add the following environment variables to the ``mattermostEnv`` section: 
 
-TBD
+  .. code-block:: yaml
+
+    spec:
+      mattermostEnv:
+        MM_FILESETTINGS_AMAZONS3SSL: true
+        MM_FILESETTINGS_AMAZONS3SSE: true
 
 
 **Review Mattermost Resource Status**

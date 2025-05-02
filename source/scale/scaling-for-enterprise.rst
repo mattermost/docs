@@ -7,7 +7,17 @@ Mattermost is designed to scale from small teams hosted on a single server to la
 - **Databases supported**: PostgreSQL, Amazon RDS for PostgreSQL
 - **Storage supported**: Amazon S3 or a local filestore
 
-Server requirements vary based on usage and we highly recommend that you run a pilot before an enterprise-wide deployment in order to estimate full scale usage based on your specific organizational needs. 
+Server requirements vary based on usage and we highly recommend that you run a pilot before an enterprise-wide deployment in order to estimate full scale usage based on your specific organizational needs.
+
+Elasticsearch
+--------------
+
+:doc:`Elasticsearch </scale/elasticsearch>` provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results.
+
+High availability
+-----------------
+
+A :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
 Available reference architectures
 ---------------------------------
@@ -17,6 +27,8 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
+    Elasticsearch </scale/elasticsearch>
+    High availability </scale/high-availability-cluster-based-deployment> 
     Scale up to 200 users </scale/scale-to-200-users>
     Scale up to 2000 users </scale/scale-to-2000-users>
     Scale up to 15000 users </scale/scale-to-15000-users>
@@ -41,7 +53,7 @@ The following reference architectures are available as recommended starting poin
 
 .. important::
 
-    Due to constraints in testing, the proxy instance specifications were fixed for all the tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts.
+    Due to constraints in testing, the proxy instance specifications were fixed for all the scaling tests from which we derived these reference architectures. This was done to avoid a combinatorial explosion of variables in tests, but it resulted in minor gaps in our understandings of certain aspects of the reference architectures. In particular, the proxy instance is overspecified for the smaller user counts.
 
 Testing methodology and updates
 --------------------------------
@@ -52,7 +64,7 @@ At a high level, each deployment size was fixed (Mattermost server node count/si
 
 Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions) where the coordinator metrics define a health system under load. Tests were performed using the Mattermost v9.5 Extended Support Release (ESR). Job servers weren't used. All tests with more than a single app node had an NGINX proxy running in front of them.
 
-For the last test of 200K users, further infrastructure changes were made. Elasticsearch nodes were added. A Redis instance was added, and multiple NGINX proxies were used to distribute traffic evenly across all nodes in the cluster. More details can be found in the `page </scale/scale-to-200000-users>`.
+For the last test of 200K users, further infrastructure changes were made. Elasticsearch nodes were added. A Redis instance was added, and multiple NGINX proxies were used to distribute traffic evenly across all nodes in the cluster. More details can be found on the :doc:`scale to 200000 users </scale/scale-to-200000-users>` documentation page.
 
 Full testing methodology, configuration, and setup is available, incluidng a `fixed database dump with 100 million posts <https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#/resources/arn%3Aaws%3Ards%3Aus-east-1%3A729462591288%3Acluster%3Adb-pg-100m-posts-v9-5-5>`_. Visit the `Mattermost Community <https://community.mattermost.com/>`_ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`_ for details.
 
