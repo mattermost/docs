@@ -167,6 +167,8 @@ Configuring advanced logging includes the following steps:
 Define advanced log output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Ensure that :ref:`audit logging is enabled <configure/experimental-configuration-settings:enable audit logging>` and that the :ref:`file name <configure/experimental-configuration-settings:file name>` is set to ``./logs/audit.log`` in the ``ExperimentalAuditSettings`` section of the ``config.json`` file. 
+
 .. tab:: Multi-line JSON
 
     In the example below, file output is written to ``./logs/audit.log`` in plain text and includes all audit log levels & events. Older logs are kept for 1 day, and up to a total of 10 backup log files are kept at a time. Logs are rotated using gzip when the maximum size of the log file reaches 500 MB. A maximum of 1000 audit records can be queued/buffered while writing to the file.
