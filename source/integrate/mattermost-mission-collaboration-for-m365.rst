@@ -146,7 +146,7 @@ Key features
 - **AI-Powered Insights**: Use multi-agent AI, including Azure OpenAI and local LLMs, for faster decision-making and situational awareness.
 - **Embedded DevSecOps Collaboration**: Keep developer teams productive with integrated workflows inside Microsoft Teams.
 - **Entra-Based SSO**: Simplify user authentication and enhance security with enterprise-grade identity management for organizations using Microsoft Entra ID.
-- **Activity Feed Notifications for events in Mattermost**: Never miss critical updates, with real-time notifications in your MS Teams activity feed whenever someone mentions or DM's you in Mattermost.
+- **Activity Feed Notifications for events in Mattermost**: Never miss critical updates, with real-time notifications in your MS Teams activity feed whenever someone mentions or messages you directly in Mattermost.
 
 FAQ
 ---
