@@ -85,7 +85,7 @@ Mattermost plugin setup
 
 2. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
 
-3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MSTeams DevSecOps**, and select **Enable**.
+3. Go to **System Console > Plugins > Plugin Management**. In the **Installed Plugins** section, scroll to **MSTeams DevSecOps**.
 
 4. Enter an **Application Version**. You can start with ``1.0.0``.
 
