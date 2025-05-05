@@ -9,7 +9,7 @@ Integrate and extend Mattermost
     GitHub interoperability </integrate/github-interoperability>
     GitLab interoperability </integrate/gitlab-interoperability>
     Jira interoperability </integrate/jira-interoperability>
-    Mattermost mission collaboration for Microsoft 365 </integrate/mattermost-mission-collaboration-for-m365>
+    Mattermost Mission Collaboration for Microsoft 365 </integrate/mattermost-mission-collaboration-for-m365>
     Mattermost Playbooks for Microsoft Teams </integrate/playbooks-for-microsoft-teams>
     Microsoft Calendar interoperability </integrate/microsoft-calendar-interoperability>
     Microsoft Teams interoperability </integrate/microsoft-teams-interoperability>
