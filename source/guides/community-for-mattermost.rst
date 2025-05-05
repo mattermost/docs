@@ -23,7 +23,7 @@ A Microsoft Teams administrator must make the Community for Mattermost app avail
 
 1. Go to the Microsoft Teams Admin Center.
 2. Select **Teams Apps > Manage Apps**.
-3. Search for the **Community for Mattermost app** and select it.
+3. Search for **Community for Mattermost** and select it.
 4. Under the **Users and Groups** tab, enable the app for all users.
 
 End user setup
