@@ -19,7 +19,7 @@ Setup
 Admin setup
 ~~~~~~~~~~~~
 
-An admin must make the Community for Mattermost app available to all users.
+A Microsoft Teams administrator must make the Community for Mattermost app available to all users.
 
 1. Go to the Microsoft Teams Admin Center.
 2. Select **Teams Apps > Manage Apps**.
