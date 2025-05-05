@@ -68,7 +68,7 @@ Key features
 Benefits
 --------
 
-- Seamlessly communicate with the Mattermost Community from Microsoft Teams and Outlook using application tabs.
+- Seamlessly communicate with the Mattermost community using application tabs.
 - Evaluate a showcase deployment of Mattermost capabilities in consideration of self-hosting the platform within your Azure or on-prem environments.
 - Share input with Mattermost staff and developers on future improvements to the platform.
 
