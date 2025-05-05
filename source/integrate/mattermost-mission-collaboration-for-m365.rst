@@ -7,7 +7,7 @@ Mattermost Mission Collaboration for Microsoft 365 (Beta)
 Mattermost Mission Collaboration for Microsoft extends Microsoft 365, Microsoft Outlook, and Microsoft Teams for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks.
 
 .. image:: ../images/External-Collaboration-with-Enterprise-Control-Microsoft.png
-  :alt: Mattermost Mission Collaboration for Microsoft application extends Enterprise communications with secure external collaboration controlled by IT by accessing Mattermost from your Microsoft Office365, Teams, and Outlook user experiences.
+  :alt: Mattermost Mission Collaboration for Microsoft application extends Enterprise communications with secure external collaboration controlled by IT by accessing Mattermost from your Microsoft 365, Teams, and Outlook user experiences.
 
 This app is designed to work with Microsoft 365, Outlook, and Teams.
 
