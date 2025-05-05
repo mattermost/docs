@@ -1,6 +1,9 @@
 Community for Mattermost
 ========================
 
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 Join the Mattermost Community directly from your Microsoft 365, Microsoft Outlook, or Microsoft Teams instance!
 
 Use the Mattermost for Microsoft Teams integration to stay connected with thousands of users, contributors, and Mattermost staff directly from the tools you use every day. Join thousands of Mattermost users, contributors, and staff members in a vibrant community where you can ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
