@@ -34,7 +34,7 @@ Create an MS Teams app in Azure
   .. image:: ../images/remember-tenant-client.png
     :alt: Go to your newly created application and copy the Application (client) ID and Directory (tenant) ID values. You'll need those later to configure the plugin.
 
-6. Go to **Certificates and secrets** to generate a new client secret. Make a copy of the secrfet value, as it will only be shown once. You'll need this value to configure the plugin.
+6. Go to **Certificates and secrets** to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
 
   .. image:: ../images/remember-client-secret.png
     :alt: Go to Certificates and secrets to generate a new client secret. Make a copy of the secret value, as it will only be shown once. You'll need this value to configure the plugin.
