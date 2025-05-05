@@ -72,6 +72,9 @@ Create an MS Teams app in Azure
 
             - **Teams web**: 5e3ce6c0-2b1f-4285-8d4b-75ee78787346
             - **Teams app**: 1fec8e78-bce4-4aaf-ab1b-5451cc387264
+            - **Outlook desktop** : d3590ed6-52b3-4102-aeff-aad2292ab01c
+            - **Outlook web**     : bc59ab01-8403-45c6-8796-ac3ef710b3e3
+            
 
     - If you want to make your application available in more Microsoft applications, keep adding client applications from `the following table <https://learn.microsoft.com/en-us/microsoftteams/platform/tabs/how-to/authentication/tab-sso-register-aad#to-configure-authorized-client-application:~:text=Select%20one%20of%20the%20following%20client%20IDs%3A>`_.
 
