@@ -102,7 +102,6 @@ Mattermost plugin setup
 
 9. Select the **Download Manifest** button to generate the MS Teams application as a ZIP file, containing the app manifest. Save this file as it will be used in the next steps.
 
-10. Configure Mattermost with the list of domains permitted to embed the Mattermost web client via an iFrame by setting the :ref:`frame ancestors <configure/integrations-configuration-settings:frame ancestors>` configuration setting. Additionally, ensure that correct configurations are in place to allow communication between the iframe and the parent domain without violating security.
 
 Install Mattermost in Microsoft Teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
