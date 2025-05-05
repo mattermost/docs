@@ -59,7 +59,7 @@ Key features
 
 - **Direct Access**: Access the Community for Mattermost directly from a tab without switching applications or opening a browser.
 - **Seamless Integration**: Experience the full functionality of Community for Mattermost within a familiar interface.
-- **Real-time Collaboration**: Engage with the Community for Mattermost in real-time discussions on product features, technical questions, and best practices.
+- **Real-time Collaboration**: Engage with the Mattermost community in real-time discussions on product features, technical questions, and best practices.
 - **Product Support**: Get help from both Mattermost staff and experienced community members.
 - **Contribute to Development**: Participate in discussions that shape the future direction of Mattermost products.
 - **Knowledge Sharing**: Learn implementation strategies and best practices from a diverse community of users.
