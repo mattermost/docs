@@ -57,7 +57,7 @@ Once you've installed the app, here are some ways to get started:
 Key features
 ------------
 
-- **Direct Access**: Access the Community for Mattermost directly from a tab without switching applications or opening a browser.
+- **Direct Access**: Access the Community for Mattermost app directly from a tab without switching applications or opening a browser.
 - **Seamless Integration**: Experience the full functionality of Community for Mattermost within a familiar interface.
 - **Real-time Collaboration**: Engage with the Mattermost community in real-time discussions on product features, technical questions, and best practices.
 - **Product Support**: Get help from both Mattermost staff and experienced community members.
