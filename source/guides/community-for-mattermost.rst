@@ -11,7 +11,7 @@ Use the Mattermost for Microsoft Teams integration to stay connected with thousa
 .. image:: ../images/mattermost-for-microsoft_365.png
   :alt: Community for Mattermost is available in the Microsoft App Store.
 
-This app is designed to work with Microsoft 365, Outlook, and Teams. A free Mattermost account is required to use the Mattermost Customer Community.
+This app is designed to work with Microsoft 365, Outlook, and Teams. A free Mattermost account is required to access the Mattermost Community server.
 
 Setup
 -----
