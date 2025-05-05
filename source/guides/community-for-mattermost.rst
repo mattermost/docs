@@ -29,7 +29,7 @@ A Microsoft Teams administrator must make the Community for Mattermost app avail
 End user setup
 ~~~~~~~~~~~~~~~
 
-Once enabled for all, any Microsoft 365 user can complete the steps below to access the Mattermost for Microsoft 365 within their Microsoft environment:
+Once enabled for all, any Microsoft 365 user can complete the steps below to access the Community for Mattermost app within their Microsoft environment:
 
 1. Sign in to your Microsoft Teams account from a `web browser <https://teams.microsoft.com/v2/?clientexperience=t2>`_ or the desktop application.
 
