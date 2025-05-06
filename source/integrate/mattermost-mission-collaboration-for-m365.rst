@@ -31,7 +31,7 @@ Key Notes
 ~~~~~~~~~
 
 - The **Azure App** is responsible for authentication and managing permissions.
-- The **Teams App** is installed within Microsoft Teams to enable collaboration.
+- The **Teams App** is installed within Microsoft Teams to enable collaboration via a tab.
 - The **Mattermost Plugin** is the configuration point within Mattermost that unifies the integration.
 
 The order you will be following in this guide is:
