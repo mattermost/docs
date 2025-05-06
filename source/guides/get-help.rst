@@ -7,6 +7,7 @@ Training and Support
    :titlesonly:
 
    /guides/community-chat.rst
+   /guides/community-for-mattermost.rst
    /guides/contribute-to-documentation.rst
 
 Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. If you're struggling with something on your Mattermost journey, take a look at the following learning resources:
