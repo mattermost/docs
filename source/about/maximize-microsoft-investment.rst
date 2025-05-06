@@ -8,7 +8,7 @@ Supplement existing investments in Microsoft Teams, M365, and Entra ID with Matt
   :hidden:
   :titlesonly:
 
-* :doc:`Mattermost for Microsoft Teams </integrate/mattermost-teams-sync>` - Integrate Microsoft Teams to securely flow chats and group chats from Teams into Mattermost, sharing information and requests across environments in real time.
+* :doc:`Mattermost for Microsoft Teams </integrate/microsoft-teams-sync>` - Integrate Microsoft Teams to securely flow chats and group chats from Teams into Mattermost, sharing information and requests across environments in real time.
 * :doc:`Mattermost Mission Collaboration for Microsoft 365 </integrate/mattermost-mission-collaboration-for-m365>` - Extend Microsoft 365, Microsoft Outlook, and Microsoft Teams for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks.
 * :doc:`Community for Mattermost </guides/community-for-mattermost>` - Join the Mattermost Community directly from your Microsoft 365, Microsoft Outlook, or Microsoft Teams instance to ask questions, get support, share ideas, and contribute to shaping the future of Mattermost.
 * :doc:`Mattermost for Microsoft Meetings </integrate/microsoft-teams-meetings>` - Integrate Microsoft Teams Meetings to launch integrated video and audio call meetings from Microsoft Teams.
