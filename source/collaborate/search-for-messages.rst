@@ -4,7 +4,7 @@ Search for messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__.
+Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ and perform more advanced searches using `search modifiers <#search-modifiers>`__.
 
 .. include:: ../_static/badges/academy-search.rst
   :start-after: :nosearch:
@@ -16,7 +16,7 @@ Search for message
 
   **Search for messages**
 
-  1. Select the Search field, select **Messages**, enter your search criteria including applicable `hashtags <#hashtags>`__.
+  1. Select the Search field, select **Messages**, enter your search criteria.
 
     .. image:: ../images/search-messages.png
       :alt: Use the Search field to search for messages.
@@ -36,7 +36,7 @@ Search for message
 
   .. tip::
 
-    From Mattermost v10.8, you can adjust the search results to show messages from the current team, a specific team, or all teams.
+    From Mattermost v10.8, you can also adjust your search results to show messages from the current team, a specific team, or all teams.
 
 .. tab:: Mobile
 
@@ -52,7 +52,7 @@ Search for message
         :alt: Tap on the Team selector to select the team you want to search in.
         :scale: 30
 
-  3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
+  3. Enter your search criteria.
 
     .. image:: ../images/mobile-search-message-criteria-with-hashtags.jpg
         :alt: Type your search criteria along with applicable hashtags.

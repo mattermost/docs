@@ -1922,7 +1922,7 @@ Cross-team search
 | - **true**: **(Default)** Cross-team search is    |                                                                                   |
 |   enabled. Searches can be performed against all  |                                                                                   |
 |   channels the user is a member of across all     |                                                                                   |
-|   teams or a specific team.                       |                                                                                   |
+|   teams, a specific team, or the current team.    |                                                                                   |
 | - **false**: Cross-team search is disabled.       |                                                                                   |
 |   Searches are performed on all channels the user |                                                                                   |
 |   is member of within the current team only.      |                                                                                   |
