@@ -234,8 +234,8 @@ About link
 .. config:setting:: forgot-password-custom-link
   :displayname: Forgot Password custom link (Customization)
   :systemconsole: Site Configuration > Customization
-  :configjson: .SupportSettings.ForgetPasswordCustomLink
-  :environment: MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK
+  :configjson: .SupportSettings.ForgetPasswordLink
+  :environment: MM_SUPPORTSETTINGS_FORGOTPASSWORDLINK
   :description: Set a custom URL for the **Forgot Password** link on the Mattermost login page. Leave this field blank to use Mattermost's Password Reset workflow.
 
 Forgot Password custom link
@@ -243,8 +243,8 @@ Forgot Password custom link
 
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | When the **Forgot Password** link is enabled on the Mattermost login page,    | - System Config path: **Site Configuration > Forgot password custom link**    |
-| users are taken to a custom URL to recover or change their password.          | - ``config.json`` setting: ``SupportSettings`` > ``ForgetPasswordCustomLink`` |
-|                                                                               | - Environment variable: ``MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK``       |
+| users are taken to a custom URL to recover or change their password.          | - ``config.json`` setting: ``SupportSettings`` > ``ForgetPasswordLink``       |
+|                                                                               | - Environment variable: ``MM_SUPPORTSETTINGS_FORGETPASSWORDLINK``             |
 | Leave this field blank to use Mattermost's Password Reset workflow.           |                                                                               |
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -1277,10 +1277,11 @@ Automatically follow threads
   - Enabling this setting does not automatically follow threads based on previous user actions.
     For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned
     in the thread.
+
 .. config:setting:: threaded-discussions
   :displayname: Threaded discussions (Posts)
   :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.ThreadedDiscussions
+  :configjson: .ServiceSettings.CollapsedThreads
   :environment: MM_SERVICESETTINGS_COLLAPSEDTHREADS
 
   - **Always On**: **(Default)** Enables `threaded discussions <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
@@ -1297,8 +1298,8 @@ Threaded discussions
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`threaded discussions </collaborate/organize-conversations>`      | - System Config path: **Site Configuration > Posts**                      |
-|   on the server and for all users. This is the recommended configuration for optimal user experience          | - ``config.json`` setting: ``ServiceSettings`` > ``ThreadedDiscussions``  |
-|   and to ensure consistency in how users read and respond to threaded conversations.                          | - Environment variable: ``MM_SERVICESETTINGS_THREADEDDISCUSSIONS``        |
+|   on the server and for all users. This is the recommended configuration for optimal user experience          | - ``config.json`` setting: ``ServiceSettings`` > ``CollapsedThreads``     |
+|   and to ensure consistency in how users read and respond to threaded conversations.                          | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``           |
 |   ``config.json`` setting: ``"always_on"``                                                                    |                                                                           |
 | - **Default On**: Enables threaded discussions on the server and for all users.                               |                                                                           |
 | - **Default Off**: Enables threaded discussions on the server but **not** for users.                          |                                                                           |
@@ -1360,7 +1361,7 @@ Persistent notifications
   :displayname: Maximum number of recipients for persistent notifications (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PersistentNotificationMaxRecipients
-  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXRECIPIENTS
   :description: The maximum number of recipients users may send persistent notifications to. Default is **5**.
 
 Maximum number of recipients for persistent notifications
@@ -1369,7 +1370,7 @@ Maximum number of recipients for persistent notifications
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                              |
 | notifications to.                                             | - ``config.json`` setting: ``ServiceSettings`` > ``PersistentNotificationMaxRecipients`` > ``5``  |
-|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS``               |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXRECIPIENTS``                |
 | Numerical input. Default is **5**.                            |                                                                                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
