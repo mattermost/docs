@@ -2787,6 +2787,10 @@ redirects = {
         "https://developers.mattermost.com/integrate/reference/bot-accounts/",
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
+"integrate/mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/about/community-for-mattermost.html",
+"integrate/community-for-mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/integrate/matermost-mission-collaboration-for-m365.html",
 
 # Manage redirects
 "manage/scripts.html":
