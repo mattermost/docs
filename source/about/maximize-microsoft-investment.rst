@@ -48,3 +48,5 @@ Mattermost Microsoft offerings
 - :doc:`Mattermost Playbooks for Teams </integrate/playbooks-for-microsoft-teams>`: Access active, repeatable processes and real-time status updates directly in Microsoft Teams, improving cross-organizational alignment and operational efficiency.
 - :doc:`Mattermost for Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>`: Securely sync chats and group messages between Microsoft Teams and Mattermost for real-time collaboration and streamlined communication.
 - :doc:`Community for Mattermost </guides/community-for-mattermost>`: Engage with the Mattermost community directly within M365, Outlook, or Teams for support, insights, and collaboration on future product developments.
+
+Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more about these solutions.
