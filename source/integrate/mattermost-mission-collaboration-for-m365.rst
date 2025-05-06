@@ -154,4 +154,6 @@ FAQ
 Where can I get support?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Submit an issue on GitHub <https://github.com/mattermost/mattermost-plugin-msteams-devsecops/issues>`_. Share your thoughts and suggestions in the `~user-feedback channel <https://community.mattermost.com/core/channels/user-feedback>`_ on the Mattermost Community server.
+Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
