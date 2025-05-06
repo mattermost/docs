@@ -19,13 +19,13 @@ Before proceeding with the setup guide, it is important to understand the compon
 The integration consists of **three main components**:
 
 1. **Azure App Registration**:
-   An application must be registered in Microsoft Azure to enable secure authentication and authorization between Mattermost and M365 services. This app acts as the bridge for permissions and connectivity.
+   An application must be registered in Microsoft Azure to enable secure authentication and authorization between Mattermost and M365 services. This app registration acts as the bridge for permissions and connectivity.
 
 2. **Microsoft Teams App Installation**:
-   A Microsoft Teams app is installed into Microsoft Teams. This app facilitates collaboration between Mattermost and Teams, allowing messages and interactions to flow seamlessly between the platforms.
+   A Microsoft Teams app is installed into Microsoft Teams. This app facilitates collaboration between Mattermost and Teams, providing a tab containing Mattermost within the Teams client.
 
 3. **Mattermost Plugin Configuration**:
-   Within your Mattermost workspace, the M365 plugin needs to be installed and configured. This plugin acts as the integration hub on the Mattermost side, connecting to both the Azure App and the Teams App.
+   Within your Mattermost, the Mattermost Mission Collaboration for Microsoft plugin needs to be installed and configured. This plugin acts as the integration hub on the Mattermost side, connecting to both the Azure App and the Teams App.
 
 Key Notes
 ~~~~~~~~~
