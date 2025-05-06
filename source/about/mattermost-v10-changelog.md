@@ -11,6 +11,7 @@
 
 ### Important Upgrade Notes
  - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
+ - Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, [talk to a Mattermost expert](https://mattermost.com/contact-sales/).
 
 ```{Important}
 If you upgrade from a release earlier than v10.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -28,7 +29,6 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 
 #### Administration
  - Added Custom Profile Attribute field type, visibility, and related options in **System Console -> System Properties**.
- - Introduced Premium SKU in code and removed usages of E10 and E20 licenses.
  - Stopped building and packaging Windows and MacOS releases. 
  - ``EnableLocalMode`` is now automatically enabled during development. 
  - Log messages are now added if post props are invalid. 
