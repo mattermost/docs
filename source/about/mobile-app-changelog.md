@@ -21,7 +21,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 
 ### Improvements
  - Added a feature to support scheduled posts on mobile. 
- - Added the ability to display channel banners in the mobile app. 
+ - Added the ability to display channel banners in the mobile app. This is available for Enterprise Advanced servers that have the Channel Banners feature available. 
  - Added autofill on the email/password fields on the login screen. 
  - Upgraded forked ``commonmark`` to v0.31.2-0. 
 
