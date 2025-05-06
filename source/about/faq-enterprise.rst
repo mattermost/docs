@@ -1,5 +1,5 @@
-Enterprise Edition questions
-============================
+Enterprise Edition
+===================
 
 What is Mattermost Enterprise Edition?
 --------------------------------------
@@ -54,7 +54,7 @@ For small businesses, :ref:`Mattermost Professional <about/editions-and-offering
 Do you offer special programs for non-profit organizations, open source projects, or educational institutions?
 ----------------------------------------------------------------------------------------------------------------
 
-Yes. See the :ref:`Mattermost nonprofit license program <about/subscription:mattermost nonprofit license program>` documentation for details.
+Yes. See the :doc:`non-profit subscriptions </about/non-profit-subscriptions>` documentation for details.
 
 How can I be assured that my data will not be locked in to commercial software?
 -------------------------------------------------------------------------------

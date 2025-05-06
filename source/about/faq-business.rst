@@ -1,5 +1,5 @@
-Business questions
-==================
+Business
+=========
 
 How do I fork Mattermost?
 -------------------------
@@ -54,7 +54,7 @@ Why does Mattermost have a discount for certain kinds of non-profits but not for
 
 While we welcome anyone to use the open source version of Mattermost Team Edition free of charge, Mattermost, Inc., like any software company, has specific discounting programs for its commercial Mattermost Enterprise Edition based on business objectives. Objectives of the discounting programs include the suitability of potential case studies, references, word-of-mouth promotion and public promotion of solutions, among many other factors.
 
-See our :ref:`License and Subscription <about/subscription:mattermost nonprofit license program>` documentation for details.
+See our :doc:`non-profit subscriptions </about/non-profit-subscriptions>` documentation for details.
 
 Can I create a derivative work of the Mattermost /mattermost repository that is not open source?
 -------------------------------------------------------------------------------------------------------

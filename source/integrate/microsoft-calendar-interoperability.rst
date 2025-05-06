@@ -65,7 +65,7 @@ Create a Mattermost App in Azure
 
   - ``Calendars.Read``
   - ``MailboxSettings.Read``
-  - ``User.ReadAll``
+  - ``User.Read.All``
 
   .. image:: ../images/ms-teams-meetings-grant-admin-consent.png
     :alt: In Azure, grant admin consent permissions for the application.

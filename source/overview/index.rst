@@ -1,3 +1,9 @@
+.. meta::
+   :name: robots
+   :content: noindex
+
+:orphan:
+:nosearch:
 
 About Mattermost
 ================
@@ -5,7 +11,7 @@ About Mattermost
 Mattermost’s purpose is to accelerate the world’s mission critical work by developing and delivering secure, open core collaboration software providing unrivaled focus, adaptability and resilience to our customers. You’ll find an overview of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support below.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :hidden:
 
    /about/product.rst
@@ -13,7 +19,7 @@ Mattermost’s purpose is to accelerate the world’s mission critical work by d
    /about/security.rst
    /about/integrations.rst
    /about/subscription.rst
-   /about/zero-trust.rst
+   /about/security/zero-trust.rst
    /about/releases-lifecycle.rst
    /about/corporate-directory-integration.rst
    /about/certifications-and-compliance.rst
@@ -31,7 +37,7 @@ This section provides an overview of Mattermost products, features, security, in
 * :doc:`Product overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Use cases </about/use-cases>` - Learn about product use cases.
 * :doc:`Security </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
-* :doc:`Zero Trust </about/zero-trust>` - Learn how Mattermost helps organizations adopt and implement Zero Trust principles to safeguard their mission-critical communications and collaboration.
+* :doc:`Zero Trust </about/security/zero-trust>` - Learn how Mattermost helps organizations adopt and implement Zero Trust principles to safeguard their mission-critical communications and collaboration.
 * :doc:`Integrations </about/integrations>` - Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
 * :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions, plans, and licenses for both Cloud and self-hosted deployments..
 * :doc:`Mattermost releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.

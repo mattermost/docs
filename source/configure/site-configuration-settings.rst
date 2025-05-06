@@ -383,7 +383,10 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :systemconsole: N/A
   :configjson: NativeAppSettings.MobileExternalBrowser
   :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
-  :description: This setting configures the mobile app to perform SSO Authentication using the external default browser.
+  :description: Configure the mobile app to use the default mobile browser to perform SSO authentication. It should be enabled when there are issues with the mobile app SSO redirect flow. Disabled by default.
+
+  - **true**:  The mobile app uses the default internal mobile browser to perform SSO authentication.
+  - **false**: **(Default)** The mobile app uses an external mobile browser to perform SSO authentication.
 
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -393,10 +396,15 @@ Mobile external browser
 
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | From Mattermost v10.2 and Mobile v2.2.1, this setting configures the mobile app       | - System Config path: N/A                                                   |
-| to perform SSO Authentication using the external default browser.                     | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
+| to use an external mobile browser to perform SSO authentication.                      | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
 |                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
-| String input.                                                                         |                                                                             |
+| - **true**:  The mobile app uses the default internal mobile browser to perform SSO   |                                                                             |
+|   authentication.                                                                     |                                                                             |
+| - **false**: **(Default)** The mobile app uses an external mobile browser to          |                                                                             |
+|   perform SSO authentication.                                                         |                                                                             |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Enable this configuration setting when there are issues with the mobile app SSO redirect flow.
 
 ----
 
@@ -780,7 +788,7 @@ Enable custom user groups
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
-| - **false**: Custom user groups cannot be created.                                                | - Environment variable: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS                      |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: ``MM_SERVICESETTINGS.ENABLECUSTOMGROUPS``                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: user-statistics-update-time
@@ -1413,7 +1421,7 @@ Enable website link previews
 
 .. important::
 
-  The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
+  The server must be connected to the internet to generate previews. This connection can be established through a :ref:`firewall or outbound proxy <deploy/server/preparations:outbound proxy configuration>` if necessary.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - System Config path: **Site Configuration > Posts**                               |
