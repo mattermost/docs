@@ -404,7 +404,9 @@ Due to the inherent complexities of hosting a WebRTC service, some limitations a
 
 One key requirement is that each `rtcd` process live in a dedicated Kubernetes node. This is necessary to forward the data correctly while allowing for horizontal scaling. Data should generally not go through a standard ingress but directly to the pod running the `rtcd` process.
 
-The general recommendation is to expose one external IP address per `rtcd` instance (Kubernetes node). This makes it simpler to scale as the application is able to detect its own external address (through STUN) and advertise it to clients to achieve connectivity with minimal configuration.
+The general recommendation is to expose one external IP address per `rtcd` instance (Kubernetes node). This makes it simpler to scale as the application is able to detect its own external address (through STUN) and advertise it to clients to achieve connectivity with minimal configuration. If deploying `rtcd` via the recommended [rtcd Helm chart](https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd) mentioned above, this external IP address is natively available as the direct node IP addresses as the `rtcd` Deployment uses `hostNetwork: true` by default. This adds Kubernetes `endpoints` to each node with a `rtcd` pod with each port in the `rtcd` service available directly on the nodes, by default TCP/8045 (api), UDP/8443 (calls), and TCP/8443 (TCP Calls fallback).
+
+For an alternative to allowing `hostNetwork: true` in your environment, see [Non Highly Available option](#non-ha-rtcd-deployment-optional) below.
 
 If, for some reason, exposing multiple IP addresses is not possible in your environment, port mapping (NAT) can be used. In this scenario different ports are used to map the respective `rtcd` nodes behind the single external IP. Example:
 
@@ -424,6 +426,17 @@ This case requires a couple of extra configurations:
 ```{note}
 One option to limit these static mappings is to reduce the size of the local subnet (e.g., to `/29`).
 ```
+
+#### Non-HA RTCD Deployment (optional)
+
+If you would like to expose your UDP `rtcd` service but without giving the pods direct node network access, you can use a `NodePort` service type for the `rtcd` service instead of headless like it uses by default. You will either need to create multiple NodePort services (one per `rtcd` pod) or ensure the `deploymentType` to "deployment" and `.configuration.replicas` to "1" (both in your `rtcd` helm chart values).
+
+Once you have `rtcd` deployed as a single replica using a `NodePort`, you can now configure your **RTCD Service URL** and your `rtcd` components to get functional calls in Kubernetes without permitting `hostNetwork` access. Configurations specifically needed:
+
+- In the Mattermost helm chart values, the environment variable `MM_CALLS_RTCD_URL` corresponds with the **RTCD Service URL** and should be set to the `rtcd` API service (TCP/8045). If everything is deployed in Kuebretes, this can be statically set to the internal service name `http://mattermost-rtcd.mattermost.svc:8045`.
+- In the Mettermost-RTCD helm chart values, the environment variable `RTCD_RTC_ICEHOSTOVERRIDE` should be the IP where your `NodePort` is reachable; in Kubernetes, this usually corresponds with any worker node.
+  - Also, the `NodePort` needs to be passed along to `rtcd` to advertise as well via the `RTCD_RTC_ICEHOSTPORTOVERRIDE` environment variable.
+
 
 ## Frequently asked questions
 
