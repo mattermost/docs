@@ -1,12 +1,12 @@
-Connect Microsoft 365, Outlook, and Teams with Mattermost (Beta)
+Connect Microsoft 365, Teams, and Outlook with Mattermost (Beta)
 ================================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Mission Collaboration for Microsoft extends Microsoft 365, Microsoft Outlook, and Microsoft Teams for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks.
+Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks.
 
-This app is designed to work with Microsoft 365, Outlook, and Teams.
+This app is designed to work with Microsoft 365, Teams, and Outlook.
 
 Deploy
 -------

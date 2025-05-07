@@ -10,7 +10,6 @@ Mattermost's purpose is to accelerate the world's mission critical work by devel
 
    /about/product.rst
    /about/use-cases.rst
-   /about/skype-for-business-replacement.rst
    /guides/deployment-guide.rst
    /guides/administration-guide.rst
    /about/security.rst
@@ -28,7 +27,6 @@ Visit the following sections to learn more about Mattermost.
 
 * :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Use Case Guide </about/use-cases>` - Learn about Mattermost use cases for mission critical operations.
-* :doc:`Skype for Business Replacement </about/skype-for-business-replacement>` - Learn how to replace Skype for Business with Mattermost in classified operations.
 * :doc:`Deployment Guide </guides/deployment-guide>` - Learn about the Mattermost deployment process, including system requirements, installation, and configuration.
 * :doc:`Administration Guide </guides/administration-guide>` - Learn about the Mattermost administration process, including user management, security settings, and system maintenance.
 * :doc:`Security Guide </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.

@@ -14,7 +14,7 @@ Intelligent incident response with MS Security Suite
 During high-stakes incidents, Microsoft 365 tools can be limited or unavailable, slowing down response times and jeopardizing mission continuity. Mattermost provides a secure, out-of-band solution that keeps your team connected, even if Microsoft systems go down. Integrates with Microsoft Security Suite and Entra ID for a seamless, fast response. With real-time chat, automated workflows, decision logs, and AI-powered summaries, your team can stay mission-ready under pressure.
 
 External collaboration with enterprise control
-----------------------------------------------------------------
+-----------------------------------------------
 
 Managing external collaboration within Microsoft Teams can be complex, often requiring numerous configurations and administrative workarounds that lead to security risks. Mattermost integrates directly into Microsoft Teams and Outlook, enabling secure, IT-approved external collaboration and mitigating the risk of consumer tool usage. This ensures compliance, centralizes communication, and provides enterprise-grade oversight through encryption, audit trails, and controls.
 
@@ -36,7 +36,7 @@ Mattermost for Microsoft offerings
   :hidden:
   :titlesonly:
 
-- :doc:`Mission Collaboration for M365, Outlook, and Teams </integrate/mattermost-mission-collaboration-for-m365>`: Extend the capabilities of M365, Outlook, and Teams for mission-critical operations, including those in air-gapped and classified environments.
+- :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`: Extend the capabilities of M365, Teams, and Outlook for mission-critical operations, including those in air-gapped and classified environments.
 - :doc:`Entra ID Single Sign-On </onboard/sso-entraid>`: Simplify user access and management with single sign-on and unified group management in M365, improving security and productivity.
 - `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_: Take advantage of Azure’s infrastructure for a reliable, scalable, and highly available Mattermost deployment that grows with your needs.
 - :ref:`Azure AI Integration <configure/enable-copilot:mattermost configuration>`: Integrate Mattermost Copilot with Azure AI to securely customize workflows and enhance AI-powered decision-making, tailored to your team’s specific mission.
