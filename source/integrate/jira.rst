@@ -6,15 +6,7 @@ Connect Jira to Mattermost
 
 Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. You control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions. 
 
-.. tip::
-
-  Download `this Jira workflows datasheet <https://mattermost.com/mattermost-jira-datasheet/>`_ to learn more about using Mattermost and Jira, including:
-
-  - Key benefits to integrating Jira and Mattermost
-  - Common Jira Workflows on Mattermost
-  - How to get started with the Jira plugin for Mattermost
-
-Setup
+Deploy
 ------
 
 Setup starts in Mattermost, moves to Jira, and finishes in Mattermost.
@@ -56,7 +48,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 2. Run ``/jira setup`` to start the wizard to configure the plugin. If you wish to set up the plugin manually, then please follow the steps below.     
 
 Install Jira integration in your Jira instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable your users to create and manage Jira issues across Mattermost channels, you must install this Jira integration, as an application, in your Jira instance. 
 
@@ -152,9 +144,6 @@ Enable
 ------
 
 Notify your teams that they can `connect their Jira accounts to Mattermost <#connect-a-jira-account-to-mattermost>`__.
-
-Do more with Jira
-~~~~~~~~~~~~~~~~~
 
 Do more with Jira interoperabiilty as a Mattermost system admin by using the following slash commands:
 
@@ -301,14 +290,24 @@ How do I handle credential rotation for the Jira webhook?
 
 Generate a new secret by going to **System Console > Plugins > Jira**. Paste the new webhook URL in your Jira webhook configuration.
 
-Get help
---------
-
-Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
-
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
-
 Customize
 ---------
 
 This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
+Get help
+--------
+
+Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
+
+.. tip::
+
+  Download `this Jira workflows datasheet <https://mattermost.com/mattermost-jira-datasheet/>`_ to learn more about using Mattermost and Jira, including:
+
+  - Key benefits to integrating Jira and Mattermost
+  - Common Jira Workflows on Mattermost
+  - How to get started with the Jira plugin for Mattermost

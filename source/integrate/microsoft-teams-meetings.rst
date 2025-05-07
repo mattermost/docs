@@ -6,8 +6,8 @@ Connect Microsoft Teams Meetings to Mattermost
 
 Start and join voice calls, video calls, and use screen sharing with your team members in Microsoft Teams without leaving Mattermost.
 
-Setup
------
+Deploy
+-------
 
 Setup starts in Microsoft Azure and ends in Mattermost.
 
@@ -126,8 +126,8 @@ We recommend updating this integration as new versions are released. Generally, 
 Get help
 --------
 
-If you face issues while installing this integration, gather relevant information, including reproduction steps to accelerate troubleshooting. You're welcome to open a new issue in the `Mattermost for Microsoft Teams Meetings GitHub repository <https://github.com/mattermost-community/mattermost-plugin-msteams-meetings/issues/new>`_.
+Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost for Microsoft Teams Sync plugin <https://github.com/mattermost/mattermost-plugin-msteams-meetings>`_.
 
-- **Mattermost Commercial Customers (including Enterprise and Professional plans)**: Visit `Mattermost Support <https://mattermost.com/support/>`_ to `submit a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`_.
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
-- **Mattermost Team Edition and Free customers** Visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ where you can access the global Mattermost Community for assistance.
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.

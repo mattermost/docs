@@ -1,5 +1,5 @@
-Use Cases
-=========
+Use Case Guide
+===============
 
 Learn how technical and operational teams use Mattermost to accelerate mission-critical work across a wide variety of disciplines.
 

@@ -2811,6 +2811,27 @@ redirects = {
         "https://docs.mattermost.com/integrate/servicenow.html",
 "integrate/zoom-interoperability.html":
         "https://docs.mattermost.com/integrate/zoom.html",
+"integrate/github.html#setup":
+        "https://docs.mattermost.com/integrate/github.html#deploy",
+"integrate/gitlab.html#setup":
+        "https://docs.mattermost.com/integrate/gitlab.html#deploy",
+"integrate/jira.html#setup":
+        "https://docs.mattermost.com/integrate/jira.html#deploy",
+"integrate/mattermost-mission-collaboration-for-m365.html#setup":
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
+"integrate/playbooks-for-microsoft-teams.html#setup":
+        "https://docs.mattermost.com/integrate/playbooks-for-microsoft-teams.html#deploy",
+"integrate/microsoft-calendar.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
+"integrate/microsoft-teams-sync.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html#deploy",
+"integrate/microsoft-teams-meetings.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-teams-meetings.html#deploy",
+"integrate/servicenow.html#setup":
+        "https://docs.mattermost.com/integrate/servicenow.html#deploy",
+"integrate/zoom.html#setup":
+        "https://docs.mattermost.com/integrate/zoom.html#deploy",
+
 
 # Manage redirects
 "manage/scripts.html":

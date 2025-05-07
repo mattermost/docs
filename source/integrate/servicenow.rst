@@ -6,11 +6,7 @@ Connect ServiceNow to Mattermost
 
 Minimize distractions and reduce context switching by bridging the gap between IT service management (ITSM) and team communication. Create and manage incident reports, change requests, and service tickets, as well as manage event-driven notification subscriptions for ServiceNow record changes, in real-time, and automate routine tasks to decrease response times without leaving Mattermost.
 
-.. tip::
-
-  Watch `this on-demand webinar on incident response with Mattermost and ServiceNow <https://mattermost.com/video/streamline-incident-response-with-mattermost-and-servicenow/>`_ to learn how to streamline incident response.
-
-Setup
+Deploy
 ------
 
 Setup starts in ServiceNow and finishes in Mattermost.
@@ -127,19 +123,9 @@ Once connected, you'll receive direct messages from the ServiceNow bot in Matter
 Connect a ServiceNow account to Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. In Mattermost, run the ``/servicenow connect`` slash command in any Mattermost channel to link your Mattermost account with your ServiceNow account. Follow the link into your ServiceNow instance, and select **Allow**. You can disconnect your accounts by running the ``/servicenow disconnect`` slash command.
-
-.. tip:: 
-  You can also select the **ServiceNow** icon in the apps bar on the right to connect your ServiceNow account.
+1. In Mattermost, run the ``/servicenow connect`` slash command in any Mattermost channel to link your Mattermost account with your ServiceNow account. Follow the link into your ServiceNow instance, and select **Allow**. You can disconnect your accounts by running the ``/servicenow disconnect`` slash command. Alternatively, select the **ServiceNow** icon in the apps bar on the right to connect your ServiceNow account.
 
 2. Once connected, run the ``/servicenow help`` slash command to see what you can do.
-
-Get help
---------
-
-Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost ServiceNow plugin repository <https://github.com/mattermost/mattermost-plugin-servicenow>`_.
-
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
 Customize
 ---------
@@ -151,3 +137,16 @@ ServiceNow itself provides developer instances to anyone who wishes to develop o
 See the `Development <https://github.com/mattermost/mattermost-plugin-servicenow/blob/master/docs/developer_docs.md#development>`_ section of the Mattermost ServiceNow Plugin GitHub repository for details on customizing this integration.
 
 Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
+Get help
+--------
+
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost ServiceNow plugin repository <https://github.com/mattermost/mattermost-plugin-servicenow>`_.
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
+
+.. tip::
+
+  Watch `this on-demand webinar on incident response with Mattermost and ServiceNow <https://mattermost.com/video/streamline-incident-response-with-mattermost-and-servicenow/>`_ to learn how to streamline incident response.

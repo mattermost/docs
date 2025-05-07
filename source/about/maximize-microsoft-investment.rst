@@ -6,7 +6,7 @@ Unlock the full potential of your Microsoft Teams, M365, and Entra ID investment
 On-prem Skype for Business replacement in classified operations
 ----------------------------------------------------------------
 
-As Skype for Business is phased out, secure teams need a new communication solution that meets stringent air-gap and security standards. Mattermost operates entirely within your infrastructure, trusted in air-gapped environments, and integrates smoothly with Outlook and Azure AI to maintain secure operations while preserving full data control.
+As Skype for Business is phased out, secure teams need a new communication solution that meets stringent air-gap and security standards. Mattermost operates entirely within your infrastructure, trusted in air-gapped environments, and integrates smoothly with Outlook and Azure AI to maintain secure operations while preserving full data control. :doc:`Learn more </about/skype-for-business-replacement>` about how Mattermost can replace Skype for Business in classified operations.
 
 Intelligent incident response with MS Security Suite
 -----------------------------------------------------
@@ -36,14 +36,14 @@ Mattermost for Microsoft offerings
   :hidden:
   :titlesonly:
 
-- :doc:`Mission Collaboration for Microsoft 365 </integrate/mattermost-mission-collaboration-for-m365>`: Extend the capabilities of Microsoft 365, Outlook, and Teams for mission-critical operations, including those in air-gapped and classified environments.
+- :doc:`Mission Collaboration for M365, Outlook, and Teams </integrate/mattermost-mission-collaboration-for-m365>`: Extend the capabilities of M365, Outlook, and Teams for mission-critical operations, including those in air-gapped and classified environments.
 - :doc:`Entra ID Single Sign-On </onboard/sso-entraid>`: Simplify user access and management with single sign-on and unified group management in M365, improving security and productivity.
 - `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_: Take advantage of Azure’s infrastructure for a reliable, scalable, and highly available Mattermost deployment that grows with your needs.
 - :ref:`Azure AI Integration <configure/enable-copilot:mattermost configuration>`: Integrate Mattermost Copilot with Azure AI to securely customize workflows and enhance AI-powered decision-making, tailored to your team’s specific mission.
-- :doc:`Microsoft Calendar Integration </integrate/microsoft-calendar>`: Keep your team synced with calendar updates from Microsoft M365 directly in Mattermost, streamlining scheduling and meeting management.
-- :doc:`Mattermost for Microsoft Team Meetings </integrate/microsoft-teams-meetings>`: Launch and manage video and audio calls directly from Microsoft Teams within Mattermost for unified, secure communication.
-- :doc:`Mattermost Playbooks for Teams </integrate/playbooks-for-microsoft-teams>`: Access active, repeatable processes and real-time status updates directly in Microsoft Teams, improving cross-organizational alignment and operational efficiency.
-- :doc:`Mattermost for Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>`: Securely sync chats and group messages between Microsoft Teams and Mattermost for real-time collaboration and streamlined communication.
+- :doc:`Microsoft Calendar Sync </integrate/microsoft-calendar>`: Keep your team synced with calendar updates from Microsoft M365 directly in Mattermost, streamlining scheduling and meeting management.
+- :doc:`Join Microsoft Team Meetings </integrate/microsoft-teams-meetings>`: Launch and manage video and audio calls directly from Microsoft Teams within Mattermost for unified, secure communication.
+- :doc:`Playbooks in Microsoft Teams </integrate/playbooks-for-microsoft-teams>`: Access active, repeatable processes and real-time status updates directly in Microsoft Teams, improving cross-organizational alignment and operational efficiency.
+- :doc:`Microsoft Teams Sync </collaborate/collaborate-within-connected-microsoft-teams>`: Securely sync chats and group messages between Microsoft Teams and Mattermost for real-time collaboration and streamlined communication.
 - :doc:`Community for Mattermost </guides/community-for-mattermost>`: Engage with the Mattermost community directly within M365, Outlook, or Teams for support, insights, and collaboration on future product developments.
 
 Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more about these solutions.

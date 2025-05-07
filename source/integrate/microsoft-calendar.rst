@@ -6,8 +6,8 @@ Connect Microsoft Calendar to Mattermost
 
 Connect your Microsoft M365 Calendar to your Mattermost instance to receive daily summaries of calendar events, synchronize your  M365 status in Mattermost, and accept or decline calendar invites from Mattermost.
 
-Setup
------
+Deploy
+-------
 
 Setup starts in Microsoft Azure and ends in Mattermost.
 
@@ -118,3 +118,12 @@ Upgrade
 -------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+
+Get help
+--------
+
+Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Microsoft Calendar plugin repository <https://github.com/mattermost/mattermost-plugin-mscalendar>`_.
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
