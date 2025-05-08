@@ -5,7 +5,7 @@ As Skype for Business reaches its end-of-life, organizations with stringent secu
 
 Mattermost offers a purpose-built, on-premises collaboration platform designed to address these unique requirements. With robust support for private, air-gapped environments and tightly controlled external communications, Mattermost empowers organizations to maintain operational continuity while meeting the demands of high-security environments.
 
-Key solutions
+Use cases
 -------------
 
 Air-gapped operations

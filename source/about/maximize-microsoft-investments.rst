@@ -5,8 +5,8 @@ Unlock the full potential of your Microsoft Teams, M365, and Entra ID investment
 
 Mattermost complements Microsoft solutions with tailored capabilities designed to meet the unique needs of high-security environments, inter-agency collaboration, and external workflows, enabling teams to maximize their Microsoft investment.  
 
-Key features and use cases
----------------------------
+Use cases
+----------
 
 On-premises Skype for Business replacement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

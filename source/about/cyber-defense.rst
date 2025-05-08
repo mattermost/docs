@@ -5,7 +5,7 @@ In today’s escalating threat landscape, organizations must respond to cyber in
 
 Mattermost offers a secure, on-premises collaboration platform designed for cybersecurity use cases. With features tailored for Out-of-Band Incident Response, Red Team operations, and SOC/CERT workflows, Mattermost integrates secure communication, workflow automation, and leading security tools to empower effective cyber defense.
 
-Key features
+Use cases
 ------------
 
 Secure communication for cyber defense

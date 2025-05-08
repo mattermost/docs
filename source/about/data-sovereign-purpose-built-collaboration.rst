@@ -5,7 +5,7 @@ In an era where control over data sovereignty is paramount, organizations need c
 
 Mattermost addresses the unique challenges of data sovereignty and purpose-built collaboration through solutions engineered for high-security environments and specialized operational requirements with a fully sovereign, on-premises solution that enables organizations to retain complete control over their data while maintaining operational efficiency and fostering teamwork.
 
-Key features
+Use cases
 -------------
 
 Fully sovereign on-premise collaboration

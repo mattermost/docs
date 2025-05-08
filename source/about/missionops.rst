@@ -1,11 +1,11 @@
-MissionOps  
-==========  
+Mission Operations
+===================
 
 Modern operations demand robust and flexible solutions to address challenges in disconnected and secure environments, tactical coordination, command and control, air-gapped systems, global logistics, and emergency response. Mattermost empowers MissionOps teams with secure and customizable collaboration capabilities that ensure mission success, even in the most demanding scenarios.  
 
 Whether communicating across tactical teams or coordinating logistics on a global scale, Mattermost provides a secure platform designed to support operational agility, compliance, and responsiveness.  
 
-Key features
+Use cases
 -------------
 
 DDIL/disconnected secure communications

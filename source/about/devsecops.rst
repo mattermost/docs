@@ -1,11 +1,11 @@
-Development and security operations
-====================================
+Real-Time DevSecOps Collaboration
+==================================
 
 Incorporating security into every stage of the software development lifecycle demands a platform that seamlessly integrates the teams, tools, and workflows central to DevSecOps. Traditional, siloed approaches to software development, security, and operations pose risks to agility, efficiency, and innovation—particularly under the increasing pressure to deliver robust, secure systems rapidly.
 
 Mattermost offers a unified collaboration and workflow solution purpose-built for DevSecOps teams, enabling effective communication, efficient process management, and enhanced security throughout the software delivery pipeline. With Mattermost, your organization can adopt the principles of DevSecOps, ensuring speed and security without compromising compliance or quality.
 
-Key features
+Use cases
 -------------
 
 Agile software development
