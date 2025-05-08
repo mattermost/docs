@@ -14,6 +14,7 @@ For detailed information on specific topics, please refer to these specialized g
 - `RTCD Setup and Configuration <calls-rtcd-setup.html>`__: Comprehensive guide for setting up the dedicated RTCD service
 - `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
 - `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__: Guide to monitoring Calls performance using metrics and observability
+- `Calls Deployment on Kubernetes <calls-kubernetes.html>`__: Detailed guide for deploying Calls in Kubernetes environments
 
 About Mattermost Calls
 ---------------------
@@ -66,8 +67,8 @@ Limitations
 -----------
 
 - In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. 
-- You can configure the maximum participants in **System Console > Plugin Management > Calls > Max call participants**.
+- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources.
+- For more information on capacity planning, see the `Performance Considerations <#performance-considerations>`__ section below.
 
 Configuration
 -------------
@@ -82,46 +83,49 @@ Mattermost Calls can be deployed in several configurations:
 Single Instance Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Integrated Mode
+^^^^^^^^^^^^^
+
+The WebRTC service runs within the Calls plugin on the Mattermost server.  This is the default mode when first installing the plugin on a single Mattermost instance setup. The WebRTC service is integrated in the plugin itself and runs alongside the Mattermost server.
+
 .. image:: ../images/calls-deployment-image3.png
-  :alt: A diagram of the integrated configuration model of a single instance.
+  :alt: Integrated configuration model of a single instance
   :width: 600px
 
-**Integrated mode**: The WebRTC service runs within the Calls plugin on the Mattermost server.
+RTCD Mode
+^^^^^^^^
+
+A dedicated RTCD service handles media routing, reducing load on the Mattermost server.
 
 .. image:: ../images/calls-deployment-image7.png
-  :alt: A diagram of a Web RTC deployment configuration.
+  :alt: Web RTC deployment configuration
   :width: 600px
-
-**RTCD mode**: A dedicated RTCD service handles media routing, reducing load on the Mattermost server.
 
 High Availability Deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/calls-deployment-image4.png
-  :alt: A diagram of a clustered calls deployment.
+Clustered Mode
+^^^^^^^^^^^^
+
+This is the default mode when running the plugin in a high availability cluster-based deployment. Every Mattermost node will run an instance of the plugin that includes a WebRTC service. Calls are distributed across all available nodes through the existing load-balancer: a call is hosted on the instance where the initiating websocket connection (first client to join) is made. A single call will be hosted on a single cluster node.
+
+.. image:: ../images/calls-deployment-image5.png
+  :alt: Clustered calls deployment
   :width: 600px
 
-**Clustered mode**: Each Mattermost node runs an instance of the plugin with its own WebRTC service.
+RTCD with High Availability
+^^^^^^^^^^
+
+Dedicated RTCD services handle media routing for high availability.
 
 .. image:: ../images/calls-deployment-image2.png
-  :alt: A diagram of an rtcd deployment.
+  :alt: RTCD deployment with high availability
   :width: 600px
-
-**RTCD with HA**: Dedicated RTCD services handle media routing for high availability.
 
 Kubernetes Deployments
 ~~~~~~~~~~~~~~~~~~~~
 
-.. image:: ../images/calls-deployment-kubernetes.png
-  :alt: A diagram of calls deployed in a Kubernetes cluster.
-  :width: 600px
-
-For Kubernetes deployments, the RTCD service is strongly recommended and is the only officially supported approach.
-
-For Kubernetes deployments, the recommended approach is to use the officially provided Helm charts:
-
-- `rtcd Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__
-- `calls-offloader Helm chart <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-calls-offloader>`__
+RTCD is the only officially supported approach for Kubernetes deployments. For detailed information on deploying Mattermost Calls in Kubernetes environments, including Helm chart configurations, resource requirements, and scaling considerations, see the `Calls Deployment on Kubernetes <calls-kubernetes.html>`__ guide.
 
 When to Use RTCD
 --------------
@@ -185,3 +189,4 @@ Next Steps
 1. For detailed setup instructions, see `RTCD Setup and Configuration <calls-rtcd-setup.html>`__
 2. For monitoring guidance, see `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__
 3. If you encounter issues, see `Calls Troubleshooting <calls-troubleshooting.html>`__
+4. For Kubernetes deployments, see `Calls Deployment on Kubernetes <calls-kubernetes.html>`__
