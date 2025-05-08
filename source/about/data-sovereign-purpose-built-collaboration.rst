@@ -6,7 +6,7 @@ In an era where control over data sovereignty is paramount, organizations need c
 Mattermost addresses the unique challenges of data sovereignty and purpose-built collaboration through solutions engineered for high-security environments and specialized operational requirements with a fully sovereign, on-premises solution that enables organizations to retain complete control over their data while maintaining operational efficiency and fostering teamwork.
 
 Use cases
--------------
+-----------
 
 Fully sovereign on-premise collaboration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -18,17 +18,6 @@ Organizations lack full control, security, and compliance over collaboration pla
 - **Kubernetes-compatible architecture**: Simplify deployment, scale easily, and administer IT operations through Kubernetes support, compatible with global and local cloud services such as AWS, Azure, or entirely air-gapped infrastructures.
 
 - **STIG-hardened and FIPS 140-2 validated images**: Meet strict compliance mandates, including DISA and FedRAMP requirements, with secure system images designed for sensitive environments.
-
-Operational technology – industrial control systems
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Traditional collaboration tools are not secure, reliable, or tailored enough to support the unique needs of critical operational environments. Enhance communication and collaboration in operational technology (OT) environments, including industrial control systems (ICS), while ensuring data sovereignty and compliance.
-
-- **Hardened communication for OT environments**: Support collaboration in operational technology settings, including industrial control systems (ICS), with secure, resilient messaging and file-sharing capabilities tailored for high uptime and operational reliability.
-
-- **Robust fault tolerance**: Ensure uninterrupted communication for critical systems through high availability and disaster recovery options.
-
-- **Customizable workflows**: Optimize operational coordination in ICS environments with collaborative playbooks and streamlined task management.
 
 External collaboration with enterprise control
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

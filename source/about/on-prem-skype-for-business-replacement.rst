@@ -32,17 +32,6 @@ Struggling to enable secure external collaboration with third parties while main
 
 - **Microsoft Teams Integration**: Connect users from Mattermost and Microsoft Teams for seamless communication between internal and external stakeholders, all while maintaining enterprise-level governance and compliance controls.
 
-Why Choose Mattermost?
-------------------------
-
-- **Customizable for Mission Demands**: Tailor Mattermost to meet the specific requirements of high-security operations with integrations, plugins, and source code customizations.
-
-- **Flexible On-Premises Deployment**: Deploy on existing infrastructure using Kubernetes, virtual machines, or bare-metal servers, ensuring full control over system configurations and security.
-
-- **Data Sovereignty and Governance**: Keep sensitive data entirely within your control without relying on third-party cloud services, meeting stringent data privacy regulations.
-
-- **Reliability in Air-Gapped Scenarios**: Ensure your critical communications remain performant and available, even in environments that are fully disconnected from external networks.
-
 Get started
 ------------
 
