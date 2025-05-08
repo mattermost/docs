@@ -82,4 +82,4 @@ Ready to maximize your Microsoft investment? Explore Mattermost for Microsoft of
 
 Take control of your collaboration tools today and see how Mattermost complements and enhances your Microsoft infrastructure for seamless, secure, and scalable operations. Try Mattermost now and transform the way your teams collaborate.
 
-Try Mattermost Today | Talk to an Expert
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.

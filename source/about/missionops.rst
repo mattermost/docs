@@ -69,4 +69,4 @@ Equip your teams with Mattermost to enhance MissionOps capabilities for secure c
 
 Ready to optimize your mission workflows and communications?
 
-Try Mattermost Today | Talk to an Expert  
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.

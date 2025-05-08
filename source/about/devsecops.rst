@@ -90,4 +90,4 @@ Get started
 
 Ready to transform your software development, operations, and security with DevSecOps? Elevate your workflows with Mattermost, a platform purpose-built for agility, collaboration, and security.
 
-Try Mattermost Today | Talk to an Expert
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.

@@ -172,6 +172,16 @@ redirects = {
         "https://docs.mattermost.com/about/use-cases.html",
 "about/subscription.html#mattermost-nonprofit-license-program":
         "https://docs.mattermost.com/about/non-profit-subscriptions.html",
+"about/maximize-microsoft-investment.html":
+        "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
+"about/secure-command-and-control.html":
+        "https://docs.mattermost.com/about/use-cases.html",
+"about/devops-collaboration.html":
+        "https://docs.mattermost.com/about/devsecops.html",
+"about/incident-response-collaboration.html":
+        "https://docs.mattermost.com/about/use-cases.html",
+"about/out-of-band-collaboration.html":
+        "https://docs.mattermost.com/about/use-cases.html",
 
 
 # Administration redirects

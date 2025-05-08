@@ -88,4 +88,4 @@ Get started
 
 Ready to enhance your collaboration infrastructure with a sovereign, purpose-built platform? Upgrade to Mattermost today and see how a secure, scalable, and customizable solution can redefine collaboration in your organization’s unique environment.
 
-Try Mattermost Today | Talk to an Expert
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.

@@ -48,4 +48,4 @@ Get started
 
 Ready to transition from Skype for Business to a secure, on-premises communication platform built for air-gapped operations and enterprise-controlled external collaboration? Upgrade to Mattermost today to protect sensitive data, maintain operational continuity, and unlock new collaboration capabilities without sacrificing security.
 
-Try Mattermost Today | Talk to an Expert
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.

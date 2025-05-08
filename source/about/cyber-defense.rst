@@ -68,4 +68,4 @@ Get started
 
 Elevate your cyber defense operations with Mattermost. Equip your security teams to respond faster, collaborate better, and operate securely in the most demanding environments.
 
-Try Mattermost Today | Talk to an Expert
+Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.
