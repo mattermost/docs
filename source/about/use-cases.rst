@@ -8,16 +8,14 @@ Learn how operational teams use Mattermost to accelerate mission-critical work a
    :hidden:
    :titlesonly:
 
-   /about/cyber-defense.rst
-   /about/devsecops.rst
-   /about/missionops.rst
    /about/maximize-microsoft-investments.rst
    /about/on-prem-skype-for-business-replacement.rst
-   /about/data-sovereign-purpose-built-collaboration.rst
+   /about/devops-collaboration.rst
+   /about/incident-response-collaboration.rst
+   /about/out-of-band-collaboration.rst
 
-- :doc:`Cyber defense </about/cyber-defense>` - Cybersecurity teams use Mattermost to accelerate incident response, threat hunting, and security operations.
-- :doc:`Real-time DevSecOps Collaboration </about/devsecops>` - Engineers, IT admins, and other operational teams use Mattermost to accelerate mission-critical processes and software development and deployment processes to reduce costs.
-- :doc:`Mission operations </about/missionops>` - Technical and operational teams use Mattermost to accelerate mission-critical work across a wide variety of disciplines, including incident response, logistics, and command and control.
 - :doc:`Maximize your Microsoft investments </about/maximize-microsoft-investments>` - Speed mission-critical outcomes by supplementing existing investments in Microsoft Teams, M365, and Entra ID for everyday collaboration with Mattermost’s specialized workflow platform for technical and operational teams needing advanced customization, toolchain integration, and deployment to segregated networks.
 - :doc:`On-prem Skype for Business replacement </about/on-prem-skype-for-business-replacement>` - Replace Skype for Business with Mattermost in classified operations.
-- :doc:`Data sovereign purpose-built collaboration </about/data-sovereign-purpose-built-collaboration>` - Meet data sovereignty requirements with Mattermost’s purpose-built collaboration platform for secure, on-premises deployments in air-gapped environments.
+- **DevOps collaboration** - Learn how engineers, IT admins, and other operational teams :doc:`use Mattermost to accelerate mission-critical processes </about/devops-collaboration>`, from quality assurance and technical support to release management, and  accelerate software development and deployment processes and reduce costs.
+- **Incident response collaboration**: Learn how security teams use Mattermost to :doc:`coordinate fast, effective incident response workflows </about/incident-response-collaboration>` to keep their organizations more secure and reduce downtime.
+- **Out-of-band collaboration**: Learn how technical and operational teams use Mattermost to :doc:`communicate securely and effectively in out-of-band scenarios </about/out-of-band-collaboration>` when primary communication channels are unavailable.
