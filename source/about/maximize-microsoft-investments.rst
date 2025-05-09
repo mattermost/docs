@@ -15,7 +15,7 @@ As Skype for Business is phased out, secure teams need a new communication solut
 
 - **Seamless Microsoft integrations**: Integrates with Outlook and Azure AI to maintain secure workflows while preserving data sovereignty.
 
-- **Customizable deployment**: A trusted solution for replacing Skype for Business as it is phased out, ensuring compliance and operational success.
+- **Flexible deployment**: Ensuring compliance and operational success with self-hosted deployment in air-gapped, hyberscaler private cloud, gov Cloud or VM deployment options. 
 
 :doc:`Learn more </about/on-prem-skype-for-business-replacement>` about replacing Skype for Business with Mattermost.
 
