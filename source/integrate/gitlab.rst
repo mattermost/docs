@@ -6,21 +6,15 @@ Connect GitLab to Mattermost
 
 Minimize distractions and reduce context switching between your GitLab code repositories and your communication platform by integrating GitLab with Mattermost. You control which events trigger notifications beyond default events, including merges, issue comments, merge request comments, pipelines, pull reviews, and many more. Help your teams stay focused and productive with daily task summaries, real-time updates and notifications on new and closed merge requests, new and closed issues, and tag creation events, directly from Mattermost channel subscriptions.
 
-.. tip::
-
-  Watch `this on-demand webinar on release management with Mattermost and GitLab <https://mattermost.com/webinar/release-management-with-gitlab/>`_ to learn how to streamline and standardize your release processes, while reducing the amount of effort required to ship your latest releases.
+Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
 
 .. image:: ../images/gitlab_mattermost.png
   :alt: An example of the GitLab integration for Mattermost.
 
-Setup
+Deploy
 ------
 
 Setup starts in GitLab and configuration ends in Mattermost.
-
-.. note::
-
-  Mattermost supports both Software-as-a-Service (SaaS) and on-premises versions of GitLab.
 
 Register an OAuth app in GitLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -67,7 +61,7 @@ Upgrade
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-gitlab/releases>`__ for the latest release, available releases, and compatibility considerations.
 
-Usage
+Use
 -----
 
 Users who want to use GitLab interconnectivity must register an OAuth app in GitLab for Mattermost, and then connect a GitLab account to Mattermost. 
@@ -119,6 +113,11 @@ Run the ``/gitlab settings [setting] [value]`` slash command to update your pref
 - Turn personal notifications on or off.
 - Turn reminders on or off when you connect initially each day.
 
+Customize
+---------
+
+This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
 Get help
 --------
 
@@ -126,7 +125,8 @@ Mattermost customers can open a `Mattermost support case <https://support.matter
 
 For questions, feedback, and assistance, join our public `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
-Customize
----------
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
 
-This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+.. tip::
+
+  Watch `this on-demand webinar on release management with Mattermost and GitLab <https://mattermost.com/webinar/release-management-with-gitlab/>`_ to learn how to streamline and standardize your release processes, while reducing the amount of effort required to ship your latest releases.

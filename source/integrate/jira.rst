@@ -4,17 +4,13 @@ Connect Jira to Mattermost
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. You control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions. 
+Minimize distractions, reduce context switching between your project management tool and your communication platform by integrating Jira with Mattermost. You control which events trigger notifications including issue creation, field-specific issue updates, reopened, resolved, or deleted issues, as well as new, updated, or deleted issue comments. Create Jira issues directly from Mattermost conversations, attach messages to Jira issues, transition and assign Jira issues, and follow up on action items in real-time, directly from Mattermost channel subscriptions.
 
-.. tip::
+Mattermost supports versions 7 and 8 of Jira Core and Jira Software products, for Server, Data Center, and Cloud platforms. From v3.0 of this integration, a commercial Mattermost license is required for multiple Jira instances with Mattermost configured using Administrator Slash Commands.
 
-  Download `this Jira workflows datasheet <https://mattermost.com/mattermost-jira-datasheet/>`_ to learn more about using Mattermost and Jira, including:
+Jira Service Management (formally known as Jira Service Desk) isn't supported.
 
-  - Key benefits to integrating Jira and Mattermost
-  - Common Jira Workflows on Mattermost
-  - How to get started with the Jira plugin for Mattermost
-
-Setup
+Deploy
 ------
 
 Setup starts in Mattermost, moves to Jira, and finishes in Mattermost.
@@ -37,11 +33,14 @@ A Mattermost system admin must perform the following steps in Mattermost.
   c. Once installed, select **Configure**. You're taken to the System Console.
   d. On the Jira configuration page, enable and configure Jira interoperability as follows, and then select **Save**:
 
-    .. note::
-  
-      We recommend making a copy of your webhook secret, as it will only be visible to you once.
+
 
     - Generate a **Webhook Secret** by selecting **Regenerate**.
+
+  .. note::
+  
+    We recommend making a copy of your webhook secret, as it will only be visible to you once.
+
     - **Allow users to attach and create Jira issues in Mattermost**: Enable or disable the user's ability to attach and create Jira issues in Mattermost. When enabled, you must also `install this Jira integration in your Jira instance <#install-integration-as-Jira-app>`__.
     - **Mattermost Roles Allowed to Edit Jira Subscriptions**: Specify the Mattermost roles that can edit Jira subscriptions to control which Mattermost users can subscribe channels to Jira tickets.
     - **Jira Groups Allowed to Edit Jira Subscriptions**: (Applies to older Jira v2.4 or earlier deployments only) Specify the Jira groups allowed to edit Jira subscriptions as a comma-separated list of user group names. Leave blank to allow any Jira user the ability to create subscriptions. The user editing a subscription only needs to be a member of one of the listed groups.
@@ -56,7 +55,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
 2. Run ``/jira setup`` to start the wizard to configure the plugin. If you wish to set up the plugin manually, then please follow the steps below.     
 
 Install Jira integration in your Jira instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To enable your users to create and manage Jira issues across Mattermost channels, you must install this Jira integration, as an application, in your Jira instance. 
 
@@ -82,7 +81,13 @@ A Mattermost system admin and a Jira system admin must perform the following ste
 Manage channel subscriptions in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The Channel Subscription modal provides easy access for Mattermost channel admins to set up which notifications they want to receive per channel. In any channel, run the ``/jira subscribe`` slash command, and configure the following options:
+Mattermost channel admins can set up notifications they want to receive per channel as subscription rules based on the Jira project, event type, issue type. You can also filter out issues based on its value.
+
+To modify subscription, users must meet the criteria of both the Mattermost user settings and Jira group settings. If you can subscribe channels to Jira events, you can also set up rules; however, you'll only see the projects and issue types you have access to within Jira. If you can't see a project in Jira, it won't be avaialble as an option.
+
+If your organization's infrastructure is set up such that your Mattermost instance can't connect to your Jira instance, channel subscriptions won't be avaialable. Instead, use `legacy Webhooks <#legacy-jira-webhooks>`__ instead to allow a Jira webhook to post to a specific channel.
+
+In any channel, run the ``/jira subscribe`` slash command to configure the following options:
 
 - Configure what Jira notifications are sent to the current channel.
 - Specify filters including: affects versions, epic link, fix versions, labels, and priority.
@@ -90,13 +95,6 @@ The Channel Subscription modal provides easy access for Mattermost channel admin
 - Review the approximate JQL output generated. This is not guaranteed to be valid JQL and is only shown as a reference to what the query may look like if converted to JQL.
 
 Run the ``/jira subscribe list`` slash command to display all subscription rules set up across all channels and teams on your Mattermost instance.
-
-.. note::
-
-  - A user must meet the criteria of both the Mattermost user settings and Jira group settings in order to edit subscriptions. If you can subscribe channels to Jira events, you can also set up rules that define when a particular event with certain criteria are met in Jira that trigger a notification is sent to a particular channel.
-  - These subscription rules can specify the Jira Project, Event Type, Issue Type, and can filter out issues with certain values. 
-  - When a user is setting up a notification subscription, they'll only see the projects and issue types they have access to within Jira. If they can't see a project in Jira, it won't be displayed as an option for that particular user when they are trying to set up a subscription in Mattermost.
-  - If your organization's infrastructure is set up in such a way that your Mattermost instance can't connect to your Jira instance, channel subscriptions won't be avaialable. Instead, use `legacy Webhooks <#legacy-jira-webhooks>`__ instead to allow a Jira webhook to post to a specific channel.
 
 Legacy Jira webhooks
 ^^^^^^^^^^^^^^^^^^^^
@@ -133,28 +131,19 @@ By default, the legacy webhook integration publishes notifications for issue cre
 
 Here's an example of a webhook configured to create a post for comment events: ``https://community.mattermost.com/plugins/jira/webhook?secret=MYSECRET&team=contributors&channel=town-square&updated_comments=1``
 
-.. tip::
-  
-  Any previously configured webhooks set up in Jira that point to specific channels are supported and will continue to work.
+Any previously configured webhooks set up in Jira that point to specific channels are supported and will continue to work.
 
 Manage notifications
 ~~~~~~~~~~~~~~~~~~~~
 
-Jira notifications are messages sent to a Mattermost channel when a particular event occurs in Jira. They can managed as `channel subscriptions <#manage-channel-subscriptions>`__ in Mattermost, or managed as `webhooks <#configure-webhooks-in-Jira>`__ in Jira. 
+Jira notifications are messages sent to a Mattermost channel when a particular event occurs in Jira. They can managed as `channel subscriptions <#manage-channel-subscriptions>`__ in Mattermost, or managed as `webhooks <#configure-webhooks-in-Jira>`__ in Jira. Notifications and metadata shown in a channel aren't protected by Jira permissions. Anyone in the channel can see what's posted to the channel. However, if users don't have the appropriate permission, they won't be able to see further details of the issue if they try to access it in Jira.
 
 When any webhook event is received from Jira, and it matches a notification rule, it posts a notification to the channel. If there are no subscription matches, the webhook event is discarded.
-
-.. note::
-  
-  The notifications and metadata shown in a channel are not protected by Jira permissions. Anyone in the channel can see what's posted to the channel. However, if they don't have the appropriate permission, they won't be able to see further details of the issue if they try to access it in Jira.
 
 Enable
 ------
 
 Notify your teams that they can `connect their Jira accounts to Mattermost <#connect-a-jira-account-to-mattermost>`__.
-
-Do more with Jira
-~~~~~~~~~~~~~~~~~
 
 Do more with Jira interoperabiilty as a Mattermost system admin by using the following slash commands:
 
@@ -166,12 +155,7 @@ Do more with Jira interoperabiilty as a Mattermost system admin by using the fol
 - ``/jira webhook [--instance=<YOUR-JIRA-URL>]`` - Display the Mattermost webhook that receive JQL queries.
 - ``/jira v2revert`` - Revert to the legacy V2 jira integration data model.
 
-Upgrade
--------
-
-We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-jira/releases>`__ for the latest release, available releases, and compatibiilty considerations.
-
-Usage
+Use
 -----
 
 Users who want to use Jira interconnectivity must connect a Jira account to Mattermost. 
@@ -183,15 +167,11 @@ Connect a Jira account to Mattermost
 
 1. In Mattermost, run the ``/jira connect`` slash command in any Mattermost channel to link your Mattermost account with your Jira account. Follow the link into your Jira instance, and select **Allow**. 
 
-.. note::
-
-  Please use ``/jira instance connect <YOUR-JIRA-URL>`` if you have multiple Jira instances installed. 
+If you have multiple Jira instances, run the ``/jira instance connect <YOUR-JIRA-URL>`` slash command instead to connect to a specific Jira instance. 
 
 2. Once connected, run the ``/jira help`` slash command to see what you can do.
 
-.. tip::
-
-  Disconnect your accounts by running the ``/jira disconnect`` slash command.
+3. To disconnect a Jira account from Mattermost, run the ``/jira disconnect`` slash command in any Mattermost channel.
 
 Get started 
 ~~~~~~~~~~~
@@ -220,21 +200,17 @@ Use the ``/jira issue create`` slash command to create a Jira issue without leav
 Transition Jira issues
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-Transition issues without leaving Mattermost by using the ``/jira transition <issue-key> <state>`` slash command. For example, ``/jira transition EXT-20 done`` transitions the issue key EXT-20 to a ``done`` state.
-
-.. note::
-
-  - States and issue transitions are based on your Jira project workflow configuration. If an invalid state is entered, an ephemeral message is returned mentioning that the state couldn't be found.
-  - Partial matches are supported. For example, running the  ``/jira transition EXT-20 in`` slash command transitions the issue to an ``in progress`` state. However, if your Jira instance includes states of both ``in review`` and ``in progress``, the Jira integration bot will prompt you to clarify which state you want.
+You can transition issues without leaving Mattermost by using the ``/jira transition <issue-key> <state>`` slash command. States and issue transitions are based on your Jira project workflow configuration. For example, ``/jira transition EXT-20 done`` transitions the issue key EXT-20 to a ``done`` state. Partial matches are supported. For example, running the  ``/jira transition EXT-20 in`` slash command transitions the issue to an ``in progress`` state. However, if your Jira instance includes states of both ``in review`` and ``in progress``, the Jira integration bot will prompt you to clarify which state you want.
 
 Assign Jira issues
 ^^^^^^^^^^^^^^^^^^
 
-Assign issues to other Jira users without leaving Mattermost using the ``/jira assign`` command. For example, running the slash command ``/jira assign EXT-20 john`` transitions the issue EXT-20 to John.
+Assign issues to other Jira users without leaving Mattermost using the ``/jira assign`` command. Partial matches on usernames, firstnames, and lastnames are supported. For example, running the slash command ``/jira assign EXT-20 john`` transitions the issue EXT-20 to John.
 
-.. note::
+Upgrade
+-------
 
-  Partial matches on usernames, firstnames, and lastnames are supported. 
+We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-jira/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
 Frequenly asked questions
 --------------------------
@@ -301,14 +277,24 @@ How do I handle credential rotation for the Jira webhook?
 
 Generate a new secret by going to **System Console > Plugins > Jira**. Paste the new webhook URL in your Jira webhook configuration.
 
-Get help
---------
-
-Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
-
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
-
 Customize
 ---------
 
 This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
+Get help
+--------
+
+Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Jira plugin repository <https://github.com/mattermost/mattermost-plugin-jira>`_.
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
+
+.. tip::
+
+  Download `this Jira workflows datasheet <https://mattermost.com/mattermost-jira-datasheet/>`_ to learn more about using Mattermost and Jira, including:
+
+  - Key benefits to integrating Jira and Mattermost
+  - Common Jira Workflows on Mattermost
+  - How to get started with the Jira plugin for Mattermost

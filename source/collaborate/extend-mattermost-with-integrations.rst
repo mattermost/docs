@@ -19,12 +19,12 @@ Mattermost features
 Mattermost interoperability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :ref:`GitHub <integrate/github:usage>`
-- :ref:`GitLab <integrate/gitlab:usage>`
-- :ref:`Jira <integrate/jira:usage>`
-- :ref:`Microsoft Teams <integrate/microsoft-teams-sync:usage>`
-- :ref:`ServiceNow <integrate/servicenow:usage>`
-- :ref:`Zoom <integrate/zoom:usage>`
+- :ref:`GitHub <integrate/github:use>`
+- :ref:`GitLab <integrate/gitlab:use>`
+- :ref:`Jira <integrate/jira:use>`
+- :ref:`Microsoft Teams <integrate/microsoft-teams-sync:use>`
+- :ref:`ServiceNow <integrate/servicenow:use>`
+- :ref:`Zoom <integrate/zoom:use>`
 
 .. tip::
 
