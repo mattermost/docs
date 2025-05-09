@@ -126,7 +126,7 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :ref:`Slash commands <repeatable-processes/interact-with-playbooks:slash commands>`                             | |checkmark| | |checkmark| | Partial Support |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Server-side plugins <guides/integrate-and-extend:integrate and extend mattermost>`                        | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Server-side plugins </guides/pre-built-integrations>`                                                     | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_               | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+

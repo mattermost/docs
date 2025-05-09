@@ -127,7 +127,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 Usage
 -----
 
-See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams interoperability.
+See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams synchronization.
 
 Upgrade
 -------
