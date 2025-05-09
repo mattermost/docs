@@ -15,9 +15,7 @@ Looking for a communication solution that eliminates reliance on external cloud 
 
 - **Secure Workflows Tailored for Air-Gapped Environments**: Enable private messaging, file sharing, and collaboration features like audio calls and screen sharing—all operating securely in fully air-gapped infrastructures.
 
-- **FIPS 140-2 Compliance**: Deploy securely with FIPS 140-2 validated images that comply with NIST 800-53 and FedRAMP standards, ensuring the platform is fit for handling classified or sensitive data.
-
-- **STIG-Hardened Deployments**: Run Mattermost within environments hardened to DISA Security Technical Implementation Guidelines (STIG) to meet the strictest security and compliance requirements.
+- **Compliant, High-assurance Security**: Deploy Mattermost with FIPS 140-2 validated images and DISA STIG-hardening to meet NIST 800-53, FedRAMP, and classified compliance standards.
 
 - **Scalable On-Premises Architecture**: Build a collaboration environment that scales across tens of thousands of users without compromising data privacy or productivity in disconnected networks.
 
@@ -26,6 +24,16 @@ Enterprise-controlled external collaboration
 
 Struggling to enable secure external collaboration with third parties while maintaining enterprise-level control, oversight, and compliance to protect sensitive information? Mattermost provides integrations with Microsoft Teams, M365, and Outlook, allowing organizations to collaborate securely with external partners while ensuring that sensitive data remains protected.
 
+
+- **Streamlined Communication with External Partners:** Work securely with external teams using Shared Channels that deliver enterprise-grade messaging, file sharing, and threaded discussions—without losing visibility or control.
+
+- **Precision Control Over External Access** - Enforce your organization’s security and compliance standards with fine-grained access policies, permissions, and retention settings tailored to external users.
+
+- **Unified Workflows Across Microsoft Teams**: Break down silos by connecting Mattermost and Microsoft Teams users in a single, compliant environment that supports seamless communication and centralized oversight.
+
+
+Explore solution features
+--------------------------
 - **Shared Channels for External Teams**: Collaborate in real time with external organizations using Shared Channels, enabling secure, enterprise-managed messaging, file sharing, and threaded discussions.
 
 - **Granular Controls for External Access**: Maintain strict oversight of external communications with granular security policies, access controls, and data retention protocols.
