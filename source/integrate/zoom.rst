@@ -87,12 +87,7 @@ Enable
 
 Notify your teams that they can `connect their Zoom accounts to Mattermost <#usage>`__.
 
-Upgrade
--------
-
-We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibiilty considerations.
-
-Usage
+Use
 -----
 
 You need a paid Zoom account to start a Zoom call within Mattermost. The first time you create a Zoom meeting, you may be prompted to connect your account. Follow the instructions to connect your Zoom account using your credentials.
@@ -112,6 +107,11 @@ This `integration <https://github.com/mattermost/mattermost-plugin-zoom>`_ conta
 - Web App: Inside the ``/webapp`` directory, you will find the JS and React files that make up the client-side of the plugin. Within there, modify files and components as necessary. Test your syntax by running ``npm run build``.
 
 Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
+Upgrade
+-------
+
+We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibiilty considerations.
 
 Get help
 --------

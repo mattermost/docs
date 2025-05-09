@@ -124,7 +124,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
 
-Usage
+Use
 -----
 
 See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams synchronization.

@@ -63,8 +63,8 @@ Organizations often face challenges with secure, compliant collaboration when ma
 
 - **Enhanced oversight and security**: Maintain full control over data while enabling smooth collaboration across instances.  
 
-Explore the possibilities  
--------------------------  
+Explore solution features
+-------------------------
 
 Discover how Mattermost transforms your Microsoft ecosystem into a tailored, mission-ready collaboration platform. Enhance security, streamline workflows, and unlock new efficiencies with solutions designed for high-security environments, external collaborations, and cross-agency operations.
 
@@ -78,8 +78,10 @@ Ready to maximize your Microsoft investment? Explore Mattermost for Microsoft of
 - :doc:`Join Microsoft Team Meetings </integrate/microsoft-teams-meetings>`: Launch and manage video and audio calls directly from Microsoft Teams within Mattermost for unified, secure communication.
 - :doc:`Playbooks in Microsoft Teams </integrate/playbooks-for-microsoft-teams>`: Access active, repeatable processes and real-time status updates directly in Microsoft Teams, improving cross-organizational alignment and operational efficiency.
 - :doc:`Microsoft Teams Sync </collaborate/collaborate-within-connected-microsoft-teams>`: Securely sync chats and group messages between Microsoft Teams and Mattermost for real-time collaboration and streamlined communication.
-- :doc:`Community for Mattermost </guides/community-for-mattermost>`: Engage with the Mattermost community directly within M365, Outlook, or Teams for support, insights, and collaboration on future product developments.
 
-Take control of your collaboration tools today and see how Mattermost complements and enhances your Microsoft infrastructure for seamless, secure, and scalable operations. Try Mattermost now and transform the way your teams collaborate.
+Get started
+------------
+
+Ready to transform the way your teams collaborate? See how Mattermost complements and enhances your Microsoft infrastructure for seamless, secure, and scalable operations?
 
 Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.

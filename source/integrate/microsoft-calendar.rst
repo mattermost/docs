@@ -107,7 +107,7 @@ Enable and configure the Microsoft Calendar integration in Mattermost
 
 Notify your teams that they can `connect their Microsoft Office accounts to Mattermost <#connect-a-microsoft-calendar-account-to-mattermost>`__.
 
-Usage
+Use
 -----
 
 Users who want to use Microsoft Calendar interconnectivity must connect a Microsoft Office account to Mattermost. 

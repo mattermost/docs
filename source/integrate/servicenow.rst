@@ -18,7 +18,7 @@ Create an OAuth app in ServiceNow
 2. Select New in the top right corner, and then select **Create an OAuth API endpoint for external clients**.
 3. Enter the name for your app and set the redirect URL to: ``https://<YOUR-MATTERMOST-URL>/plugins/mattermost-plugin-servicenow/api/v1/oauth2/complete``, replacing ``YOUR-MATTERMOST-URL`` with the Mattermost URL you want the ServiceNow events to post to, using lowercase characters.
 
- .. note:: 
+.. note:: 
 
   A client secret is generated automatically. Copy the secret and the Client ID. You'll need these values for the Mattermost configuration.
 
@@ -113,7 +113,7 @@ Upgrade
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-servicenow/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
-Usage
+Use
 -----
 
 Users who want to use ServiceNow interconnectivity must connect a ServiceNow account to Mattermost. 

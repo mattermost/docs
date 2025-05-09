@@ -123,7 +123,7 @@ Within Mattermost, the Mattermost Mission Collaboration for Microsoft plugin nee
 
 5. Done! Your application is now available to users.
 
-Usage
+Use
 ------
 
 This plugin supports automatic authentication when logged into Microsoft Teams. Teams authentication automatically logs users into Mattermost if the email addresses in both platforms match exactly. Regular authentication methods (LDAP, SAML, email/password, OpenID) can additionally be used for Mattermost.

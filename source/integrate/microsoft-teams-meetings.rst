@@ -92,7 +92,7 @@ Enable and configure the Microsoft Teams Meetings integration in Mattermost
 
 Notify your teams that they can `connect their Microsoft Teams Meetings accounts to Mattermost <#connect-a-microsoft-teams-account-to-mattermost>`__.
 
-Usage
+Use
 -----
 
 Users who want to use MS Teams Meetings interconnectivity must connect a Microsoft Teams Meetings account to Mattermost. 
