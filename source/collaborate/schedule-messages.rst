@@ -4,19 +4,19 @@ Schedule messages
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-There are times when you want to send a message, but you don't want it sent immediately. For example, it may be after working hours for the recipient. 
-From Mattermost v10.3, using Mattermost in a web browser or the desktop app, you can schedule messages to send in the future. 
+There are times when you want to send a message, but you don’t want it sent immediately. For example, it may be after working hours for the recipient. Scheduled messages can include a :doc:`priority </collaborate/message-priority>`, :ref:`request acknowledgements <collaborate/message-priority:request acknowledgements>`, include :doc:`file attachments </collaborate/share-files-in-messages>`, and include anything that a non-scheduled message can contain.
 
-Compose a message, then select the right side of **Send** to schedule when the message will be sent. You can choose from a fixed time or set a custom time.
+.. tab:: Web/Desktop
 
-.. image:: ../images/schedule-a-message.png
-    :alt: Compose a message and select the right side of the **Send** button to schedule when the message will be sent.
-    :scale: 70
+    From Mattermost v10.3, you can schedule messages to send in the future. Compose a message, then select the right side of **Send** to schedule when the message will be sent. You can choose from a fixed time or set a custom time, and Mattermost displays both your local time and the recipient’s local time.
 
-.. tip::
+    .. image:: ../images/schedule-a-message.png
+        :alt: Compose a message and select the right side of the **Send** button to schedule when the message will be sent.
+        :scale: 70
 
-    - When scheduling a direct message, Mattermost displays both your local time and the recipient's local time.
-    - Scheduled messages can include a :doc:`priority </collaborate/message-priority>`, :ref:`request acknowledgements <collaborate/message-priority:request acknowledgements>`, include :doc:`file attachments </collaborate/share-files-in-messages>`, and have anything that a non-scheduled message can contain.
+.. tab:: Mobile
+
+    From Mattermost mobile v2.28, you can schedule messages to send in the future. Compose a message, then long press on **Send** to schedule when the message will be sent. You can choose from a fixed time or set a custom time, and Mattermost displays both your local time and the recipient’s local time.
 
 Manage scheduled messages
 -------------------------
