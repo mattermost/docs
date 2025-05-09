@@ -37,7 +37,9 @@
     <div class="visually-hidden">Hide table of contents sidebar</div>
 </label>
 
-{% include "custom-nav.html" %}
+{% if webdocs %}
+  {% include "custom-nav.html" %}
+{% endif %}
 
 {% if theme_announcement -%}
 <div class="announcement">
@@ -80,7 +82,7 @@
     <aside class="sidebar-drawer">
         <div class="sidebar-container">
             {% block left_sidebar %}
-            <div class="sidebar-sticky">
+            <div class="{% if webdocs %}sidebar-sticky{% else %}sidebar-sticky-local{% endif %}">
                 {%- for sidebar_section in sidebars %}
                 {%- include sidebar_section %}
                 {%- endfor %}
@@ -121,7 +123,7 @@
                     </label>
                 </div>
                 <article role="main">
-                    <section class="masthead">
+                    <section class="{% if webdocs %}masthead{% else %}masthead masthead-local{% endif %}">
                         <div class="container">
                             <div class="theme-toggle-container theme-toggle-header">
                                 <button class="theme-toggle">
