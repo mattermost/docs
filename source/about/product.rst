@@ -34,7 +34,7 @@ Channel-based communication workflows require real-time information sharing, fle
 .. image:: ../images/Channels_Hero.png
    :alt: An example of the Mattermost screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.
 
-Trust your proceses with playbooks
+Trust your processes with playbooks
 -----------------------------------
 
 Structured workflows are specific scenarios and use cases that require a reliable and repeatable process. These use cases lend themselves well to shared checklists, automation, and retrospectives where the life cycle is measured in hours to weeks. Some examples include incident collaboration and software releases.
