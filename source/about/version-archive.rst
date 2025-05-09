@@ -72,7 +72,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - GPG Signature: https://releases.mattermost.com/9.6.3/mattermost-9.6.3-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.5.14 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.14/mattermost-9.5.14-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.5.14/mattermost-9.5.14-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``4f95a1df6daa8b1d17699fb8a18c1e2a4c5722add1718948d1fc804e053cdb80``
+    - SHA-256 Checksum: ``f165cbf967214e5ce2f83c3414bc606ceb28cdf71c2454bdd823d6f97997dadb``
     - GPG Signature: https://releases.mattermost.com/9.5.14/mattermost-9.5.14-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v9.4.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-4-feature-release>`__ - `Download <https://releases.mattermost.com/9.4.5/mattermost-9.4.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.4.5/mattermost-9.4.5-linux-amd64.tar.gz``
@@ -480,7 +480,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - GPG Signature: https://releases.mattermost.com/9.6.3/mattermost-team-9.6.3-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.5.14 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/9.5.14/mattermost-team-9.5.14-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.5.14/mattermost-team-9.5.14-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``cd8894ca340e59fa60ceaf000f8be9367245aecdf057a866167672b3b684bdea``
+    - SHA-256 Checksum: ``db5730b44caadb647b09e593be38d808d35f9f67c9806b2e022d08675fa5257a``
     - GPG Signature: https://releases.mattermost.com/9.5.14/mattermost-team-9.5.14-linux-amd64.tar.gz.sig
   Mattermost Team Edition v9.4.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v9-changelog.html#release-v9-4-feature-release>`__ - `Download <https://releases.mattermost.com/9.4.5/mattermost-team-9.4.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/9.4.5/mattermost-team-9.4.5-linux-amd64.tar.gz``
