@@ -6,11 +6,11 @@ Integrations Guide
    :hidden:
    :titlesonly:
 
-   /guides/integrate-and-extend.rst
+   /guides/pre-built-integrations.rst
 
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization’s needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
 
-Learn about the :doc:`Mattermost integrations </guides/integrate-and-extend>` that come with your Mattermost deployment.
+Learn about the :doc:`Mattermost integrations </guides/pre-built-integrations>` that come with your Mattermost deployment.
 
 In addition, a wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations available, please see the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_.
 
@@ -46,7 +46,7 @@ Bots
 
 You can deploy interactive bots to help users with processes and tasks with Mattermost by  issuing messages to users they can respond to using buttons and dropdown menus. Bots can be used together with apps and plugins. The Hubot open source project, created by GitHub, Inc., is among the most popular of the bot options.
 
-Prebuilt bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_, or you can `configure your own bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_.
+Pre-built bots are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_, or you can `configure your own bots <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_.
 
 Learn about `Mattermost Hubot integration (hubot-matteruser on npm) <https://www.npmjs.com/package/hubot-matteruser>`_ and `other open source community bots available <https://mattermost.com/marketplace/>`_ or you can `build your own <https://developers.mattermost.com/integrate/reference/bot-accounts/>`_.
 
@@ -60,7 +60,7 @@ Plugins
 
 Plugins are the most comprehensive way to add new features and customization to self-hosted Mattermost deployments. These powerful integrations are written in Go and React and they’re ideal for customers wanting to change the behavior of the Mattermost server, desktop, and web apps without forking the core codebase to suit their organization’s needs.
 
-Prebuilt plugins are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_, or you can `build your own plugin <https://developers.mattermost.com/integrate/plugins/>`_.
+Pre-built plugins are available on the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_, or you can `build your own plugin <https://developers.mattermost.com/integrate/plugins/>`_.
 
 .. note::
 
@@ -72,6 +72,7 @@ Prebuilt plugins are available on the `Mattermost Marketplace <https://mattermos
 
 Source code customizations
 --------------------------
+
 As an open source project, we support your ability to modify the source code for the server or web app to make changes and customizations to meet your specific needs. 
 
-Learn about `forking our open source repositories <https://developers.mattermost.com/integrate/other-integrations/customization/>`_.
+Learn about `forking our open source repositories <https://developers.mattermost.com/integrate/other-integrations/customization/>`_ and `customizing the Mattermost source code <https://developers.mattermost.com/integrate/customization/customization/>`__ for your specific operational needs.
