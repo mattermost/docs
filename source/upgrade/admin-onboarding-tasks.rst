@@ -143,6 +143,6 @@ Then, enable batched email notifications by setting **System Console > Notificat
 
 **9. Enable Elasticsearch**
 
-Mattermost Enterprise customers can enable :doc:`Elasticsearch </scale/elasticsearch>` for optimized search performance at enterprise-scale. Elasticsearch solves many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
+Mattermost Enterprise customers can enable :doc:`enterprise search </scale/enterprise-search>` for optimized search performance at enterprise-scale. Both Elasticsearch and AWS OpenSearch solve many known issues with full text database search, such as dots, dashes, and email addresses returning unexpected results.
 
-Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the :ref:`Elasticsearch <configure/environment-configuration-settings:elasticsearch>` configuration settings documentation for details. Enabling Elasticsearch requires :ref:`setting up an Elasticsearch server <scale/elasticsearch:set up an elasticsearch server>`.
+Enable Elasticsearch by setting **System Console > Elasticsearch > Enable Indexing** to **true**. See the :ref:`Elasticsearch <configure/environment-configuration-settings:enterprise search>` configuration settings documentation for details. Enabling Elasticsearch requires :ref:`setting up an Elasticsearch server <scale/elasticsearch-setup:set up elasticsearch>`.
