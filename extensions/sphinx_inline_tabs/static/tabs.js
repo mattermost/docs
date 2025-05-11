@@ -80,29 +80,29 @@ function addHashchangeListener() {
           }
         }
       }
-      // set class of <a href="#id"> to "scroll-current"; remove from others
-      const toctreeDiv = document.getElementsByClassName("toc-tree");
-      if (toctreeDiv && toctreeDiv.length) {
-        const listitemElements = toctreeDiv[0].getElementsByTagName("li");
-        for (const listitemElement of listitemElements) {
-          const anchorElements = listitemElement.getElementsByTagName("a");
-          if (anchorElements.length) {
-            const anchorHref = anchorElements[0].getAttribute("href");
-            if (!anchorHref) {
-              console.log('+++ skip anchorElem since anchorHref is falsy');
-              continue;
+    }
+    // set class of <a href="#id"> to "scroll-current"; remove from others
+    const toctreeDiv = document.getElementsByClassName("toc-tree");
+    if (toctreeDiv && toctreeDiv.length) {
+      const listitemElements = toctreeDiv[0].getElementsByTagName("li");
+      for (const listitemElement of listitemElements) {
+        const anchorElements = listitemElement.getElementsByTagName("a");
+        if (anchorElements.length) {
+          const anchorHref = anchorElements[0].getAttribute("href");
+          if (!anchorHref) {
+            console.log('+++ skip anchorElem since anchorHref is falsy');
+            continue;
+          }
+          const anchorId = anchorHref.substring(1);
+          if (anchorId === hash) {
+            if (!listitemElement.classList.contains("scroll-current")) {
+              console.log(`[${anchorId}] add scroll-current`);
+              listitemElement.classList.add("scroll-current");
             }
-            const anchorId = anchorHref.substring(1);
-            if (anchorId === hash) {
-              if (!listitemElement.classList.contains("scroll-current")) {
-                console.log(`[${anchorId}] add scroll-current`);
-                listitemElement.classList.add("scroll-current");
-              }
-            } else {
-              if (listitemElement.classList.contains("scroll-current")) {
-                console.log(`[${anchorId}] remove scroll-current`);
-                listitemElement.classList.remove("scroll-current");
-              }
+          } else {
+            if (listitemElement.classList.contains("scroll-current")) {
+              console.log(`[${anchorId}] remove scroll-current`);
+              listitemElement.classList.remove("scroll-current");
             }
           }
         }

@@ -33,20 +33,20 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     if not hasattr(app.env, "sphinx_tabs"):
         app.env.sphinx_tabs = {}
     if app.env.docname in app.env.sphinx_tabs:
-        if app.env.docname == "deploy/server/deploy-kubernetes":
-            sd: SectionData = collect_sections(
-                app.env, doctree, app.env.docname, doctree
-            )
-            #dump_sections(app.env.docname, sd)
-            print(
-                f"+++ doctree_read({app.env.docname}): tocs[0]={app.env.tocs[app.env.docname][0]}"
-            )
-            updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
-            print(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
-            if len(app.env.tocs[app.env.docname][0]) == 1:
-                app.env.tocs[app.env.docname][0].append(updated_tocs.children[0])
-            else:
-                app.env.tocs[app.env.docname][0][1] = updated_tocs.children[0]
+        # if app.env.docname == "deploy/server/deploy-kubernetes":
+        sd: SectionData = collect_sections(
+            app.env, doctree, app.env.docname, doctree
+        )
+        #dump_sections(app.env.docname, sd)
+        print(
+            f"+++ doctree_read({app.env.docname}): tocs[0]={app.env.tocs[app.env.docname][0]}"
+        )
+        updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
+        print(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
+        if len(app.env.tocs[app.env.docname][0]) == 1:
+            app.env.tocs[app.env.docname][0].append(updated_tocs.children[0])
+        else:
+            app.env.tocs[app.env.docname][0][1] = updated_tocs.children[0]
 
         app.env.sphinx_tabs.pop(app.env.docname)
 

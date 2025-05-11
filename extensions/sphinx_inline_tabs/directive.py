@@ -66,14 +66,20 @@ class TabDirective(SphinxDirective):
             #print(f"+++ parsed_node: {parsed_node.astext()}")
             if isinstance(parsed_node, nodes.section):
                 node_id: str = parsed_node.attributes["ids"][0]
-                #print(f"+++ [{level}] section: {node_id}")
+                print(f"+++ [{level}] section: {node_id}")
                 prefixed_id: str = f"inlinetab--{tab_name}--{level}-{node_id}"
-                if re.match('id[0-9]+', node_id):
-                    #print(f"+++ [{level}] replace id with '{prefixed_id}'")
-                    parsed_node.attributes["ids"] = [prefixed_id]
-                else:
-                    #print(f"+++ [{level}] add id '{prefixed_id}'")
-                    parsed_node.append_attr_list("ids", [prefixed_id])
-            if len(parsed_node.children) > 0:
+                #if re.match('id[0-9]+', node_id):
+                #    print(f"+++ [{level}] replace id with '{prefixed_id}'")
+                #    parsed_node.attributes["ids"] = [prefixed_id]
+                #else:
+                print(f"+++ [{level}] add id '{prefixed_id}' as first id")
+                #parsed_node.append_attr_list("ids", [prefixed_id])
+                existing_ids: list[str] = parsed_node.attributes["ids"]
+                if existing_ids:
+                    new_ids: list[str] = [prefixed_id]
+                    for existing_id in existing_ids:
+                        new_ids.append(existing_id)
+                    parsed_node.attributes["ids"] = new_ids
+            if parsed_node.children is not None:
                 #print(f"+++ [{level}] parse {len(parsed_node.children)} children")
                 self.walk_parsed_nodes(parsed_node.children, level + 1, tab_name)
