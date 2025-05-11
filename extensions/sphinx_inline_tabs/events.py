@@ -29,6 +29,27 @@ def env_merge_info(
                     env.sphinx_tabs[docname] = other.sphinx_tabs[docname]
 
 
+def doctree_read(app: Sphinx, doctree: nodes.document):
+    if not hasattr(app.env, "sphinx_tabs"):
+        app.env.sphinx_tabs = {}
+    if app.env.docname in app.env.sphinx_tabs:
+        if app.env.docname == "deploy/server/deploy-kubernetes":
+            sd: SectionData = collect_sections(
+                app.env, doctree, app.env.docname, doctree
+            )
+            #dump_sections(app.env.docname, sd)
+            #print(
+            #    f"+++ doctree_read({app.env.docname}): tocs={app.env.tocs[app.env.docname][0][1]}"
+            #)
+            updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
+            #print(f"+++ doctree_read({app.env.docname}): updated_tocs={updated_tocs}")
+            if len(app.env.tocs[app.env.docname][0]) == 1:
+                app.env.tocs[app.env.docname][0].append(updated_tocs)
+            else:
+                app.env.tocs[app.env.docname][0][1] = updated_tocs
+        app.env.sphinx_tabs.pop(app.env.docname)
+
+
 @dataclass(repr=True)
 class SectionData:
     name: str
@@ -66,14 +87,17 @@ def collect_sections(
         # print(f">>> ({docname}) [{level}] Tab: {localsecdata.name}")
 
     section_id: str = ""
-    if "ids" in node.attributes:
-        if len(node.attributes["ids"]) == 1 and node.attributes["ids"][0] != "":
-            section_id = node.attributes["ids"][0]
-        elif len(node.attributes["ids"]) > 1:
-            for id in node.attributes["ids"]:
-                if re.match('inlinetab--([a-zA-Z0-9-]+)--([0-9]+)-(.*)', id):
-                    section_id = id
-                    break
+    if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
+       section_id = node.attributes["inline_tab_id"]
+    else:
+        if "ids" in node.attributes:
+            if len(node.attributes["ids"]) == 1 and node.attributes["ids"][0] != "":
+                section_id = node.attributes["ids"][0]
+            elif len(node.attributes["ids"]) > 1:
+                for id in node.attributes["ids"]:
+                    if re.match('inlinetab--([a-zA-Z0-9-]+)--([0-9]+)-(.*)', id):
+                        section_id = id
+                        break
     if section_id == "":
         section_id = _make_id(secdata.name)
     secdata.id = section_id
@@ -152,8 +176,8 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
     # )
     list_item: nodes.list_item = nodes.list_item()
     anchor_name: str = f"#{secdata.id}"
-    if secdata.is_tab:
-        anchor_name = f"#inlinetab--{secdata.name}--0-{secdata.id}"
+    #if secdata.is_tab:
+    #    anchor_name = f"#inlinetab--{secdata.name}--0-{secdata.id}"
     reference = nodes.reference(
         "",
         secdata.name,
@@ -165,7 +189,7 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
     cpara.append(reference)
     list_item.append(cpara)
     if len(secdata.children) > 0:
-        child_names = [sd.name for sd in secdata.children]
+        # child_names = [sd.name for sd in secdata.children]
         # print(f"### ({docname}): [{secdata.level}] children: {','.join(child_names)}")
         for idx, child in enumerate(secdata.children):
             # print(
@@ -177,24 +201,3 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
     bullet_list: nodes.bullet_list = nodes.bullet_list()
     bullet_list.append(list_item)
     return bullet_list
-
-
-def doctree_read(app: Sphinx, doctree: nodes.document):
-    if not hasattr(app.env, "sphinx_tabs"):
-        app.env.sphinx_tabs = {}
-    if app.env.docname in app.env.sphinx_tabs:
-        if app.env.docname == "deploy/server/deploy-kubernetes":
-            sd: SectionData = collect_sections(
-                app.env, doctree, app.env.docname, doctree
-            )
-            #dump_sections(app.env.docname, sd)
-            #print(
-            #    f"+++ doctree_read({app.env.docname}): tocs={app.env.tocs[app.env.docname][0][1]}"
-            #)
-            updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
-            #print(f"+++ doctree_read({app.env.docname}): updated_tocs={updated_tocs}")
-            if len(app.env.tocs[app.env.docname][0]) == 1:
-                app.env.tocs[app.env.docname][0].append(updated_tocs)
-            else:
-                app.env.tocs[app.env.docname][0][1] = updated_tocs
-        app.env.sphinx_tabs.pop(app.env.docname)

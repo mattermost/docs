@@ -1,8 +1,12 @@
 var labels_by_text = {};
+const labels_by_name = {};
 const labels_by_id = {};
 
+// "inlinetab--{tab_name}--{level}-{node_id}"
+const inlinetabRE = new RegExp('inlinetab--([a-zA-Z0-9- ]+)--([0-9]+)-(.*)');
+
 function ready() {
-  var li = document.getElementsByClassName("tab-label");
+  const li = document.getElementsByClassName("tab-label");
   const urlParams = new URLSearchParams(window.location.search);
   const tabs = urlParams.getAll("tabs");
 
@@ -12,9 +16,27 @@ function ready() {
     if (!labels_by_text[text]) {
       labels_by_text[text] = [];
     }
+    console.log(`labels_by_text[${text}].push(${label})`);
     labels_by_text[text].push(label);
-    const id = label.getAttribute("id");
-    console.log(`id=${id}`);
+
+    const childSpans = label.getElementsByTagName("span");
+    if (childSpans.length) {
+      const spanId = childSpans[0].getAttribute("id")
+      if (!labels_by_name[spanId]) {
+        labels_by_name[spanId] = [];
+      }
+      console.log(`labels_by_name[${spanId}].push(${label})`);
+      labels_by_name[spanId].push(label);
+      if (inlinetabRE.test(spanId)) {
+        const reExecArray = inlinetabRE.exec(spanId);
+        const tabId = reExecArray[1];
+        if (!labels_by_id[tabId]) {
+          labels_by_id[tabId] = [];
+        }
+        console.log(`labels_by_id[${tabId}].push(${label})`);
+        labels_by_id[tabId].push(label);
+      }
+    }
   }
 
   for (const tab of tabs) {
@@ -33,22 +55,27 @@ function onLabelClick() {
   }
 }
 
-// "inlinetab--{tab_name}--{level}-{node_id}"
-const inlinetabRE = new RegExp('inlinetab--([a-zA-Z0-9- ]+)--([0-9]+)-(.*)');
-
 function addHashchangeListener() {
   window.addEventListener("hashchange", function() {
-    const hash = window.location.hash;
+    const hash = decodeURIComponent(window.location.hash.substring(1));
     if (inlinetabRE.test(hash)) {
       console.log(`sphinx_inline_tabs: hash change to inlinetab; ${hash}`);
+      // check full hash
+      if (hash in labels_by_name && labels_by_name[hash].length > 0) {
+        const labelElement = labels_by_name[hash][0];
+        if (labelElement) {
+          console.log(`sphinx_inline_tabs: labels_by_name[${hash}][0].click()`);
+          labelElement.click();
+          return;
+        }
+      }
+      // extract tab id and check labels_by_id
       const reExecArray = inlinetabRE.exec(hash);
       const tabName = reExecArray[1];
-      const nodeId = reExecArray[3];
-      console.log(`sphinx_inline_tabs: tabName=${tabName}, nodeId=${nodeId}`);
-      if (tabName in labels_by_text && labels_by_text[tabName].length > 0) {
-        const labelElement = labels_by_text[tabName][0];
+      if (tabName in labels_by_id && labels_by_id[tabName].length > 0) {
+        const labelElement = labels_by_id[tabName][0];
         if (labelElement) {
-          console.log(`sphinx_inline_tabs: labels_by_test[${tabName}][0].click()`);
+          console.log(`sphinx_inline_tabs: labels_by_id[${tabName}][0].click()`);
           labelElement.click();
         }
       }

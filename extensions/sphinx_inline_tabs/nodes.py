@@ -48,34 +48,34 @@ class TabLabel(_GeneralHTMLTagElement):
     _endtag = True
 
 
-class TabAnchor(nodes.Element):
+class TabSpan(nodes.Element):
     """
-    A docutils node that writes an ``<a>`` tag that includes a specific id
+    A docutils node that writes a ``<span>`` tag that includes a specific id
     """
 
-    anchor: str
+    span_id: str
 
-    def __init__(self, href: str):
+    def __init__(self, span_id: str):
         super().__init__()
-        self.tagname = "a"
-        self.anchor = href
+        self.tagname = "span"
+        self.span_id = span_id
 
+    @classmethod
+    def visit(cls, visitor: SphinxTranslator, node: "TabSpan") -> None:
+        """
+        Write the opening HTML tag for the span node
+          :param visitor: The translator that handles writing HTML bodies
+          :param node: The docutils node we're visiting
+          :return: None
+        """
+        visitor.body.append('<%s id="%s">' % (node.tagname, node.span_id))
 
-def visit_anchor_node(visitor: SphinxTranslator, node: TabAnchor) -> None:
-    """
-    Write the opening HTML tag for the anchor node
-      :param visitor: The translator that handles writing HTML bodies
-      :param node: The docutils node we're visiting
-      :return: None
-    """
-    visitor.body.append('<%s id="%s">' % (node.tagname, node.anchor))
-
-
-def depart_anchor_node(visitor: SphinxTranslator, node: TabAnchor) -> None:
-    """
-    Write the closing HTML tag for the anchor node
-      :param visitor: The translator that handles writing HTML bodies
-      :param node: The docutils node we're departing
-      :return: None
-    """
-    visitor.body.append(f"</{node.tagname}>")
+    @classmethod
+    def depart(cls, visitor: SphinxTranslator, node: "TabSpan") -> None:
+        """
+        Write the closing HTML tag for the anchor node
+          :param visitor: The translator that handles writing HTML bodies
+          :param node: The docutils node we're departing
+          :return: None
+        """
+        visitor.body.append(f"</{node.tagname}>")
