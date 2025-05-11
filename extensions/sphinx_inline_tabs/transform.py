@@ -90,7 +90,6 @@ class TabHtmlTransform(SphinxPostTransform):
         node_counter: int = 0
         for node in tab_set:
             node_counter += 1
-            inline_tab_id: str = node.attributes["inline_tab_id"] if "inline_tab_id" in node.attributes else ""
             tab_id: str = tab_set_name + f"-input--{node_counter}"
             title, content = node.children
 
@@ -101,10 +100,13 @@ class TabHtmlTransform(SphinxPostTransform):
 
             # <label>
             label_node: TabLabel = TabLabel(
-                "", *title.children, **{"for": tab_id}, classes=["tab-label"]
+                "", **{"for": tab_id}, classes=["tab-label"]
             )
+            inline_tab_id: str = node.attributes["inline_tab_id"] if "inline_tab_id" in node.attributes else ""
             if inline_tab_id:
                 label_node += TabSpan(inline_tab_id)
+            for title_child in title.children:
+                label_node += title_child
 
             # For error messages
             input_node.source = node.source

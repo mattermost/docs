@@ -66,18 +66,45 @@ function addHashchangeListener() {
         if (labelElement) {
           console.log(`sphinx_inline_tabs: labels_by_name[${hash}][0].click()`);
           labelElement.click();
-          return;
+        }
+      } else {
+        // extract tab id and check labels_by_id
+        const reExecArray = inlinetabRE.exec(hash);
+        const tabName = reExecArray[1];
+        if (tabName in labels_by_id && labels_by_id[tabName].length > 0) {
+          const labelElement = labels_by_id[tabName][0];
+          if (labelElement) {
+            console.log(`sphinx_inline_tabs: labels_by_id[${tabName}][0].click()`);
+            labelElement.click();
+            window.location.hash = `${window.location.hash}`;
+          }
         }
       }
-      // extract tab id and check labels_by_id
-      const reExecArray = inlinetabRE.exec(hash);
-      const tabName = reExecArray[1];
-      if (tabName in labels_by_id && labels_by_id[tabName].length > 0) {
-        const labelElement = labels_by_id[tabName][0];
-        if (labelElement) {
-          console.log(`sphinx_inline_tabs: labels_by_id[${tabName}][0].click()`);
-          labelElement.click();
-          window.location.hash = `${window.location.hash}`;
+      // set class of <a href="#id"> to "scroll-current"; remove from others
+      const toctreeDiv = document.getElementsByClassName("toc-tree");
+      if (toctreeDiv && toctreeDiv.length) {
+        const listitemElements = toctreeDiv[0].getElementsByTagName("li");
+        for (const listitemElement of listitemElements) {
+          const anchorElements = listitemElement.getElementsByTagName("a");
+          if (anchorElements.length) {
+            const anchorHref = anchorElements[0].getAttribute("href");
+            if (!anchorHref) {
+              console.log('+++ skip anchorElem since anchorHref is falsy');
+              continue;
+            }
+            const anchorId = anchorHref.substring(1);
+            if (anchorId === hash) {
+              if (!listitemElement.classList.contains("scroll-current")) {
+                console.log(`[${anchorId}] add scroll-current`);
+                listitemElement.classList.add("scroll-current");
+              }
+            } else {
+              if (listitemElement.classList.contains("scroll-current")) {
+                console.log(`[${anchorId}] remove scroll-current`);
+                listitemElement.classList.remove("scroll-current");
+              }
+            }
+          }
         }
       }
     }

@@ -38,15 +38,16 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
                 app.env, doctree, app.env.docname, doctree
             )
             #dump_sections(app.env.docname, sd)
-            #print(
-            #    f"+++ doctree_read({app.env.docname}): tocs={app.env.tocs[app.env.docname][0][1]}"
-            #)
+            print(
+                f"+++ doctree_read({app.env.docname}): tocs[0]={app.env.tocs[app.env.docname][0]}"
+            )
             updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
-            #print(f"+++ doctree_read({app.env.docname}): updated_tocs={updated_tocs}")
+            print(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
             if len(app.env.tocs[app.env.docname][0]) == 1:
-                app.env.tocs[app.env.docname][0].append(updated_tocs)
+                app.env.tocs[app.env.docname][0].append(updated_tocs.children[0])
             else:
-                app.env.tocs[app.env.docname][0][1] = updated_tocs
+                app.env.tocs[app.env.docname][0][1] = updated_tocs.children[0]
+
         app.env.sphinx_tabs.pop(app.env.docname)
 
 
@@ -174,10 +175,9 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
     # print(
     #     f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
     # )
+    bullet_list: nodes.bullet_list = nodes.bullet_list()
     list_item: nodes.list_item = nodes.list_item()
     anchor_name: str = f"#{secdata.id}"
-    #if secdata.is_tab:
-    #    anchor_name = f"#inlinetab--{secdata.name}--0-{secdata.id}"
     reference = nodes.reference(
         "",
         secdata.name,
@@ -188,6 +188,8 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
     cpara: addnodes.compact_paragraph = addnodes.compact_paragraph()
     cpara.append(reference)
     list_item.append(cpara)
+    bullet_list.append(list_item)
+
     if len(secdata.children) > 0:
         # child_names = [sd.name for sd in secdata.children]
         # print(f"### ({docname}): [{secdata.level}] children: {','.join(child_names)}")
@@ -196,8 +198,8 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
             #     f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
             # )
             child_toc = sectiondata_to_toc(docname, child)
-            list_item.append(child_toc)
-    # print(f"### ({docname}): [{secdata.level}] add list_item to bullet_list and return")
-    bullet_list: nodes.bullet_list = nodes.bullet_list()
-    bullet_list.append(list_item)
+            child_list_item = nodes.list_item()
+            child_list_item.append(child_toc)
+            bullet_list.append(child_list_item)
+
     return bullet_list

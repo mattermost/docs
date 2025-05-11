@@ -46,8 +46,8 @@ class TabDirective(SphinxDirective):
 
         parse_titles = "parse-titles" in self.options
         parsed_nodes = self.parse_content_to_nodes(allow_section_headings=parse_titles)
-        if self.env.docname == "deploy/server/deploy-kubernetes":
-            self.walk_parsed_nodes(parsed_nodes, tab_name=_make_id(self.arguments[0]))
+        #if self.env.docname == "deploy/server/deploy-kubernetes":
+        self.walk_parsed_nodes(parsed_nodes, tab_name=_make_id(self.arguments[0]))
         for parsed_node in parsed_nodes:
             content += parsed_node
 
@@ -66,13 +66,13 @@ class TabDirective(SphinxDirective):
             #print(f"+++ parsed_node: {parsed_node.astext()}")
             if isinstance(parsed_node, nodes.section):
                 node_id: str = parsed_node.attributes["ids"][0]
-                print(f"+++ [{level}] section: {node_id}")
+                #print(f"+++ [{level}] section: {node_id}")
                 prefixed_id: str = f"inlinetab--{tab_name}--{level}-{node_id}"
                 if re.match('id[0-9]+', node_id):
-                    print(f"+++ [{level}] replace id with '{prefixed_id}'")
+                    #print(f"+++ [{level}] replace id with '{prefixed_id}'")
                     parsed_node.attributes["ids"] = [prefixed_id]
                 else:
-                    print(f"+++ [{level}] add id '{prefixed_id}'")
+                    #print(f"+++ [{level}] add id '{prefixed_id}'")
                     parsed_node.append_attr_list("ids", [prefixed_id])
             if len(parsed_node.children) > 0:
                 #print(f"+++ [{level}] parse {len(parsed_node.children)} children")
