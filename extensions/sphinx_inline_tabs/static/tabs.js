@@ -77,6 +77,7 @@ function addHashchangeListener() {
         if (labelElement) {
           console.log(`sphinx_inline_tabs: labels_by_id[${tabName}][0].click()`);
           labelElement.click();
+          window.location.hash = `${window.location.hash}`;
         }
       }
     }
