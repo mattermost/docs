@@ -11,9 +11,9 @@ from sphinx.application import Sphinx
 def find_duplicate_redirects(redirects):
     # Track sources that map to the same target
     target_to_sources = {}
-    # Track duplicate sources 
+    # Track duplicate sources
     duplicate_sources = {}
-    
+
     # Open warnings log file in build directory
     with open("build/warnings.log", "w") as log:
         for source, target in redirects.items():
@@ -27,7 +27,7 @@ def find_duplicate_redirects(redirects):
                 print(warning)
             else:
                 duplicate_sources[source] = target
-                
+
             # Track sources mapping to same target
             if target in target_to_sources:
                 target_to_sources[target].append(source)
@@ -37,12 +37,10 @@ def find_duplicate_redirects(redirects):
         # Log sources that map to the same target
         for target, sources in target_to_sources.items():
             if len(sources) > 1:
-                warning = f"\nMultiple sources map to same target:\n"
-                warning += f"Target: {target}\n" 
-                warning += f"Sources: {sources}\n"
-                log.write(warning)
-                print(warning)
-                
+                warning_message: str = f"Multiple sources map to same target; Target: {target} <- Sources: {sources}"
+                log.write(warning_message)
+                print(warning_message)
+
     return len(duplicate_sources) == len(redirects)
 
 def setup(_: Sphinx):
