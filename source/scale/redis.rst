@@ -67,7 +67,6 @@ When using Redis with Mattermost, consider the following performance insights:
 
 - Current load tests indicate that memory usage of Redis is relatively low, with CPU being the primary bottleneck because Redis is single-threaded.
 - When planning your Redis deployment, use CPU utilization as the primary metric for scaling decisions.
-- For extremely large deployments, consider sharding your Redis deployment to distribute the workload.
 
 Implementation details
 ----------------------
