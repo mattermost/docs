@@ -1,22 +1,22 @@
-Mattermost as an Out-of-Band (OOB) Communication System
-=======================================================
+Deploy Mattermost as an Out-of-Band (OOB) Communication System
+==============================================================
 
-Overview
---------
 When a critical incident disrupts an organization’s primary infrastructure—due to a cyberattack, cloud outage, or internal failure—a secure, independent communication channel becomes essential. Mattermost can serve as that channel by operating in an Out-of-Band (OOB) environment: isolated, pre-provisioned, and ready to support incident response and business continuity teams.
 
-This document outlines architectural guidance for deploying Mattermost in an OOB scenario across generic, AWS, and Azure environments.
+This document outlines architectural guidance for deploying Mattermost in an OOB scenario across `generic <#generic-oob-architecture>`__, `AWS <#aws-based-oob-deployment>`__, and `Azure <#azure-based-oob-deployment>`__ environments.
 
-Generic OOB Architecture
+Generic OOB architecture
 ------------------------
+
 This platform-agnostic design establishes a fallback communication system, decoupled from primary networks and identity providers.
 
-.. image:: source/images/oob-generic-architecture.png
+.. image:: /images/oob-generic-architecture.png
    :alt: Generic OOB Architecture
    :align: center
 
-Architecture Components
+Architecture components
 ~~~~~~~~~~~~~~~~~~~~~~~
+
 - **Users (Cybersecurity, IR Teams)**: Pre-authorized personnel trained to access and use the OOB platform during emergencies. Credentials and access methods should be provisioned in advance.
 - **Secure Access Layer**: A firewall or access gateway protecting entry into the OOB environment. May include network policies, IP allowlists, or WAFs.
 - **Secondary IdP / Emergency Auth**: A dedicated identity provider not dependent on the organization’s primary SSO or IdP (e.g., a minimal Azure AD tenant, Okta org, or locally stored credentials with MFA).
@@ -26,52 +26,62 @@ Architecture Components
 - **Mattermost Operator & App**: Automates lifecycle of Mattermost instances in Kubernetes; ensures updates, scaling, and configuration consistency.
 - **PostgreSQL Database**: Persistent storage for channels, messages, users, and configurations; can be self-hosted or managed externally with hardened access.
 - **Backups**:
+
   - **Velero**: Backs up Kubernetes resources to external object store (S3, Blob).
   - **pg_dump / Cloud-native backup**: Regular logical exports or managed backups.
   - **Object Storage**: Durable, versioned storage (e.g., S3, Azure Blob) for snapshots and dumps.
 
-AWS-Based OOB Deployment
+AWS-based OOB deployment
 ------------------------
+
 Deploying Mattermost in AWS leverages managed services and strong isolation capabilities.
 
-.. image:: source/images/oob-aws-architecture.png
+.. image:: /images/oob-aws-architecture.png
    :alt: AWS OOB Deployment diagram
    :align: center
 
-**AWS Components**
+AWS components
+~~~~~~~~~~~~~~~
+
 - **Amazon EKS**: Managed Kubernetes for Mattermost Operator and application, with HA and auto-scaling.
 - **Route 53**: DNS service for health-checked failover to the OOB environment.
 - **Amazon Aurora PostgreSQL**: High-performance managed PostgreSQL with automated failovers.
 - **Amazon S3**: Object storage for Velero snapshots, configurations, and database backups (with versioning and cross-region replication).
 - **IAM Roles**: Scoped roles for EKS nodes and Velero using IRSA, enforcing least-privilege.
 
-**Notes**
-- Use separate AWS accounts or VPCs for full isolation.
-- Configure Route 53 health checks against public or synthetic endpoints.
-- Encrypt secrets and enforce least-privilege IAM policies.
+.. tip::
 
-Azure-Based OOB Deployment
+  - Use separate AWS accounts or VPCs for full isolation.
+  - Configure Route 53 health checks against public or synthetic endpoints.
+  - Encrypt secrets and enforce least-privilege IAM policies.
+
+Azure-Based OOB deployment
 --------------------------
+
 For Azure customers, AKS and related services provide a robust OOB platform for Mattermost.
 
-.. image:: source/images/oob-azure-architecture.png
+.. image:: /images/oob-azure-architecture.png
    :alt: Azure OOB Deployment diagram
    :align: center
 
-**Azure Components**
+Azure components
+~~~~~~~~~~~~~~~~~
+
 - **Azure Kubernetes Service (AKS)**: Runs Mattermost workloads with native autoscaling and Azure AD integration.
 - **Azure DNS + Traffic Manager**: Global traffic routing and DNS failover based on endpoint health.
 - **Azure Database for PostgreSQL**: Managed DB service with automated backups and patching.
 - **Azure Blob Storage**: Destination for Velero snapshots and DB dumps; supports lifecycle policies and secure access.
 - **Azure AD (Secondary Tenant)**: Acts as the IdP for OOB; deployed in a separate directory with scoped permissions and MFA.
 
-**Notes**
-- Deploy in a dedicated subscription for security and billing separation.
-- Use Azure Monitor for health checks and Traffic Manager probes.
-- Harden AKS node pools and isolate workloads with namespaces and network policies.
+.. tip::
 
-Operational Guidelines
+  - Deploy in a dedicated subscription for security and billing separation.
+  - Use Azure Monitor for health checks and Traffic Manager probes.
+  - Harden AKS node pools and isolate workloads with namespaces and network policies.
+
+Operational guidelines
 ----------------------
+
 .. list-table::
    :header-rows: 1
    :widths: 20 80
@@ -89,6 +99,4 @@ Operational Guidelines
    * - Security
      - Treat OOB as Tier 0. Use hardened OS images, audit logging, strict RBAC, and centralized monitoring. Rotate secrets regularly.
 
-Conclusion
-----------
 Mattermost can be an effective OOB communication platform when deployed with isolation, automation, and operational readiness. Whether on AWS, Azure, or a generic environment, prioritize independence, simplicity, and resilience. Pair these designs with standard IR playbooks and routine failover testing to build a confident, secure response capability.
