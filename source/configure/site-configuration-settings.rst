@@ -861,11 +861,11 @@ Enable email notifications
   - Email invitations and account deactivation emails aren't affected by this setting.
   - If you don't plan on :doc:`configuring Mattermost for email </configure/smtp-email>`, disabling this configuration setting in larger deployments may improve server performance in the following areas, particularly in high-traffic environments where performance is a key concern:
 
-    - Reduced Server Load: Generating and sending emails requires processing power and resources. By disabling email notifications, you reduce the load on the server, which can be reallocated to other tasks.
-    - Decreased I/O Operations: Sending emails involves input/output (I/O) operations, such as writing to logs and databases, and handling communication with the email server. Reducing these I/O operations can improve overall system efficiency.
-    - Lowered Network Traffic: Each email sent contributes to network traffic. Disabling email notifications decreases the amount of data being transmitted, which can lead to better performance, especially in environments with limited bandwidth.
-    - Faster Response Times: With fewer background tasks (like sending emails) to handle, the application can potentially respond to user requests more quickly, improving perceived performance.
-    - Resource Allocation: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
+    - **Reduced Server Load**: Generating and sending emails requires processing power and resources. By disabling email notifications, you reduce the load on the server, which can be reallocated to other tasks.
+    - **Decreased I/O Operations**: Sending emails involves input/output (I/O) operations, such as writing to logs and databases, and handling communication with the email server. Reducing these I/O operations can improve overall system efficiency.
+    - **Lowered Network Traffic**: Each email sent contributes to network traffic. Disabling email notifications decreases the amount of data being transmitted, which can lead to better performance, especially in environments with limited bandwidth.
+    - **Faster Response Times**: With fewer background tasks (like sending emails) to handle, the application can potentially respond to user requests more quickly, improving perceived performance.
+    - **Resource Allocation**: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
     - However, disabling email notifications can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: enable-preview-mode-banner
@@ -897,22 +897,26 @@ Enable preview mode banner
   :configjson: .EmailSettings.EnableEmailBatching
   :environment: MM_EMAILSETTINGS_ENABLEEMAILBATCHING
 
-  - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email.
+  - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. Users can customize how often to receive batched notifications.
   - **false**: **(Default)** Emails will be sent for each mention or direct message.
 
 Enable email batching
 ~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. The time period can be customized by each user under **Settings > Notifications**. The default time period is 15 minutes.                | - System Config path: **Site Configuration > Notifications**                       |
-| - **false**: **(Default)** Emails will be sent for each mention or direct message.                                                                                                                                                                                           | - ``config.json`` setting: ``EmailSettings`` > ``EnableEmailBatching`` > ``false`` |
-|                                                                                                                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``                   |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| - **true**: Multiple email notifications for mentions and direct messages       | - System Config path: **Site Configuration > Notifications**                       |
+|   over a given time period are batched into a single email.                     | - ``config.json`` setting: ``EmailSettings`` > ``EnableEmailBatching`` > ``false`` |
+|                                                                                 | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``                   |
+| - **false**: **(Default)** Email notifications are sent for each mention or     |                                                                                    |
+|   direct message.                                                               |                                                                                    |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
+
   - Cloud admins can't modify this configuration setting.
-  - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.
   - The :ref:`Site Url <configure/environment-configuration-settings:site url>` and :ref:`SMTP Email Server <configure/environment-configuration-settings:smtp server>` must be configured to allow email batching.
+  - Regardless of how this setting is configured, users can :ref:`disable email-based notifications altogether <preferences/manage-your-notifications:email notifications>`.
+  - When email batching is enabled, users can :ref:`customize how often to receive batched notifications <preferences/manage-your-notifications:email notifications>`. The default frequency is 15 minutes.
   - Email batching in :ref:`High Availability Mode <configure/environment-configuration-settings:enable high availability mode>` is planned, but not yet supported.
 
 .. config:setting:: email-notification-contents
