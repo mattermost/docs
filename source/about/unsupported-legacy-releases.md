@@ -9590,7 +9590,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Highlights
 
 #### JIRA App
-- Built-in JIRA integration that can post to multiple channels using a single webhook. See the [Jira integration](https://docs.mattermost.com/integrate/jira-interoperability.html) documentation for details.
+- Built-in JIRA integration that can post to multiple channels using a single webhook. See the [Jira integration](https://docs.mattermost.com/integrate/jira.html) documentation for details.
 
 #### Personal Access Tokens
 - Enables easier and more flexible integrations by authenticating against the REST API. See the [personal access token](https://developers.mattermost.com/integrate/reference/personal-access-token/) developers documentation for details.

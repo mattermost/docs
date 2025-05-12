@@ -64,7 +64,7 @@ At a high level, each deployment size was fixed (Mattermost server node count/si
 
 Tests were defined by configuration of the actions executed by each simulated user (and the frequency of these actions) where the coordinator metrics define a health system under load. Tests were performed using the Mattermost v9.5 Extended Support Release (ESR). Job servers weren't used. All tests with more than a single app node had an NGINX proxy running in front of them.
 
-For the last test of 200K users, further infrastructure changes were made. Elasticsearch nodes were added. A Redis instance was added, and multiple NGINX proxies were used to distribute traffic evenly across all nodes in the cluster. More details can be found in the `page </scale/scale-to-200000-users>`.
+For the last test of 200K users, further infrastructure changes were made. Elasticsearch nodes were added. A Redis instance was added, and multiple NGINX proxies were used to distribute traffic evenly across all nodes in the cluster. More details can be found on the :doc:`scale to 200000 users </scale/scale-to-200000-users>` documentation page.
 
 Full testing methodology, configuration, and setup is available, incluidng a `fixed database dump with 100 million posts <https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#/resources/arn%3Aaws%3Ards%3Aus-east-1%3A729462591288%3Acluster%3Adb-pg-100m-posts-v9-5-5>`_. Visit the `Mattermost Community <https://community.mattermost.com/>`_ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`_ for details.
 

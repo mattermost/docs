@@ -168,14 +168,15 @@ We provide a [load-test tool](https://github.com/mattermost/mattermost-plugin-ca
 
 ### Monitoring
 
-Both the plugin and the external `rtcd` service expose some Prometheus metrics to monitor performance. We provide an [official dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) that can be imported in Grafana. You can refer to [Performance monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external `rtcd` service expose some Prometheus metrics to monitor performance. We provide an [official dashboard](https://grafana.com/grafana/dashboards/23225-mattermost-calls-performance-monitoring/) that can be imported in Grafana. You can refer to [Performance monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 #### Calls plugin metrics
 
 Metrics for the calls plugin are exposed through the `/plugins/com.mattermost.calls/metrics` subpath under the existing Mattermost server metrics endpoint. This is controlled by the [Listen address for performance](https://docs.mattermost.com/configure/environment-configuration-settings.html#listen-address-for-performance) configuration setting. It defaults to port `8067`.
 
 ```{note}
-On Mattermost versions prior to v9.5, plugin metrics were exposed through the public `/plugins/com.mattermost.calls/metrics` API endpoint controlled by the [Web server listen address](https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address) configuration setting. This defaults to port `8065`.
+- The [Metrics plugin](https://docs.mattermost.com/scale/collect-performance-metrics.html) collects application-level metrics only and does not make system or OS-level calls. As a result, data typically derived from system-level metrics may be missing in the Grafana panel.
+- On Mattermost versions prior to v9.5, plugin metrics were exposed through the public `/plugins/com.mattermost.calls/metrics` API endpoint controlled by the [Web server listen address](https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address) configuration setting. This defaults to port `8065`.
 ```
 
 **Process**
