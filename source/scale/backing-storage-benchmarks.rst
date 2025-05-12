@@ -59,16 +59,22 @@ Read operations
 |           | p50: 1.56 s)           | p50: 1.55 s)           | p50: 146.51 s)           |
 +-----------+------------------------+------------------------+--------------------------+
 
-.. image:: /images/read-write-storage-performance.png
-  :alt: Read and Write Performance
-
 .. note::
 
-  - For S3 tests, :ref:`Amazon S3 exported upload part size <configure/environment-configuration-settings:amazon s3 upload part size>` was set to the default value (100MB).
-  - Local EBS storage is the stock gp3 (3000 IOPS) provided by EC2 instances.
   - **Read Performance**: Local and EFS have comparable read performance for very large files (10GB), but local storage outperforms for smaller files. S3 read performance is significantly slower, especially for large files (150.66s versus ~1.56s for 10GB files).
   - **Consistency**: Local storage shows the most consistent performance (lower standard deviations) for small files, while EFS shows more consistent performance for large files. S3 generally has higher variability across all metrics.
   - **Median vs Average**: The median (p50) values generally align with the averages, but in some cases (particularly EFS read operations), the median reveals that outliers significantly affect the average. For example, EFS read performance for 100MB and 1GB files shows much better median values than averages.
+
+.. image:: /images/read-write-storage-performance.png
+  :alt: Read and Write Performance
+
+Testing notes
+--------------
+
+- For S3 tests, :ref:`Amazon S3 exported upload part size <configure/environment-configuration-settings:amazon s3 upload part size>` was set to the default value (100MB).
+- Local EBS storage is the stock gp3 (3000 IOPS) provided by EC2 instances.
+- Both EBS and EFS solutions tested are considered ``local`` storage options from the application's perspective, where the :ref:`file storage system <configure/environment-configuration-settings:file storage system>` is set to ``local`` in both cases. EFS is essentially AWS's managed NFS, which enables it to serve as a potential alternative to S3 by allowing multiple Mattermost nodes in a high-availability (HA) deployment to share a common file system. In such HA scenarios, the standard local file storage (e.g., an EBS volume attached to a single instance) :ref:`is not suitable, as it can't be shared across multiple nodes <scale/high-availability-cluster-based-deployment:file storage configuration>`. EFS is a good alternative in this case, but EFS is not a block storage solution like EBS.
+
 
 Supported storage options
 -------------------------
