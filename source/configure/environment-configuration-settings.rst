@@ -1751,6 +1751,28 @@ Index prefix
 
   When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.
 
+.. config:setting:: global-search-prefix
+  :displayname: Global search prefix (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.GlobalSearchPrefix
+  :environment: MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX
+  :description: Enable global search across multiple Elasticsearch indices with the same index prefix.
+
+Global search prefix
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+| Enable global search across multiple Elasticsearch indices    | - System Config path: N/A                                                    |
+| with the same `index prefix <#index-prefix>`__.               | - ``config.json`` setting: ``".Elasticsearchsettings.GlobalSearchPrefix",``  |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX``      |
+| This is helpful for setups with multiple data centers where   |                                                                              |
+| Elasticsearch instances share data using cross-cluster        |                                                                              |
+| replication. It allows for easier and unified searching       |                                                                              |
+| across distributed indices.                                   |                                                                              |
+|                                                               |                                                                              |
+| Value must be a prefix of ``IndexPrefix``.                    |                                                                              |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+
 .. config:setting:: live-indexing-batch-size
   :displayname: Live indexing batch size (Elasticsearch)
   :systemconsole: N/A
