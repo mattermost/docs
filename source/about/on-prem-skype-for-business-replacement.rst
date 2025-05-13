@@ -1,48 +1,52 @@
 On-Premises Skype for Business Replacement
 ===========================================
+With Skype for Business reaching end-of-life, security-conscious organizations face a critical inflection point. Many operate in air-gapped or classified environments where cloud-based alternatives are not viable due to compliance restrictions, risk exposure, or data sovereignty mandates. Without a secure, modern, on-premises collaboration platform, these organizations risk operational disruption, mission misalignment, and non-compliance with stringent regulatory frameworks.
 
-As Skype for Business reaches its end-of-life, organizations with stringent security, compliance, and operational demands face a critical challenge: finding a secure, on-premises replacement that supports both air-gapped operations and enterprise-controlled external collaboration. For environments that cannot rely on cloud-based solutions, the need for a secure and flexible platform is paramount.
+Mattermost provides a secure, self-hosted communication and collaboration platform purpose-built for air-gapped environments, classified networks, and regulated industries. Designed to meet NIST 800-53, FedRAMP, and DISA STIG compliance requirements, Mattermost replaces legacy tools with modern capabilities—secure messaging, file sharing, workflow automation, and integrated video collaboration—while maintaining full enterprise control. Organizations can operate at scale, enable external collaboration without policy violations, and modernize their digital workflows without compromising security.
 
-Mattermost offers a purpose-built, on-premises collaboration platform designed to address these unique requirements. With robust support for private, air-gapped environments and tightly controlled external communications, Mattermost empowers organizations to maintain operational continuity while meeting the demands of high-security environments.
+Mission-ready collaboration capabilities include: 
 
-Use cases
--------------
+Air-Gapped and Classified Operations
+------------------------------------
 
-Air-gapped operations
-~~~~~~~~~~~~~~~~~~~~~
+Organizations operating in fully disconnected or classified environments require secure communication platforms that function entirely within their own infrastructure.
 
-Looking for a communication solution that eliminates reliance on external cloud providers while ensuring complete control over sensitive data and secure collaboration within their infrastructure? Mattermost provides a secure, on-premises platform that meets these needs, enabling organizations to maintain operational continuity and data sovereignty in fully disconnected environments.
+**Benefits**
 
-- **Secure Workflows Tailored for Air-Gapped Environments**: Enable private messaging, file sharing, and collaboration features like audio calls and screen sharing—all operating securely in fully air-gapped infrastructures.
+- **Ensure secure communication in fully disconnected networks** using Mattermost’s support for private on-premise deployments, including FIPS 140-2 validated and DISA STIG-hardened container images.
+- **Maintain operational continuity with enterprise-grade collaboration tools**—including 1:1 audio calls, screen sharing, threaded messaging, and file sharing—entirely within air-gapped systems.
+- **Scale to mission requirements** with a high-availability, horizontally scalable architecture that supports tens of thousands of users in secure on-prem environments.
+- **Preserve data sovereignty and eliminate external dependencies** with a self-hosted Kubernetes deployment model that integrates into classified networks or sovereign data centers.
 
-- **Compliant, High-assurance Security**: Deploy Mattermost with FIPS 140-2 validated images and DISA STIG-hardening to meet NIST 800-53, FedRAMP, and classified compliance standards.
+Modernize Secure Collaboration Workflows
+------------------------------------------
 
-- **Scalable On-Premises Architecture**: Build a collaboration environment that scales across tens of thousands of users without compromising data privacy or productivity in disconnected networks.
+Legacy communication tools lack the flexibility, automation, and usability demanded by modern operational teams. Mattermost introduces modern collaboration workflows without compromising compliance or deployment control.
 
-Enterprise-controlled external collaboration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Benefits**
 
-Struggling to enable secure external collaboration with third parties while maintaining enterprise-level control, oversight, and compliance to protect sensitive information? Mattermost provides integrations with Microsoft Teams, M365, and Outlook, allowing organizations to collaborate securely with external partners while ensuring that sensitive data remains protected.
+- **Enable dynamic, cross-platform messaging and coordination** with a unified interface across web, desktop, and mobile—featuring threaded discussions, file previews, and screen sharing.
+- **Streamline mission-critical processes with Collaborative Playbooks** that automate and track workflows like incident response, shift turnover, and logistics planning.
+- **Embed secure video conferencing into daily operations** using Pexip integration, allowing real-time video engagement from within your air-gapped or secure infrastructure.
+- **Support operational task management** through optional Kanban-style Boards for structured, accountable planning—hosted securely within your own network.
+- **Align the user experience with your operational identity** using custom branding, theming, and localization across more than 20 languages to support multinational teams.
+
+Enterprise-Controlled External Collaboration
+--------------------------------------------
+
+Collaborating across organizational boundaries must not compromise compliance or IT governance. Mattermost enables secure external engagement while keeping control centralized within the enterprise.
+
+**Benefits**
+
+- **Collaborate securely with third parties** via Shared Channels that allow messaging, file sharing, and thread-based discussions with external teams—without exposing internal systems.
+- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed permissions, audit logging, and channel-specific configurations.
+- **Integrate with Microsoft Teams, Exchange, and M365** to maintain centralized workflows and extend secure communication to external stakeholders without leaving policy-aligned platforms.
+- **Manage user identity and access** across internal and external roles using Microsoft EntraID (Azure AD) synchronization for scalable and compliant provisioning.
 
 
-- **Streamlined Communication with External Partners:** Work securely with external teams using Shared Channels that deliver enterprise-grade messaging, file sharing, and threaded discussions—without losing visibility or control.
+Get Started
+-----------
 
-- **Precision Control Over External Access** - Enforce your organization’s security and compliance standards with fine-grained access policies, permissions, and retention settings tailored to external users.
-
-- **Unified Workflows Across Microsoft Teams**: Break down silos by connecting Mattermost and Microsoft Teams users in a single, compliant environment that supports seamless communication and centralized oversight.
+`Try Mattermost <https://mattermost.com/download/>`__ or `talk to an Expert <https://mattermost.com/contact/>`__ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
 
 
-Explore solution features
---------------------------
-- **Shared Channels for External Teams**: Collaborate in real time with external organizations using Shared Channels, enabling secure, enterprise-managed messaging, file sharing, and threaded discussions.
-
-- **Granular Controls for External Access**: Maintain strict oversight of external communications with granular security policies, access controls, and data retention protocols.
-
-- **Microsoft Teams Integration**: Connect users from Mattermost and Microsoft Teams for seamless communication between internal and external stakeholders, all while maintaining enterprise-level governance and compliance controls.
-
-Get started
-------------
-
-Ready to transition from Skype for Business to a secure, on-premises communication platform built for air-gapped operations and enterprise-controlled external collaboration? Upgrade to Mattermost today to protect sensitive data, maintain operational continuity, and unlock new collaboration capabilities without sacrificing security.
-
-Contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to get started.
