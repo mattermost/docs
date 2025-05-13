@@ -9,6 +9,11 @@ Mattermost is designed to scale from small teams hosted on a single server to la
 
 Server requirements vary based on usage and we highly recommend that you run a pilot before an enterprise-wide deployment in order to estimate full scale usage based on your specific organizational needs.
 
+Backing storage
+---------------
+
+Review detailed :doc:`write and read storage benchmark results </scale/backing-storage-benchmarks>` for supported storage options including local file system (EBS, gp3), network file system (EFS), and object storage (S3) to make informed decisions based on your use case and infrastructure needs.
+
 Elasticsearch
 --------------
 
@@ -32,6 +37,7 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
+    Backing storage benchmarks </scale/backing-storage-benchmarks>
     Elasticsearch </scale/elasticsearch>
     High availability </scale/high-availability-cluster-based-deployment>
     Redis </scale/redis>
