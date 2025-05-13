@@ -30,7 +30,7 @@ During high-stakes incidents, Microsoft 365 tools can be limited or unavailable,
 - **Integrate with Microsoft Security Suite and :doc:`Entra ID </onboard/sso-entraid>`** to preserve centralized identity management while keeping sensitive data in a secure secondary system.
 - **Protect breach-sensitive notifications** using ID-only push alerts and encrypted mobility, enabling secure communication without cloud exposure.
 
-External collaboration with full control
+External Collaboration with Full Control
 ----------------------------------------------------
 
 Managing external collaboration within Microsoft Teams can be complex, often requiring numerous configurations and administration that lead to security risks like usage of consumer-grade chat tools.
@@ -42,7 +42,7 @@ Managing external collaboration within Microsoft Teams can be complex, often req
 - **Apply granular policy enforcement for external users**, including read-only roles, legal hold, retention policies, and custom Terms of Service.
 - **Synchronize user identity via :doc:`Entra ID </onboard/sso-entraid>`** to maintain scalable, centralized access control across both internal and external collaborators.
 
-Sovereign communication in Microsoft Teams  
+Sovereign Communication in Microsoft Teams  
 -------------------------------------------
 
 Agencies and critical infrastructure organizations must often comply with strict data sovereignty rules that restrict cloud usage for sensitive collaboration.
@@ -54,7 +54,7 @@ Agencies and critical infrastructure organizations must often comply with strict
 - **Enable secure Microsoft Teams interactions via embedded Mattermost collaboration**, supporting operations within familiar interfaces while enforcing regulatory compliance.
 - **Enforce agency-specific policies** with legal hold, retention, and user access controls that align with national or sectoral mandates.
 
-Cross-instance collaboration hub
+Cross-Instance Collaboration Hub
 ---------------------------------
 
 Multi-agency, multi-tenant Microsoft 365 environments often hinder seamless collaboration and increase complexity for inter-organization workflows.
