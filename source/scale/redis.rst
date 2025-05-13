@@ -92,7 +92,7 @@ While Redis is not required for smaller Mattermost deployments, it is highly rec
 - If your installation has more than 100K users, Redis is highly recommended. Redis significantly improves performance by reducing database load and optimizing common operations.
 - If your installation has less than 100K users, Redis is not recommended.
 
-It is suggested to keep an eye on the `sum(rate(mattermost_cache_mem_invalidation_total[5m]))` metric which indicates the rate of cache invalidations happening. A single cache invalidation will send a message across your HA cluster to all nodes, leading to database calls from all of them. So the metric, combined with the number of nodes in your cluster should be used to determine when is the right time to use Redis.
+It is suggested to keep an eye on the ``sum(rate(mattermost_cache_mem_invalidation_total[5m]))`` metric which indicates the rate of cache invalidations happening. A single cache invalidation will send a message across your HA cluster to all nodes, leading to database calls from all of them. So the metric, combined with the number of nodes in your cluster should be used to determine when is the right time to use Redis.
 
 For example, if you have more than 10 nodes in your cluster, and the rate of invalidations goes beyond 10, then you should definitely start considering adding Redis.
 
