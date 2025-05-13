@@ -9,7 +9,13 @@
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.15, released 2025-05-09**
+  - Mattermost v9.11.15 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Brought back the bug fix for [MM-61361](https://mattermost.atlassian.net/browse/MM-61361), since the performance regression has been fixed by tweaking the offending SQL query.
+  - Mattermost v9.11.15 contains the following database changes:
+    - A new index was added to the ``CategoryId`` column in ``SidebarChannels`` table to improve query performance. No database downtime is expected for this upgrade. It takes around 2s to add the index on a table with 1.2M rows for PostgreSQL, and it takes around 5s on MySQL on a table with 300K rows. The migrations are fully backwards-compatible and no table locks or existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are ``CREATE INDEX idx_sidebarchannels_categoryid ON SidebarChannels(CategoryId);`` for MYSQL and ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_sidebarchannels_categoryid ON sidebarchannels(categoryid);`` for PostgreSQL.
 - **9.11.14, released 2025-05-05**
+  - Mattermost v9.11.14 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Reverted a bug fix for [MM-61361](https://mattermost.atlassian.net/browse/MM-61361) that likely introduced a performance regression.
   - Mattermost v9.11.14 contains no database or functional changes.
 - **9.11.13, released 2025-04-29**
