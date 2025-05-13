@@ -19,6 +19,11 @@ High availability
 
 A :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
+Redis
+-----
+
+:doc:`Redis </scale/redis>` is an in-memory data structure store that can be used as a database, cache, and message broker. Mattermost uses Redis as an external cache to improve performance at scale. When properly configured, Redis can help support Mattermost installations with more than 100,000 users by providing improved performance through efficient caching.
+
 Available reference architectures
 ---------------------------------
 
@@ -28,7 +33,8 @@ Available reference architectures
     :titlesonly:
 
     Elasticsearch </scale/elasticsearch>
-    High availability </scale/high-availability-cluster-based-deployment> 
+    High availability </scale/high-availability-cluster-based-deployment>
+    Redis </scale/redis>
     Scale up to 200 users </scale/scale-to-200-users>
     Scale up to 2000 users </scale/scale-to-2000-users>
     Scale up to 15000 users </scale/scale-to-15000-users>
