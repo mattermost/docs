@@ -435,7 +435,7 @@ Once you have `rtcd` deployed as a single replica using a `NodePort`, you can no
 
 - In the Mattermost helm chart values, the environment variable `MM_CALLS_RTCD_URL` corresponds with the **RTCD Service URL** and should be set to the `rtcd` API service (TCP/8045). If everything is deployed in Kuebretes, this can be statically set to the internal service name `http://mattermost-rtcd.mattermost.svc:8045`.
 - In the Mettermost-RTCD helm chart values, the environment variable `RTCD_RTC_ICEHOSTOVERRIDE` should be the IP where your `NodePort` is reachable; in Kubernetes, this usually corresponds with any worker node.
-  - Also, the `NodePort` needs to be passed along to `rtcd` to advertise as well via the `RTCD_RTC_ICEHOSTPORTOVERRIDE` environment variable.
+, the `NodePort` needs to be passed along to `rtcd` to advertise as well via the `RTCD_RTC_ICEHOSTPORTOVERRIDE` environment variable.
 
 
 ## Frequently asked questions
