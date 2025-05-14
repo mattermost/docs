@@ -19,6 +19,11 @@ High availability
 
 A :doc:`high availability cluster-based deployment </scale/high-availability-cluster-based-deployment>` enables a Mattermost system to maintain service during outages and hardware failures through the use of redundant infrastructure.
 
+Redis
+-----
+
+:doc:`Redis </scale/redis>` is an in-memory data structure store that can be used as a database, cache, and message broker. Mattermost uses Redis as an external cache to improve performance at scale. When properly configured, Redis can help support Mattermost installations with more than 100,000 users by providing improved performance through efficient caching.
+
 Available reference architectures
 ---------------------------------
 
@@ -28,7 +33,8 @@ Available reference architectures
     :titlesonly:
 
     Elasticsearch </scale/elasticsearch>
-    High availability </scale/high-availability-cluster-based-deployment> 
+    High availability </scale/high-availability-cluster-based-deployment>
+    Redis </scale/redis>
     Scale up to 200 users </scale/scale-to-200-users>
     Scale up to 2000 users </scale/scale-to-2000-users>
     Scale up to 15000 users </scale/scale-to-15000-users>
@@ -67,6 +73,10 @@ Tests were defined by configuration of the actions executed by each simulated us
 For the last test of 200K users, further infrastructure changes were made. Elasticsearch nodes were added. A Redis instance was added, and multiple NGINX proxies were used to distribute traffic evenly across all nodes in the cluster. More details can be found on the :doc:`scale to 200000 users </scale/scale-to-200000-users>` documentation page.
 
 Full testing methodology, configuration, and setup is available, incluidng a `fixed database dump with 100 million posts <https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#/resources/arn%3Aaws%3Ards%3Aus-east-1%3A729462591288%3Acluster%3Adb-pg-100m-posts-v9-5-5>`_. Visit the `Mattermost Community <https://community.mattermost.com/>`_ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`_ for details.
+
+The performance specifications and user capacities provided in these reference architectures are based on extensive testing conducted in AWS environments. 
+
+For Azure deployments, the instance specifications have been extrapolated using equivalent configurations, drawing upon AWS performance data and industry expertise. While these configurations are designed to meet the stated requirements, we have not yet conducted formal testing in Azure environments to validate performance under load. Azure Blob Storage support is in active development, and not yet natively supported by Mattermost.
 
 Mattermost load testing tools
 -----------------------------
