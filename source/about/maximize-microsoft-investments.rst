@@ -28,7 +28,7 @@ During high-stakes incidents, Microsoft 365 tools can be limited or unavailable,
 - **Maintain operational continuity during M365 outages** with a dedicated, out-of-band Mattermost instance for secure incident response, communication, and collaboration. See :doc:`Playbooks in Microsoft Teams </integrate/playbooks-for-microsoft-teams>`
 - **Accelerate responses** with :ref:`AI-powered workflows <configure/enable-copilot:mattermost configuration>`, enabling structured playbooks for triage, escalation, and resolution even when primary systems are compromised.
 - **Integrate with Microsoft Security Suite** and :doc:`Entra ID </onboard/sso-entraid>` to preserve centralized identity management while keeping sensitive data in a secure secondary system.
-- **Protect breach-sensitive notifications** using :ref:`ID-only push alerts <configure/environment-configuration-settings:id-only push notifications>` and encrypted mobility, enabling secure communication without cloud exposure.
+- **Protect breach-sensitive notifications** using :ref:`ID-only push alerts <configure/environment-configuration-settings:id-only push notifications>` and enhanced mobile security, enabling secure communication without cloud exposure.
 
 External Collaboration with Full Control
 ------------------------------------------
