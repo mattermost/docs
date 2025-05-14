@@ -28,6 +28,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Bug Fixes
  - Fixed an issue with some threads not getting marked as read when read from a different device. 
  - Fixed an issue where the team sidebar did not show the unread indicator if the user had unread threads.
+ - Fixed an issue where message attachments (e.g. from a webhook) would not appear if received while the app was in the background.
 
 ### Open Source Components
  - Added ``@shopify/flash-list`` to https://github.com/mattermost/mattermost-mobile.
