@@ -4,7 +4,7 @@ Customize your Desktop App experience
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-You can customize your desktop app further with additional settings. Select the tab below that matches your operating system to learn more about the available settings.
+You can customize your desktop app further with additional settings. Select the tab below that matches your operating system to learn more about what's available.
 
 .. tab:: macOS
 
