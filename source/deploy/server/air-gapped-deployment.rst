@@ -3,7 +3,7 @@ Deploy Mattermost in Air-Gapped Environments
 
 This guide outlines how to deploy Mattermost in a self-hosted air-gapped environment, focusing on setting up the supporting infrastructure required for a successful deployment. An air-gapped environment is one that is isolated from the public internet, requiring all necessary components to be available locally.
 
-Deploying in an air-gapped environment requires careful planning to ensure all necessary components are available within the network. This includes:
+Deploying Mattermost in an air-gapped environment involves detailed preparation to ensure uninterrupted availability of critical components within the network. These efforts mitigate risks associated with the lack of internet connectivity by ensuring access to secure, localized resources. Key considerations include:
 
 - Container images required when deploying in Kubernetes or Docker.
 - Mattermost server packages and dependencies required when deploying directly on Linux servers.
@@ -16,7 +16,7 @@ Refer to Mattermost deployment documentation for setting up Mattermost as needed
 Set up a self-hosted private container registry
 --------------------------------------------------
 
-A private container registry allows you to store Docker images locally within your air-gapped network. These registries can be used to store images for Mattermost for deployment in Kubernetes or Docker.
+A private container registry securely stores Docker images for air-gapped deployments, ensuring compliance with data isolation requirements. Use it to enable local deployments in Kubernetes or Docker.
 
 The process for uploading images to the registry will need to be tailored to the security policies of the air-gapped network. For example, perhaps the registry is allowed to pull images from the public internet. If not, images will have to be uploaded to the registry from a machine that has access to the public internet.
 
@@ -87,7 +87,7 @@ Ideally the air-gapped network already has a private registry available. If not,
 Populate your private registry
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Assuming the registry is not allowed to pull images from the public internet, you will need to upload the images to the registry from a machine that has internet access.
+If the private registry cannot access the public internet, retrieve images on an external machine and securely transfer them using approved data transfer methods.
 
 .. code-block:: bash
 
