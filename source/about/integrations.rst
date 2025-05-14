@@ -7,10 +7,11 @@ Integrations Guide
    :titlesonly:
 
    /guides/pre-built-integrations.rst
+   /guides/microsoft-integrations.rst
 
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization’s needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
 
-Learn about the :doc:`Mattermost integrations </guides/pre-built-integrations>` that come with your Mattermost deployment.
+Learn about the :doc:`pre-built integrations </guides/pre-built-integrations>` that come with your Mattermost deployment and :doc:`integrations specific to the Microsoft ecosystem </guides/microsoft-integrations>`.
 
 In addition, a wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations available, please see the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_.
 
