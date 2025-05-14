@@ -13,8 +13,8 @@ Organizations operating in fully disconnected or classified environments require
 
 **Benefits**
 
-- **Ensure secure communication in fully disconnected networks** using Mattermost’s support for private on-premise deployments, including FIPS 140-2 validated and DISA STIG-hardened container images.
-- **Maintain operational continuity with enterprise-grade channel-based collaboration**—including :doc:`1:1 audio calls </collaborate/make-calls>`, :ref:`screen sharing <collaborate/make-calls:share your screen>`, :doc:`threaded messaging </collaborate/organize-conversations>`, and :doc:`file sharing </collaborate/share-files-in-messages>`—entirely within air-gapped systems.
+- **Ensure secure communication in fully disconnected networks** using Mattermost’s support for private on-premise deployments, including FIPS 140-2 validated and DISA STIG-hardened container images. :doc:`Learn more </deploy/application-architecture>` about Mattermost’s architecture, components, and backend infrastructure.
+- **Maintain operational continuity** with enterprise-grade :doc:`channel-based collaboration </guides/collaborate>`—including :doc:`1:1 audio calls </collaborate/make-calls>`, :ref:`screen sharing <collaborate/make-calls:share your screen>`, :doc:`threaded messaging </collaborate/organize-conversations>`, and :doc:`file sharing </collaborate/share-files-in-messages>`—entirely within air-gapped systems.
 - **Scale to mission requirements** with a :doc:`high-availability, horizontally scalable architecture </scale/scaling-for-enterprise>` that supports tens of thousands of users in secure on-prem environments.
 - **Preserve data sovereignty and eliminate external dependencies** with a self-hosted :doc:`Kubernetes deployment model </deploy/server/deploy-kubernetes>` that integrates into classified networks or sovereign data centers.
 
@@ -27,7 +27,7 @@ Legacy communication tools lack the flexibility, automation, and usability deman
 
 - **Enable dynamic, cross-platform messaging and coordination** with a unified interface across web, desktop, and mobile—featuring :doc:`threaded discussions </collaborate/organize-conversations>`, :ref:`file previews <collaborate/share-files-in-messages:preview file attachments>`, and :ref:`screen sharing <collaborate/make-calls:share your screen>`.
 - **Streamline mission-critical processes** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that automate and track workflows like incident response, shift turnover, and logistics planning.
-- **Embed secure video conferencing into daily operations** using Pexip integration, allowing real-time video engagement from within your air-gapped or secure infrastructure.
+- **Embed secure video conferencing into daily operations** using the `Pexip integration <https://mattermost.com/marketplace/pexip-video-connect/>`_, allowing real-time video engagement from within your air-gapped or secure infrastructure.
 - **Support operational task management** through optional Kanban-style Boards for structured, accountable planning—hosted securely within your own network.
 - **Align the user experience with your operational identity** using :doc:`custom branding </configure/custom-branding-tools>`, :doc:`theming </preferences/customize-your-theme>`, and :ref:`product localization <preferences/manage-your-display-options:language>` across more than 20 languages to support multinational teams.
 
@@ -39,7 +39,7 @@ Collaborating across organizational boundaries must not compromise compliance or
 **Benefits**
 
 - **Collaborate securely with third parties** via Connected Workspaces that allow messaging, :doc:`file sharing </collaborate/share-files-in-messages>`, and :doc:`thread-based discussions </collaborate/organize-conversations>` with external teams—without exposing internal systems.
-- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed :doc:`permissions </onboard/advanced-permissions>`, :ref:`audit logging <manage/logging:audit logging (beta)>`, and channel-specific configurations.
+- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed :doc:`permissions </onboard/advanced-permissions>`, :ref:`audit logging <manage/logging:audit logging (beta)>`, and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>`.
 - **Integrate with Microsoft Teams, Exchange, and M365** to maintain centralized workflows and extend secure communication to external stakeholders without leaving policy-aligned platforms. See :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Manage user identity and access** across internal and external roles using Microsoft :doc:`Entra ID </onboard/sso-entraid>` (Azure AD) synchronization for scalable and compliant provisioning.
 
