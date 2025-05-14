@@ -1,14 +1,10 @@
-Mattermost Playbooks for Microsoft Teams (Technical Preview)
-============================================================
+Connect Microsoft Teams to Mattermost Playbooks (Technical Preview)
+===================================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Playbooks for Teams improves cross-organizational alignment and awareness by enabling access to your :doc:`active, repeatable processes </guides/repeatable-processes>` and :ref:`status updates <repeatable-processes/notifications-and-updates:status updates>` in Mattermost directly in Microsoft Teams.
-
-Stakeholders working in Teams now gain enhanced visibility into ongoing incidents, while incident responders working in Mattermost can stay focused on incident response and eliminate context switching. 
-
-With the Mattermost Playbooks for Teams integration, you can:
+The Mattermost Playbooks for Teams technical preview improves cross-organizational alignment and awareness by enabling access to your :doc:`active, repeatable processes </guides/repeatable-processes>` and :ref:`status updates <repeatable-processes/notifications-and-updates:status updates>` in Mattermost directly in Microsoft Teams. Stakeholders working in Teams gain enhanced visibility into ongoing incidents, while incident responders working in Mattermost can stay focused on incident response and eliminate context switching. With the Mattermost Playbooks for Teams integration, you can:
 
 - View active incidents, responders, and last updated time
 - Read real-time incident status updates in chronological order
@@ -16,12 +12,8 @@ With the Mattermost Playbooks for Teams integration, you can:
 .. image:: ../images/mattermost_playbooks_for_teams.png
   :alt: Mattermost Playbooks for Teams, available in the Microsoft Teams App Store.
 
-Setup
------
-
-.. important::
-
-  Mattermost Playbooks for Teams is currently available as a technical preview. Please reach out to playbooks-for-teams@mattermost.com and connect with our technical experts to help with installation and setup, including getting access to the latest experimental builds of Playbooks required to support this feature.
+Deploy
+-------
 
 Update and configure the Playbooks integration for Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,3 +77,8 @@ Why don't I see any runs after entering my Mattermost server URL?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Please ensure you've added the **@msteams** bot to any runs you want to be accessible within Microsoft Teams. You can automate this step for future runs of a Playbook by inviting the **@msteams** bot as a participant in the **Actions** section of any Playbook configuration.
+
+Get help
+---------
+
+Reach out to playbooks-for-teams@mattermost.com to connect with our technical experts to help with installation and setup, including getting access to the latest experimental builds of Playbooks required to support this feature.
