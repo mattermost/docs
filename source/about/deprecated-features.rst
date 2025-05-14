@@ -18,6 +18,12 @@ Mattermost Server v11.0.0
 Removed features by Mattermost version
 ----------------------------------------
 
+Mattermost Server v10.8.0
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+- Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`__.
+
+
 Mattermost Server v10.6.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
