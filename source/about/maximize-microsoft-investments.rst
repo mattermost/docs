@@ -14,7 +14,7 @@ As Skype for Business reaches end-of-life, secure organizations require an alter
 
 - **Preserve mission-critical communication workflows** with a self-hosted Mattermost deployment that supports :doc:`1:1 calls </collaborate/make-calls>`, :ref:`screen sharing <collaborate/make-calls:share your screen>`, and :doc:`threaded messaging </collaborate/organize-conversations>` within secure environments. See :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Integrate Mattermost with Microsoft tools** such as Outlook, Teams, and :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` to retain user workflows while centralizing identity and access control.
-- **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ to maintain compliance with STIG, FedRAMP, and NIST 800-53 standards.
+- **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ while maintaining compliance with STIG, FedRAMP, and NIST 800-53 standards.
 
 :doc:`Learn more </about/on-prem-skype-for-business-replacement>` about replacing Skype for Business with Mattermost.
 
