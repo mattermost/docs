@@ -29,6 +29,7 @@ If you upgrade from a release earlier than v10.7, please read the other [Importa
 
 #### Administration
  - Added Custom Profile Attribute field type, visibility, and related options in **System Console -> System Properties**.
+ - Added support for LDAP/SAML sync with Custom Profile Attributes (disabled behind a feature flag).
  - Stopped building and packaging Windows and MacOS releases. 
  - ``EnableLocalMode`` is now automatically enabled during development. 
  - Log messages are now added if post props are invalid. 
