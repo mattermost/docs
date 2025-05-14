@@ -11,6 +11,7 @@ Server deployment planning
     Deploy with Linux </deploy/server/deploy-linux>
     Deploy with Containers </deploy/server/deploy-containers>
     Deploy for Out-of-Band Use </deploy/server/deploy-oob>
+    Deploy in Air-Gapped Environments </deploy/server/air-gapped-deployment>
     Reference Architecture </deploy/server/server-architecture>
     Scale for Enterprise </scale/scaling-for-enterprise>
 
