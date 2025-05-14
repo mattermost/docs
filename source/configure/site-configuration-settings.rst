@@ -1900,3 +1900,34 @@ Default maximum posts per sync (Beta)
 |                                                                           | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DefaultMaxPostsPerSync`` > ``50`` |
 | Default is **50**.                                                        | - Environment variable: N/A                                                                      |
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+----
+
+config.json-only settings
+-------------------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+.. config:setting:: enable-cross-team-search
+  :displayname: Enable cross-team search
+  :systemconsole: N/A
+  :configjson: ServiceSettings.EnableCrossTeamSearch
+  :environment: SERVICESETTINGS.ENABLECROSSTEAMSEARCH
+  :description: Disable the ability to search all channels the user is a member of across all teams or a specific team, and search all channels the user is a member of within the current team only. Enabled by default.
+
+Cross-team search
+~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------+-----------------------------------------------------------------------------------+
+| Disable the ability to search across all teams    | - System Config path: N/A                                                         |
+| or a specific team.                               | - ``config.json`` setting: ``ServiceSettings.EnableCrossTeamSearch`` > ``true``   |
+|                                                   | - Environment variable: ``MM_SERVICESETTINGS_ENABLECROSSTEAMSEARCH``              |
+| - **true**: **(Default)** Cross-team search is    |                                                                                   |
+|   enabled. Searches can be performed against all  |                                                                                   |
+|   channels the user is a member of across all     |                                                                                   |
+|   teams, a specific team, or the current team.    |                                                                                   |
+| - **false**: Cross-team search is disabled.       |                                                                                   |
+|   Searches are performed on all channels the user |                                                                                   |
+|   is member of within the current team only.      |                                                                                   |
++---------------------------------------------------+-----------------------------------------------------------------------------------+
