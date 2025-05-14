@@ -12,11 +12,6 @@ Pre-built integrations
     GitHub </integrate/github>
     GitLab </integrate/gitlab>
     Jira </integrate/jira>
-    Mattermost Mission Collaboration for Microsoft 365 </integrate/mattermost-mission-collaboration-for-m365>
-    Mattermost Playbooks for Microsoft Teams </integrate/playbooks-for-microsoft-teams>
-    Microsoft Calendar </integrate/microsoft-calendar>
-    Microsoft Teams </integrate/microsoft-teams-sync>
-    Microsoft Teams Meetings </integrate/microsoft-teams-meetings>
     ServiceNow </integrate/servicenow>
     Zoom </integrate/zoom>
 
@@ -27,12 +22,8 @@ Your Mattermost deployment comes with the following integrations pre-packaged yo
 * :doc:`GitHub </integrate/github>` - Connect GitHub to Mattermost to subscribe to repositiories, and to stay current with reviews, assignments, and more.
 * :doc:`GitLab </integrate/gitlab>` - Connect GitLab to Mattermost to subscribe to repositories, use GitLab events as Mattermost action triggers, and more.
 * :doc:`Jira </integrate/jira>` - Connect Jira to Mattermost to create Jira tickets from messages in Mattermost, and to get Mattermost notifications for Jira updates.
-* :doc:`Mattermost Mission Collaboration for M365 </integrate/mattermost-mission-collaboration-for-m365>` - Access Mattermost directly from a tab in Microsoft Teams, and receive Teams notifications for Mattermost direct messages and mentions.
-* :doc:`Mattermost Playbooks for Microsoft Teams </integrate/playbooks-for-microsoft-teams>` - Enable access to your Mattermost playbooks and status updates within Microsoft Teams.
-* :doc:`Microsoft Calendar </integrate/microsoft-calendar>` - Connect Microsoft Calendar to Mattermost to receive daily summaries of calendar events, synchronize Microsoft O365 status in Mattermost, and accept or decline calendar invites without leaving Mattermost.
-* :doc:`Microsoft Teams Sync </integrate/microsoft-teams-sync>` - Connect Microsoft Teams to Mattermost to synchronize real-time chat notifications from Teams to Mattermost.
-* :doc:`Microsoft Teams Meetings </integrate/microsoft-teams-meetings>` - Connect Microsoft Teams Meetings to Mattermost to start and join voice calls, video calls, and use screen sharing without leaving Mattermost.
 * :doc:`ServiceNow </integrate/servicenow>` - Connect ServiceNow to Mattermost to subscribe to record changes in ServiceNow and manage them in Mattermost.
+* `Splunk <https://github.com/mattermost-community/mattermost-plugin-splunk#readme>`_ - Connect Splunk to Mattermost to receive alerts and notifications from Splunk in Mattermost.
 * :doc:`Zoom </integrate/zoom>` - Connect Zoom to Mattermost to start audio and video conferencing calls in Mattermost with a single click.
 
 Mattermost Marketplace integrations

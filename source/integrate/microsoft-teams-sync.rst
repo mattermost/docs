@@ -9,8 +9,8 @@ Break through siloes in a mixed Mattermost and Microsoft Teams environment by fo
 .. include:: ../_static/badges/academy-msteams.rst
   :start-after: :nosearch:
 
-Setup
------
+Deploy
+-------
 
 Setup starts in Microsoft Teams and ends in Mattermost.
 
@@ -124,7 +124,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
   
   Modifications will be necessary for self-hosted Mattermost deployments. See the `Get help <#get-help>`__ section below for details on how to contact us for assistance.
 
-Usage
+Use
 -----
 
 See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams synchronization.
@@ -169,8 +169,6 @@ The integration subscribes to change notifications from the Microsoft Graph API.
 Get help
 --------
 
-If you face issues while installing this integration, gather relevant information, including reproduction steps to accelerate troubleshooting. You're welcome to open a new issue in the `Mattermost for Microsoft Teams GitHub repository <https://github.com/mattermost/mattermost-plugin-msteams/issues/new>`_.
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost for Microsoft Teams Sync plugin repository <https://github.com/mattermost/mattermost-plugin-msteams>`_.
 
-- **Mattermost Commercial Customers (including Enterprise and Professional plans)**: Visit `Mattermost Support <https://mattermost.com/support/>`_ to `submit a support ticket <https://support.mattermost.com/hc/en-us/requests/new>`_.
-
-- **Mattermost Team Edition and Free customers** Visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ where you can access the global Mattermost Community for assistance.
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
