@@ -46,6 +46,14 @@ Scroll horizontally to see additional columns in the table below.
 | API (`rtcd`) | 8045 | TCP (incoming) | Mattermost instance(s) (Calls plugin) | `rtcd` service | To allow for HTTP/WebSocket connectivity from Calls plugin to `rtcd` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server. |
 | STUN (Calls plugin or `rtcd`) | 3478 | UDP (outgoing) | Mattermost Instance(s) (Calls plugin) or `rtcd` service | Configured STUN servers | (Optional) To allow for either Calls plugin or `rtcd` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) config option. |
 
+```{note}
+Mattermost Calls can function in air-gapped environments. Exposing Calls to the public internet is only necessary when users need to connect from outside the local network, and no existing method supports that connection. In such setups:
+
+- Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
+- Configuring a STUN server is unnecessary, as all connections occur within the local network.
+- The ICE Host Override setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
+```
+
 ## Limitations
 
 - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
@@ -434,6 +442,10 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 ### Are there any third-party services involved?
 
 The only external service used is a Mattermost official STUN server (`stun.global.calls.mattermost.com`) which is configured as default. This is primarily used to find the public address of the Mattermost instance if none is provided through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) option. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in cases where the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) setting is provided.
+
+```{note}
+In air-gapped deployments, using STUN servers is not necessary since all connections remain within the local network.
+```
 
 ### Is using UDP a requirement?
 
