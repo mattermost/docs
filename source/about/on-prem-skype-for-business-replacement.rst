@@ -28,7 +28,7 @@ Legacy communication tools lack the flexibility, automation, and usability deman
 - **Enable dynamic, cross-platform messaging and coordination** with a unified interface across web, desktop, and mobile—featuring :doc:`threaded discussions </collaborate/organize-conversations>`, :ref:`file previews <collaborate/share-files-in-messages:preview file attachments>`, and :ref:`screen sharing <collaborate/make-calls:share your screen>`.
 - **Streamline mission-critical processes** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that automate and track workflows like incident response, shift turnover, and logistics planning.
 - **Embed secure video conferencing into daily operations** using the `Pexip integration <https://mattermost.com/marketplace/pexip-video-connect/>`_, allowing real-time video engagement from within your air-gapped or secure infrastructure.
-- **Support operational task management** through optional Kanban-style Boards for structured, accountable planning—hosted securely within your own network.
+- **Support operational task management** through optional Kanban-style `Boards <https://github.com/mattermost/mattermost-plugin-boards>`_ for structured, accountable planning—hosted securely within your own network.
 - **Align the user experience with your operational identity** using :doc:`custom branding </configure/custom-branding-tools>`, :doc:`theming </preferences/customize-your-theme>`, and :ref:`product localization <preferences/manage-your-display-options:language>` across more than 20 languages to support multinational teams.
 
 Enterprise-Controlled External Collaboration
