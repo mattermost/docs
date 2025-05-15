@@ -463,7 +463,7 @@ Manage properties
 
 - **Modify**: Select the property fields to make inline changes to the property's name, type, or values. Select **More** |more-icon| to change a property's visibility.
 
-- **Order** Control the order you want properties to appear in user profiles by dragging and dropping them in the list.
+- **Order**: Control the order you want properties to appear in user profiles by dragging and dropping them in the list.
 
 - **Delete**: Delete properties you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
 
