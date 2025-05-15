@@ -56,11 +56,11 @@ Deploying Mattermost in a Kubernetes environment allows you to harness Kubernete
 
 4. Save your Ingress and TLS YAML manifests to files (e.g., ``ingress.yaml`` and ``tls.yaml``) and apply them to your cluster using Kubernetes command-line tools. 
 
-Configure DNS by ensuring your domain name ``your-domain.com`` is properly pointed to the external IP address of your cluster or ingress controller. You can verify this using tools like nslookup or dig.
+5. Configure DNS by ensuring your domain name ``your-domain.com`` is properly pointed to the external IP address of your cluster or ingress controller. You can verify this using tools like nslookup or dig.
 
-5. After applying the Ingress, verify HTTPS Access by navigating to your domain (e.g., ``https://your-domain.com``) in a web browser to verify HTTPS access. If you encounter issues, check ingress controller logs (``kubectl logs -n <namespace> <ingress-controller-pod-name>``, DNS records, and TLS configurations.
+6. After applying the Ingress, verify HTTPS Access by navigating to your domain (e.g., ``https://your-domain.com``) in a web browser to verify HTTPS access. If you encounter issues, check ingress controller logs (``kubectl logs -n <namespace> <ingress-controller-pod-name>``, DNS records, and TLS configurations.
 
-6. Enable HSTS and Additional Security in your Ingress annotations.
+7. Enable HSTS and Additional Security in your Ingress annotations.
 
 Additionally, consider:
 

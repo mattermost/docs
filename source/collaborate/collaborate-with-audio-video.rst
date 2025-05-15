@@ -10,9 +10,9 @@ Mattermost offers native real-time chat, self-hosted audio calls, and screen sha
 For video conferencing, Mattermost integrates seamlessly with leading providers, giving users the flexibility to easily transition from chat to video:
 
 - **Pexip**: An enterprise-grade video conferencing solution with advanced security features, tailored for secure and scalable video collaboration.
-- :doc:`Zoom </integrate/zoom-interoperability>`: A widely used, cloud-based video conferencing platform known for its ease of use and wide range of collaboration tools, including screen sharing and breakout rooms.
+- :doc:`Zoom </integrate/zoom>`: A widely used, cloud-based video conferencing platform known for its ease of use and wide range of collaboration tools, including screen sharing and breakout rooms.
 - `Webex <https://mattermost.com/marketplace/webex-cloud/>`_: A comprehensive video conferencing solution designed for enterprise-grade security, offering features like file sharing, virtual backgrounds, and meeting recordings.
-- :doc:`Microsoft Teams </integrate/microsoft-teams-interoperability>`: A cloud-based collaboration platform that integrates with Microsoft 365, with text, voice, video, and file-sharing features.
+- :doc:`Microsoft Teams </integrate/microsoft-teams-sync>`: A cloud-based collaboration platform that integrates with Microsoft 365, with text, voice, video, and file-sharing features.
 
 With always-online calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
 

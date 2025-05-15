@@ -11,7 +11,6 @@ The platform is fully extensible by design, supporting a rich ecosystem of third
    :titlesonly:
 
    /about/editions-and-offerings.rst
-   /about/use-cases.rst
    /about/subscription.rst
    /about/certifications-and-compliance.rst
    /about/accessibility-compliance-policy.rst
@@ -19,11 +18,10 @@ The platform is fully extensible by design, supporting a rich ecosystem of third
    /about/frequently-asked-questions.rst
 
 * :doc:`Editions and offerings </about/editions-and-offerings>` - Learn about Mattermost editions, feature sets, and capabilities.
-* :doc:`Use cases </about/use-cases>` - Learn about Mattermost use cases for mission critical operations.
 * :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions, plans, and licenses for both Cloud and self-hosted deployments..
 * :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
 * :doc:`Accessibility compliance policy </about/accessibility-compliance-policy>` - Learn about Mattermost's policy and commitment to accessibility.
-* :doc:`Mattermost releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
+* :doc:`Releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
 * :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
 
 Stay connected with channels
@@ -36,7 +34,7 @@ Channel-based communication workflows require real-time information sharing, fle
 .. image:: ../images/Channels_Hero.png
    :alt: An example of the Mattermost screen that includes teams, the channel sidebar, an active conversation in the center pane, reply threads in the right-hand pane.
 
-Trust your proceses with playbooks
+Trust your processes with playbooks
 -----------------------------------
 
 Structured workflows are specific scenarios and use cases that require a reliable and repeatable process. These use cases lend themselves well to shared checklists, automation, and retrospectives where the life cycle is measured in hours to weeks. Some examples include incident collaboration and software releases.

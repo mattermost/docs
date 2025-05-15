@@ -17,7 +17,7 @@ Connect your Mattermost account to your Microsoft Teams account
 ---------------------------------------------------------------
 
 .. note::
-  Your System Administrator must install and enable the :doc:`Mattermost for Microsoft Teams integration </integrate/microsoft-teams-interoperability>` and ensure :ref:`support for notifications is enabled <configure/plugins-configuration-settings:sync notifications>` in order for you to connect your account and recieve chat notifications. 
+  Your System Administrator must install and enable the :doc:`Mattermost for Microsoft Teams integration </integrate/microsoft-teams-sync>` and ensure :ref:`support for notifications is enabled <configure/plugins-configuration-settings:sync notifications>` in order for you to connect your account and recieve chat notifications. 
   
 
 Once the integration is installed and configured by a System Administrator, you can connect your Mattermost user account to your Microsoft Teams account. You only need to complete this step once.

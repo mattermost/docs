@@ -74,7 +74,7 @@ You can use the :ref:`mmctl config migrate <manage/mmctl-command-line-tool:mmctl
 
 .. code-block:: sh
 
-   .bin/mmctl mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
+   ./bin/mmctl config migrate path/to/config.json "postgres://mmuser:mostest@localhost:5432/mattermost_test?sslmode=disable&connect_timeout=10" --local
 
 .. important::
  
