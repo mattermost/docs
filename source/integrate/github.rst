@@ -9,7 +9,7 @@ Minimize distractions and reduce context switching between your GitHub code repo
 .. image:: ../images/github_mattermost.png
   :alt: An example of the GitHub integration for Mattermost.
 
-Setup
+Deploy
 ------
 
 Setup starts in GitHub and configuration ends in Mattermost.
@@ -102,7 +102,7 @@ Upgrade
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-github/releases>`__ for the latest release, available releases, and compatibiilty considerations.
 
-Usage
+Use
 -----
 
 Users who want to use GitHub interconnectivity must register an OAuth app in GitHub for Mattermost, and then connect a GitHub account to Mattermost.
@@ -170,6 +170,13 @@ How does the integration save user data for each connected GitHub user?
 
 GitHub user tokens are AES-encrypted with an **At Rest Encryption Key** generated in Mattermost. Once encrypted, the tokens are saved in the ``PluginKeyValueStore`` table in your Mattermost database.
 
+Customize
+---------
+
+This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
+In order to get your environment set up to run Playwright tests, please see the setup guide at `e2e/playwright <https://github.com/mattermost/mattermost-plugin-github/blob/master/e2e/playwright#readme>`_.
+
 Get help
 --------
 
@@ -177,9 +184,4 @@ Mattermost customers can open a `Mattermost support case <https://support.matter
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
 
-Customize
----------
-
-This integration contains both a server and web app portion. Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
-
-In order to get your environment set up to run Playwright tests, please see the setup guide at `e2e/playwright <https://github.com/mattermost/mattermost-plugin-github/blob/master/e2e/playwright#readme>`_.
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.
