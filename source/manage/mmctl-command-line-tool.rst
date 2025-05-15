@@ -104,11 +104,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
    .. code-block:: sh
 
-      # For Mattermost versions >= v8.0.0
       go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
-
-      # For Mattermost versions < v8.0.0
-      go install github.com/mattermost/mmctl@latest
 
 .. tab:: Homebrew
 
