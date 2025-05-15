@@ -1,38 +1,22 @@
-Mattermost Mission Collaboration for Microsoft 365 (Beta)
-=========================================================
+Connect Microsoft 365, Teams, and Outlook with Mattermost (Beta)
+================================================================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Mission Collaboration for Microsoft extends Microsoft 365, Microsoft Outlook, and Microsoft Teams for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks.
+Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks.
 
-This app is designed to work with Microsoft 365, Outlook, and Teams.
+This app is designed to work with Microsoft 365, Teams, and Outlook.
 
-Before you begin
------------------
+Deploy
+-------
 
-Before starting the setup, ensure you understand the 3 components needed to integrate Mattermost with M365, including: Azure App Registration, Microsoft Teams App Installation, and Mattermost Plugin Configuration. Each component plays a crucial role in ensuring seamless communication and collaboration between Mattermost and Microsoft 365 services:
-
-1. **Azure App Registration**:
-   An application must be registered in Microsoft Azure to enable secure authentication and authorization between Mattermost and M365 services. This app registration acts as the bridge for permissions and connectivity. The **Azure App** is responsible for authentication and managing permissions.
-
-2. **Microsoft Teams App Installation**:
-   A Microsoft Teams app is installed into Microsoft Teams. This app facilitates collaboration between Mattermost and Teams, providing a tab containing Mattermost within the Teams client. The **Teams App** is installed within Microsoft Teams to enable collaboration via a tab.
-
-3. **Mattermost Plugin Configuration**:
-   Within Mattermost, the Mattermost Mission Collaboration for Microsoft plugin needs to be installed and configured. This plugin acts as the integration hub on the Mattermost side, connecting to both the Azure App and the Teams App. The **Mattermost Plugin** is the configuration point within Mattermost that unifies the integration.
-  
-Setup
------
-
-Complete the following integration setup steps in the order listed:
-
-1. `Register the Azure App <#register-an-ms-teams-app-in-azure>`__
-2. `Configure the Mattermost Plugin <#mattermost-plugin-setup>`__
-3. `Install the Teams App <#install-mattermost-in-microsoft-teams>`__
+Before starting the setup, review this section to familiarize yourself with the 3 components needed to integrate Mattermost with M365, including `Azure App registration <#register-an-ms-teams-app-in-azure>`__, `Microsoft Teams App installation <#mattermost-plugin-setup>`__, and `Mattermost plugin configuration <#install-mattermost-in-microsoft-teams>`__. Each component plays a crucial role in ensuring seamless communication and collaboration between Mattermost and Microsoft 365 services. Then complete the following integration setup steps in the order listed below.
 
 Register an MS Teams app in Azure
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+An application must be registered in Microsoft Azure to enable secure authentication and authorization between Mattermost and M365 services. This app registration acts as the bridge for permissions and connectivity. The **Azure App** is responsible for authentication and managing permissions.
 
 1. Sign in to the `Azure portal <https://portal.azure.com/>`_ using an admin Azure account.
 
@@ -98,6 +82,8 @@ Register an MS Teams app in Azure
 Configure the Mattermost plugin
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+A Microsoft Teams app is installed into Microsoft Teams. This app facilitates collaboration between Mattermost and Teams, providing a tab containing Mattermost within the Teams client. The **Teams App** is installed within Microsoft Teams to enable collaboration via a tab.
+
 1. Download the `latest release of the plugin <https://github.com/mattermost/mattermost-plugin-msteams-devsecops/releases>`_.
 
 2. Go to **System Console > Plugins > Plugin Management > Upload Plugin**, and upload the plugin binary you downloaded in the previous step.
@@ -122,6 +108,8 @@ Configure the Mattermost plugin
 Install Mattermost in Microsoft Teams
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Within Mattermost, the Mattermost Mission Collaboration for Microsoft plugin needs to be installed and configured. This plugin acts as the integration hub on the Mattermost side, connecting to both the Azure App and the Teams App. The **Mattermost Plugin** is the configuration point within Mattermost that unifies the integration.
+
 1. Go to the `Microsoft Teams admin center <https://admin.teams.microsoft.com/dashboard>`_.
 
 2. Go to **Teams apps > Manage apps**.
@@ -135,40 +123,18 @@ Install Mattermost in Microsoft Teams
 
 5. Done! Your application is now available to users.
 
-Usage
+Use
 ------
 
 This plugin supports automatic authentication when logged into Microsoft Teams. Teams authentication automatically logs users into Mattermost if the email addresses in both platforms match exactly. Regular authentication methods (LDAP, SAML, email/password, OpenID) can additionally be used for Mattermost.
 
 In air-gapped environments or during business continuity disruptions, users who can't join Microsoft Teams, can continue to access Mattermost using their Mattermost credentials by opening Mattermost in a separate app (e.g., in a new browser window). Alternatively, a Mattermost admin can pre-distribute the Mattermost desktop app using Windows MSI or the mobile app via EMM.
 
-Benefits and use cases
------------------------
-
-- **External Collaboration with IT Control**: Replace non-compliant freemium personal apps with dedicated external collaboration across mobile, web, and desktop, fully controlled by IT.
-- **Intelligent, AI-Accelerated Incident Response**: Augment Microsoft Security Suite with AI-powered collaborative workflows, from detection to resolution, within secure environments.
-- **Sovereign, Cyber-Resilient S4B Replacement for Classified Workflows**: Replace legacy Skype for Business with a self-hosted, fully sovereign solution for classified operations, tightly integrated within Microsoft ecosystems.
-- **Embedded DevSecOps Collaboration Inside Microsoft Teams**: Maintain a unified user experience while achieving higher operational productivity for DevSecOps and mission teams.
-- **Mission Operations at the Tactical Edge**: Real-time command and control for joint operations, mission partner environments, and disconnected/denied environments (DDIL).
-
-Key features
--------------
-
-- **Direct Access**: Access Mattermost directly from a tab without switching applications or opening a browser.
-- **Seamless Integration**: Experience the full functionality of Mattermost within a familiar Microsoft Teams interface.
-- **Real-time Collaboration**: Collaborate with your team on projects, workflows, and communications in real time.
-- **Unified Communications**: Combine chat, meetings, workflows, and task management inside MS Teams.
-- **Secure Data Handling**: Maintain data sovereignty with self-hosted deployment options.
-- **AI-Powered Insights**: Use multi-agent AI, including Azure OpenAI and local LLMs, for faster decision-making and situational awareness.
-- **Embedded DevSecOps Collaboration**: Keep developer teams productive with integrated workflows inside Microsoft Teams.
-- **Entra-Based SSO**: Simplify user authentication and enhance security with enterprise-grade identity management for organizations using Microsoft Entra ID.
-- **Activity Feed Notifications for events in Mattermost**: Never miss critical updates, with real-time notifications in your MS Teams activity feed whenever someone mentions or messages you directly in Mattermost.
-
 FAQ
 ---
 
-Where can I get support?
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Get help
+~~~~~~~~~
 
 Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
