@@ -4,7 +4,7 @@ Manage your Mattermost profile
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Select your profile picture and select **Profile** to manage your Mattermost profile, including your name, username, nickname, email, and profile picture. 
+Select your profile picture and select **Profile** to manage the details of your Mattermost profile, including your name, username, nickname, email, and profile picture. 
 
 Your Mattermost system admin may :ref:`define additional profile fields <configure/site-configuration-settings:system properties>` you can manage. Additionally, some of your profile information may be pulled from another source, which means you won't be able to modify it in Mattermost. Contact your Mattermost system admin for assistance.
 
@@ -18,19 +18,21 @@ Your Mattermost system admin may :ref:`define additional profile fields <configu
 | Username            | Usernames are unique identifiers appearing next to all posts.                                   |
 |                     | Usernames must begin with a letter, and contain between 3 to 22                                 |
 |                     | lowercase characters made up of numbers, letters, and the                                       |
-|                     | symbols '.', '-', and '_'.                                                                      |
+|                     | symbols ``.``, ``-``, and ``_``.                                                                |
 |                     |                                                                                                 |
 |                     | Pick something easy for teammates to recognize and recall.                                      |
-|                     | By default, you will receive mention notifications when someone                                 |
-|                     | types your username. Changing your username won't change existing @mentions in sent messages.   |
+|                     | By default, you'll receive mention notifications when someone types your username.              |
+|                     | Changing your username won't change your existing @mentions in sent messages.                   |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Nickname            | (Optional) Nicknames appear in the direct messages member list and team management modal.       |
 |                     | Your nickname can be up to 64 characters long.                                                  |
 |                     |                                                                                                 |
-|                     | You won't be notified when someone types your nickname unless you add it to the **Words         |
-|                     | that Trigger Mentions** notifications list as a :doc:`notification                              |
-|                     | </preferences/manage-your-notifications>` preference.                                           |
-|                     | From Mattermost v10.8, nicknames display in threaded discussions when available.                |
+|                     | You won't be notified when someone types your nickname unless you add your nickname to the list |
+|                     | of **Keywords that Trigger Notifications** as a :ref:`notification preference                   |
+|                     | <preferences/manage-your-mentions-keywords-notifications:customize notification keywords>`.     |
+|                     |                                                                                                 |
+|                     | From Mattermost v10.8, nicknames display in                                                     |
+|                     | :doc:`threaded discussions </collaborate/organize-conversations>` when available.               |
 +---------------------+-------------------------------------------------------------------------------------------------+
 | Position            | (Optional) Position can be used to describe your role or job title.                             |
 |                     | Your position appears in the profile popup that displays when you select                        |
