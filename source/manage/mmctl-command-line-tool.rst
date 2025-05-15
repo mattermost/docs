@@ -151,7 +151,11 @@ To use local mode, the Mattermost server first needs to :ref:`have local mode en
 Using local mode
 ~~~~~~~~~~~~~~~~
 
-You need to append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the :ref:`server configuration setting <configure/experimental-configuration-settings:enable local mode socket location>`.
+From Mattermost v10.8, when no authentication credentials are found in the authentication configuration, mmctl automatically assumes local mode, eliminating the need to manually append the ``--local`` flag to the command you want to use. When valid credentials exist, Mattermost will continue to validate them as expected.
+
+Prior to Mattermost v10.8, you must append ``--local`` to the command you want to use, or set the environment variable as ``MMCTL_LOCAL=true``. 
+
+To use a socket file other than the default, you need to set the environment variable to ``MMCTL_LOCAL_SOCKET_PATH``. This file must match the :ref:`server configuration setting <configure/experimental-configuration-settings:enable local mode socket location>`.
 
 Running mmctl tests
 -------------------
