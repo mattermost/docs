@@ -86,17 +86,15 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
 .. tab:: Release package 
 
-   From Mattermost v8.0, if you're using a release page for Linux, macOS, or Windows, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
+   If you're using a release page for Linux, macOS, or Windows, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
-   E.g. to download version ``v8.0.0`` of the mmctl amd64 build for linux, you can run the following:
+   E.g. to download version ``v10.7.0`` of the mmctl amd64 build for linux, you can run the following:
 
    .. code-block:: sh
 
-      curl -vfsSL -O https://releases.mattermost.com/mmctl/v8.0.0/linux_amd64.tar
+      curl -vfsSL -O https://releases.mattermost.com/mmctl/v10.7.0/linux_amd64.tar
 
    Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
-
-   For versions older than ``v8.0.0``, you can instead visit the `mmctl releases page <https://github.com/mattermost/mmctl/releases>`__ and download the appropriate release for your OS, and install the binary.
 
 .. tab:: Go install 
 
@@ -106,11 +104,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
    .. code-block:: sh
 
-      # For Mattermost versions >= v8.0.0
       go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
-
-      # For Mattermost versions < v8.0.0
-      go install github.com/mattermost/mmctl@latest
 
 .. tab:: Homebrew
 
