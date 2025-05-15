@@ -59,9 +59,9 @@ Set up in one data center
 As a first step, set up Mattermost in a single data center. At a very basic high level, this would be something like below:
 
 .. image:: ../images/dr1.png
-   :alt: An architecture diagram showing a single proxy that's forwarding traffic to 2 nodes, a database with single writer + n readers, and an S3 bucket and ES/OS using AWS Opensearch service.
+   :alt: An architecture diagram showing a single proxy that's forwarding traffic to 2 nodes, a database with single writer + n readers, and an S3 bucket and ES/OS using AWS OpenSearch service.
 
-The diagram above has a single proxy, forwarding traffic to 2 nodes. There's also a database with single writer + n readers and an S3 bucket and ES/OS using AWS Opensearch service.
+The diagram above has a single proxy, forwarding traffic to 2 nodes. There's also a database with single writer + n readers and an S3 bucket and ES/OS using AWS OpenSearch service.
 
 At this stage, we are ignoring other details like LDAP/SAML, SMTP etc.
 
@@ -121,7 +121,7 @@ Now you have bi-directional replication working between these S3 replica and sou
 Replicate ES/OS storage
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-1. To replicate ES/OS storage, set up CCR (cross-cluster replication) for AWS Opensearch with the following requirements:
+1. To replicate ES/OS storage, set up CCR (cross-cluster replication) for AWS OpenSearch with the following requirements:
 
   - Elasticsearch 7.10 or OpenSearch 2.x
   - Fine-grained access control enabled
@@ -159,7 +159,7 @@ Replicate ES/OS storage
 
 To recap:
 
-- Use Opensearch 2.x.
+- Use OpenSearch 2.x.
 - Enable fine-grained access control.
 - Create the master user, and note the server credentials.
 - Set the IAM policy as above.
@@ -314,7 +314,7 @@ Failover RDS to secondary
 
 To perform the failover, go to the RDS global cluster, and under **Actions**, select **Switchover or Failover global database**, and then select **switchover** to switch over without any data loss (which will take more time to complete). Alternatively, you can choose **failover** for a quicker failover at the expense of data-loss. If the entire region is unavailable anyways, then **failover** is no worse than **switchover**.
 
-After this is done, the app nodes which were stuck trying to connect should move forward and everything should be functional. You can read/write, upload images and everything should be replicated. Everything except Opensearch data.
+After this is done, the app nodes which were stuck trying to connect should move forward and everything should be functional. You can read/write, upload images and everything should be replicated. Everything except OpenSearch data.
 
 Failover ES/OS to secondary
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
