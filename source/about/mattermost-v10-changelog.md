@@ -182,6 +182,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.6-feature-release)=
 ## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.6.5, released 2025-05-15**
+  - Added support for AES-256-GCM encryption in SAML [MM-64222](https://mattermost.atlassian.net/browse/MM-64222).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in "All members" section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Mattermost v10.6.5 contains no database or functional changes.
 - **10.6.4, released 2025-05-12**
   - Mattermost v10.6.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.6.4 contains no database or functional changes.
