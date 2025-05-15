@@ -149,13 +149,13 @@ redirects = {
 "about/mattermost-customizable-ai-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
 "about/install-mattermost-app-in-microsoft-teams.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "about/mattermost-google-calendar-integration.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/setup-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/embed-mattermost-app-within-microsoft-teams.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "about/cloud-subscriptions.html#buy-a-cloud-subscription":
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "about/cloud-subscriptions.html#view-subscription-information":
@@ -167,11 +167,14 @@ redirects = {
 "about/mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/about/maximize-microsoft-investment.html",
 "about/install-mattermost-for-microsoft-teams-plugin.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
 "about/orchestration.html":
         "https://docs.mattermost.com/about/use-cases.html",
 "about/subscription.html#mattermost-nonprofit-license-program":
         "https://docs.mattermost.com/about/non-profit-subscriptions.html",
+"about/maximize-microsoft-investment.html":
+        "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
+
 
 
 # Administration redirects
@@ -182,7 +185,7 @@ redirects = {
 "administration/backup.html":
         "https://docs.mattermost.com/deploy/backup-disaster-recovery.html",
 "administration/branding.html":
-        "https://docs.mattermost.com/configure/custom-branding-tools.html",
+        "https://docs.mattermost.com/manage/admin/customize-branding.html",
 "administration/bulk-export.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
 "administration/changelog.html":
@@ -248,13 +251,13 @@ redirects = {
 "administration/hipchat-migration-guidelines.html":
         "https://docs.mattermost.com/onboard/migrating-from-hipchat-to-mattermost.html",
 "administration/image-proxy.html":
-        "https://docs.mattermost.com/deploy/image-proxy.html",
+        "https://docs.mattermost.com/deploy/server/image-proxy.html",
 "administration/important-upgrade-notes.html":
         "https://docs.mattermost.com/upgrade/important-upgrade-notes.html",
 "administration/legacy-upgrade.html":
-        "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
+        "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
 "administration/light-install-hindi.html":
-        "https://docs.mattermost.com/guides/deployment.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "administration/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import":
         "https://docs.mattermost.com/onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import",
 "administration/migrating.html#migrating-from-slack-using-the-mattermost-web-app":
@@ -302,11 +305,11 @@ redirects = {
 "administration/upgrade.html#upgrade-team-edition-to-enterprise-edition":
         "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html#upgrading-team-edition-to-enterprise-edition",
 "administration/upgrade-guide.html":
-        "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
+        "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
 "administration/upgrading-to-2.0.html":
-        "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
+        "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
 "administration/upgrading-to-3.0.html":
-        "https://docs.mattermost.com/guides/deployment.html#upgrade-mattermost",
+        "https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html",
 "administration/user-provisioning.html":
         "https://docs.mattermost.com/onboard/user-provisioning-workflows.html",
 "administration/config-in-database.html#create-an-environment-file":
@@ -429,6 +432,8 @@ redirects = {
 	"https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-local-mode-for-mmctl",
 "administration/upgrade.html#upgrade-guide":
         "https://docs.mattermost.com/guides/upgrade-mattermost.html",
+"administration/release-lifecycle.html":
+        "https://docs.mattermost.com/about/releases-lifecycle.html",
 
 # Boards redirects
 "boards/navigating-mattermost-boards.html":
@@ -874,13 +879,13 @@ redirects = {
 "cloud/cloud-integrations.html":
         "https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/",
 "cloud/cloud-mobile/cloud-app-config.html":
-	"https://docs.mattermost.com/deploy/mobile-appconfig.html",
+	"https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
 "cloud/cloud-mobile/troubleshooting-mobile.html":
-        "https://docs.mattermost.com/deploy/mobile-faq.html",
+        "https://docs.mattermost.com/deploy/mobile/mobile-faq.html",
 "cloud/cloud-reporting.html":
 	"https://docs.mattermost.com/manage/cloud-reporting.html",
 "cloud/mobile-apps-faq.html":
-        "https://docs.mattermost.com/deploy/mobile-faq.html",
+        "https://docs.mattermost.com/deploy/mobile/mobile-faq.html",
 "cloud/cloud-user-management.html":
         "https://docs.mattermost.com/channels/manage-channel-members.html",
 
@@ -898,7 +903,7 @@ redirects = {
 "collaborate/organize-conversations.html#enable-collapsed-reply-threads":
         "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions",
 "collaborate/collaborate-within-embedded-microsoft-teams.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "collaborate/syntax-highlighting.html":
         "https://docs.mattermost.com/collaborate/format-messages.html#syntax-highlighting",
 "collaborate/channel-types.html#direct-messages":
@@ -917,10 +922,12 @@ redirects = {
 # Configure redirects
 "configure/config-ssl-http2-apache2.html":
 	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
+"configure/customizing-mattermost.html":
+        "https://docs.mattermost.com/configure/customize-mattermost.html",
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
-        "https://docs.mattermost.com/enable-copilot.html",
+        "https://docs.mattermost.com/configure/enable-copilot.html",
 "configure/common-config-settings-notation.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "configure/bulk-loading-about.html":
@@ -1910,7 +1917,7 @@ redirects = {
 "configure/configuration-in-the-database.html":
         "https://docs.mattermost.com/configure/configuration-in-your-database.html",
 "configure/install-mattermost-for-microsoft-teams-plugin.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html#install-and-configure-the-microsoft-teams-integration-in-mattermost",
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html#install-and-configure-the-microsoft-teams-integration-in-mattermost",
 "configure/developer-mode-configuration-settings.html":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#developer",
 "configure/performance-monitoring-configuration-settings.html":
@@ -1939,10 +1946,45 @@ redirects = {
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-shared-channels-experimental",
 "configure/experimental-configuration-settings.rst#remote-clusters":
         "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-remote-cluster-service-experimental",
+"configure/configuring-cloudfront-to-host-mattermost-static-assets.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+"configure/using-outbound-proxy.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
-        "https://docs.mattermost.com/deploy/mobile-faq.html",
+        "https://docs.mattermost.com/deploy/mobile/mobile-faq.html",
+"deploy/bleve-search.html":
+        "https://docs.mattermost.com/configure/bleve-search.html",
+"deploy/image-proxy.html":
+        "https://docs.mattermost.com/deploy/server/image-proxy.html",
+"deploy/consider-mobile-vpn-options.html":
+        "https://docs.mattermost.com/deploy/mobile/consider-mobile-vpn-options.html",
+"deploy/mobile-appconfig.html":
+        "https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
+"deploy/mobile-faq.html":
+        "https://docs.mattermost.com/deploy/mobile/mobile-faq.html",
+"deploy/build-custom-mobile-apps.html":
+        "https://docs.mattermost.com/deploy/mobile/distribute-custom-mobile-apps.html",
+"deploy/client-side-data.html":
+        "https://docs.mattermost.com/deploy/mobile/mobile-app-deployment.html",
+"deploy/deploy-mobile-apps-using-emm-provider.html":
+        "https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
+"deploy/mobile-hpns.html":
+        "https://docs.mattermost.com/deploy/mobile/host-your-own-push-proxy-service.html",
+"deploy/mobile-overview.html":
+        "https://docs.mattermost.com/deploy/mobile/mobile-app-deployment.html",
+"deploy/mobile-troubleshoot-notifications.html":
+        "https://docs.mattermost.com/deploy/mobile/mobile-troubleshooting.html",
+"deploy/mobile-troubleshoot.html":
+        "https://docs.mattermost.com/deploy/mobile/mobile-troubleshooting.html",
+"deploy/use-prebuilt-mobile-apps.html":
+        "https://docs.mattermost.com/deploy/mobile/mobile-app-deployment.html",
+"deploy/desktop-app.html":
+        "https://docs.mattermost.com/deploy/desktop/desktop-app-deployment.html",
+"deploy/deployment-overview.html":
+        "https://docs.mattermost.com/deploy/application-architecture.html",
 "deploy/deprecated-features.html":
         "https://docs.mattermost.com/about/deprecated-features.html",
 "deploy/desktop-app-changelog.html":
@@ -2013,6 +2055,12 @@ redirects = {
         "https://developers.mattermost.com/integrate/plugins/",
 "deploy/high-scale-troubleshoot.html":
         "https://docs.mattermost.com/install/troubleshooting.html#deployment-troubleshooting",
+"deploy/server/kubernetes/deploy-k8s-aks.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"deploy/server/linux/deploy-rhel.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"deploy/server/setting-up-socket-based-mattermost-database.html":
+        "https://docs.mattermost.com/deploy/server/preparations.html",
 
 # Deployment redirects
 "deployment/advanced-permissions.html":
@@ -2082,9 +2130,9 @@ redirects = {
 "deployment/mobile-app-deployment.html":
 	"https://docs.mattermost.com/deploy/mobile-overview.html",
 "deployment/on-boarding.html":
-	"https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
+	"https://docs.mattermost.com/upgrade/admin-onboarding-tasks.html",
 "deployment/on-boarding.html#common-tasks":
-        "https://docs.mattermost.com/getting-started/admin-onboarding-tasks.html",
+        "https://docs.mattermost.com/upgrade/admin-onboarding-tasks.html",
 "deployment/permissions-backend.html":
         "https://docs.mattermost.com/onboard/advanced-permissions-backend-infrastructure.html",
 "deployment/pre-sales.html":
@@ -2092,7 +2140,7 @@ redirects = {
 "deployment/productivity-tools.html":
         "https://mattermost.com/marketplace/",
 "deployment/push.html":
-	"https://docs.mattermost.com/deploy/mobile-hpns.html",
+	"https://docs.mattermost.com/deploy/mobile/host-your-own-push-proxy-service.html",
 "deployment/scaling.html":
 	"https://docs.mattermost.com/scale/scaling-for-enterprise.html",
 "deployment/sso-ldap.html":
@@ -2219,21 +2267,53 @@ redirects = {
 
 # Getting Started redirects
 "getting-started/implementation_plan.html":
-        "https://docs.mattermost.com/getting-started/implementation-plan.html",
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+"getting-started/feature-labels.html":
+        "https://docs.mattermost.com/manage/feature-labels.html",
+"getting-started/admin-onboarding-tasks.html":
+        "https://docs.mattermost.com/upgrade/admin-onboarding-tasks.html",
+"getting-started/enterprise-roll-out-checklist.html":
+        "https://docs.mattermost.com/upgrade/enterprise-roll-out-checklist.html",
+"getting-started/welcome-email-to-end-users.html":
+        "https://docs.mattermost.com/upgrade/welcome-email-to-end-users.html",
+"getting-started/architecture-overview.html":
+        "https://docs.mattermost.com/deploy/application-architecture.html",
+"getting-started/implementation-plan.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "getting-started/light-install.html":
-        "https://docs.mattermost.com/guides/deployment.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "getting-started/welcome_email.html":
-        "https://docs.mattermost.com/getting-started/welcome-email-to-end-users.html",
+        "https://docs.mattermost.com/upgrade/welcome-email-to-end-users.html",
 "getting-started/organizing-conversations.html":
         "https://docs.mattermost.com/collaborate/organize-conversations.html",
 
 # Guides redirects
 "guides/administrator.html":
         "https://docs.mattermost.com/guides/deployment.html",
+"guides/administration.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/deployment-guides.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/deployment.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/desktop-mobile-app-deployment.html":
+        "https://docs.mattermost.com/deploy/desktop/desktop-app-deployment.html",
+"guides/get-started-with-administration.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/server-deployment.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+"guides/other-administration-resources.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/prepare-for-your-mattermost-deployment.html":
+        "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
+"guides/self-hosted-administration.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
 "guides/administrator.html#mattermost-integrations":
 	"https://developers.mattermost.com/integrate/getting-started/",
+"guides/deployment.html#install-guides":
+	"https://docs.mattermost.com/guides/deployment-guide.html#server-application",
 "guides/administrator.html#installing-mattermost":
-	"https://docs.mattermost.com/guides/deployment.html#install-guides",
+	"https://docs.mattermost.com/guides/deployment-guide.html#server-application",
 "guides/channels.html#access-your-workspace":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html",
 "guides/channels.html#work-with-messages":
@@ -2245,7 +2325,7 @@ redirects = {
 "guides/channels.html#navigate-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
 "guides/channels.html#extend-mattermost-channels":
-        "https://docs.mattermost.com/guides/integrate-and-extend.html",
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/messaging.html":
 	"https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/orchestration.html":
@@ -2258,9 +2338,9 @@ redirects = {
 "guides/developer.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "guides/install-deploy-upgrade-scale.html":
-	 "https://docs.mattermost.com/guides/deployment.html",
+	 "https://docs.mattermost.com/guides/deployment-guide.html",
 "guides/install-deploy-upgrade-scale.html#install-mattermost":
-        "https://docs.mattermost.com/guides/deployment.html#install-guides",
+        "https://docs.mattermost.com/guides/deployment-guide.html#server-application",
 "guides/integration.html":
         "https://developers.mattermost.com/integrate/getting-started/",
 "guides/setup-onboard-manage-comply.html":
@@ -2279,7 +2359,7 @@ redirects = {
 "guides/channels.html#keyboard-accessibility":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
 "guides/channels.html#extend-channels-functionality":
-        "https://docs.mattermost.com/guides/integrate-and-extend.html",
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/playbooks.html":
         "https://docs.mattermost.com/guides/repeatable-processes.html",
 "guides/welcome-to-mattermost.html":
@@ -2294,6 +2374,19 @@ redirects = {
         "https://docs.mattermost.com/guides/deployment.html#changelogs",
 "guides/changelogs.html":
         "https://docs.mattermost.com/about/releases-lifecycle.html",
+"guides/administration.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/deployment.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/deploy.html":
+        "https://docs.mattermost.com/guides/deployment-guide.html",
+"guides/admin.html":
+        "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/integrate-and-extend.html":
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
+"guides/integrate-and-extend.html#interoperability-with-pre-packaged-integrations":
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
+
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -2402,18 +2495,74 @@ redirects = {
 # Install redirects
 "install/config-cloudfront.html":
         "https://docs.mattermost.com/configure/configuring-cloudfront-to-host-mattermost-static-assets.html",
+"install/desktop-app-managed-resources.html":
+        "https://docs.mattermost.com/deploy/desktop/desktop-app-managed-resources.html",
+"install/desktop-custom-dictionaries.html":
+        "https://docs.mattermost.com/deploy/desktop/desktop-custom-dictionaries.html",
+"install/desktop-msi-installer-and-group-policy-install.html":
+        "https://docs.mattermost.com/deploy/desktop/desktop-msi-installer-and-group-policy-install.html",
+"install/setting-up-aws-elastic-beanstalk-docker.html":
+        "https://docs.mattermost.com/deploy/server/containers/install-aws-beanstalk.html",
+"install/install-docker.html":
+        "https://docs.mattermost.com/deploy/server/containers/install-docker.html",
+"install/installing-mattermost-omnibus.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/prepare-mattermost-mysql-database.html":
+        "https://docs.mattermost.com/deploy/server/prepare-mattermost-mysql-database.html",
+"install/prepare-mattermost-database.html":
+        "https://docs.mattermost.com/deploy/server/preparations.html",
+"install/setting-up-socket-based-mattermost-database.html":
+        "https://docs.mattermost.com/deploy/server/setting-up-socket-based-mattermost-database.html",
+"install/setup-nginx-proxy.html":
+        "https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html",
+"install/setup-tls.html":
+        "https://docs.mattermost.com/deploy/server/setup-tls.html",
+"install/setup-mattermost-server.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/trouble-postgres.html":
+        "https://docs.mattermost.com/deploy/server/trouble-postgres.html",
+"install/trouble_mysql.html":
+        "https://docs.mattermost.com/deploy/server/trouble_mysql.html",
+"install/troubleshooting.html":
+        "https://docs.mattermost.com/deploy/server/troubleshooting.html",
+"install/software-hardware-requirements.html":
+        "https://docs.mattermost.com/deploy/software-hardware-requirements.html",
+"install/install-rhel.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/install-tar.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/install-ubuntu.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/install-kubernetes.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/install-kubernetes-aks.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/cluster-transport-encryption.html":
+        "https://docs.mattermost.com/deploy/transport-encryption.html",
+"install/database-transport-encryption.html":
+        "https://docs.mattermost.com/deploy/transport-encryption.html",
+"install/config-tls-mattermost.html":
+        "https://docs.mattermost.com/deploy/transport-encryption.html",
+"install/proxy-to-mattermost-transport-encryption.html":
+        "https://docs.mattermost.com/deploy/transport-encryption.html",
+"install/transport-encryption.html":
+        "https://docs.mattermost.com/deploy/transport-encryption.html",
+"install/deploy-bitnami.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/enterprise-install-upgrade.html":
+        "https://docs.mattermost.com/upgrade/enterprise-install-upgrade.html",
 "install/config-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "install/deploy-bitnami.html":
-        "https://docs.mattermost.com/install/deploying-team-edition-on-bitnami.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/desktop.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
 "install/desktop-managed-resources.html":
-        "https://docs.mattermost.com/install/desktop-app-managed-resources.html",
+        "https://docs.mattermost.com/deploy/desktop/desktop-app-managed-resources.html",
 "install/desktop-msi-gpo.html":
-        "https://docs.mattermost.com/install/desktop-msi-installer-and-group-policy-install.html",
+        "https://docs.mattermost.com/deploy/desktop/desktop-msi-installer-and-group-policy-install.html",
 "install/docker-ebs.html":
-        "https://docs.mattermost.com/install/setting-up-aws-elastic-beanstalk-docker.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/docker-local-machine.html":
         "https://docs.mattermost.com/install/setting-up-local-machine-using-docker.html",
 "install/ee-install.html":
@@ -2425,19 +2574,19 @@ redirects = {
 "install/installing-mattermost-desktop-app.html":
         "https://docs.mattermost.com/collaborate/install-desktop-app.html",
 "install/install-kubernetes-cluster.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes-mattermost":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes-operator.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-ubuntu-1804.html":
-        "https://docs.mattermost.com/install/install-ubuntu",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004.html":
-        "https://docs.mattermost.com/install/installing-ubuntu-2004-LTS.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/mattermost-omnibus.html":
-        "https://docs.mattermost.com/install/installing-mattermost-omnibus.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/outbound-proxy.html":
-        "https://docs.mattermost.com/configure/using-outbound-proxy.html",
+        "https://docs.mattermost.com/deploy/server/preparations.html#outbound-proxy-configuration",
 "install/prod-docker.html":
 	"https://forum.mattermost.com/t/deploy-mattermost-on-docker/12231",
 "install/prod-windows-2012.html":
@@ -2459,15 +2608,15 @@ redirects = {
 "install/transport-encryption/config-mattermost.html":
         "https://docs.mattermost.com/install/proxy-to-mattermost-transport-encryption.html",
 "install/use-kubernetes-mattermost.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/deploy-cloudron.html":
         "https://forum.mattermost.com/",
 "install/desktop-custom-dictionaries.html#setting-up-the-dictionaries":
-        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
+        "https://docs.mattermost.com/deploy/desktop/desktop-custom-dictionaries.html#prepare-custom-dictionaries",
 "install/desktop-custom-dictionaries.html#configuring-the-desktop-app":
-        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#configure-the-desktop-app",
+        "https://docs.mattermost.com/deploy/desktop/desktop-custom-dictionaries.html#configure-the-desktop-app",
 "install/desktop-custom-dictionaries.html#removing-customized-dictionaries":
-        "https://docs.mattermost.com/install/desktop-custom-dictionaries.html#remove-custom-dictionaries",
+        "https://docs.mattermost.com/deploy/desktop/desktop-custom-dictionaries.html#remove-custom-dictionaries",
 "install/self-managed-changelog.html":
         "https://docs.mattermost.com/about/legacy-self-hosted-changelog.html",
 "install/legacy-self-hosted-changelog.html":
@@ -2488,126 +2637,139 @@ redirects = {
 "install/deprecated-features.html":
 	"https://docs.mattermost.com/about/deprecated-features.html",
 "install/install-mattermost-server-tarball.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-6-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/mattermost-kubernetes-operator.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html#mattermost-operator",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-ubuntu-2004-server.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/heroku.html":
-        "https://docs.mattermost.com/guides/deployment.html",
+        "https://docs.mattermost.com/guides/deployment-guide.html",
 "install/install-rhel-7-server.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-server.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-postgresql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004-mysql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian-mysql.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-server.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-mysql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian-server.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-mysql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7-mysql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian-postgresql.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004-postgresql.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-postgresql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/installing-ubuntu-1804-LTS.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-1804-mattermost.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-ubuntu-2004-mattermost.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7-postgresql.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8-mattermost.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-7.html":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/installing-ubuntu-2004-LTS.html":
-        "https://docs.mattermost.com/install/install-ubuntu.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-debian.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-centos-oracle-scientific":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-common-intro.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-latest-tarball.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/setup-mattermost-server.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/common-prod-deploy-docker.html":
-        "https://docs.mattermost.com/install/install-docker.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/common-deploy-faq.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-nginx.html":
-        "https://docs.mattermost.com/install/setup-nginx-proxy.html",
+        "https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html",
 "install/config-ssl-http2-nginx.html":
-        "https://docs.mattermost.com/install/setup-nginx-proxy.html#configure-nginx-with-ssl-and-http-2",
+        "https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html#configure-nginx-with-ssl-and-http-2",
 "install/config-proxy-nginx.html":
-        "https://docs.mattermost.com/install/setup-nginx-proxy.html",
+        "https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html",
 "install/install-nginx.html":
-        "https://docs.mattermost.com/install/setup-nginx-proxy.html",
+        "https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html",
 "install/faq_kubernetes.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/kubernetes/deploy-k8s.html",
 "install/common-prod-deploy-tar.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/common-prod-deploy-omnibus.html":
-        "https://docs.mattermost.com/install/install-tar.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/common-local-deploy-docker.html":
-        "https://docs.mattermost.com/install/trial-mattermost-using-docker.html",
-"install/config-mattermost-server.html":
-        "https://docs.mattermost.com/guides/get-started-with-administration.html",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/install-rhel-8":
-        "https://docs.mattermost.com/install/install-rhel.html",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#download-the-latest-mattermost-server-tarball":
-        "https://docs.mattermost.com/install/install-rhel.html#download-the-latest-mattermost-server-tarball",
+        "hhttps://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#install":
-        "https://docs.mattermost.com/install/install-rhel.html#install",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#setup":
-        "https://docs.mattermost.com/install/install-rhel.html#setup",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#updates":
-        "https://docs.mattermost.com/install/install-rhel.html#updates",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#remove-mattermost":
-        "https://docs.mattermost.com/install/install-rhel.html#remove-mattermost",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#frequently-asked-questions":
-        "https://docs.mattermost.com/install/install-rhel.html#frequently-asked-questions",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-rhel-8.html#set-the-correct-contexts-for-opt-mattermost":
-        "https://docs.mattermost.com/install/install-rhel.html#set-bin-contexts-for-opt-mattermost-bin",
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
 "install/install-kubernetes.html#install-mattermost-on-kubernetes":
-        "https://docs.mattermost.com/install/install-kubernetes.html#intended-outcome-and-deployment-recommendations",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#install-the-operators":
-        "https://docs.mattermost.com/install/install-kubernetes.html#installation-steps",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#mattermost-cloudnative-bootstrapper-sneak-peek":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-kubernetes.html#does-the-mattermost-operator-replace-the-mattermost-helm-chart":
-        "https://docs.mattermost.com/install/install-kubernetes.html#frequently-asked-questions",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/install-docker.html#deploy-mattermost-on-docker-for-production-use":
-        "https://docs.mattermost.com/install/install-docker.html#deploy-mattermost-on-docker-quick-start",
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
 "install/install-docker.html#installing-a-different-version-of-mattermost":
-        "https://docs.mattermost.com/install/install-docker.html#install-a-different-version-of-mattermost",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
 "install/manage_kubernetes.html":
-        "https://docs.mattermost.com/install/install-kubernetes.html",
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/trial-mattermost-using-docker.html":
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
+"install/install-docker.html":
+        "https://docs.mattermost.com/deploy/server/deploy-containers.html",
+"install/install-kubernetes.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/install-kubernetes-aks.html":
+        "https://docs.mattermost.com/deploy/server/deploy-kubernetes.html",
+"install/install-ubuntu.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/install-rhel.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+"install/installing-mattermost-omnibus.html":
+        "https://docs.mattermost.com/deploy/server/deploy-linux.html",
+
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
 "integrate/ms-teams-interoperability.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
 "integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/cloud-outgoing-webhooks.html":
@@ -2632,10 +2794,57 @@ redirects = {
         "https://developers.mattermost.com/integrate/reference/bot-accounts/",
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
+"integrate/mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/about/community-for-mattermost.html",
+"integrate/community-for-mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/integrate/matermost-mission-collaboration-for-m365.html",
+"integrate/github-interoperability.html":
+        "https://docs.mattermost.com/integrate/github",
+"integrate/gitlab-interoperability.html":
+        "https://docs.mattermost.com/integrate/gitlab.html",
+"integrate/jira-interoperability.html":
+        "https://docs.mattermost.com/",
+"integrate/microsoft-calendar-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-calendar.html",
+"integrate/microsoft-teams-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
+"integrate/microsoft-teams-meetings-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-meetings.html",
+"integrate/servicenow-interoperability.html":
+        "https://docs.mattermost.com/integrate/servicenow.html",
+"integrate/zoom-interoperability.html":
+        "https://docs.mattermost.com/integrate/zoom.html",
+"integrate/github.html#setup":
+        "https://docs.mattermost.com/integrate/github.html#deploy",
+"integrate/gitlab.html#setup":
+        "https://docs.mattermost.com/integrate/gitlab.html#deploy",
+"integrate/jira.html#setup":
+        "https://docs.mattermost.com/integrate/jira.html#deploy",
+"integrate/mattermost-mission-collaboration-for-m365.html#setup":
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
+"integrate/playbooks-for-microsoft-teams.html#setup":
+        "https://docs.mattermost.com/integrate/playbooks-for-microsoft-teams.html#deploy",
+"integrate/microsoft-calendar.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
+"integrate/microsoft-teams-sync.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html#deploy",
+"integrate/microsoft-teams-meetings.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-teams-meetings.html#deploy",
+"integrate/servicenow.html#setup":
+        "https://docs.mattermost.com/integrate/servicenow.html#deploy",
+"integrate/zoom.html#setup":
+        "https://docs.mattermost.com/integrate/zoom.html#deploy",
+
 
 # Manage redirects
 "manage/scripts.html":
         "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
+"manage/error-codes.html":
+        "https://docs.mattermost.com/manage/admin/error-codes.html",
+"manage/generating-support-packet.html":
+        "https://docs.mattermost.com/manage/admin/generating-support-packet.html",
+"manage/self-hosted-billing.html":
+        "https://docs.mattermost.com/manage/admin/self-hosted-billing.html",
 "manage/command-line-tools.html#mattermost-channel":
         "https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel",
 "manage/command-line-tools.html#mattermost-channel-add":
@@ -3235,25 +3444,25 @@ redirects = {
 
 # Mobile redirects
 "mobile/deploy-mobile-apps-using-emm-provider.html":
-	"https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
+	"https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
 "mobile/mobile-appstore-install.html":
-        "https://docs.mattermost.com/deploy/use-prebuilt-mobile-apps.html",
+        "https://docs.mattermost.com/deploy/mobile/mobile-app-deployment.html",
 "mobile/mobile-blackberry.html":
-        "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
+        "https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
 "mobile/mobile-compile yourself.html":
-        "https://docs.mattermost.com/deploy/build-custom-mobile-apps.html",
+        "https://docs.mattermost.com/deploy/mobile/distribute-custom-mobile-apps.html",
 "mobile/mobile-faq#how-do-push-notifications-work.html":
-        "https://docs.mattermost.com/deploy/mobile-faq.html#how-do-push-notifications-work",
+        "https://docs.mattermost.com/deploy/mobile/mobile-faq.html#how-do-push-notifications-work",
 "mobile/mobile-hpns.html":
-	"https://docs.mattermost.com/deploy/mobile-hpns.html",
+        "https://docs.mattermost.com/deploy/mobile/host-your-own-push-proxy-service.html",
 "mobile/mobile-mobileiron.html":
-        "https://docs.mattermost.com/deploy/build-custom-mobile-apps.html",
+        "https://docs.mattermost.com/deploy/mobile/distribute-custom-mobile-apps.html",
 "mobile/mobile-overview.html":
-	"https://docs.mattermost.com/deploy/mobile-overview.html",
+	"https://docs.mattermost.com/deploy/mobile/mobile-app-deployment.html",
 "mobile/mobile-overview.html#use-an-emm-provider-with-managed-app-configuration":
-        "https://docs.mattermost.com/deploy/deploy-mobile-apps-using-emm-provider.html",
+        "https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html",
 "mobile/mobile-testing-notifications.html":
-	"https://docs.mattermost.com/deploy/mobile-testing-notifications.html",
+	"https://docs.mattermost.com/deploy/mobile/mobile-troubleshooting.html",
 
 # Onboard redirects
 "onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20":
@@ -3636,6 +3845,8 @@ redirects = {
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html",
+"upgrade/installing-license-key.html":
+        "https://docs.mattermost.com/manage/admin/installing-license-key.html",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
         "https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-to-mattermost-v7-0",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v6-7":
@@ -3757,9 +3968,9 @@ redirects = {
 "welcome/manage-multiple-server-connections.html":
         "https://docs.mattermost.com/preferences/connect-multiple-workspaces.html",
 "welcome/what-changed-in-v70.html":
-        "https://docs.mattermost.com/guides/deployment.html#changelogs",
+        "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
 "welcome/what-changed-in-v60.html":
-        "https://docs.mattermost.com/guides/deployment.html#changelogs",
+        "https://docs.mattermost.com/about/mattermost-v9-changelog.html",
 "welcome/whats-new-in-v72.html":
         "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app":
@@ -3815,9 +4026,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '10.6'
+# version = '10.7'
 # The full version, including alpha/beta/rc tags.
-# release = '10.6'
+# release = '10.7'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.
@@ -3834,7 +4045,7 @@ author = "Mattermost"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ["archive/*", "process/*", "/about/common-esr-support.md", "/about/common-esr-support-upgrade.md"]
+exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -3918,7 +4129,9 @@ html_static_path = ["_static"]
 html_css_files = [
     "css/mattermost-global.css",
     "css/homepage-v1.css",
-    "css/compass-icons.css"
+    "css/compass-icons.css",
+    "css/version-filter.css",
+    "css/changelog-filter.css"
 ]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
@@ -3928,6 +4141,8 @@ html_js_files = [
     "js/jquery.js",
     "js/thermometer.js",
     "js/myscript-v1.js",
+    "js/version-filter.js",
+    "js/changelog-filter.js"
 ]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
@@ -3952,7 +4167,7 @@ html_extra_path = ["_static/robots.txt"]
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
-html_additional_pages = {"index": "custom-index.html", "404": "404.html"}
+html_additional_pages = {"404": "404.html"}
 
 # If false, no module index is generated.
 # html_domain_indices = True

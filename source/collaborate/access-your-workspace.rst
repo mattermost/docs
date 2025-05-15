@@ -1,10 +1,7 @@
 Access your workspace
 =====================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through a URL link. You'll receive a link from your Mattermost system admin or through an email invitation. You can use that link in a web browser, or as a server connection in the :doc:`desktop app </collaborate/install-desktop-app>`, the :doc:`mobile app for iOS </collaborate/install-ios-app>`, or the :doc:`mobile app for Android </collaborate/install-android-app>`.
+Access your Mattermost instance with your credentials using a web browser, the desktop app, or the mobile app for iOS or Android. Depending on how Mattermost is configured, you'll log in using your email address, username, or single sign-on (SSO) username, and your password.
 
 .. tip::
 
@@ -24,20 +21,16 @@ Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through 
 
   **Web browser**
 
-  1. Open a supported :ref:`web browser <install/software-hardware-requirements:pc web>`.
+  1. Open a supported :ref:`web browser <deploy/software-hardware-requirements:pc web>`.
   2. Copy and paste the Mattermost server link into the browser's address field.
-  3. Enter your user credentials to log into Mattermost. 
+  3. Enter your user credentials to log into Mattermost.
+  4. Bookmark the Mattermost URL in your web browser of choice so logging into Mattermost is easy in the future.
 
-  .. tip::
-
-    - We recommend bookmarking the Mattermost URL in your browser of choice so logging into Mattermost is easy in the future.
-    - The credentials you use to log in depend on how your system admin has configured Mattermost. You may be prompted for an `email address or username <#email-address-or-username>`__ and a password, or you may be able to `log in using other credentials <#single-sign-on-sso>`__. Contact your system admin for more information.
-  
   **Desktop app**
 
-  1. Download and install the Mattermost :doc:`desktop app </collaborate/install-desktop-app>`.
+  1. Download and install the Mattermost desktop app from the App Store (macOS), Microsoft Store (Windows), or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
-  3. Enter your user credentials to log into Mattermost. 
+  3. Enter your user credentials to log into Mattermost.
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
 
   .. note::
@@ -46,14 +39,10 @@ Your Mattermost :doc:`workspace </guides/use-mattermost>` is accessible through 
 
 .. tab:: Mobile
 
-  1. Download and install the Mattermost :doc:`iOS mobile app </collaborate/install-ios-app>` or the :doc:`Android mobile app </collaborate/install-android-app>`.
+  1. Download and install the Mattermost mobile app from the Apple App Store (iOS) or Google Play Store (Android).
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. Server URLs must begin with either ``http://`` or ``https://``. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.
-
-  .. tip::
-    
-    The credentials you use to log in depend on how your system admin has configured Mattermost. You may be prompted for an email address or username and a password, or you may be able to log in using other credentials. Contact your system admin for details.
 
 Reset your password
 --------------------

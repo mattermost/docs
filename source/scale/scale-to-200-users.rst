@@ -12,20 +12,24 @@ This page describes the Mattermost reference architecture designed for the load 
 Requirements
 ------------
 
-+------------------------+-----------+----------------+-------------------+
-| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  |
-|                        |           | Memory (GiB)** |                   |
-+========================+===========+================+===================+
-| Mattermost Application | 1         | 2/4            | c7i.large         |
-+------------------------+-----------+----------------+-------------------+
-| RDS Writer             | 1         | 2/16           | db.r7g.large      |
-+------------------------+-----------+----------------+-------------------+
-| RDS Reader             | 0         | 2/16           | db.r7g.large      |
-+------------------------+-----------+----------------+-------------------+
-| Elasticsearch Node     | 0         | 4/32           | r6g.xlarge.search |
-+------------------------+-----------+----------------+-------------------+
-| Proxy                  | 1         | 16/64          | m7i.4xlarge       |
-+------------------------+-----------+----------------+-------------------+
+.. tip::
+
+    Scroll horizontally to see additional columns in the table below.
+
++------------------------+-----------+----------------+-------------------+-------------------+
+| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  | **Azure Instance**|
+|                        |           | Memory (GiB)** |                   |                   |
++========================+===========+================+===================+===================+
+| Mattermost Application | 1         | 2/4            | c7i.large         | F2s v2            |
++------------------------+-----------+----------------+-------------------+-------------------+
+| RDS Writer             | 1         | 2/16           | db.r7g.large      | E2as v6           |
++------------------------+-----------+----------------+-------------------+-------------------+
+| RDS Reader             | 0         | 2/16           | db.r7g.large      | E2as v6           |
++------------------------+-----------+----------------+-------------------+-------------------+
+| Elasticsearch Node     | 0         | 4/32           | r6g.xlarge.search | E4ads v6          |
++------------------------+-----------+----------------+-------------------+-------------------+
+| Proxy                  | 1         | 16/64          | m7i.4xlarge       | D16s v6           |
++------------------------+-----------+----------------+-------------------+-------------------+
 
 Lifetime storage
 ----------------
@@ -53,4 +57,4 @@ We strongly recommend that you review storage utilization at least quarterly to 
 Additional considerations
 -------------------------
 
-Smaller deployments, or deployments using the :doc:`Mattermost Omnibus installer </install/installing-mattermost-omnibus>`, will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.
+Smaller deployments, or deployments using the :doc:`Mattermost Omnibus installer </deploy/server/deploy-linux>`, will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.

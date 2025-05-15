@@ -23,8 +23,8 @@ To get alerts, first set up a Notification Channel in Grafana. Here’s how you 
 
 2. In Grafana:
 
-  a. Under the alert icon in the sidebar, select **Notification channels**.
-  b. Select **Add channel**.
+  a. Under the alert icon in the sidebar, select **Contact points**.
+  b. Select **Create contact point**.
   c. Enter **Mattermost Alerts Channel** as the name.
   d. For type, select **Slack**.
   e. Paste your webhook URL into the URL field.

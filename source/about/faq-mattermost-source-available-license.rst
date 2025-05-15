@@ -1,5 +1,5 @@
-Mattermost Source Available License questions
-=============================================
+Mattermost Source Available License
+====================================
 
 What is the Mattermost Source Available License?
 ------------------------------------------------

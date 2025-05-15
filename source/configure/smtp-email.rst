@@ -23,7 +23,7 @@ Any SMTP email service can be used. You need a copy of the following information
 	    
     Alternatively, you can use one of the `services listed below <#sample-smtp-settings>`__, or can set up local ``sendmail`` by setting **Server Name** ``127.0.0.1`` with **Port** ``25``.
 
-    If deploying Mattermost using :doc:`Docker </install/install-docker>`, the standard docker ``172.16.0.0/12`` IP range isn't used. Specify the IP range ``192.168.0.0/24`` to the email service to avoid relay access errors. If using postfix, under ``/etc/postfix/main.cf``, specify ``mynetworks = 192.168.0.0/24``. This may vary depending on how Mattermost is deployed. Ensure that **Port 25** is open if a firewall is present.
+    If deploying Mattermost using :doc:`Docker </deploy/server/deploy-containers>`, the standard docker ``172.16.0.0/12`` IP range isn't used. Specify the IP range ``192.168.0.0/24`` to the email service to avoid relay access errors. If using postfix, under ``/etc/postfix/main.cf``, specify ``mynetworks = 192.168.0.0/24``. This may vary depending on how Mattermost is deployed. Ensure that **Port 25** is open if a firewall is present.
 
 Configure SMTP settings
 ------------------------

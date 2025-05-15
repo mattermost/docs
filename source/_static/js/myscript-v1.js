@@ -1,3 +1,23 @@
+// Function to sort version numbers in descending order (newer versions first)
+function sortVersions(versions) {
+    return versions.sort((a, b) => {
+        const [majorA, minorA] = a.split('.').map(Number);
+        const [majorB, minorB] = b.split('.').map(Number);
+
+        if (majorA !== majorB) {
+            return majorB - majorA;
+        }
+        return minorB - minorA;
+    });
+}
+
+// Function to parse a version string to an object with major and minor properties
+function parseVersion(v) {
+    if (v === 'all') return { major: 0, minor: 0 };
+    const [major, minor] = v.split('.').map(Number);
+    return { major, minor };
+}
+
 $(document).ready(function () {
     // Function to set the custom theme attribute based on the current theme
     function setCustomTheme(theme) {

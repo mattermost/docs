@@ -1,13 +1,10 @@
-Releases and life cycle
+Releases and Life Cycle
 =======================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. important::
-
-   
-  .. include:: ../about/common-esr-support-rst.rst
+.. include:: ../about/common-esr-support-rst.rst
 
 .. toctree::
    :maxdepth: 1

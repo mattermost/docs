@@ -1,3 +1,8 @@
+.. meta::
+   :name: robots
+   :content: noindex
+
+:orphan:
 :nosearch:
 
 Using the System Console, Mattermost Enterprise and Professional customers can migrate OAuth configuration to the OpenID Connect standard. A one-time, one-click conversion tool is available within the existing **OAuth 2.0** page. You can also go to **System Console > Authentication > OpenID Connect**.

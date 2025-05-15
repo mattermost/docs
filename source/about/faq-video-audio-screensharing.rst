@@ -1,5 +1,5 @@
-Video, audio, and screen sharing questions
-==========================================
+Video, Audio, and Screen Sharing
+================================
 
 What support is available for video and audio calling and screen sharing?
 -------------------------------------------------------------------------

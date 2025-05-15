@@ -1,9 +1,6 @@
 Install the Mattermost iOS mobile app
 =====================================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 Take Mattermost wherever you go by installing the Mattermost mobile app on your iOS mobile device running iOS 12.1 or later.
 
 1. On your device, visit the App Store. 

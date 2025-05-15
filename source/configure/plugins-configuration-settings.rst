@@ -1047,7 +1047,7 @@ GitLab
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect GitLab to Mattermost </integrate/gitlab-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/gitlab-interoperability:mattermost configuration>`.
+See the :doc:`Connect GitLab to Mattermost </integrate/gitlab>` product documentation for available :ref:`Mattermost configuration options <integrate/gitlab:mattermost configuration>`.
 
 ----
 
@@ -1064,7 +1064,7 @@ GitHub
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect GitHub to Mattermost </integrate/github-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/github-interoperability:mattermost configuration>`.
+See the :doc:`Connect GitHub to Mattermost </integrate/github>` product documentation for available :ref:`Mattermost configuration options <integrate/github:mattermost configuration>`.
 
 ----
 
@@ -1081,7 +1081,7 @@ Jira
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Jira to Mattermost </integrate/jira-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/jira-interoperability:mattermost configuration>`.
+See the :doc:`Connect Jira to Mattermost </integrate/jira>` product documentation for available :ref:`Mattermost configuration options <integrate/jira:mattermost configuration>`.
 
 ----
 
@@ -1115,7 +1115,7 @@ Microsoft Calendar
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar-interoperability:enable and configure the microsoft calendar integration in mattermost>`.
+See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
 
 ----
 
@@ -1132,14 +1132,10 @@ Microsoft Teams Meetings
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrate/microsoft-teams-meetings-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-teams-meetings-interoperability:enable and configure the microsoft teams meetings integration in mattermost>`.
+See the :doc:`Connect Microsoft Teams Meetings to Mattermost </integrate/microsoft-teams-meetings>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-teams-meetings:enable and configure the microsoft teams meetings integration in mattermost>`.
 
 
 ----
-
-
-
-
 
 
 MS Teams
@@ -1487,7 +1483,7 @@ ServiceNow
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/servicenow-interoperability:mattermost configuration>`.
+See the :doc:`Connect ServiceNow to Mattermost </integrate/servicenow>` product documentation for available :ref:`Mattermost configuration options <integrate/servicenow:mattermost configuration>`.
 
 
 ----
@@ -1505,7 +1501,7 @@ Zoom
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Zoom to Mattermost </integrate/zoom-interoperability>` product documentation for available :ref:`Mattermost configuration options <integrate/zoom-interoperability:mattermost configuration>`.
+See the :doc:`Connect Zoom to Mattermost </integrate/zoom>` product documentation for available :ref:`Mattermost configuration options <integrate/zoom:mattermost configuration>`.
 
 ----
 

@@ -1,4 +1,4 @@
-Editions and offerings 
+Editions and Offerings 
 ======================
 
 Mattermost is an open core platform. 
@@ -61,7 +61,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </scale/elasticsearch>`.
 - :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </onboard/ad-ldap-groups-synchronization>`.
 - :doc:`eDiscovery and compliance export automation </comply/compliance-export>`.
-- :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile-appconfig>`.
+- :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile/deploy-mobile-apps-using-emm-provider>`.
 - :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </comply/custom-terms-of-service>`.
 - :ref:`Private mobility with ID-only push notifications <configure/site-configuration-settings:push notification contents>`.
 - :doc:`Enhanced compliance with global and custom retention policies for messages and files </comply/data-retention-policy>`.
@@ -89,7 +89,7 @@ Mattermost Professional
 
 Mattermost Professional is the set of collaboration features that enables you to build and scale your sophisticated technical workflows across multiple cross-functional teams to deliver mission-critical software.
 
-* *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see :doc:`deployment guides </guides/deployment>`), who purchase the appropriate subscription license key through a `channel reseller <https://mattermost.com/partners/#resellers>`_ or by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated in-product (**System Console > Edition and License > Start trial**).
+* *Self-hosted deployments* - **Mattermost Professional** is available to our self-hosted community who either run, or upgrade to, our self-hosted commercial Mattermost Enterprise Edition (see :doc:`deployment guides </guides/deployment-guide>`), who purchase the appropriate subscription license key through a `channel reseller <https://mattermost.com/partners/#resellers>`_ or by contacting a `Mattermost Expert <https://mattermost.com/contact-sales/>`_, and who then install the license key onto their Mattermost server. A 30-day free trial to preview the features in this subscription can be activated in-product (**System Console > Edition and License > Start trial**).
 
 This offering includes all the features of `Mattermost Free <#mattermost-free>`__, plus: 
 

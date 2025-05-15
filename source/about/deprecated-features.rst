@@ -1,4 +1,4 @@
-Removed and deprecated features
+Removed and Deprecated Features
 ===============================
 
 This page describes features that are removed from support for Mattermost, or will be removed in a future update (deprecated), and provides early notice about future changes that might affect your use of Mattermost. This information is subject to change with future releases, and might not include each deprecated feature.
@@ -11,6 +11,9 @@ Mattermost Server v11.0.0
 
 - Starting in September 2025, Mattermost will deprecate the ``TeamSettings.ExperimentalViewArchivedChannels`` setting in favor of a new setting, ``TeamSettings.BrowseArchivedPublicChannels``. See more details in `this forum post <https://forum.mattermost.com/t/viewing-accessing-archived-channels-v11/22626>`__.
 - Beginning in Mattermost v11 (estimated in September 2025), Playbooks will be unsupported for Free Edition and Professional customers. Professional customers using Playbooks can contact their Customer Success Manager to discuss potential upgrade options with discounting applied as appropriate. Additional details can be found in the `Clarification on Playbooks in Mattermost v10 <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`__ article on the Mattermost Discussion Forums.
+- Mattermost v11 will retire experimental Bleve Search functionality as it no longer aligns with our vision for streamlined search solutions. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
+- End of support for MySQL is targeted for Mattermost v11. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
+- Starting in Mattermost v11, the default value of the ``ExperimentalStrictCSRFEnforcement`` setting will be changed to ``true``. The legacy ``X-Requested-With`` header fallback will still be supported but only when explicitly disabled by setting ``ExperimentalStrictCSRFEnforcement`` to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
 
 Removed features by Mattermost version
 ----------------------------------------
@@ -18,7 +21,7 @@ Removed features by Mattermost version
 Mattermost Server v10.6.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <install/prepare-mattermost-database:minimum supported version policy>` documentation for details.
+- Support for PostgreSQL v11 and v12 have been removed. The new minimum PostgreSQL version is v13+. See the :ref:`minimum supported PostgreSQL version policy <deploy/software-hardware-requirements:minimum postgresql database support policy>` documentation for details.
 
 Mattermost Server v10.5.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~

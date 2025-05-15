@@ -1,4 +1,4 @@
-# Desktop app changelog
+# Desktop App Changelog
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```
