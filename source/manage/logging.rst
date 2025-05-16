@@ -83,7 +83,7 @@ Define logging output in JSON format in the System Console by going to **Environ
                 "max_size": 100,
                 "max_age": 1,
                 "max_backups": 10,
-                "compress": true,
+                "compress": true
             },
             "maxqueuesize": 1000
         },
