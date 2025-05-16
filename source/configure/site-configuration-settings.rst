@@ -252,12 +252,22 @@ Forgot Password custom link
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. You can control whether the **Forgot Password** link is visible or hidden in clients by going to **Authentication > Password > Enable Forgot Password Link**. See the :ref:`configuration <configure/authentication-configuration-settings:enable forgot password link>` documentation for details.
 
 
+.. config:setting:: report-a-problem-type
+  :displayname: Report a Problem type (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ReportAProblemType
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMTYPE
+  :description: Select how the ‘Report a Problem’ option behaves. Choosing ‘Custom link’ or ‘Email address’ allows you to provide a URL or address in the next field. ‘Hide link’ removes the ‘Report a Problem’ option from the app.
+
+Report a Problem type
+~~~~~~~~~~~~~~~~~~~~~
+
 .. config:setting:: report-a-problem-link
   :displayname: Report a Problem link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemLink
   :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK
-  :description: This field sets the URL for the **Report a Problem** link in the channel header **Help** menu.  Default value is **https://about.mattermost.com/default-report-a-problem**.
+  :description: Users will be directed to this link when they choose ‘Report a Problem’.
 
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~
@@ -270,6 +280,26 @@ Report a Problem link
 |                                                                                                                                                 | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemLink`` |
 | String input. Default is ``https://about.mattermost.com/default-report-a-problem``.                                                             | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
 +-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: report-a-problem-email
+  :displayname: Report a Problem email (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ReportAProblemMail
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL
+  :description: Enter the email address that users will be prompted to send a message to when they choose ‘Report a Problem’.
+
+Report a Problem email
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. config:setting:: allow-mobile-app-log-downloads
+  :displayname: Allow Mobile App Log Downloads (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.AllowDownloadLogs
+  :environment: MM_SUPPORTSETTINGS_ALLOWDOWNLOADLOGS
+  :description: When enabled, users can download app logs for troubleshooting. If a ‘Report a Problem’ link is shown, logs can be downloaded as part of that flow; if the ‘Report a Problem’ link is hidden, logs remain accessible as a separate option.
+
+Allow Mobile App Log Downloads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. config:setting:: mattermost-apps-download-page-link
   :displayname: Mattermost apps download page link (Customization)
