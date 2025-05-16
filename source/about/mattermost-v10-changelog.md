@@ -12,7 +12,7 @@
  - Updated the minimum supported versions of Edge and Chrome to 134+, and Firefox to 128+.
 
 ### Important Upgrade Notes
- - 
+ - A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 ```{Important}
 If you upgrade from a release earlier than v10.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -27,24 +27,51 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Added more descriptive page titles to the login, account creation, and password reset pages.
  - Improved the **Drafts** list by implementing virtualization.
  - Enhanced the behavior for reporting issues in the platform.
+ - Introduced minor layout tweaks in theme settings for improved usability.
 
 #### Administration
- - 
+ - Added support for AES-256-GCM encryption in SAML.
+ - Updated the email validation logic to ensure Mattermost no longer accepts email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``). Although these comply with RFC 5322 and RFC 6532 standards, they introduce unnecessary complexity. If a user already has such an email in your installation, they may face issues like being unable to update their profile. To resolve this, the email must be modified manually using the command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
+ - Added a license load metric to the **About** screen to display current license usage.
+ - Upgraded the logr dependency to version 2.0.22.
+ - Removed telemetry tracking from Redux selectors.
+ - Made it possible to view JSON logs in plain text within the **System console**.
+ - Enhanced the **System console** search functionality to include all log fields.
+ - Enhanced error reporting related to cluster management.
+
+#### Performance
+ - Optimized the team-switching operation by eliminating unnecessary calls to retrieve channels and channel members.
+ - Improved websocket re-opening speed when network conditions change.
 
 ### Bug Fixes
- - 
+ - Fixed various issues on the "Create Team" screen.
+ - Fixed several accessibility issues across the login process, account creation, and MFA setup.
+ - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
+ - Fixed an issue with inconsistent sizing of markdown images in preview mode.
+ - Fixed a keyboard navigation issue within thread items.
+ - Fixed layout issues with the emoji picker on mobile browsers.
+ - Fixed an issue with the positioning of “edited” text and tooltips in certain scenarios.
+ - Fixed the accessibility of the search box.
+ - Fixed an issue where post list scrolling didn’t work when pressing the "Page Up" or "Page Down" keys.
+ - Fixed issues with screen reader support in the **Threads** view.
+ - Fixed keyboard navigation issues in the **Threads** view.
+ - Fixed accessibility issues in the **Invite** modal.
+ - Fixed various accessibility issues in the **Browse Channels** modal.
+ - Fixed an issue that prevented team admin permissions from being modified when missing in the "All Members" section.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to Enterprise plans:
- - 
+#### Changes to all plans:
+ - Under ``SupportSettings`` in ``config.json``:
+    - Added ``ReportAProblemType``, ``ReportAProblemMail``, ``AllowDownloadLogs`` configuration settings to enhance the behavior for reporting issues in the platform.
 
-### API Changes
- - 
+#### Changes to Enterprise plans:
+ - Under ``ExperimentalAuditSettings`` in ``config.json``:
+    - Added ``Certificate`` configuration setting to accept a certificate to be used for audit logging egress.
 
 ### Open Source Components
- - 
+ - Removed ``dynamic-virtualized-list``, ``popper.js``, ``react-hot-loader``, ``react-popper`` from https://github.com/mattermost/mattermost.
 
 ### Go Version
  - v10.9 is built with Go ``v1.23.7``.
