@@ -3,6 +3,59 @@
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
+(release-v10.9-feature-release)=
+## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release day: 2025-06-16**
+
+### Compatibility
+ - Updated the minimum supported versions of Edge and Chrome to 134+, and Firefox to 128+.
+
+### Important Upgrade Notes
+ - 
+
+```{Important}
+If you upgrade from a release earlier than v10.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Consolidated all channel editing functionalities into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert between public and private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
+ - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
+ - Introduced a configurable channel banner feature for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
+ - Added more descriptive page titles to the login, account creation, and password reset pages.
+ - Improved the **Drafts** list by implementing virtualization.
+ - Enhanced the behavior for reporting issues in the platform.
+
+#### Administration
+ - 
+
+### Bug Fixes
+ - 
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise plans:
+ - 
+
+### API Changes
+ - 
+
+### Open Source Components
+ - 
+
+### Go Version
+ - v10.9 is built with Go ``v1.23.7``.
+
+### Known Issues
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+
+### Contributors
+ - 
 
 (release-v10.8-feature-release)=
 ## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
