@@ -74,6 +74,10 @@ For the last test of 200K users, further infrastructure changes were made. Elast
 
 Full testing methodology, configuration, and setup is available, incluidng a `fixed database dump with 100 million posts <https://us-east-1.console.aws.amazon.com/backup/home?region=us-east-1#/resources/arn%3Aaws%3Ards%3Aus-east-1%3A729462591288%3Acluster%3Adb-pg-100m-posts-v9-5-5>`_. Visit the `Mattermost Community <https://community.mattermost.com/>`_ and join the `Developers: Performance channel <https://community.mattermost.com/core/channels/developers-performance>`_ for details.
 
+The performance specifications and user capacities provided in these reference architectures are based on extensive testing conducted in AWS environments. 
+
+For Azure deployments, the instance specifications have been extrapolated using equivalent configurations, drawing upon AWS performance data and industry expertise. While these configurations are designed to meet the stated requirements, we have not yet conducted formal testing in Azure environments to validate performance under load. Azure Blob Storage support is in active development, and not yet natively supported by Mattermost.
+
 Mattermost load testing tools
 -----------------------------
 
