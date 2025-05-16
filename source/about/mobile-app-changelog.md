@@ -9,6 +9,36 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{include} common-esr-support.md
 ```
 
+(release-v2-28-0)=
+## 2.28.0 Release
+ - Release Date: May 16, 2025
+ - Server Versions Supported: Server v10.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.11.0 has ended and upgrading to server ESR v10.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Improvements
+ - Added a feature to support scheduled posts on mobile. 
+ - Added the ability to display channel banners in the mobile app. This is available for Enterprise Advanced servers that have the Channel Banners feature available. 
+ - Added autofill on the email/password fields on the login screen. 
+ - Upgraded forked ``commonmark`` to v0.31.2-0. 
+
+### Bug Fixes
+ - Fixed an issue with some threads not getting marked as read when read from a different device. 
+ - Fixed an issue where the team sidebar did not show the unread indicator if the user had unread threads.
+ - Fixed an issue where message attachments (e.g. from a webhook) would not appear if received while the app was in the background.
+
+### Open Source Components
+ - Added ``@shopify/flash-list`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Animation delay when clearing textbox after post is sent [MM-64243](https://mattermost.atlassian.net/browse/MM-64243).
+ - iOS: Inline images with size specified fail to post [MM-63927](https://mattermost.atlassian.net/browse/MM-63927).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
 (release-v2-27-1)=
 ## 2.27.1 Release
  - Release Date: April 30, 2025

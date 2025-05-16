@@ -22,10 +22,10 @@ If you want to check that the version of Mattermost you are installing is the of
     - ``https://releases.mattermost.com/10.7.2/mattermost-10.7.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``faf0147762e517f9aa11f423c78b4b7a74012e838ac227568dac8872f1a03cac``
     - GPG Signature: https://releases.mattermost.com/10.7.2/mattermost-10.7.2-linux-amd64.tar.gz.sig
-  Mattermost Enterprise Edition v10.6.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.4/mattermost-10.6.4-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.6.4/mattermost-10.6.4-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``267953b57a38653b497170fef894b864abf9df5f4d84541d7aae8f24b19aedef``
-    - GPG Signature: https://releases.mattermost.com/10.6.4/mattermost-10.6.4-linux-amd64.tar.gz.sig
+  Mattermost Enterprise Edition v10.6.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.5/mattermost-10.6.5-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.6.5/mattermost-10.6.5-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``8a6cca0fe2541afa1fab298b5f3c59b6b0bd405e196959f6fe632e958920299d``
+    - GPG Signature: https://releases.mattermost.com/10.6.5/mattermost-10.6.5-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.5.5 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.5/mattermost-10.5.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.5/mattermost-10.5.5-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``8d400d78f78ca8d5b6fd1e35b00a3764a3c4049b5d2307ce39304ed1eeff4064``
@@ -428,11 +428,11 @@ If you want to check that the version of Mattermost you are installing is the of
     - SHA-256 Checksum: ``5ecedae6767b882f7eeb26bd7c27eb38715e865acb189d1d3ffa6ce1e683958a``
     - GPG Signature: https://releases.mattermost.com/10.7.2/mattermost-team-10.7.2-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.7.2/sbom-mattermost-v10.7.2.json
-  Mattermost Team Edition v10.6.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.4/mattermost-team-10.6.4-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.6.4/mattermost-team-10.6.4-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``e62dfb1d78b545da2974dc3ae46d128c9cff95fe6f7211ab2bcb6ec6c7064013``
-    - GPG Signature: https://releases.mattermost.com/10.6.4/mattermost-team-10.6.4-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.4/sbom-mattermost-v10.6.4.json
+  Mattermost Team Edition v10.6.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-6-feature-release>`__ - `Download <https://releases.mattermost.com/10.6.5/mattermost-team-10.6.5-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.6.5/mattermost-team-10.6.5-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``a02a1027b7bfa0c938619f6ceec22a419a6870c673d7a4d3ee5c4a32e4e2827e``
+    - GPG Signature: https://releases.mattermost.com/10.6.5/mattermost-team-10.6.5-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.5/sbom-mattermost-v10.6.5.json
   Mattermost Team Edition v10.5.5 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.5/mattermost-team-10.5.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.5/mattermost-team-10.5.5-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``e3e2a842d04383485fa4baecf77c9dbdff4827a3de412546ecceddf8e3689570``
