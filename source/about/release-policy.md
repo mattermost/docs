@@ -53,7 +53,6 @@ gantt
     tickInterval 2month
     
     section 2024
-    v9.8                   :done,  2024-05-15, 2024-08-15
     v9.9                   :done,  2024-06-16, 2024-09-15
     v9.10                  :done,  2024-07-16, 2024-10-15
     v9.11 & Desktop App v5.9 Extended Support :crit,    2024-08-16, 2025-05-15
@@ -65,9 +64,10 @@ gantt
     section 2025
     v10.4                  :done,  2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
-    v10.6                  :active, 2025-03-16, 2025-06-15
+    v10.6                  :done, 2025-03-16, 2025-06-15
     v10.7                  :active, 2025-04-16, 2025-07-15
     v10.8                  :active, 2025-05-16, 2025-08-15
+    v10.9                  :active, 2025-06-16, 2025-09-15
 ```
 
 (esr-notifications)=
