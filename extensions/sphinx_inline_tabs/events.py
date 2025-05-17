@@ -1,54 +1,80 @@
 import re
 from dataclasses import dataclass
-from typing import List
+from typing import Any, Optional
 
 from docutils import nodes
 from sphinx import addnodes
 from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
+from sphinx.builders.html._assets import _JavaScript
 from sphinx.util.nodes import _make_id
 
 from .nodes import TabContainer
 
 
-def env_purge_doc(_: Sphinx, env: BuildEnvironment, docname: str) -> None:
-    if hasattr(env, "sphinx_tabs"):
-        if docname in env.sphinx_tabs:
-            env.sphinx_tabs.pop(docname)
+def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
+    if hasattr(app.env, "sphinx_tabs"):
+        if docname in app.env.sphinx_tabs:
+            app.env.sphinx_tabs.pop(docname)
 
 
 def env_merge_info(
-    _: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment
+    app: Sphinx, _: BuildEnvironment, docnames: list[str], other: BuildEnvironment
 ) -> None:
-    if not hasattr(env, "sphinx_tabs"):
-        env.sphinx_tabs = {}
+    if not hasattr(app.env, "sphinx_tabs"):
+        app.env.sphinx_tabs = {}
     if hasattr(other, "sphinx_tabs"):
         for docname in docnames:
             if docname in other.sphinx_tabs:
-                if len(other.sphinx_tabs[docname]) > 0:
-                    env.sphinx_tabs[docname] = other.sphinx_tabs[docname]
+                if docname not in app.env.sphinx_tabs:
+                    app.env.sphinx_tabs[docname] = []
+                if len(app.env.sphinx_tabs[docname]) > 0 and len(other.sphinx_tabs[docname]) == 0:
+                    print(f"+++ env_merge_info: {docname}; not overwriting app.env with empty list from other")
+                    continue
+                app.env.sphinx_tabs[docname] = other.sphinx_tabs[docname].copy()
 
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
     if not hasattr(app.env, "sphinx_tabs"):
+        #print('+++ doctree_read: create app.env.sphinx_tabs')
         app.env.sphinx_tabs = {}
-    if app.env.docname in app.env.sphinx_tabs:
-        # if app.env.docname == "deploy/server/deploy-kubernetes":
+    if app.env.docname in app.env.sphinx_tabs and len(app.env.sphinx_tabs[app.env.docname]) > 0:
+        #print(f"+++ doctree_read: {app.env.docname} has tabs")
         sd: SectionData = collect_sections(
             app.env, doctree, app.env.docname, doctree
         )
         #dump_sections(app.env.docname, sd)
-        print(
-            f"+++ doctree_read({app.env.docname}): tocs[0]={app.env.tocs[app.env.docname][0]}"
-        )
         updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
-        print(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
+        #print(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs.children[0])
         else:
             app.env.tocs[app.env.docname][0][1] = updated_tocs.children[0]
+        app.env.sphinx_tabs[app.env.docname] = []
 
-        app.env.sphinx_tabs.pop(app.env.docname)
+
+def html_page_context(
+    app: Sphinx,
+    pagename: str,
+    templatename: str,
+    context: dict[str, Any],
+    doctree: Optional[nodes.document],
+) -> Optional[str]:
+    if hasattr(app.env, "sphinx_tabs"):
+        if pagename in app.env.sphinx_tabs:
+            #print(f"+++ html_page_context: {pagename}; context.keys()={context.keys()}")
+            if "script_files" in context:
+                furo_js_asset: Optional[_JavaScript] = None
+                for script_asset in context["script_files"]:
+                    if script_asset.filename == "_static/scripts/furo.js":
+                        furo_js_asset = script_asset
+                        #print(f"+++ html_page_context: {pagename}; furo_js_asset={str(furo_js_asset)}")
+                        break
+                if furo_js_asset is not None:
+                    #print(f"+++ html_page_context: {pagename}; remove furo JS asset")
+                    context["script_files"].remove(furo_js_asset)
+
+    return None
 
 
 @dataclass(repr=True)

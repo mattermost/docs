@@ -17,7 +17,7 @@ def setup(app):
         TabContainer, TabInput, TabLabel, TabSpan
     )
     from .events import (
-        env_purge_doc, env_merge_info, doctree_read
+        env_purge_doc, env_merge_info, doctree_read, html_page_context
     )
 
     app.add_directive("tab", TabDirective)
@@ -35,6 +35,7 @@ def setup(app):
     app.connect("env-purge-doc", env_purge_doc)
     app.connect("env-merge-info", env_merge_info)
     app.connect("doctree-read", doctree_read)
+    app.connect("html-page-context", html_page_context)
 
     app.add_js_file("tabs.js")
     app.add_css_file("tabs.css")

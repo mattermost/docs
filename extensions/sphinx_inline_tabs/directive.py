@@ -1,7 +1,5 @@
 """The actual implementation."""
 
-import re
-
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
@@ -54,10 +52,11 @@ class TabDirective(SphinxDirective):
         container += label
         container += content
 
-        if hasattr(self.env, "sphinx_tabs"):
-            if self.env.docname not in self.env.sphinx_tabs:
-                self.env.sphinx_tabs[self.env.docname] = []
-            self.env.sphinx_tabs[self.env.docname].append(self.arguments[0])
+        if not hasattr(self.env, "sphinx_tabs"):
+            self.env.sphinx_tabs = {}
+        if self.env.docname not in self.env.sphinx_tabs:
+            self.env.sphinx_tabs[self.env.docname] = []
+        self.env.sphinx_tabs[self.env.docname].append(self.arguments[0])
 
         return [container]
 
@@ -66,13 +65,13 @@ class TabDirective(SphinxDirective):
             #print(f"+++ parsed_node: {parsed_node.astext()}")
             if isinstance(parsed_node, nodes.section):
                 node_id: str = parsed_node.attributes["ids"][0]
-                print(f"+++ [{level}] section: {node_id}")
+                #print(f"+++ [{level}] section: {node_id}")
                 prefixed_id: str = f"inlinetab--{tab_name}--{level}-{node_id}"
                 #if re.match('id[0-9]+', node_id):
                 #    print(f"+++ [{level}] replace id with '{prefixed_id}'")
                 #    parsed_node.attributes["ids"] = [prefixed_id]
                 #else:
-                print(f"+++ [{level}] add id '{prefixed_id}' as first id")
+                #print(f"+++ [{level}] add id '{prefixed_id}' as first id")
                 #parsed_node.append_attr_list("ids", [prefixed_id])
                 existing_ids: list[str] = parsed_node.attributes["ids"]
                 if existing_ids:

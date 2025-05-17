@@ -14,7 +14,7 @@ class _GeneralHTMLTagElement(nodes.Element, nodes.General):
     @staticmethod
     def visit(translator, node):
         attributes = node.attributes.copy()
-        # Nobody needs this crap.
+        # Remove unused attributes
         attributes.pop("ids")
         attributes.pop("classes")
         attributes.pop("names")
