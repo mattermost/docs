@@ -3,14 +3,19 @@ Deploy Mattermost on Kubernetes
 
 Mattermost server can be deployed on various Kubernetes platforms, providing a scalable and robust infrastructure for your team communication needs. This guide covers deployment options for major cloud providers and general Kubernetes installations.
 
+Platform
+--------
+
 Choose your preferred platform below for specific deployment instructions:
 
 .. tab:: Azure
+  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s-aks.rst
     :start-after: :nosearch:
 
 .. tab:: Other Kubernetes
+  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s.rst
     :start-after: :nosearch:
@@ -20,7 +25,7 @@ Secure your Mattermost deployment
 
 Deploying Mattermost in a Kubernetes environment allows you to harness Kubernetes-native features for scalability, security, and ease of management. By using an Ingress resource in combination with an ingress controller, you can enable secure HTTPS access to Mattermost while managing routing and TLS certificates effectively.
 
-1. Deploy an ingress controller, such as the `NGINX Ingress Controller <https://kubernetes.github.io/ingress-nginx/>`_, in your Kubernetes cluster. 
+1. Deploy an ingress controller, such as the `NGINX Ingress Controller <https://kubernetes.github.io/ingress-nginx/>`_, in your Kubernetes cluster.
 2. Define an Ingress resource to route external traffic to your Mattermost service. Below is an example Ingress manifest:
 
   .. code-block:: yaml
@@ -54,7 +59,7 @@ Deploying Mattermost in a Kubernetes environment allows you to harness Kubernete
   - Automate TLS certificate issuance and management using `cert-manager <https://cert-manager.io/docs/>`_. If you are providing your own TLS certificate, create a Kubernetes secret to store it.
   - Ensure the Ingress resource references the secret name (mattermost-tls) in its tls section.
 
-4. Save your Ingress and TLS YAML manifests to files (e.g., ``ingress.yaml`` and ``tls.yaml``) and apply them to your cluster using Kubernetes command-line tools. 
+4. Save your Ingress and TLS YAML manifests to files (e.g., ``ingress.yaml`` and ``tls.yaml``) and apply them to your cluster using Kubernetes command-line tools.
 
 5. Configure DNS by ensuring your domain name ``your-domain.com`` is properly pointed to the external IP address of your cluster or ingress controller. You can verify this using tools like nslookup or dig.
 

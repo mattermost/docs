@@ -7,7 +7,8 @@
 
 You can use the Mattermost Kubernetes Operator to deploy Mattermost on Kubernetes using S3-compatible storage and a managed database service. While the operator supports a range of configurations, we strongly recommend using a cloud-native approach for production environments.
 
-**Prerequisites**
+Prerequisites
+~~~~~~~~~~~~~
 
 Before you begin, ensure you have the following:
 
@@ -16,15 +17,18 @@ Before you begin, ensure you have the following:
 * A fundamental understanding of Kubernetes concepts, such as deployments, pods, and applying manifests.
 * Sufficient Kubernetes resources allocated based on your expected user load. Consult the `Mattermost Kubernetes Operator <#install-the-mattermost-operator>`__ documentation for resource requirements at different scales.
 
-**Installation steps**
+Installation steps
+~~~~~~~~~~~~~~~~~~
 
 The installation process involves setting up necessary operators and then deploying Mattermost itself.
 
-**Step 1: Install the NGINX Ingress Controller**
+Step 1: Install the NGINX Ingress Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Follow the instructions in the `Kubernetes deployment documentation <https://kubernetes.github.io/ingress-nginx/deploy/>`_ to install the NGINX ingress controller on your Kubernetes cluster. Mattermost recommends installing the Nginx Operator via helm, regardless of platform you are installing to. 
+Follow the instructions in the `Kubernetes deployment documentation <https://kubernetes.github.io/ingress-nginx/deploy/>`_ to install the NGINX ingress controller on your Kubernetes cluster. Mattermost recommends installing the Nginx Operator via helm, regardless of platform you are installing to.
 
-**Step 2: Install the Mattermost Operator**
+Step 2: Install the Mattermost Operator
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The Mattermost Kubernetes Operator can be installed using Helm.
 
@@ -62,11 +66,12 @@ The Mattermost Kubernetes Operator can be installed using Helm.
 
     helm install mattermost-operator mattermost/mattermost-operator -n mattermost-operator -f config.yaml
 
-**Step 3: Deploy Mattermost**
+Step 3: Deploy Mattermost
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. note::
 
-  - A Mattermost Enterprise license is required for multi-server deployments. 
+  - A Mattermost Enterprise license is required for multi-server deployments.
   - For single-server deployments without an Enterprise license, add ``Replicas: 1`` to the ``spec`` section in step 2 below. See the :doc:`high availability documentation </scale/high-availability-cluster-based-deployment>` for more on highly-available deployments.
 
 1. **(Mattermost Enterprise only)** Create a Mattermost license secret. Create a file named ``mattermost-license-secret.yaml`` with the following content, replacing ``[LICENSE_FILE_CONTENTS]`` with your actual license:
@@ -137,7 +142,8 @@ The Mattermost Kubernetes Operator can be installed using Helm.
       name: my-postgres-connection
     type: Opaque
 
-**Step 4: Create the Filestore Secret**
+Step 4: Create the Filestore Secret
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Create a file named ``mattermost-filestore-secret.yaml`` to store the credentials for your object storage service (e.g., AWS S3, MinIO). This secret must be created in the same namespace where you intend to install Mattermost. The file should contain the following YAML structure:
 
@@ -176,7 +182,8 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
       accesskey: QUNDRVNTX0tFWQo=  # Example: Replace with your actual encoded key
       secretkey: U1VQRVJfU0VDUkVUX0tFWQo=  # Example: Replace with your actual encoded key
 
-**Step 5: Configure the Mattermost Installation Manifest**
+Step 5: Configure the Mattermost Installation Manifest
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Modify the ``mattermost-installation.yaml`` file (created in step 2) to connect Mattermost to your external database and object storage. Refer to the supported fields for guidance on where to add these configurations within the YAML structure.
 
@@ -204,7 +211,7 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
             bucket: <bucket-name>      # The name of your storage bucket
             secret: <filestore-secret-name> # The name of the filestore secret (e.g., my-s3-credentials)
 
-4. If you are using Amazon S3, it's recommended to enable server-side encryption (SSE) and SSL. Add the following environment variables to the ``mattermostEnv`` section: 
+4. If you are using Amazon S3, it's recommended to enable server-side encryption (SSE) and SSL. Add the following environment variables to the ``mattermostEnv`` section:
 
   .. code-block:: yaml
 
@@ -214,7 +221,8 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
         MM_FILESETTINGS_AMAZONS3SSE: true
 
 
-**Review Mattermost Resource Status**
+Review Mattermost Resource Status
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 After a Mattermost installation has been created with the Operator, you can review its status with the following:
 
@@ -243,7 +251,7 @@ This command can be used to review the Mattermost Operator or Mattermost server 
 .. note::
 
   - If you're new to Kubernetes or prefer a managed solution, consider using a service like `Amazon EKS <https://aws.amazon.com/eks/>`_, `Azure Kubernetes Service <https://azure.microsoft.com/en-ca/products/kubernetes-service/>`_, `Google Kubernetes Engine <https://cloud.google.com/kubernetes-engine/>`_, or `DigitalOcean Kubernetes <https://www.digitalocean.com/products/kubernetes/>`_.- While this guidance focuses on using external, managed services for your database and file storage, the Mattermost Operator *does* offer the flexibility to use other solutions. For example, you could choose to deploy a PostgreSQL database within your Kubernetes cluster using the CloudNative PG operator (or externally however you wish), or use a self-hosted MinIO instance for object storage.
-  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them. 
+  - While using managed cloud services is generally simpler to maintain and our recommended approach for production deployments, using self-managed services like MinIO for storage and CloudNative PG for PostgreSQL are also valid options if you have the expertise to manage them.
   - If you choose to use self-managed components, you'll need to adapt the instructions accordingly, pointing to your internal services instead.
   - To customize your production deployment, refer to the :doc:`configuration settings documentation </configure/configuration-settings>`.
   - If you encounter issues during deployment, consult the :doc:`deployment troubleshooting guide </guides/deployment-troubleshooting>`.
