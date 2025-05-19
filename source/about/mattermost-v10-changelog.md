@@ -72,7 +72,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - Added ``Certificate`` configuration setting to accept a certificate to be used for audit logging egress.
 
 ### Open Source Components
- - Removed ``dynamic-virtualized-list``, ``popper.js``, ``react-hot-loader``, ``react-popper`` from https://github.com/mattermost/mattermost.
+ - Added ``monaco-editor`` and ``monaco-editor-webpack-plugin``, and removed ``dynamic-virtualized-list``, ``popper.js``, ``react-hot-loader``, ``react-popper`` from https://github.com/mattermost/mattermost.
 
 ### Go Version
  - v10.9 is built with Go ``v1.23.7``.
