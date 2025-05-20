@@ -16,9 +16,9 @@ Discover how Mattermost and Microsoft empower your team to stay productive—no 
   Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>
   Calendar Integration </integrate/microsoft-calendar>
   Teams Notifications </integrate/microsoft-teams-sync>
-  Join Microsoft Teams Meetings </integrate/microsoft-teams-meetings>
+  Teams Meetings </integrate/microsoft-teams-meetings>
 
 * :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>` - Access Mattermost directly from a tab in Microsoft Teams, and receive Teams notifications for Mattermost direct messages and mentions.
 * :doc:`Calendar Integration </integrate/microsoft-calendar>` - Receive daily summaries of calendar events, synchronize Microsoft status in Mattermost, and accept or decline calendar invites without leaving Mattermost.
 * :doc:`Teams Notifications </integrate/microsoft-teams-sync>` - Synchronize real-time chat notifications from Teams to Mattermost.
-* :doc:`Join Teams Meetings </integrate/microsoft-teams-meetings>` - Start and join Teams voice calls, video calls, and use screen sharing without leaving Mattermost.
+* :doc:`Teams Meetings </integrate/microsoft-teams-meetings>` - Start and join Teams voice calls, video calls, and use screen sharing without leaving Mattermost.
