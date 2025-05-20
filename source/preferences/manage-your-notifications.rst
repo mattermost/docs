@@ -82,13 +82,13 @@ The table below lists the types of notifications you can expect to see and hear 
 Email notifications
 ~~~~~~~~~~~~~~~~~~~~
 
-By default, Mattermost notifications are sent to you via email for :doc:`@mentions </collaborate/mention-people>` and :ref:`direct messages <collaborate/channel-types:direct message channels>` when you are :ref:`offline or away <preferences/set-your-status-availability:set your availability>` from Mattermost for more than 5 minutes. 
+When your admin :ref:`enables email notifications <configure/site-configuration-settings:enable email notifications>`, Mattermost notifications are sent to you via email for :doc:`@mentions </collaborate/mention-people>` and :ref:`direct messages <collaborate/channel-types:direct message channels>` as soon as you're away from Mattermost for 5 minutes.
 
-You can disable email notifications by going to **Settings > Notifications > Email notifications** and changing **Immediately** to **Never**.
+You can also opt in to be notified by email about thread replies you're following.
 
-.. note::
+Additionally, if your admin :ref:`enables email batching <configure/site-configuration-settings:enable email batching>`, email-based notifications are batched, and you can customize how frequenly you receive batched notifications by going to **Settings > Notifications > Email notifications**. The default frequency is 15 minutes. Choosing every 15 minutes or every hour will reduce the number of emails you receive.
 
-  Mattermost can group multiple email notifications together into a single email. If your Mattermost admin :ref:`enables this feature <configure/site-configuration-settings:enable email batching>`, you'll receive batches of notifications by email every 15 minutes, or as configured by your admin.
+Disable email notifications by going to **Settings > Notifications > Email notifications** and changing **On** to **Off**.
 
 Missing notifications?
 ----------------------
