@@ -45,12 +45,12 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     if app.env.docname in app.env.sphinx_tabs and len(app.env.sphinx_tabs[app.env.docname]) > 0:
         logger.debug(f"+++ doctree_read: {app.env.docname} has tabs")
         sd: SectionData = collect_sections(app.env, doctree, app.env.docname, doctree)
-        updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
-        logger.debug(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
+        updated_tocs: nodes.list_item = sectiondata_to_toc(app.env.docname, sd)
+        logger.debug(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}")
         if len(app.env.tocs[app.env.docname][0]) == 1:
-            app.env.tocs[app.env.docname][0].append(updated_tocs.children[0])
+            app.env.tocs[app.env.docname][0].append(updated_tocs)
         else:
-            app.env.tocs[app.env.docname][0][1] = updated_tocs.children[0]
+            app.env.tocs[app.env.docname][0][1] = updated_tocs
         app.env.sphinx_tabs[app.env.docname] = []
 
 
@@ -159,7 +159,7 @@ def dump_sections(docname: str, secdata: SectionData):
         dump_sections(docname, child)
 
 
-def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
+def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     logger.debug(
         f"### ({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
     )
@@ -168,42 +168,33 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
             f"### ({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
         )
         return sectiondata_to_toc(docname, secdata.children[0])
-    elif secdata.is_section_root:
-        list_item: nodes.list_item = nodes.list_item()
-        for idx, child in enumerate(secdata.children):
-            logger.debug(
-                f"### ({docname}): [{secdata.level}] top section {idx+1}/{len(secdata.children)}"
-            )
-            list_item.append(sectiondata_to_toc(docname, child))
-        bullet_list: nodes.bullet_list = nodes.bullet_list()
-        bullet_list.append(list_item)
-        return bullet_list
     logger.debug(
         f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
     )
-    bullet_list: nodes.bullet_list = nodes.bullet_list()
     list_item: nodes.list_item = nodes.list_item()
-    anchor_name: str = f"#{secdata.id}"
-    reference: nodes.reference = nodes.reference(
-        "",
-        secdata.name,
-        refuri=docname,
-        anchorname=anchor_name,
-        internal=True,
-    )
-    cpara: addnodes.compact_paragraph = addnodes.compact_paragraph()
-    cpara.append(reference)
-    list_item.append(cpara)
-    bullet_list.append(list_item)
-    if len(secdata.children) > 0:
-        logger.debug(f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}")
-        for idx, child in enumerate(secdata.children):
-            logger.debug(
-                f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
-            )
-            child_toc: nodes.bullet_list = sectiondata_to_toc(docname, child)
-            child_list_item: nodes.list_item = nodes.list_item()
-            child_list_item.append(child_toc)
-            bullet_list.append(child_list_item)
+    list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
+    bullet_list: nodes.bullet_list = nodes.bullet_list()
+    logger.debug(f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}")
+    for idx, child in enumerate(secdata.children):
+        logger.debug(
+            f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
+        )
+        bullet_list.append(sectiondata_to_toc(docname, child))
+    if len(bullet_list.children) > 0:
+        list_item.append(bullet_list)
 
-    return bullet_list
+    return list_item
+
+
+def make_compact_reference(section_id: str, section_name: str, docname: str) -> addnodes.compact_paragraph:
+    cpara: addnodes.compact_paragraph = addnodes.compact_paragraph()
+    cpara.append(
+        nodes.reference(
+            "",
+            section_name,
+            refuri=docname,
+            anchorname=f"#{section_id}",
+            internal=True,
+        )
+    )
+    return cpara
