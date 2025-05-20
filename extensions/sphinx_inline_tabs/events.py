@@ -7,9 +7,13 @@ from sphinx import addnodes
 from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
 from sphinx.builders.html._assets import _JavaScript
+from sphinx.util import logging
 from sphinx.util.nodes import _make_id
 
 from .nodes import TabContainer
+
+
+logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
 
 
 def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
@@ -29,23 +33,20 @@ def env_merge_info(
                 if docname not in app.env.sphinx_tabs:
                     app.env.sphinx_tabs[docname] = []
                 if len(app.env.sphinx_tabs[docname]) > 0 and len(other.sphinx_tabs[docname]) == 0:
-                    print(f"+++ env_merge_info: {docname}; not overwriting app.env with empty list from other")
+                    logger.warning(f"+++ env_merge_info: {docname}; not overwriting app.env with empty list from other")
                     continue
                 app.env.sphinx_tabs[docname] = other.sphinx_tabs[docname].copy()
 
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
     if not hasattr(app.env, "sphinx_tabs"):
-        #print('+++ doctree_read: create app.env.sphinx_tabs')
+        logger.debug('+++ doctree_read: create app.env.sphinx_tabs')
         app.env.sphinx_tabs = {}
     if app.env.docname in app.env.sphinx_tabs and len(app.env.sphinx_tabs[app.env.docname]) > 0:
-        #print(f"+++ doctree_read: {app.env.docname} has tabs")
-        sd: SectionData = collect_sections(
-            app.env, doctree, app.env.docname, doctree
-        )
-        #dump_sections(app.env.docname, sd)
+        logger.debug(f"+++ doctree_read: {app.env.docname} has tabs")
+        sd: SectionData = collect_sections(app.env, doctree, app.env.docname, doctree)
         updated_tocs: nodes.bullet_list = sectiondata_to_toc(app.env.docname, sd)
-        #print(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
+        logger.debug(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs.children[0]}")
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs.children[0])
         else:
@@ -62,16 +63,16 @@ def html_page_context(
 ) -> Optional[str]:
     if hasattr(app.env, "sphinx_tabs"):
         if pagename in app.env.sphinx_tabs:
-            #print(f"+++ html_page_context: {pagename}; context.keys()={context.keys()}")
+            logger.debug(f"+++ html_page_context: {pagename}; context.keys()={context.keys()}")
             if "script_files" in context:
                 furo_js_asset: Optional[_JavaScript] = None
                 for script_asset in context["script_files"]:
                     if script_asset.filename == "_static/scripts/furo.js":
                         furo_js_asset = script_asset
-                        #print(f"+++ html_page_context: {pagename}; furo_js_asset={str(furo_js_asset)}")
+                        logger.debug(f"+++ html_page_context: {pagename}; furo_js_asset={str(furo_js_asset)}")
                         break
                 if furo_js_asset is not None:
-                    #print(f"+++ html_page_context: {pagename}; remove furo JS asset")
+                    logger.debug(f"+++ html_page_context: {pagename}; remove furo JS asset")
                     context["script_files"].remove(furo_js_asset)
 
     return None
@@ -95,23 +96,23 @@ def collect_sections(
     node: nodes.Element,
     level=0,
 ) -> SectionData:
-    # print(f">>> ({docname}) [{level}] node={type(node)}")
+    logger.debug(f">>> ({docname}) [{level}] node={type(node)}")
     secdata = SectionData(
         name=docname if level == 0 else "",
         level=level,
-        is_doc_root=True if level == 0 else False,
-        is_section_root=True if level == 1 else False,
-        is_tab=True if isinstance(node, TabContainer) else False,
+        is_doc_root=level == 0,
+        is_section_root=level == 1,
+        is_tab=isinstance(node, TabContainer),
         id="",
         children=[],
     )
 
     if isinstance(node, nodes.section):
         secdata.name = node.next_node(nodes.title).astext()
-        # print(f">>> ({docname}) [{level}] Section: {localsecdata.name}")
+        logger.debug(f">>> ({docname}) [{level}] Section: {secdata.name}")
     elif isinstance(node, TabContainer):
         secdata.name = node.next_node(nodes.label).astext()
-        # print(f">>> ({docname}) [{level}] Tab: {localsecdata.name}")
+        logger.debug(f">>> ({docname}) [{level}] Tab: {secdata.name}")
 
     section_id: str = ""
     if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
@@ -134,7 +135,7 @@ def collect_sections(
     )
 
     for child in parent_node.children:
-        # print(f"   >>> ({docname}) [{level}] child={type(child)}")
+        logger.debug(f"   >>> ({docname}) [{level}] child={type(child)}")
         if isinstance(child, nodes.section) or isinstance(child, TabContainer):
             secdata.children.append(
                 collect_sections(env, document, docname, child, level + 1)
@@ -151,60 +152,39 @@ def dump_sections(docname: str, secdata: SectionData):
         section_type = "section root"
     elif secdata.is_tab:
         section_type = "tab"
-    print(
+    logger.debug(
         f"!!! ({docname}) [{secdata.level}] {secdata.name}/{secdata.id}: {section_type}, {len(secdata.children)} children"
     )
     for child in secdata.children:
         dump_sections(docname, child)
 
 
-# def dump_sections_v1(self, content: nodes.Node) -> dict[str, list[str]]:
-#     visited = {}
-#     for section in content.findall(nodes.section, siblings=False):
-#         section_title = section.next_node(nodes.title).astext()
-#         if section_title in visited:
-#             continue
-#         print(f"+++ TabDirective({self.env.docname}): section {section_title}")
-#         visited[section_title] = []
-#         for sub_section in section.findall(nodes.section, siblings=False):
-#             sub_section_title = sub_section.next_node(nodes.title).astext()
-#             if sub_section_title in visited[section_title]:
-#                 continue
-#             print(
-#                 f"+++ TabDirective({self.env.docname}): section {section_title}, sub-section {sub_section_title}"
-#             )
-#             visited[section_title].append(sub_section_title)
-#     return visited
-
-
 def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
-    # print(
-    #     f"### ({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
-    # )
-
+    logger.debug(
+        f"### ({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
+    )
     if secdata.is_doc_root:
-        # print(
-        #     f"### ({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
-        # )
+        logger.debug(
+            f"### ({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
+        )
         return sectiondata_to_toc(docname, secdata.children[0])
     elif secdata.is_section_root:
         list_item: nodes.list_item = nodes.list_item()
         for idx, child in enumerate(secdata.children):
-            # print(
-            #     f"### ({docname}): [{secdata.level}] top section {idx+1}/{len(secdata.children)}"
-            # )
+            logger.debug(
+                f"### ({docname}): [{secdata.level}] top section {idx+1}/{len(secdata.children)}"
+            )
             list_item.append(sectiondata_to_toc(docname, child))
         bullet_list: nodes.bullet_list = nodes.bullet_list()
         bullet_list.append(list_item)
         return bullet_list
-
-    # print(
-    #     f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
-    # )
+    logger.debug(
+        f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
+    )
     bullet_list: nodes.bullet_list = nodes.bullet_list()
     list_item: nodes.list_item = nodes.list_item()
     anchor_name: str = f"#{secdata.id}"
-    reference = nodes.reference(
+    reference: nodes.reference = nodes.reference(
         "",
         secdata.name,
         refuri=docname,
@@ -215,16 +195,14 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.bullet_list:
     cpara.append(reference)
     list_item.append(cpara)
     bullet_list.append(list_item)
-
     if len(secdata.children) > 0:
-        # child_names = [sd.name for sd in secdata.children]
-        # print(f"### ({docname}): [{secdata.level}] children: {','.join(child_names)}")
+        logger.debug(f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}")
         for idx, child in enumerate(secdata.children):
-            # print(
-            #     f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
-            # )
-            child_toc = sectiondata_to_toc(docname, child)
-            child_list_item = nodes.list_item()
+            logger.debug(
+                f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
+            )
+            child_toc: nodes.bullet_list = sectiondata_to_toc(docname, child)
+            child_list_item: nodes.list_item = nodes.list_item()
             child_list_item.append(child_toc)
             bullet_list.append(child_list_item)
 

@@ -102,6 +102,8 @@ class TabHtmlTransform(SphinxPostTransform):
             label_node: TabLabel = TabLabel(
                 "", **{"for": tab_id}, classes=["tab-label"]
             )
+
+            # <span>, for storing an anchor for the table of contents to link to
             inline_tab_id: str = node.attributes["inline_tab_id"] if "inline_tab_id" in node.attributes else ""
             if inline_tab_id:
                 label_node += TabSpan(inline_tab_id)

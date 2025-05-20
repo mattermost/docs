@@ -1,12 +1,13 @@
 """Add inline tabbed content to your Sphinx documentation."""
 
 import os
+from sphinx.application import Sphinx
 
-__version__ = "2025.05.05"
-__all__ = ["setup"]
+__version__: str = "2025.05.05"
+__all__: list[str] = ["setup"]
 
 
-def setup(app):
+def setup(app: Sphinx):
     """Entry point for sphinx theming."""
     app.require_sphinx("7.4")
 
@@ -28,7 +29,7 @@ def setup(app):
     app.add_node(TabContainer, xml=(lambda _, __: None, lambda _, __: None))
 
     # Include our static assets
-    static_dir = os.path.join(os.path.dirname(__file__), "static")
+    static_dir: str = os.path.join(os.path.dirname(__file__), "static")
     app.connect(
         "builder-inited", (lambda app: app.config.html_static_path.append(static_dir))
     )
