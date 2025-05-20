@@ -40,6 +40,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Made it possible to view JSON logs in plain text within the **System console**.
  - Enhanced the **System console** search functionality to include all log fields.
  - Enhanced error reporting related to cluster management.
+ - Added a LDAP setting to re-add removed members.
 
 #### Performance
  - Optimized the team-switching operation by eliminating unnecessary calls to retrieve channels and channel members.
@@ -71,6 +72,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 #### Changes to Enterprise plans:
  - Under ``ExperimentalAuditSettings`` in ``config.json``:
     - Added ``Certificate`` configuration setting to accept a certificate to be used for audit logging egress.
+ - Under ``LdapSettings`` in ``config.json``:
+    - Added ``ReAddRemovedMembers`` configuration setting to add a LDAP setting to re-add removed members.
 
 ### Open Source Components
  - Added ``monaco-editor`` and ``monaco-editor-webpack-plugin``, and removed ``dynamic-virtualized-list``, ``popper.js``, ``react-hot-loader``, ``react-popper`` from https://github.com/mattermost/mattermost.
