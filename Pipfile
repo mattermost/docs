@@ -41,24 +41,9 @@ myst-parser = "==4.0.1"
 # Repo: https://github.com/executablebooks/sphinx-autobuild
 sphinx-autobuild = "==2024.10.3"
 #
-# Setuptools; used by sphinx-tabs
-# Repo: https://github.com/pypa/setuptools
-# setuptools = "==70.0.0"
-#
 # Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
 # Repo: https://github.com/executablebooks/sphinx-copybutton
 sphinx-copybutton = "==0.5.2"
 #
-# Python importlib metadata library; used by Sphinx
-# Repo: https://github.com/python/importlib_metadata
-# importlib-metadata = "==4.12.0"
-#
-# Tabbed views for Sphinx
-# Repo: https://github.com/pradyunsg/sphinx-inline-tabs
-#sphinx-inline-tabs = "==2023.04.21"
-#
 # MermaidJS support for Sphinx
 sphinxcontrib-mermaid = "==1.0.0"
-#
-# sphinx-tabs
-#sphinx-tabs = "==3.4.7"
