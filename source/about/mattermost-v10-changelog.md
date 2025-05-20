@@ -23,6 +23,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
 #### User Interface (UI)
  - Consolidated all channel editing functionalities into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert between public and private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
  - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
+ - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
  - Introduced a configurable channel banner feature for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
  - Added more descriptive page titles to the login, account creation, and password reset pages.
  - Improved the **Drafts** list by implementing virtualization.
