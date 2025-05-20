@@ -104,9 +104,7 @@ autosectionlabel_prefix_document = True
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
-# The suffix(es) of source filenames.
-# You can specify multiple suffix as a list of string:
-#source_suffix = [".rst", ".md"]
+# The suffix(es) of source filenames and what type of document they map to.
 source_suffix = {
     ".rst": "restructuredtext",
     ".md": "markdown",
@@ -212,6 +210,8 @@ html_theme_options = {
     "source_repository": "https://github.com/mattermost/docs/",
     "source_branch": "master",
     "source_directory": "source/",
+    # Only show the 'Edit in GitHub' button at the top of the page; don't show the 'View in GitHub' button
+    "top_of_page_buttons": ["edit"],
 }
 
 # html_permalinks_icon = " "
