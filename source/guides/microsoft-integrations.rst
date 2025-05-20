@@ -14,13 +14,11 @@ Discover how Mattermost and Microsoft empower your team to stay productive—no 
   :hidden:
 
   Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>
-  Playbooks in Microsoft Teams </integrate/playbooks-for-microsoft-teams>
-  Microsoft Calendar Sync </integrate/microsoft-calendar>
-  Microsoft Teams Sync </integrate/microsoft-teams-sync>
+  Calendar Integration </integrate/microsoft-calendar>
+  Teams Notifications </integrate/microsoft-teams-sync>
   Join Microsoft Teams Meetings </integrate/microsoft-teams-meetings>
 
 * :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>` - Access Mattermost directly from a tab in Microsoft Teams, and receive Teams notifications for Mattermost direct messages and mentions.
-* :doc:`Playbooks in Microsoft Teams </integrate/playbooks-for-microsoft-teams>` - Access Mattermost playbooks and status updates within Microsoft Teams.
-* :doc:`Microsoft Calendar Sync </integrate/microsoft-calendar>` - Connect Microsoft Calendar to Mattermost to receive daily summaries of calendar events, synchronize Microsoft status in Mattermost, and accept or decline calendar invites without leaving Mattermost.
-* :doc:`Microsoft Teams Sync </integrate/microsoft-teams-sync>` - Connect Microsoft Teams to Mattermost to synchronize real-time chat notifications from Teams to Mattermost.
-* :doc:`Join Microsoft Teams Meetings </integrate/microsoft-teams-meetings>` - Connect Microsoft Teams Meetings to Mattermost to start and join voice calls, video calls, and use screen sharing without leaving Mattermost.
+* :doc:`Calendar Integration </integrate/microsoft-calendar>` - Receive daily summaries of calendar events, synchronize Microsoft status in Mattermost, and accept or decline calendar invites without leaving Mattermost.
+* :doc:`Teams Notifications </integrate/microsoft-teams-sync>` - Synchronize real-time chat notifications from Teams to Mattermost.
+* :doc:`Join Teams Meetings </integrate/microsoft-teams-meetings>` - Start and join Teams voice calls, video calls, and use screen sharing without leaving Mattermost.

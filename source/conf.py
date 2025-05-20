@@ -2823,7 +2823,7 @@ redirects = {
 "integrate/mattermost-mission-collaboration-for-m365.html#setup":
         "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
 "integrate/playbooks-for-microsoft-teams.html#setup":
-        "https://docs.mattermost.com/integrate/playbooks-for-microsoft-teams.html#deploy",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html#setup":
         "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
 "integrate/microsoft-teams-sync.html#setup":
