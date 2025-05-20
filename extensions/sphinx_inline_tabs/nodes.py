@@ -1,8 +1,8 @@
 from docutils import nodes
-from sphinx.util.docutils import SphinxTranslator
+from docutils.writers._html_base import HTMLTranslator
 
 
-class TabContainer(nodes.Element):
+class TabContainer(nodes.container):
     """The initial tree-node for holding tab content."""
 
     def __init__(self, rawsource="", *children, **attributes):
@@ -11,8 +11,12 @@ class TabContainer(nodes.Element):
 
 
 class _GeneralHTMLTagElement(nodes.Element, nodes.General):
+
+    _tagname: str = ""
+    _endtag: bool = False
+
     @staticmethod
-    def visit(translator, node):
+    def visit(translator: HTMLTranslator, node: "_GeneralHTMLTagElement"):
         attributes = node.attributes.copy()
         # Remove unused attributes
         attributes.pop("ids")
@@ -29,7 +33,7 @@ class _GeneralHTMLTagElement(nodes.Element, nodes.General):
         translator.body.append(text.strip())
 
     @staticmethod
-    def depart(translator, node):
+    def depart(translator, node: "_GeneralHTMLTagElement"):
         if node._endtag:
             translator.body.append(f"</{node._tagname}>")
 
@@ -61,17 +65,17 @@ class TabSpan(nodes.Element):
         self.span_id = span_id
 
     @classmethod
-    def visit(cls, visitor: SphinxTranslator, node: "TabSpan") -> None:
+    def visit(cls, visitor: HTMLTranslator, node: "TabSpan") -> None:
         """
         Write the opening HTML tag for the span node
           :param visitor: The translator that handles writing HTML bodies
           :param node: The docutils node we're visiting
           :return: None
         """
-        visitor.body.append('<%s id="%s">' % (node.tagname, node.span_id))
+        visitor.body.append(f"<{node.tagname} id=\"{node.span_id}\">")
 
     @classmethod
-    def depart(cls, visitor: SphinxTranslator, node: "TabSpan") -> None:
+    def depart(cls, visitor: HTMLTranslator, node: "TabSpan") -> None:
         """
         Write the closing HTML tag for the anchor node
           :param visitor: The translator that handles writing HTML bodies
