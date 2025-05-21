@@ -168,11 +168,13 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
             f"### ({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
         )
         return sectiondata_to_toc(docname, secdata.children[0])
-    logger.debug(
-        f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
-    )
     list_item: nodes.list_item = nodes.list_item()
-    list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
+    if not secdata.is_section_root:
+        # Don't add a reference for the section root since it will be displayed in the ToC
+        logger.debug(
+            f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
+        )
+        list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
     bullet_list: nodes.bullet_list = nodes.bullet_list()
     logger.debug(f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}")
     for idx, child in enumerate(secdata.children):
