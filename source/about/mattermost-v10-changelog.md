@@ -61,6 +61,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Fixed accessibility issues in the **Invite** modal.
  - Fixed various accessibility issues in the **Browse Channels** modal.
  - Fixed an issue that prevented team admin permissions from being modified when missing in the "All Members" section.
+ - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
