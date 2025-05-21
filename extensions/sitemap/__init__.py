@@ -17,16 +17,19 @@
 # all copies or substantial portions of the Software.
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Final
 from xml.etree import ElementTree
 
+from docutils import nodes
 from sphinx.application import Sphinx, BuildEnvironment
 from sphinx.errors import SphinxError
 from sphinx.util import logging
 from sphinx.util.console import bold, colorize  # type: ignore
+from sphinx.util.logging import SphinxLoggerAdapter
 
 # Sphinx logger
-logger = logging.getLogger(__name__)
+logger: SphinxLoggerAdapter = logging.getLogger(__name__)
+LOG_PREFIX: Final[str] = "[sitemap]"
 
 
 def setup(app: Sphinx) -> dict[str, Any]:
@@ -67,6 +70,11 @@ def setup(app: Sphinx) -> dict[str, Any]:
     https://www.sphinx-doc.org/en/master/extdev/appapi.html#event-html-collect-pages
     """
     app.connect("html-collect-pages", create_sitemap)
+    """
+    Create the sitemap link for a document when the `doctree-read` event fires.
+    https://www.sphinx-doc.org/en/master/extdev/event_callbacks.html#event-doctree-read
+    """
+    app.connect("doctree-read", doctree_read)
 
     return {
         # Enable parallel reading and writing
@@ -84,11 +92,11 @@ def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str):
     :param _: The Sphinx BuildEnvironment object; unused
     :param docname: The name of the document to purge
     """
-    logger.debug(f"env_purge_doc: docname={docname}")
+    logger.debug(f"{LOG_PREFIX} env_purge_doc: docname={docname}")
     if hasattr(app.env, "sitemap_links"):
         if docname in app.env.sitemap_links:
             logger.debug(
-                f"env_purge_doc: sitemap_links contains {docname}; removing it"
+                f"{LOG_PREFIX} env_purge_doc: sitemap_links contains {docname}; removing it"
             )
             app.env.sitemap_links.pop(docname)
 
@@ -106,21 +114,32 @@ def env_merge_info(
     :param other: The Sphinx BuildEnvironment from the reader worker
     """
     # Create a `sitemap_links` attribute in the environment if it doesn't already exist
-    if not hasattr(app.env, "sitemap_links") or app.env.sitemap_links is None:
+    if not hasattr(app.env, "sitemap_links"):
         app.env.sitemap_links = {}
     # Add any links that were present in the reader worker's environment
     if hasattr(other, "sitemap_links"):
-        for link_key, other_links in other.sitemap_links.items():
-            app.env.sitemap_links[link_key] = other_links
+        for docname in docnames:
+            if docname in other.sitemap_links:
+                app.env.sitemap_links[docname] = f"{other.sitemap_links[docname]}"
+
+
+def doctree_read(app: Sphinx, doctree: nodes.document):
+    """
+    Create the sitemap link for a document after it has been read
+
+    :param app: The Sphinx Application instance
+    :param doctree: The parsed document tree; unused
+    """
+    # Create a `sitemap_links` attribute in the environment if it doesn't already exist
+    if not hasattr(app.env, "sitemap_links"):
+        logger.debug(f"{LOG_PREFIX} doctree_read: create app.env.sitemap_links")
+        app.env.sitemap_links = {}
     # Determine if we're using a DirectoryHTMLBuilder or not
     is_dictionary_builder: bool = False
     if hasattr(app.env, "is_dictionary_builder"):
         is_dictionary_builder = app.env.is_dictionary_builder
-    # Calculate the document link for each docname and add it to the `sitemap_links` attribute in the environment
-    for docname in docnames:
-        link = calculate_link(is_dictionary_builder, docname)
-        logger.debug(f"env_merge_info: docname={docname}, link={link}")
-        app.env.sitemap_links[docname] = link
+    # Calculate the document link for this document and add it to the `sitemap_links` attribute in the environment
+    app.env.sitemap_links[app.env.docname] = calculate_link(is_dictionary_builder, app.env.docname)
 
 
 def calculate_link(is_dictionary_builder: bool, docname: str) -> str:
@@ -225,7 +244,7 @@ def create_sitemap(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
     site_url: str = app.builder.config.site_url or app.builder.config.html_baseurl
     if not site_url:
         logger.error(
-            "sphinx-sitemap: Neither html_baseurl nor site_url "
+            f"{LOG_PREFIX} create_sitemap: Neither html_baseurl nor site_url "
             "are set in conf.py. Sitemap not built."
         )
         return return_list
@@ -233,7 +252,7 @@ def create_sitemap(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
     # Retrieve the collected document links
     if not hasattr(app.env, "sitemap_links") or app.env.sitemap_links == []:
         logger.warning(
-            f"sphinx-sitemap: No pages generated for {app.config.sitemap_filename}"
+            f"{LOG_PREFIX} create_sitemap: No pages generated for {app.config.sitemap_filename}"
         )
         return return_list
     # Create a new XML root element
