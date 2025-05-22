@@ -17,15 +17,15 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
 .. tab:: On-Premises OpenSearch
 
-  1. To install on-premise OpenSearch, provision a dedicated server (e.g. Ubuntu 22.04 LTS) by running the following command:
-  
+  1. To install on-premise OpenSearch, provision a dedicated server (e.g. Ubuntu 22.04 LTS).
+  2. Install Java (OpenSearch requires Java 11+):
     .. code-block:: sh
 
       sudo apt update 
       sudo apt install -y openjdk-11-jdk 
       java -version
 
-  2. Install Java 11+:
+  3. Download & extract OpenSearch 2.x:
 
     .. code-block:: sh
 
@@ -33,15 +33,14 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       tar -xzf opensearch-2.9.0-linux-x64.tar.gz 
       sudo mv opensearch-2.9.0 /usr/share/opensearch
 
-  3. Download & extract OpenSearch 2.x:
+  4. Create a dedicated user & set permissions:
 
     .. code-block:: sh
 
       sudo useradd --no-create-home --shell /bin/false opensearch 
       sudo chown -R opensearch:opensearch /usr/share/opensearch
 
-  4. Create a dedicated user & set permissions:
-
+  5. Configure systemd:
     .. code-block:: sh
 
       [Unit] 
@@ -61,7 +60,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       [Install] 
         WantedBy=multi-user.target
 
-  5. Configure systemd:
+  6. Edit ``opensearch.yml`` to include the following:
 
     .. code-block:: sh
 
@@ -73,8 +72,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       discovery.seed_hosts: ["<other-node-ip>"] 
       cluster.initial_master_nodes: ["node-1", "node-2"]
 
-  6. Edit ``opensearch.yml`` to include the following:
-
+  7. Enable & start OpenSearch:
     .. code-block:: sh
 
       sudo systemctl daemon-reload 
@@ -82,11 +80,6 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       sudo systemctl start opensearch 
       sudo systemctl status opensearch
 
-  7. Enable & start OpenSearch:
-
-    .. code-block:: sh
-
-      curl -X GET http://localhost:9200
 
   **Terraform (Docker) Example**
 
