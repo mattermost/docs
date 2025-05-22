@@ -17,7 +17,8 @@ Enable MPNS
 
 **Deployment recommendations:** 
 
-- Deploy the MPNS inside your private network or in a DMZ, behind your firewall. Ensure the Mattermost server has network access to the MPNS instance.
+- Deploy the MPNS on your own infrastructure - whether on-premises behind your firewall or in your public cloud.
+- Ensure the Mattermost server has network access to the MPNS instance. Mattermost clients don't need any inbound connectivity.
 - The MPNS does not connect with Mattermost mobile apps directly; the MPNS parses and forwards push notifications from the Mattermost server to the Apple Push Notification Service (APNS) or the Firebase Cloud Messaging (FCM).
 - The MPNS must be able to communicate with the Apple Push Notification Service over HTTP/2. If an outbound proxy appliance is deployed between the MPNS and APNS, ensure it supports HTTP/2.
 - Use encrypted TLS connections between your MPNS and Apple Push Notification Service, between your MPNS and Google FCM, and between your MPNS and your Mattermost server.
