@@ -148,7 +148,7 @@ Search limitations on PostgreSQL:
 
   - One of them is: ``The length of a tsvector (lexemes + positions) must be less than 1 megabyte``, which means that, based on the file content, even files with content less than 1 MB won't be searchable if they hit the ``tsvector`` limit of 1 MB.
 
-- If any of the above is an issue, you can enable the :doc:`Elasticsearch feature </scale/elasticsearch>`.
+- If any of the above is an issue, you can :doc:`set up and enable enterprise search </scale/enterprise-search>`.
 
 MySQL Support
 ::::::::::::::::::::
@@ -222,5 +222,5 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
-- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or Opensource is recommended from Mattermost v9.11. :doc:`Learn more here </scale/elasticsearch>`.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </scale/enterprise-search>`.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <configure/environment-configuration-settings:file storage>`.
