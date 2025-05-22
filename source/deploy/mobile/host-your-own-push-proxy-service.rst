@@ -14,10 +14,18 @@ Enable MPNS
 1. Go to **System Console > Environment > Push Notification Server**.
 2. Under **Enable Push Notifications**, select **Manually enter Push Notification Service location**.
 3. Enter the location of your MPNS in the **Push Notification Server** field, then select **Save**.
-4. (Optional) Customize mobile push notification contents. Most deployments choose to include the full message content sent in the notification payload.
 
-  a. Go to **System Console > Site Configuration > Notifications**.
-  b. Under **Push Notification Contents**, select the type of information to include in push notifications, then select **Save**.
+Configure ID-only push notification contents (Enterprise)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+By default, push notification message content passes through Apple Push Notification Service (APNS) or Google Firebase Cloud Messaging (FCM) before it reaches a device. This potentially presents a problem for organizations with ultra-strict security and compliance requirements.
+
+With the ID-only option, message contents can be fetched directly from the server once a push notification is delivered to a device. APNS and FCM can’t read push notifications since only a unique message ID is sent in each notification payload. While message content will take slightly longer to send, this feature helps organizations meet advanced compliance requirements.
+
+To set mobile push notification contents to ID-only: 
+
+1. Go to **System Console > Site Configuration > Notifications**.
+2. Under **Push Notification Contents**, select **Full message content fetched from the server on receipt**, then select **Save**.
+
 
 .. note::
 
