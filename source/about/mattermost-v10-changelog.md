@@ -33,6 +33,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Introduced minor layout tweaks in theme settings for improved usability.
 
 #### Administration
+ - Added support for a new Enterprise Advanced license. This new license is supported starting v10.9 and is supported on PostgreSQL only. Enterprise plugins need to be updated to support the new license (most of which are pre-packaged in v10.9).
  - Added support for attribute based channel access (disabled and behind a feature flag).
  - Added support for AES-256-GCM encryption in SAML.
  - Updated the email validation logic to ensure Mattermost no longer accepts email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``). Although these comply with RFC 5322 and RFC 6532 standards, they introduce unnecessary complexity. If a user already has such an email in your installation, they may face issues like being unable to update their profile. To resolve this, the email must be modified manually using the command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
