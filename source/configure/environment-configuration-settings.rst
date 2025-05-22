@@ -8,7 +8,7 @@ Review and manage the following environmental configuration options in the Syste
 
 - `Web server <#web-server>`__
 - `Database <#database>`__
-- `Elasticsearch <#elasticsearch>`__
+- `Enterprise search <#enterprise-search>`__
 - `File storage <#file-storage>`__
 - `Image proxy <#image-proxy>`__
 - `SMTP <#smtp>`__
@@ -943,10 +943,9 @@ Disable database search
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
-| When other search engines are configured, such as             | - System Config path: **Environment > Database**                             |
-| :doc:`Elasticsearch </scale/elasticsearch>`,                  | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
-| the database can be disabled to perform searches.             | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
-|                                                               |                                                                              |
+| When `enterprise-scale search </scale/enterprise-search>`,    | - System Config path: **Environment > Database**                             |
+| database search can be disabled from performing searches.     | - ``config.json`` setting: ``".SqlSettings.DisableDatabaseSearch: false",``  |
+|                                                               | - Environment variable: ``MM_SQLSETTINGS_DISABLEDATABASESEARCH``             |
 | - **true**: Disables the use of the database to perform       |                                                                              |
 |   searches. If another search engine isn't configured,        |                                                                              |
 |   setting this value to ``true`` will result in empty search  |                                                                              |
@@ -956,20 +955,20 @@ Disable database search
 
 Search behavior in Mattermost depends on which search engines are enabled:
 
-- When :doc:`Elasticsearch </scale/elasticsearch>` is enabled, Mattermost will try to use it first.
+- When :doc:`Elasticsearch </scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
 - If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
-- If both Elasticsearch and Bleve fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
+- If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
 
 .. note::
 
   Disabling this configuration setting in larger deployments may improve server performance in the following areas:
 
-  - Reduced Database Load: When database search is enabled, every search query executed by users needs to interact with the database, leading to additional load on the database server. By disabling database search, you can avoid these queries, thereby reducing the database load.
-  - Improved Response Time: Database searches can be time-consuming, especially with large datasets. Disabling database search can result in faster response times because the system no longer spends time fetching and processing search results from the database.
-  - Offloading Search to Indexing Services: Disabling database search often means that searches are offloaded to specialized indexing services like Elasticsearch, which are optimized for search operations. These services can provide faster and more efficient search capabilities compared to traditional database searches.
-  - Lower Resource Consumption: Running search queries directly against the database can be resource-intensive (using CPU and memory). With database search disabled, these resources can be allocated to other critical functions, improving overall system performance.
-  - Enhanced Scalability: As the number of users and data volume grow, database search can become less efficient. Specialized search services are designed to scale more effectively, enhancing overall system scalability and performance.
+  - **Reduced Database Load**: When database search is enabled, every search query executed by users needs to interact with the database, leading to additional load on the database server. By disabling database search, you can avoid these queries, thereby reducing the database load.
+  - **Improved Response Time**: Database searches can be time-consuming, especially with large datasets. Disabling database search can result in faster response times because the system no longer spends time fetching and processing search results from the database.
+  - **Offloading Search to Indexing Services**: Disabling database search often means that searches are offloaded to specialized indexing services like Elasticsearch, which are optimized for search operations. These services can provide faster and more efficient search capabilities compared to traditional database searches.
+  - **Lower Resource Consumption**: Running search queries directly against the database can be resource-intensive (using CPU and memory). With database search disabled, these resources can be allocated to other critical functions, improving overall system performance.
+  - **Enhanced Scalability**: As the number of users and data volume grow, database search can become less efficient. Specialized search services are designed to scale more effectively, enhancing overall system scalability and performance.
   - However, the ability to perform database searches in Mattermost is a critical feature for many users, particularly when other search engines aren't enabled. Disabling this feature will result in users seeing an error if they attempt to use the Mattermost Search box. It’s important to balance performance improvements with the needs of your organization and users.
 
 Applied schema migrations
@@ -1213,15 +1212,17 @@ Replica monitor interval (seconds)
 
 ----
 
-Elasticsearch
--------------
+Enterprise search
+-----------------
 
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Elasticsearch provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`Elasticsearch </scale/elasticsearch>` in our product documentation.
+Core database search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, enabling enterprise search with Elasticsearch or AWS OpenSearch is highly recommended for optimum search performance before reaching 3 million posts.
 
-You can configure the Elasticsearch environment in which Mattermost is deployed in **System Console > Environment > Elasticsearch**. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
+For deployments with over 3 million posts, Elasticsearch or AWS OpenSearch is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
+
+You can configure Mattermost enterprise search by going to **System Console > Environment > Elasticsearch**. The following configuration settings apply to both Elasticsearch and AWS OpenSearch. You can also edit the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: enable-elasticsearch-indexing
   :displayname: Enable Elasticsearch indexing (Elasticsearch)
@@ -1240,67 +1241,48 @@ Enable Elasticsearch indexing
 | Configure Mattermost to index new posts automatically.        | - System Config path: **Environment > Elasticsearch**                          |
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableIndexing: false",`` |
 | - **true**: Indexing of new messages occurs automatically.    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEINDEXING``            |
-| - **false**: **(Default)** Elasticsearch indexing is disabled |                                                                                |
-|   and new messages aren't indexed.                            |                                                                                |
+| - **false**: **(Default)** Indexing of new messages is        |                                                                                |
+|   disabled, and new messages aren't indexed.                  |                                                                                |
 +---------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. note::
 
-  - Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, enabling `enabling Elasticsearch for search queries <#enable-elasticsearch-for-search-queries>`__ for search queries is highly recommended.
-  - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for optimum search performance before reaching 3 million posts.
-  - For deployments with over 3 million posts, Elasticsearch is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
-  - If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.
+  If indexing is disabled and then re-enabled after an index is created, purge and rebuild the index to ensure complete search results.
 
 .. config:setting:: backend-type
   :displayname: Elasticsearch backend type (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Backend
   :environment: MM_ELASTICSEARCHSETTINGS_BACKEND
-  :description: Set the type of search backend as either Elasticsearch or Opensearch.
+  :description: Set the type of search backend as either Elasticsearch or AWS OpenSearch.
 
 Backend type
 ~~~~~~~~~~~~~
+
+Both :doc:`Elasticsearch </scale/elasticsearch-setup>` and :doc:`AWS OpenSearch </scale/opensearch-setup>` provide enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Learn more about :doc:`enterprise search </scale/enterprise-search>` in our product documentation.
 
 +----------------------------------------------------+-----------------------------------------------------------------------------------+
 | The type of search backend.                        | - System Config path: **Environment > Elasticsearch**                             |
 |                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.Backend: elasticsearch",``   |
 | - ``elasticsearch`` - (**Default**)                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_BACKEND``                      |
-| - ``opensearch`` - Required for AWS Opensearch     |                                                                                   |
-|   customers.                                       |                                                                                   |
+| - ``opensearch`` - Required for AWS OpenSearch.    |                                                                                   |
 +----------------------------------------------------+-----------------------------------------------------------------------------------+
 
-.. important::
-
-  Mattermost v9.11 introduces support for `Elasticsearch v8 <https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html>`__ and beta support for `Opensearch v1.x and v2.x <https://opensearch.org/>`_.
-
-  - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the `Elasticsearch upgrade <https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html>`_ documentation for details.
-  - Customers using Elasticsearch v8 must set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to enable wildcard operations.
-
-  **AWS Elasticsearch Customers**
-
-  The official AWS Elasticsearch v8 client only works from Elasticsearch v7.11 and later. This is a breaking change for customers using AWS Elasticsearch v7.10.x. If you're using AWS Elasticsearch, you must upgrade to `AWS Opensearch <https://aws.amazon.com/opensearch-service/>`_. See the `AWS Amazon Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
-
-  If you're using AWS Elasticsearch, you must:
-
-    1. Upgrade to AWS Opensearch for future compatibility. Refer to the `Opensearch upgrade <https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html>`_ documentation for details.
-    2. Disable "compatibility mode" in Opensearch.
-    3. Upgrade the Mattermost server.
-    4. Change the default ``ElasticsearchSettings.Backend`` configuration value from ``elasticsearch`` to ``opensearch`` using :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>`, or by editing the ``config.json`` file manually. This value cannot be changed using the System Console. See the Mattermost :ref:`Elasticsearch backend type <configure/environment-configuration-settings:backend type>` documentation for additional details.
-    5. Restart the Mattermost server.
+Learn more about :ref:`enterprise search version support <scale/enterprise-search:supported paths>`.
 
 .. config:setting:: server-connection-address
   :displayname: Server connection address (Elasticsearch)
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.ConnectionUrl
   :environment: MM_ELASTICSEARCHSETTINGS_CONNECTIONURL
-  :description: The address of the Elasticsearch server.
+  :description: The address of the Elasticsearch or AWS OpenSearch server.
 
 Server connection address
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| The address of the Elasticsearch server.           | - System Config path: **Environment > Elasticsearch**                    |
-|                                                    | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
+| The address of the Elasticsearch or AWS            | - System Config path: **Environment > Elasticsearch**                    |
+| OpenSearch server.                                 | - ``config.json`` setting: ``".Elasticsearchsettings.ConnectionUrl",``   |
 |                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CONNECTIONURL``       |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -1309,20 +1291,20 @@ Server connection address
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.CA
   :environment: MM_ELASTICSEARCHSETTINGS_CA
-  :description: Optional path to the Custom Certificate Authority certificates for the Elasticsearch server.
+  :description: Optional path to the Custom Certificate Authority certificates for the Elasticsearch or AWS OpenSearch server.
 
 CA path
 ~~~~~~~
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional path to the Custom Certificate Authority  | - System Config path: **Environment > Elasticsearch**                    |
-| certificates for the Elasticsearch server.         | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
-|                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
+| certificates for the Elasticsearch or AWS          | - ``config.json`` setting: ``".Elasticsearchsettings.CA",``              |
+| OpenSearch server.                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CA``                  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
-  - Available from Mattermost v7.8. The certificate path should be ``/opt/mattermost/data/elasticsearch/`` and configured in the System Console as ``./elasticsearch/cert.pem``.
+  - Available from Mattermost v7.8. The certificate path should be ``/opt/mattermost/data/elasticsearch/`` or ``/opt/mattermost/data/opensearch`` and configured in the System Console as ``./elasticsearch/cert.pem`` or ``./opensearch/cert.pem``.
   - Can be used in conjunction with basic authentication credentials or can replace them. Leave this setting blank to use the default Certificate Authority certificates for the operating system.
 
 .. config:setting:: client-certificate-path
@@ -1330,7 +1312,7 @@ CA path
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.ClientCert
   :environment: MM_ELASTICSEARCHSETTINGS_CLIENTCERT
-  :description: Optional client certificate for the connection to the Elasticsearch server in PEM format.
+  :description: Optional client certificate for the connection to the Elasticsearch or AWS OpenSearch server in PEM format.
 
 Client certificate path
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1339,8 +1321,8 @@ Available from Mattermost v7.8. Can be used in conjunction with basic auth crede
 
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | Optional client certificate for the connection to  | - System Config path: **Environment > Elasticsearch**                    |
-| the Elasticsearch server in the PEM format.        | - ``config.json`` setting: ``".Elasticsearchsettings.ClientCert",``      |
-|                                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTCERT``          |
+| the Elasticsearch or AWS OpenSearch server in      | - ``config.json`` setting: ``".Elasticsearchsettings.ClientCert",``      |
+| the PEM format.                                    | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_CLIENTCERT``          |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: client-certificate-key-path
@@ -1379,7 +1361,7 @@ Skip TLS verification
 |                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.SkipTLSVerification: false",`` |
 | - **true**: Skips the certificate verification step for       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_SKIPTLSVERIFICATION``            |
 |   TLS connections.                                            |                                                                                     |
-| - **false**: **(Default)** Mattermost does not skip           |                                                                                     |
+| - **false**: **(Default)** Mattermost requires                |                                                                                     |
 |   certificate verification.                                   |                                                                                     |
 +---------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
@@ -1388,14 +1370,14 @@ Skip TLS verification
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.UserName
   :environment: MM_ELASTICSEARCHSETTINGS_USERNAME
-  :description: (Optional) The username to authenticate to the Elasticsearch server.
+  :description: (Optional) The username to authenticate to the Elasticsearch or AWS OpenSearch server.
 
 Server username
 ~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The username to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
-| Elasticsearch server.                                         | - ``config.json`` setting: ``".Elasticsearchsettings.UserName",``        |
+| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``".Elasticsearchsettings.UserName",``        |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_USERNAME``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1405,14 +1387,14 @@ Server username
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.Password
   :environment: MM_ELASTICSEARCHSETTINGS_PASSWORD
-  :description: (Optional) The password to authenticate to the Elasticsearch server.
+  :description: (Optional) The password to authenticate to the Elasticsearch or AWS OpenSearch server.
 
 Server password
 ~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | (Optional) The password to authenticate to the                | - System Config path: **Environment > Elasticsearch**                    |
-| Elasticsearch server.                                         | - ``config.json`` setting: ``".Elasticsearchsettings.Password",``        |
+| Elasticsearch or AWS OpenSearch server.                       | - ``config.json`` setting: ``".Elasticsearchsettings.Password",``        |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_PASSWORD``            |
 | String input.                                                 |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -1439,7 +1421,7 @@ Enable cluster sniffing
 | - **false**: **(Default)** Cluster sniffing is disabled.       |                                                                          |
 +----------------------------------------------------------------+--------------------------------------------------------------------------+
 
-Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch server.
+Select the **Test Connection** button in the System Console to validate the connection between Mattermost and the Elasticsearch or AWS OpenSearch server.
 
 .. config:setting:: bulk-indexing
   :displayname: Bulk indexing (Elasticsearch)
@@ -1461,7 +1443,7 @@ Bulk indexing
 
   - Always `purge indexes <#purge-indexes>`__ before bulk indexing.
   - Select the **Index Now** button in the System Console to start a bulk index of all posts, and review all index jobs in progress.
-  - Elasticsearch is available during indexing, but search results may be incomplete until the indexing job is complete.
+  - Elasticsearch or AWS OpenSearch is available during indexing, but search results may be incomplete until the indexing job is complete.
   - If an in-progress indexing job is canceled, the index and search results will be incomplete.
 
 .. config:setting:: rebuild-channels-index
@@ -1487,7 +1469,7 @@ Select the **Rebuild Channels Index** button in the System Console to purge the 
   :systemconsole: Environment > Elasticsearch
   :configjson: N/A
   :environment: N/A
-  :description: Purge the entire Elasticsearch index by selecting Purge Indexes before creating a new index.
+  :description: Purge the entire Elasticsearch or AWS OpenSearch index by selecting Purge Indexes before creating a new index.
 
 Purge indexes
 ~~~~~~~~~~~~~
@@ -1523,28 +1505,22 @@ Indexes to skip while purging
   :systemconsole: Environment > Elasticsearch
   :configjson: .Elasticsearchsettings.EnableSearching
   :environment: MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING
-  :description: Configure Mattermost to use Elasticsearch for all search queries using the latest index.
+  :description: Configure Mattermost to use Elasticsearch or AWS OpenSearch for all search queries using the latest index.
 
-  - **true**: Elasticsearch is used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing message database is completed.
+  - **true**: Elasticsearch or AWS OpenSearch is used for all search queries using the latest index. Search results may be incomplete until a bulk index of the existing message database is completed.
   - **false**: **(Default)** Relational database search is used for search queries.
 
 Enable Elasticsearch for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. important::
-
-  - Core search happens in a relational database and is intended for deployments under about 2-3 million posts and file entries. Beyond that scale, enabling Elasticsearch for search queries is highly recommended.
-  - If you anticipate your Mattermost server reaching more than 2.5 million posts and file entries, we recommend enabling Elasticsearch for optimum search performance **before** reaching 3 million posts.
-  - For deployments with over 3 million posts, Elasticsearch with :ref:`dedicated indexing <configure/environment-configuration-settings:enable elasticsearch indexing>` and scaled usage resourcing through :doc:`cluster support </scale/high-availability-cluster-based-deployment>` is required to avoid significant performance issues, such as timeouts, with :doc:`message searches </collaborate/search-for-messages>` and :doc:`@mentions </collaborate/mention-people>`.
-
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
-| Configure Mattermost to use Elasticsearch for all search      | - System Config path: **Environment > Elasticsearch**                           |
-| queries using the latest index.                               | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
+| Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                           |
+| for all search queries using the latest index.                | - ``config.json`` setting: ``".Elasticsearchsettings.EnableSearching: false",`` |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLESEARCHING``            |
-| - **true**: Elasticsearch is used for all search queries      |                                                                                 |
-|   using the latest index. Search results may be incomplete    |                                                                                 |
-|   until a bulk index of the existing message database is      |                                                                                 |
-|   completed.                                                  |                                                                                 |
+| - **true**: Elasticsearch or AWS OpenSearch is used for all   |                                                                                 |
+|   search queries using the latest index. Search results may   |                                                                                 |
+|   be incomplete until a bulk index of the existing message    |                                                                                 |
+|   database is completed.                                      |                                                                                 |
 | - **false**: **(Default)** Database search is used for        |                                                                                 |
 |   search queries.                                             |                                                                                 |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------+
@@ -1565,12 +1541,13 @@ Enable Elasticsearch for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| Configure Mattermost to use Elasticsearch for all             | - System Config path: **Environment > Elasticsearch**                              |
-| autocompletion queries on users and channels using the        | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
-| latest index.                                                 | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            |
+| Configure Mattermost to use Elasticsearch or AWS OpenSearch   | - System Config path: **Environment > Elasticsearch**                              |
+| for all autocompletion queries on users and channels using    | - ``config.json`` setting: ``".Elasticsearchsettings.EnableAutocomplete: false",`` |
+| the latest index.                                             | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_ENABLEAUTOCOMPLETE``            |
 |                                                               |                                                                                    |
-| - **true**: Elasticsearch will be used for all autocompletion |                                                                                    |
-|   queries on users and channels using the latest index.       |                                                                                    |
+| - **true**: Elasticsearch or AWS OpenSearch will be used for  |                                                                                    |
+|   all autocompletion queries on users and channels using the  |                                                                                    |
+|   latest index.                                               |                                                                                    |
 | - **false**: **(Default)** Database autocomplete is used.     |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
@@ -1596,7 +1573,7 @@ Post index replicas
 
   - If this setting is changed, the changed configuration only applies to newly-created indexes. To apply the change to existing indexes, purge and rebuild the index after changing this setting.
   - If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``.
-  - If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
+  - If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Channel Index Replicas <#channel-index-replicas>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly.
 
 .. config:setting:: post-index-shards
   :displayname: Post index shards (Elasticsearch)
@@ -1636,7 +1613,7 @@ Channel index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
 
 .. config:setting:: channel-index-shards
   :displayname: Channel index shards (Elasticsearch)
@@ -1672,7 +1649,7 @@ User index replicas
 
 .. note::
 
-  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
+  If there are ``n`` data nodes, the number of replicas per shard for each index should be ``n-1``. If the number of nodes in an Elasticsearch or AWS OpenSearch cluster changes, this configuration setting, as well as `Post Index Replicas <#post-index-shards>`__ and `User Index Replicas <#user-index-replicas>`__ must also be updated accordingly. 
 
 .. config:setting:: user-index-shards
   :displayname: User index shards (Elasticsearch)
@@ -1695,22 +1672,22 @@ User index shards
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.AggregatePostsAfterDays
   :environment: MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS
-  :description: Elasticsearch indexes older than the age specified by this setting, in days, will be aggregated during the daily scheduled job. Default is **365** days.
+  :description: Elasticsearch or AWS OpenSearch indexes older than the age specified by this setting, in days, will be aggregated during the daily scheduled job. Default is **365** days.
 
 Aggregate search indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
-| Elasticsearch indexes older than the age specified by this    | - System Config path: N/A                                                              |
-| setting, in days, will be aggregated during the daily         | - ``config.json`` setting: ``".Elasticsearchsettings.AggregatePostsAfterDays: 365",``  |
-| scheduled job.                                                | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS``           |
+| Elasticsearch or AWS OpenSearch indexes older than the age    | - System Config path: N/A                                                              |
+| specified by this setting, in days, will be aggregated during | - ``config.json`` setting: ``".Elasticsearchsettings.AggregatePostsAfterDays: 365",``  |
+| the daily scheduled job.                                      | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_AGGREGATEPOSTSAFTERDAYS``           |
 |                                                               |                                                                                        |
 | Numerical input. Default is **365** days.                     |                                                                                        |
 +---------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
 
-  If you’re using :doc:`data retention </comply/data-retention-policy>` and :doc:`Elasticsearch </scale/elasticsearch>`, configure this with a value greater than your data retention policy.
+  If you’re using :doc:`data retention </comply/data-retention-policy>` and :doc:`enterprise search </scale/enterprise-search>`, configure this with a value greater than your data retention policy.
 
 .. config:setting:: post-aggregator-start-time
   :displayname: Post aggregator start time (Elasticsearch)
@@ -1736,20 +1713,20 @@ Post aggregator start time
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.IndexPrefix
   :environment: MM_ELASTICSEARCHSETTINGS_INDEXPREFIX
-  :description: The prefix added to the Elasticsearch index name.
+  :description: The prefix added to the Elasticsearch or AWS OpenSearch index name.
 
 Index prefix
 ~~~~~~~~~~~~
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
-| The prefix added to the Elasticsearch index name.             | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
+| The prefix added to the Elasticsearch or AWS OpenSearch       | - System Config path: N/A                                                |
+| index name.                                                   | - ``config.json`` setting: ``".Elasticsearchsettings.IndexPrefix",``     |
 |                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_INDEXPREFIX``         |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
-  When this setting is used, all Elasticsearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch cluster without the index names colliding.
+  When this setting is used, all Elasticsearch or AWS OpenSearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch or AWS OpenSearch cluster without the index names colliding.
 
 .. config:setting:: global-search-prefix
   :displayname: Global search prefix (Elasticsearch)
@@ -1778,15 +1755,15 @@ Global search prefix
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.LiveIndexingBatchSize
   :environment: MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE
-  :description: The number of new posts batched together before they're added to the Elasticsearch index. Default is **1**.
+  :description: The number of new posts batched together before they're added to the Elasticsearch or AWS OpenSearch index. Default is **1**.
 
 Live indexing batch size
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | The number of new posts needed before those posts are added   | - System Config path: N/A                                                         |
-| to the Elasticsearch index. Once added to the Index,          | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
-| the post becomes searchable.                                  | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
+| to the Elasticsearch or AWS OpenSearch index. Once added to   | - ``config.json`` setting: ``".Elasticsearchsettings.LiveIndexingBatchSize: 1",`` |
+| the index, the post becomes searchable.                       | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_LIVEINDEXINGBATCHSIZE``        |
 |                                                               |                                                                                   |
 | On servers with more than 1 post per second, we suggest       |                                                                                   |
 | setting this value to the average number of  posts over a     |                                                                                   |
@@ -1798,11 +1775,11 @@ Live indexing batch size
 
 .. note::
 
-  It may be necessary to increase this value to avoid hitting the rate limit or resource limit of your Elasticsearch cluster on installs handling more than 1 post per second.
+  It may be necessary to increase this value to avoid hitting the rate limit or resource limit of your Elasticsearch or AWS OpenSearch cluster on installs handling more than 1 post per second.
 
 **What exactly happens when I increase this value?**
 
-The primary impact is that a post will be indexed into Elasticsearch after the threshold of posts is met, which then makes the posts searchable within Mattermost. So, if you set this based on recommendations for larger servers, and you make a post, you cannot find it via search for ~10–20 seconds, on average. Realistically, no users should see or feel this impact due to the limited number of users who are actively **searching** for a post this quickly. You can set this value to a lower or higher average depending on your Elasticsearch server specifications.
+The primary impact is that a post will be indexed into Elasticsearch or AWS OpenSearch after the threshold of posts is met, which then makes the posts searchable within Mattermost. So, if you set this based on recommendations for larger servers, and you make a post, you cannot find it via search for ~10–20 seconds, on average. Realistically, no users should see or feel this impact due to the limited number of users who are actively **searching** for a post this quickly. You can set this value to a lower or higher average depending on your Elasticsearch or AWS OpenSearch server specifications.
 
 During busy periods, this delay will be faster as more traffic is occurring, causing more posts and a quicker time to hit the index number. During slower periods, expect the reverse.
 
@@ -1826,7 +1803,7 @@ During busy periods, this delay will be faster as more traffic is occurring, cau
         GROUP BY date_trunc('minute', to_timestamp(createat/1000))
       ) as ppm;
 
-2. Decide the acceptable index window for your environment, and divide your average posts per minute by that. We suggest 10-20 seconds. Assuming you have ``600`` posts per minute on average, and you want to index every 20 seconds (``60 seconds / 20 seconds = 3```) you would calculate ``600 / 3`` to come to the number ``200``. After 200 posts, Mattermost will index the posts into Elasticsearch. So, on average, there would be a 20-second delay in searchability.
+2. Decide the acceptable index window for your environment, and divide your average posts per minute by that. We suggest 10-20 seconds. Assuming you have ``600`` posts per minute on average, and you want to index every 20 seconds (``60 seconds / 20 seconds = 3```) you would calculate ``600 / 3`` to come to the number ``200``. After 200 posts, Mattermost will index the posts into Elasticsearch or AWS OpenSearch. So, on average, there would be a 20-second delay in searchability.
 
 3. Edit the ``config.json`` or run mmctl to modify the ``LiveIndexingBatchSize`` setting
 
@@ -1876,15 +1853,16 @@ Batch size
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.RequestTimeoutSeconds
   :environment: MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS
-  :description: The timeout, in seconds, for Elasticsearch calls. Default is **30** seconds.
+  :description: The timeout, in seconds, for Elasticsearch or AWS OpenSearch calls. Default is **30** seconds.
 
 Request timeout
 ~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
-| The timeout, in seconds, for Elasticsearch calls.             | - System Config path: N/A                                                          |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
-| Numerical input in seconds. Default is **30** seconds.        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
+| The timeout, in seconds, for Elasticsearch or AWS OpenSearch  | - System Config path: N/A                                                          |
+| calls.                                                        | - ``config.json`` setting: ``".Elasticsearchsettings.RequestTimeoutSeconds :30",`` |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_REQUESTTIMEOUTSECONDS``         |
+| Numerical input in seconds. Default is **30** seconds.        |                                                                                    |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: trace
@@ -1892,27 +1870,27 @@ Request timeout
   :systemconsole: N/A
   :configjson: .Elasticsearchsettings.Trace
   :environment: MM_ELASTICSEARCHSETTINGS_TRACE
-  :description: Options for printing Elasticsearch trace errors.
+  :description: Options for printing Elasticsearch or AWS OpenSearch trace errors.
 
-  - **error**: Creates the error trace when initializing the Elasticsearch client and prints any template creation or search query that returns an error as part of the error message.
+  - **error**: Creates the error trace when initializing the Elasticsearch or AWS OpenSearch client and prints any template creation or search query that returns an error as part of the error message.
   - **all**: Creates the three traces (error, trace and info) for the driver and doesn’t print the queries because they will be part of the trace log level of the driver.
   - **not specified**: **(Default)** No error trace is created.
 
 Trace
 ~~~~~
 
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
-| Options for printing Elasticsearch trace errors.              | - System Config path: N/A                                                |
-|                                                               | - ``config.json`` setting: ``".Elasticsearchsettings.Trace",``           |
-| - **error**: Creates the error trace when initializing        | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_TRACE``               |
-|   the Elasticsearch client and prints any template creation   |                                                                          |
-|   or search query that returns an error as part of the        |                                                                          |
-|   error message.                                              |                                                                          |
-| - **all**: Creates the three traces (error, trace and info)   |                                                                          |
-|   for the driver and doesn’t print the queries because they   |                                                                          |
-|   will be part of the trace log level of the driver.          |                                                                          |
-| - **not specified**: **(Default)** No error trace is created. |                                                                          |
-+---------------------------------------------------------------+--------------------------------------------------------------------------+
++---------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Options for printing Elasticsearch or AWS OpenSearch trace errors.  | - System Config path: N/A                                                |
+|                                                                     | - ``config.json`` setting: ``".Elasticsearchsettings.Trace",``           |
+| - **error**: Creates the error trace when initializing              | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_TRACE``               |
+|   the Elasticsearch or AWS OpenSearch client and prints any         |                                                                          |
+|   template creation or search query that returns an error as part   |                                                                          |
+|   of the error message.                                             |                                                                          |
+| - **all**: Creates the three traces (error, trace and info)         |                                                                          |
+|   for the driver and doesn’t print the queries because they         |                                                                          |
+|   will be part of the trace log level of the driver.                |                                                                          |
+| - **not specified**: **(Default)** No error trace is created.       |                                                                          |
++---------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
