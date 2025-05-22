@@ -9,6 +9,9 @@
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.16, released 2025-05-21**
+  - Mattermost v9.11.16 contains medium to critical severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.11.16 contains no database or functional changes.
 - **9.11.15, released 2025-05-09**
   - Mattermost v9.11.15 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Brought back the bug fix for [MM-61361](https://mattermost.atlassian.net/browse/MM-61361), since the performance regression has been fixed by tweaking the offending SQL query.

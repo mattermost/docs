@@ -1728,6 +1728,28 @@ Index prefix
 
   When this setting is used, all Elasticsearch or AWS OpenSearch indexes created by Mattermost are given this prefix. You can set different prefixes so that multiple Mattermost deployments can share an Elasticsearch or AWS OpenSearch cluster without the index names colliding.
 
+.. config:setting:: global-search-prefix
+  :displayname: Global search prefix (Elasticsearch)
+  :systemconsole: N/A
+  :configjson: .Elasticsearchsettings.GlobalSearchPrefix
+  :environment: MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX
+  :description: Enable global search across multiple Elasticsearch indices with the same index prefix.
+
+Global search prefix
+~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+| Enable global search across multiple Elasticsearch indices    | - System Config path: N/A                                                    |
+| with the same `index prefix <#index-prefix>`__.               | - ``config.json`` setting: ``".Elasticsearchsettings.GlobalSearchPrefix",``  |
+|                                                               | - Environment variable: ``MM_ELASTICSEARCHSETTINGS_GLOBALSEARCHPREFIX``      |
+| This is helpful for setups with multiple data centers where   |                                                                              |
+| Elasticsearch instances share data using cross-cluster        |                                                                              |
+| replication. It allows for easier and unified searching       |                                                                              |
+| across distributed indices.                                   |                                                                              |
+|                                                               |                                                                              |
+| Value must be a prefix of ``IndexPrefix``.                    |                                                                              |
++---------------------------------------------------------------+------------------------------------------------------------------------------+
+
 .. config:setting:: live-indexing-batch-size
   :displayname: Live indexing batch size (Elasticsearch)
   :systemconsole: N/A
@@ -3235,7 +3257,7 @@ User sessions are cleared when a user tries to log in, and sessions are cleared 
   :displayname: Extend session length with activity (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.ExtendSessionLengthWithActivity
-  :environment: MM_SERVICESETTINGS_EXTENDSESSONLENGTHWITHACTIVITY
+  :environment: MM_SERVICESETTINGS_EXTENDSESSIONLENGTHWITHACTIVITY
 
   - **true**: **(Default)** Sessions are automatically extended when users are active in their Mattermost client.
   - **false**: Sessions won't extend with activity in Mattermost.
@@ -3246,7 +3268,7 @@ Extend session length with activity
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Improves the user experience by extending sessions and keeping | - System Config path: **Environment > Session Lengths**                                 |
 | users logged in if they are active in their Mattermost apps.   | - ``config.json`` setting: ``".ServiceSettings.ExtendSessionLengthWithActivity: true,`` |
-|                                                                | - Environment variable: ``MM_SERVICESETTINGS_EXTENDSESSONLENGTHWITHACTIVITY``           |
+|                                                                | - Environment variable: ``MM_SERVICESETTINGS_EXTENDSESSIONLENGTHWITHACTIVITY``          |
 | - **true**: **(Default)** Sessions are automatically           |                                                                                         |
 |   extended when users are active in their Mattermost           |                                                                                         |
 |   client. User sessions only expire when users aren’t active   |                                                                                         |
@@ -3291,7 +3313,7 @@ Terminate sessions on password change
   :displayname: Session length for AD/LDAP and email (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionLengthWebInHours
-  :environment: MM_SERVICESETTINGS_SESSONLENGTHWEBINHOURS
+  :environment: MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS
 
   Set the number of hours counted from the last time a user entered their credentials into the web app or the desktop app to the expiry of the user’s session on email and AD/LDAP authentication.
   Default is **720** hours.
@@ -3302,7 +3324,7 @@ Session length for AD/LDAP and email
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                        |
 | entered their credentials into the web app or the desktop      | - ``config.json`` setting: ``".ServiceSettings.SessionLengthWebInHours: 720,`` |
-| app to the expiry of the user’s session on email and AD/LDAP   | - Environment variable: ``MM_SERVICESETTINGS_SESSONLENGTHWEBINHOURS``          |
+| app to the expiry of the user’s session on email and AD/LDAP   | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHWEBINHOURS``         |
 | authentication.                                                |                                                                                |
 |                                                                |                                                                                |
 | Numerical input in hours. Default is **720** hours.            |                                                                                |
@@ -3316,7 +3338,7 @@ Session length for AD/LDAP and email
   :displayname: Session length for mobile (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionLengthMobileInHours
-  :environment: MM_SERVICESETTINGS_SESSONLENGTHMOBILEINHOURS
+  :environment: MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS
   :description: Set the number of hours counted from the last time a user entered their credential into the mobile app to the expiry of the user’s session. Default is **720** hours.
 
 Session length for mobile
@@ -3325,7 +3347,7 @@ Session length for mobile
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
 | Set the number of hours counted from the last time a user      | - System Config path: **Environment > Session Lengths**                           |
 | entered their credential into the mobile app to the expiry     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthMobileInHours: 720,`` |
-| of the user’s session.                                         | - Environment variable: ``MM_SERVICESETTINGS_SESSONLENGTHMOBILEINHOURS``          |
+| of the user’s session.                                         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHMOBILEINHOURS``         |
 |                                                                |                                                                                   |
 | Numerical input in hours. Default is **720** hours.            |                                                                                   |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------------+
@@ -3338,7 +3360,7 @@ Session length for mobile
   :displayname: Session length for SSO (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionLengthSSOInHours
-  :environment: MM_SERVICESETTINGS_SESSONLENGTHSSOINHOURS
+  :environment: MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS
   :description: Set the number of hours from the last time a user entered their SSO credentials to the expiry of the user’s session. Default is **720** hours.
 
 Session length for SSO
@@ -3347,7 +3369,7 @@ Session length for SSO
 +----------------------------------------------------------------+----------------------------------------------------------------------------------+
 | Set the number of hours from the last time a user entered      | - System Config path: **Environment > Session Lengths**                          |
 | their SSO credentials to the expiry of the user’s session.     | - ``config.json`` setting: ``".ServiceSettings.SessionLengthSSOInHours: 720,``   |
-| This setting defines the session length for SSO                | - Environment variable: ``MM_SERVICESETTINGS_SESSONLENGTHSSOINHOURS``            |
+| This setting defines the session length for SSO                | - Environment variable: ``MM_SERVICESETTINGS_SESSIONLENGTHSSOINHOURS``           |
 | authentication, such as SAML, GitLab, and OAuth 2.0.           |                                                                                  |
 |                                                                |                                                                                  |
 | Numerical input in hours. Default is **720** hours.            |                                                                                  |
@@ -3364,7 +3386,7 @@ Session length for SSO
   :displayname: Session cache (Session Lengths)
   :systemconsole: Environment > Session Lengths
   :configjson: .ServiceSettings.SessionCacheInMinutes
-  :environment: MM_SERVICESETTINGS_SESSONCACHEINMINUTES
+  :environment: MM_SERVICESETTINGS_SESSIONCACHEINMINUTES
   :description: Set the number of minutes to cache a session in memory. Default is **10** minutes.
 
 Session cache
@@ -3373,14 +3395,14 @@ Session cache
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 | Set the number of minutes to cache a session in memory.        | - System Config path: **Environment > Session Lengths**                     |
 |                                                                | - ``config.json`` setting: ``".ServiceSettings.SessionCacheInMinutes: 10,`` |
-| Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSONCACHEINMINUTES``         |
+| Numerical input in minutes. Default is **10** minutes.         | - Environment variable: ``MM_SERVICESETTINGS_SESSIONCACHEINMINUTES``        |
 +----------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: session-idle-timeout
   :displayname: Session idle timeout (Session Lengths)
   :systemconsole: N/A
   :configjson: .ServiceSettings.SessionIdleTimeoutInMinutes
-  :environment: MM_SERVICESETTINGS_SESSONIDLETIMEOUTINMINUTES
+  :environment: MM_SERVICESETTINGS_SESSIONIDLETIMEOUTINMINUTES
 
   The number of minutes from the last time a user was active on the system to the expiry of the user’s session. Once expired, the user will need to log in to continue.
   Default is **43200** minutes (30 days). Minimum value is 5 minutes, and a value of 0 sets the time as unlimited.
@@ -3391,7 +3413,7 @@ Session idle timeout
 +----------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | The number of minutes from the last time a user was active     | - System Config path: N/A                                                            |
 | on the system to the expiry of the user’s session.             | - ``config.json`` setting: ``".ServiceSettings.SessionIdleTimeoutInMinutes: 43200,`` |
-| Once expired, the user will need to log in to continue.        | - Environment variable: ``MM_SERVICESETTINGS_SESSONIDLETIMEOUTINMINUTES``            |
+| Once expired, the user will need to log in to continue.        | - Environment variable: ``MM_SERVICESETTINGS_SESSIONIDLETIMEOUTINMINUTES``           |
 |                                                                |                                                                                      |
 | Numerical input in minutes. Default is **43200** (30 days).    |                                                                                      |
 | Minimum value is **5** minutes, and a value of **0** sets      |                                                                                      |
