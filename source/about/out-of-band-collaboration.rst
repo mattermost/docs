@@ -1,66 +1,58 @@
-Out-of-Band Collaboration
-==========================
+Out-of-Band Incident Response
+=============================
 
-Out-of-Band (OOB) collaboration is a method of communication that occurs outside an organization’s primary business systems on a separate communications channel. 
+When cyberattacks, infrastructure failures, or security breaches disrupt primary systems, organizations must maintain the ability to coordinate securely and act decisively. Traditional communication tools often become liabilities under these conditions—prone to compromise, unavailable during outages, or unable to support secure workflows. The operational and financial consequences of downtime can be catastrophic, underscoring the need for an independent collaboration environment.
 
-This approach ensures teams can communicate and coordinate even when their main networks are compromised. Learn more about `key use cases <#key-use-cases>`__ below, and visit the Mattermost blog to learn how OOB collaboration helps you `maintain business continuity <https://mattermost.com/blog/out-of-band-communication-maintaining-business-continuity/>`_.
+Mattermost provides a secure, mission-resilient out-of-band (OOB) collaboration platform that operates outside your primary infrastructure. Whether deployed as a self-hosted Kubernetes instance or via Mattermost Cloud, the platform ensures real-time coordination remains available during network outages, security incidents, or critical decision windows. Built for security-conscious teams and regulated industries, Mattermost supports integrated incident workflows, and enterprise-level access control to enable business continuity—even under duress.
 
-Mattermost for OOB
-------------------
+The following mission-critical OOB collaboration capabilities are available:
 
-Organizations can use Mattermost as an OOB solution by either self-hosting their instance or leveraging Mattermost’s Cloud SaaS offering.  
+Always-Available Backup Communications
+--------------------------------------
 
-Self-hosted
-~~~~~~~~~~~~
+Out-of-band collaboration provides a persistent, independent channel for coordinating during crises—separate from compromised or degraded primary systems.
 
-We recommend one of the following self-hosted deployment options:
+**Benefits**
 
-- `Azure Marketplace Offering <http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/7816/deploy/server/deploy-kubernetes.html>`__: Use a Kubernetes deployment option available on the Azure Marketplace, separate from your own infrastructure.
+- **Preserve communication during infrastructure failures** with secure, dedicated OOB deployments across private Kubernetes clusters or Azure Marketplace-hosted environments. :doc:`Explore deployment options </deploy/deployment-options>`.
+- **Safeguard sensitive communications** with FIPS 140-2 validated and STIG-hardened images, ensuring secure operation in classified or regulated environments. :doc:`View compliance standards </about/security-compliance>`.
+- **Maintain continuity across platforms** with :doc:`multi-device access </collaborate/organize-conversations>`—including web, desktop, and mobile experiences—even when primary tools are offline.
+- **Enforce strict access controls** using :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging (beta)>` to limit risk exposure during high-stakes operations.
 
-- `Self-Hosted Kubernetes Deployment <http://mattermost-docs-preview-pulls.s3-website-us-east-1.amazonaws.com/7816/deploy/server/deploy-kubernetes.html>`__: Deploy Mattermost on Kubernetes in your own separate infrastructure or cloud, ensuring full control and customization.
+Business Continuity at Scale
+----------------------------
 
-Cloud
-~~~~~
+Outages and downtime threaten both productivity and revenue. In large enterprises, the cost of silence can be measured in hundreds of thousands of dollars per minute.
 
-If you’d prefer a turnkey out-of-band solution that requires minimal IT overhead, we recommend Mattermost’s :doc:`Cloud SaaS offering </about/cloud-subscriptions>` for your out-of-band solution.
+**Benefits**
 
-Why Mattermost is ideal for OOB
--------------------------------
+- **Enable immediate coordination during outages** using :doc:`private cloud or hybrid deployment options </deploy/deployment-options>` to maintain operational continuity outside your primary infrastructure.
+- **Scale communication globally** with Mattermost’s :doc:`high availability and horizontal scalability architecture </scale/scaling-for-enterprise>`—supporting tens of thousands of users across enterprise, field, or classified environments.
+- **Accelerate outage recovery** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that automate outage response steps and ensure team accountability during time-critical events.
 
-Mattermost is uniquely suited for defense, intelligence, and security operations, and critical infrastructure OOB collaboration. Unlike traditional messaging tools that rely on third-party cloud services, Mattermost allows critical infrastructure teams to maintain ownership of their data, ensure lines of communication remain open during crises, improve their security posture, and ensure compliance with industry regulations.
+Incident Response in Crisis Conditions
+--------------------------------------
 
-- Mattermost delivers persistent, real-time collaboration that enables teams to coordinate seamlessly across channels — even during network disruptions and incidents.  
+Cyber breaches demand swift, coordinated action across affected teams. Every delay in communication heightens risk.
 
-- Integration with mission-critical tooling connects Mattermost with popular monitoring and alerting systems — including ServiceNow, Prometheus, and Grafana — to streamline incident response and management.
+**Benefits**
 
-- Customizable role-based access controls (RBACs) ensures the right people — and only the right people — have access to the right information, reducing security risks.  
+- **Ensure secure response coordination** through :doc:`private 1:1 calling and screen sharing </collaborate/make-calls>` for uninterrupted incident discussions within an isolated Mattermost environment.
+- **Confirm alerts and share threat intelligence** with integrated tools like ServiceNow, Prometheus, and Grafana via the :doc:`Mattermost integrations platform </about/integrations>`.
+- **Reduce mean time to resolution (MTTR)** by executing :doc:`structured incident playbooks </guides/repeatable-processes>` that handle triage, task assignment, and escalation with full visibility and auditability.
 
-- Mattermost uses encryption at rest and in transit to protect sensitive communications from unauthorized access, ensuring confidentiality in high-stakes scenarios.
+Sensitive or Classified Collaboration
+--------------------------------------
 
-Learn more about the `features to look for <https://mattermost.com/blog/out-of-band-communication-features/>`__ in an out-of-band communication solution by visiting the Mattermost blog. And then download our `Deploying an out-of-band collaboration environment <https://mattermost.com/mattermost-out-of-band-deployment-guide/>`__ guide.
+Not all communication is appropriate for general collaboration platforms. Teams managing high-value or sensitive data need secure, isolated spaces for sensitive strategic planning or response operations.
 
-Key use cases
---------------
+**Benefits**
 
-When cyberattacks or system breaches occur, organizations need an independent communication channel to coordinate response efforts without relying on compromised networks. Out-of-Band collaobration is essential for the following use cases:
+- **Protect classified communications** with STIG-hardened, :doc:`DISA-approved container images </deploy/deployment-options>` built for use in air-gapped or classified networks.
+- **Enable secure collaboration** through :doc:`threaded messaging </collaborate/organize-conversations>`, :doc:`file sharing </collaborate/share-files-in-messages>`, and :ref:`channel-level access controls <manage/team-channel-members:advanced access controls>` hosted in sovereign infrastructure.
+- **Maintain IP confidentiality** with end-to-end encrypted, :doc:`self-hosted deployments </deploy/self-managed-deployment>` that eliminate reliance on third-party SaaS and ensure data sovereignty.
 
-- **Failover communications**: During network outages and failures, businesses need a backup communication system to maintain operational continuity.
+Get Started
+-----------
 
-- **Red team exercises**: Security teams use OOB to conduct realistic penetration testing and cyber defense drills without tipping off employees or exposing test plans on shared networks.
-
-- **Business continuity and risk mitigation**: Navigate network failures, downtime, security vulnerabilities, and delayed incident response with a backup communications channel for coordinating responses and keeping teams stay focused during outages, cyber incidents, and system failures.
-
-- **Regulatory compliance**: Strengthen compliance and security by protecting sensitive information to meet regulatory requirements and prevent data breaches.
-
-Best practices
---------------
-
-Set up secure, dedicated, always-available communication channels, separate from primary networks, to ensure continuity during disruptions.
-
-Ensure your teams know when to switch to backup systems by defining clear usage policies.
-
-Use Mattermost Playbooks to build your prescribed workflows and streamline recurring processes, and accelerate response time by ensuring your collaborative playbooks in Mattermost are up-to-date.
-
-Test and train regularly. Conduct routine drills and tabletop exercises to ensure teams are familiar with OOB procedures before a crisis occurs.  
-
-Use role-based access controls to minimize security risks by restricting access to OOB tools based on roles.
+`Talk to an Expert <https://mattermost.com/contact/>`__ to build your out-of-band incident response environment. Whether protecting national security, managing global infrastructure, or recovering from outages, Mattermost ensures your teams remain connected, coordinated, and compliant—no matter the crisis.
