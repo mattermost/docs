@@ -148,7 +148,7 @@ Search limitations on PostgreSQL:
 
   - One of them is: ``The length of a tsvector (lexemes + positions) must be less than 1 megabyte``, which means that, based on the file content, even files with content less than 1 MB won't be searchable if they hit the ``tsvector`` limit of 1 MB.
 
-- If any of the above is an issue, you can either enable the :doc:`Elasticsearch feature </scale/elasticsearch>`.
+- If any of the above is an issue, you can enable the :doc:`Elasticsearch feature </scale/elasticsearch>`.
 
 MySQL Support
 ::::::::::::::::::::
