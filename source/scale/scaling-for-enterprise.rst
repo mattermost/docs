@@ -14,10 +14,12 @@ Backing storage
 
 Review detailed :doc:`write and read storage benchmark results </scale/backing-storage-benchmarks>` for supported storage options including local file system (EBS, gp3), network file system (EFS), and object storage (S3) to make informed decisions based on your use case and infrastructure needs.
 
-Elasticsearch
---------------
+Enterprise search
+-----------------
 
-:doc:`Elasticsearch </scale/elasticsearch>` provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results.
+We highly recommend a dedicated server for large enterprise deployments to run highly efficient database searches in a cluster environment. 
+
+For deployments with over 5 million posts, :doc:`Enterprise search </scale/enterprise-search>` using :ref:`Elasticsearch <scale/enterprise-search:elasticsearch>` or :ref:`AWS OpenSearch Service <scale/enterprise-search:aws opensearch service>` is required for optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. 
 
 High availability
 -----------------
@@ -38,8 +40,8 @@ Available reference architectures
     :titlesonly:
 
     Backing storage benchmarks </scale/backing-storage-benchmarks>
-    Elasticsearch </scale/elasticsearch>
-    High availability </scale/high-availability-cluster-based-deployment>
+    Enterprise search </scale/enterprise-search>
+    High availability </scale/high-availability-cluster-based-deployment> 
     Redis </scale/redis>
     Scale up to 200 users </scale/scale-to-200-users>
     Scale up to 2000 users </scale/scale-to-2000-users>
