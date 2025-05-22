@@ -8,7 +8,7 @@ This approach ensures teams can communicate and coordinate even when their main 
 Mattermost for OOB
 ------------------
 
-Organizations can use Mattermost as an OOB solution by either self-hosting their instance or leveraging Mattermost’s Cloud SaaS offering.  
+Organizations can use Mattermost as an OOB solution by either :doc:`self-hosting their instance </deploy/server/deploy-oob>` or leveraging :doc:`Mattermost’s Cloud SaaS offering </about/cloud-subscriptions>`.
 
 Self-hosted
 ~~~~~~~~~~~~
