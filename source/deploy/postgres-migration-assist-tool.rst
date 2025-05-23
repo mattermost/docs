@@ -4,7 +4,7 @@ Automated PostgreSQL migration
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven’t performed a migration before. Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the :doc:`tasks to be executed </deploy/manual-postgres-migration>`, even in air-gapped deployment environments.
+Migrating databases can be a daunting task, and it can be easy to overlook or misinterpret some of the required steps if you haven't performed a migration before. Our ``migration-assist`` tool provides an efficient, error-free migration experience that automates the :doc:`tasks to be executed </deploy/manual-postgres-migration>`, even in air-gapped deployment environments.
 
 Not sure this tool is right for your Mattermost deployment? Mattermost customers looking for tailored guidance based on their Mattermost deployment can contact a `Mattermost Expert <https://mattermost.com/contact-sales/>`_.
 
@@ -15,7 +15,7 @@ Download the Mattermost ``migration-assist`` tool from the GitHub repository `re
 
 While you can run the ``migration-assist`` tool on the same server as your Mattermost deployment, we recommend running the tool in a virtual machine on the same network as your Mattermost server instead. The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient. If preferred, you can download and `compile <#compile-the-migration-assist-tool>`__ the ``migration-assist`` tool yourself.
 
-You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We strongly recommend using the official Mattermost Docker image for pgloader (`mattermost/pgloader:latest`), which includes support for MySQL’s `caching_sha2_password`. If you build your own, be sure to include the [qitab/qmynd](https://github.com/qitab/qmynd) library. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
+You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We recommend running pgloader in a virtual machine on the same network as your Mattermost server. You can use our official Mattermost Docker image for pgloader (`mattermost/pgloader:latest`), which includes support for MySQL’s `caching_sha2_password`. If you build your own, be sure to include the [qitab/qmynd](https://github.com/qitab/qmynd) library. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
 
 Usage
 -----
@@ -54,7 +54,6 @@ Before running migrations, ensure the `public` schema is owned by your migration
 
 .. code-block:: sql
 
-   sudo -u postgres psql -c "CREATE DATABASE mattermost OWNER mmuser;"
    sudo -u postgres psql -d mattermost -c "ALTER SCHEMA public OWNER TO mmuser; GRANT ALL ON SCHEMA public TO mmuser;"
 
 Then run:
@@ -100,7 +99,7 @@ Run the following command to emit a pgloader configuration file:
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
 
-Run pgloader with the generated file:
+:ref:`Run pgloader <deploy/manual-postgres-migration:pgloader>` with the generated configuration file:
 
 .. code-block:: sh
 
@@ -147,7 +146,7 @@ Run each:
    pgloader playbooks.load        > playbooks_migration.log
    pgloader calls.load            > calls_migration.log
 
-Skip any plugin you don’t use; check logs for JSON or missing-table errors. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` guide for more.
+Skip any plugin you don't use; check logs for JSON or missing-table errors. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` guide for more.
 
 Step 7 - Configure Mattermost to use PostgreSQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -166,17 +165,18 @@ If your config was stored in the database, update `MM_CONFIG` accordingly. See t
 Air-gapped environments
 ------------------------
 
-The `migration-assist` tool is self-contained once transferred. To migrate in an air-gapped network:
+Follow these steps to migrate within an air-gapped environment:
 
-1. Copy the latest `migration-assist` binary into the environment.
-2. Generate a combined schema+data file:
+1. **Verify** that the `migration-assist` binary is the latest version available to benefit from improvements and fixes.
+2. **Transfer** the latest `migration-assist` binary into the air-gapped environment (e.g., via secure media).
+3. **Generate** the MySQL schema+data output using fix flags. This produces `mysql.output`:
 
    .. code-block:: sh
 
       migration-assist mysql "user:pass@tcp(localhost:3306)/mattermost" \
         --fix-artifacts --fix-unicode --fix-varchar > mysql.output
 
-3. Apply it and run migrations:
+4. **Apply** migrations using the generated output:
 
    .. code-block:: sh
 
@@ -184,7 +184,7 @@ The `migration-assist` tool is self-contained once transferred. To migrate in an
         "postgres://mmuser:pass@localhost:5432/imported?sslmode=disable" \
         --run-migrations --applied-migrations="./mysql.output"
 
-4. Continue from **Step 3** through **Step 7** above.
+5. **Continue** from **Step 3** through **Step 7** above to complete data transfer and configuration.
 
 Tool commands
 --------------
