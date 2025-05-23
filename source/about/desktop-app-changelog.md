@@ -65,7 +65,7 @@ Mattermost Desktop App v5.12.0 contains a medium severity level security fix. Up
 (release-v5-11)=
 ## Release v5.11 (Extended Support Release)
 
-- **v5.11.3, released **
+- **v5.11.3, released 2025-05-23**
 
   - Fixed an issue where focus was lost when tabbing to an external URL on Windows/Linux [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
   - Fixed an issue where server loading was blocked on contact with each configured server [MM-63899](https://mattermost.atlassian.net/browse/MM-63899).
