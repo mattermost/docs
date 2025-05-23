@@ -34,6 +34,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Fixed inconsistencies between web and mobile category sorting (may require logging out and logging back in to fix).
  - Fixed an issue where message attachments (e.g. from a webhook) would not appear if received while the app was in the background.
  - Calls: fixed an issue with scrolling the participants list.
+ - Fixed an issue with some flickering on the tooltip in the **Drafts** screen.
 
 ### Open Source Components
  - Added ``prismjs`` to https://github.com/mattermost/mattermost-mobile.
