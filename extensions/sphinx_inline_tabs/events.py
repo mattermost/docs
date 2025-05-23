@@ -6,7 +6,6 @@ from docutils import nodes
 from sphinx import addnodes
 from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
-from sphinx.builders.html._assets import _JavaScript
 from sphinx.util import logging
 from sphinx.util.nodes import _make_id
 
@@ -32,26 +31,37 @@ def env_merge_info(
             if docname in other.sphinx_tabs:
                 if docname not in app.env.sphinx_tabs:
                     app.env.sphinx_tabs[docname] = []
-                if len(app.env.sphinx_tabs[docname]) > 0 and len(other.sphinx_tabs[docname]) == 0:
-                    logger.warning(f"+++ env_merge_info: {docname}; not overwriting app.env with empty list from other")
+                if (
+                    len(app.env.sphinx_tabs[docname]) > 0
+                    and len(other.sphinx_tabs[docname]) == 0
+                ):
+                    logger.warning(
+                        f"+++ env_merge_info: {docname}; not overwriting app.env with empty list from other"
+                    )
                     continue
                 app.env.sphinx_tabs[docname] = other.sphinx_tabs[docname].copy()
 
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
     if not hasattr(app.env, "sphinx_tabs"):
-        logger.debug('+++ doctree_read: create app.env.sphinx_tabs')
         app.env.sphinx_tabs = {}
-    if app.env.docname in app.env.sphinx_tabs and len(app.env.sphinx_tabs[app.env.docname]) > 0:
+    if (
+        app.env.docname in app.env.sphinx_tabs
+        and len(app.env.sphinx_tabs[app.env.docname]) > 0
+    ):
         logger.debug(f"+++ doctree_read: {app.env.docname} has tabs")
-        sd: SectionData = collect_sections(app.env, doctree, app.env.docname, doctree)
-        updated_tocs: nodes.list_item = sectiondata_to_toc(app.env.docname, sd)
-        logger.debug(f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}")
+        updated_tocs: nodes.list_item = sectiondata_to_toc(
+            app.env.docname,
+            collect_sections(app.env, doctree, app.env.docname, doctree),
+        )
+        logger.debug(
+            f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}"
+        )
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs)
         else:
             app.env.tocs[app.env.docname][0][1] = updated_tocs
-        app.env.sphinx_tabs[app.env.docname] = []
+        app.env.sphinx_tabs[app.env.docname].clear()
 
 
 def html_page_context(
@@ -63,22 +73,28 @@ def html_page_context(
 ) -> Optional[str]:
     if hasattr(app.env, "sphinx_tabs"):
         if pagename in app.env.sphinx_tabs:
-            logger.debug(f"+++ html_page_context: {pagename}; context.keys()={context.keys()}")
-            if "script_files" in context:
-                furo_js_asset: Optional[_JavaScript] = None
-                for script_asset in context["script_files"]:
+            logger.debug(
+                f"+++ html_page_context: {pagename}; context.keys()={context.keys()}"
+            )
+            if "script_files" in context and len(context["script_files"]) > 0:
+                furo_js_asset_index: int = -1
+                for idx, script_asset in enumerate(context["script_files"]):
                     if script_asset.filename == "_static/scripts/furo.js":
-                        furo_js_asset = script_asset
-                        logger.debug(f"+++ html_page_context: {pagename}; furo_js_asset={str(furo_js_asset)}")
+                        furo_js_asset_index = idx
+                        logger.debug(
+                            f"+++ html_page_context: {pagename}; furo_js_asset_index={furo_js_asset_index}"
+                        )
                         break
-                if furo_js_asset is not None:
-                    logger.debug(f"+++ html_page_context: {pagename}; remove furo JS asset")
-                    context["script_files"].remove(furo_js_asset)
+                if furo_js_asset_index > -1:
+                    logger.debug(
+                        f"+++ html_page_context: {pagename}; remove furo JS asset"
+                    )
+                    context["script_files"].pop(furo_js_asset_index)
 
     return None
 
 
-@dataclass(repr=True)
+@dataclass(repr=True, slots=True)
 class SectionData:
     name: str
     level: int
@@ -116,21 +132,21 @@ def collect_sections(
 
     section_id: str = ""
     if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
-       section_id = node.attributes["inline_tab_id"]
+        section_id = node.attributes["inline_tab_id"]
     else:
         if "ids" in node.attributes:
             if len(node.attributes["ids"]) == 1 and node.attributes["ids"][0] != "":
                 section_id = node.attributes["ids"][0]
             elif len(node.attributes["ids"]) > 1:
                 for id in node.attributes["ids"]:
-                    if re.match('inlinetab--([a-zA-Z0-9-]+)--([0-9]+)-(.*)', id):
+                    if re.match("inlinetab--([a-zA-Z0-9-]+)--([0-9]+)-(.*)", id):
                         section_id = id
                         break
     if section_id == "":
         section_id = _make_id(secdata.name)
     secdata.id = section_id
 
-    parent_node = (
+    parent_node: nodes.Element = (
         node.next_node(nodes.container) if isinstance(node, TabContainer) else node
     )
 
@@ -168,27 +184,34 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
             f"### ({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
         )
         return sectiondata_to_toc(docname, secdata.children[0])
+
     list_item: nodes.list_item = nodes.list_item()
+
     if not secdata.is_section_root:
         # Don't add a reference for the section root since it will be displayed in the ToC
         logger.debug(
             f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
         )
         list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
-    bullet_list: nodes.bullet_list = nodes.bullet_list()
-    logger.debug(f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}")
-    for idx, child in enumerate(secdata.children):
+
+    if len(secdata.children) > 0:
         logger.debug(
-            f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
+            f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}"
         )
-        bullet_list.append(sectiondata_to_toc(docname, child))
-    if len(bullet_list.children) > 0:
+        bullet_list: nodes.bullet_list = nodes.bullet_list()
+        for idx, child in enumerate(secdata.children):
+            logger.debug(
+                f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
+            )
+            bullet_list.append(sectiondata_to_toc(docname, child))
         list_item.append(bullet_list)
 
     return list_item
 
 
-def make_compact_reference(section_id: str, section_name: str, docname: str) -> addnodes.compact_paragraph:
+def make_compact_reference(
+    section_id: str, section_name: str, docname: str
+) -> addnodes.compact_paragraph:
     cpara: addnodes.compact_paragraph = addnodes.compact_paragraph()
     cpara.append(
         nodes.reference(

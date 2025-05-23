@@ -72,7 +72,7 @@ class TabSpan(nodes.Element):
           :param node: The docutils node we're visiting
           :return: None
         """
-        visitor.body.append(f"<{node.tagname} id=\"{node.span_id}\">")
+        visitor.body.append(f'<{node.tagname} id="{node.span_id}">')
 
     @classmethod
     def depart(cls, visitor: HTMLTranslator, node: "TabSpan") -> None:

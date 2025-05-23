@@ -14,12 +14,8 @@ def setup(app: Sphinx):
     # We do imports from Sphinx, after validating the Sphinx version
     from .directive import TabDirective
     from .transform import TabHtmlTransform
-    from .nodes import (
-        TabContainer, TabInput, TabLabel, TabSpan
-    )
-    from .events import (
-        env_purge_doc, env_merge_info, doctree_read, html_page_context
-    )
+    from .nodes import TabContainer, TabInput, TabLabel, TabSpan
+    from .events import env_purge_doc, env_merge_info, doctree_read, html_page_context
 
     app.add_directive("tab", TabDirective)
     app.add_post_transform(TabHtmlTransform)

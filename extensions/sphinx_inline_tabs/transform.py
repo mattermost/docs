@@ -21,14 +21,16 @@ class TabHtmlTransform(SphinxPostTransform):
         self.stack = []
         self.counter = itertools.count(start=0, step=1)
 
-        matcher: NodeMatcher = NodeMatcher(TabContainer)
-
-        for node in self.document.findall(matcher):  # type: TabContainer
+        for node in self.document.findall(
+            NodeMatcher(TabContainer)
+        ):  # type: TabContainer
             self._process_one_node(node)
 
         while self.stack:
-            tab_set: list[TabContainer] = self.stack.pop()
-            self.finalize_set(tab_set, next(self.counter))
+            self.finalize_set(
+                self.stack.pop(),
+                next(self.counter),
+            )
 
     def _process_one_node(self, node: TabContainer):
         # There is no existing tab set. Let's start a new one.
@@ -42,7 +44,7 @@ class TabHtmlTransform(SphinxPostTransform):
         close_till: Optional[list[TabContainer]] = None
         append: bool = False
         for tab_set in reversed(self.stack[:]):
-            last_node = tab_set[-1]
+            last_node: TabContainer = tab_set[-1]
 
             # Is this node a direct child of the last node in this tab-set?
             is_child: bool = node in last_node.children[1]
@@ -83,7 +85,9 @@ class TabHtmlTransform(SphinxPostTransform):
 
         parent: nodes.Element = tab_set[0].parent
 
-        container: nodes.container = nodes.container("", is_div=True, classes=["tab-set"])
+        container: nodes.container = nodes.container(
+            "", is_div=True, classes=["tab-set"]
+        )
         container.parent = parent
 
         tab_set_name: str = f"tab-set--{set_counter}"
@@ -95,7 +99,10 @@ class TabHtmlTransform(SphinxPostTransform):
 
             # <input>, for storing state in radio boxes.
             input_node: TabInput = TabInput(
-                type="radio", ids=[tab_id], name=tab_set_name, classes=["tab-input"],
+                type="radio",
+                ids=[tab_id],
+                name=tab_set_name,
+                classes=["tab-input"],
             )
 
             # <label>
@@ -104,9 +111,15 @@ class TabHtmlTransform(SphinxPostTransform):
             )
 
             # <span>, for storing an anchor that the table of contents links to.
-            inline_tab_id: str = node.attributes["inline_tab_id"] if "inline_tab_id" in node.attributes else ""
+            inline_tab_id: str = (
+                node.attributes["inline_tab_id"]
+                if "inline_tab_id" in node.attributes
+                else ""
+            )
             if inline_tab_id:
                 label_node += TabSpan(inline_tab_id)
+
+            # Add the tab title to the label
             for title_child in title.children:
                 label_node += title_child
 
