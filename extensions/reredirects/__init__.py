@@ -34,6 +34,7 @@ CTX_HAS_FRAGMENT_REDIRECTS: Final[str] = "has_fragment_redirects"
 CTX_FRAGMENT_REDIRECTS: Final[str] = "fragment_redirects"
 # Other constants...
 DEFAULT_PAGE: Final[str] = "-"
+SUFFIX_HTML: Final[str] = ".html"
 
 # Sphinx logger
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
@@ -119,7 +120,6 @@ def html_page_context(
             logger.verbose(
                 f"html_page_context(): page {pagename} has intra-page redirects; adding redirects to HTML context"
             )
-            #computed_redirects: dict[str, dict[str, str]] = getattr(app.env, ENV_COMPUTED_REDIRECTS)
             context[CTX_FRAGMENT_REDIRECTS] = build_js_object(
                 getattr(app.env, ENV_COMPUTED_REDIRECTS)[pagename]
             )
@@ -223,7 +223,6 @@ def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
 
 def build_finished(app: Sphinx, exception: Exception):
     if exception is None:
-        #write_extensionless_pages: bool = getattr(app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES)
         if getattr(app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES):
             extensionless_pages: list[str] = getattr(app.env, ENV_EXTENSIONLESS_PAGES)
             for pagename in list_status_iterator(
@@ -251,9 +250,9 @@ def compute_redirects(
     computed_redirects: dict[str, dict[str, str]] = {}
     # read parameters from config
     html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL).removesuffix("/")
-    #html_baseurl = html_baseurl.removesuffix("/")
-    redirects_baseurl: str = getattr(app.config, CONFIG_OPTION_BASEURL).removesuffix("/")
-    #redirects_baseurl = redirects_baseurl.removesuffix("/")
+    redirects_baseurl: str = getattr(app.config, CONFIG_OPTION_BASEURL).removesuffix(
+        "/"
+    )
     # If redirects_baseurl is the same as html_baseurl, don't check the redirect target
     # for a baseurl to replace.
     if redirects_baseurl == html_baseurl:
@@ -264,14 +263,14 @@ def compute_redirects(
         tokens: list[str] = source.split("#")
         if len(tokens) == 2:
             pagename = tokens[0].removesuffix(
-                ".html"
+                SUFFIX_HTML
             )  # ensure pagename does not end with ".html"
             fragment = tokens[1].removesuffix(
-                ".html"
+                SUFFIX_HTML
             )  # if the fragment ends in ".html", remove it
         elif len(tokens) == 1:
             pagename = tokens[0].removesuffix(
-                ".html"
+                SUFFIX_HTML
             )  # ensure pagename does not end with ".html"
             fragment = ""
         else:
@@ -288,7 +287,7 @@ def compute_redirects(
         target: str = redirects_option[source]
         # If the target is the empty string, then the redirect is invalid. warn the user and continue on.
         if target == "":
-            logger.warning("compute_redirects(): empty target for source %s" % source)
+            logger.warning(f"compute_redirects(): empty target for source {source}")
             continue
         # If there is a redirects_baseurl defined and the target URL starts with that value, replace the
         # value with that of html_baseurl.
