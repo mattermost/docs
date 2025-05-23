@@ -36,7 +36,9 @@ def find_duplicate_redirects(redirects_map: dict[str, str]) -> bool:
         # Log sources that map to the same target
         for target, sources in target_to_sources.items():
             if len(sources) > 1:
-                warning_message: str = f"Multiple sources map to same target; Target: {target} <- Sources: {sources}"
+                warning_message: str = (
+                    f"Multiple sources map to same target; Target: {target} <- Sources: {sources}\n"
+                )
                 log.write(warning_message)
 
     return len(duplicate_sources) == len(redirects_map)
@@ -45,6 +47,7 @@ def find_duplicate_redirects(redirects_map: dict[str, str]) -> bool:
 # Import page redirect configuration from redirects.py
 sys.path.insert(0, os.path.abspath("."))
 import redirects as redirects_py
+
 redirects = redirects_py.redirects_map
 
 
@@ -52,8 +55,9 @@ def setup(_: Sphinx):
     # Check for duplicate redirects when Sphinx starts up
     has_duplicate_redirects: bool = find_duplicate_redirects(redirects)
     if has_duplicate_redirects:
-        print("* WARNING: Duplicate page redirects found; see warnings.log for more information.")
-    return
+        print(
+            "* WARNING: Duplicate page redirects found; see warnings.log for more information."
+        )
 
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -64,7 +68,7 @@ sys.path.insert(0, os.path.abspath("../extensions"))
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = "7.2"
+needs_sphinx = "8.2"
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -86,7 +90,7 @@ extensions = [
     "sphinx_copybutton",
     "compass-icons",
     "config-setting-v2",
-    "sphinx_inline_tabs"
+    "sphinx_inline_tabs",
 ]
 
 sphinx_tabs_disable_tab_closing = True
@@ -156,7 +160,28 @@ author = "Mattermost"
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
-exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst"]
+exclude_patterns = [
+    "about/common-esr-support.md",
+    "about/common-esr-support-rst.rst",
+    "about/common-esr-support-upgrade.md",
+    "deploy/server/linux/deploy-tar.rst",
+    "deploy/server/linux/deploy-omnibus.rst",
+    "deploy/server/linux/deploy-ubuntu.rst",
+    "deploy/server/linux/deploy-rhel.rst",
+    "deploy/server/kubernetes/deploy-k8s-aks.rst",
+    "deploy/server/kubernetes/deploy-k8s.rst",
+    "deploy/server/containers/install-aws-beanstalk.rst",
+    "deploy/server/containers/install-docker.rst",
+    "about/cloud-supported-integrations.rst",
+    "configure/push-notification-server-configuration-settings.rst",
+    "configure/rate-limiting-configuration-settings.rst",
+    "onboard/common-converting-oauth-to-openidconnect.rst",
+    "onboard/sso-saml-before-you-begin.rst",
+    "onboard/sso-saml-faq.rst",
+    "onboard/sso-saml-ldapsync.rst",
+    "scale/estimated-storage-per-user-per-month.rst",
+    "scale/lifetime-storage.rst",
+]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
@@ -243,7 +268,7 @@ html_css_files = [
     "css/homepage-v1.css",
     "css/compass-icons.css",
     "css/version-filter.css",
-    "css/changelog-filter.css"
+    "css/changelog-filter.css",
 ]
 
 # A list of JavaScript filenames. The entry must be a filename string or a tuple containing the filename string and the
@@ -254,7 +279,7 @@ html_js_files = [
     "js/thermometer.js",
     "js/myscript-v1.js",
     "js/version-filter.js",
-    "js/changelog-filter.js"
+    "js/changelog-filter.js",
 ]
 
 # The name of an image file, relative to the configuration directory, to use as favicon of the docs.  This file should
@@ -311,7 +336,7 @@ html_use_index = False
 # Sphinx supports the following languages:
 #   'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'ja'
 #   'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr'
-html_search_language = 'en'
+html_search_language = "en"
 
 # A dictionary with options for the search language support, empty by default.
 # Now only 'ja' uses this config value
