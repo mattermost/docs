@@ -1,5 +1,5 @@
 from docutils import nodes
-from docutils.writers._html_base import HTMLTranslator
+from sphinx.writers.html5 import HTML5Translator
 
 
 class TabContainer(nodes.container):
@@ -16,7 +16,7 @@ class _GeneralHTMLTagElement(nodes.Element, nodes.General):
     _endtag: bool = False
 
     @staticmethod
-    def visit(translator: HTMLTranslator, node: "_GeneralHTMLTagElement"):
+    def visit(translator: HTML5Translator, node: "_GeneralHTMLTagElement"):
         attributes = node.attributes.copy()
         # Remove unused attributes
         attributes.pop("ids")
@@ -65,7 +65,7 @@ class TabSpan(nodes.Element):
         self.span_id = span_id
 
     @classmethod
-    def visit(cls, visitor: HTMLTranslator, node: "TabSpan") -> None:
+    def visit(cls, visitor: HTML5Translator, node: "TabSpan") -> None:
         """
         Write the opening HTML tag for the span node
           :param visitor: The translator that handles writing HTML bodies
@@ -75,7 +75,7 @@ class TabSpan(nodes.Element):
         visitor.body.append(f'<{node.tagname} id="{node.span_id}">')
 
     @classmethod
-    def depart(cls, visitor: HTMLTranslator, node: "TabSpan") -> None:
+    def depart(cls, visitor: HTML5Translator, node: "TabSpan") -> None:
         """
         Write the closing HTML tag for the anchor node
           :param visitor: The translator that handles writing HTML bodies

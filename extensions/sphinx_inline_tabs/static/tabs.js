@@ -153,7 +153,7 @@ function setTheme(mode) {
   }
   document.body.dataset.theme = mode;
   localStorage.setItem("theme", mode);
-  console.log(`Changed to ${mode} mode.`);
+  console.log(`sphinx_inline_tabs: Changed to ${mode} mode.`);
 }
 
 function cycleThemeOnce() {

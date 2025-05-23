@@ -1,6 +1,6 @@
 import re
 from dataclasses import dataclass
-from typing import Any, Optional
+from typing import Any, Final, Optional
 
 from docutils import nodes
 from sphinx import addnodes
@@ -13,6 +13,7 @@ from .nodes import TabContainer
 
 
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
+FURO_SCRIPT_ASSET_FILENAME: Final[str] = "_static/scripts/furo.js"
 
 
 def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
@@ -36,7 +37,7 @@ def env_merge_info(
                     and len(other.sphinx_tabs[docname]) == 0
                 ):
                     logger.warning(
-                        f"+++ env_merge_info: {docname}; not overwriting app.env with empty list from other"
+                        f"[sphinx_inline_tabs] env_merge_info: {docname}; not overwriting app.env with empty list from other"
                     )
                     continue
                 app.env.sphinx_tabs[docname] = other.sphinx_tabs[docname].copy()
@@ -49,13 +50,13 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         app.env.docname in app.env.sphinx_tabs
         and len(app.env.sphinx_tabs[app.env.docname]) > 0
     ):
-        logger.debug(f"+++ doctree_read: {app.env.docname} has tabs")
+        logger.debug(f"[sphinx_inline_tabs] doctree_read: {app.env.docname} has tabs")
         updated_tocs: nodes.list_item = sectiondata_to_toc(
             app.env.docname,
             collect_sections(app.env, doctree, app.env.docname, doctree),
         )
         logger.debug(
-            f"+++ doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}"
+            f"[sphinx_inline_tabs] doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}"
         )
         if len(app.env.tocs[app.env.docname][0]) == 1:
             app.env.tocs[app.env.docname][0].append(updated_tocs)
@@ -74,20 +75,20 @@ def html_page_context(
     if hasattr(app.env, "sphinx_tabs"):
         if pagename in app.env.sphinx_tabs:
             logger.debug(
-                f"+++ html_page_context: {pagename}; context.keys()={context.keys()}"
+                f"[sphinx_inline_tabs] html_page_context: {pagename}; context.keys()={context.keys()}"
             )
             if "script_files" in context and len(context["script_files"]) > 0:
                 furo_js_asset_index: int = -1
                 for idx, script_asset in enumerate(context["script_files"]):
-                    if script_asset.filename == "_static/scripts/furo.js":
+                    if script_asset.filename == FURO_SCRIPT_ASSET_FILENAME:
                         furo_js_asset_index = idx
                         logger.debug(
-                            f"+++ html_page_context: {pagename}; furo_js_asset_index={furo_js_asset_index}"
+                            f"[sphinx_inline_tabs] html_page_context: {pagename}; furo_js_asset_index={furo_js_asset_index}"
                         )
                         break
                 if furo_js_asset_index > -1:
                     logger.debug(
-                        f"+++ html_page_context: {pagename}; remove furo JS asset"
+                        f"[sphinx_inline_tabs] html_page_context: {pagename}; remove furo JS asset"
                     )
                     context["script_files"].pop(furo_js_asset_index)
 
@@ -112,7 +113,7 @@ def collect_sections(
     node: nodes.Element,
     level=0,
 ) -> SectionData:
-    logger.debug(f">>> ({docname}) [{level}] node={type(node)}")
+    logger.debug(f"[sphinx_inline_tabs] collect_sections(): ({docname}) [{level}] node={type(node)}")
     secdata = SectionData(
         name=docname if level == 0 else "",
         level=level,
@@ -125,10 +126,10 @@ def collect_sections(
 
     if isinstance(node, nodes.section):
         secdata.name = node.next_node(nodes.title).astext()
-        logger.debug(f">>> ({docname}) [{level}] Section: {secdata.name}")
+        logger.debug(f"[sphinx_inline_tabs] collect_sections(): ({docname}) [{level}] Section: {secdata.name}")
     elif isinstance(node, TabContainer):
         secdata.name = node.next_node(nodes.label).astext()
-        logger.debug(f">>> ({docname}) [{level}] Tab: {secdata.name}")
+        logger.debug(f"[sphinx_inline_tabs] collect_sections(): ({docname}) [{level}] Tab: {secdata.name}")
 
     section_id: str = ""
     if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
@@ -151,7 +152,7 @@ def collect_sections(
     )
 
     for child in parent_node.children:
-        logger.debug(f"   >>> ({docname}) [{level}] child={type(child)}")
+        logger.debug(f"[sphinx_inline_tabs] collect_sections():    ({docname}) [{level}] child={type(child)}")
         if isinstance(child, nodes.section) or isinstance(child, TabContainer):
             secdata.children.append(
                 collect_sections(env, document, docname, child, level + 1)
@@ -169,7 +170,7 @@ def dump_sections(docname: str, secdata: SectionData):
     elif secdata.is_tab:
         section_type = "tab"
     logger.debug(
-        f"!!! ({docname}) [{secdata.level}] {secdata.name}/{secdata.id}: {section_type}, {len(secdata.children)} children"
+        f"[sphinx_inline_tabs] dump_sections(): ({docname}) [{secdata.level}] {secdata.name}/{secdata.id}: {section_type}, {len(secdata.children)} children"
     )
     for child in secdata.children:
         dump_sections(docname, child)
@@ -177,11 +178,13 @@ def dump_sections(docname: str, secdata: SectionData):
 
 def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     logger.debug(
-        f"### ({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
+        "[sphinx_inline_tabs] sectiondata_to_toc(): "
+        f"({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
     )
     if secdata.is_doc_root:
         logger.debug(
-            f"### ({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
+            "[sphinx_inline_tabs] sectiondata_to_toc(): "
+            f"({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
         )
         return sectiondata_to_toc(docname, secdata.children[0])
 
@@ -190,18 +193,21 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     if not secdata.is_section_root:
         # Don't add a reference for the section root since it will be displayed in the ToC
         logger.debug(
-            f"### ({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
+            "[sphinx_inline_tabs] sectiondata_to_toc(): "
+            f"({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
         )
         list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
 
     if len(secdata.children) > 0:
         logger.debug(
-            f"### ({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}"
+            "[sphinx_inline_tabs] sectiondata_to_toc(): "
+            f"({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}"
         )
         bullet_list: nodes.bullet_list = nodes.bullet_list()
         for idx, child in enumerate(secdata.children):
             logger.debug(
-                f"### ({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
+                "[sphinx_inline_tabs] sectiondata_to_toc(): "
+                f"({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
             )
             bullet_list.append(sectiondata_to_toc(docname, child))
         list_item.append(bullet_list)

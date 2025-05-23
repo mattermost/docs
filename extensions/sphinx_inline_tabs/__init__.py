@@ -3,13 +3,13 @@
 import os
 from sphinx.application import Sphinx
 
-__version__: str = "2025.05.05"
+__version__: str = "2023.04.21"
 __all__: list[str] = ["setup"]
 
 
 def setup(app: Sphinx):
     """Entry point for sphinx theming."""
-    app.require_sphinx("7.4")
+    app.require_sphinx("8.2")
 
     # We do imports from Sphinx, after validating the Sphinx version
     from .directive import TabDirective
