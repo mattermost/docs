@@ -1,7 +1,9 @@
 import json
-import pathlib
+from pathlib import Path
+from typing import Optional, Iterable, Any, Final
+
 import docutils.core, docutils.io
-from docutils import nodes
+from docutils import nodes, SettingsSpec
 from docutils.nodes import Element, Node
 from docutils.parsers.rst.directives import unchanged
 from sphinx.addnodes import pending_xref
@@ -12,23 +14,25 @@ from sphinx.environment import BuildEnvironment
 from sphinx.roles import XRefRole
 from sphinx.util import logging
 from sphinx.util.console import bold  # type: ignore
-from sphinx.util.docutils import SphinxTranslator, SphinxDirective
+from sphinx.util.docutils import SphinxDirective
 from sphinx.util.nodes import make_refnode
-from typing import Optional, Iterable, Tuple, List, Dict, Any
+from sphinx.writers.html5 import HTML5Translator
 
-__version__ = "0.2.0"
 
-CONFIG_SETTING_ANCHOR = "anchor"
-CONFIG_SETTING_DOCNAME = "docname"
-CONFIG_SETTING_ID = "id"
-CONFIG_SETTING_DISPLAYNAME = "displayname"
-CONFIG_SETTING_SYSTEMCONSOLE = "systemconsole"
-CONFIG_SETTING_CONFIGJSON = "configjson"
-CONFIG_SETTING_ENVIRONMENT = "environment"
-CONFIG_SETTING_DESCRIPTION = "description"
+__version__ = "0.3.0"
+
+
+CONFIG_SETTING_ANCHOR: Final[str] = "anchor"
+CONFIG_SETTING_DOCNAME: Final[str] = "docname"
+CONFIG_SETTING_ID: Final[str] = "id"
+CONFIG_SETTING_DISPLAYNAME: Final[str] = "displayname"
+CONFIG_SETTING_SYSTEMCONSOLE: Final[str] = "systemconsole"
+CONFIG_SETTING_CONFIGJSON: Final[str] = "configjson"
+CONFIG_SETTING_ENVIRONMENT: Final[str] = "environment"
+CONFIG_SETTING_DESCRIPTION: Final[str] = "description"
 
 # Sphinx logger
-logger = logging.getLogger(__name__)
+logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
 
 
 def rst2html(source_string: str) -> str:
@@ -38,7 +42,7 @@ def rst2html(source_string: str) -> str:
         source_class=docutils.io.StringInput, destination_class=docutils.io.StringOutput
     )
     pub.set_components("standalone", "restructuredtext", "html")
-    pub.process_programmatic_settings(None, None, None)
+    pub.process_programmatic_settings(SettingsSpec(), None, "")
     pub.set_source(source=source_string)
     pub.publish()
     # publish parts are described here: https://docutils.sourceforge.io/docs/api/publisher.html#publish-parts-details
@@ -58,7 +62,7 @@ class AnchorNode(Element):
         self.anchor = href
 
 
-def visit_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
+def visit_anchor_node(visitor: HTML5Translator, node: AnchorNode) -> None:
     """
     Write the opening HTML tag for the anchor node
       :param visitor: The translator that handles writing HTML bodies
@@ -68,7 +72,7 @@ def visit_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
     visitor.body.append('<%s id="%s">' % (node.tagname, node.anchor))
 
 
-def depart_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
+def depart_anchor_node(visitor: HTML5Translator, node: AnchorNode) -> None:
     """
     Write the closing HTML tag for the anchor node
       :param visitor: The translator that handles writing HTML bodies
@@ -79,23 +83,23 @@ def depart_anchor_node(visitor: SphinxTranslator, node: AnchorNode) -> None:
 
 
 class ConfigSettingNode(Element):
-    config_settings: Dict[str, str]
+    config_settings: dict[str, str]
 
-    def __init__(self, settings: Optional[Dict[str, str]]):
+    def __init__(self, settings: Optional[dict[str, str]]):
         super().__init__()
-        self.config_settings = dict()
+        self.config_settings = {}
         if settings is not None:
             self.config_settings = settings
 
 
 def visit_config_setting_node(
-    visitor: SphinxTranslator, node: ConfigSettingNode
+    visitor: HTML5Translator, node: ConfigSettingNode
 ) -> None:
     return
 
 
 def depart_config_setting_node(
-    visitor: SphinxTranslator, node: ConfigSettingNode
+    visitor: HTML5Translator, node: ConfigSettingNode
 ) -> None:
     return
 
@@ -111,26 +115,25 @@ class ConfigSettingDirective(SphinxDirective):
         CONFIG_SETTING_DESCRIPTION: unchanged,
     }
 
-    def run(self) -> List[Node]:
-        replacement_nodes: List[Node] = list()
+    def run(self) -> list[Node]:
         # Add an anchor node, so we can refer to this section later
-        replacement_nodes.append(AnchorNode(self.arguments[0]))
+        replacement_nodes: list[Node] = [AnchorNode(self.arguments[0])]
         # If there is content, then collect it into a string and append it to the short description
-        long_description = ""
+        long_description: str = ""
         for content_line in self.content:
             if content_line != "":
                 long_description += content_line.rstrip()
             long_description += "\n"
-        short_description = ""
+        short_description: str = ""
         if CONFIG_SETTING_DESCRIPTION in self.options:
             short_description = self.options[CONFIG_SETTING_DESCRIPTION]
         # If the short description is non-empty, append two newlines so that it is treated as a new paragraph
         if short_description != "":
             short_description += "\n\n"
         # Parse RST content in the description into HTML, so it can be displayed richly on the browser side
-        description = rst2html(short_description + long_description.rstrip())
+        description: str = rst2html(short_description + long_description.rstrip())
         # Add a ConfigSettingNode that contains the metadata for the setting
-        config_setting = {
+        config_setting: dict[str, str] = {
             CONFIG_SETTING_ID: self.arguments[0],
             CONFIG_SETTING_DISPLAYNAME: self.options[CONFIG_SETTING_DISPLAYNAME],
             CONFIG_SETTING_SYSTEMCONSOLE: self.options[CONFIG_SETTING_SYSTEMCONSOLE],
@@ -140,7 +143,7 @@ class ConfigSettingDirective(SphinxDirective):
         }
         replacement_nodes.append(ConfigSettingNode(config_setting))
         # Get the domain and add a reference to this config setting, so we can process XRefs
-        config_domain = self.env.domains["config"]
+        config_domain: Domain = self.env.domains["config"]
         if isinstance(config_domain, ConfigSettingDomain):
             config_domain.add_config_setting(config_setting)
         return replacement_nodes
@@ -166,14 +169,14 @@ class ConfigSettingDomain(Domain):
 
     def get_full_qualified_name(self, node: Element) -> Optional[str]:
         if isinstance(node, ConfigSettingNode):
-            return "config.setting_%s" % node.config_settings[CONFIG_SETTING_ID]
-        return "{}.{}".format("config", node.arguments[0])
+            return f"config.setting_{node.config_settings[CONFIG_SETTING_ID]}"
+        return f"config.{node.arguments[0]}"
 
-    def get_objects(self) -> Iterable[Tuple[str, str, str, str, str, int]]:
+    def get_objects(self) -> Iterable[tuple[str, str, str, str, str, int]]:
         # yield from an empty list, so we do not add anything to the Sphinx search index
-        yield from list()
+        yield from []
 
-    def merge_domaindata(self, docnames: List[str], otherdata: Dict) -> None:
+    def merge_domaindata(self, docnames: list[str], otherdata: dict[str, Any]) -> None:
         self.data["configs"].extend(otherdata["configs"])
 
     def resolve_any_xref(
@@ -184,26 +187,25 @@ class ConfigSettingDomain(Domain):
         target: str,
         node: pending_xref,
         contnode: Element,
-    ) -> List[Tuple[str, Element]]:
-        return list()
+    ) -> list[tuple[str, Element]]:
+        return []
 
     def resolve_xref(
         self, env, fromdocname, builder, typ, target, node, contnode
     ) -> Optional[Node]:
-        match = [
+        match: list[tuple[str, str]] = [
             (docname, anchor)
             for name, sig, typ, docname, anchor, prio in self.data["configs"]
             if sig == target
         ]
         if len(match) > 0:
-            todocname = match[0][0]
-            targ = match[0][1]
+            todocname: str = match[0][0]
+            targ: str = match[0][1]
             return make_refnode(builder, fromdocname, todocname, targ, contnode, targ)
         else:
             logger.warning(
                 "ConfigSettingDomain: resolve_xref(): "
-                "unable to resolve crossreference; fromdocname=%s, typ=%s, target=%s"
-                % (fromdocname, typ, target)
+                f"unable to resolve crossreference; fromdocname={fromdocname}, typ={typ}, target={target}"
             )
             return None
 
@@ -213,9 +215,9 @@ class ConfigSettingDomain(Domain):
           :param setting: Setting metadata
           :return: None
         """
-        name = "config.setting_%s" % setting[CONFIG_SETTING_ID]
-        anchor = setting[CONFIG_SETTING_ID]
-        config_setting = (
+        name: str = f"config.setting_{setting[CONFIG_SETTING_ID]}"
+        anchor: str = setting[CONFIG_SETTING_ID]
+        config_setting: tuple[str, str, str, str, str, int] = (
             name,
             setting[CONFIG_SETTING_DISPLAYNAME],
             "setting",
@@ -235,23 +237,22 @@ def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
     if hasattr(env, "config_settings"):
         if docname in env.config_settings:
             logger.verbose(
-                "config-setting-v2: env_purge_doc(): removing doc %s from config_settings"
-                % docname
+                f"config-setting-v2: env_purge_doc(): removing doc {docname} from config_settings"
             )
             env.config_settings.pop(docname)
 
 
 def env_merge_info(
-    app: Sphinx, env: BuildEnvironment, docnames: List[str], other: BuildEnvironment
+    app: Sphinx, env: BuildEnvironment, docnames: list[str], other: BuildEnvironment
 ) -> None:
     if not hasattr(env, "config_settings"):
-        env.config_settings = dict()
+        env.config_settings = {}
     if hasattr(other, "config_settings"):
         for docname in docnames:
             if docname in other.config_settings:
                 logger.verbose(
-                    "config-setting-v2: env_merge_info(): adding %d settings to config_settings[%s]"
-                    % (len(other.config_settings[docname]), docname)
+                    "config-setting-v2: env_merge_info(): "
+                    f"adding {len(other.config_settings[docname])} settings to config_settings[{docname}]"
                 )
                 if len(other.config_settings[docname]) > 0:
                     env.config_settings[docname] = other.config_settings[docname]
@@ -259,37 +260,36 @@ def env_merge_info(
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
     if not hasattr(app.env, "config_settings"):
-        app.env.config_settings = dict()
+        app.env.config_settings = {}
     # Check if this document has the :nosearch: metadata attribute; skip if it does
     if app.env.docname in app.env.metadata:
         if "nosearch" in app.env.metadata[app.env.docname]:
             logger.debug(
-                "config-setting-v2: doctree_read(): doc %s has :nosearch: attribute; skipping it"
-                % app.env.docname
+                f"config-setting-v2: doctree_read(): doc {app.env.docname} has :nosearch: attribute; skipping it"
             )
             return
-    config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
+    # config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
+    config_nodes: list[ConfigSettingNode] = []
+    for config_node in doctree.findall(ConfigSettingNode, False, True, False, False):
+        config_nodes.append(config_node)
     if len(config_nodes) == 0:
         return
     logger.verbose(
-        "config-setting-v2: doctree_read(): found %d ConfigSettingNodes in doc %s"
-        % (len(config_nodes), app.env.docname)
+        f"config-setting-v2: doctree_read(): found {len(config_nodes)} ConfigSettingNodes in doc {app.env.docname}"
     )
-    doc_config_settings: List[Dict[str, str]] = list()
+    doc_config_settings: list[dict[str, str]] = []
     for config_node in config_nodes:
         doc_config_settings.append(config_node.config_settings)
     if len(doc_config_settings) > 0:
         logger.info(
-            "config-setting-v2: %d config settings in %s"
-            % (len(doc_config_settings), app.env.docname)
+            f"config-setting-v2: {len(doc_config_settings)} config settings in {app.env.docname}"
         )
         if app.env.docname not in app.env.config_settings:
-            app.env.config_settings[app.env.docname] = list()
+            app.env.config_settings[app.env.docname] = []
         app.env.config_settings[app.env.docname].extend(doc_config_settings)
     else:
         logger.verbose(
-            "config-setting-v2: doctree_read(): no config settings in doc %s"
-            % app.env.docname
+            f"config-setting-v2: doctree_read(): no config settings in doc {app.env.docname}"
         )
 
 
@@ -299,22 +299,22 @@ def build_finished(app: Sphinx, exception: Exception):
     if hasattr(app.env, "config_settings"):
         logger.info(bold("writing config setting search index... "), nonl=True)
         # create config setting search index
-        settings_index: List[Dict[str, str]] = list()
+        settings_index: list[dict[str, str]] = []
         for docname in app.env.config_settings:
             for config_setting in app.env.config_settings[docname]:
                 config_setting[CONFIG_SETTING_DOCNAME] = docname
                 config_setting[CONFIG_SETTING_ANCHOR] = (
-                    docname + ".html#" + config_setting[CONFIG_SETTING_ID]
+                    f"{docname}.html#{config_setting[CONFIG_SETTING_ID]}"
                 )
                 settings_index.append(config_setting)
         # dump to a JSON file
-        outfile = pathlib.PurePath(app.outdir, "config-settings-index.json")
-        with open(outfile, "w") as fout:
+        outfile: Path = Path(app.outdir) / "config-settings-index.json"
+        with outfile.open("w") as fout:
             json.dump(settings_index, fout)
         logger.info("done")
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(app: Sphinx) -> dict[str, Any]:
     """
     Sphinx extension entry point
       :param app: The Sphinx application instance
