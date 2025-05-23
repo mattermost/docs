@@ -16,22 +16,23 @@ examples:
      :description: Icon Description
    ```
 """
+
+from typing import Any, Final, Optional
+
 from docutils import nodes
-from docutils.nodes import NodeVisitor
 from docutils.parsers.rst.directives import unchanged
 from docutils.parsers.rst.states import Inliner
 from sphinx.application import Sphinx
 from sphinx.util.docutils import SphinxDirective
-from typing import Dict, Any, List, Tuple
-
+from sphinx.writers.html5 import HTML5Translator
 
 # The name of the directive
-DIRECTIVE_NAME = "compass-icon"
+DIRECTIVE_NAME: Final[str] = "compass-icon"
 # The name of the `description` directive option
-OPTION_DESCRIPTION = "description"
+OPTION_DESCRIPTION: Final[str] = "description"
 
 
-def setup(app: Sphinx) -> Dict[str, Any]:
+def setup(app: Sphinx) -> dict[str, Any]:
     """
     Sphinx extension setup function
       :param app: The Sphinx app instance
@@ -68,7 +69,7 @@ class CompassIconContainer(nodes.Element):
             self.icon_description = description
 
 
-def visit(visitor: NodeVisitor, node: CompassIconContainer):
+def visit(visitor: HTML5Translator, node: CompassIconContainer):
     """
     Docutils node visitor that renders a CompassIconContainer node into HTML. This function creates the opening
     HTML tag.
@@ -88,12 +89,12 @@ def visit(visitor: NodeVisitor, node: CompassIconContainer):
     node_attributes["aria-label"] = node.icon_description
     node_attributes["title"] = node.icon_description
     # Generate the starting HTML tag
-    text = visitor.starttag(node, node.tagname, **node_attributes)
+    text: str = visitor.starttag(node, node.tagname, **node_attributes)
     # Add the tag to the rendered document
     visitor.body.append(text.strip())
 
 
-def depart(visitor: NodeVisitor, node: CompassIconContainer):
+def depart(visitor: HTML5Translator, node: CompassIconContainer):
     """
     Docutils node visitor that renders a CompassIconContainer node into HTML. This function creates the closing
     HTML tag.
@@ -109,9 +110,9 @@ def compass_icon_role(
     text: str,
     lineno: int,
     inliner: Inliner,
-    options: Dict = None,
-    content: List = None,
-) -> Tuple[List[nodes.Node], List[nodes.system_message]]:
+    options: Optional[dict] = None,
+    content: Optional[list] = None,
+) -> tuple[list[nodes.Node], list[nodes.system_message]]:
     """
     A docutils Role which adds a CompassIconContainer node to the document.
       :param name: (unused)
@@ -123,20 +124,20 @@ def compass_icon_role(
       :param content: (unused)
       :return: A tuple containing the list of nodes to add to the document
     """
-    icon_name = ""
-    icon_description = ""
+    icon_name: str = ""
+    icon_description: str = ""
     """
     Split the text parameter on a comma (,). The first token is the icon name. If there is a second token,
     then it will be used as the icon description.
     """
-    tokens = text.split(",", 1)
+    tokens: list[str] = text.split(",", 1)
     if len(tokens) == 2:
         icon_name = tokens[0]
         icon_description = tokens[1]
     elif len(tokens) == 1:
         icon_name = tokens[0]
     # Return a new CompassIconContainer object that includes the icon name and optional description
-    return [CompassIconContainer(icon_name, icon_description)], list()
+    return [CompassIconContainer(icon_name, icon_description)], []
 
 
 class CompassIconDirective(SphinxDirective):
@@ -153,13 +154,13 @@ class CompassIconDirective(SphinxDirective):
     # Define the `description` directive option
     option_spec = {OPTION_DESCRIPTION: unchanged}
 
-    def run(self) -> List[nodes.Node]:
+    def run(self) -> list[nodes.Node]:
         """
         Replace the directive with an appropriate CompassIconContainer node
           :return: A list of nodes to insert into the documednt
         """
-        icon_name = self.arguments[0]
-        icon_description = ""
+        icon_name: str = self.arguments[0]
+        icon_description: str = ""
         if OPTION_DESCRIPTION in self.options:
             icon_description = self.options[OPTION_DESCRIPTION]
         return [CompassIconContainer(icon_name, icon_description)]
