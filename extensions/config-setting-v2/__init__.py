@@ -21,7 +21,6 @@ from sphinx.writers.html5 import HTML5Translator
 
 __version__ = "0.3.0"
 
-
 CONFIG_SETTING_ANCHOR: Final[str] = "anchor"
 CONFIG_SETTING_DOCNAME: Final[str] = "docname"
 CONFIG_SETTING_ID: Final[str] = "id"
@@ -30,6 +29,8 @@ CONFIG_SETTING_SYSTEMCONSOLE: Final[str] = "systemconsole"
 CONFIG_SETTING_CONFIGJSON: Final[str] = "configjson"
 CONFIG_SETTING_ENVIRONMENT: Final[str] = "environment"
 CONFIG_SETTING_DESCRIPTION: Final[str] = "description"
+
+LOG_PREFIX: Final[str] = "[config-setting-v2]"
 
 # Sphinx logger
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
@@ -204,7 +205,7 @@ class ConfigSettingDomain(Domain):
             return make_refnode(builder, fromdocname, todocname, targ, contnode, targ)
         else:
             logger.warning(
-                "ConfigSettingDomain: resolve_xref(): "
+                f"{LOG_PREFIX} ConfigSettingDomain: resolve_xref(): "
                 f"unable to resolve crossreference; fromdocname={fromdocname}, typ={typ}, target={target}"
             )
             return None
@@ -226,7 +227,7 @@ class ConfigSettingDomain(Domain):
             0,
         )
         logger.verbose(
-            "ConfigSettingDomain: add_config_setting(): "
+            f"{LOG_PREFIX} ConfigSettingDomain: add_config_setting(): "
             "appending config: name=%s, dispname=%s, type=%s, docname=%s, anchor=%s, priority=%d"
             % config_setting
         )
@@ -237,7 +238,7 @@ def env_purge_doc(app: Sphinx, env: BuildEnvironment, docname: str) -> None:
     if hasattr(env, "config_settings"):
         if docname in env.config_settings:
             logger.verbose(
-                f"config-setting-v2: env_purge_doc(): removing doc {docname} from config_settings"
+                f"{LOG_PREFIX} env_purge_doc(): removing doc {docname} from config_settings"
             )
             env.config_settings.pop(docname)
 
@@ -251,7 +252,7 @@ def env_merge_info(
         for docname in docnames:
             if docname in other.config_settings:
                 logger.verbose(
-                    "config-setting-v2: env_merge_info(): "
+                    f"{LOG_PREFIX} env_merge_info(): "
                     f"adding {len(other.config_settings[docname])} settings to config_settings[{docname}]"
                 )
                 if len(other.config_settings[docname]) > 0:
@@ -265,31 +266,30 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     if app.env.docname in app.env.metadata:
         if "nosearch" in app.env.metadata[app.env.docname]:
             logger.debug(
-                f"config-setting-v2: doctree_read(): doc {app.env.docname} has :nosearch: attribute; skipping it"
+                f"{LOG_PREFIX} doctree_read(): doc {app.env.docname} has :nosearch: attribute; skipping it"
             )
             return
-    # config_nodes = doctree.traverse(ConfigSettingNode, False, True, False, False)
     config_nodes: list[ConfigSettingNode] = []
     for config_node in doctree.findall(ConfigSettingNode, False, True, False, False):
         config_nodes.append(config_node)
     if len(config_nodes) == 0:
         return
     logger.verbose(
-        f"config-setting-v2: doctree_read(): found {len(config_nodes)} ConfigSettingNodes in doc {app.env.docname}"
+        f"{LOG_PREFIX} doctree_read(): found {len(config_nodes)} ConfigSettingNodes in doc {app.env.docname}"
     )
     doc_config_settings: list[dict[str, str]] = []
     for config_node in config_nodes:
         doc_config_settings.append(config_node.config_settings)
     if len(doc_config_settings) > 0:
         logger.info(
-            f"config-setting-v2: {len(doc_config_settings)} config settings in {app.env.docname}"
+            f"{LOG_PREFIX} {len(doc_config_settings)} config settings in {app.env.docname}"
         )
         if app.env.docname not in app.env.config_settings:
             app.env.config_settings[app.env.docname] = []
         app.env.config_settings[app.env.docname].extend(doc_config_settings)
     else:
         logger.verbose(
-            f"config-setting-v2: doctree_read(): no config settings in doc {app.env.docname}"
+            f"{LOG_PREFIX} doctree_read(): no config settings in doc {app.env.docname}"
         )
 
 

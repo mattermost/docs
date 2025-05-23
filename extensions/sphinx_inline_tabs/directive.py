@@ -1,5 +1,7 @@
 """The actual implementation."""
 
+from typing import Final
+
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util import logging
@@ -10,6 +12,7 @@ from .nodes import TabContainer
 
 
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
+LOG_PREFIX: Final[str] = "[sphinx_inline_tabs]"
 
 
 class TabDirective(SphinxDirective):
@@ -74,10 +77,10 @@ class TabDirective(SphinxDirective):
         self, parsed_nodes: list[nodes.Node], level: int = 0, tab_name: str = ""
     ):
         for parsed_node in parsed_nodes:
-            logger.debug(f"[sphinx_inline_tabs] walk_parsed_nodes(): parsed_node={parsed_node.astext()}")
+            logger.debug(f"{LOG_PREFIX} walk_parsed_nodes(): parsed_node={parsed_node.astext()}")
             if isinstance(parsed_node, nodes.section):
                 node_id: str = parsed_node.attributes["ids"][0]
-                logger.debug(f"[sphinx_inline_tabs] walk_parsed_nodes(): [{level}] section: {node_id}")
+                logger.debug(f"{LOG_PREFIX} walk_parsed_nodes(): [{level}] section: {node_id}")
                 if parsed_node.attributes["ids"]:
                     new_ids: list[str] = [f"inlinetab--{tab_name}--{level}-{node_id}"]
                     for existing_id in parsed_node.attributes["ids"]:
@@ -85,6 +88,6 @@ class TabDirective(SphinxDirective):
                     parsed_node.attributes["ids"] = new_ids
             if parsed_node.children is not None:
                 logger.debug(
-                    f"[sphinx_inline_tabs] walk_parsed_nodes(): [{level}] parse {len(parsed_node.children)} children"
+                    f"{LOG_PREFIX} walk_parsed_nodes(): [{level}] parse {len(parsed_node.children)} children"
                 )
                 self.walk_parsed_nodes(parsed_node.children, level + 1, tab_name)
