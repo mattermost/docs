@@ -17,7 +17,7 @@
 # all copies or substantial portions of the Software.
 
 from pathlib import Path
-from typing import Any, Final
+from typing import Any, Final, Optional
 from xml.etree import ElementTree
 
 from docutils import nodes
@@ -26,6 +26,7 @@ from sphinx.errors import SphinxError
 from sphinx.util import logging
 from sphinx.util.console import bold, colorize  # type: ignore
 from sphinx.util.logging import SphinxLoggerAdapter
+
 
 # Sphinx logger
 logger: SphinxLoggerAdapter = logging.getLogger(__name__)
@@ -139,7 +140,9 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
     if hasattr(app.env, "is_dictionary_builder"):
         is_dictionary_builder = app.env.is_dictionary_builder
     # Calculate the document link for this document and add it to the `sitemap_links` attribute in the environment
-    app.env.sitemap_links[app.env.docname] = calculate_link(is_dictionary_builder, app.env.docname)
+    app.env.sitemap_links[app.env.docname] = calculate_link(
+        is_dictionary_builder, app.env.docname
+    )
 
 
 def calculate_link(is_dictionary_builder: bool, docname: str) -> str:
@@ -206,7 +209,7 @@ def record_builder_type(app: Sphinx):
     """
     # builder isn't initialized in the setup so we do it here
     # we rely on the class name, not the actual class, as it was moved 2.0.0
-    builder = getattr(app, "builder", None)
+    builder: Optional[Any] = getattr(app, "builder", None)
     if builder is None:
         return
     app.env.is_dictionary_builder = type(builder).__name__ == "DirectoryHTMLBuilder"
