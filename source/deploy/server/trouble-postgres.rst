@@ -5,10 +5,10 @@ From Mattermost v8.0, :ref:`PostgreSQL <deploy/software-hardware-requirements:da
 
 PostgreSQL v15 introduces changes that may affect compatibility with previous releases. If you're deploying a fresh installation of PostgreSQL v15, run this command: ``GRANT CREATE ON SCHEMA public TO PUBLIC`` to ensure that you can use Mattermost.
 
-PostgresSQL full-text search fails to use indexes with non-english ``default_text_search_config``
+PostgreSQL full-text search fails to use indexes with non-english ``default_text_search_config``
 --------------------------------------------------------------------------------------------------
 
-Mattermost uses ``default_text_search_config`` for full-text search in PostgresSQL databases, as opposed to a hardcoded text search config. However, indexes are still created with a hardcoded text search config (english) and as a result, full-text search may never use the indexes.
+Mattermost uses ``default_text_search_config`` for full-text search in PostgreSQL databases, as opposed to a hardcoded text search config. However, indexes are still created with a hardcoded text search config (english) and as a result, full-text search may never use the indexes.
 
 Some of the tables in Mattermost, like ``Posts`` or ``Users``, contain GIN indexes to improve the database full-text search feature in PostgreSQL.
 
