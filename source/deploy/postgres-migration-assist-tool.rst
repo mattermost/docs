@@ -20,13 +20,10 @@ You'll also need to install the ``pgloader`` tool to migrate your data from MySQ
 Usage
 -----
 
-.. note::
-
-   If you encounter heap exhaustion errors in pgloader, edit your generated ``migration.load`` and under the ``WITH`` block set: ``prefetch rows = 1000``
-
 .. important::
 
-   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </deploy/server/preparations>` documentation for details.
+  - If you encounter heap exhaustion errors in pgloader, edit your generated ``migration.load`` and under the ``WITH`` block set: ``prefetch rows = 1000``
+  - Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </deploy/server/preparations>` documentation for details.
 
 Step 1 - Check the MySQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
