@@ -21,7 +21,7 @@ Stay up to date with the latest features and improvements.
 
 * :doc:`Important upgrade notes </upgrade/important-upgrade-notes>` - Find version-specific upgrade considerations.
 * :doc:`Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>` - Learn how to prepare for a Mattermost upgrade.
-* :doc:`Communicate scheduled mainenance best practices </upgrade/communicate-scheduled-maintenance>` - Learn best practices for communicating scheduled server mainenance in advance of a service maintenance window.
+* :doc:`Communicate scheduled maintenance best practices </upgrade/communicate-scheduled-maintenance>` - Learn best practices for communicating scheduled server maintenance in advance of a service maintenance window.
 * :doc:`Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` - Learn the basics of upgrading your Mattermost server to the latest version.
 * :doc:`Enterprise install and upgrade </upgrade/enterprise-install-upgrade>` - Learn how to upgrade your Mattermost server to premium versions.
 * :doc:`Administrator onboarding tasks </upgrade/admin-onboarding-tasks>` - Learn about the onboarding tasks for administrators after an upgrade.
