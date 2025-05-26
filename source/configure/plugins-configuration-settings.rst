@@ -12,7 +12,7 @@ Review and manage the following plugin configuration options in the System Conso
 - `GitHub <#github>`__
 - `Jira <#jira>`__
 - `Legal Hold <#legal-hold>`__
-- `Microsoft Calendar <#microsoft-calendar>`__
+- `Microsoft Calendar Integration <#microsoft-calendar>`__
 - `MS Teams <#ms-teams>`__
 - `Performance metrics <#performance-metrics>`__
 - `Collaborative playbooks <#collaborative-playbooks>`__
@@ -1103,19 +1103,19 @@ See the :doc:`Legal holds </comply/legal-hold>` product documentation for detail
 ----
 
 .. config:setting:: microsoft-calendar
-  :displayname: Microsoft Calendar interoperability (Plugins > Microsoft Calendar)
+  :displayname: Microsoft Calendar Integration (Plugins > Microsoft Calendar)
   :systemconsole: Plugins > Microsoft Calendar
   :configjson: N/A
   :environment: N/A
   :description: Connect your Microsoft Calendar to your Mattermost instance.
 
-Microsoft Calendar
--------------------
+Microsoft Calendar Integration
+-------------------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
+See the :doc:`Connect Microsoft Calendar Integration to Mattermost </integrate/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
 
 ----
 
