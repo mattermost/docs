@@ -4,6 +4,10 @@ Chat with Copilot
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. include:: /agents/docs/usage.md
+  :parser: myst
+
+
 Overcome information overload and streamline team communication and collaboration with Mattermost Copilot in your Mattermost instance. Copilot is a generative AI assistant with a flexible LLM backend that can be configured to meet your organization's needs. Copilot can summarize call recordings, threads, unread channel messages, and provide insights on any topic you're curious about.
 
 .. tip::
