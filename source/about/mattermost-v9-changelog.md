@@ -9,6 +9,18 @@
 (release-v9-11-extended-support-release)=
 ## Release v9.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **9.11.16, released 2025-05-21**
+  - Mattermost v9.11.16 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v9.11.16 contains no database or functional changes.
+- **9.11.15, released 2025-05-09**
+  - Mattermost v9.11.15 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Brought back the bug fix for [MM-61361](https://mattermost.atlassian.net/browse/MM-61361), since the performance regression has been fixed by tweaking the offending SQL query.
+  - Mattermost v9.11.15 contains the following database changes:
+    - A new index was added to the ``CategoryId`` column in ``SidebarChannels`` table to improve query performance. No database downtime is expected for this upgrade. It takes around 2s to add the index on a table with 1.2M rows for PostgreSQL, and it takes around 5s on MySQL on a table with 300K rows. The migrations are fully backwards-compatible and no table locks or existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are ``CREATE INDEX idx_sidebarchannels_categoryid ON SidebarChannels(CategoryId);`` for MYSQL and ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_sidebarchannels_categoryid ON sidebarchannels(categoryid);`` for PostgreSQL.
+- **9.11.14, released 2025-05-05**
+  - Mattermost v9.11.14 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Reverted a bug fix for [MM-61361](https://mattermost.atlassian.net/browse/MM-61361) that likely introduced a performance regression.
+  - Mattermost v9.11.14 contains no database or functional changes.
 - **9.11.13, released 2025-04-29**
   - Mattermost v9.11.13 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v9.11.13 contains no database or functional changes.
@@ -83,7 +95,7 @@
 
 ### Important Upgrade Notes
 
- - Added support for Elasticsearch v8. Also added Beta support for [Opensearch v1.x and v2.x](https://opensearch.org/). A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and Opensearch. The default value is `elasticsearch`, which breaks support for AWS Elasticsearch v7.10.x since the official v8 client only works from Elasticsearch v7.11 and higher versions. See the important note below for details.
+ - Added support for Elasticsearch v8. Also added Beta support for [OpenSearch v1.x and v2.x](https://opensearch.org/). A new config setting ``ElasticsearchSettings.Backend`` has been added to differentiate between Elasticsearch and OpenSearch. The default value is `elasticsearch`, which breaks support for AWS Elasticsearch v7.10.x since the official v8 client only works from Elasticsearch v7.11 and higher versions. See the important note below for details.
  - Mattermost supports Elasticsearch v7.17+. However, we recommend upgrading your Elasticsearch v7 instance to v8.x. See the [Elasticsearch upgrade](https://www.elastic.co/guide/en/elasticsearch/reference/current/setup-upgrade.html) documentation for details.
  - When using Elasticsearch v8, ensure you set ``action.destructive_requires_name`` to ``false`` in ``elasticsearch.yml`` to allow for wildcard operations to work.
 
@@ -91,8 +103,8 @@
 **AWS Elasticsearch**
 
 If you're using AWS Elasticsearch, you must:
-1. Upgrade to AWS Opensearch. Refer to the [Opensearch upgrade](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html) documentation for details.
-2. Disable "compatibility mode" in Opensearch.
+1. Upgrade to AWS OpenSearch. Refer to the [OpenSearch upgrade](https://docs.aws.amazon.com/opensearch-service/latest/developerguide/version-migration.html) documentation for details.
+2. Disable "compatibility mode" in OpenSearch.
 3. Upgrade Mattermost server.
 4. Update the Mattermost `ElasticsearchSettings.Backend` configuration setting value from `elasticsearch` to `opensearch` manually or using [mmctl](https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-config-set). This value cannot be changed using the System Console. See the Mattermost [Elasticsearch backend type](https://docs.mattermost.com/configure/environment-configuration-settings.html#elastic-backendtype) documentation for additional details.
 5. Restart the Mattermost server.
@@ -163,7 +175,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to the Enterprise plan:
  - Under ``ElasticsearchSettings`` in ``config.json``:
-    - Added ``Backend`` to differentiate between Elasticsearch and Opensearch. The default value is Elasticsearch.
+    - Added ``Backend`` to differentiate between Elasticsearch and OpenSearch. The default value is ``elasticsearch``.
 
 ### API Changes
  - Added new API endpoints to manage remote clusters.
@@ -715,6 +727,9 @@ See [this walkthrough video](https://mattermost.com/video/changelog-v9-6/) on so
 (release-v9-5-extended-support-release)=
 ## Release v9.5 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
 
+- **9.5.14, released 2025-05-09**
+  - Upgraded logr dependency to v2.0.22 for multiple improvements and bug fixes.
+  - Mattermost v9.5.14 contains no database or functional changes.
 - **9.5.13, released 2024-11-14**
   - Mattermost v9.5.13 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Calls plugin [v0.29.4](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v0.29.4).

@@ -7,7 +7,7 @@ Connect Zoom to Mattermost
 
 Reduce friction and time lost to coordinating meetings and switching between apps by integrating Zoom with Mattermost. Make it easy for your teams to start both spontaneous video calls directly from Mattermost channels.
 
-Setup
+Deploy
 ------
 
 Setup starts in Zoom and configuration ends in Mattermost.
@@ -87,12 +87,7 @@ Enable
 
 Notify your teams that they can `connect their Zoom accounts to Mattermost <#usage>`__.
 
-Upgrade
--------
-
-We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibiilty considerations.
-
-Usage
+Use
 -----
 
 You need a paid Zoom account to start a Zoom call within Mattermost. The first time you create a Zoom meeting, you may be prompted to connect your account. Follow the instructions to connect your Zoom account using your credentials.
@@ -103,13 +98,6 @@ Join the meeting by selecting the call invitation in the channel.
 
 Run the ``/zoom settings`` slash command to set your preference for using your Zoom personal meeting ID as a meeting host. You can choose to always use your personal meeting ID, always use a new unique meeting id, or set Mattermost to prompt you for your preference each time you start a call.
 
-Get help
---------
-
-Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Zoom plugin repository <https://github.com/mattermost/mattermost-plugin-zoom>`_.
-
-For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
-
 Customize
 ----------
 
@@ -119,3 +107,17 @@ This `integration <https://github.com/mattermost/mattermost-plugin-zoom>`_ conta
 - Web App: Inside the ``/webapp`` directory, you will find the JS and React files that make up the client-side of the plugin. Within there, modify files and components as necessary. Test your syntax by running ``npm run build``.
 
 Visit the `Mattermost Developer Workflow <https://developers.mattermost.com/extend/plugins/developer-workflow/>`__ and `Mattermost Developer environment setup <https://developers.mattermost.com/extend/plugins/developer-setup/>`_ for information about developing, customizing, and extending Mattermost functionality.
+
+Upgrade
+-------
+
+We recommend updating this integration when new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-zoom/releases>`__ for information on the latest release, previous releases, and compatibiilty considerations.
+
+Get help
+--------
+
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Zoom plugin repository <https://github.com/mattermost/mattermost-plugin-zoom>`_.
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.

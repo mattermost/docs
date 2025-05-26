@@ -4,9 +4,101 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.8-feature-release)=
+## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+- **10.8.1, released 2025-05-21**
+  - Mattermost v10.8.1 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Updated ``golang.org/x/net`` version to v0.39.0.
+  - Mattermost v10.8.1 contains no database or functional changes.
+- **10.8.0, released 2025-05-16**
+  - Original 10.8.0 release.
+
+### Important Upgrade Notes
+ - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
+ - Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, [talk to a Mattermost expert](https://mattermost.com/contact-sales/).
+
+```{Important}
+If you upgrade from a release earlier than v10.7, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin version [v1.7.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.1).
+ - Pre-packaged Metrics plugin version [v0.6.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.6.0).
+ - Added an improved channel menu. 
+ - Updated email notification settings to provide clearer wording and descriptions for both batched and non-batched scenarios. The settings dialog now reflects the selected status more accurately in both collapsed and expanded views, enhancing consistency and usability.
+ - Added the ability to display the nickname or full name in Threads based on settings.
+ - Improved the error message for failed file copies. 
+
+#### Administration
+ - Added Custom Profile Attribute field type, visibility, and related options in **System Console -> System Properties**.
+ - Added support for LDAP/SAML sync with Custom Profile Attributes (disabled behind a feature flag).
+ - Stopped building and packaging Windows and MacOS releases. 
+ - ``EnableLocalMode`` is now automatically enabled during development. 
+ - Log messages are now added if post props are invalid. 
+ - Stopped logging websocket PING events received by the server. 
+ - Errors from Support Packet generation are now shown in the **System Console**. 
+ - Added a client-side ping to the websocket to detect broken connections more quickly.
+ - Removed the feature flag and added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature. 
+
+### Bug Fixes
+ - Fixed ``GET /groups endpoint`` documentation. 
+ - Fixed an issue with group mentions overlay and details after an update. 
+ - Fixed an issue with showing local hours on bot users. 
+ - Fixed an issue where replies appeared as part of the wrong thread when Collapsed Reply Threads were disabled. 
+ - Fixed an issue with keyboard input not working on new menus when the menu was opened using the mouse. 
+ - Fixed an issue with keyboard navigation with the channel switcher. 
+ - Fixed an issue with link previews when using angle brackets for autolinking. 
+ - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens. 
+ - Fixed an issue where there were invalid restrictions on local mode administration (e.g. via mmctl). 
+ - Fixed an issue where users were not able to escape emoticon formatting by prefixing with a backslash. 
+ - Fixed an issue with post links trapping focus when hovered or focused using the keyboard.
+ - Fixed an issue where plugins were disabled when Mattermost was embedded.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise plans:
+ - Under ``AccessControlSettings`` in ``config.json``:
+   - Added ``EnableAttributeBasedAccessControl`` and ``EnableChannelScopeAccessControl`` configuration settings. 
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added a ``EnableCrossTeamSearch`` configuration option for cross-team search feature.
+ - Under ``ElasticsearchSettings`` in ``config.json``:
+   - Added a new configuration setting ``GlobalSearchPrefix`` which can be used to search across multiple indices having a common prefix. This is useful in a scenario with multiple Elasticsearch instances, where multiple instances are writing to different indices with different prefixes using the ``ElasticsearchSettings.IndexPrefix`` setting. 
+
+### API Changes
+ - Added a new API endpoint to retrieve the Custom Profile Attributes group data. 
+
+### Open Source Components
+ - Added ``bep/imagemeta`` and removed ``rwcarlsen/goexif`` from https://github.com/mattermost/mattermost.
+
+### Go Version
+ - v10.8 is built with Go ``v1.23.7``.
+
+### Known Issues
+ - The ``icon_emoji`` property does not work for webhook posts [MM-64316](https://mattermost.atlassian.net/browse/MM-64316).
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+ - Searching stop words in quotation marks with Elasticsearch enabled returns more than just the searched terms.
+ - Slack import through the CLI fails if email notifications are enabled.
+
+### Contributors
+ - [aboukhal](https://github.com/aboukhal), [acc0mplish-note](https://translate.mattermost.com/user/acc0mplish-note), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Arusekk](https://translate.mattermost.com/user/Arusekk), [Aryakoste](https://github.com/Aryakoste), [AshiishKarhade](https://github.com/AshiishKarhade), [AulakhHarsh](https://github.com/AulakhHarsh), [BenCookie95](https://github.com/BenCookie95), [bndn](https://github.com/bndn), [bshumylo](https://github.com/bshumylo), [burakcakirel](https://github.com/burakcakirel), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://github.com/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [DSchalla](https://github.com/DSchalla), [Eleferen](https://translate.mattermost.com/user/Eleferen), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [errotu](https://github.com/errotu), [esarafianou](https://github.com/esarafianou), [evituzas](https://translate.mattermost.com/user/evituzas), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [jadrales](https://github.com/jadrales), [JahleelT](https://github.com/JahleelT), [jasonblais](https://github.com/jasonblais), [jeoooo](https://github.com/jeoooo), [jespino](https://github.com/jespino), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [kaakaa](https://github.com/kaakaa), [kasyap1234](https://github.com/kasyap1234), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [KuSh](https://github.com/KuSh), [larkox](https://github.com/larkox), [lieut-data](https://github.com/lieut-data), [lil5](https://github.com/lil5), [lucasvbeek](https://github.com/lucasvbeek), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [marianunez](https://github.com/marianunez), [mariuskarotkis](https://translate.mattermost.com/user/mariuskarotkis), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [melroy89](https://github.com/melroy89), [mgdelacroix](https://github.com/mgdelacroix), [mlcuchlu](https://translate.mattermost.com/user/mlcuchlu), [nickmisasi](https://github.com/nickmisasi), [panoramix360](https://github.com/panoramix360), [polinapianina](https://github.com/polinapianina), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [Ricky-Tigg](https://github.com/Ricky-Tigg), [Roy-Orbison](https://github.com/Roy-Orbison), [sadohert](https://github.com/sadohert), [saket-dev01](https://github.com/saket-dev01), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://github.com/Sharuru), [spirosoik](https://github.com/spirosoik), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [surya2611](https://github.com/surya2611), [ThrRip](https://github.com/ThrRip), [timstott](https://github.com/timstott), [tnir\](https://translate.mattermost.com/user/tnir), [toninis](https://github.com/toninis), [vasilybels](https://translate.mattermost.com/user/vasilybels), [ViKriuVK](https://translate.mattermost.com/user/ViKriuVK), [vish9812](https://github.com/vish9812), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
+
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.7.3, released 2025-05-21**
+  - Mattermost v10.7.3 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Mattermost v10.7.3 contains no database or functional changes.
+- **10.7.2, released 2025-05-12**
+  - Mattermost v10.7.2 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.7.2 contains no database or functional changes.
 - **10.7.1, released 2025-04-29**
   - Mattermost v10.7.1 contains a low severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where plugins were disabled when Mattermost was embedded [MM-63507](https://mattermost.atlassian.net/browse/MM-63507).
@@ -103,6 +195,17 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.6-feature-release)=
 ## Release v10.6 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.6.6, released 2025-05-21**
+  - Mattermost v10.6.6 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
+  - Mattermost v10.6.6 contains no database or functional changes.
+- **10.6.5, released 2025-05-15**
+  - Added support for AES-256-GCM encryption in SAML [MM-64222](https://mattermost.atlassian.net/browse/MM-64222).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in "All members" section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Mattermost v10.6.5 contains no database or functional changes.
+- **10.6.4, released 2025-05-12**
+  - Mattermost v10.6.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.6.4 contains no database or functional changes.
 - **10.6.3, released 2025-04-29**
   - Mattermost v10.6.3 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Mattermost v10.6.3 contains no database or functional changes.
@@ -186,6 +289,16 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.5.6, released 2025-05-21**
+  - Mattermost v10.5.6 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
+  - Pre-packaged Calls plugin [v1.7.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.7.1).
+  - Fixed an issue where Team Admin permissions couldn't be changed if they were missing in **All members** section [MM-64157](https://mattermost.atlassian.net/browse/MM-64157).
+  - Mattermost v10.5.6 contains no database or functional changes.
+- **10.5.5, released 2025-05-09**
+  - Mattermost v10.5.5 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.5.5 contains the following database changes:
+    - A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. It takes around 2s to add the index on a table with 1.2M rows for PostgreSQL, and it takes around 5s on MySQL on a table with 300K rows. The migrations are fully backwards-compatible and no table locks or existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are ``CREATE INDEX idx_sidebarchannels_categoryid ON SidebarChannels(CategoryId);`` for MYSQL and ``CREATE INDEX CONCURRENTLY IF NOT EXISTS idx_sidebarchannels_categoryid ON sidebarchannels(categoryid);`` for PostgreSQL. 
 - **10.5.4, released 2025-04-29**
   - Mattermost v10.5.4 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where **Recent Mentions** showed incorrect results for custom notification keywords containing hyphens [MM-63582](https://mattermost.atlassian.net/browse/MM-63582).

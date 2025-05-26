@@ -3,6 +3,8 @@
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```
 
+Mattermost Calls is an excellent option for organizations demanding enhanced security and control over their communication infrastructure. Calls is designed to operate securely in self-hosted deployments, including [air-gapped environments](https://docs.mattermost.com/configure/calls-deployment.html#air-gapped-deployments), ensuring private communication without reliance on public internet connectivity with flexible configuration options for complex network requirements.
+
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
 
 ## Terminology
@@ -45,6 +47,14 @@ Scroll horizontally to see additional columns in the table below.
 | RTC (Calls plugin or `rtcd`) | 8443 | TCP (incoming) | Mattermost clients (Web/Desktop/Mobile) | Mattermost instance or `rtcd` service | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or `rtcd`) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires `rtcd` version >= v0.11 and Calls version >= v0.17. |
 | API (`rtcd`) | 8045 | TCP (incoming) | Mattermost instance(s) (Calls plugin) | `rtcd` service | To allow for HTTP/WebSocket connectivity from Calls plugin to `rtcd` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server. |
 | STUN (Calls plugin or `rtcd`) | 3478 | UDP (outgoing) | Mattermost Instance(s) (Calls plugin) or `rtcd` service | Configured STUN servers | (Optional) To allow for either Calls plugin or `rtcd` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) config option. |
+
+#### Air-gapped deployments
+
+Mattermost Calls can function in air-gapped environments. Exposing Calls to the public internet is only necessary when users need to connect from outside the local network, and no existing method supports that connection. In such setups:
+
+- Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
+- Configuring a STUN server is unnecessary, as all connections occur within the local network.
+- The [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
 
 ## Limitations
 
@@ -168,14 +178,15 @@ We provide a [load-test tool](https://github.com/mattermost/mattermost-plugin-ca
 
 ### Monitoring
 
-Both the plugin and the external `rtcd` service expose some Prometheus metrics to monitor performance. We provide an [official dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) that can be imported in Grafana. You can refer to [Performance monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external `rtcd` service expose some Prometheus metrics to monitor performance. We provide an [official dashboard](https://grafana.com/grafana/dashboards/23225-mattermost-calls-performance-monitoring/) that can be imported in Grafana. You can refer to [Performance monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 #### Calls plugin metrics
 
 Metrics for the calls plugin are exposed through the `/plugins/com.mattermost.calls/metrics` subpath under the existing Mattermost server metrics endpoint. This is controlled by the [Listen address for performance](https://docs.mattermost.com/configure/environment-configuration-settings.html#listen-address-for-performance) configuration setting. It defaults to port `8067`.
 
 ```{note}
-On Mattermost versions prior to v9.5, plugin metrics were exposed through the public `/plugins/com.mattermost.calls/metrics` API endpoint controlled by the [Web server listen address](https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address) configuration setting. This defaults to port `8065`.
+- The [Metrics plugin](https://docs.mattermost.com/scale/collect-performance-metrics.html) collects application-level metrics only and does not make system or OS-level calls. As a result, data typically derived from system-level metrics may be missing in the Grafana panel.
+- On Mattermost versions prior to v9.5, plugin metrics were exposed through the public `/plugins/com.mattermost.calls/metrics` API endpoint controlled by the [Web server listen address](https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address) configuration setting. This defaults to port `8065`.
 ```
 
 **Process**
@@ -434,6 +445,10 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 ### Are there any third-party services involved?
 
 The only external service used is a Mattermost official STUN server (`stun.global.calls.mattermost.com`) which is configured as default. This is primarily used to find the public address of the Mattermost instance if none is provided through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) option. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in cases where the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) setting is provided.
+
+```{note}
+In air-gapped deployments, using STUN servers is not necessary since all connections remain within the local network.
+```
 
 ### Is using UDP a requirement?
 

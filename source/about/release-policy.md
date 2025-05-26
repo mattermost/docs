@@ -33,6 +33,11 @@ Mattermost Extended Support Releases (ESRs) are a strategic choice for organizat
 
 Mattermost [server](/about/mattermost-server-releases) and [desktop app](/about/mattermost-desktop-releases) ESRs are released twice a year, every February and August release. Extended releases are supported for 9 months to provide customers with enough time to test and upgrade to the next ESR.
 
+```{Important}
+Starting with the August 2025 releases (server v10.11 and desktop app v5.13), Mattermost will adjust the server and desktop app ESR life cycle as follows: 
+ - Extended Cadence: The ESR release cycle will change from every 6 months to every 9 months. 
+ - Prolonged Support: The support window will increase from 9 months to 12 months. 
+
 We strongly recommend planning ahead for upgrades before the end of an ESR's life cycle to ensure continuity in receiving security updates.
 
 ESRs don’t include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
@@ -51,23 +56,17 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %y
     tickInterval 2month
-    
-    section 2024
-    v9.7                   :done,  2024-04-16, 2024-07-15
-    v9.8                   :done,  2024-05-15, 2024-08-15
-    v9.9                   :done,  2024-06-16, 2024-09-15
-    v9.10                  :done,  2024-07-16, 2024-10-15
-    v9.11 & Desktop App v5.9 Extended Support :crit,    2024-08-16, 2025-05-15
-    v10.0                  :done,    2024-09-16, 2024-12-15
-    v10.1                  :done,    2024-10-16, 2025-01-15
-    v10.2                  :done,  2024-11-15, 2025-02-15
-    v10.3                  :done,  2024-12-16, 2025-03-15
 
     section 2025
-    v10.4                  :active,  2025-01-16, 2025-04-15
+    v10.4                  :done,  2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
     v10.6                  :active, 2025-03-16, 2025-06-15
     v10.7                  :active, 2025-04-16, 2025-07-15
+    v10.8                  :active, 2025-05-16, 2025-08-15
+    v10.9                  :active, 2025-06-16, 2025-09-15
+    v10.10                 :active, 2025-07-16, 2025-10-15
+    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
+    v11.0                  :active, 2025-09-16, 2025-12-15
 ```
 
 (esr-notifications)=

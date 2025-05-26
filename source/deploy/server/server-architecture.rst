@@ -21,73 +21,46 @@ Mattermost is designed to be able to handle a large number of concurrent users, 
 - Each Azure diagram represents a full High Availability deployment on Microsoft Azure making full use of the available services.
 - Push proxy can be replaced by the Mattermost :ref:`hosted push notification service <configure/environment-configuration-settings:hosted push notifications service (hpns)>`.
 
-.. tab:: 5000 users
+.. tab:: AWS
 
-    **General**
+    .. tab:: 5,000 users
 
-    .. image:: /images/MattermostDeployment5kUsers.png
-        :class: bg-white
+        .. image:: /images/MattermostDeployment5kaws.png
+            :class: bg-white
 
-    **AWS**
+    .. tab:: 10,000 users
 
-    .. image:: /images/MattermostDeployment5kaws.png
-        :class: bg-white
+        .. image:: /images/MattermostDeployment10kaws.png
+            :class: bg-white
 
-    **Azure**
+    .. tab:: 25,000 users
 
-    .. image:: /images/MattermostDeployment5kAzure.png
-        :class: bg-white
+        .. image:: /images/MattermostDeployment25kaws.png
+            :class: bg-white
 
-.. tab:: 10,000 users
+    .. tab:: 50,000 users
 
-    **General**
+        .. image:: /images/MattermostDeployment50kaws.png
+            :class: bg-white
 
-    .. image:: /images/MattermostDeployment10kUsers.png
-        :class: bg-white
+.. tab:: Azure
 
-    **AWS**
+    .. tab:: 5,000 users
 
-    .. image:: /images/MattermostDeployment10kaws.png
-        :class: bg-white
+        .. image:: /images/MattermostDeployment5kAzure.png
+            :class: bg-white
 
-    **Azure**
+    .. tab:: 10,000 users
 
-    .. image:: /images/MattermostDeployment10kAzure.png
-        :class: bg-white
+        .. image:: /images/MattermostDeployment10kAzure.png
+            :class: bg-white
 
-.. tab:: 25,000 users
+    .. tab:: 25,000 users
 
-    **General**
+        .. image:: /images/MattermostDeployment25kAzure.png
+            :class: bg-white
 
-    .. image:: /images/MattermostDeployment25kUsers.png
-        :class: bg-white
+    .. tab:: 50,000 users
 
-    **AWS**
-
-    .. image:: /images/MattermostDeployment25kaws.png
-        :class: bg-white
-
-    **Azure**
-
-    .. image:: /images/MattermostDeployment25kAzure.png
-        :class: bg-white
-
-.. tab:: 50,000 users
-
-    **AWS**
-
-    .. image:: /images/MattermostDeployment50kaws.png
-        :class: bg-white
-
-    **Azure**
-
-    .. image:: /images/MattermostDeployment50kAzure.png
-        :class: bg-white
-
-Database with Virtual IPs
---------------------------
-
-We recommend the following configuration for Highly-Available databases through virtual IPs.
-
-.. image:: /images/DatabasewithVIPs.png
-  :class: bg-white
+        .. image:: /images/MattermostDeployment50kAzure.png
+            :class: bg-white
