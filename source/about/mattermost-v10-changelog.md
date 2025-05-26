@@ -48,6 +48,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Enhanced the **System console** search functionality to include all log fields.
  - Enhanced error reporting related to cluster management.
  - Added a LDAP setting to re-add removed members.
+ - Added support for SSO while Mattermost is embedded in an iframe.
 
 #### Performance
  - Optimized the team-switching operation by eliminating unnecessary calls to retrieve channels and channel members.
