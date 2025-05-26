@@ -22,7 +22,7 @@ Usage
 
 .. note::
 
-   If you encounter heap exhaustion errors in pgloader, edit your generated `migration.load` and under the `WITH` block set:
+   If you encounter heap exhaustion errors in pgloader, edit your generated ``migration.load`` and under the ``WITH`` block set:
 
       prefetch rows = 1000
 
