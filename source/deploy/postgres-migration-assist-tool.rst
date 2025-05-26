@@ -15,7 +15,7 @@ Download the Mattermost ``migration-assist`` tool from the GitHub repository `re
 
 While you can run the ``migration-assist`` tool on the same server as your Mattermost deployment, we recommend running the tool in a virtual machine on the same network as your Mattermost server instead. The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient. If preferred, you can download and `compile <#compile-the-migration-assist-tool>`__ the ``migration-assist`` tool yourself.
 
-You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We recommend running pgloader in a virtual machine on the same network as your Mattermost server. You can use our official Mattermost Docker image for pgloader (`mattermost/pgloader:latest`), which includes support for MySQL’s `caching_sha2_password`. If you build your own, be sure to include the [qitab/qmynd](https://github.com/qitab/qmynd) library. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
+You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We recommend running pgloader in a virtual machine on the same network as your Mattermost server. You can use our official Mattermost Docker image for pgloader (``mattermost/pgloader:latest``), which includes support for MySQL’s ``caching_sha2_password``. If you build your own, be sure to include the `qitab/qmynd <https://github.com/qitab/qmynd>`_ library. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
 
 Usage
 -----
