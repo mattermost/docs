@@ -9,10 +9,17 @@ Mattermost is designed to scale from small teams hosted on a single server to la
 
 Server requirements vary based on usage and we highly recommend that you run a pilot before an enterprise-wide deployment in order to estimate full scale usage based on your specific organizational needs.
 
-Elasticsearch
---------------
+Backing storage
+---------------
 
-:doc:`Elasticsearch </scale/elasticsearch>` provides enterprise-scale deployments with optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results.
+Review detailed :doc:`write and read storage benchmark results </scale/backing-storage-benchmarks>` for supported storage options including local file system (EBS, gp3), network file system (EFS), and object storage (S3) to make informed decisions based on your use case and infrastructure needs.
+
+Enterprise search
+-----------------
+
+We highly recommend a dedicated server for large enterprise deployments to run highly efficient database searches in a cluster environment. 
+
+For deployments with over 5 million posts, :doc:`Enterprise search </scale/enterprise-search>` using :ref:`Elasticsearch <scale/enterprise-search:elasticsearch>` or :ref:`AWS OpenSearch Service <scale/enterprise-search:aws opensearch service>` is required for optimized search performance, dedicated indexing and usage resourcing via cluster support without performance degradation and timeouts, resulting in faster, more predicable search results. 
 
 High availability
 -----------------
@@ -32,8 +39,9 @@ Available reference architectures
     :hidden:
     :titlesonly:
 
-    Elasticsearch </scale/elasticsearch>
-    High availability </scale/high-availability-cluster-based-deployment>
+    Backing storage benchmarks </scale/backing-storage-benchmarks>
+    Enterprise search </scale/enterprise-search>
+    High availability </scale/high-availability-cluster-based-deployment> 
     Redis </scale/redis>
     Scale up to 200 users </scale/scale-to-200-users>
     Scale up to 2000 users </scale/scale-to-2000-users>
