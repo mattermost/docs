@@ -72,7 +72,7 @@ Create a Mattermost App in Azure
 
 You're all set for configuration in the Azure portal.
 
-Install the Microsoft Calendar integration
+Install the Microsoft Calendar Integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
@@ -84,7 +84,7 @@ Install the Microsoft Calendar integration
 
   From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`_, and upload it to your server via **System Console > Plugin Management**.
 
-Enable and configure the Microsoft Calendar integration in Mattermost
+Enable and configure the Microsoft Calendar Integration in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In Azure, copy the **Application (client) ID** and **Directory (tenant) ID** from the Azure portal.
