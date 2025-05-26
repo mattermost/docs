@@ -157,7 +157,7 @@ You can check for the default ``search_path`` by running the following command:
   SELECT boot_val FROM pg_settings WHERE name='search_path';
 
 Permission issues when accessing the schema in PostgreSQL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If you run into a permission issue during step 2 where the command reports a permission issue similar to the following:
 
@@ -169,8 +169,12 @@ you need to ensure that the `mmuser` user in PostgreSQL is the owner of the sche
 
 1. Connect to PostgreSQL using `sudo -u postgres psql`.
 2. Select the `mattermost` database using `\c mattermost`. Verify you are using the right database by running `SELECT current_database();`. The command should output `mattermost`.
-3. Run `ALTER SCHEMA public OWNER TO mmuser;` and `GRANT ALL ON SCHEMA public to mmuser;`.
+3. Run the following commands:
 
+   .. code-block:: sql
+
+      ALTER SCHEMA public OWNER TO mmuser;
+      GRANT ALL ON SCHEMA public TO mmuser;
 Then, re-run the command from step 2.
 
 Contact Support
