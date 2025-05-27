@@ -44,8 +44,8 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Added a license load metric to the **About** screen to display current license usage.
  - Upgraded the logr dependency to version 2.0.22.
  - Removed telemetry tracking from Redux selectors.
- - Made it possible to view JSON logs in plain text within the **System console**.
- - Enhanced the **System console** search functionality to include all log fields.
+ - Made it possible to view JSON logs in plain text within the **System Console**.
+ - Enhanced the **System Console** search functionality to include all log fields.
  - Enhanced error reporting related to cluster management.
  - Added a LDAP setting to re-add removed members.
  - Added support for SSO while Mattermost is embedded in an iframe.
@@ -55,20 +55,20 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Improved websocket re-opening speed when network conditions change.
 
 ### Bug Fixes
- - Fixed various issues on the "Create Team" screen.
+ - Fixed various issues on the **Create Team** screen.
  - Fixed several accessibility issues across the login process, account creation, and MFA setup.
  - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
  - Fixed an issue with inconsistent sizing of markdown images in preview mode.
  - Fixed a keyboard navigation issue within thread items.
  - Fixed layout issues with the emoji picker on mobile browsers.
- - Fixed an issue with the positioning of “edited” text and tooltips in certain scenarios.
+ - Fixed an issue with the positioning of **Edited** text and tooltips in certain scenarios.
  - Fixed the accessibility of the search box.
- - Fixed an issue where post list scrolling didn’t work when pressing the "Page Up" or "Page Down" keys.
+ - Fixed an issue where post list scrolling didn’t work when pressing the **Page Up** or **Page Down** keys.
  - Fixed issues with screen reader support in the **Threads** view.
  - Fixed keyboard navigation issues in the **Threads** view.
  - Fixed accessibility issues in the **Invite** modal.
  - Fixed various accessibility issues in the **Browse Channels** modal.
- - Fixed an issue that prevented team admin permissions from being modified when missing in the "All Members" section.
+ - Fixed an issue that prevented team admin permissions from being modified when missing in the **All Members** section.
  - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables.
 
 ### config.json
