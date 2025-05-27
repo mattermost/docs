@@ -15,14 +15,15 @@ Download the Mattermost ``migration-assist`` tool from the GitHub repository `re
 
 While you can run the ``migration-assist`` tool on the same server as your Mattermost deployment, we recommend running the tool in a virtual machine on the same network as your Mattermost server instead. The tool itself is lightweight and does not require a large server. A server with 2 CPU cores and 16 GB of RAM should be sufficient. If preferred, you can download and `compile <#compile-the-migration-assist-tool>`__ the ``migration-assist`` tool yourself.
 
-You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We recommend running ``pgloader`` in a virtual machine on the same network as your Mattermost server. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
+You'll also need to install the ``pgloader`` tool to migrate your data from MySQL to PostgreSQL. We recommend running ``pgloader`` in a virtual machine on the same network as your Mattermost server. You can use our official Mattermost Docker image for pgloader (``mattermost/pgloader:latest``); please note that it does **not** currently support MySQL’s ``caching_sha2_password`` authentication plugin. If you require ``caching_sha2_password`` support, you’ll need to build your own image and include the `qitab/qmynd <https://github.com/qitab/qmynd>`_ library. See the :ref:`pgloader <deploy/manual-postgres-migration:install pgloader>` installation documentation for details.
 
 Usage
 -----
 
 .. important::
 
-   Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </deploy/server/preparations>` documentation for details.
+  - If you encounter heap exhaustion errors in ``pgloader``, edit your generated ``migration.load`` and under the ``WITH`` block set: ``prefetch rows = 1000`` and consider reducing it if the issue persists.
+  - Please make sure you have the necessary environment to perform the migration. Ensure that the MySQL and PostgreSQL databases are running and accessible. To set up a PostgreSQL instance, see the :doc:`prepare your Mattermost database </deploy/server/preparations>` documentation for details.
 
 Step 1 - Check the MySQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,46 +32,67 @@ Run the following command to check the MySQL database schema:
 
 .. code-block:: sh
 
-   migration-assist mysql "<MYSQL_DSN>" # example DSN: "user:password@tcp(address:3306)/db_name"
+   migration-assist mysql "<MYSQL_DSN>"  # example DSN: "user:password@tcp(address:3306)/db_name"
 
-This command outputs the readiness status and prints required fixes for common issues. The flags for fixes are as follows (where all fixes can be used together at the same time):
+This command outputs the readiness status and prints required fixes for common issues. The flags for fixes are as follows (you can combine all of them):
 
 .. code-block:: text
 
-   --fix-artifacts               Removes the artifacts from older versions of Mattermost
-   --fix-unicode                 Removes the unsupported unicode characters from MySQL tables
-   --fix-varchar                 Removes the rows with varchar overflow
+   --fix-artifacts   Removes the artifacts from older versions of Mattermost
+   --fix-unicode     Strips unsupported Unicode characters from MySQL tables
+   --fix-varchar     Removes rows exceeding column lengths
 
 Step 2 - Create the PostgreSQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the following command to create the Postgres database schema:
+Before running migrations, ensure the ``public`` schema is owned by your migration user:
+
+.. code-block:: sql
+
+   sudo -u postgres psql -d mattermost -c "ALTER SCHEMA public OWNER TO mmuser; GRANT ALL ON SCHEMA public TO mmuser;"
+
+Then run:
 
 .. code-block:: sh
 
-   migration-assist postgres "<POSTGRES_DSN>" --run-migrations --mattermost-version="<MATTERMOST_VERSION>" # example DSN: "postgres://user:password@address:5432/db_name", example Mattermost version: "v9.4.0"
+   migration-assist postgres "<POSTGRES_DSN>" \
+     --run-migrations \
+     --mattermost-version="<MATTERMOST_VERSION>"
 
-This command downloads the necessary migrations and applies them to the Postgres database. The ``--mattermost-version`` flag is required to specify the Mattermost version you are migrating from.
+- ``<POSTGRES_DSN>`` example: ``postgres://user:password@address:5432/db_name``
+- ``<MATTERMOST_VERSION>`` example: ``10.5.4``
 
-There are two flags that can be used with the ``migration-assist postgres`` command to run a few checks before running the migrations. You can disable them by setting the following flags to false:
+By default, two pre-checks run before migration:
 
-.. code-block:: shell
+- ``--check-schema-owner=true``
+- ``--check-tables-empty=true``
 
-   --check-schema-owner          Check if the schema owner is the same as the user running the migration (default true)
-   --check-tables-empty          Check if tables are empty before running migrations (default true)
+To disable them:
+
+.. code-block:: sh
+
+   --check-schema-owner=false \
+   --check-tables-empty=false
 
 Step 3 - Generate a pgloader configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the following command to generate a pgloader configuration:
+Run the following command to emit a pgloader configuration file:
 
 .. code-block:: sh
 
-   migration-assist pgloader --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > migration.load
+   migration-assist pgloader \
+     --mysql="<MYSQL_DSN>" \
+     --postgres="<POSTGRES_DSN>" \
+     --remove-null-chars \
+     > migration.load
 
-This command will generate a pgloader configuration file that can be used to migrate the data from MySQL to Postgres.
+- By default, null characters in text columns are stripped. Disable with ``--remove-null-chars=false``.
+- If you run out of heap, edit ``migration.load`` and under the ``WITH`` block set:
 
-The generated configuration has the setting to remove the null character from the text type data. This is to ensure the migration won't return errors while inserting data into Postgres. However, if you want to disable this behavior, you can set the ``--remove-null-chars`` to ``false``.
+  .. code-block:: text
+
+     prefetch rows = 1000
 
 Step 4 - Run pgloader
 ~~~~~~~~~~~~~~~~~~~~~
@@ -81,95 +103,103 @@ Step 4 - Run pgloader
 
    pgloader migration.load > migration.log
 
-Carefully read the log file to analyze whether there were any errors during the migration process. If there were any errors, please contact Mattermost for further guidance.
+Carefully review `migration.log` for errors (e.g., duplicate-key or missing-table warnings). Use the ``mattermost/pgloader:latest`` Docker image to avoid build/auth issues.
 
-Step 5 - Restore full-text indexes
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 5 - Restore full-text indexes & create all indexes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Run the following command to create the full-text indexes for the ``Posts`` and ``FileInfo`` tables:
+Run:
 
 .. code-block:: sh
 
-   migration-assist postgres post-migrate "<POSTGRES_DSN>" --create-indexes
+   migration-assist postgres post-migrate --create-indexes "<POSTGRES_DSN>"
 
-This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` tables. See the :ref:`Restore full-text indexes <deploy/manual-postgres-migration:restore full-text indexes>` documentation for more information.
+- The ``--create-indexes`` flag rebuilds full-text indexes on ``Posts`` and ``FileInfo``, plus all other Mattermost indexes.
+- Omitting that flag only restores full-text indexes for ``Posts`` and ``FileInfo``.
+
+See the :ref:`Restore full-text indexes <deploy/manual-postgres-migration:restore full-text indexes>` documentation for details.
 
 Step 6 - Complete plugin migrations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Generate migration configuration for collaborative playbooks, boards and calls:
+Generate pgloader configs for Playbooks, Boards, and Calls:
 
 .. code-block:: sh
 
-   migration-assist pgloader boards --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > boards.load
-   migration-assist pgloader playbooks --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > playbooks.load
-   migration-assist pgloader calls --mysql="<MYSQL_DSN>" --postgres="<POSTGRES_DSN>" > calls.load
+   migration-assist pgloader boards \
+     --mysql="<MYSQL_DSN>" \
+     --postgres="<POSTGRES_DSN>" > boards.load
+   migration-assist pgloader playbooks \
+     --mysql="<MYSQL_DSN>" \
+     --postgres="<POSTGRES_DSN>" > playbooks.load
+   migration-assist pgloader calls \
+     --mysql="<MYSQL_DSN>" \
+     --postgres="<POSTGRES_DSN>" > calls.load
 
-Then run pgloader with the generated configuration files:
+Run each:
 
 .. code-block:: sh
 
-   pgloader boards.load > boards_migration.log
-   pgloader playbooks.load > playbooks_migration.log
-   pgloader calls.load > calls.log
+   pgloader boards.load           > boards_migration.log
+   pgloader playbooks.load        > playbooks_migration.log
+   pgloader calls.load            > calls_migration.log
 
-Carefully read the log file to analyze whether there were any errors during the migration process. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` documentation for information on migrating Playbooks, Boards and Calls.
+Skip any plugin you don't use; check logs for JSON or missing-table errors. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` guide for more.
 
-Step 7 - Configure Mattermost to utilize the new PostgreSQL database
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Step 7 - Configure Mattermost to use PostgreSQL
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This is the final step of the migration process, where we need to update the Mattermost configuration to point to the new PostgreSQL database. To do so, locate the ``SqlSettings.DataSource`` and ``SqlSettings.DriverName`` fields in the ``config.json`` then modify these fields to reflect the new PostgreSQL database connection details. See the :ref:`Environment configuration settings <configure/environment-configuration-settings:database>` documentation for more information.
+In your ``config.json`` or via environment variables, update:
+
+.. code-block:: json
+
+   "SqlSettings": {
+     "DriverName": "postgres",
+     "DataSource": "postgres://mmuser:pass@db:5432/mattermost?sslmode=disable"
+   }
+
+If your config was stored in the database, update ``MM_CONFIG`` accordingly. See the :ref:`environment configuration settings <configure/environment-configuration-settings:database>` documentation for details.
 
 .. note::
-
-  If your configuration was stored in the database, see the :ref:`configuration in database <deploy/manual-postgres-migration:configuration in database>` documentation for migration details. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
+  If your Mattermost deployment was initially configured with MySQL, there's a good chance your systemd service file has a ``BindsTo=mysql.service`` directive in it. This will cause the Mattermost server to be shut down if you deactivate your MySQL service. To fix this, update all references to ``mysql.service`` in your service file to use ``postgresql.service`` instead. This is only an issue if your Database and Mattermost are running on the same system.
 
 Air-gapped environments
 ------------------------
 
-The ``migration-assist`` tool contains all necessary files for migration, removing any need for external access to repositories. Once transferred across the air gap, the tool operates independently. Follow the guidance below to perform a seamless MySQL to PostgreSQL migration in an air-gapped environment without needing external dependencies:
+Follow these steps to migrate within an air-gapped environment:
 
-1. Verify that the ``migration-assist`` binary is the latest version available to benefit from improvements and fixes.
-
-2. Transfer the latest version of the ``migration-assist`` binary into the air-gapped environment.
-
-3. Generate the schema and data output file from MySQL using the ``--fix`` flags for Unicode, artifacts, and VARCHAR. This step is crucial to ensure the MySQL database is ready for migration. The following command checks the MySQL database schema, applies necessary fixes, and automatically produces a file named ``mysql.output``:
+1. **Verify** that the `migration-assist` binary is the latest version available to benefit from improvements and fixes.
+2. **Transfer** the latest `migration-assist` binary into the air-gapped environment (e.g., via secure media).
+3. **Generate** the MySQL schema+data output using fix flags. This produces ``mysql.output``:
 
    .. code-block:: sh
 
-      migration-assist mysql "user:password@tcp(localhost:3306)/mattermost" --fix-unicode --fix-artifacts --fix-varchar
+      migration-assist mysql "user:pass@tcp(localhost:3306)/mattermost" \
+        --fix-artifacts --fix-unicode --fix-varchar > mysql.output
 
-4. Use the ``mysql.output`` file to apply the schema and data into the PostgreSQL database:
+4. **Apply** migrations using the generated output:
 
    .. code-block:: sh
 
-      migration-assist postgres "postgres://mmuser:mostest@localhost:5432/imported?sslmode=disable" --run-migrations --applied-migrations="./mysql.output"
+      migration-assist postgres \
+        "postgres://mmuser:pass@localhost:5432/imported?sslmode=disable" \
+        --run-migrations --applied-migrations="./mysql.output"
 
-5. Follow `step 3 <#step-3-generate-a-pgloader-configuration>`__ through `step 7 <#step-7-configure-mattermost-to-utilize-the-new-postgresql-database>`__ above to complete the migration process using the ``migration-assist`` tool.
+5. **Continue** from **Step 3** through **Step 7** above to complete data transfer and configuration.
 
 Tool commands
 --------------
 
-The ``migration-assist`` tool offers 3 core utility commands:
+The ``migration-assist`` tool offers 3 core commands:
 
-1. ``migration-assist mysql``
-
-   Checks the MySQL database schema to ensure readiness for migration, and offers fixes for common issues. See the `install <#install>`__ section below for details on installing the ``migration-assist`` tool.
-
-2. ``migration-assist postgres``
-
-   Creates the PostgreSQL database schema, and prepares it for Mattermost deployment by downloading the necessary migrations and applying them.
-
-3. ``migration-assist pgloader``
-
-   Generates a pgloader configuration from DSN values, ensuring accurate data transfer. See the :ref:`install pgloader <deploy/manual-postgres-migration:install pgloader>` documentation for details on installing the pgloader tool.
+1. ``migration-assist mysql`` — Checks MySQL schema readiness and offers fixes.
+2. ``migration-assist postgres`` — Builds the PostgreSQL schema and applies migrations.
+3. ``migration-assist pgloader`` — Generates a pgloader config for data transfer.
 
 Compile the migration-assist tool
 ---------------------------------
 
-You can download and compile the ``migration-assist`` tool with the `Go <https://go.dev/>`__ toolchain. The tool requires at least ``v1.22`` of the Go compiler.
-
-Use ``go install`` to install the tool:
+Requires Go ≥ v1.22. Install with:
 
 .. code-block:: shell
 
@@ -178,4 +208,4 @@ Use ``go install`` to install the tool:
 Troubleshooting
 ---------------
 
-See :ref:`troubleshooting errors during migration from MySQL to PostgreSQL <deploy/postgres-migration:troubleshooting>`
+See :ref:`troubleshooting errors during migration from MySQL to PostgreSQL <deploy/postgres-migration:troubleshooting>`.
