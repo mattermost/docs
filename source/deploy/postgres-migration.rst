@@ -165,16 +165,17 @@ If you run into a permission issue during step 2 where the command reports a per
 
    An Error Occurred: could not check schema owner: the user “mmuser” is not owner of the “public” schema
 
-you need to ensure that the `mmuser` user in PostgreSQL is the owner of the schema.
+Ensure that the ``mmuser`` user in PostgreSQL is the owner of the schema.
 
-1. Connect to PostgreSQL using `sudo -u postgres psql`.
-2. Select the `mattermost` database using `\c mattermost`. Verify you are using the right database by running `SELECT current_database();`. The command should output `mattermost`.
+1. Connect to PostgreSQL using ``sudo -u postgres psql``.
+2. Select the ``mattermost`` database using ``\c mattermost``. Verify you are using the right database by running ``SELECT current_database();``. The command should output ``mattermost``.
 3. Run the following commands:
 
    .. code-block:: sql
 
       ALTER SCHEMA public OWNER TO mmuser;
       GRANT ALL ON SCHEMA public TO mmuser;
+
 Then, re-run the command from step 2.
 
 Contact Support
