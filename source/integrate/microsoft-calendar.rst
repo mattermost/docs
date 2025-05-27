@@ -6,8 +6,8 @@ Connect Microsoft Calendar to Mattermost
 
 Connect your Microsoft M365 Calendar to your Mattermost instance to receive daily summaries of calendar events, synchronize your  M365 status in Mattermost, and accept or decline calendar invites from Mattermost.
 
-Setup
------
+Deploy
+-------
 
 Setup starts in Microsoft Azure and ends in Mattermost.
 
@@ -72,7 +72,7 @@ Create a Mattermost App in Azure
 
 You're all set for configuration in the Azure portal.
 
-Install the Microsoft Calendar integration
+Install the Microsoft Calendar Integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system admin.
@@ -84,7 +84,7 @@ Install the Microsoft Calendar integration
 
   From Mattermost v9.11.2 (ESR) and Mattermost Cloud v10, this plugin is pre-packaged with the Mattermost Server. If your Mattermost deployment is on a release prior to v9.11.2, download the `latest plugin binary release <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`_, and upload it to your server via **System Console > Plugin Management**.
 
-Enable and configure the Microsoft Calendar integration in Mattermost
+Enable and configure the Microsoft Calendar Integration in Mattermost
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In Azure, copy the **Application (client) ID** and **Directory (tenant) ID** from the Azure portal.
@@ -107,7 +107,7 @@ Enable and configure the Microsoft Calendar integration in Mattermost
 
 Notify your teams that they can `connect their Microsoft Office accounts to Mattermost <#connect-a-microsoft-calendar-account-to-mattermost>`__.
 
-Usage
+Use
 -----
 
 Users who want to use Microsoft Calendar interconnectivity must connect a Microsoft Office account to Mattermost. 
@@ -118,3 +118,12 @@ Upgrade
 -------
 
 We recommend updating this integration as new versions are released. Generally, updates are seamless and don't interrupt the user experience in Mattermost. Visit the `Releases page <https://github.com/mattermost/mattermost-plugin-mscalendar/releases>`__ for the latest release, available releases, and compatibiilty considerations.
+
+Get help
+--------
+
+Mattermost commercial customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost Microsoft Calendar plugin repository <https://github.com/mattermost/mattermost-plugin-mscalendar>`_.
+
+For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
+
+Mattermost Team Edition and Free customers can visit the Mattermost `peer-to-peer troubleshooting forum <https://forum.mattermost.com/c/trouble-shoot/16>`_ to access the global Mattermost Community for assistance.

@@ -93,9 +93,8 @@ Database software
 ^^^^^^^^^^^^^^^^^
 
 -  PostgreSQL 13.0+
--  MySQL 8.0.12+ (see note below on MySQL 8 support)
 
-Amazon Aurora equivalents of both PostgreSQL and MySQL are also supported.
+Amazon Aurora equivalents of PostgreSQL is also supported.
 
 .. important::
 
@@ -149,15 +148,16 @@ Search limitations on PostgreSQL:
 
   - One of them is: ``The length of a tsvector (lexemes + positions) must be less than 1 megabyte``, which means that, based on the file content, even files with content less than 1 MB won't be searchable if they hit the ``tsvector`` limit of 1 MB.
 
-- If any of the above is an issue, you can either enable the :doc:`Elasticsearch feature </scale/elasticsearch>` or install MySQL instead.
+- If any of the above is an issue, you can :doc:`set up and enable enterprise search </scale/enterprise-search>`.
 
-Search limitations on MySQL:
+MySQL Support
+::::::::::::::::::::
+:doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
-- Hashtags or recent mentions of usernames containing a dot do not return search results.
+- Search limitations on MySQL: Hashtags or recent mentions of usernames containing a dot do not return search results.
 - The migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
-
-MySQL 8 Support
-::::::::::::::::
+- MariaDB v10+ no longer functions as a MySQL drop-in replacement, and it's not supported for Mattermost due to the requirement of MySQL 5.7.12. Prior versions of MariaDB were not officially supported but may have functioned in older Mattermost releases. If you are running MariaDB now, migrating from MariaDB to the MySQL equivalent is recommended.
+- Deployments requiring searching in Chinese, Japanese, and Korean languages require MySQL 5.7.6+ and the configuration of `ngram Full-Text parser <https://dev.mysql.com/doc/refman/5.7/en/fulltext-search-ngram.html>`__. For searching two characters, you will also need to set ``ft_min_word_len`` and ``innodb_ft_min_token_size`` to ``2`` and restart MySQL. See `CJK discussion <https://github.com/mattermost/mattermost/issues/2033#issuecomment-183872616>`__ for details.
 
 .. important::
 
@@ -222,5 +222,5 @@ For Enterprise Edition deployments with a multi-server setup, we highly recommen
 
 - Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
 - Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
-- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or Opensource is recommended from Mattermost v9.11. :doc:`Learn more here </scale/elasticsearch>`.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </scale/enterprise-search>`.
 - MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <configure/environment-configuration-settings:file storage>`.
