@@ -85,8 +85,8 @@ Run the following command to emit a pgloader configuration file:
      --remove-null-chars \
      > migration.load
 
-- By default, null characters in text columns are stripped. Disable with `--remove-null-chars=false`.
-- If you run out of heap, edit `migration.load` and under the `WITH` block set:
+- By default, null characters in text columns are stripped. Disable with ``--remove-null-chars=false``.
+- If you run out of heap, edit ``migration.load`` and under the ``WITH`` block set:
 
   .. code-block:: text
 
