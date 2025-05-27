@@ -61,16 +61,18 @@ Then run:
 
 - ``<POSTGRES_DSN>`` example: ``postgres://user:password@address:5432/db_name``
 - ``<MATTERMOST_VERSION>`` example: ``10.5.4``
-- By default, two pre-checks run before migration:
 
-  - ``--check-schema-owner=true``
-  - ``--check-tables-empty=true``
-- To disable them:
+By default, two pre-checks run before migration:
 
-  .. code-block:: sh
+- ``--check-schema-owner=true``
+- ``--check-tables-empty=true``
 
-     --check-schema-owner=false \
-     --check-tables-empty=false
+To disable them:
+
+.. code-block:: sh
+
+   --check-schema-owner=false \
+   --check-tables-empty=false
 
 Step 3 - Generate a pgloader configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -101,7 +103,7 @@ Step 4 - Run pgloader
 
    pgloader migration.load > migration.log
 
-Carefully review `migration.log` for errors (e.g., duplicate-key or missing-table warnings). Use the `mattermost/pgloader:latest` Docker image to avoid build/auth issues.
+Carefully review `migration.log` for errors (e.g., duplicate-key or missing-table warnings). Use the ``mattermost/pgloader:latest`` Docker image to avoid build/auth issues.
 
 Step 5 - Restore full-text indexes & create all indexes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -112,7 +114,7 @@ Run:
 
    migration-assist postgres post-migrate --create-indexes "<POSTGRES_DSN>"
 
-- The `--create-indexes` flag rebuilds full-text indexes on `Posts` and `FileInfo`, plus all other Mattermost indexes.
+- The ``--create-indexes`` flag rebuilds full-text indexes on ``Posts`` and ``FileInfo``, plus all other Mattermost indexes.
 - Omitting that flag only restores full-text indexes for ``Posts`` and ``FileInfo``.
 
 See the :ref:`Restore full-text indexes <deploy/manual-postgres-migration:restore full-text indexes>` documentation for details.
@@ -187,9 +189,9 @@ Tool commands
 
 The ``migration-assist`` tool offers 3 core commands:
 
-1. **`migration-assist mysql`** — Checks MySQL schema readiness and offers fixes.
-2. **`migration-assist postgres`** — Builds the PostgreSQL schema and applies migrations.
-3. **`migration-assist pgloader`** — Generates a pgloader config for data transfer.
+1. ``migration-assist mysql`` — Checks MySQL schema readiness and offers fixes.
+2. ``migration-assist postgres`` — Builds the PostgreSQL schema and applies migrations.
+3. ``migration-assist pgloader`` — Generates a pgloader config for data transfer.
 
 Compile the migration-assist tool
 ---------------------------------
