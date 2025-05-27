@@ -90,7 +90,7 @@ Run the following command to create the full-text indexes for the ``Posts`` and 
 
 .. code-block:: sh
 
-   migration-assist postgres post-migrate "<POSTGRES_DSN>"
+   migration-assist postgres post-migrate "<POSTGRES_DSN>" --create-indexes
 
 This command creates the full-text indexes for the ``Posts`` and ``FileInfo`` tables. See the :ref:`Restore full-text indexes <deploy/manual-postgres-migration:restore full-text indexes>` documentation for more information.
 
