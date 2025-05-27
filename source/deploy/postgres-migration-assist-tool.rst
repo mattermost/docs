@@ -45,7 +45,7 @@ This command outputs the readiness status and prints required fixes for common i
 Step 2 - Create the PostgreSQL database schema
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Before running migrations, ensure the `public` schema is owned by your migration user:
+Before running migrations, ensure the ``public`` schema is owned by your migration user:
 
 .. code-block:: sql
 
