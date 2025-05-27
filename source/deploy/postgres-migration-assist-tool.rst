@@ -147,7 +147,7 @@ Skip any plugin you don't use; check logs for JSON or missing-table errors. See 
 Step 7 - Configure Mattermost to use PostgreSQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In your `config.json` or via environment variables, update:
+In your ``config.json`` or via environment variables, update:
 
 .. code-block:: json
 
