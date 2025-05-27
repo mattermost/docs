@@ -127,7 +127,7 @@ Grafana dashboards `are available on GitHub <https://github.com/mattermost/matte
 Use
 -----
 
-See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to get started using Microsoft Teams synchronization.
+See the :doc:`collaborate within connected microsoft teams </collaborate/collaborate-within-connected-microsoft-teams>` product documentation to start receiving Microsoft Teams notifications.
 
 Upgrade
 -------
@@ -169,6 +169,6 @@ The integration subscribes to change notifications from the Microsoft Graph API.
 Get help
 --------
 
-Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost for Microsoft Teams Sync plugin repository <https://github.com/mattermost/mattermost-plugin-msteams>`_.
+Mattermost customers can open a `Mattermost support case <https://support.mattermost.com/hc/en-us/requests/new>`_. To report a bug, please open a GitHub issue against the `Mattermost for Microsoft Teams Notifications plugin repository <https://github.com/mattermost/mattermost-plugin-msteams>`_.
 
 For questions, feedback, and assistance, join our pubic `Integrations and Apps channel <https://community.mattermost.com/core/channels/integrations>`_ on the `Mattermost Community Server <https://community.mattermost.com/>`_ for assistance.
