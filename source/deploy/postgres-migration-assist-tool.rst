@@ -185,7 +185,7 @@ Follow these steps to migrate within an air-gapped environment:
 Tool commands
 --------------
 
-The `migration-assist` tool offers three core commands:
+The ``migration-assist`` tool offers 3 core commands:
 
 1. **`migration-assist mysql`** — Checks MySQL schema readiness and offers fixes.
 2. **`migration-assist postgres`** — Builds the PostgreSQL schema and applies migrations.
