@@ -78,27 +78,27 @@
     </tr>
     <tr>
       <td><strong>Flexible bring-your-own-LLM integration</strong>: Connect Mattermost to any LLM platform compatible with OpenAI protocol across public cloud, private cloud and air gapped edge including OpenAI, Llama, Anthropic, and custom LLMs.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Contextual summarization and composition</strong>: Enable organizational interaction with LLMs with permission-restricted access to Mattermost conversations, threads, call and meeting summaries to summarize topics, answer questions and follow-ups, note action items and open questions and compose draft messages and responses.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Private, air-gapped &amp; DDIL AI operations</strong>: Run AI-accelerated operations in private cloud, air-gapped and disconnected, denied, intermittent and limited-bandwidth (DDIL) environments with open source and custom LLMs self-hosted alongside workflow, chat operations, audio calling, screen sharing, recording, transcription, analysis, workflow and summarization capabilities.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Real-time channel briefing</strong>: Concisely summarize unread messages, action items and unanswered questions in channels to focus attention and accelerate priority responses and workflows.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Q&amp;A with access-controlled backend systems</strong>: Receive secure and compliant real-time answers to questions about permission-controlled backend systems connected with Mattermost channels which can optionally pass back end user credentials to work with access-controlled data. For example, asking a channel connected with an issue tracking system which code defect tickets they have access to which could expose security vulnerabilities.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td><strong>Q&A with access-controlled backend systems</strong>: Receive secure and compliant real-time answers to questions about permission-controlled backend systems connected with Mattermost channels which can optionally pass back end user credentials to work with access-controlled data. For example, asking a channel connected with an issue tracking system which code defect tickets they have access to which could expose security vulnerabilities.</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Optional full trace mode</strong>: Optional full trace mode for detailed monitoring and to verify Responsible AI/LLM assurances by recording every prompt, question, AI request and response across users, systems and LLM-backends and platform source code into specialized audit logs for analysis.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Operational & technical collaboration -->
     <tr class="section"><td colspan="7"><strong>Operational &amp; technical collaboration</strong></td></tr>
@@ -121,11 +121,11 @@
     </tr>
     <tr>
       <td><strong>Message priority</strong>: Elevate the focus of organizations with the ability for end users to <a href="https://docs.mattermost.com/collaborate/message-priority.html#set-message-priority-beta">specify the priority of messages</a> as Standard (Default), Important, and Urgent.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Persistent notifications</strong>: Replace phone-based confirmations with <a href="https://docs.mattermost.com/collaborate/message-priority.html#send-persistent-notifications">message-based acknowledgement requests</a> that can persist on a recipient’s Mattermost interface until acknowledged.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Advanced access controls & automation -->
     <tr class="section"><td colspan="7"><strong>Advanced access controls &amp; automation</strong></td></tr>
@@ -136,115 +136,115 @@
     </tr>
     <tr>
       <td><strong>Single sign-on w/SAML 2.0, Entra ID, Okta, and others</strong>: Centralize, integrate, and automate identify management and access controls by enabling Mattermost to operate as a SAML 2.0 service provider. Integrate with SAML 2.0-based providers including Entra ID (formerly Office365 SSO), Okta, OneLogin, Microsoft ADFS SAML Configuration, and Keycloak, among others.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>SSO with AD/LDAP, OpenID, and others</strong>: Simplify sign-on and user management with non-SAML-based SSO options including <a href="https://docs.mattermost.com/onboard/sso-openidconnect.html">Open ID</a>, Google SSO, and <a href="https://docs.mattermost.com/onboard/sso-gitlab.html">GitLab SSO</a>. Moreover, Mattermost offers “same sign-on” with Active Directory/LDAP by enabling the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional multi-factor authentication (MFA).</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>AD/LDAP user sync</strong>: Simplify and accelerate user administration, access control, and compliance by <a href="https://docs.mattermost.com/onboard/ad-ldap.html">synchronizing Active Directory and LDAP with Mattermost</a>, including single-sign-on with AD/LDAP credentials, synchronization of user display attributes (e.g., first name, last name, email, and username), automated account provisioning on a user’s first sign-on, automated assignment of Mattermost roles based on a user’s LDAP group, and compliance with administrator settings managed in AD/LDAP by having the Mattermost System Console honor LDAP filters for disabled users, guest users, and administrative users.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>MFA enforcement for email and LDAP accounts</strong>: Fulfill MFA compliance requirements by <a href="https://docs.mattermost.com/onboard/multi-factor-authentication.html#enforcing-mfa">enforcing an MFA requirement</a> for login with email and LDAP accounts.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Advanced access controls</strong>: Empower admins to <a href="https://docs.mattermost.com/manage/team-channel-members.html#channel-moderation">manage and moderate multi-team deployments</a> with the ability to configure channels to be read-only, to restrict channel mentions and emoji reactions, and to lock down channels so that users can only be added or removed by selected administrators.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Multi-team collaboration -->
     <tr class="section"><td colspan="7"><strong>Multi-team collaboration</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Work across teams and organizations with real-time calling and screen share, guest accounts to integrate internal and external stakeholders, customer user groups to organize teams within teams, and system-wide notifications to share organization-wide messages.</strong></td></tr>
     <tr>
       <td><strong>Group calling and screen share</strong>: Streamline real-time collaboration with complete privacy by enabling group audio calling and screen share up to approximately 50 concurrent users in any group call per self-hosted server. High-scale options for private, self-hosted group calling and screen share are available in Mattermost Enterprise with the setup of its horizontal scaling option.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Guest accounts</strong>: Bring external users and users who need to have restricted access into your Mattermost instance as guests who can interact with your team with limited permissions. For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Custom user groups</strong>: Simplify communication by creating custom user groups to mention and notify up to 256 users who work together on projects or in functions or have other ties. Examples include creating custom groups for cross-functional teams, for job types, or organization membership within an enterprise.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>System-wide notifications</strong>: Notify users across teams of upcoming system maintenance, service changes, and other announcements using system-wide announcement banners.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Scale & high availability -->
     <tr class="section"><td colspan="7"><strong>Scale &amp; high availability</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Achieve scale and resilience with cluster-based deployment, horizontal system architecture, advanced performance monitoring and logging and Kubernetes-based deployment.</strong></td></tr>
     <tr>
       <td><strong>High availability cluster-based deployment</strong>: Enable business continuity through component failures using <a href="https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment">cluster-based deployment</a> with multiple application servers, multiple database servers, and multiple front-end proxies and/or load balancers.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Horizontal scalability architecture</strong>: Scale to tens of thousands of users with <a href="https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment">horizontal scale-out architectures</a> offering a range of deployment options from on-prem data centers to cloud-based hyperscalers including AWS and Azure.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Enterprise search (3M+ posts)</strong>: Enable enterprise-scale search after exceeding 3 million posts in the Mattermost database by <a href="https://docs.mattermost.com/scale/elasticsearch.html">deploying Elasticsearch</a> with dedicated indexing and usage resourcing via cluster support.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Performance monitoring</strong>: Track system health in large deployments, including deployments on high availability clusters, using <a href="https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html">advanced performance monitoring</a> integrated with Grafana and Prometheus.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Advanced logging</strong>: Enable <a href="https://docs.mattermost.com/manage/logging.html#audit-logging-experimental-beta">advanced logging</a> for optimizing and troubleshooting high-scale, mission-critical deployments including error, panic, debug, trace and conditional logging to a full range of destinations including Syslog and TCP target options.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>High availability, horizontally scalable calls and screen share</strong>: Enable <a href="https://docs.mattermost.com/configure/calls-deployment.html#the-rtcd-service">high-scale, high availability deployment of audio calling and screen share</a> through dedicated servers managed on an integrated Kubernetes platform.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Supported Kubernetes deployment</strong>: Simplify and automate IT administration through Mattermost’s supported options for <a href="https://docs.mattermost.com/deploy/server/deploy-kubernetes.html">deploying to Kubernetes clusters</a> running either on-prem in data centers or in managed services such as Amazon EKS, Azure Kubernetes Service, Google Kubernetes Engine, and DigitalOcean Kubernetes, among others.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Advanced compliance & administration -->
     <tr class="section"><td colspan="7"><strong>Advanced compliance &amp; administration</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Fulfill enterprise- and critical infrastructure-level compliance and administration requirements with advanced identity and access control synchronization, delegated administration, granular configuration of data retention, eDiscovery, and legal hold and information export requirements while automating disclosures and agreements with end users.</strong></td></tr>
     <tr>
       <td><strong>AD/LDAP group, channel, and team sync</strong>: Automate management of users, groups, access controls, and channel and team membership through <a href="https://docs.mattermost.com/onboard/ad-ldap-groups-synchronization.html">synchronizing with Entra ID/AD/LDAP Groups</a>.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Delegated granular administration</strong>: In large deployments where administrative tasks need to be separated and delegated, Mattermost supports the <a href="https://docs.mattermost.com/onboard/delegated-granular-administration.html">creation and customization of system administrator roles with specific granular permissions</a> in order to offer specialized administration delegated from senior administrators.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Data retention policy</strong>: Meet data retention compliance requirements. By default Mattermost uses a “soft delete” system where messages and files deleted based on user actions are removed from the user interface, but persist in the Mattermost database. <p>By activating <a href="https://docs.mattermost.com/comply/data-retention-policy.html">Mattermost’s data retention policy capability</a>, rules can be set to permanently delete all messages and files in a Mattermost system, or in specific teams or channels, that are beyond a specific age (e.g., 30 days, 90 days, or other options). This feature should be used carefully; once data is removed using data retention policies, the action is irreversible.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Legal hold</strong>: Comply with legal hold and litigation hold requests to preserve information in anticipation of legal action. The <a href="https://docs.mattermost.com/comply/legal-hold.html">legal hold capability</a> can be combined with eDiscovery integration and data retention policies to customize the data retained and deleted to meet compliance requirements.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Compliance export and eDiscovery automation</strong>: Fulfill eDiscovery and compliance requirements <a href="https://docs.mattermost.com/comply/compliance-export.html">with manual and automated export of message history</a> to Actiance, Global Relay, and custom compliance formats.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Channel export</strong>: Archive, backup, or submit the contents of a channel into other systems to fulfill reporting and auditability requirements as needed.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Custom end user Terms of Service</strong>: Increase clarity on legal expectations for internal employees and guests with the ability to set <a href="https://docs.mattermost.com/comply/custom-terms-of-service.html">custom Terms of Service (“ToS”) agreements</a> and re-acceptable periods.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Enterprise mobility -->
     <tr class="section"><td colspan="7"><strong>Enterprise mobility</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Speed real-world workflows with enterprise-grade mobility and security through EMM, MDM, and AppConfig integration across iOS and Android mobile platforms.</strong></td></tr>
     <tr>
       <td><strong>Enterprise Mobility Management (AppConfig) support</strong>: Enhance mobile security by <a href="https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html">deploying with Enterprise Mobility Management (EMM)</a> to secure mobile endpoints with management application configuration, and <a href="https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html#manage-app-configuration-using-appconfig">Mattermost AppConfig compatibility</a>.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Private mobility with ID-only push notifications</strong>: This capability protects a Mattermost customer against breaches in iOS and Android notification infrastructure by enabling mobile notifications to be fully private. The standard way to send notifications to iOS and Android applications requires sending clear text messages to Apple or Google so they can be forwarded to a user’s phone and displayed on iOS or Android. <p> While Apple and Google assure the data is not collected or stored, all standard mobile notifications on the platform could be compromised should the organizations be breached or coerced. To avoid this risk, Mattermost can be configured to replace mobile notification text with message ID numbers that pass no information to Apple of Google, and which, when received by the Mattermost mobile application on a user’s phone, are used to privately communicate with their Mattermost server and use the message ID to retrieve mobile notification messages over an encrypted channel. This means at no time will the message text be visible to Apple or Google’s message relay system. </p> <p>Because of the extra steps to retrieve the notifications messages under Mattermost’s private mobility capability with ID-only push notifications, end users may experience a slight delay before the mobile notification is fully displayed compared to sending clear text through Apple and Google’s platform.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Workflow automation -->
     <tr class="section"><td colspan="7"><strong>Workflow automation</strong></td></tr>
@@ -265,7 +265,7 @@
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Shared Channels</strong>: Communicate across organizations using Mattermost by synchronizing messages, emoji reactions, and file sharing in real time through <a href="https://docs.mattermost.com/onboard/connected-workspaces.html">Mattermost Shared Channels</a>.</td>
+      <td><strong>Connected Workspaces</strong>: Communicate across organizations using Mattermost by synchronizing messages, emoji reactions, and file sharing in real time through <a href="https://docs.mattermost.com/onboard/connected-workspaces.html">Mattermost Connected Workspaces</a>.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Support -->
@@ -277,7 +277,7 @@
     </tr>
     <tr>
       <td><strong>Professional Support</strong>: Professional Support includes business hours support from 8am to 8pm United States Pacific Time (UTC-8 except for U.S. daylight savings time), with next business day response time via email and the Mattermost <a href="https://support.mattermost.com/hc/en-us/requests/new">online ticketing system</a>. For more information, please see <a href="https://mattermost.com/support-terms/">Support Terms</a>.</td>
-      <td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td></td><td>v9.11+</td>
+      <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
       <td><strong>Enterprise Support</strong>: Enterprise Support is available 24×7 at all times on all days via email and the Mattermost <a href="https://support.mattermost.com/hc/en-us/requests/new">online ticketing system</a> with a 4-hour response time service-level target. For more information, please see <a href="https://mattermost.com/support-terms/">Support Terms</a>.</td>
