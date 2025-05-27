@@ -113,7 +113,7 @@ Run:
    migration-assist postgres post-migrate --create-indexes "<POSTGRES_DSN>"
 
 - The `--create-indexes` flag rebuilds full-text indexes on `Posts` and `FileInfo`, plus all other Mattermost indexes.
-- Omitting that flag only restores full-text indexes for `Posts` and `FileInfo`.
+- Omitting that flag only restores full-text indexes for ``Posts`` and ``FileInfo``.
 
 See the :ref:`Restore full-text indexes <deploy/manual-postgres-migration:restore full-text indexes>` documentation for details.
 
