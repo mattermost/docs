@@ -156,7 +156,7 @@ In your `config.json` or via environment variables, update:
      "DataSource": "postgres://mmuser:pass@db:5432/mattermost?sslmode=disable"
    }
 
-If your config was stored in the database, update `MM_CONFIG` accordingly. See the :ref:`environment configuration settings <configure/environment-configuration-settings:database>` documentation.
+If your config was stored in the database, update ``MM_CONFIG`` accordingly. See the :ref:`environment configuration settings <configure/environment-configuration-settings:database>` documentation for details.
 
 Air-gapped environments
 ------------------------
