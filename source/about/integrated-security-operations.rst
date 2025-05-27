@@ -17,7 +17,7 @@ SOCs are the front lines of real-time monitoring, triage, and escalation. Coordi
 - **Accelerate triage and response workflows** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that automate escalations, task assignment, and ticket updates for consistent response execution.
 - **Integrate detection pipelines and observability tools** using the :doc:`Mattermost integrations platform </about/integrations>` to surface alerts from SIEM, SOAR, and log analysis systems into dedicated response channels.
 - **Maintain operational security and compliance** through :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging (beta)>` to safeguard sensitive incident data.
-- **Operate in secure, classified, or hybrid environments** with :doc:`self-hosted deployment models </deploy/deployment-options>` that keep SOC operations inside compliant, sovereign infrastructure.
+- **Operate in secure, classified, or hybrid environments** with :ref:`self-hosted deployment models <deploy/server/server-deployment-planning:deployment options>` that keep SOC operations inside compliant, sovereign infrastructure.
 
 Red Teams
 ---------
@@ -26,8 +26,8 @@ Adversary simulation exercises require stealth, control, and segmented communica
 
 **Benefits**
 
-- **Coordinate covert engagements securely** using :doc:`private channels and threaded messaging </collaborate/organize-conversations>` to maintain operational compartmentalization during offensive scenarios.
-- **Control exposure and data lineage** with :doc:`custom retention policies </manage/data-retention-policy>` and :doc:`channel-level access controls </manage/team-channel-members:advanced access controls>` that align with internal red team governance.
+- **Coordinate covert engagements securely** using :doc:`private channels <collaborate/channel-types:private channels>` and :doc:`threaded messaging </collaborate/organize-conversations>` to maintain operational compartmentalization during offensive scenarios.
+- **Control exposure and data lineage** with :doc:`custom retention policies </comply/data-retention-policy>` and :ref:`channel-level access controls <manage/team-channel-members:advanced access controls>`` that align with internal red team governance.
 - **Simulate real-world attacks across tools** using :doc:`custom integrations </about/integrations>` that connect Mattermost with infrastructure like C2 frameworks, vulnerability scanners, and operational support tools.
 - **Run red/blue postmortems and hotwash debriefs** in controlled collaboration spaces that preserve findings, artifacts, and replayable insights.
 
@@ -39,9 +39,9 @@ CERTs serve as rapid-response teams during high-risk events, requiring tight coo
 **Benefits**
 
 - **Orchestrate high-stakes incident response** through :doc:`Collaborative Playbooks </guides/repeatable-processes>` tailored for malware outbreaks, data exfiltration events, and zero-day exploits.
-- **Centralize and structure communication** with :doc:`channel-based collaboration </guides/collaborate>`, including file sharing, threaded updates, and task-tracking across affected teams.
-- **Enable coordination across geographies** using :doc:`multi-device access </collaborate/organize-conversations>` and :doc:`mobile EMM support </deploy/mobile-appconfig-emm>` for secure participation across locations and devices.
-- **Preserve evidentiary and compliance data** through :ref:`audit logs <manage/logging:audit logging (beta)>` and configurable exports for legal review or forensic handoff.
+- **Centralize and structure communication** with :doc:`channel-based collaboration </guides/collaborate>`, including :doc:`file sharing </collaborate/share-files-in-messages>`, :doc:`threaded updates </collaborate/organize-conversations>`, and task-tracking across affected teams.
+- **Enable coordination across geographies** using :doc:`multi-device access </guides/deployment-guide>` and :doc:`mobile EMM support </deploy/mobile/deploy-mobile-apps-using-emm-provider>` for secure participation across locations and devices.
+- **Preserve evidentiary and compliance data** through :ref:`audit logs <manage/logging:audit logging (beta)>` and configurable :dco:`exports </manage/bulk-export-tool>` for legal review or forensic handoff.
 
 Federated Threat Intelligence & Information Sharing
 ---------------------------------------------------
@@ -50,8 +50,8 @@ Cross-organizational threat intelligence teams—spanning sectors, regions, and 
 
 **Benefits**
 
-- **Collaborate securely across agencies or organizations** using :doc:`Shared Channels </onboard/shared-channels>` to synchronize alerts, discussions, and file sharing with trusted external partners.
-- **Support multinational and sectoral collaboration** with :doc:`custom terms of service enforcement </onboard/custom-tos>` and localized UI settings for global partner access.
+- **Collaborate securely across agencies or organizations** using :doc:`Connected Workspaces </onboard/connected-workspaces>` to synchronize alerts, discussions, and file sharing with trusted external partners.
+- **Support multinational and sectoral collaboration** with :doc:`custom terms of service enforcement </comply/custom-terms-of-service>` and :ref:`localized UI settings <preferences/manage-your-display-options:language>` for global partner access.
 - **Preserve operational trust and compliance** through :doc:`role-based access controls </onboard/advanced-permissions>` and :ref:`channel-specific permissions <manage/team-channel-members:advanced access controls>` that enforce jurisdictional and information-sharing agreements.
 - **Operationalize shared threat intelligence** by integrating IOCs, threat actor profiles, and shared playbooks into your Mattermost instance via the :doc:`integrations platform </about/integrations>`.
 
