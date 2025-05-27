@@ -165,7 +165,7 @@ Follow these steps to migrate within an air-gapped environment:
 
 1. **Verify** that the `migration-assist` binary is the latest version available to benefit from improvements and fixes.
 2. **Transfer** the latest `migration-assist` binary into the air-gapped environment (e.g., via secure media).
-3. **Generate** the MySQL schema+data output using fix flags. This produces `mysql.output`:
+3. **Generate** the MySQL schema+data output using fix flags. This produces ``mysql.output``:
 
    .. code-block:: sh
 
