@@ -22,7 +22,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Improvements
  - Added a license load metric to the **About** screen to show current license usage.
  - Improved the behavior around reporting a problem.
- - Updated the copy action label to "Copy Email Address" for Markdown-rendered email links.
+ - Updated the copy action label to **Copy Email Address** for Markdown-rendered email links.
 
 ### Bug Fixes
  - Fixed an issue with the hardware keyboard on iPad overlapping the input in threads.
