@@ -60,7 +60,7 @@ Then run:
      --mattermost-version="<MATTERMOST_VERSION>"
 
 - ``<POSTGRES_DSN>`` example: ``postgres://user:password@address:5432/db_name``
-- `<MATTERMOST_VERSION>` example: `10.5.4`
+- ``<MATTERMOST_VERSION>`` example: ``10.5.4``
 - By default, two pre-checks run before migration:
   - `--check-schema-owner=true`
   - `--check-tables-empty=true`
