@@ -1950,7 +1950,8 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
-
+"configure/environment-configuration-settings.html#elasticsearch":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2823,7 +2824,7 @@ redirects = {
 "integrate/mattermost-mission-collaboration-for-m365.html#setup":
         "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
 "integrate/playbooks-for-microsoft-teams.html#setup":
-        "https://docs.mattermost.com/integrate/playbooks-for-microsoft-teams.html#deploy",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html#setup":
         "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
 "integrate/microsoft-teams-sync.html#setup":
@@ -3841,6 +3842,8 @@ redirects = {
         "https://docs.mattermost.com/scale/scale-to-80000-users.html",
 "scale/scale-to-88000-users.html":
         "https://docs.mattermost.com/scale/scale-to-90000-users.html",
+"scale/elasticsearch.html":
+        "https://docs.mattermost.com/scale/enterprise-search.html",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
