@@ -284,8 +284,8 @@
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Premier Support</strong>: Available as an additional purchase for Mattermost Enterprise customers, Mattermost Premier Support offers additional license entitlements for non-production environments, direct access to senior support team members, screen-sharing and audio calling for P1 and P2 tickets, and access to a private channel with Mattermost technical staff. For more information, please see <a href="https://mattermost.com/support-terms/">Support Terms</a>.</td>
-      <td></td><td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
+      <td><strong>Premier Support</strong>: Available as an additional purchase offering additional license entitlements for non-production environments, direct access to senior support team members, screen-sharing and audio calling for P1 and P2 tickets, and access to a private channel with Mattermost technical staff. For more information, please see <a href="https://mattermost.com/support-terms/">Support Terms</a>.</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
   </tbody>
 </table>
