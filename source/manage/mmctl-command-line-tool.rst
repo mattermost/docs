@@ -1225,7 +1225,7 @@ mmctl channel search
 
 **Description**
 
-Search a channel by channel name. Channels can be specified by team (e.g., ``--team myteam mychannel``), or by team ID.
+Search for channel details by channel name. Channels can be specified by team (e.g., ``--team myteam mychannel``), or by team ID. Returns channel name, display name, and channel ID.
 
 **Format**
 
@@ -7138,13 +7138,13 @@ Create an incoming webhook to allow external posting of messages to a specific c
 
 .. code-block:: sh
 
-   --channel string        Channel name or ID of the new webhook
+   --channel string        Channel ID (required)
    --description string    Incoming webhook description
    --display-name string   Incoming webhook display name
    -h, --help              help for create-incoming
    --icon string           Icon URL
    --lock-to-channel       Lock to channel
-   --user string           The username, email, or ID of the user that the webhook should post as
+   --user string           User ID (required)
 
 **Options inherited from parent commands**
 
