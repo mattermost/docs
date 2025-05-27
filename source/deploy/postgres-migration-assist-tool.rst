@@ -125,7 +125,7 @@ This is the final step of the migration process, where we need to update the Mat
   If your configuration was stored in the database, see the :ref:`configuration in database <deploy/manual-postgres-migration:configuration in database>` documentation for migration details. Once migrated, you should also update the ``MM_CONFIG`` environment variable to point to the new DSN.
 
 .. note::
-  If your Mattermost deployment was initially configured with MySQL there's a good chance your systemd service file has a `BindsTo=mysql.service` directive in it. This will cause the Mattermost server to be shut down if you deactivate your MySQL service. To fix this update all references to `mysql.service` in your service file to use `postgresql.service` instead. This is only an issue if your Database and Mattermost are running on the same system.
+  If your Mattermost deployment was initially configured with MySQL, there's a good chance your systemd service file has a ``BindsTo=mysql.service`` directive in it. This will cause the Mattermost server to be shut down if you deactivate your MySQL service. To fix this, update all references to ``mysql.service`` in your service file to use ``postgresql.service`` instead. This is only an issue if your Database and Mattermost are running on the same system.
 
 Air-gapped environments
 ------------------------
