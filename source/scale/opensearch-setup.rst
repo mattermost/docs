@@ -19,6 +19,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
   1. To install on-premise OpenSearch, provision a dedicated server (e.g. Ubuntu 22.04 LTS).
   2. Install Java (OpenSearch requires Java 11+):
+
     .. code-block:: sh
 
       sudo apt update 
@@ -41,6 +42,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       sudo chown -R opensearch:opensearch /usr/share/opensearch
 
   5. Configure systemd:
+
     .. code-block:: sh
 
       [Unit] 
@@ -73,6 +75,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       cluster.initial_master_nodes: ["node-1", "node-2"]
 
   7. Enable & start OpenSearch:
+
     .. code-block:: sh
 
       sudo systemctl daemon-reload 
