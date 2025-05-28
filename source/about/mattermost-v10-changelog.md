@@ -26,7 +26,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Consolidated all channel editing functionalities into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert between public and private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
+ - Consolidated all channel editing functionality into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert between public and private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
  - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
  - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
  - Pre-packaged Calls plugin [v1.8.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.8.0).
@@ -47,8 +47,9 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Made it possible to view JSON logs in plain text within the **System Console**.
  - Enhanced the **System Console** search functionality to include all log fields.
  - Enhanced error reporting related to cluster management.
- - Added a LDAP setting to re-add removed members.
+ - Added an LDAP setting to re-add removed members.
  - Added support for SSO while Mattermost is embedded in an iframe.
+ - Set the Custom Profile Attributes feature flag to ``true`` by default.
 
 #### Performance
  - Optimized the team-switching operation by eliminating unnecessary calls to retrieve channels and channel members.
@@ -113,7 +114,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Original 10.8.0 release.
 
 ### Important Upgrade Notes
- - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
+ - New tables ``AccessControlPolicies`` and ``AccessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
  - Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, [talk to a Mattermost expert](https://mattermost.com/contact-sales/).
 
 ```{Important}
