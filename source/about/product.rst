@@ -11,18 +11,20 @@ The platform is fully extensible by design, supporting a rich ecosystem of third
    :titlesonly:
 
    /about/editions-and-offerings.rst
+   /about/plans.md
    /about/subscription.rst
    /about/certifications-and-compliance.rst
    /about/accessibility-compliance-policy.rst
    /about/releases-lifecycle.rst
    /about/frequently-asked-questions.rst
 
-* :doc:`Editions and offerings </about/editions-and-offerings>` - Learn about Mattermost editions, feature sets, and capabilities.
-* :doc:`Subscription overview </about/subscription>` - Learn about Mattermost subscriptions, plans, and licenses for both Cloud and self-hosted deployments..
-* :doc:`Certifications and compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
-* :doc:`Accessibility compliance policy </about/accessibility-compliance-policy>` - Learn about Mattermost's policy and commitment to accessibility.
-* :doc:`Releases and life cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
-* :doc:`Frequently asked questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
+* :doc:`Editions and Offerings </about/editions-and-offerings>` - Learn about Mattermost editions, feature sets, and capabilities.
+* :doc:`Mattermost Plans </about/plans>` - Learn about the features available across all Mattermost plans, including free and paid subscription services.
+* :doc:`Subscription Overview </about/subscription>` - Learn about Mattermost subscriptions, plans, and licenses for both Cloud and self-hosted deployments..
+* :doc:`Certifications and Compliance </about/certifications-and-compliance>` - Mattermost can meet all major security and compliance requirements.
+* :doc:`Accessibility Compliance policy </about/accessibility-compliance-policy>` - Learn about Mattermost's policy and commitment to accessibility.
+* :doc:`Releases and Life Cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
+* :doc:`Frequently Asked Questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
 
 Stay connected with channels
 -----------------------------
