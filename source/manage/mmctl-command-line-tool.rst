@@ -86,7 +86,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
 .. tab:: Release package 
 
-   If you're using a release page for Linux, macOS, or Windows, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
+   If you're using a release page for Linux, macOS, or Windows, we recommend downloading the mmctl builds through their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
    E.g. to download version ``v10.7.0`` of the mmctl amd64 build for linux, you can run the following:
 
@@ -95,16 +95,6 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
       curl -vfsSL -O https://releases.mattermost.com/mmctl/v10.7.0/linux_amd64.tar
 
    Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
-
-.. tab:: Go install 
-
-   Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
-
-   To build and install the mmctl binary in your `$GOPATH`, run the following command:
-
-   .. code-block:: sh
-
-      go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
 
 .. tab:: Homebrew
 
