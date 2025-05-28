@@ -13,12 +13,16 @@ Learn how operational teams use Mattermost to accelerate mission-critical work a
    /about/devops-collaboration.rst
    /about/integrated-security-operations.rst
    /about/incident-response-collaboration.rst
-   /about/out-of-band-collaboration.rst
+   /about/out-of-band-incident-response.rst
+   /about/purpose-built-collaboration.rst
+   /about/self-sovereign-collaboration.rst
 
 - :doc:`Maximize your Microsoft investments </about/maximize-microsoft-investments>` - Speed mission-critical outcomes by supplementing existing investments in Microsoft Teams, M365, and Entra ID for everyday collaboration with Mattermost’s specialized workflow platform for technical and operational teams needing advanced customization, toolchain integration, and deployment to segregated networks.
-- :doc:`On-prem Skype for Business replacement </about/on-prem-skype-for-business-replacement>` - Replace Skype for Business with Mattermost in classified operations.
-- **Secure command and control** - Learn about the :doc:`Mattermost Secure Command and Control </about/secure-command-and-control>` solution, designed to provide fast and secure mobile communications for technical teams.
-- **Real-Time DevSecOps collaboration** - Learn how engineers, IT admins, and other operational teams :doc:`use Mattermost to accelerate mission-critical processes </about/devops-collaboration>`, from quality assurance and technical support to release management, and accelerate software development and deployment processes and reduce costs.
-- **Integrated security operations**: Learn how security teams use Mattermost to :doc:`accelerate detection, decision-making, and coordinated response </about/integrated-security-operations>` while maintaining full operational control in Security Operations Centers (SOCs), red team engagements, CERT responses, and cross-organizational intelligence hubs.
-- **Incident response collaboration**: Learn how security teams use Mattermost to :doc:`coordinate fast, effective incident response workflows </about/incident-response-collaboration>` to keep their organizations more secure and reduce downtime.
-- **Out-of-band collaboration**: Learn how technical and operational teams use Mattermost to :doc:`communicate securely and effectively in out-of-band scenarios </about/out-of-band-collaboration>` when primary communication channels are unavailable.
+- :doc:`On-Premises Skype for Business replacement </about/on-prem-skype-for-business-replacement>` - Replace Skype for Business with Mattermost in classified operations.
+- :doc:`Secure Command and Control </about/secure-command-and-control>` - Accelerate decision advantage through real-time collaboration and mission-aligned workflows to enable operational units, contractors, and mission partners to work together in tightly controlled environments whether connected, disconnected, or degraded.
+- :doc:`Real-Time DevSecOps collaboration </about/devops-collaboration>` - Support sovereign software supply chains, regulated platforms, or air-gapped operational environments to accelerate software development and deployment processes and reduce costs.
+- :doc:`Integrated Security Operations </about/integrated-security-operations>` - Accelerate detection, decision-making, and coordinated response while maintaining full operational control in Security Operations Centers (SOCs), red team engagements, CERT responses, and cross-organizational intelligence hubs.
+- :doc:`Incident Response Collaboration </about/incident-response-collaboration>` - Coordinate fast, effective incident response workflows to keep your organizations more secure while reducing operational downtime.
+- :doc:`Out-of-Band Incident Response </about/out-of-band-incident-response>` - Ensure real-time coordination remains available during network outages, security incidents, or critical decision windows when primary communication channels are unavailable.
+- :doc:`Purpose-Built Collaboration </about/purpose-built-collaboration>` - Streamline coordination, improve decision velocity, and increase resilience across mission-critical workflows.
+- :doc:`Self-Sovereign Collaboration </about/self-sovereign-collaboration>` - Maintain control over your data and communications with Mattermost’s self-hosted, on-premises deployment options that ensure compliance, security, and operational continuity across all mission environments.

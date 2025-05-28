@@ -1,4 +1,4 @@
-Real-time DevSecOps Collaboration
+Real-Time DevSecOps Collaboration
 =================================
 
 Modern mission-driven software teams—ranging from critical infrastructure operators to government software factories—face the challenge of delivering and defending complex systems at speed. From CI/CD pipelines to incident response, secure collaboration is essential to ensure resilience, compliance, and operational success in environments where failure is not an option.
@@ -54,7 +54,7 @@ Critical infrastructure DevSecOps must align with strict security, audit, and co
 
 - **Apply granular role-based access controls** using :doc:`advanced permissions </onboard/advanced-permissions>` and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>` to protect sensitive workflows.
 - **Support supply chain security coordination** by using :doc:`Playbooks </guides/repeatable-processes>` to manage SBOM reviews, vendor risk analysis, and software intake workflows across internal and external teams.
-- **Enforce secure collaboration behavior** through :doc:`custom Terms of Service </onboard/custom-tos>`, :doc:`data retention policies </manage/data-retention-policy>`, and user authentication tied to :doc:`SSO and Entra ID </onboard/sso-entraid>`.
+- **Enforce secure collaboration behavior** through :doc:`custom Terms of Service </comply/custom-terms-of-service>`, :doc:`data retention policies </comply/data-retention-policy>`, and user authentication tied to :doc:`SSO and Entra ID </onboard/sso-entraid>`.
 - **Deploy in line** with :doc:`Zero Trust </about/security/zero-trust>` principles with :ref:`self-managed, segmented deployments <deploy/server/server-deployment-planning:deployment options>` that enforce identity, access, and policy boundaries—suitable for classified or sovereign cloud environments.
 
 Get Started

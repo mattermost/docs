@@ -26,8 +26,8 @@ Adversary simulation exercises require stealth, control, and segmented communica
 
 **Benefits**
 
-- **Coordinate covert engagements securely** using :doc:`private channels <collaborate/channel-types:private channels>` and :doc:`threaded messaging </collaborate/organize-conversations>` to maintain operational compartmentalization during offensive scenarios.
-- **Control exposure and data lineage** with :doc:`custom retention policies </comply/data-retention-policy>` and :ref:`channel-level access controls <manage/team-channel-members:advanced access controls>`` that align with internal red team governance.
+- **Coordinate covert engagements securely** using :ref:`private channels <collaborate/channel-types:private channels>` and :doc:`threaded messaging </collaborate/organize-conversations>` to maintain operational compartmentalization during offensive scenarios.
+- **Control exposure and data lineage** with :doc:`custom retention policies </comply/data-retention-policy>` and :ref:`channel-level access controls <manage/team-channel-members:advanced access controls>` that align with internal red team governance.
 - **Simulate real-world attacks across tools** using :doc:`custom integrations </about/integrations>` that connect Mattermost with infrastructure like C2 frameworks, vulnerability scanners, and operational support tools.
 - **Run red/blue postmortems and hotwash debriefs** in controlled collaboration spaces that preserve findings, artifacts, and replayable insights.
 
@@ -41,7 +41,7 @@ CERTs serve as rapid-response teams during high-risk events, requiring tight coo
 - **Orchestrate high-stakes incident response** through :doc:`Collaborative Playbooks </guides/repeatable-processes>` tailored for malware outbreaks, data exfiltration events, and zero-day exploits.
 - **Centralize and structure communication** with :doc:`channel-based collaboration </guides/collaborate>`, including :doc:`file sharing </collaborate/share-files-in-messages>`, :doc:`threaded updates </collaborate/organize-conversations>`, and task-tracking across affected teams.
 - **Enable coordination across geographies** using :doc:`multi-device access </guides/deployment-guide>` and :doc:`mobile EMM support </deploy/mobile/deploy-mobile-apps-using-emm-provider>` for secure participation across locations and devices.
-- **Preserve evidentiary and compliance data** through :ref:`audit logs <manage/logging:audit logging (beta)>` and configurable :dco:`exports </manage/bulk-export-tool>` for legal review or forensic handoff.
+- **Preserve evidentiary and compliance data** through :ref:`audit logs <manage/logging:audit logging (beta)>` and configurable :doc:`exports </manage/bulk-export-tool>` for legal review or forensic handoff.
 
 Federated Threat Intelligence & Information Sharing
 ---------------------------------------------------

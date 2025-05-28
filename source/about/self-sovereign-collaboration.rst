@@ -14,10 +14,10 @@ Managing global operations means adhering to regional regulations—without comp
 
 **Benefits**
 
-- **Meet global compliance mandates** like GDPR and data localization laws by deploying Mattermost in :doc:`public, private, or sovereign cloud environments </deploy/deployment-options>` tailored to national regulatory frameworks.
-- **Ensure full data control and transparency** with :doc:`self-hosted deployment options </deploy/self-managed-deployment>` that eliminate exposure to vendor-controlled infrastructure or telemetry.
-- **Audit and enforce compliance behavior** with :ref:`role-based access controls <manage/team-channel-members:advanced access controls>`, :doc:`custom Terms of Service </onboard/custom-tos>`, and :ref:`audit logging <manage/logging:audit logging (beta)>` to align with internal and regulatory standards.
-- **Protect identity and access** using :doc:`SSO integrations </onboard/sso-entraid>`, AD/LDAP synchronization, and :doc:`MFA enforcement </onboard/mfa>` for secure authentication across geographies and operational roles.
+- **Meet global compliance mandates** like GDPR and data localization laws by deploying Mattermost in :doc:`public, private, or sovereign cloud environments </about/cloud-subscriptions>` tailored to national regulatory frameworks.
+- **Ensure full data control and transparency** with :ref:`self-hosted deployment options <deploy/server/server-deployment-planning:deployment options>` that eliminate exposure to vendor-controlled infrastructure or telemetry.
+- **Audit and enforce compliance behavior** with :ref:`role-based access controls <manage/team-channel-members:advanced access controls>`, :doc:`custom Terms of Service </comply/custom-terms-of-service>`, and :ref:`audit logging <manage/logging:audit logging (beta)>` to align with internal and regulatory standards.
+- **Protect identity and access** using :doc:`SSO integrations </onboard/sso-entraid>`, :doc:`AD/LDAP synchronization </onboard/ad-ldap-groups-synchronization>`, and :doc:`MFA enforcement </onboard/multi-factor-authentication>` for secure authentication across geographies and operational roles.
 
 Secure, Sovereign Deployment at Any Scale
 -----------------------------------------
@@ -38,10 +38,10 @@ Cross-agency, multinational, or coalition collaboration requires sovereignty wit
 
 **Benefits**
 
-- **Create secure shared workspaces** with :doc:`Shared Channels </onboard/shared-channels>` that synchronize discussions, reactions, and file sharing across trusted organizations—without exposing internal systems.
+- **Create secure shared workspaces** with :doc:`Connected Workspaces Channels </onboard/connected-workspaces>` that synchronize discussions, reactions, and file sharing across trusted organizations—without exposing internal systems.
 - **Control access across organizations** with :doc:`attribute-based permissions </onboard/advanced-permissions>` and scoped identity policies to ensure mission alignment and CUI segmentation.
-- **Deploy sovereign AI and workflow automation** in isolated environments using :doc:`air-gapped AI operations </about/private-cloud-ai>` and :doc:`Collaborative Playbooks </guides/repeatable-processes>`—enabling intelligence and speed without compromising data control.
-- **Upgrade legacy platforms** like Skype for Business with modern, compliant tools for secure messaging, screen sharing, and team coordination. :doc:`See Skype for Business replacement options </guides/skype-replacement>`.
+- **Deploy sovereign AI and workflow automation** in isolated environments using :doc:`air-gapped AI operations </configure/enable-copilot>` and :doc:`Collaborative Playbooks </guides/repeatable-processes>`—enabling intelligence and speed without compromising data control.
+- **Upgrade legacy platforms** like Skype for Business with modern, compliant tools for secure messaging, screen sharing, and team coordination. :doc:`See Skype for Business replacement options </about/on-prem-skype-for-business-replacement>`.
 
 Unified Collaboration for Secure Workflows
 ------------------------------------------
@@ -53,8 +53,8 @@ Mattermost replaces legacy, on-premises communication systems with a modern, sov
 **Benefits**
 
 - **Modernize secure messaging and team coordination** with :doc:`channel-based collaboration </guides/collaborate>`, :doc:`threaded discussions </collaborate/organize-conversations>`, and :doc:`file sharing </collaborate/share-files-in-messages>` that work across web, desktop, and mobile.
-- **Replace outdated platforms** like Skype for Business with a scalable, :doc:`self-hosted architecture </deploy/self-managed-deployment>` that delivers enhanced user experience, compliance, and cross-organizational flexibility.
-- **Protect sensitive information on mobile** using :doc:`enterprise-grade mobile security </deploy/mobile-appconfig-emm>` including biometric access, jailbreak detection, screenshot prevention, and remote wipe—ensuring secure access from personal or field-issued devices.
+- **Replace outdated platforms** like Skype for Business with a scalable, :ref:`self-hosted architecture <deploy/server/server-deployment-planning:deployment options>` that delivers enhanced user experience, compliance, and cross-organizational flexibility.
+- **Protect sensitive information on mobile** using :doc:`enterprise-grade mobile security </about/security/mobile-security>` including :ref:`biometric access <deploy/mobile/mobile-security-features:biometric authentication>`, :ref:`jailbreak detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`, :ref:`screenshot prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`, and remote wipe—ensuring secure access from personal or field-issued devices.
 - **Extend collaboration capabilities** using :doc:`integrated workflows and automations </guides/repeatable-processes>` to replace manual coordination with policy-driven processes.
 - **Unify teams around a secure, customizable platform** that evolves with your mission and integrates with internal systems via :doc:`webhooks, plugins, and APIs </about/integrations>`.
 

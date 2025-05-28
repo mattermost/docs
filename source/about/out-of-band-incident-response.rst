@@ -14,9 +14,9 @@ Out-of-band collaboration provides a persistent, independent channel for coordin
 
 **Benefits**
 
-- **Preserve communication during infrastructure failures** with secure, dedicated OOB deployments across private Kubernetes clusters or Azure Marketplace-hosted environments. :doc:`Explore deployment options </deploy/deployment-options>`.
-- **Safeguard sensitive communications** with FIPS 140-2 validated and STIG-hardened images, ensuring secure operation in classified or regulated environments. :doc:`View compliance standards </about/security-compliance>`.
-- **Maintain continuity across platforms** with :doc:`multi-device access </collaborate/organize-conversations>`—including web, desktop, and mobile experiences—even when primary tools are offline.
+- **Preserve communication during infrastructure failures** with secure, dedicated OOB deployments across private Kubernetes clusters or Azure Marketplace-hosted environments. :ref:`Explore deployment options <deploy/server/server-deployment-planning:deployment options>`.
+- **Safeguard sensitive communications** with FIPS 140-2 validated and STIG-hardened images, ensuring secure operation in classified or regulated environments.
+- **Maintain continuity across platforms** with :doc:`multi-device access </guides/deployment-guide>`—including web, desktop, and mobile experiences—even when primary tools are offline.
 - **Enforce strict access controls** using :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging (beta)>` to limit risk exposure during high-stakes operations.
 
 Business Continuity at Scale
@@ -26,7 +26,7 @@ Outages and downtime threaten both productivity and revenue. In large enterprise
 
 **Benefits**
 
-- **Enable immediate coordination during outages** using :doc:`private cloud or hybrid deployment options </deploy/deployment-options>` to maintain operational continuity outside your primary infrastructure.
+- **Enable immediate coordination during outages** using :ref:`private cloud or hybrid deployment options <deploy/server/server-deployment-planning:deployment options>` to maintain operational continuity outside your primary infrastructure.
 - **Scale communication globally** with Mattermost’s :doc:`high availability and horizontal scalability architecture </scale/scaling-for-enterprise>`—supporting tens of thousands of users across enterprise, field, or classified environments.
 - **Accelerate outage recovery** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that automate outage response steps and ensure team accountability during time-critical events.
 
@@ -48,9 +48,9 @@ Not all communication is appropriate for general collaboration platforms. Teams 
 
 **Benefits**
 
-- **Protect classified communications** with STIG-hardened, :doc:`DISA-approved container images </deploy/deployment-options>` built for use in air-gapped or classified networks.
+- **Protect classified communications** with STIG-hardened, DISA-approved container images built for use in air-gapped or classified networks.
 - **Enable secure collaboration** through :doc:`threaded messaging </collaborate/organize-conversations>`, :doc:`file sharing </collaborate/share-files-in-messages>`, and :ref:`channel-level access controls <manage/team-channel-members:advanced access controls>` hosted in sovereign infrastructure.
-- **Maintain IP confidentiality** with end-to-end encrypted, :doc:`self-hosted deployments </deploy/self-managed-deployment>` that eliminate reliance on third-party SaaS and ensure data sovereignty.
+- **Maintain IP confidentiality** with end-to-end encrypted, :doc:`self-hosted deployments </deploy/server/server-deployment-planning>` that eliminate reliance on third-party SaaS and ensure data sovereignty.
 
 Get Started
 -----------

@@ -16,8 +16,8 @@ Coordinating logistics across continents, agencies, and time zones requires a se
 
 - **Enable real-time coordination** across supply chains, procurement, and field units with :doc:`channel-based messaging </guides/collaborate>` and :doc:`playbook-driven workflows </guides/repeatable-processes>` that standardize communication and reduce friction.
 - **Connect systems across logistics networks** by integrating ERP, fleet tracking, maintenance management, and transportation tools via :doc:`webhooks, APIs, and plugins </about/integrations>`.
-- **Preserve operational continuity** during outages or disruptions using :doc:`self-hosted deployments </deploy/deployment-options>` and :doc:`high availability architecture </scale/scaling-for-enterprise>` that eliminate reliance on third-party cloud services.
-- **Support multilingual coordination** with :doc:`localized UI options </preferences/manage-your-display-options>` in 20+ languages to ensure inclusive collaboration across global teams.
+- **Preserve operational continuity** during outages or disruptions using :ref:`self-hosted deployments <deploy/server/server-deployment-planning:deployment options>` and :doc:`high availability architecture </scale/high-availability-cluster-based-deployment>` that eliminate reliance on third-party cloud services.
+- **Support multilingual coordination** with :ref:`localized UI options <preferences/manage-your-display-options:language>` in 20+ languages to ensure inclusive collaboration across global teams.
 
 Operational Technology and ICS Collaboration
 --------------------------------------------
@@ -28,11 +28,11 @@ Mattermost enables secure collaboration across OT environments and field operati
 
 **Benefits**
 
-- **Enable compliant, real-time OT communications** across operational zones and facilities using :doc:`secure, on-prem collaboration </deploy/self-managed-deployment>` that keeps data within your control perimeter.
-- **Support field teams with hardened mobile access** using :doc:`EMM-based app provisioning </deploy/mobile-appconfig-emm>`, :doc:`biometric authentication </deploy/mobile-biometric-authentication>`, :doc:`jailbreak detection </deploy/mobile-root-detection>`, and :ref:`ID-only push notifications <deploy/mobile-id-only-pns:overview>`—ensuring that only authorized, uncompromised devices can access operational data.
+- **Enable compliant, real-time OT communications** across operational zones and facilities using :ref:`secure, on-prem collaboration <deploy/server/server-deployment-planning:deployment options>` that keeps data within your control perimeter.
+- **Support field teams with hardened mobile access** using :doc:`EMM-based app provisioning </deploy/mobile/deploy-mobile-apps-using-emm-provider>`, :ref:`biometric authentication <deploy/mobile/mobile-security-features:biometric authentication>`, :ref:`jailbreak detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>`—ensuring that only authorized, uncompromised devices can access operational data.
 - **Integrate with industrial monitoring systems** like SCADA, PI historians, and plant analytics using :doc:`alert-driven webhook and plugin integrations </about/integrations>` that push system events to relevant mobile or desktop channels.
-- **Ensure system and network isolation** with :doc:`air-gapped deployment support </deploy/server/deploy-kubernetes>` that allows full collaboration within OT enclaves and disconnected environments.
-- **Prevent mobile data leakage** via :doc:`remote wipe capabilities </deploy/mobile-appconfig-emm>` and :doc:`screenshot/screen recording prevention </deploy/mobile-screenshot-recording-prevention>` for mobile devices used in the field.
+- **Ensure system and network isolation** with :doc:`air-gapped deployment support </deploy/server/air-gapped-deployment>` that allows full collaboration within OT enclaves and disconnected environments.
+- **Prevent mobile data leakage** via :ref:`remote wipe capabilities <about/security/mobile-security:mobile device management (mdm)>` and :ref:`screenshot/screen recording prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>` for mobile devices used in the field.
 
 Technical Operational Command Centers
 -------------------------------------
@@ -44,7 +44,7 @@ Engineering, infrastructure, and security teams manage increasingly complex envi
 - **Accelerate decision-making and incident response** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` to automate workflows for triage, patching, code releases, and security alerts.
 - **Customize your collaboration environment** with :doc:`theming </preferences/customize-your-theme>`, :doc:`custom branding </configure/custom-branding-tools>`, and :doc:`channel templates </guides/collaborate>` to mirror internal teams and operational domains.
 - **Extend platform capabilities** with :doc:`slash commands, bots, and custom plugins </about/integrations>` that connect Mattermost to CI/CD systems, alerting frameworks, ticketing platforms, and internal tools.
-- **Increase usability and team cohesion** with :doc:`custom emojis </preferences/emoji>`, shared terminology, and real-time messaging optimized for platform engineers, DevSecOps teams, and field service managers.
+- **Increase usability and team cohesion** with :ref:`custom emojis <collaborate/react-with-emojis-gifs:upload custom emojis>`, shared terminology, and :doc:`real-time messaging </guides/collaborate>` optimized for platform engineers, DevSecOps teams, and field service managers.
 
 Get Started
 -----------

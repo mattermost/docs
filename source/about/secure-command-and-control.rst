@@ -16,9 +16,9 @@ In high-stakes missions—including classified operations—real-time collaborat
 
 - **Surface essential context faster for decisive action** using :doc:`threaded messaging </collaborate/organize-conversations>`, :doc:`file previews </collaborate/share-files-in-messages>`, and :doc:`channel-based discussion </guides/collaborate>` to consolidate signals and reduce noise.
 - **Integrate mission tooling and automation** via the :doc:`Mattermost integrations platform </about/integrations>`—connecting alerting, workflow engines, and tactical systems directly into operational channels.
-- **Strengthen mobile communication channels** through :doc:`enterprise mobility security </security-guide/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
+- **Strengthen mobile communication channels** through :doc:`enterprise mobility security </about/security/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
 - **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
-- **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </about/private-cloud-ai>` to power decision support and automation in disconnected or classified settings.
+- **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deploy/server/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
 
 Disconnected, Intermittent, and Low-Bandwidth (DDIL) Collaboration
 -------------------------------------------------------------------
@@ -27,8 +27,8 @@ Disconnected environments demand resilient tools that work without cloud access,
 
 **Benefits**
 
-- **Operate in air-gapped and disconnected networks** using :doc:`self-hosted Kubernetes deployments </deploy/server/deploy-kubernetes>` and :doc:`STIG-hardened container images </deploy/deployment-options>` for secure offline operations.
-- **Ensure secure mobile access on managed or BYOD devices** with :doc:`AppConfig integration </deploy/mobile-appconfig-emm>`, Zero Trust enforcement, and :ref:`ID-only push notifications <deploy/mobile-id-only-pns:overview>` for sensitive alerts.
+- **Operate in air-gapped and disconnected networks** using :doc:`self-hosted Kubernetes deployments </deploy/server/deploy-kubernetes>` and STIG-hardened container images for secure offline operations.
+- **Ensure secure mobile access on managed or BYOD devices** with :doc:`AppConfig integration </deploy/mobile/deploy-mobile-apps-using-emm-provider>`, Zero Trust enforcement, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
 - **Maintain command resilience** using :doc:`high availability cluster-based deployment </scale/scaling-for-enterprise>` and :doc:`horizontal scalability </scale/scaling-for-enterprise>` to support operational continuity at scale.
 - **Automate field workflows** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
 
@@ -41,12 +41,12 @@ Mattermost provides enterprise-grade mobile protections to enable secure BYOD ac
 
 **Benefits**
 
-- **Enforce CUI protections on mobile devices** using :doc:`Enterprise Mobility Management (EMM) and AppConfig integrations </deploy/mobile-appconfig-emm>` to provision secure Mattermost apps on EMM-enrolled personal or corporate devices.
-- **Mitigate unauthorized access** with :doc:`biometric authentication </deploy/mobile-biometric-authentication>` and :doc:`jailbreak/root detection </deploy/mobile-root-detection>`, ensuring only secure and uncompromised devices can access mission data.
-- **Control information sharing** with :doc:`screenshot and screen recording prevention </deploy/mobile-screenshot-recording-prevention>`, blocking unauthorized capture of sensitive content during classified or time-sensitive discussions.
-- **Protect data at rest and in motion** using encrypted mobile storage, :doc:`secure sandboxing </deploy/mobile-appconfig-emm>`, and :ref:`ID-only push notifications <deploy/mobile-id-only-pns:overview>` that never expose message content to third-party cloud services.
-- **Prevent lingering risk from device loss or separation** through :doc:`remote wipe and deactivation capabilities </deploy/mobile-appconfig-emm>` that erase all Mattermost content if access is revoked or the device is compromised.
-- **Comply with enterprise and regulatory policies** using :doc:`MDM-enforced compliance controls </deploy/mobile-appconfig-emm>`—such as encryption enforcement, password complexity, and device integrity checks—validated before mobile access is granted.
+- **Enforce CUI protections on mobile devices** using :doc:`Enterprise Mobility Management (EMM) and AppConfig integrations </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to provision secure Mattermost apps on EMM-enrolled personal or corporate devices.
+- **Mitigate unauthorized access** with :ref:`biometric authentication <deploy/mobile/mobile-security-features:biometric authentication>` and :ref:`jailbreak/root detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`, ensuring only secure and uncompromised devices can access mission data.
+- **Control information sharing** with :ref:`screenshot and screen recording prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`, blocking unauthorized capture of sensitive content during classified or time-sensitive discussions.
+- **Protect data at rest and in motion** using encrypted mobile storage, :ref:`secure sandboxing <deploy/mobile/mobile-security-features:mobile data isolation>`, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` that never expose message content to third-party cloud services.
+- **Prevent lingering risk from device loss or separation** through :ref:`remote wipe and deactivation capabilities <about/security/mobile-security:mobile device management (mdm)>` that erase all Mattermost content if access is revoked or the device is compromised.
+- **Comply with enterprise and regulatory policies** using :doc:`MDM-enforced compliance controls </deploy/mobile/deploy-mobile-apps-using-emm-provider>`—such as encryption enforcement, password complexity, and device integrity checks—validated before mobile access is granted.
 - **Segment mission access by role or project** with :ref:`attribute-based access controls (ABAC) <manage/team-channel-members:advanced access controls>` and scoped channel access, ensuring users only see data aligned with their permissions and operational role.
 - **Ensure continuous mobile compliance** with secure SDLC practices and proactive vulnerability management baked into the Mattermost mobile application lifecycle.
 
@@ -58,10 +58,10 @@ Coordinating across departments, agencies, and external stakeholders—especiall
 
 **Benefits**
 
-- **Unify mission stakeholders on a common-use platform** that supports :doc:`hybrid deployments </deploy/deployment-options>` across private cloud, edge environments, and air-gapped infrastructure.
+- **Unify mission stakeholders on a common-use platform** that supports :ref:`hybrid deployments <deploy/server/server-deployment-planning:deployment options>` across private cloud, edge environments, and :doc:`air-gapped infrastructure </deploy/server/air-gapped-deployment>`.
 - **Maintain data sovereignty and mission alignment** with deployments that avoid consumer infrastructure and retain control over all communications and file transfers—even in classified operations.
 - **Apply role-based separation of access** through :doc:`advanced permissions </onboard/advanced-permissions>` and :ref:`channel-level controls <manage/team-channel-members:advanced access controls>` to protect mission integrity across organizational boundaries.
-- **Enable secure real-time collaboration across entities** using :doc:`Shared Channels </onboard/shared-channels>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
+- **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </onboard/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
 - **Reduce personal device risk** by offering secure enterprise communication options that eliminate the need for unauthorized messaging apps.
 
 Get Started
