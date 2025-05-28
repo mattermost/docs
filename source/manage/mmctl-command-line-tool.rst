@@ -2439,6 +2439,8 @@ mmctl export generate-presigned-url
 
 Generate a pre-signed URL for an export file in cases where a Mattermost Cloud export is large and challenging to download from the Mattermost server.
 
+Requires the ``EnableExportDirectDownload`` feature flag to be set to ``true``.
+
 **Format**
 
 .. code-block:: sh
