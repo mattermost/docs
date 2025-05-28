@@ -103,7 +103,7 @@ Connect with another device
 Opening a support ticket for self-hosted deployments
 ----------------------------------------------------
 
-If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` or :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>`, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
+If you have a :doc:`paid subscription to a Mattermost offering </about/editions-and-offerings>`, such as Mattermost Professional or Mattermost Enterprise, you're entitled to open support tickets via our `online support portal <https://support.mattermost.com/hc/en-us/requests/new>`_. 
 
 When opening a Support ticket as part of your paid subscription, it's important that you provide us with as much information as you can in a timely manner. Knowing what information is relevant can be confusing. We use the anagram C.L.U.E.S. to remember what we need:
 
