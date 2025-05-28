@@ -33,7 +33,7 @@ Important Upgrade Notes
 |                                                    |                                                                                                                                                                  |
 |                                                    |  CREATE INDEX idx_sidebarchannels_categoryid ON SidebarChannels(CategoryId);                                                                                     |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| v10.8                                              | New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero       |
+| v10.8                                              | New tables ``AccessControlPolicies`` and ``AccessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero      |
 |                                                    | downtime is expected.                                                                                                                                            |
 |                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 |                                                    | Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, `talk to a Mattermost expert <https://mattermost.com/contact-sales/>`__.       |
