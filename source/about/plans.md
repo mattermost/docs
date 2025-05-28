@@ -63,11 +63,11 @@
     </tr>
     <tr>
       <td><strong>Custom branding, themes, and emojis</strong>: Match your organizations look, feel and brand by <a href="https://docs.mattermost.com/configure/custom-branding-tools.html">customizing</a> the site name, description, login brand image and text, as well as <a href="https://docs.mattermost.com/preferences/customize-your-theme.html">theme colors</a>.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
+      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v3.0.0+</td>
     </tr>
     <tr>
       <td><strong>Available in 20 languages</strong>: Support for English (U.S., Australian), Japanese, Korean, Swedish, Dutch, French, German, Italian, Spanish, Turkish, Polish, Portuguese (Brazil), Romanian, Vietnamese, Ukrainian, Bulgarian, Hungarian, Persian, Russian, and Chinese (Simplified and Traditional) languages.</td>
-      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
+      <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v2.0.0+</td>
     </tr>
     <!-- AI-accelerated collaboration -->
     <tr class="section"><td colspan="7"><strong>AI-accelerated collaboration</strong></td></tr>
