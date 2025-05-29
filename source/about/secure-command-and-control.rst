@@ -20,10 +20,16 @@ In high-stakes missions—including classified operations—real-time collaborat
 - **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
 - **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deploy/server/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
 
+.. image:: /images/Enterprise-to-Tactical-Edge.png
+    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
+
 Disconnected, Intermittent, and Low-Bandwidth (DDIL) Collaboration
 -------------------------------------------------------------------
 
 Disconnected environments demand resilient tools that work without cloud access, persistent connectivity, or conventional device infrastructure.
+
+.. image:: /images/DDIL-disconnected-secure-communication-collaboration.png
+    :alt: Mattermost's Self-Hosted Kubernetes-based Collaborative Workflow platform installs on edge, cloud and custom data center platforms.
 
 **Benefits**
 

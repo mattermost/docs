@@ -19,6 +19,9 @@ SOCs are the front lines of real-time monitoring, triage, and escalation. Coordi
 - **Maintain operational security and compliance** through :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging (beta)>` to safeguard sensitive incident data.
 - **Operate in secure, classified, or hybrid environments** with :ref:`self-hosted deployment models <deploy/server/server-deployment-planning:deployment options>` that keep SOC operations inside compliant, sovereign infrastructure.
 
+.. image:: /images/Intelligent-RT-Incident-Response.png
+    :alt: Augments security platform investments with collaborative, AI-powered security operations workflow.
+
 Red Teams
 ---------
 
@@ -54,7 +57,6 @@ Cross-organizational threat intelligence teams—spanning sectors, regions, and 
 - **Support multinational and sectoral collaboration** with :doc:`custom terms of service enforcement </comply/custom-terms-of-service>` and :ref:`localized UI settings <preferences/manage-your-display-options:language>` for global partner access.
 - **Preserve operational trust and compliance** through :doc:`role-based access controls </onboard/advanced-permissions>` and :ref:`channel-specific permissions <manage/team-channel-members:advanced access controls>` that enforce jurisdictional and information-sharing agreements.
 - **Operationalize shared threat intelligence** by integrating IOCs, threat actor profiles, and shared playbooks into your Mattermost instance via the :doc:`integrations platform </about/integrations>`.
-
 
 Get Started
 -----------

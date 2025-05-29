@@ -176,6 +176,8 @@ redirects = {
         "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
 "about/out-of-band-collaboration.html":
         "https://docs.mattermost.com/about/out-of-band-incident-response.html",
+"about/incident-response-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
