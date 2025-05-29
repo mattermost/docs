@@ -94,7 +94,17 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
       curl -vfsSL -O https://releases.mattermost.com/mmctl/v10.7.0/linux_amd64.tar
 
-   Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+   Supported platforms, and corresponding supported architectures include linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+
+.. tab:: Local git clone
+
+   You can build mmctl from a local Git clone to work directly with the source code, use the latest features, and experiment with custom changes. This workflow is ideal if you need a tailored version of mmctl, want to fix bugs, or test new updates before they’re officially released.
+
+   .. code-block:: sh
+
+      git clone https://github.com/mattermost/mattermost.git
+      cd mattermost/server
+      go install ./cmd/mmctl
 
 .. tab:: Homebrew
 
