@@ -71,15 +71,6 @@ What happens when a file is deleted by the file retention policy?
 
 The file attachment is removed from the Mattermost user interface, deleted from the ``FileInfo`` table, and from your local disk or Amazon S3 service as specified in **System Console > Environment > File Storage**.
 
-Why didn't an old file get deleted after running the deletion job?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Check the data deletion was successful in the deletion job table in **System Console > Compliance > Data Retention Policy**.
-
-2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
-
-Note that these files will still be removed from the Mattermost user interface. 
-
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
