@@ -69,7 +69,7 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 The following software is required to build the documentation:
 
 - Git [[download]](https://git-scm.com/downloads)
-- Python 3.9 or later [[download]](https://www.python.org/downloads)
+- Python 3.11 or later [[download]](https://www.python.org/downloads)
 - Pipenv [[download]](https://pipenv.pypa.io)
 
 ### Build instructions
@@ -116,9 +116,7 @@ The following software is required to build the documentation:
 > 4. Run the following command: `choco install make`
 > 5. Exit the terminal.
 >
-> If `make` isn't installed, substitute `CMD /C make.bat` for make in the build commands above to use the Windows command interpreter. For example, to run `make html`, run the command: `CMD /C make.bat html`. Only a single target may be specified using this method. This means that, instead of running `CMD /C make.bat clean html`, each target must be run separately as `CMD /C make.bat clean` followed by `CMD /C make.bat html`. 
->
-> When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. It's not yet clear where to make changes to support multiple processing cores on Windows machines. More investigation is needed.
+> When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. This is a limitation of Sphinx on Windows platforms.
 
 6. When working with static build results, navigate to the `build` directory:
     ```sh
@@ -127,4 +125,4 @@ The following software is required to build the documentation:
    
 7. Then, preview your changes by opening the `build/html/index.html` file.
 
-Build errors are written to the `build/warnings.log` file. 
+Build errors are written to the `build/warnings.log` file. Errors regarding redirects are written to the `build/redirect-warnings.log` file.

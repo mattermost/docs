@@ -30,7 +30,8 @@ You can install the Mattermost Server on any 64-bit Linux system using the tarba
 
 This Mattermost deployment includes 3 steps: download, install Mattermost server, and set up the server.
 
-**Step 1: Download**
+Step 1: Download
+------------------
 
 In a terminal window, ssh onto the system that will host the Mattermost Server. Using ``wget``, download the Mattermost Server release you want to install using one of the following commands. Replace ``amd64`` with the appropriate architecture (e.g., ``arm64`` for ARM-based systems) in the link as needed.
 
@@ -50,7 +51,8 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </about/version-archive>` documentation.
 
-**Step 2: Install Mattermost server**
+Step 2: Install Mattermost server
+----------------------------------
 
 Install the Mattermost Server by extracting the tarball, creating users and groups, and setting file/folder permissions. 
 
@@ -135,7 +137,8 @@ You will now have the latest Mattermost Server version installed on your system.
 
 9. Save the file and reload systemd using ``sudo systemctl daemon-reload``. Mattermost Server is now installed and is ready for setup.
 
-**Step 3: Set up the server**
+Step 3: Set up the server
+-------------------------
 
 Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. We recommend taking a backup of this default config ahead of making changes:
 
@@ -161,11 +164,13 @@ Verify that Mattermost is running: curl ``http://localhost:8065``. You should se
 
 The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot.
 
-**Step 4: Update the server**
+Step 4: Update the server
+----------------------------
 
 Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
 
-**Remove Mattermost**
+Remove Mattermost
+------------------
 
 To remove the Mattermost Server for any reason, you must stop the Mattermost Server, back up all important files, and then run this command:
 

@@ -31,7 +31,8 @@ You can deploy Mattermost Server using our ``rpm`` signed packages available thr
 
 This Mattermost deployment includes 4 steps: download, install Matermost server, set up the server, and update the server.
 
-**Step 1: Download the latest Mattermost Server tarball**
+Step 1: Download the latest Mattermost Server tarball
+-----------------------------------------------------
 
 In a terminal window, ssh onto the system that will host the Mattermost Server. Using ``wget``, download the Mattermost Server release you want to install using one of the following commands. Replace ``amd64`` with the appropriate architecture (e.g., ``arm64`` for ARM-based systems) in the link as needed.
 
@@ -51,7 +52,8 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </about/version-archive>` documentation.
 
-**Step 2: Install Mattermost server**
+Step 2: Install Mattermost server
+---------------------------------
 
 1. Ahead of installing the Mattermost Server, we recommend updating all your repositories and, where required, update existing packages by running the following commands:
 
@@ -139,7 +141,8 @@ You will now have the latest Mattermost Server version installed on your system.
 
 9. Save the file and reload systemd using ``sudo systemctl daemon-reload``. Mattermost Server is now installed and is ready for setup.
 
-**Step 3: Set up the server**
+Step 3: Set up the server
+--------------------------
 
 Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. We recommend taking a backup of this default config ahead of making changes:
 
@@ -226,7 +229,8 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
       - `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
       - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
 
-**Step 3: Update the server**
+Step 3: Update the server
+--------------------------
 
 Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
 

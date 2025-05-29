@@ -147,7 +147,7 @@ Run each:
 Skip any plugin you don't use; check logs for JSON or missing-table errors. See the :ref:`Plugin migrations <deploy/manual-postgres-migration:plugin migrations>` guide for more.
 
 Step 7 - Configure Mattermost to use PostgreSQL
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In your ``config.json`` or via environment variables, update:
 
