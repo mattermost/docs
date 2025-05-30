@@ -155,7 +155,7 @@ Advanced MSI options
 
 .. important::
 
-  You must be an administrator to run these commands, or you must run them from an admin command prompt or powershell.
+  You must be a system admin to run these commands, or you must run them from an admin command prompt or PowerShell.
 
 Silent installation
 ~~~~~~~~~~~~~~~~~~~~
