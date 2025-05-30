@@ -5,6 +5,9 @@ As data privacy laws tighten and geopolitical risk escalates, organizations must
 
 Mattermost provides a secure, extensible collaboration platform that delivers full control over data, infrastructure, and compliance posture. Built on a self-hosted, open core foundation, Mattermost supports localized deployments across air-gapped, private cloud, and sovereign environments—ensuring organizations can future-proof operations, meet global compliance demands, and maintain continuous operational continuity without third-party dependencies.
 
+.. image:: /images/Enterprise-to-Tactical-Edge.png
+    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
+
 The following mission-ready sovereign collaboration capabilities are available:
 
 Localized Compliance and Data Control

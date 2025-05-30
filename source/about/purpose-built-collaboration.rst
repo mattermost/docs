@@ -5,6 +5,9 @@ From large-scale logistics operations to critical infrastructure defense, organi
 
 Mattermost provides a purpose-built collaboration platform designed for technical, operational, and industrial teams. It brings people, tools, and workflows together in a secure, extensible environment—streamlining coordination, improving decision velocity, and increasing resilience. Whether coordinating a global logistics chain, managing operational technology (OT) in the field, or running a security operations center, Mattermost adapts to your environment—not the other way around.
 
+.. image:: /images/Enterprise-to-Tactical-Edge.png
+    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
+
 The following mission-ready collaboration capabilities are available:
 
 Global Logistics Coordination
