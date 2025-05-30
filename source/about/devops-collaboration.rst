@@ -60,4 +60,4 @@ Critical infrastructure DevSecOps must align with strict security, audit, and co
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`_ to modernize your DevSecOps collaboration stack. Whether you’re building secure CI/CD pipelines, enabling platform self-service, or responding to production incidents under regulatory pressure, Mattermost keeps your teams connected, compliant, and mission-ready.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to modernize your DevSecOps collaboration stack. Whether you’re building secure CI/CD pipelines, enabling platform self-service, or responding to production incidents under regulatory pressure, Mattermost keeps your teams connected, compliant, and mission-ready.

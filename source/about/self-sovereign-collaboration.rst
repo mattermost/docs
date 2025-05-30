@@ -64,4 +64,4 @@ Mattermost replaces legacy, on-premises communication systems with a modern, sov
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`__ to deploy a sovereign collaboration platform that gives you full control over your data, infrastructure, and compliance. Whether operating in a national defense context, regulated enterprise, or multinational coalition, Mattermost provides the control, transparency, and resilience required to stay mission-ready.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to deploy a sovereign collaboration platform that gives you full control over your data, infrastructure, and compliance. Whether operating in a national defense context, regulated enterprise, or multinational coalition, Mattermost provides the control, transparency, and resilience required to stay mission-ready.

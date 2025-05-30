@@ -52,6 +52,6 @@ Collaborating across organizational boundaries must not compromise compliance or
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`__ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
 
 
