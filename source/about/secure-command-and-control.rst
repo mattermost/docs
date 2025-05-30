@@ -1,24 +1,77 @@
 Secure Command and Control
-============================
+===========================
 
-Mattermost's Secure Command and Control solution is designed to provide fast and secure mobile communications for technical teams. It addresses the pain points of data leakage to unsecured channels, like SMS and WhatsApp, and the lack of control and compliance from vendor-hosted mobile applications that leaves technical teams struggling to collaborate securely.
+Expanding adversarial risk across cyber and kinetic domains requires faster, more secure, and better-informed coordination across mission environments. Traditional communication systems often fall short in high-stakes operational contexts—where minutes matter, information must remain contained, and decision advantage is critical to mission success. In an age of contested networks, personal device sprawl, and fragmented toolsets, organizations need a unified, secure platform to bridge communication and coordination gaps.
 
-The solution provides easy-to-use collaboration for technical teams, including team messaging, file sharing, audio and screen-share, and process automation directly from your mobile device on iOS or Android. The solution is specifically designed to address the challenges of enterprise-scale secure mobile communications.
+Mattermost provides a secure, extensible Command & Control platform that accelerates decision advantage through real-time collaboration and mission-aligned workflows. It enables operational units, contractors, and mission partners to work together in tightly controlled environments—whether connected, disconnected, or degraded. With support for secure mobility, ChatOps, classified deployment models, and sovereign AI integrations, Mattermost empowers organizations to act faster, coordinate securely, and maintain operational resilience across the full mission lifecycle.
 
-.. tip::
+.. image:: /images/Enterprise-to-Tactical-Edge.png
+    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
 
-    Download `this guide to out-of-band communications <https://mattermost.com/out-of-band-communications/>`_ to learn more about maintaining business continuity, and `this Mattermost for Security Team Operations datasheet <https://mattermost.com/mattermost-security-team-ops-datasheet/>`_ to learn how Mattermost helps increase cyber resilience with faster detection, response, and remediation workflows with collaboration purpose-built for security team operations.
+The following mission-ready coordination capabilities are available:
 
-Features include:
+Mission-Critical ChatOps
+------------------------
 
-* :doc:`Private mobile communications </deploy/mobile/mobile-app-deployment>` to provide secure mobile apps via encryption keys and certifications with custom mobile applications.
-* :ref:`Custom push notification service <configure/environment-configuration-settings:enable push notifications>` to ensure notifications are not intercepted or leaked to unsecured channels by transmitting push notifications within your private network.
-* :doc:`Remote user deactivation with data purge </deploy/mobile/mobile-faq>` to mitigate sensitive data from being stored on mobile devices after a user departs the organization.
-* (Professional & Enterprise) :ref:`Hosted push notifications service (HPNS) <configure/environment-configuration-settings:hosted push notifications service (hpns)>` for production-level uptime SLAs and encrypted TLS connections between HPNS and Apple Push Notification Services, between HPNS and Google’s Firebase Cloud Messaging Service, and between HPNS and your Mattermost Server.
-* (Professional & Enterprise) Mobile single-sign-on with :doc:`SAML </onboard/sso-saml>`, :doc:`AD/LDAP </onboard/ad-ldap>`, :doc:`OpenID Connect </onboard/sso-openidconnect>`, :doc:`Google </onboard/sso-google>`, and :doc:`Office365 </onboard/sso-entraid>` for centralized identity management and automatic account provisioning for fast and secure access to mobile applications.
-* (Enterprise) :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` to remove the need to pass clear text notifications through Apple and Google’s mobile notification relays.
-* (Enterprise) :doc:`Enterprise Mobility Management (EMM) </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to manage secure mobile endpoints with a managed app configuration (:doc:`via AppConfig </deploy/mobile/deploy-mobile-apps-using-emm-provider>`), such as AirWatch.
+In high-stakes missions—including classified operations—real-time collaboration and secure workflows are essential for operational success. Mattermost unifies teams, toolchains, and decision-makers into a single secure environment.
 
-For an example case study, learn why `The U.S. Department of Defense relies on Mattermost for Secure Command and Control across devices <https://mattermost.com/customers/us-department-of-defense/>`__, including flight crews who can now securely access documents from mobile devices anywhere in the world. 
+**Benefits**
 
-Talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to learn more about this solution and to discuss whether it’s the right one for you.
+- **Surface essential context faster for decisive action** using :doc:`threaded messaging </collaborate/organize-conversations>`, :doc:`file previews </collaborate/share-files-in-messages>`, and :doc:`channel-based discussion </guides/collaborate>` to consolidate signals and reduce noise.
+- **Integrate mission tooling and automation** via the :doc:`Mattermost integrations platform </about/integrations>`—connecting alerting, workflow engines, and tactical systems directly into operational channels.
+- **Strengthen mobile communication channels** through :doc:`enterprise mobility security </about/security/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
+- **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
+- **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deploy/server/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
+
+Disconnected, Intermittent, and Low-Bandwidth (DDIL) Collaboration
+-------------------------------------------------------------------
+
+Disconnected environments demand resilient tools that work without cloud access, persistent connectivity, or conventional device infrastructure.
+
+.. image:: /images/DDIL-disconnected-secure-communication-collaboration.png
+    :alt: Mattermost's Self-Hosted Kubernetes-based Collaborative Workflow platform installs on edge, cloud and custom data center platforms.
+
+**Benefits**
+
+- **Operate in air-gapped and disconnected networks** using :doc:`self-hosted Kubernetes deployments </deploy/server/deploy-kubernetes>` and STIG-hardened container images for secure offline operations.
+- **Ensure secure mobile access on managed or BYOD devices** with :doc:`AppConfig integration </deploy/mobile/deploy-mobile-apps-using-emm-provider>`, Zero Trust enforcement, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
+- **Maintain command resilience** using :doc:`high availability cluster-based deployment </scale/scaling-for-enterprise>` and :doc:`horizontal scalability </scale/scaling-for-enterprise>` to support operational continuity at scale.
+- **Automate field workflows** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
+
+Bring Your Own Device (BYOD) with CUI Protections
+-------------------------------------------------
+
+Modern operations often require users—such as field personnel, mission partners, or remote contractors—to access critical communication tools from personal or unmanaged mobile devices. However, this flexibility introduces new risks when Controlled Unclassified Information (CUI) or other sensitive data is involved. Without strong protections, mobile access becomes a liability in contested or regulated environments.
+
+Mattermost provides enterprise-grade mobile protections to enable secure BYOD access without compromising security or compliance. From mobile application management and encryption enforcement to biometric authentication and jailbreak detection, Mattermost ensures that data remains protected, access is governed, and CUI stays within authorized boundaries.
+
+**Benefits**
+
+- **Enforce CUI protections on mobile devices** using :doc:`Enterprise Mobility Management (EMM) and AppConfig integrations </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to provision secure Mattermost apps on EMM-enrolled personal or corporate devices.
+- **Mitigate unauthorized access** with :ref:`biometric authentication <deploy/mobile/mobile-security-features:biometric authentication>` and :ref:`jailbreak/root detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`, ensuring only secure and uncompromised devices can access mission data.
+- **Control information sharing** with :ref:`screenshot and screen recording prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`, blocking unauthorized capture of sensitive content during classified or time-sensitive discussions.
+- **Protect data at rest and in motion** using encrypted mobile storage, :ref:`secure sandboxing <deploy/mobile/mobile-security-features:mobile data isolation>`, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` that never expose message content to third-party cloud services.
+- **Prevent lingering risk from device loss or separation** through :ref:`remote wipe and deactivation capabilities <about/security/mobile-security:mobile device management (mdm)>` that erase all Mattermost content if access is revoked or the device is compromised.
+- **Comply with enterprise and regulatory policies** using :doc:`MDM-enforced compliance controls </deploy/mobile/deploy-mobile-apps-using-emm-provider>`—such as encryption enforcement, password complexity, and device integrity checks—validated before mobile access is granted.
+- **Segment mission access by role or project** with :ref:`attribute-based access controls (ABAC) <manage/team-channel-members:advanced access controls>` and scoped channel access, ensuring users only see data aligned with their permissions and operational role.
+- **Ensure continuous mobile compliance** with secure SDLC practices and proactive vulnerability management baked into the Mattermost mobile application lifecycle.
+
+
+Mission-Partner Environments
+----------------------------
+
+Coordinating across departments, agencies, and external stakeholders—especially in multinational or coalition contexts—requires secure boundaries, role separation, and deployment flexibility.
+
+**Benefits**
+
+- **Unify mission stakeholders on a common-use platform** that supports :ref:`hybrid deployments <deploy/server/server-deployment-planning:deployment options>` across private cloud, edge environments, and :doc:`air-gapped infrastructure </deploy/server/air-gapped-deployment>`.
+- **Maintain data sovereignty and mission alignment** with deployments that avoid consumer infrastructure and retain control over all communications and file transfers—even in classified operations.
+- **Apply role-based separation of access** through :doc:`advanced permissions </onboard/advanced-permissions>` and :ref:`channel-level controls <manage/team-channel-members:advanced access controls>` to protect mission integrity across organizational boundaries.
+- **Enable secure real-time collaboration across entities** using :doc:`Connected Workspaces </onboard/connected-workspaces>` to synchronize discussions, files, and reactions between teams without compromising internal governance.
+- **Reduce personal device risk** by offering secure enterprise communication options that eliminate the need for unauthorized messaging apps.
+
+Get Started
+-----------
+
+`Talk to an Expert <https://mattermost.com/contact/>`__ to explore how Mattermost supports secure, real-time Command and Control collaboration. Whether you're coordinating joint operations, managing disconnected mission environments, or securing tactical communications in classified settings, Mattermost provides the control, scalability, and resilience your teams need to operate with speed, confidence, and compliance.
+
