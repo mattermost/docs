@@ -153,6 +153,10 @@ Verify group policy settings in the installed desktop app
 Advanced MSI options
 --------------------
 
+.. important::
+
+  You must be an administrator to run these commands, or you must run them from an admin command prompt or powershell.
+
 Silent installation
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -168,7 +172,6 @@ Perform a silent installation of MSI by running the following command:
 
 .. note::
    - You'll need to update the version details in this command as new versions of the Mattermost desktop app are released.
-   - You must be an administrator to run these commands, or you must run them from an admin command prompt or powershell.
 
 From version v5.9.0 of the Mattermost desktop app, the following silent MSI installation options are also available.
 
