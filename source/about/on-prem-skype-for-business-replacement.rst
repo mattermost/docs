@@ -39,6 +39,9 @@ Enterprise-Controlled External Collaboration
 
 Collaborating across organizational boundaries must not compromise compliance or IT governance. Mattermost enables secure external engagement while keeping control centralized within the enterprise.
 
+.. image:: /images/External-Collaboration-with-Enterprise-Control.png
+    :alt: Mattermost replaces Signal, Discord and other free personal apps with secure external messaging controlled by IT.
+
 **Benefits**
 
 - **Collaborate securely with third parties** via Connected Workspaces that allow messaging, :doc:`file sharing </collaborate/share-files-in-messages>`, and :doc:`thread-based discussions </collaborate/organize-conversations>` with external teams—without exposing internal systems.
@@ -46,12 +49,9 @@ Collaborating across organizational boundaries must not compromise compliance or
 - **Integrate with Microsoft Teams, Exchange, and M365** to maintain centralized workflows and extend secure communication to external stakeholders without leaving policy-aligned platforms. See :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Manage user identity and access** across internal and external roles using Microsoft :doc:`Entra ID </onboard/sso-entraid>` (Azure AD) synchronization for scalable and compliant provisioning.
 
-.. image:: /images/External-Collaboration-with-Enterprise-Control.png
-    :alt: Mattermost replaces Signal, Discord and other free personal apps with secure external messaging controlled by IT.
-
 Get Started
 -----------
 
-`Try Mattermost <https://mattermost.com/download/>`__ or `talk to an Expert <https://mattermost.com/contact/>`__ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
+`Talk to an Expert <https://mattermost.com/contact/>`__ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
 
 

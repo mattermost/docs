@@ -5,6 +5,9 @@ Expanding adversarial risk across cyber and kinetic domains requires faster, mor
 
 Mattermost provides a secure, extensible Command & Control platform that accelerates decision advantage through real-time collaboration and mission-aligned workflows. It enables operational units, contractors, and mission partners to work together in tightly controlled environments—whether connected, disconnected, or degraded. With support for secure mobility, ChatOps, classified deployment models, and sovereign AI integrations, Mattermost empowers organizations to act faster, coordinate securely, and maintain operational resilience across the full mission lifecycle.
 
+.. image:: /images/Enterprise-to-Tactical-Edge.png
+    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
+
 The following mission-ready coordination capabilities are available:
 
 Mission-Critical ChatOps
@@ -19,9 +22,6 @@ In high-stakes missions—including classified operations—real-time collaborat
 - **Strengthen mobile communication channels** through :doc:`enterprise mobility security </about/security/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
 - **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
 - **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deploy/server/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
-
-.. image:: /images/Enterprise-to-Tactical-Edge.png
-    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
 
 Disconnected, Intermittent, and Low-Bandwidth (DDIL) Collaboration
 -------------------------------------------------------------------

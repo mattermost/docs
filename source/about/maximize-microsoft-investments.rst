@@ -12,19 +12,22 @@ On-Premises Skype for Business Replacement
 
 As Skype for Business reaches end-of-life, secure organizations require an alternative that preserves on-premises control, integrates into Microsoft workflows, and meets the security standards of air-gapped and classified environments. Cloud-first replacements like Microsoft Teams are not always viable due to network segmentation, compliance restrictions, or data sovereignty mandates.
 
+.. image:: /images/On-Prem-Skype-for-Business-replace.png
+    :alt: Extend Microsoft Enterprise IT investments for edge-based, highly tailored Mission IT workflows with Mattermost.
+
 - **Preserve mission-critical communication workflows** with a self-hosted Mattermost deployment that supports :doc:`1:1 calls </collaborate/make-calls>`, :ref:`screen sharing <collaborate/make-calls:share your screen>`, and :doc:`threaded messaging </collaborate/organize-conversations>` within secure environments.
 - **Integrate Mattermost with Microsoft tools** such as Outlook, Teams, and :doc:`Entra ID Single Sign-On </onboard/sso-entraid>` to retain user workflows while centralizing identity and access control. See :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Deploy in sovereign, air-gapped, or private cloud environments** such as `Azure Deployment <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator?tab=overview>`_ while maintaining compliance with STIG, FedRAMP, and NIST 800-53 standards.
 
 :doc:`Learn more </about/on-prem-skype-for-business-replacement>` about replacing Skype for Business with Mattermost.
 
-.. image:: /images/On-Prem-Skype-for-Business-replace.png
-    :alt: Extend Microsoft Enterprise IT investments for edge-based, highly tailored Mission IT workflows with Mattermost.
-
 Out-of-Band Incident Response for Microsoft-Centric Environments
 -----------------------------------------------------------------
 
 During high-stakes incidents, Microsoft 365 tools can be limited or unavailable, slowing down response times and jeopardizing mission continuity.
+
+.. image:: /images/Fully-Sovereign-Communication-Inside-MSTeams.png
+    :alt: Self-hosted Mattermost collaboration embeds in Microsoft Teams and Outlook user experience, while storing data all messaging, audio and screen share recordings, transcriptions, file sharing and AI interactions in fully on-premise data stores.
 
 **Benefits**
 
@@ -33,13 +36,13 @@ During high-stakes incidents, Microsoft 365 tools can be limited or unavailable,
 - **Integrate with Microsoft Security Suite** and :doc:`Entra ID </onboard/sso-entraid>` to preserve centralized identity management while keeping sensitive data in a secure secondary system. :doc:`Learn more </about/integrations>` about Mattermost's integration capabilities.
 - **Protect breach-sensitive notifications** using :ref:`ID-only push alerts <configure/environment-configuration-settings:id-only push notifications>` and enhanced mobile security, enabling secure communication without cloud exposure.
 
-.. image:: /images/Fully-Sovereign-Communication-Inside-MSTeams.png
-    :alt: Self-hosted Mattermost collaboration embeds in Microsoft Teams and Outlook user experience, while storing data all messaging, audio and screen share recordings, transcriptions, file sharing and AI interactions in fully on-premise data stores.
-
 External Collaboration with Full Control
 ------------------------------------------
 
 Managing external collaboration within Microsoft Teams can be complex, often requiring numerous configurations and administration that lead to security risks like usage of consumer-grade chat tools.
+
+.. image:: /images/External-Collaboration-with-Enterprise-Control.png
+    :alt: Mattermost replaces Signal, Discord and other free personal apps with secure external messaging controlled by IT.
 
 **Benefits**
 
@@ -47,9 +50,6 @@ Managing external collaboration within Microsoft Teams can be complex, often req
 - **Eliminate shadow IT** by providing :doc:`Connected Workspaces </onboard/connected-workspaces>` for sanctioned, policy-enforced engagement with external partners—reducing reliance on consumer-grade tools.
 - **Apply granular policy enforcement for external users**, including :ref:`granular user permissions <manage/team-channel-members:advanced access controls>`, :doc:`legal hold </comply/legal-hold>`, :doc:`retention policies </comply/data-retention-policy>`, and :doc:`custom Terms of Service </comply/custom-terms-of-service>`.
 - **Synchronize user identity** using :doc:`Entra ID </onboard/sso-entraid>` to maintain scalable, centralized access control across both internal and external collaborators.
-
-.. image:: /images/External-Collaboration-with-Enterprise-Control.png
-    :alt: Mattermost replaces Signal, Discord and other free personal apps with secure external messaging controlled by IT.
 
 Sovereign Communication in Microsoft Teams
 -------------------------------------------
@@ -78,4 +78,4 @@ Multi-agency, multi-tenant Microsoft 365 environments often hinder seamless coll
 Get Started
 -----------
 
-`Try Mattermost <https://mattermost.com/download/>`__ or `talk to an Expert <https://mattermost.com/contact/>`__ to discover how your organization can enhance Microsoft-based workflows with secure, extensible collaboration tailored for operational and compliance-sensitive environments. Maximize your Microsoft investment while extending its capabilities into the most demanding mission contexts.
+`Talk to an Expert <https://mattermost.com/contact/>`__ to discover how your organization can enhance Microsoft-based workflows with secure, extensible collaboration tailored for operational and compliance-sensitive environments. Maximize your Microsoft investment while extending its capabilities into the most demanding mission contexts.

@@ -5,6 +5,9 @@ In today’s evolving threat landscape, fragmented workflows, isolated teams, an
 
 Mattermost provides a secure, extensible platform for integrated security operations—built to support real-time coordination, mission-specific tooling, and sensitive communications. Whether in Security Operations Centers (SOCs), red team engagements, CERT responses, or cross-organizational intelligence hubs, Mattermost empowers security teams to accelerate detection, decision-making, and coordinated response while maintaining full operational control.
 
+.. image:: /images/Intelligent-RT-Incident-Response.png
+    :alt: Augments security platform investments with collaborative, AI-powered security operations workflow.
+
 The following integrated SecOps capabilities are available:
 
 Security Operations Centers (SOCs)
@@ -18,9 +21,6 @@ SOCs are the front lines of real-time monitoring, triage, and escalation. Coordi
 - **Integrate detection pipelines and observability tools** using the :doc:`Mattermost integrations platform </about/integrations>` to surface alerts from SIEM, SOAR, and log analysis systems into dedicated response channels.
 - **Maintain operational security and compliance** through :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging (beta)>` to safeguard sensitive incident data.
 - **Operate in secure, classified, or hybrid environments** with :ref:`self-hosted deployment models <deploy/server/server-deployment-planning:deployment options>` that keep SOC operations inside compliant, sovereign infrastructure.
-
-.. image:: /images/Intelligent-RT-Incident-Response.png
-    :alt: Augments security platform investments with collaborative, AI-powered security operations workflow.
 
 Red Teams
 ---------
@@ -61,4 +61,4 @@ Cross-organizational threat intelligence teams—spanning sectors, regions, and 
 Get Started
 -----------
 
-`Try Mattermost <https://mattermost.com/download/>`__ or `talk to an Expert <https://mattermost.com/contact/>`__ to unify your security operations. Whether you’re coordinating a global SOC, simulating threats, responding to incidents, or exchanging intelligence across borders, Mattermost ensures your teams are secure, synchronized, and mission-ready.
+`Talk to an Expert <https://mattermost.com/contact/>`__ to unify your security operations. Whether you’re coordinating a global SOC, simulating threats, responding to incidents, or exchanging intelligence across borders, Mattermost ensures your teams are secure, synchronized, and mission-ready.

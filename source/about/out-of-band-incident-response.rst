@@ -5,6 +5,9 @@ When cyberattacks, infrastructure failures, or security breaches disrupt primary
 
 Mattermost provides a secure, mission-resilient out-of-band (OOB) collaboration platform that operates outside your primary infrastructure. Whether deployed as a self-hosted Kubernetes instance or via Mattermost Cloud, the platform ensures real-time coordination remains available during network outages, security incidents, or critical decision windows. Built for security-conscious teams and regulated industries, Mattermost supports integrated incident workflows, and enterprise-level access control to enable business continuity—even under duress.
 
+.. image:: /images/Intelligent-RT-Incident-Response.png
+    :alt: Augments security platform investments with collaborative, AI-powered security operations workflow.
+
 The following mission-critical OOB collaboration capabilities are available:
 
 Always-Available Backup Communications
