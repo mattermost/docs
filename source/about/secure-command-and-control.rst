@@ -47,12 +47,9 @@ Mattermost provides enterprise-grade mobile protections to enable secure BYOD ac
 
 **Benefits**
 
-- **Enforce CUI protections on mobile devices** using :doc:`Enterprise Mobility Management (EMM) and AppConfig integrations </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to provision secure Mattermost apps on EMM-enrolled personal or corporate devices.
 - **Mitigate unauthorized access** with :ref:`biometric authentication <deploy/mobile/mobile-security-features:biometric authentication>` and :ref:`jailbreak/root detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`, ensuring only secure and uncompromised devices can access mission data.
 - **Control information sharing** with :ref:`screenshot and screen recording prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`, blocking unauthorized capture of sensitive content during classified or time-sensitive discussions.
 - **Protect data at rest and in motion** using encrypted mobile storage, :ref:`secure sandboxing <deploy/mobile/mobile-security-features:mobile data isolation>`, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` that never expose message content to third-party cloud services.
-- **Prevent lingering risk from device loss or separation** through :ref:`remote wipe and deactivation capabilities <about/security/mobile-security:mobile device management (mdm)>` that erase all Mattermost content if access is revoked or the device is compromised.
-- **Comply with enterprise and regulatory policies** using :doc:`MDM-enforced compliance controls </deploy/mobile/deploy-mobile-apps-using-emm-provider>`—such as encryption enforcement, password complexity, and device integrity checks—validated before mobile access is granted.
 - **Segment mission access by role or project** with :ref:`attribute-based access controls (ABAC) <manage/team-channel-members:advanced access controls>` and scoped channel access, ensuring users only see data aligned with their permissions and operational role.
 - **Ensure continuous mobile compliance** with secure SDLC practices and proactive vulnerability management baked into the Mattermost mobile application lifecycle.
 
