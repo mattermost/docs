@@ -78,4 +78,4 @@ Multi-agency, multi-tenant Microsoft 365 environments often hinder seamless coll
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`__ to discover how your organization can enhance Microsoft-based workflows with secure, extensible collaboration tailored for operational and compliance-sensitive environments. Maximize your Microsoft investment while extending its capabilities into the most demanding mission contexts.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to discover how your organization can enhance Microsoft-based workflows with secure, extensible collaboration tailored for operational and compliance-sensitive environments. Maximize your Microsoft investment while extending its capabilities into the most demanding mission contexts.

@@ -34,7 +34,7 @@ Disconnected environments demand resilient tools that work without cloud access,
 **Benefits**
 
 - **Operate in air-gapped and disconnected networks** using :doc:`self-hosted Kubernetes deployments </deploy/server/deploy-kubernetes>` and STIG-hardened container images for secure offline operations.
-- **Ensure secure mobile access on managed or BYOD devices** with :doc:`mobile security features <deploy/mobile/mobile-security-features>`, Zero Trust enforcement, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
+- **Ensure secure mobile access on managed or BYOD devices** with :doc:`mobile security features </deploy/mobile/mobile-security-features>`, Zero Trust enforcement, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
 - **Integrate with legacy and mission-specific systems** to maintain decision advantage in disconnected environments through :doc:`custom-built, self-hosted integrations </about/integrations>` tailored to your operational infrastructure.
 - **Maintain command resilience** using :doc:`high availability cluster-based deployment </scale/scaling-for-enterprise>` and :doc:`horizontal scalability </scale/scaling-for-enterprise>` to support operational continuity at scale.
 - **Automate field workflows** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
@@ -72,5 +72,5 @@ Coordinating across departments, agencies, and external stakeholders—especiall
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`__ to explore how Mattermost supports secure, real-time Command and Control collaboration. Whether you're coordinating joint operations, managing disconnected mission environments, or securing tactical communications in classified settings, Mattermost provides the control, scalability, and resilience your teams need to operate with speed, confidence, and compliance.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to explore how Mattermost supports secure, real-time Command and Control collaboration. Whether you're coordinating joint operations, managing disconnected mission environments, or securing tactical communications in classified settings, Mattermost provides the control, scalability, and resilience your teams need to operate with speed, confidence, and compliance.
 

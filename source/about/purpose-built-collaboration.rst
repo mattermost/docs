@@ -52,4 +52,4 @@ Engineering, infrastructure, and security teams manage increasingly complex envi
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`__ to create a secure, purpose-built collaboration environment aligned with your mission. Whether supporting distributed logistics, managing ICS environments, or running an operational command center, Mattermost adapts to your workflows—so your teams can move faster, respond smarter, and deliver with confidence.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to create a secure, purpose-built collaboration environment aligned with your mission. Whether supporting distributed logistics, managing ICS environments, or running an operational command center, Mattermost adapts to your workflows—so your teams can move faster, respond smarter, and deliver with confidence.

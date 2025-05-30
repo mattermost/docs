@@ -61,4 +61,4 @@ Cross-organizational threat intelligence teams—spanning sectors, regions, and 
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact/>`__ to unify your security operations. Whether you’re coordinating a global SOC, simulating threats, responding to incidents, or exchanging intelligence across borders, Mattermost ensures your teams are secure, synchronized, and mission-ready.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to unify your security operations. Whether you’re coordinating a global SOC, simulating threats, responding to incidents, or exchanging intelligence across borders, Mattermost ensures your teams are secure, synchronized, and mission-ready.
