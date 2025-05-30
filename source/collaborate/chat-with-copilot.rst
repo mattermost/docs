@@ -4,7 +4,7 @@ Chat with Copilot
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. include:: /agents/docs/usage.md
+.. include:: /agents/docs/user_guide.md
   :parser: myst
 
 
