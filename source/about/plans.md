@@ -282,11 +282,11 @@
     <tr class="subsection"><td colspan="7"><strong>Connect across organizations using Mattermost and Microsoft Teams to share information and accelerate collaborative, cross-organizational workflows.</strong></td></tr>
     <tr>
       <td><strong>Microsoft Teams messaging integration</strong>: Increase focus and adaptability across your organization by <a href="https://docs.mattermost.com/about/maximize-microsoft-investments.html">connecting users across Microsoft Teams and Mattermost</a>. Microsoft Teams often serves as a centralized, organization-wide standard for general collaboration and everyday productivity, which can complicate the business case for customizing workflows and integrated toolsets to meet the specialized needs of technical and operational teams. <p>Mattermost is often deployed to supplement a centralized, general purpose Microsoft Teams deployment with a dedicated environment for developers, security professionals, and operators. Integrated direct messaging and group messaging across Microsoft Teams and Mattermost deployments connects an organization to the best of both worlds, helping teams unlock their full potential.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.0+</td>
     </tr>
     <tr>
       <td><strong>Connected Workspaces</strong>: Communicate across organizations using Mattermost by synchronizing messages, emoji reactions, and file sharing in real time through <a href="https://docs.mattermost.com/onboard/connected-workspaces.html">Mattermost Connected Workspaces</a>.</td>
-      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
+      <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.2+</td>
     </tr>
     <!-- Support -->
     <tr class="section"><td colspan="7"><strong>Support</strong></td></tr>
