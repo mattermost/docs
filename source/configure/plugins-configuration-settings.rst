@@ -257,7 +257,7 @@ Enable plugin
   :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserveraddress
-  :environment: N/A
+  :environment: MM_CALLS_UDP_SERVER_ADDRESS
   :description: The IP address used by the RTC server to listen for UDP connections. By default the service listens on all the available interfaces.
 
 RTC server address (UDP)
@@ -269,18 +269,18 @@ RTC server address (UDP)
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 | This setting controls the IP address the RTC server listens for UDP connections. All calls UDP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                                 |
 |                                                                                                                                            | - ``config.json`` setting: ``PluginSettings`` ``Plugins`` > ``com.mattermost.calls`` > ``udpserveraddress``               |
-| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                                               |
+| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: ``MM_CALLS_UDP_SERVER_ADDRESS``                                                                   |
 | If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                                           |
 +--------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
   This setting is only applicable when not running calls through the standalone ``rtcd`` service.
 
-.. config:setting:: rtc-server-address-udp
+.. config:setting:: rtc-server-address-tcp
   :displayname: RTC server port (TCP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserveraddress
-  :environment: N/A
+  :environment: MM_CALLS_TCP_SERVER_ADDRESS
   :description: The IP address used by the RTC server to listen for TCP connections. By default the service listens on all the available interfaces.
 
 RTC server address (TCP)
@@ -292,7 +292,7 @@ RTC server address (TCP)
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 | This setting controls the IP address the RTC server listens for TCP connections. All calls TCP traffic will be served through this IP.     | - System Config path: **Plugins > Calls**                                                                                   |
 |                                                                                                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``tcpserveraddress``               |
-| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: N/A                                                                                                 |
+| Changing this setting requires a plugin restart to take effect.                                                                            | - Environment variable: ``MM_CALLS_TCP_SERVER_ADDRESS``                                                                     |
 | If left unset (default value) the service will listen on all the available interfaces.                                                     |                                                                                                                             |
 +--------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+
 
@@ -303,7 +303,7 @@ RTC server address (TCP)
   :displayname: RTC server port (UDP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.udpserverport
-  :environment: N/A
+  :environment: MM_CALLS_UDP_SERVER_PORT
   :description: The UDP port the RTC server will listen on. All calls UDP traffic will be served through this port. Default port is **8443**.
 
 RTC server port (UDP)
@@ -315,7 +315,7 @@ RTC server port (UDP)
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | This setting controls the UDP port listened on by the RTC server. All calls UDP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``udpserverport``               |
-|                                                                                                                               | - Environment variable: N/A                                                                                              |
+|                                                                                                                               | - Environment variable: ``MM_CALLS_UDP_SERVER_PORT``                                                                     |
 | Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                                          |
 |                                                                                                                               |                                                                                                                          |
 | Default is **8443**.                                                                                                          |                                                                                                                          |
@@ -328,7 +328,7 @@ RTC server port (UDP)
   :displayname: RTC server port (TCP) (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.tcpserverport
-  :environment: N/A
+  :environment: MM_CALLS_TCP_SERVER_PORT
   :description: The TCP port the RTC server will listen on. All calls TCP traffic will be served through this port. Default port is **8443**.
 
 RTC server port (TCP)
@@ -340,7 +340,7 @@ RTC server port (TCP)
 +-------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 | This setting controls the TCP port listened on by the RTC server. All calls TCP traffic will be served through this port.     | - System Config path: **Plugins > Calls**                                                                   |
 |                                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``tcpserverport``  |
-|                                                                                                                               | - Environment variable: N/A                                                                                 |
+|                                                                                                                               | - Environment variable: ``MM_CALLS_TCP_SERVER_PORT``                                                        |
 | Changing this setting requires a plugin restart to take effect.                                                               |                                                                                                             |
 |                                                                                                                               |                                                                                                             |
 | Default is **8443**.                                                                                                          |                                                                                                             |
@@ -353,7 +353,7 @@ RTC server port (TCP)
   :displayname: Enable on specific channels (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.allowenablecalls
-  :environment: N/A
+  :environment: MM_CALLS_ALLOW_ENABLE_CALLS
   :description: Manage who can enable or disable calls on specific channels (deprecated from Mattermost v7.7)
 
 Enable on specific channels
@@ -367,14 +367,14 @@ Enable on specific channels
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | - **true**: Channel admins can enable or disable calls on specific channels. Participants in DMs/GMs can also enable or disable calls. | - System Config path: **Plugins > Calls**                                                                       |
 | - **false**: Only system admins can enable or disable calls on specific channels.                                                      | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``allowenablecalls``   |
-|                                                                                                                                        | - Environment variable: N/A                                                                                     |
+|                                                                                                                                        | - Environment variable: ``MM_CALLS_ALLOW_ENABLE_CALLS``                                                         |
 +----------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: test-mode
   :displayname: Test mode (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.defaultenabled
-  :environment: N/A
+  :environment: MM_CALLS_DEFAULT_ENABLED
   :description: A setting to allow system admins to test calls before making them available across the deployment. This setting was called **Enable on all channels** up until Mattermost v7.7.
 
 Test mode
@@ -388,7 +388,7 @@ Test mode
 +-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | - **false**: Test mode is enabled and only system admins can start calls in channels.                           | - System Config path: **Plugins > Calls**                                                                     |
 | - **true**: Live mode is enabled and all team members can start calls in channels.                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``defaultenabled``   |
-|                                                                                                                 | - Environment variable: N/A                                                                                   |
+|                                                                                                                 | - Environment variable: ``MM_CALLS_DEFAULT_ENABLED``                                                          |
 +-----------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -398,7 +398,7 @@ Test mode
   :displayname: ICE host override (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostoverride
-  :environment: N/A
+  :environment: MM_CALLS_ICE_HOST_OVERRIDE
   :description: An optional override to the host that gets advertised to clients when connecting to calls. When empty or unset, the RTC service will attempt to automatically find the instance's public IP through STUN.
 
 ICE host override
@@ -410,7 +410,7 @@ ICE host override
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 | This setting can be used to override the host addresses that get advertised to clients when connecting to calls. The accepted formats are the following:         | - System Config path: **Plugins > Calls**                                                                      |
 |                                                                                                                                                                  | - ``config.json`` setting:  ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostoverride``  |
-|                                                                                                                                                                  |                                                                                                                |
+|                                                                                                                                                                  | - Environment variable: ``MM_CALLS_ICE_HOST_OVERRIDE``                                                         |
 | - A single IP address (e.g. ``10.0.0.1``).                                                                                                                       |                                                                                                                |
 | - A single hostname or FQDN (e.g. ``calls.myserver.tld``).                                                                                                       |                                                                                                                |
 | - (starting in v0.17.0) A comma separated list of externalAddr/internalAddr mappings (e.g. ``10.0.0.1/172.0.0.1,10.0.0.2/172.0.0.2``).                           |                                                                                                                |
@@ -429,7 +429,7 @@ ICE host override
   :displayname: ICE host port override (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.icehostportoverride
-  :environment: N/A
+  :environment: MM_CALLS_ICE_HOST_PORT_OVERRIDE
   :description: An optional port number to be used as an override for host candidates in place of the one used to listen on.
 
 ICE host port override
@@ -441,7 +441,7 @@ ICE host port override
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | This setting can be used to override the port used in the ICE host candidates that get advertised to clients when connecting to calls.                              | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                                                                     | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostportoverride``         |
-|                                                                                                                                                                     | - Environment variable: N/A                                                                                              |
+|                                                                                                                                                                     | - Environment variable: ``MM_CALLS_ICE_HOST_PORT_OVERRIDE``                                                              |
 | This can be useful in case there are additional network components (e.g. NLBs) in front of the RTC server that may route the calls traffic through a different port.|                                                                                                                          |
 | Changing this setting requires a plugin restart to take effect.                                                                                                     |                                                                                                                          |
 |                                                                                                                                                                     |                                                                                                                          |
@@ -454,7 +454,7 @@ ICE host port override
   :displayname: RTCD service URL (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.rtcdserviceurl
-  :environment: MM_CALLS_RTCD_URL
+  :environment: MM_CALLS_RTCD_SERVICE_URL
   :description: The URL to a running rtcd service instance that will host the calls. When set (non empty) all the calls will be handled by this external service.
 
 RTCD service URL
@@ -466,11 +466,16 @@ RTCD service URL
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
 | The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                                                                                 |
 |                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``rtcdserviceurl``                                               |
-|                                                                                                               | - Environment variable: ``MM_CALLS_RTCD_URL``                                                                                                             |
+|                                                                                                               | - Environment variable: ``MM_CALLS_RTCD_SERVICE_URL``                                                                                                     |
 | When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                                                                           |
 |                                                                                                               |                                                                                                                                                           |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                                                                           |
 +---------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  - The environment variable ``MM_CALLS_RTCD_URL`` is deprecated in favor of ``MM_CALLS_RTCD_SERVICE_URL``.
+  - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
+  - The service URL supports credentials in the form ``http://clientID:authKey@hostname``. Alternatively these can be passed through environment overrides to the Mattermost server, namely ``MM_CALLS_RTCD_CLIENT_ID`` and ``MM_CALLS_RTCD_AUTH_KEY``
 
 .. note::
   - The client will self-register the first time it connects to the service and store the authentication key in the database. If no client ID is explicitly provided, the diagnostic ID of the Mattermost installation will be used.
@@ -480,7 +485,7 @@ RTCD service URL
   :displayname: Max call participants (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxcallparticipants
-  :environment: MM_CALLS_MAX_PARTICIPANTS
+  :environment: MM_CALLS_MAX_CALL_PARTICIPANTS
   :description: The maximum number of participants that can join a single call. Default value is **0** (unlimited). The maximum recommended setting is 50.
 
 Max call participants
@@ -492,18 +497,20 @@ Max call participants
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                       |
 |                                                                             | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``maxcallparticipants``|
-|                                                                             | - Environment variable: ``MM_CALLS_MAX_PARTICIPANTS``                                                           |
+|                                                                             | - Environment variable: ``MM_CALLS_MAX_CALL_PARTICIPANTS``                                                      |
 | Default is **0** (no limit).                                                |                                                                                                                 |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.
+  - The environment variable ``MM_CALLS_MAX_PARTICIPANTS`` is deprecated in favor of ``MM_CALLS_MAX_CALL_PARTICIPANTS``.
+  - This setting is optional, but the recommended maximum number of participants is **50**. Call participant limits greatly depends on instance resources. See the :doc:`Calls self-hosted deployment </configure/calls-deployment>` documentation for details.
+
 
 .. config:setting:: ice-servers-configurations
   :displayname: ICE server configurations (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.iceserversconfigs
-  :environment: N/A
+  :environment: MM_CALLS_ICE_SERVERS_CONFIGS
   :description: A list of ICE servers (STUN/TURN) to be used by the service. Value should be valid JSON. Default value is **[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]**.
 
 ICE servers configurations
@@ -515,7 +522,7 @@ ICE servers configurations
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service.                                                                                                                           | - System Config path: **Plugins > Calls**                                                                          |
 |                                                                                                                                                                                                                           | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``iceserversconfigs``     |
-|                                                                                                                                                                                                                           | - Environment variable: N/A                                                                                        |
+|                                                                                                                                                                                                                           | - Environment variable: ``MM_CALLS_ICE_SERVERS_CONFIGS``                                                           |
 | This is an optional field. Changing this setting may require a plugin restart to take effect.                                                                                                                             |                                                                                                                    |
 |                                                                                                                                                                                                                           |                                                                                                                    |
 | Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                                                                                                                                                 |                                                                                                                    |
@@ -561,7 +568,7 @@ ICE servers configurations
   :displayname: TURN static auth secret (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.turnstaticauthsecret
-  :environment: N/A
+  :environment: MM_CALLS_TURN_STATIC_AUTH_SECRET
   :description: A static secret used to generate short-lived credentials for TURN servers.
 
 TURN static auth secret
@@ -573,14 +580,14 @@ TURN static auth secret
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls**                                                                                        |
 |                                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turnstaticauthsecret``                |
-| This is an optional field.                                                 | - Environment variable: N/A                                                                                                      |
+| This is an optional field.                                                 | - Environment variable: ``MM_CALLS_TURN_STATIC_AUTH_SECRET``                                                                     |
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: turn-credentials-expiration
   :displayname: TURN credentials expiration (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.turncredentialsexpirationminutes
-  :environment: N/A
+  :environment: MM_CALLS_TURN_CREDENTIALS_EXPIRATION_MINUTES
   :description: The expiration, in minutes, of the short-lived credentials generated for TURN servers.
 
 TURN credentials expiration
@@ -592,7 +599,7 @@ TURN credentials expiration
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 | The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls**                                                                                                    |
 |                                                                                        | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turncredentialsexpirationminutes``                |
-|                                                                                        | - Environment variable: N/A                                                                                                                  |
+|                                                                                        | - Environment variable: ``MM_CALLS_TURN_CREDENTIALS_EXPIRATION_MINUTES``                                                                     |
 | Default is **1440** (one day).                                                         |                                                                                                                                              |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -600,7 +607,7 @@ TURN credentials expiration
   :displayname: Server side TURN (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.serversideturn
-  :environment: N/A
+  :environment: MM_CALLS_SERVER_SIDE_TURN
 
   - **true**: The RTC server will use the configured TURN candidates for server-initiated connections.
   - **false**: TURN will be used only on the client-side.
@@ -614,7 +621,7 @@ Server side TURN
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls**                                                                                  |
 | - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``serversideturn``                |
-|                                                                                                      | - Environment variable: N/A                                                                                                |
+|                                                                                                      | - Environment variable: ``MM_CALLS_SERVER_SIDE_TURN``                                                                      |
 | Changing this setting requires a plugin restart to take effect.                                      |                                                                                                                            |
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
@@ -622,7 +629,7 @@ Server side TURN
   :displayname: Allow screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.allowscreensharing
-  :environment: N/A
+  :environment: MM_CALLS_ALLOW_SCREEN_SHARING
 
   - **true**: Call participants will be allowed to share their screen.
   - **false**: Call participants won't be allowed to share their screen.
@@ -636,7 +643,7 @@ Allow screen sharing
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Call participants will be allowed to share their screen.   | - System Config path: **Plugins > Calls**                                                                                      |
 | - **false**: Call participants won't be allowed to share their screen. | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``allowscreensharing``                |
-|                                                                        | - Environment variable: N/A                                                                                                    |
+|                                                                        | - Environment variable: ``MM_CALLS_ALLOW_SCREEN_SHARING``                                                                      |
 | Changing this setting requires a plugin restart to take effect.        |                                                                                                                                |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------------+
 
@@ -644,7 +651,7 @@ Allow screen sharing
   :displayname: (Experimental) Enable simulcast for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablesimulcast
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_SIMULCAST
   
   - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.
   - **false**: (Default) Disables simulcast for screen sharing.
@@ -658,7 +665,7 @@ Enable simulcast for screen sharing (Experimental)
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Enables simulcast for screen sharing. This can help to improve screen sharing quality.                     | - System Config path: **Plugins > Calls**                                                                                  |
 | - **false**: Disables simulcast for screen sharing.                                                                    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enablesimulcast``               |
-|                                                                                                                        | - Environment variable: N/A                                                                                                |
+|                                                                                                                        | - Environment variable: ``MM_CALLS_ENABLE_SIMULCAST``                                                                      |
 +------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -670,7 +677,7 @@ Enable simulcast for screen sharing (Experimental)
   :displayname: Enable call recordings (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablerecordings
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_RECORDINGS
 
   - **true**: Allows call hosts to record meeting video and audio.
   - **false**: (Default) Call recording functionality is not available to hosts.
@@ -684,7 +691,7 @@ Enable call recordings
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Allows call hosts to record meeting video and audio.                                                                                      | - System Config path: **Plugins > Calls**                                                                                    |
 | - **false**: **(Default)** Call recording functionality is not available to hosts.                                                                    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enablerecordings``                |
-|                                                                                                                                                       |                                                                                                                              |
+|                                                                                                                                                       | - Environment variable: ``MM_CALLS_ENABLE_RECORDINGS``                                                                       |
 | Recordings include the entire call window view along with participants' audio track and any shared screen video. Recordings are stored in Mattermost. |                                                                                                                              |
 |                                                                                                                                                       |                                                                                                                              |
 | Changing this setting requires a plugin restart to take effect.                                                                                       |                                                                                                                              |
@@ -720,7 +727,7 @@ Job service URL
   :displayname: Maximum call recording duration (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.maxrecordingduration
-  :environment: N/A
+  :environment: MM_CALLS_MAX_RECORDING_DURATION
   :description: The maximum duration of a call recording in minutes.
   
 Maximum call recording duration
@@ -732,7 +739,7 @@ Maximum call recording duration
 +-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 | The maximum duration of a call recording in minutes.                                                                        | - System Config path: **Plugins > Calls**                                                                        |
 |                                                                                                                             | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``maxrecordingduration``|
-|                                                                                                                             | - Environment variable: N/A                                                                                      |
+|                                                                                                                             | - Environment variable: ``MM_CALLS_MAX_RECORDING_DURATION``                                                      |
 | The default is **60**. The maximum is **180**. This is a required value.                                                    |                                                                                                                  |
 +-----------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
@@ -740,7 +747,7 @@ Maximum call recording duration
   :displayname: Call recording quality (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.recordingquality
-  :environment: N/A
+  :environment: MM_CALLS_RECORDING_QUALITY
   :description: The audio and video quality of call recordings.
 
 Call recording quality
@@ -752,6 +759,7 @@ Call recording quality
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | The audio and video quality of call recordings. Available options are: *Low*, *Medium* and *High*.                          | - System Config path: **Plugins > Calls**                                                                                                                      |
 |                                                                                                                             | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``recordingquality``                                                  |
+|                                                                                                                             | - Environment variable: ``MM_CALLS_RECORDING_QUALITY``                                                                                                         |
 | The default is **Medium**. This is a required value.                                                                        |                                                                                                                                                                |
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -762,7 +770,7 @@ Call recording quality
   :displayname: Enable call transcriptions (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enabletranscriptions
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_TRANSCRIPTIONS
   
   - **true**: Enables automatic transcriptions of calls.
   - **false**: (Default) Call transcriptions functionality is disabled.
@@ -776,7 +784,7 @@ Enable call transcriptions (Beta)
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 | - **true**: Enables automatic transcriptions of calls.                                                                                                                                                                                                             | - System Config path: **Plugins > Calls**                                                                                    |
 | - **false**: **(Default)** Call transcriptions functionality is disabled.                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enabletranscriptions``            |
-|                                                                                                                                                                                                                                                                    |                                                                                                                              |
+|                                                                                                                                                                                                                                                                    | - Environment variable: ``MM_CALLS_ENABLE_TRANSCRIPTIONS``                                                                   |
 | Transcriptions are generated from the call participants' audio tracks and the resulting files are attached to the call thread when the recording ends. Captions will be optionally rendered on top of the recording file video player.                             |                                                                                                                              |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
@@ -787,7 +795,7 @@ Enable call transcriptions (Beta)
   :displayname: Call transcriber model size (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribermodelsize
-  :environment: N/A
+  :environment: MM_CALLS_TRANSCRIBER_MODEL_SIZE
   :description: The speech-to-text model size to use. Heavier models will produce more accurate results at the expense of processing time and resources usage.
 
 Transcriber model size
@@ -799,6 +807,7 @@ Transcriber model size
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 | The speech-to-text model size to use. Heavier models will produce more accurate results at the expense of processing time and resources usage. Available options are: *Tiny*, *Base* and *Small*.                                                                                  | - System Config path: **Plugins > Calls**                                                                             |
 |                                                                                                                                                                                                                                                                                    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``transcribermodelsize``     |
+|                                                                                                                                                                                                                                                                                    | - Environment variable: ``MM_CALLS_TRANSCRIBER_MODEL_SIZE``                                                           |
 | The default is **Base**. This is a required value.                                                                                                                                                                                                                                 |                                                                                                                       |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
@@ -809,7 +818,7 @@ Transcriber model size
   :displayname: Call transcriber threads (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.transcribernumthreads
-  :environment: N/A
+  :environment: MM_CALLS_TRANSCRIBER_NUM_THREADS
   :description: The number of threads used by the post-call transcriber. Default is 2. This is a required value that must be in the range [1, numCPUs].
 
 Call transcriber threads
@@ -821,6 +830,7 @@ Call transcriber threads
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | The number of threads used by the post-call transcriber. This must be in the range [1, numCPUs].                                                                                                                                                                                                                                     | - System Config path: **Plugins > Calls**                                                                                                                      |
 |                                                                                                                                                                                                                                                                                                                                      | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``transcribernumthread``                                              |
+|                                                                                                                                                                                                                                                                                                                                      | - Environment variable: ``MM_CALLS_TRANSCRIBER_NUM_THREADS``                                                                                                   |
 | The default is 2. This is a required value.                                                                                                                                                                                                                                                                                          |                                                                                                                                                                |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -831,7 +841,7 @@ Call transcriber threads
   :displayname: (Experimental) Enable live captions (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enablelivecaptions
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_LIVE_CAPTIONS
   :description: Enables live captioning of calls.
 
   - **true**: Enables live captioning of calls.
@@ -846,7 +856,7 @@ Enable live captions (Beta)
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 | - **true**: Enables live captioning of calls.                             | - System Config path: **Plugins > Calls**                                                                        |
 | - **false**: **(Default)** Live captions functionality is disabled.       | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enablelivecaptions``  |
-|                                                                           |                                                                                                                  |
+|                                                                           | - Environment variable: ``MM_CALLS_ENABLE_LIVE_CAPTIONS``                                                        |
 | Live captions are generated from the call participants' audio tracks      |                                                                                                                  |
 | and the resulting captions can be optionally displayed on the call        |                                                                                                                  |
 | clients by clicking the **[cc]** option.                                  |                                                                                                                  |
@@ -859,7 +869,7 @@ Enable live captions (Beta)
   :displayname: Live captions: Model size (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsmodelsize
-  :environment: N/A
+  :environment: MM_CALLS_LIVE_CAPTIONS_MODEL_SIZE
   :description: The speech-to-text model size to use for live captions. Heavier models will produce more accurate results at the expense of processing time and resources usage. Default is **Tiny**. This is a required value. 
 
 Live captions: Model size
@@ -871,6 +881,7 @@ Live captions: Model size
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 | The speech-to-text model size to use for live captions. While heavier models can produce more accurate results, live captioning requires the transcriber to process up to ten seconds of audio within two seconds. Therefore a maximum of size `base` is recommended. Available options are: *Tiny*, *Base* and *Small*. | - System Config path: **Plugins > Calls**                                                                           |
 |                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``livecaptionsmodelsize``  |
+|                                                                                                                                                                                                                                                                                                                          | - Environment variable: ``MM_CALLS_LIVE_CAPTIONS_MODEL_SIZE``                                                       |
 | The default is **Tiny**. This is a required value.                                                                                                                                                                                                                                                                       |                                                                                                                     |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------+
 
@@ -881,7 +892,7 @@ Live captions: Model size
   :displayname: Live captions: Number of transcribers used per call (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumtranscribers
-  :environment: N/A
+  :environment: MM_CALLS_LIVE_CAPTIONS_NUM_TRANSCRIBERS
   :description: The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. Default is 1. This is a required value. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
 
 Live captions: Number of transcribers used per call
@@ -893,6 +904,7 @@ Live captions: Number of transcribers used per call
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 | The number of separate live captions transcribers for each call. Each transcribes one audio stream at a time. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].                                                                                       | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``livecaptionsnumtranscribers`` |
+|                                                                                                                                                                                                                                                                                                                          | - Environment variable: ``MM_CALLS_LIVE_CAPTIONS_NUM_TRANSCRIBERS``                                                      |
 | The default is 1. This is a required value.                                                                                                                                                                                                                                                                              |                                                                                                                          |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
@@ -903,7 +915,7 @@ Live captions: Number of transcribers used per call
   :displayname: Live captions: Number of threads per transcriber (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionsnumthreadspertranscriber
-  :environment: N/A
+  :environment: MM_CALLS_LIVE_CAPTIONS_NUM_THREADS_PER_TRANSCRIBER
   :description: The number of threads per live captions transcriber. Default is 2. This is a required value. The product of LiveCaptionsNumTranscribers * LiveCaptionsNumThreadsPerTranscriber must be in the range [1, numCPUs].
 
 Live captions: Number of threads per transcriber
@@ -915,6 +927,7 @@ Live captions: Number of threads per transcriber
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 | The number of threads per live-captions transcriber. The product of ``LiveCaptionsNumTranscribers`` * ``LiveCaptionsNumThreadsPerTranscriber`` must be in the range [1, numCPUs].                                                                                                                                        | - System Config path: **Plugins > Calls**                                                                                         |
 |                                                                                                                                                                                                                                                                                                                          | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``livecaptionsnumthreadspertranscriber`` |
+|                                                                                                                                                                                                                                                                                                                          | - Environment variable: ``MM_CALLS_LIVE_CAPTIONS_NUM_THREADS_PER_TRANSCRIBER``                                                    |
 | The default is 2. This is a required value.                                                                                                                                                                                                                                                                              |                                                                                                                                   |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 
@@ -925,7 +938,7 @@ Live captions: Number of threads per transcriber
   :displayname: Live captions language (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.livecaptionslanguage
-  :environment: N/A
+  :environment: MM_CALLS_LIVE_CAPTIONS_LANGUAGE
   :description: The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'. If blank, the lange will be set to 'en' (English) as default. 
 
 Live captions language
@@ -937,6 +950,7 @@ Live captions language
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 | The language passed to the live captions transcriber. Should be a 2-letter ISO 639 Set 1 language code, e.g. 'en'.  | - System Config path: **Plugins > Calls**                                                                        |
 |                                                                                                                     | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``livecaptionslanguage``|
+|                                                                                                                     | - Environment variable: ``MM_CALLS_LIVE_CAPTIONS_LANGUAGE``                                                      |
 | If blank, the lange will be set to 'en' (English) as default.                                                       |                                                                                                                  |
 +---------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
@@ -944,7 +958,7 @@ Live captions language
   :displayname: (Experimental) Enable IPv6 (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enableipv6
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_IPV6
 
   - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones.
   - **false**: (False) The RTC service will only listen for IPv4 connections.
@@ -958,7 +972,7 @@ Live captions language
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | - **true**: The RTC service will work in dual-stack mode, listening for IPv6 connections and generating candidates in addition to IPv4 ones. | - System Config path: **Plugins > Calls**                                                                |
 | - **false**: **(Default)** The RTC service will only listen for IPv4 connections.                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableipv6``  |
-|                                                                                                                                              | - Environment variable: N/A                                                                              |
+|                                                                                                                                              | - Environment variable: ``MM_CALLS_ENABLE_IPV6``                                                         |
 | Changing this setting requires a plugin restart to take effect.                                                                              |                                                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
@@ -969,7 +983,7 @@ Live captions language
   :displayname: Enable call ringing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enableringing
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_RINGING
 
   - **true**: Ringing functionality is enabled. Direct and group message participants receive a desktop app alert and a ringing notification when a call starts.
   - **false**: **(False)** Ringing functionality is disabled.
@@ -979,7 +993,7 @@ Enable call ringing
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 | - **true**: Ringing functionality is enabled. Direct and group message   | - System Config path: **Plugins > Calls**                                                                    |
 |   participants receive a desktop app alert and a ringing notification    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableringing``   |
-|   when a call starts.                                                    | - Environment variable: N/A                                                                                  |
+|   when a call starts.                                                    | - Environment variable: ``MM_CALLS_ENABLE_RINGING``                                                          |
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                                              |
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
@@ -987,7 +1001,7 @@ Enable call ringing
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enableav1
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_AV1
 
   - **true**: Enables the ability to use the AV1 codec to encode screen sharing tracks. This can result in improved screen sharing quality for clients that support it.
   - **false**: **(False)** AV1 codec is disabled for screen sharing tracks.
@@ -998,7 +1012,7 @@ Enable AV1 (Experimental)
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
 | - **true**: Enables the ability to use the AV1 codec to encode screen    | - System Config path: **Plugins > Calls**                                                                     |
 |   sharing tracks. Can result in improved screen sharing quality via      | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enableAV1``        |
-|   clients that support AV1 encoding.                                     | - Environment variable: N/A                                                                                   |
+|   clients that support AV1 encoding.                                     | - Environment variable: ``MM_CALLS_ENABLE_AV1``                                                               |
 | - **false**: **(Default**) AV1 codec is disabled for screen sharing      |                                                                                                               |
 |   tracks.                                                                |                                                                                                               |
 +--------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------+
@@ -1011,7 +1025,7 @@ Enable AV1 (Experimental)
   :displayname: Use data channels for signaling media tracks (Plugins - Calls)
   :systemconsole: Plugins > Calls
   :configjson: PluginSettings.Plugins.com.mattermost.calls.enabledcsignaling
-  :environment: N/A
+  :environment: MM_CALLS_ENABLE_DC_SIGNALING
 
   - **true**: Clients will use WebRTC data channels for signaling of media tracks (i.e., voice, screen). This can result in a more efficient and less race-prone process, especially in case of poor network connections.
   - **false**: **(False)** Clients will use WebSockets for signaling media tracks.
@@ -1022,7 +1036,7 @@ Enable DC signaling (Experimental)
 +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 | - **true**: Clients will use WebRTC data channels for signaling of media   | - System Config path: **Plugins > Calls**                                                                          |
 |   tracks (i.e., voice, screen). This can result in a more efficient and    | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``enabledcsignaling``     |
-|   less race-prone process, especially in case of poor network connections. | - Environment variable: N/A                                                                                        |
+|   less race-prone process, especially in case of poor network connections. | - Environment variable: ``MM_CALLS_ENABLE_DC_SIGNALING``                                                           |
 | - **false**: **(Default**) Clients will use WebSockets for signaling       |                                                                                                                    |
 |   media tracks.                                                            |                                                                                                                    |
 +----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
