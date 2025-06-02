@@ -36,7 +36,7 @@ Important Upgrade Notes
 |                                                    | Schema changes in the form of a new materialized view (``AttributeView``) was added that aggregates user attributes into a separate table. No database downtime  |
 |                                                    | is expected for this upgrade. A previous version of Mattermost can run with the new schema changes. The SQL queries included in the schema changes are below:    |
 |                                                    |                                                                                                                                                                  |
-|                                                    | PostgreSQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000136_create_attribute_view.up.sql                      |
+|                                                    | PostgreSQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000137_update_attribute_view.up.sql                      |
 |                                                    |                                                                                                                                                                  |
 |                                                    | MySQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000136_create_attribute_view.up.sql                              |
 |                                                    |                                                                                                                                                                  |
