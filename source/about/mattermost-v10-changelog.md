@@ -27,7 +27,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
- - Consolidated all channel editing functionality into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert between public and private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
+ - Consolidated all channel editing functionality into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert to private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
  - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
  - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
  - Pre-packaged Calls plugin [v1.8.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.8.0).
@@ -39,7 +39,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Introduced minor layout tweaks in theme settings for improved usability.
 
 #### Administration
- - Added support for attribute based channel access (disabled and behind a feature flag).
+ - Added support for attribute based channel access for Enterprise Advanced licensed servers (currently behind a feature flag ).
  - Added support for AES-256-GCM encryption in SAML.
  - Updated the email validation logic to ensure Mattermost no longer accepts email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``). Although these comply with RFC 5322 and RFC 6532 standards, they introduce unnecessary complexity. If a user already has such an email in your installation, they may face issues like being unable to update their profile. To resolve this, the email must be modified manually using the command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
  - Added a license load metric to the **About** screen to display current license usage.
