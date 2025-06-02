@@ -19,35 +19,7 @@ Database preparation
 
 PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
-1. Create an PostgreSQL server instance:
-
-   .. tab:: AWS
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-    
-   .. tab:: Azure
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-
-   .. tab:: Ubuntu/Debian
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-
-   .. tab:: RHEL/CentOS
-
-      .. code-block:: sh
-
-         sudo dnf install postgresql-server
-         sudo postgresql-setup --initdb
+1. Create an PostgreSQL server instance. See the `PostgreSQL documentation <https://www.postgresql.org/download/>`_ for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called postgres has been created.
 
 2. Create the Mattermost database and user:
 

@@ -11,10 +11,20 @@
     padding: 6px 8px;
     vertical-align: top;
   }
+  /* Dark mode border color */
+  body:not([data-custom-theme="light"]) table.mattermost-plans th, 
+  body:not([data-custom-theme="light"]) table.mattermost-plans td {
+    border-color: #666;
+  }
   table.mattermost-plans th {
     background: #f2f2f2;
     font-weight: bold;
     text-align: left;
+  }
+  /* Dark mode support for table headers */
+  body:not([data-custom-theme="light"]) table.mattermost-plans th {
+    background: #444;
+    color: #fff;
   }
   table.mattermost-plans tr.section td {
     background: #f9f9f9;
@@ -22,10 +32,20 @@
     font-size: 1.05em;
     border-top: 2px solid #888;
   }
+  /* Dark mode support for section rows */
+  body:not([data-custom-theme="light"]) table.mattermost-plans tr.section td {
+    background: #3a3a3a;
+    color: #fff;
+  }
   table.mattermost-plans tr.subsection td {
     background: #f6f6f6;
     font-style: italic;
     border-top: 1px solid #888;
+  }
+  /* Dark mode support for subsection rows */
+  body:not([data-custom-theme="light"]) table.mattermost-plans tr.subsection td {
+    background: #333;
+    color: #eee;
   }
 </style>
 
