@@ -470,7 +470,7 @@ Manage properties
 In cases where multiple system admins manage system properties, refresh your web browser instance to see real-time updates to system properties made by other admins.
 
 Sync properties with your identity provider
--------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Synchronize a property with AD/LDAP or SAML by selecting **More** |more-icon| and selecting **Link property to AD/LDAP** or **Link property to SAML**. Mattermost takes you directly to the **AD/LDAP** or **SAML 2.0** configuration settings page in the System Console where you can map the attributes you want to synchronize.
 

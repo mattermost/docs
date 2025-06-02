@@ -12,8 +12,8 @@ Follow these steps to configure Mattermost to use GitLab as a Single Sign-on (SS
 .. important::  
   - Only the default GitLab SSO is officially supported. 
   - "Double SSO", where GitLab SSO is chained to other SSO solutions, is not supported. It may be possible to connect GitLab SSO with AD, LDAP, SAML, or MFA add-ons in some cases, but because of the special logic required, they're not officially supported, and they're known not to work in some cases. 
-  - :ref:`Mattermost Free (self-hosted only) <about/editions-and-offerings:mattermost free>` supports the OAuth 2.0 standard.
-  - :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` and :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` support the OpenID Connect standard.
+  - :doc:`Mattermost Free (self-hosted only) </about/editions-and-offerings>` supports the OAuth 2.0 standard.
+  - :doc:`Mattermost Professional </about/editions-and-offerings>` and :doc:`Mattermost Enterprise </about/editions-and-offerings>` support the OpenID Connect standard.
 
 Step 1: Add a Mattermost application to your GitLab account
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

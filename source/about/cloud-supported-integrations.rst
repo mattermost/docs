@@ -9,7 +9,7 @@
 - :doc:`Mattermost Copilot </configure/enable-copilot>`
 - :doc:`Mattermost for Microsoft Teams </integrate/microsoft-teams-sync>`
 - :doc:`Mattermost Playbooks </guides/repeatable-processes>`
-- :doc:`Microsoft Calendar </integrate/microsoft-calendar>`
+- :doc:`Microsoft Calendar Integration </integrate/microsoft-calendar>`
 - :doc:`Microsoft Teams Meetings </integrate/microsoft-teams-meetings>`
 - :doc:`GitHub </integrate/github>` 
 - :doc:`GitLab </integrate/gitlab>` 
