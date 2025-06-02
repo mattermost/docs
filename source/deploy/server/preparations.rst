@@ -63,6 +63,8 @@ PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL dat
 
          CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
 
+   If this steps fails with an error message like ``invalid LC_COLLATE locale name: "en_US.UTF-8"``, you need to generate the locale first using ``locale-gen en_US.UTF-8``.
+
    c. Create the Mattermost user with a secure password:
 
       .. code-block:: sql
