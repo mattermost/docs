@@ -86,7 +86,7 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
 .. tab:: Release package 
 
-   If you're using a release page for Linux, macOS, or Windows, you can download the mmctl builds at their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
+   If you're using a release page for Linux, macOS, or Windows, we recommend downloading the mmctl builds through their release URL: ``https://releases.mattermost.com/mmctl/${MATTERMOST_VERSION}/${PLATFORM}_${ARCHITECTURE}.tar`` (for windows, substitute the ``.tar`` suffix with ``.zip``)
 
    E.g. to download version ``v10.7.0`` of the mmctl amd64 build for linux, you can run the following:
 
@@ -94,17 +94,17 @@ The mmctl tool comes bundled with Mattermost package. For customers that want to
 
       curl -vfsSL -O https://releases.mattermost.com/mmctl/v10.7.0/linux_amd64.tar
 
-   Supported platforms, and corresponding supported architectures, are: linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
+   Supported platforms, and corresponding supported architectures include linux (amd64 and arm64), darwin (amd64 and arm64), windows (amd64 only).
 
-.. tab:: Go install 
+.. tab:: Local git clone
 
-   Use this option on Linux, macOS, and Windows if you have a ``go`` environment configured.
-
-   To build and install the mmctl binary in your `$GOPATH`, run the following command:
+   You can build mmctl from a local Git clone to work directly with the source code, use the latest features, and experiment with custom changes. This workflow is ideal if you need a tailored version of mmctl, want to fix bugs, or test new updates before they’re officially released.
 
    .. code-block:: sh
 
-      go install github.com/mattermost/mattermost/server/v8/cmd/mmctl@master
+      git clone https://github.com/mattermost/mattermost.git
+      cd mattermost/server
+      go install ./cmd/mmctl
 
 .. tab:: Homebrew
 
@@ -1225,7 +1225,7 @@ mmctl channel search
 
 **Description**
 
-Search a channel by channel name. Channels can be specified by team (e.g., ``--team myteam mychannel``), or by team ID.
+Search for channel details by channel name. Channels can be specified by team (e.g., ``--team myteam mychannel``), or by team ID. Returns channel name, display name, and channel ID.
 
 **Format**
 
@@ -2438,6 +2438,8 @@ mmctl export generate-presigned-url
 **Description**
 
 Generate a pre-signed URL for an export file in cases where a Mattermost Cloud export is large and challenging to download from the Mattermost server.
+
+Requires the ``EnableExportDirectDownload`` feature flag to be set to ``true``.
 
 **Format**
 
@@ -7138,13 +7140,13 @@ Create an incoming webhook to allow external posting of messages to a specific c
 
 .. code-block:: sh
 
-   --channel string        Channel name or ID of the new webhook
+   --channel string        Channel ID (required)
    --description string    Incoming webhook description
    --display-name string   Incoming webhook display name
    -h, --help              help for create-incoming
    --icon string           Icon URL
    --lock-to-channel       Lock to channel
-   --user string           The username, email, or ID of the user that the webhook should post as
+   --user string           User ID (required)
 
 **Options inherited from parent commands**
 
