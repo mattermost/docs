@@ -45,7 +45,7 @@ Collaborating across organizational boundaries must not compromise compliance or
 **Benefits**
 
 - **Collaborate securely with third parties** via Connected Workspaces that allow messaging, :doc:`file sharing </collaborate/share-files-in-messages>`, and :doc:`thread-based discussions </collaborate/organize-conversations>` with external teams—without exposing internal systems.
-- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed :doc:`permissions </onboard/advanced-permissions>`, :ref:`audit logging <manage/logging:audit logging (beta)>`, and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>`.
+- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed :doc:`permissions </onboard/advanced-permissions>`, :ref:`audit logging <manage/logging:audit logging>`, and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>`.
 - **Integrate with Microsoft Teams, Exchange, and M365** to maintain centralized workflows and extend secure communication to external stakeholders without leaving policy-aligned platforms. See :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Manage user identity and access** across internal and external roles using Microsoft :doc:`Entra ID </onboard/sso-entraid>` (Azure AD) synchronization for scalable and compliant provisioning.
 

@@ -1,5 +1,5 @@
-Connected workspaces (Beta)
-==============================
+Connected workspaces
+====================
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -9,6 +9,10 @@ Communicate across organizations, as well as external partners and vendors using
 Connected workspaces in Mattermost behave like regular public and private channels and offer the same user experience and functionality. All members using secure connections, including local members and remote members, can :doc:`send and receive channel messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`.  Content is synchronized across all participating Mattermost instances.
 
 A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
+
+.. note::
+
+    The ability to share Mattermost channels across connected workspaces is currently in :ref:`Beta <manage/feature-labels:beta>`. `Learn more <#why-is-this-feature-in-beta>`__.
 
 Set up connected workspaces
 ---------------------------
@@ -39,11 +43,11 @@ System admins must enable connected workspaces functionality for their Mattermos
 - ``ConnectedWorkspacesSettings.EnableRemoteClusterService = true``
 - ``ConnectedWorkspacesSettings.EnableSharedChannels = true``
 
-See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces (beta)>` documentation for details.
+See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces>` documentation for details.
 
 .. note::
 
-    Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces (beta)>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
+    Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 Create a secure connection
 ---------------------------
@@ -150,7 +154,7 @@ Once a connection is established between two Mattermost servers, system admins c
 
 .. important::
 
-    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in beta there are some known issues that may impact reliability of direct message delivery across servers.
+    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in :ref:`Beta <manage/feature-labels:beta>`, there are some known issues that may impact reliability of direct message delivery across servers.
 
 Manage connections and invitations
 ----------------------------------
@@ -274,9 +278,9 @@ When a user is added to a shared channel, member status is synchronized within a
 
 When using Mattermost in a web browser, Mattermost polls the server every minute. Refreshing the browser page triggers immediate synchronization.
 
-By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync (beta)>`. 
+By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync>`. 
 
-Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync (beta)>`.
+Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync>`.
 
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -60,7 +60,7 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 
 - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
 - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
-- Enterprise customers can also [record calls](https://docs.mattermost.com/collaborate/make-calls.html#record-a-call), enable [live text captions](https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls-beta) during calls, and [transcribe recorded calls](https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls-beta). We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the [dedicated rtcd service](#the-rtcd-service).
+- Enterprise customers can also [record calls](https://docs.mattermost.com/collaborate/make-calls.html#record-a-call), enable [live text captions](https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls) during calls, and [transcribe recorded calls](https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls). We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the [dedicated rtcd service](#the-rtcd-service).
 - For Mattermost self-hosted deployments, System admins need to enable and configure the plugin [using the System Console](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls). The default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the [performance section](#performance) below.
 
 ## Configuration
@@ -382,9 +382,9 @@ If deploying the service in a Kubernetes cluster, refer to the later section on 
 
 Once the `calls-offloader` service is running, recordings should be explicitly enabled through the [Enable call recordings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings) config setting and the service's URL should be configured using [Job service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#job-service-url).
 
-Call transcriptions can be enabled through the [Enable call transcriptions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions-beta) configuration setting.
+Call transcriptions can be enabled through the [Enable call transcriptions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions) configuration setting.
 
-Live captions can be enabled through the [Enable live captions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions-beta) configuration setting.
+Live captions can be enabled through the [Enable live captions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions) configuration setting.
 
 ```{note}
 - The call transcriptions functionality is available starting in Calls version v0.22.0.
