@@ -38,9 +38,9 @@ Terminology
 Key Components
 -------------
 
-- **Calls plugin**: The main plugin that enables calls functionality
-- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature)
-- **calls-offloader**: Service for call recording and transcription (if enabled)
+- **Calls plugin**: The main plugin that enables calls functionality.  Installed by default in Mattermost self-hosted deployments.
+- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature).  Typically deployed to dedicated servers or containers.
+- **calls-offloader**: Service for call recording and transcription (if enabled).  Typically deployed to dedicated servers.
 
 Network Requirements
 ------------------

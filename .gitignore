@@ -70,3 +70,5 @@ source/developer/localization.md
 *.key
 *.crt
 .aider*
+
+**/.claude/settings.local.json
