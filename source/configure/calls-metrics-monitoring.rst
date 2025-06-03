@@ -63,7 +63,7 @@ Installing Prometheus
         - job_name: 'rtcd'
           scrape_interval: 15s
           static_configs:
-            - targets: ['rtcd-server:9090']
+            - targets: ['rtcd-server:8045']
 
 Installing Grafana
 ^^^^^^^^^^^^^^^

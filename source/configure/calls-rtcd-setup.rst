@@ -21,28 +21,12 @@ Note
 
 This guide provides detailed instructions for setting up, configuring, and validating a Mattermost Calls deployment using the dedicated RTCD service.
 
-- `Why use RTCD <#why-use-rtcd>`__
 - `Prerequisites <#prerequisites>`__
 - `Installation and deployment <#installation-and-deployment>`__
 - `Configuration <#configuration>`__
 - `Validation and testing <#validation-and-testing>`__
 - `Horizontal scaling <#horizontal-scaling>`__
 - `Integration with Mattermost <#integration-with-mattermost>`__
-
-Why use RTCD
------------
-
-The RTCD service (Real-Time Communication Daemon) is the recommended way to host Mattermost Calls for production environments for the following key reasons:
-
-1. **Performance isolation**: RTCD runs as a standalone service, isolating the resource-intensive calls traffic from the main Mattermost servers. This prevents call traffic spikes from affecting the rest of your Mattermost deployment.
-
-2. **Scalability**: When calls traffic increases, additional RTCD instances can be deployed to handle the load, without affecting your Mattermost servers.
-
-3. **Call stability**: With RTCD, if a Mattermost server needs to be restarted, ongoing calls won't be disrupted. The call audio/video will continue while the Mattermost server restarts (though some features like emoji reactions will be temporarily unavailable).
-
-4. **Kubernetes support**: For Kubernetes deployments, RTCD is the only officially supported way to run Calls.
-
-5. **Real-time optimization**: The RTCD service is specifically optimized for real-time audio/video traffic, with configurations prioritizing low latency over throughput.
 
 Prerequisites
 ------------
@@ -51,38 +35,79 @@ Before deploying RTCD, ensure you have:
 
 - A Mattermost Enterprise license
 - A server or VM with sufficient CPU and network capacity (see the `Performance <calls-deployment.html#performance>`__ section for sizing guidance)
-- Network configuration that allows:
-  - UDP port 8443 (default) open between clients and RTCD servers
-  - TCP port 8045 (default) open between Mattermost servers and RTCD servers
-  - TCP port 8443 (optional backup) between clients and RTCD servers
+
+Network Requirements
+------------------
+
+The following network connectivity is required:
+
++-------------------+--------+-----------------+-------------------------+------------------------+
+| Service           | Ports  | Protocols       | Source                  | Target                 |
++===================+========+=================+=========================+========================+
+| Calls plugin API  | 80,443 | TCP (incoming)  | Mattermost clients      | Mattermost server      |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| RTC media         | 8443   | UDP (incoming)  | Mattermost clients      | Mattermost or RTCD     |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| RTC media         | 8443   | TCP (incoming)  | Mattermost clients      | Mattermost or RTCD     |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| RTCD API          | 8045   | TCP (incoming)  | Mattermost server       | RTCD service           |
++-------------------+--------+-----------------+-------------------------+------------------------+
+| STUN              | 3478   | UDP (outgoing)  | Mattermost or RTCD      | STUN servers           |
++-------------------+--------+-----------------+-------------------------+------------------------+
 
 Installation and Deployment
 --------------------------
 
 There are multiple ways to deploy RTCD, depending on your environment:
 
-Bare Metal or VM Deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+Docker Deployment
+^^^^^^^^^^^^^^^
 
-1. Download the latest release from the `RTCD GitHub repository <https://github.com/mattermost/rtcd/releases>`__
+The simplest way to deploy RTCD with Docker is to use environment variables for configuration:
 
-2. Create a configuration file (``config.toml``) with the following minimal settings:
-
-   .. code-block:: toml
-
-      [api]
-      http.listen_address = ":8045"
-
-      [rtc]
-      ice_address_udp = ""
-      ice_port_udp = 8443
-      ice_host_override = "YOUR_RTCD_SERVER_PUBLIC_IP"
-
-3. Run the RTCD service:
+1. Run the RTCD container with basic configuration:
 
    .. code-block:: bash
 
-      ./rtcd --config config.toml
+      docker run -d --name rtcd \
+        -e "RTCD_LOGGER_ENABLEFILE=false" \
+        -e "RTCD_API_SECURITY_ALLOWSELFREGISTRATION=true" \
+        -p 8443:8443/udp \
+        -p 8443:8443/tcp \
+        -p 8045:8045/tcp \
+        mattermost/rtcd:latest
+
+2. For debugging purposes, you can enable more detailed logging:
+
+   .. code-block:: bash
+
+      docker run -d --name rtcd \
+        -e "RTCD_LOGGER_ENABLEFILE=false" \
+        -e "RTCD_LOGGER_CONSOLELEVEL=DEBUG" \
+        -e "RTCD_API_SECURITY_ALLOWSELFREGISTRATION=true" \
+        -p 8443:8443/udp \
+        -p 8443:8443/tcp \
+        -p 8045:8045/tcp \
+        mattermost/rtcd:latest
+
+   To view the logs:
+
+   .. code-block:: bash
+
+      docker logs -f rtcd
+
+You can also use a mounted configuration file instead of environment variables:
+
+.. code-block:: bash
+
+   docker run -d --name rtcd \
+     -p 8045:8045 \
+     -p 8443:8443/udp \
+     -p 8443:8443/tcp \
+     -v /path/to/config.toml:/rtcd/config/config.toml \
+     mattermost/rtcd:latest
+
+For a complete sample configuration file, see the `RTCD config.sample.toml <https://github.com/mattermost/rtcd/blob/master/config/config.sample.toml>`__ in the official repository.
 
 Kubernetes Deployment
 ^^^^^^^^^^^^^^^^^^^
@@ -108,21 +133,28 @@ For Kubernetes deployments, use the official Helm chart:
 
    Refer to the `RTCD Helm chart documentation <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ for additional configuration options.
 
-Docker Deployment
-^^^^^^^^^^^^^^^
+Bare Metal or VM Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-1. Create a configuration file as described in the Bare Metal section
+1. Download the latest release from the `RTCD GitHub repository <https://github.com/mattermost/rtcd/releases>`__
 
-2. Run the RTCD container:
+2. Create a configuration file (``config.toml``) with the following minimal settings:
+
+   .. code-block:: toml
+
+      [api]
+      http.listen_address = ":8045"
+
+      [rtc]
+      ice_address_udp = ""
+      ice_port_udp = 8443
+      ice_host_override = "YOUR_RTCD_SERVER_PUBLIC_IP"
+
+3. Run the RTCD service:
 
    .. code-block:: bash
 
-      docker run -d --name rtcd \
-        -p 8045:8045 \
-        -p 8443:8443/udp \
-        -p 8443:8443/tcp \
-        -v /path/to/config.toml:/rtcd/config/config.toml \
-        mattermost/rtcd:latest
+      ./rtcd --config config.toml
 
 Configuration
 -----------
@@ -254,12 +286,13 @@ Validation and Testing
 
 After deploying RTCD, validate the installation:
 
-1. **Check service status**:
+1. **Check service status and version**:
 
    .. code-block:: bash
 
-      curl http://YOUR_RTCD_SERVER:8045/api/v1/health
-      # Should return {"status":"ok"}
+      curl http://YOUR_RTCD_SERVER:8045/version
+      # Should return a JSON object with service information
+      # Example: {"build_hash":"abc123","build_date":"2023-01-15T12:00:00Z","build_version":"0.11.0","goVersion":"go1.20.4"}
 
 2. **Test UDP connectivity**:
 

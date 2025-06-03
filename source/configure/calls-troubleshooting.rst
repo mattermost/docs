@@ -29,8 +29,13 @@ Calls Not Connecting
    - Check that any load balancers are properly configured for UDP traffic
 
 2. **ICE configuration issues**:
-   - Verify the ``ice.hostOverride`` setting in RTCD configuration matches the publicly accessible hostname or IP
-   - Ensure STUN/TURN servers are properly configured if needed
+   - Verify the ``rtc.ice_host_override`` setting in RTCD configuration matches the publicly accessible hostname or IP of the RTCD server
+   - If this setting is incorrect, client browser console may show errors like: ``com.mattermost.calls: peer error timed out waiting for rtc connection``
+   - Meanwhile, RTCD `trace` level logs might show internal IP addresses in ICE connection logs:
+     
+     .. code-block:: json
+
+        {"timestamp":"2025-05-14 10:29:08.935 Z","level":"trace","msg":"Ping STUN from udp4 host 172.31.29.117:8443 (resolved: 172.31.29.117:8443) to udp4 host 192.168.64.1:59737 (resolved: 192.168.64.1:59737)","caller":"rtc/logger.go:54","origin":"ice/v4.(*Agent).sendBindingRequest github.com/pion/ice/v4@v4.0.3/agent.go:921"}
 
 3. **API connectivity**:
    - Verify that Mattermost servers can reach the RTCD API endpoint
