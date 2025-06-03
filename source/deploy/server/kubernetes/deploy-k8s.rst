@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 * A functioning Kubernetes cluster (see the `Kubernetes setup guide <https://kubernetes.io/docs/setup/>`__). Your cluster should be running a `supported Kubernetes version <https://kubernetes.io/releases/>`__.
 * The `kubectl` command-line tool installed on your local machine (see the `kubectl installation guide <https://kubernetes.io/docs/reference/kubectl/>`__).
 * A fundamental understanding of Kubernetes concepts, such as deployments, pods, and applying manifests.
-* Sufficient Kubernetes resources allocated based on your expected user load. Consult the `Mattermost Kubernetes Operator <https://github.com/mattermost/mattermost-operator#readme>`_ documentation for resource requirements at different scales.
+* Sufficient Kubernetes resources allocated based on your expected user load. Consult the :ref:`scaling for Enterprise </scale/scaling-for-enterprise.html#available-reference-architectures>` documentation for resource requirements at different scales.
 
 **Installation steps**
 
