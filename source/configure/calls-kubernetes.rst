@@ -23,7 +23,7 @@ This diagram shows how the RTCD standalone service can be deployed in a Kubernet
 1. Calls traffic is handled by dedicated RTCD pods
 2. RTCD services are exposed through load balancers
 3. Scaling is managed through Kubernetes deployment configurations
-4. Call recording and transcription is handled by the calls-offloader service
+4. Call recording and transcription is handled by the calls-offloader service (see `Calls Offloader Setup and Configuration <calls-offloader-setup.html>`__)
 
 If Mattermost isn't already deployed in your Kubernetes cluster and you want to use this deployment type, visit the `Kubernetes operator guide </install/mattermost-kubernetes-operator.html>`__.
 
