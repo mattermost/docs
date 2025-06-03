@@ -58,12 +58,98 @@ The following network connectivity is required:
 Installation and Deployment
 --------------------------
 
-There are multiple ways to deploy RTCD, depending on your environment:
+There are multiple ways to deploy RTCD, depending on your environment. We recommend the following order based on production readiness and operational control:
+
+Bare Metal or VM Deployment (Recommended)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This is the recommended deployment method for production environments as it provides the best performance and operational control.
+
+1. Download the latest release from the `RTCD GitHub repository <https://github.com/mattermost/rtcd/releases>`__
+
+2. Create a configuration file (``/opt/rtcd/rtcd.toml``) with the following settings:
+
+   .. code-block:: toml
+
+      [api]
+      http.listen_address = ":8045"
+      security.allow_self_registration = true
+
+      [rtc]
+      ice_address_udp = ""
+      ice_port_udp = 8443
+      ice_address_tcp = ""
+      ice_port_tcp = 8443
+      ice_host_override = "YOUR_RTCD_SERVER_PUBLIC_IP"
+
+      # UDP port range for WebRTC connections
+      ice.port_range.min = 9000
+      ice.port_range.max = 10000
+
+      # STUN/TURN server configuration
+      ice_servers = [
+        { urls = ["stun:stun.l.google.com:19302"] }
+      ]
+
+      [store]
+      data_source = "/opt/rtcd/data/db"
+
+      [logger]
+      enable_console = true
+      console_json = true
+      console_level = "INFO"
+      enable_file = true
+      file_json = true
+      file_level = "INFO"
+      file_location = "/opt/rtcd/rtcd.log"
+      enable_color = true
+
+      [mattermost]
+      host = "http://YOUR_MATTERMOST_SERVER:8065"
+
+3. Create the data directory:
+
+   .. code-block:: bash
+
+      sudo mkdir -p /opt/rtcd/data/db
+
+4. Create a systemd service file (``/etc/systemd/system/rtcd.service``):
+
+   .. code-block:: ini
+
+      [Unit]
+      Description=Mattermost RTCD Server
+      After=network.target
+
+      [Service]
+      Type=simple
+      User=root
+      ExecStart=/opt/rtcd/rtcd --config /opt/rtcd/rtcd.toml
+      Restart=always
+      RestartSec=10
+      LimitNOFILE=65536
+
+      [Install]
+      WantedBy=multi-user.target
+
+5. Enable and start the service:
+
+   .. code-block:: bash
+
+      sudo systemctl daemon-reload
+      sudo systemctl enable rtcd
+      sudo systemctl start rtcd
+
+6. Check the service status:
+
+   .. code-block:: bash
+
+      sudo systemctl status rtcd
 
 Docker Deployment
 ^^^^^^^^^^^^^^^
 
-The simplest way to deploy RTCD with Docker is to use environment variables for configuration:
+Docker deployment is suitable for development, testing, or containerized production environments:
 
 1. Run the RTCD container with basic configuration:
 
@@ -132,29 +218,6 @@ For Kubernetes deployments, use the official Helm chart:
         --set rtcd.ice.hostOverride=rtcd.example.com
 
    Refer to the `RTCD Helm chart documentation <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-rtcd>`__ for additional configuration options.
-
-Bare Metal or VM Deployment
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-1. Download the latest release from the `RTCD GitHub repository <https://github.com/mattermost/rtcd/releases>`__
-
-2. Create a configuration file (``config.toml``) with the following minimal settings:
-
-   .. code-block:: toml
-
-      [api]
-      http.listen_address = ":8045"
-
-      [rtc]
-      ice_address_udp = ""
-      ice_port_udp = 8443
-      ice_host_override = "YOUR_RTCD_SERVER_PUBLIC_IP"
-
-3. Run the RTCD service:
-
-   .. code-block:: bash
-
-      ./rtcd --config config.toml
 
 Configuration
 -----------

@@ -330,45 +330,21 @@ If you suspect network bandwidth issues:
       net.core.wmem_max = 16777216
       net.core.optmem_max = 16777216
 
+Recording and Transcription Issues
+----------------------------------
+
+For troubleshooting calls-offloader service issues including recording and transcription problems, see the `Calls Offloader Setup and Configuration <calls-offloader-setup.html#troubleshooting>`__ guide.
+
 Debugging Tools
 ------------
 
-WebRTC Internals (Chrome)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-For in-depth WebRTC diagnostics in Chrome:
-
-1. **Access chrome://webrtc-internals** in a new browser tab while on a call
-
-2. **Examine the connection details**:
-   
-   - ICE connection state
-   - Selected candidate pairs
-   - DTLS/SRTP setup
-   - Bandwidth estimation
-
-3. **Look for specific issues**:
-   
-   - Candidate gathering delays
-   - Failed ICE connections
-   - Bandwidth limitations
 
 Prometheus Metrics Analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Use Prometheus metrics for real-time and historical performance data:
 
-1. **Key metrics to monitor**:
-
-   - ``rtcd_rtc_sessions_total``: Number of active RTC sessions
-   - ``rtcd_rtc_conn_states_total``: Connection state transitions 
-   - ``rtcd_rtc_errors_total``: Error counts
-   - ``rtcd_rtc_rtp_tracks_total``: Media track count
-   - ``rtcd_process_cpu_seconds_total``: CPU usage
-
-2. **Set up Grafana dashboards**:
-   
-   Import the official [Mattermost Calls dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) into Grafana for visualization.
+Import the official [Mattermost Calls dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) into Grafana for visualization.
 
 Advanced Diagnostics
 -----------------
@@ -429,7 +405,7 @@ When to Contact Support
 
 Consider contacting Mattermost Support when:
 
-1. You've tried basic troubleshooting steps without resolution
+1. You've tried troubleshooting steps without resolution
 2. You're experiencing persistent connection failures across multiple clients
 3. You notice unexpected or degraded performance despite proper configuration
 4. You need help interpreting diagnostic information
@@ -443,3 +419,4 @@ When contacting support, please include:
 - Client environments (browsers, OS versions)
 - Relevant logs and diagnostic information
 - Detailed description of the issue and steps to reproduce
+- Monitoring dashboards screenshots

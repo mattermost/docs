@@ -12,6 +12,7 @@ Quick Links
 For detailed information on specific topics, please refer to these specialized guides:
 
 - `RTCD Setup and Configuration <calls-rtcd-setup.html>`__: Comprehensive guide for setting up the dedicated RTCD service
+- `Calls Offloader Setup and Configuration <calls-offloader-setup.html>`__: Comprehensive guide for setting up the calls-offloader service for recording and transcription
 - `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
 - `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__: Guide to monitoring Calls performance using metrics and observability
 - `Calls Deployment on Kubernetes <calls-kubernetes.html>`__: Detailed guide for deploying Calls in Kubernetes environments
@@ -39,8 +40,8 @@ Key Components
 -------------
 
 - **Calls plugin**: The main plugin that enables calls functionality.  Installed by default in Mattermost self-hosted deployments.
-- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature).  Typically deployed to dedicated servers or containers.
-- **calls-offloader**: Service for call recording and transcription (if enabled).  Typically deployed to dedicated servers.
+- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature).  Typically deployed to dedicated servers or containers. See `RTCD Setup and Configuration <calls-rtcd-setup.html>`__ for details.
+- **calls-offloader**: Service for call recording and transcription (if enabled).  Typically deployed to dedicated servers. See `Calls Offloader Setup and Configuration <calls-offloader-setup.html>`__ for setup and troubleshooting details.
 
 Network Requirements
 ------------------
