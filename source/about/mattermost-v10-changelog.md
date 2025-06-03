@@ -40,7 +40,8 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
  - Introduced minor layout tweaks in theme settings for improved usability.
 
 #### Administration
- - Added support for user attributes for Enterprise Advanced licensed servers (currently behind a feature flag).
+ - Added support for user attributes for Enterprise Advanced licensed servers. Defined policies that automatically grant channel memberships based on user attributes. Membership updates happen automatically when user attributes change — no need for manual role adjustments.
+ - Added Policy Management user interface and API to easily create and manage attribute-based rules via an admin interface.
  - Added support for AES-256-GCM encryption in SAML.
  - Updated the email validation logic to ensure Mattermost no longer accepts email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``). Although these comply with RFC 5322 and RFC 6532 standards, they introduce unnecessary complexity. If a user already has such an email in your installation, they may face issues like being unable to update their profile. To resolve this, the email must be modified manually using the command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
  - Added a license load metric to the **About** screen to display current license usage.
