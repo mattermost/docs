@@ -174,8 +174,10 @@ redirects = {
         "https://docs.mattermost.com/about/non-profit-subscriptions.html",
 "about/maximize-microsoft-investment.html":
         "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
-
-
+"about/out-of-band-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
+"about/incident-response-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -2824,7 +2826,7 @@ redirects = {
 "integrate/mattermost-mission-collaboration-for-m365.html#setup":
         "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
 "integrate/playbooks-for-microsoft-teams.html#setup":
-        "https://docs.mattermost.com/integrate/playbooks-for-microsoft-teams.html#deploy",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html#setup":
         "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
 "integrate/microsoft-teams-sync.html#setup":
