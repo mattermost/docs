@@ -12,7 +12,14 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 (release-v5-12)=
 ## Release v5.12
 
-**Release day: 2025-05-16**
+- **v5.12.1, released 2025-05-31**
+
+  - Fixed an issue where focus was lost when tabbing to an external URL on Windows/Linux [MM-62005](https://mattermost.atlassian.net/browse/MM-62005).
+  - Disabled server management in the **Settings** modal when disabled via group policy [MM-64355](https://mattermost.atlassian.net/browse/MM-64355).
+
+- **v5.12.0, released 2025-05-16**
+
+  - Original v5.12.0 release
 
 **Download Binaries:** [Mattermost Desktop on GitHub](https://github.com/mattermost/desktop/releases/latest)
 
