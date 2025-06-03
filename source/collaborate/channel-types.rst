@@ -16,7 +16,7 @@ There are 5 types of channels in Mattermost:
 
 .. tip::
   
-  Enterprise customers can additionally configure :ref:`read-only <onboard/advanced-permissions:read only channels>` broadcast channels.
+  Enterprise customers can additionally configure :ref:`read-only <onboard/advanced-permissions:read-only channels>` broadcast channels.
 
 Public channels
 ---------------
