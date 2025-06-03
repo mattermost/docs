@@ -65,6 +65,9 @@ Installing Prometheus
           static_configs:
             - targets: ['rtcd-server:8045']
 
+   .. important::
+      **Metrics Configuration Notice**: The Calls dashboard expects targets to be in ``<host>:<port>`` format. Avoid using ``labels`` in your Prometheus configuration for Calls metrics, as this can cause compatibility issues with the dashboard. For example, use ``targets: ['rtcd-server:8045']`` instead of labels-based targeting.
+
 Installing Grafana
 ^^^^^^^^^^^^^^^
 
