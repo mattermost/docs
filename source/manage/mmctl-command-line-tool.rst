@@ -4249,7 +4249,7 @@ mmctl permissions remove
 
 **Description**
 
-Remove one or more permissions from an existing role.
+Remove one or more permissions from an existing role. For classified projects, this command can be used to ensure that team members don't know about members outside of their project, and :doc:`@mentions </collaborate/mention-people>` don't disclose the names of people outside of a classified project.
 
 **Format**
 
@@ -4263,6 +4263,7 @@ Remove one or more permissions from an existing role.
 
    mmctl permissions remove system_user list_open_teams
    mmctl permissions remove system_manager sysconsole_read_user_management_channels
+   mmctl permissions remove system_user view_member
 
 **Options**
 

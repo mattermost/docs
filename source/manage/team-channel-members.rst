@@ -102,7 +102,7 @@ Advanced access controls
 
 Advanced access control settings enable system admins to restrict actions within specific channels. These actions include:
 
-- **Make channel read-only:** :ref:`Read-only channels <onboard/advanced-permissions:read only channels>` enable system admins to turn off posting in specified channels.
+- **Make channel read-only:** :ref:`Read-only channels <onboard/advanced-permissions:read-only channels>` enable system admins to turn off posting in specified channels.
 - **Restrict reactions:** Turn off the ability for members and guests to post reactions.
 - **Restrict channel mentions:** Turn off the ability for users to post channel wide mentions (@all/@channel/@here) in specified channels.
 - **Channel member management:** Only admins have the ability to add and remove channel members in the specified channels.
