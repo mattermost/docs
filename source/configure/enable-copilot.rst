@@ -123,15 +123,23 @@ Custom instructions
 
 Text input here is included in the prompt for every request. Use this to give your bots extra context or instructions. For example, you could list all of your organization's specific acronyms so the bot knows your vernacular and users can ask for definitions. Or you could give it specialized instructions such as adopting a specific personality or following a certain workflow. By customizing the instructions for each individual bot, you can create a more tailored AI experience for your specific needs.
 
-Enable vision (Beta)
-~~~~~~~~~~~~~~~~~~~~~
+Enable vision
+~~~~~~~~~~~~~~
 
 Enabling vision allows images that are attached to posts to be sent to the upstream LLM for analysis. This requires that your upstream LLM supports these features. Only available with OpenAI and OpenAI-compatable services.
 
-Disable tools (Beta)
+.. note::
+
+  The ability to enable vision for an LLM is currently in :ref:`Beta <manage/feature-labels:beta>`. 
+
+Disable tools
 ~~~~~~~~~~~~~~~~~~~~~
 
 Disabling tools will prevent the LLM from making function calls. This is useful when a model technically supports tool usage but you want to prevent it from being used within Mattermost. Try toggling this feature if you encounter unpredictable tool-related behavior with your model.
+
+.. note::
+
+  The ability to disable LLM tools is currently in :ref:`Beta <manage/feature-labels:beta>`. 
 
 Copilot plugin metrics
 -----------------------

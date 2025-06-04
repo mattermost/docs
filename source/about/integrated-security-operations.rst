@@ -19,7 +19,7 @@ SOCs are the front lines of real-time monitoring, triage, and escalation. Coordi
 
 - **Accelerate triage and response workflows** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that automate escalations, task assignment, and ticket updates for consistent response execution.
 - **Integrate detection pipelines and observability tools** using the :doc:`Mattermost integrations platform </about/integrations>` to surface alerts from SIEM, SOAR, and log analysis systems into dedicated response channels.
-- **Maintain operational security and compliance** through :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging (beta)>` to safeguard sensitive incident data.
+- **Maintain operational security and compliance** through :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging>` to safeguard sensitive incident data.
 - **Operate in secure, classified, or hybrid environments** with :ref:`self-hosted deployment models <deploy/server/server-deployment-planning:deployment options>` that keep SOC operations inside compliant, sovereign infrastructure.
 
 Red Teams
@@ -44,7 +44,7 @@ CERTs serve as rapid-response teams during high-risk events, requiring tight coo
 - **Orchestrate high-stakes incident response** through :doc:`Collaborative Playbooks </guides/repeatable-processes>` tailored for malware outbreaks, data exfiltration events, and zero-day exploits.
 - **Centralize and structure communication** with :doc:`channel-based collaboration </guides/collaborate>`, including :doc:`file sharing </collaborate/share-files-in-messages>`, :doc:`threaded updates </collaborate/organize-conversations>`, and task-tracking across affected teams.
 - **Enable coordination across geographies** using :doc:`multi-device access </guides/deployment-guide>` and :doc:`mobile EMM support </deploy/mobile/deploy-mobile-apps-using-emm-provider>` for secure participation across locations and devices.
-- **Preserve evidentiary and compliance data** through :ref:`audit logs <manage/logging:audit logging (beta)>` and configurable :doc:`exports </manage/bulk-export-tool>` for legal review or forensic handoff.
+- **Preserve evidentiary and compliance data** through :ref:`audit logs <manage/logging:audit logging>` and configurable :doc:`exports </manage/bulk-export-tool>` for legal review or forensic handoff.
 
 Federated Threat Intelligence & Information Sharing
 ---------------------------------------------------

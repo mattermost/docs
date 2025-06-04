@@ -43,7 +43,7 @@ Real-time visibility and structured collaboration are critical during service de
 - **Automate incident handling** with :doc:`Playbooks </guides/repeatable-processes>` to track diagnostics, assign tasks, and issue updates—supporting NOC, SRE, and AppSec workflows.
 - **Accelerate containment and recovery** by :ref:`integrating alerting tools <about/integrations:webhooks>` like PagerDuty, Opsgenie, and custom webhooks into secure Mattermost channels.
 - **Ensure communication continuity** during outages using :doc:`high availability architecture </scale/high-availability-cluster-based-deployment>` and :doc:`support for disconnected environments </deploy/server/air-gapped-deployment>`.
-- **Enable forensic review and audit** with :ref:`logging and export capabilities <manage/logging:audit logging (beta)>` that preserve all incident-related communications.
+- **Enable forensic review and audit** with :ref:`logging and export capabilities <manage/logging:audit logging>` that preserve all incident-related communications.
 
 Policy-Driven Collaboration in Regulated Environments
 ------------------------------------------------------
