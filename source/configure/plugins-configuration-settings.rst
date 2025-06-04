@@ -987,6 +987,10 @@ Enable call ringing
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                                              |
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  The ability to enable call ringing in Mattermost calls is in :ref:`Beta <manage/feature-labels:beta>`.
+
 .. config:setting:: enable-pluginsav1
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
