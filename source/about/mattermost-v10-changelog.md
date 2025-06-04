@@ -29,7 +29,7 @@ If you upgrade from a release earlier than v10.8, please read the other [Importa
 #### User Interface (UI)
  - Consolidated all channel editing functionality into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert to private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
  - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
- - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
+ - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0) and [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
  - Pre-packaged Calls plugin [v1.8.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.8.0).
  - Pre-packaged Jira plugin version [v4.3.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.3.0).
  - Pre-packaged Metrics plugin version [v0.7.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.7.0).
