@@ -165,6 +165,6 @@ Mattermost’s Intelligent Mission Environment is designed to support critical w
 The Mattermost Advantage
 ------------------------
 
-Mattermost doesn't just provide tools — it delivers a comprehensive solution for navigating high-pressure mission challenges with measurable results. Carefully designed for focus, resiliency, and adaptability, Mattermost transforms workflows, enhances security, and empowers decision-makers and operational teams alike to rise to today’s toughest challenges. 
+Mattermost doesn't just provide tools — we deliver a comprehensive solution for navigating high-pressure mission challenges with measurable results. Carefully designed for focus, resiliency, and adaptability, Mattermost transforms workflows, enhances security, and empowers decision-makers and operational teams alike to rise to today’s toughest challenges. 
 
 To learn more about how Mattermost might benefit your national security or critical infrastructure enterprise, `book time with a Mattermost expert <https://mattermost.com/contact-sales/>`_
