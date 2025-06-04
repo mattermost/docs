@@ -130,7 +130,7 @@ If you have an search indexing job that's paused, it's likely your Elasticsearch
 Do I need to purge first then bulk index each time?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes.
+Yes. Every time you choose to remove old data (purge), you must follow it up with a bulk index operation to repopulate them with new data. When you purge (delete) indices, you are removing the existing data from Elasticsearch. After purging, if you want to repopulate the indices with fresh data, you perform a bulk index operation to rebuild the indices efficiently. The bulk API allows for indexing, deleting, or updating multiple documents in a single request, which is faster and more efficient than processing documents one by one.
 
 Required Permissions For Mattermost Service Account
 ---------------------------------------------------

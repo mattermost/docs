@@ -289,6 +289,10 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
+- **10.5.7, released 2025-05-27**
+  - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables [MM-63923](https://mattermost.atlassian.net/browse/MM-63923).
+  - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
+  - Mattermost v10.5.7 contains no database or functional changes.
 - **10.5.6, released 2025-05-21**
   - Mattermost v10.5.6 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
@@ -855,7 +859,7 @@ See [this walkthrough video](https://mattermost.com/video/mattermost-v10-0-chang
  - Pre-packaged the Microsoft Teams plugin for Mattermost, [v2.0.3](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.0.3).
 
 #### Mattermost Microsoft Calendar and Microsoft Teams Meetings Plugins
- - Pre-packaged Microsoft Calendar [v1.3.4](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.3.4) and Microsoft Teams Meetings [v2.2.0](https://github.com/mattermost-community/mattermost-plugin-msteams-meetings/releases/tag/v2.2.0) plugins.
+ - Pre-packaged Microsoft Calendar Integration [v1.3.4](https://github.com/mattermost/mattermost-plugin-mscalendar/releases/tag/v1.3.4) and Microsoft Teams Meetings [v2.2.0](https://github.com/mattermost-community/mattermost-plugin-msteams-meetings/releases/tag/v2.2.0) plugins.
 
 #### Mattermost Copilot GA
  - Pre-packaged Mattermost Copilot plugin version [v1.0.0](https://github.com/mattermost/mattermost-plugin-ai/releases/tag/v1.0.0).
