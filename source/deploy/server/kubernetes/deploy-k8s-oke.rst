@@ -25,7 +25,7 @@ Installation steps
 
 The installation process includes deploying Mattermost and configuring the necessary components.
 
-Step 1**: Start from Oracle Cloud Marketplace**-
+**Step 1: Start from Oracle Cloud Marketplace**
 
 Go to the Mattermost listing and click **Launch Stack**.
 
@@ -167,15 +167,37 @@ To upgrade your Mattermost installation:
 4. Apply the changes and wait for the upgrade to complete
 
 
-
-Tips for Success
-================
+## Tips for Success
 
 - Make sure you have all the permissions you need before you start.
 - Use Oracle Vault to store passwords and sensitive data.
 - Use private nodes and secure your network for production.
 - For more details, see the official `OCI Database with PostgreSQL documentation <https://www.oracle.com/cloud/postgresql/>`__ and `OKE documentation <https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm>`__.
 
+## Common Errors and How to Avoid Them
+
+
+- **Error: Kubernetes API not reachable**
+
+  - *Cause:* API endpoint is private and you're not connected to the VCN via VPN or Bastion.
+  - *Solution:* Ensure you have access to the network or make the endpoint public for testing.
+
+- **Error: Stack creation fails with missing permissions**
+
+  - *Cause:* IAM policies are not set properly for the user or group.
+  - *Solution:* Ensure you have permissions for Resource Manager, OKE, Networking, and Secrets.
+
+- **Error: No ingress returned by kubectl**
+
+  - *Cause:* Mattermost Ingress might not be ready or was misconfigured.
+  - *Solution:* Check with `kubectl describe ingress` and validate DNS, TLS, and Helm values.
+
+- **Error: PostgreSQL password rejected**
+
+  - *Cause:* Password not set or mismatched with Oracle Vault.
+  - *Solution:* Re-check the password value or Vault secret used during setup.
+
+**Tip:** Always monitor logs from the Resource Manager and pods using `kubectl logs` for more specific error messages.
 
 
 .. important::
