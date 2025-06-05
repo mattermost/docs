@@ -50,7 +50,7 @@ Operational teams need to extend Microsoft capabilities to mission environments 
 - **Fuse data and decision-making across platforms** with support for :doc:`toolchain integration </about/integrations>`, :doc:`audio/screen share </collaborate/make-calls>`, and :doc:`workflow automation </guides/repeatable-processes>` embedded into a dedicated Mission Operations Platform.
 - **Maintain coalition and partner alignment** through `interoperable :doc:`Connected Workspaces </onboard/connected-workspaces>` supporting collaboration across mission partner networks.
 - **Accelerate action with mission-tuned AI** using secure Azure AI and :doc:`Mattermost Copilot </collaborate/chat-with-copilot>` to summarize context, guide decisions, and automate operational tasks.
-- **Secure every communication path** with built-in :doc:`Zero Trust controls </about/security/zero-trust> and deploy on Azure or sovereign environments for maximum flexibility and compliance.
+- **Secure every communication path** with built-in :doc:`Zero Trust controls </about/security/zero-trust>` and deploy on Azure or sovereign environments for maximum flexibility and compliance.
 
 
 External Collaboration with Full Control
