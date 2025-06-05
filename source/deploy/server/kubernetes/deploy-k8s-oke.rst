@@ -11,37 +11,47 @@ You can use the supported `Oracle Cloud Marketplace listing <https://cloudmarket
 
 Before deploying, make sure you have the following:
 
-- **Oracle Cloud Account**
+- **Oracle Cloud Account** with appropriate permissions
 - **Permissions** to create/manage OKE, Compute, Networking, Database, Resource Manager, and Secrets
 - **Compartment** for deployment
-- **Domain Name and TLS Certificate**
-- **Mattermost License Key**
+- **Domain Name and TLS Certificate** for secure access
+- **Mattermost License Key** (Trial or Enterprise)
+- **Node Capacity**: At least 2 OKE nodes for high availability when deploying for 100 users or more
 
 ---
 
-**Step 1: Start from Oracle Cloud Marketplace**
+Installation steps
+==================
+
+The installation process includes deploying Mattermost and configuring the necessary components.
+
+Step 1: Start from Oracle Cloud Marketplace
+-------------------------------------------
 
 Go to the Mattermost listing and click **Launch Stack**.
 
-.. image:: /_static/images/oracle/marketplace-listing.png
+.. image:: /images/oracle/marketplace-listing.png
    :alt: Oracle Cloud Marketplace listing for Mattermost
 
 ---
 
-## Step 2: Stack Information
+Step 2: Stack Information
+-------------------------
 
 On the **Create stack** page, check the information, set the name, compartment, and Terraform version.
 
-.. image:: /_static/images/oracle/stack-info.png
+.. image:: /images/oracle/stack-info.png
    :alt: Stack information page
 
 ---
 
-**Step 3: Configure Variables**
+Step 3: Configure Variables
+---------------------------
 
 On this screen, you will set all the details for your Mattermost deployment. Each section is important for a successful and secure installation.
 
-### OKE Cluster Configuration
+OKE Cluster Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Create new OKE Cluster:**  
   - Check this if you want to create a new Kubernetes cluster.  
@@ -59,7 +69,8 @@ On this screen, you will set all the details for your Mattermost deployment. Eac
 
 ---
 
-### OKE Network Configuration
+OKE Network Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Worker Node Visibility:**  
   - Private is more secure for production. Public is easier for testing.
@@ -74,7 +85,8 @@ On this screen, you will set all the details for your Mattermost deployment. Eac
 
 ---
 
-### OKE Worker Nodes
+OKE Worker Nodes
+~~~~~~~~~~~~~~~~
 
 - **Enable Cluster Autoscaler:**  
   - Allows the cluster to automatically add or remove nodes based on usage.
@@ -91,7 +103,8 @@ On this screen, you will set all the details for your Mattermost deployment. Eac
 
 ---
 
-### PostgreSQL Configuration
+PostgreSQL Configuration
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Admin Username:**  
   - The main user for your PostgreSQL database (e.g., `admin1`).
@@ -106,7 +119,8 @@ On this screen, you will set all the details for your Mattermost deployment. Eac
 
 ---
 
-### General Configuration
+General Configuration
+~~~~~~~~~~~~~~~~~~~~~
 
 - **Cluster Name Prefix:**  
   - Used to identify all resources (e.g., `mm-oke`).
@@ -129,92 +143,18 @@ On this screen, you will set all the details for your Mattermost deployment. Eac
 
 ---
 
-Common Errors and How to Avoid Them
-===================================
-
-1. Invalid Password for PostgreSQL Database
--------------------------------------------
-
-Error Example::
-
-   Error: 400-InvalidParameter, Invalid Invalid password received.
-
-Why this happens:
-   The admin password for your PostgreSQL database does not meet Oracle Cloud's password policy.
-
-OCI PostgreSQL Password Policy:
-
-- Must be **8–30 characters** long
-- Must include **at least 1 uppercase letter**
-- Must include **at least 1 lowercase letter**
-- Must include **at least 1 number**
-- Must include **at least 1 special character** (Allowed: ``!@#$%^&*()_+=[]{}|:;<>,.?/``)
-
-Example of a valid password::
-
-   S3cur3P@ssword!
-
-What to do:
-   When setting the admin password, make sure it follows all the above rules. If you see this error, update your password and try again.
-
-----
-
-2. Invalid Compartment OCID in Object Storage
----------------------------------------------
-
-Error Example::
-
-   Error: 400-InvalidCompartmentId, OCID doesn't match expected pattern or contains invalid characters. var.tenacy_ocid
-
-Why this happens:
-   There is a typo in your Terraform variable name or the OCID value is not correct.
-
-How to fix:
-
-- Double-check your variable names. The correct variable is ``tenancy_ocid`` (not ``tenacy_ocid``).
-- Make sure the value is a valid OCID, for example: ``ocid1.tenancy.oc1..aaaaaaaaxyz123...``
-
-What to do:
-   Correct the variable name and verify the OCID value. If you copy-paste, check for extra spaces or missing characters.
-
-----
-
-Summary Table
--------------
-
-+--------------------------+--------------------------------------------------------------------------+
-| Issue                    | Fix/Action                                                               |
-+==========================+==========================================================================+
-| Invalid DB password      | Use a strong password matching OCI policy (see above for requirements)   |
-+--------------------------+--------------------------------------------------------------------------+
-| Invalid compartment OCID | Correct the variable name to ``tenancy_ocid`` and verify its value/format|
-+--------------------------+--------------------------------------------------------------------------+
-
-Tip:
-   If you see a 400 error, always check for typos, missing required fields, or values that do not match Oracle's requirements.
-
----
-
-.. image:: /_static/images/oracle/configure-variables.png
-   :alt: Configure stack variables
-
----
-
-**Validation:**  
-If you see errors or missing fields, check your permissions and quotas. Make sure all required fields are filled and passwords are strong.
-
----
-
-## Step 4: Review and Apply
+Step 4: Review and Apply
+------------------------
 
 Check all your settings and click **Create** to start the deployment. Monitor the Resource Manager job and logs.
 
-  .. image:: /_static/images/oracle/job-monitor.png
-    :alt: Resource Manager job monitor
+.. image:: /images/oracle/job-monitor.png
+   :alt: Resource Manager job monitor
 
 ---
 
-## Step 5: After Deployment
+Step 5: After Deployment
+------------------------
 
 When the job is finished, your OKE cluster, PostgreSQL database, and Mattermost will be ready. To find the Mattermost web address, run:
 
@@ -226,7 +166,20 @@ Copy the address and create a DNS record for your domain. Open your browser and 
 
 ---
 
-## Tips for Success
+Step 6: Upgrade Mattermost
+--------------------------
+
+To upgrade your Mattermost installation:
+
+1. Access your OKE cluster through the Oracle Cloud Console
+2. Navigate to the Mattermost operator deployment
+3. Update the Mattermost version in the configuration
+4. Apply the changes and wait for the upgrade to complete
+
+---
+
+Tips for Success
+================
 
 - Make sure you have all the permissions you need before you start.
 - Use Oracle Vault to store passwords and sensitive data.
@@ -238,3 +191,5 @@ Copy the address and create a DNS record for your domain. Open your browser and 
 .. important::
 
    You are responsible for Oracle Cloud Infrastructure costs for the resources you create. Oracle Cloud credits cannot be used to buy a Mattermost license.
+
+Learn more about administrating your Mattermost server by visiting the :doc:`Administration Guide </guides/administration-guide>`.
