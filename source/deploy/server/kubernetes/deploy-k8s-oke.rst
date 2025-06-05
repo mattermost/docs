@@ -7,7 +7,8 @@
 
 You can use the supported `Oracle Cloud Marketplace listing <https://cloudmarketplace.oracle.com/marketplace/en_US/listing/188386963>`__ to install Mattermost Enterprise Edition on Oracle Cloud Infrastructure (OCI) using Oracle Kubernetes Engine (OKE).
 
-**Before you begin**
+Before you begin
+--------------------------
 
 Before deploying, make sure you have the following:
 
@@ -21,11 +22,12 @@ Before deploying, make sure you have the following:
 
 
 Installation steps
-==================
+--------------------------
 
 The installation process includes deploying Mattermost and configuring the necessary components.
 
-**Step 1: Start from Oracle Cloud Marketplace**
+Step 1: Start from Oracle Cloud Marketplace
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Go to the Mattermost listing and click **Launch Stack**.
 
@@ -33,7 +35,8 @@ Go to the Mattermost listing and click **Launch Stack**.
    :alt: Oracle Cloud Marketplace listing for Mattermost
 
 
-**Step 2: Stack Information**
+Step 2: Stack Information
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 On the **Create stack** page, check the information, set the name, compartment, and Terraform version.
 
