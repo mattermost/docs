@@ -21,13 +21,11 @@ Before deploying, make sure you have the following:
 
 
 
-Installation steps
---------------------------
+**Installation steps**
 
 The installation process includes deploying Mattermost and configuring the necessary components.
 
-Step 1: Start from Oracle Cloud Marketplace
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Step 1: Start from Oracle Cloud Marketplace**
 
 Go to the Mattermost listing and click **Launch Stack**.
 
@@ -35,8 +33,7 @@ Go to the Mattermost listing and click **Launch Stack**.
    :alt: Oracle Cloud Marketplace listing for Mattermost
 
 
-Step 2: Stack Information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Step 2: Stack Information**
 
 On the **Create stack** page, check the information, set the name, compartment, and Terraform version.
 
@@ -48,8 +45,8 @@ On the **Create stack** page, check the information, set the name, compartment, 
 
 On this screen, you will set all the details for your Mattermost deployment. Each section is important for a successful and secure installation.
 
-OKE Cluster Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+**OKE Cluster Configuration**
+
 
 - **Create new OKE Cluster:**  
   - Check this if you want to create a new Kubernetes cluster.  
@@ -67,8 +64,8 @@ OKE Cluster Configuration
 
 
 
-OKE Network Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~
+**OKE Network Configuration**
+
 
 - **Worker Node Visibility:**  
   - Private is more secure for production. Public is easier for testing.
@@ -83,8 +80,7 @@ OKE Network Configuration
 
 
 
-OKE Worker Nodes
-~~~~~~~~~~~~~~~~
+**OKE Worker Nodes**
 
 - **Enable Cluster Autoscaler:**  
   - Allows the cluster to automatically add or remove nodes based on usage.
@@ -101,8 +97,8 @@ OKE Worker Nodes
 
 
 
-PostgreSQL Configuration
-~~~~~~~~~~~~~~~~~~~~~~~~
+**PostgreSQL Configuration**
+
 
 - **Admin Username:**  
   - The main user for your PostgreSQL database (e.g., `admin1`).
@@ -117,8 +113,8 @@ PostgreSQL Configuration
 
 
 
-General Configuration
-~~~~~~~~~~~~~~~~~~~~~
+**General Configuration**
+
 
 - **Cluster Name Prefix:**  
   - Used to identify all resources (e.g., `mm-oke`).
@@ -170,14 +166,14 @@ To upgrade your Mattermost installation:
 4. Apply the changes and wait for the upgrade to complete
 
 
-## Tips for Success
+**Tips for Success**
 
 - Make sure you have all the permissions you need before you start.
 - Use Oracle Vault to store passwords and sensitive data.
 - Use private nodes and secure your network for production.
 - For more details, see the official `OCI Database with PostgreSQL documentation <https://www.oracle.com/cloud/postgresql/>`__ and `OKE documentation <https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm>`__.
 
-## Common Errors and How to Avoid Them
+**Common Errors and How to Avoid Them**
 
 
 - **Error: Kubernetes API not reachable**
