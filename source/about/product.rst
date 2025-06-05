@@ -121,7 +121,7 @@ IME is architected for operational continuity in all conditions:
 - **STIG and FIPS-Compliant**: Meets FedRAMP, NIST 800-53, and other mandates.
 - :doc:`Air-Gapped and Sovereign </deploy/server/air-gapped-deployment>`: Built for national-level trust and data control.
 
-Get Started
+Get started
 -----------
 
 Mattermost empowers mission-critical teams with a sovereign, extensible, AI-ready collaboration platform that works where others cannot.
