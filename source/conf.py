@@ -912,6 +912,10 @@ redirects = {
         "https://docs.mattermost.com/collaborate/channel-types.html#direct-message-channels",
 "collaborate/channel-types.html#group-messages":
         "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
+"collaborate/make-calls.html#live-captions-during-calls-beta":
+        "https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls",
+"collaborate/make-calls.html#transcribe-recorded-calls-beta":
+        "https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1954,6 +1958,24 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/environment-configuration-settings.html#elasticsearch":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
+"configure/enable-copilot.html#enable-vision-beta":
+        "https://docs.mattermost.com/configure/enable-copilot.html#enable-vision",
+"configure/enable-copilot.html#disable-tools-beta":
+        "https://docs.mattermost.com/configure/enable-copilot.html#disable-tools",
+"configure/experimental-configuration-settings.html#experimental-audit-logging-configuration-settings-beta":
+        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#experimental-audit-logging-configuration-settings",
+"configure/plugins-configuration-settings.html#enable-call-transcriptions-beta":
+        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions",
+"configure/plugins-configuration-settings.html#enable-live-captions-beta":
+        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions",
+"configure/site-configuration-settings.html#connected-workspaces-beta":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#connected-workspaces",
+"configure/site-configuration-settings.html#enable-connected-workspaces-beta":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
+"configure/site-configuration-settings.html#disable-shared-channel-status-sync-beta":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#disable-shared-channel-status-sync",
+"configure/site-configuration-settings.html#default-maximum-posts-per-sync-beta":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#default-maximum-posts-per-sync",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2773,6 +2795,8 @@ redirects = {
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
 "integrate/ms-teams-interoperability.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
+"integrate/mattermost-mission-collaboration-for-m365.html#connect-microsoft-365-teams-and-outlook-with-mattermost-beta":
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/cloud-outgoing-webhooks.html":
@@ -3050,6 +3074,8 @@ redirects = {
         "https://docs.mattermost.com/manage/generating-support-packet.html",
 "manage/bulk-export-data.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
+"manage/logging.html#audit-logging-beta":
+        "https://docs.mattermost.com/manage/logging#audit-logging.html",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
@@ -3542,6 +3568,8 @@ redirects = {
         "https://docs.mattermost.com/onboard/connected-workspaces.html#share-channels-with-secure-connections",
 "onboard/shared-channels.html#frequently-asked-questions":
         "https://docs.mattermost.com/onboard/connected-workspaces.html#frequently-asked-questions",
+"onboard/connected-workspaces.html#connected-workspaces-beta":
+        "https://docs.mattermost.com/onboard/connected-workspaces.html",
 
 # Overview redirects
 "overview/architecture.html":

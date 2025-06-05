@@ -19,7 +19,7 @@ Managing global operations means adhering to regional regulations—without comp
 
 - **Meet global compliance mandates** like GDPR and data localization laws by deploying Mattermost in :doc:`public, private, or sovereign cloud environments </about/cloud-subscriptions>` tailored to national regulatory frameworks.
 - **Ensure full data control and transparency** with :ref:`self-hosted deployment options <deploy/server/server-deployment-planning:deployment options>` that eliminate exposure to vendor-controlled infrastructure or telemetry.
-- **Audit and enforce compliance behavior** with :ref:`role-based access controls <manage/team-channel-members:advanced access controls>`, :doc:`custom Terms of Service </comply/custom-terms-of-service>`, and :ref:`audit logging <manage/logging:audit logging (beta)>` to align with internal and regulatory standards.
+- **Audit and enforce compliance behavior** with :ref:`role-based access controls <manage/team-channel-members:advanced access controls>`, :doc:`custom Terms of Service </comply/custom-terms-of-service>`, and :ref:`audit logging <manage/logging:audit logging>` to align with internal and regulatory standards.
 - **Protect identity and access** using :doc:`SSO integrations </onboard/sso-entraid>`, :doc:`AD/LDAP synchronization </onboard/ad-ldap-groups-synchronization>`, and :doc:`MFA enforcement </onboard/multi-factor-authentication>` for secure authentication across geographies and operational roles.
 
 Secure, Sovereign Deployment at Any Scale

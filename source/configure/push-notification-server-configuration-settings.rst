@@ -136,7 +136,7 @@ Maximum notifications per channel
 
 .. note::
 
-  - We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics </scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions controlling who can post to the channel, such as a :ref:`read-only channel <onboard/advanced-permissions:read only channels>`.
+  - We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics </scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions controlling who can post to the channel, such as a :ref:`read-only channel <onboard/advanced-permissions:read-only channels>`.
   - Reducing this configuration setting value to **10** in larger deployments may improve server performance in the following areas:
 
     - Reduced Load on Notification System: Each notification generates a certain amount of computational and network load. By limiting the number of notifications per channel, the system processes fewer notifications, thereby reducing the load on servers.
