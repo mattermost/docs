@@ -18,35 +18,30 @@ Before deploying, make sure you have the following:
 - **Mattermost License Key** (Trial or Enterprise)
 - **Node Capacity**: At least 2 OKE nodes for high availability when deploying for 100 users or more
 
----
+
 
 Installation steps
 ==================
 
 The installation process includes deploying Mattermost and configuring the necessary components.
 
-Step 1: Start from Oracle Cloud Marketplace
--------------------------------------------
+Step 1**: Start from Oracle Cloud Marketplace**-
 
 Go to the Mattermost listing and click **Launch Stack**.
 
 .. image:: /images/oracle/marketplace-listing.png
    :alt: Oracle Cloud Marketplace listing for Mattermost
 
----
 
-Step 2: Stack Information
--------------------------
+**Step 2: Stack Information**
 
 On the **Create stack** page, check the information, set the name, compartment, and Terraform version.
 
 .. image:: /images/oracle/stack-info.png
    :alt: Stack information page
 
----
 
-Step 3: Configure Variables
----------------------------
+**Step 3: Configure Variables**
 
 On this screen, you will set all the details for your Mattermost deployment. Each section is important for a successful and secure installation.
 
@@ -67,7 +62,7 @@ OKE Cluster Configuration
 
 **Tip:** For production, always use at least 2 nodes and enable high availability.
 
----
+
 
 OKE Network Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -83,7 +78,7 @@ OKE Network Configuration
 
 **Tip:** For production, use private nodes and restrict access to the API endpoint.
 
----
+
 
 OKE Worker Nodes
 ~~~~~~~~~~~~~~~~
@@ -101,7 +96,7 @@ OKE Worker Nodes
 
 **Tip:** Autoscaling helps manage costs and performance automatically.
 
----
+
 
 PostgreSQL Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,7 +112,7 @@ PostgreSQL Configuration
 
 **Tip:** Always use Oracle Vault for production passwords.
 
----
+
 
 General Configuration
 ~~~~~~~~~~~~~~~~~~~~~
@@ -141,20 +136,17 @@ General Configuration
 
 **Tip:** Use advanced options if you need custom encryption or want to manage your own SSH keys.
 
----
 
-Step 4: Review and Apply
-------------------------
+
+**Step 4: Review and Apply**
 
 Check all your settings and click **Create** to start the deployment. Monitor the Resource Manager job and logs.
 
 .. image:: /images/oracle/job-monitor.png
    :alt: Resource Manager job monitor
 
----
 
-Step 5: After Deployment
-------------------------
+**Step 5: After Deployment**
 
 When the job is finished, your OKE cluster, PostgreSQL database, and Mattermost will be ready. To find the Mattermost web address, run:
 
@@ -164,10 +156,8 @@ When the job is finished, your OKE cluster, PostgreSQL database, and Mattermost 
 
 Copy the address and create a DNS record for your domain. Open your browser and go to your Mattermost URL.
 
----
 
-Step 6: Upgrade Mattermost
---------------------------
+**Step 6: Upgrade Mattermost**
 
 To upgrade your Mattermost installation:
 
@@ -176,7 +166,7 @@ To upgrade your Mattermost installation:
 3. Update the Mattermost version in the configuration
 4. Apply the changes and wait for the upgrade to complete
 
----
+
 
 Tips for Success
 ================
@@ -186,7 +176,7 @@ Tips for Success
 - Use private nodes and secure your network for production.
 - For more details, see the official `OCI Database with PostgreSQL documentation <https://www.oracle.com/cloud/postgresql/>`__ and `OKE documentation <https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm>`__.
 
----
+
 
 .. important::
 
