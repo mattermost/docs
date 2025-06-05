@@ -36,6 +36,23 @@ During high-stakes incidents, Microsoft 365 tools can be limited or unavailable,
 - **Integrate with Microsoft Security Suite** and :doc:`Entra ID </onboard/sso-entraid>` to preserve centralized identity management while keeping sensitive data in a secure secondary system. :doc:`Learn more </about/integrations>` about Mattermost's integration capabilities.
 - **Protect breach-sensitive notifications** using :ref:`ID-only push alerts <configure/environment-configuration-settings:id-only push notifications>` and enhanced mobile security, enabling secure communication without cloud exposure.
 
+Enterprise to Tactical Edge
+----------------------------
+
+Operational teams need to extend Microsoft capabilities to mission environments where bandwidth is limited, systems are segregated, and speed is critical. 
+
+.. image:: /images/Enterprise-to-Tactical-Edge.png
+    :alt: Secure, Mission-Focused Collaboration to Enable Faster, Informed Decision-Making across Environments.
+
+**Benefits**
+
+- **Enable mission-critical coordination at the edge** by :ref:`deploying Mattermost in secure, on-prem or air-gapped environments <deploy/server/server-deployment-planning:deployment options>` :doc:`integrated with Microsoft Teams and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
+- **Fuse data and decision-making across platforms** with support for :doc:`toolchain integration </about/integrations>`, :doc:`audio/screen share </collaborate/make-calls>`, and :doc:`workflow automation </guides/repeatable-processes>` embedded into a dedicated Mission Operations Platform.
+- **Maintain coalition and partner alignment** through :doc:`interoperable Connected Workspaces </onboard/connected-workspaces>` supporting collaboration across mission partner networks.
+- **Accelerate action with mission-tuned AI** using secure Azure AI and :doc:`Mattermost Copilot </collaborate/chat-with-copilot>` to summarize context, guide decisions, and automate operational tasks.
+- **Secure every communication path** with built-in :doc:`Zero Trust controls </about/security/zero-trust>` and deploy on Azure or sovereign environments for maximum flexibility and compliance.
+
+
 External Collaboration with Full Control
 ------------------------------------------
 
