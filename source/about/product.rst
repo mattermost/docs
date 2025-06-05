@@ -1,17 +1,5 @@
-Mattermost Overview
-====================
-
-In today’s global landscape, technology, sovereignty, and national security are critical forces shaping the ability of nations and organizations to lead. Defense, intelligence, cybersecurity, and critical infrastructure teams face mounting challenges, from responding to fast-evolving global threats to maintaining secure and reliable operations under extreme conditions.
-
-Mattermost’s integrated, secure, and purpose-built Intelligent Mission Environment (IME) empowers mission-critical teams and enterprises to:
-
-• **Focus** by centralizing workflows to improve operational alignment, decision-making, and actionable outcomes.
-• **Adapt** by responding to rapidly changing environments with flexible, customizable tools.
-• **Strengthen Resilience** by maintaining continuous operations in even the most demanding and high-risk scenarios.
-
-Mattermost has long been a trusted partner to mission-critical organizations, supporting their evolving needs for secure, sovereign solutions. Starting as an open-source messaging platform, Mattermost has grown into today’s Intelligent Mission Environment — a suite of collaboration and workflow capabilities designed to meet the unique demands of national security, resilience, and operational continuity at every level. Mattermost’s Intelligent Mission Environment is a force multiplier for national security and critical infrastructure teams, enabling them to replace legacy systems, automate complex workflows, and maintain full control over their digital operations.
-
-IME enables teams to maintain full control of data and infrastructure, automate mission workflows, and integrate custom applications and AI agents—accelerating decision cycles while meeting the strictest security and compliance requirements.
+Mattermost: The Intelligent Mission Environment (IME)
+======================================================
 
 .. toctree::
    :maxdepth: 1
@@ -26,152 +14,116 @@ IME enables teams to maintain full control of data and infrastructure, automate 
    /about/releases-lifecycle.rst
    /about/frequently-asked-questions.rst
 
-Why Mattermost?
----------------
+Overview
+--------
 
-Enable Mission Success with Secure Collaboration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost is the secure collaboration and workflow platform purpose-built for mission-critical operations. Designed to operate across the most demanding environments — from classified networks to the tactical edge — Mattermost enables organizations to maintain full control of their communications, workflows, and infrastructure while accelerating decision-making.
 
-Mattermost is more than a platform; it’s a strategic enabler for achieving mission-critical goals. Designed for sensitive operations, it delivers the tools to prioritize security, streamline processes, and ensure reliability.
+The platform provides sovereign, AI-integrated capabilities for secure messaging, workflow automation, task management, and real-time communication. It offers extensibility through open APIs and integrations, and deploys flexibly across on-premises, cloud, and air-gapped environments. Whether operating in a disconnected edge node or a centralized data center, Mattermost delivers operational resilience, adaptability, and focus.
 
-• **Tailored for high-pressure operations**: Simplify collaboration and improve the focus of mission-critical teams.
-• **Military-grade security**: Protect sensitive information with sovereign, self-hosted deployment options to meet strict compliance requirements.
-• **Proven organizational alignment**: Trusted by defense, intelligence, cybersecurity, financial services, utilities, manufacturing, and governmental operations.
+What is the Intelligent Mission Environment (IME)?
+--------------------------------------------------
 
-Built for Operational and Strategic Success
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+The Intelligent Mission Environment (IME) is Mattermost’s unified platform for secure, extensible, AI-powered collaboration and automation within a sovereign and cyber-resilient deployment architecture.
 
-Economic Benefits for Decision Makers
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. image:: /images/ime.png
+   :alt: Infographic titled "Mattermost: The Intelligent Mission Environment," showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, DevSecOps, and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
 
-Drive value by reducing costs, automating workflows, and consolidating capabilities into a single platform:
+It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
 
-• Reduce manual workflows and inefficiencies with automated processes that improve operational consistency.
-• Consolidate toolsets, eliminating overlapping systems and associated licensing costs.
-• Mitigate risks of compliance violations and data breaches with sovereign deployments, protecting potentially multi-million dollar liabilities.
-• Scale effortlessly across global teams and departments, ensuring cost-effective support for enterprise programs.
+- **Cyber Defense**: Secure, out-of-band communications and automation for SOC/CERT workflows.
+- **DevSecOps**: Sovereign CI/CD, ITSM, and digital system management at scale.
+- **Mission Operations**: Collaboration across command, control, manufacturing, energy, and joint operations.
 
-Operational Impact for Mission Teams
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+See the :doc:`Use Case Guide </about/use-cases>` to learn how operational teams use Mattermost to accelerate mission-critical work across a wide variety of disciplines.
 
-Deliver faster, more reliable results through centralized collaboration and powerful tools:
+Secure collaborative workflow
+-----------------------------
 
-• Cut incident response times with standardized playbooks and integration with real-time communication tools.
-• Simplify tactical and operational coordination, reducing workflow inefficiencies.
-• Empower teams with out-of-the-box integrations that align seamlessly with their existing toolsets.
+Built on an extensible open-core architecture, Mattermost offers an array of collaborative tools across desktop, web, mobile, and embedded Microsoft user experiences.
 
-Built to Achieve Your Mission Objectives
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **Secure Web**: Works in browser with or without internet access.
+- :doc:`Managed Desktop </deploy/desktop/desktop-app-deployment>`: MSI-supported clients for Windows, Mac, Linux.
+- :doc:`Mobile & MDM </about/security/mobile-security>`: Pre-packaged or ID-only notification modes for secure BYOD.
+- :doc:`Microsoft 365 Integration </integrate/mattermost-mission-collaboration-for-m365>`: Embed into Teams, Outlook, and M365 with SSO and shared presence.
 
-Cyber Defense
-^^^^^^^^^^^^^^
+Messaging collaboration
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost empowers SOC/CERT operations with AI-driven incident response, threat hunting, and secure out-of-band communications to:
+:doc:`Mattermost Channels </guides/collaborate>` delivers secure messaging and file sharing across desktop, web, and mobile. Features include:
 
-• Respond faster to evolving threats with standardized, real-time incident response workflows.
-• Reduce risks with penetration testing, secure out-of-band communications, and automated playbook execution.
-• Meet evolving regulatory standards and improve defense readiness with integrated security tools.
+- Public/private channels, direct messages, and threads.
+- Role-based access controls and audit logs.
+- Configurable notifications (alerts, keywords, muting).
+- Pinning, bookmarking, search, and channel context.
 
-Development and Security Operations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Workflow automation
+~~~~~~~~~~~~~~~~~~~
 
-Mattermost streamlines CI/CD pipelines, ITSM, and digital continuity with sovereign infrastructure and automation to:
+:doc:`Mattermost Playbooks </guides/repeatable-processes>` enables repeatable process automation for mission workflows such as incident response, shift changes, and logistics. With playbooks, you can:
 
-• Accelerate secure, sovereign software delivery with fully integrated CI/CD pipelines and task management.
-• Eliminate inefficiencies by automating vulnerability remediation and streamlining workflows.
-• Improve delivery metrics by enhancing collaboration across development, security, and operations teams.
+- Define checklists, assign tasks, track status.
+- Receive real-time updates via integrated channels.
+- Automate response workflows with consistency.
 
-Mission Operations
-^^^^^^^^^^^^^^^^^^
+Audio and screenshare
+~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost supports critical workflows, Zero Trust, C2 tactical edge and joint operations to:
+:doc:`Mattermost Calls </collaborate/make-calls>` enables secure, real-time communication via 1:1 and group audio with screensharing. Features include:
 
-• Simplify field coordination and support seamless multi-theater planning to improve mission focus.
-• Consolidate workflows for energy resilience, manufacturing support, and data-secure tactical coordination.
-• Enable joint operations with secure communication and task visibility across all teams.
+- :doc:`Sovereign deployment </configure/calls-deployment>` for air-gapped or sensitive environments.
+- Optional AI-based call :ref:`transcription <collaborate/make-calls:transcribe recorded calls>` and :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`.
 
-Comprehensive Capabilities in a Unified Platform
--------------------------------------------------
+Project and task Management
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Secure Messaging and Collaboration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Mattermost Boards provides Kanban-style project tracking, integrated directly with collaboration workflows. With Boards, you can:
 
-Enable focused communication across teams with real-time messaging, file sharing, threaded conversations, and advanced notifications. Integrated workflows ensure mission-critical teams stay aligned, enabling real-time decision-making and situational awareness.
+- Assign, prioritize, and update tasks in real time.
+- Seamlessly synchronize with messages and channels.
 
-Automated Workflows with Collaborative Playbooks
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI Agents and open APIs
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-Improve operational consistency and efficiency with preconfigured workflows for incident response, shift changes, and tactical execution. Playbooks automate task handoffs, coordinate actions, and send real-time updates to ensure execution aligns with mission goals.
+Mattermost Agents support customizable AI automation and integration with sovereign LLMs. Features include:
 
-Real-Time Audio and Screensharing with Calls
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- AI-enabled assistance within chat and workflows.
+- Retrieval-Augmented Generation (RAG), Semantic Search, and Responsible AI Guardrails support.
 
-Enhance collaboration for secure troubleshooting, live operations, and data sharing. Sovereign deployments enable fully secure AI transcription and summarization workflows, ensuring sensitive data remains within your control.
+Integrations and AI platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Integrated Task Management
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Layered extensibility enables full customization of workflows and automations:
 
-Streamline planning and execution with Kanban-style boards to track task progress, assign responsibilities, and align priorities dynamically. Prebuilt integrations reduce context-switching, keeping mission efforts focused and efficient.
+- :ref:`Slash commands <about/integrations:custom slash commands>` and :ref:`webhooks <about/integrations:webhooks>`.
+- `Open APIs <https://developers.mattermost.com/api-documentation/>`__ and :ref:`plugin architecture <about/integrations:plugins>` for full customization.
+- Out-of-the-box support for :doc:`Jira </integrate/jira>`, :doc:`GitHub </integrate/github>`, :doc:`GitLab </integrate/gitlab>`, :doc:`ServiceNow </integrate/servicenow>`, `Jenkins <https://mattermost.com/marketplace/jenkins-plugin-2/>`_, and `PagerDuty <https://mattermost.com/marketplace/pagerduty/>`_.
+- Secure video integrations: `Pexip <https://mattermost.com/marketplace/pexip-video-connect/>`_, Jitsi, `Webex <https://mattermost.com/marketplace/webex-cloud/>`_, :doc:`Zoom </integrate/zoom>`, and :doc:`Microsoft Teams </integrate/microsoft-teams-sync>`.
+- Multi-agent coordination with MCP and Agent-to-Agent architectures (pre-release).
 
-AI-Powered Decision Support with Agents
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Sovereign & cyber-resilient deployment flexibility
+--------------------------------------------------
 
-Boost decision-making efficiency with AI-driven automation that accelerates workflows, enhances data analysis, and fuses information across interconnected systems. Deploy and integrate your own sovereign Large Language Models (LLMs) to enable tailored automation and insights while maintaining full control over sensitive data.
+IME supports operations :doc:`across any infrastructure </deploy/server/server-deployment-planning>`:
 
-Operational Efficiency with Enterprise Value
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+- **Tactical Edge**: DDIL-ready deployments on portable, ruggedized systems.
+- **Air-Gapped**: Operate with no internet or DNS connectivity.
+- **Private Data Centers**: Fully self-hosted, sovereign infrastructure.
+- **Cloud Options**: Supported on Oracle Cloud, Azure (Gov, Global, Local), AWS GovCloud, GCP, and edge clouds.
 
-Drive operational efficiency and maximize enterprise value with secure, scalable communication across web, desktop, mobile, and Microsoft 365. Achieve cost-effective scalability with customizable solutions, enterprise-grade security for air-gapped environments, managed devices, and BYOD setups.
+Resilient by design
+-------------------
 
-Unparalleled Extensibility
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+IME is architected for operational continuity in all conditions:
 
-Customize and white-label solutions built on Go, React, and PostgreSQL to meet your enterprise needs, while leveraging prebuilt and custom integrations with tools like GitHub, Jira, and ServiceNow. Drive innovation in complex environments with Mattermost's extensible open-source architecture via webhooks, slash commands, bots, plugin architecture, and Open APIs to support integration into mission critical and custom applications, security tooling, CI/CD pipelines, ITSM, and other vital systems.
+- :doc:`High Availability </scale/high-availability-cluster-based-deployment>`: Auto-healing Kubernetes clusters.
+- :doc:`Scalable </scale/scaling-for-enterprise>`: From a suitcase deployment to geo-distributed multi-tenant nodes.
+- **STIG and FIPS-Compliant**: Meets FedRAMP, NIST 800-53, and other mandates.
+- :doc:`Air-Gapped and Sovereign </deploy/server/air-gapped-deployment>`: Built for national-level trust and data control.
 
-Resilient Deployment Designed for Operational Continuity
---------------------------------------------------------
+Get Started
+-----------
 
-Mattermost ensures operational continuity and adaptability, no matter the mission context:
+Mattermost empowers mission-critical teams with a sovereign, extensible, AI-ready collaboration platform that works where others cannot.
 
-• **Tactical Edge**: Deploy in disconnected, denied, intermittent, or limited (DDIL) environments using durable, field-ready infrastructure to enable operations in extreme conditions.
-• **Sovereign Infrastructure**: Self-hosted options ensure complete control over data within secure, compliant facilities.
-• **Enterprise-Scale Cloud Options**: Available on leading platforms like Oracle Cloud, Microsoft Azure, Google Cloud, and AWS for large-scale, compliant operations.
-• **High Availability and Recovery**: Automated scaling and self-healing architecture provides uninterrupted operations across global, secure networks.
-
-Whether supporting tactical teams on the ground or enterprise leaders coordinating regional initiatives, Mattermost ensures adaptability, resilience, and operational focus. 
-
-Plans and Offerings
---------------------
-
-A range of plans and offerings are designed to meet the diverse needs of national security, defense, intelligence, and critical infrastructure organizations. From self-hosted deployments to fully managed cloud solutions, Mattermost provides the flexibility and security required for mission-critical operations. See :doc:`Editions and Offerings </about/editions-and-offerings>` for plan overviews and capabilities.
-
-Each plan offers a range of features to meet different deployment needs:
-
-• **Enterprise Advanced**: Cutting-edge capabilities designed to meet the highest standards of security and compliance, ensuring that organizations can operate with confidence in today's complex threat landscape. Includes zero-trust security, sensitive and classified information controls, and advanced workflows for special mission operations (July 2025)
-• **Enterprise Edition**: Comprehensive capabilities for large organizations requiring extensive workflow automation, sovereign AI, and air-gapped deployments.
-• **Professional Edition**: Core features for team-level collaboration, including messaging, workflow automation, and integration capabilities.
-
-See the following resources for more information:
-
-* :doc:`Mattermost Plans </about/plans>` - Learn what features are available across each Mattermost plan.
-* :doc:`Subscription Overview </about/subscription>` - Learn about Mattermost subscriptions for both Cloud and self-hosted deployments.
-* :doc:`Certifications and Compliance </about/certifications-and-compliance>` - Learn how Mattermost can meet all major security and compliance requirements.
-* :doc:`Accessibility Compliance policy </about/accessibility-compliance-policy>` - Learn about Mattermost's policy and commitment to accessibility.
-* :doc:`Releases and Life Cycle </about/releases-lifecycle>` - Learn about Mattermost releases, our recommended practices around deployment updates and ESRs, and what's changed across server, desktop, and mobile releases.
-* :doc:`Frequently Asked Questions </about/frequently-asked-questions>` - Get answers to common questions about Mattermost.
-
-Use Cases Tailored to Your Mission Needs
------------------------------------------
-
-Mattermost’s Intelligent Mission Environment is designed to support critical workflows across industries and use cases. Explore our :doc:`Use Case Guide </about/use-cases>` to learn how Mattermost empowers teams to:
-
-• Streamline command and control in Mission Operations, from energy resiliency to tactical coordination.
-• Respond to evolving threats with workflows tailored to Cyber Defense, including incident response and threat hunting.
-• Accelerate secure software delivery in DevSecOps, with tools for CI/CD pipelines, ITSM, and collaboration.
-
-The Mattermost Advantage
-------------------------
-
-Mattermost doesn't just provide tools — we deliver a comprehensive solution for navigating high-pressure mission challenges with measurable results. Carefully designed for focus, resiliency, and adaptability, Mattermost transforms workflows, enhances security, and empowers decision-makers and operational teams alike to rise to today’s toughest challenges. 
-
-To learn more about how Mattermost might benefit your national security or critical infrastructure enterprise, `book time with a Mattermost expert <https://mattermost.com/contact-sales/>`_
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_
