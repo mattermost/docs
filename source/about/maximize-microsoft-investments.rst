@@ -49,7 +49,7 @@ Operational teams need to extend Microsoft capabilities to mission environments 
 - **Enable mission-critical coordination at the edge** by :ref:`deploying Mattermost in secure, on-prem or air-gapped environments <deploy/server/server-deployment-planning:deployment options>` :doc:`integrated with Microsoft Teams and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Fuse data and decision-making across platforms** with support for :doc:`toolchain integration </about/integrations>, :doc:`audio/screen share </collaborate/make-calls>`, and :doc:`workflow automation </guides/repeatable-processes>` embedded into a dedicated Mission Operations Platform.
 - **Maintain coalition and partner alignment** through `interoperable :doc:`Connected Workspaces </onboard/connected-workspaces>` supporting collaboration across mission partner networks.
-- **Accelerate action with mission-tuned AI** using secure Azure AI and :doc:`Mattermost Copilot <collaborate/chat-with-copilot>` to summarize context, guide decisions, and automate operational tasks.
+- **Accelerate action with mission-tuned AI** using secure Azure AI and :doc:`Mattermost Copilot </collaborate/chat-with-copilot>` to summarize context, guide decisions, and automate operational tasks.
 - **Secure every communication path** with built-in :doc:`Zero Trust controls </about/security/zerotrust> and deploy on Azure or sovereign environments for maximum flexibility and compliance.
 
 
