@@ -26,7 +26,7 @@ What is the Intelligent Mission Environment (IME)?
 
 The Intelligent Mission Environment (IME) is Mattermost’s unified platform for secure, extensible, AI-powered collaboration and automation within a sovereign and cyber-resilient deployment architecture.
 
-.. image:: /images/ime.png
+.. image:: /images/ime.jpg
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment," showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, DevSecOps, and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
 
 It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
