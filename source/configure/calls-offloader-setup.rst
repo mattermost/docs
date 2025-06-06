@@ -369,4 +369,15 @@ Check service logs:
 Performance Monitoring
 ^^^^^^^^^^^^^^^^^^^^
 
+Monitor calls-offloader performance and resource usage to ensure optimal operation. Set up alerts for high CPU/memory usage, failed jobs, or extended processing times.
+
+Other Calls Documentation
+----------------
+
+- `Calls Overview <calls-deployment.html>`__: Overview of deployment options and architecture
+- `RTCD Setup and Configuration <calls-rtcd-setup.html>`__: Comprehensive guide for setting up the dedicated RTCD service
+- `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__: Guide to monitoring Calls performance using metrics and observability
+- `Calls Deployment on Kubernetes <calls-kubernetes.html>`__: Detailed guide for deploying Calls in Kubernetes environments
+- `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
+
 For detailed performance tuning and monitoring recommendations, refer to the `calls-offloader performance documentation <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
