@@ -311,7 +311,13 @@ Once calls-offloader is properly set up and validated, configure Mattermost to u
 
 4. Save the configuration
 
-5. Test by starting a call and enabling recording or live captions
+5. Restart the Calls plugin to re-establish state:
+
+   - Go to **System Console > Plugins > Plugin Management**
+   - Find the **Calls** plugin and click **Disable**
+   - Wait a few seconds, then click **Enable**
+
+6. Test by starting a call and enabling recording or live captions
 
 Troubleshooting
 ---------------
