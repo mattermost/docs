@@ -910,6 +910,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/channel-types.html#direct-message-channels",
 "collaborate/channel-types.html#group-messages":
         "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
+"collaborate/chat-with-copilot.html":
+        "https://docs.mattermost.com/guides/agents.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1952,6 +1954,8 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/environment-configuration-settings.html#elasticsearch":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
+"configure/enable-copilot.html":
+        "https://docs.mattermost.com/configure/agents-admin-guide.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
