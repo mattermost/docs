@@ -63,7 +63,7 @@ Workflow automation
 Audio and screenshare
 ~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Calls </collaborate/make-calls>` enables real-time communication and troubleshooting through sovereign audio calling and screen sharing—supporting secure knowledge transfer and fast response in time-sensitive scenarios. Key capabilities include:
+:doc:`Mattermost Calls </collaborate/audio-and-screensharing>` enables real-time communication and troubleshooting through sovereign audio calling and screen sharing—supporting secure knowledge transfer and fast response in time-sensitive scenarios. Key capabilities include:
 
 - Enables 1:1 and group audio calls directly within channels and direct messages, maintaining contextual awareness and access control based on channel membership.
 - Supports secure screen sharing for visual coordination and analysis.
