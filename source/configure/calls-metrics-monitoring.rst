@@ -58,10 +58,6 @@ Installing Prometheus
         evaluation_interval: 15s
 
       scrape_configs:
-        - job_name: 'prometheus'
-          static_configs:
-            - targets: ['localhost:9090']
-
         - job_name: 'mattermost'
           metrics_path: /metrics
           static_configs:
@@ -115,19 +111,6 @@ Installing Grafana
    - Enter the URL of your Prometheus server
    - Test and save the configuration
 
-Enabling Metrics in RTCD
-^^^^^^^^^^^^^^^^^^^^^^
-
-Add the following to your RTCD configuration file:
-
-.. code-block:: json
-
-   {
-     "metrics": {
-       "enableProm": true,
-       "promPort": 9090
-     }
-   }
 
 Key Metrics to Monitor
 --------------------
