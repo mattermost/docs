@@ -47,26 +47,59 @@ Installing Prometheus
 
    Visit the [Prometheus download page](https://prometheus.io/download/) for installation instructions.
 
-2. **Configure Prometheus** to scrape metrics from Mattermost and RTCD:
+2. **Configure Prometheus** to scrape metrics from all Calls-related services:
 
-   Example ``prometheus.yml`` configuration:
+   Complete ``prometheus.yml`` configuration for Calls monitoring:
 
    .. code-block:: yaml
 
+      global:
+        scrape_interval: 15s
+        evaluation_interval: 15s
+
       scrape_configs:
-        - job_name: 'mattermost-calls'
-          scrape_interval: 15s
-          metrics_path: '/plugins/com.mattermost.calls/metrics'
+        - job_name: 'prometheus'
           static_configs:
-            - targets: ['mattermost-server:8065']
-              
+            - targets: ['localhost:9090']
+
+        - job_name: 'mattermost'
+          metrics_path: /metrics
+          static_configs:
+            - targets: ['MATTERMOST_SERVER_IP:8067']
+
+        - job_name: 'calls'
+          metrics_path: /plugins/com.mattermost.calls/metrics
+          static_configs:
+            - targets: ['MATTERMOST_SERVER_IP:8067']
+
         - job_name: 'rtcd'
-          scrape_interval: 15s
+          metrics_path: /metrics
           static_configs:
-            - targets: ['rtcd-server:8045']
+            - targets: ['RTCD_SERVER_IP:8045']
+            
+        - job_name: 'node_exporter'
+          metrics_path: /metrics
+          static_configs:
+            - targets: ['RTCD_SERVER_IP:9100']
+            
+        - job_name: 'calls-offloader'
+          metrics_path: /metrics
+          static_configs:
+            - targets: ['CALLS_OFFLOADER_SERVER_IP:4545']
+
+   Replace the placeholder IP addresses with your actual server addresses:
+   
+   - ``MATTERMOST_SERVER_IP``: IP address of your Mattermost server
+   - ``RTCD_SERVER_IP``: IP address of your RTCD server  
+   - ``CALLS_OFFLOADER_SERVER_IP``: IP address of your calls-offloader server (if deployed)
 
    .. important::
       **Metrics Configuration Notice**: The Calls dashboard expects targets to be in ``<host>:<port>`` format. Avoid using ``labels`` in your Prometheus configuration for Calls metrics, as this can cause compatibility issues with the dashboard. For example, use ``targets: ['rtcd-server:8045']`` instead of labels-based targeting.
+
+   .. note::
+      - **node_exporter**: Optional but recommended for system-level metrics (CPU, memory, disk, network). See `node_exporter setup guide <https://prometheus.io/docs/guides/node-exporter/>`__ for installation instructions.
+      - **calls-offloader**: Only needed if you have call recording/transcription enabled
+      - **Port 8067**: Default Mattermost metrics port (configurable in System Console)
 
 Installing Grafana
 ^^^^^^^^^^^^^^^
