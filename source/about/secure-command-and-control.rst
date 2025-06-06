@@ -17,10 +17,10 @@ In high-stakes missions—including classified operations—real-time collaborat
 
 **Benefits**
 
-- **Surface essential context faster for decisive action** using :doc:`threaded messaging </collaborate/organize-conversations>`, :doc:`file previews </collaborate/share-files-in-messages>`, and :doc:`channel-based discussion </guides/collaborate>` to consolidate signals and reduce noise.
+- **Surface essential context faster for decisive action** using :doc:`threaded messaging </collaborate/organize-conversations>`, :doc:`file previews </collaborate/share-files-in-messages>`, and :doc:`channel-based discussion </guides/messaging-collaboration>` to consolidate signals and reduce noise.
 - **Integrate mission tooling and automation** via the :doc:`Mattermost integrations platform </about/integrations>`—connecting alerting, workflow engines, and tactical systems directly into operational channels.
 - **Strengthen mobile communication channels** through :doc:`enterprise mobility security </about/security/mobile-security>` that reduce reliance on personal messaging apps, control data exposure, and ensure secure, compliant access.
-- **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
+- **Coordinate operations with structured workflows** using :doc:`Collaborative Playbooks </guides/workflow-automation>` that standardize task execution, streamline decision-making, and maintain continuity across teams and mission roles.
 - **Deploy sovereign AI for operational intelligence** using :doc:`air-gapped and private AI operations </deploy/server/air-gapped-deployment>` to power decision support and automation in disconnected or classified settings.
 
 Disconnected, Intermittent, and Low-Bandwidth (DDIL) Collaboration
@@ -37,7 +37,7 @@ Disconnected environments demand resilient tools that work without cloud access,
 - **Ensure secure mobile access on managed or BYOD devices** with :doc:`mobile security features </deploy/mobile/mobile-security-features>`, Zero Trust enforcement, and :ref:`ID-only push notifications <configure/environment-configuration-settings:id-only push notifications>` for sensitive alerts.
 - **Integrate with legacy and mission-specific systems** to maintain decision advantage in disconnected environments through :doc:`custom-built, self-hosted integrations </about/integrations>` tailored to your operational infrastructure.
 - **Maintain command resilience** using :doc:`high availability cluster-based deployment </scale/scaling-for-enterprise>` and :doc:`horizontal scalability </scale/scaling-for-enterprise>` to support operational continuity at scale.
-- **Automate field workflows** with :doc:`Collaborative Playbooks </guides/repeatable-processes>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
+- **Automate field workflows** with :doc:`Collaborative Playbooks </guides/workflow-automation>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
 - **Enable secure real-time collaboration with headquarters** using :doc:`Connected Workspaces </onboard/connected-workspaces>` to synchronize discussions, files, and reactions if connectivity is restored.
 
 Bring Your Own Device (BYOD) with CUI Protections

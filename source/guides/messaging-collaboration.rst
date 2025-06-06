@@ -1,4 +1,4 @@
-Connect and collaborate with Mattermost
+Messaging Collaboration
 =======================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst

@@ -13,16 +13,16 @@ In this documentation, you'll learn about using Mattermost. Your Mattermost syst
   :hidden:
   :titlesonly:
 
-  Connect and collaborate </guides/collaborate>
-  Build repeatable processes </guides/repeatable-processes>
-  Audio and Screensharing </collaborate/audio-and-screensharing>
-  Leverage AI for decision support </guides/agents>
+  Messaging Collaboration </guides/messaging-collaboration>
+  Workflow Automation </guides/workflow-automation>
+  Project and Task Management </guides/project-task-management>
+  AI Agents </guides/agents>
   Customize your preferences </guides/preferences>
 
-* :doc:`Connect and collaborate </guides/collaborate>` - Learn how to use Mattermost to connect and collaborate with your teammates.
-* :doc:`Build repeatable processes </guides/repeatable-processes>` - Learn how to build repeatable processes, move faster, and make fewer mistakes with checklist-based automations in Mattermost.
-* :doc:`Audio and Screensharing </collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.
-* :doc:`Leverage AI for decision support </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
+* :doc:`Messaging Collaboration </guides/messaging-collaboration>` - Learn how to use Mattermost to connect and collaborate with your teammates.
+* :doc:`Workflow Automation </guides/workflow-automation>` - Learn how to use Mattermost Playbooks to build repeatable processes, move faster, and make fewer mistakes with checklist-based automations.
+* :doc:`Project and Task Management </guides/project-task-management>` - Learn how to use Mattermost Boards to coordinate operational work with Kanban-style planning.
+* :doc:`AI Agents </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate repetative tasks.
 * :doc:`Customize your preferences </guides/preferences>` - Learn how to make Mattermost match the way you prefer to work.
 
 .. include:: ../_static/badges/academy-platform-overview.rst
