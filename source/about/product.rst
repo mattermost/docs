@@ -42,7 +42,6 @@ Messaging collaboration
 
 :doc:`Mattermost Channels </guides/collaborate>` enables secure, real-time and asynchronous communication across web, desktop, and mobile—powering mission-critical collaboration and ChatOps workflows across connected, hybrid, and air-gapped environments. Channels feature the following capabilities: 
 
-
 - Public and private channels, direct messages, and threaded conversations for structured operational coordination.
 - Role-based access controls and audit logs to support need-to-know enforcement.
 - Configurable notifications (e.g., alerts, keyword triggers, muting) to surface high-priority activity.
@@ -55,11 +54,11 @@ Workflow automation
 
 :doc:`Mattermost Playbooks </guides/repeatable-processes>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
 
-- Structured checklists with assigned tasks and due dates
-- Automated status updates and real-time notifications in linked channels
-- Embedded actions, assignments, and guidance for repeatable execution
-- Timeline, retrospectives, and metric tracking for after-action reviews and accountability
-- Integration triggers (e.g., alerts from monitoring tools) to launch workflows automatically
+- Structured checklists with assigned tasks and due dates to operationalize standard and incident or emergency operating procedures.
+- Automated status updates and real-time notifications in linked channels to keep stakeholders informed of workflow progress or blockers.
+- Embedded actions, assignments, and guidance for repeatable execution to ensure operational consistency.
+- Timeline, retrospectives, and metric tracking for after-action reviews and accountability.
+- Integration triggers (e.g., alerts from monitoring tools) to launch workflows automatically and decrease time to execution.
 
 Audio and screenshare
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -108,6 +107,8 @@ Key capabilities include:
 - Pre-packaged and custom integrations: Quickly connect with systems like GitHub, GitLab, Jira, ServiceNow, Jenkins, and PagerDuty.
 - Webhooks and slash commands: Enable real-time, event-driven automation and user-triggered actions directly from chat.
 - Plugin architecture: Extend the Mattermost core with custom UI components, server-side logic, and third-party services.
+
+Learn more in our :doc:`Integrations Guide <about/integrations>`.
 
 Multi-Agent, Multi-LLM integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
