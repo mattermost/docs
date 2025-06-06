@@ -25,7 +25,7 @@ Mattermost offers:
 * :doc:`AI Agents </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
 * :doc:`Customize Your Preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
 
-Visit the following sections to learn more about Mattermost.
+Visit the following pages and guides to learn more about Mattermost.
 
 * :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Use Case Guide </about/use-cases>` - Learn about Mattermost use cases for mission critical operations.
