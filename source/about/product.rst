@@ -53,7 +53,7 @@ Messaging collaboration
 Workflow automation
 ~~~~~~~~~~~~~~~~~~~
 
-doc:`Mattermost Playbooks </guides/repeatable-processes>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
+:doc:`Mattermost Playbooks </guides/repeatable-processes>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
 
 - Structured checklists with assigned tasks and due dates
 - Automated status updates and real-time notifications in linked channels
