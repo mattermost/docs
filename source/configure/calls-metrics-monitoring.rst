@@ -322,4 +322,13 @@ For historical analysis and trend identification:
 - **Medium-term metrics**: Keep 1-minute resolution data for 2 months
 - **Long-term metrics**: Keep 5-minute resolution data for 1 year
 
+Other Calls Documentation
+----------------
+
+- `Calls Overview <calls-deployment.html>`__: Overview of deployment options and architecture
+- `RTCD Setup and Configuration <calls-rtcd-setup.html>`__: Comprehensive guide for setting up the dedicated RTCD service
+- `Calls Offloader Setup and Configuration <calls-offloader-setup.html>`__: Setup guide for call recording and transcription
+- `Calls Deployment on Kubernetes <calls-kubernetes.html>`__: Detailed guide for deploying Calls in Kubernetes environments
+- `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
+
 Configure Prometheus storage accordingly to balance disk usage with retention needs.

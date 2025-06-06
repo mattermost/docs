@@ -88,7 +88,7 @@ This is the recommended deployment method for production environments as it prov
 
       # STUN/TURN server configuration
       ice_servers = [
-        { urls = ["stun:stun.l.google.com:19302"] }
+        { urls = ["stun:stun.global.calls.mattermost.com:3478"] }
       ]
 
       [store]
@@ -542,5 +542,14 @@ Once RTCD is properly set up and validated, configure Mattermost to use it:
 6. Test by creating a new call in any Mattermost channel
 
 7. Verify that the call is being routed through RTCD by checking the RTCD logs and metrics
+
+Other Calls Documentation
+----------------
+
+- `Calls Overview <calls-deployment.html>`__: Overview of deployment options and architecture
+- `Calls Offloader Setup and Configuration <calls-offloader-setup.html>`__: Setup guide for call recording and transcription
+- `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__: Guide to monitoring Calls performance using metrics and observability
+- `Calls Deployment on Kubernetes <calls-kubernetes.html>`__: Detailed guide for deploying Calls in Kubernetes environments
+- `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
 
 For detailed Mattermost Calls configuration options, see the `Calls Plugin Configuration Settings <plugins-configuration-settings.html#calls>`__ documentation.
