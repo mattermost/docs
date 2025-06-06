@@ -21,6 +21,7 @@ With Mattermost you can:
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
+* :doc:`Leverage AI for decision support </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
 * :doc:`Customize your preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
 
 Visit the following sections to learn more about Mattermost.

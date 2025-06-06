@@ -3,9 +3,6 @@ Manage your plugin preferences
 
 Using Mattermost in a web browser or the desktop app, you can customize Mattermost plugin preferences for Microsoft Teams and Calls by selecting **Settings** |gear| next to your profile picture.
 
-.. include:: ../_static/badges/academy-copilot-calls.rst
-  :start-after: :nosearch:
-
 Microsoft Teams plugin preferences
 ----------------------------------
 
