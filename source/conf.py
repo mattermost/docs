@@ -847,7 +847,7 @@ redirects = {
 "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "channels/find-channels.html#revisit-recent-channels":
         "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
 "channels/syntax-highlighting.html":
@@ -2358,7 +2358,7 @@ redirects = {
 "guides/channels.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/channels.html#channels-messages-and-conversations":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "guides/channels.html#work-with-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
 "guides/channels.html#work-with-messages":
@@ -2368,7 +2368,7 @@ redirects = {
 "guides/channels.html#extend-channels-functionality":
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
@@ -2393,7 +2393,10 @@ redirects = {
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/integrate-and-extend.html#interoperability-with-pre-packaged-integrations":
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
-
+"guides/collaborate.html":
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
+"guides/repeatable-processes.html":
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -3686,9 +3689,9 @@ redirects = {
 "playbooks/interact-with-playbooks.html#api-documentation":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
 "playbooks/work-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "playbooks/get-started-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Preference redirects
 "preferences/manage-your-calls-preferences.html":
@@ -3891,7 +3894,7 @@ redirects = {
 "welcome/log-out.html":
         "https://docs.mattermost.com/collaborate/log-out.html",
 "welcome/get-started-mattermost-channels.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "welcome/manage-custom-groups.html":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html",
 "welcome/about-teams.html":

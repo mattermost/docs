@@ -1,5 +1,5 @@
-Mattermost Agents User Guide
-=============================
+AI Agents
+===========
 
 .. toctree::
    :maxdepth: 1
@@ -12,4 +12,3 @@ Mattermost Agents User Guide
 .. include:: /agents/docs/user_guide.md
   :parser: myst
   :start-after: # Mattermost Agents User Guide
-
