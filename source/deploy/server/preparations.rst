@@ -52,6 +52,7 @@ PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL dat
       .. code-block:: sql
 
          ALTER DATABASE mattermost OWNER TO mmuser;
+         ALTER SCHEMA public OWNER TO mmuser;
          GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
 3. Configure PostgreSQL for remote connections (if database is on a separate server):
