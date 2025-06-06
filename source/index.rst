@@ -21,6 +21,7 @@ Mattermost offers:
 
 * :doc:`Messaging Collaboration </guides/messaging-collaboration>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
 * :doc:`Workflow Automation </guides/workflow-automation>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
+* :doc:`Audio and Screensharing </collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.
 * :doc:`Project and Task Management </guides/project-task-management>` - Learn how to use Mattermost Boards to coordinate operational work with Kanban-style planning.
 * :doc:`AI Agents </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
 * :doc:`Customize Your Preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
