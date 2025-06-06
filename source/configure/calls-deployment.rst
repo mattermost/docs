@@ -6,6 +6,16 @@ Calls self-hosted deployment
 
 This document provides an overview of Mattermost Calls deployment options for self-hosted environments, including deployment architectures, key requirements, and important considerations.
 
+.. toctree::
+   :maxdepth: 1
+   :hidden:
+
+   calls-rtcd-setup
+   calls-offloader-setup
+   calls-metrics-monitoring
+   calls-kubernetes
+   calls-troubleshooting
+
 Quick Links
 ----------
 
