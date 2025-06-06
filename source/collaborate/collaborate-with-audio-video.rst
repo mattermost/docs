@@ -1,16 +1,16 @@
 Audio and Screensharing
-================================
+=======================
 
 Mattermost Calls offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration. Learn more about :doc:`deploying Mattermost Calls </configure/calls-deployment>` in a self-hosted environment and :doc:`making calls </collaborate/make-calls>` with Mattermost.
 
 With calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
 
 Functionality includes: 
-- **1:1 Audio Calls**: Initiate direct, real-time voice communication between two participants for quick resolution and sensitive discussions. *(Free, Enterprise)*
-- **Audio Conference Calsl**: Host multi-party voice calls to coordinate teams and resolve issues faster across distributed environments. *(Professional, Enterprise)*
-- **Screen Share**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues. *(Free, Professional, Enterprise)*
-- **Chat/Messaging During Calls**:  Exchange messages alongside audio communication to enhance clarity, drop links, and provide visual context. *(Free, Professional, Enterprise)*
-- **Search Chat History Post-Call**: Access in-call messages later to retain decision trails, links, and key points discussed. *(Free, Professional, Enterprise)*
+- **1:1 Audio Calls**: Initiate direct, real-time voice communication between two participants for quick resolution and sensitive discussions. 
+- **Audio Conference Calsl**: Host multi-party voice calls to coordinate teams and resolve issues faster across distributed environments.
+- **Screen Share**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues. 
+- **Chat/Messaging During Calls**:  Exchange messages alongside audio communication to enhance clarity, drop links, and provide visual context.
+- **Search Chat History Post-Call**: Access in-call messages later to retain decision trails, links, and key points discussed. 
 - **Host Controls**: Manage participants, mute/unmute, and control the flow of conversations during conferences for structured engagements. *(Professional, Enterprise)*
 - **Call Recording**: Record voice sessions for review, compliance, or sharing with unavailable team members. *(Enterprise)*
 - **Call Transcription**: Convert spoken content into text to support documentation, compliance, and improved accessibility. *(Enterprise)*
