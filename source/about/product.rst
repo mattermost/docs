@@ -21,7 +21,7 @@ Mattermost is an Intelligent Mission Environment (IME), purpose-built for missio
 
 IME integrates secure messaging, workflow automation, task management, and real-time communication within a sovereign, cyber-resilient architecture. It supports extensibility through open APIs and integrations, and runs flexibly across on-premises, cloud, and air-gapped systems—enabling operational focus, adaptability, and resilience from edge nodes to centralized data centers.
 
-.. image:: /images/ime.png
+.. image:: /images/ime.jpg
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment," showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, DevSecOps, and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
 
 It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
@@ -40,7 +40,7 @@ Built on an extensible open-core architecture, Mattermost offers an array of col
 Messaging collaboration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Channels </guides/collaborate>` enables secure, real-time and asynchronous communication across web, desktop, and mobile—powering mission-critical collaboration and ChatOps workflows across connected, hybrid, and air-gapped environments. Channels feature the following capabilities: 
+:doc:`Mattermost Channels </guides/messaging-collaboration>` enables secure, real-time and asynchronous communication across web, desktop, and mobile—powering mission-critical collaboration and ChatOps workflows across connected, hybrid, and air-gapped environments. Channels feature the following capabilities: 
 
 - Public and private channels, direct messages, and threaded conversations for structured operational coordination.
 - Role-based access controls and audit logs to support need-to-know enforcement.
@@ -52,7 +52,7 @@ Messaging collaboration
 Workflow automation
 ~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Playbooks </guides/repeatable-processes>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
+:doc:`Mattermost Playbooks </guides/workflow-automation>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
 
 - Structured checklists with assigned tasks and due dates to operationalize standard and incident or emergency operating procedures.
 - Automated status updates and real-time notifications in linked channels to keep stakeholders informed of workflow progress or blockers.
@@ -74,7 +74,7 @@ Audio and screenshare
 Project and task management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Boards enables you to coordinate operational work with Kanban-style planning that integrates directly into messaging workflows—enabling transparency, prioritization, and accountability across teams with the following capabilities: 
+:doc:`Mattermost Boards </guides/project-task-management>` enables you to coordinate operational work with Kanban-style planning that integrates directly into messaging workflows—enabling transparency, prioritization, and accountability across teams with the following capabilities: 
 
 - Visual task boards with drag-and-drop cards and customizable workflows.
 - Real-time updates and synchronization with linked Mattermost channels.
@@ -160,4 +160,4 @@ IME is deployable across major cloud providers with support for hybrid and sover
 Get started
 -----------
 
-Mattermost provides mission-critical teams with a sovereign, extensible, and AI-integrated collaboration platform designed for secure operations across the most challenging environments. Talk to an Expert <https://mattermost.com/contact-sales/>_ to explore how to architect your Intelligent Mission Environment.
+Mattermost provides mission-critical teams with a sovereign, extensible, and AI-integrated collaboration platform designed for secure operations across the most challenging environments. `Talk to an Expert <https://mattermost.com/contact-sales/>_ to explore how to architect your Intelligent Mission Environment.
