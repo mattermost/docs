@@ -47,7 +47,7 @@ Messaging collaboration
 - Configurable notifications (e.g., alerts, keyword triggers, muting) to surface high-priority activity.
 - Integrated ChatOps capabilities via slash commands, bots, and incoming webhooks for real-time automation and system alerts.
 - Pinning, bookmarking, and advanced search to maintain continuity and context in high-volume environments.
-- Cross-platform support on web, desktop, and mobile clients for flexible field and enterprise access.
+- Cross-platform support on web, desktop, and mobile clients for flexible field to command and control access.
 
 Workflow automation
 ~~~~~~~~~~~~~~~~~~~
@@ -65,33 +65,33 @@ Audio and screenshare
 
 :doc:`Mattermost Calls </collaborate/make-calls>` enables real-time communication and troubleshooting through sovereign audio calling and screen sharing—supporting secure knowledge transfer and fast response in time-sensitive scenarios. Key capabilities include:
 
-- 1:1 and group audio calling integrated with channels and DMs
-- Secure screen sharing for collaborative analysis and coordination
-- Sovereign deployment support for air-gapped or sensitive networks
-- Optional AI-powered transcription and summarization of meetings
-- Cross-platform access on web, desktop, and mobile endpoints
+- Enables 1:1 and group audio calls directly within channels and direct messages, maintaining contextual awareness and access control based on channel membership.
+- Supports secure screen sharing for visual coordination and analysis.
+- Operates in sovereign, air-gapped, or sensitive network environments.
+- Offers optional AI-based transcription and summarization for meeting capture and follow ups.
+- Works across web, desktop, and mobile for flexible, secure access.
 
 Project and task management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 :doc:`Mattermost Boards </guides/project-task-management>` enables you to coordinate operational work with Kanban-style planning that integrates directly into messaging workflows—enabling transparency, prioritization, and accountability across teams with the following capabilities: 
 
-- Visual task boards with drag-and-drop cards and customizable workflows.
-- Real-time updates and synchronization with linked Mattermost channels.
-- Card-level assignments, checklists, labels, and due dates.
-- Filtering and sorting to manage backlogs and sprint planning.
-- Supports project visibility without context switching from primary communication channels.
+- Provides visual task boards with drag-and-drop cards and customizable workflows, supporting contextual awareness and role-based task visibility.
+- Delivers real-time updates and synchronization with linked Mattermost channels.
+- Supports card-level assignments, checklists, labels, and due dates for operational clarity.
+- Enables filtering and sorting to manage backlogs, priorities, and forward planning.
+- Maintains project visibility without requiring users to switch away from primary communication channels.
 
 AI Agents and open APIs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 :doc:`Mattermost Agents </guides/agents>` accelerate decisions and streamline repetitive tasks with AI-driven assistance, fully controllable within sovereign infrastructure—offering intelligent support for both users and workflows: 
 
-- Configurable AI assistants for summarizing threads, extracting action items, and answering questions.
-- Direct interactions in dedicated threads or channels.
-- Semantic search using natural language queries across Mattermost data.
-- Support for Retrieval-Augmented Generation (RAG), custom instructions, and responsible AI guardrails.
-- Integration with local models (e.g., Ollama, vLLM) or cloud LLMs via OpenAI-compatible APIs.
+- Provides configurable AI assistants that summarize threads, extract action items, and answer questions with contextual insight and operational awareness.
+- Supports direct interactions with AI agents in dedicated threads or channels.
+- Enables semantic search using natural language to surface relevant content across Mattermost data.
+- Supports Retrieval-Augmented Generation (RAG), custom instructions, and responsible AI guardrails for secure automation.
+- Integrates with local models (e.g., Ollama, vLLM) and cloud LLMs via OpenAI-compatible APIs for flexible deployment.
 
 Integrations and AI platform
 -----------------------------
@@ -133,9 +133,10 @@ Tactical edge
 
 IME runs on lightweight, ruggedized, or mobile infrastructure, optimized for disconnected, denied, intermittent, and limited (DDIL) conditions.
 
-- Supports single-node Linux binary and container-based deployments.
-- Operates without internet, DNS, or centralized authentication.
-- Enables secure communications, screen sharing, and automation in fully air-gapped environments.
+- Supports single-node Linux binaries and containerized deployments in local Kubernetes environments for rapid, lightweight setup.
+- Enables flexible deployment on compact, portable compute platforms—ideal for ships, forward operating bases, mobile command units, or disconnected kits.
+- Operates fully air-gapped without reliance on internet, DNS, or external authentication systems.
+- Delivers secure communications, screen sharing, and workflow automation in isolated or DDIL conditions.
 
 Private Cloud & sovereign datacenter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -152,10 +153,10 @@ Hyperscaler & sovereign Cloud support
 
 IME is deployable across major cloud providers with support for hybrid and sovereign architectures:
 
-- Microsoft Azure – Supports VM and Kubernetes deployments across Global, Government, and Local Regions; roadmap includes Azure Air-Gapped.
-- Amazon Web Services (AWS) – Deployable on AWS Global, GovCloud (US), and Outposts; marketplace support in development.
+- Microsoft Azure – Supports VM and Kubernetes deployments across Global, Government, and Local Regions.
+- Amazon Web Services (AWS) – Deployable on AWS Global, GovCloud (US), and Outposts.
 - Google Cloud – Supports Google Cloud Platform and Distributed Cloud (Edge and Hosted); roadmap to marketplace availability.
-- Oracle Cloud Infrastructure – Available in the Oracle Marketplace for VM and Kubernetes deployments, including Oracle Sovereign Cloud; roadmap includes Oracle Air-Gapped.
+- Oracle Cloud Infrastructure – Available in the Oracle Marketplace for VM and Kubernetes deployments, including Oracle Sovereign Cloud.
 
 Get started
 -----------
