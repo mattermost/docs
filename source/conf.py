@@ -914,6 +914,8 @@ redirects = {
         "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
 "collaborate/chat-with-copilot.html":
         "https://docs.mattermost.com/guides/agents.html",
+"collaborate/collaborate-with-audio-video.html":
+        "https://docs.mattermost.com/collaborate/audio-and-screensharing.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":

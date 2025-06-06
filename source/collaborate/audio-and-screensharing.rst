@@ -5,9 +5,10 @@ Mattermost Calls offers native real-time chat, self-hosted audio calls, and scre
 
 With calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
 
-Functionality includes: 
+Functionality includes:
+
 - **1:1 Audio Calls**: Initiate direct, real-time voice communication between two participants for quick resolution and sensitive discussions. 
-- **Audio Conference Calsl**: Host multi-party voice calls to coordinate teams and resolve issues faster across distributed environments.
+- **Audio Conference Calls**: Host multi-party voice calls to coordinate teams and resolve issues faster across distributed environments.
 - **Screen Share**:  Share your screen during calls to collaborate visually on tasks, review documents, or troubleshoot live issues. 
 - **Chat/Messaging During Calls**:  Exchange messages alongside audio communication to enhance clarity, drop links, and provide visual context.
 - **Search Chat History Post-Call**: Access in-call messages later to retain decision trails, links, and key points discussed. 

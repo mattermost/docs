@@ -15,13 +15,13 @@ In this documentation, you'll learn about using Mattermost. Your Mattermost syst
 
   Connect and collaborate </guides/collaborate>
   Build repeatable processes </guides/repeatable-processes>
-  Collaborate with audio and video </collaborate/collaborate-with-audio-video>
+  Audio and Screensharing </collaborate/audio-and-screensharing>
   Leverage AI for decision support </guides/agents>
   Customize your preferences </guides/preferences>
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Learn how to use Mattermost to connect and collaborate with your teammates.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Learn how to build repeatable processes, move faster, and make fewer mistakes with checklist-based automations in Mattermost.
-* :doc:`Collaborate with audio and video </collaborate/collaborate-with-audio-video>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing, and the many video conferencing integrations Mattermost supports.
+* :doc:`Audio and Screensharing </collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.
 * :doc:`Leverage AI for decision support </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
 * :doc:`Customize your preferences </guides/preferences>` - Learn how to make Mattermost match the way you prefer to work.
 
