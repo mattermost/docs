@@ -74,7 +74,7 @@ Audio and screenshare
 - :doc:`Sovereign deployment </configure/calls-deployment>` for air-gapped or sensitive environments.
 - Optional AI-based call :ref:`transcription <collaborate/make-calls:transcribe recorded calls>` and :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`.
 
-Project and task Management
+Project and task management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost Boards provides Kanban-style project tracking, integrated directly with collaboration workflows. With Boards, you can:
