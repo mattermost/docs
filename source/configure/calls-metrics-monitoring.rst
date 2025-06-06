@@ -176,116 +176,35 @@ Mattermost provides an official Grafana dashboard for monitoring Calls performan
    - Navigate to Dashboards > Import
    - Upload the JSON file or paste its contents
    - Select your Prometheus data source
+   - Confirm the correct rtcd (`5045`) and calls plugin (`8065`) targets are set
    - Click Import
-
-3. **Key panels** in the dashboard:
-
-   - Active Calls and Participants
-   - RTC Connection States
-   - Media Tracks (In/Out)
-   - CPU and Memory Usage
-   - Network Traffic
-   - Error Counts
-
-Custom Dashboard Panels
-^^^^^^^^^^^^^^^^^^^^
-
-Consider adding these custom panels to your dashboard:
-
-1. **Error Rate Panel**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      sum(rate(rtcd_rtc_errors_total[5m])) by (type)
-
-2. **Connection Success Rate**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      sum(rtcd_rtc_conn_states_total{state="connected"}) / (sum(rtcd_rtc_conn_states_total{state="connected"}) + sum(rtcd_rtc_conn_states_total{state="failed"}))
-
-3. **Media Track Count by Direction**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      sum(rtcd_rtc_rtp_tracks_total) by (direction)
-
-Alerting Recommendations
----------------------
-
-Setting up alerts helps you respond quickly to potential issues. Here are recommended alert thresholds:
-
-1. **High CPU Usage Alert**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      rate(rtcd_process_cpu_seconds_total[5m]) > 0.8
-      
-   This alerts when CPU usage exceeds 80% over 5 minutes.
-
-2. **Connection Failure Rate Alert**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      sum(rate(rtcd_rtc_conn_states_total{state="failed"}[5m])) / sum(rate(rtcd_rtc_conn_states_total[5m])) > 0.1
-      
-   This alerts when more than 10% of connection attempts fail over 5 minutes.
-
-3. **WebSocket Connection Drop Alert**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      rate(rtcd_ws_connections_total{state="closed"}[5m]) > 5
-      
-   This alerts when more than 5 WebSocket connections are dropping per minute.
-
-4. **Memory Leak Detection**:
-
-   PromQL query:
-   
-   .. code-block:: text
-
-      rate(rtcd_process_resident_memory_bytes[30m]) > 1024 * 1024 * 10
-      
-   This alerts when memory usage is increasing by more than 10MB per 30 minutes.
 
 Performance Baselines
 ------------------
 
-Understanding normal performance patterns helps identify anomalies. Here are baseline expectations based on call volume:
+The following performance benchmarks provide baseline metrics for RTCD deployments under various load conditions and configurations.
 
-Small Deployment (1-10 concurrent calls)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Deployment specifications**
 
-- **CPU Usage**: 5-15% on a modern 4-core server
-- **Memory Usage**: 200-500MB
-- **Network**: 5-20 Mbps (depending on participant count and unmuted users)
+- 1x r6i.large nginx proxy
+- 3x c5.large MM app nodes (HA)
+- 2x db.x2g.xlarge RDS Aurora MySQL v8 (one writer, one reader)
+- 1x (c7i.xlarge, c7i.2xlarge, c7i.4xlarge) RTCD
+- 2x c7i.2xlarge load-test agents
 
-Medium Deployment (10-50 concurrent calls)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**App specifications**
 
-- **CPU Usage**: 15-40% on a modern 8-core server
-- **Memory Usage**: 500MB-1GB
-- **Network**: 20-100 Mbps
+- Mattermost v9.6
+- Mattermost Calls v0.28.0
+- RTCD v0.16.0
+- load-test agent v0.28.0
 
-Large Deployment (50+ concurrent calls)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Media specifications**
 
-- **CPU Usage**: Consider multiple RTCD instances
-- **Memory Usage**: 1-2GB per instance
-- **Network**: 100Mbps-1Gbps (with horizontal scaling)
+- Speech sample bitrate: 80Kbps
+- Screen sharing sample bitrate: 1.6Mbps
+
+**Results**
 
 Below are the detailed benchmarks based on internal performance testing:
 
@@ -312,15 +231,6 @@ Below are the detailed benchmarks based on internal performance testing:
 +-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
 | 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
 +-------+------------+--------------+----------------+-----------+--------------+--------------------+----------------+
-
-Metric Retention Recommendations
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-For historical analysis and trend identification:
-
-- **Short-term metrics**: Keep 15-second resolution data for 2 weeks
-- **Medium-term metrics**: Keep 1-minute resolution data for 2 months
-- **Long-term metrics**: Keep 5-minute resolution data for 1 year
 
 Other Calls Documentation
 ----------------
