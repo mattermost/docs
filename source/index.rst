@@ -21,10 +21,11 @@ With Mattermost you can:
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
+* :doc:`Audio and Screensharing </collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.
 * :doc:`Leverage AI for decision support </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
 * :doc:`Customize your preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
 
-Visit the following sections to learn more about Mattermost.
+Visit the following pages and guides to learn more about Mattermost.
 
 * :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Use Case Guide </about/use-cases>` - Learn about Mattermost use cases for mission critical operations.

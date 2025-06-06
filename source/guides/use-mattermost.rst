@@ -6,10 +6,7 @@ End User Guide
 
 If you're using Mattermost to connect and collaborate, build repeatable, automated processes, and making Mattermost match your work preferences, this Mattermost end user product documentation is for you.
 
-In this documentation, you'll learn about using Mattermost.
-
-- Your Mattermost system admin has deployed Mattermost for your organization. A live Mattermost instance is ready for you to log into using your user credentials.
-- Your Mattermost workspace is where you'll send and receive messages, see activity notifications, create, run, and participate in playbook runs, and where you'll customize look and feel through workspace preferences.
+In this documentation, you'll learn about using Mattermost. Your Mattermost system admin has deployed Mattermost for your organization. A live Mattermost instance is ready for you to log into using your user credentials. Your Mattermost workspace is where you'll send and receive messages, see activity notifications, create, run, and participate in playbook runs, and where you'll customize look and feel through workspace preferences.
 
 .. toctree::
   :maxdepth: 1
@@ -18,11 +15,13 @@ In this documentation, you'll learn about using Mattermost.
 
   Connect and collaborate </guides/collaborate>
   Build repeatable processes </guides/repeatable-processes>
+  Audio and Screensharing </collaborate/audio-and-screensharing>
   Leverage AI for decision support </guides/agents>
   Customize your preferences </guides/preferences>
 
 * :doc:`Connect and collaborate </guides/collaborate>` - Learn how to use Mattermost to connect and collaborate with your teammates.
 * :doc:`Build repeatable processes </guides/repeatable-processes>` - Learn how to build repeatable processes, move faster, and make fewer mistakes with checklist-based automations in Mattermost.
+* :doc:`Audio and Screensharing </collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.
 * :doc:`Leverage AI for decision support </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
 * :doc:`Customize your preferences </guides/preferences>` - Learn how to make Mattermost match the way you prefer to work.
 
