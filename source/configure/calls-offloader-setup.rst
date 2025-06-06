@@ -302,7 +302,6 @@ Once calls-offloader is properly set up and validated, configure Mattermost to u
 2. In the **Job Service** section:
 
    - Set **Job Service URL** to your calls-offloader service (e.g., ``http://calls-offloader-server:4545``)
-   - Configure **Job Service Secret** to match your ``admin_secret_key`` if enabled
 
 3. Enable recording and transcription features as needed:
 
