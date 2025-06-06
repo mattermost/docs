@@ -263,10 +263,27 @@ After deploying calls-offloader, validate the installation:
 
 2. **Test API connectivity**:
 
+   **From the calls-offloader server (localhost test)**:
+
    .. code-block:: bash
 
       curl http://localhost:4545/version
       # Should return version information
+      # Example: {"buildDate":"2025-03-10 19:13","buildVersion":"v0.9.2","buildHash":"a4bd418","goVersion":"go1.23.6"}
+
+   **From the Mattermost server**:
+
+   .. code-block:: bash
+
+      curl http://YOUR_CALLS_OFFLOADER_SERVER:4545/version
+      # Should return the same version information
+      # This confirms network connectivity from Mattermost to calls-offloader
+
+   If the localhost test works but the Mattermost server test fails, check:
+   
+   - Firewall rules or SELinux policies on the calls-offloader server (port 4545 must be accessible)
+   - Network connectivity between Mattermost and calls-offloader servers
+   - calls-offloader service binding configuration (ensure it's not bound to localhost only)
 
 3. **Verify Docker integration** (if using docker api_type):
 
