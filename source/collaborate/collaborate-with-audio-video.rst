@@ -1,20 +1,19 @@
 Collaborate with audio and video
 ================================
 
-Mattermost offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration.
+Mattermost Calls offers native real-time chat, self-hosted audio calls, and screen sharing within your own network, enabling secure, effective team communication and collaboration. Learn more about :doc:`deploying Mattermost Calls </configure/calls-deployment>` in a self-hosted environment and :doc:`making calls </collaborate/make-calls>` with Mattermost.
 
-.. tip::
+With always-online calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
 
-    Looking for a `Skype for Business replacement <https://mattermost.com/skype-for-business-datasheet/>`_? Learn why Mattermost is the best solution to upgrade your collaboration strategy.
+Video conferencing integrations
+-------------------------------
 
 For video conferencing, Mattermost integrates seamlessly with leading providers, giving users the flexibility to easily transition from chat to video:
 
-- **Pexip**: An enterprise-grade video conferencing solution with advanced security features, tailored for secure and scalable video collaboration.
+- `Pexip <https://mattermost.com/marketplace/pexip-video-connect/>`_: An enterprise-grade video conferencing solution with advanced security features, tailored for secure and scalable video collaboration.
 - :doc:`Zoom </integrate/zoom>`: A widely used, cloud-based video conferencing platform known for its ease of use and wide range of collaboration tools, including screen sharing and breakout rooms.
 - `Webex <https://mattermost.com/marketplace/webex-cloud/>`_: A comprehensive video conferencing solution designed for enterprise-grade security, offering features like file sharing, virtual backgrounds, and meeting recordings.
 - :doc:`Microsoft Teams </integrate/microsoft-teams-sync>`: A cloud-based collaboration platform that integrates with Microsoft 365, with text, voice, video, and file-sharing features.
-
-With always-online calls and screen sharing, Mattermost ensures that communications remain uninterrupted, even during maintenance or outages, and scales effortlessly to meet your team’s growing needs, safeguarding the integrity of mission-critical operations.
 
 Conference call plan comparison
 -------------------------------
@@ -87,3 +86,4 @@ Here’s a breakdown of the conference call features supported across the availa
 
     - Webex is community supported and not maintained by Mattermost. Please see the `GitHub repository <https://github.com/mattermost-community/mattermost-plugin-webex#readme>`_ for the latest releases and documentation. 
     - Community supported integrations are not available to Cloud deployments of Mattermost.
+    - Looking for a `Skype for Business replacement <https://mattermost.com/skype-for-business-datasheet/>`_? Learn why Mattermost is the best solution to upgrade your collaboration strategy.
