@@ -85,7 +85,7 @@ Mattermost Boards enables you to coordinate operational work with Kanban-style p
 AI Agents and open APIs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Agents </ai/agents>` accelerate decisions and streamline repetitive tasks with AI-driven assistance, fully controllable within sovereign infrastructure—offering intelligent support for both users and workflows: 
+:doc:`Mattermost Agents </guides/agents>` accelerate decisions and streamline repetitive tasks with AI-driven assistance, fully controllable within sovereign infrastructure—offering intelligent support for both users and workflows: 
 
 - Configurable AI assistants for summarizing threads, extracting action items, and answering questions.
 - Direct interactions in dedicated threads or channels.
@@ -94,11 +94,13 @@ AI Agents and open APIs
 - Integration with local models (e.g., Ollama, vLLM) or cloud LLMs via OpenAI-compatible APIs.
 
 Integrations and AI platform
--------------------------------
+-----------------------------
+
 The Intelligent Mission Environment (IME) is built for secure, extensible integration with mission-critical systems and AI workflows. Designed to operate in sovereign, regulated, and disconnected environments, IME supports modular automation, multi-agent orchestration, and the secure deployment of both local and cloud-based AI models—enabling faster decision-making while maintaining full control over data, infrastructure, and model behavior.
 
 Layered extensibility
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
 Built to integrate securely with complex enterprise and mission-critical environments, this model enables teams to tailor workflows, automate operations, and connect to external systems using open standards and modular components—supporting rapid deployment of automation while maintaining flexibility and compliance across both air-gapped and connected environments.
 
 Key capabilities include:
@@ -108,10 +110,11 @@ Key capabilities include:
 - Webhooks and slash commands: Enable real-time, event-driven automation and user-triggered actions directly from chat.
 - Plugin architecture: Extend the Mattermost core with custom UI components, server-side logic, and third-party services.
 
-Learn more in our :doc:`Integrations Guide <about/integrations>`.
+Learn more in our :doc:`Integrations Guide </about/integrations>`.
 
 Multi-Agent, Multi-LLM integration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 A secure, extensible foundation for integrating multiple large language models (LLMs) and autonomous agents within a sovereign control plane enables organizations to operationalize AI within sovereign infrastructure—fusing data across systems, accelerating decisions, and maintaining full control over AI model access and performance. Organizations can leverage the following capabilities to operationalize AI:
 
 - Sovereign AI model support: Integrate with OpenAI, Anthropic, Meta Llama, and other LLMs via secure APIs.
@@ -125,16 +128,18 @@ Sovereign & cyber-resilient deployment flexibility
 
 The Intelligent Mission Environment (IME) is engineered for resilient, mission-critical operations—whether at the tactical edge, inside sovereign data centers, or across regulated cloud environments. Built on Kubernetes and designed for high availability, IME ensures continuity, scalability, and full operational control across diverse infrastructure profiles.
 
-Tactical Edge
+Tactical edge
 ~~~~~~~~~~~~~
+
 IME runs on lightweight, ruggedized, or mobile infrastructure, optimized for disconnected, denied, intermittent, and limited (DDIL) conditions.
 
 - Supports single-node Linux binary and container-based deployments.
 - Operates without internet, DNS, or centralized authentication.
 - Enables secure communications, screen sharing, and automation in fully air-gapped environments.
 
-Private Cloud & Sovereign Datacenter
+Private Cloud & sovereign datacenter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 For high-security environments requiring full infrastructure control, IME supports scalable, highly available deployment within sovereign datacenters.
 
 - Kubernetes-native architecture enables containerized services, self-healing workloads, and zero-downtime updates.
@@ -142,8 +147,9 @@ For high-security environments requiring full infrastructure control, IME suppor
 - Horizontal scalability to tens of thousands of users per instance.
 - Complies with STIG, FIPS 140-2, and FedRAMP-aligned security standards.
 
-Hyperscaler & Sovereign Cloud Support
+Hyperscaler & sovereign Cloud support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 IME is deployable across major cloud providers with support for hybrid and sovereign architectures:
 
 - Microsoft Azure – Supports VM and Kubernetes deployments across Global, Government, and Local Regions; roadmap includes Azure Air-Gapped.
@@ -153,4 +159,5 @@ IME is deployable across major cloud providers with support for hybrid and sover
 
 Get started
 -----------
+
 Mattermost provides mission-critical teams with a sovereign, extensible, and AI-integrated collaboration platform designed for secure operations across the most challenging environments. Talk to an Expert <https://mattermost.com/contact-sales/>_ to explore how to architect your Intelligent Mission Environment.
