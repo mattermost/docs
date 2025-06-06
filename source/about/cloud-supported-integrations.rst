@@ -8,7 +8,7 @@
 - :ref:`Mattermost Calls <configure/plugins-configuration-settings:calls>`
 - :doc:`Mattermost Agents </configure/agents-admin-guide>`
 - :doc:`Mattermost for Microsoft Teams </integrate/microsoft-teams-sync>`
-- :doc:`Mattermost Playbooks </guides/repeatable-processes>`
+- :doc:`Mattermost Playbooks </guides/workflow-automation>`
 - :doc:`Microsoft Calendar Integration </integrate/microsoft-calendar>`
 - :doc:`Microsoft Teams Meetings </integrate/microsoft-teams-meetings>`
 - :doc:`GitHub </integrate/github>` 

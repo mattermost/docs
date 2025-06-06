@@ -43,7 +43,7 @@ Cross-agency, multinational, or coalition collaboration requires sovereignty wit
 
 - **Create secure shared workspaces** with :doc:`Connected Workspaces Channels </onboard/connected-workspaces>` that synchronize discussions, reactions, and file sharing across trusted organizations—without exposing internal systems.
 - **Control access across organizations** with :doc:`attribute-based permissions </onboard/advanced-permissions>` and scoped identity policies to ensure mission alignment and CUI segmentation.
-- **Deploy sovereign AI and workflow automation** in isolated environments using :doc:`air-gapped AI operations </guides/agents>` and :doc:`Collaborative Playbooks </guides/repeatable-processes>`—enabling intelligence and speed without compromising data control.
+- **Deploy sovereign AI and workflow automation** in isolated environments using :doc:`air-gapped AI operations </guides/agents>` and :doc:`Collaborative Playbooks </guides/workflow-automation>`—enabling intelligence and speed without compromising data control.
 - **Upgrade legacy platforms** like Skype for Business with modern, compliant tools for secure messaging, screen sharing, and team coordination. :doc:`See Skype for Business replacement options </about/on-prem-skype-for-business-replacement>`.
 
 Unified Collaboration for Secure Workflows
@@ -55,10 +55,10 @@ Mattermost replaces legacy, on-premises communication systems with a modern, sov
 
 **Benefits**
 
-- **Modernize secure messaging and team coordination** with :doc:`channel-based collaboration </guides/collaborate>`, :doc:`threaded discussions </collaborate/organize-conversations>`, and :doc:`file sharing </collaborate/share-files-in-messages>` that work across web, desktop, and mobile.
+- **Modernize secure messaging and team coordination** with :doc:`channel-based collaboration </guides/messaging-collaboration>`, :doc:`threaded discussions </collaborate/organize-conversations>`, and :doc:`file sharing </collaborate/share-files-in-messages>` that work across web, desktop, and mobile.
 - **Replace outdated platforms** like Skype for Business with a scalable, :ref:`self-hosted architecture <deploy/server/server-deployment-planning:deployment options>` that delivers enhanced user experience, compliance, and cross-organizational flexibility.
 - **Protect sensitive information on mobile** using :doc:`enterprise-grade mobile security </about/security/mobile-security>` including :ref:`biometric access <deploy/mobile/mobile-security-features:biometric authentication>`, :ref:`jailbreak detection <deploy/mobile/mobile-security-features:jailbreak and root detection>`, :ref:`screenshot prevention <deploy/mobile/mobile-security-features:screenshot and screen recording prevention>`, and remote wipe—ensuring secure access from personal or field-issued devices.
-- **Extend collaboration capabilities** using :doc:`integrated workflows and automations </guides/repeatable-processes>` to replace manual coordination with policy-driven processes.
+- **Extend collaboration capabilities** using :doc:`integrated workflows and automations </guides/workflow-automation>` to replace manual coordination with policy-driven processes.
 - **Unify teams around a secure, customizable platform** that evolves with your mission and integrates with internal systems via :doc:`webhooks, plugins, and APIs </about/integrations>`.
 
 Get Started
