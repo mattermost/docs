@@ -1,5 +1,5 @@
-Mattermost: The Intelligent Mission Environment (IME)
-======================================================
+Overview
+=========
 
 .. toctree::
    :maxdepth: 1
@@ -14,19 +14,14 @@ Mattermost: The Intelligent Mission Environment (IME)
    /about/releases-lifecycle.rst
    /about/frequently-asked-questions.rst
 
-Overview
---------
+The Intelligent Mission Environment (IME)
+------------------------------------------
 
-Mattermost is the secure collaboration and workflow platform purpose-built for mission-critical operations. Designed to operate across the most demanding environments — from classified networks to the tactical edge — Mattermost enables organizations to maintain full control of their communications, workflows, and infrastructure while accelerating decision-making.
+Mattermost is an Intelligent Mission Environment (IME), purpose-built for mission-critical operations. It delivers a unified platform for secure, extensible, AI-powered collaboration and automation, deployable across the most demanding environments—from classified networks to the tactical edge. Organizations use Mattermost to maintain full control over communications, workflows, and infrastructure while accelerating decision-making.
 
-The platform provides sovereign, AI-integrated capabilities for secure messaging, workflow automation, task management, and real-time communication. It offers extensibility through open APIs and integrations, and deploys flexibly across on-premises, cloud, and air-gapped environments. Whether operating in a disconnected edge node or a centralized data center, Mattermost delivers operational resilience, adaptability, and focus.
+IME integrates secure messaging, workflow automation, task management, and real-time communication within a sovereign, cyber-resilient architecture. It supports extensibility through open APIs and integrations, and runs flexibly across on-premises, cloud, and air-gapped systems—enabling operational focus, adaptability, and resilience from edge nodes to centralized data centers.
 
-What is the Intelligent Mission Environment (IME)?
---------------------------------------------------
-
-The Intelligent Mission Environment (IME) is Mattermost’s unified platform for secure, extensible, AI-powered collaboration and automation within a sovereign and cyber-resilient deployment architecture.
-
-.. image:: /images/ime.jpg
+.. image:: /images/ime.png
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment," showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, DevSecOps, and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
 
 It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
@@ -40,90 +35,121 @@ See the :doc:`Use Case Guide </about/use-cases>` to learn how operational teams 
 Secure collaborative workflow
 -----------------------------
 
-Built on an extensible open-core architecture, Mattermost offers an array of collaborative tools across desktop, web, mobile, and embedded Microsoft user experiences.
-
-- **Secure Web**: Works in browser with or without internet access.
-- :doc:`Managed Desktop </deploy/desktop/desktop-app-deployment>`: MSI-supported clients for Windows, Mac, Linux.
-- :doc:`Mobile & MDM </about/security/mobile-security>`: Pre-packaged or ID-only notification modes for secure BYOD.
-- :doc:`Microsoft 365 Integration </integrate/mattermost-mission-collaboration-for-m365>`: Embed into Teams, Outlook, and M365 with SSO and shared presence.
+Built on an extensible open-core architecture, Mattermost offers an array of collaborative tools across :doc:`managed Windows, Mac, or Linux desktop applications </deploy/desktop/desktop-app-deployment>, secure web browsers with or without internet access, :doc:`BYOD or MDM managed mobile </about/security/mobile-security>`, and :doc:`embedded Microsoft 365 </integrate/mattermost-mission-collaboration-for-m365>` user experiences.
 
 Messaging collaboration
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Channels </guides/collaborate>` delivers secure messaging and file sharing across desktop, web, and mobile. Features include:
+:doc:`Mattermost Channels </guides/collaborate>` enables secure, real-time and asynchronous communication across web, desktop, and mobile—powering mission-critical collaboration and ChatOps workflows across connected, hybrid, and air-gapped environments. Channels feature the following capabilities: 
 
-- Public/private channels, direct messages, and threads.
-- Role-based access controls and audit logs.
-- Configurable notifications (alerts, keywords, muting).
-- Pinning, bookmarking, search, and channel context.
+
+- Public and private channels, direct messages, and threaded conversations for structured operational coordination.
+- Role-based access controls and audit logs to support need-to-know enforcement.
+- Configurable notifications (e.g., alerts, keyword triggers, muting) to surface high-priority activity.
+- Integrated ChatOps capabilities via slash commands, bots, and incoming webhooks for real-time automation and system alerts.
+- Pinning, bookmarking, and advanced search to maintain continuity and context in high-volume environments.
+- Cross-platform support on web, desktop, and mobile clients for flexible field and enterprise access.
 
 Workflow automation
 ~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Playbooks </guides/repeatable-processes>` enables repeatable process automation for mission workflows such as incident response, shift changes, and logistics. With playbooks, you can:
+doc:`Mattermost Playbooks </guides/repeatable-processes>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
 
-- Define checklists, assign tasks, track status.
-- Receive real-time updates via integrated channels.
-- Automate response workflows with consistency.
+- Structured checklists with assigned tasks and due dates
+- Automated status updates and real-time notifications in linked channels
+- Embedded actions, assignments, and guidance for repeatable execution
+- Timeline, retrospectives, and metric tracking for after-action reviews and accountability
+- Integration triggers (e.g., alerts from monitoring tools) to launch workflows automatically
 
 Audio and screenshare
 ~~~~~~~~~~~~~~~~~~~~~~
 
-:doc:`Mattermost Calls </collaborate/make-calls>` enables secure, real-time communication via 1:1 and group audio with screensharing. Features include:
+:doc:`Mattermost Calls </collaborate/make-calls>` enables real-time communication and troubleshooting through sovereign audio calling and screen sharing—supporting secure knowledge transfer and fast response in time-sensitive scenarios. Key capabilities include:
 
-- :doc:`Sovereign deployment </configure/calls-deployment>` for air-gapped or sensitive environments.
-- Optional AI-based call :ref:`transcription <collaborate/make-calls:transcribe recorded calls>` and :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`.
+- 1:1 and group audio calling integrated with channels and DMs
+- Secure screen sharing for collaborative analysis and coordination
+- Sovereign deployment support for air-gapped or sensitive networks
+- Optional AI-powered transcription and summarization of meetings
+- Cross-platform access on web, desktop, and mobile endpoints
 
 Project and task management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Boards provides Kanban-style project tracking, integrated directly with collaboration workflows. With Boards, you can:
+Mattermost Boards enables you to coordinate operational work with Kanban-style planning that integrates directly into messaging workflows—enabling transparency, prioritization, and accountability across teams with the following capabilities: 
 
-- Assign, prioritize, and update tasks in real time.
-- Seamlessly synchronize with messages and channels.
+- Visual task boards with drag-and-drop cards and customizable workflows.
+- Real-time updates and synchronization with linked Mattermost channels.
+- Card-level assignments, checklists, labels, and due dates.
+- Filtering and sorting to manage backlogs and sprint planning.
+- Supports project visibility without context switching from primary communication channels.
 
 AI Agents and open APIs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost Agents support customizable AI automation and integration with sovereign LLMs. Features include:
+:doc:`Mattermost Agents </ai/agents>` accelerate decisions and streamline repetitive tasks with AI-driven assistance, fully controllable within sovereign infrastructure—offering intelligent support for both users and workflows: 
 
-- AI-enabled assistance within chat and workflows.
-- Retrieval-Augmented Generation (RAG), Semantic Search, and Responsible AI Guardrails support.
+- Configurable AI assistants for summarizing threads, extracting action items, and answering questions.
+- Direct interactions in dedicated threads or channels.
+- Semantic search using natural language queries across Mattermost data.
+- Support for Retrieval-Augmented Generation (RAG), custom instructions, and responsible AI guardrails.
+- Integration with local models (e.g., Ollama, vLLM) or cloud LLMs via OpenAI-compatible APIs.
 
 Integrations and AI platform
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-------------------------------
+The Intelligent Mission Environment (IME) is built for secure, extensible integration with mission-critical systems and AI workflows. Designed to operate in sovereign, regulated, and disconnected environments, IME supports modular automation, multi-agent orchestration, and the secure deployment of both local and cloud-based AI models—enabling faster decision-making while maintaining full control over data, infrastructure, and model behavior.
 
-Layered extensibility enables full customization of workflows and automations:
+Layered extensibility
+~~~~~~~~~~~~~~~~~~~~
+Built to integrate securely with complex enterprise and mission-critical environments, this model enables teams to tailor workflows, automate operations, and connect to external systems using open standards and modular components—supporting rapid deployment of automation while maintaining flexibility and compliance across both air-gapped and connected environments.
 
-- :ref:`Slash commands <about/integrations:custom slash commands>` and :ref:`webhooks <about/integrations:webhooks>`.
-- `Open APIs <https://developers.mattermost.com/api-documentation/>`__ and :ref:`plugin architecture <about/integrations:plugins>` for full customization.
-- Out-of-the-box support for :doc:`Jira </integrate/jira>`, :doc:`GitHub </integrate/github>`, :doc:`GitLab </integrate/gitlab>`, :doc:`ServiceNow </integrate/servicenow>`, `Jenkins <https://mattermost.com/marketplace/jenkins-plugin-2/>`_, and `PagerDuty <https://mattermost.com/marketplace/pagerduty/>`_.
-- Secure video integrations: `Pexip <https://mattermost.com/marketplace/pexip-video-connect/>`_, Jitsi, `Webex <https://mattermost.com/marketplace/webex-cloud/>`_, :doc:`Zoom </integrate/zoom>`, and :doc:`Microsoft Teams </integrate/microsoft-teams-sync>`.
-- Multi-agent coordination with MCP and Agent-to-Agent architectures (pre-release).
+Key capabilities include:
+
+- Secure video integrations: Embed secure video platforms such as Pexip, Webex, and Jitsi for sovereign mission collaboration.
+- Pre-packaged and custom integrations: Quickly connect with systems like GitHub, GitLab, Jira, ServiceNow, Jenkins, and PagerDuty.
+- Webhooks and slash commands: Enable real-time, event-driven automation and user-triggered actions directly from chat.
+- Plugin architecture: Extend the Mattermost core with custom UI components, server-side logic, and third-party services.
+
+Multi-Agent, Multi-LLM integration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+A secure, extensible foundation for integrating multiple large language models (LLMs) and autonomous agents within a sovereign control plane enables organizations to operationalize AI within sovereign infrastructure—fusing data across systems, accelerating decisions, and maintaining full control over AI model access and performance. Organizations can leverage the following capabilities to operationalize AI:
+
+- Sovereign AI model support: Integrate with OpenAI, Anthropic, Meta Llama, and other LLMs via secure APIs.
+- Custom instructions and Retrieval-Augmented Generation (RAG): Adapt agent behavior to domain-specific tasks using internal data and policies.
+- Semantic search and natural language interaction: Provide operational teams with intuitive ways to retrieve and act on information.
+- Responsible AI control plane: Define model access policies, enforce guardrails, and monitor agent activity with feedback loops.
+- Multi-agent orchestration: Use the Mission Control Plane (MCP) and agent-to-agent protocols to coordinate actions across multiple autonomous agents.
 
 Sovereign & cyber-resilient deployment flexibility
 --------------------------------------------------
 
-IME supports operations :doc:`across any infrastructure </deploy/server/server-deployment-planning>`:
+The Intelligent Mission Environment (IME) is engineered for resilient, mission-critical operations—whether at the tactical edge, inside sovereign data centers, or across regulated cloud environments. Built on Kubernetes and designed for high availability, IME ensures continuity, scalability, and full operational control across diverse infrastructure profiles.
 
-- **Tactical Edge**: DDIL-ready deployments on portable, ruggedized systems.
-- **Air-Gapped**: Operate with no internet or DNS connectivity.
-- **Private Data Centers**: Fully self-hosted, sovereign infrastructure.
-- **Cloud Options**: Supported on Oracle Cloud, Azure (Gov, Global, Local), AWS GovCloud, GCP, and edge clouds.
+Tactical Edge
+~~~~~~~~~~~~~
+IME runs on lightweight, ruggedized, or mobile infrastructure, optimized for disconnected, denied, intermittent, and limited (DDIL) conditions.
 
-Resilient by design
--------------------
+- Supports single-node Linux binary and container-based deployments.
+- Operates without internet, DNS, or centralized authentication.
+- Enables secure communications, screen sharing, and automation in fully air-gapped environments.
 
-IME is architected for operational continuity in all conditions:
+Private Cloud & Sovereign Datacenter
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+For high-security environments requiring full infrastructure control, IME supports scalable, highly available deployment within sovereign datacenters.
 
-- :doc:`High Availability </scale/high-availability-cluster-based-deployment>`: Auto-healing Kubernetes clusters.
-- :doc:`Scalable </scale/scaling-for-enterprise>`: From a suitcase deployment to geo-distributed multi-tenant nodes.
-- **STIG and FIPS-Compliant**: Meets FedRAMP, NIST 800-53, and other mandates.
-- :doc:`Air-Gapped and Sovereign </deploy/server/air-gapped-deployment>`: Built for national-level trust and data control.
+- Kubernetes-native architecture enables containerized services, self-healing workloads, and zero-downtime updates.
+- High availability through clustering across application, database, and proxy layers.
+- Horizontal scalability to tens of thousands of users per instance.
+- Complies with STIG, FIPS 140-2, and FedRAMP-aligned security standards.
+
+Hyperscaler & Sovereign Cloud Support
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+IME is deployable across major cloud providers with support for hybrid and sovereign architectures:
+
+- Microsoft Azure – Supports VM and Kubernetes deployments across Global, Government, and Local Regions; roadmap includes Azure Air-Gapped.
+- Amazon Web Services (AWS) – Deployable on AWS Global, GovCloud (US), and Outposts; marketplace support in development.
+- Google Cloud – Supports Google Cloud Platform and Distributed Cloud (Edge and Hosted); roadmap to marketplace availability.
+- Oracle Cloud Infrastructure – Available in the Oracle Marketplace for VM and Kubernetes deployments, including Oracle Sovereign Cloud; roadmap includes Oracle Air-Gapped.
 
 Get started
 -----------
-
-Mattermost empowers mission-critical teams with a sovereign, extensible, AI-ready collaboration platform that works where others cannot.
-
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_
+Mattermost provides mission-critical teams with a sovereign, extensible, and AI-integrated collaboration platform designed for secure operations across the most challenging environments. Talk to an Expert <https://mattermost.com/contact-sales/>_ to explore how to architect your Intelligent Mission Environment.
