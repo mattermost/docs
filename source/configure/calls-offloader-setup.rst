@@ -391,7 +391,7 @@ Check service logs:
 Performance Monitoring
 ^^^^^^^^^^^^^^^^^^^^
 
-Monitor calls-offloader performance and resource usage to ensure optimal operation. Set up alerts for high CPU/memory usage, failed jobs, or extended processing times.
+Monitor calls-offloader performance and resource usage to ensure optimal operation. See `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__ for details on setting up metrics and observability.
 
 Other Calls Documentation
 ----------------
@@ -401,5 +401,4 @@ Other Calls Documentation
 - `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__: Guide to monitoring Calls performance using metrics and observability
 - `Calls Deployment on Kubernetes <calls-kubernetes.html>`__: Detailed guide for deploying Calls in Kubernetes environments
 - `Calls Troubleshooting <calls-troubleshooting.html>`__: Detailed troubleshooting steps and debugging techniques
-
-For detailed performance tuning and monitoring recommendations, refer to the `calls-offloader performance documentation <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__.
+- `calls-offloader performance documentation <https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md>`__: Detailed performance tuning and monitoring recommendations
