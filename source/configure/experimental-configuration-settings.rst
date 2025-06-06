@@ -8,7 +8,7 @@ Review and manage the following experimental configuration options in the System
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
-- `Experimental audit logging configuration settings (Beta) <#experimental-audit-logging-configuration-settings-beta>`__
+- `Experimental audit logging configuration settings <#experimental-audit-logging-configuration-settings>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
@@ -789,14 +789,14 @@ Enable Bleve for autocomplete queries
 
 ----
 
-Experimental audit logging configuration settings (Beta)
+Experimental audit logging configuration settings
 --------------------------------------------------------
 
 Enable the following settings to output audit events in the System Console by going to **Experimental > Features**, or in the ``config.json`` file. 
 
 .. note::
-  
-  The ability to configure audit logging in the System Console requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
+
+  The ability to enable and configure audit logging is currently in :ref:`Beta <manage/feature-labels:beta>` and requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
 
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
@@ -1086,7 +1086,7 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: restrict-system-admin
-  :displayname: File configuration settings (Beta)
+  :displayname: File configuration settings
   :systemconsole: N/A
   :configjson: FileEnabled
   :environment: N/A
@@ -1104,6 +1104,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  The ability to restrict the system admin from viewing and modifying a subset of server configuration settings is currently in :ref:`Beta <manage/feature-labels:beta>`.
+
 
 .. config:setting:: enable-client-side-certification
   :displayname: Enable client-side certification (Experimental)

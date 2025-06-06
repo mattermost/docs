@@ -35,15 +35,9 @@ Because of the benefits of Mattermost Enterprise Edition, we recommend installin
 Mattermost plans
 ----------------
 
-Mattermost plans consist of features and entitlements available either a paid subscription service or free. 
+Mattermost plans consist of features and entitlements available either a paid subscription service or free. :doc:`Learn more </about/plans>` about the features available across all plans.
 
-We have three primary plans available: 
-
-* `Mattermost Enterprise <#mattermost-enterprise>`__: This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost platform.
-* `Mattermost Professional <#mattermost-professional>`__: This is a paid subscription service providing advance access controls and user management for managers leading teams of teams.
-* `Mattermost Free <#mattermost-free>`__: This a free version of our collaboration platform designed for single teams (self-hosted only).
-
-The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase. Alternatively, you can start a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
+The Mattermost Professional, Enterprise, or Enterprise Advanced editions are only available after deploying our Mattermost Enterprise Edition binary, and then applying a valid license key that comes with a subscription purchase. Alternatively, you can start a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~
@@ -69,7 +63,7 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Deleted granular administrative control </onboard/delegated-granular-administration>`.
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </repeatable-processes/share-and-collaborate>`
 - :doc:`Channel export </comply/export-mattermost-channel-data>`
-- :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging (beta)>`.
+- :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging>`.
 - :doc:`Advanced collaboration with connected workspaces across Mattermost instances </onboard/connected-workspaces>`.
 - :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster-based-deployment>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
@@ -136,8 +130,6 @@ Features include:
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, and Vietnamese.
 - `Community support <https://mattermost.com/support/>`_.
-
-See a complete list of features `here <https://mattermost.com/pricing>`_.
 
 Product decisions
 -----------------

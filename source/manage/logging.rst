@@ -108,29 +108,31 @@ Define logging output in JSON format in the System Console by going to **Environ
 
 ----
 
-Audit logging (Beta)
---------------------
+Audit logging
+---------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost :doc:`workspace </guides/use-mattermost>`, such as access to the Mattermost REST API or mmctl. 
+By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost :doc:`workspace </guides/use-mattermost>`, such as access to the Mattermost REST API or mmctl.
 
 .. tip::
-    From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
 
-- Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
-- During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
+    - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
+    - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
 
 You can define :ref:`whether audit events are output to file <configure/experimental-configuration-settings:enable audit logging>`, :ref:`the name and path of the audit logging file <configure/experimental-configuration-settings:file name>`, the :ref:`maximum size of each file <configure/experimental-configuration-settings:max file size>`, the :ref:`maximum number of days before triggering a rotation <configure/experimental-configuration-settings:max file age>`, the :ref:`maximum number of rotated files to keep <configure/experimental-configuration-settings:maximum file backups>`, :ref:`whether files are compressed using GZIP <configure/experimental-configuration-settings:file compression>`, and :ref:`how many audit records can be queued/buffered <configure/experimental-configuration-settings:maximum file queue>` at any point in time when writing to a file.
 
-In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.  
+In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 
-.. warning::
-    
-    - From Mattermost v7.2, experimental audit logging (Beta) is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
+.. note::
+
+    - The ability to enable audit logging in Mattermost is currently in :ref:`Beta <manage/feature-labels:beta>`.
+    - From Mattermost v7.2, experimental audit logging is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
     - The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </comply/embedded-json-audit-log-schema>`.
     - Existing tools which ingest or parse audit log records may need to be modified.
+    - From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
+
 
 ----
 
@@ -488,7 +490,7 @@ Debug logging can cause log files to expand substantially, and may adversely imp
 Does Mattermost have an audit log besides the system ``auditd``?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Yes. See the `audit logging <#audit-logging-beta>`__ documentation for details.
+Yes. See the `audit logging <#audit-logging>`__ documentation for details.
 
 When syslog is configured as the target, does it contain the IP address of the emitter of the data (i.e., the Mattermost app node)?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

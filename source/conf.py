@@ -174,8 +174,10 @@ redirects = {
         "https://docs.mattermost.com/about/non-profit-subscriptions.html",
 "about/maximize-microsoft-investment.html":
         "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
-
-
+"about/out-of-band-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
+"about/incident-response-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -929,7 +931,7 @@ redirects = {
 "configure/configuring-apache2.html":
         "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
 "configure/enable-ai-copilot.html":
-        "https://docs.mattermost.com/configure/agents-admin-guide.html",
+        "https://docs.mattermost.com/configure/enable-copilot.html",
 "configure/common-config-settings-notation.html":
         "https://docs.mattermost.com/configure/configuration-settings.html",
 "configure/bulk-loading-about.html":

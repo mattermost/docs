@@ -4,6 +4,9 @@ With Skype for Business reaching end-of-life, security-conscious organizations f
 
 Mattermost provides a secure, self-hosted communication and collaboration platform purpose-built for air-gapped environments, classified networks, and regulated industries. Designed to meet NIST 800-53, FedRAMP, and DISA STIG compliance requirements, Mattermost replaces legacy tools with modern capabilities—secure messaging, file sharing, workflow automation, and integrated video collaboration—while maintaining full enterprise control. Organizations can operate at scale, enable external collaboration without policy violations, and modernize their digital workflows without compromising security.
 
+.. image:: /images/On-Prem-Skype-for-Business-replace.png
+    :alt: Extend Microsoft Enterprise IT investments for edge-based, highly tailored Mission IT workflows with Mattermost.
+
 The following mission-ready collaboration capabilities are available: 
 
 Air-Gapped and Classified Operations
@@ -36,16 +39,19 @@ Enterprise-Controlled External Collaboration
 
 Collaborating across organizational boundaries must not compromise compliance or IT governance. Mattermost enables secure external engagement while keeping control centralized within the enterprise.
 
+.. image:: /images/External-Collaboration-with-Enterprise-Control.png
+    :alt: Mattermost replaces Signal, Discord and other free personal apps with secure external messaging controlled by IT.
+
 **Benefits**
 
 - **Collaborate securely with third parties** via Connected Workspaces that allow messaging, :doc:`file sharing </collaborate/share-files-in-messages>`, and :doc:`thread-based discussions </collaborate/organize-conversations>` with external teams—without exposing internal systems.
-- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed :doc:`permissions </onboard/advanced-permissions>`, :ref:`audit logging <manage/logging:audit logging (beta)>`, and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>`.
+- **Apply fine-grained access controls and retention policies** to external users through enterprise-managed :doc:`permissions </onboard/advanced-permissions>`, :ref:`audit logging <manage/logging:audit logging>`, and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>`.
 - **Integrate with Microsoft Teams, Exchange, and M365** to maintain centralized workflows and extend secure communication to external stakeholders without leaving policy-aligned platforms. See :doc:`Mattermost for M365, Teams, and Outlook </integrate/mattermost-mission-collaboration-for-m365>`.
 - **Manage user identity and access** across internal and external roles using Microsoft :doc:`Entra ID </onboard/sso-entraid>` (Azure AD) synchronization for scalable and compliant provisioning.
 
 Get Started
 -----------
 
-`Try Mattermost <https://mattermost.com/download/>`__ or `talk to an Expert <https://mattermost.com/contact/>`__ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
+`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to learn more about transitioning from Skype for Business to a secure, modern collaboration platform built for mission-critical environments. With Mattermost, your organization gains a self-hosted, scalable, and compliant solution tailored for classified operations, secure external engagement, and operational modernization.
 
 
