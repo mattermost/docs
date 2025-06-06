@@ -290,6 +290,7 @@ For clients behind strict firewalls, you may need to configure STUN/TURN servers
    ]
 
 We recommend using `coturn <https://github.com/coturn/coturn>`__ for your TURN server implementation. 
+
 System Tuning
 ^^^^^^^^^^^
 
@@ -339,17 +340,20 @@ After deploying RTCD, validate the installation:
       
    Type a message and hit Enter on either side. If messages are received on both ends, UDP connectivity is working.
 
+   Note: This test must be run with the RTCD service stopped, as it binds to the same port.
+
+   .. code-block:: bash
+
+      sudo systemctl stop rtcd
+
+
 3. **Test TCP connectivity** (if enabled):
 
    Similar to the UDP test, but remove the ``-u`` flag from both commands.
 
 4. **Monitor metrics**:
 
-   If you've enabled Prometheus metrics, access them at:
-   
-   .. code-block:: bash
-
-      curl http://YOUR_RTCD_SERVER:9090/metrics
+   Refer to `Calls Metrics and Monitoring <calls-metrics-monitoring.html>`__ for setting up Calls metrics and monitoring.
 
 Horizontal Scaling
 ----------------
