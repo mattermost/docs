@@ -6,7 +6,7 @@
 :nosearch:
 
 - :ref:`Mattermost Calls <configure/plugins-configuration-settings:calls>`
-- :doc:`Mattermost Copilot </configure/enable-copilot>`
+- :doc:`Mattermost Agents </configure/agents-admin-guide>`
 - :doc:`Mattermost for Microsoft Teams </integrate/microsoft-teams-sync>`
 - :doc:`Mattermost Playbooks </guides/repeatable-processes>`
 - :doc:`Microsoft Calendar Integration </integrate/microsoft-calendar>`
