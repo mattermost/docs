@@ -7,6 +7,7 @@ Training and Support
    :titlesonly:
 
    /guides/community-chat.rst
+   /guides/community-for-mattermost.rst
    /guides/contribute-to-documentation.rst
 
 Get the help you need with Mattermost via robust documentation, extensive community support, and professional support services. If you're struggling with something on your Mattermost journey, take a look at the following learning resources:
@@ -36,7 +37,7 @@ Commercial Customer Support
 Enterprise
 ~~~~~~~~~~
 
-:ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` support is available 24 x 7 at all times on all days through email and the `Mattermost online ticketing system <https://support.mattermost.com/hc/en-us/requests/new>`_ with a 4 hour response time service-level target. For more information, please see `Mattermost Support Terms <https://mattermost.com/support-terms/>`_.
+:doc:`Mattermost Enterprise </about/editions-and-offerings>` support is available 24 x 7 at all times on all days through email and the `Mattermost online ticketing system <https://support.mattermost.com/hc/en-us/requests/new>`_ with a 4 hour response time service-level target. For more information, please see `Mattermost Support Terms <https://mattermost.com/support-terms/>`_.
 
 Premier
 ^^^^^^^
@@ -46,14 +47,14 @@ Available as an additional purchase for Mattermost Enterprise customers, Matterm
 Professional
 ~~~~~~~~~~~~
 
-:ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` support includes business hours support from 8am to 8pm United States Pacific Time (UTC-8 except for U.S. daylight savings time, with next business day response time via email and the Mattermost online ticketing system. For more information, please see `Mattermost Support Terms <https://mattermost.com/support-terms/>`_.
+:doc:`Mattermost Professional </about/editions-and-offerings>` support includes business hours support from 8am to 8pm United States Pacific Time (UTC-8 except for U.S. daylight savings time, with next business day response time via email and the Mattermost online ticketing system. For more information, please see `Mattermost Support Terms <https://mattermost.com/support-terms/>`_.
 
 Non-Commercial Support
 ----------------------
 
-Community support for :ref:`Mattermost Free <about/editions-and-offerings:mattermost free>` is available on the `peer-to-peer discussion forums <https://forum.mattermost.com/>`_. 
+Community support for :doc:`Mattermost Free </about/editions-and-offerings>` is available on the `peer-to-peer discussion forums <https://forum.mattermost.com/>`_. 
 
-Organizations using Mattermost Free to evaluate a future purchase of :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` can talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to apply for early access to commercial support as part of the evaluation process.
+Organizations using Mattermost Free to evaluate a future purchase of :doc:`Mattermost Enterprise </about/editions-and-offerings>` can talk to a `Mattermost Expert <https://mattermost.com/contact-sales/>`_ to apply for early access to commercial support as part of the evaluation process.
 
 Community server
 ~~~~~~~~~~~~~~~~
