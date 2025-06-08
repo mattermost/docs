@@ -1,3 +1,6 @@
+"""
+Sphinx event handler implementation.
+"""
 import re
 from dataclasses import dataclass
 from typing import Any, Final, Optional
@@ -13,11 +16,23 @@ from .nodes import TabContainer
 
 
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
+"""The Sphinx logger"""
+
 FURO_SCRIPT_ASSET_FILENAME: Final[str] = "_static/scripts/furo.js"
+"""The file name of the Furo theme JavaScript asset"""
+
 LOG_PREFIX: Final[str] = "[sphinx_inline_tabs]"
+"""A log message prefix string identifying this Sphinx extension"""
 
 
 def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
+    """
+
+    :param app:
+    :param _:
+    :param docname:
+    :return:
+    """
     if hasattr(app.env, "sphinx_tabs"):
         if docname in app.env.sphinx_tabs:
             app.env.sphinx_tabs.pop(docname)
@@ -26,6 +41,14 @@ def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
 def env_merge_info(
     app: Sphinx, _: BuildEnvironment, docnames: list[str], other: BuildEnvironment
 ) -> None:
+    """
+
+    :param app:
+    :param _:
+    :param docnames:
+    :param other:
+    :return:
+    """
     if not hasattr(app.env, "sphinx_tabs"):
         app.env.sphinx_tabs = {}
     if hasattr(other, "sphinx_tabs"):
@@ -45,6 +68,12 @@ def env_merge_info(
 
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
+    """
+
+    :param app:
+    :param doctree:
+    :return:
+    """
     if not hasattr(app.env, "sphinx_tabs"):
         app.env.sphinx_tabs = {}
     if (
@@ -73,6 +102,15 @@ def html_page_context(
     context: dict[str, Any],
     doctree: Optional[nodes.document],
 ) -> Optional[str]:
+    """
+
+    :param app:
+    :param pagename:
+    :param templatename:
+    :param context:
+    :param doctree:
+    :return:
+    """
     if hasattr(app.env, "sphinx_tabs"):
         if pagename in app.env.sphinx_tabs:
             logger.debug(
@@ -98,6 +136,9 @@ def html_page_context(
 
 @dataclass(repr=True, slots=True)
 class SectionData:
+    """
+
+    """
     name: str
     level: int
     is_doc_root: bool
@@ -114,6 +155,15 @@ def collect_sections(
     node: nodes.Element,
     level=0,
 ) -> SectionData:
+    """
+
+    :param env:
+    :param document:
+    :param docname:
+    :param node:
+    :param level:
+    :return:
+    """
     logger.debug(
         f"{LOG_PREFIX} collect_sections(): ({docname}) [{level}] node={type(node)}"
     )
@@ -171,6 +221,12 @@ def collect_sections(
 
 
 def dump_sections(docname: str, secdata: SectionData):
+    """
+
+    :param docname:
+    :param secdata:
+    :return:
+    """
     section_type: str = "section"
     if secdata.is_doc_root:
         section_type = "doc root"
@@ -186,6 +242,12 @@ def dump_sections(docname: str, secdata: SectionData):
 
 
 def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
+    """
+
+    :param docname:
+    :param secdata:
+    :return:
+    """
     logger.debug(
         f"{LOG_PREFIX} sectiondata_to_toc(): "
         f"({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
@@ -227,6 +289,13 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
 def make_compact_reference(
     section_id: str, section_name: str, docname: str
 ) -> addnodes.compact_paragraph:
+    """
+
+    :param section_id:
+    :param section_name:
+    :param docname:
+    :return:
+    """
     cpara: addnodes.compact_paragraph = addnodes.compact_paragraph()
     cpara.append(
         nodes.reference(

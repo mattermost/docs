@@ -1,4 +1,10 @@
-"""Add inline tabbed content to your Sphinx documentation."""
+"""
+Add inline tabbed content to your Sphinx documentation
+by: Pradyun Gedam <mail@pradyunsg.me> (https://github.com/pradyunsg/sphinx-inline-tabs)
+
+Support for inline tab subsections in page Table of Contents
+by: Alan Lew <alan@ethereal.cc> (https://github.com/neflyte/)
+"""
 
 import os
 from sphinx.application import Sphinx
@@ -8,10 +14,14 @@ __all__: list[str] = ["setup"]
 
 
 def setup(app: Sphinx):
-    """Entry point for sphinx theming."""
+    """
+    Entry point for sphinx theming.
+
+    :param app: Sphinx application.
+    """
     app.require_sphinx("8.2")
 
-    # We do imports from Sphinx, after validating the Sphinx version
+    # We do imports from Sphinx after validating the Sphinx version
     from .directive import TabDirective
     from .transform import TabHtmlTransform
     from .nodes import TabContainer, TabInput, TabLabel, TabSpan
