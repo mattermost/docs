@@ -71,6 +71,7 @@ The following software is required to build the documentation:
 - Git [[download]](https://git-scm.com/downloads)
 - Python 3.11 or later [[download]](https://www.python.org/downloads)
 - Pipenv [[download]](https://pipenv.pypa.io)
+- GNU Make 3.82 or later
 
 ### Build instructions
 

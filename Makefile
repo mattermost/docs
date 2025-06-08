@@ -9,11 +9,10 @@
 #
 #    macOS has shipped with v3.81 of GNU Make pre-installed and may
 #    cause this error. A modern version of GNU Make can be installed
-#    using Homebrew.
+#    using Homebrew (https://brew.sh/).
 #
 #    Windows users can install a modern version of GNU Make using
-#    the Scoop (https://scoop.sh/) or Chocolatey (https://chocolatey.org)
-#    package managers.
+#    the Chocolatey (https://chocolatey.org) package manager.
 #
 ifeq ($(filter undefine,$(.FEATURES)),)
 $(error Unsupported Make version. \
