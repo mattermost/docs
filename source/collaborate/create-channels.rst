@@ -4,7 +4,7 @@ Create channels
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read only channels>`.
+Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read-only channels>`.
 
 .. tab:: Web/Desktop
   :parse-titles:

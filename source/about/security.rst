@@ -88,7 +88,7 @@ Public links can also be disabled by setting the :ref:`public link salt <configu
 LLM context management
 -----------------------
 
-Mattermost Copilot is designed to ensure that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses in Mattermost. Learn how Mattermost :doc:`Copilot manages LLM context </collaborate/copilot-context-management>` and how to ensure data privacy.
+Mattermost Agents are designed to ensure that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses in Mattermost. Learn how Mattermost :doc:`Agents manages LLM context </collaborate/agents-context-management>` and how to ensure data privacy.
 
 Audit logs and monitoring
 -------------------------

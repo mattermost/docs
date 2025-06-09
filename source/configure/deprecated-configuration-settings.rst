@@ -790,7 +790,7 @@ Shared channels settings
 Enable remote cluster service (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces (beta)>` configuration settings
+Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces>` configuration settings
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
@@ -807,7 +807,7 @@ Enable this setting to add, remove, and view remote clusters for shared channels
 Enable shared channels (Experimental)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces (beta)>` configuration settings
+Deprecated in November 16th, 2024 release in favor of :ref:`Connected Workspaces <configure/site-configuration-settings:enable connected workspaces>` configuration settings
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 

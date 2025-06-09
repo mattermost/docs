@@ -64,3 +64,11 @@ Mattermost is designed to be able to handle a large number of concurrent users, 
 
         .. image:: /images/MattermostDeployment50kAzure.png
             :class: bg-white
+
+
+.. tab:: Oracle
+
+    .. tab:: 5,000 users
+
+        .. image:: /images/MattermostDeployment5kOracle.png
+            :class: bg-white

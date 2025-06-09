@@ -140,7 +140,7 @@
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Message priority</strong>: Elevate the focus of organizations with the ability for end users to <a href="https://docs.mattermost.com/collaborate/message-priority.html#set-message-priority-beta">specify the priority of messages</a> as Standard (Default), Important, and Urgent.</td>
+      <td><strong>Message priority</strong>: Elevate the focus of organizations with the ability for end users to <a href="https://docs.mattermost.com/collaborate/message-priority.html#set-message-priority">specify the priority of messages</a> as Standard (Default), Important, and Urgent.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -213,7 +213,7 @@
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Advanced logging</strong>: Enable <a href="https://docs.mattermost.com/manage/logging.html#audit-logging-experimental-beta">advanced logging</a> for optimizing and troubleshooting high-scale, mission-critical deployments including error, panic, debug, trace and conditional logging to a full range of destinations including Syslog and TCP target options.</td>
+      <td><strong>Advanced logging</strong>: Enable <a href="https://docs.mattermost.com/manage/logging.html#audit-logging-experimental">advanced logging</a> for optimizing and troubleshooting high-scale, mission-critical deployments including error, panic, debug, trace and conditional logging to a full range of destinations including Syslog and TCP target options.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>

@@ -10,7 +10,7 @@ Using a web browser, the desktop app, or the mobile app, you can `join a call <#
 
   - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
   - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
-  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <collaborate/make-calls:live captions during calls (beta)>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <configure/calls-deployment:rtcd>`.
+  - Enterprise customers can also `record calls <#record-a-call>`__, enable :ref:`live text captions <collaborate/make-calls:live captions during calls>` during calls, and `transcribe recorded calls <#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the :ref:`dedicated rtcd service <configure/calls-deployment:rtcd>`.
   - Mattermost Cloud users can start calling right out of the box. For Mattermost self-hosted deployments, System admins need to enable and configure the plugin :ref:`using the System Console <configure/plugins-configuration-settings:calls>`.
 
 .. include:: ../_static/badges/academy-calls.rst
@@ -155,7 +155,7 @@ Record a call
 
 From Mattermost v7.7, if you're the host of a meeting, you can record the call, unless your system admin has :ref:`disabled the host's ability to do so <configure/plugins-configuration-settings:enable call recordings>`.
 
-Call recordings include audio, any screen sharing during the call, and text transcriptions, when :ref:`enabled <configure/plugins-configuration-settings:enable call transcriptions (beta)>`. 
+Call recordings include audio, any screen sharing during the call, and text transcriptions, when :ref:`enabled <configure/plugins-configuration-settings:enable call transcriptions>`. 
 
 The default setting for a recording is 60 minutes, but your system admin may :ref:`change the recording duration <configure/plugins-configuration-settings:maximum call recording duration>` as needed. You'll receive a reminder 10 minutes before the recording limit is reached. If your call is going to continue beyond the recording limit, allow the first recording to complete, then start a new recording immediately after.
 
@@ -192,33 +192,35 @@ To record a call:
       :alt: Tap on Stop Recording to stop recording the call.
       :scale: 50
 
-Live captions during calls (Beta)
+Live captions during calls
 ---------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions (beta)>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
+From Mattermost v9.7, and Mattermost mobile app v.2.16, all call participants can display real-time text captions by selecting the **More** |more-icon| icon and **Show live captions** when the call is being recorded, and when :ref:`live captions are enabled <configure/plugins-configuration-settings:enable live captions>`. Live captions can be helpful in cases where noise is preventing you from hearing the audio of participants clearly.
 
 By default, live captions display in English. Your Mattermost system admin can :ref:`specify a different language for live captions <configure/plugins-configuration-settings:live captions language>` in the System Console.
 
 .. note::
 
-  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings>` to enable live captions.
+  - The ability to enable live captions during Mattermost calls is currently in :ref:`Beta <manage/feature-labels:beta>`. 
+  - Your system admin must enable :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to enable live captions.
 
-Transcribe recorded calls (Beta)
+Transcribe recorded calls
 --------------------------------
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions (beta)>`.
+From Mattermost v9.4, and Mattermost mobile app v.2.13, call recordings can include text captions, and a transcription text file can be generated, unless your system admin has :ref:`disabled the ability to transcribe call recordings <configure/plugins-configuration-settings:enable call transcriptions>`.
+
+When call recording stops, the transcription file is posted in the call thread as a TXT file attachment. It's available to all users in the channel both during the call, and after the call has ended. Additionally, users viewing the call recording can show or hide text captions using the Closed Captioning option in the video player.
 
 .. note::
 
-  :ref:`Call recording must be enabled <configure/plugins-configuration-settings:enable call recordings>` to enable recorded call transcriptions.
-
-When call recording stops, the transcription file is posted in the call thread as a TXT file attachment. It's available to all users in the channel both during the call, and after the call has ended. Additionally, users viewing the call recording can show or hide text captions using the Closed Captioning option in the video player.
+  - The ability to enable recorded call transcriptions is currently in :ref:`Beta <manage/feature-labels:beta>`.
+  - Your system admin must enable :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to enable recorded call transcriptions.
 
 Frequently asked questions
 --------------------------
