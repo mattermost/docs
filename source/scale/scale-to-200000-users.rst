@@ -14,6 +14,11 @@ This page describes the Mattermost reference architecture designed for the load 
   - From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Using Redis can help ensure that Mattermost remains performant and efficient, even under heavy usage. See the :ref:`Redis cache backend <configure/environment-configuration-settings:redis cache backend>` configuration settings documentation for details.
   - While the following Elasticsearch specifications may be more than sufficient for some use cases, we have not extensively tested configurations with lower resource allocations for this user scale. If cost optimization is a priority, admins may choose to experiment with smaller configurations, but we recommend starting with the tested specifications to ensure system stability and performance. Keep in mind that under-provisioning can lead to degraded user experience and additional troubleshooting effort.
 
+Ramp-up rate
+------------
+
+The tests for all architectures were designed to login 4 users per second; i.e., 14,400 users in an hour. For this architecture, we ran an additional test to better understand larger rates. The maximum rate we tested was 30 users per second, that was supported by this architecture for the first 150,000 users. That means that this architecture can login 150,000 users in under 1.5 hours. There is no hard data on larger rates after that 150,000 mark, apart from the base rate of 4 users per second.
+
 Requirements
 ------------
 
