@@ -11,7 +11,7 @@ Your system admin can install the following pre-packaged integrations through th
 Mattermost features
 ~~~~~~~~~~~~~~~~~~~~
 
-- :ref:`Copilot <collaborate/chat-with-copilot:get started>`
+- :ref:`AI Agents <guides/agents:access ai features>`
 - :ref:`Export Mattermost channel data <comply/export-mattermost-channel-data:usage>`
 - :ref:`Monitor performance metrics <scale/collect-performance-metrics:usage>`
 - :doc:`Perform legal holds </comply/legal-hold>`

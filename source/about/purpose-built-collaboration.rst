@@ -17,7 +17,7 @@ Coordinating logistics across continents, agencies, and time zones requires a se
 
 **Benefits**
 
-- **Enable real-time coordination** across supply chains, procurement, and field units with :doc:`channel-based messaging </guides/collaborate>` and :doc:`playbook-driven workflows </guides/repeatable-processes>` that standardize communication and reduce friction.
+- **Enable real-time coordination** across supply chains, procurement, and field units with :doc:`channel-based messaging </guides/messaging-collaboration>` and :doc:`playbook-driven workflows </guides/workflow-automation>` that standardize communication and reduce friction.
 - **Connect systems across logistics networks** by integrating ERP, fleet tracking, maintenance management, and transportation tools via :doc:`webhooks, APIs, and plugins </about/integrations>`.
 - **Preserve operational continuity** during outages or disruptions using :ref:`self-hosted deployments <deploy/server/server-deployment-planning:deployment options>` and :doc:`high availability architecture </scale/high-availability-cluster-based-deployment>` that eliminate reliance on third-party cloud services.
 - **Support multilingual coordination** with :ref:`localized UI options <preferences/manage-your-display-options:language>` in 20+ languages to ensure inclusive collaboration across global teams.
@@ -44,10 +44,10 @@ Engineering, infrastructure, and security teams manage increasingly complex envi
 
 **Benefits**
 
-- **Accelerate decision-making and incident response** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` to automate workflows for triage, patching, code releases, and security alerts.
-- **Customize your collaboration environment** with :doc:`theming </preferences/customize-your-theme>`, :doc:`custom branding </configure/custom-branding-tools>`, and :doc:`channel templates </guides/collaborate>` to mirror internal teams and operational domains.
+- **Accelerate decision-making and incident response** using :doc:`Collaborative Playbooks </guides/workflow-automation>` to automate workflows for triage, patching, code releases, and security alerts.
+- **Customize your collaboration environment** with :doc:`theming </preferences/customize-your-theme>`, :doc:`custom branding </configure/custom-branding-tools>`, and :doc:`channel templates </guides/messaging-collaboration>` to mirror internal teams and operational domains.
 - **Extend platform capabilities** with :doc:`slash commands, bots, and custom plugins </about/integrations>` that connect Mattermost to CI/CD systems, alerting frameworks, ticketing platforms, and internal tools.
-- **Increase usability and team cohesion** with :ref:`custom emojis <collaborate/react-with-emojis-gifs:upload custom emojis>`, shared terminology, and :doc:`real-time messaging </guides/collaborate>` optimized for platform engineers, DevSecOps teams, and field service managers.
+- **Increase usability and team cohesion** with :ref:`custom emojis <collaborate/react-with-emojis-gifs:upload custom emojis>`, shared terminology, and :doc:`real-time messaging </guides/messaging-collaboration>` optimized for platform engineers, DevSecOps teams, and field service managers.
 
 Get Started
 -----------

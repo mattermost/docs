@@ -1,20 +1,20 @@
-Copilot context management
-===========================
+Agents context management
+==========================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Copilot is designed to handle context efficiently, ensuring that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses. This document outlines how Copilot processes and includes relevant context. The company name, the server name, and the time are always passed to the LLM to ensure accurate and contextually relevant responses.
+Mattermost Agents are designed to handle context efficiently, ensuring that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses. This document outlines how Agents process and include relevant context. The company name, the server name, and the time are always passed to the LLM to ensure accurate and contextually relevant responses.
 
 .. note::
   **Ensure data privacy**
 
-  We recommend that customers with strict privacy requirements run the LLM locally to prevent sensitive data, including personally identifiable information (PII) and message content, from being shared with an external LLM hosting vendor. This ensures data privacy while enabling Copilot’s functionality.
+  We recommend that customers with strict privacy requirements run the LLM locally to prevent sensitive data, including personally identifiable information (PII) and message content, from being shared with an external LLM hosting vendor. This ensures data privacy while enabling Agent functionality.
 
-Direct messages to the Copilot Bot
-------------------------------------
+Direct messages to Agent bots
+-------------------------------
 
-When you send a direct message to the Copilot bot, the context sent to the LLM includes:
+When you send a direct message to an Agent bot, the context sent to the LLM includes:
 
 - The profile information of the user sending the prompt.
 - Chat messages exchanged between the user and the bot.
@@ -38,7 +38,7 @@ By default, some tool use is enabled to allow for features such as integrations 
 @-Mentions in channels
 ------------------------
 
-When you @-mention Copilot in a channel, the context sent to the LLM includes:
+When you ``@mention`` Agents in a channel, the context sent to the LLM includes:
 
 **Standalone messages (@-mentions in a channel)**
 
@@ -57,10 +57,10 @@ When you @-mention Copilot in a channel, the context sent to the LLM includes:
 - For @-mentions in standalone messages, the context includes only the mentioned message.
 - For @-mentions in threads, the entire thread's messages are included, along with usernames of the authors of the messages.
 
-Built-in ways to trigger Copilot
+Built-in ways to trigger Agents
 ---------------------------------
 
-In addition to regular chat interactions, Copilot provides specialized features where extra context is sent to the LLM. Each feature provides specialized context tailored to the task being performed. Below are the scenarios where extra context is sent to the LLM:
+In addition to regular chat interactions, Agents provide specialized features where extra context is sent to the LLM. Each feature provides specialized context tailored to the task being performed. Below are the scenarios where extra context is sent to the LLM:
 
 - **Thread summarization**: Includes thread messages and the usernames of the authors
 - **Meeting summary**: Incorporates transcriptions from calls
