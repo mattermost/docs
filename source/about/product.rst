@@ -164,7 +164,7 @@ For high-security environments requiring full infrastructure control, IME suppor
 - :doc:`Kubernetes-native architecture </deploy/server/deploy-kubernetes>` enables containerized services, self-healing workloads, and zero-downtime updates.
 - :doc:`High availability </scale/high-availability-cluster-based-deployment>` through clustering across application, database, and proxy layers.
 - :doc:`Horizontal scalability </scale/scaling-for-enterprise>` to tens of thousands of users per instance.
-- Complies with Security Technical Implementation Guide (STIG), Federal Information Processing Standard 140-3 (FIPS 140-3), and Federal Risk and Authorization Management Program (FedRAMP)-aligned security standards. *
+- Complies with Security Technical Implementation Guide (STIG), Federal Information Processing Standard 140-3 (FIPS 140-3), and Federal Risk and Authorization Management Program (FedRAMP)-aligned security standards.
 
 Hyperscaler & sovereign Cloud support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
