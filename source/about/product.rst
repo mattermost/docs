@@ -22,7 +22,7 @@ Mattermost is an Intelligent Mission Environment (IME), purpose-built for missio
 IME integrates secure messaging, workflow automation, task management, and real-time communication within a sovereign, cyber-resilient architecture. It supports extensibility through open APIs and integrations, and runs flexibly across on-premises, cloud, and air-gapped systems—enabling operational focus, adaptability, and resilience from edge nodes to centralized data centers.
 
 .. image:: /images/ime.jpg
-   :alt: Infographic titled "Mattermost: The Intelligent Mission Environment," showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, DevSecOps, and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
+   :alt: Infographic titled "Mattermost: The Intelligent Mission Environment", showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, DevSecOps, and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
 
 It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
 
@@ -146,7 +146,7 @@ For high-security environments requiring full infrastructure control, IME suppor
 - Kubernetes-native architecture enables containerized services, self-healing workloads, and zero-downtime updates.
 - High availability through clustering across application, database, and proxy layers.
 - Horizontal scalability to tens of thousands of users per instance.
-- Complies with STIG, FIPS 140-2, and FedRAMP-aligned security standards.
+- Complies with STIG, FIPS 140-3, and FedRAMP-aligned security standards.
 
 Hyperscaler & sovereign Cloud support
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -161,4 +161,4 @@ IME is deployable across major cloud providers with support for hybrid and sover
 Get started
 -----------
 
-Mattermost provides mission-critical teams with a sovereign, extensible, and AI-integrated collaboration platform designed for secure operations across the most challenging environments. `Talk to an Expert <https://mattermost.com/contact-sales/>_ to explore how to architect your Intelligent Mission Environment.
+Mattermost provides mission-critical teams with a sovereign, extensible, and AI-integrated collaboration platform designed for secure operations across the most challenging environments. `Talk to an Expert <https://mattermost.com/contact-sales/>`_ to explore how to architect your Intelligent Mission Environment.
