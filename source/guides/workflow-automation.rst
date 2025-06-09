@@ -1,14 +1,10 @@
-Build repeatable processes
-==========================
+Workflow Automation
+=====================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. important::
-
-  Mattermost v10 introduces Playbooks v2 for all Enterprise licensed customers. Professional SKU customers may continue to use Playbooks v1 uninterrupted which will be maintained and supported until September 2025, followed by an appropriate grandfathering strategy. More detailed information and the discussion are available on the `Mattermost discussion forum <https://forum.mattermost.com/t/clarification-on-playbooks-in-mattermost-v10/20563>`_.
-
-Use collaborative playbooks in Mattermost to provide structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </repeatable-processes/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </repeatable-processes/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
+Mattermost Playbooks provides structure, monitoring and automation for repeatable, team-based processes integrated with the Mattermost platform. Playbooks are :doc:`configurable checklists </repeatable-processes/work-with-tasks>` for teams to achieve :doc:`specific and predictable outcomes </repeatable-processes/metrics-and-goals>`, such as incident response, software release management, and logistical operations.
 
 Playbooks monitor channels for keywords or user actions to trigger a structured process, which brings up a set of individual or shared tasks, each associated with manual or automated actions. As playbooks are executed, some may have requirements for :doc:`broadcasting status updates to stakeholders </repeatable-processes/notifications-and-updates>` at regular intervals, to populate workflow dashboards by conducting :ref:`retrospectives <repeatable-processes/metrics-and-goals:configure retrospectives before a run>` after the core process is complete, or other customer requirements as exit criteria for a :doc:`playbook “run” </repeatable-processes/work-with-runs>`. 
 

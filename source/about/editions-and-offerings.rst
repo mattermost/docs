@@ -70,8 +70,8 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - :doc:`Server health checks </manage/request-server-health-check>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
-- Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
-- Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
+- Contextual AI-based :ref:`summarization <guides/agents:record calls to summarize meetings>`, real-time :ref:`channel briefing <guides/agents:analyze threads and channels>`, and :ref:`composition <guides/agents:access ai features>`
+- Private, air-gapped & DDIL :doc:`AI operations </configure/agents-admin-guide>`
 - PQ&A with :doc:`access-controlled backend systems </about/security>`
 - 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
@@ -96,8 +96,8 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
 - O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
-- :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
-- Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`
+- :ref:`Interactive AI bot support <guides/agents:access ai features>`
+- Flexible :doc:`bring-your-own-LLM integration </configure/agents-admin-guide>`
 
 See a `complete list of Mattermost features <https://mattermost.com/pricing>`_.
 

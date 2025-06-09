@@ -17,13 +17,16 @@ Mattermost's purpose is to accelerate the world's mission critical work by devel
    /about/integrations.rst
    /guides/get-help.rst
 
-With Mattermost you can:
+Mattermost offers:
 
-* :doc:`Connect and collaborate </guides/collaborate>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
-* :doc:`Build repeatable processes </guides/repeatable-processes>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
-* :doc:`Customize your preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
+* :doc:`Messaging Collaboration </guides/messaging-collaboration>` - Stay connected with your team via 1:1 and group messages, voice calls, and screensharing.
+* :doc:`Workflow Automation </guides/workflow-automation>` - Build and configure repeatable processes with workflow automation to achieve specific and predictable outcomes.
+* :doc:`Audio and Screensharing </collaborate/audio-and-screensharing>` - Learn about Mattermost's self-hosted audio calls plugin with screen sharing and the many video conferencing integrations Mattermost supports.
+* :doc:`Project and Task Management </guides/project-task-management>` - Learn how to use Mattermost Boards to coordinate operational work with Kanban-style planning.
+* :doc:`AI Agents </guides/agents>` - Learn how to use AI agents to help you make decisions, find information, and automate tasks in Mattermost.
+* :doc:`Customize Your Preferences </guides/preferences>` - Match the way you work by adjusting your notification settings, changing your theme, or updating your profile settings.
 
-Visit the following sections to learn more about Mattermost.
+Visit the following pages and guides to learn more about Mattermost.
 
 * :doc:`Product Overview </about/product>` - Learn about the Mattermost open source project, self-hosted vs. cloud, and premium Mattermost features.
 * :doc:`Use Case Guide </about/use-cases>` - Learn about Mattermost use cases for mission critical operations.
