@@ -1,7 +1,3 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
@@ -229,12 +225,13 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
       - `A Sysadmin's Guide to SELinux: 42 Answers to the Big Questions <https://opensource.com/article/18/7/sysadmin-guide-selinux>`_
       - `Mastering SELinux: A Comprehensive Guide to Linux Security <https://srivastavayushmaan1347.medium.com/mastering-selinux-a-comprehensive-guide-to-linux-security-8bed9976da88>`_
 
-Step 3: Update the server
+Step 4: Update the server
 --------------------------
 
 Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
 
-**Remove Mattermost**
+Remove Mattermost
+------------------
 
 To remove the Mattermost Server, you must stop the Mattermost Server, back up all important files, and then run this command:
 

@@ -181,6 +181,17 @@ exclude_patterns = [
     "onboard/sso-saml-ldapsync.rst",
     "scale/estimated-storage-per-user-per-month.rst",
     "scale/lifetime-storage.rst",
+    "agents/.config/notice-file/README.md",
+    "agents/.github/CONTRIBUTING.md",
+    "agents/.github/ISSUE_TEMPLATE/bug_report.md",
+    "agents/.github/ISSUE_TEMPLATE/feature_request.md",
+    "agents/.github/PULL_REQUEST_TEMPLATE.md",
+    "agents/.github/SECURITY.md",
+    "agents/CLAUDE.md",
+    "agents/README.md",
+    "agents/interpluginclient/README.md",
+    "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.md",
+    "agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md"
 ]
 
 # The reST default role (used for this markup: `text`) to use for all

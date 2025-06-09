@@ -51,7 +51,7 @@ This page describes how to install the Mattermost desktop app on Linux.
 
   Beta ``.rpm`` packages are available for CentOS and RHEL 7 and 8. Automatic app updates aren't supported. You must update your app manually.
 
-  Install the Mattermost Desktop App
+  Install the Mattermost desktop app
   ----------------------------------
 
   1. Download the latest version of the Mattermost desktop app for 64-bit systems: `mattermost-desktop-5.12.1-linux-x86_64.rpm <https://releases.mattermost.com/desktop/5.12.1/mattermost-desktop-5.12.1-linux-x86_64.rpm>`_

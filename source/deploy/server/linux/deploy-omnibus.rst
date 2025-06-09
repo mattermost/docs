@@ -1,7 +1,3 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
@@ -178,7 +174,7 @@ Does the SSL Certificate automatically renew?
 Yes. The SSL certificate automatically updated and renewed. Omnibus installs the certbot package to manage the certificate, and it comes with a cron job that you can find at /etc/cron.d/certbot that automatically launches the renewal process.
 
 How do I fix an ``EXPKEYSIG`` error on upgrades?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates that your certificate is expired. Run the following commands to obtain a new certificate:
 
