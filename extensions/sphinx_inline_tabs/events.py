@@ -27,11 +27,12 @@ LOG_PREFIX: Final[str] = "[sphinx_inline_tabs]"
 
 def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
     """
+    Purge an existing document from the pickled document list.
+    This function is called when the Sphinx `env-purge-doc` event is fired.
 
-    :param app:
-    :param _:
-    :param docname:
-    :return:
+    :param app: The Sphinx instance
+    :param _: The Sphinx BuildEnvironment object; unused
+    :param docname: The name of the document to purge
     """
     if hasattr(app.env, "sphinx_tabs"):
         if docname in app.env.sphinx_tabs:
@@ -42,12 +43,13 @@ def env_merge_info(
     app: Sphinx, _: BuildEnvironment, docnames: list[str], other: BuildEnvironment
 ) -> None:
     """
+    Merge collected document names from parallel readers (workers) into the master Sphinx environment.
+    This function is called when the Sphinx `env-merge-info` event is fired.
 
-    :param app:
-    :param _:
-    :param docnames:
-    :param other:
-    :return:
+    :param app: The Sphinx Application instance
+    :param _: The master Sphinx BuildEnvironment object; unused
+    :param docnames: A list of the document names to merge
+    :param other: The Sphinx BuildEnvironment from the reader worker
     """
     if not hasattr(app.env, "sphinx_tabs"):
         app.env.sphinx_tabs = {}
@@ -69,10 +71,10 @@ def env_merge_info(
 
 def doctree_read(app: Sphinx, doctree: nodes.document):
     """
+    Construct a new Table of Contents for documents that have inline tabs
 
-    :param app:
-    :param doctree:
-    :return:
+    :param app: The Sphinx Application instance
+    :param doctree: The parsed document tree; unused
     """
     if not hasattr(app.env, "sphinx_tabs"):
         app.env.sphinx_tabs = {}
@@ -103,6 +105,7 @@ def html_page_context(
     doctree: Optional[nodes.document],
 ) -> Optional[str]:
     """
+    Remove Furo's JavaScript asset file for pages that have inline tabs.
 
     :param app:
     :param pagename:
@@ -137,7 +140,7 @@ def html_page_context(
 @dataclass(repr=True, slots=True)
 class SectionData:
     """
-
+    A dataclass to hold metadata on each section of inline tab content.
     """
     name: str
     level: int
@@ -156,6 +159,7 @@ def collect_sections(
     level=0,
 ) -> SectionData:
     """
+    Recursively collect subsection metadata from inline tab content.
 
     :param env:
     :param document:
@@ -222,6 +226,8 @@ def collect_sections(
 
 def dump_sections(docname: str, secdata: SectionData):
     """
+    Recursively display subsection metadata collected from inline tab content.
+    Useful for extension debugging.
 
     :param docname:
     :param secdata:
@@ -243,6 +249,8 @@ def dump_sections(docname: str, secdata: SectionData):
 
 def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     """
+    Convert collected subsection metadata into a new Table of Contents for a document
+    with inline tabs.
 
     :param docname:
     :param secdata:
@@ -290,6 +298,8 @@ def make_compact_reference(
     section_id: str, section_name: str, docname: str
 ) -> addnodes.compact_paragraph:
     """
+    Create a subsection reference node using the Sphinx compact_paragraph
+    node.
 
     :param section_id:
     :param section_name:

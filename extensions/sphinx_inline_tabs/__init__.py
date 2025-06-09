@@ -15,9 +15,10 @@ __all__: list[str] = ["setup"]
 
 def setup(app: Sphinx):
     """
-    Entry point for sphinx theming.
+    Sphinx extension setup function
 
-    :param app: Sphinx application.
+    :param app: The Sphinx app instance
+    :return: A dict of extension options to send back to Sphinx
     """
     app.require_sphinx("8.2")
 

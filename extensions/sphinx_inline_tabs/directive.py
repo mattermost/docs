@@ -59,7 +59,7 @@ class TabDirective(SphinxDirective):
             "", is_div=True, classes=["tab-content"]
         )
 
-        parse_titles = "parse-titles" in self.options
+        parse_titles: bool = "parse-titles" in self.options
         parsed_nodes: list[nodes.Node] = self.parse_content_to_nodes(
             allow_section_headings=parse_titles
         )

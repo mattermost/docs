@@ -3,7 +3,9 @@ from sphinx.writers.html5 import HTML5Translator
 
 
 class TabContainer(nodes.container):
-    """The initial tree-node for holding tab content."""
+    """
+    The initial tree-node for holding tab content.
+    """
 
     def __init__(self, rawsource="", *children, **attributes):
         super().__init__(rawsource, *children, **attributes)
