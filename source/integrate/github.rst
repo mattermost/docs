@@ -53,13 +53,14 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
 
   - Branch or Tag creation
   - Branch or Tag deletion
-  - Releases
+  - Discussions
   - Issue comments
   - Issues
   - Pull requests
   - Pull request review
   - Pull request review comments
   - Pushes
+  - Releases
   - Stars
   - Workflows
   - Discussions
