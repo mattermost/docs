@@ -17,8 +17,8 @@ Coordinating secure software delivery requires tight integration between code co
 **Benefits**
 
 - **Automate pipeline visibility and alerting** by integrating with CI/CD tools like GitLab, Jenkins, and GitHub Actions using the :doc:`Mattermost integrations platform </about/integrations>`.
-- **Coordinate secure releases and hotfixes** using :doc:`Collaborative Playbooks </guides/repeatable-processes>` to manage rollout steps, validation gates, and team notifications.
-- **Enable traceable delivery communications** through :doc:`channel-based collaboration </guides/collaborate>`, ensuring build logs, changelogs, and approvals remain accessible and audit-ready.
+- **Coordinate secure releases and hotfixes** using :doc:`Collaborative Playbooks </guides/workflow-automation>` to manage rollout steps, validation gates, and team notifications.
+- **Enable traceable delivery communications** through :doc:`channel-based collaboration </guides/messaging-collaboration>`, ensuring build logs, changelogs, and approvals remain accessible and audit-ready.
 - **Support deployments in regulated and sovereign environments** using :doc:`self-hosted Kubernetes deployment models </deploy/server/deploy-kubernetes>` for full control over CI/CD communications.
 
 Platform Engineering & Internal Developer Platforms (IDPs)
@@ -28,8 +28,8 @@ Platform teams need streamlined, secure ways to deliver services and enable deve
 
 **Benefits**
 
-- **Centralize platform requests and updates** in :doc:`dedicated channels </guides/collaborate>` that organize provisioning, support, and environment status discussions.
-- **Automate ticket triage and escalation workflows** using :doc:`Playbooks </guides/repeatable-processes>` to track response SLAs and ownership across platform operations.
+- **Centralize platform requests and updates** in :doc:`dedicated channels </guides/messaging-collaboration>` that organize provisioning, support, and environment status discussions.
+- **Automate ticket triage and escalation workflows** using :doc:`Playbooks </guides/workflow-automation>` to track response SLAs and ownership across platform operations.
 - **Monitor infrastructure health and changes** with integrated feeds from :doc:`Prometheus, Grafana </scale/deploy-prometheus-grafana-for-performance-monitoring>`, or custom observability tools—supporting faster feedback loops.
 - **Support hybrid cloud and edge operations** through :ref:`deployment flexibility <deploy/server/server-deployment-planning:deployment options>` across public, private, and disconnected environments.
 
@@ -40,7 +40,7 @@ Real-time visibility and structured collaboration are critical during service de
 
 **Benefits**
 
-- **Automate incident handling** with :doc:`Playbooks </guides/repeatable-processes>` to track diagnostics, assign tasks, and issue updates—supporting NOC, SRE, and AppSec workflows.
+- **Automate incident handling** with :doc:`Playbooks </guides/workflow-automation>` to track diagnostics, assign tasks, and issue updates—supporting NOC, SRE, and AppSec workflows.
 - **Accelerate containment and recovery** by :ref:`integrating alerting tools <about/integrations:webhooks>` like PagerDuty, Opsgenie, and custom webhooks into secure Mattermost channels.
 - **Ensure communication continuity** during outages using :doc:`high availability architecture </scale/high-availability-cluster-based-deployment>` and :doc:`support for disconnected environments </deploy/server/air-gapped-deployment>`.
 - **Enable forensic review and audit** with :ref:`logging and export capabilities <manage/logging:audit logging>` that preserve all incident-related communications.
@@ -53,7 +53,7 @@ Critical infrastructure DevSecOps must align with strict security, audit, and co
 **Benefits**
 
 - **Apply granular role-based access controls** using :doc:`advanced permissions </onboard/advanced-permissions>` and :ref:`channel-specific configurations <manage/team-channel-members:advanced access controls>` to protect sensitive workflows.
-- **Support supply chain security coordination** by using :doc:`Playbooks </guides/repeatable-processes>` to manage SBOM reviews, vendor risk analysis, and software intake workflows across internal and external teams.
+- **Support supply chain security coordination** by using :doc:`Playbooks </guides/workflow-automation>` to manage SBOM reviews, vendor risk analysis, and software intake workflows across internal and external teams.
 - **Enforce secure collaboration behavior** through :doc:`custom Terms of Service </comply/custom-terms-of-service>`, :doc:`data retention policies </comply/data-retention-policy>`, and user authentication tied to :doc:`SSO and Entra ID </onboard/sso-entraid>`.
 - **Deploy in line** with :doc:`Zero Trust </about/security/zero-trust>` principles with :ref:`self-managed, segmented deployments <deploy/server/server-deployment-planning:deployment options>` that enforce identity, access, and policy boundaries—suitable for classified or sovereign cloud environments.
 
