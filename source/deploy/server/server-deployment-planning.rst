@@ -8,10 +8,12 @@ Server deployment planning
 
     Preparations </deploy/server/preparations>
     Deploy with Kubernetes </deploy/server/deploy-kubernetes>
-    Deploy with Containers </deploy/server/deploy-containers>
     Deploy with Linux </deploy/server/deploy-linux>
-    Architecture reference </deploy/server/server-architecture>
-    Scale for enterprise </scale/scaling-for-enterprise>
+    Deploy with Containers </deploy/server/deploy-containers>
+    Deploy for Out-of-Band Use </deploy/server/deploy-oob>
+    Deploy in Air-Gapped Environments </deploy/server/air-gapped-deployment>
+    Reference Architecture </deploy/server/server-architecture>
+    Scale for Enterprise </scale/scaling-for-enterprise>
 
 This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
 
@@ -42,21 +44,23 @@ Mattermost offers several deployment options to suit your organization's needs:
    * Built-in monitoring and logging
    * Easy integration with existing DevOps workflows
 
-2. :doc:`Container-Based Deployment </deploy/server/deploy-containers>`
 
-   Docker containers are suitable for smaller deployments that offer:
-
-   * Simplified installation and updates
-   * Consistent environments
-   * Easy dependency management
-
-3. :doc:`Traditional Linux Installation </deploy/server/deploy-linux>`
+2. :doc:`Linux Server Installation </deploy/server/deploy-linux>`
 
    A direct installation on Linux servers offers:
 
    * Simple, straightforward setup
    * Full control over the installation
    * For situations where containers aren't preferred
+
+3. :doc:`Container-Based Deployment </deploy/server/deploy-containers>`
+
+   Docker containers are suitable for smaller deployments only as it offers:
+
+   * Simplified installation and updates
+   * Consistent environments
+   * Easy dependency management
+   * No support for high availability
 
 Prerequisites
 --------------

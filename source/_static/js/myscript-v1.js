@@ -1,3 +1,23 @@
+// Function to sort version numbers in descending order (newer versions first)
+function sortVersions(versions) {
+    return versions.sort((a, b) => {
+        const [majorA, minorA] = a.split('.').map(Number);
+        const [majorB, minorB] = b.split('.').map(Number);
+
+        if (majorA !== majorB) {
+            return majorB - majorA;
+        }
+        return minorB - minorA;
+    });
+}
+
+// Function to parse a version string to an object with major and minor properties
+function parseVersion(v) {
+    if (v === 'all') return { major: 0, minor: 0 };
+    const [major, minor] = v.split('.').map(Number);
+    return { major, minor };
+}
+
 $(document).ready(function () {
     // Function to set the custom theme attribute based on the current theme
     function setCustomTheme(theme) {
@@ -71,8 +91,8 @@ $(document).ready(function () {
     const expiryDate = '2024-10-31T00:00:00-0500';
     // 12am EST
     const fallback_url =
-        'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
-    const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
+        'https://docs.mattermost.com/about/maximize-microsoft-investments.html';
+    const fallback_text = 'Maximize your Microsoft investments  »';
 
     if (!dateInFuture(expiryDate)) {
         if ($('.notification-bar').length) {

@@ -26,9 +26,13 @@ Learn what’s required to build and deploy Mattermost mobile apps.
     /deploy/mobile/distribute-custom-mobile-apps.rst
     /deploy/mobile/host-your-own-push-proxy-service.rst
     /deploy/mobile/consider-mobile-vpn-options.rst
+    /deploy/mobile/mobile-security-features.rst
+    /deploy/mobile/secure-mobile-file-storage.rst
     /deploy/mobile/mobile-faq.rst
 
 * :doc:`Distribute custom mobile apps </deploy/mobile/distribute-custom-mobile-apps>`
 * :doc:`Host your own push proxy service </deploy/mobile/host-your-own-push-proxy-service>`
 * :doc:`Mobile VPN options </deploy/mobile/consider-mobile-vpn-options>`
+* :doc:`Mobile security features </deploy/mobile/mobile-security-features>`
+* :doc:`Secure mobile file storage </deploy/mobile/secure-mobile-file-storage>`
 * :doc:`Mobile apps FAQ </deploy/mobile/mobile-faq>`

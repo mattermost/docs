@@ -7,36 +7,31 @@
 
 You can use a supported `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`__ to install Mattermost on your existing Azure infrastructure.
 
-.. important::
+**Before you begin**
 
-  You are responsible for Azure costs associated with any infrastructure you spin up to host a Mattermost server, and Azure credits cannot be applied towards the purchase of a Mattermost license.
+Before deploying, make sure you have the following: 
 
-**Infrastructure pre-requisites**
+- **An AKS cluster**: with the `Application Gateway Ingress Controller (AGIC) add-on <https://learn.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-new>`_ enabled or another Ingress controller deployed.  
 
-Deploying Mattermost on Azure AKS requires the following database and cluster prerequisites.
+- **PostgreSQL v13.0+ database**: `Azure Database for PostgreSQL - Flexible Server with Private Access <https://learn.microsoft.com/en-us/azure/postgresql/>`_ is recommended. Deploy one by following `this Microsoft quick start guide <https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal>`_. 
 
-- **PostgreSQL v13.0+ database**: Mattermost requires a pre-existing PostgreSQL database within your infrastructure. We recommend using `Azure Database for PostgreSQL - Flexible Server <https://learn.microsoft.com/en-us/azure/postgresql/>`_. Deploy one by following `this Microsoft quick start guide <https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal>`_. We recommend using Private Access for your database.
-- **Running AKS cluster**: Mattermost Azure Container Offer requires a pre-existing Kubernetes Cluster with an Ingress Controller pre-installed. We recommend creating a new AKS cluster with the `AGIC add-on enabled <https://learn.microsoft.com/en-us/azure/application-gateway/ingress-controller-overview>`_. Follow `this tutorial <https://learn.microsoft.com/en-us/azure/application-gateway/tutorial-ingress-controller-add-on-new>`_ to create a new AKS cluster with the add-on enabled.
+- **Private Network Connectivity**: Verify that there is network connectivity between your AKS cluster and the PostgreSQL database. 
 
-.. note::
+- **Valid DNS name and TLS certificate**: You must have access to a DNS zone and provide a valid TLS key and certificate for the Ingress Controller. 
 
-  - Connectivity should be already in place between the AKS cluster and the PostgreSQL database.
-  - Any pre-installed Ingress Controller within the cluster that supports the Ingress Kubernetes resource and TLS termination should work out of the box.
+- **Node Capacity**: At least 2 AKS nodes for high availability when deploying for 100 users or more. 
 
-**Deployment pre-requisites**
-
-Deploying Mattermost on Azure AKS requires the following deployment prerequisites.
-
-- **Valid DNS name and TLS certificates**: Mattermost relies on strong TLS certification in order to provide all the features to users. You need to have access to a DNS zone and be able to provide a valid TLS key and certificate for the Ingress Controller.
-- **Mattermost License and AKS Capacity**: (Mattermost Enterprise only) If your deployment option is for more than ``100 users``, you must have more than 2 nodes on your AKS cluster to support High Availability, and you must provide a valid Mattermost License file. Providing a license is optional at this stage. You can enable a **30 day** Mattermost trial once the server is deployed.
+- **License Key**: Trial or Enterprise license to test high availability and other Enterprise features. 
 
 **Installation steps**
 
 The installation process includes deploying Mattermost and updating the server.
 
 **Step 1: Deploy Mattermost**
-  
-1. Navigate to our `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`_ and get the offer. Alternatively, you can go to the ``Extensions + Applications`` section of your AKS cluster and install the Mattermost offering from there. Visit the `Microsoft cluster extensions documentation <https://learn.microsoft.com/en-gb/azure/aks/cluster-extensions?tabs=azure-cli>`_ to learn more.
+
+1. Deploy Mattermost from the `Azure Marketplace Container Offer <https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mattermost.mattermost-operator>`_ and select **Get it now**. 
+
+  - Alternatively, you can go to the ``Extensions + Applications`` section of your AKS cluster and install the Mattermost offering from there. Visit the `Microsoft cluster extensions documentation <https://learn.microsoft.com/en-gb/azure/aks/cluster-extensions?tabs=azure-cli>`_ to learn more.
 
 2. Choose the **Resource Group** and the **Region** of your installed AKS and PostgreSQL database.
 
@@ -48,32 +43,31 @@ The installation process includes deploying Mattermost and updating the server.
   .. image:: /_static/images/azure/aks-cluster.png
     :alt: An example of the Azure AKS cluster setup screen.
 
-4. Fill in the details for your PostgreSQL database.
+4. Fill in the details for your PostgreSQL database. Ensure the user specified has full access.
 
   .. image:: /_static/images/azure/postgreSQL.png
     :alt: An example of the Azure AKS Database setup screen.
 
-.. note::
 
-  - Connectivity should be already in place between the AKS cluster and the database.
-  - Database should already exist and the user specified must have full access.
-
-5. Adjust deployment details.
+5. Specify Deployment Details including Deployment Name and Deployment Size. Click the checkbox to Deploy Minio, a required utility for this installation that will provide filestore functionality for your Mattermost instance. 
 
   .. image:: /_static/images/azure/deployment-details.png
     :alt: An example of the Azure AKS Deployment Details setup screen.
 
-.. note:: 
-  You can define a Deployment size to automatically adjust the installation. A valid Mattermost license is required for deployments of more than 100 users.
-
 6. Configure Mattermost installation hostname and Ingress details. The AGIC add-on is used in the following example to show the ingress annotations required.
 
-  .. code-block:: yaml
+  a. You can use any pre-installed Ingress Controller in your cluster as long as it supports Kubernetes Ingress and TLS termination.
 
-    kubernetes.io/ingress.class: azure/application-gateway
-    appgw.ingress.kubernetes.io/ssl-redirect: "true"
+    .. code-block:: yaml
+
+      kubernetes.io/ingress.class: azure/application-gateway
+      appgw.ingress.kubernetes.io/ssl-redirect: "true"
   
-7. Upload yor own TLS certificates at this stage to take advantage of all Mattermost features.
+7. Additionally, we recommend considering:   
+
+  a. Enforcing a minimum TLS version (e.g., TLS 1.2).  
+  b. Deploying a Web Application Firewall (WAF) for additional protection, if supported by your ingress controller.  
+  c. Limiting access using Kubernetes Network Policies. 
 
   .. image:: /_static/images/azure/networking-details.png
     :alt: An example of the Azure AKS Networking Details setup screen.
@@ -86,16 +80,17 @@ The installation process includes deploying Mattermost and updating the server.
 
       kubectl -n mattermost-operator get ingress
 
-  b. Get the resulting IP address from the ``ADDRESS`` column, and use your domain registration service to create a DNS record.
-  c. You should be good to go.
+9. Use your IP address from the ``ADDRESS`` column, and create a DNS record in your domain registration service. 
 
-Learn more about managing your Mattermost server by visiting the :doc:`Managing Mattermost </manage/admin/server-maintenance>` documentation.
+10. Access your working Mattermost installation at the URL you’ve determined in your DNS record.
 
-**Step 2: Upgrade Mattermost**
+Learn more about administrating your Mattermost server by visiting the :doc:`Administration Guide </guides/administration-guide>`.
+
+**Step 2: Upgrade Mattermost via your AKS cluster**
 
 1. Visit the ``Extensions + Applications`` section of your AKS cluster where your Mattermost installation is deployed.
 2. You can enable minor version auto upgrades since these are not updating Mattermost version
-3. Expand the ``Configurarion Settings`` table and add the below configuration and the version you want to install as a value.
+3. Expand the ``Configuration Settings`` table and add the below configuration and the version you want to install as a value.
 
   .. code:: 
 
@@ -105,3 +100,7 @@ Learn more about managing your Mattermost server by visiting the :doc:`Managing 
     :alt: An example of using custom Mattermost version.
 
 4. Select **Save** and wait for the upgrade.
+
+.. important::
+
+  You are responsible for Azure costs associated with any infrastructure you spin up to host a Mattermost server, and Azure credits cannot be applied towards the purchase of a Mattermost license.

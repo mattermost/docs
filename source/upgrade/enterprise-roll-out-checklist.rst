@@ -115,7 +115,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
 - Finalize production environment design basing hardware on expected usage and requirements for high availability
 
  - Resource: https://docs.mattermost.com/deploy/application-architecture.html
- - Resource: https://docs.mattermost.com/deploy/deployment-guide.html 
+ - Resource: https://docs.mattermost.com/guides/deployment-guide.html 
  - Resource: https://docs.mattermost.com/scale/scaling-for-enterprise.html 
  - Resource: https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html
 
@@ -131,7 +131,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
   - Install the number of nodes based on your high availability requirements outlined in your production environment design
   - Recommendation: Use Kubernetes and the Mattermost Operator, with external supported external database and file storage solutions. This will also provide blue/green deployment, rolling upgrades, and canary builds
 
-   - Resource: https://docs.mattermost.com/deploy/server/install-kubernetes.html
+   - Resource: https://docs.mattermost.com/deploy/server/deploy-kubernetes.html
 
  - Install and configure database
 
@@ -180,7 +180,7 @@ Much of the preparation work is focused on ensuring the environment is deployed 
  - Upload your valid Enterprise License under Edition and License
  - Ensure site URL is set appropriately for your production, dev and staging environments
  - Add your database configuration to **System Console > Environment > Database**
- - Add your Elasticsearch configuration to **System Console > Environment > Elasticsearch**
+ - Add your Elasticsearch or AWS OpenSearch configuration to **System Console > Environment > Elasticsearch**
  - Add your file storage system configuration to **System Console > Environment > File Storage** 
  - Add your proxy configuration to **System Console > Environment > Image Proxy** 
  - Add your SMTP configuration to **System Console > Environment > SMTP**

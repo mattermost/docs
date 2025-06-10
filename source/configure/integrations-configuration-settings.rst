@@ -386,3 +386,33 @@ CORS debug
 +-------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"CorsDebug": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------+
+
+----
+
+Embedding
+---------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+Access the following configuration settings in the System Console by going to **Integrations > Embedding**.
+
+.. config:setting:: frame-ancestors
+  :displayname: Frame ancestors (Integrations)
+  :systemconsole: Integrations > Embedding
+  :configjson: .ServiceSettings.FrameAncestors
+  :environment: MM_SERVICESETTINGS_FRAMEANCESTORS
+  :description: Specify domains that Mattermost can be embedded in via an iFrame. Blank by default to disable embedding.
+
+Frame ancestors
+~~~~~~~~~~~~~~~~
+
+Enter a space-separated list of domains that are allowed to embed the Mattermost web client via an iFrame. Leave blank to disallow embedding. Leave blank to disable embedding. Blank by default.
+
++------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FrameAncestors".``  |
++------------------------------------------------------------------+
+
+.. note::
+
+  Embedding Mattermost via an iFrame can provide seamless integration for collaboration into an organization’s existing tools and workflows. However, you must ensure that correct configurations are in place to allow communication between the iframe and the parent domain without violating security.

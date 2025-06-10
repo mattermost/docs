@@ -71,11 +71,14 @@ A Mattermost Support Packet can contain the following files:
       - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
       - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
       - Field names are normalized.
-      - New data includes server statistics, permission details, and extended job list details.
+      - New data includes server statistics, logs, permissions, and extended job list details.
       - Mattermost-supported plugin diagnostic data is included where applicable.
 
    - `metadata.yaml <#metadata>`__
    - ``mattermost.log`` (Mattermost logs)
+   - ``audit.log`` (Mattermost audit logs)
+   - ``ldap.log`` (AD/LDAP logs)
+   - ``notifications.log`` (notifications logs)
    - ``plugins.json`` (all active and inactive plugins)
    - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
    - ``stats.yaml`` (Mattermost usage statistics)

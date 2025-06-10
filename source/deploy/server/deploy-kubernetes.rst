@@ -10,62 +10,62 @@ Choose your preferred platform below for specific deployment instructions:
   .. include:: kubernetes/deploy-k8s-aks.rst
     :start-after: :nosearch:
 
+.. tab:: Oracle
+
+  .. include:: kubernetes/deploy-k8s-oke.rst
+    :start-after: :nosearch:
+
 .. tab:: Other Kubernetes
 
   .. include:: kubernetes/deploy-k8s.rst
     :start-after: :nosearch:
 
-Secure your Mattermost deployment
----------------------------------
+Frequently Asked Questions
+--------------------------
 
-Deploying Mattermost in a Kubernetes environment allows you to harness Kubernetes-native features for scalability, security, and ease of management. By using an Ingress resource in combination with an ingress controller, you can enable secure HTTPS access to Mattermost while managing routing and TLS certificates effectively.
+Why are my pods failing with a ``CrashLoopBackOff`` error after adding a custom CA certificate to my Docker image?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-1. Deploy an ingress controller, such as the `NGINX Ingress Controller <https://kubernetes.github.io/ingress-nginx/>`_, in your Kubernetes cluster. 
-2. Define an Ingress resource to route external traffic to your Mattermost service. Below is an example Ingress manifest:
+You may see a ``CrashLoopBackOff`` error after adding a custom CA certificate to your Docker image's ``/etc/ssl/certs`` directory and deploying it to your Kubernetes environment via the Mattermost Enterprise Edition Helm Chart. This issue typically arises because the custom CA certificate is not being recognized by the system's certificate trust store, leading to TLS handshake failures when the application attempts to connect to services that require the custom CA.
 
-  .. code-block:: yaml
+While core functionality may remain operational, you may notice the following symptoms:  
 
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-      name: mattermost-ingress
-      annotations:
-        nginx.ingress.kubernetes.io/ssl-redirect: "true"
-        nginx.ingress.kubernetes.io/proxy-body-size: "10m"  # Customize client body size limit
-        nginx.ingress.kubernetes.io/proxy-read-timeout: "60" # Customize request timeout
-    spec:
-      tls:
-      - secretName: mattermost-tls # Reference to the TLS secret
-      rules:
-      - host: <your-domain.com>
-        http:
-          paths:
-          - path: /
-            pathType: ImplementationSpecific
-            backend:
-              service:
-                name: mattermost-service # Name of your Mattermost service
-                port:
-                  number: 80
+- Pods stuck in a crashloop with the error message: backoff - restarting failed container in pod.
+- Debugging commands like ``kubectl describe`` and ``kubectl logs`` provide little to no valuable information.
+- Integrations may be blocked.
 
-3. Secure HTTPS access by using TLS certificates. You can either:
+Can I resolve this issue without rebuilding the Docker image?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-  - Provide your own TLS certificate and private key.
-  - Automate TLS certificate issuance and management using `cert-manager <https://cert-manager.io/docs/>`_. If you are providing your own TLS certificate, create a Kubernetes secret to store it.
-  - Ensure the Ingress resource references the secret name (mattermost-tls) in its tls section.
+Yes. We recommend using Kubernetes-native solutions to manage custom CA certificates to simplify deployment processes and minimize disruptions caused by image rebuilds. You can inject the certificate directly into the pod using Kubernetes resources instead of modifying the Docker image to manage custom CA certificates dynamically without needing to rebuild and redeploy your Docker image every time the certificate changes.
 
-4. Save your Ingress and TLS YAML manifests to files (e.g., ``ingress.yaml`` and ``tls.yaml``) and apply them to your cluster using Kubernetes command-line tools. 
+Use a Kubernetes secret to store your custom CA certificate and then mount it into the pod:
 
-Configure DNS by ensuring your domain name ``your-domain.com`` is properly pointed to the external IP address of your cluster or ingress controller. You can verify this using tools like nslookup or dig.
+1. Create a Kubernetes secret with your custom CA certificate.
+2. Mount the certificate into the pod using the Helm chart’s configuration options. This method simplifies management and avoids the need to rebuild your Docker image for future certificate updates.
 
-5. After applying the Ingress, verify HTTPS Access by navigating to your domain (e.g., ``https://your-domain.com``) in a web browser to verify HTTPS access. If you encounter issues, check ingress controller logs (``kubectl logs -n <namespace> <ingress-controller-pod-name>``, DNS records, and TLS configurations.
+Alternatively, to dynamically inject certificates without modifying the Docker image, use an ``initContainer`` to copy the certificate into the pod's filesystem and update the certificate trust store before the main container starts.
 
-6. Enable HSTS and Additional Security in your Ingress annotations.
+How to troubleshoot the root cause of the ``CrashLoopBackOff`` error?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Additionally, consider:
+Use ``kubectl describe pods`` to check detailed event logs.
 
-- Enforcing a minimum TLS version (e.g., TLS 1.2).
-- Deploying a Web Application Firewall (WAF) for additional protection, if supported by your ingress controller.
-- Limiting access using Kubernetes Network Policies.
+Consider logging tools like Grafana to aggregate and analyze logs for additional insights.
 
-By following these steps, your Mattermost deployment in Kubernetes will be securely accessible over HTTPS using TLS. With an NGINX Ingress controller managing routing and proxying, and proper security practices in place, you'll have a robust setup ready for production use.
+Where is data stored in a self-hosted Kubernetes deployment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Where data is stored depends on the backend database (such as RDS, Azure Postgres, self-hosted PostgreSQL), and the backend filestore (such as AWS S3, Minio, Mounted volume) configured during deployment.
+
+We recommend the following S3 Options:
+
+- AWS S3
+- MinIO (Self-Hosted)
+
+For Volume Mounts, the following options use Kubernetes Volume Mounting to provide filestores as a "local" directory to the Mattermost server:
+
+- NFS
+- AzureBlob
+
+Not all types of `Kubernetes persistent volumes <https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes>`_ have been tested with Mattermost, and some may have limitations or specific configurations that may require additional setup to ensure proper permissions and access. We recommend system admins review documentation for their preferred persistent volume types and test to ensure compatibility with Mattermost.

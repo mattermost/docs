@@ -32,21 +32,19 @@ This Mattermost deployment includes 3 steps: download, install Mattermost server
 
 **Step 1: Download**
 
-In a terminal window, ssh onto the system that will host the Mattermost Server. 
-
-Using ``wget``, download the Mattermost Server release you want to install.
+In a terminal window, ssh onto the system that will host the Mattermost Server. Using ``wget``, download the Mattermost Server release you want to install using one of the following commands. Replace ``amd64`` with the appropriate architecture (e.g., ``arm64`` for ARM-based systems) in the link as needed.
 
 .. tab:: Latest release
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.6.1/mattermost-10.6.1-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.8.1/mattermost-10.8.1-linux-amd64.tar.gz
 
 .. tab:: Current ESR
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.5.2/mattermost-10.5.2-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.5.7/mattermost-10.5.7-linux-amd64.tar.gz
 
 .. tab:: Older releases
 

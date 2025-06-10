@@ -3,6 +3,8 @@
 ```{include} ../_static/badges/allplans-selfhosted.md
 ```
 
+Mattermost Calls is an excellent option for organizations demanding enhanced security and control over their communication infrastructure. Calls is designed to operate securely in self-hosted deployments, including [air-gapped environments](https://docs.mattermost.com/configure/calls-deployment.html#air-gapped-deployments), ensuring private communication without reliance on public internet connectivity with flexible configuration options for complex network requirements.
+
 This document provides information on how to successfully make the Calls plugin work on self-hosted deployments. It also outlines some of the most common deployment strategies with example diagrams, and provides the deployment guidelines for the recording, transcription, and live captions service.
 
 ## Terminology
@@ -46,11 +48,19 @@ Scroll horizontally to see additional columns in the table below.
 | API (`rtcd`) | 8045 | TCP (incoming) | Mattermost instance(s) (Calls plugin) | `rtcd` service | To allow for HTTP/WebSocket connectivity from Calls plugin to `rtcd` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server. |
 | STUN (Calls plugin or `rtcd`) | 3478 | UDP (outgoing) | Mattermost Instance(s) (Calls plugin) or `rtcd` service | Configured STUN servers | (Optional) To allow for either Calls plugin or `rtcd` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) config option. |
 
+#### Air-gapped deployments
+
+Mattermost Calls can function in air-gapped environments. Exposing Calls to the public internet is only necessary when users need to connect from outside the local network, and no existing method supports that connection. In such setups:
+
+- Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
+- Configuring a STUN server is unnecessary, as all connections occur within the local network.
+- The [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
+
 ## Limitations
 
 - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
 - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
-- Enterprise customers can also [record calls](https://docs.mattermost.com/collaborate/make-calls.html#record-a-call), enable [live text captions](https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls-beta) during calls, and [transcribe recorded calls](https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls-beta). We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the [dedicated rtcd service](#the-rtcd-service).
+- Enterprise customers can also [record calls](https://docs.mattermost.com/collaborate/make-calls.html#record-a-call), enable [live text captions](https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls) during calls, and [transcribe recorded calls](https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls). We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the [dedicated rtcd service](#the-rtcd-service).
 - For Mattermost self-hosted deployments, System admins need to enable and configure the plugin [using the System Console](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls). The default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the [performance section](#performance) below.
 
 ## Configuration
@@ -168,14 +178,15 @@ We provide a [load-test tool](https://github.com/mattermost/mattermost-plugin-ca
 
 ### Monitoring
 
-Both the plugin and the external `rtcd` service expose some Prometheus metrics to monitor performance. We provide an [official dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) that can be imported in Grafana. You can refer to [Performance monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) for more information on how to set up Prometheus and visualize metrics through Grafana.
+Both the plugin and the external `rtcd` service expose some Prometheus metrics to monitor performance. We provide an [official dashboard](https://grafana.com/grafana/dashboards/23225-mattermost-calls-performance-monitoring/) that can be imported in Grafana. You can refer to [Performance monitoring](https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html) for more information on how to set up Prometheus and visualize metrics through Grafana.
 
 #### Calls plugin metrics
 
 Metrics for the calls plugin are exposed through the `/plugins/com.mattermost.calls/metrics` subpath under the existing Mattermost server metrics endpoint. This is controlled by the [Listen address for performance](https://docs.mattermost.com/configure/environment-configuration-settings.html#listen-address-for-performance) configuration setting. It defaults to port `8067`.
 
 ```{note}
-On Mattermost versions prior to v9.5, plugin metrics were exposed through the public `/plugins/com.mattermost.calls/metrics` API endpoint controlled by the [Web server listen address](https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address) configuration setting. This defaults to port `8065`.
+- The [Metrics plugin](https://docs.mattermost.com/scale/collect-performance-metrics.html) collects application-level metrics only and does not make system or OS-level calls. As a result, data typically derived from system-level metrics may be missing in the Grafana panel.
+- On Mattermost versions prior to v9.5, plugin metrics were exposed through the public `/plugins/com.mattermost.calls/metrics` API endpoint controlled by the [Web server listen address](https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server-listen-address) configuration setting. This defaults to port `8065`.
 ```
 
 **Process**
@@ -371,9 +382,9 @@ If deploying the service in a Kubernetes cluster, refer to the later section on 
 
 Once the `calls-offloader` service is running, recordings should be explicitly enabled through the [Enable call recordings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings) config setting and the service's URL should be configured using [Job service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#job-service-url).
 
-Call transcriptions can be enabled through the [Enable call transcriptions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions-beta) configuration setting.
+Call transcriptions can be enabled through the [Enable call transcriptions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions) configuration setting.
 
-Live captions can be enabled through the [Enable live captions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions-beta) configuration setting.
+Live captions can be enabled through the [Enable live captions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions) configuration setting.
 
 ```{note}
 - The call transcriptions functionality is available starting in Calls version v0.22.0.
@@ -434,6 +445,10 @@ Media (audio/video) is encrypted using security standards as part of WebRTC. It'
 ### Are there any third-party services involved?
 
 The only external service used is a Mattermost official STUN server (`stun.global.calls.mattermost.com`) which is configured as default. This is primarily used to find the public address of the Mattermost instance if none is provided through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) option. The only information sent to this service is the IP addresses of clients connecting as no other traffic goes through it. It can be removed in cases where the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) setting is provided.
+
+```{note}
+In air-gapped deployments, using STUN servers is not necessary since all connections remain within the local network.
+```
 
 ### Is using UDP a requirement?
 

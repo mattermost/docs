@@ -9,54 +9,17 @@ This guide outlines the key preparation steps required before installing the Mat
   :titlesonly:
 
    Review software and hardware requirements </deploy/software-hardware-requirements>
-   (Recommended) Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
-   (Recommended) Configure Mattermost Calls </configure/calls-deployment>
-   (Recommended) Enable Mattermost Copilot </configure/enable-copilot>
-   (Optional) Set up TLS </deploy/server/setup-tls>
-   (Optional) Use an image proxy </deploy/server/image-proxy>
-   (Optional) Configure CloudFront to host Mattermost static assets </configure/configuring-cloudfront-to-host-mattermost-static-assets>
-   (Optional) Use an outbound proxy </configure/using-outbound-proxy>
-   (Optional) Use sockets to set up the database </deploy/server/setting-up-socket-based-mattermost-database>
+   Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
+   Configure Mattermost Calls </configure/calls-deployment>
+   Set up TLS </deploy/server/setup-tls>
+   Use an image proxy </deploy/server/image-proxy>
 
 Database preparation
 --------------------
 
-Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL was previously supported, PostgreSQL is now the recommended and preferred database.
+PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
-.. important::
-
-   - PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
-   - Learn how to :doc:`use sockets to set up the database </deploy/server/setting-up-socket-based-mattermost-database>`.
-
-1. Create an PostgreSQL server instance:
-
-   .. tab:: AWS
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-    
-   .. tab:: Azure
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-
-   .. tab:: Ubuntu/Debian
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-
-   .. tab:: RHEL/CentOS
-
-      .. code-block:: sh
-
-         sudo dnf install postgresql-server
-         sudo postgresql-setup --initdb
+1. Create an PostgreSQL server instance. See the `PostgreSQL documentation <https://www.postgresql.org/download/>`_ for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called postgres has been created.
 
 2. Create the Mattermost database and user:
 
@@ -89,7 +52,8 @@ Mattermost requires a PostgreSQL database (version 13 or higher). While MySQL wa
       .. code-block:: sql
 
          ALTER DATABASE mattermost OWNER TO mmuser;
-         GRANT USAGE, CREATE ON SCHEMA PUBLIC TO mmuser;
+         ALTER SCHEMA public OWNER TO mmuser;
+         GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
 3. Configure PostgreSQL for remote connections (if database is on a separate server):
 
@@ -181,11 +145,100 @@ Certain proxy servers also provide a layer of caching which can make loading ima
 Network preparation
 --------------------
 
-Ensure the following ports are available:
+The following table outlines the network ports and protocols required for Mattermost server:
 
-- Application ports: 80/443 (TCP) for HTTP/HTTPS
-- Database port: 5432 (TCP) for PostgreSQL
-- SMTP port: 10025 (TCP/UDP) for outbound email
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Service Name                                                | Config Setting                        | Port (default)                    | Protocol  | Direction  | Info                                                          |
++=============================================================+=======================================+===================================+===========+============+===============================================================+
+| HTTP/Websocket                                              | ServiceSettings.ListenAddress         | 8065/80/443 (TLS)                 | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+ Usually this requires port 80 and 443 when running HTTPS.     |
+|                                                             |                                       |                                   |           |            |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Cluster                                                     | ClusterSettings.GossipPort            | 8074                              | TCP/UDP   | Inbound    | Internal                                                      |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Metrics                                                     | MetricsSettings.ListenAddress         | 8067                              | TCP       | Inbound    | External (no proxy) / Internal (with proxy)                   |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Database                                                    | SqlSettings.DataSource                | 5432 (PostgreSQL) / 3306 (MySQL)  | TCP       | Outbound   | Usually internal (recommended)                                |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| LDAP                                                        | LdapSettings.LdapPort                 | 389                               | TCP/UDP   | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| S3 Storage                                                  | FileSettings.AmazonS3Endpoint         | 443 (TLS)                         | TCP       | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| SMTP                                                        | EmailSettings.SMTPPort                | 10025                             | TCP/UDP   | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+| Push Notifications                                          | EmailSettings.PushNotificationServer  | 443 (TLS)                         | TCP       | Outbound   |                                                               |
++-------------------------------------------------------------+---------------------------------------+-----------------------------------+-----------+------------+---------------------------------------------------------------+
+
+.. note::
+   
+   - All outbound ports may vary based on your specific configuration
+   - Mattermost can be configured to use an outbound proxy for any HTTP/HTTPS traffic (see below)
+   - Calls service may require additional ports 
+
+Outbound proxy configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If your deployment requires using an outbound proxy, you can configure Mattermost using environment variables:
+
+1. Configure the proxy settings in your service configuration:
+
+   .. code-block:: text
+
+      Environment=HTTP_PROXY=http://proxy.example.com:3128
+      Environment=HTTPS_PROXY=https://proxy.example.com:3128
+      Environment=NO_PROXY=localhost,127.0.0.1,.internal.example.com
+
+2. For authenticated proxies, include credentials in the URL:
+
+   .. code-block:: text
+
+      Environment=HTTP_PROXY=http://username:password@proxy.example.com:3128
+      Environment=HTTPS_PROXY=https://username:password@proxy.example.com:3128
+
+3. The ``NO_PROXY`` variable can include:
+   - IP addresses (e.g., ``1.2.3.4``)
+   - CIDR ranges (e.g., ``1.2.3.4/8``)
+   - Domain names (e.g., ``example.com``)
+   - Subdomains (e.g., ``.example.com``)
+
+.. note::
+
+   When using an HTTPS proxy, ensure your Mattermost server has the proxy's root certificate configured to avoid connection issues.
+
+   Example systemd Service Configuration
+
+   .. code-block:: ini
+
+      [Unit]
+      Description=Mattermost
+      After=network.target
+      After=postgresql.service
+      BindsTo=postgresql.service
+
+      [Service]
+      Type=notify
+      ExecStart=/opt/mattermost/bin/mattermost
+      TimeoutStartSec=3600
+      KillMode=mixed
+      Restart=always
+      RestartSec=10
+      WorkingDirectory=/opt/mattermost
+      User=mattermost
+      Group=mattermost
+      LimitNOFILE=49152
+
+      # Configure proxy settings if needed
+      #Environment=HTTP_PROXY=http://proxy.example.com:3128
+      #Environment=HTTPS_PROXY=https://proxy.example.com:3128
+      #Environment=NO_PROXY=localhost,127.0.0.1,.internal.example.com
+
+      # Recommended security options
+      ProtectSystem=full
+      PrivateTmp=true
+      NoNewPrivileges=true
+
+      [Install]
+      WantedBy=postgresql.service
 
 System requirements
 --------------------
@@ -206,5 +259,5 @@ Next steps
 Once you've completed these preparation steps, you can proceed with installing the Mattermost server. Choose your preferred installation method:
 
 - :doc:`Deploy with Kubernetes </deploy/server/deploy-kubernetes>`
-- :doc:`Deploy with Containers </deploy/server/deploy-containers>`
 - :doc:`Deploy on Linux </deploy/server/deploy-linux>`
+- :doc:`Deploy with Containers </deploy/server/deploy-containers>`

@@ -1,5 +1,5 @@
-Notifications questions
-=======================
+Notifications
+==============
 
 What determines if a desktop notification should be triggered?
 --------------------------------------------------------------

@@ -6,7 +6,7 @@ Cloud Dedicated
 
 Mattermost Cloud Dedicated is designed for larger organizations with higher demands for performance, scalability, customizability, and compliance looking to offload operational overhead and focus on more business-critical tasks.
 
-Your own private Mattermost instance running :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` is a Kubernetes cluster hosted and managed by Mattermost that runs on dedicated cloud infrastructure, where resources are exclusively available for your organization.
+Your own private Mattermost instance running :doc:`Mattermost Enterprise </about/editions-and-offerings>` is a Kubernetes cluster hosted and managed by Mattermost that runs on dedicated cloud infrastructure, where resources are exclusively available for your organization.
 
 Reference architecture
 ----------------------
@@ -90,7 +90,7 @@ Mattermost Cloud Dedicated provides access to :doc:`audit and system logs </mana
 Customization
 ~~~~~~~~~~~~~~
 
-Approved plugins developed and/or tested by Mattermost are supported and available in the `Mattermost Cloud Marketplace <https://mattermost.com/marketplace/>`_, including:
+The following Mattermost plugins are available for cloud-based deployments:
 
 .. include:: ./cloud-supported-integrations.rst
   :start-after: :nosearch:

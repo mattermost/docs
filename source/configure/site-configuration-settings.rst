@@ -7,6 +7,7 @@ Site configuration settings
 Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
 
 - `Customization <#customization>`__
+- `System Properties <#system-properties>`__
 - `Localization <#localization>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
@@ -16,7 +17,7 @@ Review and manage the following site configuration options in the System Console
 - `File Sharing and Downloads <#file-sharing-and-downloads>`__
 - `Public Links <#public-links>`__
 - `Notices <#notices>`__
-- `Connected Workspaces (Beta) <#connected-workspaces-beta>`__
+- `Connected Workspaces <#connected-workspaces>`__
 
 .. tip::
 
@@ -234,8 +235,8 @@ About link
 .. config:setting:: forgot-password-custom-link
   :displayname: Forgot Password custom link (Customization)
   :systemconsole: Site Configuration > Customization
-  :configjson: .SupportSettings.ForgetPasswordCustomLink
-  :environment: MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK
+  :configjson: .SupportSettings.ForgetPasswordLink
+  :environment: MM_SUPPORTSETTINGS_FORGOTPASSWORDLINK
   :description: Set a custom URL for the **Forgot Password** link on the Mattermost login page. Leave this field blank to use Mattermost's Password Reset workflow.
 
 Forgot Password custom link
@@ -243,8 +244,8 @@ Forgot Password custom link
 
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | When the **Forgot Password** link is enabled on the Mattermost login page,    | - System Config path: **Site Configuration > Forgot password custom link**    |
-| users are taken to a custom URL to recover or change their password.          | - ``config.json`` setting: ``SupportSettings`` > ``ForgetPasswordCustomLink`` |
-|                                                                               | - Environment variable: ``MM_SUPPORTSETTINGS_FORGETPASSWORDCUSTOMLINK``       |
+| users are taken to a custom URL to recover or change their password.          | - ``config.json`` setting: ``SupportSettings`` > ``ForgetPasswordLink``       |
+|                                                                               | - Environment variable: ``MM_SUPPORTSETTINGS_FORGETPASSWORDLINK``             |
 | Leave this field blank to use Mattermost's Password Reset workflow.           |                                                                               |
 +-------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
@@ -383,7 +384,10 @@ When configured, after OAuth or SAML user authentication is complete, custom URL
   :systemconsole: N/A
   :configjson: NativeAppSettings.MobileExternalBrowser
   :environment: MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER
-  :description: This setting configures the mobile app to perform SSO Authentication using the external default browser.
+  :description: Configure the mobile app to use the default mobile browser to perform SSO authentication. It should be enabled when there are issues with the mobile app SSO redirect flow. Disabled by default.
+
+  - **true**:  The mobile app uses the default internal mobile browser to perform SSO authentication.
+  - **false**: **(Default)** The mobile app uses an external mobile browser to perform SSO authentication.
 
 Mobile external browser
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -393,10 +397,88 @@ Mobile external browser
 
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 | From Mattermost v10.2 and Mobile v2.2.1, this setting configures the mobile app       | - System Config path: N/A                                                   |
-| to perform SSO Authentication using the external default browser.                     | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
+| to use an external mobile browser to perform SSO authentication.                      | - ``config.json`` setting: ``NativeAppSettings.MobileExternalBrowser``      |
 |                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEEXTERNALBROWSER``      |
-| String input.                                                                         |                                                                             |
+| - **true**:  The mobile app uses the default internal mobile browser to perform SSO   |                                                                             |
+|   authentication.                                                                     |                                                                             |
+| - **false**: **(Default)** The mobile app uses an external mobile browser to          |                                                                             |
+|   perform SSO authentication.                                                         |                                                                             |
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+
+Enable this configuration setting when there are issues with the mobile app SSO redirect flow.
+
+----
+
+System properties
+-----------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.8, ensure your teams always have the critical information they need to collaborate effectively by defining and managing organization-specific user profile attributes as system properties that you can synchronize with your AD/LDAP or SAML identity provider. 
+
+System properties enable you to customize user profile properties to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. The properties you define, such as position, rank, or location, are :doc:`attributes users can manage as part of their user profile </preferences/manage-your-profile>`. These custom profile attributes supplement existing user details visible from the user's profile picture.
+
+.. image:: ../images/cpa-properties.png
+  :alt: Mobile examples of a user profile with custom profile attributes added as system properties.
+
+Before you begin
+~~~~~~~~~~~~~~~~~
+
+You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
+
+In addition, to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is enabled and configured. See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
+
+Add properties
+~~~~~~~~~~~~~~
+
+You can define and manage up to 20 system properties using the System Console by going to **Site Configuration > System Properties**. Each property becomes a user profile attribute users can populate. Once you reach the maximum of 20 properties, you can't create new properties until you `delete properties <#manage-properties>`__ you no longer need.
+
+1. In the System Console, go to **Site Configuration > System Properties** and select **Add Property**.
+2. Enter the following details:
+
+    - **Property name**: Enter a unique name for the property. Property names can be up to 40 characters long.
+    - **Type**: Specify the type of property as one of the following:
+
+      - **Text** for text-based profile attributes.
+      - **Phone** for phone number-based profile attributes.
+      - **URL** for web site address-based profile attributes.
+      - **Select** for a list of profile attribute values users can choose from. Specify each value followed by pressing TAB or ENTER. Values can be up to 64 characters long, and users can choose a single value.
+      - **Multi-select** for a list of profile attribute values users can select from. Specify each value followed by pressing TAB or ENTER. Values can be up to 64 characters long, and users can choose multiple values.
+
+3. Specify the property's visibility as one of the following:
+
+  - **Always show**: The property is always visible in user profiles.
+  - **Hide when empty**: The property is only visible in user profiles when it has a value.
+  - **Always hide**: The property is never visible in user profiles.
+
+4. Save your changes.
+
+.. tip::
+
+  Duplicate existing properties by selecting **More** |more-icon| and selecting **Duplicate property**. This creates a new property with the same name and type as the original property. You can then edit the new property to change its name, type, and visibility as needed.
+
+Manage properties
+~~~~~~~~~~~~~~~~~~
+
+- **Modify**: Select the property fields to make inline changes to the property's name, type, or values. Select **More** |more-icon| to change a property's visibility.
+
+- **Order**: Control the order you want properties to appear in user profiles by dragging and dropping them in the list.
+
+- **Delete**: Delete properties you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
+
+In cases where multiple system admins manage system properties, refresh your web browser instance to see real-time updates to system properties made by other admins.
+
+Sync properties with your identity provider
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Synchronize a property with AD/LDAP or SAML by selecting **More** |more-icon| and selecting **Link property to AD/LDAP** or **Link property to SAML**. Mattermost takes you directly to the **AD/LDAP** or **SAML 2.0** configuration settings page in the System Console where you can map the attributes you want to synchronize.
+
+2. Scroll to the **Custom profile attributes sync** section to specify the attribute used to populate the property in user profiles.
+
+3. Specify the attribute mapping for the property by entering the attribute name in the system property's **Attribute** field. The attribute name must match the attribute name in your identity provider.
+
+4. Save your changes.
 
 ----
 
@@ -780,7 +862,7 @@ Enable custom user groups
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users with appropriate permissions can create custom user groups,       | - System Config path: **Site Configuration > Users and Teams**                     |
 |   and users can @mention custom user groups in Mattermost conversations.                          | - ``config.json`` setting: ``ServiceSettings`` > ``EnableCustomGroups`` > ``true`` |
-| - **false**: Custom user groups cannot be created.                                                | - Environment variable: MM_SERVICESETTINGS.ENABLECUSTOMGROUPS                      |
+| - **false**: Custom user groups cannot be created.                                                | - Environment variable: ``MM_SERVICESETTINGS.ENABLECUSTOMGROUPS``                  |
 +---------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. config:setting:: user-statistics-update-time
@@ -853,11 +935,11 @@ Enable email notifications
   - Email invitations and account deactivation emails aren't affected by this setting.
   - If you don't plan on :doc:`configuring Mattermost for email </configure/smtp-email>`, disabling this configuration setting in larger deployments may improve server performance in the following areas, particularly in high-traffic environments where performance is a key concern:
 
-    - Reduced Server Load: Generating and sending emails requires processing power and resources. By disabling email notifications, you reduce the load on the server, which can be reallocated to other tasks.
-    - Decreased I/O Operations: Sending emails involves input/output (I/O) operations, such as writing to logs and databases, and handling communication with the email server. Reducing these I/O operations can improve overall system efficiency.
-    - Lowered Network Traffic: Each email sent contributes to network traffic. Disabling email notifications decreases the amount of data being transmitted, which can lead to better performance, especially in environments with limited bandwidth.
-    - Faster Response Times: With fewer background tasks (like sending emails) to handle, the application can potentially respond to user requests more quickly, improving perceived performance.
-    - Resource Allocation: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
+    - **Reduced Server Load**: Generating and sending emails requires processing power and resources. By disabling email notifications, you reduce the load on the server, which can be reallocated to other tasks.
+    - **Decreased I/O Operations**: Sending emails involves input/output (I/O) operations, such as writing to logs and databases, and handling communication with the email server. Reducing these I/O operations can improve overall system efficiency.
+    - **Lowered Network Traffic**: Each email sent contributes to network traffic. Disabling email notifications decreases the amount of data being transmitted, which can lead to better performance, especially in environments with limited bandwidth.
+    - **Faster Response Times**: With fewer background tasks (like sending emails) to handle, the application can potentially respond to user requests more quickly, improving perceived performance.
+    - **Resource Allocation**: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
     - However, disabling email notifications can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: enable-preview-mode-banner
@@ -889,22 +971,26 @@ Enable preview mode banner
   :configjson: .EmailSettings.EnableEmailBatching
   :environment: MM_EMAILSETTINGS_ENABLEEMAILBATCHING
 
-  - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email.
+  - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. Users can customize how often to receive batched notifications.
   - **false**: **(Default)** Emails will be sent for each mention or direct message.
 
 Enable email batching
 ~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| - **true**: Multiple email notifications for mentions and direct messages over a given time period are batched into a single email. The time period can be customized by each user under **Settings > Notifications**. The default time period is 15 minutes.                | - System Config path: **Site Configuration > Notifications**                       |
-| - **false**: **(Default)** Emails will be sent for each mention or direct message.                                                                                                                                                                                           | - ``config.json`` setting: ``EmailSettings`` > ``EnableEmailBatching`` > ``false`` |
-|                                                                                                                                                                                                                                                                              | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``                   |
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| - **true**: Multiple email notifications for mentions and direct messages       | - System Config path: **Site Configuration > Notifications**                       |
+|   over a given time period are batched into a single email.                     | - ``config.json`` setting: ``EmailSettings`` > ``EnableEmailBatching`` > ``false`` |
+|                                                                                 | - Environment variable: ``MM_EMAILSETTINGS_ENABLEEMAILBATCHING``                   |
+| - **false**: **(Default)** Email notifications are sent for each mention or     |                                                                                    |
+|   direct message.                                                               |                                                                                    |
++---------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
+
   - Cloud admins can't modify this configuration setting.
-  - Regardless of this setting, a user can turn off these notifications under **Settings > Notifications**.
   - The :ref:`Site Url <configure/environment-configuration-settings:site url>` and :ref:`SMTP Email Server <configure/environment-configuration-settings:smtp server>` must be configured to allow email batching.
+  - Regardless of how this setting is configured, users can :ref:`disable email-based notifications altogether <preferences/manage-your-notifications:email notifications>`.
+  - When email batching is enabled, users can :ref:`customize how often to receive batched notifications <preferences/manage-your-notifications:email notifications>`. The default frequency is 15 minutes.
   - Email batching in :ref:`High Availability Mode <configure/environment-configuration-settings:enable high availability mode>` is planned, but not yet supported.
 
 .. config:setting:: email-notification-contents
@@ -1269,10 +1355,11 @@ Automatically follow threads
   - Enabling this setting does not automatically follow threads based on previous user actions.
     For example, threads a user participated in prior to enabling this setting won't be automatically followed, unless the user adds a new comment or is mentioned
     in the thread.
+
 .. config:setting:: threaded-discussions
   :displayname: Threaded discussions (Posts)
   :systemconsole: Site Configuration > Posts
-  :configjson: .ServiceSettings.ThreadedDiscussions
+  :configjson: .ServiceSettings.CollapsedThreads
   :environment: MM_SERVICESETTINGS_COLLAPSEDTHREADS
 
   - **Always On**: **(Default)** Enables `threaded discussions <https://docs.mattermost.com/collaborate/organize-conversations.html>`__ on the server and for all users. ``config.json`` setting: ``"always_on"``
@@ -1289,8 +1376,8 @@ Threaded discussions
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`threaded discussions </collaborate/organize-conversations>`      | - System Config path: **Site Configuration > Posts**                      |
-|   on the server and for all users. This is the recommended configuration for optimal user experience          | - ``config.json`` setting: ``ServiceSettings`` > ``ThreadedDiscussions``  |
-|   and to ensure consistency in how users read and respond to threaded conversations.                          | - Environment variable: ``MM_SERVICESETTINGS_THREADEDDISCUSSIONS``        |
+|   on the server and for all users. This is the recommended configuration for optimal user experience          | - ``config.json`` setting: ``ServiceSettings`` > ``CollapsedThreads``     |
+|   and to ensure consistency in how users read and respond to threaded conversations.                          | - Environment variable: ``MM_SERVICESETTINGS_COLLAPSEDTHREADS``           |
 |   ``config.json`` setting: ``"always_on"``                                                                    |                                                                           |
 | - **Default On**: Enables threaded discussions on the server and for all users.                               |                                                                           |
 | - **Default Off**: Enables threaded discussions on the server but **not** for users.                          |                                                                           |
@@ -1352,7 +1439,7 @@ Persistent notifications
   :displayname: Maximum number of recipients for persistent notifications (Posts)
   :systemconsole: Site Configuration > Posts
   :configjson: .ServiceSettings.PersistentNotificationMaxRecipients
-  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS
+  :environment: MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXRECIPIENTS
   :description: The maximum number of recipients users may send persistent notifications to. Default is **5**.
 
 Maximum number of recipients for persistent notifications
@@ -1361,7 +1448,7 @@ Maximum number of recipients for persistent notifications
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                              |
 | notifications to.                                             | - ``config.json`` setting: ``ServiceSettings`` > ``PersistentNotificationMaxRecipients`` > ``5``  |
-|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONSMAXRECIPIENTS``               |
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_PERSISTENTNOTIFICATIONMAXRECIPIENTS``                |
 | Numerical input. Default is **5**.                            |                                                                                                   |
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 
@@ -1413,7 +1500,7 @@ Enable website link previews
 
 .. important::
 
-  The server must be connected to the internet to generate previews. This connection can be established through a :doc:`firewall or outbound proxy </configure/using-outbound-proxy>` if necessary.
+  The server must be connected to the internet to generate previews. This connection can be established through a :ref:`firewall or outbound proxy <deploy/server/preparations:outbound proxy configuration>` if necessary.
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 | - **true**: The server generates a preview of the first website, image, or YouTube video linked in a message. Users can disable website previews, but not image or YouTube previews, under **Settings > Display > Website Link Previews**. | - System Config path: **Site Configuration > Posts**                               |
@@ -1815,7 +1902,7 @@ Enable end user notices
 |                                                                                                                                                                                | - Environment variable: ``MM_ANNOUNCEMENTSETTINGS_USERNOTICESENABLED``                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
-Connected workspaces (Beta)
+Connected workspaces
 ---------------------------
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
@@ -1825,14 +1912,18 @@ The following settings aren't available in the System Console and can only be se
 
 When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
 
-.. config:setting:: enable-connected-workspaces-beta
-  :displayname: Enable connected workspaces (Beta)
-  :systemconsole: Site Configuration > Connected Workspaces (Beta)
+.. note::
+
+    The ability to share Mattermost channels across connected workspaces is currently in :ref:`Beta <manage/feature-labels:beta>`. `Learn more <#why-is-this-feature-in-beta>`__.
+
+.. config:setting:: enable-connected-workspaces
+  :displayname: Enable connected workspaces
+  :systemconsole: Site Configuration > Connected Workspaces
   :configjson: ConnectedWorkspacesSettings.EnableSharedChannels, ConnectedWorkspacesSettings.EnableRemoteClusterService 
   :environment: N/A
   :description: Establish secure connections between Mattermost instances, and invite secured connections to shared channels
 
-Enable connected workspaces (Beta)
+Enable connected workspaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Enable the ability to establish secure connections between Mattermost instances, and invite secured connections to shared channels where users can participate as they would in any public and private channel.
@@ -1852,8 +1943,8 @@ This feature's two ``config.json`` settings include:
   - System admins for Cloud deployments can submit a request to have these required configuration settings enabled for their Cloud deployment instance.
   - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to connected workspace configuration settings in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
-.. config:setting:: disable-shared-channel-status-sync-beta
-  :displayname: Disable shared channel status sync (Beta)
+.. config:setting:: disable-shared-channel-status-sync
+  :displayname: Disable shared channel status sync
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
   :environment: N/A
@@ -1861,7 +1952,7 @@ This feature's two ``config.json`` settings include:
   - **true**: Channel as well as member status and availability isn't synchronized.
   - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
 
-Disable shared channel status sync (Beta)
+Disable shared channel status sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Disable member status and availability synchronization between connected workspaces.
@@ -1872,14 +1963,15 @@ Disable member status and availability synchronization between connected workspa
 |                                                                                                                            | - Environment variable: N/A                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: default-maximum-posts-per-sync-beta
-  :displayname: Default maximum posts per sync (Beta)
+
+.. config:setting:: default-maximum-posts-per-sync
+  :displayname: Default maximum posts per sync
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DefaultMaxPostsPerSync
   :environment: N/A
   :description: Define the default maximum number of mesages to synchronize at a time between connected workspaces. Default is 50.
 
-Default maximum posts per sync (Beta)
+Default maximum posts per sync
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
@@ -1887,3 +1979,34 @@ Default maximum posts per sync (Beta)
 |                                                                           | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DefaultMaxPostsPerSync`` > ``50`` |
 | Default is **50**.                                                        | - Environment variable: N/A                                                                      |
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+----
+
+config.json-only settings
+-------------------------
+
+.. include:: ../_static/badges/allplans-selfhosted.rst
+  :start-after: :nosearch:
+
+.. config:setting:: enable-cross-team-search
+  :displayname: Enable cross-team search
+  :systemconsole: N/A
+  :configjson: ServiceSettings.EnableCrossTeamSearch
+  :environment: SERVICESETTINGS.ENABLECROSSTEAMSEARCH
+  :description: Disable the ability to search all channels the user is a member of across all teams or a specific team, and search all channels the user is a member of within the current team only. Enabled by default.
+
+Cross-team search
+~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------+-----------------------------------------------------------------------------------+
+| Disable the ability to search across all teams    | - System Config path: N/A                                                         |
+| or a specific team.                               | - ``config.json`` setting: ``ServiceSettings.EnableCrossTeamSearch`` > ``true``   |
+|                                                   | - Environment variable: ``MM_SERVICESETTINGS_ENABLECROSSTEAMSEARCH``              |
+| - **true**: **(Default)** Cross-team search is    |                                                                                   |
+|   enabled. Searches can be performed against all  |                                                                                   |
+|   channels the user is a member of across all     |                                                                                   |
+|   teams, a specific team, or the current team.    |                                                                                   |
+| - **false**: Cross-team search is disabled.       |                                                                                   |
+|   Searches are performed on all channels the user |                                                                                   |
+|   is member of within the current team only.      |                                                                                   |
++---------------------------------------------------+-----------------------------------------------------------------------------------+

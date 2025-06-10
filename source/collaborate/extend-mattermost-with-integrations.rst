@@ -3,15 +3,15 @@ Extend Mattermost with integrations
 
 Ensure your teams are are always informed about important events, status changes, deadlines, or priorities with Mattermost operational and DevOps integrations. Enhance communication, streamline Mattermost with external workflows, ensure security and compliance, and foster a more efficient and collaborative work environment with major communication tools and services featuring real-time alerts, updates, and notifications directly within channels. 
 
-Interoperability with pre-packaged integrations
-------------------------------------------------
+Interoperability with pre-built integrations
+----------------------------------------------
 
 Your system admin can install the following pre-packaged integrations through the Mattermost Marketplace, and enable and configure them in the Mattermost System Console.
 
 Mattermost features
 ~~~~~~~~~~~~~~~~~~~~
 
-- :ref:`Copilot <collaborate/chat-with-copilot:get started>`
+- :ref:`AI Agents <guides/agents:access ai features>`
 - :ref:`Export Mattermost channel data <comply/export-mattermost-channel-data:usage>`
 - :ref:`Monitor performance metrics <scale/collect-performance-metrics:usage>`
 - :doc:`Perform legal holds </comply/legal-hold>`
@@ -19,12 +19,12 @@ Mattermost features
 Mattermost interoperability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- :ref:`GitHub <integrate/github-interoperability:usage>`
-- :ref:`GitLab <integrate/gitlab-interoperability:usage>`
-- :ref:`Jira <integrate/jira-interoperability:usage>`
-- :ref:`Microsoft Teams <integrate/microsoft-teams-interoperability:usage>`
-- :ref:`ServiceNow <integrate/servicenow-interoperability:usage>`
-- :ref:`Zoom <integrate/zoom-interoperability:usage>`
+- :ref:`GitHub <integrate/github:use>`
+- :ref:`GitLab <integrate/gitlab:use>`
+- :ref:`Jira <integrate/jira:use>`
+- :ref:`Microsoft Teams <integrate/microsoft-teams-sync:use>`
+- :ref:`ServiceNow <integrate/servicenow:use>`
+- :ref:`Zoom <integrate/zoom:use>`
 
 .. tip::
 

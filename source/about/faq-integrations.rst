@@ -1,10 +1,10 @@
-Integration questions
-=====================
+Integrations
+=============
 
 What integrations come pre-packaged with Mattermost Server?
 ------------------------------------------------------------
 
-See the :doc:`integrate and extend </guides/integrate-and-extend>` documentation for details on pre-packaged integrations available with Mattermost Server.
+See the :doc:`integrations guide </about/integrations>` documentation for details on pre-packaged integrations available with Mattermost Server.
 
 Can I use Mattermost to add messaging functionality to my proprietary SaaS service?
 ------------------------------------------------------------------------------------

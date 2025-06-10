@@ -150,7 +150,7 @@ Discord Dark Theme (New)
 .. image:: ../images/DiscordNewDarkTheme.png
   :alt: Discord New Dark Theme
 
-`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__.
+`Visit the mattermost-discord-dark GitHub repository online: <https://github.com/melroy89/mattermost-discord-dark>`__.
 
 Want this theme? Copy and paste the following code into Mattermost:
 
@@ -165,7 +165,7 @@ Discord Dark Theme (Old)
 .. image:: ../images/DiscordDarkTheme.png
   :alt: Discord Dark Theme (old)
 
-`Visit the mattermost-discord-dark-old GitHub repository online: <https://github.com/danger89/mattermost-discord-dark>`__
+`Visit the mattermost-discord-dark-old GitHub repository online: <https://github.com/melroy89/mattermost-discord-dark>`__
 
 Want this theme? Copy and paste the following code into Mattermost:
 

@@ -15,8 +15,8 @@ Whether you’re installing a license key, performing backups, upgrading the ser
     Backup and disaster recovery </deploy/backup-disaster-recovery>
     Upgrade Mattermost server </guides/upgrade-mattermost>
     Secure Mattermost </guides/secure-mattermost>
-    Scale your deployment </guides/scale-mattermost>
     Mattermost error codes </manage/admin/error-codes>
+    Logging </manage/logging>
     mmctl </manage/mmctl-command-line-tool>
     CLI </manage/command-line-tools>
     Feature labels </manage/feature-labels>
@@ -26,8 +26,8 @@ Whether you’re installing a license key, performing backups, upgrading the ser
 * :doc:`Backup and disaster recovery </deploy/backup-disaster-recovery>` - Learn about backup and disaster recovery for Mattermost.
 * :doc:`Upgrade Mattermost server </guides/upgrade-mattermost>` - Learn how to upgrading Mattermost server.
 * :doc:`Secure Mattermost </guides/secure-mattermost>` - Learn about securing Mattermost server.
-* :doc:`Scale your deployment </guides/scale-mattermost>` - Learn about scaling Mattermost deployment.
 * :doc:`Mattermost error codes </manage/admin/error-codes>` - Learn about Mattermost error codes and troubleshooting.
+* :doc:`Logging </manage/logging>` - Learn how to customize logging options based on business practices and needs.
 * :doc:`mmctl </manage/mmctl-command-line-tool>` - Learn about the mmctl command line tool for Mattermost.
 * :doc:`CLI </manage/command-line-tools>` - Learn about command line tools for Mattermost.
 * :doc:`Feature labels </manage/feature-labels>` - Learn about Mattermost feature labels and their meanings.
