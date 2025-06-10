@@ -847,7 +847,7 @@ redirects = {
 "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "channels/find-channels.html#revisit-recent-channels":
         "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
 "channels/syntax-highlighting.html":
@@ -897,7 +897,7 @@ redirects = {
 "collaborate/use-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "collaborate/chat-with-ai-copilot.html":
-        "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
+        "https://docs.mattermost.com/guides/agents.html",
 "collaborate-within-embedded-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "collaborate/send-messages.html#edit-or-delete-messages":
@@ -912,10 +912,10 @@ redirects = {
         "https://docs.mattermost.com/collaborate/channel-types.html#direct-message-channels",
 "collaborate/channel-types.html#group-messages":
         "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
-"collaborate/make-calls.html#live-captions-during-calls-beta":
-        "https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls",
-"collaborate/make-calls.html#transcribe-recorded-calls-beta":
-        "https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls",
+"collaborate/chat-with-copilot.html":
+        "https://docs.mattermost.com/guides/agents.html",
+"collaborate/collaborate-with-audio-video.html":
+        "https://docs.mattermost.com/collaborate/audio-and-screensharing.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1958,24 +1958,8 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/environment-configuration-settings.html#elasticsearch":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
-"configure/enable-copilot.html#enable-vision-beta":
-        "https://docs.mattermost.com/configure/enable-copilot.html#enable-vision",
-"configure/enable-copilot.html#disable-tools-beta":
-        "https://docs.mattermost.com/configure/enable-copilot.html#disable-tools",
-"configure/experimental-configuration-settings.html#experimental-audit-logging-configuration-settings-beta":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#experimental-audit-logging-configuration-settings",
-"configure/plugins-configuration-settings.html#enable-call-transcriptions-beta":
-        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions",
-"configure/plugins-configuration-settings.html#enable-live-captions-beta":
-        "https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions",
-"configure/site-configuration-settings.html#connected-workspaces-beta":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#connected-workspaces",
-"configure/site-configuration-settings.html#enable-connected-workspaces-beta":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
-"configure/site-configuration-settings.html#disable-shared-channel-status-sync-beta":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#disable-shared-channel-status-sync",
-"configure/site-configuration-settings.html#default-maximum-posts-per-sync-beta":
-        "https://docs.mattermost.com/configure/site-configuration-settings.html#default-maximum-posts-per-sync",
+"configure/enable-copilot.html":
+        "https://docs.mattermost.com/configure/agents-admin-guide.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2376,7 +2360,7 @@ redirects = {
 "guides/channels.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/channels.html#channels-messages-and-conversations":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "guides/channels.html#work-with-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
 "guides/channels.html#work-with-messages":
@@ -2386,7 +2370,7 @@ redirects = {
 "guides/channels.html#extend-channels-functionality":
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
@@ -2411,7 +2395,10 @@ redirects = {
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/integrate-and-extend.html#interoperability-with-pre-packaged-integrations":
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
-
+"guides/collaborate.html":
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
+"guides/repeatable-processes.html":
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -2795,8 +2782,6 @@ redirects = {
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
 "integrate/ms-teams-interoperability.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
-"integrate/mattermost-mission-collaboration-for-m365.html#connect-microsoft-365-teams-and-outlook-with-mattermost-beta":
-        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/cloud-outgoing-webhooks.html":
@@ -3074,8 +3059,6 @@ redirects = {
         "https://docs.mattermost.com/manage/generating-support-packet.html",
 "manage/bulk-export-data.html":
         "https://docs.mattermost.com/manage/bulk-export-tool.html",
-"manage/logging.html#audit-logging-beta":
-        "https://docs.mattermost.com/manage/logging#audit-logging.html",
 
 # Messaging redirects
 "messaging/about-teams-channels-messages.html#teams":
@@ -3568,8 +3551,6 @@ redirects = {
         "https://docs.mattermost.com/onboard/connected-workspaces.html#share-channels-with-secure-connections",
 "onboard/shared-channels.html#frequently-asked-questions":
         "https://docs.mattermost.com/onboard/connected-workspaces.html#frequently-asked-questions",
-"onboard/connected-workspaces.html#connected-workspaces-beta":
-        "https://docs.mattermost.com/onboard/connected-workspaces.html",
 
 # Overview redirects
 "overview/architecture.html":
@@ -3710,9 +3691,9 @@ redirects = {
 "playbooks/interact-with-playbooks.html#api-documentation":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
 "playbooks/work-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "playbooks/get-started-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Preference redirects
 "preferences/manage-your-calls-preferences.html":
@@ -3915,7 +3896,7 @@ redirects = {
 "welcome/log-out.html":
         "https://docs.mattermost.com/collaborate/log-out.html",
 "welcome/get-started-mattermost-channels.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "welcome/manage-custom-groups.html":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html",
 "welcome/about-teams.html":

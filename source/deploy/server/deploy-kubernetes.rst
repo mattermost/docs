@@ -10,6 +10,11 @@ Choose your preferred platform below for specific deployment instructions:
   .. include:: kubernetes/deploy-k8s-aks.rst
     :start-after: :nosearch:
 
+.. tab:: Oracle
+
+  .. include:: kubernetes/deploy-k8s-oke.rst
+    :start-after: :nosearch:
+
 .. tab:: Other Kubernetes
 
   .. include:: kubernetes/deploy-k8s.rst
@@ -47,3 +52,20 @@ How to troubleshoot the root cause of the ``CrashLoopBackOff`` error?
 Use ``kubectl describe pods`` to check detailed event logs.
 
 Consider logging tools like Grafana to aggregate and analyze logs for additional insights.
+
+Where is data stored in a self-hosted Kubernetes deployment?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Where data is stored depends on the backend database (such as RDS, Azure Postgres, self-hosted PostgreSQL), and the backend filestore (such as AWS S3, Minio, Mounted volume) configured during deployment.
+
+We recommend the following S3 Options:
+
+- AWS S3
+- MinIO (Self-Hosted)
+
+For Volume Mounts, the following options use Kubernetes Volume Mounting to provide filestores as a "local" directory to the Mattermost server:
+
+- NFS
+- AzureBlob
+
+Not all types of `Kubernetes persistent volumes <https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes>`_ have been tested with Mattermost, and some may have limitations or specific configurations that may require additional setup to ensure proper permissions and access. We recommend system admins review documentation for their preferred persistent volume types and test to ensure compatibility with Mattermost.
