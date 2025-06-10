@@ -91,8 +91,8 @@ $(document).ready(function () {
     const expiryDate = '2024-10-31T00:00:00-0500';
     // 12am EST
     const fallback_url =
-        'https://mattermost.com/solutions/mattermost-for-microsoft-teams/';
-    const fallback_text = 'Learn more about Mattermost for Microsoft Teams »';
+        'https://docs.mattermost.com/about/maximize-microsoft-investments.html';
+    const fallback_text = 'Maximize your Microsoft investments  »';
 
     if (!dateInFuture(expiryDate)) {
         if ($('.notification-bar').length) {

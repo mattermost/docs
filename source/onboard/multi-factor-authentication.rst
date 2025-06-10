@@ -6,7 +6,7 @@ Multi-factor authentication
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Multi-factor authentication (MFA) is a secondary layer of user authentication applied to your Mattermost server.
+Multi-factor authentication (MFA) is a secondary layer of user authentication applied to your Mattermost server that applies to all users on all teams within your Mattermost workspace.
 
 With MFA enabled, users need to provide a secure one-time code in addition to their username and password in order to log in to Mattermost. MFA is useful in organizations that have specific security and compliance policies. It can also be used in organizations where Mattermost is not behind a firewall and doesn't have access to existing MFA infrastructure.
 

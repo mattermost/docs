@@ -1,4 +1,4 @@
-Connect and collaborate with Mattermost
+Messaging Collaboration
 =======================================
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
@@ -21,11 +21,9 @@ This Mattermost end user documentation is designed for anyone who wants guidance
    Organize using custom user groups </collaborate/organize-using-custom-user-groups>
    Invite people </collaborate/invite-people>
    Learn about Mattermost roles </collaborate/learn-about-roles>
-   Collaborate with audio and video </collaborate/collaborate-with-audio-video>
    Collaborate within channels </collaborate/collaborate-within-channels>
    Communicate with messages and threads </collaborate/communicate-with-messages>
    Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>
-   Chat with Copilot </collaborate/chat-with-copilot>
    Keyboard shortcuts </collaborate/keyboard-shortcuts>
    Extend Mattermost with integrations </collaborate/extend-mattermost-with-integrations>
 
@@ -34,10 +32,8 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 * :doc:`Organize using custom user groups </collaborate/organize-using-custom-user-groups>` - Learn about creating and managing custom user groups in Mattermost.
 * :doc:`Invite people to your workspace </collaborate/invite-people>` - Learn how to add new users to Mattermost and add users to existing teams and channels.
 * :doc:`Learn about Mattermost user roles </collaborate/learn-about-roles>` - Learn about the 6 user roles in Mattermost and what they can do.
-* :doc:`Collaborate with audio and video </collaborate/collaborate-with-audio-video>` - Learn about Mattermost's native real-time chat, self-hosted audio calls, and screen sharing capabilities.
 * :doc:`Collaborate within channels </collaborate/collaborate-within-channels>` - Learn how to get started collaborating within Mattermost channels.
 * :doc:`Communicate with messages and threads </collaborate/communicate-with-messages>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to get started collaborating within Microsoft Teams.
-* :doc:`Chat with Copilot </collaborate/chat-with-copilot>` - Overcome information overload and streamline communication and collaboration by chatting with Copilot in your Mattermost instance.
 * :doc:`Keyboard shortcuts </collaborate/keyboard-shortcuts>` - Make a more efficient use of your keyboard with keyboard shortcuts.
 * :doc:`Extend Mattermost with integrations </collaborate/extend-mattermost-with-integrations>` - Find open source integrations to common tools in the Mattermost Marketplace.
