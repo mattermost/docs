@@ -117,7 +117,7 @@ To share your screen:
 Share audio during screen sharing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Calls plugin v1.9.0, you can share audio along with your screen during screen sharing. To enable this feature, you must first turn on the **Share sound with screen** preference in your Calls settings. You can find this setting by going to **Settings > Plugin Preferences > Calls**. This setting is stored locally on each client and is not synced across devices.
+From Mattermost Calls plugin v1.9.0, you can share audio along with your screen during screen sharing. To enable this feature, you must first turn on the **Share sound with screen** preference in your Calls settings by going to **Settings > Plugin Preferences > Calls**. This setting is stored locally on each client and is not synchronized across devices.
 
 .. note::
 
