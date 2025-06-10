@@ -49,7 +49,7 @@ Messaging collaboration
 - :ref:`Pinning <collaborate/save-pin-messages:pin messages>`, :doc:`bookmarking </collaborate/manage-channel-bookmarks>`, and :doc:`advanced search </collaborate/search-for-messages>` to maintain continuity and context in high-volume environments.
 - Cross-platform support on web, desktop, and mobile clients for flexible field to command and control access.
 
-.. image:: /images/messaging.png
+.. image:: /images/messaging-new-hero.png
    :alt: An image showing Mattermost messaging collaboration, highlighting the ability to create public and private channels, direct messages, and threaded conversations for secure, real-time communication across web, desktop, and mobile.
 
 Workflow automation
