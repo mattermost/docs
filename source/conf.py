@@ -1960,6 +1960,17 @@ redirects = {
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
 "configure/enable-copilot.html":
         "https://docs.mattermost.com/configure/agents-admin-guide.html",
+"configure/site-configuration-settings.html#system-properties":
+        "https://docs.mattermost.com/configure/site-configuration-settings.html#system-attributes",
+"configure/site-configuration-settings.html#before-you-begin":
+        "https://docs.mattermost.com/manage/admin/user-attributes.html#before-you-begin",
+"configure/site-configuration-settings.html#add-properties":
+        "https://docs.mattermost.com/manage/admin/user-attributes.html#add-attributes",
+"configure/site-configuration-settings.html#manage-properties":
+        "https://docs.mattermost.com/manage/admin/user-attributes.html#manage-attributes",
+"configure/site-configuration-settings.html#sync-properties-with-your-identity-provider":
+        "https://docs.mattermost.com/manage/admin/user-attributes.html#sync-attributes-with-your-identity-provider",
+
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":

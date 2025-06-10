@@ -7,7 +7,7 @@ Site configuration settings
 Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
 
 - `Customization <#customization>`__
-- `System Properties <#system-properties>`__
+- `System Attributes <#system-attributes>`__
 - `Localization <#localization>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
@@ -409,76 +409,16 @@ Enable this configuration setting when there are issues with the mobile app SSO 
 
 ----
 
-System properties
+System attributes
 -----------------
 
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-From Mattermost v10.8, ensure your teams always have the critical information they need to collaborate effectively by defining and managing organization-specific user profile attributes as system properties that you can synchronize with your AD/LDAP or SAML identity provider. 
+System attributes configuration settings provide Enterprise system admins with centralized control over key user account properties. You can define, manage, and enforce specific attributes, including:
 
-System properties enable you to customize user profile properties to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. The properties you define, such as position, rank, or location, are :doc:`attributes users can manage as part of their user profile </preferences/manage-your-profile>`. These custom profile attributes supplement existing user details visible from the user's profile picture.
-
-.. image:: ../images/cpa-properties.png
-  :alt: Mobile examples of a user profile with custom profile attributes added as system properties.
-
-Before you begin
-~~~~~~~~~~~~~~~~~
-
-You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
-
-In addition, to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is enabled and configured. See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
-
-Add properties
-~~~~~~~~~~~~~~
-
-You can define and manage up to 20 system properties using the System Console by going to **Site Configuration > System Properties**. Each property becomes a user profile attribute users can populate. Once you reach the maximum of 20 properties, you can't create new properties until you `delete properties <#manage-properties>`__ you no longer need.
-
-1. In the System Console, go to **Site Configuration > System Properties** and select **Add Property**.
-2. Enter the following details:
-
-    - **Property name**: Enter a unique name for the property. Property names can be up to 40 characters long.
-    - **Type**: Specify the type of property as one of the following:
-
-      - **Text** for text-based profile attributes.
-      - **Phone** for phone number-based profile attributes.
-      - **URL** for web site address-based profile attributes.
-      - **Select** for a list of profile attribute values users can choose from. Specify each value followed by pressing TAB or ENTER. Values can be up to 64 characters long, and users can choose a single value.
-      - **Multi-select** for a list of profile attribute values users can select from. Specify each value followed by pressing TAB or ENTER. Values can be up to 64 characters long, and users can choose multiple values.
-
-3. Specify the property's visibility as one of the following:
-
-  - **Always show**: The property is always visible in user profiles.
-  - **Hide when empty**: The property is only visible in user profiles when it has a value.
-  - **Always hide**: The property is never visible in user profiles.
-
-4. Save your changes.
-
-.. tip::
-
-  Duplicate existing properties by selecting **More** |more-icon| and selecting **Duplicate property**. This creates a new property with the same name and type as the original property. You can then edit the new property to change its name, type, and visibility as needed.
-
-Manage properties
-~~~~~~~~~~~~~~~~~~
-
-- **Modify**: Select the property fields to make inline changes to the property's name, type, or values. Select **More** |more-icon| to change a property's visibility.
-
-- **Order**: Control the order you want properties to appear in user profiles by dragging and dropping them in the list.
-
-- **Delete**: Delete properties you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
-
-In cases where multiple system admins manage system properties, refresh your web browser instance to see real-time updates to system properties made by other admins.
-
-Sync properties with your identity provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Synchronize a property with AD/LDAP or SAML by selecting **More** |more-icon| and selecting **Link property to AD/LDAP** or **Link property to SAML**. Mattermost takes you directly to the **AD/LDAP** or **SAML 2.0** configuration settings page in the System Console where you can map the attributes you want to synchronize.
-
-2. Scroll to the **Custom profile attributes sync** section to specify the attribute used to populate the property in user profiles.
-
-3. Specify the attribute mapping for the property by entering the attribute name in the system property's **Attribute** field. The attribute name must match the attribute name in your identity provider.
-
-4. Save your changes.
+- Custom attributes for user profiles, such as job titles, departments, or other metadata, that align with your organizational structures and workflows. Learn more about :doc:`managing custom user profile attributes </manage/admin/user-attributes>`.
+- Granular access controls based on user attributes that ensure users have access to only the resources and functionality relevant to their roles, bolstering security and compliance across the organization.
 
 ----
 
