@@ -53,15 +53,18 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
 
   - Branch or Tag creation
   - Branch or Tag deletion
-  - Releases
+  - Discussions
   - Issue comments
   - Issues
   - Pull requests
   - Pull request review
   - Pull request review comments
   - Pushes
+  - Releases
   - Stars
   - Workflows
+  - Discussions
+  - Discussion comments
 
 6. Select **Add Webhook** to save your changes.
 
@@ -83,7 +86,7 @@ A Mattermost system admin must perform the following steps in Mattermost.
   d. On the GitHub configuration page, enable and configure GitHub interoperability as follows, and then select **Save**:
 
     - Enter the **GitHub OAuth Client ID** and **GitHub OAuth Client Secret** obtained during registration.
-    - (Optional) **GitHub Organization**: Lock the integration to a single GitHub organization by specifying the name of your GitHub organization.
+    - (Optional) **GitHub Organization**: Lock the integration to GitHub organizations by specifying a comma seperated list of your GitHub organizations.
     - (GitHub Enterprise Only): Set **Enterprise Base URL** and **Enterprise Upload URL** values to your GitHub Enterprise URLs, e.g. ``https://github.example.com``. These values are often the same.
     - (Mattermost desktop app only) **Display Notification Counters in Left Sidebar**: Display or hide GitHub notification counters in the Mattermost sidebar.
     - (Optional) **Enable Private Repositories**: Enable the ability to work with private repositories. Affected users are notified once private repositories are enabled, and must reconnect their GitHub accounts to gain access to private repositories.
@@ -137,7 +140,7 @@ Run the ``/github subscriptions add`` slash command to subscribe a Mattermost ch
 
 For example, to post notifications for issues, issue comments, and pull requests matching the label **Help Wanted** from the ``mattermost/mattermost-server`` GitHub repository, use: ``/github subscriptions add mattermost/mattermost-server --features issues,pulls,issue_comments,label:"Help Wanted"``. The following flags are supported:
 
-- ``--features``: A comma-delimited list of one or more of: issues, pulls, pulls_merged, pulls_created, pushes, creates, deletes, issue_creations, issue_comments, pull_reviews, releases, workflow_success, workflow_failure, label:"labelname". Defaults to ``pulls,issues,creates,deletes``.
+- ``--features``: A comma-delimited list of one or more of: issues, pulls, pulls_merged, pulls_created, pushes, creates, deletes, issue_creations, issue_comments, pull_reviews, releases, workflow_success, workflow_failure, discussions, discussion_comments, label:"labelname". Defaults to ``pulls,issues,creates,deletes``.
 - ``--exclude-org-member``: The events triggered by organization members that won't be delivered. It will be locked to the organization configured and only works for users whose membership is public. Organization members and collaborators are not the same.
 - ``--render-style``: Notifications are delivered in the specified style (for example, the body of a pull request will not be displayed). Supported values are ``collapsed``, ``skip-body``, or ``default`` (which is the same as omitting the flag).
 - ``--exclude``: A comma-separated list of the repositories to exclude from getting the subscription notifications like ``mattermost/mattermost-server``. Only supported for subscriptions to an organization.
@@ -151,6 +154,7 @@ Run the ``/github setup`` slash command to configure the integration between Git
 - ``/github setup oauth``: Sets up the OAuth2 application in GitHub, establishing the necessary authorization connection between GitHub and Mattermost.
 - ``/github setup webhook``: Creates a webhook from GitHub to Mattermost, allowing real-time notifications and updates from GitHub to be sent to Mattermost channels.
 - ``/github setup announce``: Sends a message to designated channels in Mattermost, announcing the availability of the GitHub integration for team members to use.
+- ``/github default-repo``:  Sets a default repository for user per channel to be auto-filled in the Create GitHub Issue modal for convenience.
 
 Frequently asked questions
 ---------------------------
