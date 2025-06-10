@@ -47,7 +47,7 @@ You can also run the deletion job manually at any time by selecting **Run Deleti
 
 .. note::
   
-  If using data retention and :doc:`ElasticSearch </scale/elasticsearch>`, ensure the :ref:`ElasticSearch aggregate search indexes <configure/environment-configuration-settings:aggregate search indexes>` setting is set to a value that is greater than your data retention policy in days.
+  If using data retention with :doc:`ElasticSearch </scale/elasticsearch-setup>`, ensure the :ref:`ElasticSearch aggregate search indexes <configure/environment-configuration-settings:aggregate search indexes>` setting is set to a value that is greater than your data retention policy in days.
 
 Frequently Asked Questions (FAQs)
 ---------------------------------
@@ -70,15 +70,6 @@ What happens when a file is deleted by the file retention policy?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The file attachment is removed from the Mattermost user interface, deleted from the ``FileInfo`` table, and from your local disk or Amazon S3 service as specified in **System Console > Environment > File Storage**.
-
-Why didn't an old file get deleted after running the deletion job?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Check the data deletion was successful in the deletion job table in **System Console > Compliance > Data Retention Policy**.
-
-2. Delete the ``teams/`` folder in the root of your  Mattermost storage directory.
-
-Note that these files will still be removed from the Mattermost user interface. 
 
 Why do I see ``Pending`` in the deletion job table with no details?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

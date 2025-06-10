@@ -35,15 +35,9 @@ Because of the benefits of Mattermost Enterprise Edition, we recommend installin
 Mattermost plans
 ----------------
 
-Mattermost plans consist of features and entitlements available either a paid subscription service or free. 
+Mattermost plans consist of features and entitlements available either a paid subscription service or free. :doc:`Learn more </about/plans>` about the features available across all plans.
 
-We have three primary plans available: 
-
-* `Mattermost Enterprise <#mattermost-enterprise>`__: This is a paid subscription service for large and sophisticated enterprise-scale deployments of the Mattermost platform.
-* `Mattermost Professional <#mattermost-professional>`__: This is a paid subscription service providing advance access controls and user management for managers leading teams of teams.
-* `Mattermost Free <#mattermost-free>`__: This a free version of our collaboration platform designed for single teams (self-hosted only).
-
-The Mattermost Professional and Mattermost Enterprise editions are only available after deploying our Mattermost Enterprise Edition code base, and then applying a valid license key that comes with a subscription purchase. Alternatively, you can start a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
+The Mattermost Professional, Enterprise, or Enterprise Advanced editions are only available after deploying our Mattermost Enterprise Edition binary, and then applying a valid license key that comes with a subscription purchase. Alternatively, you can start a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~
@@ -58,7 +52,7 @@ Mattermost Enterprise is an enterprise-grade collaboration system that supports 
 
 This offering includes all the features of `Mattermost Professional <#mattermost-professional>`__, plus: 
 
-- :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </scale/elasticsearch>`.
+- :doc:`Enterprise-scale search with dedicated indexing and usage resourcing via cluster support </scale/enterprise-search>`.
 - :doc:`Sychronization of access controls, channels, and teams with AD/LDAP Groups </onboard/ad-ldap-groups-synchronization>`.
 - :doc:`eDiscovery and compliance export automation </comply/compliance-export>`.
 - :doc:`Enterprise mobile device management with custom EMM support via AppConfig </deploy/mobile/deploy-mobile-apps-using-emm-provider>`.
@@ -69,15 +63,15 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Deleted granular administrative control </onboard/delegated-granular-administration>`.
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </repeatable-processes/share-and-collaborate>`
 - :doc:`Channel export </comply/export-mattermost-channel-data>`
-- :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging (beta)>`.
+- :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging>`.
 - :doc:`Advanced collaboration with connected workspaces across Mattermost instances </onboard/connected-workspaces>`.
 - :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster-based-deployment>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - :doc:`Server health checks </manage/request-server-health-check>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
-- Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
-- Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
+- Contextual AI-based :ref:`summarization <guides/agents:record calls to summarize meetings>`, real-time :ref:`channel briefing <guides/agents:analyze threads and channels>`, and :ref:`composition <guides/agents:access ai features>`
+- Private, air-gapped & DDIL :doc:`AI operations </configure/agents-admin-guide>`
 - PQ&A with :doc:`access-controlled backend systems </about/security>`
 - 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
@@ -102,8 +96,8 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
 - O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
-- :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
-- Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`
+- :ref:`Interactive AI bot support <guides/agents:access ai features>`
+- Flexible :doc:`bring-your-own-LLM integration </configure/agents-admin-guide>`
 
 See a `complete list of Mattermost features <https://mattermost.com/pricing>`_.
 
@@ -136,8 +130,6 @@ Features include:
 - Extensive integration support via `webhooks, APIs, drivers <https://developers.mattermost.com/integrate/other-integrations/>`_, and `third-party extensions <https://mattermost.com/marketplace/>`_.
 - Multiple languages including English (Australian, US), Bulgarian, Chinese (Simplified and Traditional), Dutch, French, German, Hungarian, Italian, Japanese, Korean, Persian, Polish, Portuguese (Brazil), Romanian, Russian, Spanish, Swedish, Turkish, Ukrainian, and Vietnamese.
 - `Community support <https://mattermost.com/support/>`_.
-
-See a complete list of features `here <https://mattermost.com/pricing>`_.
 
 Product decisions
 -----------------

@@ -62,6 +62,7 @@ Deployment options
     - Locate a resource named ``<your VM name>-ip`` and click on it.
     - Your DNS name will be listed under "DNS Name" in the "Essentials" pane.
     - The DNS name is formatted as follows:
+
     ``<dns name you chose>.<region>.cloudapp.azure.com`` (e.g.,
     ``myorg.eastus.cloudapp.azure.com``).
 

@@ -149,13 +149,13 @@ redirects = {
 "about/mattermost-customizable-ai-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
 "about/install-mattermost-app-in-microsoft-teams.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "about/mattermost-google-calendar-integration.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/setup-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "about/embed-mattermost-app-within-microsoft-teams.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "about/cloud-subscriptions.html#buy-a-cloud-subscription":
         "https://docs.mattermost.com/about/cloud-subscriptions.html",
 "about/cloud-subscriptions.html#view-subscription-information":
@@ -167,12 +167,17 @@ redirects = {
 "about/mattermost-for-microsoft-teams.html":
         "https://docs.mattermost.com/about/maximize-microsoft-investment.html",
 "about/install-mattermost-for-microsoft-teams-plugin.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
 "about/orchestration.html":
         "https://docs.mattermost.com/about/use-cases.html",
 "about/subscription.html#mattermost-nonprofit-license-program":
         "https://docs.mattermost.com/about/non-profit-subscriptions.html",
-
+"about/maximize-microsoft-investment.html":
+        "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
+"about/out-of-band-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
+"about/incident-response-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -842,7 +847,7 @@ redirects = {
 "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "channels/find-channels.html#revisit-recent-channels":
         "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
 "channels/syntax-highlighting.html":
@@ -892,7 +897,7 @@ redirects = {
 "collaborate/use-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "collaborate/chat-with-ai-copilot.html":
-        "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
+        "https://docs.mattermost.com/guides/agents.html",
 "collaborate-within-embedded-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "collaborate/send-messages.html#edit-or-delete-messages":
@@ -900,13 +905,17 @@ redirects = {
 "collaborate/organize-conversations.html#enable-collapsed-reply-threads":
         "https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions",
 "collaborate/collaborate-within-embedded-microsoft-teams.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "collaborate/syntax-highlighting.html":
         "https://docs.mattermost.com/collaborate/format-messages.html#syntax-highlighting",
 "collaborate/channel-types.html#direct-messages":
         "https://docs.mattermost.com/collaborate/channel-types.html#direct-message-channels",
 "collaborate/channel-types.html#group-messages":
         "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
+"collaborate/chat-with-copilot.html":
+        "https://docs.mattermost.com/guides/agents.html",
+"collaborate/collaborate-with-audio-video.html":
+        "https://docs.mattermost.com/collaborate/audio-and-screensharing.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1914,7 +1923,7 @@ redirects = {
 "configure/configuration-in-the-database.html":
         "https://docs.mattermost.com/configure/configuration-in-your-database.html",
 "configure/install-mattermost-for-microsoft-teams-plugin.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html#install-and-configure-the-microsoft-teams-integration-in-mattermost",
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html#install-and-configure-the-microsoft-teams-integration-in-mattermost",
 "configure/developer-mode-configuration-settings.html":
         "https://docs.mattermost.com/configure/environment-configuration-settings.html#developer",
 "configure/performance-monitoring-configuration-settings.html":
@@ -1947,7 +1956,10 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
-
+"configure/environment-configuration-settings.html#elasticsearch":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
+"configure/enable-copilot.html":
+        "https://docs.mattermost.com/configure/agents-admin-guide.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2322,7 +2334,7 @@ redirects = {
 "guides/channels.html#navigate-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
 "guides/channels.html#extend-mattermost-channels":
-        "https://docs.mattermost.com/guides/integrate-and-extend.html",
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/messaging.html":
 	"https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/orchestration.html":
@@ -2348,7 +2360,7 @@ redirects = {
 "guides/channels.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/channels.html#channels-messages-and-conversations":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "guides/channels.html#work-with-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
 "guides/channels.html#work-with-messages":
@@ -2356,9 +2368,9 @@ redirects = {
 "guides/channels.html#keyboard-accessibility":
         "https://docs.mattermost.com/collaborate/keyboard-accessibility.html",
 "guides/channels.html#extend-channels-functionality":
-        "https://docs.mattermost.com/guides/integrate-and-extend.html",
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
@@ -2379,6 +2391,14 @@ redirects = {
         "https://docs.mattermost.com/guides/deployment-guide.html",
 "guides/admin.html":
         "https://docs.mattermost.com/guides/administration-guide.html",
+"guides/integrate-and-extend.html":
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
+"guides/integrate-and-extend.html#interoperability-with-pre-packaged-integrations":
+        "https://docs.mattermost.com/guides/pre-built-integrations.html",
+"guides/collaborate.html":
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
+"guides/repeatable-processes.html":
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -2761,7 +2781,7 @@ redirects = {
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
 "integrate/ms-teams-interoperability.html":
-        "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
 "integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/cloud-outgoing-webhooks.html":
@@ -2786,6 +2806,47 @@ redirects = {
         "https://developers.mattermost.com/integrate/reference/bot-accounts/",
 "integrations/cloud-slash-commands.html":
         "https://developers.mattermost.com/integrate/slash-commands/",
+"integrate/mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/about/community-for-mattermost.html",
+"integrate/community-for-mattermost-for-microsoft-teams.html":
+        "https://docs.mattermost.com/integrate/matermost-mission-collaboration-for-m365.html",
+"integrate/github-interoperability.html":
+        "https://docs.mattermost.com/integrate/github",
+"integrate/gitlab-interoperability.html":
+        "https://docs.mattermost.com/integrate/gitlab.html",
+"integrate/jira-interoperability.html":
+        "https://docs.mattermost.com/",
+"integrate/microsoft-calendar-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-calendar.html",
+"integrate/microsoft-teams-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html",
+"integrate/microsoft-teams-meetings-interoperability.html":
+        "https://docs.mattermost.com/integrate/microsoft-teams-meetings.html",
+"integrate/servicenow-interoperability.html":
+        "https://docs.mattermost.com/integrate/servicenow.html",
+"integrate/zoom-interoperability.html":
+        "https://docs.mattermost.com/integrate/zoom.html",
+"integrate/github.html#setup":
+        "https://docs.mattermost.com/integrate/github.html#deploy",
+"integrate/gitlab.html#setup":
+        "https://docs.mattermost.com/integrate/gitlab.html#deploy",
+"integrate/jira.html#setup":
+        "https://docs.mattermost.com/integrate/jira.html#deploy",
+"integrate/mattermost-mission-collaboration-for-m365.html#setup":
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
+"integrate/playbooks-for-microsoft-teams.html#setup":
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
+"integrate/microsoft-calendar.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
+"integrate/microsoft-teams-sync.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-teams-sync.html#deploy",
+"integrate/microsoft-teams-meetings.html#setup":
+        "https://docs.mattermost.com/integrate/microsoft-teams-meetings.html#deploy",
+"integrate/servicenow.html#setup":
+        "https://docs.mattermost.com/integrate/servicenow.html#deploy",
+"integrate/zoom.html#setup":
+        "https://docs.mattermost.com/integrate/zoom.html#deploy",
+
 
 # Manage redirects
 "manage/scripts.html":
@@ -3630,9 +3691,9 @@ redirects = {
 "playbooks/interact-with-playbooks.html#api-documentation":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
 "playbooks/work-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "playbooks/get-started-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Preference redirects
 "preferences/manage-your-calls-preferences.html":
@@ -3792,6 +3853,8 @@ redirects = {
         "https://docs.mattermost.com/scale/scale-to-80000-users.html",
 "scale/scale-to-88000-users.html":
         "https://docs.mattermost.com/scale/scale-to-90000-users.html",
+"scale/elasticsearch.html":
+        "https://docs.mattermost.com/scale/enterprise-search.html",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
@@ -3833,7 +3896,7 @@ redirects = {
 "welcome/log-out.html":
         "https://docs.mattermost.com/collaborate/log-out.html",
 "welcome/get-started-mattermost-channels.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "welcome/manage-custom-groups.html":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html",
 "welcome/about-teams.html":
@@ -3977,9 +4040,9 @@ author = "Mattermost"
 # built documents.
 #
 # The short X.Y version.
-# version = '10.7'
+# version = '10.8'
 # The full version, including alpha/beta/rc tags.
-# release = '10.7'
+# release = '10.8'
 
 # The language for content autogenerated by Sphinx. Refer to documentation
 # for a list of supported languages.

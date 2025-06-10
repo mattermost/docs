@@ -409,9 +409,9 @@ Frame ancestors
 
 Enter a space-separated list of domains that are allowed to embed the Mattermost web client via an iFrame. Leave blank to disallow embedding. Leave blank to disable embedding. Blank by default.
 
-+---------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FrameAncestors". |
-+---------------------------------------------------------------+
++------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FrameAncestors".``  |
++------------------------------------------------------------------+
 
 .. note::
 

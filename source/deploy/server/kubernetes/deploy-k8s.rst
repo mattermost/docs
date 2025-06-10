@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 * A functioning Kubernetes cluster (see the `Kubernetes setup guide <https://kubernetes.io/docs/setup/>`__). Your cluster should be running a `supported Kubernetes version <https://kubernetes.io/releases/>`__.
 * The `kubectl` command-line tool installed on your local machine (see the `kubectl installation guide <https://kubernetes.io/docs/reference/kubectl/>`__).
 * A fundamental understanding of Kubernetes concepts, such as deployments, pods, and applying manifests.
-* Sufficient Kubernetes resources allocated based on your expected user load. Consult the `Mattermost Kubernetes Operator <#install-the-mattermost-operator>`__ documentation for resource requirements at different scales.
+* Sufficient Kubernetes resources allocated based on your expected user load. Consult the :ref:`scaling for Enterprise <scale/scaling-for-enterprise:available reference architectures>` documentation for resource requirements at different scales.
 
 **Installation steps**
 
@@ -206,7 +206,12 @@ Create a file named ``mattermost-filestore-secret.yaml`` to store the credential
 
 4. If you are using Amazon S3, it's recommended to enable server-side encryption (SSE) and SSL. Add the following environment variables to the ``mattermostEnv`` section: 
 
-TBD
+  .. code-block:: yaml
+
+    spec:
+      mattermostEnv:
+        MM_FILESETTINGS_AMAZONS3SSL: true
+        MM_FILESETTINGS_AMAZONS3SSE: true
 
 
 **Review Mattermost Resource Status**
