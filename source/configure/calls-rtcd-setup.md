@@ -245,6 +245,42 @@ Key Configuration Options:
 - **api.security.allowed_origins**: List of allowed origins for CORS
 - **api.security.admin_secret_key**: API key for Mattermost servers to authenticate with RTCD
 
+### Required Mattermost Server Configuration
+
+When using RTCD, you must configure the Mattermost server's CORS settings to allow proper communication between the server and the RTCD service.
+
+#### CORS Configuration
+
+The `AllowCorsFrom` setting must include your SiteURL and, if using calls-offloader in a private network, the Mattermost server's private IP address:
+
+**Using mmctl:**
+```bash
+# Basic RTCD configuration - include your SiteURL
+mmctl config set ServiceSettings.AllowCorsFrom "https://your-domain.com"
+
+# If using calls-offloader in a private network, also include Mattermost's private IP with port 8065
+mmctl config set ServiceSettings.AllowCorsFrom "https://your-domain.com http://192.168.1.100:8065"
+```
+
+**Using System Console:**
+1. Go to **System Console > Environment > Web Server**
+2. Set **Allow cross-origin requests from** to include:
+   - Your SiteURL (e.g., `https://your-domain.com`)
+   - If using calls-offloader in a private network: Also include Mattermost's private IP with port 8065 (e.g., `http://192.168.1.100:8065`)
+
+**Using config.json:**
+```json
+{
+  "ServiceSettings": {
+    "AllowCorsFrom": "https://your-domain.com http://192.168.1.100:8065"
+  }
+}
+```
+
+```{important}
+This CORS configuration is specifically required for RTCD deployments and is not needed for integrated mode deployments. Multiple origins should be separated by spaces.
+```
+
 ### STUN/TURN Configuration
 
 For clients behind strict firewalls, you may need to configure STUN/TURN servers. In the RTCD configuration file, reference your STUN/TURN servers as follows:

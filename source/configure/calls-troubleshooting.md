@@ -316,6 +316,43 @@ If you suspect network bandwidth issues:
 
 For troubleshooting calls-offloader service issues including recording and transcription problems, see the [Calls Offloader Setup and Configuration](calls-offloader-setup.html#troubleshooting) guide.
 
+### Calls-Offloader Docker Debugging
+
+If you're running calls-offloader in Docker, use these commands for debugging:
+
+#### Monitor Live Logs
+
+To view real-time logs from calls-offloader containers:
+
+```bash
+# Find and follow logs from all calls-related containers
+docker ps --format "{{.ID}} {{.Image}}" | grep "calls" | awk '{print $1}' | xargs -I {} docker logs -f {}
+```
+
+This command finds all running containers with "calls" in the image name and follows their logs.
+
+#### View Completed Jobs
+
+To view completed calls-offloader job containers (useful for debugging failed jobs):
+
+```bash
+# List all exited containers to see completed jobs
+docker ps -a --filter "status=exited"
+```
+
+Look for containers with calls-offloader image names that have exited. You can then examine their logs:
+
+```bash
+# View logs from a specific completed container
+docker logs <container_id>
+```
+
+#### Additional Docker Debugging Tips
+
+- **Check container resource usage**: `docker stats` to see if containers are hitting resource limits
+- **Inspect container configuration**: `docker inspect <container_id>` for detailed container settings
+- **Check container health**: `docker inspect <container_id> | grep Health` if health checks are configured
+
 ## Debugging Tools
 
 ### Prometheus Metrics Analysis

@@ -234,6 +234,38 @@ Below are the detailed benchmarks based on internal performance testing:
 | 5     | 200        | 2            | no             | 30%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.2xlarge    |
 | 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
 
+## Troubleshooting Metrics Collection
+
+### Verify RTCD Metrics are Being Collected
+
+To verify that Prometheus is successfully collecting RTCD metrics, use this command:
+
+```bash
+curl http://PROMETHEUS_IP:9090/api/v1/label/__name__/values | jq '.' | grep rtcd
+```
+
+This command queries Prometheus for all available metric names and filters for RTCD-related metrics.
+
+If no RTCD metrics appear, check:
+1. RTCD is running
+2. Prometheus is configured to scrape the RTCD metrics endpoint
+3. RTCD metrics port is accessible from Prometheus (default: 8045)
+
+### Check Prometheus Scrape Targets
+
+To verify all Calls-related services are being scraped successfully:
+
+1. Open the Prometheus web interface (typically `http://PROMETHEUS_IP:9090`)
+2. Navigate to **Status > Targets**
+3. Look for your configured Calls services:
+   - Mattermost server (for Calls plugin metrics)
+   - RTCD service
+
+Each target should show status "UP" in green. If a target shows "DOWN" or errors:
+- Verify the service is running
+- Check network connectivity between Prometheus and the target
+- Verify the metrics endpoint is accessible
+
 ## Other Calls Documentation
 
 - [Calls Overview](calls-deployment.html): Overview of deployment options and architecture
