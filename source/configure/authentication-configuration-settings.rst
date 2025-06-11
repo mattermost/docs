@@ -62,9 +62,9 @@ Enable account creation
 +---------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. note::
-   LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this
-   configuration setting is enabled.
-   
+  - LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this configuration setting is enabled.
+  - From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
+
 .. config:setting:: restrict-account-creation-to-specified-email-domains
   :displayname: Restrict account creation to specified email domains (Signup)
   :systemconsole: Authentication > Signup
@@ -207,8 +207,9 @@ Enable sign-in with email
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  To provide users with only a single email sign in option on the login page, ensure that the
-  `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**. 
+  - To provide users with only a single email sign in option on the login page, ensure that the `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**.
+  - From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
+
 
 .. config:setting:: enable-sign-in-with-username
   :displayname: Enable sign-in with username (Signup)

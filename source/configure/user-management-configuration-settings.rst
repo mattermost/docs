@@ -181,6 +181,11 @@ Update user's email
 
 Update the emails of users using the System Console.
 
+.. note::
+
+  From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
+
+
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user, and enter a new email in the **Email** field.
 3. Select **Save**.
