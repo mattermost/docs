@@ -20,3 +20,21 @@ A safety limits exceeded error (``ERROR_SAFETY_LIMITS_EXCEEDED``) displays in th
 2,500 users represents a “high upper limit” for deployments that are approximately 100 times the recommended size, which is far beyond the intended design of the product. 
 
 The free version of Mattermost is intended for approximately 50 users. If your Mattermost materially exceeds this recommended size, system admins should seek to either `purchase a commercial license <https://mattermost.com/pricing/>`_, or apply for a :doc:`non-profit subscription </about/non-profit-subscriptions>` license. Alternatively, admins can :ref:`deactivate users <configure/user-management-configuration-settings:deactivate users>` until the user count falls below the high upper limit.
+
+ERROR_LICENSED_USERS_LIMIT_EXCEEDED
+-----------------------------------
+
+A licensed user limit exceeded error (``ERROR_LICENSED_USERS_LIMIT_EXCEEDED``) displays when attempting to create or activate users on a licensed Mattermost server where the user count would exceed the maximum number of users allowed by the license.
+
+This error occurs when:
+
+- Creating new users would exceed the license user limit plus a 5% grace period
+- Activating deactivated users would exceed the license user limit plus a 5% grace period
+
+To resolve this error, system administrators can:
+
+- `Upgrade to a license with a higher user limit <https://mattermost.com/pricing/>`_
+- :ref:`Deactivate users <configure/user-management-configuration-settings:deactivate users>` to reduce the active user count below the license limit
+- Contact Mattermost support to discuss license options
+
+The grace period allows for a 5% buffer above the licensed user count (minimum of 1 additional user) to accommodate temporary usage spikes before enforcement occurs.
