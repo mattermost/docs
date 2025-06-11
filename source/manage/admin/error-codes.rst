@@ -34,6 +34,6 @@ This error occurs when:
 To resolve this error, system administrators can:
 
 - :ref:`Deactivate users <configure/user-management-configuration-settings:deactivate users>` to reduce the active user count below the license limit.
-- Contact `Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ to discuss license options.
+- Contact `Mattermost Sales <https://mattermost.com/contact-sales/>`_ to discuss license options.
 
 The grace period allows for a 5% buffer above the licensed user count (minimum of 1 additional user) to accommodate temporary usage spikes before enforcement occurs.
