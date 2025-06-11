@@ -1018,6 +1018,33 @@ Synchronization interval (minutes)
 .. note::
   LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
 
+.. config:setting:: re-add-removed-members-on-sync
+  :displayname: Re-add removed members on sync (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.ReAddRemovedMembers
+  :environment: MM_LDAPSETTINGS_READDREMOVEDMEMBERS
+  :description: Enable this setting to re-add members of the LDAP group that were previously removed from group-synchronized teams or channels during LDAP synchronization. Disabled by default.
+
+Re-add removed members on sync
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enable this setting to re-add members of the LDAP group that were   | - System Config path: **Authentication > AD/LDAP**                      |
+| previously removed from group-synchronized teams or channels        | - ``config.json`` setting: ``LdapSettings`` > ``ReAddRemovedMembers``   |
+| during LDAP synchronization.                                        | - Environment variable: ``MM_LDAPSETTINGS_READDREMOVEDMEMBERS``         |
+|                                                                     |                                                                         |
+| - **true**: Members of the LDAP group who were previously removed   |                                                                         |
+|   are re-added to group-synchronized teams or channels during LDAP  |                                                                         |
+|   synchronization.                                                  |                                                                         |
+| - **false**: **(Default)** Members of the LDAP group who were       |                                                                         |
+|   previously removed are not re-added to group-synchronized         |                                                                         |
+|   teams or channels during LDAP synchronization.                    |                                                                         |
++---------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  The :ref:`mmctl ldap sync <manage/mmctl-command-line-tool:mmctl ldap sync>` command takes precedence over this server configuration setting. If you have this setting disabled, and run the mmctl command with the ``--include-removed-members`` flag, removed members will be re-added during LDAP synchronization.
+
 .. config:setting:: maximum-page-size
   :displayname: Maximum page size (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
