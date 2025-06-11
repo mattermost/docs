@@ -1,5 +1,4 @@
-# Calls Deployment Overview
-
+# Deploy Mattermost Calls
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```

@@ -1,4 +1,4 @@
-# Calls deployment on Kubernetes
+# Deploy Calls Kubernetes
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```
