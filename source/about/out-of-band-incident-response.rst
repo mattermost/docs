@@ -18,7 +18,7 @@ Out-of-band collaboration provides a persistent, independent channel for coordin
 **Benefits**
 
 - **Preserve communication during infrastructure failures** with secure, dedicated OOB deployments across private Kubernetes clusters or Azure Marketplace-hosted environments. :ref:`Explore deployment options <deploy/server/server-deployment-planning:deployment options>`.
-- **Safeguard sensitive communications** with FIPS 140-2 validated and STIG-hardened images, ensuring secure operation in classified or regulated environments.
+- **Safeguard sensitive communications** with FIPS 140-3 validated and STIG-hardened images, ensuring secure operation in classified or regulated environments.
 - **Maintain continuity across platforms** with :doc:`multi-device access </guides/deployment-guide>`—including web, desktop, and mobile experiences—even when primary tools are offline.
 - **Enforce strict access controls** using :doc:`role-based permissions </onboard/advanced-permissions>` and :ref:`audit logging <manage/logging:audit logging>` to limit risk exposure during high-stakes operations.
 

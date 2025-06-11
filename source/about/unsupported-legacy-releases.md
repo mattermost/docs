@@ -4192,7 +4192,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
-## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.31 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.9, released 2021-08-04**
   - Mattermost v5.31.9 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
@@ -4917,7 +4917,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ----
 
-## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
+## Release v5.25 - [Extended Support Release](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
 - **v5.25.7, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
@@ -5591,7 +5591,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ----
 
-## Release v5.19 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.19 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
 
@@ -6841,7 +6841,7 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 ----
 
-## Release v5.9 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.9 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
 
@@ -7912,7 +7912,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ----
 
-## Release v4.10 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v4.10 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
  - **v4.10.10, released 2019-06-20** 
    - Mattermost v4.10.10 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
