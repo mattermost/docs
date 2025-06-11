@@ -18,9 +18,9 @@ This diagram shows how the RTCD standalone service can be deployed in a Kubernet
 1. Calls traffic is handled by dedicated RTCD pods
 2. RTCD services are exposed through load balancers
 3. Scaling is managed through Kubernetes deployment configurations
-4. Call recording and transcription is handled by the calls-offloader service (see [Calls Offloader Setup and Configuration](calls-offloader-setup.html))
+4. Call recording and transcription is handled by the calls-offloader service (see [Calls Offloader Setup and Configuration](calls-offloader-setup.md))
 
-If Mattermost isn't already deployed in your Kubernetes cluster and you want to use this deployment type, visit the [Kubernetes operator guide](/install/mattermost-kubernetes-operator.html).
+If Mattermost isn't already deployed in your Kubernetes cluster and you want to use this deployment type, visit the [Kubernetes operator guide](/install/mattermost-kubernetes-operator.md).
 
 ## Helm Chart Deployment
 
@@ -140,7 +140,7 @@ We recommend deploying Prometheus and Grafana alongside your Calls deployment:
 2. Import the official Mattermost Calls dashboard to Grafana
 3. Set up alerts for CPU usage, connection failures, and error rates
 
-For detailed information on metrics collection and monitoring, see the [Calls Metrics and Monitoring](calls-metrics-monitoring.html) guide.
+For detailed information on metrics collection and monitoring, see the [Calls Metrics and Monitoring](calls-metrics-monitoring.md) guide.
 
 ## Troubleshooting
 
@@ -151,13 +151,13 @@ For Kubernetes-specific troubleshooting:
 3. Ensure UDP traffic is properly routed through your ingress/load balancer
 4. Verify network policies allow required communication paths
 
-For detailed troubleshooting steps, see the [Calls Troubleshooting](calls-troubleshooting.html) guide.
+For detailed troubleshooting steps, see the [Calls Troubleshooting](calls-troubleshooting.md) guide.
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.html): Overview of deployment options and architecture
-- [RTCD Setup and Configuration](calls-rtcd-setup.html): Comprehensive guide for setting up the dedicated RTCD service
-- [Calls Offloader Setup and Configuration](calls-offloader-setup.html): Setup guide for call recording and transcription
-- [Calls Metrics and Monitoring](calls-metrics-monitoring.html): Guide to monitoring Calls performance using metrics and observability
-- [Calls Troubleshooting](calls-troubleshooting.html): Detailed troubleshooting steps and debugging techniques
-3. If you encounter issues, see [Calls Troubleshooting](calls-troubleshooting.html)
+- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
+- [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
+- [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
+- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
+3. If you encounter issues, see [Calls Troubleshooting](calls-troubleshooting.md)

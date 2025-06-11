@@ -8,9 +8,8 @@ This guide provides detailed information on monitoring Mattermost Calls performa
 - [Metrics overview](#metrics-overview)
 - [Setting up monitoring](#setting-up-monitoring)
 - [Key metrics to monitor](#key-metrics-to-monitor)
-- [Grafana dashboards](#grafana-dashboards)
-- [Alerting recommendations](#alerting-recommendations)
 - [Performance baselines](#performance-baselines)
+- [Troubleshooting metrics collection](#troubleshooting-metrics-collection)
 
 ## Metrics Overview
 
@@ -268,10 +267,10 @@ Each target should show status "UP" in green. If a target shows "DOWN" or errors
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.html): Overview of deployment options and architecture
-- [RTCD Setup and Configuration](calls-rtcd-setup.html): Comprehensive guide for setting up the dedicated RTCD service
-- [Calls Offloader Setup and Configuration](calls-offloader-setup.html): Setup guide for call recording and transcription
-- [Calls Deployment on Kubernetes](calls-kubernetes.html): Detailed guide for deploying Calls in Kubernetes environments
-- [Calls Troubleshooting](calls-troubleshooting.html): Detailed troubleshooting steps and debugging techniques
+- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
+- [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
+- [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
+- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
 
 Configure Prometheus storage accordingly to balance disk usage with retention needs.
