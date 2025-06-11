@@ -532,7 +532,7 @@ ICE servers configurations
   - The configurations above, containing STUN and TURN servers, are sent to the clients and used to generate local candidates.
   - If hosting calls through the plugin (i.e. not using the |rtcd_service|) any configured STUN server may also be used to find the instance's public IP when none is provided through the |ice_host_override_link| option.
 
-.. |rtcd_service| replace:: :ref:`rtcd service <configure/calls-deployment:the rtcd service>`
+.. |rtcd_service| replace:: :doc:`RTCD service </configure/calls-deployment>`
 
 **Example**
 
@@ -764,7 +764,7 @@ Call recording quality
 +-----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`deployment section <configure/calls-deployment:configure recording, transcriptions, and live captions>` for more information.
+  The quality setting will affect the performance of the job service and the file size of recordings. Refer to the :ref:`call recording and transcription section <configure/calls-deployment:call recording and transcription>` for more information.
 
 .. config:setting:: enable-pluginscalltranscriptions
   :displayname: Enable call transcriptions (Plugins - Calls)
@@ -814,7 +814,7 @@ Transcriber model size
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information.
+  This setting is available starting in plugin version 0.22. The model size setting will affect the performance of the job service. Refer to the :ref:`call recording and transcription section <configure/calls-deployment:call recording and transcription>` documentation for more information.
 
 .. config:setting:: call-transcriber-threads
   :displayname: Call transcriber threads (Plugins - Calls)
@@ -837,7 +837,7 @@ Call transcriber threads
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`configure call recordings, transcriptions, and live captions <configure/calls-deployment:configure recording, transcriptions, and live captions>` documentation for more information. This setting is available starting in plugin version 0.26.2.
+  The call transcriber threads setting will affect the performance of the job service. Refer to the :ref:`call recording and transcription section <configure/calls-deployment:call recording and transcription>` documentation for more information. This setting is available starting in plugin version 0.26.2.
 
 .. config:setting:: enable-pluginslivecaptions
   :displayname: (Experimental) Enable live captions (Plugins - Calls)
