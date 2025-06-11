@@ -1,6 +1,9 @@
 AI Agents
 ===========
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 .. toctree::
    :maxdepth: 1
    :hidden:
