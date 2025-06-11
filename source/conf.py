@@ -131,6 +131,7 @@ redirects_baseurl = "https://docs.mattermost.com/"
 # of the resource to send.
 redirects_write_extensionless_pages = False
 
+
 # General information about the project.
 project = "Mattermost"
 copyright = "2015-2025 Mattermost"

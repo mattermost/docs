@@ -4,6 +4,10 @@ Mattermost Agents Admin Guide
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. note::
+
+  Mattermost Agents is formally known as Mattermost Copilot.
+
 .. toctree::
    :maxdepth: 1
    :hidden:
