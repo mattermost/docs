@@ -1,16 +1,9 @@
 # RTCD Setup and Configuration
 
-```{include} ../_static/badges/ent-only.md
+```{include} ../_static/badges/calls-rtcd-ent-only.md
 ```
 
 This guide provides detailed instructions for setting up, configuring, and validating a Mattermost Calls deployment using the dedicated RTCD service.
-
-- [Prerequisites](#prerequisites)
-- [Installation and deployment](#installation-and-deployment)
-- [Configuration](#configuration)
-- [Validation and testing](#validation-and-testing)
-- [Horizontal scaling](#horizontal-scaling)
-- [Integration with Mattermost](#integration-with-mattermost)
 
 ## Prerequisites
 
