@@ -1916,11 +1916,7 @@ Connected workspaces
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
 
-When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
-
-.. note::
-
-    The ability to share Mattermost channels across connected workspaces is currently in :ref:`Beta <manage/feature-labels:beta>`. `Learn more <#why-is-this-feature-in-beta>`__.
+When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces**.
 
 .. config:setting:: enable-connected-workspaces
   :displayname: Enable connected workspaces
@@ -1950,7 +1946,7 @@ This feature's two ``config.json`` settings include:
   - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to connected workspace configuration settings in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 .. config:setting:: disable-shared-channel-status-sync
-  :displayname: Disable shared channel status sync
+  :displayname: Disable shared channel status sync (Connected Workspaces)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
   :environment: N/A
@@ -1971,7 +1967,7 @@ Disable member status and availability synchronization between connected workspa
 
 
 .. config:setting:: default-maximum-posts-per-sync
-  :displayname: Default maximum posts per sync
+  :displayname: Default maximum posts per sync (Connected Workspaces)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DefaultMaxPostsPerSync
   :environment: N/A
