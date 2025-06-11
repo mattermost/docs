@@ -23,7 +23,6 @@ Choose your preferred platform below for specific deployment instructions:
   .. include:: kubernetes/deploy-k8s-oke.rst
     :start-after: :nosearch:
 
-
 Frequently Asked Questions
 --------------------------
 
