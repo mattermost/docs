@@ -348,7 +348,7 @@ After deploying RTCD, validate the installation:
 
 4. **Monitor metrics**:
 
-   Refer to [Calls Metrics and Monitoring](calls-metrics-monitoring.html) for setting up Calls metrics and monitoring.
+   Refer to [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for setting up Calls metrics and monitoring.
 
 ## Horizontal Scaling
 
@@ -398,10 +398,10 @@ Once RTCD is properly set up and validated, configure Mattermost to use it:
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.html): Overview of deployment options and architecture
-- [Calls Offloader Setup and Configuration](calls-offloader-setup.html): Setup guide for call recording and transcription
-- [Calls Metrics and Monitoring](calls-metrics-monitoring.html): Guide to monitoring Calls performance using metrics and observability
-- [Calls Deployment on Kubernetes](calls-kubernetes.html): Detailed guide for deploying Calls in Kubernetes environments
-- [Calls Troubleshooting](calls-troubleshooting.html): Detailed troubleshooting steps and debugging techniques
+- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
+- [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
+- [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
+- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
 
-For detailed Mattermost Calls configuration options, see the [Calls Plugin Configuration Settings](plugins-configuration-settings.html#calls) documentation.
+For detailed Mattermost Calls configuration options, see the [Calls Plugin Configuration Settings](plugins-configuration-settings.rst#calls) documentation.

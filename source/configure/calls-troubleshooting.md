@@ -9,8 +9,6 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
 - [Connectivity troubleshooting](#connectivity-troubleshooting)
 - [Log analysis](#log-analysis)
 - [Performance issues](#performance-issues)
-- [Debugging tools](#debugging-tools)
-- [Advanced diagnostics](#advanced-diagnostics)
 
 ## Common Issues
 
@@ -68,7 +66,7 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
 
 1. **Server resources**:
    - Check CPU usage on RTCD servers - high CPU can cause quality issues
-   - Refer to the [Calls Metrics and Monitoring](calls-metrics-monitoring.html) guide for detailed instructions on monitoring and optimizing performance
+   - Refer to the [Calls Metrics and Monitoring](calls-metrics-monitoring.md) guide for detailed instructions on monitoring and optimizing performance
    - Monitor network bandwidth usage
 
 2. **Network congestion**:
@@ -242,7 +240,7 @@ If RTCD servers show high CPU usage:
 1. **Check concurrent calls and participants**:
    
    - Access the Prometheus metrics endpoint to see active sessions
-   - Compare with the benchmark data in the documentation
+   - Compare with the benchmark data in the {doc}`Calls Metrics and Monitoring <calls-metrics-monitoring>` documentation's Performance Baselines section
 
 2. **Profile CPU usage** (Linux):
 
@@ -314,7 +312,7 @@ If you suspect network bandwidth issues:
 
 ## Recording and Transcription Issues
 
-For troubleshooting calls-offloader service issues including recording and transcription problems, see the [Calls Offloader Setup and Configuration](calls-offloader-setup.html#troubleshooting) guide.
+For troubleshooting calls-offloader service issues including recording and transcription problems, see the [Calls Offloader Setup and Configuration](calls-offloader-setup.md#troubleshooting) guide.
 
 ### Calls-Offloader Docker Debugging
 
@@ -353,66 +351,13 @@ docker logs <container_id>
 - **Inspect container configuration**: `docker inspect <container_id>` for detailed container settings
 - **Check container health**: `docker inspect <container_id> | grep Health` if health checks are configured
 
-## Debugging Tools
-
-### Prometheus Metrics Analysis
+## Prometheus Metrics Analysis
 
 Use Prometheus metrics for real-time and historical performance data:
 
-Import the official [Mattermost Calls dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) into Grafana for visualization.
+For detailed setup instructions on configuring Prometheus and Grafana for Calls monitoring, see the {doc}`Calls Metrics and Monitoring <calls-metrics-monitoring>` guide.
 
-## Advanced Diagnostics
-
-### WebRTC Diagnostic Commands
-
-For detailed WebRTC diagnostics:
-
-1. **Test STUN server connectivity**:
-
-   ```bash
-   # Using stun-client (you may need to install it)
-   stun-client stun.global.calls.mattermost.com
-   ```
-      
-   This should return your public IP address if STUN is working correctly.
-
-2. **Verify TURN server**:
-
-   ```bash
-   # Using turnutils_uclient (part of coturn)
-   turnutils_uclient -v -s your-turn-server -u username -p password
-   ```
-      
-   This tests if your TURN server is correctly configured.
-
-3. **Test end-to-end latency**:
-
-   Between client locations and RTCD server:
-   
-   ```bash
-   ping -c 10 your-rtcd-server
-   ```
-      
-   Look for consistent, low latency (<100ms ideally for voice calls).
-
-### Client-Side Testing Tools
-
-Tools to help diagnose client-side issues:
-
-1. **WebRTC Troubleshooter**:
-   
-   Direct users to [WebRTC Troubleshooter](https://test.webrtc.org/) for browser capability testing.
-
-2. **Network Quality Tests**:
-   
-   Use [Speedtest](https://www.speedtest.net/) or similar to check internet connection quality.
-
-3. **Browser-Specific WebRTC Info**:
-   
-   - Chrome: chrome://webrtc-internals
-   - Firefox: about:webrtc
-
-### When to Contact Support
+## When to Contact Support
 
 Consider contacting Mattermost Support when:
 
@@ -433,9 +378,8 @@ When contacting support, please include:
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.html): Overview of deployment options and architecture
-- [RTCD Setup and Configuration](calls-rtcd-setup.html): Comprehensive guide for setting up the dedicated RTCD service
-- [Calls Offloader Setup and Configuration](calls-offloader-setup.html): Setup guide for call recording and transcription
-- [Calls Metrics and Monitoring](calls-metrics-monitoring.html): Guide to monitoring Calls performance using metrics and observability
-- [Calls Deployment on Kubernetes](calls-kubernetes.html): Detailed guide for deploying Calls in Kubernetes environments
-- Monitoring dashboards screenshots
+- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
+- [Calls Offloader Setup and Configuration](calls-offloader-setup.md): Setup guide for call recording and transcription
+- [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
+- [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments

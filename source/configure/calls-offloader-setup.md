@@ -356,13 +356,13 @@ tail -f /opt/calls-offloader/calls-offloader.log
 
 ### Performance Monitoring
 
-Monitor calls-offloader performance and resource usage to ensure optimal operation. See [Calls Metrics and Monitoring](calls-metrics-monitoring.html) for details on setting up metrics and observability.
+Monitor calls-offloader performance and resource usage to ensure optimal operation. See [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for details on setting up metrics and observability.
 
 ## Other Calls Documentation
 
-- [Calls Overview](calls-deployment.html): Overview of deployment options and architecture
-- [RTCD Setup and Configuration](calls-rtcd-setup.html): Comprehensive guide for setting up the dedicated RTCD service
-- [Calls Metrics and Monitoring](calls-metrics-monitoring.html): Guide to monitoring Calls performance using metrics and observability
-- [Calls Deployment on Kubernetes](calls-kubernetes.html): Detailed guide for deploying Calls in Kubernetes environments
-- [Calls Troubleshooting](calls-troubleshooting.html): Detailed troubleshooting steps and debugging techniques
+- [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
+- [RTCD Setup and Configuration](calls-rtcd-setup.md): Comprehensive guide for setting up the dedicated RTCD service
+- [Calls Metrics and Monitoring](calls-metrics-monitoring.md): Guide to monitoring Calls performance using metrics and observability
+- [Calls Deployment on Kubernetes](calls-kubernetes.md): Detailed guide for deploying Calls in Kubernetes environments
+- [Calls Troubleshooting](calls-troubleshooting.md): Detailed troubleshooting steps and debugging techniques
 - [calls-offloader performance documentation](https://github.com/mattermost/calls-offloader/blob/master/docs/performance.md): Detailed performance tuning and monitoring recommendations

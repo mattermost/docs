@@ -1,4 +1,4 @@
-# Deploy Mattermost Calls
+# Calls Deployment Overview
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```
@@ -10,11 +10,11 @@ This document provides an overview of Mattermost Calls deployment options for se
 
 For detailed information on specific topics, please refer to these specialized guides:
 
-- [RTCD Setup and Configuration](calls-rtcd-setup.html): Comprehensive guide for setting up the dedicated RTCD service
-- [Calls Offloader Setup and Configuration](calls-offloader-setup.html): Comprehensive guide for setting up the calls-offloader service for recording and transcription
-- [Calls Troubleshooting](calls-troubleshooting.html): Detailed troubleshooting steps and debugging techniques
-- [Calls Metrics and Monitoring](calls-metrics-monitoring.html): Guide to monitoring Calls performance using metrics and observability
-- [Calls Deployment on Kubernetes](calls-kubernetes.html): Detailed guide for deploying Calls in Kubernetes environments
+- {doc}`RTCD Setup and Configuration <calls-rtcd-setup>`: Comprehensive guide for setting up the dedicated RTCD service
+- {doc}`Calls Offloader Setup and Configuration <calls-offloader-setup>`: Comprehensive guide for setting up the calls-offloader service for recording and transcription
+- {doc}`Calls Troubleshooting <calls-troubleshooting>`: Detailed troubleshooting steps and debugging techniques
+- {doc}`Calls Metrics and Monitoring <calls-metrics-monitoring>`: Guide to monitoring Calls performance using metrics and observability
+- {doc}`Calls Deployment on Kubernetes <calls-kubernetes>`: Detailed guide for deploying Calls in Kubernetes environments
 
 ## About Mattermost Calls
 
@@ -36,8 +36,8 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 ## Key Components
 
 - **Calls plugin**: The main plugin that enables calls functionality.  Installed by default in Mattermost self-hosted deployments.
-- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature).  Typically deployed to dedicated servers or containers. See [RTCD Setup and Configuration](calls-rtcd-setup.html) for details.
-- **calls-offloader**: Service for call recording and transcription (if enabled).  Typically deployed to dedicated servers. See [Calls Offloader Setup and Configuration](calls-offloader-setup.html) for setup and troubleshooting details.
+- **RTCD service**: Optional dedicated service for offloading media processing (Enterprise feature).  Typically deployed to dedicated servers or containers. See [RTCD Setup and Configuration](calls-rtcd-setup.md) for details.
+- **calls-offloader**: Service for call recording and transcription (if enabled).  Typically deployed to dedicated servers. See [Calls Offloader Setup and Configuration](calls-offloader-setup.md) for setup and troubleshooting details.
 
 ## Network Requirements
 
@@ -134,7 +134,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 </tbody>
 </table>
 
-For complete network requirements, see the [RTCD Setup and Configuration](calls-rtcd-setup.html) guide.
+For complete network requirements, see the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide.
 
 #### Air-gapped deployments
 
@@ -189,7 +189,7 @@ Dedicated RTCD services handle media routing for high availability.
 
 ### Kubernetes Deployments
 
-RTCD is the only officially supported approach for Kubernetes deployments. For detailed information on deploying Mattermost Calls in Kubernetes environments, including Helm chart configurations, resource requirements, and scaling considerations, see the [Calls Deployment on Kubernetes](calls-kubernetes.html) guide.
+RTCD is the only officially supported approach for Kubernetes deployments. For detailed information on deploying Mattermost Calls in Kubernetes environments, including Helm chart configurations, resource requirements, and scaling considerations, see the [Calls Deployment on Kubernetes](calls-kubernetes.md) guide.
 
 ## When to Use RTCD
 
@@ -201,7 +201,7 @@ The dedicated RTCD service (available with Enterprise license) is recommended fo
 - **Call stability**: Calls continue even if Mattermost server needs to restart
 - **Kubernetes deployments**: Required for officially supported Kubernetes deployments
 
-For detailed RTCD setup instructions, see the [RTCD Setup and Configuration](calls-rtcd-setup.html) guide.
+For detailed RTCD setup instructions, see the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide.
 
 ## Call Recording and Transcription
 
@@ -428,7 +428,7 @@ Calls performance primarily depends on:
 - **Network bandwidth**: Both incoming and outgoing traffic increases with participant count
 - **Active speakers**: Unmuted participants require significantly more resources 
 
-For detailed performance metrics, benchmarks, and monitoring guidance, see the [Calls Metrics and Monitoring](calls-metrics-monitoring.html) guide.
+For detailed performance metrics, benchmarks, and monitoring guidance, see the [Calls Metrics and Monitoring](calls-metrics-monitoring.md) guide.
 
 ## Frequently Asked Questions
 
@@ -461,7 +461,7 @@ Generally clients should connect directly to either Mattermost or, if deployed, 
 
 The plugin can function in different modes. By default calls are handled completely by the plugin which runs as part of Mattermost. It's also possible to use a dedicated service to offload the computational and bandwidth costs and scale further (Enterprise only).
 
-See [RTCD Setup and Configuration](calls-rtcd-setup.html) for more details on the dedicated RTCD service.
+See [RTCD Setup and Configuration](calls-rtcd-setup.md) for more details on the dedicated RTCD service.
 
 **Can the traffic between Mattermost and `rtcd` be kept internal or should it be opened to the public?**
 
@@ -490,11 +490,11 @@ When [test mode](https://docs.mattermost.com/configure/plugins-configuration-set
 
 ## Troubleshooting
 
-For comprehensive troubleshooting steps and debugging techniques, please refer to the [Calls Troubleshooting](calls-troubleshooting.html) guide.
+For comprehensive troubleshooting steps and debugging techniques, please refer to the [Calls Troubleshooting](calls-troubleshooting.md) guide.
 
 ## Next Steps
 
-1. For detailed setup instructions, see [RTCD Setup and Configuration](calls-rtcd-setup.html)
-2. For monitoring guidance, see [Calls Metrics and Monitoring](calls-metrics-monitoring.html)
-3. If you encounter issues, see [Calls Troubleshooting](calls-troubleshooting.html)
-4. For Kubernetes deployments, see [Calls Deployment on Kubernetes](calls-kubernetes.html)
+1. For detailed setup instructions, see [RTCD Setup and Configuration](calls-rtcd-setup.md)
+2. For monitoring guidance, see [Calls Metrics and Monitoring](calls-metrics-monitoring.md)
+3. If you encounter issues, see [Calls Troubleshooting](calls-troubleshooting.md)
+4. For Kubernetes deployments, see [Calls Deployment on Kubernetes](calls-kubernetes.md)
