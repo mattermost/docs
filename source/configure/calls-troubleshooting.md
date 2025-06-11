@@ -89,9 +89,8 @@ This guide provides comprehensive troubleshooting steps for Mattermost Calls, pa
    Test if the RTCD API is reachable:
 
    ```bash
-   curl http://YOUR_RTCD_SERVER:8045/api/v1/health
-   # Expected response: {"status":"ok"}
-   ```
+   curl http://YOUR_RTCD_SERVER:8045/version
+   # Example response: {"buildDate":"2025-04-02 21:33","buildVersion":"v1.1.0","buildHash":"7bc1f7a","goVersion":"go1.23.6","goOS":"linux","goArch":"amd64"}   ```
 
 2. **UDP connectivity test**:
 
