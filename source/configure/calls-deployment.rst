@@ -77,9 +77,10 @@ For complete network requirements, see the `RTCD Setup and Configuration <calls-
 Limitations
 -----------
 
-- In Mattermost Cloud, up to 200 participants per channel can join a call.
-- In Mattermost self-hosted deployments, the default maximum number of participants is unlimited. The recommended maximum number of participants per call is 200. This setting can be changed in **System Console > Plugin Management > Calls > Max call participants**. There's no limit to the total number of participants across all calls as the supported value greatly depends on instance resources.
-- For more information on capacity planning, see the `Performance Considerations <#performance-considerations>`__ section below.
+- All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
+- For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
+- Enterprise customers can also `record calls <https://docs.mattermost.com/collaborate/make-calls.html#record-a-call>`__, enable `live text captions <https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls>`__ during calls, and `transcribe recorded calls <https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls>`__. We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the `dedicated RTCD service <#when-to-use-rtcd>`__.
+- For Mattermost self-hosted deployments, System admins need to enable and configure the plugin `using the System Console <https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls>`__. The default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the `Performance Considerations <#performance-considerations>`__ section below.
 
 Configuration
 -------------
@@ -160,6 +161,15 @@ For call recording and transcription, you need to:
 2. Configure the service URL in the System Console
 3. Enable call recordings and/or transcriptions in the plugin settings
 
+Air-Gapped Deployments
+---------------------
+
+Mattermost Calls can function in air-gapped environments. Exposing Calls to the public internet is only necessary when users need to connect from outside the local network, and no existing method supports that connection. In such setups:
+
+- Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
+- Configuring a STUN server is unnecessary, as all connections occur within the local network.
+- The ICE Host Override configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
+
 Performance Considerations
 ------------------------
 
@@ -181,13 +191,55 @@ Yes, using WebRTC security standards (DTLS/SRTP). Traffic is encrypted in transi
 Only a Mattermost STUN server (``stun.global.calls.mattermost.com``) is used by default. This can be removed if you set the ICE Host Override configuration.
 
 **Is using UDP a requirement?**  
-UDP is recommended for best performance, but TCP fallback is supported since plugin version 0.17 and RTCD version 0.11.
+UDP is recommended protocol to serve real-time media as it allows for the lowest latency between peers, but TCP fallback is supported since plugin version 0.17 and RTCD version 0.11.
+
+If clients are unable to connect using UDP (due to limitations or strict firewalls), you have a few options:
+
+- Since plugin version 0.17 and `rtcd` version 0.11 the RTC service will listen for TCP connections in addition to UDP ones. If configured correctly (e.g. using commonly allowed ports such as 80 or 443) it's possible to have clients connect directly through TCP when unable to do it through the preferred UDP channel.
+
+- Run calls through an external TURN server that listens on TCP and relays all media traffic between peers. However, this is a sub-optimal solution that should be avoided if possible as it will introduce extra latency along with added infrastructural cost.
 
 **Do I need a TURN server?**  
-Only if clients are behind restrictive firewalls that block UDP. We recommend `coturn <https://github.com/coturn/coturn>`__ if needed.
+Only if clients are behind restrictive firewalls that block UDP. We recommend (and officially support) `coturn <https://github.com/coturn/coturn>`__ if needed.
 
 **Can RTCD traffic be kept internal?**  
 Yes, and it's recommended. Only the media ports need to be accessible to end-users.
+
+**How will this work with an existing reverse proxy sitting in front of Mattermost?**
+
+Generally clients should connect directly to either Mattermost or, if deployed, the dedicated ``rtcd`` service through the configured UDP port. However, it's also possible to route the traffic through an existing load balancer as long as this has support for routing the UDP protocol (e.g. nginx). Of course this will require additional configuration and potential changes to how the plugin is run as it won't be possible to load balance the UDP flow across multiple instances like it happens for HTTP.
+
+**Do calls require a dedicated server to work or can they run alongside Mattermost?**
+
+The plugin can function in different modes. By default calls are handled completely by the plugin which runs as part of Mattermost. It's also possible to use a dedicated service to offload the computational and bandwidth costs and scale further (Enterprise only).
+
+See RTCD Setup and Configuration <calls-rtcd-setup.html> for more details on the dedicated RTCD service.
+
+**Can the traffic between Mattermost and ``rtcd`` be kept internal or should it be opened to the public?**
+
+When possible, it's recommended to keep communication between the Mattermost cluster and the dedicated ``rtcd`` service under the same private network as this can greatly simplify deployment and security. There's no requirement to expose ``rtcd``'s HTTP API to the public internet.
+
+**Can Calls be rolled out on a per-channel basis?**
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+Yes. Mattermost system admins running self-hosted deployments can enable or disable call functionality per channel. Once `test mode <https://docs.mattermost.com/configure/plugins-configuration-settings.html#test-mode>`__ is enabled for Mattermost Calls:
+
+1. **Navigate to the channel** where you want to enable or disable Calls
+2. **Access the channel menu** by clicking the channel name at the top of the channel
+3. **Select the Calls option** from the dropdown menu:
+   - Select **Enable calls** for each channel where you want Calls enabled
+   - Select **Disable calls** for all channels where you want Calls disabled
+
+.. image:: ../images/calls-channel-enable-disable.png
+  :alt: Channel menu showing Enable/Disable calls options
+  :width: 400px
+
+Once Calls is enabled for specific channels, users can start making calls in those channels.
+
+.. note::
+   When `test mode <https://docs.mattermost.com/configure/plugins-configuration-settings.html#test-mode>`__ is disabled for Mattermost Calls, users in any Mattermost channel can make a call.
 
 Troubleshooting
 ---------------

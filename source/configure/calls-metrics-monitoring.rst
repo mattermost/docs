@@ -45,7 +45,7 @@ Installing Prometheus
 
 1. **Download and install Prometheus**:
 
-   Visit the [Prometheus download page](https://prometheus.io/download/) for installation instructions.
+   Visit the `Prometheus download page <https://prometheus.io/download/>`__ for installation instructions.
 
 2. **Configure Prometheus** to scrape metrics from all Calls-related services:
 
@@ -58,51 +58,66 @@ Installing Prometheus
         evaluation_interval: 15s
 
       scrape_configs:
+        - job_name: 'prometheus'
+          static_configs:
+            - targets: ['PROMETHEUS_IP:9090']
+
         - job_name: 'mattermost'
           metrics_path: /metrics
           static_configs:
             - targets: ['MATTERMOST_SERVER_IP:8067']
 
-        - job_name: 'calls'
+        - job_name: 'calls-plugin'
           metrics_path: /plugins/com.mattermost.calls/metrics
           static_configs:
             - targets: ['MATTERMOST_SERVER_IP:8067']
+              labels:
+                service_name: 'calls-plugin'
 
         - job_name: 'rtcd'
           metrics_path: /metrics
           static_configs:
             - targets: ['RTCD_SERVER_IP:8045']
-            
-        - job_name: 'node_exporter'
+              labels:
+                service_name: 'rtcd'
+
+        - job_name: 'rtcd-node-exporter'
           metrics_path: /metrics
           static_configs:
             - targets: ['RTCD_SERVER_IP:9100']
-            
-        - job_name: 'calls-offloader'
+              labels:
+                service_name: 'rtcd'
+
+        - job_name: 'calls_offloader-node-exporter'
           metrics_path: /metrics
           static_configs:
-            - targets: ['CALLS_OFFLOADER_SERVER_IP:4545']
+            - targets: ['CALLS_OFFLOADER_SERVER_IP:9100']
+              labels:
+                service_name: 'offloader'
 
    Replace the placeholder IP addresses with your actual server addresses:
    
    - ``MATTERMOST_SERVER_IP``: IP address of your Mattermost server
    - ``RTCD_SERVER_IP``: IP address of your RTCD server  
    - ``CALLS_OFFLOADER_SERVER_IP``: IP address of your calls-offloader server (if deployed)
+   - ``PROMETHEUS_IP``: IP address of your Prometheus server
+   - **Note**: The configuration above uses the default ports (RTCD: ``8045``, Mattermost metrics: ``8067``, etc.).  Adjust these ports in ``prometheus.yml`` if you have customized them.
+   .. important::
+      **Metrics Path**: Ensure the metrics paths are correct. The RTCD service exposes metrics at ``/metrics`` by default, and the Calls plugin at ``/plugins/com.mattermost.calls/metrics``.
 
    .. important::
-      **Metrics Configuration Notice**: The Calls dashboard expects targets to be in ``<host>:<port>`` format. Avoid using ``labels`` in your Prometheus configuration for Calls metrics, as this can cause compatibility issues with the dashboard. For example, use ``targets: ['rtcd-server:8045']`` instead of labels-based targeting.
+      **Metrics Configuration Notice**: Use the ``service_name`` labels as shown in the configuration above. These labels help organize metrics in dashboards and enable proper service identification. 
 
    .. note::
       - **node_exporter**: Optional but recommended for system-level metrics (CPU, memory, disk, network). See `node_exporter setup guide <https://prometheus.io/docs/guides/node-exporter/>`__ for installation instructions.
       - **calls-offloader**: Only needed if you have call recording/transcription enabled
-      - **Port 8067**: Default Mattermost metrics port (configurable in System Console)
 
 Installing Grafana
 ^^^^^^^^^^^^^^^
 
 1. **Download and install Grafana**:
 
-   Visit the [Grafana download page](https://grafana.com/grafana/download) for installation instructions.
+   Visit the `Grafana download page <https://grafana.com/grafana/download>`__ for installation instructions.
 
 2. **Configure Grafana** to use Prometheus as a data source:
    
@@ -110,6 +125,17 @@ Installing Grafana
    - Select Prometheus as the type
    - Enter the URL of your Prometheus server
    - Test and save the configuration
+
+3. **Import the Mattermost Calls dashboard**:
+
+   - Navigate to Dashboards > Import in Grafana
+   - Enter dashboard ID: ``23225`` or use the direct link: `Mattermost Calls Performance Monitoring <https://grafana.com/grafana/dashboards/23225-mattermost-calls-performance-monitoring/>`__
+   - Select your Prometheus data source, and enter values for the
+   - Confirm the port used for RTCD metrics (default is ``8045``), and the port used for the Calls plugin metrics (default is ``8067``)
+   - Click Import to add the dashboard to your Grafana instance
+
+   .. note::
+      The dashboard is also available as JSON source from the `Mattermost performance assets repository <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ for manual import or customization.
 
 
 Key Metrics to Monitor
@@ -174,26 +200,6 @@ Similar metrics are available for the Calls plugin with the following prefixes:
 - WebRTC connection metrics: ``mattermost_plugin_calls_rtc_*``
 - WebSocket metrics: ``mattermost_plugin_calls_websocket_*``
 - Store metrics: ``mattermost_plugin_calls_store_ops_total``
-
-Grafana Dashboards
-----------------
-
-Official Dashboard
-^^^^^^^^^^^^^^^^
-
-Mattermost provides an official Grafana dashboard for monitoring Calls performance:
-
-1. **Download the dashboard JSON**:
-   
-   Get it from [GitHub](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json)
-
-2. **Import the dashboard** into Grafana:
-   
-   - Navigate to Dashboards > Import
-   - Upload the JSON file or paste its contents
-   - Select your Prometheus data source
-   - Confirm the correct rtcd (`5045`) and calls plugin (`8065`) targets are set
-   - Click Import
 
 Performance Baselines
 ------------------
