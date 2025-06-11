@@ -186,14 +186,13 @@ The RTCD service logs important events and errors. Set the log level to "debug" 
 
 1. **In the configuration file**:
 
-   ```json
-   {
-     "log": {
-       "level": "debug",
-       "json": true
-     }
-   }
+   ```toml
+   [logger]
+   enable_file = true
+   file_level = "DEBUG"
    ```
+
+   Restart the RTCD service after making these changes
 
 2. **Common log patterns to look for**:
 
