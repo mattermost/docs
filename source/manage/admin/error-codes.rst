@@ -33,7 +33,6 @@ This error occurs when:
 
 To resolve this error, system administrators can:
 
-- `Upgrade to a license with a higher user limit <https://mattermost.com/pricing/>`_
 - :ref:`Deactivate users <configure/user-management-configuration-settings:deactivate users>` to reduce the active user count below the license limit.
 - Contact `Mattermost Support <https://support.mattermost.com/hc/en-us/requests/new>`_ to discuss license options.
 
