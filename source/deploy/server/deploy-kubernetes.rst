@@ -8,6 +8,11 @@ Mattermost server can be deployed on various Kubernetes platforms, providing a s
 
 Choose your preferred platform below for specific deployment instructions:
 
+.. tab:: Mattermost Operator
+
+  .. include:: kubernetes/deploy-k8s.rst
+    :start-after: :nosearch:
+
 .. tab:: Azure
 
   .. include:: kubernetes/deploy-k8s-aks.rst
@@ -18,10 +23,6 @@ Choose your preferred platform below for specific deployment instructions:
   .. include:: kubernetes/deploy-k8s-oke.rst
     :start-after: :nosearch:
 
-.. tab:: Other Kubernetes
-
-  .. include:: kubernetes/deploy-k8s.rst
-    :start-after: :nosearch:
 
 Frequently Asked Questions
 --------------------------
