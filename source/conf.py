@@ -4199,7 +4199,7 @@ rst_prolog = """
     :alt: Reply icon.
     :class: theme-icon
 .. |product-list| image:: /images/products_E82F.svg
-    :alt: Navigate between Channels and collaborative playbooks using the product menu icon.
+    :alt: Navigate between Channels, collaborative playbooks, and boards using the product menu icon.
     :class: theme-icon
 .. |search-icon| image:: /images/magnify_F0349.svg
     :alt: Search for messages and files in Mattermost.
