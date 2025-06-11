@@ -344,7 +344,7 @@ Prometheus Metrics Analysis
 
 Use Prometheus metrics for real-time and historical performance data:
 
-Import the official [Mattermost Calls dashboard](https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json) into Grafana for visualization.
+Import the official `Mattermost Calls dashboard <https://github.com/mattermost/mattermost-performance-assets/blob/master/grafana/mattermost-calls-performance-monitoring.json>`__ into Grafana for visualization.
 
 Advanced Diagnostics
 -----------------
@@ -389,11 +389,11 @@ Tools to help diagnose client-side issues:
 
 1. **WebRTC Troubleshooter**:
    
-   Direct users to [WebRTC Troubleshooter](https://test.webrtc.org/) for browser capability testing.
+   Direct users to `WebRTC Troubleshooter <https://test.webrtc.org/>`__ for browser capability testing.
 
 2. **Network Quality Tests**:
    
-   Use [Speedtest](https://www.speedtest.net/) or similar to check internet connection quality.
+   Use `Speedtest <https://www.speedtest.net/>`__ or similar to check internet connection quality.
 
 3. **Browser-Specific WebRTC Info**:
    
