@@ -10,7 +10,7 @@ This guide outlines the key preparation steps required before installing the Mat
 
    Review software and hardware requirements </deploy/software-hardware-requirements>
    Set up an NGINX proxy </deploy/server/setup-nginx-proxy>
-   Configure Mattermost Calls </configure/calls-deployment>
+   Configure Mattermost Calls </configure/calls-overview>
    Set up TLS </deploy/server/setup-tls>
    Use an image proxy </deploy/server/image-proxy>
 

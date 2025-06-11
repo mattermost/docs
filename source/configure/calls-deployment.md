@@ -6,16 +6,6 @@
 
 This document provides an overview of Mattermost Calls deployment options for self-hosted environments, including [air-gapped environments](https://docs.mattermost.com/configure/calls-deployment.html#air-gapped-deployments), ensuring private communication without reliance on public internet connectivity with flexible configuration options for complex network requirements.
 
-```{toctree}
-:maxdepth: 1
-:hidden:
-
-calls-rtcd-setup.md
-calls-offloader-setup.md
-calls-metrics-monitoring.md
-calls-kubernetes.md
-calls-troubleshooting.md
-```
 
 ## Quick Links
 
