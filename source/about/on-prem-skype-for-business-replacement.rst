@@ -16,7 +16,7 @@ Organizations operating in fully disconnected or classified environments require
 
 **Benefits**
 
-- **Ensure secure communication in fully disconnected networks** using Mattermost’s support for private on-premise deployments, including FIPS 140-2 validated and DISA STIG-hardened container images. :doc:`Learn more </deploy/application-architecture>` about Mattermost’s architecture, components, and backend infrastructure.
+- **Ensure secure communication in fully disconnected networks** using Mattermost’s support for private on-premise deployments, including FIPS 140-3 validated and DISA STIG-hardened container images. :doc:`Learn more </deploy/application-architecture>` about Mattermost’s architecture, components, and backend infrastructure.
 - **Maintain operational continuity** with enterprise-grade :doc:`channel-based collaboration </guides/messaging-collaboration>`— including :doc:`1:1 audio calls </collaborate/make-calls>`, :ref:`screen sharing <collaborate/make-calls:share your screen>`, :doc:`threaded messaging </collaborate/organize-conversations>`, and :doc:`file sharing </collaborate/share-files-in-messages>`—entirely within air-gapped systems.
 - **Scale to mission requirements** with a :doc:`high-availability, horizontally scalable architecture </scale/scaling-for-enterprise>` that supports tens of thousands of users in secure on-prem environments.
 - **Preserve data sovereignty and eliminate external dependencies** with a self-hosted :doc:`Kubernetes deployment model </deploy/server/deploy-kubernetes>` that integrates into classified networks or sovereign data centers.
