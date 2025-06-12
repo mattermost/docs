@@ -8,7 +8,7 @@ Learn more about :ref:`mobile app software requirements <deploy/software-hardwar
 Download
 --------
 
-Download and install the Mattermost mobile app from the Apple App Store (iOS) or Google Play Store (Android). When new mobile app releases become available, your mobile app is automatically updated.
+Download and install the Mattermost mobile app from the `Apple App Store (iOS) <https://www.apple.com/app-store/>`_ or `Google Play Store (Android) <https://play.google.com/store/games?hl=en>`_. When new mobile app releases become available, your mobile app is automatically updated.
 
 If you prefer to manage distribution of the mobile app to your users, we recommend using an :doc:`EMM provider </deploy/mobile/deploy-mobile-apps-using-emm-provider>` to maintain full control over the distribution process, as well as enforce or restrict specific security policies. See the deployment options below for details.
 
