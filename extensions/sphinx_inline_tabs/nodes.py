@@ -6,6 +6,7 @@ class TabContainer(nodes.container):
     """
     The initial tree-node for holding tab content.
     """
+    tab_counter: int = 0
 
     def __init__(self, rawsource="", *children, **attributes):
         super().__init__(rawsource, *children, **attributes)

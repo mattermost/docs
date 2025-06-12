@@ -6,9 +6,35 @@ const labelsByName = {};
 /** @type {Record<String, Element[]>} */
 const labelsById = {};
 
-// Tab ID pattern: "inlinetab--{tab_name}--{level}-{node_id}"
-const inlinetabRE = new RegExp('inlinetab--([a-zA-Z0-9- ]+)--([0-9]+)-(.*)');
+// Tab ID pattern: "itab--{tab_name}--{level}_{tab_count}-{node_id}"
+const inlinetabRE = new RegExp('itab--([a-zA-Z0-9- ]+)--([0-9]+)_([0-9]+)-(.*)');
 const SCROLL_CURRENT = "scroll-current";
+
+class TabId {
+  tabName = "";
+  level = 0;
+  tabCount = 0;
+  nodeId = "";
+
+  static isTabId = (tabId) => inlinetabRE.test(tabId);
+
+  static fromString = (idString) => {
+    const idMatch = inlinetabRE.exec(idString);
+    if (idMatch) {
+      const tabId = new TabId();
+      tabId.tabName = idMatch[1];
+      tabId.level = idMatch[2];
+      tabId.tabCount = idMatch[3];
+      tabId.nodeId = idMatch[4];
+      return tabId;
+    }
+    return null;
+  };
+
+  toString = () => {
+    return `itab--${this.tabName}--${this.level}_${this.tabCount}-${this.nodeId}`;
+  };
+}
 
 function ready() {
   const li = document.getElementsByClassName("tab-label");
@@ -32,16 +58,13 @@ function ready() {
       }
       console.log(`sphinx_inline_tabs: labelsByName[${spanId}].push(${label})`);
       labelsByName[spanId].push(label);
-      if (inlinetabRE.test(spanId)) {
-        const reExecArray = inlinetabRE.exec(spanId);
-        if (reExecArray !== null) {
-          const tabId = reExecArray[1];
-          if (!labelsById[tabId]) {
-            labelsById[tabId] = [];
-          }
-          console.log(`sphinx_inline_tabs: labelsById[${tabId}].push(${label})`);
-          labelsById[tabId].push(label);
+      const tabId = TabId.fromString(spanId);
+      if (tabId !== null) {
+        if (!labelsById[tabId.tabName]) {
+          labelsById[tabId.tabName] = [];
         }
+        console.log(`sphinx_inline_tabs: labelsById[${tabId.tabName}].push(${label})`);
+        labelsById[tabId.tabName].push(label);
       }
     }
   }
@@ -80,7 +103,7 @@ function onLabelClick() {
 function onHashchange() {
   const hash = decodeURIComponent(window.location.hash.substring(1));
   console.log(`sphinx_inline_tabs: hash change to inlinetab; ${hash}`);
-  if (!inlinetabRE.test(hash)) {
+  if (!TabId.isTabId(hash)) {
     updateScrollCurrentForHash(hash);
     return;
   }
@@ -95,12 +118,11 @@ function onHashchange() {
     }
   }
   // extract tab id and check labels_by_id
-  const reExecArray = inlinetabRE.exec(hash);
-  const tabName = reExecArray[1];
-  if (tabName in labelsById && labelsById[tabName].length > 0) {
-    const labelElement = labelsById[tabName][0];
+  const tabId = TabId.fromString(hash);
+  if (tabId !== null && tabId.tabName in labelsById && labelsById[tabId.tabName].length > 0) {
+    const labelElement = labelsById[tabId.tabName][0];
     if (labelElement) {
-      console.log(`sphinx_inline_tabs: labelsById[${tabName}][0].click()`);
+      console.log(`sphinx_inline_tabs: labelsById[${tabId.tabName}][0].click()`);
       labelElement.click();
       window.location.hash = `${window.location.hash}`;
     }

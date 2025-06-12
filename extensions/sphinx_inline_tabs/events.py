@@ -1,7 +1,6 @@
 """
 Sphinx event handler implementation.
 """
-import re
 from dataclasses import dataclass
 from typing import Any, Final, Optional
 
@@ -13,6 +12,7 @@ from sphinx.util import logging
 from sphinx.util.nodes import _make_id
 
 from .nodes import TabContainer
+from .tab_id import TabId
 
 
 logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
@@ -144,6 +144,7 @@ class SectionData:
     """
     name: str
     level: int
+    tab_counter: int
     is_doc_root: bool
     is_section_root: bool
     is_tab: bool
@@ -157,6 +158,7 @@ def collect_sections(
     docname: str,
     node: nodes.Element,
     level=0,
+    tab_counter=0,
 ) -> SectionData:
     """
     Recursively collect subsection metadata from inline tab content.
@@ -166,14 +168,16 @@ def collect_sections(
     :param docname:
     :param node:
     :param level:
+    :param tab_counter:
     :return:
     """
-    logger.debug(
-        f"{LOG_PREFIX} collect_sections(): ({docname}) [{level}] node={type(node)}"
+    logger.info(
+        f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] node={type(node)}"
     )
     secdata = SectionData(
         name=docname if level == 0 else "",
         level=level,
+        tab_counter=tab_counter,
         is_doc_root=level == 0,
         is_section_root=level == 1,
         is_tab=isinstance(node, TabContainer),
@@ -183,42 +187,58 @@ def collect_sections(
 
     if isinstance(node, nodes.section):
         secdata.name = node.next_node(nodes.title).astext()
-        logger.debug(
-            f"{LOG_PREFIX} collect_sections(): ({docname}) [{level}] Section: {secdata.name}"
+        logger.info(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] Section: {secdata.name}"
         )
     elif isinstance(node, TabContainer):
         secdata.name = node.next_node(nodes.label).astext()
-        logger.debug(
-            f"{LOG_PREFIX} collect_sections(): ({docname}) [{level}] Tab: {secdata.name}"
+        logger.info(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] Tab: {secdata.name}"
         )
 
     section_id: str = ""
-    if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
-        section_id = node.attributes["inline_tab_id"]
-    else:
-        if "ids" in node.attributes:
-            if len(node.attributes["ids"]) == 1 and node.attributes["ids"][0] != "":
-                section_id = node.attributes["ids"][0]
-            elif len(node.attributes["ids"]) > 1:
-                for id in node.attributes["ids"]:
-                    if re.match("inlinetab--([a-zA-Z0-9-]+)--([0-9]+)-(.*)", id):
-                        section_id = id
-                        break
+    #if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
+    #    section_id = node.attributes["inline_tab_id"]
+    #else:
+    if "ids" in node.attributes:
+        if len(node.attributes["ids"]) == 1 and node.attributes["ids"][0] != "":
+            section_id = node.attributes["ids"][0]
+            logger.info(
+                f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] using ids[0] attribute: {section_id}"
+            )
+        elif len(node.attributes["ids"]) > 1:
+            for id in node.attributes["ids"]:
+                if TabId.is_tab_id(id):
+                    section_id = id
+                    logger.info(
+                        f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] using ids attribute: {section_id}"
+                    )
+                    break
     if section_id == "":
         section_id = _make_id(secdata.name)
+        logger.info(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] make section_id from {secdata.name}: {section_id}"
+        )
     secdata.id = section_id
+    logger.info(
+        f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] secdata.id: {secdata.id}"
+    )
 
     parent_node: nodes.Element = (
         node.next_node(nodes.container) if isinstance(node, TabContainer) else node
     )
 
     for child in parent_node.children:
-        logger.debug(
-            f"{LOG_PREFIX} collect_sections():    ({docname}) [{level}] child={type(child)}"
+        logger.info(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] child={type(child)}"
         )
-        if isinstance(child, nodes.section) or isinstance(child, TabContainer):
+        if isinstance(child, nodes.section):
             secdata.children.append(
-                collect_sections(env, document, docname, child, level + 1)
+                collect_sections(env, document, docname, child, level + 1, tab_counter)
+            )
+        elif isinstance(child, TabContainer):
+            secdata.children.append(
+                collect_sections(env, document, docname, child, level + 1, tab_counter + 1)
             )
 
     return secdata
@@ -241,7 +261,7 @@ def dump_sections(docname: str, secdata: SectionData):
     elif secdata.is_tab:
         section_type = "tab"
     logger.debug(
-        f"{LOG_PREFIX} dump_sections(): ({docname}) [{secdata.level}] {secdata.name}/{secdata.id}: {section_type}, {len(secdata.children)} children"
+        f"{LOG_PREFIX} dump_sections(): ({docname}) [{secdata.level}/{secdata.tab_counter}] {secdata.name}/{secdata.id}: {section_type}, {len(secdata.children)} children"
     )
     for child in secdata.children:
         dump_sections(docname, child)
@@ -256,14 +276,14 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     :param secdata:
     :return:
     """
-    logger.debug(
+    logger.info(
         f"{LOG_PREFIX} sectiondata_to_toc(): "
-        f"({docname}): [{secdata.level}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
+        f"({docname}): [{secdata.level}/{secdata.tab_counter}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
     )
     if secdata.is_doc_root:
-        logger.debug(
+        logger.info(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
-            f"({docname}): [{secdata.level}] return sectiondata_to_toc(..., secdata.children[0])"
+            f"({docname}): [{secdata.level}/{secdata.tab_counter}] return sectiondata_to_toc(..., secdata.children[0])"
         )
         return sectiondata_to_toc(docname, secdata.children[0])
 
@@ -271,22 +291,22 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
 
     if not secdata.is_section_root:
         # Don't add a reference for the section root since it will be displayed in the ToC
-        logger.debug(
+        logger.info(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
-            f"({docname}): [{secdata.level}] add reference for {secdata.name}<{secdata.id}>"
+            f"({docname}): [{secdata.level}/{secdata.tab_counter}] add reference for {secdata.name}<{secdata.id}>"
         )
         list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
 
     if len(secdata.children) > 0:
-        logger.debug(
+        logger.info(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
-            f"({docname}): [{secdata.level}] children: {','.join([sd.name for sd in secdata.children])}"
+            f"({docname}): [{secdata.level}/{secdata.tab_counter}] children: {','.join([sd.name for sd in secdata.children])}"
         )
         bullet_list: nodes.bullet_list = nodes.bullet_list()
         for idx, child in enumerate(secdata.children):
-            logger.debug(
+            logger.info(
                 f"{LOG_PREFIX} sectiondata_to_toc(): "
-                f"({docname}): [{secdata.level}] child {idx+1}/{len(secdata.children)}"
+                f"({docname}): [{secdata.level}/{secdata.tab_counter}] child {idx+1}/{len(secdata.children)}"
             )
             bullet_list.append(sectiondata_to_toc(docname, child))
         list_item.append(bullet_list)

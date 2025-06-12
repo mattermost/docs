@@ -6,6 +6,7 @@ from sphinx.transforms.post_transforms import SphinxPostTransform
 from sphinx.util.nodes import NodeMatcher
 
 from .nodes import TabContainer, TabInput, TabLabel, TabSpan
+from .tab_id import TabId
 
 
 class TabHtmlTransform(SphinxPostTransform):
@@ -27,7 +28,7 @@ class TabHtmlTransform(SphinxPostTransform):
             self._process_one_node(node)
 
         while self.stack:
-            self.finalize_set(
+            TabHtmlTransform.finalize_set(
                 self.stack.pop(),
                 next(self.counter),
             )
@@ -67,10 +68,10 @@ class TabHtmlTransform(SphinxPostTransform):
         # Close all tab sets as required.
         if close_till is not None:
             while self.stack[-1] != close_till:
-                self.finalize_set(self.stack.pop(), next(self.counter))
+                TabHtmlTransform.finalize_set(self.stack.pop(), next(self.counter))
         else:
             while self.stack:
-                self.finalize_set(self.stack.pop(), next(self.counter))
+                TabHtmlTransform.finalize_set(self.stack.pop(), next(self.counter))
 
         # Start a new tab set, as required or if requested.
         if append and not node["new_set"]:
@@ -79,7 +80,8 @@ class TabHtmlTransform(SphinxPostTransform):
         else:
             self.stack.append([node])
 
-    def finalize_set(self, tab_set: List[TabContainer], set_counter: int):
+    @classmethod
+    def finalize_set(cls, tab_set: List[TabContainer], set_counter: int):
         """Add these TabContainers as a single-set-of-tabs."""
         assert tab_set
 
@@ -111,13 +113,14 @@ class TabHtmlTransform(SphinxPostTransform):
             )
 
             # <span>, for storing an anchor that the table of contents links to.
-            inline_tab_id: str = (
-                node.attributes["inline_tab_id"]
-                if "inline_tab_id" in node.attributes
-                else ""
-            )
+            inline_tab_id: str = ""
+            if node.attributes["ids"]:
+                inline_tab_id = node.attributes["ids"][0]
             if inline_tab_id:
-                label_node += TabSpan(inline_tab_id)
+                tabid: TabId = TabId.from_str(inline_tab_id)
+                if tabid is not None:
+                    tabid.tab_count = node.tab_counter
+                    label_node += TabSpan(str(tabid))
 
             # Add the tab title to the label
             for title_child in title.children:
