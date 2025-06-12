@@ -1,5 +1,5 @@
-Mattermost community questions
-==============================
+Mattermost community
+====================
 
 How can I contribute to Mattermost?
 -----------------------------------

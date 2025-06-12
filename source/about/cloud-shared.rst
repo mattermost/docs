@@ -6,7 +6,7 @@ Cloud Shared
 
 Mattermost Cloud Shared is designed as a cost-effective solution for companies who don't have strict security and compliance requirements that need a straightforward, managed communication platform without the necessity for extensive customization or dedicated resources.
 
-Your Mattermost deployment is isolated, is fully hosted and managed by Mattermost, and runs :ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` on shared infrastructure where resources are shared among multiple Mattermost customers, which might affect performance during peak times. 
+Your Mattermost deployment is isolated, is fully hosted and managed by Mattermost, and runs :doc:`Mattermost Enterprise </about/editions-and-offerings>` on shared infrastructure where resources are shared among multiple Mattermost customers, which might affect performance during peak times. 
 
 Reference architecture
 ----------------------
@@ -57,7 +57,7 @@ Enterprise customers with a Mattermost Cloud Shared deployment can :ref:`configu
 Encryption
 ~~~~~~~~~~~
 
-Mattermost provides encryption-in-transit and encryption-at-rest capabilities. Mattermost supports :doc:`TLS encryption </install/setup-tls>`, including AES-256 with 2048-bit RSA on all data transmissions, between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or :doc:`install a proxy such as NGINX </install/proxy-to-mattermost-transport-encryption>`, and set up TLS on the proxy.
+Mattermost provides encryption-in-transit and encryption-at-rest capabilities. Mattermost supports :doc:`TLS encryption </deploy/server/setup-tls>`, including AES-256 with 2048-bit RSA on all data transmissions, between Mattermost client applications and the Mattermost server. You may either set up TLS on the Mattermost Server or :doc:`install a proxy such as NGINX </deploy/server/setup-nginx-proxy>`, and set up TLS on the proxy.
 
 Connections to :doc:`Active Directory/LDAP </onboard/ad-ldap>` can :ref:`optionally be secured with TLS or stunnel <configure/authentication-configuration-settings:ad/ldap port>`.
 

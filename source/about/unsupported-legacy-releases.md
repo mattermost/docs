@@ -1,4 +1,4 @@
-# Unsupported legacy releases
+# Unsupported Legacy Releases
 
 (release-v8-1-extended-support-release)=
 ## Release v8.1 - [Extended Support Release](https://docs.mattermost.com/upgrade/release-definitions.html#extended-support-release-esr)
@@ -1222,7 +1222,7 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 
 ### Bug Fixes
  - Fixed an issue with a nil point exception error during imports.
- - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/generating-support-packet.html) using the Desktop App.
+ - Fixed an issue where users were unable to download a [Support Packet](https://docs.mattermost.com/manage/admin/generating-support-packet.html) using the Desktop App.
  - Fixed an issue with the **Message forward** modal where the auto-complete in the comment box moved with the text cursor.
  - Fixed an issue where muted channels with an at-mention were displayed under the **Unreads** section of the channel switcher.
  - Fixed an issue where the Collapsed Reply Threads setting was displayed in the **System Console > Experimental Features** section.
@@ -2460,7 +2460,7 @@ IMPORTANT: If you upgrade from a release earlier than v6.2, please read the othe
   - Mattermost v6.2.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
 
 ### Important Upgrade Notes
- -  Channel results in the channel autocomplete will include private channels. Customers using [Bleve](https://docs.mattermost.com/deploy/bleve-search.html) or [Elasticsearch](https://docs.mattermost.com/scale/elasticsearch.html) for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete. Note that only channel members will see private channel names in autocomplete results.
+ -  Channel results in the channel autocomplete will include private channels. Customers using [Bleve](https://docs.mattermost.com/configure/bleve-search.html) or [Elasticsearch](https://docs.mattermost.com/scale/elasticsearch.html) for autocomplete will have to reindex their data to get the new results. Since this can take a long time, we suggest disabling autocomplete and running indexing in the background. When this is complete, re-enable autocomplete. Note that only channel members will see private channel names in autocomplete results.
  -  [Collapsed Reply Threads](https://docs.mattermost.com/messaging/organizing-conversations.html), available in beta, are known to have a negative impact on server performance. If you cannot easily scale up and tune your database, or if you are running the Mattermost application server and database server on the same machine, we recommended disabling [``ThreadAutoFollow``](https://docs.mattermost.com/configure/configuration-settings.html#automatically-follow-threads) and [``CollapsedThreads``](https://docs.mattermost.com/configure/configuration-settings.html#collapsed-reply-threads-beta) until Collapsed Reply Threads is promoted to general availability in Q2 2022. Learn more about these [performance considerations here](https://support.mattermost.com/hc/en-us/articles/4413183568276-What-to-expect-when-enabling-Collapsed-Reply-Threads-Beta).
 
 ```{Important}
@@ -4192,7 +4192,7 @@ Multiple setting options were added to ``config.json``. Below is a list of the a
 
 ----
 
-## Release v5.31 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.31 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 - **v5.31.9, released 2021-08-04**
   - Mattermost v5.31.9 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
@@ -4917,7 +4917,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ----
 
-## Release v5.25 - [ESR](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
+## Release v5.25 - [Extended Support Release](https://docs.mattermost.com/administration/release-definitions.html#extended-support-release-esr)
 
 - **v5.25.7, released 2020-12-03**
   - Disabled the xmlsec1-based SAML library in favor of the re-enabled and improved SAML library.
@@ -5591,7 +5591,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ----
 
-## Release v5.19 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.19 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 Mattermost v5.19.0 contains low to high level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
 
@@ -6841,7 +6841,7 @@ Thank you to everyone who contributed to the Mattermost project in March 2019!
 
 ----
 
-## Release v5.9 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v5.9 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
 Mattermost v5.9.0 contains low to medium level security fixes. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
 
@@ -7912,7 +7912,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 
 ----
 
-## Release v4.10 - [ESR](https://docs.mattermost.com/administration/extended-support-release.html)
+## Release v4.10 - [Extended Support Release](https://docs.mattermost.com/administration/extended-support-release.html)
 
  - **v4.10.10, released 2019-06-20** 
    - Mattermost v4.10.10 contains a medium level security fix. [Upgrading](https://docs.mattermost.com/administration/upgrade.html) is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/?redirect_source=mm-org/).
@@ -9375,7 +9375,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 - Added message buttons to support user interactions with posts made by incoming webhooks and custom slash commands.
 
 #### Mobile Support for AppConfig
-- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/deploy/mobile-appconfig.html) to learn more.
+- iOS and Android mobile apps now support Enterprise Mobility Management (EMM) solutions through integration with [App Config](https://www.appconfig.org/). See [documentation](https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html) to learn more.
 
 ### Improvements
 
@@ -9590,7 +9590,7 @@ Multiple setting options were added to `config.json`. Below is a list of the add
 ### Highlights
 
 #### JIRA App
-- Built-in JIRA integration that can post to multiple channels using a single webhook. See the [Jira integration](https://docs.mattermost.com/integrate/jira-interoperability.html) documentation for details.
+- Built-in JIRA integration that can post to multiple channels using a single webhook. See the [Jira integration](https://docs.mattermost.com/integrate/jira.html) documentation for details.
 
 #### Personal Access Tokens
 - Enables easier and more flexible integrations by authenticating against the REST API. See the [personal access token](https://developers.mattermost.com/integrate/reference/personal-access-token/) developers documentation for details.
@@ -11414,7 +11414,7 @@ Thanks also to those who reported bugs that benefited the release, in alphabetic
  - Added server-side in-memory caching to reduce DB reads/writes.
 
 #### Connection Security
-- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/install/config-tls-mattermost.html).
+- TLS is now supported directly on the Mattermost server. Learn more in our [documentation](https://docs.mattermost.com/deploy/server/setup-tls.html).
 - Support for automatically fetching certificates through Let's Encrypt.
 
 #### Minio File Storage
@@ -12769,7 +12769,7 @@ Release date: 2016-04-16
 
 #### TPNS and EAS options
 
-- [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/deploy/mobile-hpns.html#hosted-push-notifications-service-hpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
+- [Enterprise App Store](https://docs.mattermost.com/deployment/push.html#enterprise-app-store-eas) (EAS) and [Test Push Notification Service](https://docs.mattermost.com/configure/push-notification-configuration-settings.html#test-push-notifications-service-tpns) (TPNS) option are now included in **System Console** > **Email Settings** > **Push Notification Settings** as built-in options.
 
 ### Languages
 

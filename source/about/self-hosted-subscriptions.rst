@@ -1,5 +1,5 @@
-Self-hosted subscriptions
-=========================
+Self-Hosted
+============
 
 .. include:: ../_static/badges/ent-pro-selfhosted.rst
   :start-after: :nosearch:
@@ -29,7 +29,7 @@ You can also use the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl license>`
 Mattermost not yet installed
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you haven't yet installed and deployed a Mattermost instance, visit the :doc:`Deployment Guide </deploy/deployment-overview>` to get started. For information on creating a system admin account, visit our :doc:`Administrator Tasks </getting-started/admin-onboarding-tasks>` documentation.
+If you haven't yet installed and deployed a Mattermost instance, visit the :doc:`Deployment Guide </guides/deployment-guide>` to get started. For information on creating a system admin account, visit our :doc:`Administrator Tasks </upgrade/admin-onboarding-tasks>` documentation.
 
 Add more users to your subscription
 -----------------------------------
@@ -66,7 +66,7 @@ System admins will be alerted 60 days prior to license expiry via a banner in Ma
 Frequently asked questions
 --------------------------
 
-What is the minimum number of users I can purhcase on a subscription? 
+What is the minimum number of users I can purchase on a subscription? 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The minimum purchase for a Mattermost license subscription is 10 users, with no set maximum. You can buy as many user seats as needed. 

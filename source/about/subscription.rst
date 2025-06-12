@@ -1,4 +1,4 @@
-Subscription overview
+Subscription Overview
 =====================
 
 .. toctree::
@@ -6,15 +6,14 @@ Subscription overview
    :hidden:
    :titlesonly:
 
-   Cloud subscriptions </about/cloud-subscriptions>
-   Self-hosted subscriptions </about/self-hosted-subscriptions>
-   Non-profit subscriptions </about/non-profit-subscriptions>
-   Editions and offerings </about/editions-and-offerings>
+   Self-Hosted </about/self-hosted-subscriptions>
+   Cloud </about/cloud-subscriptions>
+   Non-Profit </about/non-profit-subscriptions>
 
 Mattermost offers the following types of subscriptions:
 
-* :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
 * :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for secure enterprise collaboration with full control over your data.
+* :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
 * :doc:`Non-profit subscriptions </about/non-profit-subscriptions>` for nonprofit and open-source organizations who are unable to afford commercial licenses.
 
 Learn more about Mattermost's commerial :doc:`editions and offerings </about/editions-and-offerings>`.
@@ -35,7 +34,7 @@ Mattermost offers self-hosted capabilities through **Mattermost Enterprise** and
 
 Mattermost self-hosted deployments require a license subscription key to be applied to access features. Your plan subscription determines what features you have access to. Talk to a `Mattermost expert <https://mattermost.com/contact-sales/>`_ to learn more.
 
-:ref:`Mattermost Enterprise <about/editions-and-offerings:mattermost enterprise>` and :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` licenses are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated.
+:doc:`Mattermost Enterprise and Mattermost Professional :doc:`licenses </about/editions-and-offerings>` are sold as prepaid annual subscriptions based on the number of seat licenses purchased, or “seats”. Each seat license purchased entitles a customer to an “activated user”, which is a user registered on a specific Mattermost server and not deactivated.
 
 System administrators can view user status in the System Console and activate and deactivate registered users at any time. Deactivated users have history and preferences saved.
 

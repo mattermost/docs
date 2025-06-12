@@ -6,7 +6,7 @@ SSL client certificate setup
 
 Follow these steps to configure SSL client certificates for your browser and the Mattermost desktop apps on Windows, macOS, and Linux. SSL client certificates are not yet supported on the Mattermost mobile apps.
 
-Before you begin, follow the :doc:`official guides to install Mattermost </guides/deployment>` on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
+Before you begin, follow the :doc:`official guides to install Mattermost </guides/deployment-guide>` on your system, including NGINX configuration as a proxy with SSL and HTTP/2, and a valid SSL certificate such as Let's Encrypt.
 
 For the purposes of this guide, the Mattermost server domain name is ``example.mattermost.com``, and the user account is ``mmuser`` with email ``mmuser@mattermost.com`` and password ``mmuser-password``.
 
@@ -133,8 +133,3 @@ You should see the Mattermost login page. If you see:
   2. Go to **File > Import Items** and select the ``mmuser-mattermost.p12`` file.
 
 10. Go to ``https://example.mattermost.com``. You should see a popup for the client certificate request.
-
-Troubleshooting
-~~~~~~~~~~~~~~~~
-
-:doc:`Follow this process </install/troubleshooting>` to resolve configuration issues and to ask for help.

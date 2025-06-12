@@ -4,19 +4,19 @@ Search for messages
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Use Mattermost search to find messages, replies, and the contents of files shared across all channels you're a member of in your team's conversation history. You can also search by `hashtags <#hashtags>`__ or perform more advanced searches using `search modifiers <#search-modifiers>`__.
+Use Mattermost search to find messages, replies, and the contents of files. You can also search by `hashtags <#hashtags>`__ and perform more advanced searches using `search modifiers <#search-modifiers>`__.
 
 .. include:: ../_static/badges/academy-search.rst
   :start-after: :nosearch:
 
-Search for message and files 
------------------------------
+Search for message
+-------------------
 
 .. tab:: Web/Desktop
 
   **Search for messages**
 
-  1. Select the Search field, select **Messages**, then enter your search criteria. 
+  1. Select the Search field, select **Messages**, enter your search criteria.
 
     .. image:: ../images/search-messages.png
       :alt: Use the Search field to search for messages.
@@ -24,78 +24,100 @@ Search for message and files
     .. image:: ../images/search-messages-expanded.png
       :alt: Use the expanded Search field to search for messages.
 
-  2. When message results display in the Search Results pane, select **Jump** to view a full message in context.
+  2. By default, your search results include messages from all channels within your current team. From Mattermost v10.8, you can select **All Teams** to search all channels across all teams, select a specific team instead, or continue searching within the current team.
+
+    .. image:: ../images/search-all-teams.png
+      :alt: Select All Teams to search all channels across all teams.
+
+  3. When message results display in the Search Results pane, select **Jump** to view a full message in context. 
 
     .. image:: ../images/jump-to-message.png
       :alt: From search results, you can go to the full message by selecting Jump.
 
-  **Search for files**
-
-  File content search is available in Mattermost Server and in Mattermost Cloud. Select the **Search** field, select **Files**, then type your search criteria. 
-
-    .. image:: ../images/search-files.png
-      :alt: Use the Search field to serach for files attached to messages.
-
-  File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared.
-
-  - For Mattermost Cloud :doc:`workspaces </guides/use-mattermost>`, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
-  - For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
-
-  .. note::
-    
-    System admins can extend file content search support for self-hosted deployments to include:
-
-    - :ref:`files shared before upgrading to Mattermost Server v5.35 <manage/mmctl-command-line-tool:mmctl extract>`.
-    - :ref:`DOC and RTF file formats <configure/environment-configuration-settings:enable document search by content>`.
-    - :ref:`documents within ZIP files <configure/environment-configuration-settings:enable searching content of documents within zip files>`.
-
-  **Filter results by file type**
-  
-  To narrow search results further, in the Search Results pane, select the **File Type Filter** option, then select specific file types, such as documents, spreadsheets, or images.
-
-  .. image:: ../images/file-search-filter.png
-    :alt: You can filter search results by file type.
-
   .. tip::
-    Select the **Channel Files** icon to the right of the channel name to access files recently shared in the current channel. 
 
-    .. image:: ../images/channel-files-icon.png
-      :alt: Use the Channel Files option to access recently shared files in the current channel.
+    From Mattermost v10.8, you can also adjust your search results to show messages from the current team, a specific team, or all teams.
 
 .. tab:: Mobile
 
   1. Tap the **Search** |search-icon| icon at the bottom of the app to search for messages or files attached to messages.
 
-  .. image:: ../images/mobile-search-for-messages.jpg
-      :alt: Tap on the Search icon to search for messages or files attached to messages.
-      :scale: 30
+    .. image:: ../images/mobile-search-for-messages.jpg
+        :alt: Tap on the Search icon to search for messages.
+        :scale: 30
 
-  2. To the right of search options, tap to select which team to search.
+  2. By default, your search results include messages from all channels within your current team. From mobile v2.28, tap **All Teams** to search all channels across all teams, or select a specific team instead.
 
-  .. image:: ../images/mobile-search-message-team-selection.jpg
-      :alt: Tap on the Team selector to select the team you want to search in.
-      :scale: 30
+    .. image:: ../images/mobile-search-message-team-selection.jpg
+        :alt: Tap on the Team selector to select the team you want to search in.
+        :scale: 30
 
-  3. Enter your search criteria, including applicable `hashtags <#hashtags>`__.
+  3. Enter your search criteria.
 
-  .. image:: ../images/mobile-search-message-criteria-with-hashtags.jpg
-      :alt: Type your search criteria along with applicable hashtags.
-      :scale: 30
+    .. image:: ../images/mobile-search-message-criteria-with-hashtags.jpg
+        :alt: Type your search criteria along with applicable hashtags.
+        :scale: 30
 
   4. Tap to apply `search modifiers <#search-modifiers>`__ to your search.
 
-  .. image:: ../images/mobile-search-message-with-modifiers.jpg
-      :alt: Apply search modifiers to further refine your search.
-      :scale: 30
+    .. image:: ../images/mobile-search-message-with-modifiers.jpg
+        :alt: Apply search modifiers to further refine your search.
+        :scale: 30
   
-  .. image:: ../images/mobile-search-message-results.jpg
-      :alt: Check the search results to find your required message or file from the list.
-      :scale: 30
+    .. image:: ../images/mobile-search-message-results.jpg
+        :alt: Check the search results to find your required message or file from the list.
+        :scale: 30
 
-To access files recently shared in a channel:
+  .. tip::
 
-- Select the |channel-files-icon| icon to the right of the channel name to access files recently shared in that channel. 
-- Select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
+    You can adjust search results to show messages from the current team, a specific team, or all teams.
+
+Search for files
+----------------
+
+From the **Search** field, select **Files** to search for files attached to messages. From Mattermost v10.8 and mobile v2.28, you can specify whether you want to search all channels you're a member of in the current team, a specific team, or all channels across all teams. 
+
+.. image:: ../images/search-files.png
+  :alt: Use the Search field to serach for files attached to messages.
+
+File contents that match on file name, or contain matching text content within supported document types, are returned in the Search Results pane. Each search result includes file name, extension, and size details, as well as details about when and where the file was originally shared. You can adjust search results to show messages from the current team, a specific team, or all teams.
+
+- For Mattermost Cloud :doc:`workspaces </guides/use-mattermost>`, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. DOC and RTF file formats, as well as the contents of ZIP files, are not supported.
+- For Mattermost self-hosted deployments, supported document file formats include PDF, PPTX, DOCX, ODT, HTML, and plain text documents. 
+
+.. note::
+
+  System admins can extend file content search support for self-hosted deployments to include:
+
+  - :ref:`files shared before upgrading to Mattermost Server v5.35 <manage/mmctl-command-line-tool:mmctl extract>`.
+  - :ref:`DOC and RTF file formats <configure/environment-configuration-settings:enable document search by content>`.
+  - :ref:`documents within ZIP files <configure/environment-configuration-settings:enable searching content of documents within zip files>`.
+
+Filter results by file type
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Using Mattermost in a web browser or the desktop app, you can narrow search results further by selecting the **File Type Filter** option, then selecting specific file types, such as documents, spreadsheets, or images.
+
+.. image:: ../images/file-search-filter.png
+  :alt: You can filter search results by file type.
+
+Access recently shared files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can access files recently shared in a channel:
+
+.. tab:: Web/Desktop
+
+  Select the |channel-files-icon| icon to the right of the channel name to access files recently shared in that channel. 
+
+  .. image:: ../images/channel-files-icon.png
+    :alt: Use the Channel Files option to access recently shared files in the current channel.
+
+  Alternatively, you can select the channel name, select the **View Info** |channel-info| icon, then select **Files** in the right pane.
+
+.. tab:: Mobile
+
+  Tap the channel name to view channel options, then tap **Files**.
 
 Search modifiers
 ----------------
@@ -154,7 +176,7 @@ Wildcards
 Use the asterisk ``*`` symbol at the end of the word to perform a wildcard search. The wildcard search returns all words that begin with the specified letters. The wildcard in search cannot be used at the beginning or in the middle of a word. For example, searching ``rea*`` returns messages or files containing words like ``reach``, ``reason``, ``reality``, ``real``, and other words starting with ``rea``. However, searches like ``*each`` and ``re*ch`` are invalid wildcard searches.
 
 Hashtags
---------
+~~~~~~~~~
 
 Hashtags are searchable labels for messages. Anyone can create a hashtag in a message by using the pound sign ``#`` followed by alphanumeric or other unicode characters. Hashtag examples include: ``#bug``, ``#marketing``, ``#user_testing``, ``#per.iod``, ``#check-in``, ``#마케팅``.
 

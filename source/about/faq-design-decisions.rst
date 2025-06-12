@@ -1,5 +1,5 @@
-Design decision questions
-=========================
+Design Decisions
+=================
 
 Why does Mattermost disclose whether or not an account exists when a user enters an incorrect password?
 -------------------------------------------------------------------------------------------------------

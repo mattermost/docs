@@ -83,7 +83,7 @@ Install Grafana
 
    While Prometheus and Grafana may be installed on the same server as Mattermost, we recommend installing these integrations on separate servers, and configure Prometheus to pull all metrics from Mattermost and other connected servers.
 
-1. `Download a precompiled binary for Grafana <https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/>`_ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <hhttps://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/>`_
+1. `Download a precompiled binary for Grafana <https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/>`_ on Ubuntu or Debian. Binaries are also available for other distributions, including Redhat, Windows and Mac. For install instructions, see `Grafana install guides <https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/>`_
 
 2. The Grafana package is installed as a service, so it is easy to start the server. See their `install guides <https://grafana.com/docs/grafana/latest/setup-grafana/installation/debian/>`_ to learn more.
 

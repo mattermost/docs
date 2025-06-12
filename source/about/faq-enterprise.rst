@@ -1,5 +1,5 @@
-Enterprise Edition questions
-============================
+Enterprise Edition
+===================
 
 What is Mattermost Enterprise Edition?
 --------------------------------------
@@ -49,7 +49,7 @@ Yes, Enterprises can inquire about `Mattermost Cloud Enterprise <https://matterm
 
 For more information, contact the Mattermost Sales organization at https://mattermost.com/contact-sales/
 
-For small businesses, :ref:`Mattermost Professional <about/editions-and-offerings:mattermost professional>` is available as a self-serve, multi-tenant, software-as-a-service offering.
+For small businesses, :doc:`Mattermost Professional </about/editions-and-offerings>` is available as a self-serve, multi-tenant, software-as-a-service offering.
 
 Do you offer special programs for non-profit organizations, open source projects, or educational institutions?
 ----------------------------------------------------------------------------------------------------------------

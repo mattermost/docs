@@ -1,4 +1,4 @@
-# Mobile apps changelog
+# Mobile Apps Changelog
 
 ```{include} ../_static/badges/allplans-cloud-selfhosted.md
 ```
@@ -8,6 +8,116 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ```{Important}
 ```{include} common-esr-support.md
 ```
+
+(release-v2-28-1)=
+## 2.28.1 Release
+ - Release Date: June 4, 2025
+ - Server Versions Supported: Server v10.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.11.0 has ended and upgrading to server ESR v10.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Bug Fixes
+ - Fixed an issue with some flickering on the tooltip in the drafts screen.
+
+(release-v2-28-0)=
+## 2.28.0 Release
+ - Release Date: May 16, 2025
+ - Server Versions Supported: Server v10.5.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v10.5.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.11.0 has ended and upgrading to server ESR v10.5.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Improvements
+ - Added a feature to support scheduled posts on mobile. 
+ - Added the ability to display channel banners in the mobile app. This is available for Enterprise Advanced servers that have the Channel Banners feature available. 
+ - Added autofill on the email/password fields on the login screen. 
+ - Upgraded forked ``commonmark`` to v0.31.2-0. 
+
+### Bug Fixes
+ - Fixed an issue with some threads not getting marked as read when read from a different device. 
+ - Fixed an issue where the team sidebar did not show the unread indicator if the user had unread threads.
+ - Fixed an issue where message attachments (e.g. from a webhook) would not appear if received while the app was in the background.
+
+### Open Source Components
+ - Added ``@shopify/flash-list`` to https://github.com/mattermost/mattermost-mobile.
+
+### Known Issues
+ - Animation delay when clearing textbox after post is sent [MM-64243](https://mattermost.atlassian.net/browse/MM-64243).
+ - iOS: Inline images with size specified fail to post [MM-63927](https://mattermost.atlassian.net/browse/MM-63927).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-27-1)=
+## 2.27.1 Release
+ - Release Date: April 30, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Bug Fixes
+ - Calls: fixed a regression that caused unmuting to fail when running the latest app against an older plugin version (earlier than v1.7.0) [MM-63889](https://mattermost.atlassian.net/browse/MM-63889).
+
+(release-v2-27-0)=
+## 2.27.0 Release
+ - Release Date: April 16, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Improvements
+ - (Enterprise) Added the ability to configure per-server prompting for biometric authentication, to prevent the use of the app if the device is jailbroken / rooted, and to prevent screen captures. 
+ - Updated empty state images to align with new branding style. 
+ - Added the ability to play and download audios on the chat. 
+ - Added custom profile attributes to the edit profile screen. Requires server v10.5+ with an Enterprise license and feature flag enabled.
+ - Added improvements to the emoji picker. 
+ - Added a client-side ping to the websocket to detect broken connections more quickly. 
+
+### Bug Fixes
+ - Fixed an issue with scrolling lists inside the bottom menu.
+
+### Known Issues
+ - (Android) Autocomplete suggestions are not available for at-mentions for out of channel members (as well as in-channel members) [MM-63594](https://mattermost.atlassian.net/browse/MM-63594).
+ - (Android) Autocomplete does not show up when typing ``+:taco`` in "write to" input box [MM-63592](https://mattermost.atlassian.net/browse/MM-63592).
+ - Custom themes cannot be applied on mobile [MM-63596](https://mattermost.atlassian.net/browse/MM-63596).
+ - Users are unable to adjust the font size via the OS font size setting.
+ - Some Google Pixel phones on Android 12+ might not continue past the login screen. This is a known issue with the OS, and the current workaround is to restart the device.
+
+(release-v2-26-2)=
+## 2.26.2 Release
+ - Release Date: March 25, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Bug Fixes
+ - Fixed an issue where the autocomplete area was too small on Android devices.
+
+(release-v2-26-1)=
+## 2.26.1 Release
+ - Release Date: March 21, 2025
+ - Server Versions Supported: Server v9.11.0+ is required. Self-Signed SSL Certificates are not supported unless the user installs the CA certificate on their device.
+
+### Compatibility
+ - **Upgrade to server version v9.11.0 or later is required.** Support for server [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#extended-support-releases) (ESR) v9.5.0 has ended and upgrading to server ESR v9.11.0 or later is required. As we innovate and offer newer versions of our mobile apps, we maintain backwards compatibility only with supported server versions. Users who upgrade to the newest mobile apps while being connected to an unsupported server version can be exposed to compatibility issues, which can cause crashes or severe bugs that break core functionality of the app.
+ - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).	
+ - iPhone 6s devices and later with iOS 15.1+ are required.
+
+### Bug Fixes
+ - Fixed issues where app bindings and message attachments would not show properly.
 
 (release-v2-26-0)=
 ## 2.26.0 Release
@@ -3212,7 +3322,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
 
 ### Compatibility
  - If **DisableLegacyMfa** setting in ``config.json`` is set to ``true`` and [multi-factor authentication](https://docs.mattermost.com/onboard/multi-factor-authentication.html) is enabled, ensure your users have upgraded to mobile app version 1.17 or later. See [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
- - If you are using an EMM provider via AppConfig, make sure to add two new settings, `useVPN` and `timeoutVPN`, to your AppConfig file. The settings were added for EMM connections using VPN on-demand - one to indicate if every request should wait for the VPN connection to be established, and another to set the timeout in seconds. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
+ - If you are using an EMM provider via AppConfig, make sure to add two new settings, `useVPN` and `timeoutVPN`, to your AppConfig file. The settings were added for EMM connections using VPN on-demand - one to indicate if every request should wait for the VPN connection to be established, and another to set the timeout in seconds. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html#mattermost-appconfig-values) for VPN support.
  - Mobile App v1.13+ is required for Mattermost Server v5.4+.
  - Android operating system 7+ [is required by Google](https://android-developers.googleblog.com/2017/12/improving-app-security-and-performance.html).
  - iPhone 5s devices and later with iOS 11+ is required.
@@ -3221,7 +3331,7 @@ Mattermost Mobile App v1.26.0 contains low to medium level security fixes. [Upgr
  - iOS Share Extension now supports large file sizes and improved performance
 
 ### Bug Fixes
- - Fixed support for EMM connections using VPN on-demand. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile-appconfig.html#mattermost-appconfig-values) for VPN support.
+ - Fixed support for EMM connections using VPN on-demand. See docs for more details on [setting AppConfig values](https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html#mattermost-appconfig-values) for VPN support.
  - Fixed several Android app crash / fatal error issues.
  - Fixed an issue on Android where the app crashed intermittently when selecting a link.
  - Fixed an issue where email notifications setting was out of sync with the webapp until the setting was edited.

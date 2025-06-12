@@ -1,5 +1,5 @@
-Business questions
-==================
+Business
+=========
 
 How do I fork Mattermost?
 -------------------------

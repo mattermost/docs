@@ -1,5 +1,5 @@
-Open-source licensing questions
-===============================
+Open-source licensing
+======================
 
 Terms of use and privacy policy
 -------------------------------
