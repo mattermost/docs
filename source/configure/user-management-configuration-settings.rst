@@ -143,19 +143,6 @@ Apply roles to users using the System Console. The current available roles are *
 .. image:: ../images/manage-roles.png
   :alt: Manage a user's Mattermost role using the System Console.
 
-Manage user's settings
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
-
-1. Go to **System Console > User Management > Users** to access all user accounts.
-2. Select the user you want to manage.
-3. Select **Manage User Settings**.
-4. In **Admin Mode**, modify the user's settings as needed. Saved changes take effect immediately in the user's account.
-
 Manage user's teams
 ~~~~~~~~~~~~~~~~~~~~
 
@@ -175,6 +162,31 @@ Add or remove users from teams using the System Console.
 
 .. tip::
   You can also remove the user from a specific team from the **Actions** column on the **Users** page. Select **Manage Teams**, and then select **Remove from Team** for applicable teams.
+
+Manage user's settings
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Select the user you want to manage.
+3. Select **Manage User Settings**.
+4. In **Admin Mode**, modify the user's settings as needed. Saved changes take effect immediately in the user's account.
+
+Reset login attempts
+~~~~~~~~~~~~~~~~~~~~~
+
+If a user, whose account details are synchronized with AD/LDAP, can't access their Mattermost account due to too many failed login attempts, you can reset the number of failed login attempts for their user account in the System Console.
+
+1. Go to **System Console > User Management > Users** to access all user accounts.
+2. Under **Actions**, select **Reset login attempts**.
+
+.. note::
+
+  To adjust the maximum login attempts allowed for all users, go to **System Console > Authentication > AD/LDAP > Maximum Login Attempts**. Lowering this :ref:`configuration setting <configure/authentication-configuration-settings:id1>` value below the maximum threshhold allowed on your AD/LDAP server will ensure that your users won’t get locked out of AD/LDAP due to failed login attempts in Mattermost.
 
 Update user's email
 ~~~~~~~~~~~~~~~~~~~
