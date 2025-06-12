@@ -951,6 +951,20 @@ This setting can be left as default unless you are seeing audit write failures i
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: audit-logging-certificate
+  :displayname: Audit logging certificate upload (Audit Logging > Cloud Enterprise)
+  :systemconsole: Audit Log Settings > Certificate
+  :configjson: N/A
+  :environment: N/A
+  :description: Cloud Enterprise customers can upload and manage a certificate for audit logging encryption on Syslog or TCP logging targets.
+
+Certificate
+~~~~~~~~~~~~
+
+Cloud Enterprise customers can upload and manage a certificate for audit logging encryption on Syslog or TCP logging targets. The ability to upload a certificate is only available when the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` is enabled.
+
+Upload the certificate PEM file in the System Console by going to **System Console > Audit Log Settings > Certificate** and selecting **File/Remove Certificate**. The certificate file can be stored in the filestore or stored locally on the filesystem. 
+
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
