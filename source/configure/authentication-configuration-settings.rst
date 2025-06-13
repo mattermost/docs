@@ -64,6 +64,7 @@ Enable account creation
 .. note::
   - LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this configuration setting is enabled.
   - From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
+  - See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
 
 .. config:setting:: restrict-account-creation-to-specified-email-domains
   :displayname: Restrict account creation to specified email domains (Signup)
@@ -1120,6 +1121,8 @@ SAML 2.0
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
+
+See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
 
 .. important::
 
