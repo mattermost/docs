@@ -10,6 +10,7 @@ Mattermost offers a comprehensive set of security features to protect informatio
 
    /about/security/zero-trust.rst
    /about/security/mobile-security.rst
+   /about/security/dependency-vulnerability-analysis.md
 
 Data-in-transit encryption
 ---------------------------
