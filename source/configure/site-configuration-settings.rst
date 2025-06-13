@@ -7,7 +7,6 @@ Site configuration settings
 Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
 
 - `Customization <#customization>`__
-- `System Attributes <#system-attributes>`__
 - `Localization <#localization>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
@@ -406,19 +405,6 @@ Mobile external browser
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Enable this configuration setting when there are issues with the mobile app SSO redirect flow.
-
-----
-
-System attributes
------------------
-
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-System attributes configuration settings provide Enterprise system admins with centralized control over key user account properties. You can define, manage, and enforce specific attributes, including:
-
-- Custom attributes for user profiles, such as job titles, departments, or other metadata, that align with your organizational structures and workflows. Learn more about :doc:`managing custom user profile attributes </manage/admin/user-attributes>`.
-- Granular access controls based on user attributes that ensure users have access to only the resources and functionality relevant to their roles, bolstering security and compliance across the organization.
 
 ----
 
