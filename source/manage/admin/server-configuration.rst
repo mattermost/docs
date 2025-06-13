@@ -14,6 +14,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
     Server configuration options </configure/configuration-settings>
     Set up Mattermost Agents </configure/agents-admin-guide>
     Install Mattermost Boards </configure/install-boards>
+    Manage user attributes </manage/admin/user-attributes>
     Environment variables </configure/environment-variables>
     Customize the server </manage/admin/customize-branding>
     SMTP email setup </configure/smtp-email>
@@ -27,6 +28,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 * :doc:`Server configuration options </configure/configuration-settings>` - Learn about server configuration options for Mattermost.
 * :doc:`Set up Mattermost Agents</configure/agents-admin-guide>` - Learn how to enable AI-powered Agents for your Mattermost instance.
 * :doc:`Install Mattermost Boards </configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
+* :doc:`Manage custom user attributes </manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
 * :doc:`Environment variables </configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
 * :doc:`Customize the server </manage/admin/customize-branding>` - Learn about customizing branding for Mattermost server.
 * :doc:`SMTP email setup </configure/smtp-email>` - Learn how to set up SMTP email for Mattermost.
