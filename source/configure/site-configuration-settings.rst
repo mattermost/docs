@@ -1355,6 +1355,9 @@ Message priority
 Persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users can trigger repeating notifications to   | - System Config path: **Site Configuration > Posts**                                          |
 |   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``ServiceSettings`` > ``AllowPersistentNotifications`` > ``true``  |
@@ -1370,6 +1373,9 @@ Persistent notifications
 
 Maximum number of recipients for persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                              |
@@ -1388,6 +1394,9 @@ Maximum number of recipients for persistent notifications
 Frequency of persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | The number of minutes between repeated notifications for      | - System Config path: **Site Configuration > Posts**                                                |
 | urgent messages sent with persistent notifications.           | - ``config.json`` setting: ``ServiceSettings`` > ``PersistentNotificationIntervalMinutes`` > ``5``  |
@@ -1404,6 +1413,9 @@ Frequency of persistent notifications
 
 Total number of persistent notifications per post
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 +-------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | The maximum number of times users may receive persistent    | - System Config path: **Site Configuration > Posts**                                         |
