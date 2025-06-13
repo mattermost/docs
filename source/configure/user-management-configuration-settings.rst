@@ -186,7 +186,7 @@ If a user, whose account details are synchronized with AD/LDAP, can't access the
 
 .. note::
 
-  To adjust the maximum login attempts allowed for all users, go to **System Console > Authentication > AD/LDAP > Maximum Login Attempts**. Lowering this :ref:`configuration setting <configure/authentication-configuration-settings:id1>` value below the maximum threshhold allowed on your AD/LDAP server will ensure that your users won’t get locked out of AD/LDAP due to failed login attempts in Mattermost.
+  To adjust the maximum login attempts allowed for all users, go to **System Console > Authentication > AD/LDAP > Maximum Login Attempts**. Lowering this :ref:`configuration setting <configure/authentication-configuration-settings:maximum login attempts>` value below the maximum threshhold allowed on your AD/LDAP server will ensure that your users won’t get locked out of AD/LDAP due to failed login attempts in Mattermost.
 
 Update user's email
 ~~~~~~~~~~~~~~~~~~~
