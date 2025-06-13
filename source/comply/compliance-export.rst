@@ -175,6 +175,11 @@ See the `Global Relay <#global-relay-eml>`__ section for details on updated Glob
 Frequently Asked Questions (FAQ)
 --------------------------------
 
+Are Playbooks and Boards data included in compliance exports?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+No. Compliance exports only include channel messages, direct messages, file uploads, and posts from plugins/bots/webhooks. Data from Mattermost Playbooks (including run activities, status updates, and retrospectives) and Mattermost Boards (including cards, comments, and board activities) are not included in the compliance export functionality. Organizations requiring compliance archiving of Playbooks and Boards data should consider separate data retention strategies for these features.
+
 How do I export past history?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
