@@ -106,6 +106,16 @@ source_suffix = [".rst", ".md"]
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
 
+# Sitemap configuration
+sitemap_excludes = [
+    "agents/.config/notice-file/README.html",
+    "agents/.github/CONTRIBUTING.html",
+    "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.html",
+    "agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.html",
+    "agents/.github/PULL_REQUEST_TEMPLATE.html",
+    "agents/.github/SECURITY.html",
+]
+
 # -- Page redirects -------------------------------------------------
 
 # If `redirects_baseurl` is non-empty and the target of a redirect begins
