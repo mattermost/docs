@@ -1,7 +1,7 @@
 Zero Trust Security
 ====================
 
-.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 From Mattermost v10.9, Zero Trust Security enables system admins in large or complex organizations, who are dealing wtih sensitive information, to control which users can access private Mattermost channel, based on their profile attributes. Attribute-based access controls help admins avoid manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, ensures that only authorized users can access specific channels, and maintains security and compliance by preventing unauthorized access to sensitive information.
