@@ -106,6 +106,58 @@ source_suffix = [".rst", ".md"]
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
 
+# Sitemap configuration
+sitemap_excludes = [
+    # Original excludes
+    "agents/.config/notice-file/README.html",
+    
+    # GitHub directory files
+    "agents/.github/CONTRIBUTING.html",
+    "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.html",
+    "agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.html",
+    "agents/.github/PULL_REQUEST_TEMPLATE.html",
+    "agents/.github/SECURITY.html",
+    
+    # Common ESR support files
+    "about/common-esr-support.html",
+    "about/common-esr-support-rst.html",
+    "about/common-esr-support-upgrade.html",
+    
+    # Deploy server files
+    "deploy/server/linux/deploy-tar.html",
+    "deploy/server/linux/deploy-omnibus.html",
+    "deploy/server/linux/deploy-ubuntu.html",
+    "deploy/server/linux/deploy-rhel.html",
+    "deploy/server/kubernetes/deploy-k8s-aks.html",
+    "deploy/server/kubernetes/deploy-k8s.html",
+    "deploy/server/containers/install-aws-beanstalk.html",
+    "deploy/server/containers/install-docker.html",
+    
+    # About and configure files
+    "about/cloud-supported-integrations.html",
+    "configure/push-notification-server-configuration-settings.html",
+    "configure/rate-limiting-configuration-settings.html",
+    
+    # Onboard files
+    "onboard/common-converting-oauth-to-openidconnect.html",
+    "onboard/sso-saml-before-you-begin.html",
+    "onboard/sso-saml-faq.html",
+    "onboard/sso-saml-ldapsync.html",
+    
+    # Scale files
+    "scale/estimated-storage-per-user-per-month.html",
+    "scale/lifetime-storage.html",
+    
+    # Agents files
+    "agents/readme.html",
+    "agents/notice.html",
+    "agents/license.html",
+    "agents/claude.html",
+    "agents/CLAUDE.html",
+    "agents/README.html",
+    "agents/interpluginclient/README.html",
+]
+
 # -- Page redirects -------------------------------------------------
 
 # If `redirects_baseurl` is non-empty and the target of a redirect begins
@@ -3915,8 +3967,9 @@ author = "Mattermost"
 # today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst"]
+# directories and files to ignore when looking for source files. Include all child pages that are includes of another page as well as any submodule 
+# files from external repositories you don't want to be returned in search results.
+exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst", "agents/readme.md", "agents/notice.txt", "agents/license.txt", "agents/claude.md", "agents/.config/notice-file/README.html", "agents/.github/PULL_REQUEST_TEMPLATE.html", "/agents/.github/CONTRIBUTING.md", "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.md", "/agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md", "/agents/.github/SECURITY.md", "/agents/CLAUDE.md", "/agents/README.md", " /agents/interpluginclient/README.md"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
