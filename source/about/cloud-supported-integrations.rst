@@ -6,10 +6,10 @@
 :nosearch:
 
 - :ref:`Mattermost Calls <configure/plugins-configuration-settings:calls>`
-- :doc:`Mattermost Copilot </configure/enable-copilot>`
+- :doc:`Mattermost Agents </configure/agents-admin-guide>`
 - :doc:`Mattermost for Microsoft Teams </integrate/microsoft-teams-sync>`
-- :doc:`Mattermost Playbooks </guides/repeatable-processes>`
-- :doc:`Microsoft Calendar </integrate/microsoft-calendar>`
+- :doc:`Mattermost Playbooks </guides/workflow-automation>`
+- :doc:`Microsoft Calendar Integration </integrate/microsoft-calendar>`
 - :doc:`Microsoft Teams Meetings </integrate/microsoft-teams-meetings>`
 - :doc:`GitHub </integrate/github>` 
 - :doc:`GitLab </integrate/gitlab>` 

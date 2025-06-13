@@ -12,7 +12,7 @@ Review and manage the following plugin configuration options in the System Conso
 - `GitHub <#github>`__
 - `Jira <#jira>`__
 - `Legal Hold <#legal-hold>`__
-- `Microsoft Calendar <#microsoft-calendar>`__
+- `Microsoft Calendar Integration <#microsoft-calendar>`__
 - `MS Teams <#ms-teams>`__
 - `Performance metrics <#performance-metrics>`__
 - `Collaborative playbooks <#collaborative-playbooks>`__
@@ -775,8 +775,8 @@ Call recording quality
   - **true**: Enables automatic transcriptions of calls.
   - **false**: (Default) Call transcriptions functionality is disabled.
 
-Enable call transcriptions (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable call transcriptions
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -789,7 +789,9 @@ Enable call transcriptions (Beta)
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.22. Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. 
+  - The ability to enable call transcriptions in Mattermost calls is currently in :ref:`Beta <manage/feature-labels:beta>`. 
+  - This server-side configuration setting is available from plugin version 0.22. 
+  - Call transcriptions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` to be enabled. 
 
 .. config:setting:: transcriber-model-size
   :displayname: Call transcriber model size (Plugins - Calls)
@@ -847,8 +849,8 @@ Call transcriber threads
   - **true**: Enables live captioning of calls.
   - **false**: **(Default)** Live captions functionality is disabled.
 
-Enable live captions (Beta)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable live captions
+~~~~~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-selfhosted-only.rst
   :start-after: :nosearch:
@@ -859,11 +861,13 @@ Enable live captions (Beta)
 |                                                                           | - Environment variable: ``MM_CALLS_ENABLE_LIVE_CAPTIONS``                                                        |
 | Live captions are generated from the call participants' audio tracks      |                                                                                                                  |
 | and the resulting captions can be optionally displayed on the call        |                                                                                                                  |
-| clients by clicking the **[cc]** option.                                  |                                                                                                                  |
+| clients by selecting the **[cc]** option.                                 |                                                                                                                  |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 .. note::
-  This setting is available starting in plugin version 0.26.2. Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions (beta)>` to be enabled.
+  - The ability to enable live call captions in Mattermost calls is currently in :ref:`Beta <manage/feature-labels:beta>`. 
+  - This server-side configuration setting is available starting in plugin version 0.26.2. 
+  - Live captions require :ref:`call recordings <configure/plugins-configuration-settings:enable call recordings>` and :ref:`call transcriptions <configure/plugins-configuration-settings:enable call transcriptions>` to be enabled.
 
 .. config:setting:: live-captions-model-size
   :displayname: Live captions: Model size (Plugins - Calls)
@@ -997,6 +1001,10 @@ Enable call ringing
 | - **false**: **(Default**) Ringing functionality is disabled.            |                                                                                                              |
 +--------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  The ability to enable call ringing in Mattermost calls is in :ref:`Beta <manage/feature-labels:beta>`.
+
 .. config:setting:: enable-pluginsav1
   :displayname: Enable AV1 codec for screen sharing (Plugins - Calls)
   :systemconsole: Plugins > Calls
@@ -1117,19 +1125,19 @@ See the :doc:`Legal holds </comply/legal-hold>` product documentation for detail
 ----
 
 .. config:setting:: microsoft-calendar
-  :displayname: Microsoft Calendar interoperability (Plugins > Microsoft Calendar)
+  :displayname: Microsoft Calendar Integration (Plugins > Microsoft Calendar)
   :systemconsole: Plugins > Microsoft Calendar
   :configjson: N/A
   :environment: N/A
   :description: Connect your Microsoft Calendar to your Mattermost instance.
 
-Microsoft Calendar
--------------------
+Microsoft Calendar Integration
+-------------------------------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-See the :doc:`Connect Microsoft Calendar to Mattermost </integrate/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
+See the :doc:`Connect Microsoft Calendar Integration to Mattermost </integrate/microsoft-calendar>` product documentation for available :ref:`Mattermost configuration options <integrate/microsoft-calendar:enable and configure the microsoft calendar integration in mattermost>`.
 
 ----
 

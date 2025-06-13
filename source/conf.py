@@ -106,6 +106,58 @@ source_suffix = [".rst", ".md"]
 # The encoding of source files.
 # source_encoding = 'utf-8-sig'
 
+# Sitemap configuration
+sitemap_excludes = [
+    # Original excludes
+    "agents/.config/notice-file/README.html",
+    
+    # GitHub directory files
+    "agents/.github/CONTRIBUTING.html",
+    "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.html",
+    "agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.html",
+    "agents/.github/PULL_REQUEST_TEMPLATE.html",
+    "agents/.github/SECURITY.html",
+    
+    # Common ESR support files
+    "about/common-esr-support.html",
+    "about/common-esr-support-rst.html",
+    "about/common-esr-support-upgrade.html",
+    
+    # Deploy server files
+    "deploy/server/linux/deploy-tar.html",
+    "deploy/server/linux/deploy-omnibus.html",
+    "deploy/server/linux/deploy-ubuntu.html",
+    "deploy/server/linux/deploy-rhel.html",
+    "deploy/server/kubernetes/deploy-k8s-aks.html",
+    "deploy/server/kubernetes/deploy-k8s.html",
+    "deploy/server/containers/install-aws-beanstalk.html",
+    "deploy/server/containers/install-docker.html",
+    
+    # About and configure files
+    "about/cloud-supported-integrations.html",
+    "configure/push-notification-server-configuration-settings.html",
+    "configure/rate-limiting-configuration-settings.html",
+    
+    # Onboard files
+    "onboard/common-converting-oauth-to-openidconnect.html",
+    "onboard/sso-saml-before-you-begin.html",
+    "onboard/sso-saml-faq.html",
+    "onboard/sso-saml-ldapsync.html",
+    
+    # Scale files
+    "scale/estimated-storage-per-user-per-month.html",
+    "scale/lifetime-storage.html",
+    
+    # Agents files
+    "agents/readme.html",
+    "agents/notice.html",
+    "agents/license.html",
+    "agents/claude.html",
+    "agents/CLAUDE.html",
+    "agents/README.html",
+    "agents/interpluginclient/README.html",
+]
+
 # -- Page redirects -------------------------------------------------
 
 # If `redirects_baseurl` is non-empty and the target of a redirect begins
@@ -174,8 +226,10 @@ redirects = {
         "https://docs.mattermost.com/about/non-profit-subscriptions.html",
 "about/maximize-microsoft-investment.html":
         "https://docs.mattermost.com/about/maximize-microsoft-investments.html",
-
-
+"about/out-of-band-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
+"about/incident-response-collaboration.html":
+        "https://docs.mattermost.com/about/out-of-band-incident-response.html",
 
 # Administration redirects
 "administration/announcement-banner.html":
@@ -434,141 +488,6 @@ redirects = {
         "https://docs.mattermost.com/guides/upgrade-mattermost.html",
 "administration/release-lifecycle.html":
         "https://docs.mattermost.com/about/releases-lifecycle.html",
-
-# Boards redirects
-"boards/navigating-mattermost-boards.html":
-        "https://docs.mattermost.com/welcome/what-changed-in-v60.html",
-# Important Note: The following guide files were reorg'd in FY23 Q3.
-"boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/boards-settings.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/calculations.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/groups-filter-sort.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/overview.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/share-and-collaborate.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-views.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/overview.html#what-s-a-board":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/overview.html#what-s-a-card":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/overview.html#access-your-boards":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/overview.html#focalboard-personal-server":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-boards.html#add-new-boards":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-boards.html#choose-a-board-template":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-boards.html#edit-board-templates":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#card-descriptions":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#card-properties":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#add-properties":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#rename-a-property":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#change-a-property-type":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#delete-a-property":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#define-a-select-or-multi-select-property":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#toggle-properties-shown-on-a-board":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#attach-files":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#card-badges":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#comment-on-a-card":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#mention-people":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#receive-updates":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#search-cards":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-cards.html#card-templates":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-views.html#board-view":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-views.html#table-view":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-views.html#gallery-view":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/work-with-views.html#calendar-view":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/groups-filter-sort.html#group-cards":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/groups-filter-sort.html#filters":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/groups-filter-sort.html#sorting-cards":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/share-and-collaborate.html#board-permissions":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/share-and-collaborate.html#roles":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/share-and-collaborate.html#guest-accounts":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/share-and-collaborate.html#share-a-board":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/share-and-collaborate.html#share-cards-on-channels":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-and-export-a-board-archive":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#export-to-csv":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-and-export-from-other-applications":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-from-asana":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-from-notion":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-from-jira":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-from-trello":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/migrate-to-boards.html#import-from-todoist":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#link-a-board-to-a-channel":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#unlink-a-board-from-a-channel":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#sidebar-categories":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#drag-and-drop":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#manage-boards-on-the-sidebar":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#find-a-board":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/navigate-boards.html#team-sidebar":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/boards-settings.html#set-language":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/boards-settings.html#random-emoji-icons":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/boards-settings.html#product-tour":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
-"boards/get-started-with-boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 
 # Channels redirects
 "channels/find-channels.html":
@@ -845,7 +764,7 @@ redirects = {
 "channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html",
 "channels/about-teams-channels-messages.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "channels/find-channels.html#revisit-recent-channels":
         "https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels",
 "channels/syntax-highlighting.html":
@@ -895,7 +814,7 @@ redirects = {
 "collaborate/use-mattermost-google-calendar-plugin.html":
         "https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md",
 "collaborate/chat-with-ai-copilot.html":
-        "https://docs.mattermost.com/collaborate/chat-with-copilot.html",
+        "https://docs.mattermost.com/guides/agents.html",
 "collaborate-within-embedded-microsoft-teams.html":
         "https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html",
 "collaborate/send-messages.html#edit-or-delete-messages":
@@ -910,6 +829,10 @@ redirects = {
         "https://docs.mattermost.com/collaborate/channel-types.html#direct-message-channels",
 "collaborate/channel-types.html#group-messages":
         "https://docs.mattermost.com/collaborate/channel-types.html#group-message-channels",
+"collaborate/chat-with-copilot.html":
+        "https://docs.mattermost.com/guides/agents.html",
+"collaborate/collaborate-with-audio-video.html":
+        "https://docs.mattermost.com/collaborate/audio-and-screensharing.html",
 
 # Compliance redirects
 "comply/compliance-reporting-oversight":
@@ -1950,7 +1873,10 @@ redirects = {
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
 "configure/using-outbound-proxy.html":
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
-
+"configure/environment-configuration-settings.html#elasticsearch":
+        "https://docs.mattermost.com/configure/environment-configuration-settings.html#enterprise-search",
+"configure/enable-copilot.html":
+        "https://docs.mattermost.com/configure/agents-admin-guide.html",
 
 # Deploy redirects
 "deploy/mobile-apps-faq.html":
@@ -2261,10 +2187,6 @@ redirects = {
 "about/embed-mattermost-within-microsoft-teams.html":
         "https://docs.mattermost.com/about/maximize-microsoft-investment.html",
 
-# Focalboard redirects
-"focalboard/installing-boards":
-	"https://github.com/mattermost/focalboard/blob/main/docs/mattermost-boards-dev-guide.md",
-
 # Getting Started redirects
 "getting-started/implementation_plan.html":
         "https://docs.mattermost.com/deploy/server/server-deployment-planning.html",
@@ -2330,8 +2252,6 @@ redirects = {
 	"https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/orchestration.html":
         "https://docs.mattermost.com/about/orchestration.html",
-"guides/boards.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 # Important Note: The following guide files were archived in FY23 Q2.
 "guides/cloud-admin-guide.html":
 	"https://docs.mattermost.com/guides/deployment.html",
@@ -2351,7 +2271,7 @@ redirects = {
 "guides/channels.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/channels.html#channels-messages-and-conversations":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "guides/channels.html#work-with-channels":
         "https://docs.mattermost.com/collaborate/collaborate-within-channels.html",
 "guides/channels.html#work-with-messages":
@@ -2361,7 +2281,7 @@ redirects = {
 "guides/channels.html#extend-channels-functionality":
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/guides/use-mattermost.html",
 "guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
@@ -2386,7 +2306,10 @@ redirects = {
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
 "guides/integrate-and-extend.html#interoperability-with-pre-packaged-integrations":
         "https://docs.mattermost.com/guides/pre-built-integrations.html",
-
+"guides/collaborate.html":
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
+"guides/repeatable-processes.html":
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Help redirects resulting from the June 2021 docs reorganization project.
 "help/apps/desktop-changelog.html":
@@ -2823,7 +2746,7 @@ redirects = {
 "integrate/mattermost-mission-collaboration-for-m365.html#setup":
         "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html#deploy",
 "integrate/playbooks-for-microsoft-teams.html#setup":
-        "https://docs.mattermost.com/integrate/playbooks-for-microsoft-teams.html#deploy",
+        "https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html",
 "integrate/microsoft-calendar.html#setup":
         "https://docs.mattermost.com/integrate/microsoft-calendar.html#deploy",
 "integrate/microsoft-teams-sync.html#setup":
@@ -3679,9 +3602,9 @@ redirects = {
 "playbooks/interact-with-playbooks.html#api-documentation":
         "https://docs.mattermost.com/repeatable-processes/interact-with-playbooks.html#api-documentation",
 "playbooks/work-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 "playbooks/get-started-with-playbooks.html":
-        "https://docs.mattermost.com/guides/repeatable-processes.html",
+        "https://docs.mattermost.com/guides/workflow-automation.html",
 
 # Preference redirects
 "preferences/manage-your-calls-preferences.html":
@@ -3841,6 +3764,8 @@ redirects = {
         "https://docs.mattermost.com/scale/scale-to-80000-users.html",
 "scale/scale-to-88000-users.html":
         "https://docs.mattermost.com/scale/scale-to-90000-users.html",
+"scale/elasticsearch.html":
+        "https://docs.mattermost.com/scale/enterprise-search.html",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
@@ -3882,7 +3807,7 @@ redirects = {
 "welcome/log-out.html":
         "https://docs.mattermost.com/collaborate/log-out.html",
 "welcome/get-started-mattermost-channels.html":
-        "https://docs.mattermost.com/guides/collaborate.html",
+        "https://docs.mattermost.com/guides/messaging-collaboration.html",
 "welcome/manage-custom-groups.html":
         "https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html",
 "welcome/about-teams.html":
@@ -3971,8 +3896,6 @@ redirects = {
         "https://docs.mattermost.com/about/mattermost-v10-changelog.html",
 "welcome/what-changed-in-v60.html":
         "https://docs.mattermost.com/about/mattermost-v9-changelog.html",
-"welcome/whats-new-in-v72.html":
-        "https://github.com/mattermost/focalboard/blob/main/docs/focalboard-plugin-end-user-guide.md",
 "welcome/keyboard-shortcuts.html#navigation-shortcuts-in-the-desktop-app":
         "https://docs.mattermost.com/collaborate/keyboard-shortcuts.html#navigation-in-the-desktop-app",
 "welcome/keyboard-shortcuts.html#zoom-shortcuts-for-web-and-desktop-app":
@@ -4044,8 +3967,9 @@ author = "Mattermost"
 # today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst"]
+# directories and files to ignore when looking for source files. Include all child pages that are includes of another page as well as any submodule 
+# files from external repositories you don't want to be returned in search results.
+exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst", "agents/readme.md", "agents/notice.txt", "agents/license.txt", "agents/claude.md", "agents/.config/notice-file/README.html", "agents/.github/PULL_REQUEST_TEMPLATE.html", "/agents/.github/CONTRIBUTING.md", "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.md", "/agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md", "/agents/.github/SECURITY.md", "/agents/CLAUDE.md", "/agents/README.md", " /agents/interpluginclient/README.md"]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
