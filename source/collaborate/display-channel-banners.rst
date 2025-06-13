@@ -7,6 +7,7 @@ Display channel headers
 From Mattermost v10.9, users with admin permissions can enable channel banners to remind channel members about being diligent to avoid data spillage in channels that aren't intended for classified or sensitive information. These non-dismissible banners can be styled using Markdown and are visible across all Mattermost clients, including web browsers, the desktop app, and the mobile app.
 
 Channel banner use cases include the following:
+
 - Security classifications, such as **CONTROLLED UNCLASSIFIED: IMPACT LEVEL 5** with a distinctive color to alert members of the required security level.
 - Important notices, such as **Reminder: Code complete deadlines are Fridays at 3 PM**, for recurring reminders.
 - Policy or terms, such as  **All discussion in this channel is private and restricted** with a red color to signal caution.
