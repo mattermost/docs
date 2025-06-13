@@ -12,6 +12,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 
     Store configuration in your database </configure/configuration-in-your-database>
     Server configuration options </configure/configuration-settings>
+    Set up attribute-based access controls </manage/admin/zero-trust-security>
     Set up Mattermost Agents </configure/agents-admin-guide>
     Install Mattermost Boards </configure/install-boards>
     Manage user attributes </manage/admin/user-attributes>
@@ -26,6 +27,7 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 
 * :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </configure/configuration-settings>` - Learn about server configuration options for Mattermost.
+* :doc:`Set up attribute-based access controls </manage/admin/zero-trust-security>` - Learn how to set up attribute-based access controls for your Mattermost instance for Zero Trust Security.
 * :doc:`Set up Mattermost Agents</configure/agents-admin-guide>` - Learn how to enable AI-powered Agents for your Mattermost instance.
 * :doc:`Install Mattermost Boards </configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
 * :doc:`Manage custom user attributes </manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
