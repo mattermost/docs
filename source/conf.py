@@ -8,26 +8,25 @@ import os
 from sphinx.application import Sphinx
 
 
-def find_duplicate_redirects(redirects):
+def find_duplicate_redirects(redirects_map: dict[str, str]) -> bool:
     # Track sources that map to the same target
-    target_to_sources = {}
-    # Track duplicate sources 
-    duplicate_sources = {}
-    
-    # Open warnings log file in build directory
-    with open("build/warnings.log", "w") as log:
-        for source, target in redirects.items():
+    target_to_sources: dict[str, list[str]] = {}
+    # Track duplicate sources
+    duplicate_sources: dict[str, str] = {}
+
+    # Open redirect warnings log file in build directory
+    with open("build/redirect-warnings.log", "w") as log:
+        for source, target in redirects_map.items():
             # Check for duplicate sources
             if source in duplicate_sources:
-                warning = f"\nDuplicate redirect found:\n"
+                warning: str = f"\nDuplicate redirect found:\n"
                 warning += f"Source: {source}\n"
                 warning += f"Already maps to: {duplicate_sources[source]}\n"
                 warning += f"Also maps to: {target}\n"
                 log.write(warning)
-                print(warning)
             else:
                 duplicate_sources[source] = target
-                
+
             # Track sources mapping to same target
             if target in target_to_sources:
                 target_to_sources[target].append(source)
@@ -37,17 +36,24 @@ def find_duplicate_redirects(redirects):
         # Log sources that map to the same target
         for target, sources in target_to_sources.items():
             if len(sources) > 1:
-                warning = f"\nMultiple sources map to same target:\n"
-                warning += f"Target: {target}\n" 
-                warning += f"Sources: {sources}\n"
-                log.write(warning)
-                print(warning)
-                
-    return len(duplicate_sources) == len(redirects)
+                warning_message: str = (
+                    f"Multiple sources map to same target; Target: {target} <- Sources: {sources}\n"
+                )
+                log.write(warning_message)
+
+    return len(duplicate_sources) == len(redirects_map)
+
+
+# Import page redirect configuration from redirects.py
+sys.path.insert(0, os.path.abspath("."))
+import redirects as redirects_py
+
+redirects = redirects_py.redirects_map
+
 
 def setup(_: Sphinx):
     # Check for duplicate redirects when Sphinx builds
-    find_duplicate_redirects(redirects)
+    find_duplicate_redirects(redirects_py.redirects_map)
     return
 
 
@@ -112,19 +118,16 @@ source_suffix = {
 sitemap_excludes = [
     # Original excludes
     "agents/.config/notice-file/README.html",
-    
     # GitHub directory files
     "agents/.github/CONTRIBUTING.html",
     "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.html",
     "agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.html",
     "agents/.github/PULL_REQUEST_TEMPLATE.html",
     "agents/.github/SECURITY.html",
-    
     # Common ESR support files
     "about/common-esr-support.html",
     "about/common-esr-support-rst.html",
     "about/common-esr-support-upgrade.html",
-    
     # Deploy server files
     "deploy/server/linux/deploy-tar.html",
     "deploy/server/linux/deploy-omnibus.html",
@@ -134,22 +137,18 @@ sitemap_excludes = [
     "deploy/server/kubernetes/deploy-k8s.html",
     "deploy/server/containers/install-aws-beanstalk.html",
     "deploy/server/containers/install-docker.html",
-    
     # About and configure files
     "about/cloud-supported-integrations.html",
     "configure/push-notification-server-configuration-settings.html",
     "configure/rate-limiting-configuration-settings.html",
-    
     # Onboard files
     "onboard/common-converting-oauth-to-openidconnect.html",
     "onboard/sso-saml-before-you-begin.html",
     "onboard/sso-saml-faq.html",
     "onboard/sso-saml-ldapsync.html",
-    
     # Scale files
     "scale/estimated-storage-per-user-per-month.html",
     "scale/lifetime-storage.html",
-    
     # Agents files
     "agents/readme.html",
     "agents/notice.html",
@@ -202,9 +201,43 @@ author = "Mattermost"
 # today_fmt = '%B %d, %Y'
 
 # List of patterns, relative to source directory, that match files and
-# directories and files to ignore when looking for source files. Include all child pages that are includes of another page as well as any submodule 
+# directories and files to ignore when looking for source files. Include all child pages that are includes of another page as well as any submodule
 # files from external repositories you don't want to be returned in search results.
-exclude_patterns = ["about/common-esr-support.md", "about/common-esr-support-rst.rst", "about/common-esr-support-upgrade.md", "deploy/server/linux/deploy-tar.rst", "deploy/server/linux/deploy-omnibus.rst", "deploy/server/linux/deploy-ubuntu.rst", "deploy/server/linux/deploy-rhel.rst", "deploy/server/kubernetes/deploy-k8s-aks.rst", "deploy/server/kubernetes/deploy-k8s.rst", "deploy/server/containers/install-aws-beanstalk.rst", "deploy/server/containers/install-docker.rst", "about/cloud-supported-integrations.rst", "configure/push-notification-server-configuration-settings.rst", "configure/rate-limiting-configuration-settings.rst", "onboard/common-converting-oauth-to-openidconnect.rst", "onboard/sso-saml-before-you-begin.rst", "onboard/sso-saml-faq.rst", "onboard/sso-saml-ldapsync.rst", "scale/estimated-storage-per-user-per-month.rst", "scale/lifetime-storage.rst", "agents/readme.md", "agents/notice.txt", "agents/license.txt", "agents/claude.md", "agents/.config/notice-file/README.html", "agents/.github/PULL_REQUEST_TEMPLATE.html", "/agents/.github/CONTRIBUTING.md", "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.md", "/agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md", "/agents/.github/SECURITY.md", "/agents/CLAUDE.md", "/agents/README.md", " /agents/interpluginclient/README.md"]
+exclude_patterns = [
+    "about/common-esr-support.md",
+    "about/common-esr-support-rst.rst",
+    "about/common-esr-support-upgrade.md",
+    "deploy/server/linux/deploy-tar.rst",
+    "deploy/server/linux/deploy-omnibus.rst",
+    "deploy/server/linux/deploy-ubuntu.rst",
+    "deploy/server/linux/deploy-rhel.rst",
+    "deploy/server/kubernetes/deploy-k8s-aks.rst",
+    "deploy/server/kubernetes/deploy-k8s.rst",
+    "deploy/server/containers/install-aws-beanstalk.rst",
+    "deploy/server/containers/install-docker.rst",
+    "about/cloud-supported-integrations.rst",
+    "configure/push-notification-server-configuration-settings.rst",
+    "configure/rate-limiting-configuration-settings.rst",
+    "onboard/common-converting-oauth-to-openidconnect.rst",
+    "onboard/sso-saml-before-you-begin.rst",
+    "onboard/sso-saml-faq.rst",
+    "onboard/sso-saml-ldapsync.rst",
+    "scale/estimated-storage-per-user-per-month.rst",
+    "scale/lifetime-storage.rst",
+    "agents/readme.md",
+    "agents/notice.txt",
+    "agents/license.txt",
+    "agents/claude.md",
+    "agents/.config/notice-file/README.html",
+    "agents/.github/PULL_REQUEST_TEMPLATE.html",
+    "/agents/.github/CONTRIBUTING.md",
+    "agents/.github/ISSUE_TEMPLATE/BUG_REPORT.md",
+    "/agents/.github/ISSUE_TEMPLATE/FEATURE_REQUEST.md",
+    "/agents/.github/SECURITY.md",
+    "/agents/CLAUDE.md",
+    "/agents/README.md",
+    "/agents/interpluginclient/README.md",
+]
 
 # The reST default role (used for this markup: `text`) to use for all
 # documents.
