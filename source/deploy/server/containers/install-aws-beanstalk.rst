@@ -23,7 +23,8 @@ The Elastic Beanstalk application creation process below combines Application an
 11. Select **Create Application**. It may take a few minutes for Beanstalk to launch your environment. If the launch is successful, you will see a see a large green checkmark and the **Health status** displayed in green.
 12. Test your environment by selecting the domain link next to your application name at the top of the dashboard. Alternatively, enter the domain into your browser in the form of ``http://<your-ebs-application-url>.elasticbeanstalk.com``. You can also map your own domain if you prefer. When everything is working correctly, the domain navigates you to the Mattermost Login page. Enjoy exploring Mattermost!
 
-**(Recommended) Enable Email**
+Enable Email (Recommended)
+-----------------------------
 
 The default Docker instance for Mattermost is designed for product evaluation, and sets ``SendEmailNotifications=false`` so the product can function without enabling email. To see the product's full functionality, we recommend :doc:`enabling SMTP email </configure/smtp-email>`.
 

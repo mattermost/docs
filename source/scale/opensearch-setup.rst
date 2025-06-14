@@ -16,6 +16,7 @@ From Mattermost v9.11, beta support is available for `AWS OpenSearch v1.x and v2
 We highly recommend that you set up an AWS OpenSearch server on a separate machine from the Mattermost server.
 
 .. tab:: On-Premises OpenSearch
+  :parse-titles:
 
   1. To install on-premise OpenSearch, provision a dedicated server (e.g. Ubuntu 22.04 LTS).
   2. Install Java (OpenSearch requires Java 11+):
@@ -83,8 +84,8 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
       sudo systemctl start opensearch 
       sudo systemctl status opensearch
 
-
-  **Terraform (Docker) Example**
+  Terraform (Docker) Example
+  --------------------------
 
   .. code-block:: sh
 
@@ -119,6 +120,7 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
     }
 
 .. tab:: AWS OpenSearch Console Setup
+  :parse-titles:
 
   1. To install AWS OpenSearch, open the **AWS Console > OpenSearch Service**.
 
@@ -169,7 +171,8 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       curl https://mattermost-os-xxxxxxxxxxx.us-east-1.es.amazonaws.com
 
-  **AWS Terraform Example**
+  AWS Terraform Example
+  ----------------------
 
   .. code-block:: sh
 

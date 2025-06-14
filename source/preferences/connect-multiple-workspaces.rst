@@ -41,8 +41,6 @@ Add a server
 
   Tap the **Servers** |servers-icon| icon located in the top left corner of the window to access all available servers and to add new servers.
 
-  **Add a server**
-      
   1. Tap **Add a server**.
   2. Enter the server URL. Server URLs must begin with either ``http://`` or ``https://``.
   3. Enter the server's Display Name.

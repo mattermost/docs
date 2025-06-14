@@ -1100,7 +1100,7 @@ Replica lag settings
 
     For more information on Aurora replication stats, see the `AWS Aurora documentaion <https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora_global_db_instance_status.html>`__.
 
-    **Example:**
+    Example
 
     .. code-block:: json
       :emphasize-lines: 4,5,6,7,8
@@ -1123,7 +1123,7 @@ Replica lag settings
 
     For more information on group replication stats, see the `MySQL documentation <https://dev.mysql.com/doc/refman/8.0/en/group-replication-replication-group-member-stats.html>`__.
 
-    **Example:**
+    Example
 
     .. code-block:: json
       :emphasize-lines: 4,5,6,7,8
