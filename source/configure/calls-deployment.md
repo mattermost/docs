@@ -421,6 +421,30 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 </tr>
 </tbody>
 </table>
+- Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
+- Configuring a STUN server is unnecessary, as all connections occur within the local network.
+- The ICE Host Override configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
+
+### Docker Registry Setup for Air-Gapped Environments
+
+When using the calls-offloader service for call recording and transcription in air-gapped environments, you need to set up a local Docker registry since the service creates Docker containers that normally pull images from Docker Hub.
+
+**Required Docker Images:**
+- `mattermost/calls-offloader:v0.9.3` (or latest version)
+- `mattermost/calls-transcriber:latest`
+- `registry:2` (for the local Docker registry)
+
+**Setup Overview:**
+1. **Preparation phase** (on internet-connected machine): Download and prepare Docker images
+2. **Air-gap deployment phase**: Transfer and deploy the local registry with pre-loaded images
+
+**Key Configuration Changes:**
+- Configure Docker daemon to allow insecure registries: `{"insecure-registries": ["localhost:5000"]}`
+- Update calls-offloader configuration to use local registry: `image_registry = "localhost:5000/mattermost"`
+
+For detailed step-by-step instructions, including setup scripts, manual configuration, and troubleshooting, see the comprehensive air-gap setup guide in the [Calls Offloader Setup and Configuration](calls-offloader-setup.md#air-gapped-deployments) documentation.
+
+## Performance Considerations
 
 Calls performance primarily depends on:
 
