@@ -20,6 +20,7 @@ System admins for both self-hosted and Cloud Mattermost deployments can manage M
     Cloud workspace subscription, billing, and account settings </configure/cloud-billing-account-settings>
     Reporting configuration settings </configure/reporting-configuration-settings>
     User management configuration settings </configure/user-management-configuration-settings>
+    System attributes </configure/system-attributes>
     Environment configuration settings </configure/environment-configuration-settings>
     Site configuration settings </configure/site-configuration-settings>
     Authentication configuration settings </configure/authentication-configuration-settings>
@@ -36,6 +37,7 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Cloud workspace subscription, billing, and account settings</configure/cloud-billing-account-settings>`
 - :doc:`Reporting configuration settings </configure/reporting-configuration-settings>`
 - :doc:`User management configuration settings </configure/user-management-configuration-settings>`
+- :doc:`System attributes </configure/system-attributes>`
 - :doc:`Environment configuration settings </configure/environment-configuration-settings>`
 - :doc:`Site configuration settings </configure/site-configuration-settings>`
 - :doc:`Authentication configuration settings </configure/authentication-configuration-settings>`

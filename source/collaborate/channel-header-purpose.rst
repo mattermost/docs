@@ -4,7 +4,6 @@ Communicate a channel's focus and scope
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-
 Every channel in Mattermost serves a purpose and exists for a reason. You can communicate a channel's focus and scope in 3 ways:
 
 - a descriptive `channel name <#channel-name>`__
@@ -17,25 +16,25 @@ Channel name
 You're prompted to provide a channel name when :doc:`creating a new channel in Mattermost </collaborate/create-channels>`. Channel names must be at least 2 characters, and can be up to 64 characters in length. See the :doc:`channel naming conventions </collaborate/channel-naming-conventions>` documentation for additional details and guidance on why channel naming is important.
 
 .. note::
-    
-    `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported in channel names.
+
+  `Some unicode characters <https://www.w3.org/TR/unicode-xml/#Charlist>`_ aren't supported in channel names.
 
 Looking to rename an existing channel? See the :doc:`rename channels </collaborate/rename-channels>` documentation for details.
 
 Channel purpose
 ---------------
 
-You're prompted to provide an optional channel purpose description when :doc:`creating a new channel in Mattermost </collaborate/create-channels>` visible when you select **View Info** |channel-info| for the channel. Any member of a channel can change a channel's purpose description, unless the system admin has :doc:`disabled the ability to do so </onboard/advanced-permissions>`.
+You're prompted to provide an optional channel purpose description when :doc:`creating a channel </collaborate/create-channels>` or :doc:`renaming a channel </collaborate/rename-channels>`. A channel purpose can be up to 250 characters in length, and is often used to help users decide whether to join that channel.
 
-A channel purpose can be up to 250 characters in length, and is often used to help users decide whether to join that channel.
+A channel's purpose is visible in the right pane when you select the **View Info** |channel-info| icon for the channel. Any member of a channel can change a channel's purpose description, unless the system admin has :doc:`disabled the ability to do so </onboard/advanced-permissions>`.
 
 .. tab:: Web/Desktop
 
   .. image:: ../images/channel-purpose-info.png
     :alt: Channel purpose helps users decide if they want to join the channel based on its scope or focus.
 
-  1. Select a channel.
-  2. Select the channel name and **Edit Channel Purpose** to provide or update a channel's purpose.
+  1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Channel Settings**.
+  2. Enter or update the channel purpose.
   3. Select **Save**.
 
 .. tab:: Mobile
@@ -73,14 +72,14 @@ A channel purpose can be up to 250 characters in length, and is often used to he
 Channel header
 --------------
 
-A channel header refers to text that displays directly under a channel name at the top of the screen. Any channel member can change a channel header, unless the system admin has :doc:`disabled the ability to do so </onboard/advanced-permissions>`
+A channel header is text that displays directly under a channel name at the top of the channel. Any channel member can change a channel header, unless the system admin has :doc:`disabled the ability to do so </onboard/advanced-permissions>`
 
 A channel header can be up to 1024 characters in length, include Markdown formatting, and is often used to summarize the channel's focus or to provide links to frequently accessed documents, tools, or websites.
 
 .. tab:: Web/Desktop
 
-  1. Select a channel.
-  2. Select the channel name and **Edit Channel Header**. You can use the same :ref:`Markdown formatting <collaborate/format-messages:use markdown>` in the channel header as you would when composing a message.
+  1. Select the channel name at the top of the center pane to access the drop-down menu, then select **Channel Settings**.
+  2. Enter or change channel header details. You can use the same :ref:`Markdown formatting <collaborate/format-messages:use markdown>` in the channel header as you would when composing a message.
 
   .. image:: ../images/channel-header.png
     :alt: Channel headers can include links to documents, tools, or websites.

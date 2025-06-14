@@ -3,6 +3,8 @@ Configure SAML with OneLogin
 
 The following process provides steps to configure SAML 2.0 with OneLogin for Mattermost.
 
+See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
+
 .. include:: sso-saml-before-you-begin.rst
   :start-after: :nosearch:
 

@@ -62,9 +62,10 @@ Enable account creation
 +---------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. note::
-   LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this
-   configuration setting is enabled.
-   
+  - LDAP and SAML users can always create a Mattermost account by logging in using LDAP or SAML user credentials, regardless of whether this configuration setting is enabled.
+  - From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
+  - See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
+
 .. config:setting:: restrict-account-creation-to-specified-email-domains
   :displayname: Restrict account creation to specified email domains (Signup)
   :systemconsole: Authentication > Signup
@@ -207,8 +208,9 @@ Enable sign-in with email
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. note::
-  To provide users with only a single email sign in option on the login page, ensure that the
-  `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**. 
+  - To provide users with only a single email sign in option on the login page, ensure that the `enable sign-in with username <#enable-sign-in-with-username>`__ configuration setting is set to **false**.
+  - From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
+
 
 .. config:setting:: enable-sign-in-with-username
   :displayname: Enable sign-in with username (Signup)
@@ -1018,6 +1020,33 @@ Synchronization interval (minutes)
 .. note::
   LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
 
+.. config:setting:: re-add-removed-members-on-sync
+  :displayname: Re-add removed members on sync (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.ReAddRemovedMembers
+  :environment: MM_LDAPSETTINGS_READDREMOVEDMEMBERS
+  :description: Enable this setting to re-add members of the LDAP group that were previously removed from group-synchronized teams or channels during LDAP synchronization. Disabled by default.
+
+Re-add removed members on sync
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enable this setting to re-add members of the LDAP group that were   | - System Config path: **Authentication > AD/LDAP**                      |
+| previously removed from group-synchronized teams or channels        | - ``config.json`` setting: ``LdapSettings`` > ``ReAddRemovedMembers``   |
+| during LDAP synchronization.                                        | - Environment variable: ``MM_LDAPSETTINGS_READDREMOVEDMEMBERS``         |
+|                                                                     |                                                                         |
+| - **true**: Members of the LDAP group who were previously removed   |                                                                         |
+|   are re-added to group-synchronized teams or channels during LDAP  |                                                                         |
+|   synchronization.                                                  |                                                                         |
+| - **false**: **(Default)** Members of the LDAP group who were       |                                                                         |
+|   previously removed are not re-added to group-synchronized         |                                                                         |
+|   teams or channels during LDAP synchronization.                    |                                                                         |
++---------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  The :ref:`mmctl ldap sync <manage/mmctl-command-line-tool:mmctl ldap sync>` command takes precedence over this server configuration setting. If you have this setting disabled, and run the mmctl command with the ``--include-removed-members`` flag, removed members will be re-added during LDAP synchronization.
+
 .. config:setting:: maximum-page-size
   :displayname: Maximum page size (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -1092,6 +1121,8 @@ SAML 2.0
   :start-after: :nosearch:
 
 Access the following configuration settings in the System Console by going to **Authentication > SAML 2.0**.
+
+See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
 
 .. important::
 

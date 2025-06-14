@@ -48,7 +48,7 @@ Mattermost Server v10.4.0
 Mattermost Server v10.3.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-- The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
+- The Classic Mobile App has been phased out. Please download the new v2 Mobile App from the `Apple App Store <https://apps.apple.com/us/app/mattermost/id1257222717>`__ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__. See more details in the `classic mobile app deprecation <https://forum.mattermost.com/t/classic-mobile-app-deprecation/18703>`_ Mattermost forum post.
 
 Mattermost Server v10.2.0
 ~~~~~~~~~~~~~~~~~~~~~~~~~

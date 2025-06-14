@@ -4,8 +4,12 @@ Navigate boards
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-  
-If you've already created a board, you can open Boards using the Apps Bar. If you don't see the Apps Bar to the right of your screen, you can access boards using the product menu in the top left corner of Mattermost.
+Access boards
+-------------
+
+To access Mattermost Boards, select the **Product** |product-list| menu in the top left corner of Mattermost, and then select **Boards** to view all the boards for your team.
+
+To access boards linked to a channel, select the **Toggle Linked Boards** icon to the far right.
 
 Link a board to a channel
 -------------------------

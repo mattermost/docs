@@ -147,7 +147,6 @@ Use ``mattermost_system_server_start_time`` to dynamically add an annotation cor
 .. image:: ../images/mattermost_system_server_start_time.png
    :alt: Example debugging metrics, including number of messages per second, in a self-hosted Mattermost deployment.
 
-
 Debugging metrics - jobs
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -229,7 +228,6 @@ Web app metrics
 - ``mattermost_webapp_team_switch``: Duration of the time taken from when a user clicks on a team in the LHS to when posts in that team become visible (seconds).
 - ``mattermost_webapp_time_to_first_byte``: Duration from when a browser starts to request a page from a server until when it starts to receive data in response (seconds).
 
-
 Standard Go metrics
 --------------------
 
@@ -267,6 +265,14 @@ where you can replace ``localhost`` with the server name. The profiling reports 
 
 .. image:: ../images/perf_monitoring_go_metrics.png
    :alt: Example Go metrics for HTTP server runtime profiling data and system monitoring, including memory usage, Go routines, and garbage collection duration, in a self-hosted Mattermost deployment.
+
+Host/system metrics
+--------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+From Metrics Plugin v0.7.0, you can pull metrics from `node exporter <https://github.com/prometheus/node_exporter>`_ targets to access network-related panels for Mattermost Calls.
 
 Frequently asked questions
 --------------------------

@@ -108,7 +108,13 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 .. note::
 
    - Ensure at least one AD/LDAP user is in Mattermost or the sync won't complete.
-   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details. 
+   - Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to modifying these settings. See the :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.
+
+3. From Mattermost v10.9, you can configure Mattermost to automatically :ref:`re-add members of an LDAP group to group-synchronized teams or channels <configure/authentication-configuration-settings:re-add removed members on sync>` during LDAP synchronization, even if those members were previously removed. This option enables you to maintain uninterrupted collaboration and address specific organizational needs, ensuring users who were unintentionally removed due to changes in LDAP group membership, synchronization errors, or exceptions to the standard group sync rules can be seamlessly restored.
+
+  .. note::
+
+    The :ref:`mmctl ldap sync <manage/mmctl-command-line-tool:mmctl ldap sync>` command takes precedence over this server configuration setting. If you have this setting disabled, and run the mmctl command with the ``--include-removed-members`` flag, removed members will be re-added during LDAP synchronization.
 
 Configure AD/LDAP sign-in using filters
 ----------------------------------------

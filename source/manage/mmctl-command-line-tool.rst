@@ -6436,6 +6436,10 @@ mmctl user email
 
 Change the email address associated with a user.
 
+.. note::
+
+   From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using this mmctl command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
+
 **Format**
 
 .. code-block:: sh

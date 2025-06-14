@@ -48,3 +48,14 @@ File storage
 For local storage or storage via Minio, encryption-at-rest is available for files stored via hardware and software disk encryption solutions applied to the server.
 
 For Amazon’s proprietary S3 system, encryption-at-rest is available via :ref:`server-side encryption with Amazon S3-managed keys <configure/environment-configuration-settings:enable server-side encryption for amazon s3>` in Mattermost enterprise-badge.
+
+SAML encryption support
+-----------------------
+
+Mattermost supports the following encryption methods for SAML:
+
+* aes128-gcm
+* aes192-gcm
+* aes256-gcm
+* aes128-cbc
+* aes256-cbc

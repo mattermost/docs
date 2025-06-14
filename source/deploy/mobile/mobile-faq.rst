@@ -71,7 +71,7 @@ The full process is outlined below:
 
 Regardless of whether you're using iOS or Android, the MPNS needs to have access to the appropriate secret compiled into the mobile app.
 
-This means if you use the Mattermost apps from the Apple App Store or Google Play, you need to use the hosted push notification service from Mattermost, Inc. If you compile the apps yourself, you must also compile and use your own MPNS with the corresponding secret.
+This means if you use the Mattermost apps from the `Apple App Store <https://www.apple.com/app-store/>`__ or `Google Play Store <https://play.google.com/store/games?hl=en>`__, you need to use the hosted push notification service from Mattermost, Inc. If you compile the apps yourself, you must also compile and use your own MPNS with the corresponding secret.
 
 4. Either APNS or FCM receives the push notification message from MPNS over TLS, and then relays the message to the user's iOS or Android device to be displayed.
 
@@ -177,7 +177,7 @@ The following options are available for securing your push notification service:
     - MPNS and Google’s Firebase Cloud Messaging (FCM)
     - MPNS and your Mattermost server
 
-4. Securing the Mattermost Apple App Store and Google Play apps:
+4. Securing apps installed through the Apple App Store and Google Play:
 
   - When using Mattermost mobile apps from the App Store and Google Play, purchase an annual subscription to Mattermost Enterprise or Professional to use Mattermost's :ref:`Hosted Push Notification Service (HPNS) <configure/environment-configuration-settings:enable push notifications>`.
 
@@ -353,7 +353,7 @@ You will need to `whitelist one subdomain and one port from Apple <https://devel
 Run App Store versions of the Mattermost mobile apps
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`_ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`_ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) <configure/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
+You can use the mobile applications hosted by Mattermost in the `Apple App Store <https://apps.apple.com/ca/app/mattermost/id1257222717>`__ or `Google Play Store <https://play.google.com/store/apps/details?id=com.mattermost.rn>`__ and connect with the :ref:`Mattermost Hosted Push Notification Service (HPNS) <configure/environment-configuration-settings:hosted push notifications service (hpns)>` through your corporate proxy.
 
 .. note::
   

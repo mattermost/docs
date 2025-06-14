@@ -7,7 +7,7 @@ Settings
 Set language
 ------------
 
-To set your language on boards, select the gear icon |gear| next to your profile picture, then go to **Set language** to apply your language settings.  Language settings in Boards are independent from language settings in Channels.
+In a board, set your preferred language by selecting the gear icon |gear| next to your profile picture, then go to **Set language** to apply your language settings.  Language settings in Boards are independent from language settings in Channels.
 
 Random emoji icons
 ------------------

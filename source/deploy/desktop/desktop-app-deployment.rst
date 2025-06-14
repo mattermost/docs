@@ -11,11 +11,13 @@ Learn more about desktop app :ref:`software requirements <deploy/software-hardwa
 Download
 ---------
 
-Download and install the Mattermost desktop app from the App Store (macOS), Microsoft Store (Windows), or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`. Under **Downloads**, you're notified when new desktop app releases become available, where you can view the changelog and download updates.
+Download and install the Mattermost desktop app from the `App Store (macOS) <https://www.apple.com/app-store/>`_, `Microsoft Store (Windows) <https://apps.microsoft.com/home?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`. 
+
+In Matermost, you're notified under **Downloads** when new desktop app releases become available, where you can view the changelog and download updates.
 
 We strongly recommend installing the desktop app on a local drive. Network shares aren't supported.
 
-If you prefer to manage distribution of the mobile app to your users, see the deployment options below.
+If you prefer to manage distribution of the mobile app to your users, see the additional deployment options below.
 
 Deployment options
 ------------------

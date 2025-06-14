@@ -6,6 +6,8 @@ Configure SAML with Keycloak
 
 The following process provides steps to configure SAML with Keycloak for Mattermost.
 
+See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
+
 Set up a connection app for Mattermost SSO
 -------------------------------------------
 

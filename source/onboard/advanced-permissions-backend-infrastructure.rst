@@ -236,6 +236,8 @@ Permissions in Mattermost are a property of the server code base and are not cre
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | order_bookmark_private_channel               | channel | Reorder bookmarks in a private channel.                                                                                                                                                               |
 +----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| manage_channel_banner                        | channel | Manage channel banners.                                                                                                                                                                               |
++----------------------------------------------+---------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 ``Roles`` field
 ~~~~~~~~~~~~~~~
@@ -284,6 +286,7 @@ The following built-in roles with default permissions are available:
 - edit_bookmark_private_channel
 - delete_bookmark_private_channel
 - order_bookmark_private_channel
+- manage_channel_banner
 
 *channel_guest*
 
@@ -456,6 +459,7 @@ The following built-in roles with default permissions are available:
 - edit_bookmark_private_channel
 - delete_bookmark_private_channel
 - order_bookmark_private_channel
+- manage_channel_banner
 
 *system_custom_group_admin*
 
@@ -636,6 +640,7 @@ The following built-in roles with default permissions are available:
 - edit_bookmark_private_channel
 - delete_bookmark_private_channel
 - order_bookmark_private_channel
+- manage_channel_banner
 
 *team_guest*
 
