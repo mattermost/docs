@@ -387,18 +387,34 @@ The following Docker images are needed for full calls functionality:
 
 Run this phase on a machine with internet access to download and prepare the Docker images.
 
-1. **Run the setup script**:
+1. **Set up a local Docker registry**:
    ```bash
-   chmod +x air-gap-docker-registry-setup.sh
-   sudo ./air-gap-docker-registry-setup.sh
+   # Create registry data directory
+   sudo mkdir -p /opt/docker-registry/data
+   
+   # Start a local Docker registry
+   docker run -d \
+     --name local-registry \
+     --restart=always \
+     -p 5000:5000 \
+     -v /opt/docker-registry/data:/var/lib/registry \
+     registry:2
    ```
 
-2. **What the script does**:
-   - Sets up a local Docker registry on port 5000
-   - Downloads required Mattermost Docker images
-   - Pushes images to the local registry
-   - Configures Docker daemon for insecure registry access
-   - Creates deployment scripts for the air-gapped environment
+2. **Download and push required images**:
+   ```bash
+   # Pull required images from Docker Hub
+   docker pull mattermost/calls-offloader:v0.9.3
+   docker pull mattermost/calls-transcriber:latest
+   
+   # Tag images for local registry
+   docker tag mattermost/calls-offloader:v0.9.3 localhost:5000/mattermost/calls-offloader:v0.9.3
+   docker tag mattermost/calls-transcriber:latest localhost:5000/mattermost/calls-transcriber:latest
+   
+   # Push images to local registry
+   docker push localhost:5000/mattermost/calls-offloader:v0.9.3
+   docker push localhost:5000/mattermost/calls-transcriber:latest
+   ```
 
 3. **Export the registry data**:
    ```bash
@@ -413,8 +429,7 @@ Run this phase on a machine with internet access to download and prepare the Doc
 
 Transfer the following files to your air-gapped network:
 - `docker-registry-data.tar.gz`
-- `registry-image.tar.gz` 
-- `deploy-airgap-calls.sh` (created by setup script)
+- `registry-image.tar.gz`
 
 1. **Load the registry container**:
    ```bash
@@ -437,14 +452,17 @@ Transfer the following files to your air-gapped network:
      registry:2
    ```
 
-4. **Configure Docker and calls-offloader**:
+4. **Configure Docker daemon for insecure registry access**:
    ```bash
-   sudo /opt/deploy-airgap-calls.sh
+   # Create or update Docker daemon configuration
+   sudo mkdir -p /etc/docker
+   echo '{"insecure-registries": ["localhost:5000"]}' | sudo tee /etc/docker/daemon.json
+   sudo systemctl restart docker
    ```
 
 ### Manual Configuration
 
-If you prefer to configure manually instead of using the scripts:
+For reference, here are the individual configuration steps:
 
 #### 1. Docker Daemon Configuration
 
@@ -546,22 +564,30 @@ docker pull localhost:5000/mattermost/calls-offloader:latest
 
 **Using a Different Registry Host**
 
-If you want to run the registry on a different host:
+If you want to run the registry on a different host, replace `localhost:5000` with your registry host in all commands:
 
 ```bash
-export REGISTRY_HOST="registry.internal.domain"
-export REGISTRY_PORT="5000"
-./air-gap-docker-registry-setup.sh
+# Example: using a dedicated registry server
+REGISTRY_HOST="registry.internal.domain:5000"
+
+# Update Docker daemon configuration
+echo "{\"insecure-registries\": [\"$REGISTRY_HOST\"]}" | sudo tee /etc/docker/daemon.json
+
+# Update calls-offloader configuration
+sed -i "s|localhost:5000|$REGISTRY_HOST|g" /opt/calls-offloader/calls-offloader.toml
 ```
 
 **Custom Image Versions**
 
-To use specific versions of the calls images:
+To use specific versions of the calls images, update the version tags in the docker commands:
 
 ```bash
-export CALLS_OFFLOADER_VERSION="v0.8.0"
-export CALLS_TRANSCRIBER_VERSION="v1.2.0"
-./air-gap-docker-registry-setup.sh
+# Example: using specific versions
+OFFLOADER_VERSION="v0.8.0"
+TRANSCRIBER_VERSION="v1.2.0"
+
+docker pull mattermost/calls-offloader:$OFFLOADER_VERSION
+docker pull mattermost/calls-transcriber:$TRANSCRIBER_VERSION
 ```
 
 ## Other Calls Documentation
