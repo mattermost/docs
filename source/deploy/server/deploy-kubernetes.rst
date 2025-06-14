@@ -11,22 +11,19 @@ Platform
 
 Choose your preferred platform below for specific deployment instructions:
 
+.. tab:: Mattermost Operator
+
+  .. include:: kubernetes/deploy-k8s.rst
+    :start-after: :nosearch:
+
 .. tab:: Azure
-  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s-aks.rst
     :start-after: :nosearch:
 
 .. tab:: Oracle
-  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s-oke.rst
-    :start-after: :nosearch:
-
-.. tab:: Other Kubernetes
-  :parse-titles:
-
-  .. include:: kubernetes/deploy-k8s.rst
     :start-after: :nosearch:
 
 Frequently Asked Questions
