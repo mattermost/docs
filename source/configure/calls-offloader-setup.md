@@ -358,6 +358,212 @@ tail -f /opt/calls-offloader/calls-offloader.log
 
 Monitor calls-offloader performance and resource usage to ensure optimal operation. See [Calls Metrics and Monitoring](calls-metrics-monitoring.md) for details on setting up metrics and observability.
 
+## Air-Gapped Deployments
+
+When deploying calls-offloader in air-gapped environments, you need to set up a local Docker registry since the service creates Docker containers that normally pull images from Docker Hub.
+
+### Overview
+
+The calls-offloader service creates Docker containers to handle:
+- **Call Recording**: Creates containers to record audio/video from calls
+- **Call Transcription**: Creates containers to transcribe recorded calls using speech-to-text
+
+These containers are typically pulled from the `mattermost` registry on Docker Hub, but in air-gapped networks, you need to:
+1. Set up a local Docker registry
+2. Pre-load the required Docker images
+3. Configure the calls-offloader to use the local registry
+
+### Required Docker Images
+
+The following Docker images are needed for full calls functionality:
+
+- `mattermost/calls-offloader:v0.9.3` (or latest version)
+- `mattermost/calls-transcriber:latest`
+- `registry:2` (for the local Docker registry)
+
+### Setup Process
+
+#### Phase 1: Preparation (Internet-Connected Environment)
+
+Run this phase on a machine with internet access to download and prepare the Docker images.
+
+1. **Run the setup script**:
+   ```bash
+   chmod +x air-gap-docker-registry-setup.sh
+   sudo ./air-gap-docker-registry-setup.sh
+   ```
+
+2. **What the script does**:
+   - Sets up a local Docker registry on port 5000
+   - Downloads required Mattermost Docker images
+   - Pushes images to the local registry
+   - Configures Docker daemon for insecure registry access
+   - Creates deployment scripts for the air-gapped environment
+
+3. **Export the registry data**:
+   ```bash
+   # Create an archive of the registry data
+   sudo tar -czf docker-registry-data.tar.gz -C /opt/docker-registry/data .
+   
+   # Also backup the registry container image
+   docker save registry:2 | gzip > registry-image.tar.gz
+   ```
+
+#### Phase 2: Air-Gap Deployment
+
+Transfer the following files to your air-gapped network:
+- `docker-registry-data.tar.gz`
+- `registry-image.tar.gz` 
+- `deploy-airgap-calls.sh` (created by setup script)
+
+1. **Load the registry container**:
+   ```bash
+   gunzip -c registry-image.tar.gz | docker load
+   ```
+
+2. **Set up the registry data**:
+   ```bash
+   sudo mkdir -p /opt/docker-registry/data
+   sudo tar -xzf docker-registry-data.tar.gz -C /opt/docker-registry/data
+   ```
+
+3. **Start the local registry**:
+   ```bash
+   docker run -d \
+     --name local-registry \
+     --restart=always \
+     -p 5000:5000 \
+     -v /opt/docker-registry/data:/var/lib/registry \
+     registry:2
+   ```
+
+4. **Configure Docker and calls-offloader**:
+   ```bash
+   sudo /opt/deploy-airgap-calls.sh
+   ```
+
+### Manual Configuration
+
+If you prefer to configure manually instead of using the scripts:
+
+#### 1. Docker Daemon Configuration
+
+Create or update `/etc/docker/daemon.json`:
+```json
+{
+    "insecure-registries": ["localhost:5000"]
+}
+```
+
+Restart Docker:
+```bash
+sudo systemctl restart docker
+```
+
+#### 2. Calls-Offloader Configuration
+
+Update `/opt/calls-offloader/calls-offloader.toml`:
+
+```toml
+[jobs]
+# Change this line:
+image_registry = "mattermost"
+
+# To this:
+image_registry = "localhost:5000/mattermost"
+```
+
+Restart the calls-offloader service:
+```bash
+sudo systemctl restart calls-offloader
+```
+
+### Verification
+
+#### Test Registry Access
+```bash
+# List available repositories
+curl http://localhost:5000/v2/_catalog
+
+# Test pulling an image
+docker pull localhost:5000/mattermost/calls-offloader:latest
+```
+
+#### Test Calls Functionality
+
+1. **Check calls-offloader logs**:
+   ```bash
+   sudo journalctl -u calls-offloader -f
+   ```
+
+2. **Verify calls-offloader API**:
+   ```bash
+   curl http://localhost:4545/version
+   ```
+
+3. **Test recording job creation** (requires proper Mattermost integration):
+   - Start a call in Mattermost
+   - Enable recording
+   - Check that Docker containers are created for recording jobs
+
+### Troubleshooting Air-Gap Deployments
+
+#### Common Issues
+
+1. **Registry not accessible**:
+   - Check that the registry container is running: `docker ps | grep registry`
+   - Verify Docker daemon configuration includes insecure registry
+   - Check firewall settings on port 5000
+
+2. **Image pull failures**:
+   - Verify images are in the registry: `curl http://localhost:5000/v2/_catalog`
+   - Check Docker daemon logs: `sudo journalctl -u docker`
+
+3. **calls-offloader fails to create jobs**:
+   - Check calls-offloader logs: `sudo journalctl -u calls-offloader`
+   - Verify the `image_registry` configuration in calls-offloader.toml
+   - Ensure the calls-offloader service can reach the registry
+
+#### Log Locations
+
+- Setup script logs: `/tmp/air-gap-registry-setup.log`
+- calls-offloader logs: `/opt/calls-offloader/calls-offloader.log`
+- Docker daemon logs: `sudo journalctl -u docker`
+- Registry container logs: `docker logs local-registry`
+
+#### Security Considerations
+
+1. **Insecure Registry**: The setup uses an insecure HTTP registry for simplicity. For production, consider:
+   - Setting up TLS certificates for the registry
+   - Implementing authentication
+   - Using proper firewall rules
+
+2. **Network Access**: Ensure the registry is only accessible within your private network
+
+3. **Image Verification**: Consider implementing image signing and verification processes
+
+#### Advanced Configuration
+
+**Using a Different Registry Host**
+
+If you want to run the registry on a different host:
+
+```bash
+export REGISTRY_HOST="registry.internal.domain"
+export REGISTRY_PORT="5000"
+./air-gap-docker-registry-setup.sh
+```
+
+**Custom Image Versions**
+
+To use specific versions of the calls images:
+
+```bash
+export CALLS_OFFLOADER_VERSION="v0.8.0"
+export CALLS_TRANSCRIBER_VERSION="v1.2.0"
+./air-gap-docker-registry-setup.sh
+```
+
 ## Other Calls Documentation
 
 - [Calls Overview](calls-deployment.md): Overview of deployment options and architecture
