@@ -1779,9 +1779,6 @@ Allow file sharing
 Allow file uploads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              | - System Config path: **Site Configuration > File Sharing and Downloads**            |
 | - **false**: Prevents users from attaching files (including images) to messages from mobile apps. | - ``config.json`` setting: ``FileSettings`` > ``EnableMobileUpload`` > ``true``      |
@@ -1799,9 +1796,6 @@ Allow file uploads on mobile
 
 Allow file downloads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables file downloads on mobile apps.                                               | - System Config path: **Site Configuration > File sharing and downloads**           |
@@ -1905,7 +1899,7 @@ Enable end user notices
 Connected workspaces
 ---------------------------
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 

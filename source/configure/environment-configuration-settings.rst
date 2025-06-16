@@ -3680,7 +3680,7 @@ From Mattermost v10.7 and mobile app v2.27, you can configure biometric authenti
 Enable biometric authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
+.. include:: ../_static/badges/ent-adv-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------+
@@ -3717,7 +3717,7 @@ Enable biometric authentication
 Enable jailbreak/root protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
+.. include:: ../_static/badges/ent-adv-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------+----------------------------------------------------------------------------------------+
@@ -3750,7 +3750,7 @@ Enable jailbreak/root protection
 Prevent screen capture
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-adv-only.rst
+.. include:: ../_static/badges/ent-adv-only.rst
   :start-after: :nosearch:
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -3886,7 +3886,7 @@ This setting isn't available in the System Console and can only be enabled in ``
 Redis cache backend
 ~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted.rst
+.. include:: ../_static/badges/ent-adv-selfhosted.rst
   :start-after: :nosearch:
 
 From Mattermost v10.4, Mattermost Enterprise customers can configure `Redis <https://redis.io/>`_ (Remote Dictionary Server) as an alternative cache backend. Redis is an open-source, in-memory data structure store that can be used as a database, cache, and message broker. It supports various data structures and is a top choice for its performance because its able to store data in memory and provide very quick data access.
