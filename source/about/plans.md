@@ -66,19 +66,19 @@
     <tr class="section"><td colspan="7"><strong>Channel-based messaging</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS and Android devices, with 1-1 audio calls and screen share, threaded discussions, search, custom branding themes and emojis, and availability in 20 languages.</strong></td></tr>
     <tr>
-      <td><strong>Messaging, file sharing, and link and file previews across device platforms</strong>: Channels-based messaging including 1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS, and Android devices.</td>
+      <td><strong>Messaging, file sharing, and link and file previews across device platforms</strong>: <a href="https://docs.mattermost.com/collaborate/collaborate-within-channels.html">Channels-based messaging</a> including 1-1, group messaging, public and private channels, <a href="https://docs.mattermost.com/collaborate/share-files-in-messages.html">file sharing </a>, and <a href="https://docs.mattermost.com/collaborate/share-files-in-messages.html#preview-file-attachments">link and media previews</a> across web, PC, Mac, iOS, and Android devices.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>1:1 audio calls and screen sharing</strong>: Call another user to start a 1-1 audio discussion in web, desktop, and mobile experiences with optional screen sharing.</td>
+      <td><strong>1:1 audio calls and screen sharing</strong>: <a href="https://docs.mattermost.com/collaborate/">Call another user</a> to start a 1-1 audio discussion in web, desktop, and mobile experiences with optional <a href="https://docs.mattermost.com/collaborate/share-files-in-messages.html#preview-file-attachments">screen sharing</a>.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Threaded discussions</strong>: Organize discussions within channels using <a href="https://docs.mattermost.com/collaborate/organize-conversations.html">threaded discussions</a> and the thread inbox to follow-up on threaded discussions in addition to channels.</td>
+      <td><strong>Threaded discussions</strong>: Organize discussions within channels using <a href="https://docs.mattermost.com/collaborate/organize-conversations.html">threaded discussions</a> and the <a href="https://docs.mattermost.com/collaborate/organize-conversations.html#view-all-threads">thread inbox</a> to follow-up on threaded discussions in addition to channels.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Core search</strong>: Search over messages and files in Mattermost. Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, <a href="https://docs.mattermost.com/scale/elasticsearch.html">Enterprise Search</a> is recommended.</td>
+      <td><strong>Core search</strong>: Search over <a href="https://docs.mattermost.com//collaborate/search-for-messagess">messages</a> and <a href="https://docs.mattermost.com/collaborate/search-for-messages.html#search-for-files">files</a> in Mattermost. Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, <a href="https://docs.mattermost.com/scale/enterprise-search.html#enterprise-search">Enterprise Search</a> is recommended.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -86,34 +86,34 @@
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Available in 20 languages</strong>: Support for English (U.S., Australian), Japanese, Korean, Swedish, Dutch, French, German, Italian, Spanish, Turkish, Polish, Portuguese (Brazil), Romanian, Vietnamese, Ukrainian, Bulgarian, Hungarian, Persian, Russian, and Chinese (Simplified and Traditional) languages.</td>
+      <td><strong>Available in 20+ languages</strong>: Support for English (U.S., Australian), Japanese, Korean, Swedish, Dutch, French, German, Italian, Spanish, Turkish, Polish, Portuguese (Brazil), Romanian, Vietnamese, Ukrainian, Bulgarian, Hungarian, Persian, Russian, and Chinese (Simplified and Traditional) <a href="https://docs.mattermost.com/preferences/manage-your-display-options.html#language">languages</a>.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- AI-accelerated collaboration -->
     <tr class="section"><td colspan="7"><strong>AI-accelerated collaboration</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Integrate your preferred LLM in 1-1, group messaging, public and private channels, with audio calls and screen share, and threaded discussions to speed workflows, increase efficiency and unlock innovation.</strong></td></tr>
     <tr>
-      <td><strong>Interactive AI bot support</strong>: Enable organizations to work with LLM-powered AI bots through Direct Messages, Group Messages, threads and @mentions to bot in private and public channels with full commercial support from Mattermost, Inc.</td>
+      <td><strong>Interactive AI bot support</strong>: Enable organizations to <a href="https://docs.mattermost.com/guides/agents.html">work with LLM-powered AI bots </a> through Direct Messages, Group Messages, threads, and @mentions to bot in private and public channels with full commercial support from Mattermost, Inc.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Flexible bring-your-own-LLM integration</strong>: Connect Mattermost to any LLM platform compatible with OpenAI protocol across public cloud, private cloud and air gapped edge including OpenAI, Llama, Anthropic, and custom LLMs.</td>
+      <td><strong>Flexible bring-your-own-LLM integration</strong>: <a href="https://docs.mattermost.com/agents/docs/providers.html">Connect Mattermost to any LLM platform</a> compatible with OpenAI protocol across public cloud, private cloud and air gapped edge including OpenAI, Llama, Anthropic, and custom LLMs.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Contextual summarization and composition</strong>: Enable organizational interaction with LLMs with permission-restricted access to Mattermost conversations, threads, call and meeting summaries to summarize topics, answer questions and follow-ups, note action items and open questions and compose draft messages and responses.</td>
+      <td><strong>Contextual summarization and composition</strong>: Enable organizational interaction with LLMs with permission-restricted access to Mattermost conversations, <a href="https://docs.mattermost.com/guides/agents.html#analyze-threads-and-channels">threads </a>, <a href="https://docs.mattermost.com/guides/agents.html#record-calls-to-summarize-meetings">call and meeting summaries</a> to summarize topics, answer questions and follow-ups, note action items and open questions and compose draft messages and responses.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Private, air-gapped &amp; DDIL AI operations</strong>: Run AI-accelerated operations in private cloud, air-gapped and disconnected, denied, intermittent and limited-bandwidth (DDIL) environments with open source and custom LLMs self-hosted alongside workflow, chat operations, audio calling, screen sharing, recording, transcription, analysis, workflow and summarization capabilities.</td>
+      <td><strong>Private, air-gapped &amp; DDIL AI operations</strong>: Run AI-accelerated operations in <a href="https://docs.mattermost.com/agents/docs/sovereign_ai.html">private cloud, air-gapped and disconnected, denied, intermittent and limited-bandwidth (DDIL) environments</a> with open source and custom LLMs self-hosted alongside workflow, chat operations, audio calling, screen sharing, recording, transcription, analysis, workflow and summarization capabilities.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Real-time channel briefing</strong>: Concisely summarize unread messages, action items and unanswered questions in channels to focus attention and accelerate priority responses and workflows.</td>
+      <td><strong>Real-time channel briefing</strong>: Concisely <a href="https://docs.mattermost.com/agents/docs/sovereign_ai.html">summarize unread messages, action items and unanswered questions</a> in channels to focus attention and accelerate priority responses and workflows.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Q&A with access-controlled backend systems</strong>: Receive secure and compliant real-time answers to questions about permission-controlled backend systems connected with Mattermost channels which can optionally pass back end user credentials to work with access-controlled data. For example, asking a channel connected with an issue tracking system which code defect tickets they have access to which could expose security vulnerabilities.</td>
+      <td><strong>Q&A with access-controlled backend systems</strong>: Receive <a href="https://docs.mattermost.com/collaborate/agents-context-management.html">secure and compliant real-time answers to questions about permission-controlled backend systems</a> connected with Mattermost channels which can optionally pass back end user credentials to work with access-controlled data. For example, asking a channel connected with an issue tracking system which code defect tickets they have access to which could expose security vulnerabilities.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -136,7 +136,7 @@
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Markdown compatibility</strong>: Easily move information across Mattermost discussions and technical tooling outputs with built-in support for the Markdown technical formatting standard. Text formatting, code snippets, media embedding, tables, status indicators, and emojis render consistently across the Mattermost user experience and Markdown-compatible tools.</td>
+      <td><strong>Markdown compatibility</strong>: Easily move information across Mattermost discussions and technical tooling outputs with built-in support for the <a href="https://docs.mattermost.com/collaborate/format-messages.html#use-markdown">Markdown</a> technical formatting standard. Text formatting, code snippets, media embedding, tables, status indicators, and emojis render consistently across the Mattermost user experience and Markdown-compatible tools.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -151,15 +151,15 @@
     <tr class="section"><td colspan="7"><strong>Advanced access controls &amp; automation</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Centralize and automate user identity and permissions with a range of single-sign-on (SSO), user synchronization and advanced access control capabilities.</strong></td></tr>
     <tr>
-      <td><strong>Email authentication</strong>: Basic email-based authentication with username and password is available in Mattermost Free and higher-level Mattermost packages. While the method includes a number of core admin features around email address verification, password complexity, maximum login attempts, and password reset, among others, it is highly recommended that this method of authentication is only used in small teams on private networks.</td>
+      <td><strong>Email authentication</strong>: Basic <a href="https://docs.mattermost.com/configure/authentication-configuration-settings.html#email">email-based authentication</a> with username and password is available in Mattermost Free and higher-level Mattermost packages. While the method includes a number of core admin features around email address verification, password complexity, maximum login attempts, and password reset, among others, it is highly recommended that this method of authentication is only used in small teams on private networks.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Single sign-on w/SAML 2.0, Entra ID, Okta, and others</strong>: Centralize, integrate, and automate identify management and access controls by enabling Mattermost to operate as a SAML 2.0 service provider. Integrate with SAML 2.0-based providers including Entra ID (formerly Office365 SSO), Okta, OneLogin, Microsoft ADFS SAML Configuration, and Keycloak, among others.</td>
+      <td><strong>Single sign-on w/SAML 2.0, Entra ID, Okta, and others</strong>: Centralize, integrate, and automate identify management and access controls by enabling Mattermost to operate as a SAML 2.0 service provider. Integrate with SAML 2.0-based providers including <a href="https://docs.mattermost.com/onboard/sso-entraid.html">Entra ID (formerly Office365 SSO)</a>, <a href="https://docs.mattermost.com/onboard/sso-saml-okta.html">Okta</a>, <a href="https://docs.mattermost.com/onboard/sso-saml-onelogin.html">OneLogin</a>, <a href="https://docs.mattermost.com/onboard/sso-saml-adfs-msws2016.html">Microsoft ADFS SAML Configuration</a>, and <a href="https://docs.mattermost.com/onboard/sso-saml-keycloak.html">Keycloak</a>, among others.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>SSO with AD/LDAP, OpenID, and others</strong>: Simplify sign-on and user management with non-SAML-based SSO options including <a href="https://docs.mattermost.com/onboard/sso-openidconnect.html">Open ID</a>, Google SSO, and <a href="https://docs.mattermost.com/onboard/sso-gitlab.html">GitLab SSO</a>. Moreover, Mattermost offers “same sign-on” with Active Directory/LDAP by enabling the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional multi-factor authentication (MFA).</td>
+      <td><strong>SSO with AD/LDAP, OpenID, and others</strong>: Simplify sign-on and user management with non-SAML-based SSO options including <a href="https://docs.mattermost.com/onboard/sso-openidconnect.html">Open ID</a>, <a href="https://docs.mattermost.com/onboard/sso-google.html">Google SSO</a>, and <a href="https://docs.mattermost.com/onboard/sso-gitlab.html">GitLab SSO</a>. Moreover, Mattermost offers “same sign-on” with Active Directory/LDAP by enabling the same credentials used in on-prem AD/LDAP deployments to be reused in Mattermost, with optional <a href="https://docs.mattermost.com/onboard/multi-factor-authentication.html">multi-factor authentication (MFA)</a>.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
