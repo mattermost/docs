@@ -6,7 +6,10 @@
 (release-v10.9-feature-release)=
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release day: 2025-06-16**
+- **10.9.1, release day TBD**
+  - Fixing an issue where Direct/Group Messages are sometimes missing on initial load [MM-64481](https://mattermost.atlassian.net/browse/MM-64481).
+- **10.9.0, released 2025-06-16**
+  - Original 10.9.0 release.
 
 ### Compatibility
  - Updated the minimum supported versions of Edge and Chrome to 134+, and Firefox to 128+.
@@ -100,7 +103,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
  - v10.9 is built with Go ``v1.23.7``.
 
 ### Known Issues
- - Direct/Group Messages are sometimes missing on initial load [MM-64481](https://mattermost.atlassian.net/browse/MM-64481).
  - Permissions lists exceed content area for **All Members** and **System Admins** in the System Console [MM-64417](https://mattermost.atlassian.net/browse/MM-64417).
  - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
 
