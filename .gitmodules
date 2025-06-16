@@ -1,4 +1,4 @@
 [submodule "source/agents"]
 	path = source/agents
-	url = https://github.com/mattermost/mattermost-plugin-ai.git
+	url = https://github.com/mattermost/mattermost-plugin-agents.git
 	branch = master
