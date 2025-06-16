@@ -4,13 +4,14 @@ Project and Task Management
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams, and is part of all Mattermost editions.
+Mattermost Boards provides tight integration between project management and Mattermost to align, define, organize, track, and manage work across teams.
 
 .. toctree::
    :maxdepth: 1
    :hidden:
    :titlesonly:
 
+   Navigate boards </boards/navigate-boards>
    Work with boards </boards/work-with-boards>
    Work with cards </boards/work-with-cards>
    Work with views </boards/work-with-views>
@@ -18,7 +19,6 @@ Mattermost Boards provides tight integration between project management and Matt
    Work with calculations </boards/calculations>
    Share and collaborate </boards/share-and-collaborate>
    Import, export, and migrate </boards/migrate-to-boards>
-   Navigate boards </boards/navigate-boards>
    Boards settings </boards/boards-settings>
 
 With Boards you can:
@@ -27,6 +27,11 @@ With Boards you can:
 * **Manage and collaborate on various projects:** Software releases, product launches, meetings, personal to-do’s, events, etc.
 * **Stay on schedule:** Clearly-defined tasks, owners, checklists, deadlines, and calendars.
 * **Increase transparency and keep everybody in the loop:** Everything your team needs in one place, including documents, images, and links that are visible to every stakeholder.
+
+Install Boards
+---------------
+
+Your system admin may need to install and enable Mattermost Boards before you can use it. See the :doc:`install Mattermost Boards </configure/install-boards>` documentation to learn how to install and configure the Boards plugin for your Mattermost instance.
 
 What's a board?
 ---------------
@@ -41,13 +46,6 @@ What's a card?
 Cards are used on a board to track individual work items. Cards are customizable and can have a number of properties added to them, which are then used as a way to tag, sort, and filter the cards.
 
 When working with cards, you can manage properties, add descriptions, attach images, assign them to team members, mention team members, add comments, and so on. Learn more about :doc:`working with cards </boards/work-with-cards>`.
-
-Access your boards
-------------------
-
-Open the **Boards** tab via the product menu in the top left corner of Mattermost, to view all the boards for your team. You can select the Boards icon in the Apps Bar to open the right-hand panel, and display boards linked to the channel or message that you're in.
-
-If you don't see the Apps Bar and your boards layout looks different to what's described, you may be using an older version of Mattermost. The navigation content in this documentation will not be aligned with your navigation, but the functionality described will be applicable across versions unless otherwise noted.
 
 Learn more about working with boards by visiting the following documentation pages:
 
