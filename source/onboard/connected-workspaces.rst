@@ -10,10 +10,6 @@ Connected workspaces in Mattermost behave like regular public and private channe
 
 A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
-.. note::
-
-    The ability to share Mattermost channels across connected workspaces is currently in :ref:`Beta <manage/feature-labels:beta>`. `Learn more <#why-is-this-feature-in-beta>`__.
-
 Set up connected workspaces
 ---------------------------
 
@@ -56,7 +52,7 @@ Create a secure connection
 
     Only system admins can create workspace connections using the System Console.
 
-    1. Go to **Site Configuration > Connected Workspaces (Beta)**.
+    1. Go to **Site Configuration > Connected Workspaces**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Create a connection**.
     3. Specify the **Organization Name** for this connection. The remote system admin must specify this name when accepting a connection invitation.
     4. Select the **Destination Team** as the default team where shared channels will be added.
@@ -99,7 +95,7 @@ Accept a connection invitation
 
 .. tab:: System Console
 
-    1. Go to **Site Configuration > Connected Workspaces (Beta)**.
+    1. Go to **Site Configuration > Connected Workspaces**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Accept an invitation**.
     3. Specify the **Organization Name** for this invitation. This must be the same name specified when creating the connection.
     4. Select the team where shared channels will be added.
@@ -248,11 +244,6 @@ When using the System Console to manage connected workspaces, system admins can 
 
 Frequently Asked Questions
 ---------------------------
-
-Why is this feature in beta?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This feature is considered beta while we recruit customer testing partners. Mattermost QA has tested this feature, but we want to work with system admins to iterate on the most optimal connected workspace experience.
 
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
