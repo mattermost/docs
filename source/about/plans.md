@@ -312,7 +312,4 @@
 
 See a [complete list of features](https://mattermost.com/pricing) on the Mattermost website.
 
-.. note::
-
-  - Mattermost Enterprise Advanced requires a Mattermost Server running v10.9 or later and a PostgreSQL database.
-  - Enterprise plugins must be updated to support the new license (most of which are pre-packaged from v10.9)
+Note: Mattermost Enterprise Advanced requires a Mattermost Server running v10.9 or later and a PostgreSQL database. Enterprise plugins must be updated to support the new license (most of which are pre-packaged from v10.9)
