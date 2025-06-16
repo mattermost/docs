@@ -3665,9 +3665,6 @@ Allow untrusted internal connections
 Mobile security
 ---------------
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 From Mattermost v10.7 and mobile app v2.27, you can configure biometric authentication, prevent Mattermost use on jailbroken or rooted devices, and can block screen captures without relying on an EMM Provider. Configure these options by going to **System Console > Environment > Mobile Security**, or by editing the ``config.json`` file as described in the following tables. Changes to configuration settings in this section require a server restart before taking effect.
 
 .. config:setting:: enable-biometric-authentication
@@ -3682,6 +3679,9 @@ From Mattermost v10.7 and mobile app v2.27, you can configure biometric authenti
 
 Enable biometric authentication
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
 
 +-----------------------------------------------+-------------------------------------------------------------------------------------+
 | Enforce biometric authentication, with        | - System Config path: **Environment > Mobile Security**                             |
@@ -3717,6 +3717,9 @@ Enable biometric authentication
 Enable jailbreak/root protection
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
+
 +-----------------------------------------------+----------------------------------------------------------------------------------------+
 | Prevent access to the app on devices          | - System Config path: **Environment > Mobile Security**                                |
 | detected as jailbroken or rooted. If a        | - ``config.json setting``: ``".NativeAppSettings.MobileJailbreakProtection": false",`` |
@@ -3746,6 +3749,9 @@ Enable jailbreak/root protection
 
 Prevent screen capture
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
 
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+
 | Block screenshots and screen recordings when  | - System Config path: **Environment > Mobile Security**                                 |
