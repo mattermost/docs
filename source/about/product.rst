@@ -21,7 +21,7 @@ Mattermost is an Intelligent Mission Environment (IME), purpose-built for missio
 
 IME integrates secure messaging, workflow automation, task management, and real-time communication within a sovereign, cyber-resilient architecture. It supports extensibility through open APIs and integrations, and runs flexibly across on-premises, cloud, and air-gapped systems—enabling operational focus, adaptability, and resilience from edge nodes to centralized data centers.
 
-.. image:: /images/ime.jpg
+.. image:: /images/ime.png
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment", showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, Development, Security, and Operations (DevSecOps), and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
 
 It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
