@@ -4006,7 +4006,7 @@ Redis cache prefix
 .. config:setting:: enable-webhub-channel-iteration
   :displayname: Enable webhub channel iteration
   :systemconsole: N/A
-  :configjson: EnableWebHubChannelIteration
+  :configjson: ServiceSettings.EnableWebHubChannelIteration
   :environment: MM_SERVICESETTINGS_ENABLEWEBHUBCHANNELITERATION
 
     - **true**: Improves websocket broadcasting performance; however, performance may decrease when users join or leave a channel. Not recommended unless you have at least 200,000 concurrent users actively using Mattermost.
@@ -4028,3 +4028,51 @@ Enable webhub channel iteration
 |                                                      |                                                                                                  |
 | Disabled by default.                                 |                                                                                                  |
 +------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-dedicated-export-filestore-target
+  :displayname: Enable dedicated export filestore target
+  :systemconsole: N/A
+  :configjson: EnableWebHubChannelIteration
+  :environment: MM_FILESETTINGS_DEDICATEDEXPORTSTORE
+
+    - **true**: A new ``ExportFileBackend()`` is generated under ``FileSettings`` using new configuration values for select configuration settings.
+    - **false**: **(Default)** Standard file storage is used. Standard file storage will also be used when the configuration setting or value is omitted.
+
+Enable dedicated export filestore target
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enables the ability to specify an alternate filestore                              | - System Config path: **N/A**                                           |
+| target for Mattermost                                                              | - ``config.json setting``: ``FileSettings`` > ``DedicatedExportStore``  |
+| :doc:`bulk exports </manage/bulk-export-tool>` and                                 | - Environment variable: ``MM_FILESETTINGS_DEDICATEDEXPORTSTORE``        |
+| :doc:`compliance exports </comply/compliance-export>`.                             |                                                                         |
+|                                                                                    |                                                                         |
+| - **True**: A new ``ExportFileBackend()`` is generated                             |                                                                         |
+|   under ``FileSettings`` using new configuration values                            |                                                                         |
+|   for the following configuration settings:                                        |                                                                         |
+|                                                                                    |                                                                         |
+|  - ``ExportDriverName``                                                            |                                                                         |
+|  - ``ExportDirectory``                                                             |                                                                         |
+|  - ``ExportAmazonS3AccessKeyId``                                                   |                                                                         |
+|  - ``ExportAmazonS3SecretAccessKey``                                               |                                                                         |
+|  - ``ExportAmazonS3Bucket``                                                        |                                                                         |
+|  - ``ExportAmazonS3PathPrefix``                                                    |                                                                         |
+|  - ``ExportAmazonS3Region``                                                        |                                                                         |
+|  - ``ExportAmazonS3Endpoint``                                                      |                                                                         |
+|  - ``ExportAmazonS3SSL``                                                           |                                                                         |
+|  - ``ExportAmazonS3SignV2``                                                        |                                                                         |
+|  - ``ExportAmazonS3SSE``                                                           |                                                                         |
+|  - ``ExportAmazonS3Trace``                                                         |                                                                         |
+|  - ``ExportAmazonS3RequestTimeoutMilliseconds``                                    |                                                                         |
+|  - ``ExportAmazonS3PresignExpiresSeconds``                                         |                                                                         |
+|                                                                                    |                                                                         |
+| - **False**: (**Default**) Standard                                                |                                                                         |
+|   :ref:`file storage <configure/environment-configuration-settings:file storage>`  |                                                                         |
+|   is used. Standard file storage will also be used when the configuration setting  |                                                                         |
+|   or value is omitted.                                                             |                                                                         |
++------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  - When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
+  - Generating an S3 presigned URL requires the feature flag ``EnableExportDirectDownload`` to be set to ``true``,  the storage must be compatible with generating an S3 link, and this experimental configuration setting must be set to ``true``. Presigned URLs for exports aren't supported for systems with shared storage.

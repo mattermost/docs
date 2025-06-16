@@ -10,7 +10,7 @@ Download and share the collected data with Mattermost to understand application 
 
 .. tip::
 
-   Already have Prometheus and Grafana deployed? You can :doc:`use these tools to monitor performance of your Mattermost deployment </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
+  Already have Prometheus and Grafana deployed? You can :doc:`use these tools to monitor performance of your Mattermost deployment </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
 Mattermost configuration
 ------------------------
@@ -62,4 +62,4 @@ You can also use our `Mattermost Performance Monitoring v2 <https://grafana.com/
 What's collected?
 -----------------
 
-Mattermost provides :ref:`custom metrics <scale/performance-monitoring-metrics:custom Mattermost metrics>` and :ref:`standard Go metrics <scale/performance-monitoring-metrics:standard go metrics>` that can be used to monitor your system's performance.
+Mattermost provides :ref:`custom metrics <scale/performance-monitoring-metrics:custom Mattermost metrics>` and :ref:`standard Go metrics <scale/performance-monitoring-metrics:standard go metrics>` that can be used to monitor your system's performance. Additionally Enterprise customers can use the Metrics plugin to collect :ref:`host/system metrics <scale/performance-monitoring-metrics:host/system metrics>` from `node exporter <https://github.com/prometheus/node_exporter>`_ targets to monitor network-related panels for Mattermost Calls.
