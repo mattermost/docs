@@ -1,4 +1,4 @@
-Display channel headers
+Display channel banners
 =======================
 
 .. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
