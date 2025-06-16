@@ -8,12 +8,12 @@ Anyone can rename the channels they belong to, unless the system admin has :doc:
 
 .. tab:: Web/Desktop
 
-  Select the channel name at the top of the center pane to access the drop-down menu, then select **Rename Channel**. You'll be prompted to provide two pieces of information:
+  Select the channel name at the top of the center pane to access the drop-down menu, then select **Channel Settings**. You'll be prompted to provide two pieces of information:
 
-  - **Channel display name:** This appears in the Mattermost user interface. 
-  - **Channel handle:** This is part of the channel URL. You can also change the channel handle when renaming a channel, but changing channel handles may break existing links.
+  - **Channel name:** The channel name that displays in the Mattermost user interface for all users. Enter a different channel name if needed or preferred.
+  - **Channel URL:** The web URL used to access the channel in a web browser. Select **Edit** to change the URL, and select **Done** to save your changes.
 
-  For example, for the following channel, ``https://community.mattermost.com/core/channels/ux-design``, The channel display name would be ``UX Design``, and the channel handle would be ``ux-design``.
+  For example, a channel could be named ``UX Design`` and have a URL of ``https://community.mattermost.com/core/channels/ux-design``.
 
 .. tab:: Mobile
 
