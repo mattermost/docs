@@ -9,7 +9,7 @@
 **Release Day: July 16, 2025**
 
 ### Important Upgrade Notes
- - 
+ - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
 
 ```{Important}
 If you upgrade from a release earlier than v10.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
@@ -79,7 +79,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
     - Added ``PreservePinnedPosts`` configuration setting. If it's set to ``true``, pinned posts will not be deleted by data retention. 
 
 #### Changes to Enterprise Advanced plan:
- - ``MemberSyncBatchSize``, ``SyncUsersOnConnectionOpen``, ``GlobalUserSyncBatchSize``. 
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Added ``MemberSyncBatchSize``, ``SyncUsersOnConnectionOpen``, ``GlobalUserSyncBatchSize`` configuration settings to allow remote users to be discoverable in the Direct/Group Message modal. 
 
 ### API Changes
  - Added property fields and value methods to the plugin API.
