@@ -195,10 +195,8 @@ def create_sitemap(app: Sphinx, exception):
 
         url = ElementTree.SubElement(root, "url")
         scheme = app.config.sitemap_url_scheme
-        if app.builder.config.language:
-            lang = app.builder.config.language + "/"
-        else:
-            lang = ""
+
+        lang = ""
 
         ElementTree.SubElement(url, "loc").text = site_url + scheme.format(
             lang=lang, version=version, link=link

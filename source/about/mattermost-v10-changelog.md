@@ -6,8 +6,11 @@
 (release-v10.9-feature-release)=
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.9.1, release day TBD**
-  - Fixing an issue where Direct/Group Messages are sometimes missing on initial load [MM-64481](https://mattermost.atlassian.net/browse/MM-64481).
+- **10.9.1, released 2025-06-17**
+  - Mattermost v10.9.1 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Fixed an issue where Direct/Group Messages were missing on initial load [MM-64481](https://mattermost.atlassian.net/browse/MM-64481).
+  - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
+  - Mattermost v10.9.1 contains no database or functional changes.
 - **10.9.0, released 2025-06-16**
   - Original 10.9.0 release.
 
