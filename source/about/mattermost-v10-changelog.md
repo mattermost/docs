@@ -14,7 +14,7 @@
   - Fixed an issue where the ``icon_emoji`` property was not working for webhook posts [MM-64316](https://mattermost.atlassian.net/browse/MM-64316).
   - Mattermost v10.8.3 contains no database or functional changes.
 - **10.8.2, released 2025-05-29**
-  - Mattermost v10.8.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.8.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
   - Mattermost v10.8.2 contains no database or functional changes.
 - **10.8.1, released 2025-05-21**
