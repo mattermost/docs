@@ -22,7 +22,7 @@ Before you begin
 
   You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
 
-In addition, ensure AD/LDAP or SAML synchronization is enabled and configured to synchronize system properties with your AD/LDAP or SAML identity provider. See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
+If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
 
 Add attributes
 ~~~~~~~~~~~~~~
