@@ -16,7 +16,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Enterprise Edition v10.9.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.1/mattermost-10.9.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.9.1/mattermost-10.9.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``63d31e67a07047498a548ee421bbb68b1bd40e749a863a41475e7d79c2c975b3``
+    - SHA-256 Checksum: ``236fe78ce69e0ce73ba33586c1bb869f1c6b1231bc1afa745d4eae078063f090``
     - GPG Signature: https://releases.mattermost.com/10.9.1/mattermost-10.9.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.8.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-8-feature-release>`__ - `Download <https://releases.mattermost.com/10.8.1/mattermost-10.8.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.8.1/mattermost-10.8.1-linux-amd64.tar.gz``
@@ -424,7 +424,7 @@ If you want to check that the version of Mattermost you are installing is the of
 
   Mattermost Team Edition v10.9.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.1/mattermost-team-10.9.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.9.1/mattermost-team-10.9.1-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``2fd9798a5737ceedc4b4ae3e34143f341155c7f88fec69fa1149a9d05223bb18``
+    - SHA-256 Checksum: ``9c45d2406a77ea805ac2aa70b82798f09fa3bdedef450f275adf839408239240``
     - GPG Signature: https://releases.mattermost.com/10.9.1/mattermost-team-10.9.1-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.9.1/sbom-mattermost-v10.9.1.json
   Mattermost Team Edition v10.8.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-8-feature-release>`__ - `Download <https://releases.mattermost.com/10.8.1/mattermost-team-10.8.1-linux-amd64.tar.gz?src=arc>`__
