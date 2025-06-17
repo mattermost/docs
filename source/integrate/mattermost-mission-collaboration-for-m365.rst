@@ -1,7 +1,7 @@
 Connect Microsoft 365, Teams, and Outlook with Mattermost
 ==========================================================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Mattermost Mission Collaboration for Microsoft extends Microsoft for mission-critical coordination, command and control, incident response, and DevSecOps workflows in demanding environments, including air-gapped and classified networks. Use data-sovereign tools like secure chat, Playbooks, and Calls directly within M365, Teams, and Outlook.
