@@ -7,7 +7,13 @@
 (release-v10.8-feature-release)=
 ## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.8.2, released **
+- **10.8.3, released **
+  - Mattermost v10.8.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
+  - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
+  - Fixed an issue where the ``icon_emoji`` property was not working for webhook posts [MM-64316](https://mattermost.atlassian.net/browse/MM-64316).
+  - Mattermost v10.8.3 contains no database or functional changes.
+- **10.8.2, released 2025-05-29**
   - Mattermost v10.8.2 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
   - Mattermost v10.8.2 contains no database or functional changes.
@@ -209,11 +215,11 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Mattermost v10.6.7 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
+  - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
   - Mattermost v10.6.7 contains no database or functional changes.
 - **10.6.6, released 2025-05-21**
   - Mattermost v10.6.6 contains a Critical severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0).
-  - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
   - Mattermost v10.6.6 contains no database or functional changes.
 - **10.6.5, released 2025-05-15**
   - Added support for AES-256-GCM encryption in SAML [MM-64222](https://mattermost.atlassian.net/browse/MM-64222).
