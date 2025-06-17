@@ -16,7 +16,7 @@ Before you begin
 
 .. tab:: Mattermost Enterprise v10.9 or later
 
-  From Mattermost Enterprise v10.9, you can create and manage system properties as a Mattermost system admin without needing to enable the ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` feature flag as it's enabled by default.
+  From Mattermost Enterprise v10.9, the ability to create and manage system properties as a Mattermost system admin requires no manual setup. 
 
 .. tab:: Mattermost Enterprise v10.8
 
