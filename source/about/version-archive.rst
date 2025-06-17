@@ -14,10 +14,10 @@ If you want to check that the version of Mattermost you are installing is the of
 
 .. tab:: Mattermost Enterprise
 
-  Mattermost Enterprise Edition v10.9.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.0/mattermost-10.9.0-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.9.0/mattermost-10.9.0-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``63d31e67a07047498a548ee421bbb68b1bd40e749a863a41475e7d79c2c975b3``
-    - GPG Signature: https://releases.mattermost.com/10.9.0/mattermost-10.9.0-linux-amd64.tar.gz.sig
+  Mattermost Enterprise Edition v10.9.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.1/mattermost-10.9.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.9.1/mattermost-10.9.1-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``236fe78ce69e0ce73ba33586c1bb869f1c6b1231bc1afa745d4eae078063f090``
+    - GPG Signature: https://releases.mattermost.com/10.9.1/mattermost-10.9.1-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.8.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-8-feature-release>`__ - `Download <https://releases.mattermost.com/10.8.1/mattermost-10.8.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.8.1/mattermost-10.8.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``f132f0c815f4db9ffbd39207885c5a601117922eb9a08f5a287fec65c40df426``
@@ -422,11 +422,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v10.9.0 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.0/mattermost-team-10.9.0-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.9.0/mattermost-team-10.9.0-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``2fd9798a5737ceedc4b4ae3e34143f341155c7f88fec69fa1149a9d05223bb18``
-    - GPG Signature: https://releases.mattermost.com/10.9.0/mattermost-team-10.9.0-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.9.0/sbom-mattermost-v10.9.0.json
+  Mattermost Team Edition v10.9.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.1/mattermost-team-10.9.1-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.9.1/mattermost-team-10.9.1-linux-amd64.tar.gz``
+    - SHA-256 Checksum: ``9c45d2406a77ea805ac2aa70b82798f09fa3bdedef450f275adf839408239240``
+    - GPG Signature: https://releases.mattermost.com/10.9.1/mattermost-team-10.9.1-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.9.1/sbom-mattermost-v10.9.1.json
   Mattermost Team Edition v10.8.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-8-feature-release>`__ - `Download <https://releases.mattermost.com/10.8.1/mattermost-team-10.8.1-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.8.1/mattermost-team-10.8.1-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``5643cb6a08ea130b16c2623653b9fe039fbc56df2096008ab46db5021f66453a``
