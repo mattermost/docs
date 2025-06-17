@@ -3,6 +3,111 @@
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
+(release-v10.9-feature-release)=
+## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+- **10.9.1, release day TBD**
+  - Fixing an issue where Direct/Group Messages are sometimes missing on initial load [MM-64481](https://mattermost.atlassian.net/browse/MM-64481).
+- **10.9.0, released 2025-06-16**
+  - Original 10.9.0 release.
+
+### Compatibility
+ - Updated the minimum supported versions of Edge and Chrome to 134+, and Firefox to 128+.
+
+### Important Upgrade Notes
+ - A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Schema changes in the form of a new materialized view (``AttributeView``) was added that aggregates user attributes into a separate table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+```{Important}
+If you upgrade from a release earlier than v10.8, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Highlights
+
+#### New Enterprise Advanced License
+ - Added support for a new Enterprise Advanced license. This new license is supported starting v10.9 and is supported on PostgreSQL only. Enterprise plugins need to be updated to support the new license (most of which are pre-packaged in v10.9).
+
+### Improvements
+
+#### User Interface (UI)
+ - Consolidated all channel editing functionality into a single, accessible modal located in the channel header menu. Users can now update channel names, URL slugs, convert to private, modify/add a purpose and header (with a live markdown preview), manage channel banners, and archive the channel—all in one place. Updates include safeguards for unsaved edits, improved URL-slug editing, and enhanced keyboard and navigation accessibility.
+ - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
+ - Pre-packaged Playbooks plugin [v2.2.0](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v2.2.0) and [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
+ - Pre-packaged Calls plugin [v1.8.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.8.0).
+ - Pre-packaged Jira plugin version [v4.3.0](https://github.com/mattermost/mattermost-plugin-jira/releases/tag/v4.3.0).
+ - Pre-packaged Metrics plugin version [v0.7.0](https://github.com/mattermost/mattermost-plugin-metrics/releases/tag/v0.7.0).
+ - Introduced a configurable channel banner feature for channel admins, visible across desktop, web, and mobile platforms. This feature requires an Enterprise Advanced license.
+ - Added more descriptive page titles to the login, account creation, and password reset pages.
+ - Improved the **Drafts** list by implementing virtualization.
+ - Enhanced the behavior for reporting issues in the platform.
+ - Introduced minor layout tweaks in theme settings for improved usability.
+
+#### Administration
+ - Added support for user attributes for Enterprise Advanced licensed servers. Defined policies that automatically grant channel memberships based on user attributes. Membership updates happen automatically when user attributes change — no need for manual role adjustments.
+ - Added Policy Management user interface and API to easily create and manage attribute-based rules via an admin interface.
+ - Added support for AES-256-GCM encryption in SAML.
+ - Updated the email validation logic to ensure Mattermost no longer accepts email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``). Although these comply with RFC 5322 and RFC 6532 standards, they introduce unnecessary complexity. If a user already has such an email in your installation, they may face issues like being unable to update their profile. To resolve this, the email must be modified manually using the command: ``mmctl user email "<affecteduser@domain.com>" affecteduser@domain.com``.
+ - Added a license load metric to the **About** screen to display current license usage.
+ - Upgraded the logr dependency to version 2.0.22.
+ - Removed telemetry tracking from Redux selectors.
+ - Made it possible to view JSON logs in plain text within the **System Console**.
+ - Enhanced the **System Console** search functionality to include all log fields.
+ - Enhanced error reporting related to cluster management.
+ - Added an LDAP setting to re-add removed members.
+ - Added support for SSO while Mattermost is embedded in an iframe.
+ - Set the Custom Profile Attributes feature flag to ``true`` by default.
+
+#### Performance
+ - Optimized the team-switching operation by eliminating unnecessary calls to retrieve channels and channel members.
+ - Improved websocket re-opening speed when network conditions change.
+
+### Bug Fixes
+ - Fixed various issues on the **Create Team** screen.
+ - Fixed several accessibility issues across the login process, account creation, and MFA setup.
+ - Fixed an issue where horizontal rule (HR) elements were not visible in preview mode in the right-hand sidebar (RHS).
+ - Fixed an issue with inconsistent sizing of markdown images in preview mode.
+ - Fixed a keyboard navigation issue within thread items.
+ - Fixed layout issues with the emoji picker on mobile browsers.
+ - Fixed an issue with the positioning of **Edited** text and tooltips in certain scenarios.
+ - Fixed the accessibility of the search box.
+ - Fixed an issue where post list scrolling didn’t work when pressing the **Page Up** or **Page Down** keys.
+ - Fixed issues with screen reader support in the **Threads** view.
+ - Fixed keyboard navigation issues in the **Threads** view.
+ - Fixed accessibility issues in the **Invite** modal.
+ - Fixed various accessibility issues in the **Browse Channels** modal.
+ - Fixed an issue that prevented team admin permissions from being modified when missing in the **All Members** section.
+ - Fixed possible deadlocks when updating ``SidebarCategories`` and ``SidebarChannels`` tables.
+ - Fixed an issue where unreads from deleted teams would display in the titlebar/Desktop App.
+ - Fixed an issue with ``icon_emoji`` property not working for webhook posts.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``SupportSettings`` in ``config.json``:
+    - Added ``ReportAProblemType``, ``ReportAProblemMail``, ``AllowDownloadLogs`` configuration settings to enhance the behavior for reporting issues in the platform.
+
+#### Changes to Enterprise plans:
+ - Under ``ExperimentalAuditSettings`` in ``config.json``:
+    - Added ``Certificate`` configuration setting to accept a certificate to be used for audit logging egress.
+ - Under ``LdapSettings`` in ``config.json``:
+    - Added ``ReAddRemovedMembers`` configuration setting to add a LDAP setting to re-add removed members.
+
+### API Changes
+ - Exposed two new plugin APIs for syncables.
+
+### Open Source Components
+ - Added ``monaco-editor`` and ``monaco-editor-webpack-plugin``, and removed ``dynamic-virtualized-list``, ``popper.js``, ``react-hot-loader``, ``react-popper`` from https://github.com/mattermost/mattermost.
+
+### Go Version
+ - v10.9 is built with Go ``v1.23.7``.
+
+### Known Issues
+ - Permissions lists exceed content area for **All Members** and **System Admins** in the System Console [MM-64417](https://mattermost.atlassian.net/browse/MM-64417).
+ - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
+
+### Contributors
+ - [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [AnmiTaliDev](https://translate.mattermost.com/user/AnmiTaliDev), [Aryakoste](https://github.com/Aryakoste), [AshishDhama](https://github.com/AshishDhama), [AulakhHarsh](https://github.com/AulakhHarsh), [BenCookie95](https://github.com/BenCookie95), [bndn](https://translate.mattermost.com/user/bndn), [bshumylo](https://github.com/bshumylo), [calebroseland](https://github.com/calebroseland), [catalintomai](https://github.com/catalintomai), [chicchu4157](https://translate.mattermost.com/user/chicchu4157), [cinlloc](https://github.com/cinlloc), [coltoneshaw](https://github.com/coltoneshaw), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [cyrusjc](https://github.com/cyrusjc), [danilvalov](https://github.com/danilvalov), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [enahum](https://github.com/enahum), [esarafianou](https://github.com/esarafianou), [evituzas](https://translate.mattermost.com/user/evituzas), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [gentcod](https://github.com/gentcod), [Gesare5](https://github.com/Gesare5), [guenjun](https://translate.mattermost.com/user/guenjun), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [isacikgoz](https://github.com/isacikgoz), [iyampaul](https://github.com/iyampaul), [jespino](https://github.com/jespino), [johnsonbrothers](https://github.com/johnsonbrothers), [joho1968](https://github.com/joho1968), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kasyap1234](https://github.com/kasyap1234), [kayazeren](https://translate.mattermost.com/user/kayazeren), [Kimbohlovette](https://github.com/Kimbohlovette), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [ldez](https://github.com/ldez), [lieut-data](https://github.com/lieut-data), [lindy65](https://github.com/lindy65), [lynn915](https://github.com/lynn915), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [marcelhintermann](https://github.com/marcelhintermann), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [nickmisasi](https://github.com/nickmisasi), [oonid](https://translate.mattermost.com/user/oonid), [panoramix360](https://github.com/panoramix360), [pineoak-audio](https://github.com/pineoak-audio), [pvev](https://github.com/pvev), [raghavaggarwal2308](https://github.com/raghavaggarwal2308), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [rOt779kVceSgL](https://translate.mattermost.com/user/rOt779kVceSgL), [sadohert](https://github.com/sadohert), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://translate.mattermost.com/user/Sharuru), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [svelle](https://github.com/svelle), [Theo024](https://github.com/Theo024), [ThrRip](https://github.com/ThrRip), [toninis](https://github.com/toninis), [Vasfed](https://github.com/Vasfed), [vasilybels](https://github.com/vasilybels), [VDALuky](https://github.com/VDALuky), [vish9812](https://github.com/vish9812), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
 
 (release-v10.8-feature-release)=
 ## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
@@ -27,7 +132,7 @@
   - Original 10.8.0 release.
 
 ### Important Upgrade Notes
- - New tables ``AccessControlPolicies`` and ``AcessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
+ - New tables ``AccessControlPolicies`` and ``AccessControlPolicyHistory`` will be created. The migration is fully backwards-compatible, non-locking, and zero downtime is expected.
  - Support for legacy SKUs E10 and E20 licenses was removed. If you need assistance, [talk to a Mattermost expert](https://mattermost.com/contact-sales/).
 
 ```{Important}

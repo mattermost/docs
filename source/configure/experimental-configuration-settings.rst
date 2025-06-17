@@ -8,7 +8,7 @@ Review and manage the following experimental configuration options in the System
 
 - `Experimental System Console configuration settings <#experimental-system-console-configuration-settings>`__
 - `Experimental Bleve configuration settings <#experimental-bleve-configuration-settings>`__
-- `Experimental audit logging configuration settings (Beta) <#experimental-audit-logging-configuration-settings-beta>`__
+- `Experimental audit logging configuration settings <#experimental-audit-logging-configuration-settings>`__
 - `Experimental job configuration settings <#experimental-job-configuration-settings>`__
 - `Experimental configuration settings for self-hosted deployments only <#experimental-configuration-settings-for-self-hosted-deployments-only>`__
 
@@ -640,40 +640,6 @@ This setting controls whether or not the channel link autocomplete triggers imme
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------------------+
 
-Enable dedicated export filestore target
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This setting enables you to specify an alternate filestore target for Mattermost :doc:`bulk exports </manage/bulk-export-tool>` and :doc:`compliance exports </comply/compliance-export>`. 
-
-**True**: A new ``ExportFileBackend()`` is generated under ``FileSettings`` using new configuration values for the following configuration settings:
-
-- ``ExportDriverName``
-- ``ExportDirectory``
-- ``ExportAmazonS3AccessKeyId``
-- ``ExportAmazonS3SecretAccessKey``
-- ``ExportAmazonS3Bucket``
-- ``ExportAmazonS3PathPrefix``
-- ``ExportAmazonS3Region``
-- ``ExportAmazonS3Endpoint``
-- ``ExportAmazonS3SSL``
-- ``ExportAmazonS3SignV2``
-- ``ExportAmazonS3SSE``
-- ``ExportAmazonS3Trace``
-- ``ExportAmazonS3RequestTimeoutMilliseconds``
-- ``ExportAmazonS3PresignExpiresSeconds``
-
-**False**: Standard :ref:`file storage <configure/environment-configuration-settings:file storage>` is used (or when the configuration setting is omitted).
-
-When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
-
-.. note::
-
-  Generating an S3 presigned URL requires the feature flag ``EnableExportDirectDownload`` to be set to ``true``,  the storage must be compatible with generating an S3 link, and this experimental configuration setting must be set to ``true``. Presigned URLs for exports aren't supported for systems with shared storage.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DedicatedExportStore": false`` with options ``true`` and ``false``.     |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-
 YouTube referrer policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -789,14 +755,14 @@ Enable Bleve for autocomplete queries
 
 ----
 
-Experimental audit logging configuration settings (Beta)
+Experimental audit logging configuration settings
 --------------------------------------------------------
 
 Enable the following settings to output audit events in the System Console by going to **Experimental > Features**, or in the ``config.json`` file. 
 
 .. note::
-  
-  The ability to configure audit logging in the System Console requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
+
+  The ability to enable and configure audit logging is currently in :ref:`Beta <manage/feature-labels:beta>` and requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
 
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
@@ -951,6 +917,20 @@ This setting can be left as default unless you are seeing audit write failures i
 | This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
 +-------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: audit-logging-certificate
+  :displayname: Audit logging certificate upload (Audit Logging > Cloud Enterprise)
+  :systemconsole: Audit Log Settings > Certificate
+  :configjson: N/A
+  :environment: N/A
+  :description: Cloud Enterprise customers can upload and manage a certificate for audit logging encryption on Syslog or TCP logging targets.
+
+Certificate
+~~~~~~~~~~~~
+
+Cloud Enterprise customers can upload and manage a certificate for audit logging encryption on Syslog or TCP logging targets. The ability to upload a certificate is only available when the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` is enabled.
+
+Upload the certificate PEM file in the System Console by going to **System Console > Audit Log Settings > Certificate** and selecting **File/Remove Certificate**. The certificate file can be stored in the filestore or stored locally on the filesystem. 
+
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
@@ -1086,7 +1066,7 @@ Used to control the buffer of outstanding Push Notification messages to be sent.
 +---------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: restrict-system-admin
-  :displayname: File configuration settings (Beta)
+  :displayname: File configuration settings
   :systemconsole: N/A
   :configjson: FileEnabled
   :environment: N/A
@@ -1104,6 +1084,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 +-------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  The ability to restrict the system admin from viewing and modifying a subset of server configuration settings is currently in :ref:`Beta <manage/feature-labels:beta>`.
+
 
 .. config:setting:: enable-client-side-certification
   :displayname: Enable client-side certification (Experimental)

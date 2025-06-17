@@ -174,7 +174,7 @@ Ensure that the ``mmuser`` user in PostgreSQL is the owner of the schema.
    .. code-block:: sql
 
       ALTER SCHEMA public OWNER TO mmuser;
-      GRANT ALL ON SCHEMA public TO mmuser;
+      GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
 Then, re-run the command from step 2.
 

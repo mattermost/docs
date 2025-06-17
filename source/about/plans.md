@@ -11,10 +11,20 @@
     padding: 6px 8px;
     vertical-align: top;
   }
+  /* Dark mode border color */
+  body:not([data-custom-theme="light"]) table.mattermost-plans th, 
+  body:not([data-custom-theme="light"]) table.mattermost-plans td {
+    border-color: #666;
+  }
   table.mattermost-plans th {
     background: #f2f2f2;
     font-weight: bold;
     text-align: left;
+  }
+  /* Dark mode support for table headers */
+  body:not([data-custom-theme="light"]) table.mattermost-plans th {
+    background: #444;
+    color: #fff;
   }
   table.mattermost-plans tr.section td {
     background: #f9f9f9;
@@ -22,10 +32,20 @@
     font-size: 1.05em;
     border-top: 2px solid #888;
   }
+  /* Dark mode support for section rows */
+  body:not([data-custom-theme="light"]) table.mattermost-plans tr.section td {
+    background: #3a3a3a;
+    color: #fff;
+  }
   table.mattermost-plans tr.subsection td {
     background: #f6f6f6;
     font-style: italic;
     border-top: 1px solid #888;
+  }
+  /* Dark mode support for subsection rows */
+  body:not([data-custom-theme="light"]) table.mattermost-plans tr.subsection td {
+    background: #333;
+    color: #eee;
   }
 </style>
 
@@ -44,7 +64,7 @@
   <tbody>
     <!-- Channel-based messaging -->
     <tr class="section"><td colspan="7"><strong>Channel-based messaging</strong></td></tr>
-    <tr class="subsection"><td colspan="7"><strong>1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS and Android devices, with 1-1 audio calls and screen share, threaded discussions, search, custom branding themes and emojis, and availability in 20 languages.</strong></td></tr>
+    <tr class="subsection"><td colspan="7"><strong>1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS and Android devices, with 1-1 audio calls and screen share, threaded discussions, search, custom branding themes and emojis, and availability in 20+ languages.</strong></td></tr>
     <tr>
       <td><strong>Messaging, file sharing, and link and file previews across device platforms</strong>: Channels-based messaging including 1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS, and Android devices.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
@@ -58,7 +78,7 @@
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Core search</strong>: Search over messages and files in Mattermost. Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, <a href="https://docs.mattermost.com/scale/elasticsearch.html">Enterprise Search</a> is recommended.</td>
+      <td><strong>Core search</strong>: Search over messages and files in Mattermost. Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, <a href="https://docs.mattermost.com/scale/enterprise-search.html">Enterprise Search</a> is recommended.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -120,7 +140,7 @@
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Message priority</strong>: Elevate the focus of organizations with the ability for end users to <a href="https://docs.mattermost.com/collaborate/message-priority.html#set-message-priority-beta">specify the priority of messages</a> as Standard (Default), Important, and Urgent.</td>
+      <td><strong>Message priority</strong>: Elevate the focus of organizations with the ability for end users to <a href="https://docs.mattermost.com/collaborate/message-priority.html#set-message-priority">specify the priority of messages</a> as Standard (Default), Important, and Urgent.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -193,7 +213,7 @@
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Advanced logging</strong>: Enable <a href="https://docs.mattermost.com/manage/logging.html#audit-logging-experimental-beta">advanced logging</a> for optimizing and troubleshooting high-scale, mission-critical deployments including error, panic, debug, trace and conditional logging to a full range of destinations including Syslog and TCP target options.</td>
+      <td><strong>Advanced logging</strong>: Enable <a href="https://docs.mattermost.com/manage/logging.html#audit-logging-experimental">advanced logging</a> for optimizing and troubleshooting high-scale, mission-critical deployments including error, panic, debug, trace and conditional logging to a full range of destinations including Syslog and TCP target options.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -291,3 +311,5 @@
 </table>
 
 See a [complete list of features](https://mattermost.com/pricing) on the Mattermost website.
+
+Note: Mattermost Enterprise Advanced requires a Mattermost Server running v10.9 or later and a PostgreSQL database. Enterprise plugins must be updated to support the new license (most of which are pre-packaged from v10.9)

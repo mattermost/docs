@@ -19,7 +19,7 @@ For customers using our service in a self-hosted deployment, the `Mattermost Fre
 Mattermost Enterprise Edition 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our commercial, self-hosted software is called Mattermost Enterprise Edition, and it's available as a Linux binary that deploys identically to our open source version - including upgrading in an identical fashion - with two key differences: It contains code for advanced commercial features and it's offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business.
+Our commercial, self-hosted software is called Mattermost Enterprise Edition, and it's available as a Linux binary that deploys identically to our open source version - including upgrading in an identical fashion - with 2 key differences: It contains code for advanced commercial features and it's offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business.
 
 Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial**, or request a trial online at https://mattermost.com/trial/.
 
@@ -38,6 +38,23 @@ Mattermost plans
 Mattermost plans consist of features and entitlements available either a paid subscription service or free. :doc:`Learn more </about/plans>` about the features available across all plans.
 
 The Mattermost Professional, Enterprise, or Enterprise Advanced editions are only available after deploying our Mattermost Enterprise Edition binary, and then applying a valid license key that comes with a subscription purchase. Alternatively, you can start a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
+
+Mattermost Enterprise Advanced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Mattermost Enterprise Advanced is the :doc:`Intelligent Mission Environment </about/product>` for Cyber Defense and Mission Operations that features:
+
+- :doc:`Classified and Sensitive Information Controls </collaborate/display-channel-banners>`
+- :doc:`Zero Trust Security </manage/admin/zero-trust-security>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
+- :doc:`Mobile security </about/security/mobile-security>` controls
+- :doc:`Air-gapped deployment workflows </deploy/server/air-gapped-deployment>`
+
+Visit the :doc:`Mattermost Plans </about/plans>` page to learn more about the capabilities and features available in Enterprise Advanced. 
+
+A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/.
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~
@@ -63,15 +80,15 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Deleted granular administrative control </onboard/delegated-granular-administration>`.
 - :doc:`Advanced configuration of playbook permissions, and analytics dashboards </repeatable-processes/share-and-collaborate>`
 - :doc:`Channel export </comply/export-mattermost-channel-data>`
-- :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging (beta)>`.
+- :ref:`Enhanced compliance controls and granular audit logs with data export <manage/logging:audit logging>`.
 - :doc:`Advanced collaboration with connected workspaces across Mattermost instances </onboard/connected-workspaces>`.
 - :doc:`High availability support with multi-node database deployment </scale/high-availability-cluster-based-deployment>`.
 - :doc:`Horizontal scaling through cluster-based deployment </scale/scaling-for-enterprise>`.
 - :doc:`Advanced performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 - :doc:`Server health checks </manage/request-server-health-check>`.
 - `Eligibility for Premier Support add-on <https://mattermost.com/support/>`__.
-- Contextual AI-based :ref:`summarization <collaborate/chat-with-copilot:summarize mattermost call recordings>`, real-time :ref:`channel briefing <collaborate/chat-with-copilot:summarize threads & unread channel messages>`, and :ref:`composition <collaborate/chat-with-copilot:get started>`
-- Private, air-gapped & DDIL :doc:`AI operations </configure/enable-copilot>`
+- Contextual AI-based :ref:`summarization <guides/agents:record calls to summarize meetings>`, real-time :ref:`channel briefing <guides/agents:analyze threads and channels>`, and :ref:`composition <guides/agents:access ai features>`
+- Private, air-gapped & DDIL :doc:`AI operations </configure/agents-admin-guide>`
 - PQ&A with :doc:`access-controlled backend systems </about/security>`
 - 99.99% uptime SLA guarantee (Cloud only, via dedicated virtual secure Cloud add-on option).
 
@@ -96,8 +113,8 @@ This offering includes all the features of `Mattermost Free <#mattermost-free>`_
 - :doc:`System-wide announcement banners </manage/system-wide-notifications>`.
 - O365 integration with `Microsoft Teams Meetings <https://mattermost.com/marketplace/microsoft-teams-meetings/>`_ and `Jira multi-server <https://mattermost.com/marketplace/jira-plugin/>`_.
 - `Next business day support via online ticketing system <https://mattermost.com/support/>`_.
-- :ref:`Interactive AI bot support <collaborate/chat-with-copilot:get started>`
-- Flexible :doc:`bring-your-own-LLM integration </configure/enable-copilot>`
+- :ref:`Interactive AI bot support <guides/agents:access ai features>`
+- Flexible :doc:`bring-your-own-LLM integration </configure/agents-admin-guide>`
 
 See a `complete list of Mattermost features <https://mattermost.com/pricing>`_.
 

@@ -12,7 +12,10 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 
     Store configuration in your database </configure/configuration-in-your-database>
     Server configuration options </configure/configuration-settings>
-    Enable Copilot </configure/enable-copilot>
+    Set up attribute-based access controls </manage/admin/zero-trust-security>
+    Set up Mattermost Agents </configure/agents-admin-guide>
+    Install Mattermost Boards </configure/install-boards>
+    Manage user attributes </manage/admin/user-attributes>
     Environment variables </configure/environment-variables>
     Customize the server </manage/admin/customize-branding>
     SMTP email setup </configure/smtp-email>
@@ -24,7 +27,10 @@ Whether you’re setting up email notifications, optimizing search capabilities,
 
 * :doc:`Store configuration in your database </configure/configuration-in-your-database>` - Learn how to store configuration information in your Mattermost database rather than as a JSON file.
 * :doc:`Server configuration options </configure/configuration-settings>` - Learn about server configuration options for Mattermost.
-* :doc:`Enable Copilot </configure/enable-copilot>` - Learn how to enable Mattermost Copilot for your deployment.
+* :doc:`Set up attribute-based access controls </manage/admin/zero-trust-security>` - Learn how to set up attribute-based access controls for your Mattermost instance for Zero Trust Security.
+* :doc:`Set up Mattermost Agents</configure/agents-admin-guide>` - Learn how to enable AI-powered Agents for your Mattermost instance.
+* :doc:`Install Mattermost Boards </configure/install-boards>` - Learn how to install and configure the Boards plugin for your Mattermost instance.
+* :doc:`Manage custom user attributes </manage/admin/user-attributes>` - Learn how to manage custom user attributes in user profiles in Mattermost.
 * :doc:`Environment variables </configure/environment-variables>` - Learn how to use environment variables for Mattermost configuration.
 * :doc:`Customize the server </manage/admin/customize-branding>` - Learn about customizing branding for Mattermost server.
 * :doc:`SMTP email setup </configure/smtp-email>` - Learn how to set up SMTP email for Mattermost.

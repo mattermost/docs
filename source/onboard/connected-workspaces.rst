@@ -1,7 +1,7 @@
-Connected workspaces (Beta)
-==============================
+Connected workspaces
+====================
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Communicate across organizations, as well as external partners and vendors using Mattermost by synchronizing messages, emoji reactions, and file sharing in real-time through secured, connected Mattermost workspaces.
@@ -39,11 +39,11 @@ System admins must enable connected workspaces functionality for their Mattermos
 - ``ConnectedWorkspacesSettings.EnableRemoteClusterService = true``
 - ``ConnectedWorkspacesSettings.EnableSharedChannels = true``
 
-See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces (beta)>` documentation for details.
+See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces>` documentation for details.
 
 .. note::
 
-    Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces (beta)>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
+    Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to :ref:`connected workspace configuration settings <configure/site-configuration-settings:enable connected workspaces>` in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 Create a secure connection
 ---------------------------
@@ -52,7 +52,7 @@ Create a secure connection
 
     Only system admins can create workspace connections using the System Console.
 
-    1. Go to **Site Configuration > Connected Workspaces (Beta)**.
+    1. Go to **Site Configuration > Connected Workspaces**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Create a connection**.
     3. Specify the **Organization Name** for this connection. The remote system admin must specify this name when accepting a connection invitation.
     4. Select the **Destination Team** as the default team where shared channels will be added.
@@ -95,7 +95,7 @@ Accept a connection invitation
 
 .. tab:: System Console
 
-    1. Go to **Site Configuration > Connected Workspaces (Beta)**.
+    1. Go to **Site Configuration > Connected Workspaces**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Accept an invitation**.
     3. Specify the **Organization Name** for this invitation. This must be the same name specified when creating the connection.
     4. Select the team where shared channels will be added.
@@ -150,7 +150,7 @@ Once a connection is established between two Mattermost servers, system admins c
 
 .. important::
 
-    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in beta there are some known issues that may impact reliability of direct message delivery across servers.
+    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in :ref:`Beta <manage/feature-labels:beta>`, there are some known issues that may impact reliability of direct message delivery across servers.
 
 Manage connections and invitations
 ----------------------------------
@@ -245,11 +245,6 @@ When using the System Console to manage connected workspaces, system admins can 
 Frequently Asked Questions
 ---------------------------
 
-Why is this feature in beta?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This feature is considered beta while we recruit customer testing partners. Mattermost QA has tested this feature, but we want to work with system admins to iterate on the most optimal connected workspace experience.
-
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -274,9 +269,9 @@ When a user is added to a shared channel, member status is synchronized within a
 
 When using Mattermost in a web browser, Mattermost polls the server every minute. Refreshing the browser page triggers immediate synchronization.
 
-By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync (beta)>`. 
+By default, a maximum of 50 messages are synchronized at a time, and :ref:`this value is configurable <configure/site-configuration-settings:default maximum posts per sync>`. 
 
-Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync (beta)>`.
+Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync>`.
 
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

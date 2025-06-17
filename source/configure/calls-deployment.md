@@ -36,17 +36,88 @@ This document provides information on how to successfully make the Calls plugin 
 
 ### Network
 
-```{tip}
-Scroll horizontally to see additional columns in the table below.
-```
+<style>
+  table.network-requirements {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.95em;
+  }
+  table.network-requirements th, table.network-requirements td {
+    border: 1px solid #888;
+    padding: 6px 8px;
+    vertical-align: top;
+  }
+  /* Dark mode border color */
+  body:not([data-custom-theme="light"]) table.network-requirements th, 
+  body:not([data-custom-theme="light"]) table.network-requirements td {
+    border-color: #666;
+  }
+  table.network-requirements th {
+    background: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+  }
+  /* Dark mode support for table headers */
+  body:not([data-custom-theme="light"]) table.network-requirements th {
+    background: #444;
+    color: #fff;
+  }
+</style>
 
-| Service | Ports | Protocols | Source | Target | Purpose |
-|---------|-------|-----------|--------|--------|---------|
-| API (Calls plugin) | 80,443 | TCP (incoming) | Mattermost clients (web/desktop/mobile) | Mattermost instance (Calls plugin) | To allow for HTTP and WebSocket connectivity from clients to Calls plugin. This API is exposed on the same connection as Mattermost, so there's likely no need to change anything. |
-| RTC (Calls plugin or `rtcd`) | 8443 | UDP (incoming) | Mattermost clients (Web/Desktop/Mobile) | Mattermost instance or `rtcd` service | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or `rtcd`) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients). |
-| RTC (Calls plugin or `rtcd`) | 8443 | TCP (incoming) | Mattermost clients (Web/Desktop/Mobile) | Mattermost instance or `rtcd` service | To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or `rtcd`) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires `rtcd` version >= v0.11 and Calls version >= v0.17. |
-| API (`rtcd`) | 8045 | TCP (incoming) | Mattermost instance(s) (Calls plugin) | `rtcd` service | To allow for HTTP/WebSocket connectivity from Calls plugin to `rtcd` service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server. |
-| STUN (Calls plugin or `rtcd`) | 3478 | UDP (outgoing) | Mattermost Instance(s) (Calls plugin) or `rtcd` service | Configured STUN servers | (Optional) To allow for either Calls plugin or `rtcd` service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) config option. |
+<table class="network-requirements">
+<thead>
+<tr>
+<th>Service</th>
+<th>Ports</th>
+<th>Protocols</th>
+<th>Source</th>
+<th>Target</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>API (Calls plugin)</td>
+<td>80,443</td>
+<td>TCP (incoming)</td>
+<td>Mattermost clients (web/desktop/mobile)</td>
+<td>Mattermost instance (Calls plugin)</td>
+<td>To allow for HTTP and WebSocket connectivity from clients to Calls plugin. This API is exposed on the same connection as Mattermost, so there's likely no need to change anything.</td>
+</tr>
+<tr>
+<td>RTC (Calls plugin or <code>rtcd</code>)</td>
+<td>8443</td>
+<td>UDP (incoming)</td>
+<td>Mattermost clients (Web/Desktop/Mobile)</td>
+<td>Mattermost instance or <code>rtcd</code> service</td>
+<td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).</td>
+</tr>
+<tr>
+<td>RTC (Calls plugin or <code>rtcd</code>)</td>
+<td>8443</td>
+<td>TCP (incoming)</td>
+<td>Mattermost clients (Web/Desktop/Mobile)</td>
+<td>Mattermost instance or <code>rtcd</code> service</td>
+<td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires <code>rtcd</code> version >= v0.11 and Calls version >= v0.17.</td>
+</tr>
+<tr>
+<td>API (<code>rtcd</code>)</td>
+<td>8045</td>
+<td>TCP (incoming)</td>
+<td>Mattermost instance(s) (Calls plugin)</td>
+<td><code>rtcd</code> service</td>
+<td>To allow for HTTP/WebSocket connectivity from Calls plugin to <code>rtcd</code> service. Can be expose internally as the service only needs to be reachable by the instance(s) running the Mattermost server.</td>
+</tr>
+<tr>
+<td>STUN (Calls plugin or <code>rtcd</code>)</td>
+<td>3478</td>
+<td>UDP (outgoing)</td>
+<td>Mattermost Instance(s) (Calls plugin) or <code>rtcd</code> service</td>
+<td>Configured STUN servers</td>
+<td>(Optional) To allow for either Calls plugin or <code>rtcd</code> service to discover their instance public IP. Only needed if configuring STUN/TURN servers. This requirement does not apply when manually setting an IP or hostname through the <a href="https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override">ICE Host Override</a> config option.</td>
+</tr>
+</tbody>
+</table>
 
 #### Air-gapped deployments
 
@@ -60,7 +131,7 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 
 - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
 - For group calls up to 50 concurrent users, Mattermost Enterprise, Professional, or Mattermost Cloud is required.
-- Enterprise customers can also [record calls](https://docs.mattermost.com/collaborate/make-calls.html#record-a-call), enable [live text captions](https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls-beta) during calls, and [transcribe recorded calls](https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls-beta). We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the [dedicated rtcd service](#the-rtcd-service).
+- Enterprise customers can also [record calls](https://docs.mattermost.com/collaborate/make-calls.html#record-a-call), enable [live text captions](https://docs.mattermost.com/collaborate/make-calls.html#live-captions-during-calls) during calls, and [transcribe recorded calls](https://docs.mattermost.com/collaborate/make-calls.html#transcribe-recorded-calls). We recommend that Enterprise self-hosted customers looking for group calls beyond 50 concurrent users consider using the [dedicated rtcd service](#the-rtcd-service).
 - For Mattermost self-hosted deployments, System admins need to enable and configure the plugin [using the System Console](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls). The default maximum number of participants is unlimited; however, we recommend a maximum of 50 participants per call. Maximum call participants is configurable by going to **System Console > Plugin Management > Calls > Max call participants**. Call participant limits greatly depends on instance resources. For more details, refer to the [performance section](#performance) below.
 
 ## Configuration
@@ -136,31 +207,212 @@ Here are the results from internally conducted performance and ceiling tests on 
 
 #### Results
 
-```{tip}
-Scroll horizontally to see additional columns in the table below.
-```
-
-| Calls | Participants/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out) | Instance type (RTCD) |
-|-------|-------------------|--------------|----------------|-----------|--------------|---------------------|----------------------|
-| 1 | 1000 | 2 | no | 47% | 1.46GB | 1Mbps / 194Mbps | c7i.xlarge |
-| 1 | 800 | 1 | yes | 64% | 1.43GB | 2.7Mbps / 1.36Gbps | c7i.xlarge |
-| 1 | 1000 | 1 | yes | 79% | 1.54GB | 2.9Mbps / 1.68Gbps | c7i.xlarge |
-| 10 | 100 | 1 | yes | 74% | 1.56GB | 18.2Mbps / 1.68Gbps | c7i.xlarge |
-| 100 | 10 | 2 | no | 49% | 1.46GB | 18.7Mbps / 175Mbps | c7i.xlarge |
-| 100 | 10 | 1 | yes | 84% | 1.73GB | 171Mbps / 1.53Gbps | c7i.xlarge |
-| 1 | 1000 | 2 | no | 20% | 1.44GB | 1.4Mbps / 194Mbps | c7i.2xlarge |
-| 1 | 1000 | 2 | yes | 49% | 1.53GB | 3.6Mbps / 1.79Gbps | c7i.2xlarge |
-| 2 | 1000 | 1 | yes | 73% | 2.38GB | 5.7Mbps / 3.06Gbps | c7i.2xlarge |
-| 100 | 10 | 2 | yes | 60% | 1.74GB | 181Mbps / 1.62Gbps | c7i.2xlarge |
-| 150 | 10 | 1 | yes | 72% | 2.26GB | 257Mbps / 2.30Gbps | c7i.2xlarge |
-| 150 | 10 | 2 | yes | 79% | 2.34GB | 271Mbps / 2.41Gbps | c7i.2xlarge |
-| 250 | 10 | 2 | no | 58% | 2.66GB | 47Mbps / 439Mbps | c7i.2xlarge |
-| 1000 | 2 | 2 | no | 78% | 2.31GB | 178Mbps / 195Mbps | c7i.2xlarge |
-| 2 | 1000 | 2 | yes | 41% | 2.6GB | 7.23Mbps / 3.60Gbps | c7i.4xlarge |
-| 3 | 1000 | 2 | yes | 63% | 3.53GB | 10.9Mbps / 5.38Gbps | c7i.4xlarge |
-| 4 | 1000 | 2 | yes | 83% | 4.40GB | 14.5Mbps / 7.17Gbps | c7i.4xlarge |
-| 250 | 10 | 2 | yes | 79% | 3.49GB | 431Mbps / 3.73Gbps | c7i.4xlarge |
-| 500 | 2 | 2 | yes | 71% | 2.54GB | 896Mbps / 919Mbps | c7i.4xlarge |
+<table class="network-requirements">
+<thead>
+<tr>
+<th>Calls</th>
+<th>Participants/call</th>
+<th>Unmuted/call</th>
+<th>Screen sharing</th>
+<th>CPU (avg)</th>
+<th>Memory (avg)</th>
+<th>Bandwidth (in/out)</th>
+<th>Instance type (RTCD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>no</td>
+<td>47%</td>
+<td>1.46GB</td>
+<td>1Mbps / 194Mbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>800</td>
+<td>1</td>
+<td>yes</td>
+<td>64%</td>
+<td>1.43GB</td>
+<td>2.7Mbps / 1.36Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>1</td>
+<td>yes</td>
+<td>79%</td>
+<td>1.54GB</td>
+<td>2.9Mbps / 1.68Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>10</td>
+<td>100</td>
+<td>1</td>
+<td>yes</td>
+<td>74%</td>
+<td>1.56GB</td>
+<td>18.2Mbps / 1.68Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>100</td>
+<td>10</td>
+<td>2</td>
+<td>no</td>
+<td>49%</td>
+<td>1.46GB</td>
+<td>18.7Mbps / 175Mbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>100</td>
+<td>10</td>
+<td>1</td>
+<td>yes</td>
+<td>84%</td>
+<td>1.73GB</td>
+<td>171Mbps / 1.53Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>no</td>
+<td>20%</td>
+<td>1.44GB</td>
+<td>1.4Mbps / 194Mbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>49%</td>
+<td>1.53GB</td>
+<td>3.6Mbps / 1.79Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1000</td>
+<td>1</td>
+<td>yes</td>
+<td>73%</td>
+<td>2.38GB</td>
+<td>5.7Mbps / 3.06Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>100</td>
+<td>10</td>
+<td>2</td>
+<td>yes</td>
+<td>60%</td>
+<td>1.74GB</td>
+<td>181Mbps / 1.62Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>150</td>
+<td>10</td>
+<td>1</td>
+<td>yes</td>
+<td>72%</td>
+<td>2.26GB</td>
+<td>257Mbps / 2.30Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>150</td>
+<td>10</td>
+<td>2</td>
+<td>yes</td>
+<td>79%</td>
+<td>2.34GB</td>
+<td>271Mbps / 2.41Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>250</td>
+<td>10</td>
+<td>2</td>
+<td>no</td>
+<td>58%</td>
+<td>2.66GB</td>
+<td>47Mbps / 439Mbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>2</td>
+<td>2</td>
+<td>no</td>
+<td>78%</td>
+<td>2.31GB</td>
+<td>178Mbps / 195Mbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>41%</td>
+<td>2.6GB</td>
+<td>7.23Mbps / 3.60Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>63%</td>
+<td>3.53GB</td>
+<td>10.9Mbps / 5.38Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>83%</td>
+<td>4.40GB</td>
+<td>14.5Mbps / 7.17Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>250</td>
+<td>10</td>
+<td>2</td>
+<td>yes</td>
+<td>79%</td>
+<td>3.49GB</td>
+<td>431Mbps / 3.73Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>500</td>
+<td>2</td>
+<td>2</td>
+<td>yes</td>
+<td>71%</td>
+<td>2.54GB</td>
+<td>896Mbps / 919Mbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+</tbody>
+</table>
 
 ```{note}
 - The tests focused on a single, vertically scaled RTCD instance to understand the processing limits within a single node. Scaling the RTCD service horizontally should be sufficient to support a higher number of calls.
@@ -382,9 +634,9 @@ If deploying the service in a Kubernetes cluster, refer to the later section on 
 
 Once the `calls-offloader` service is running, recordings should be explicitly enabled through the [Enable call recordings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-recordings) config setting and the service's URL should be configured using [Job service URL](https://docs.mattermost.com/configure/plugins-configuration-settings.html#job-service-url).
 
-Call transcriptions can be enabled through the [Enable call transcriptions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions-beta) configuration setting.
+Call transcriptions can be enabled through the [Enable call transcriptions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-call-transcriptions) configuration setting.
 
-Live captions can be enabled through the [Enable live captions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions-beta) configuration setting.
+Live captions can be enabled through the [Enable live captions](https://docs.mattermost.com/configure/plugins-configuration-settings.html#enable-live-captions) configuration setting.
 
 ```{note}
 - The call transcriptions functionality is available starting in Calls version v0.22.0.

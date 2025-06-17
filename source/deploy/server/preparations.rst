@@ -19,35 +19,7 @@ Database preparation
 
 PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
-1. Create an PostgreSQL server instance:
-
-   .. tab:: AWS
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-    
-   .. tab:: Azure
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-
-   .. tab:: Ubuntu/Debian
-
-      .. code-block:: sh
-
-         sudo apt update
-         sudo apt install postgresql
-
-   .. tab:: RHEL/CentOS
-
-      .. code-block:: sh
-
-         sudo dnf install postgresql-server
-         sudo postgresql-setup --initdb
+1. Create an PostgreSQL server instance. See the `PostgreSQL documentation <https://www.postgresql.org/download/>`_ for details. When the installation is complete, the PostgreSQL server is running, and a Linux user account called postgres has been created.
 
 2. Create the Mattermost database and user:
 
@@ -62,6 +34,8 @@ PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL dat
       .. code-block:: sql
 
          CREATE DATABASE mattermost WITH ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
+
+   If this steps fails with an error message like ``invalid LC_COLLATE locale name: "en_US.UTF-8"``, you need to generate the locale first using ``locale-gen en_US.UTF-8``.
 
    c. Create the Mattermost user with a secure password:
 
@@ -80,6 +54,7 @@ PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL dat
       .. code-block:: sql
 
          ALTER DATABASE mattermost OWNER TO mmuser;
+         ALTER SCHEMA public OWNER TO mmuser;
          GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
 3. Configure PostgreSQL for remote connections (if database is on a separate server):

@@ -57,7 +57,7 @@ Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Ho
 - Out-of-box configuration for new servers means nothing is required to enable HPNS for new deployments. HPNS can be `enabled for existing deployments <#enable-hpns-for-existing-deployments>`_.
 
 .. note:: 
-  - The HPNS only works with pre-built apps Mattermost deploys through the Apple App Store and Google Play Store. If you build your own mobile apps, you must also `host your own Mattermost push proxy server <#host-your-own-push-proxy-service>`_.
+  - The HPNS only works with pre-built apps Mattermost deploys through the `Apple App Store <https://www.apple.com/app-store/>`__ and `Google Play Store <https://play.google.com/store/games?hl=en>`__. If you build your own mobile apps, you must also `host your own Mattermost push proxy server <#host-your-own-push-proxy-service>`_.
   - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server.
   - Mattermost doesn't store any notification data. Any data being stored is at the server level only, such as the ``device_id``, since the HPNS needs to know which device the notification must be sent to.
 
@@ -69,7 +69,7 @@ Non-commercial and self-hosted customers can use Mattermost's free, basic Test P
 .. note::
   - The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs). 
   - The TPNS isn't available for Mattermost Cloud deployments.
-  - The TPNS only works with the pre-built mobile apps that Mattermost deploys through the Apple App Store and Google Play Store. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.
+  - The TPNS only works with the pre-built mobile apps that Mattermost deploys through the `Apple App Store <https://www.apple.com/app-store/>`__ and `Google Play Store <https://play.google.com/store/games?hl=en>`__. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.
   - You must ensure that the push proxy can be reached on the correct port. For TPNS, it's port 80 from the Mattermost server.
   - If you don't need or want Mattermost to send mobile push notifications, disabling this configuration setting in larger deployments may improve server performance in the following areas:
 
@@ -136,7 +136,7 @@ Maximum notifications per channel
 
 .. note::
 
-  - We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics </scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions controlling who can post to the channel, such as a :ref:`read-only channel <onboard/advanced-permissions:read only channels>`.
+  - We recommend increasing this value a little at a time, monitoring system health by tracking :doc:`performance monitoring metrics </scale/deploy-prometheus-grafana-for-performance-monitoring>`, and only increasing this value if large channels have restricted permissions controlling who can post to the channel, such as a :ref:`read-only channel <onboard/advanced-permissions:read-only channels>`.
   - Reducing this configuration setting value to **10** in larger deployments may improve server performance in the following areas:
 
     - Reduced Load on Notification System: Each notification generates a certain amount of computational and network load. By limiting the number of notifications per channel, the system processes fewer notifications, thereby reducing the load on servers.

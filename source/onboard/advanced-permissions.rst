@@ -77,7 +77,15 @@ This section provides some examples of common permissions use cases for team man
 Team management
 ~~~~~~~~~~~~~~~~
 
-**Only allow admins, in a specific team, to add members**
+Ensure users only see each other when in the same team or channel
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Example: A classified organization wants to use Mattermost teams for classified projects. In each project, team members can't know about members outside of their project, and :doc:`@mentions </collaborate/mention-people>` can't disclose the names of people outside of a classified project.
+
+Use the :ref:`mmctl permissions remove <manage/mmctl-command-line-tool:mmctl permissions remove>` command to revoke the ``view_member`` permission from the ``system_user`` role: ``mmctl permissions remove system_user view_member``.
+
+Only allow admins, in a specific team, to add members
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: In Team A, only allow system and team admins to add new team members. As the default for all other teams, allow all users to add and invite new members.
 
@@ -99,7 +107,8 @@ Example: In Team A, only allow system and team admins to add new team members. A
 Public and private channel management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Restrict who can rename channels and edit channel header and purposes**
+Restrict who can rename & edit channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: As the default for the entire system, restrict renaming channels and editing headers and purposes to admins only.
 
@@ -109,11 +118,8 @@ Example: As the default for the entire system, restrict renaming channels and ed
 
 The **Manage Channel Settings** option is now only available to channel admins, team admins, and system admins.
 
-.. note::
-
-  Permissions for channel renaming, editing channel header, and editing channel purpose are currently grouped in a single permission. These will be split into separate permissions in a future release.
-
-**Restrict who can create channels, in specific teams**
+Restrict who can create channels in specific teams
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: In Team C, restrict public channel creation to admins. As the default for all other teams, allow everyone to create public channels.
 
@@ -132,7 +138,8 @@ Example: In Team C, restrict public channel creation to admins. As the default f
 Convert public channels to private channels
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Allow all members to convert public channels to private channels**
+Allow anyone to convert public channels to private channels
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: Set the default setting to allow all members, team admins, and channel admins to convert public channels to private.
 
@@ -142,13 +149,14 @@ Example: Set the default setting to allow all members, team admins, and channel 
 
 This permission is applied to all other roles (excluding the Guest role). When this permission is not enabled for all members, it must be manually applied to team admins and channel admins if required.
 
-Read only channels
+Read-only channels
 ~~~~~~~~~~~~~~~~~~
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-**Configure a channel so that members can post/reply/react but guests can only read and react.**
+Members can participate but guests can only read and react
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Go to **System Console > User Management > Channels**.
 2. Select **Edit** next to the name of the channel you want to configure.
@@ -158,7 +166,8 @@ Read only channels
 
 The channel is available for all members and guests to access, but guests can only read messages and react to them.
 
-**Create an announcement channel where only channel admins are able to post.**
+Create an announcement channel where only channel admins can post
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. Create a new channel (either public or private).
 2. Navigate to **System Console > User Management > Channels**.
@@ -169,10 +178,11 @@ The channel is available for all members and guests to access, but guests can on
 
 The channel is available for all members and guests to access but only admins can post.
 
-Post management
-~~~~~~~~~~~~~~~
+Message management
+~~~~~~~~~~~~~~~~~~~
 
-**Restrict who can delete posts.**
+Restrict who can delete messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: As the default for the entire system, restrict deleting posts to only system and team admins.
 
@@ -181,7 +191,8 @@ Example: As the default for the entire system, restrict deleting posts to only s
 3. In the **All Members** and **Channel Administrators** panels, in the **Delete Posts** section, uncheck the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 4. In the **Channel Administrators** and **Team Administrators** panels, in the **Delete Posts** section, check the boxes for **Delete Own Posts** and **Delete Others' Posts**.
 
-**Restrict who can edit posts.**
+Restrict who can edit messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: As the default for the entire system, only allow users to edit their own posts for five minutes after posting.
 
@@ -193,17 +204,14 @@ Example: As the default for the entire system, only allow users to edit their ow
 Integration management
 ~~~~~~~~~~~~~~~~~~~~~~
 
-**Restrict managing webhooks and slash commands.**
+Restrict who can manage webhooks and slash commands
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Example: As the default for the entire system, only allow system admins to create, edit and delete integrations.
 
 1. Go to **System Console > User Management > Permissions**.
 2. Select **Edit Scheme**.
 3. In the **All Members** and **Team Administrators** panels, in the **Integrations & Customizations** section, uncheck the boxes for **Manage Incoming Webhooks**, **Manage Outgoing Webhooks**, and **Manage Slash Commands**.
-
-.. note::
-
-  Permissions for creating, editing, and deleting integrations are currently grouped for each integration type. These will be split into separate permissions in a future release.
 
 Administration tools
 --------------------

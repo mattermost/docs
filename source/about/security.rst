@@ -1,7 +1,7 @@
 Security Guide
 ==================
 
-Mattermost offers a comprehensive set of security features to protect information in its mobile applications. These features, ranging from encryption and authentication to device management and user education, provide a secure environment for team collaboration and communication. By prioritizing security, Mattermost ensures that customers can trust the mobile application to safeguard their data and privacy. 
+Mattermost offers a comprehensive set of security features to protect information in its mobile applications. These features, ranging from encryption and authentication to device management and user education, provide a secure environment for team collaboration and communication. By prioritizing security, Mattermost ensures that customers can trust the mobile application to safeguard their data and privacy.
 
 .. toctree::
    :maxdepth: 1
@@ -10,6 +10,7 @@ Mattermost offers a comprehensive set of security features to protect informatio
 
    /about/security/zero-trust.rst
    /about/security/mobile-security.rst
+   /about/security/dependency-vulnerability-analysis.rst
 
 Data-in-transit encryption
 ---------------------------
@@ -64,7 +65,7 @@ Remote session revocation & password reset
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 System administrators can remotely :doc:`revoke user sessions </preferences/manage-your-security-preferences>` across web, mobile devices, and desktop apps.
-User passwords can be remotely :ref:`reset <configure/user-management-configuration-settings:reset user's password>` to enhance security. 
+User passwords can be remotely :ref:`reset <configure/user-management-configuration-settings:reset user's password>` to enhance security.
 
 Admins can also enforce re-login after a specified period of time by defining :ref:`session lengths <configure/environment-configuration-settings:session lengths>` and by :ref:`revoking user sessions <configure/user-management-configuration-settings:revoke a user's session>` to force users to log back into the system immediately.
 
@@ -88,7 +89,7 @@ Public links can also be disabled by setting the :ref:`public link salt <configu
 LLM context management
 -----------------------
 
-Mattermost Copilot is designed to ensure that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses in Mattermost. Learn how Mattermost :doc:`Copilot manages LLM context </collaborate/copilot-context-management>` and how to ensure data privacy.
+Mattermost Agents are designed to ensure that only necessary information is sent to the Large Language Model (LLM) for generating accurate responses in Mattermost. Learn how Mattermost :doc:`Agents manages LLM context </collaborate/agents-context-management>` and how to ensure data privacy.
 
 Audit logs and monitoring
 -------------------------
