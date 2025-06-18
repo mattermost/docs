@@ -411,7 +411,24 @@ AD/LDAP
 .. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**.
+Access the following configuration settings in the System Console by going to **Authentication > AD/LDAP**. This opens the AD/LDAP setup wizard with step-by-step sections and testing to help configure each setting.
+
+The wizard is organized into the following sections:
+
+- **Connection Settings**: Configure server connection details
+- **User Filters**: Set up user identification and filtering
+- **Account Synchronization**: Map AD/LDAP attributes to Mattermost user fields
+- **Group Synchronization**: Configure group settings and group attributes (if using LDAP groups)
+- **Synchronization Performance**: Adjust synchronization timing and performance settings
+- **Synchronization History**: View synchronization status and manually trigger syncs
+
+.. note::
+   Each section includes a test button to verify your configuration incrementally, helping identify and resolve issues early in the setup process.
+
+Connection Settings
+~~~~~~~~~~~~~~~~~~~
+
+Configure your AD/LDAP server connection and basic authentication settings. Use the **Test Connection** button in this section to verify your server connection before proceeding to other configuration steps.
 
 .. config:setting:: enable-sign-in-with-adldap
   :displayname: Enable sign-in with AD/LDAP (AD/LDAP)
@@ -533,6 +550,50 @@ AD/LDAP port
 | Numerical input. Default is **389**.                               | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``                 |
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 
+.. config:setting:: bind-username
+  :displayname: Bind username (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.BindUsername
+  :environment: MM_LDAPSETTINGS_BINDUSERNAME
+
+  This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost.
+
+  Limit the permissions of the account to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** setting.
+
+  When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.
+
+Bind username
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost. | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                                                                                          | - ``config.json`` setting: ``LdapSettings`` > ``BindUsername`` |
+| Limit the permissions of the account to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** setting.        | - Environment variable: ``MM_LDAPSETTINGS_BINDUSERNAME``       |
+|                                                                                                                                          |                                                                |
+| When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.                                    |                                                                |
+|                                                                                                                                          |                                                                |
+| String input.                                                                                                                            |                                                                |
++------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
+
+.. note::
+  This field is required. Anonymous bind is not currently supported.
+
+.. config:setting:: bind-password
+  :displayname: Bind password (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.BindPassword
+  :environment: MM_LDAPSETTINGS_BINDPASSWORD
+  :description: This is the password for the username given in the **Bind Username** setting.
+
+Bind password
+~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------+----------------------------------------------------------------+
+| This is the password for the username given in the **Bind Username** setting. | - System Config path: **Authentication > AD/LDAP**             |
+|                                                                               | - ``config.json`` setting: ``LdapSettings`` > ``BindPassword`` |
+| String input.                                                                 | - Environment variable: ``MM_LDAPSETTINGS_BINDPASSWORD``       |
++-------------------------------------------------------------------------------+----------------------------------------------------------------+
+
 .. config:setting:: connection-security
   :displayname: Connection security (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -612,49 +673,10 @@ Public certificate
 | String input.                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. config:setting:: bind-username
-  :displayname: Bind username (AD/LDAP)
-  :systemconsole: Authentication > AD/LDAP
-  :configjson: .LdapSettings.BindUsername
-  :environment: MM_LDAPSETTINGS_BINDUSERNAME
+User Filters
+~~~~~~~~~~~~
 
-  This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost.
-
-  Limit the permissions of the account to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** setting.
-
-  When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.
-
-Bind username
-~~~~~~~~~~~~~
-
-+------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost. | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                                                                                          | - ``config.json`` setting: ``LdapSettings`` > ``BindUsername`` |
-| Limit the permissions of the account to read-only access to the portion of the AD/LDAP tree specified in the **Base DN** setting.        | - Environment variable: ``MM_LDAPSETTINGS_BINDUSERNAME``       |
-|                                                                                                                                          |                                                                |
-| When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.                                    |                                                                |
-|                                                                                                                                          |                                                                |
-| String input.                                                                                                                            |                                                                |
-+------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
-
-.. note::
-  This field is required. Anonymous bind is not currently supported.
-
-.. config:setting:: bind-password
-  :displayname: Bind password (AD/LDAP)
-  :systemconsole: Authentication > AD/LDAP
-  :configjson: .LdapSettings.BindPassword
-  :environment: MM_LDAPSETTINGS_BINDPASSWORD
-  :description: This is the password for the username given in the **Bind Username** setting.
-
-Bind password
-~~~~~~~~~~~~~
-
-+-------------------------------------------------------------------------------+----------------------------------------------------------------+
-| This is the password for the username given in the **Bind Username** setting. | - System Config path: **Authentication > AD/LDAP**             |
-|                                                                               | - ``config.json`` setting: ``LdapSettings`` > ``BindPassword`` |
-| String input.                                                                 | - Environment variable: ``MM_LDAPSETTINGS_BINDPASSWORD``       |
-+-------------------------------------------------------------------------------+----------------------------------------------------------------+
+Define how Mattermost identifies and filters users and groups from your AD/LDAP directory. Use the **Test Filters** button in this section to verify your filters work correctly before proceeding to other configuration steps.
 
 .. config:setting:: base-dn
   :displayname: Base DN (AD/LDAP)
@@ -771,6 +793,11 @@ Guest filter
 |                                                                                                                                                                                      |                                                               |
 | String input.                                                                                                                                                                        |                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
+
+Account Synchronization
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Map AD/LDAP user attributes to Mattermost user profile fields. Use the **Test Attributes** button in this section to verify correct attribute mapping and data synchronization before proceeding to other configuration steps.
 
 .. config:setting:: id-attribute
   :displayname: ID attribute (AD/LDAP)
@@ -949,6 +976,11 @@ Profile picture attribute
 | String input.                                                                                       |                                                                    |
 +-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
+Group Synchronization
+~~~~~~~~~~~~~~~~~~~~~~
+
+Configure group mapping for AD/LDAP group synchronization. Use the **Test Group Attributes** button in this section to verify proper group attribute mapping before proceeding to other configuration steps.
+
 .. config:setting:: group-display-name-attribute
   :displayname: Group display name attribute (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -995,6 +1027,11 @@ Group ID attribute
 .. note::
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
 
+Synchronization Performance
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Configure timing and performance settings for AD/LDAP synchronization. These settings control how often Mattermost syncs with your AD/LDAP server.
+
 .. config:setting:: synchronization-interval-minutes
   :displayname: Synchronization interval (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -1019,33 +1056,6 @@ Synchronization interval (minutes)
 
 .. note::
   LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
-
-.. config:setting:: re-add-removed-members-on-sync
-  :displayname: Re-add removed members on sync (AD/LDAP)
-  :systemconsole: Authentication > AD/LDAP
-  :configjson: .LdapSettings.ReAddRemovedMembers
-  :environment: MM_LDAPSETTINGS_READDREMOVEDMEMBERS
-  :description: Enable this setting to re-add members of the LDAP group that were previously removed from group-synchronized teams or channels during LDAP synchronization. Disabled by default.
-
-Re-add removed members on sync
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-+---------------------------------------------------------------------+-------------------------------------------------------------------------+
-| Enable this setting to re-add members of the LDAP group that were   | - System Config path: **Authentication > AD/LDAP**                      |
-| previously removed from group-synchronized teams or channels        | - ``config.json`` setting: ``LdapSettings`` > ``ReAddRemovedMembers``   |
-| during LDAP synchronization.                                        | - Environment variable: ``MM_LDAPSETTINGS_READDREMOVEDMEMBERS``         |
-|                                                                     |                                                                         |
-| - **true**: Members of the LDAP group who were previously removed   |                                                                         |
-|   are re-added to group-synchronized teams or channels during LDAP  |                                                                         |
-|   synchronization.                                                  |                                                                         |
-| - **false**: **(Default)** Members of the LDAP group who were       |                                                                         |
-|   previously removed are not re-added to group-synchronized         |                                                                         |
-|   teams or channels during LDAP synchronization.                    |                                                                         |
-+---------------------------------------------------------------------+-------------------------------------------------------------------------+
-
-.. note::
-
-  The :ref:`mmctl ldap sync <manage/mmctl-command-line-tool:mmctl ldap sync>` command takes precedence over this server configuration setting. If you have this setting disabled, and run the mmctl command with the ``--include-removed-members`` flag, removed members will be re-added during LDAP synchronization.
 
 .. config:setting:: maximum-page-size
   :displayname: Maximum page size (AD/LDAP)
@@ -1083,16 +1093,10 @@ Query timeout (seconds)
 | Numerical input. Default is **60**.                                                                                                                   | - Environment variable: ``MM_LDAPSETTINGS_QUERYTIMEOUT``                |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-AD/LDAP test
-~~~~~~~~~~~~
+Synchronization History
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-+---------------------------------------------------------------+----------------------------------------------------+
-| Use this button to test the connection to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP** |
-|                                                               | - ``config.json`` setting: N/A                     |
-| If the test succeeds, a confirmation message is displayed.    | - Environment variable: N/A                        |
-|                                                               |                                                    |
-| If the test fails, an error message is displayed.             |                                                    |
-+---------------------------------------------------------------+----------------------------------------------------+
+View synchronization status and manually trigger AD/LDAP synchronization. This section includes the **AD/LDAP Synchronize Now** button for immediate synchronization.
 
 AD/LDAP synchronize now
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -1109,6 +1113,39 @@ AD/LDAP synchronize now
   If a sync is ``Pending`` and does not complete, check that **Enable Synchronization with AD/LDAP** is set to ``true``.
   
 .. figure:: ../images/ldap-sync-table.png
+
+
+Config Settings Not Available in the Wizard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The following AD/LDAP configuration settings are available in the config.json file but are not part of the AD/LDAP wizard interface in the System Console.
+
+.. config:setting:: re-add-removed-members-on-sync
+  :displayname: Re-add removed members on sync (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.ReAddRemovedMembers
+  :environment: MM_LDAPSETTINGS_READDREMOVEDMEMBERS
+  :description: Enable this setting to re-add members of the LDAP group that were previously removed from group-synchronized teams or channels during LDAP synchronization. Disabled by default.
+
+Re-add removed members on sync
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enable this setting to re-add members of the LDAP group that were   | - System Config path: **Authentication > AD/LDAP**                      |
+| previously removed from group-synchronized teams or channels        | - ``config.json`` setting: ``LdapSettings`` > ``ReAddRemovedMembers``   |
+| during LDAP synchronization.                                        | - Environment variable: ``MM_LDAPSETTINGS_READDREMOVEDMEMBERS``         |
+|                                                                     |                                                                         |
+| - **true**: Members of the LDAP group who were previously removed   |                                                                         |
+|   are re-added to group-synchronized teams or channels during LDAP  |                                                                         |
+|   synchronization.                                                  |                                                                         |
+| - **false**: **(Default)** Members of the LDAP group who were       |                                                                         |
+|   previously removed are not re-added to group-synchronized         |                                                                         |
+|   teams or channels during LDAP synchronization.                    |                                                                         |
++---------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. note::
+
+  The :ref:`mmctl ldap sync <manage/mmctl-command-line-tool:mmctl ldap sync>` command takes precedence over this server configuration setting. If you have this setting disabled, and run the mmctl command with the ``--include-removed-members`` flag, removed members will be re-added during LDAP synchronization.
 
 .. _saml-enterprise:
 
