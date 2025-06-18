@@ -112,7 +112,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.8-feature-release)=
 ## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.8.3, released **
+- **10.8.3, released 2025-06-18**
   - Mattermost v10.8.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
   - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
@@ -207,7 +207,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.7-feature-release)=
 ## Release v10.7 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.7.4, released **
+- **10.7.4, released 2025-06-18**
   - Mattermost v10.7.4 contains high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Pre-packaged MS Teams plugin [v2.2.1](https://github.com/mattermost/mattermost-plugin-msteams/releases/tag/v2.2.1).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
@@ -412,7 +412,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
 (release-v10.5-extended-support-release)=
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.5.8, released **
+- **10.5.8, released 2025-06-18**
   - Mattermost v10.5.8 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where unreads from deleted teams would display in the titlebar/Desktop App [MM-63933](https://mattermost.atlassian.net/browse/MM-63933).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
