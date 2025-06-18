@@ -32,7 +32,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - GPG Signature: https://releases.mattermost.com/10.6.6/mattermost-10.6.6-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.5.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.8/mattermost-10.5.8-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.8/mattermost-10.5.8-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``ac2986373596d73e1e54fd573570a560a0da947f1c82430ae46b42a652ba59ff``
+    - SHA-256 Checksum: ``a887360ada2f802ee71e9b7f8b97c551634301658c863d66d35e4d5bfc6b2048``
     - GPG Signature: https://releases.mattermost.com/10.5.8/mattermost-10.5.8-linux-amd64.tar.gz.sig
   Mattermost Enterprise Edition v10.4.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-4-feature-release>`__ - `Download <https://releases.mattermost.com/10.4.5/mattermost-10.4.5-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.4.5/mattermost-10.4.5-linux-amd64.tar.gz``
@@ -444,7 +444,7 @@ If you want to check that the version of Mattermost you are installing is the of
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.6.6/sbom-mattermost-v10.6.6.json
   Mattermost Team Edition v10.5.8 *Extended Support Release (ESR)* - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-5-extended-support-release>`__ - `Download <https://releases.mattermost.com/10.5.8/mattermost-team-10.5.8-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.5.8/mattermost-team-10.5.8-linux-amd64.tar.gz``
-    - SHA-256 Checksum: ``ba23c605cb5c60052e82b48d786b62d7049be9366da078f657d21f137ef6e3e2``
+    - SHA-256 Checksum: ``53645c42ea099bdc52e16abfafdd17d2900cdeaf0a67ce58a58a1d750b213ed1``
     - GPG Signature: https://releases.mattermost.com/10.5.8/mattermost-team-10.5.8-linux-amd64.tar.gz.sig
     - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.5.8/sbom-mattermost-v10.5.8.json
   Mattermost Team Edition v10.4.5 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-4-feature-release>`__ - `Download <https://releases.mattermost.com/10.4.5/mattermost-team-10.4.5-linux-amd64.tar.gz?src=arc>`__
