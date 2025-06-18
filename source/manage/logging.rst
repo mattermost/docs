@@ -14,7 +14,11 @@ System admins can customize the following logging options based on your business
 
 .. tip::
 
-    You can configure logging specifically for Mattermost notifications using ``NotificationLogSettings`` in the ``config.json`` file. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. See :ref:`Notification logging <configure/environment-configuration-settings:notification logging>` for details.
+    You can configure logging specifically for different Mattermost subsystems using specialized logging settings in the ``config.json`` file. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior for specific subsystems:
+    
+    - **General logging**: Use ``LogSettings`` for main application logging with ``AdvancedLoggingJSON`` support
+    - **Audit logging**: Use ``AuditLogSettings`` for audit events. See :ref:`Audit logging <configure/environment-configuration-settings:audit logging>` for details.
+    - **Notification logging**: Use ``NotificationLogSettings`` for notification events. See :ref:`Notification logging <configure/environment-configuration-settings:notification logging>` for details.
 
 Console logs
 ------------
