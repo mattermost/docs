@@ -171,8 +171,6 @@ System administrators can enable plugin component visibility in connected worksp
 
 - ``ConnectedWorkspacesSettings.EnableSharedChannelsPlugins = true``
 
-See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces>` documentation for details.
-
 .. note::
 
     When plugin components are enabled in shared channels, ensure all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors may vary between instances if different plugin versions or configurations are used.

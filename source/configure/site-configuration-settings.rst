@@ -1920,17 +1920,16 @@ Enable the ability to establish secure connections between Mattermost instances,
 
 Connected workspaces requires Mattermost Enterprise servers running v10.2 or later.
 
-By default, the EnableRemoteClusterService and EnableSharedChannels configuration settings are disabled and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
+By default, both configuration settings are disabled and must be enabled in order to share channels with secure connections. Enabling connected workspace functionality requires a server restart.
 
-This feature's ``config.json`` settings include:
+This feature's two ``config.json`` settings include:
 
 - ``ConnectedWorkspacesSettings.EnableRemoteClusterService: false`` with options ``true`` and ``false``.
 - ``ConnectedWorkspacesSettings.EnableSharedChannels: false`` with options ``true`` and ``false``.
-- ``ConnectedWorkspacesSettings.EnableSharedChannelsPlugins: false`` with options ``true`` and ``false``.
 
 .. note::
 
-  - These settings are not available in the System Console and can only be set in ``config.json`` under ``ConnectedWorkspacesSettings``. 
+  - Neither setting is available in the System Console and can only be set in ``config.json`` under ``ConnectedWorkspacesSettings``. 
   - System admins for Cloud deployments can submit a request to have these required configuration settings enabled for their Cloud deployment instance.
   - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to connected workspace configuration settings in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
@@ -1970,32 +1969,6 @@ Default maximum posts per sync
 |                                                                           | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DefaultMaxPostsPerSync`` > ``50`` |
 | Default is **50**.                                                        | - Environment variable: N/A                                                                      |
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
-
-.. config:setting:: enable-shared-channels-plugins
-  :displayname: Enable shared channels plugins (Connected Workspaces)
-  :systemconsole: N/A
-  :configjson: ConnectedWorkspacesSettings.EnableSharedChannelsPlugins
-  :environment: N/A
-  :description: Enable plugin component interactions in connected workspaces (shared channels). Available in Mattermost Server v10.10 or later.
-
-Enable shared channels plugins
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Available in Mattermost Server v10.10 or later.*
-
-Enable plugin component interactions in connected workspaces (shared channels).
-
-By default, plugin components such as slash commands, interactive buttons, and other plugin-generated components are hidden in shared channels to ensure a consistent experience across different Mattermost instances that may have different plugins installed.
-
-+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-| - **true**: Plugin components are visible and functional in shared channels.     | - System Config path: N/A                                                                           |
-| - **false**: **(Default)** Plugin components are hidden in shared channels.     | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``EnableSharedChannelsPlugins`` > ``false`` |
-+-----------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
-
-.. note::
-
-  - This setting is not available in the System Console and can only be set in ``config.json`` under ``ConnectedWorkspacesSettings``.
-  - When enabled, ensure all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences.
 
 ----
 
