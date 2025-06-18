@@ -152,6 +152,31 @@ Once a connection is established between two Mattermost servers, system admins c
 
     The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in :ref:`Beta <manage/feature-labels:beta>`, there are some known issues that may impact reliability of direct message delivery across servers.
 
+Plugin component interaction
+-----------------------------
+
+.. include:: ../_static/badges/version-badge.rst
+  :start-after: :nosearch:
+
+*Available in Mattermost Server v10.10 or later.*
+
+By default, plugin components are hidden in connected workspaces (shared channels) to ensure a consistent experience across different Mattermost instances that may have different plugins installed.
+
+Starting from Mattermost Server v10.10, plugin interactions such as slash commands, interactive buttons, and other plugin-generated components are not displayed or accessible in shared channels unless explicitly enabled by a system administrator.
+
+Enable plugin components
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+System administrators can enable plugin component visibility in connected workspaces by setting the following configuration in ``config.json``:
+
+- ``ConnectedWorkspacesSettings.EnableSharedChannelsPlugins = true``
+
+See the :ref:`Site Configuration Settings <configure/site-configuration-settings:enable connected workspaces>` documentation for details.
+
+.. note::
+
+    When plugin components are enabled in shared channels, ensure all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors may vary between instances if different plugin versions or configurations are used.
+
 Manage connections and invitations
 ----------------------------------
 
