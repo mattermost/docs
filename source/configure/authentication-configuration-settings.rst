@@ -489,28 +489,7 @@ Login field name
 | String input. Default is ``AD/LDAP Username``.                                                                                                           | - Environment variable: ``MM_LDAPSETTINGS_LOGINFIELDNAME``       | 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
-.. config:setting:: maximum-login-attempts
-  :displayname: Maximum login attempts (AD/LDAP)
-  :systemconsole: Authentication > AD/LDAP
-  :configjson: .LdapSettings.DefaultMaximumLoginAttempts
-  :environment: MM_LDAPSETTINGS_DEFAULTMAXIMUMLOGINATTEMPTS
-  :description: The maximum number of login attempts before the Mattermost account is locked. Default is 10.
-
-Maximum login attempts
-~~~~~~~~~~~~~~~~~~~~~~~
-
-+--------------------------------------------------------------+--------------------------------------------------------------------------+
-| The maximum number of login attempts before the Mattermost   | - System Config path: **Authentication > AD/LDAP**                       |
-| account is locked.                                           | - ``config.json`` setting: ``DefaultMaximumLoginAttempts`` > ``10``      |
-|                                                              | - Environment variable: ``MM_LDAPSETTINGS_DEFAULTMAXIMUMLOGINATTEMPTS``  |
-| Numeric input.                                               |                                                                          |
-+--------------------------------------------------------------+--------------------------------------------------------------------------+ 
-
-.. note::
-
-  - Adjust this value to align with your organization’s authentication policies.
-  - If a user's account is locked, you can unlock it manually by going to **System console > User Management > Users**.
-
+ 
 .. config:setting:: adldap-server
   :displayname: AD/LDAP server (AD/LDAP)
   :systemconsole: Authentication > AD/LDAP
@@ -672,6 +651,31 @@ Public certificate
 |                                                                                                                                                                    | - ``config.json`` setting: ``LdapSettings`` > ``PublicCertificateFile`` |
 | String input.                                                                                                                                                      | - Environment variable: ``MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE``       |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: maximum-login-attempts-ldap
+  :displayname: Maximum login attempts (AD/LDAP)
+  :systemconsole: Authentication > AD/LDAP
+  :configjson: .LdapSettings.MaximumLoginAttempts
+  :environment: MM_LDAPSETTINGS_MAXIMUMLOGINATTEMPTS
+  :description: This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. Default is **10**.
+
+Maximum login attempts
+~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+| This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. | - System Config path: **Authentication > AD/LDAP**                                |
+|                                                                                                                                                             | - ``config.json`` setting: ``LdapSettings`` > ``MaximumLoginAttempts`` > ``10``   |
+| You can unlock the account in System Console on the users page. Setting this value lower than your LDAP maximum login attempts ensures that the users     | - Environment variable: ``MM_LDAPSETTINGS_MAXIMUMLOGINATTEMPTS``                  |
+| won't be locked out of your LDAP server because of failed login attempts in Mattermost.                                                                    |                                                                                    |
+|                                                                                                                                                             |                                                                                    |
+| Numerical input. Default is **10**.                                                                                                                         |                                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
+
+.. note::
+
+  - Adjust this value to align with your organization’s authentication policies.
+  - If a user's account is locked, you can unlock it manually by going to **System console > User Management > Users**.
+
 
 User Filters
 ~~~~~~~~~~~~
