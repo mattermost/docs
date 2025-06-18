@@ -48,7 +48,7 @@ Mattermost Enterprise Advanced
 Mattermost Enterprise Advanced is the :doc:`Intelligent Mission Environment </about/product>` for Cyber Defense and Mission Operations that features:
 
 - :doc:`Classified and Sensitive Information Controls </collaborate/display-channel-banners>`
-- :doc:`Zero Trust Security </manage/admin/zero-trust-security>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
+- :doc:`Zero Trust Security </manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
 - :doc:`Mobile security </about/security/mobile-security>` controls
 - :doc:`Air-gapped deployment workflows </deploy/server/air-gapped-deployment>`
 
