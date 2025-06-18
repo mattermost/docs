@@ -78,7 +78,7 @@
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Core search</strong>: Search over <a href="https://docs.mattermost.com//collaborate/search-for-messagess">messages</a> and <a href="https://docs.mattermost.com/collaborate/search-for-messages.html#search-for-files">files</a> in Mattermost. Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, <a href="https://docs.mattermost.com/scale/enterprise-search.html#enterprise-search">Enterprise Search</a> is recommended.</td>
+      <td><strong>Core search</strong>: Search over <a href="https://docs.mattermost.com//collaborate/search-for-messagess">messages</a> and <a href="https://docs.mattermost.com/collaborate/search-for-messages.html#search-for-files">files</a> in Mattermost. Core search happens in a relational database and is intended for deployments under about 2–3 million posts and file entries. Beyond that scale, <a href="https://docs.mattermost.com/scale/enterprise-search.html">Enterprise Search</a> is recommended.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -182,22 +182,22 @@
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Guest accounts</strong>: Bring external users and users who need to have restricted access into your Mattermost instance as guests who can interact with your team with limited permissions. For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.</td>
+      <td><strong>Guest accounts</strong>: Bring external users and users who need to have restricted access into your Mattermost instance as <a href="https://docs.mattermost.com/onboard/guest-accounts.html">guests</a> who can interact with your team with limited permissions. For billing purposes, activated guest accounts do consume a licensed seat, which is returned when the guest account is deactivated.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Custom user groups</strong>: Simplify communication by creating custom user groups to mention and notify up to 256 users who work together on projects or in functions or have other ties. Examples include creating custom groups for cross-functional teams, for job types, or organization membership within an enterprise.</td>
+      <td><strong>Custom user groups</strong>: Simplify communication by creating <a href="https://docs.mattermost.com/collaborate/organize-using-custom-user-groups.html">custom user groups</a> to mention and notify up to 256 users who work together on projects or in functions or have other ties. Examples include creating custom groups for cross-functional teams, for job types, or organization membership within an enterprise.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>System-wide notifications</strong>: Notify users across teams of upcoming system maintenance, service changes, and other announcements using system-wide announcement banners.</td>
+      <td><strong>System-wide notifications</strong>: Notify users across teams of upcoming system maintenance, service changes, and other announcements using <a href="https://docs.mattermost.com/manage/system-wide-notifications.html">system-wide announcement banners</a>.</td>
       <td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <!-- Scale & high availability -->
     <tr class="section"><td colspan="7"><strong>Scale &amp; high availability</strong></td></tr>
     <tr class="subsection"><td colspan="7"><strong>Achieve scale and resilience with cluster-based deployment, horizontal system architecture, advanced performance monitoring and logging and Kubernetes-based deployment.</strong></td></tr>
     <tr>
-      <td><strong>High availability cluster-based deployment</strong>: Enable business continuity through component failures using <a href="https://docs.mattermost.com/scale/scaling-for-enterprise.html#cluster-based-deployment">cluster-based deployment</a> with multiple application servers, multiple database servers, and multiple front-end proxies and/or load balancers.</td>
+      <td><strong>High availability cluster-based deployment</strong>: Enable business continuity through component failures using <a href="https://docs.mattermost.com/scale/high-availability-cluster-based-deployment.html">cluster-based deployment</a> with multiple application servers, multiple database servers, and multiple front-end proxies and/or load balancers.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -205,7 +205,7 @@
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Enterprise search (3M+ posts)</strong>: Enable enterprise-scale search after exceeding 3 million posts in the Mattermost database by <a href="https://docs.mattermost.com/scale/elasticsearch.html">deploying Elasticsearch</a> with dedicated indexing and usage resourcing via cluster support.</td>
+      <td><strong>Enterprise search (3M+ posts)</strong>: Enable enterprise-scale search after exceeding 3 million posts in the Mattermost database by <a href="https://docs.mattermost.com/scale/enterprise-search.html">deploying Elasticsearch</a> with dedicated indexing and usage resourcing via cluster support.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
