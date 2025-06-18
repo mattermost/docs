@@ -248,7 +248,7 @@
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
-      <td><strong>Channel export</strong>: Archive, backup, or submit the contents of a channel into other systems to fulfill reporting and auditability requirements as needed.</td>
+      <td><strong><a href="https://docs.mattermost.com/comply/export-mattermost-channel-data.html">Channel export</a></strong>: Archive, backup, or submit the contents of a channel into other systems to fulfill reporting and auditability requirements as needed.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
     </tr>
     <tr>
@@ -287,6 +287,25 @@
     <tr>
       <td><strong>Connected Workspaces</strong>: Communicate across organizations using Mattermost by synchronizing messages, emoji reactions, and file sharing in real time through <a href="https://docs.mattermost.com/onboard/connected-workspaces.html">Mattermost Connected Workspaces</a>.</td>
       <td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
+    </tr>
+    <!-- Enterprise Advanced exclusive features -->
+    <tr class="section"><td colspan="7"><strong>Enterprise Advanced exclusive features</strong></td></tr>
+    <tr class="subsection"><td colspan="7"><strong>Advanced security, compliance, and deployment capabilities designed for the most demanding cyber defense and mission-critical environments.</strong></td></tr>
+    <tr>
+      <td><strong><a href="https://docs.mattermost.com/collaborate/display-channel-banners.html">Classified and Sensitive Information Controls</a></strong>: Display channel banners to indicate classification levels and sensitive information handling requirements, ensuring compliance with security protocols for classified environments.</td>
+      <td></td><td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://docs.mattermost.com/manage/admin/attribute-based-access-control.html">Zero Trust Security</a></strong>: Implement dynamic attribute-based policy controls with environmental attributes and User Authoritative Source integration for comprehensive zero trust security architecture.</td>
+      <td></td><td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://docs.mattermost.com/about/security/mobile-security.html">Mobile security controls</a></strong>: Advanced mobile security features and controls designed for high-security environments and mission-critical mobile deployments.</td>
+      <td></td><td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
+    </tr>
+    <tr>
+      <td><strong><a href="https://docs.mattermost.com/deploy/server/air-gapped-deployment.html">Air-gapped deployment workflows</a></strong>: Specialized deployment workflows and procedures for completely disconnected and air-gapped environments with no external network connectivity.</td>
+      <td></td><td></td><td></td><td></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v10.9+</td>
     </tr>
     <!-- Support -->
     <tr class="section"><td colspan="7"><strong>Support</strong></td></tr>
