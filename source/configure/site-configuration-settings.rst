@@ -251,13 +251,32 @@ Forgot Password custom link
 .. note::
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. You can control whether the **Forgot Password** link is visible or hidden in clients by going to **Authentication > Password > Enable Forgot Password Link**. See the :ref:`configuration <configure/authentication-configuration-settings:enable forgot password link>` documentation for details.
 
+.. config:setting:: report-a-problem-type
+  :displayname: Report a Problem type (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ReportAProblemType
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMTYPE
+  :description: Specify how the ‘Report a Problem’ option behaves in the Mattermost app via the Help menu.
+
+Report a Problem
+~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+Specify how the ‘Report a Problem’ option behaves in the Mattermost app via the **Help** menu:
+
+- **Default link**: Uses the default Mattermost URL to report a problem. For commercial customers, this is the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Non-commercial customers are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
+- **Email address**: Enables you to :ref:`enter an email address <configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
+- **Custom link**: Enables you to :ref:`enter a URL <configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
+- **Hide link**: Removes the **Report a Problem** option from Mattermost.
 
 .. config:setting:: report-a-problem-link
   :displayname: Report a Problem link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemLink
   :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK
-  :description: This field sets the URL for the **Report a Problem** link in the channel header **Help** menu.  Default value is **https://about.mattermost.com/default-report-a-problem**.
+  :description: Users will be directed to this link when they choose Report a Problem in Mattermost.
 
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~
@@ -265,18 +284,61 @@ Report a Problem link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| This field sets the URL for the **Report a Problem** link in the channel header **Help** menu. If this field is empty the link does not appear. | - System Config path: **Site Configuration > Customization**            |
-|                                                                                                                                                 | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemLink`` |
-| String input. Default is ``https://about.mattermost.com/default-report-a-problem``.                                                             | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This field sets the URL for the **Report a Problem** link in the channel header **Help** menu.    | - System Config path: **Site Configuration > Customization**            |
+| If this field is empty the link does not appear.                                                  | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemLink`` |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
+| String input. Default is ``https://mattermost.com/pl/report-a-bug``.                              |                                                                         |
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: report-a-problem-email
+  :displayname: Report a Problem email (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ReportAProblemMail
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL
+  :description: Enter the email address that users will be prompted to send a message to when they choose Report a Problem in Mattermost.
+
+Report a Problem email address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This field sets the email address for the **Report a Problem** link in the channel                | - System Config path: **Site Configuration > Customization**            |
+| header **Help** menu.                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemMail`` |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL``       |
+| String input. Cannot be left blank.                                                               |                                                                         |
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: allow-mobile-app-log-downloads
+  :displayname: Allow Mobile App Log Downloads (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.AllowDownloadLogs
+  :environment: MM_SUPPORTSETTINGS_ALLOWDOWNLOADLOGS
+  :description: When enabled, users can download app logs for troubleshooting. If a Report a Problem link is shown, logs can be downloaded as part of this workflow.
+
+Allow mobile app log downloads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enable users to download mobile app logs for troubleshooting.            | - System Config path: **Site Configuration > Customization**            |
+| When the **Report a Problem** link is shown, mobile logs can be          | - ``config.json`` setting: ``SupportSettings`` > ``AllowDownloadLogs``  |
+| downloaded as part of the reporting flow.                                | - Environment variable: ``MM_SUPPORTSETTINGS_ALLOWDOWNLOADLOGS``        |
+|                                                                          |                                                                         |
+| - **true** (**Default**): Users can download mobile app logs.            |                                                                         |
+| - **false** Users can't download mobile app logs.                        |                                                                         |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: mattermost-apps-download-page-link
   :displayname: Mattermost apps download page link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.AppDownloadLink
   :environment: MM_NATIVEAPPSETTINGS_APPDOWNLOADLINK
-  :description: This field sets the URL for the Download Apps link in the **Product** menu. Default value is **https://about.mattermost.com/downloads/**.
+  :description: This field sets the URL for the Download Apps link in the Product menu. Default value is https://mattermost.com/pl/download-apps.
 
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -289,7 +351,7 @@ Mattermost apps download page link
 |                                                                                                                               | - ``config.json`` setting: ``NativeAppSettings`` > ``AppDownloadLink`` |
 | If you have an Enterprise App Store, set the link to the appropriate download page for your Mattermost apps.                  | - Environment variable: ``MM_NATIVEAPPSETTINGS_APPDOWNLOADLINK``       |
 |                                                                                                                               |                                                                        |
-| String input. Default is ``https://about.mattermost.com/downloads/``.                                                         |                                                                        |
+| String input. Default is ``https://mattermost.com/pl/download-apps``.                                                         |                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: android-app-download-link
@@ -297,7 +359,7 @@ Mattermost apps download page link
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.AndroidAppDownloadLink
   :environment: MM_NATIVEAPPSETTINGS_ANDROIDAPPDOWNLOADLINK
-  :description: This field sets the URL to download the Mattermost Android app. Default value is **https://about.mattermost.com/mattermost-android-app/**.
+  :description: This field sets the URL to download the Mattermost Android app. Default value is https://mattermost.com/pl/android-app/.
 
 Android app download link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -310,7 +372,7 @@ Android app download link
 |                                                                                                                                                                                                                                      | - ``config.json`` setting: ``NativeAppSettings`` > ``AndroidAppDownloadLink`` |
 | If you have an Enterprise App Store, link to your Android app.                                                                                                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_ANDROIDAPPDOWNLOADLINK``       |
 |                                                                                                                                                                                                                                      |                                                                               |
-| String input. Default is ``https://about.mattermost.com/mattermost-android-app/``.                                                                                                                                                   |                                                                               |
+| String input. Default is ``https://mattermost.com/pl/android-app/``.                                                                                                                                                                 |                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: ios-app-download-link
@@ -318,7 +380,7 @@ Android app download link
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.IosAppDownloadLink
   :environment: MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK
-  :description: This field sets the URL to download the Mattermost iOS app. Default value is **https://about.mattermost.com/mattermost-ios-app/**.
+  :description: This field sets the URL to download the Mattermost iOS app. Default value is https://mattermost.com/pl/ios-app/.
 
 iOS app download link
 ~~~~~~~~~~~~~~~~~~~~~
@@ -331,7 +393,7 @@ iOS app download link
 |                                                                                                                                                                                                                       | - ``config.json`` setting: ``NativeAppSettings`` > ``IosAppDownloadLink``|
 | If you use an Enterprise App Store, link to your iOS app.                                                                                                                                                             | - Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``      |
 |                                                                                                                                                                                                                       |                                                                          |
-| String input. Default is ``https://about.mattermost.com/mattermost-ios-app/``.                                                                                                                                        |                                                                          |
+| String input. Default is ``https://mattermost.com/pl/ios-app/``.                                                                                                                                                      |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-desktop-app-landing-page
@@ -1717,9 +1779,6 @@ Allow file sharing
 Allow file uploads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              | - System Config path: **Site Configuration > File Sharing and Downloads**            |
 | - **false**: Prevents users from attaching files (including images) to messages from mobile apps. | - ``config.json`` setting: ``FileSettings`` > ``EnableMobileUpload`` > ``true``      |
@@ -1737,9 +1796,6 @@ Allow file uploads on mobile
 
 Allow file downloads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables file downloads on mobile apps.                                               | - System Config path: **Site Configuration > File sharing and downloads**           |
@@ -1843,7 +1899,7 @@ Enable end user notices
 Connected workspaces
 ---------------------------
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
