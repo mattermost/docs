@@ -89,6 +89,37 @@ When planning your Mattermost deployment, consider the following when choosing t
 
 The following server, desktop, and mobile application sections provide detailed instructions for each deployment approach.
 
+v10.10+ deployment enhancements
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting with Mattermost v10.10, significant improvements have been made to the deployment and upgrade experience for administrators:
+
+**Enhanced admin tooling**
+
+* **Configuration validation**: New ``mattermost config validate`` command helps identify configuration issues before deployment
+* **Migration planning**: Enhanced ``mattermost db migrate --save-plan`` provides detailed migration plans for better upgrade planning
+* **Health checks**: Improved system health monitoring with more granular metrics and alerts
+
+**Deployment automation improvements**
+
+* **Infrastructure as code**: Better integration with automation tools and configuration management systems
+* **Container optimization**: Improved Docker and Kubernetes deployment patterns with enhanced resource management
+* **Zero-downtime upgrades**: Enhanced rolling upgrade capabilities for high-availability deployments
+
+**Performance and monitoring**
+
+* **Database optimization**: Improved connection pooling and query performance for PostgreSQL 13+ deployments
+* **Observability**: Enhanced metrics collection and logging for better operational visibility
+* **Resource monitoring**: Real-time system resource monitoring during deployment and upgrade processes
+
+**Best practices for v10.10+ deployments**
+
+1. **Pre-deployment validation**: Always run configuration validation before deploying to production
+2. **Migration planning**: Generate and review migration plans for complex schema changes
+3. **Monitoring setup**: Configure enhanced monitoring from the start of your deployment
+4. **Backup automation**: Implement automated backup verification as part of your deployment pipeline
+5. **Performance baseline**: Establish performance baselines early in your deployment lifecycle
+
 Minimum database version policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -110,6 +141,8 @@ When a PostgreSQL version reaches its end of life (EOL), Mattermost will require
 | :ref:`v10.5 ESR <release-v10.5-extended-support-release>` | 2025-2-15        | 11.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
 | :ref:`v10.6 <release-v10.6-feature-release>`              | 2025-3-15        | 13.x                           |
++-----------------------------------------------------------+------------------+--------------------------------+
+| v10.10                                                    | 2025-6-15        | 13.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
 | v10.11 ESR                                                | 2025-8-15        | 13.x                           |
 +-----------------------------------------------------------+------------------+--------------------------------+
