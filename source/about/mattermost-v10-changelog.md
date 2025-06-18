@@ -18,6 +18,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
  - Prepackaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
  - Prepackaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
  - Pre-packaged Boards plugin [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
@@ -38,7 +39,13 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 #### Administration
  - Added support for group messages in Shared Channels.
  - Added support for licenses that enforce seat counts with 5% grace period.
+ - Replaced fixed 5% grace period for user seat limits with configurable ``ExtraUsers`` field for exact control over additional seats.
  - Added support for selecting a default team on secure connections for incoming channel invites.
+ - LDAP Wizard: added a **Test Group Attributes** button for feedback on which group attributes match.
+ - LDAP Wizard: added a **Test Connection** button with improved error reporting.
+ - LDAP Wizard: added an expandable section to the **User Filters** section and added "More info" hover texts.
+ - LDAP Wizard: added a **Test Attributes** button with feedback on attribute success and number of users matching attribute.
+ - LDAP Wizard: added a **Test Filters** button with feedback on failure.
  - Organized cluster files into directories for the Support Packet.
  - Partially sanitized database datasources for the Support Packet.
  - Added deactivation status to the mmctl user search output.
