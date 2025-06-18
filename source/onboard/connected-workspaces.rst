@@ -150,7 +150,7 @@ Once a connection is established between two Mattermost servers, system admins c
 
 .. important::
 
-    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in :ref:`Beta <manage/feature-labels:beta>`, there are some known issues that may impact reliability of direct message delivery across servers.
+    The ability to create a direct or group message with remote users across connected workspaces is available from Mattermost server v10.10 onward. Remote users from shared channels can be discovered and selected when creating direct and group messages.
 
 Manage connections and invitations
 ----------------------------------
