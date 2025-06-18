@@ -3243,6 +3243,496 @@ Enable diagnostics and error reporting
 
   See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for details on the information Mattermost collects.
 
+General logging
+~~~~~~~~~~~~~~~
+
+Configure logging specifically for Mattermost general operations by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the general subsystem. Changes to these configuration settings require a server restart before taking effect.
+
+.. tip:: 
+  
+  ``GeneralLogSettings`` configuration options are equivalent to the settings available under ``LogSettings``, but apply specifically to general-related log events.
+
+.. config:setting:: general-output-logs-to-console
+  :displayname: Output general logs to console (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.EnableConsole
+  :environment: MM_GENERALLOGSETTINGS_ENABLECONSOLE
+
+  - **true**: **(Default)** General log messages are written to the console based on the `general console log level <#general-console-log-level>`__ configuration.
+  - **false**: General log messages aren't written to the console.
+
+Output general logs to console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output general       | - System Config path: N/A                                                     |
+| logs to the console.                          | - ``config.json setting``: ``".GeneralLogSettings.EnableConsole": true",``   |
+|                                               | - Environment variable: ``MM_GENERALLOGSETTINGS_ENABLECONSOLE``               |
+| - **true**: **(Default)** General log        |                                                                               |
+|   messages are written to the console based  |                                                                               |
+|   on the `general console log level          |                                                                               |
+|   <#general-console-log-level>`__             |                                                                               |
+|   configuration. The server writes messages  |                                                                               |
+|   to the standard output stream (stdout).    |                                                                               |
+| - **false**: General log messages aren't     |                                                                               |
+|   written to the console.                    |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: general-console-log-level
+  :displayname: General console log level (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.ConsoleLevel
+  :environment: MM_GENERALLOGSETTINGS_CONSOLELEVEL
+  :description: The level of detail in log events written when Mattermost outputs general log messages to the console.
+
+  - **DEBUG**: **(Default)** Outputs verbose detail for developers debugging general issues.
+  - **ERROR**: Outputs only general error messages.
+  - **INFO**: Outputs general error messages and information around startup and initialization.
+
+General console log level
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure the level of detail in log events  | - System Config path: N/A                                                     |
+| written when Mattermost outputs general log  | - ``config.json setting``: ``".GeneralLogSettings.ConsoleLevel": "DEBUG",``  |
+| messages to the console.                      | - Environment variable: ``MM_GENERALLOGSETTINGS_CONSOLELEVEL``                |
+|                                               |                                                                               |
+| - **DEBUG**: **(Default)** Outputs verbose   |                                                                               |
+|   detail for developers debugging general     |                                                                               |
+|   issues.                                     |                                                                               |
+| - **ERROR**: Outputs only general error      |                                                                               |
+|   messages.                                   |                                                                               |
+| - **INFO**: Outputs general error messages   |                                                                               |
+|   and information around startup and          |                                                                               |
+|   initialization.                             |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-general-console-logs-as-json
+  :displayname: Output general console logs as JSON (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.ConsoleJson
+  :environment: MM_GENERALLOGSETTINGS_CONSOLEJSON
+  :description: When enabled (true), logged events are written in a machine-readable JSON format. Otherwise, general logs are written in plain text.
+
+  - **true**: General log events written to the console are output in a machine-readable JSON format.
+  - **false**: **(Default)** General log events written to the console are output in plain text.
+
+Output general console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output general       | - System Config path: N/A                                                     |
+| console logs as JSON.                         | - ``config.json setting``: ``".GeneralLogSettings.ConsoleJson": false",``    |
+|                                               | - Environment variable: ``MM_GENERALLOGSETTINGS_CONSOLEJSON``                 |
+| When enabled (``true``), logged events are   |                                                                               |
+| written in a machine-readable JSON format.   |                                                                               |
+| Otherwise, general logs are written in plain |                                                                               |
+| text.                                         |                                                                               |
+|                                               |                                                                               |
+| - **true**: General log events written to    |                                                                               |
+|   the console are output in a machine-       |                                                                               |
+|   readable JSON format.                      |                                                                               |
+| - **false**: **(Default)** General log       |                                                                               |
+|   events written to the console are output   |                                                                               |
+|   in plain text.                             |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: colorize-general-plain-text-console-logs
+  :displayname: Colorize plain text general console logs (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.EnableColor
+  :environment: MM_GENERALLOGSETTINGS_ENABLECOLOR
+  :description: Enable color-coding for different general log levels in plain text console logs.
+
+  - **true**: **(Default)** General log levels are color-coded in plain text console logs.
+  - **false**: General log levels aren't color-coded in plain text console logs.
+
+Colorize plain text general console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure whether plain text general console | - System Config path: N/A                                                     |
+| logs are color-coded by log level.           | - ``config.json setting``: ``".GeneralLogSettings.EnableColor": true",``     |
+|                                               | - Environment variable: ``MM_GENERALLOGSETTINGS_ENABLECOLOR``                 |
+| - **true**: **(Default)** General log levels |                                                                               |
+|   are color-coded in plain text console logs |                                                                               |
+|   to make them easier to scan for relevant   |                                                                               |
+|   information.                               |                                                                               |
+| - **false**: General log levels aren't       |                                                                               |
+|   color-coded in plain text console logs.    |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: general-output-logs-to-file
+  :displayname: Output general logs to file (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.EnableFile
+  :environment: MM_GENERALLOGSETTINGS_ENABLEFILE
+  :description: When enabled (true), general log files are written to the configured general file log directory.
+
+  - **true**: **(Default)** General log files are written to the configured `general file log directory <#general-file-log-directory>`__.
+  - **false**: General log files aren't generated.
+
+Output general logs to file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output general logs  | - System Config path: N/A                                                     |
+| to a file.                                    | - ``config.json setting``: ``".GeneralLogSettings.EnableFile": true",``      |
+|                                               | - Environment variable: ``MM_GENERALLOGSETTINGS_ENABLEFILE``                  |
+| - **true**: **(Default)** General log files  |                                                                               |
+|   are written to the configured `general     |                                                                               |
+|   file log directory                          |                                                                               |
+|   <#general-file-log-directory>`__.          |                                                                               |
+| - **false**: General log files aren't        |                                                                               |
+|   generated.                                 |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: general-file-log-level
+  :displayname: General file log level (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.FileLevel
+  :environment: MM_GENERALLOGSETTINGS_FILELEVEL
+  :description: The level of detail in log events written to general log files.
+
+  - **DEBUG**: Outputs verbose detail for developers debugging general issues.
+  - **ERROR**: Outputs only general error messages.
+  - **INFO**: **(Default)** Outputs general error messages and information around startup and initialization.
+
+General file log level
+^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure the level of detail in log events  | - System Config path: N/A                                                     |
+| written to general log files.                | - ``config.json setting``: ``".GeneralLogSettings.FileLevel": "INFO",``      |
+|                                               | - Environment variable: ``MM_GENERALLOGSETTINGS_FILELEVEL``                   |
+| - **DEBUG**: Outputs verbose detail for      |                                                                               |
+|   developers debugging general issues.       |                                                                               |
+| - **ERROR**: Outputs only general error      |                                                                               |
+|   messages.                                   |                                                                               |
+| - **INFO**: **(Default)** Outputs general    |                                                                               |
+|   error messages and information around      |                                                                               |
+|   startup and initialization.                |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-general-file-logs-as-json
+  :displayname: Output general file logs as JSON (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.FileJson
+  :environment: MM_GENERALLOGSETTINGS_FILEJSON
+  :description: When enabled (true), logged events written to general log files are output in a machine-readable JSON format.
+
+  - **true**: General log events written to file are output in a machine-readable JSON format.
+  - **false**: **(Default)** General log events written to file are output in plain text.
+
+Output general file logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output general file  | - System Config path: N/A                                                     |
+| logs as JSON.                                 | - ``config.json setting``: ``".GeneralLogSettings.FileJson": false",``       |
+|                                               | - Environment variable: ``MM_GENERALLOGSETTINGS_FILEJSON``                    |
+| When enabled (``true``), logged events       |                                                                               |
+| written to general log files are output in a |                                                                               |
+| machine-readable JSON format.                |                                                                               |
+|                                               |                                                                               |
+| - **true**: General log events written to    |                                                                               |
+|   file are output in a machine-readable JSON |                                                                               |
+|   format.                                     |                                                                               |
+| - **false**: **(Default)** General log       |                                                                               |
+|   events written to file are output in plain |                                                                               |
+|   text.                                       |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: general-file-log-directory
+  :displayname: General file log directory (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.FileLocation
+  :environment: MM_GENERALLOGSETTINGS_FILELOCATION
+  :description: Directory to which general log files are written.
+
+General file log directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Directory to which general log files are     | - System Config path: N/A                                                     |
+| written. If blank, general log files are     | - ``config.json setting``: ``".GeneralLogSettings.FileLocation": "",``       |
+| written to the ./logs directory. The path    | - Environment variable: ``MM_GENERALLOGSETTINGS_FILELOCATION``                |
+| you set must exist and Mattermost must have  |                                                                               |
+| write permissions in it.                     |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-general-logs-to-multiple-targets
+  :displayname: Output general logs to multiple targets (General Logging)
+  :systemconsole: N/A
+  :configjson: .GeneralLogSettings.AdvancedLoggingJSON
+  :environment: MM_GENERALLOGSETTINGS_ADVANCEDLOGGINGJSON
+  :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send general log records to multiple targets.
+
+Output general logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination| - System Config path: N/A                                                     |
+| of console, local file, syslog, and TCP      | - ``config.json setting``: ``".GeneralLogSettings.AdvancedLoggingJSON": "",``|
+| socket targets, and send general log         | - Environment variable: ``MM_GENERALLOGSETTINGS_ADVANCEDLOGGINGJSON``         |
+| records to multiple targets.                 |                                                                               |
+|                                               |                                                                               |
+| String input can contain a filespec to       |                                                                               |
+| another configuration file, a database DSN,  |                                                                               |
+| or JSON.                                      |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - See the :doc:`Mattermost logging </manage/logging>` documentation for details on advanced logging configuration. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+  - General logs are recorded asynchronously to reduce latency to the caller.
+  - Advanced general logging supports hot-reloading of logger configuration.
+
+Audit logging
+~~~~~~~~~~~~~
+
+Configure logging specifically for Mattermost audit operations by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the audit subsystem. Changes to these configuration settings require a server restart before taking effect.
+
+.. tip:: 
+  
+  ``AuditLogSettings`` configuration options are equivalent to the settings available under ``LogSettings``, but apply specifically to audit-related log events.
+
+.. config:setting:: audit-output-logs-to-console
+  :displayname: Output audit logs to console (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.EnableConsole
+  :environment: MM_AUDITLOGSETTINGS_ENABLECONSOLE
+
+  - **true**: **(Default)** Audit log messages are written to the console based on the `audit console log level <#audit-console-log-level>`__ configuration.
+  - **false**: Audit log messages aren't written to the console.
+
+Output audit logs to console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output audit         | - System Config path: N/A                                                     |
+| logs to the console.                          | - ``config.json setting``: ``".AuditLogSettings.EnableConsole": true",``     |
+|                                               | - Environment variable: ``MM_AUDITLOGSETTINGS_ENABLECONSOLE``                 |
+| - **true**: **(Default)** Audit log          |                                                                               |
+|   messages are written to the console based  |                                                                               |
+|   on the `audit console log level            |                                                                               |
+|   <#audit-console-log-level>`__              |                                                                               |
+|   configuration. The server writes messages  |                                                                               |
+|   to the standard output stream (stdout).    |                                                                               |
+| - **false**: Audit log messages aren't       |                                                                               |
+|   written to the console.                    |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: audit-console-log-level
+  :displayname: Audit console log level (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.ConsoleLevel
+  :environment: MM_AUDITLOGSETTINGS_CONSOLELEVEL
+  :description: The level of detail in log events written when Mattermost outputs audit log messages to the console.
+
+  - **DEBUG**: **(Default)** Outputs verbose detail for developers debugging audit issues.
+  - **ERROR**: Outputs only audit error messages.
+  - **INFO**: Outputs audit error messages and information around startup and initialization.
+
+Audit console log level
+^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure the level of detail in log events  | - System Config path: N/A                                                     |
+| written when Mattermost outputs audit log    | - ``config.json setting``: ``".AuditLogSettings.ConsoleLevel": "DEBUG",``    |
+| messages to the console.                      | - Environment variable: ``MM_AUDITLOGSETTINGS_CONSOLELEVEL``                  |
+|                                               |                                                                               |
+| - **DEBUG**: **(Default)** Outputs verbose   |                                                                               |
+|   detail for developers debugging audit       |                                                                               |
+|   issues.                                     |                                                                               |
+| - **ERROR**: Outputs only audit error        |                                                                               |
+|   messages.                                   |                                                                               |
+| - **INFO**: Outputs audit error messages     |                                                                               |
+|   and information around startup and          |                                                                               |
+|   initialization.                             |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-audit-console-logs-as-json
+  :displayname: Output audit console logs as JSON (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.ConsoleJson
+  :environment: MM_AUDITLOGSETTINGS_CONSOLEJSON
+  :description: When enabled (true), logged events are written in a machine-readable JSON format. Otherwise, audit logs are written in plain text.
+
+  - **true**: Audit log events written to the console are output in a machine-readable JSON format.
+  - **false**: **(Default)** Audit log events written to the console are output in plain text.
+
+Output audit console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output audit         | - System Config path: N/A                                                     |
+| console logs as JSON.                         | - ``config.json setting``: ``".AuditLogSettings.ConsoleJson": false",``      |
+|                                               | - Environment variable: ``MM_AUDITLOGSETTINGS_CONSOLEJSON``                   |
+| When enabled (``true``), logged events are   |                                                                               |
+| written in a machine-readable JSON format.   |                                                                               |
+| Otherwise, audit logs are written in plain   |                                                                               |
+| text.                                         |                                                                               |
+|                                               |                                                                               |
+| - **true**: Audit log events written to      |                                                                               |
+|   the console are output in a machine-       |                                                                               |
+|   readable JSON format.                      |                                                                               |
+| - **false**: **(Default)** Audit log         |                                                                               |
+|   events written to the console are output   |                                                                               |
+|   in plain text.                             |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: colorize-audit-plain-text-console-logs
+  :displayname: Colorize plain text audit console logs (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.EnableColor
+  :environment: MM_AUDITLOGSETTINGS_ENABLECOLOR
+  :description: Enable color-coding for different audit log levels in plain text console logs.
+
+  - **true**: **(Default)** Audit log levels are color-coded in plain text console logs.
+  - **false**: Audit log levels aren't color-coded in plain text console logs.
+
+Colorize plain text audit console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure whether plain text audit console   | - System Config path: N/A                                                     |
+| logs are color-coded by log level.           | - ``config.json setting``: ``".AuditLogSettings.EnableColor": true",``       |
+|                                               | - Environment variable: ``MM_AUDITLOGSETTINGS_ENABLECOLOR``                   |
+| - **true**: **(Default)** Audit log levels   |                                                                               |
+|   are color-coded in plain text console logs |                                                                               |
+|   to make them easier to scan for relevant   |                                                                               |
+|   information.                               |                                                                               |
+| - **false**: Audit log levels aren't         |                                                                               |
+|   color-coded in plain text console logs.    |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: audit-output-logs-to-file
+  :displayname: Output audit logs to file (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.EnableFile
+  :environment: MM_AUDITLOGSETTINGS_ENABLEFILE
+  :description: When enabled (true), audit log files are written to the configured audit file log directory.
+
+  - **true**: **(Default)** Audit log files are written to the configured `audit file log directory <#audit-file-log-directory>`__.
+  - **false**: Audit log files aren't generated.
+
+Output audit logs to file
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output audit logs    | - System Config path: N/A                                                     |
+| to a file.                                    | - ``config.json setting``: ``".AuditLogSettings.EnableFile": true",``        |
+|                                               | - Environment variable: ``MM_AUDITLOGSETTINGS_ENABLEFILE``                    |
+| - **true**: **(Default)** Audit log files    |                                                                               |
+|   are written to the configured `audit       |                                                                               |
+|   file log directory                          |                                                                               |
+|   <#audit-file-log-directory>`__.            |                                                                               |
+| - **false**: Audit log files aren't          |                                                                               |
+|   generated.                                 |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: audit-file-log-level
+  :displayname: Audit file log level (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.FileLevel
+  :environment: MM_AUDITLOGSETTINGS_FILELEVEL
+  :description: The level of detail in log events written to audit log files.
+
+  - **DEBUG**: Outputs verbose detail for developers debugging audit issues.
+  - **ERROR**: Outputs only audit error messages.
+  - **INFO**: **(Default)** Outputs audit error messages and information around startup and initialization.
+
+Audit file log level
+^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure the level of detail in log events  | - System Config path: N/A                                                     |
+| written to audit log files.                  | - ``config.json setting``: ``".AuditLogSettings.FileLevel": "INFO",``        |
+|                                               | - Environment variable: ``MM_AUDITLOGSETTINGS_FILELEVEL``                     |
+| - **DEBUG**: Outputs verbose detail for      |                                                                               |
+|   developers debugging audit issues.         |                                                                               |
+| - **ERROR**: Outputs only audit error        |                                                                               |
+|   messages.                                   |                                                                               |
+| - **INFO**: **(Default)** Outputs audit      |                                                                               |
+|   error messages and information around      |                                                                               |
+|   startup and initialization.                |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-audit-file-logs-as-json
+  :displayname: Output audit file logs as JSON (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.FileJson
+  :environment: MM_AUDITLOGSETTINGS_FILEJSON
+  :description: When enabled (true), logged events written to audit log files are output in a machine-readable JSON format.
+
+  - **true**: Audit log events written to file are output in a machine-readable JSON format.
+  - **false**: **(Default)** Audit log events written to file are output in plain text.
+
+Output audit file logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output audit file    | - System Config path: N/A                                                     |
+| logs as JSON.                                 | - ``config.json setting``: ``".AuditLogSettings.FileJson": false",``         |
+|                                               | - Environment variable: ``MM_AUDITLOGSETTINGS_FILEJSON``                      |
+| When enabled (``true``), logged events       |                                                                               |
+| written to audit log files are output in a   |                                                                               |
+| machine-readable JSON format.                |                                                                               |
+|                                               |                                                                               |
+| - **true**: Audit log events written to      |                                                                               |
+|   file are output in a machine-readable JSON |                                                                               |
+|   format.                                     |                                                                               |
+| - **false**: **(Default)** Audit log         |                                                                               |
+|   events written to file are output in plain |                                                                               |
+|   text.                                       |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: audit-file-log-directory
+  :displayname: Audit file log directory (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.FileLocation
+  :environment: MM_AUDITLOGSETTINGS_FILELOCATION
+  :description: Directory to which audit log files are written.
+
+Audit file log directory
+^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Directory to which audit log files are       | - System Config path: N/A                                                     |
+| written. If blank, audit log files are       | - ``config.json setting``: ``".AuditLogSettings.FileLocation": "",``         |
+| written to the ./logs directory. The path    | - Environment variable: ``MM_AUDITLOGSETTINGS_FILELOCATION``                  |
+| you set must exist and Mattermost must have  |                                                                               |
+| write permissions in it.                     |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-audit-logs-to-multiple-targets
+  :displayname: Output audit logs to multiple targets (Audit Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.AdvancedLoggingJSON
+  :environment: MM_AUDITLOGSETTINGS_ADVANCEDLOGGINGJSON
+  :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send audit log records to multiple targets.
+
+Output audit logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination| - System Config path: N/A                                                     |
+| of console, local file, syslog, and TCP      | - ``config.json setting``: ``".AuditLogSettings.AdvancedLoggingJSON": "",``  |
+| socket targets, and send audit log           | - Environment variable: ``MM_AUDITLOGSETTINGS_ADVANCEDLOGGINGJSON``           |
+| records to multiple targets.                 |                                                                               |
+|                                               |                                                                               |
+| String input can contain a filespec to       |                                                                               |
+| another configuration file, a database DSN,  |                                                                               |
+| or JSON.                                      |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. note::
+
+  - See the :doc:`Mattermost logging </manage/logging>` documentation for details on advanced logging configuration. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+  - Audit logs are recorded asynchronously to reduce latency to the caller.
+  - Advanced audit logging supports hot-reloading of logger configuration.
+
 Notification logging
 ~~~~~~~~~~~~~~~~~~~~~
 
