@@ -157,7 +157,7 @@ Plugin component interaction
 
 From Mattermost v10.10, plugin interactions such as slash commands, interactive buttons, and other plugin-generated components aren't displayed or accessible in shared channels by default to ensure a consistent experience across different Mattermost instances. System admins can enable the ``EnableSharedChannelsPlugins`` feature flag to enable these plugin interactions in shared channels.
 
-    When plugin components are enabled in shared channels, ensure all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors may vary between instances if different plugin versions or configurations are used.
+When plugin components are enabled in shared channels, we recommend ensuring that all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors can vary between instances if different plugin versions or configurations are used.
 
 Manage connections and invitations
 ----------------------------------
