@@ -3,8 +3,9 @@ Mattermost Product Documentation
 
 Mattermost's purpose is to accelerate the world's mission critical work by developing and delivering secure, open core collaboration software providing unrivaled focus, adaptability and resilience to our customers. On this site you'll find an overview of our products, features, security, integrations, licensing and subscriptions, authentication, and compliance support. Learn more about the :doc:`Mattermost Intelligent Mission Environment (IME) </about/product>`.
 
-.. image:: /images/ime.jpg
+.. image:: /images/ime.png
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment", showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, Development, Security, and Operations (DevSecOps), and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
+   :target: about/product.html
 
 .. toctree::
    :maxdepth: 1

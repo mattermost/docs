@@ -64,7 +64,7 @@
   <tbody>
     <!-- Channel-based messaging -->
     <tr class="section"><td colspan="7"><strong>Channel-based messaging</strong></td></tr>
-    <tr class="subsection"><td colspan="7"><strong>1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS and Android devices, with 1-1 audio calls and screen share, threaded discussions, search, custom branding themes and emojis, and availability in 20 languages.</strong></td></tr>
+    <tr class="subsection"><td colspan="7"><strong>1-1, group messaging, public and private channels, file sharing, link and media previews across web, PC, Mac, iOS and Android devices, with 1-1 audio calls and screen share, threaded discussions, search, custom branding themes and emojis, and availability in 20+ languages.</strong></td></tr>
     <tr>
       <td><strong>Messaging, file sharing, and link and file previews across device platforms</strong>: <a href="https://docs.mattermost.com/collaborate/collaborate-within-channels.html">Channels-based messaging</a> including 1-1, group messaging, public and private channels, <a href="https://docs.mattermost.com/collaborate/share-files-in-messages.html">file sharing </a>, and <a href="https://docs.mattermost.com/collaborate/share-files-in-messages.html#preview-file-attachments">link and media previews</a> across web, PC, Mac, iOS, and Android devices.</td>
       <td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td><img src="../_static/images/check-circle-green.svg"></td><td>v9.11+</td>
@@ -311,3 +311,5 @@
 </table>
 
 See a [complete list of features](https://mattermost.com/pricing) on the Mattermost website.
+
+Note: Mattermost Enterprise Advanced requires a Mattermost Server running v10.9 or later and a PostgreSQL database. Enterprise plugins must be updated to support the new license (most of which are pre-packaged from v10.9)
