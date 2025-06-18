@@ -155,10 +155,6 @@ Once a connection is established between two Mattermost servers, system admins c
 Plugin component interaction
 -----------------------------
 
-.. include:: ../_static/badges/version-badge.rst
-  :start-after: :nosearch:
-
-
 By default, plugin components are hidden in connected workspaces (shared channels) to ensure a consistent experience across different Mattermost instances that may have different plugins installed.
 
 Starting from Mattermost Server v10.10, plugin interactions such as slash commands, interactive buttons, and other plugin-generated components are not displayed or accessible in shared channels unless explicitly enabled by a system administrator.
