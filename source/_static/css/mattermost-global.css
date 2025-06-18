@@ -2005,3 +2005,12 @@ mark {
     background-color: var(--color-background-secondary);
     padding: 0rem 1rem 1rem 1rem;
 }
+
+/* Image borders */
+img {
+    border: 1px solid #d3d3d3;
+}
+
+body:not([data-custom-theme="light"]) img {
+    border: 1px solid #4a4a4a;
+}
