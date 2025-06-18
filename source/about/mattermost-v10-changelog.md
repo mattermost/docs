@@ -19,8 +19,8 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 
 #### User Interface (UI)
  - Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
- - Prepackaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
- - Prepackaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
+ - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
+ - Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
  - Pre-packaged Boards plugin [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
  - Resolved inconsistent styling issues in new integration pages.
  - Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
