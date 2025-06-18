@@ -158,7 +158,6 @@ Plugin component interaction
 .. include:: ../_static/badges/version-badge.rst
   :start-after: :nosearch:
 
-*Available in Mattermost Server v10.10 or later.*
 
 By default, plugin components are hidden in connected workspaces (shared channels) to ensure a consistent experience across different Mattermost instances that may have different plugins installed.
 
