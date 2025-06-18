@@ -12,6 +12,10 @@ By default, all Mattermost editions write logs to both the console and to the ``
 
 System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
 
+.. tip::
+
+    You can configure logging specifically for Mattermost notifications using ``NotificationLogSettings`` in the ``config.json`` file. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. See :ref:`Notification logging <configure/environment-configuration-settings:notification logging>` for details.
+
 Console logs
 ------------
 

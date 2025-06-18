@@ -3243,6 +3243,255 @@ Enable diagnostics and error reporting
 
   See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for details on the information Mattermost collects.
 
+Notification logging
+~~~~~~~~~~~~~~~~~~~~~
+
+Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+
+.. tip:: 
+  
+  ``NotificationLogSettings`` configuration options are equivalent to the settings available under ``LogSettings``, but apply specifically to notification-related log events.
+
+.. config:setting:: notifications-output-logs-to-console
+  :displayname: Output notification logs to console (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.EnableConsole
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ENABLECONSOLE
+
+  - **true**: **(Default)** Notification log messages are written to the console based on the `notification console log level <#notification-console-log-level>`__ configuration.
+  - **false**: Notification log messages aren't written to the console.
+
+Output notification logs to console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                     |
+| logs to the console.                          | - ``config.json setting``: ``".NotificationLogSettings.EnableConsole": true",`` |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLECONSOLE``          |
+| - **true**: **(Default)** Notification log    |                                                                               |
+|   messages are written to the console based   |                                                                               |
+|   on the `notification console log level      |                                                                               |
+|   <#notification-console-log-level>`__        |                                                                               |
+|   configuration. The server writes messages   |                                                                               |
+|   to the standard output stream (stdout).     |                                                                               |
+| - **false**: Notification log messages aren't |                                                                               |
+|   written to the console.                     |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: notification-console-log-level
+  :displayname: Notification console log level (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.ConsoleLevel
+  :environment: MM_NOTIFICATIONLOGSETTINGS_CONSOLELEVEL
+  :description: The level of detail in log events written when Mattermost outputs notification log messages to the console.
+
+  - **DEBUG**: **(Default)** Outputs verbose detail for developers debugging notification issues.
+  - **ERROR**: Outputs only notification error messages.
+  - **INFO**: Outputs notification error messages and information around startup and initialization.
+
+Notification console log level
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-------------------------------------------------------------------------------+
+| The level of detail in log events written     | - System Config path: N/A                                                     |
+| when Mattermost outputs notification log      | - ``config.json setting``: ``".NotificationLogSettings.ConsoleLevel": DEBUG",`` |
+| messages to the console.                      | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_CONSOLELEVEL``           |
+|                                               |                                                                               |
+| - **DEBUG**: **(Default)** Outputs verbose    |                                                                               |
+|   detail for developers debugging             |                                                                               |
+|   notification issues.                        |                                                                               |
+| - **ERROR**: Outputs only notification error  |                                                                               |
+|   messages.                                   |                                                                               |
+| - **INFO**: Outputs notification error        |                                                                               |
+|   messages and information around startup     |                                                                               |
+|   and initialization.                         |                                                                               |
++-----------------------------------------------+-------------------------------------------------------------------------------+
+
+.. config:setting:: output-notification-console-logs-as-json
+  :displayname: Output notification console logs as JSON (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.ConsoleJson
+  :environment: MM_NOTIFICATIONLOGSETTINGS_CONSOLEJSON
+  :description: Configure Mattermost to output notification console logs as JSON.
+
+  - **true**: **(Default)** Notification logged events are written in a machine-readable JSON format.
+  - **false**: Notification logged events are written in plain text.
+
+Output notification console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+--------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                      |
+| console logs as JSON.                         | - ``config.json setting``: ``".NotificationLogSettings.ConsoleJson": true",``   |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_CONSOLEJSON``             |
+| - **true**: **(Default)** Notification logged |                                                                                |
+|   events are written in a machine-readable    |                                                                                |
+|   JSON format.                                |                                                                                |
+| - **false**: Notification logged events are   |                                                                                |
+|   written in plain text.                      |                                                                                |
++-----------------------------------------------+--------------------------------------------------------------------------------+
+
+Typically set to **true** in a production environment.
+
+.. config:setting:: colorize-plain-text-notification-console-logs
+  :displayname: Colorize plain text notification console logs (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.EnableColor
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ENABLECOLOR
+  :description: Enables system admins to display plain text notification log level details in color.
+
+  - **true**: When notification logged events are output to the console as plain text, colorize log levels details.
+  - **false**: **(Default)** Plain text notification log details aren't colorized in the console.
+
+Colorize plain text notification console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+----------------------------------------------------------------------------------+
+| Enables system admins to display plain text   | - System Config path: N/A                                                        |
+| notification log level details in color.      | - ``config.json setting``: ``".NotificationLogSettings.EnableColor": false",``   |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLECOLOR``               |
+| - **true**: When notification logged events   |                                                                                  |
+|   are output to the console as plain text,    |                                                                                  |
+|   colorize log levels details.                |                                                                                  |
+| - **false**: **(Default)** Plain text         |                                                                                  |
+|   notification log details aren't colorized   |                                                                                  |
+|   in the console.                             |                                                                                  |
++-----------------------------------------------+----------------------------------------------------------------------------------+
+
+.. config:setting:: output-notification-logs-to-file
+  :displayname: Output notification logs to file (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.EnableFile
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ENABLEFILE
+  :description: Configure Mattermost to output notification console logs to a file.
+
+  - **true**: **(Default)** Notification logged events are written based on the `notification file log level <#notification-file-log-level>`__ configuration to a ``mattermost.log`` file located in the directory configured via notification file location.
+  - **false**: Notification logged events aren't written to a file.
+
+Output notification logs to file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                    |
+| console logs to a file.                       | - ``config.json setting``: ``".NotificationLogSettings.EnableFile": true",``  |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ENABLEFILE``            |
+| - **true**: **(Default)** Notification logged |                                                                              |
+|   events are written based on the             |                                                                              |
+|   `notification file log level                |                                                                              |
+|   <#notification-file-log-level>`__           |                                                                              |
+|   configuration to a ``mattermost.log`` file  |                                                                              |
+|   located in the directory configured via     |                                                                              |
+|   ``notification file location``.             |                                                                              |
+| - **false**: Notification logged events       |                                                                              |
+|   aren't written to a file.                   |                                                                              |
++-----------------------------------------------+------------------------------------------------------------------------------+
+
+.. note::
+
+  Typically set to **true** in a production environment. When enabled, notification logs are included in the ``mattermost.log`` file you can download locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
+
+.. config:setting:: notification-file-log-level
+  :displayname: Notification file log level (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.FileLevel
+  :environment: MM_NOTIFICATIONLOGSETTINGS_FILELEVEL
+  :description: The level of detail in notification log events when Mattermost outputs notification log messages to a file.
+
+  - **DEBUG**: Outputs verbose detail for developers debugging notification issues.
+  - **ERROR**: Outputs only notification error messages.
+  - **INFO**: **(Default)** Outputs notification error messages and information around startup and initialization.
+
+Notification file log level
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+----------------------------------------------------------------------------+
+| The level of detail in notification log       | - System Config path: N/A                                                  |
+| events when Mattermost outputs notification   | - ``config.json setting``: ``".NotificationLogSettings.FileLevel": INFO",`` |
+| log messages to a file.                       | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILELEVEL``           |
+|                                               |                                                                            |
+| - **DEBUG**: Outputs verbose detail for       |                                                                            |
+|   developers debugging notification issues.   |                                                                            |
+| - **ERROR**: Outputs only notification error  |                                                                            |
+|   messages.                                   |                                                                            |
+| - **INFO**: **(Default)** Outputs             |                                                                            |
+|   notification error messages and information |                                                                            |
+|   around startup and initialization.          |                                                                            |
++-----------------------------------------------+----------------------------------------------------------------------------+
+
+.. config:setting:: output-notification-file-logs-as-json
+  :displayname: Output notification file logs as JSON (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.FileJson
+  :environment: MM_NOTIFICATIONLOGSETTINGS_FILEJSON
+  :description: Configure Mattermost to output notification file logs as JSON.
+
+  - **true**: **(Default)** Notification logged events are written in a machine-readable JSON format.
+  - **false**: Notification logged events are written in plain text.
+
+Output notification file logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+------------------------------------------------------------------------------+
+| Configure Mattermost to output notification   | - System Config path: N/A                                                    |
+| file logs as JSON.                            | - ``config.json setting``: ``".NotificationLogSettings.FileJson": true",``   |
+|                                               | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILEJSON``              |
+| - **true**: **(Default)** Notification logged |                                                                              |
+|   events are written in a machine-readable    |                                                                              |
+|   JSON format.                                |                                                                              |
+| - **false**: Notification logged events are   |                                                                              |
+|   written in plain text.                      |                                                                              |
++-----------------------------------------------+------------------------------------------------------------------------------+
+
+Typically set to **true** in a production environment.
+
+.. config:setting:: notification-file-log-directory
+  :displayname: Notification file log directory (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.FileLocation
+  :environment: MM_NOTIFICATIONLOGSETTINGS_FILELOCATION
+  :description: The location of the notification log files. Default value is **./logs**.
+
+Notification file log directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+------------------------------------------------------------------------------+
+| The location of the notification log files.   | - System Config path: N/A                                                    |
+|                                               | - ``config.json setting``: ``".NotificationLogSettings.FileLocation": "",``  |
+| String input. If left blank, notification log | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_FILELOCATION``          |
+| files are stored in the ``./logs`` directory. |                                                                              |
++-----------------------------------------------+------------------------------------------------------------------------------+
+
+.. note::
+
+  The path you configure must exist, and Mattermost must have write permissions for this directory.
+
+.. config:setting:: output-notification-logs-to-multiple-targets
+  :displayname: Output notification logs to multiple targets (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.AdvancedLoggingJSON
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ADVANCEDLOGGINGJSON
+  :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send notification log records to multiple targets.
+
+Output notification logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination | - System Config path: N/A                                                         |
+| of console, local file, syslog, and TCP       | - ``config.json setting``: ``".NotificationLogSettings.AdvancedLoggingJSON":: "",`` |
+| socket targets, and send notification log     | - Environment variable: ``MM_NOTIFICATIONLOGSETTINGS_ADVANCEDLOGGINGJSON``        |
+| records to multiple targets.                  |                                                                                   |
+|                                               |                                                                                   |
+| String input can contain a filespec to        |                                                                                   |
+| another configuration file, a database DSN,   |                                                                                   |
+| or JSON.                                      |                                                                                   |
++-----------------------------------------------+-----------------------------------------------------------------------------------+
+
+.. note::
+
+  - See the :doc:`Mattermost logging </manage/logging>` documentation for details on advanced logging configuration. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+  - Notification logs are recorded asynchronously to reduce latency to the caller.
+  - Advanced notification logging supports hot-reloading of logger configuration.
+
 ----
 
 Session lengths
