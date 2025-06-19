@@ -4,7 +4,9 @@ React with emojis and GIFs
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Emojis and GIFs are small, digital images, animated images, or icons you can use to communicate or express concepts such as emotions, humor, and physical gestures in your messages. 
+Emojis and GIFs are small, digital images, animated images, or icons you can use to communicate or express concepts such as emotions, humor, and physical gestures in your messages.
+
+Text emoticons (such as ``:)`` or ``:D``) are automatically converted to emoji characters in your messages by default when using Mattermost Server v10.10 and later. You can :ref:`disable this auto-rendering <preferences/manage-your-display-options:emoticon rendering>` if you prefer to keep emoticons as text. 
 
 Quick emoji reactions
 -----------------------

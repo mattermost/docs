@@ -200,6 +200,24 @@ By default, you can hover over messages to react using recently-used emojis. You
 
     This option isn't something you can set using the mobile app.
 
+Emoticon rendering
+------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Available in Mattermost Server v10.10 and later.
+
+By default, text emoticons in your messages (such as ``:)`` or ``:D``) are automatically converted to emoji characters. You can disable this auto-rendering if you prefer to keep emoticons as text.
+
+.. tab:: Web/Desktop
+
+    Select **Emoticon rendering > Edit** to disable automatic conversion of emoticons to emojis in your messages.
+
+.. tab:: Mobile
+
+    This option isn't available in the mobile app.
+
 Language
 --------
 
