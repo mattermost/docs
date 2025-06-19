@@ -38,8 +38,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 
 #### Administration
  - Added support for group messages in Shared Channels.
- - Added support for licenses that enforce seat counts with 5% grace period.
- - Replaced fixed 5% grace period for user seat limits with configurable ``ExtraUsers`` field for exact control over additional seats.
+ - Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
  - Added support for selecting a default team on secure connections for incoming channel invites.
  - LDAP Wizard: added a **Test Group Attributes** button for feedback on which group attributes match.
  - LDAP Wizard: added a **Test Connection** button with improved error reporting.
