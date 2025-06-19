@@ -97,10 +97,6 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 ### Go Version
  - v10.10 is built with Go ``v1.24.3``.
-
-### Known Issues
- - Setting the license file location through an environment variable still gives the option to upload a new license through the System Console, resulting in the license being overwritten by the one set through the environment variable. See this [knowledge base article](https://support.mattermost.com/hc/en-us/articles/33911983851284-System-console-still-displays-old-license-after-uploading-a-new-one) on how to resolve this issue.
-
 ### Contributors
  - 
 
