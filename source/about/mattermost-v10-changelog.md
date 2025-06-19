@@ -3,6 +3,17 @@
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
+(release-v10.10-feature-release)=
+## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+- **10.10.0, released TBD**
+  - Original 10.10.0 release.
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged GitLab plugin version [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
+
 (release-v10.9-feature-release)=
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
