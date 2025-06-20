@@ -8,7 +8,7 @@ Review and manage the following plugin configuration options in the System Conso
 
 - `Plugin management <#plugin-management>`__
 - `Calls <#calls>`__
-- `Copilot <#copilot>`__
+- `AI Agents <#ai-agents>`__
 - `GitLab <#gitlab>`__
 - `GitHub <#github>`__
 - `Jira <#jira>`__
@@ -63,7 +63,7 @@ Enable plugins
   - Faster Load Times: Disabling plugins can lead to faster server startup and lower latency during user interactions, as there are fewer components for the system to initialize and manage.
   - Stability: Some plugins may have bugs or performance issues that can affect the overall performance and stability of the Mattermost instance. Disabling problematic or under-utilized plugins can enhance the stability of the system.
   - Maintenance and Updates: Managing fewer plugins reduces the overhead associated with maintaining and updating them, which can contribute to smoother operation and less downtime
-  - However, plugins are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+  - However, plugins are often essential for integrating Mattermost with other services and workflows. It's important to balance performance improvements with the needs of your organization and users.
 
 
 .. config:setting:: require-plugin-signature
@@ -191,7 +191,8 @@ Marketplace URL
 +----------------------------------------------------------------------+--------------------------------------------------------------------+
 | This setting stores the URL for the remote Markeplace.               | - System Config path: **Plugins > Plugin Management**              |
 |                                                                      | - ``config.json`` setting: ``PluginSettings`` > ``MarketplaceURL`` |
-| String input. Default is **https://api.integrations.mattermost.com** | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``       |
+|                                                                      | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``       |
+| String input. Default is **https://api.integrations.mattermost.com** |                                                                    |
 +----------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: installed-plugin-state
@@ -207,7 +208,8 @@ Installed plugin state
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting is a list of installed plugins and their status as enabled or disabled.                                                                                                                         | - System Config path: **Plugins > Plugin Management**            |
 |                                                                                                                                                                                                              | - ``config.json`` setting: ``PluginSettings`` > ``PluginStates`` |
-| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``       |
+|                                                                                                                                                                                                              | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``       |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. |                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: plugin-settings
@@ -223,7 +225,8 @@ Plugin settings
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | This setting contains plugin-specific data.                                                                                                                            | - System Config path: **Plugins > Plugin Management**       |
 |                                                                                                                                                                        | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` |
-| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains plugin-specific data. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINS``       |
+|                                                                                                                                                                        | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINS``       |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains plugin-specific data. |                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -412,6 +415,7 @@ ICE host override
 | This setting can be used to override the host addresses that get advertised to clients when connecting to calls. The accepted formats are the following:         | - System Config path: **Plugins > Calls**                                                                      |
 |                                                                                                                                                                  | - ``config.json`` setting:  ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostoverride``  |
 |                                                                                                                                                                  | - Environment variable: ``MM_CALLS_ICE_HOST_OVERRIDE``                                                         |
+|                                                                                                                                                                  |                                                                                                                |
 | - A single IP address (e.g. ``10.0.0.1``).                                                                                                                       |                                                                                                                |
 | - A single hostname or FQDN (e.g. ``calls.myserver.tld``).                                                                                                       |                                                                                                                |
 | - (starting in v0.17.0) A comma separated list of externalAddr/internalAddr mappings (e.g. ``10.0.0.1/172.0.0.1,10.0.0.2/172.0.0.2``).                           |                                                                                                                |
@@ -443,9 +447,9 @@ ICE host port override
 | This setting can be used to override the port used in the ICE host candidates that get advertised to clients when connecting to calls.                              | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                                                                     | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostportoverride``         |
 |                                                                                                                                                                     | - Environment variable: ``MM_CALLS_ICE_HOST_PORT_OVERRIDE``                                                              |
+|                                                                                                                                                                     |                                                                                                                          |
 | This can be useful in case there are additional network components (e.g. NLBs) in front of the RTC server that may route the calls traffic through a different port.|                                                                                                                          |
 | Changing this setting requires a plugin restart to take effect.                                                                                                     |                                                                                                                          |
-|                                                                                                                                                                     |                                                                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -468,6 +472,7 @@ RTCD service URL
 | The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                                                                                 |
 |                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``rtcdserviceurl``                                               |
 |                                                                                                               | - Environment variable: ``MM_CALLS_RTCD_SERVICE_URL``                                                                                                     |
+|                                                                                                               |                                                                                                                                                           |
 | When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                                                                           |
 |                                                                                                               |                                                                                                                                                           |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                                                                           |
@@ -499,6 +504,7 @@ Max call participants
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                       |
 |                                                                             | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``maxcallparticipants``|
 |                                                                             | - Environment variable: ``MM_CALLS_MAX_CALL_PARTICIPANTS``                                                      |
+|                                                                             |                                                                                                                 |
 | Default is **0** (no limit).                                                |                                                                                                                 |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
@@ -524,6 +530,7 @@ ICE servers configurations
 | This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service.                                                                                                                           | - System Config path: **Plugins > Calls**                                                                          |
 |                                                                                                                                                                                                                           | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``iceserversconfigs``     |
 |                                                                                                                                                                                                                           | - Environment variable: ``MM_CALLS_ICE_SERVERS_CONFIGS``                                                           |
+|                                                                                                                                                                                                                           |                                                                                                                    |
 | This is an optional field. Changing this setting may require a plugin restart to take effect.                                                                                                                             |                                                                                                                    |
 |                                                                                                                                                                                                                           |                                                                                                                    |
 | Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                                                                                                                                                 |                                                                                                                    |
@@ -581,7 +588,8 @@ TURN static auth secret
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls**                                                                                        |
 |                                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turnstaticauthsecret``                |
-| This is an optional field.                                                 | - Environment variable: ``MM_CALLS_TURN_STATIC_AUTH_SECRET``                                                                     |
+|                                                                            | - Environment variable: ``MM_CALLS_TURN_STATIC_AUTH_SECRET``                                                                     |
+| This is an optional field.                                                 |                                                                                                                                  |
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: turn-credentials-expiration
@@ -601,6 +609,7 @@ TURN credentials expiration
 | The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls**                                                                                                    |
 |                                                                                        | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turncredentialsexpirationminutes``                |
 |                                                                                        | - Environment variable: ``MM_CALLS_TURN_CREDENTIALS_EXPIRATION_MINUTES``                                                                     |
+|                                                                                        |                                                                                                                                              |
 | Default is **1440** (one day).                                                         |                                                                                                                                              |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -623,6 +632,7 @@ Server side TURN
 | - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls**                                                                                  |
 | - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``serversideturn``                |
 |                                                                                                      | - Environment variable: ``MM_CALLS_SERVER_SIDE_TURN``                                                                      |
+|                                                                                                      |                                                                                                                            |
 | Changing this setting requires a plugin restart to take effect.                                      |                                                                                                                            |
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
@@ -1057,11 +1067,15 @@ Enable DC signaling (Experimental)
 
 ----
 
-Copilot
--------
+AI Agents
+----------
 
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
+
+.. note::
+
+  Mattermost Agents is formally known as Mattermost Copilot.
 
 Access the following Mattermost Agents configuration settings in the System Console by going to **Plugins > Copilot**.
 
@@ -1078,8 +1092,8 @@ Enable plugin
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| - **true**: Enables the Copilot plugin on your Mattermost workspace.  | - System Config path: **Plugins > Copilot**                                                            |
-| - **false**: **(Default)** Disables the Copilot plugin.               | - ``config.json`` setting: N/A                                                                         |
+| - **true**: Enables the Copilot plugin on your Mattermost workspace.   | - System Config path: **Plugins > Copilot**                                                            |
+| - **false**: **(Default)** Disables the Copilot plugin.                | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
@@ -1113,7 +1127,8 @@ Bot username
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The bot's username that can be used to @mention the bot in a channel.  | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 |                                                                        | - ``config.json`` setting: N/A                                                                         |
-| String input.                                                          | - Environment variable: N/A                                                                            |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input.                                                          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-bot-avatar
@@ -1129,7 +1144,8 @@ Bot avatar
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Upload an image to use as the bot's avatar in Mattermost.              | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 |                                                                        | - ``config.json`` setting: N/A                                                                         |
-| Image upload interface.                                                | - Environment variable: N/A                                                                            |
+|                                                                        | - Environment variable: N/A                                                                            |
+| Image upload interface.                                                |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-service-type
@@ -1145,8 +1161,9 @@ Service
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Select the LLM service provider to use for AI assistance.              | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 |                                                                        | - ``config.json`` setting: N/A                                                                         |
-| Available options: **OpenAI**, **OpenAI Compatible**, **Azure**,       | - Environment variable: N/A                                                                            |
-| **Anthropic**, **Ask Sage**.                                          |                                                                                                        |
+|                                                                        | - Environment variable: N/A                                                                            |
+| Available options: **OpenAI**, **OpenAI Compatible**, **Azure**,       |                                                                                                        |
+| **Anthropic**, **Ask Sage**.                                           |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-username
@@ -1161,8 +1178,9 @@ Username
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The username used to authenticate with Ask Sage service.               | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| Required for **Ask Sage** service.                                    | - ``config.json`` setting: N/A                                                                         |
+| Required for **Ask Sage** service.                                     | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
 | String input.                                                          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
@@ -1178,8 +1196,9 @@ Password
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The password used to authenticate with Ask Sage service.               | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| Required for **Ask Sage** service.                                    | - ``config.json`` setting: N/A                                                                         |
+| Required for **Ask Sage** service.                                     | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
 | String input. This value is encrypted when stored.                     |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
@@ -1195,9 +1214,10 @@ API URL
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The endpoint that Mattermost will use to communicate with the LLM's    | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| API. Required for **OpenAI Compatible** and **Azure** services.       | - ``config.json`` setting: N/A                                                                         |
+| API. Required for **OpenAI Compatible** and **Azure** services.        | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
-| String input (URL format).                                            |                                                                                                        |
+|                                                                        |                                                                                                        |
+| String input (URL format).                                             |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-api-key
@@ -1212,8 +1232,9 @@ API Key
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The key used to authenticate requests to the LLM's API. Required for   | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| **OpenAI**, **OpenAI Compatible**, and **Anthropic** services.        | - ``config.json`` setting: N/A                                                                         |
+| **OpenAI**, **OpenAI Compatible**, and **Anthropic** services.         | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
 | String input. This value is encrypted when stored.                     |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
@@ -1230,7 +1251,7 @@ Organization ID
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Ensures that requests are billed and processed under the correct       | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 | organization, where applicable. Supported for **OpenAI**,              | - ``config.json`` setting: N/A                                                                         |
-| **OpenAI Compatible**, and **Azure** services.                        | - Environment variable: N/A                                                                            |
+| **OpenAI Compatible**, and **Azure** services.                         | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | String input.                                                          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -1270,9 +1291,10 @@ Default Model
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The specific LLM that will be used to process queries if no other      | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| model is explicitly selected. Supported for all LLM services.         | - ``config.json`` setting: N/A                                                                         |
+| model is explicitly selected. Supported for all LLM services.          | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
-| String input (model name).                                            |                                                                                                        |
+|                                                                        |                                                                                                        |
+| String input (model name).                                             |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-input-token-limit
@@ -1325,7 +1347,7 @@ Streaming Timeout Seconds
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Determines how long the system will wait for a response from the LLM   | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 | when using streaming (real-time) output mode. Supported for            | - ``config.json`` setting: N/A                                                                         |
-| **OpenAI**, **OpenAI Compatible**, and **Azure** services.            | - Environment variable: N/A                                                                            |
+| **OpenAI**, **OpenAI Compatible**, and **Azure** services.             | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Numerical value (seconds). If the LLM takes longer than the            |                                                                                                        |
 | configured timeout, the connection is terminated.                      |                                                                                                        |
@@ -1371,7 +1393,7 @@ Enable Vision
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | - **true**: Enables the LLM to process and generate responses that     | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 |   incorporate image-related input or output. Supported for **OpenAI**, | - ``config.json`` setting: N/A                                                                         |
-|   **OpenAI Compatible**, **Azure**, and **Anthropic** services.       | - Environment variable: N/A                                                                            |
+|   **OpenAI Compatible**, **Azure**, and **Anthropic** services.        | - Environment variable: N/A                                                                            |
 | - **false**: **(Default)** Disables vision capabilities.               |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
@@ -1393,7 +1415,7 @@ Enable Tools
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | - **true**: Enables the LLM to leverage additional tools or plugins    | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 |   to enhance its capabilities. Supported for **OpenAI**,               | - ``config.json`` setting: N/A                                                                         |
-|   **OpenAI Compatible**, **Azure**, and **Anthropic** services.       | - Environment variable: N/A                                                                            |
+|   **OpenAI Compatible**, **Azure**, and **Anthropic** services.        | - Environment variable: N/A                                                                            |
 | - **false**: **(Default)** Disables tool capabilities.                 |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
@@ -1413,7 +1435,7 @@ Channel access
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Determines whether the bot can consume the contents of a given         | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 | channel and provide answers only from content available in the         | - ``config.json`` setting: N/A                                                                         |
-| channel. Supported for all LLM services.                              | - Environment variable: N/A                                                                            |
+| channel. Supported for all LLM services.                               | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Available options: **Allow for all channels**, **Allow for selected    |                                                                                                        |
 | channels**, **Block selected channels**, **Block all channels**.       |                                                                                                        |
@@ -1432,10 +1454,10 @@ User access
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Determines whether users who chat with this bot can get private        | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
 | assistance about content across all channels the user has access to.   | - ``config.json`` setting: N/A                                                                         |
-| Supported for all LLM services.                                       | - Environment variable: N/A                                                                            |
+| Supported for all LLM services.                                        | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Available options: **Allow for all users**, **Allow for selected       |                                                                                                        |
-| users**, **Block selected users**.                                    |                                                                                                        |
+| users**, **Block selected users**.                                     |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-default-bot
@@ -1450,9 +1472,9 @@ Default bot
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | Select the default bot to use for AI functions when multiple bots      | - System Config path: **Plugins > Copilot > AI Functions**                                             |
-| are configured. Based on defined bots.                                | - ``config.json`` setting: N/A                                                                         |
+| are configured. Based on defined bots.                                 | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
-| Selection based on configured bots.                                   |                                                                                                        |
+| Selection based on configured bots.                                    |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: copilot-allowed-hostnames
