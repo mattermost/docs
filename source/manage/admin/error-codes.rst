@@ -28,12 +28,10 @@ A licensed user limit exceeded error (``ERROR_LICENSED_USERS_LIMIT_EXCEEDED``) d
 
 This error occurs when:
 
-- Creating new users would exceed the license user limit plus a 5% grace period.
-- Activating deactivated users would exceed the license user limit plus a 5% grace period.
+- Creating new users would exceed the license user limit.
+- Activating deactivated users would exceed the license user limit.
 
 To resolve this error, system administrators can:
 
 - :ref:`Deactivate users <configure/user-management-configuration-settings:deactivate users>` to reduce the active user count below the license limit.
 - Contact `Mattermost Sales <https://mattermost.com/contact-sales/>`_ to discuss license options.
-
-The grace period allows for a 5% buffer above the licensed user count (minimum of 1 additional user) to accommodate temporary usage spikes before enforcement occurs.
