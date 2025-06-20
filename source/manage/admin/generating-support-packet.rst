@@ -189,8 +189,8 @@ Use ``go tool pprof -web X`` to open a visualization of the profile in your brow
 Load metric
 ------------
 
-From Mattermost v10.10, system admins have access to an additional diagnostic data point when working with Mattermost support by going to  the **Product** menu |product-list| and selecting **About Mattermost**. 
+From Mattermost v10.10, all users have access to an additional diagnostic data point when working with Mattermost support by going to  the **Product** menu |product-list| and selecting **About Mattermost**. 
 
-The **Load Metric** field displays current server activity levels and usage patterns, giving Mattermost support teams a contextual reference point for understanding deployment characteristics without requiring access to detailed logs, configurations, or sensitive system data. System admins may need to reference this value when working with Mattermost support teams in environments where Support Packet generation is restricted or prohibited.
+The **Load Metric** field displays monthly active users relative to the total number of licensed users, giving Mattermost support teams a contextual reference point for understanding deployment characteristics without requiring access to detailed logs, configurations, or sensitive system data. Users may need to reference this value when working with Mattermost support teams in environments where Support Packet generation is restricted or prohibited.
 
 It isn't a comprehensive performance monitoring tool or health indicator, but serves as a supplementary data point to assist Mattermost support teams when traditional diagnostic methods aren't available. 

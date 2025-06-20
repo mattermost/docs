@@ -25,3 +25,4 @@ The About dialog displays key information about your Mattermost instance, includ
 - **Database Schema Version**: The version of the database schema in use
 - **License**: Information about your Mattermost license (if applicable)
 - **Build Information**: Details about the server build
+- **Load Metric**: Monthly active users relative to licensed users (from v10.10+)
