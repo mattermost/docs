@@ -1,7 +1,7 @@
 Self-Hosted
 ============
 
-.. include:: ../_static/badges/ent-pro-selfhosted.rst
+.. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
 Buy a subscription
