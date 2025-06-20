@@ -10,7 +10,7 @@ Generate
 ---------
 
 .. important::
-   
+
    Before generating a Support Packet, go to **System Console > Environment > Logging** and ensure **Output logs to file** is set to **true**, and set **File Log Level** to **DEBUG**.
 
 .. tab:: Web/Desktop
@@ -143,11 +143,11 @@ From Mattermost v9.11, generated Support Packets include a ``metadata.yaml`` fil
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | license_id            | Optional              | Unique identifier of the current server's license.                                                                | abcdejisd67yigqhmkz4ho1234 |
 |                       |                       | Expected to be 26 characters or longer.                                                                           |                            |
-|                       |                       | This field is empty when there’s no license.                                                                      |                            |
+|                       |                       | This field is empty when there's no license.                                                                      |                            |
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | customer_id           | Optional              | The id of the customer, as defined in the license file.                                                           | a1b2c3d4qbbr5cpkbpbmef123h |
 |                       |                       | Expected to be 26 characters or longer.                                                                           |                            |
-|                       |                       | Empty when there’s no license.                                                                                    |                            |
+|                       |                       | Empty when there's no license.                                                                                    |                            |
 +-----------------------+-----------------------+-------------------------------------------------------------------------------------------------------------------+----------------------------+
 | extras                | Optional              | Key/value of any additional information, specific to the plugin/component that generated the file.                |                            |
 |                       |                       | Can be useful for identifying the contents of the data.                                                           |                            |
@@ -185,3 +185,12 @@ The Support Packet contains 3 go runtime profiling files:
 These files can be read using `pprof <https://golang.google.cn/cmd/pprof/>`_.
 
 Use ``go tool pprof -web X`` to open a visualization of the profile in your browser, replacing ``X`` with the profile's file name.
+
+Load metric
+------------
+
+From Mattermost v10.10, system admins have access to an additional diagnostic data point when working with Mattermost support by going to  the **Product** menu |product-list| and selecting **About Mattermost**. 
+
+The **Load Metric** field displays current server activity levels and usage patterns, giving Mattermost support teams a contextual reference point for understanding deployment characteristics without requiring access to detailed logs, configurations, or sensitive system data. System admins may need to reference this value when working with Mattermost support teams in environments where Support Packet generation is restricted or prohibited.
+
+It isn't a comprehensive performance monitoring tool or health indicator, but serves as a supplementary data point to assist Mattermost support teams when traditional diagnostic methods aren't available. 
