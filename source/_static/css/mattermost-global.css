@@ -2006,11 +2006,25 @@ mark {
     padding: 0rem 1rem 1rem 1rem;
 }
 
-/* Image borders */
-img {
+/* Image borders - Apply to content images but not inline icons */
+/* Apply borders to larger images and images in article content */
+.document img,
+.section img,
+.body img {
     border: 1px solid #d3d3d3;
 }
 
-body:not([data-custom-theme="light"]) img {
+body:not([data-custom-theme="light"]) .document img,
+body:not([data-custom-theme="light"]) .section img,
+body:not([data-custom-theme="light"]) .body img {
     border: 1px solid #4a4a4a;
+}
+
+/* Remove borders from small inline icons */
+img[src*="_static/images/"],
+img[width="14"], img[width="16"], img[width="18"], img[width="20"],
+img[height="14"], img[height="16"], img[height="18"], img[height="20"],
+.mm-badge img,
+table img {
+    border: none !important;
 }
