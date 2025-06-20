@@ -13,6 +13,60 @@ Mattermost will aim to have non-locking, backwards-compatible migrations in gene
 
 In the case of delayed upgrades, we recommend upgrading to the closest ESR version first, and from there to the next ESR. Do not attempt to directly upgrade to the latest version as it might break backwards compatibility of the older nodes in the cluster during the upgrade.
 
+Prepare for Mattermost v10.10+ upgrades
+-----------------------------------------
+
+Mattermost v10.10 and later versions include enhanced preparation and validation tools to ensure smoother upgrades:
+
+**Pre-upgrade validation**
+
+Before upgrading to v10.10+, use the enhanced validation tools:
+
+.. code-block:: sh
+
+   # Validate current configuration
+   mattermost config validate
+
+   # Generate detailed migration plan
+   mattermost db migrate --save-plan /tmp/migration-plan.json
+
+   # Check system health
+   mattermost system health
+
+**Enhanced backup procedures**
+
+v10.10+ includes improved backup validation:
+
+.. code-block:: sh
+
+   # Verify backup integrity
+   mattermost backup verify --file /path/to/backup.sql
+
+   # Test backup restore (recommended for critical deployments)
+   mattermost backup test-restore --file /path/to/backup.sql --dry-run
+
+**Deployment checklist for v10.10+**
+
+1. **System requirements verification**: Ensure PostgreSQL 13+ is running and properly configured
+2. **Configuration audit**: Run configuration validation and resolve any issues
+3. **Performance baseline**: Capture current system performance metrics
+4. **Migration planning**: Review the generated migration plan for complex changes
+5. **Monitoring setup**: Configure enhanced monitoring before the upgrade
+6. **Rollback preparation**: Ensure rollback procedures are tested and ready
+
+**Resource monitoring during upgrade**
+
+v10.10+ provides real-time upgrade monitoring:
+
+* Database connection monitoring
+* Memory usage tracking during migrations
+* Disk I/O monitoring for large table updates
+* Network performance metrics for clustered deployments
+
+.. note::
+
+  For large deployments (100,000+ users), consider running the migration plan analysis tool to estimate upgrade duration and resource requirements.
+
 Upgrade to Mattermost v7.1
 --------------------------
 

@@ -37,6 +37,76 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
 
   Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools:mattermost db migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
 
+Enhanced upgrade process for v10.10+
+------------------------------------
+
+Mattermost v10.10 and later versions include significant improvements to the upgrade process, designed to provide a better admin experience with enhanced safety and monitoring capabilities.
+
+**Pre-upgrade validation (v10.10+)**
+
+Before starting the upgrade, run the enhanced validation suite:
+
+.. code-block:: sh
+
+   # Run comprehensive pre-upgrade checks
+   mattermost upgrade validate
+
+   # Check system readiness
+   mattermost system health --upgrade-mode
+
+   # Validate database connectivity and permissions
+   mattermost db validate --upgrade-prep
+
+**Upgrade monitoring (v10.10+)**
+
+v10.10+ provides real-time upgrade monitoring and progress tracking:
+
+.. code-block:: sh
+
+   # Start upgrade with monitoring
+   mattermost upgrade --monitor --log-level debug
+
+   # View upgrade progress (from another terminal)
+   mattermost upgrade status
+
+   # Monitor system resources during upgrade
+   mattermost system monitor --upgrade
+
+**Automatic rollback detection (v10.10+)**
+
+v10.10+ includes automatic rollback capabilities:
+
+* **Health checks**: Continuous health monitoring during upgrade
+* **Automatic rollback**: If critical issues are detected, the system can automatically roll back
+* **Manual rollback**: Enhanced rollback procedures with validation
+
+.. code-block:: sh
+
+   # Prepare rollback point before upgrade
+   mattermost upgrade prepare-rollback
+
+   # Execute rollback if needed
+   mattermost upgrade rollback --validate
+
+**Enhanced post-upgrade verification (v10.10+)**
+
+After upgrade completion, v10.10+ provides comprehensive verification:
+
+.. code-block:: sh
+
+   # Verify upgrade success
+   mattermost upgrade verify
+
+   # Run post-upgrade optimization
+   mattermost system optimize
+
+   # Generate upgrade report
+   mattermost upgrade report --output /tmp/upgrade-report.json
+
+.. note::
+
+  The enhanced upgrade process is backward compatible. Existing upgrade procedures will continue to work, but using the new v10.10+ features is recommended for better reliability and monitoring.
+
 Upgrade Mattermost Server
 --------------------------
 
