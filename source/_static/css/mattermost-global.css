@@ -2021,10 +2021,12 @@ body:not([data-custom-theme="light"]) .body img {
 }
 
 /* Remove borders from small inline icons */
-img[src*="_static/images/"],
 img[width="14"], img[width="16"], img[width="18"], img[width="20"],
 img[height="14"], img[height="16"], img[height="18"], img[height="20"],
+img[src*="check-circle-green.svg"],
+img[src*="icon"],
 .mm-badge img,
-table img {
+table img[width="14"], table img[width="16"], table img[width="18"], table img[width="20"],
+table img[height="14"], table img[height="16"], table img[height="18"], table img[height="20"] {
     border: none !important;
 }
