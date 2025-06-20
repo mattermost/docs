@@ -27,7 +27,7 @@ Anyone can create public channels, private channels, direct messages, and group 
     .. image:: ../images/write-dm.png
       :alt: Access recent direct messages and group messages.
 
-  2. Select up to seven users by searching or browsing.
+  2. Select up to seven users by searching or browsing. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, remote users from shared channels are also available to select for direct and group messages.
 
   .. tip::
 
@@ -52,7 +52,7 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   **To start a direct or group message**
 
-  Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. Tap **Start** to start the conversation.
+  Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, remote users from shared channels are also available to select. Tap **Start** to start the conversation.
 
     .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
       :alt: You can start a direct or group message by tapping the plus in the top right corner.
