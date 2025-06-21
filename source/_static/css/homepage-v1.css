@@ -872,12 +872,20 @@ body.with-notification .main > .content,
 body.with-notification .sidebar-sticky {
   padding-top: 120px;
 }
+body.with-notification .sidebar-sticky-local {
+  padding-top: 0;
+}
 body.with-notification .masthead {
   padding-top: 160px;
 }
 @media (max-width: 770px) {
   body.with-notification .sidebar-sticky {
     padding-top: 110px;
+  }
+}
+@media (max-width: 770px) {
+  body.with-notification .sidebar-sticky-local {
+    padding-top: 0;
   }
 }
 body.with-notification .mobile-header {
@@ -891,6 +899,9 @@ body.with-notification header {
 .main > .content,
 .sidebar-sticky {
   padding-top: 75px;
+}
+.sidebar-sticky-local {
+  padding-top: 0;
 }
 
 .page .main {
