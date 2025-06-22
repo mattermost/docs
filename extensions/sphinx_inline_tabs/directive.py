@@ -1,7 +1,7 @@
 """
 Sphinx directive implementation.
 """
-from typing import Final, Optional
+from typing import Final
 
 from docutils import nodes
 from docutils.parsers.rst import directives
@@ -36,50 +36,46 @@ class TabDirective(SphinxDirective):
         """
         self.assert_has_content()
 
+        # TabContainer ends up being a <div type="tab">
         container: TabContainer = TabContainer(
             "", type="tab", new_set="new-set" in self.options
         )
         self.set_source_info(container)
 
-        tab_id: TabId = TabId(tab_name=self.arguments[0], level=0, tab_count=0, node_id=self.arguments[0])
-        container.attributes["tab_name"] = self.arguments[0]
-        container.attributes["inline_tab_id"] = str(tab_id)
+        #tab_id: TabId = TabId(tab_name=self.arguments[0], level=0, tab_count=0, node_id=self.arguments[0])
+        #container.attributes["tab_name"] = self.arguments[0]
+        #container.attributes["inline_tab_id"] = str(tab_id)
 
         # Handle the label (non-plain-text variants allowed)
         textnodes, messages = self.parse_inline(self.arguments[0], lineno=self.lineno)
-        # The signature of this object is:
-        #     __init__(self, rawsource='', text='', *children, **attributes)
-        #
+
         # We want to directly populate the children here.
         label: nodes.label = nodes.label("", "", *textnodes)
 
         # Handle the content
-        content: nodes.container = nodes.container(
-            "", is_div=True, classes=["tab-content"]
-        )
-
         parse_titles: bool = "parse-titles" in self.options
         parsed_nodes: list[nodes.Node] = self.parse_content_to_nodes(
             allow_section_headings=parse_titles
         )
+        content: nodes.container = nodes.container(
+            "", *parsed_nodes, is_div=True, classes=["tab-content"], tab_name=self.arguments[0],
+        )
+
+        # Add the tab label and content to the container
+        container += label
+        container += content
 
         """
         Walk the parsed content and add new `id` attributes on section nodes that
         will be used for HTML page navigation.
         """
-        self.walk_parsed_nodes(parsed_nodes, tab_name=_make_id(self.arguments[0]), docname=self.env.docname)
-
-        # Add the parsed content to the content node
-        for parsed_node in parsed_nodes:
-            content += parsed_node
-
-        container += label
-        container += content
+        self.walk_parsed_nodes([container], tab_name=_make_id(self.arguments[0]), docname=self.env.docname)
 
         """
         Record the name of this tab in a list of tabs for this document in the
         Sphinx environment.
         """
+        # FIXME: is this valuable any longer?
         if not hasattr(self.env, "sphinx_tabs"):
             self.env.sphinx_tabs = {}
         if self.env.docname not in self.env.sphinx_tabs:
@@ -103,48 +99,70 @@ class TabDirective(SphinxDirective):
         :return:
         """
         for parsed_node in parsed_nodes:
-            logger.debug(f"{LOG_PREFIX} walk_parsed_nodes({docname}): [{level}/{tab_counter}] parsed_node={type(parsed_node)}")
-            parent_node: Optional[nodes.Element] = parsed_node if isinstance(parsed_node, nodes.Element) else None
+            # if (
+            #     isinstance(parsed_node, TabContainer) is False
+            #     and isinstance(parsed_node, nodes.section) is False
+            # ):
+            node_info = (
+                f"type(parsed_node)={type(parsed_node)}; "
+                f"has_ids={True if hasattr(parsed_node, 'attributes') and parsed_node.attributes["ids"] else False}; "
+                f"parent={parsed_node.parent!r}"
+            )
+            logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] {node_info}")
 
             if isinstance(parsed_node, TabContainer):
                 tab_container_name: str = parsed_node.next_node(nodes.label).astext()
-                logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}): [{level}/{tab_counter}] node is a TabContainer({tab_container_name}); increment tab_counter to {tab_counter + 1}")
+                logger.info(
+                    f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] "
+                    f"TabContainer({tab_container_name}); node.tab_counter={parsed_node.tab_counter} "
+                    f"is_parsed={parsed_node.is_parsed}; has_ids={True if parsed_node.attributes["ids"] else False}; "
+                    f"first_id={parsed_node.attributes['ids'][0] if parsed_node.attributes['ids'] else 'None'}; "
+                    f"increment tab_counter to {tab_counter + 1}"
+                )
+                sub_tab_name: str = tab_name
+                if tab_counter > 0:
+                    sub_tab_name += f"-{_make_id(tab_container_name)}"
+                tab_id = TabId(tab_name=sub_tab_name, level=level, tab_count=tab_counter+1, node_id=_make_id(tab_container_name))
                 parsed_node.tab_counter = tab_counter + 1
-                # if parsed_node.attributes["ids"]:
-                #     tab_container_id: str = parsed_node.attributes["ids"][0]
-                #     tab_id = TabId.from_str(tab_container_id)
-                #     if tab_id is not None:
-                #         tab_id.tab_count = parsed_node.tab_counter
-                #         logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}): [{level}/{tab_counter}] {tab_container_name}; update ids[0] from {tab_container_id} to {str(tab_id)}")
-                #         parsed_node.attributes["ids"][0] = str(tab_id)
-                # else:
-                sub_tab_name: str = f"{tab_name}-{_make_id(tab_container_name)}"
-                tab_id = TabId(tab_name=sub_tab_name, level=level, tab_count=parsed_node.tab_counter, node_id=tab_container_name)
-                logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}): [{level}/{tab_counter}] {tab_container_name}; set ids[0] to {str(tab_id)}")
+                parsed_node.is_parsed = True
+                parsed_node.tab_id = tab_id
+                logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] {tab_container_name}; set ids to [{str(tab_id)}]")
                 parsed_node.attributes["ids"] = [str(tab_id)]
-                parent_node = parsed_node.next_node(nodes.container)
+
             elif isinstance(parsed_node, nodes.section):
+                section_title: str = parsed_node.next_node(nodes.title).astext()
+                logger.info(
+                    f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] section({section_title}); "
+                    f"has_ids={True if parsed_node.attributes["ids"] else False}; "
+                    f"first_id={parsed_node.attributes['ids'][0] if parsed_node.attributes['ids'] else 'None'}; "
+                )
                 # If the node has at least one `id` attribute
                 if parsed_node.attributes["ids"]:
                     # Get the first `id` for the node
                     node_id: str = parsed_node.attributes["ids"][0]
                     # Create a new `id` value that includes the tab name, subsection level, and first node `id`
                     new_id: TabId = TabId(tab_name=tab_name, level=level, tab_count=tab_counter, node_id=node_id)
-                    logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}): [{level}/{tab_counter}] section={node_id}, new_id={str(new_id)}")
+                    logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] section={node_id}, new_id={str(new_id)}")
                     new_ids: list[str] = [str(new_id)]
                     # Create a new list of `id` attribute values with the new value first
                     for existing_id in parsed_node.attributes["ids"]:
                         new_ids.append(existing_id)
                     # Set the node's `id` attribute to the new list of attribute values
+                    logger.info(f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] set attributes['ids'] to {new_ids}")
                     parsed_node.attributes["ids"] = new_ids
+                else:
+                    logger.warning(f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] section has no IDs; this is unexpected")
 
             # Recurse down through this node's children if there are any
-            if parent_node is not None and parent_node.children is not None:
-                logger.debug(
-                    f"{LOG_PREFIX} walk_parsed_nodes({docname}): [{level}/{tab_counter}] parse {len(parent_node.children)} children"
-                )
+            if hasattr(parsed_node, "children") and parsed_node.children:
                 if isinstance(parsed_node, TabContainer):
-                    child_tab_name: str = parsed_node.next_node(nodes.label).astext()
-                    self.walk_parsed_nodes(parent_node.children, level + 1, child_tab_name, docname, tab_counter + 1)
+                    child_tab_name: str = _make_id(parsed_node.next_node(nodes.label).astext())
+                    logger.info(
+                        f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] TabContainer({child_tab_name}); parse {len(parsed_node.children)} children"
+                    )
+                    self.walk_parsed_nodes(parsed_node.children, level + 1, child_tab_name, docname, tab_counter + 1)
                 else:
-                    self.walk_parsed_nodes(parent_node.children, level + 1, tab_name, docname, tab_counter)
+                    logger.info(
+                        f"{LOG_PREFIX} walk_parsed_nodes({docname}|{tab_name}): [{level}/{tab_counter}] {type(parsed_node)}(); parse {len(parsed_node.children)} children"
+                    )
+                    self.walk_parsed_nodes(parsed_node.children, level + 1, tab_name, docname, tab_counter)

@@ -17,6 +17,16 @@ class TabContainer(nodes.container):
         super().__init__(rawsource, *children, **attributes)
         self.tagname = "div"
 
+    def tab_identifier(self) -> str:
+        identifier: str = "??"
+        if self.tab_id:
+            identifier = str(self.tab_id)
+        if identifier == "":
+            child_container: Optional[nodes.container] = self.next_node(nodes.container)
+            if child_container is not None and child_container.attributes['tab_name']:
+                identifier = child_container.attributes['tab_name']
+        return identifier
+
 
 class _GeneralHTMLTagElement(nodes.Element, nodes.General):
 

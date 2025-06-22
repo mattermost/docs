@@ -1,7 +1,6 @@
 """
 Sphinx event handler implementation.
 """
-from dataclasses import dataclass
 from typing import Any, Final, Optional
 
 from docutils import nodes
@@ -11,7 +10,9 @@ from sphinx.environment import BuildEnvironment
 from sphinx.util import logging
 from sphinx.util.nodes import _make_id
 
+from .directive import LOG_PREFIX
 from .nodes import TabContainer
+from .sectiondata import SectionData
 from .tab_id import TabId
 
 
@@ -20,9 +21,6 @@ logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
 
 FURO_SCRIPT_ASSET_FILENAME: Final[str] = "_static/scripts/furo.js"
 """The file name of the Furo theme JavaScript asset"""
-
-LOG_PREFIX: Final[str] = "[sphinx_inline_tabs]"
-"""A log message prefix string identifying this Sphinx extension"""
 
 
 def env_purge_doc(app: Sphinx, _: BuildEnvironment, docname: str) -> None:
@@ -137,21 +135,6 @@ def html_page_context(
     return None
 
 
-@dataclass(repr=True, slots=True)
-class SectionData:
-    """
-    A dataclass to hold metadata on each section of inline tab content.
-    """
-    name: str
-    level: int
-    tab_counter: int
-    is_doc_root: bool
-    is_section_root: bool
-    is_tab: bool
-    id: str
-    children: list["SectionData"]
-
-
 def collect_sections(
     env: BuildEnvironment,
     document: nodes.document,
@@ -171,7 +154,7 @@ def collect_sections(
     :param tab_counter:
     :return:
     """
-    logger.info(
+    logger.debug(
         f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] node={type(node)}"
     )
     secdata = SectionData(
@@ -187,50 +170,57 @@ def collect_sections(
 
     if isinstance(node, nodes.section):
         secdata.name = node.next_node(nodes.title).astext()
-        logger.info(
+        logger.debug(
             f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] Section: {secdata.name}"
         )
     elif isinstance(node, TabContainer):
         secdata.name = node.next_node(nodes.label).astext()
-        logger.info(
-            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] Tab: {secdata.name}"
+        logger.debug(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] TabContainer: {secdata.name}"
         )
 
     section_id: str = ""
     #if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
     #    section_id = node.attributes["inline_tab_id"]
     #else:
-    if "ids" in node.attributes:
+    if node.attributes["ids"]:
+        logger.debug(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] node ids: {node.attributes['ids']}"
+        )
         if len(node.attributes["ids"]) == 1 and node.attributes["ids"][0] != "":
             section_id = node.attributes["ids"][0]
-            logger.info(
+            logger.debug(
                 f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] using ids[0] attribute: {section_id}"
             )
         elif len(node.attributes["ids"]) > 1:
             for id in node.attributes["ids"]:
                 if TabId.is_tab_id(id):
                     section_id = id
-                    logger.info(
-                        f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] using ids attribute: {section_id}"
+                    logger.debug(
+                        f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] using TabId attribute: {section_id}"
                     )
                     break
+                else:
+                    logger.debug(f"+++ {LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] id {id} is not a TabId")
     if section_id == "":
         section_id = _make_id(secdata.name)
-        logger.info(
-            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] make section_id from {secdata.name}: {section_id}"
+        logger.debug(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] make section_id from secdata.name({secdata.name}): {section_id}"
         )
     secdata.id = section_id
-    logger.info(
+    logger.debug(
         f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] secdata.id: {secdata.id}"
     )
 
-    parent_node: nodes.Element = (
-        node.next_node(nodes.container) if isinstance(node, TabContainer) else node
-    )
+    # FIXME: is this still necessary?
+    # parent_node: nodes.Element = (
+    #     node.next_node(nodes.container) if isinstance(node, TabContainer) else node
+    # )
 
-    for child in parent_node.children:
-        logger.info(
-            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] child={type(child)}"
+    #for child in parent_node.children:
+    for idx, child in enumerate(node.children):
+        logger.debug(
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] child[{idx}]={type(child)}"
         )
         if isinstance(child, nodes.section):
             secdata.children.append(
@@ -253,15 +243,10 @@ def dump_sections(docname: str, secdata: SectionData):
     :param secdata:
     :return:
     """
-    section_type: str = "section"
-    if secdata.is_doc_root:
-        section_type = "doc root"
-    elif secdata.is_section_root:
-        section_type = "section root"
-    elif secdata.is_tab:
-        section_type = "tab"
     logger.debug(
-        f"{LOG_PREFIX} dump_sections(): ({docname}) [{secdata.level}/{secdata.tab_counter}] {secdata.name}/{secdata.id}: {section_type}, {len(secdata.children)} children"
+        f"{LOG_PREFIX} dump_sections(): ({docname}) [{secdata.level}/{secdata.tab_counter}] "
+        f"{secdata.name}/{secdata.id}: {secdata.get_section_type()}, "
+        f"{len(secdata.children)} children"
     )
     for child in secdata.children:
         dump_sections(docname, child)
@@ -276,12 +261,12 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     :param secdata:
     :return:
     """
-    logger.info(
+    logger.debug(
         f"{LOG_PREFIX} sectiondata_to_toc(): "
         f"({docname}): [{secdata.level}/{secdata.tab_counter}] {secdata.name}<{secdata.id}>, {len(secdata.children)} children"
     )
     if secdata.is_doc_root:
-        logger.info(
+        logger.debug(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
             f"({docname}): [{secdata.level}/{secdata.tab_counter}] return sectiondata_to_toc(..., secdata.children[0])"
         )
@@ -291,20 +276,20 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
 
     if not secdata.is_section_root:
         # Don't add a reference for the section root since it will be displayed in the ToC
-        logger.info(
+        logger.debug(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
             f"({docname}): [{secdata.level}/{secdata.tab_counter}] add reference for {secdata.name}<{secdata.id}>"
         )
         list_item.append(make_compact_reference(secdata.id, secdata.name, docname))
 
     if len(secdata.children) > 0:
-        logger.info(
+        logger.debug(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
             f"({docname}): [{secdata.level}/{secdata.tab_counter}] children: {','.join([sd.name for sd in secdata.children])}"
         )
         bullet_list: nodes.bullet_list = nodes.bullet_list()
         for idx, child in enumerate(secdata.children):
-            logger.info(
+            logger.debug(
                 f"{LOG_PREFIX} sectiondata_to_toc(): "
                 f"({docname}): [{secdata.level}/{secdata.tab_counter}] child {idx+1}/{len(secdata.children)}"
             )
