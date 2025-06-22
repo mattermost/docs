@@ -19,7 +19,7 @@ For customers using our service in a self-hosted deployment, the `Mattermost Fre
 Mattermost Enterprise Edition 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Our commercial, self-hosted software is called Mattermost Enterprise Edition, and it's available as a Linux binary that deploys identically to our open source version - including upgrading in an identical fashion - with two key differences: It contains code for advanced commercial features and it's offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business.
+Our commercial, self-hosted software is called Mattermost Enterprise Edition, and it's available as a Linux binary that deploys identically to our open source version - including upgrading in an identical fashion - with 2 key differences: It contains code for advanced commercial features and it's offered under a commercial license (https://mattermost.com/enterprise-edition-license/). The commercial license prohibits reverse engineering and tampering with our license key mechanism unlocking paid features so that we can run a compliant and fair commercial business.
 
 Once you’ve downloaded and installed Mattermost Enterprise Edition within your preferred environment, you have the option to use it as-is in a "free" mode, or you can access Mattermost's commercial features by starting a trial or by purchasing a subscription. You can start a 30-day free Enterprise trial via **System Console > Edition and License > Start trial**, or request a trial online at https://mattermost.com/trial/.
 
@@ -38,6 +38,23 @@ Mattermost plans
 Mattermost plans consist of features and entitlements available either a paid subscription service or free. :doc:`Learn more </about/plans>` about the features available across all plans.
 
 The Mattermost Professional, Enterprise, or Enterprise Advanced editions are only available after deploying our Mattermost Enterprise Edition binary, and then applying a valid license key that comes with a subscription purchase. Alternatively, you can start a 30-day free trial that can be activated either in-product (**System Console > Edition and License > Start trial**) or online at https://mattermost.com/trial/.
+
+Mattermost Enterprise Advanced
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Mattermost Enterprise Advanced is the :doc:`Intelligent Mission Environment </about/product>` for Cyber Defense and Mission Operations that features:
+
+- :doc:`Classified and Sensitive Information Controls </collaborate/display-channel-banners>`
+- :doc:`Zero Trust Security </manage/admin/attribute-based-access-control>` with dynamic attribute-based policy controls, environmental atributes, and User Authoritative Source integration
+- :doc:`Mobile security </about/security/mobile-security>` controls
+- :doc:`Air-gapped deployment workflows </deploy/server/air-gapped-deployment>`
+
+Visit the :doc:`Mattermost Plans </about/plans>` page to learn more about the capabilities and features available in Enterprise Advanced. 
+
+A 30-day free trial to preview the features in this subscription can be activated either in-product (**System Console > Edition and License > Start trial**) or via an online request at https://mattermost.com/trial/.
 
 Mattermost Enterprise 
 ~~~~~~~~~~~~~~~~~~~~~

@@ -7,7 +7,6 @@ Site configuration settings
 Review and manage the following site configuration options in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **Site Configuration**:
 
 - `Customization <#customization>`__
-- `System Properties <#system-properties>`__
 - `Localization <#localization>`__
 - `Users and Teams <#users-and-teams>`__
 - `Notifications <#notifications>`__
@@ -252,13 +251,32 @@ Forgot Password custom link
 .. note::
   This configuration setting applies to all Mattermost clients, including web, desktop app, and mobile app. You can control whether the **Forgot Password** link is visible or hidden in clients by going to **Authentication > Password > Enable Forgot Password Link**. See the :ref:`configuration <configure/authentication-configuration-settings:enable forgot password link>` documentation for details.
 
+.. config:setting:: report-a-problem-type
+  :displayname: Report a Problem type (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ReportAProblemType
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMTYPE
+  :description: Specify how the ‘Report a Problem’ option behaves in the Mattermost app via the Help menu.
+
+Report a Problem
+~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+Specify how the ‘Report a Problem’ option behaves in the Mattermost app via the **Help** menu:
+
+- **Default link**: Uses the default Mattermost URL to report a problem. For commercial customers, this is the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Non-commercial customers are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
+- **Email address**: Enables you to :ref:`enter an email address <configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
+- **Custom link**: Enables you to :ref:`enter a URL <configure/site-configuration-settings:report a problem link>` that users will be directed to when they choose **Report a Problem** in Mattermost.
+- **Hide link**: Removes the **Report a Problem** option from Mattermost.
 
 .. config:setting:: report-a-problem-link
   :displayname: Report a Problem link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemLink
   :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK
-  :description: This field sets the URL for the **Report a Problem** link in the channel header **Help** menu.  Default value is **https://about.mattermost.com/default-report-a-problem**.
+  :description: Users will be directed to this link when they choose Report a Problem in Mattermost.
 
 Report a Problem link
 ~~~~~~~~~~~~~~~~~~~~~
@@ -266,18 +284,61 @@ Report a Problem link
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| This field sets the URL for the **Report a Problem** link in the channel header **Help** menu. If this field is empty the link does not appear. | - System Config path: **Site Configuration > Customization**            |
-|                                                                                                                                                 | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemLink`` |
-| String input. Default is ``https://about.mattermost.com/default-report-a-problem``.                                                             | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
-+-------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This field sets the URL for the **Report a Problem** link in the channel header **Help** menu.    | - System Config path: **Site Configuration > Customization**            |
+| If this field is empty the link does not appear.                                                  | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemLink`` |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLEMLINK``       |
+| String input. Default is ``https://mattermost.com/pl/report-a-bug``.                              |                                                                         |
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: report-a-problem-email
+  :displayname: Report a Problem email (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.ReportAProblemMail
+  :environment: MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL
+  :description: Enter the email address that users will be prompted to send a message to when they choose Report a Problem in Mattermost.
+
+Report a Problem email address
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| This field sets the email address for the **Report a Problem** link in the channel                | - System Config path: **Site Configuration > Customization**            |
+| header **Help** menu.                                                                             | - ``config.json`` setting: ``SupportSettings`` > ``ReportAProblemMail`` |
+|                                                                                                   | - Environment variable: ``MM_SUPPORTSETTINGS_REPORTAPROBLMEMAIL``       |
+| String input. Cannot be left blank.                                                               |                                                                         |
++---------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+
+.. config:setting:: allow-mobile-app-log-downloads
+  :displayname: Allow Mobile App Log Downloads (Customization)
+  :systemconsole: Site Configuration > Customization
+  :configjson: .SupportSettings.AllowDownloadLogs
+  :environment: MM_SUPPORTSETTINGS_ALLOWDOWNLOADLOGS
+  :description: When enabled, users can download app logs for troubleshooting. If a Report a Problem link is shown, logs can be downloaded as part of this workflow.
+
+Allow mobile app log downloads
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
++--------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Enable users to download mobile app logs for troubleshooting.            | - System Config path: **Site Configuration > Customization**            |
+| When the **Report a Problem** link is shown, mobile logs can be          | - ``config.json`` setting: ``SupportSettings`` > ``AllowDownloadLogs``  |
+| downloaded as part of the reporting flow.                                | - Environment variable: ``MM_SUPPORTSETTINGS_ALLOWDOWNLOADLOGS``        |
+|                                                                          |                                                                         |
+| - **true** (**Default**): Users can download mobile app logs.            |                                                                         |
+| - **false** Users can't download mobile app logs.                        |                                                                         |
++--------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: mattermost-apps-download-page-link
   :displayname: Mattermost apps download page link (Customization)
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.AppDownloadLink
   :environment: MM_NATIVEAPPSETTINGS_APPDOWNLOADLINK
-  :description: This field sets the URL for the Download Apps link in the **Product** menu. Default value is **https://about.mattermost.com/downloads/**.
+  :description: This field sets the URL for the Download Apps link in the Product menu. Default value is https://mattermost.com/pl/download-apps.
 
 Mattermost apps download page link
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -290,7 +351,7 @@ Mattermost apps download page link
 |                                                                                                                               | - ``config.json`` setting: ``NativeAppSettings`` > ``AppDownloadLink`` |
 | If you have an Enterprise App Store, set the link to the appropriate download page for your Mattermost apps.                  | - Environment variable: ``MM_NATIVEAPPSETTINGS_APPDOWNLOADLINK``       |
 |                                                                                                                               |                                                                        |
-| String input. Default is ``https://about.mattermost.com/downloads/``.                                                         |                                                                        |
+| String input. Default is ``https://mattermost.com/pl/download-apps``.                                                         |                                                                        |
 +-------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
 .. config:setting:: android-app-download-link
@@ -298,7 +359,7 @@ Mattermost apps download page link
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.AndroidAppDownloadLink
   :environment: MM_NATIVEAPPSETTINGS_ANDROIDAPPDOWNLOADLINK
-  :description: This field sets the URL to download the Mattermost Android app. Default value is **https://about.mattermost.com/mattermost-android-app/**.
+  :description: This field sets the URL to download the Mattermost Android app. Default value is https://mattermost.com/pl/android-app/.
 
 Android app download link
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -311,7 +372,7 @@ Android app download link
 |                                                                                                                                                                                                                                      | - ``config.json`` setting: ``NativeAppSettings`` > ``AndroidAppDownloadLink`` |
 | If you have an Enterprise App Store, link to your Android app.                                                                                                                                                                       | - Environment variable: ``MM_NATIVEAPPSETTINGS_ANDROIDAPPDOWNLOADLINK``       |
 |                                                                                                                                                                                                                                      |                                                                               |
-| String input. Default is ``https://about.mattermost.com/mattermost-android-app/``.                                                                                                                                                   |                                                                               |
+| String input. Default is ``https://mattermost.com/pl/android-app/``.                                                                                                                                                                 |                                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: ios-app-download-link
@@ -319,7 +380,7 @@ Android app download link
   :systemconsole: Site Configuration > Customization
   :configjson: .NativeAppSettings.IosAppDownloadLink
   :environment: MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK
-  :description: This field sets the URL to download the Mattermost iOS app. Default value is **https://about.mattermost.com/mattermost-ios-app/**.
+  :description: This field sets the URL to download the Mattermost iOS app. Default value is https://mattermost.com/pl/ios-app/.
 
 iOS app download link
 ~~~~~~~~~~~~~~~~~~~~~
@@ -332,7 +393,7 @@ iOS app download link
 |                                                                                                                                                                                                                       | - ``config.json`` setting: ``NativeAppSettings`` > ``IosAppDownloadLink``|
 | If you use an Enterprise App Store, link to your iOS app.                                                                                                                                                             | - Environment variable: ``MM_NATIVEAPPSETTINGS_IOSAPPDOWNLOADLINK``      |
 |                                                                                                                                                                                                                       |                                                                          |
-| String input. Default is ``https://about.mattermost.com/mattermost-ios-app/``.                                                                                                                                        |                                                                          |
+| String input. Default is ``https://mattermost.com/pl/ios-app/``.                                                                                                                                                      |                                                                          |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-desktop-app-landing-page
@@ -406,79 +467,6 @@ Mobile external browser
 +---------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 Enable this configuration setting when there are issues with the mobile app SSO redirect flow.
-
-----
-
-System properties
------------------
-
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
-From Mattermost v10.8, ensure your teams always have the critical information they need to collaborate effectively by defining and managing organization-specific user profile attributes as system properties that you can synchronize with your AD/LDAP or SAML identity provider. 
-
-System properties enable you to customize user profile properties to match your organization's unique needs and streamline collaboration while keeping user data centralized and consistent. The properties you define, such as position, rank, or location, are :doc:`attributes users can manage as part of their user profile </preferences/manage-your-profile>`. These custom profile attributes supplement existing user details visible from the user's profile picture.
-
-.. image:: ../images/cpa-properties.png
-  :alt: Mobile examples of a user profile with custom profile attributes added as system properties.
-
-Before you begin
-~~~~~~~~~~~~~~~~~
-
-You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
-
-In addition, to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is enabled and configured. See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
-
-Add properties
-~~~~~~~~~~~~~~
-
-You can define and manage up to 20 system properties using the System Console by going to **Site Configuration > System Properties**. Each property becomes a user profile attribute users can populate. Once you reach the maximum of 20 properties, you can't create new properties until you `delete properties <#manage-properties>`__ you no longer need.
-
-1. In the System Console, go to **Site Configuration > System Properties** and select **Add Property**.
-2. Enter the following details:
-
-    - **Property name**: Enter a unique name for the property. Property names can be up to 40 characters long.
-    - **Type**: Specify the type of property as one of the following:
-
-      - **Text** for text-based profile attributes.
-      - **Phone** for phone number-based profile attributes.
-      - **URL** for web site address-based profile attributes.
-      - **Select** for a list of profile attribute values users can choose from. Specify each value followed by pressing TAB or ENTER. Values can be up to 64 characters long, and users can choose a single value.
-      - **Multi-select** for a list of profile attribute values users can select from. Specify each value followed by pressing TAB or ENTER. Values can be up to 64 characters long, and users can choose multiple values.
-
-3. Specify the property's visibility as one of the following:
-
-  - **Always show**: The property is always visible in user profiles.
-  - **Hide when empty**: The property is only visible in user profiles when it has a value.
-  - **Always hide**: The property is never visible in user profiles.
-
-4. Save your changes.
-
-.. tip::
-
-  Duplicate existing properties by selecting **More** |more-icon| and selecting **Duplicate property**. This creates a new property with the same name and type as the original property. You can then edit the new property to change its name, type, and visibility as needed.
-
-Manage properties
-~~~~~~~~~~~~~~~~~~
-
-- **Modify**: Select the property fields to make inline changes to the property's name, type, or values. Select **More** |more-icon| to change a property's visibility.
-
-- **Order**: Control the order you want properties to appear in user profiles by dragging and dropping them in the list.
-
-- **Delete**: Delete properties you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
-
-In cases where multiple system admins manage system properties, refresh your web browser instance to see real-time updates to system properties made by other admins.
-
-Sync properties with your identity provider
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-1. Synchronize a property with AD/LDAP or SAML by selecting **More** |more-icon| and selecting **Link property to AD/LDAP** or **Link property to SAML**. Mattermost takes you directly to the **AD/LDAP** or **SAML 2.0** configuration settings page in the System Console where you can map the attributes you want to synchronize.
-
-2. Scroll to the **Custom profile attributes sync** section to specify the attribute used to populate the property in user profiles.
-
-3. Specify the attribute mapping for the property by entering the attribute name in the system property's **Attribute** field. The attribute name must match the attribute name in your identity provider.
-
-4. Save your changes.
 
 ----
 
@@ -1429,6 +1417,9 @@ Message priority
 Persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 +--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users can trigger repeating notifications to   | - System Config path: **Site Configuration > Posts**                                          |
 |   mentioned recipients of urgent messages.                               | - ``config.json`` setting: ``ServiceSettings`` > ``AllowPersistentNotifications`` > ``true``  |
@@ -1444,6 +1435,9 @@ Persistent notifications
 
 Maximum number of recipients for persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 +---------------------------------------------------------------+---------------------------------------------------------------------------------------------------+
 | The maximum number of recipients users may send persistent    | - System Config path: **Site Configuration > Posts**                                              |
@@ -1462,6 +1456,9 @@ Maximum number of recipients for persistent notifications
 Frequency of persistent notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
 +---------------------------------------------------------------+-----------------------------------------------------------------------------------------------------+
 | The number of minutes between repeated notifications for      | - System Config path: **Site Configuration > Posts**                                                |
 | urgent messages sent with persistent notifications.           | - ``config.json`` setting: ``ServiceSettings`` > ``PersistentNotificationIntervalMinutes`` > ``5``  |
@@ -1478,6 +1475,9 @@ Frequency of persistent notifications
 
 Total number of persistent notifications per post
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 +-------------------------------------------------------------+----------------------------------------------------------------------------------------------+
 | The maximum number of times users may receive persistent    | - System Config path: **Site Configuration > Posts**                                         |
@@ -1779,9 +1779,6 @@ Allow file sharing
 Allow file uploads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
 +---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to attach files to messages from mobile apps.              | - System Config path: **Site Configuration > File Sharing and Downloads**            |
 | - **false**: Prevents users from attaching files (including images) to messages from mobile apps. | - ``config.json`` setting: ``FileSettings`` > ``EnableMobileUpload`` > ``true``      |
@@ -1799,9 +1796,6 @@ Allow file uploads on mobile
 
 Allow file downloads on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
 
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables file downloads on mobile apps.                                               | - System Config path: **Site Configuration > File sharing and downloads**           |
@@ -1905,16 +1899,12 @@ Enable end user notices
 Connected workspaces
 ---------------------------
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../_static/badges/ent-adv-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 The following settings aren't available in the System Console and can only be set in ``config.json``. 
 
-When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces (Beta)**.
-
-.. note::
-
-    The ability to share Mattermost channels across connected workspaces is currently in :ref:`Beta <manage/feature-labels:beta>`. `Learn more <#why-is-this-feature-in-beta>`__.
+When connected workspaces are enabled, system admins can :doc:`create and manage connected workspaces </onboard/connected-workspaces>` in the System Console by going to **Site Configuration > Connected Workspaces**.
 
 .. config:setting:: enable-connected-workspaces
   :displayname: Enable connected workspaces
@@ -1944,7 +1934,7 @@ This feature's two ``config.json`` settings include:
   - Following an upgrade to Mattermost v10.2 or later, existing configuration values for shared channels, including ``EnableSharedChannels`` and ``EnableRemoteClusterService`` are automatically converted to connected workspace configuration settings in the ``config.json`` file. The :ref:`deprecated shared channels experimental settings <configure/deprecated-configuration-settings:shared channels settings>` remain in the ``config.json`` file to support backwards compatibility.
 
 .. config:setting:: disable-shared-channel-status-sync
-  :displayname: Disable shared channel status sync
+  :displayname: Disable shared channel status sync (Connected Workspaces)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DisableSharedChannelsStatusSync
   :environment: N/A
@@ -1965,7 +1955,7 @@ Disable member status and availability synchronization between connected workspa
 
 
 .. config:setting:: default-maximum-posts-per-sync
-  :displayname: Default maximum posts per sync
+  :displayname: Default maximum posts per sync (Connected Workspaces)
   :systemconsole: N/A
   :configjson: ConnectedWorkspacesSettings.DefaultMaxPostsPerSync
   :environment: N/A

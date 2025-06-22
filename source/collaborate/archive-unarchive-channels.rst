@@ -15,7 +15,7 @@ Delete :ref:`public channels <collaborate/channel-types:public channels>` and :r
 
 .. tab:: Web/Desktop
 
-  To archive a channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**. 
+  To archive a channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Archive Channel**.
 
 .. tab:: Mobile
 
