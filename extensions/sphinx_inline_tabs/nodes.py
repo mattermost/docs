@@ -1,5 +1,8 @@
+from typing import Optional
 from docutils import nodes
 from sphinx.writers.html5 import HTML5Translator
+
+from .tab_id import TabId
 
 
 class TabContainer(nodes.container):
@@ -7,6 +10,8 @@ class TabContainer(nodes.container):
     The initial tree-node for holding tab content.
     """
     tab_counter: int = 0
+    is_parsed: bool = False
+    tab_id: Optional[TabId] = None
 
     def __init__(self, rawsource="", *children, **attributes):
         super().__init__(rawsource, *children, **attributes)
