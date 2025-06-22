@@ -2005,3 +2005,29 @@ mark {
     background-color: var(--color-background-secondary);
     padding: 0rem 1rem 1rem 1rem;
 }
+
+/* Image borders - Apply to content images but not UI elements */
+/* Default: Apply borders to all images */
+img {
+    border: 1px solid #d3d3d3;
+}
+
+body:not([data-custom-theme="light"]) img {
+    border: 1px solid #4a4a4a;
+}
+
+/* Remove borders from globally defined UI elements and navigation */
+/* All images from _static directory (UI elements, not content) */
+img[src*="_static/images/"],
+img[src*="/_static/images/"],
+/* Specific classes for globally defined images */
+img.mm-badge-flag,
+img.mm-badge-deployment,
+img.theme-icon,
+/* Small table icons */
+table img[width="14"], table img[width="16"],
+table img[height="14"], table img[height="16"],
+/* Badge wrapper images */
+.mm-badge img {
+    border: none !important;
+}

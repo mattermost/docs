@@ -5,6 +5,11 @@ Mattermost Server can be deployed on various Linux distributions, providing a fl
 
 This page covers deployment options for major Linux distributions and installation methods. Choose your preferred platform below for specific deployment instructions:
 
+.. tab:: Manual Install
+
+  .. include:: linux/deploy-tar.rst
+    :start-after: :nosearch:
+
 .. tab:: Ubuntu
   :parse-titles:
 

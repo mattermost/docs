@@ -28,7 +28,7 @@ Use the following guides to configure exports for `CSV <#csv>`__, `Actiance XML 
 .. note::
 
    - For self-hosted deployments, compliance exports are written to the ``exports`` subdirectory of the configured filestore in the chosen format. This will either be in the :ref:`Local Storage directory <configure/environment-configuration-settings:file storage>` or the Mattermost S3 bucket if S3 storage is configured.
-   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the :ref:`dedicated export filestore target <configure/experimental-configuration-settings:enable dedicated export filestore target>` configuration settings documentation for details.
+   - Alternatively, you can specify an alternate filestore target and generate an S3 presigned URL for compliance exports. See the :ref:`dedicated export filestore target <configure/environment-configuration-settings:enable dedicated export filestore target>` configuration settings documentation for details.
    - Compliance exports don't contain posts sent before the feature was enabled. For self-hosted deployments, you can export past history via the ``export`` :doc:`command line tool <../manage/command-line-tools>`. 
 
 CSV

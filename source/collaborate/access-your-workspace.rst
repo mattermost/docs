@@ -43,7 +43,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
 .. tab:: Mobile
   :parse-titles:
 
-  1. Download and install the Mattermost mobile app from the Apple App Store (iOS) or Google Play Store (Android).
+  1. Download and install the Mattermost mobile app from the `Apple App Store (iOS) <https://www.apple.com/app-store/>`__ or `Google Play Store (Android) <https://play.google.com/store/games?hl=en>`__.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. Server URLs must begin with either ``http://`` or ``https://``. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
   3. Enter your user credentials to log into Mattermost. 
   4. The team that displays first in the team sidebar opens. If you're not a member of a team yet, you're prompted to select a team to join.

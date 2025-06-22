@@ -10,6 +10,11 @@
 Frequently Asked Questions
 --------------------------
 
+What encryption options are supported for SAML?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+See the encryption options documentation for details on what :ref:`encryption methods <deploy/encryption-options:saml encryption support>` Mattermost supports for SAML.
+
 How to bind authentication to Id attribute instead of email
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
