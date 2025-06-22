@@ -1,0 +1,28 @@
+import re
+from dataclasses import dataclass
+from typing import Final, Optional
+from sphinx.util.nodes import _make_id
+
+TAB_ID_PATTERN: Final[str] = "itab--([a-zA-Z0-9-]+)--([0-9]+)_([0-9]+)-(.*)"
+
+
+@dataclass(slots=True)
+class TabId:
+    tab_name: str
+    level: int
+    tab_count: int
+    node_id: str
+
+    def __repr__(self):
+        return f"itab--{_make_id(self.tab_name)}--{self.level}_{self.tab_count}-{self.node_id}"
+
+    @classmethod
+    def is_tab_id(cls, id_string: str) -> bool:
+        return re.match(TAB_ID_PATTERN, id_string) is not None
+
+    @classmethod
+    def from_str(cls, id_string: str) -> Optional["TabId"]:
+        match: Optional[re.Match[str]] = re.match(TAB_ID_PATTERN, id_string)
+        if match is not None:
+            return cls(tab_name=match.group(1), level=int(match.group(2)), tab_count=int(match.group(3)), node_id=match.group(4))
+        return None

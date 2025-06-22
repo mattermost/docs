@@ -9,33 +9,36 @@ from sphinx.application import Sphinx
 from sphinx.environment import BuildEnvironment
 from sphinx.util import logging
 from sphinx.util.console import bold, colorize, term_width_line  # type: ignore
-from typing import Mapping, Any, Optional
+from typing import Any, Final, Mapping, Optional
+
 
 # Global Sphinx configuration options
-CONFIG_HTML_BASEURL = "html_baseurl"
+CONFIG_HTML_BASEURL: Final[str] = "html_baseurl"
 # Configuration options
-CONFIG_OPTION_REDIRECTS = "redirects"
-CONFIG_OPTION_TEMPLATE_FILE = "redirects_html_template_file"
-CONFIG_OPTION_BASEURL = "redirects_baseurl"
-CONFIG_WRITE_EXTENSIONLESS_PAGES = "redirects_write_extensionless_pages"
+CONFIG_OPTION_REDIRECTS: Final[str] = "redirects"
+CONFIG_OPTION_TEMPLATE_FILE: Final[str] = "redirects_html_template_file"
+CONFIG_OPTION_BASEURL: Final[str] = "redirects_baseurl"
+CONFIG_WRITE_EXTENSIONLESS_PAGES: Final[str] = "redirects_write_extensionless_pages"
 # Option defaults
-OPTION_REDIRECTS_DEFAULT: dict[str, str] = dict()
-OPTION_TEMPLATE_FILE_DEFAULT = None
-WRITE_EXTENSIONLESS_PAGES_DEFAULT = False
-OPTION_BASEURL_DEFAULT = ""
+OPTION_REDIRECTS_DEFAULT: Final[dict[str, str]] = {}
+OPTION_TEMPLATE_FILE_DEFAULT: Final[Optional[str]] = None
+WRITE_EXTENSIONLESS_PAGES_DEFAULT: Final[bool] = False
+OPTION_BASEURL_DEFAULT: Final[str] = ""
 # Environment keys
-ENV_REDIRECTS_ENABLED = "redirects-enabled"
-ENV_COMPUTED_REDIRECTS = "computed-redirects"
-ENV_INTRA_PAGE_FRAGMENT_PAGES = "intra-page-fragment-pages"
-ENV_EXTENSIONLESS_PAGES = "extensionless-pages"
+ENV_REDIRECTS_ENABLED: Final[str] = "redirects-enabled"
+ENV_COMPUTED_REDIRECTS: Final[str] = "computed-redirects"
+ENV_INTRA_PAGE_FRAGMENT_PAGES: Final[str] = "intra-page-fragment-pages"
+ENV_EXTENSIONLESS_PAGES: Final[str] = "extensionless-pages"
 # HTML context keys
-CTX_HAS_FRAGMENT_REDIRECTS = "has_fragment_redirects"
-CTX_FRAGMENT_REDIRECTS = "fragment_redirects"
+CTX_HAS_FRAGMENT_REDIRECTS: Final[str] = "has_fragment_redirects"
+CTX_FRAGMENT_REDIRECTS: Final[str] = "fragment_redirects"
 # Other constants...
-DEFAULT_PAGE = "-"
+DEFAULT_PAGE: Final[str] = "-"
+SUFFIX_HTML: Final[str] = ".html"
+LOG_PREFIX: Final[str] = "[reredirects]"
 
 # Sphinx logger
-logger = logging.getLogger(__name__)
+logger: logging.SphinxLoggerAdapter = logging.getLogger(__name__)
 
 
 def setup(app: Sphinx) -> dict[str, Any]:
@@ -68,13 +71,13 @@ def builder_inited(app: Sphinx):
     setattr(app.env, ENV_REDIRECTS_ENABLED, True)
     if not app.config[CONFIG_OPTION_REDIRECTS]:
         logger.warning(
-            "No redirects configured; disabling redirects extension for this build"
+            f"{LOG_PREFIX} No redirects configured; disabling redirects extension for this build"
         )
         setattr(app.env, ENV_REDIRECTS_ENABLED, False)
         return
     if len(app.config[CONFIG_OPTION_REDIRECTS]) == 0:
         logger.warning(
-            "Empty redirect definition; disabling redirects extension for this build"
+            f"{LOG_PREFIX} Empty redirect definition; disabling redirects extension for this build"
         )
         setattr(app.env, ENV_REDIRECTS_ENABLED, False)
         return
@@ -83,21 +86,16 @@ def builder_inited(app: Sphinx):
 
 
 def env_updated(app: Sphinx, env: BuildEnvironment) -> list[str]:
-    is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
-    if is_enabled:
-        computed_redirects: dict[str, dict[str, str]] = getattr(
-            env, ENV_COMPUTED_REDIRECTS
-        )
-        intra_page_fragments: list[str] = list()
-        for page in computed_redirects.keys():
+    if getattr(app.env, ENV_REDIRECTS_ENABLED):
+        intra_page_fragments: list[str] = []
+        for page in getattr(env, ENV_COMPUTED_REDIRECTS).keys():
             if page in env.all_docs:
                 intra_page_fragments.append(page)
         logger.verbose(
-            "env_updated(): found %d intra-page fragment pages"
-            % len(intra_page_fragments)
+            f"{LOG_PREFIX} env_updated(): found {len(intra_page_fragments)} intra-page fragment pages"
         )
         setattr(app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES, intra_page_fragments)
-    return list()
+    return []
 
 
 def html_page_context(
@@ -108,10 +106,9 @@ def html_page_context(
     doctree: dict,
 ) -> str:
     logger.verbose(
-        f"html_page_context(): pagename={pagename}, templatename={templatename}"
+        f"{LOG_PREFIX} html_page_context(): pagename={pagename}, templatename={templatename}"
     )
-    is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
-    if is_enabled:
+    if getattr(app.env, ENV_REDIRECTS_ENABLED):
         context[CTX_HAS_FRAGMENT_REDIRECTS] = False
         intra_page_fragments: list[str] = getattr(
             app.env, ENV_INTRA_PAGE_FRAGMENT_PAGES
@@ -122,13 +119,10 @@ def html_page_context(
             and pagename in intra_page_fragments
         ):
             logger.verbose(
-                f"html_page_context(): page {pagename} has intra-page redirects; adding redirects to HTML context"
-            )
-            computed_redirects: dict[str, dict[str, str]] = getattr(
-                app.env, ENV_COMPUTED_REDIRECTS
+                f"{LOG_PREFIX} html_page_context(): page {pagename} has intra-page redirects; adding redirects to HTML context"
             )
             context[CTX_FRAGMENT_REDIRECTS] = build_js_object(
-                computed_redirects[pagename]
+                getattr(app.env, ENV_COMPUTED_REDIRECTS)[pagename]
             )
             context[CTX_HAS_FRAGMENT_REDIRECTS] = True
     return templatename
@@ -158,11 +152,10 @@ def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
     :param app: The Sphinx Application instance
     :return: The list of redirect pages to create
     """
-    is_enabled: bool = getattr(app.env, ENV_REDIRECTS_ENABLED)
-    if not is_enabled:
-        return list()
-    redirect_pages: list[tuple[str, dict[str, Any], str]] = list()
-    extensionless_pages: list[str] = list()
+    if not getattr(app.env, ENV_REDIRECTS_ENABLED):
+        return []
+    redirect_pages: list[tuple[str, dict[str, Any], str]] = []
+    extensionless_pages: list[str] = []
     write_extensionless_pages: bool = getattr(
         app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES
     )
@@ -173,7 +166,7 @@ def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
         # if page is a real page in the doctree, we've already handled it elsewhere
         if page in app.env.all_docs:
             logger.verbose(
-                f"html_collect_pages(): page {page} has intra-page redirects; skipping it"
+                f"{LOG_PREFIX} html_collect_pages(): page {page} has intra-page redirects; skipping it"
             )
             continue
         # Handle the case where there is a single redirect defined for a source page
@@ -181,7 +174,8 @@ def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
             # if this page only has a redirect to the DEFAULT_PAGE, then use a simple redirect template
             if DEFAULT_PAGE in computed_redirects[page]:
                 logger.verbose(
-                    f"html_collect_pages(): simple redirect from {page} to {computed_redirects[page][DEFAULT_PAGE]}"
+                    f"{LOG_PREFIX} html_collect_pages(): "
+                    f"simple redirect from {page} to {computed_redirects[page][DEFAULT_PAGE]}"
                 )
                 redirect_pages.append(
                     (
@@ -198,14 +192,14 @@ def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
                 continue
             # there's only one fragment redirect, and it's not DEFAULT_PAGE. if someone browses to the page, they
             # will see a blank screen. we add a DEFAULT_PAGE redirect in that case.
-            default_page_url = ""
+            default_page_url: str = ""
             for frag in computed_redirects[page].keys():
                 default_page_url = computed_redirects[page][frag]
                 break
             if default_page_url != "":
                 computed_redirects[page][DEFAULT_PAGE] = default_page_url
                 logger.debug(
-                    f"html_collect_pages(): added DEFAULT_PAGE redirect for {page}"
+                    f"{LOG_PREFIX} html_collect_pages(): added DEFAULT_PAGE redirect for {page}"
                 )
         # build a JS object that will hold the fragment redirect map
         jsobject = build_js_object(computed_redirects[page])
@@ -231,10 +225,7 @@ def html_collect_pages(app: Sphinx) -> list[tuple[str, dict[str, Any], str]]:
 
 def build_finished(app: Sphinx, exception: Exception):
     if exception is None:
-        write_extensionless_pages: bool = getattr(
-            app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES
-        )
-        if write_extensionless_pages:
+        if getattr(app.config, CONFIG_WRITE_EXTENSIONLESS_PAGES):
             extensionless_pages: list[str] = getattr(app.env, ENV_EXTENSIONLESS_PAGES)
             for pagename in list_status_iterator(
                 extensionless_pages,
@@ -242,17 +233,15 @@ def build_finished(app: Sphinx, exception: Exception):
                 "darkgreen",
                 len(extensionless_pages),
             ):
-                target_file = Path(app.outdir).joinpath(pagename)
+                target_file: Path = Path(app.outdir) / pagename
                 if target_file.is_dir():
                     logger.warning(
-                        "target extensionless redirect '%s' is a directory; cannot write this page"
-                        % target_file
+                        f"{LOG_PREFIX} build_finished(): target extensionless redirect '{str(target_file)}' is a directory; cannot write this page"
                     )
                     continue
-                source_file = str(target_file) + ".html"
+                source_file: str = f"{str(target_file)}.html"
                 logger.verbose(
-                    "build_finished(): extensionless redirect; %s -> %s"
-                    % (source_file, target_file)
+                    f"{LOG_PREFIX} build_finished(): extensionless redirect; {source_file} -> {str(target_file)}"
                 )
                 copyfile(source_file, target_file)
 
@@ -260,12 +249,12 @@ def build_finished(app: Sphinx, exception: Exception):
 def compute_redirects(
     app: Sphinx, redirects_option: dict[str, str]
 ) -> dict[str, dict[str, str]]:
-    computed_redirects: dict[str, dict[str, str]] = dict()
+    computed_redirects: dict[str, dict[str, str]] = {}
     # read parameters from config
-    html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL)
-    html_baseurl = html_baseurl.removesuffix("/")
-    redirects_baseurl: str = getattr(app.config, CONFIG_OPTION_BASEURL)
-    redirects_baseurl = redirects_baseurl.removesuffix("/")
+    html_baseurl: str = getattr(app.config, CONFIG_HTML_BASEURL).removesuffix("/")
+    redirects_baseurl: str = getattr(app.config, CONFIG_OPTION_BASEURL).removesuffix(
+        "/"
+    )
     # If redirects_baseurl is the same as html_baseurl, don't check the redirect target
     # for a baseurl to replace.
     if redirects_baseurl == html_baseurl:
@@ -273,40 +262,46 @@ def compute_redirects(
     # process each record in the redirects dict
     for source in redirects_option.keys():
         # split the URL on # so we get the path and page name + the fragment, if any
-        tokens = source.split("#")
+        tokens: list[str] = source.split("#")
         if len(tokens) == 2:
             pagename = tokens[0].removesuffix(
-                ".html"
+                SUFFIX_HTML
             )  # ensure pagename does not end with ".html"
             fragment = tokens[1].removesuffix(
-                ".html"
+                SUFFIX_HTML
             )  # if the fragment ends in ".html", remove it
         elif len(tokens) == 1:
             pagename = tokens[0].removesuffix(
-                ".html"
+                SUFFIX_HTML
             )  # ensure pagename does not end with ".html"
             fragment = ""
         else:
-            logger.warning("compute_redirects(): invalid redirect: %s" % source)
+            logger.warning(
+                f"{LOG_PREFIX} compute_redirects(): invalid redirect: {source}"
+            )
             continue
-        # if the source page is the empty string then the redirect is invalid. warn the user and continue on.
+        # if the source page is the empty string, then the redirect is invalid. warn the user and continue on.
         if pagename == "":
-            logger.warning("compute_redirects(): empty page name: %s" % source)
+            logger.warning(
+                f"{LOG_PREFIX} compute_redirects(): empty page name: {source}"
+            )
             continue
         # add a new dict to redirect_map if the page has not been seen before
         if pagename not in computed_redirects:
-            computed_redirects[pagename] = dict()
+            computed_redirects[pagename] = {}
         # Get the target link of the redirect
-        target = redirects_option[source]
-        # If the target is the empty string then the redirect is invalid. warn the user and continue on.
+        target: str = redirects_option[source]
+        # If the target is the empty string, then the redirect is invalid. warn the user and continue on.
         if target == "":
-            logger.warning("compute_redirects(): empty target for source %s" % source)
+            logger.warning(
+                f"{LOG_PREFIX} compute_redirects(): empty target for source {source}"
+            )
             continue
         # If there is a redirects_baseurl defined and the target URL starts with that value, replace the
         # value with that of html_baseurl.
         if redirects_baseurl != "" and target.startswith(redirects_baseurl):
             target = target.replace(redirects_baseurl, html_baseurl)
-        # if there's no fragment then we're redirecting to the "default page", which is
+        # if there's no fragment, then we're redirecting to the "default page", which is
         # the `pagename` without any fragment.
         if fragment == "":
             computed_redirects[pagename][DEFAULT_PAGE] = target
@@ -314,7 +309,7 @@ def compute_redirects(
         # redirect the fragment to the desired page
         computed_redirects[pagename][fragment] = target
     # remove empty keys from the map
-    empty_keys: list[str] = list()
+    empty_keys: list[str] = []
     for key in computed_redirects.keys():
         if len(computed_redirects[key]) == 0:
             empty_keys.append(key)
@@ -324,7 +319,7 @@ def compute_redirects(
 
 
 def build_js_object(pagemap: dict[str, str]) -> str:
-    jsobject = f"const {CTX_FRAGMENT_REDIRECTS} = Object.freeze(" + "{"
+    jsobject: str = f"const {CTX_FRAGMENT_REDIRECTS} = Object.freeze(" + "{"
     for frag in pagemap.keys():
         jsobject += f'"{frag}":"{pagemap[frag]}",'
     return jsobject.rstrip(",") + "});"

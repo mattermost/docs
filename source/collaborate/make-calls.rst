@@ -37,10 +37,9 @@ Start a call
 .. tab:: Web/Desktop
 
   To start a call, select **Start call** in the channel header. When you start a call, you become the call host by default. See the `host controls <#host-controls>`__ section below for details on host controls available to ensure calls run smoothly.
-  
-    
+
   .. tip::
-      
+
     - When you start a call in a channel, you're muted by default. In a direct or group message you're unmuted by default.
     - You can move the call widget to a different area of your screen.
     - Alternatively, you can start a call using the ``/call start`` slash command.

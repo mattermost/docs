@@ -3,12 +3,11 @@
 
 .. raw:: html
 
-    <div class="mm-badge mm-badge--combo">
-
+   <div class="mm-badge mm-badge--combo">
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
-        <li>Operating System: 20.04 LTS, 22.04 LTS, 24.04 LTS
+        <li>Operating System: 20.04 LTS, 22.04 LTS, 24.04 LTS</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
         <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network:
@@ -20,7 +19,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 
 You can deploy Mattermost server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). This is the quickest way to install a Mattermost Server that provides automatic updates. This install method is used for both single and clustered installations, as you can tools like Packer for a clustered deployment.
@@ -31,7 +29,8 @@ You can deploy Mattermost server using our ``.deb`` signed packages using the Ma
 
 This Mattermost deployment includes 4 steps: add the PPA repository, install Mattermost server, configure the server, and update the server.
 
-**Step 1: Add the Mattermost Server PPA repository**
+Step 1: Add the Mattermost Server PPA repository
+------------------------------------------------
 
 .. important::
 
@@ -57,13 +56,14 @@ In a terminal window, run the following repository setup command to add the Matt
 
 This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost Omnibus repository so that you can run the install command.
 
-**Step 2: Instal Mattermost server**
+Step 2: Install Mattermost server
+---------------------------------
 
 Ahead of installing the Mattermost Server, it's good practice to update all your repositories and, where required, update existing packages by running the following command:
 
 .. code-block:: sh
 
-    sudo apt update
+  sudo apt update
 
 After any updates and system reboots are complete, you can install the Mattermost Server by running:
 
@@ -79,7 +79,8 @@ The installation path is ``/opt/mattermost``. The package will have added a user
 
   Since the signed package from the Mattermost repository is used for mulitple installation types, we don't add any dependencies in the systemd unit file. If you are installing the Mattermost server on the same system as your database, you may want to add both ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section of the systemd unit file.
 
-**Step 3: Configure the server**
+Step 3: Configure the server
+----------------------------
 
 Before you start the Mattermost Server, you need to edit the configuration file. A sample configuration file is located at ``/opt/mattermost/config/config.defaults.json``.
 
@@ -109,9 +110,10 @@ The final step, depending on your requirements, is to run ``sudo systemctl enabl
 
 .. note::
 
-	The value of the ``sslmode`` property in the ``DataSource`` configuration is entirely dependent on your native environment. Please consult the native environment setup documentation for guidance on its value. The available options for ``sslmode`` are ``disable`` or ``require``. For example, if you are using Amazon Lightsail as your data source, you must set ``sslmode`` to ``require`` to successfully connect to the database.
+  The value of the ``sslmode`` property in the ``DataSource`` configuration is entirely dependent on your native environment. Please consult the native environment setup documentation for guidance on its value. The available options for ``sslmode`` are ``disable`` or ``require``. For example, if you are using Amazon Lightsail as your data source, you must set ``sslmode`` to ``require`` to successfully connect to the database.
 
-**Step 4: Update the server**
+Step 4: Update the server
+-------------------------
 
 When a new Mattermost version is released, run: ``sudo apt update && sudo apt upgrade`` to download and update your Mattermost instance.
 
@@ -119,7 +121,8 @@ When a new Mattermost version is released, run: ``sudo apt update && sudo apt up
 
   When you run the ``sudo apt upgrade`` command, ``mattermost-server`` will be updated along with any other packages. We strongly recommend you stop the Mattermost Server before running the ``apt`` command using ``sudo systemctl stop mattermost``.
 
-**Remove Mattermost**
+Remove Mattermost
+-----------------
 
 Run the following command to remove the Mattermost Server:
 

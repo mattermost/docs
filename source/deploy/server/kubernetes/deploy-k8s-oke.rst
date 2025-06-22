@@ -7,7 +7,8 @@
 
 You can use the supported `Oracle Cloud Marketplace listing <https://cloudmarketplace.oracle.com/marketplace/en_US/listing/188386963>`_ to install Mattermost Enterprise Edition on Oracle Cloud Infrastructure (OCI) using Oracle Kubernetes Engine (OKE).
 
-**Before you begin**
+Before you begin
+~~~~~~~~~~~~~~~~
 
 Before deploying, make sure you have the following:
 
@@ -18,29 +19,34 @@ Before deploying, make sure you have the following:
 - **Mattermost License Key** (Trial or Enterprise)
 - **Node Capacity**: At least 2 OKE nodes for high availability when deploying for 100 users or more
 
-**Installation steps**
+Installation steps
+~~~~~~~~~~~~~~~~~~
 
 The installation process includes deploying Mattermost and configuring the necessary components.
 
-**Step 1: Start from Oracle Cloud Marketplace**
+Step 1: Start from Oracle Cloud Marketplace
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Go to the Mattermost listing and select **Launch Stack**.
 
 .. image:: /images/oracle/marketplace-listing.png
    :alt: Oracle Cloud Marketplace listing for Mattermost
 
-**Step 2: Stack Information**
+Step 2: Stack Information
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 On the **Create stack** page, review the information, and then set the name, compartment, and Terraform version.
 
 .. image:: /images/oracle/stack-info.png
    :alt: Stack information page
 
-**Step 3: Configure Variables**
+Step 3: Configure Variables
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Set all the details for your Mattermost deployment. Each section is important for a successful and secure installation.
 
-**OKE Cluster Configuration**
+OKE Cluster Configuration
+::::::::::::::::::::::::::
 
 - **Create new OKE Cluster:**
 
@@ -59,7 +65,8 @@ Set all the details for your Mattermost deployment. Each section is important fo
 
   - Oracle Linux 8 is recommended for best compatibility.
 
-**OKE Network Configuration**
+OKE Network Configuration
+::::::::::::::::::::::::::::
 
 - **Worker Node Visibility:**
 
@@ -74,7 +81,8 @@ Set all the details for your Mattermost deployment. Each section is important fo
 
   - Set a unique network range (e.g., ``10.20.0.0/16``). Avoid overlap with other networks.
 
-**OKE Worker Nodes**
+OKE Worker Nodes
+:::::::::::::::::
 
 - **Enable Cluster Autoscaler:**
 
@@ -92,7 +100,8 @@ Set all the details for your Mattermost deployment. Each section is important fo
 
   - Oracle Linux 8 is recommended.
 
-**PostgreSQL Configuration**
+PostgreSQL Configuration
+::::::::::::::::::::::::::
 
 - **Admin Username:**
 
@@ -107,7 +116,8 @@ Set all the details for your Mattermost deployment. Each section is important fo
 
   - Required if not using a secret.
 
-**General Configuration**
+General Configuration
+:::::::::::::::::::::::
 
 - **Cluster Name Prefix:**
 
@@ -134,14 +144,16 @@ Set all the details for your Mattermost deployment. Each section is important fo
 
   - Default is ``https://helm.mattermost.com``.
 
-**Step 4: Review and Apply**
+Step 4: Review and Apply
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Check all your settings and select **Create** to start the deployment. Monitor the Resource Manager job and logs.
 
 .. image:: /images/oracle/job-monitor.png
    :alt: Resource Manager job monitor
 
-**Step 5: After Deployment**
+Step 5: After Deployment
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 When the job is finished, your OKE cluster, PostgreSQL database, and Mattermost will be ready. To find the Mattermost web address, run:
 
@@ -151,7 +163,8 @@ When the job is finished, your OKE cluster, PostgreSQL database, and Mattermost 
 
 Copy the address and create a DNS record for your domain. Open your browser and go to your Mattermost URL.
 
-**Step 6: Upgrade Mattermost**
+Step 6: Upgrade Mattermost
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To upgrade your Mattermost installation:
 
@@ -170,7 +183,8 @@ To upgrade your Mattermost installation:
   - Always monitor logs from the Resource Manager and pods using ``kubectl logs`` for more specific error messages.
   - For more details, see the official `OCI Database with PostgreSQL documentation <https://www.oracle.com/cloud/postgresql/>`_ and `OKE documentation <https://docs.oracle.com/en-us/iaas/Content/ContEng/Concepts/contengoverview.htm>`_.
 
-**Common Errors and How to Avoid Them**
+Common Errors and How to Avoid Them
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - **Error: Kubernetes API not reachable**
 

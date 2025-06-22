@@ -6,19 +6,25 @@ Deploy Mattermost on Kubernetes
 
 Mattermost server can be deployed on various Kubernetes platforms, providing a scalable and robust infrastructure for your team communication needs. This guide covers deployment options for major cloud providers and general Kubernetes installations.
 
+Platform
+--------
+
 Choose your preferred platform below for specific deployment instructions:
 
 .. tab:: Mattermost Operator
+  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s.rst
     :start-after: :nosearch:
 
 .. tab:: Azure
+  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s-aks.rst
     :start-after: :nosearch:
 
 .. tab:: Oracle
+  :parse-titles:
 
   .. include:: kubernetes/deploy-k8s-oke.rst
     :start-after: :nosearch:
@@ -31,7 +37,7 @@ Why are my pods failing with a ``CrashLoopBackOff`` error after adding a custom 
 
 You may see a ``CrashLoopBackOff`` error after adding a custom CA certificate to your Docker image's ``/etc/ssl/certs`` directory and deploying it to your Kubernetes environment via the Mattermost Enterprise Edition Helm Chart. This issue typically arises because the custom CA certificate is not being recognized by the system's certificate trust store, leading to TLS handshake failures when the application attempts to connect to services that require the custom CA.
 
-While core functionality may remain operational, you may notice the following symptoms:  
+While core functionality may remain operational, you may notice the following symptoms:
 
 - Pods stuck in a crashloop with the error message: backoff - restarting failed container in pod.
 - Debugging commands like ``kubectl describe`` and ``kubectl logs`` provide little to no valuable information.

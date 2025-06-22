@@ -11,13 +11,27 @@ This page covers deployment options for major Linux distributions and installati
     :start-after: :nosearch:
 
 .. tab:: Ubuntu
+  :parse-titles:
 
   .. include:: linux/deploy-ubuntu.rst
     :start-after: :nosearch:
 
 .. tab:: RHEL/CentOS
+  :parse-titles:
 
   .. include:: linux/deploy-rhel.rst
+    :start-after: :nosearch:
+
+.. tab:: Generic Linux
+  :parse-titles:
+
+  .. include:: linux/deploy-tar.rst
+    :start-after: :nosearch:
+
+.. tab:: Omnibus Package
+  :parse-titles:
+
+  .. include:: linux/deploy-omnibus.rst
     :start-after: :nosearch:
 
 Secure your Mattermost deployment

@@ -41,6 +41,7 @@ CSV
 5. Select **Save**.
 
 .. tab:: From Mattermost v10.5
+   :parse-titles:
 
    You can review export job status in the System Console.
 
@@ -64,7 +65,8 @@ CSV
       ├── metadata.json
       └── actiance_export.xml
 
-   **Updated CSV export fields**
+   Updated CSV export fields
+   --------------------------
 
    **Post Creation Time** is always the ``CreateAt`` for messages and attachments, or ``JoinTime`` and ``LeaveTime`` for participant join and leave events, respectively.
 
@@ -97,6 +99,7 @@ Actiance XML
    In Actiance XML exports, channel type is prepended to the channel names.
 
 .. tab:: From Mattermost v10.5
+   :parse-titles:
 
    You can review export job status in the System Console. Once you've selected Actiance XML as your file format, you can set up an integration with Actiance Vantage archive system. 
 
@@ -119,7 +122,8 @@ Actiance XML
       ├── 20240808
       └── actiance_export.xml
 
-   **Updated Actiance XML export fields**
+   Updated Actiance XML export fields
+   ----------------------------------
 
    If an XML field is empty, it won't be exported. This is a change from previous Mattermost releases, where empty XML nodes were exported.
 

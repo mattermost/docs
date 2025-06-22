@@ -18,15 +18,18 @@ Access your Mattermost instance with your credentials using a web browser, the d
   Log out of Mattermost </collaborate/log-out>
 
 .. tab:: Web/Desktop
+  :parse-titles:
 
-  **Web browser**
+  Web browser
+  -----------
 
   1. Open a supported :ref:`web browser <deploy/software-hardware-requirements:pc web>`.
   2. Copy and paste the Mattermost server link into the browser's address field.
   3. Enter your user credentials to log into Mattermost.
   4. Bookmark the Mattermost URL in your web browser of choice so logging into Mattermost is easy in the future.
 
-  **Desktop app**
+  Desktop app
+  -----------
 
   1. Download and install the Mattermost desktop app from the App Store (macOS), Microsoft Store (Windows), or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
@@ -38,6 +41,7 @@ Access your Mattermost instance with your credentials using a web browser, the d
     When you log into Mattermost using external user credentials, such as Google or Entra ID, you'll temporarily leave the desktop app during login while authenticating your credentials. Once you're successfully logged in to Mattermost, you'll be returned to the desktop app. See the `Single Sign-On (SSO) <#single-sign-on-sso>`__ section below for details on the external providers that Mattermosts supports.
 
 .. tab:: Mobile
+  :parse-titles:
 
   1. Download and install the Mattermost mobile app from the `Apple App Store (iOS) <https://www.apple.com/app-store/>`__ or `Google Play Store (Android) <https://play.google.com/store/games?hl=en>`__.
   2. When prompted, enter the Mattermost server link and a display name for the Mattermost instance. Server URLs must begin with either ``http://`` or ``https://``. The display name is helpful in cases where you connect to multiple Mattermost instances. See the :doc:`server connections </preferences/connect-multiple-workspaces>` documentation for details.
