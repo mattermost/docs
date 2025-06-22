@@ -4,12 +4,11 @@
 .. raw:: html
 
   <div class="mm-badge mm-badge--combo">
-
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
-	<li>Operating System: Ubuntu 20.04 or greater</li>
+	    <li>Operating System: Ubuntu 20.04 or greater</li>
         <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network ports required:
           <ul>
@@ -20,7 +19,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 
 .. warning::
@@ -32,7 +30,7 @@ Mattermost Omnibus packages together all required components: the :ref:`free ver
 This Mattermost deployment includes 4 steps: add the Mattermost PPA repositories, install Mattermost Omnibus, and set up Omnibus, and update Omnibus.
 
 Step 1: Add the Mattermost PPA repositories
---------------------------------------------
+-------------------------------------------
 
 .. important:
 
@@ -64,7 +62,7 @@ This command sets up all required repositories and configures:
 - Mattermost Omnibus repository
 
 Step 2: Install Mattermost Omnibus
-------------------------------------
+----------------------------------
 
 1. When installing Mattermost Omnibus, SSL is enabled by default to provide a secure connection between the Mattermost server and the Mattermost client. To install with SSL, run the following command:
 
@@ -91,7 +89,7 @@ Step 2: Install Mattermost Omnibus
 5. Create your first Mattermost user, invite more users, and explore the Mattermost platform.
 
 Step 3: Configure Mattermost Omnibus
---------------------------------------
+------------------------------------
 
 .. note::
 
@@ -116,9 +114,9 @@ Please note that certain configuration parameters, such as the Mattermost server
 After modifying the ``mmomni.yml`` configuration file, run ``mmomni reconfigure`` to apply the changes, and then restart the Mattermost server with ``systemctl restart mattermost``.
 
 Step 4: Update Mattermost Omnibus
-----------------------------------
+---------------------------------
 
-Mattermost Omnibus is integrated with the apt package manager. 
+Mattermost Omnibus is integrated with the apt package manager.
 
 Before updating Mattermost , we strongly recommend stopping the Mattermost server by running the command ``sudo systemctl stop mattermost``.
 
@@ -129,7 +127,7 @@ Run the following command to download and update your Mattermost instance (along
   sudo apt update && sudo apt upgrade
 
 Backup and restore
--------------------
+------------------
 
 The Mattermost Omnibus CLI tool ``mmomni`` simplifies server and domain migration, as well as backup and restore. You can easily create snapshots of your entire Mattermost server, including all content, users, plugins, configurations, and databases. These snapshots can be restored to the same server or a different one.
 
@@ -147,7 +145,7 @@ To restore the contents of your Mattermost server, run the following two command
   mmomni reconfigure
 
 Remove Mattermost Omnibus
-----------------------------
+-------------------------
 
 Run the following command to remove Mattermost and Mattermost Omnibus completely:
 
@@ -156,7 +154,7 @@ Run the following command to remove Mattermost and Mattermost Omnibus completely
   sudo apt remove --purge mattermost mattermost-omnibus
 
 Frequently asked questions
----------------------------
+--------------------------
 
 Can I use a license with Omnibus?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -169,12 +167,12 @@ Can I use an Omnibus server as part of a cluster?
 No. Omnibus is designed to be a self-contained single server Mattermost platform. It expects all the necessary components to be on the same server.
 
 Does the SSL Certificate automatically renew?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes. The SSL certificate automatically updated and renewed. Omnibus installs the certbot package to manage the certificate, and it comes with a cron job that you can find at /etc/cron.d/certbot that automatically launches the renewal process.
 
 How do I fix an ``EXPKEYSIG`` error on upgrades?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This error indicates that your certificate is expired. Run the following commands to obtain a new certificate:
 
@@ -185,7 +183,7 @@ This error indicates that your certificate is expired. Run the following command
   sudo apt update
 
 Can I use a custom NGINX template?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Yes.Mattermost Omnibus supports using a custom NGINX template to generate its configuration.
 
@@ -196,7 +194,7 @@ Then, you can either use the variables and internal logic already bundled in the
 After the template has been customized, add an ``nginx_template`` property to the ``/etc/mattermost/mmomni.yml`` configuration file, and then run ``mmomni reconfigure``. The reconfigure process will use the new template to generate the NGINX final configuration. You can check the contents of the ``/etc/nginx/conf.d/mattermost.conf`` file to validate that the changes were applied successfully.
 
 What ``mmomni`` commands are available?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 - ``mmomni backup``: Takes a complete snapshot of your Mattermost server and places the backup file in a specified file location.
 - ``mmomni restore``: Restores specified backup file to your Mattermost server.
