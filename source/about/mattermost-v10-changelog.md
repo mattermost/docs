@@ -30,7 +30,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
  - Enhanced the accessibility of login and password reset functionality.
  - Stopped the Threads textbox from automatically taking focus when it contained a draft.
- - Added a user setting to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
+ - Added a display setting for users to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
  - Added support for the ``from:`` search filter in cross-team searches.
  - Standardized button styling by consolidating color variables and removing redundant theme definitions.
  - Ignored email domain in user searches on the client side.
@@ -56,9 +56,9 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
 
 ### Bug Fixes
  - Fixed an issue where a ``MESSAGES`` badge appeared in the search bar after clearing text and closing the search box.
- - Fixed an issue where overridden webhook usernames did not appear in replies when Collapsed Reply Threads was disabled.
- - Fixed indentation issues in markdown lists containing checkboxes.
- - Fixed desktop notifications for posts without text content to display "posted a message" instead of "did something new."
+ - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled.
+ - Fixed indentation issues in Markdown lists containing checkboxes.
+ - Fixed desktop notifications for posts without text content to display "posted a message" instead of "did something new".
  - Fixed the height of the automatic replies text area to align with proper dimensions.
  - Fixed various accessibility issues in the User Groups modals.
  - Fixed accessibility issues in Profile Settings to enhance usability.
