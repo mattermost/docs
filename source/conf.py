@@ -190,6 +190,8 @@ redirects = {
         "https://docs.mattermost.com/about/subscription.html#mattermost-nonprofit-license-program",
 "about/deployments-and-editions.html":
         "https://docs.mattermost.com/about/editions-and-offerings.html",
+"about/secure-command-and-control.html#bring-your-own-device-byod-with-cui-protections":
+        "https://docs.mattermost.com/about/secure-command-and-control.html#bring-your-own-device-byod-with-sensitive-information-protections",
 "about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
 	"https://docs.mattermost.com/about/faq-license.html#open-source-derivative-work-of-mattermost",
 "about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
