@@ -220,18 +220,212 @@ The following performance benchmarks provide baseline metrics for RTCD deploymen
 
 Below are the detailed benchmarks based on internal performance testing:
 
-| Calls | Users/call | Unmuted/call | Screen sharing | CPU (avg) | Memory (avg) | Bandwidth (in/out) | Instance (EC2) |
-|-------|------------|--------------|----------------|-----------|--------------|--------------------|--------------| 
-| 100   | 8          | 2            | no             | 60%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.xlarge     |
-| 100   | 8          | 2            | no             | 30%       | 0.5GB        | 22Mbps / 125Mbps   | c6i.2xlarge    |
-| 100   | 8          | 2            | yes            | 86%       | 0.7GB        | 280Mbps / 2.2Gbps  | c6i.2xlarge    |
-| 10    | 50         | 2            | no             | 35%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.xlarge     |
-| 10    | 50         | 2            | no             | 16%       | 0.3GB        | 5.25Mbps / 86Mbps  | c6i.2xlarge    |
-| 10    | 50         | 2            | yes            | 90%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.xlarge     |
-| 10    | 50         | 2            | yes            | 45%       | 0.3GB        | 32Mbps / 1.33Gbps  | c6i.2xlarge    |
-| 5     | 200        | 2            | no             | 65%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.xlarge     |
-| 5     | 200        | 2            | no             | 30%       | 0.6GB        | 8.2Mbps / 180Mbps  | c6i.2xlarge    |
-| 5     | 200        | 2            | yes            | 90%       | 0.7GB        | 31Mbps / 2.2Gbps   | c6i.2xlarge    |
+<table class="network-requirements">
+<thead>
+<tr>
+<th>Calls</th>
+<th>Participants/call</th>
+<th>Unmuted/call</th>
+<th>Screen sharing</th>
+<th>CPU (avg)</th>
+<th>Memory (avg)</th>
+<th>Bandwidth (in/out)</th>
+<th>Instance type (RTCD)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>no</td>
+<td>47%</td>
+<td>1.46GB</td>
+<td>1Mbps / 194Mbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>800</td>
+<td>1</td>
+<td>yes</td>
+<td>64%</td>
+<td>1.43GB</td>
+<td>2.7Mbps / 1.36Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>1</td>
+<td>yes</td>
+<td>79%</td>
+<td>1.54GB</td>
+<td>2.9Mbps / 1.68Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>10</td>
+<td>100</td>
+<td>1</td>
+<td>yes</td>
+<td>74%</td>
+<td>1.56GB</td>
+<td>18.2Mbps / 1.68Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>100</td>
+<td>10</td>
+<td>2</td>
+<td>no</td>
+<td>49%</td>
+<td>1.46GB</td>
+<td>18.7Mbps / 175Mbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>100</td>
+<td>10</td>
+<td>1</td>
+<td>yes</td>
+<td>84%</td>
+<td>1.73GB</td>
+<td>171Mbps / 1.53Gbps</td>
+<td>c7i.xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>no</td>
+<td>20%</td>
+<td>1.44GB</td>
+<td>1.4Mbps / 194Mbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>49%</td>
+<td>1.53GB</td>
+<td>3.6Mbps / 1.79Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1000</td>
+<td>1</td>
+<td>yes</td>
+<td>73%</td>
+<td>2.38GB</td>
+<td>5.7Mbps / 3.06Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>100</td>
+<td>10</td>
+<td>2</td>
+<td>yes</td>
+<td>60%</td>
+<td>1.74GB</td>
+<td>181Mbps / 1.62Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>150</td>
+<td>10</td>
+<td>1</td>
+<td>yes</td>
+<td>72%</td>
+<td>2.26GB</td>
+<td>257Mbps / 2.30Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>150</td>
+<td>10</td>
+<td>2</td>
+<td>yes</td>
+<td>79%</td>
+<td>2.34GB</td>
+<td>271Mbps / 2.41Gbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>250</td>
+<td>10</td>
+<td>2</td>
+<td>no</td>
+<td>58%</td>
+<td>2.66GB</td>
+<td>47Mbps / 439Mbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>1000</td>
+<td>2</td>
+<td>2</td>
+<td>no</td>
+<td>78%</td>
+<td>2.31GB</td>
+<td>178Mbps / 195Mbps</td>
+<td>c7i.2xlarge</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>41%</td>
+<td>2.6GB</td>
+<td>7.23Mbps / 3.60Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>3</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>63%</td>
+<td>3.53GB</td>
+<td>10.9Mbps / 5.38Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>4</td>
+<td>1000</td>
+<td>2</td>
+<td>yes</td>
+<td>83%</td>
+<td>4.40GB</td>
+<td>14.5Mbps / 7.17Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>250</td>
+<td>10</td>
+<td>2</td>
+<td>yes</td>
+<td>79%</td>
+<td>3.49GB</td>
+<td>431Mbps / 3.73Gbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+<tr>
+<td>500</td>
+<td>2</td>
+<td>2</td>
+<td>yes</td>
+<td>71%</td>
+<td>2.54GB</td>
+<td>896Mbps / 919Mbps</td>
+<td>c7i.4xlarge</td>
+</tr>
+</tbody>
+</table>
 
 ## Troubleshooting Metrics Collection
 

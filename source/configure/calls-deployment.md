@@ -103,7 +103,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 <td>RTC (Calls plugin or <code>rtcd</code>)</td>
 <td>8443</td>
 <td>UDP (incoming)</td>
-<td>Mattermost clients (Web/Desktop/Mobile)</td>
+<td>Mattermost clients (Web/Desktop/Mobile) and calls-offloader</td>
 <td>Mattermost instance or <code>rtcd</code> service</td>
 <td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).</td>
 </tr>
@@ -111,7 +111,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 <td>RTC (Calls plugin or <code>rtcd</code>)</td>
 <td>8443</td>
 <td>TCP (incoming)</td>
-<td>Mattermost clients (Web/Desktop/Mobile)</td>
+<td>Mattermost clients (Web/Desktop/Mobile) and calls-offloader</td>
 <td>Mattermost instance or <code>rtcd</code> service</td>
 <td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires <code>rtcd</code> version >= v0.11 and Calls version >= v0.17.</td>
 </tr>
@@ -136,14 +136,6 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 
 For complete network requirements, see the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide.
 
-#### Air-gapped deployments
-
-Mattermost Calls can function in air-gapped environments. Exposing Calls to the public internet is only necessary when users need to connect from outside the local network, and no existing method supports that connection. In such setups:
-
-- Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
-- Configuring a STUN server is unnecessary, as all connections occur within the local network.
-- The [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
-
 ## Limitations
 
 - All Mattermost customers can start, join, and participate in 1:1 audio calls with optional screen sharing.
@@ -153,7 +145,7 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 
 ## Configuration
 
-For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in the [System Console](/configure/plugins-configuration-settings.html#calls).
+For Mattermost self-hosted customers, the calls plugin is pre-packaged, installed, and enabled. Configuration to allow end-users to use it can be found in ``System Console > Plugins > Calls``.
 
 ## Deployment Architecture Options
 
@@ -211,238 +203,16 @@ For call recording and transcription, you need to:
 2. Configure the service URL in the System Console
 3. Enable call recordings and/or transcriptions in the plugin settings
 
+For detailed setup instructions, see the [Calls Offloader Setup and Configuration](calls-offloader-setup.md) guide.
+
 ## Air-Gapped Deployments
 
 Mattermost Calls can function in air-gapped environments. Exposing Calls to the public internet is only necessary when users need to connect from outside the local network, and no existing method supports that connection. In such setups:
 
-<table class="network-requirements">
-<thead>
-<tr>
-<th>Calls</th>
-<th>Participants/call</th>
-<th>Unmuted/call</th>
-<th>Screen sharing</th>
-<th>CPU (avg)</th>
-<th>Memory (avg)</th>
-<th>Bandwidth (in/out)</th>
-<th>Instance type (RTCD)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>1000</td>
-<td>2</td>
-<td>no</td>
-<td>47%</td>
-<td>1.46GB</td>
-<td>1Mbps / 194Mbps</td>
-<td>c7i.xlarge</td>
-</tr>
-<tr>
-<td>1</td>
-<td>800</td>
-<td>1</td>
-<td>yes</td>
-<td>64%</td>
-<td>1.43GB</td>
-<td>2.7Mbps / 1.36Gbps</td>
-<td>c7i.xlarge</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1000</td>
-<td>1</td>
-<td>yes</td>
-<td>79%</td>
-<td>1.54GB</td>
-<td>2.9Mbps / 1.68Gbps</td>
-<td>c7i.xlarge</td>
-</tr>
-<tr>
-<td>10</td>
-<td>100</td>
-<td>1</td>
-<td>yes</td>
-<td>74%</td>
-<td>1.56GB</td>
-<td>18.2Mbps / 1.68Gbps</td>
-<td>c7i.xlarge</td>
-</tr>
-<tr>
-<td>100</td>
-<td>10</td>
-<td>2</td>
-<td>no</td>
-<td>49%</td>
-<td>1.46GB</td>
-<td>18.7Mbps / 175Mbps</td>
-<td>c7i.xlarge</td>
-</tr>
-<tr>
-<td>100</td>
-<td>10</td>
-<td>1</td>
-<td>yes</td>
-<td>84%</td>
-<td>1.73GB</td>
-<td>171Mbps / 1.53Gbps</td>
-<td>c7i.xlarge</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1000</td>
-<td>2</td>
-<td>no</td>
-<td>20%</td>
-<td>1.44GB</td>
-<td>1.4Mbps / 194Mbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>1</td>
-<td>1000</td>
-<td>2</td>
-<td>yes</td>
-<td>49%</td>
-<td>1.53GB</td>
-<td>3.6Mbps / 1.79Gbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1000</td>
-<td>1</td>
-<td>yes</td>
-<td>73%</td>
-<td>2.38GB</td>
-<td>5.7Mbps / 3.06Gbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>100</td>
-<td>10</td>
-<td>2</td>
-<td>yes</td>
-<td>60%</td>
-<td>1.74GB</td>
-<td>181Mbps / 1.62Gbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>150</td>
-<td>10</td>
-<td>1</td>
-<td>yes</td>
-<td>72%</td>
-<td>2.26GB</td>
-<td>257Mbps / 2.30Gbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>150</td>
-<td>10</td>
-<td>2</td>
-<td>yes</td>
-<td>79%</td>
-<td>2.34GB</td>
-<td>271Mbps / 2.41Gbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>250</td>
-<td>10</td>
-<td>2</td>
-<td>no</td>
-<td>58%</td>
-<td>2.66GB</td>
-<td>47Mbps / 439Mbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>1000</td>
-<td>2</td>
-<td>2</td>
-<td>no</td>
-<td>78%</td>
-<td>2.31GB</td>
-<td>178Mbps / 195Mbps</td>
-<td>c7i.2xlarge</td>
-</tr>
-<tr>
-<td>2</td>
-<td>1000</td>
-<td>2</td>
-<td>yes</td>
-<td>41%</td>
-<td>2.6GB</td>
-<td>7.23Mbps / 3.60Gbps</td>
-<td>c7i.4xlarge</td>
-</tr>
-<tr>
-<td>3</td>
-<td>1000</td>
-<td>2</td>
-<td>yes</td>
-<td>63%</td>
-<td>3.53GB</td>
-<td>10.9Mbps / 5.38Gbps</td>
-<td>c7i.4xlarge</td>
-</tr>
-<tr>
-<td>4</td>
-<td>1000</td>
-<td>2</td>
-<td>yes</td>
-<td>83%</td>
-<td>4.40GB</td>
-<td>14.5Mbps / 7.17Gbps</td>
-<td>c7i.4xlarge</td>
-</tr>
-<tr>
-<td>250</td>
-<td>10</td>
-<td>2</td>
-<td>yes</td>
-<td>79%</td>
-<td>3.49GB</td>
-<td>431Mbps / 3.73Gbps</td>
-<td>c7i.4xlarge</td>
-</tr>
-<tr>
-<td>500</td>
-<td>2</td>
-<td>2</td>
-<td>yes</td>
-<td>71%</td>
-<td>2.54GB</td>
-<td>896Mbps / 919Mbps</td>
-<td>c7i.4xlarge</td>
-</tr>
-</tbody>
-</table>
 - Users should connect from within the private/local network. This can be done on-premises, through a VPN, or via virtual machines.
 - Configuring a STUN server is unnecessary, as all connections occur within the local network.
-- The ICE Host Override configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
-
-### Docker Registry Setup for Air-Gapped Environments
-
-When using the calls-offloader service for call recording and transcription in air-gapped environments, you need to set up a local Docker registry since the service creates Docker containers that normally pull images from Docker Hub.
-
-**Required Docker Images:**
-- `mattermost/calls-offloader:v0.9.3` (or latest version)
-- `mattermost/calls-transcriber:latest`
-- `registry:2` (for the local Docker registry)
-
-**Setup Overview:**
-1. **Preparation phase** (on internet-connected machine): Download and prepare Docker images
-2. **Air-gap deployment phase**: Transfer and deploy the local registry with pre-loaded images
-
-**Key Configuration Changes:**
-- Configure Docker daemon to allow insecure registries: `{"insecure-registries": ["localhost:5000"]}`
-- Update calls-offloader configuration to use local registry: `image_registry = "localhost:5000/mattermost"`
-
-For detailed step-by-step instructions, including setup scripts, manual configuration, and troubleshooting, see the comprehensive air-gap setup guide in the [Calls Offloader Setup and Configuration](calls-offloader-setup.md#air-gapped-deployments) documentation.
+- The [ICE Host Override](https://docs.mattermost.com/configure/plugins-configuration-settings.html#ice-host-override) configuration setting can be optionally set with a local IP address (e.g., 192.168.1.45), depending on the specific network configuration and topology.
+- For call recording and transcription in air-gapped environments, see the [Air-Gapped Deployments](calls-offloader-setup.md#air-gapped-deployments) section in the Calls Offloader Setup documentation.
 
 ## Performance Considerations
 
