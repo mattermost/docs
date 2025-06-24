@@ -5,7 +5,7 @@ Mattermost's **Deployment Solutions Programs** help IT administrators understand
 
 This is an optional program for third-party developers to increase awareness about their work and to enable Mattermost to refer its communities to different solutions.
 
-Any person or any company interested in discussing deployment solutions with Mattermost can join the `Deployment Solutions discussion channel <https://community.mattermost.com/core/channels/installers-and-images>`__ on the Mattermost community server to speak to peers and Mattermost community managers.
+Individuals or companies interested in exploring deployment solutions with Mattermost are encouraged to reach out to us via the Mattermost Partner Form. Simply select "Deployment Solutions" under the "Business Type" section. You can access the form here: [Mattermost Partner Program](https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=24278352368532)
 
 Deployment solutions are recognized by Mattermost at three-levels:
 
