@@ -40,12 +40,12 @@ Disconnected environments demand resilient tools that work without cloud access,
 - **Automate field workflows** with :doc:`Collaborative Playbooks </guides/workflow-automation>` that track tasks, manage field updates, and orchestrate responses under DDIL constraints.
 - **Enable secure real-time collaboration with headquarters** using :doc:`Connected Workspaces </onboard/connected-workspaces>` to synchronize discussions, files, and reactions if connectivity is restored.
 
-Bring Your Own Device (BYOD) with CUI Protections
--------------------------------------------------
+Bring Your Own Device (BYOD) with Sensitive Information Protections
+--------------------------------------------------------------------
 
-Modern operations often require users—such as field personnel, mission partners, or remote contractors—to access critical communication tools from personal or unmanaged mobile devices. However, this flexibility introduces new risks when Controlled Unclassified Information (CUI) or other sensitive data is involved. Without strong protections, mobile access becomes a liability in contested or regulated environments.
+Modern operations often require users—such as field personnel, mission partners, or remote contractors—to access critical communication tools from personal or unmanaged mobile devices. However, this flexibility introduces new risks when sensitive information or other protected data is involved. Without strong protections, mobile access becomes a liability in contested or regulated environments.
 
-Mattermost provides enterprise-grade mobile protections to enable secure BYOD access without compromising security or compliance. From mobile application management and encryption enforcement to biometric authentication and jailbreak detection, Mattermost ensures that data remains protected, access is governed, and CUI stays within authorized boundaries.
+Mattermost provides enterprise-grade mobile protections to enable secure BYOD access without compromising security or compliance. From mobile application management and encryption enforcement to biometric authentication and jailbreak detection, Mattermost ensures that data remains protected, access is governed, and sensitive information stays within authorized boundaries.
 
 **Benefits**
 
