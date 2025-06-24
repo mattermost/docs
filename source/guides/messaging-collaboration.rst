@@ -21,6 +21,7 @@ This Mattermost end user documentation is designed for anyone who wants guidance
    Organize using custom user groups </collaborate/organize-using-custom-user-groups>
    Invite people </collaborate/invite-people>
    Learn about Mattermost roles </collaborate/learn-about-roles>
+   View system information </collaborate/view-system-information>
    Collaborate within channels </collaborate/collaborate-within-channels>
    Communicate with messages and threads </collaborate/communicate-with-messages>
    Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>
@@ -32,6 +33,7 @@ This Mattermost end user documentation is designed for anyone who wants guidance
 * :doc:`Organize using custom user groups </collaborate/organize-using-custom-user-groups>` - Learn about creating and managing custom user groups in Mattermost.
 * :doc:`Invite people to your workspace </collaborate/invite-people>` - Learn how to add new users to Mattermost and add users to existing teams and channels.
 * :doc:`Learn about Mattermost user roles </collaborate/learn-about-roles>` - Learn about the 6 user roles in Mattermost and what they can do.
+* :doc:`View system information </collaborate/view-system-information>` - View technical details about your Mattermost server, including version information and system metrics.
 * :doc:`Collaborate within channels </collaborate/collaborate-within-channels>` - Learn how to get started collaborating within Mattermost channels.
 * :doc:`Communicate with messages and threads </collaborate/communicate-with-messages>` Learn how to get started collaborating within Mattermost channels.
 * :doc:`Collaborate within Microsoft Teams </collaborate/collaborate-within-connected-microsoft-teams>` - Learn how to get started collaborating within Microsoft Teams.

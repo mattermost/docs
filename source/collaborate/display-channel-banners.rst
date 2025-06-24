@@ -8,7 +8,7 @@ From Mattermost v10.9, users with admin permissions can enable channel banners t
 
 Channel banner use cases include the following:
 
-- Security classifications, such as **CONTROLLED UNCLASSIFIED: IMPACT LEVEL 5** with a distinctive color to alert members of the required security level.
+- Security classifications, such as **SENSITIVE INFORMATION: IMPACT LEVEL 5** with a distinctive color to alert members of the required security level.
 - Important notices, such as **Reminder: Code complete deadlines are Fridays at 3 PM**, for recurring reminders.
 - Policy or terms, such as  **All discussion in this channel is private and restricted** with a red color to signal caution.
 
