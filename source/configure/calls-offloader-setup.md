@@ -309,7 +309,7 @@ Check the following:
 
 - Verify the calls-offloader service is running: `sudo systemctl status calls-offloader`
 - Ensure network connectivity between Mattermost and calls-offloader
-- Check Docker daemon is running and accessible by the user running `calls-offloader`: `docker ps`
+- Check Docker daemon is running and accessible by the user running the Calls Offloader service (E.g., user: ``calls-offloader``)
 - Verify authentication configuration matches between services
 - Review service logs for specific error messages
 
@@ -418,8 +418,6 @@ To find the correct versions for your Calls plugin:
 **Direct link format**: For plugin version `v1.9.0`, the plugin.json would be at:
 `https://github.com/mattermost/mattermost-plugin-calls/blob/v1.9.0/plugin.json`
 
-**Why this matters**: Using mismatched image versions can cause recording and transcription jobs to fail in air-gapped environments where the calls-offloader cannot automatically pull the correct images.
-
 ### Setup Process
 
 #### Phase 1: Preparation (Internet-Connected Environment)
@@ -435,8 +433,8 @@ For convenience, you can use the automated setup script:
 curl -O https://docs.mattermost.com/scripts/air-gap-docker-registry-setup.sh
 chmod +x air-gap-docker-registry-setup.sh
 
-# Run the setup script
-sudo ./air-gap-docker-registry-setup.sh
+# Run the setup script with the required image versions
+sudo ./air-gap-docker-registry-setup.sh <RECORDER_VERSION> <TRANSCRIBER_VERSION>
 ```
 
 The script will automatically create the required archive files (`docker-registry-data.tar.gz` and `registry-image.tar.gz`) for transfer to your air-gapped environment.
@@ -650,7 +648,7 @@ docker pull localhost:5000/mattermost/calls-recorder:latest
      docker pull localhost:5000/mattermost/calls-transcriber:latest
      ```
    
-   - **Image tag mismatch**: The calls-offloader may be looking for specific image tags. Check what the plugin expects vs what's in your registry:
+   - **Image tag mismatch**: The calls-offloader will be looking for specific image tags. Check what the plugin expects vs what's in your registry:
      ```bash
      # Check what tags are available
      curl http://localhost:5000/v2/mattermost/calls-recorder/tags/list
@@ -668,17 +666,6 @@ docker pull localhost:5000/mattermost/calls-recorder:latest
 - calls-offloader logs: `/opt/calls-offloader/calls-offloader.log`
 - Docker daemon logs: `sudo journalctl -u docker`
 - Registry container logs: `docker logs local-registry`
-
-#### Security Considerations
-
-1. **Insecure Registry**: The setup uses an insecure HTTP registry for simplicity. For production, consider:
-   - Setting up TLS certificates for the registry
-   - Implementing authentication
-   - Using proper firewall rules
-
-2. **Network Access**: Ensure the registry is only accessible within your private network
-
-3. **Image Verification**: Consider implementing image signing and verification processes
 
 #### Advanced Configuration
 
