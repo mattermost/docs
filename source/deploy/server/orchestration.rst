@@ -22,19 +22,19 @@ Deployment solutions are recognized by Mattermost at three-levels:
 
 To summarize the commitment level of different solutions:
 
-==================================  ============  =============  ============
-Deployment Solution Requirement     Community     Registered     Certified 
-==================================  ============  =============  ============
-Installation                        |checkmark|   |checkmark|    |checkmark|
-----------------------------------  ------------  -------------  ------------
-Minimum Documentation               |checkmark|   |checkmark|    |checkmark|
-----------------------------------  ------------  -------------  ------------
-Security Updates                                  |checkmark|    |checkmark|
-----------------------------------  ------------  -------------  ------------
-Branding                                          |checkmark|    |checkmark|
-----------------------------------  ------------  -------------  ------------
-Upgrade                                                          |checkmark|
-==================================  ============  =============  ============
+===========================================  ============  =============  ============
+Deployment Solution Requirement              Community     Registered     Certified 
+===========================================  ============  =============  ============
+`Installation <#installation>`__             |checkmark|   |checkmark|    |checkmark|
+-------------------------------------------  ------------  -------------  ------------
+`Minimum Documentation <#documentation>`__   |checkmark|   |checkmark|    |checkmark|
+-------------------------------------------  ------------  -------------  ------------
+`Security Updates <#security-updates>`__                   |checkmark|    |checkmark|
+-------------------------------------------  ------------  -------------  ------------
+`Branding <#branding>`__                                   |checkmark|    |checkmark|
+-------------------------------------------  ------------  -------------  ------------
+`Upgrade <#upgrade>`__                                                    |checkmark|
+===========================================  ============  =============  ============
 
 Requirement details are outlined below.
 
@@ -79,9 +79,9 @@ Security updates
 Branding 
 ~~~~~~~~
 
-1. **Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials.
+**Support Mattermost branding and naming guidelines**. To ensure naming is clear across deployment solutions, README or equivalent should contain ``The name for this deployment solution in the context of [Mattermost branding guidelines](https://handbook.mattermost.com/operations/operations/publishing/publishing-guidelines/brand-and-visual-design-guidelines) is `[NAME] for Mattermost by [CREATOR]`.`` For example, ``Multi-node Docker deployment solution for Mattermost by John Doe``. This is the name that will be used to refer to your work in Mattermost community materials.
 
 Upgrade 
 ~~~~~~~
 
-1. **Support upgrade of Mattermost**. Enable user interface or command line upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://developers.mattermost.com/integrate/faq/#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`_.
+**Support upgrade of Mattermost**. Enable user interface or command line upgrade of a Mattermost deployment to latest version based on `upgrade procedure when Mattermost is embedded <https://developers.mattermost.com/integrate/faq/#how-should-i-automate-the-install-and-upgrade-of-mattermost-when-included-in-another-application>`_.
