@@ -7,6 +7,9 @@ Mattermost provides a secure, mission-ready mobile platform built for defense, l
 
 With protections including ID-only push notifications, biometric authentication, jailbreak detection, and full MDM/EMM support, Mattermost delivers control, compliance, and usability across a range of challenging field conditions.
 
+.. image:: /images/mission-ready-mobile.png
+   :alt: An infographic illustrating "Security-Optimized Mobility" with two devices side-by-side: A Mattermost server (on the left) and a mobile device (on the right). The Mattermost server displays a list of security features, including "Zero Trust Security (Channel ABAC, Files ABAC)," "Secure File Viewer," "TLS Data in Transit (Post Quantum)," "Authentication and Access Control (MFA, SSO)," "Data Spillage Handling," and more, with asterisks (*) indicating functionality scheduled for release later in 2025. On the right, the mobile device mirrors corresponding security features, such as "Secure File Viewer," "TLS," "Burn on Read," "End-to-End Encryption," "Biometric Authentication," and others, with blue arrows connecting the related features on the server and the mobile device, signifying seamless integration and support for advanced security across these endpoints.
+
 The following mobile-first operational capabilities are available.
 
 Secure Mobile Access on Government Devices
