@@ -22,7 +22,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
  - Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
  - Pre-packaged Boards plugin [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
- - Pre-packaged Agents plugin [v1.2.0](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.0).
+ - Pre-packaged Agents plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.1).
  - Resolved inconsistent styling issues in new integration pages.
  - Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
  - Improved screen reader support for autocompletes and channel switcher.
@@ -69,6 +69,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Fixed an issue with log messages including blank "user_id" field when request session was not valid or had a blank user_id.
  - Fixed an issue where the emoji picker focus did not return to button when not selecting an emoji.
  - Fixed the label in notification settings for the notification sound combo box.
+ - Fixed an issue where an incorrect username and email were shown for remote users.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
