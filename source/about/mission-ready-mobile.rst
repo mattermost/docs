@@ -1,4 +1,4 @@
-Mission Ready Mobile
+Mission-Ready Mobile
 ====================
 
 Mission environments demand secure, reliable mobile collaboration, from intelligence briefings and operational coordination to incident response in disconnected regions. Traditional mobile communication tools fail to meet the demands of field-forward operations, exposing sensitive data to third-party systems, and increasing the risk of data leakage, non-compliance, and operational compromise.
