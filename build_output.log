@@ -1,0 +1,1049 @@
+Running Sphinx v7.2.6
+making output directory... done
+
+Multiple sources map to same target:
+Target: https://github.com/mattermost/openops#readme
+Sources: ['about/mattermost-customizable-chatgpt-bot-framework.html', 'about/mattermost-customizable-ai-bot-framework.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/integrate/mattermost-mission-collaboration-for-m365.html
+Sources: ['about/install-mattermost-app-in-microsoft-teams.html', 'about/embed-mattermost-app-within-microsoft-teams.html', 'collaborate/collaborate-within-embedded-microsoft-teams.html', 'integrate/playbooks-for-microsoft-teams.html#setup']
+
+
+Multiple sources map to same target:
+Target: https://github.com/mattermost/mattermost-plugin-google-calendar/blob/master/README.md
+Sources: ['about/mattermost-google-calendar-integration.html', 'about/setup-mattermost-google-calendar-plugin.html', 'collaborate/use-mattermost-google-calendar-plugin.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/cloud-subscriptions.html
+Sources: ['about/cloud-subscriptions.html#buy-a-cloud-subscription', 'about/cloud-subscriptions.html#view-subscription-information', 'about/cloud-subscriptions.html#renew-your-subscription', 'about/subscription.html#mattermost-enterprise-cloud', 'cloud/cloud-billing/cloud-billing.html', 'manage/cloud-billing.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/maximize-microsoft-investment.html
+Sources: ['about/mattermost-for-microsoft-teams.html', 'about/embed-mattermost-within-microsoft-teams.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/integrate/microsoft-teams-sync.html
+Sources: ['about/install-mattermost-for-microsoft-teams-plugin.html', 'integrate/ms-teams-interoperability.html', 'integrate/microsoft-teams-interoperability.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/out-of-band-incident-response.html
+Sources: ['about/out-of-band-collaboration.html', 'about/incident-response-collaboration.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/system-wide-notifications.html
+Sources: ['administration/announcement-banner.html', 'manage/announcement-banner.html', 'manage/announcement-banner.html#announcement-banner']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/bulk-export-tool.html
+Sources: ['administration/bulk-export.html', 'manage/bulk-export-data.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/mattermost-server-releases.html
+Sources: ['administration/changelog.html', 'cloud/cloud-administration/cloud-changelog.html', 'deploy/legacy-cloud-changelog.html', 'install/cloud-changelog.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-delete
+Sources: ['administration/command-line-tools.html#mattermost-user-delete', 'manage/command-line-tools.html#mattermost-user-delete']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-restore
+Sources: ['administration/command-line-tools.html#mattermost-channel-restore', 'manage/command-line-tools.html#mattermost-channel-restore']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-permissions-reset
+Sources: ['administration/command-line-tools.html#mattermost-permissions-reset', 'manage/command-line-tools.html#mattermost-permissions-reset']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-list
+Sources: ['administration/command-line-tools.html#mattermost-group-team-list', 'manage/command-line-tools.html#mattermost-group-team-list']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-enable
+Sources: ['administration/command-line-tools.html#mattermost-group-team-enable', 'manage/command-line-tools.html#mattermost-group-team-enable']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-enable
+Sources: ['administration/command-line-tools.html#mattermost-group-channel-enable', 'manage/command-line-tools.html#mattermost-group-channel-enable']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-team-disable
+Sources: ['administration/command-line-tools.html#mattermost-group-team-disable', 'manage/command-line-tools.html#mattermost-group-team-disable']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-group-channel-disable
+Sources: ['administration/command-line-tools.html#mattermost-group-channel-disable', 'manage/command-line-tools.html#mattermost-group-channel-disable']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-ldap-idmigrate
+Sources: ['administration/command-line-tools.html#mattermost-ldap-idmigrate', 'manage/command-line-tools.html#mattermost-ldap-idmigrate']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-move
+Sources: ['administration/command-line-tools.html#platform-channel-move', 'manage/command-line-tools.html#mattermost-channel-move']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/comply/compliance-monitoring.html
+Sources: ['administration/compliance.html', 'comply/compliance-reporting-oversight']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/comply/compliance-export.html
+Sources: ['administration/compliance-export.html', 'cloud/cloud-administration/compliance-export.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/configuration-in-your-database.html
+Sources: ['administration/config-in-database.html', 'administration/config-in-database.html#configuration-in-a-database.html', 'administration/config-in-database.html#configuration-in-the-mattermost-database', 'configure/configuration-in-mattermost-database.html', 'configure/configuation-in-a-database.html', 'configure/configuration-in-the-database.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/comply/data-retention-policy.html
+Sources: ['administration/data-retention.html', 'cloud/cloud-administration/data-retention-policy.html', 'comply/cloud-data-retention-policy.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/playbooks.html
+Sources: ['administration/devops-command-center.html', 'deployment/incident-response-and-monitoring.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/release-policy.html#extended-support-releases
+Sources: ['administration/extended-support-release.html', 'upgrade/extended-support-release.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/generating-support-packet.html
+Sources: ['administration/generating-support-packet.html', 'manage/common-support-packet.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/image-proxy.html
+Sources: ['administration/image-proxy.html', 'deploy/image-proxy.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html
+Sources: ['administration/legacy-upgrade.html', 'administration/upgrade.html', 'administration/upgrade-guide.html', 'administration/upgrading-to-2.0.html', 'administration/upgrading-to-3.0.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/deploy-containers.html
+Sources: ['administration/light-install-hindi.html', 'getting-started/light-install.html', 'install/install-docker.html', 'install/docker-ebs.html', 'install/common-prod-deploy-docker.html', 'install/common-local-deploy-docker.html', 'install/install-docker.html#deploy-mattermost-on-docker-for-production-use', 'install/trial-mattermost-using-docker.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-modify
+Sources: ['administration/mmctl-cli-tool.html#mmctl-channel-modify', 'manage/command-line-tools.html#mattermost-channel-modify']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-reset-password
+Sources: ['administration/mmctl-cli-tool.html#mmctl-user-reset-password', 'manage/command-line-tools.html#mattermost-user-password']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/mobile-app-changelog.html
+Sources: ['administration/mobile-changelog.html', 'deploy/mobile-app-changelog.html', 'deploy/mobile-app-changelog.html#release']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html
+Sources: ['administration/performance-alerting-guide', 'deployment/metrics.html', 'scale/performance-monitoring.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/configuration-settings.html
+Sources: ['administration/prev-config-settings.html', 'administration/config-settings.html', 'configure/common-config-settings-notation.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/releases-lifecycle.html
+Sources: ['administration/releases-lifecycle.html', 'administration/release-lifecycle.html', 'guides/changelogs.html', 'upgrade/releases-lifecycle.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/configuration-settings.html#enable-link-previews
+Sources: ['administration/config-settings.html#enable-link-previews', 'administration/config-settings.html#link-previews']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/site-configuration-settings.html#enable-users-to-open-direct-message-channels-with
+Sources: ['administration/config-settings.html#enable-users-to-open-direct-message-channels-with', 'configure/configuration-settings.html#enable-users-to-open-direct-message-channels-with']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-user-migrate-auth
+Sources: ['administration/command-line-tools.html#mattermost-user-migrate-auth', 'manage/command-line-tools.html#mattermost-user-migrate-auth']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#allow-untrusted-internal-connections
+Sources: ['administration/config-settings.html#allow-untrusted-internal-connections-to', 'configure/configuration-settings.html#allow-untrusted-internal-connections-to']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-channel-delete
+Sources: ['administration/command-line-tools.html#mattermost-channel-delete', 'administration/mmctl-cli-tool.html#mmctl-channel-delete', 'manage/command-line-tools.html#mattermost-channel-delete']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/version-archive.html
+Sources: ['administration/version-archive.html', 'upgrade/version-archive.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/access-your-workspace.html
+Sources: ['channels/sign-in.html', 'deploy/deploy-mattermost-apps.html', 'guides/channels.html#access-your-workspace', 'guides/welcome-to-mattermost.html#access-your-mattermost-workspace', 'messaging/accessing-your-workspace.html', 'welcome/log-in.html', 'welcome/sign-in.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions
+Sources: ['channels/organize-conversations.html#enable-collapsed-reply-threads-beta', 'channels/organize-conversations.html#enable-collapsed-reply-threads', 'collaborate/organize-conversations.html#enable-collapsed-reply-threads']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/manage-channel-members.html
+Sources: ['channels/manage-channel-members.html', 'messaging/cloud-user-management.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/preferences/customize-your-channel-sidebar.html
+Sources: ['channels/customize-your-channel-sidebar.html', 'channels/customize-your-channel-sidebar.html#what-can-you-customize']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/preferences.html
+Sources: ['channels/set-channel-preferences.html', 'channels/channels-settings.html', 'guides/channels.html#customize-channels', 'guides/welcome-to-mattermost.html#customize-your-mattermost-experience', 'welcome/get-started-mattermost-channels.html#customize-your-mattermost-experience']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/run-slash-commands.html
+Sources: ['channels/interact-with-channels.html', 'channels/run-slash-commands.html', 'channels/interact-with-channels.html#slash-commands']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/send-messages.html
+Sources: ['channels/send-messages.html', 'welcome/get-started-mattermost-channels.html#send-messages']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/organize-conversations.html
+Sources: ['channels/organize-conversations.html', 'getting-started/organizing-conversations.html', 'help/getting-started/organizing-conversations.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/format-messages.html
+Sources: ['channels/format-messages.html', 'help/messaging/formatting-text.html', 'messaging/channels-basics.html#format-your-messages', 'messaging/formatting-text.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/save-pin-messages.html
+Sources: ['channels/save-pin-messages.html', 'messaging/saving-messages.html#viewing-saved-messages']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/message-reminders.html
+Sources: ['channels/message-reminders.html', 'channels/message-reminders.html#set-a-reminder']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/keyboard-accessibility.html
+Sources: ['channels/keyboard-accessibility.html', 'channels/keyboard-accessibility.html#region-navigation', 'guides/channels.html#keyboard-accessibility', 'messaging/navigating-mattermost.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/keyboard-shortcuts.html
+Sources: ['channels/keyboard-shortcuts-for-channels.html', 'welcome/keyboard-shortcuts.html', 'welcome/team-keyboard-shortcuts.html#navigation-shortcuts-for-mattermost-channels']
+
+
+Multiple sources map to same target:
+Target: https://github.com/mattermost/mattermost-plugin-google-calendar/docs/usage.html
+Sources: ['channels/use-mattermost-google-calendar-plugin.html', 'channels/use-mattermost-google-calendar-plugin.html#connect-your-google-calendar-account-to-mattermost', 'channels/use-mattermost-google-calendar-plugin.html#customize-your-google-calendar-plugin', 'channels/use-mattermost-google-calendar-plugin.html#create-a-calendar-event', 'channels/use-mattermost-google-calendar-plugin.html#review-your-upcoming-events']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/browse-channels.html#revisit-recent-channels
+Sources: ['channels/browse-channels.html#revisit-recent-channels', 'channels/find-channels.html#revisit-recent-channels']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/preferences/manage-your-notifications.html
+Sources: ['channels/set-channel-preferences.html#channel-notification-preferences', 'channels/set-channel-preferences.html#automatically-follow-all-new-threads-in-this-channel', 'channels/channels-settings.html#notifications']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/save-pin-messages.html#save-messages
+Sources: ['channels/save-pin-messages.html#save-messages', 'messaging/saving-messages.html#saving-a-message']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/collaborate-within-connected-microsoft-teams.html
+Sources: ['channels/collaborate-using-mattermost-for-microsoft-teams.html#demonstration-mattermost-embedded-in-microsoft-teams', 'collaborate/collaborate-using-mattermost-for-microsoft-teams.html', 'collaborate-within-embedded-microsoft-teams.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/messaging-collaboration.html
+Sources: ['channels/about-teams-channels-messages.html', 'guides/channels.html#channels-messages-and-conversations', 'guides/collaborate.html', 'welcome/get-started-mattermost-channels.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/run-slash-commands.html
+Sources: ['cloud/cloud-integrations/cloud-slash-commands.html', 'help/messaging/executing-commands.html', 'messaging/executing-slash-commands.html', 'messaging/executing-slash-commands.html#built-in-commands', 'messaging/executing-slash-commands.html#custom-commands']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/convert-oauth20-service-providers-to-openidconnect.html
+Sources: ['cloud/cloud-administration/sso-openid-connect.html', 'deployment/converting-oauth20-service-providers-to-openidconnect.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/guest-accounts.html
+Sources: ['cloud/cloud-guest-accounts.html', 'deployment/guest-accounts.html', 'onboard/guest-account-access.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/integrate/admin-guide/admin-webhooks-incoming/
+Sources: ['cloud/cloud-integrations.html', 'developer/webhooks-incoming.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/mobile/deploy-mobile-apps-using-emm-provider.html
+Sources: ['cloud/cloud-mobile/cloud-app-config.html', 'deploy/mobile-appconfig.html', 'deploy/deploy-mobile-apps-using-emm-provider.html', 'mobile/deploy-mobile-apps-using-emm-provider.html', 'mobile/mobile-blackberry.html', 'mobile/mobile-overview.html#use-an-emm-provider-with-managed-app-configuration']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/mobile/mobile-faq.html
+Sources: ['cloud/cloud-mobile/troubleshooting-mobile.html', 'cloud/mobile-apps-faq.html', 'deploy/mobile-apps-faq.html', 'deploy/mobile-faq.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/manage-channel-members.html
+Sources: ['cloud/cloud-user-management.html', 'help/getting-started/managing-members.html', 'messaging/managing-channels.html#adding-members-to-a-channel', 'messaging/managing-members.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/agents.html
+Sources: ['collaborate/chat-with-ai-copilot.html', 'collaborate/chat-with-copilot.html']
+
+
+Multiple sources map to same target:
+Target: https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938
+Sources: ['configure/configuring-apache2.html', 'install/config-apache2.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/bulk-loading-data.html
+Sources: ['configure/bulk-loading-about.html', 'configure/bulk-loading-common-issues.html', 'configure/bulk-loading-data-format.html', 'configure/bulk-loading-troubleshooting.html', 'configure/run-bulk-loading-command.html', 'deployment/bulk-loading.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#database
+Sources: ['configure/configuration-settings.html#database', 'configure/database-configuration-settings']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/web-server-configuration-settings.html
+Sources: ['configure/configuration-settings.html#environment', 'configure/configuration-settings.html#test-live']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/user-management-configuration-settings.html#users
+Sources: ['configure/configuration-settings.html#users', 'messaging/cloud-user-management.html#obtaining-user-id', 'welcome/add-people.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#web-server
+Sources: ['configure/configuration-settings.html#web-server', 'configure/web-server-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#elasticsearch
+Sources: ['configure/configuration-settings.html#elasticsearch', 'configure/configuration-settings.html#elasticsearch-settings', 'configure/elasticsearch-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#file-storage
+Sources: ['configure/configuration-settings.html#file-storage', 'configure/file-storage-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#enable-amazon-s3-debugging
+Sources: ['configure/configuration-settings.html#enable-amazon-s3-debugging', 'configure/configuration-settings.html#test-connection']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#image-proxy
+Sources: ['configure/configuration-settings.html#image-proxy', 'configure/image-proxy-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#smtp
+Sources: ['configure/configuration-settings.html#smtp', 'configure/smtp-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#high-availability
+Sources: ['configure/configuration-settings.html#high-availability', 'configure/high-availability-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#session-lengths
+Sources: ['configure/configuration-settings.html#session-lengths', 'configure/session-lengths-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#performance-monitoring
+Sources: ['configure/configuration-settings.html#performance-monitoring', 'configure/performance-monitoring-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#developer
+Sources: ['configure/configuration-settings.html#developer', 'configure/developer-mode-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#logging
+Sources: ['configure/configuration-settings.html#standard-logging', 'configure/logging-configuration-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/environment-configuration-settings.html#output-logs-to-multiple-targets
+Sources: ['configure/configuration-settings.html#advanced-logging', 'configure/configuration-settings.html#output-logs-to-multiple-targets']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces
+Sources: ['configure/configuration-settings.html#enable-shared-channels', 'configure/experimental-configuration-settings.html#enable-shared-channels']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/integrations-configuration-settings.html#gif-beta
+Sources: ['configure/configuration-settings.html#gfycat-api-key', 'configure/configuration-settings.html#gfycat-api-secret']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/site-configuration-settings.html#enable-system-wide-notifications
+Sources: ['configure/configuration-settings.html#enable-announcement-banner', 'configure/site-configuration-settings.html#enable-announcement-banner']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/configure/site-configuration-settings.html#threaded-discussions
+Sources: ['configure/configuration-settings.html#collapsed-reply-threads', 'configure/site-configuration-settings.html#posts-collapsedreplythreads']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/logging.html#syslog-target-configuration-options
+Sources: ['configure/experimental-configuration-settings.html#syslog-configuration-options', 'configure/experimental-configuration-settings.html#syslog-ip', 'configure/experimental-configuration-settings.html#syslog-port', 'configure/experimental-configuration-settings.html#syslog-tag', 'configure/experimental-configuration-settings.html#syslog-cert', 'configure/experimental-configuration-settings.html#syslog-insecure', 'configure/experimental-configuration-settings.html#syslog-max-queue-size']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/server-deployment-planning.html
+Sources: ['configure/configuring-cloudfront-to-host-mattermost-static-assets.html', 'configure/using-outbound-proxy.html', 'getting-started/implementation_plan.html', 'getting-started/implementation-plan.html', 'guides/server-deployment.html', 'guides/prepare-for-your-mattermost-deployment.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/mobile/distribute-custom-mobile-apps.html
+Sources: ['deploy/build-custom-mobile-apps.html', 'mobile/mobile-compile yourself.html', 'mobile/mobile-mobileiron.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/mobile/mobile-app-deployment.html
+Sources: ['deploy/client-side-data.html', 'deploy/mobile-overview.html', 'deploy/use-prebuilt-mobile-apps.html', 'mobile/mobile-appstore-install.html', 'mobile/mobile-overview.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/mobile/host-your-own-push-proxy-service.html
+Sources: ['deploy/mobile-hpns.html', 'deployment/push.html', 'mobile/mobile-hpns.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/mobile/mobile-troubleshooting.html
+Sources: ['deploy/mobile-troubleshoot-notifications.html', 'deploy/mobile-troubleshoot.html', 'mobile/mobile-testing-notifications.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/desktop/desktop-app-deployment.html
+Sources: ['deploy/desktop-app.html', 'guides/desktop-mobile-app-deployment.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/application-architecture.html
+Sources: ['deploy/deployment-overview.html', 'getting-started/architecture-overview.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/deprecated-features.html
+Sources: ['deploy/deprecated-features.html', 'install/deprecated-features.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/desktop-app-changelog.html
+Sources: ['deploy/desktop-app-changelog.html', 'help/apps/desktop-changelog.html', 'install/desktop-app-changelog.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/unsupported-legacy-releases.html
+Sources: ['deploy/legacy-self-hosted-changelog.html', 'install/legacy-self-hosted-changelog.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/about/mattermost-v9-changelog.html
+Sources: ['deploy/mattermost-changelog.html#release-v9-9-feature-release', 'welcome/what-changed-in-v60.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/deployment.html
+Sources: ['deploy/deploy-openfaas.html', 'deploy/package-aws.html', 'deploy/deploy-http.html', 'guides/administrator.html', 'guides/cloud-admin-guide.html', 'install/setting-up-local-machine-using-docker.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/deploy-kubernetes.html
+Sources: ['deploy/server/kubernetes/deploy-k8s-aks.html', 'install/install-kubernetes.html', 'install/install-kubernetes-aks.html', 'install/deploy-bitnami.html', 'install/install-kubernetes-cluster.html', 'install/install-kubernetes-mattermost', 'install/install-kubernetes-operator.html', 'install/use-kubernetes-mattermost.html', 'install/mattermost-kubernetes-operator.html', 'install/install-kubernetes.html#install-mattermost-on-kubernetes', 'install/install-kubernetes.html#install-the-operators', 'install/install-kubernetes.html#mattermost-cloudnative-bootstrapper-sneak-peek', 'install/install-kubernetes.html#does-the-mattermost-operator-replace-the-mattermost-helm-chart', 'install/install-docker.html#installing-a-different-version-of-mattermost', 'install/manage_kubernetes.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/deploy-linux.html
+Sources: ['deploy/server/linux/deploy-rhel.html', 'install/installing-mattermost-omnibus.html', 'install/setup-mattermost-server.html', 'install/install-rhel.html', 'install/install-tar.html', 'install/install-ubuntu.html', 'install/install-ubuntu-1804.html', 'install/install-ubuntu-2004.html', 'install/mattermost-omnibus.html', 'install/install-mattermost-server-tarball.html', 'install/install-rhel-6-mattermost.html', 'install/install-ubuntu-2004-server.html', 'install/install-rhel-7-server.html', 'install/install-ubuntu-1804-server.html', 'install/install-ubuntu-1804-postgresql.html', 'install/install-ubuntu-2004-mysql.html', 'install/install-debian-mysql.html', 'install/install-rhel-8-server.html', 'install/install-ubuntu-1804-mysql.html', 'install/install-debian-server.html', 'install/install-rhel-8-mysql.html', 'install/install-rhel-7-mysql.html', 'install/install-debian-postgresql.html', 'install/install-ubuntu-2004-postgresql.html', 'install/install-rhel-8-postgresql.html', 'install/installing-ubuntu-1804-LTS.html', 'install/install-ubuntu-1804-mattermost.html', 'install/install-rhel-8.html', 'install/install-ubuntu-2004-mattermost.html', 'install/install-rhel-7-mattermost.html', 'install/install-rhel-7-postgresql.html', 'install/install-rhel-8-mattermost.html', 'install/install-rhel-7.html', 'install/installing-ubuntu-2004-LTS.html', 'install/install-debian.html', 'install/install-centos-oracle-scientific', 'install/install-common-intro.html', 'install/install-latest-tarball.html', 'install/common-deploy-faq.html', 'install/common-prod-deploy-tar.html', 'install/common-prod-deploy-omnibus.html', 'install/install-rhel-8', 'install/install-rhel-8.html#install', 'install/install-rhel-8.html#setup', 'install/install-rhel-8.html#updates', 'install/install-rhel-8.html#remove-mattermost', 'install/install-rhel-8.html#frequently-asked-questions', 'install/install-rhel-8.html#set-the-correct-contexts-for-opt-mattermost']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/preparations.html
+Sources: ['deploy/server/setting-up-socket-based-mattermost-database.html', 'install/prepare-mattermost-database.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/multi-factor-authentication.html
+Sources: ['deployment/auth.html', 'onboard/common-disable-mfa.html', 'overview/authentication.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/delegated-granular-administration.html
+Sources: ['deployment/admin-roles.html', 'messaging/cloud-user-management.html#about-system-roles-beta', 'onboard/system-admin-roles.html']
+
+
+Multiple sources map to same target:
+Target: https://mattermost.com/marketplace/
+Sources: ['deployment/atlassian-integrations.html', 'deployment/bot-integrations.html', 'deployment/ci-cd-tools.html', 'deployment/microsoft-integrations.html', 'deployment/productivity-tools.html', 'deployment/video-and-audio-calling.html', 'help/settings/integration-settings.html', 'messaging/extending-messaging-with-integrations.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/integrate/admin-guide/admin-bot-accounts/
+Sources: ['deployment/bots.html', 'developer/bot-accounts.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/scale/high-availability-cluster.html
+Sources: ['deployment/cluster.html', 'deployment/cluster-310.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/scale/scaling-for-enterprise.html
+Sources: ['deployment/enterprise-deployment-guide.html', 'deployment/scaling.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/upgrade/admin-onboarding-tasks.html
+Sources: ['deployment/on-boarding.html', 'deployment/on-boarding.html#common-tasks', 'getting-started/admin-onboarding-tasks.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/sso-openidconnect.html
+Sources: ['deployment/sso-openidconnect.html', 'onboard/common-sso-openidconnect.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/sso-google.html
+Sources: ['deployment/sso-google.html', 'onboard/common-sso-google.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/sso-entraid.html
+Sources: ['deployment/sso-office.html', 'onboard/sso-office.html', 'onboard/common-sso-entraid.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/sso-saml.html
+Sources: ['deployment/sso-saml.html', 'deployment/sso-saml-troubleshooting.html', 'onboard/sso-saml-faq.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/contribute/server/rest-api/
+Sources: ['developer/api4.html', 'developer/api-development-version4.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/integrate/getting-started/
+Sources: ['developer/before-you-get-started.html', 'guides/administrator.html#mattermost-integrations', 'guides/integration.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/contribute/getting-started/
+Sources: ['developer/contribution-guide.html', 'developer/developer-flow.html', 'developer/dev-setup-compiling.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/contribute/server/developer-setup/
+Sources: ['developer/developer-setup.html', 'developer/dev-setup.html', 'developer/dev-setup-archlinux.html', 'developer/dev-setup-centos-7.html', 'developer/dev-setup-osx.html', 'developer/dev-setup-troubleshooting.html', 'developer/dev-setup-ubuntu-1604.html', 'developer/dev-setup-windows.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/integrate/admin-guide/admin-interactive-messages/
+Sources: ['developer/interactive-messages.html', 'developer/interactive-message-buttons.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/company/about-mattermost
+Sources: ['developer/manifesto.html', 'process/handbook.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/upgrade/welcome-email-to-end-users.html
+Sources: ['getting-started/welcome-email-to-end-users.html', 'getting-started/welcome_email.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/administration-guide.html
+Sources: ['guides/administration.html', 'guides/get-started-with-administration.html', 'guides/other-administration-resources.html', 'guides/self-hosted-administration.html', 'guides/admin.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/deployment-guide.html
+Sources: ['guides/deployment-guides.html', 'guides/deployment.html', 'guides/install-deploy-upgrade-scale.html', 'guides/deploy.html', 'install/heroku.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/deployment-guide.html#server-application
+Sources: ['guides/deployment.html#install-guides', 'guides/administrator.html#installing-mattermost', 'guides/install-deploy-upgrade-scale.html#install-mattermost']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/communicate-with-messages.html
+Sources: ['guides/channels.html#work-with-messages', 'help/getting-started/messaging-basics.html#messaging-basics', 'messaging/about-teams-channels-messages.html#messages']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/use-mattermost.html
+Sources: ['guides/channels.html#manage-teams-channels-and-members', 'guides/messaging.html', 'guides/user.html', 'guides/channels.html', 'guides/welcome-to-mattermost.html', 'guides/welcome-to-mattermost.html#mattermost-basics', 'help/getting-started/welcome-to-mattermost.html', 'messaging/welcome-to-mattermost-channels.html', 'messaging/welcome-to-mattermost-messaging.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/collaborate-within-channels.html
+Sources: ['guides/channels.html#navigate-channels', 'guides/channels.html#work-with-channels', 'messaging/about-teams-channels-messages.html#channels', 'messaging/channels-basics.html', 'messaging/managing-channels.html', 'messaging/messaging-basics.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/pre-built-integrations.html
+Sources: ['guides/channels.html#extend-mattermost-channels', 'guides/channels.html#extend-channels-functionality', 'guides/integrate-and-extend.html', 'guides/integrate-and-extend.html#interoperability-with-pre-packaged-integrations']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/integrate/admin-guide/
+Sources: ['guides/developer.html', 'integrations/cloud-incoming-webhooks.html', 'integrations/cloud-outgoing-webhooks.html', 'integrations/webhook.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/guides/workflow-automation.html
+Sources: ['guides/playbooks.html', 'guides/repeatable-processes.html', 'playbooks/work-with-playbooks.html', 'playbooks/get-started-with-playbooks.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/manage-desktop-app-server-connections.html
+Sources: ['help/apps/desktop-guide.html', 'help/settings/manage-servers.html', 'messaging/managing-desktop-app-servers.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/keyboard-accessibility.html
+Sources: ['help/getting-started/accessibility.html', 'messaging/keyboard-accessibility.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/share-files-in-messages.html
+Sources: ['help/messaging/attaching-files.html', 'messaging/channels-basics.html#share-files', 'messaging/sharing-files.html', 'messaging/sharing-files.html#attach-files-to-messages']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/channels-settings.html#notifications
+Sources: ['help/getting-started/configuring-notifications.html', 'messaging/configuring-notifications.html', 'messaging/manage-channels-settings.html#notifications']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/about-teams.html#create-a-team
+Sources: ['help/getting-started/creating-teams.html', 'messaging/creating-teams.html', 'messaging/creating-teams.html#methods-to-create-a-team']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/install-desktop-app.html
+Sources: ['help/getting-started/install-desktop-app.html', 'install/desktop.html', 'install/installing-mattermost-desktop-app.html', 'install/desktop-app-install.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/react-to-messages.html
+Sources: ['help/messaging/emoji.html', 'messaging/channels-basics.html#react-to-messages', 'messaging/using-emoji.html', 'messaging/using-emoji.html#adding-emojis-to-messages']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/save-pin-messages.html
+Sources: ['help/messaging/flagging-messages.html', 'help/messaging/pinning-messages.html', 'messaging/channels-basics.html#save-messages-for-follow-up', 'messaging/pinning-messages.html', 'messaging/saving-messages.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/format-messages.html#in-line-images
+Sources: ['help/messaging/formatting-text.html#in-line-images', 'messaging/formatting-text.html#in-line-images']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/log-out.html
+Sources: ['help/getting-started/log-out.html', 'messaging/logging-out.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html
+Sources: ['help/messaging/keyboard-shortcuts.html', 'messaging/keyboard-shortcuts.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/mention-people.html
+Sources: ['help/messaging/mentioning-teammates.html', 'messaging/channels-basics.html#notify-teammates', 'messaging/mentioning-teammates.html', 'messaging/mentioning-teammates.html#mentions']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/channel-naming-conventions.html
+Sources: ['help/getting-started/organizing.html', 'messaging/organizing-channels.html', 'messaging/organizing-channels.html#the-importance-of-channel-names', 'messaging/organizing-mattermost.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/organize-conversations.html
+Sources: ['help/messaging/organizing-conversations.html', 'messaging/organizing-conversations.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/organize-conversations.html#known-issues
+Sources: ['help/messaging/organizing-conversations.html#known-issues', 'messaging/organizing-conversations.html#known-issues']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/customize-your-channel-sidebar.html
+Sources: ['help/getting-started/organizing-your-sidebar.html', 'messaging/organizing-your-sidebar.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/sign-in.html
+Sources: ['help/getting-started/signing-in.html', 'messaging/signing-in.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/search-for-messages.html
+Sources: ['help/getting-started/searching.html', 'messaging/searching-in-mattermost.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/send-messages.html
+Sources: ['help/messaging/sending-messages.html', 'messaging/channels-basics.html#write-messages', 'messaging/sending-messages.html', 'messaging/sending-receiving-messages.html', 'messaging/sending-receiving-messages.html#send-a-message']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/set-your-status-availability.html
+Sources: ['help/getting-started/setting-your-status-availability.html', 'messaging/setting-your-status-availability.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/about-teams.html#team-sidebar
+Sources: ['help/getting-started/switch-between-teams.html', 'messaging/navigating-between-teams.html', 'messaging/switching-between-teams.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/channels-settings.html
+Sources: ['help/settings/account-settings.html', 'help/settings/channel-settings.html', 'messaging/manage-channels-settings.html', 'messaging/managing-account-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/react-to-messages.html#upload-custom-emojis
+Sources: ['help/settings/custom-emoji.html', 'messaging/using-emoji.html#creating-custom-emojis']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/customize-desktop-app-experience.html
+Sources: ['help/settings/desktop-app-options.html', 'messaging/managing-desktop-app-options.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/team-settings.html
+Sources: ['help/settings/team-settings.html', 'messaging/team-settings.html', 'messaging/team-settings.html#general', 'messaging/team-settings.html#import', 'welcome/team-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/customize-your-theme.html
+Sources: ['help/settings/theme-colors.html', 'messaging/customizing-theme-colors.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/playbooks/refining-and-improving.html
+Sources: ['incident-collaboration/overview.html', 'incident-collaboration/refining-and-improving.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/desktop/desktop-app-managed-resources.html
+Sources: ['install/desktop-app-managed-resources.html', 'install/desktop-managed-resources.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/desktop/desktop-msi-installer-and-group-policy-install.html
+Sources: ['install/desktop-msi-installer-and-group-policy-install.html', 'install/desktop-msi-gpo.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/server/setup-nginx-proxy.html
+Sources: ['install/setup-nginx-proxy.html', 'install/install-rhel-nginx.html', 'install/config-proxy-nginx.html', 'install/install-nginx.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/deploy/transport-encryption.html
+Sources: ['install/cluster-transport-encryption.html', 'install/database-transport-encryption.html', 'install/config-tls-mattermost.html', 'install/proxy-to-mattermost-transport-encryption.html', 'install/transport-encryption.html']
+
+
+Multiple sources map to same target:
+Target: https://developers.mattermost.com/integrate/admin-guide/admin-embedding/
+Sources: ['integrations/embedding.html', 'integrations/cloud-embedding.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-roles
+Sources: ['manage/command-line-tools.html#mattermost-roles', 'manage/command-line-tools.html#mattermost-roles-member', 'manage/command-line-tools.html#mattermost-roles-system-admin']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-team-users
+Sources: ['manage/command-line-tools.html#mattermost-team-add', 'manage/command-line-tools.html#mattermost-team-remove']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/manage/mmctl-command-line-tool.html#mmctl-webhook-modify-outgoing
+Sources: ['manage/command-line-tools.html#mattermost-webhook-modify-outgoing', 'manage/command-line-tools.html#mattermost-webhook-move-outgoing']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/reply-to-messages.html
+Sources: ['messaging/channels-basics.html#reply-to-messages', 'messaging/sending-receiving-messages.html#reply-to-messages']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/set-channel-preferences.html
+Sources: ['messaging/channel-preferences.html', 'messaging/channel-settings.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/what-changed-in-v60.html
+Sources: ['messaging/common-navigating-mattermost-products.html', 'playbooks/navigating-mattermost-playbooks.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/welcome/manage-your-profile.html#security
+Sources: ['messaging/manage-profile-settings.html#multi-factor-authentication', 'messaging/manage-profile-settings.html#security']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/channel-naming-conventions.html#channel-naming-examples
+Sources: ['messaging/organizing-channels.html#how-to-navigate-and-organize-channels', 'messaging/organizing-channels.html#channel-naming-examples']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/channels/react-to-messages.html#
+Sources: ['messaging/using-emojis.html', 'messaging/using-emoji.html#typing-an-emoji']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/invite-people.html
+Sources: ['messaging/cloud-user-management.html#inviting-team-members', 'messaging/cloud-user-management.html#adding-someone-to-your-team', 'welcome/about-teams.html#invite-people-to-teams', 'welcome/get-started-mattermost-channels.html#invite-people-to-the-team', 'welcome/add-people.html#add-people-on-demand']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html
+Sources: ['messaging/cloud-user-management.html#about-user-roles', 'welcome/about-user-roles.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html#system-admin
+Sources: ['messaging/cloud-user-management.html#system-admin', 'welcome/about-user-roles.html#system-admin']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html#team-admin
+Sources: ['messaging/cloud-user-management.html#team-admin', 'welcome/about-user-roles.html#team-admin']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html#channel-admin
+Sources: ['messaging/cloud-user-management.html#channel-admin', 'welcome/about-user-roles.html#channel-admin']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html#member
+Sources: ['messaging/cloud-user-management.html#member', 'welcome/about-user-roles.html#member']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html#guest
+Sources: ['messaging/cloud-user-management.html#guest', 'welcome/about-user-roles.html#guest']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/learn-about-roles.html#grant-personal-access-tokens
+Sources: ['messaging/cloud-user-management.html#user-with-personal-access-token-permission', 'welcome/about-user-roles.html#user-with-personal-access-token-permission']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/organize-using-teams.html#remove-people-from-teams
+Sources: ['messaging/cloud-user-management.html#removing-a-user-from-a-team-or-leaving-a-team', 'messaging/cloud-user-management.html#remove-user-from-team', 'welcome/about-teams.html#remove-people-from-teams']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/organize-using-teams.html#leave-a-team
+Sources: ['messaging/cloud-user-management.html#leaving-a-team', 'welcome/about-teams.html#leave-a-team']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/onboard/migrating-to-mattermost.html#use-the-mattermost-mmetl-tool-and-bulk-import
+Sources: ['onboard/migrating.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import', 'onboard/migrating-to-mattermost.html#migrating-from-slack-using-the-mattermost-mmetl-tool-and-bulk-import']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/playbooks/customize-a-playbook.html
+Sources: ['playbooks/setting-up-playbooks.html', 'playbooks/running-playbooks.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/repeatable-processes/learn-about-playbooks.html
+Sources: ['playbooks/overview.html', 'playbooks/overview.html#what-s-a-playbook']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/contributors/contributors/help-wanted
+Sources: ['process/accepting-pull-request.html', 'process/accepting-pull-requests.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/operations/messaging-and-math
+Sources: ['process/asset-guidelines.html', 'process/marketing-guidelines.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/operations/workplace/people#key-channels-and-resources
+Sources: ['process/benefits-canada.html', 'process/benefits-us.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/contributors/contributors/community
+Sources: ['process/community-overview.html', 'process/community-process.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com
+Sources: ['process/developer.html', 'process/training.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/operations/operations/company-processes/publishing/publishing-guidelines/voice-tone-and-writing-style-guidelines/documentation-style-guide#document-structure
+Sources: ['process/end-user-documentation.html', 'process/sg_document-structure.html', 'process/sg_general-guidelines.html', 'process/sg_grammar-spelling-mechanics.html', 'process/sg_rest_markup.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding
+Sources: ['process/engineer-expectations.html', 'process/working-at-mattermost.html']
+
+
+Multiple sources map to same target:
+Target: https://handbook.mattermost.com/operations/research-and-development/product/release-process/feature-release
+Sources: ['process/feature-release.html', 'process/release-process.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/scale/scale-to-80000-users.html
+Sources: ['scale/scale-to-70000-users.html', 'scale/scale-to-79000-users.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/preferences/connect-multiple-workspaces.html
+Sources: ['welcome/manage-desktop-app-server-connections.html', 'welcome/manage-multiple-server-connections.html']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/preferences/manage-your-profile.html
+Sources: ['welcome/manage-your-profile.html', 'welcome/manage-your-profile.html#profile']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/preferences/set-your-status-availability.html#set-your-availability
+Sources: ['welcome/set-your-status-availability.html#set-your-availability', 'welcome/set-your-status-availability.html#how-mattermost-determines-your-availability']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/preferences/customize-your-theme.html
+Sources: ['welcome/customize-your-theme.html', 'welcome/customize-your-theme.html#standard-themes', 'welcome/customize-your-theme.html#export-a-custom-theme', 'welcome/customize-your-theme.html#import-a-custom-theme', 'welcome/customize-your-theme.html#custom-theme-examples']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/access-your-workspace.html#reset-your-password
+Sources: ['welcome/log-in.html#reset-your-password', 'welcome/sign-in.html#reset-your-password']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/access-your-workspace.html#email-address-or-username
+Sources: ['welcome/log-in.html#email-address-or-username', 'welcome/sign-in.html#email-address-or-username']
+
+
+Multiple sources map to same target:
+Target: https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso
+Sources: ['welcome/log-in.html#single-sign-on-sso', 'welcome/sign-in.html#single-sign-on-sso']
+
+myst v2.0.0: MdParserConfig(commonmark_only=False, gfm_only=False, enable_extensions={'colon_fence'}, disable_syntax=[], all_links_external=False, url_schemes=('http', 'https', 'mailto', 'ftp'), ref_domains=None, fence_as_directive=set(), number_code_blocks=[], title_to_header=False, heading_anchors=3, heading_slug_func=None, html_meta={}, footnote_transition=True, words_per_minute=200, substitutions={}, linkify_fuzzy_links=True, dmath_allow_labels=True, dmath_allow_space=True, dmath_allow_digits=True, dmath_double_inline=False, update_mathjax=True, mathjax_classes='tex2jax_process|mathjax_process|math|output_area', enable_checkboxes=False, suppress_warnings=[], highlight_code_blocks=True)
+building [mo]: targets for 0 po files that are out of date
+writing output... 
+building [html]: targets for 362 source files that are out of date
+updating environment: [new config] 362 added, 0 changed, 0 removed
+[2Kreading sources... [  5%] about/accessibility-compliance-policy .. about/faq-illicit-use[2Kreading sources... [ 10%] about/faq-integrations .. about/non-profit-subscriptions[2Kreading sources... [ 15%] about/on-prem-skype-for-business-replacement .. about/version-archive[2Kreading sources... [ 20%] agents/docs/admin_guide .. collaborate/browse-channels[2Kreading sources... [ 25%] collaborate/built-in-slash-commands .. collaborate/invite-people[2Kreading sources... [ 30%] collaborate/join-leave-channels .. collaborate/rename-channels[2Kreading sources... [ 35%] collaborate/reply-to-messages .. comply/legal-holdconfig-setting-v2: 16 config settings in configure/integrations-configuration-settings
+config-setting-v2: 90 config settings in configure/plugins-configuration-settings
+config-setting-v2: 86 config settings in configure/site-configuration-settings
+[2Kreading sources... [ 40%] configure/agents-admin-guide .. configure/install-boards[2Kreading sources... [ 45%] configure/integrations-configuration-settings .. deploy/desktop/linux-desktop-install[2Kreading sources... [ 50%] deploy/desktop/silent-windows-desktop-distribution .. deploy/server/deploy-linux[2Kreading sources... [ 55%] deploy/server/deploy-oob .. guides/cloud-workspace-management[2Kreading sources... [ 60%] guides/community-chat .. integrate/gitlab[2Kreading sources... [ 65%] integrate/jira .. manage/admin/user-management[2Kreading sources... [ 70%] manage/admin/user-provisioning .. manage/telemetry[2Kreading sources... [ 75%] manage/user-satisfaction-surveys .. onboard/sso-entraid[2Kreading sources... [ 80%] onboard/sso-gitlab .. preferences/manage-your-desktop-notificationsconfig-setting-v2: 125 config settings in configure/authentication-configuration-settings
+config-setting-v2: 20 config settings in configure/compliance-configuration-settings
+config-setting-v2: 168 config settings in configure/environment-configuration-settings
+config-setting-v2: 88 config settings in configure/experimental-configuration-settings
+[2Kreading sources... [ 85%] preferences/manage-your-display-options .. repeatable-processes/work-with-playbooks[2Kreading sources... [ 90%] repeatable-processes/work-with-runs .. scale/scale-to-15000-users[2Kreading sources... [ 95%] scale/scale-to-200-users .. upgrade/upgrading-mattermost-server[2Kreading sources... [100%] upgrade/welcome-email-to-end-users
+looking for now-outdated files... none found
+pickling environment... done
+checking consistency... done
+preparing documents... done
+copying assets... [2Kcopying downloadable files... [ 50%] samples/mattermost-specfile.xml[2Kcopying downloadable files... [100%] samples/sample-logger-config.json
+copying static files... done
+copying extra files... done
+done
+[2Kwriting output... [  5%] about/certifications-and-compliance .. about/faq-license[2Kwriting output... [ 11%] about/faq-mattermost-source-available-license .. about/plans[2Kwriting output... [ 16%] about/product .. agents/docs/usage_tips[2Kwriting output... [ 21%] agents/docs/user_guide .. collaborate/collaborate-within-channels[2Kwriting output... [ 26%] collaborate/collaborate-within-connected-microsoft-teams .. collaborate/make-calls[2Kwriting output... [ 32%] collaborate/manage-channel-bookmarks .. collaborate/share-files-in-messages[2Kwriting output... [ 37%] collaborate/share-links .. configure/config-proxy-apache2[2Kwriting output... [ 42%] configure/configuration-in-your-database .. configure/system-attributes[2Kwriting output... [ 47%] configure/user-management-configuration-settings .. deploy/mobile/mobile-security-features[2Kwriting output... [ 53%] deploy/mobile/mobile-troubleshooting .. deploy/server/trouble-postgres[2Kwriting output... [ 58%] deploy/server/trouble_mysql .. guides/project-task-management[2Kwriting output... [ 63%] guides/secure-mattermost .. manage/admin/migration[2Kwriting output... [ 68%] manage/admin/monitoring-and-performance .. manage/product-limits[2Kwriting output... [ 74%] manage/request-server-health-check .. onboard/migrating-to-mattermost[2Kwriting output... [ 79%] onboard/migration-announcement-email .. preferences/customize-your-theme[2Kwriting output... [ 84%] preferences/manage-advanced-options .. repeatable-processes/notifications-and-updates[2Kwriting output... [ 89%] repeatable-processes/share-and-collaborate .. scale/scale-to-100000-users[2Kwriting output... [ 95%] scale/scale-to-15000-users .. upgrade/upgrading-mattermost-server[2Kwriting output... [100%] upgrade/welcome-email-to-end-users
+generating indices... done
+writing additional pages... 404 search done
+[2Kcopying images... [  0%] _static/images/badges/flag_icon.svg[2Kcopying images... [  0%] _static/images/badges/deployment_icon.svg[2Kcopying images... [  0%] _static/images/badges/flag_icon_yellow.svg[2Kcopying images... [  1%] _static/images/badges/deployment_icon_yellow.svg[2Kcopying images... [  1%] images/link-variant_F0339.svg[2Kcopying images... [  1%] images/information-outline_F02FD.svg[2Kcopying images... [  1%] images/dots-horizontal_F01D8.svg[2Kcopying images... [  1%] images/star-outline_F04D2.svg[2Kcopying images... [  1%] images/globe_E805.svg[2Kcopying images... [  2%] images/lock-outline_F0341.svg[2Kcopying images... [  2%] images/archive-outline_F120E.svg[2Kcopying images... [  2%] images/plus_F0415.svg[2Kcopying images... [  2%] images/bookmark-outline_F00C3.svg[2Kcopying images... [  2%] images/send_F048A.svg[2Kcopying images... [  2%] images/restore_F099B.svg[2Kcopying images... [  3%] images/emoticon-plus-outline_E80F.svg[2Kcopying images... [  3%] images/settings-outline_F08BB.svg[2Kcopying images... [  3%] images/dots-vertical_F01D9.svg[2Kcopying images... [  3%] images/creation-outline_F1C2B.svg[2Kcopying images... [  3%] images/format-bold_F0264.svg[2Kcopying images... [  3%] images/format-italic_F0277.svg[2Kcopying images... [  4%] images/format-strikethrough-variant_F0281.svg[2Kcopying images... [  4%] images/format-header_E81D.svg[2Kcopying images... [  4%] images/paperclip_F03E2.svg[2Kcopying images... [  4%] images/format-list-numbered_F027B.svg[2Kcopying images... [  4%] images/format-list-bulleted_F0279.svg[2Kcopying images... [  4%] images/format-quote-open_F0757.svg[2Kcopying images... [  5%] images/code-tags_F0174.svg[2Kcopying images... [  5%] images/emoticon-outline_F01F2.svg[2Kcopying images... [  5%] images/format-letter-case_F0B34.svg[2Kcopying images... [  5%] images/eye-outline_F06D0.svg[2Kcopying images... [  5%] images/alert-circle-outline_F05D6.svg[2Kcopying images... [  5%] images/Ack-Button-Default.svg[2Kcopying images... [  6%] images/reply-outline_F0F20.svg[2Kcopying images... [  6%] images/products_E82F.svg[2Kcopying images... [  6%] images/magnify_F0349.svg[2Kcopying images... [  6%] images/file-text-outline_F09EE.svg[2Kcopying images... [  6%] images/download-outline_F0B8F.svg[2Kcopying images... [  6%] images/arrow-down-bold-circle-outline_F0048.svg[2Kcopying images... [  7%] images/edit-on-github.png[2Kcopying images... [  7%] images/server-variant_E81F.svg[2Kcopying images... [  7%] images/online.png[2Kcopying images... [  7%] images/away.png[2Kcopying images... [  7%] images/dnd.png[2Kcopying images... [  7%] images/offline.png[2Kcopying images... [  8%] images/check-circle-green.svg[2Kcopying images... [  8%] images/pin-outline_F0931.svg[2Kcopying images... [  8%] images/account-plus-outline_F0801.svg[2Kcopying images... [  8%] images/circle-multiple-outline_F0695.svg[2Kcopying images... [  8%] images/bookmark_F00C0.svg[2Kcopying images... [  8%] images/pencil-outline_F0CB6.svg[2Kcopying images... [  9%] images/schedule-count-red-badge.png[2Kcopying images... [  9%] images/mattermost-cloud-dedicated-reference-architecture.png[2Kcopying images... [  9%] images/mattermost-cloud-native-export-architecture-diagram.png[2Kcopying images... [  9%] images/private-link-architecture.png[2Kcopying images... [  9%] images/source-available-license.png[2Kcopying images... [  9%] images/desktop_notification_chart.png[2Kcopying images... [ 10%] images/email_notification_chart.png[2Kcopying images... [ 10%] images/push_notification_chart.png[2Kcopying images... [ 10%] images/Intelligent-RT-Incident-Response.png[2Kcopying images... [ 10%] images/On-Prem-Skype-for-Business-replace.png[2Kcopying images... [ 10%] images/Fully-Sovereign-Communication-Inside-MSTeams.png[2Kcopying images... [ 10%] images/Enterprise-to-Tactical-Edge.png[2Kcopying images... [ 11%] images/External-Collaboration-with-Enterprise-Control.png[2Kcopying images... [ 11%] images/ime.png[2Kcopying images... [ 11%] images/messaging-new-hero.png[2Kcopying images... [ 11%] images/playbooks.png[2Kcopying images... [ 11%] images/call-window.png[2Kcopying images... [ 11%] images/boards-kanban.png[2Kcopying images... [ 12%] images/agents-meeting-summary.png[2Kcopying images... [ 12%] images/github-integration.png[2Kcopying images... [ 12%] images/DDIL-disconnected-secure-communication-collaboration.png[2Kcopying images... [ 12%] images/mattermost_enterprise_license.png[2Kcopying images... [ 12%] images/true-up-schedule.png[2Kcopying images... [ 12%] images/login-email-username.png[2Kcopying images... [ 12%] images/login-gitlab.png[2Kcopying images... [ 13%] images/login-google.png[2Kcopying images... [ 13%] images/sign-in-entraid.png[2Kcopying images... [ 13%] images/login-ad.png[2Kcopying images... [ 13%] images/login-onelogin.png[2Kcopying images... [ 13%] images/mobile-select-a-channel.jpg[2Kcopying images... [ 13%] images/mobile-select-more-options-for-a-channel.jpg[2Kcopying images... [ 14%] images/mobile-select-view-info-for-a-channel.jpg[2Kcopying images... [ 14%] images/mobile-edit-channel.jpg[2Kcopying images... [ 14%] images/mobile-confirm-archive-a-channel.jpg[2Kcopying images... [ 14%] images/unarchive-channel.png[2Kcopying images... [ 14%] images/mobile-unarchive-a-channel.jpg[2Kcopying images... [ 14%] images/mobile-confirm-unarchive-a-channel.jpg[2Kcopying images... [ 15%] images/create-channel-or-open-direct-message-on-mobile.jpg[2Kcopying images... [ 15%] images/mobile-browse-public-channels-using-search.jpg[2Kcopying images... [ 15%] images/mobile-browse-public-channels-using-filters.jpg[2Kcopying images... [ 15%] images/mobile-browse-public-channels.jpg[2Kcopying images... [ 15%] images/channel-purpose-info.png[2Kcopying images... [ 15%] images/mobile-update-channel-purpose.jpg[2Kcopying images... [ 16%] images/channel-header.png[2Kcopying images... [ 16%] images/mobile-update-channel-header.jpg[2Kcopying images... [ 16%] images/microsoft-teams-chat-notifications.gif[2Kcopying images... [ 16%] images/microsoft-teams-chat-notifications.png[2Kcopying images... [ 16%] images/teams_plugin_notification_settings.png[2Kcopying images... [ 16%] images/mobile-select-a-group-message.jpg[2Kcopying images... [ 17%] images/mobile-select-more-options-for-a-group.jpg[2Kcopying images... [ 17%] images/mobile-select-view-info-for-a-group.jpg[2Kcopying images... [ 17%] images/mobile-convert-group-to-private-channel.jpg[2Kcopying images... [ 17%] images/mobile-provide-private-channel-name-for-the-group.jpg[2Kcopying images... [ 17%] images/convert-public-channel-to-private.png[2Kcopying images... [ 17%] images/mobile-convert-to-private-channel.jpg[2Kcopying images... [ 18%] images/mobile-confirm-convert-to-private-channel.jpg[2Kcopying images... [ 18%] images/add-channels-button.png[2Kcopying images... [ 18%] images/write-dm.png[2Kcopying images... [ 18%] images/private-channel-create.jpg[2Kcopying images... [ 18%] images/start-group-conversation.jpg[2Kcopying images... [ 18%] images/favorites-list-sidebar.png[2Kcopying images... [ 19%] images/favorite-channel-desktop.png[2Kcopying images... [ 19%] images/mobile-favorite-a-channel-within-channel.jpg[2Kcopying images... [ 19%] images/mobile-unfavorite-a-channel.jpg[2Kcopying images... [ 19%] images/mobile-unfavorite-a-channel-from-within-the-channel.jpg[2Kcopying images... [ 19%] images/message-formatting-toolbar.gif[2Kcopying images... [ 19%] images/messagesTable1.png[2Kcopying images... [ 20%] images/bold_italics.png[2Kcopying images... [ 20%] images/strikethrough.png[2Kcopying images... [ 20%] images/Headings1.png[2Kcopying images... [ 20%] images/Headings2.png[2Kcopying images... [ 20%] images/checklist.png[2Kcopying images... [ 20%] images/syntax-highlighting-github.png[2Kcopying images... [ 21%] images/syntax-highlighting-sol-dark.png[2Kcopying images... [ 21%] images/syntax-highlighting-sol-light.png[2Kcopying images... [ 21%] images/syntax-highlighting-monokai.png[2Kcopying images... [ 21%] images/icon-76x76.png[2Kcopying images... [ 21%] images/icon-50x76.png[2Kcopying images... [ 21%] images/blockQuotes.png[2Kcopying images... [ 22%] images/markdownTable1.png[2Kcopying images... [ 22%] images/latex-inline.png[2Kcopying images... [ 22%] images/latex-codeblock.png[2Kcopying images... [ 22%] images/forward-message.png[2Kcopying images... [ 22%] images/permalink-previews.png[2Kcopying images... [ 22%] images/invite-people.png[2Kcopying images... [ 23%] images/copy-invite-link.png[2Kcopying images... [ 23%] images/direct-mobile-invite-options.jpg[2Kcopying images... [ 23%] images/direct-mobile-invite-by-email.jpg[2Kcopying images... [ 23%] images/direct-mobile-invite-by-name.jpg[2Kcopying images... [ 23%] images/direct-mobile-invite-by-share-link.jpg[2Kcopying images... [ 23%] images/browse-channels.png[2Kcopying images... [ 24%] images/join-channels.png[2Kcopying images... [ 24%] images/leave-channels.png[2Kcopying images... [ 24%] images/mobile-confirm-leave-a-channel.jpg[2Kcopying images... [ 24%] images/navigation.gif[2Kcopying images... [ 24%] images/message-navigation.gif[2Kcopying images... [ 24%] images/channel-sidebar-navigation.gif[2Kcopying images... [ 25%] images/keyboard-shortcuts.png[2Kcopying images... [ 25%] images/profile-log-out.png[2Kcopying images... [ 25%] images/profile-log-out-mobile.png[2Kcopying images... [ 25%] images/mobile-start-a-call-in-a-channel.gif[2Kcopying images... [ 25%] images/mobile-react-using-emojis-in-a-call.gif[2Kcopying images... [ 25%] images/mobile-chat-in-a-call.gif[2Kcopying images... [ 25%] images/mobile-start-a-call-recording-using-slash-commands.gif[2Kcopying images... [ 26%] images/mobile-stop-a-call-recording-using-slash-commands.gif[2Kcopying images... [ 26%] images/mobile-start-a-call-recording-using-call-banner.gif[2Kcopying images... [ 26%] images/mobile-stop-a-call-recording-using-call-banner.gif[2Kcopying images... [ 26%] images/mobile-add-first-channel-bookmark.jpg[2Kcopying images... [ 26%] images/mobile-add-subsequent-channel-bookmarks.jpg[2Kcopying images... [ 26%] images/mobile-attach-a-channel-bookmark-link.jpg[2Kcopying images... [ 27%] images/mobile-attach-a-channel-bookmark-file.jpg[2Kcopying images... [ 27%] images/mobile-edit-a-channel-bookmark.gif[2Kcopying images... [ 27%] images/mobile-copy-a-channel-bookmark-link.gif[2Kcopying images... [ 27%] images/mobile-delete-a-channel-bookmark.gif[2Kcopying images... [ 27%] images/add-member-to-channel.png[2Kcopying images... [ 27%] images/mobile-channel-name-click.jpg[2Kcopying images... [ 28%] images/mobile-select-members-to-add-to-a-channel.jpg[2Kcopying images... [ 28%] images/mobile-add-selected-member-to-a-channel.jpg[2Kcopying images... [ 28%] images/mobile-add-user-to-a-channel-by-mentioning.jpg[2Kcopying images... [ 28%] images/add-member-pop.jpg[2Kcopying images... [ 28%] images/mobile-add-user-from-profile.jpg[2Kcopying images... [ 28%] images/remove-member-from-channel.png[2Kcopying images... [ 29%] images/mobile-view-members-of-a-channel.jpg[2Kcopying images... [ 29%] images/mobile-manage-channel-members-list.jpg[2Kcopying images... [ 29%] images/mobile-remove-user-from-a-channel.jpg[2Kcopying images... [ 29%] images/mobile-confirm-remove-user-from-channel.jpg[2Kcopying images... [ 29%] images/mobile-exit-after-removing-user-from-a-channel.jpg[2Kcopying images... [ 29%] images/channel-more.png[2Kcopying images... [ 30%] images/message-more.png[2Kcopying images... [ 30%] images/mark-message-as-unread.png[2Kcopying images... [ 30%] images/mobile-mark-a-message-as-unread.gif[2Kcopying images... [ 30%] images/recent-mentions.png[2Kcopying images... [ 30%] images/MPA-Animated-GIF-Update-2023-08-15.gif[2Kcopying images... [ 30%] images/urgent-message.png[2Kcopying images... [ 31%] images/switch-channels.png[2Kcopying images... [ 31%] images/collapsed-reply-threads.gif[2Kcopying images... [ 31%] images/crt-new-unread-threads.jpg[2Kcopying images... [ 31%] images/crt-following-thread.png[2Kcopying images... [ 31%] images/crt-following-thread.jpg[2Kcopying images... [ 31%] images/mobile-follow-a-message-thread-with-follow-option.gif[2Kcopying images... [ 32%] images/mobile-follow-a-message-thread-by-tapping-follow.gif[2Kcopying images... [ 32%] images/mobile-follow-a-message-with-no-replies.gif[2Kcopying images... [ 32%] images/desktop-unfollow-message-thread.jpg[2Kcopying images... [ 32%] images/mobile-unfollow-a-message-thread-with-unfollow-option.gif[2Kcopying images... [ 32%] images/mobile-unfollow-a-message-thread-by-tapping-following.gif[2Kcopying images... [ 32%] images/crt-thread-view.jpg[2Kcopying images... [ 33%] images/access-user-groups.png[2Kcopying images... [ 33%] images/manage-user-groups.png[2Kcopying images... [ 33%] images/edit-custom-group.png[2Kcopying images... [ 33%] images/teams.gif[2Kcopying images... [ 33%] images/create-team.gif[2Kcopying images... [ 33%] images/join-team.png[2Kcopying images... [ 34%] images/recent-emojis.png[2Kcopying images... [ 34%] images/emojiautocomplete.png[2Kcopying images... [ 34%] images/mobile-include-emojis-for-a-message-reaction.gif[2Kcopying images... [ 34%] images/emoji-skin-tone.png[2Kcopying images... [ 34%] images/add-custom-emoji1.png[2Kcopying images... [ 34%] images/add_custom_emoji.png[2Kcopying images... [ 35%] images/delete_custom_emoji.png[2Kcopying images... [ 35%] images/mobile-rename-channel-name-and-save.jpg[2Kcopying images... [ 35%] images/reply-to-message.png[2Kcopying images... [ 35%] images/mobile-reply-to-a-message-using-reply.gif[2Kcopying images... [ 35%] images/mobile-reply-to-a-message-by-tapping-on-it.gif[2Kcopying images... [ 35%] images/expand-sidebar.png[2Kcopying images... [ 36%] images/collapse-sidebar.png[2Kcopying images... [ 36%] images/save-message.png[2Kcopying images... [ 36%] images/remove-from-saved-posts.png[2Kcopying images... [ 36%] images/mobile-save-a-message.gif[2Kcopying images... [ 36%] images/mobile-view-saved-messages.gif[2Kcopying images... [ 36%] images/mobile-unsave-a-message-from-saved-messages.gif[2Kcopying images... [ 37%] images/mobile-unsave-a-message-from-the-channel.gif[2Kcopying images... [ 37%] images/pin-message-to-channel.png[2Kcopying images... [ 37%] images/pinned-example-channel.png[2Kcopying images... [ 37%] images/pinned-posts.png[2Kcopying images... [ 37%] images/pinned-example-rhs.png[2Kcopying images... [ 37%] images/unpin-message-from-channel.png[2Kcopying images... [ 38%] images/mobile-pin-a-message-to-the-channel.gif[2Kcopying images... [ 38%] images/mobile-view-the-pinned-message-in-the-pinned-messages-list.jpg[2Kcopying images... [ 38%] images/mobile-unpin-a-message-from-pinned-messages.gif[2Kcopying images... [ 38%] images/mobile-unpin-a-message-from-the-channel.gif[2Kcopying images... [ 38%] images/schedule-a-message.png[2Kcopying images... [ 38%] images/manage-scheduled-message.png[2Kcopying images... [ 38%] images/troubleshoot-scheduled-message.png[2Kcopying images... [ 39%] images/search-messages.png[2Kcopying images... [ 39%] images/search-messages-expanded.png[2Kcopying images... [ 39%] images/search-all-teams.png[2Kcopying images... [ 39%] images/jump-to-message.png[2Kcopying images... [ 39%] images/mobile-search-for-messages.jpg[2Kcopying images... [ 39%] images/mobile-search-message-team-selection.jpg[2Kcopying images... [ 40%] images/mobile-search-message-criteria-with-hashtags.jpg[2Kcopying images... [ 40%] images/mobile-search-message-with-modifiers.jpg[2Kcopying images... [ 40%] images/mobile-search-message-results.jpg[2Kcopying images... [ 40%] images/search-files.png[2Kcopying images... [ 40%] images/file-search-filter.png[2Kcopying images... [ 40%] images/channel-files-icon.png[2Kcopying images... [ 41%] images/calendar2.png[2Kcopying images... [ 41%] images/mobile-type-a-message-in-a-channel.jpg[2Kcopying images... [ 41%] images/mobile-sending-a-message.gif[2Kcopying images... [ 41%] images/Global-Drafts-Animated-GIF.gif[2Kcopying images... [ 41%] images/mobile-draft-a-message.gif[2Kcopying images... [ 41%] images/more-actions.png[2Kcopying images... [ 42%] images/mobile-edit-a-message.gif[2Kcopying images... [ 42%] images/mobile-editing-a-message.jpg[2Kcopying images... [ 42%] images/mobile-delete-a-message.gif[2Kcopying images... [ 42%] images/mobile-confirm-delete-a-message.jpg[2Kcopying images... [ 42%] images/restore-previous-edited-message.gif[2Kcopying images... [ 42%] images/mobile-attach-a-file-to-send-in-a-channel.gif[2Kcopying images... [ 43%] images/mobile-tap-a-file-name-to-download.jpg[2Kcopying images... [ 43%] images/mobile-more-options-to-download-or-view-a-file.jpg[2Kcopying images... [ 43%] images/copy-link.png[2Kcopying images... [ 43%] images/mobile-copy-a-link-to-the-message.gif[2Kcopying images... [ 43%] images/team-settings.png[2Kcopying images... [ 43%] images/edit-team-icon.png[2Kcopying images... [ 44%] images/legal-holds.png[2Kcopying images... [ 44%] images/legal-hold-secret.png[2Kcopying images... [ 44%] images/ldap-sync-table.png[2Kcopying images... [ 44%] images/calls-deployment-image3.png[2Kcopying images... [ 44%] images/calls-deployment-image7.png[2Kcopying images... [ 44%] images/calls-deployment-image5.png[2Kcopying images... [ 45%] images/calls-deployment-image2.png[2Kcopying images... [ 45%] images/calls-deployment-kubernetes.png[2Kcopying images... [ 45%] images/custom-branding-tools.png[2Kcopying images... [ 45%] ../source/images/database-configuration-settings-replica-lag-grafana-1.jpg[2Kcopying images... [ 45%] ../source/images/database-configuration-settings-replica-lag-grafana-2.jpg[2Kcopying images... [ 45%] images/survey-schedule.png[2Kcopying images... [ 46%] images/survey-contents.png[2Kcopying images... [ 46%] images/user-feedback.png[2Kcopying images... [ 46%] images/active-past-surveys.png[2Kcopying images... [ 46%] images/workspace-optimization.png[2Kcopying images... [ 46%] images/find-users.png[2Kcopying images... [ 46%] images/user-search-filters.png[2Kcopying images... [ 47%] images/user-id.png[2Kcopying images... [ 47%] images/deactivate-user.png[2Kcopying images... [ 47%] images/manage-roles.png[2Kcopying images... [ 47%] images/add-user-to-team.png[2Kcopying images... [ 47%] images/remove-user-from-team.png[2Kcopying images... [ 47%] images/user-email-update.png[2Kcopying images... [ 48%] images/user-password-reset.png[2Kcopying images... [ 48%] images/revoke-user-session.png[2Kcopying images... [ 48%] images/user-profile-details.png[2Kcopying images... [ 48%] images/find-teams.png[2Kcopying images... [ 48%] images/team-search-filters.png[2Kcopying images... [ 48%] images/team-configuration-details.png[2Kcopying images... [ 49%] images/add-members-to-a-team.png[2Kcopying images... [ 49%] images/remove-members-from-a-team.png[2Kcopying images... [ 49%] images/sync-group-members-in-a-team.png[2Kcopying images... [ 49%] images/anyone-can-join-a-team.png[2Kcopying images... [ 49%] images/specific-email-domains-can-join-a-team.png[2Kcopying images... [ 49%] images/archive-a-team.png[2Kcopying images... [ 50%] images/find-channels.png[2Kcopying images... [ 50%] images/channel-search-filters.png[2Kcopying images... [ 50%] images/channel-configuration-details.png[2Kcopying images... [ 50%] images/allow-create-posts-for-a-channel.png[2Kcopying images... [ 50%] images/allow-post-reactions-for-a-channel.png[2Kcopying images... [ 50%] images/allow-manage-members-for-a-channel.png[2Kcopying images... [ 50%] images/allow-mentions-for-a-channel.png[2Kcopying images... [ 51%] images/allow-manage-bookmarks-for-a-channel.png[2Kcopying images... [ 51%] images/sync-group-members-in-a-channel.png[2Kcopying images... [ 51%] images/set-a-channel-to-public-or-private.png[2Kcopying images... [ 51%] images/add-members-to-a-channel.png[2Kcopying images... [ 51%] images/remove-members-from-a-channel.png[2Kcopying images... [ 51%] images/archive-a-channel.png[2Kcopying images... [ 52%] images/network-diagram.svg[2Kcopying images... [ 52%] images/architecture_basics.png[2Kcopying images... [ 52%] images/architecture_with_protocol.png[2Kcopying images... [ 52%] images/dr1.png[2Kcopying images... [ 52%] images/dr2.png[2Kcopying images... [ 52%] images/dr3.png[2Kcopying images... [ 53%] images/desktop/msi_gpo/msi_gpo_installation_test_00001.png[2Kcopying images... [ 53%] images/desktop/msi_gpo/msi_gpo_installation_test_00002.png[2Kcopying images... [ 53%] images/desktop/msi_gpo/msi_gpo_installation_test_00003.png[2Kcopying images... [ 53%] images/desktop/msi_gpo/msi_gpo_installation_test_00004.png[2Kcopying images... [ 53%] images/desktop/msi_gpo/msi_gpo_installation_test_00005.png[2Kcopying images... [ 53%] images/desktop/msi_gpo/msi_gpo_installation_test_00006.png[2Kcopying images... [ 54%] images/desktop/msi_gpo/msi_gpo_installation_test_00007.png[2Kcopying images... [ 54%] images/desktop/msi_gpo/msi_gpo_installation_test_00008.png[2Kcopying images... [ 54%] images/desktop/msi_gpo/msi_gpo_installation_test_00009.png[2Kcopying images... [ 54%] images/desktop/msi_gpo/msi_gpo_installation_test_00010.png[2Kcopying images... [ 54%] images/desktop/msi_gpo/msi_gpo_installation_test_00011.png[2Kcopying images... [ 54%] images/desktop/msi_gpo/msi_gpo_installation_test_00012.png[2Kcopying images... [ 55%] images/desktop/msi_gpo/msi_gpo_installation_test_00013.png[2Kcopying images... [ 55%] images/desktop/msi_gpo/msi_gpo_installation_test_00014.png[2Kcopying images... [ 55%] images/desktop/msi_gpo/msi_gpo_installation_test_00015.png[2Kcopying images... [ 55%] images/desktop/msi_gpo/msi_gpo_installation_test_00016.png[2Kcopying images... [ 55%] images/desktop/msi_gpo/msi_gpo_installation_test_00017.png[2Kcopying images... [ 55%] images/desktop/msi_gpo/msi_gpo_installation_test_00018.png[2Kcopying images... [ 56%] images/mobile-pre-proxy-relay.png[2Kcopying images... [ 56%] images/mobile-post-proxy-relay.png[2Kcopying images... [ 56%] images/mobile_push_prompt.png[2Kcopying images... [ 56%] images/mobile_notification_settings.gif[2Kcopying images... [ 56%] images/mobile_push_send_for.png[2Kcopying images... [ 56%] images/mobile_push_send_when.png[2Kcopying images... [ 57%] _static/images/azure/basics.png[2Kcopying images... [ 57%] _static/images/azure/aks-cluster.png[2Kcopying images... [ 57%] _static/images/azure/postgreSQL.png[2Kcopying images... [ 57%] _static/images/azure/deployment-details.png[2Kcopying images... [ 57%] _static/images/azure/networking-details.png[2Kcopying images... [ 57%] images/oracle/marketplace-listing.png[2Kcopying images... [ 58%] images/oracle/stack-info.png[2Kcopying images... [ 58%] images/oracle/job-monitor.png[2Kcopying images... [ 58%] images/oob-generic-architecture.png[2Kcopying images... [ 58%] images/oob-aws-architecture.png[2Kcopying images... [ 58%] images/oob-azure-architecture.png[2Kcopying images... [ 58%] images/image-proxy.png[2Kcopying images... [ 59%] images/MattermostDeployment5kaws.png[2Kcopying images... [ 59%] images/MattermostDeployment10kaws.png[2Kcopying images... [ 59%] images/MattermostDeployment25kaws.png[2Kcopying images... [ 59%] images/MattermostDeployment50kaws.png[2Kcopying images... [ 59%] images/MattermostDeployment5kAzure.png[2Kcopying images... [ 59%] images/MattermostDeployment10kAzure.png[2Kcopying images... [ 60%] images/MattermostDeployment25kAzure.png[2Kcopying images... [ 60%] images/MattermostDeployment50kAzure.png[2Kcopying images... [ 60%] images/MattermostDeployment5kOracle.png[2Kcopying images... [ 60%] images/architecture_with_proxy.png[2Kcopying images... [ 60%] images/install_nginx_welcome.png[2Kcopying images... [ 60%] images/transport-encryption.png[2Kcopying images... [ 61%] images/mattermost-for-microsoft_365.png[2Kcopying images... [ 61%] images/Channels_Hero.png[2Kcopying images... [ 61%] images/Playbooks_Hero.png[2Kcopying images... [ 61%] images/github_mattermost.png[2Kcopying images... [ 61%] images/gitlab_mattermost.png[2Kcopying images... [ 61%] images/create-jira-issue.png[2Kcopying images... [ 62%] images/remember-tenant-client.png[2Kcopying images... [ 62%] images/remember-client-secret.png[2Kcopying images... [ 62%] images/tenant-client-secret-sysconsole.png[2Kcopying images... [ 62%] images/select-manage-apps.png[2Kcopying images... [ 62%] images/ms-calendar-new-azure-registration.png[2Kcopying images... [ 62%] images/ms-calendar-single-tenant.png[2Kcopying images... [ 62%] images/ms-calendar-certs-secrets.png[2Kcopying images... [ 63%] images/ms-calendar-new-client-secret.png[2Kcopying images... [ 63%] images/ms-calendar-api-permissions.png[2Kcopying images... [ 63%] images/ms-calendar-add-permission.png[2Kcopying images... [ 63%] images/ms-calendar-delegated-permissions.png[2Kcopying images... [ 63%] images/ms-teams-meetings-grant-admin-consent.png[2Kcopying images... [ 63%] images/ms-calendar-copy-ids.png[2Kcopying images... [ 64%] images/ms-teams-meetings-new-azure-registration.png[2Kcopying images... [ 64%] images/ms-teams-meetings-reg-info.png[2Kcopying images... [ 64%] images/ms-teams-meetings-certs-secrets.png[2Kcopying images... [ 64%] images/ms-teams-meetings-new-client-secret.png[2Kcopying images... [ 64%] images/ms-teams-meetings-api-permissions.png[2Kcopying images... [ 64%] images/ms-teams-meetings-add-permission.png[2Kcopying images... [ 65%] images/ms-teams-meetings-delegated-permissions.png[2Kcopying images... [ 65%] images/ms-teams-meetings-copy-ids.png[2Kcopying images... [ 65%] images/new-azure-registration.png[2Kcopying images... [ 65%] images/register-azure-app.png[2Kcopying images... [ 65%] images/note-client-and-tenant-id.png[2Kcopying images... [ 65%] images/azure-certs-secrets.png[2Kcopying images... [ 66%] images/azure-configured-permissions.png[2Kcopying images... [ 66%] images/grafana-dashboard-msteams.png[2Kcopying images... [ 66%] images/system-console-commercial-support.png[2Kcopying images... [ 66%] images/cpa-properties.png[2Kcopying images... [ 66%] images/system-console-ip-filtering.png[2Kcopying images... [ 66%] images/enable-disable-ip-filtering.gif[2Kcopying images... [ 67%] images/add-ip-filter-range.png[2Kcopying images... [ 67%] images/ip-address-not-in-filters.png[2Kcopying images... [ 67%] images/notices_admin.png[2Kcopying images... [ 67%] images/notices.png[2Kcopying images... [ 67%] images/enable-debug-logging.png[2Kcopying images... [ 67%] images/edit-viewer-system-admin-role.png[2Kcopying images... [ 68%] images/restrict-role-access.png[2Kcopying images... [ 68%] images/assign-people-to-system-role.png[2Kcopying images... [ 68%] images/announcement-banner.png[2Kcopying images... [ 68%] images/nps-admin.png[2Kcopying images... [ 68%] images/nps-survey.png[2Kcopying images... [ 68%] images/Group_filter.png[2Kcopying images... [ 69%] images/Group_Group_Member_Sync.png[2Kcopying images... [ 69%] images/Groups_listing.png[2Kcopying images... [ 69%] images/LinkFailed.png[2Kcopying images... [ 69%] images/Group_Configuration.png[2Kcopying images... [ 69%] images/open_team.png[2Kcopying images... [ 69%] images/private_team.png[2Kcopying images... [ 70%] images/public_channel.png[2Kcopying images... [ 70%] images/private_channel.png[2Kcopying images... [ 70%] images/Team_Channel_Membership_Sync.png[2Kcopying images... [ 70%] images/Group_Members.png[2Kcopying images... [ 70%] images/system-scheme.png[2Kcopying images... [ 70%] images/team-scheme.png[2Kcopying images... [ 71%] images/AzureApp_New_Registration.png[2Kcopying images... [ 71%] images/AzureApp_SetupMenuv2.png[2Kcopying images... [ 71%] images/AzureApp_Client_Secret_Expiry.png[2Kcopying images... [ 71%] images/AzureApp_App_Directory_IDsv2.png[2Kcopying images... [ 71%] images/create-google-sso-credentials.png[2Kcopying images... [ 71%] images/select-google-sso-web-app.png[2Kcopying images... [ 72%] images/google-sso-web-app-name.png[2Kcopying images... [ 72%] images/google-sso-redirect-uri.png[2Kcopying images... [ 72%] images/google-sso-credentials.png[2Kcopying images... [ 72%] ../source/images/adfs_1_add_new_relying_party_trust.png[2Kcopying images... [ 72%] ../source/images/adfs_2_start_wizard.png[2Kcopying images... [ 72%] ../source/images/adfs_3_select_data_source.png[2Kcopying images... [ 73%] ../source/images/adfs_4_specify_display_name.png[2Kcopying images... [ 73%] ../source/images/adfs_5_choose_profile.png[2Kcopying images... [ 73%] ../source/images/adfs_6_configure_certificate_default.png[2Kcopying images... [ 73%] ../source/images/adfs_7_configure_certificate_encryption.png[2Kcopying images... [ 73%] ../source/images/adfs_8_configure_url.png[2Kcopying images... [ 73%] ../source/images/adfs_9_configure_identifiers.png[2Kcopying images... [ 74%] ../source/images/adfs_10_configure_mfa.png[2Kcopying images... [ 74%] ../source/images/adfs_11_authorization.png[2Kcopying images... [ 74%] ../source/images/adfs_12_ready_to_add_trust.png[2Kcopying images... [ 74%] ../source/images/adfs_13_finish_trust.png[2Kcopying images... [ 74%] ../source/images/adfs_14_claim_rules_editor.png[2Kcopying images... [ 74%] ../source/images/adfs_15_choose_rule_type.png[2Kcopying images... [ 75%] ../source/images/adfs_16_configure_claim_rule.png[2Kcopying images... [ 75%] ../source/images/adfs_17_transformation_of_incoming_claim.png[2Kcopying images... [ 75%] ../source/images/adfs_18_configure_incoming_claim.png[2Kcopying images... [ 75%] ../source/images/adfs_19_export_idp_cert_start.png[2Kcopying images... [ 75%] ../source/images/adfs_20_export_idp_cert_copy.png[2Kcopying images... [ 75%] ../source/images/adfs_21_export_idp_cert_wizard.png[2Kcopying images... [ 75%] ../source/images/adfs_21-2_export_idp_cert_wizard.png[2Kcopying images... [ 76%] ../source/images/adfs_21-3_export_idp_cert_wizard.png[2Kcopying images... [ 76%] ../source/images/adfs_22_mattermost_basics.png[2Kcopying images... [ 76%] ../source/images/adfs_23_mattermost_verification.png[2Kcopying images... [ 76%] ../source/images/adfs_24_mattermost_encryption.png[2Kcopying images... [ 76%] ../source/images/adfs_25_mattermost_attributes.png[2Kcopying images... [ 76%] ../source/images/adfs_26_mattermost_login_button.png[2Kcopying images... [ 77%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_000.png[2Kcopying images... [ 77%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_001.png[2Kcopying images... [ 77%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_002.png[2Kcopying images... [ 77%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_003.png[2Kcopying images... [ 77%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_004.png[2Kcopying images... [ 77%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_005.png[2Kcopying images... [ 78%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_006.png[2Kcopying images... [ 78%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_007.png[2Kcopying images... [ 78%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_008.png[2Kcopying images... [ 78%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_009.png[2Kcopying images... [ 78%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_010.png[2Kcopying images... [ 78%] ../source/images/SSO-SAML-ADFS_add-new-relying-party-trust_011.png[2Kcopying images... [ 79%] ../source/images/SSO-SAML-ADFS_create-claim-rules_001.png[2Kcopying images... [ 79%] ../source/images/SSO-SAML-ADFS_create-claim-rules_002.png[2Kcopying images... [ 79%] ../source/images/SSO-SAML-ADFS_create-claim-rules_003.png[2Kcopying images... [ 79%] ../source/images/SSO-SAML-ADFS_create-claim-rules_004.png[2Kcopying images... [ 79%] ../source/images/SSO-SAML-ADFS_create-claim-rules_005.png[2Kcopying images... [ 79%] ../source/images/SSO-SAML-ADFS_export-id-provider-cert_001.png[2Kcopying images... [ 80%] ../source/images/SSO-SAML-ADFS_export-id-provider-cert_003.png[2Kcopying images... [ 80%] ../source/images/SSO-SAML-ADFS_export-id-provider-cert_004.png[2Kcopying images... [ 80%] ../source/images/SSO-SAML-ADFS_export-id-provider-cert_005.png[2Kcopying images... [ 80%] ../source/images/SSO-SAML-ADFS_export-id-provider-cert_006.png[2Kcopying images... [ 80%] ../source/images/SSO-SAML-ADFS_export-id-provider-cert_007.png[2Kcopying images... [ 80%] ../source/images/SSO-SAML-ADFS_configure-saml_001.png[2Kcopying images... [ 81%] ../source/images/SSO-SAML-ADFS_configure-saml_002.png[2Kcopying images... [ 81%] ../source/images/SSO-SAML-ADFS_configure-saml_003.png[2Kcopying images... [ 81%] ../source/images/SSO-SAML-ADFS_configure-saml_004.png[2Kcopying images... [ 81%] ../source/images/keycloak_1_client_settings.png[2Kcopying images... [ 81%] ../source/images/keycloak_2_saml_keys.png[2Kcopying images... [ 81%] ../source/images/keycloak_3_add_builtins.png[2Kcopying images... [ 82%] ../source/images/keycloak_4_create_username_attribute.png[2Kcopying images... [ 82%] ../source/images/keycloak_4_create_username_attribute_finished.png[2Kcopying images... [ 82%] ../source/images/keycloak_9_export_metadata.png[2Kcopying images... [ 82%] ../source/images/keycloak_10_get_metadata.png[2Kcopying images... [ 82%] ../source/images/keycloak_5_mattermost_config.png[2Kcopying images... [ 82%] ../source/images/keycloak_6_mattermost_encryption.png[2Kcopying images... [ 83%] ../source/images/keycloak_7_mattermost_request_signing.png[2Kcopying images... [ 83%] ../source/images/keycloak_8_mattermost_attributes.png[2Kcopying images... [ 83%] ../source/images/okta_1_new_app.png[2Kcopying images... [ 83%] ../source/images/okta_2_general_settings.png[2Kcopying images... [ 83%] ../source/images/okta_3_initial_saml_settings.png[2Kcopying images... [ 83%] ../source/images/okta_4_initial_saml_settings.png[2Kcopying images... [ 84%] ../source/images/okta_5_advanced_saml_settings.png[2Kcopying images... [ 84%] ../source/images/okta_6_attribute_statements.png[2Kcopying images... [ 84%] ../source/images/okta_7_support_configuration.png[2Kcopying images... [ 84%] ../source/images/okta_8_view_instructions.png[2Kcopying images... [ 84%] ../source/images/okta_9_view_instructions.png[2Kcopying images... [ 84%] ../source/images/okta_10_mattermost_basics.png[2Kcopying images... [ 85%] ../source/images/okta_11_mattermost_verification.png[2Kcopying images... [ 85%] ../source/images/okta_12_mattermost_encryption.png[2Kcopying images... [ 85%] ../source/images/okta_13_mattermost_attributes.png[2Kcopying images... [ 85%] ../source/images/okta_14_mattermost_login_button.png[2Kcopying images... [ 85%] ../source/images/onelogin_1_new_app.png[2Kcopying images... [ 85%] ../source/images/onelogin_2_basic_configuration.png[2Kcopying images... [ 86%] ../source/images/onelogin_3_configuration_1.png[2Kcopying images... [ 86%] ../source/images/onelogin_4_configuration_2.png[2Kcopying images... [ 86%] ../source/images/onelogin_5_parameters_add.png[2Kcopying images... [ 86%] ../source/images/onelogin_6_parameters_add_2.png[2Kcopying images... [ 86%] ../source/images/onelogin_7_parameters_add_3.png[2Kcopying images... [ 86%] ../source/images/onelogin_8_parameters_add_4.png[2Kcopying images... [ 87%] ../source/images/onelogin_9_sso.png[2Kcopying images... [ 87%] ../source/images/onelogin_10_sso_certificate.png[2Kcopying images... [ 87%] images/desktop-server-add.png[2Kcopying images... [ 87%] images/desktop-edit-server.png[2Kcopying images... [ 87%] images/swipe-left-to-remove.gif[2Kcopying images... [ 87%] images/desktop-remove-server.png[2Kcopying images... [ 88%] images/desktop-system-permissions.png[2Kcopying images... [ 88%] images/mac-desktop-app-settings.png[2Kcopying images... [ 88%] images/desktop-app-settings.jpg[2Kcopying images... [ 88%] images/channel_sidebar_updates.gif[2Kcopying images... [ 88%] images/multi-select-drag.gif[2Kcopying images... [ 88%] images/multi-select-move.gif[2Kcopying images... [ 88%] images/channel-heading-categories.png[2Kcopying images... [ 89%] images/mute-categories.gif[2Kcopying images... [ 89%] images/sort-categories.gif[2Kcopying images... [ 89%] images/unreads.gif[2Kcopying images... [ 89%] images/dm-display.gif[2Kcopying images... [ 89%] images/Mattermost.png[2Kcopying images... [ 89%] images/Organization.png[2Kcopying images... [ 90%] images/MattermostDark.png[2Kcopying images... [ 90%] images/WindowsDark.png[2Kcopying images... [ 90%] images/GitHub.png[2Kcopying images... [ 90%] images/Monokai.png[2Kcopying images... [ 90%] images/SolarizedDark.png[2Kcopying images... [ 90%] images/GruvboxDark.png[2Kcopying images... [ 91%] images/OneDark.png[2Kcopying images... [ 91%] images/DiscordNewDarkTheme.png[2Kcopying images... [ 91%] images/DiscordDarkTheme.png[2Kcopying images... [ 91%] images/NightOwlDark.png[2Kcopying images... [ 91%] images/dark-theme-via-os.gif[2Kcopying images... [ 91%] images/channel-notification-settings.gif[2Kcopying images... [ 92%] images/dot-badge.png[2Kcopying images... [ 92%] images/numbered-badge.png[2Kcopying images... [ 92%] images/desktop-notification-prompt.png[2Kcopying images... [ 92%] images/server-logout-indicator.png[2Kcopying images... [ 92%] images/keywords-trigger-mentions.gif[2Kcopying images... [ 92%] images/keywords-highlighted.gif[2Kcopying images... [ 93%] images/multi-factor-authentication.png[2Kcopying images... [ 93%] images/add-mfa-to-account.png[2Kcopying images... [ 93%] images/chrome-mention-badge.png[2Kcopying images... [ 93%] images/chrome-activity-badge.png[2Kcopying images... [ 93%] images/enable-notifications.png[2Kcopying images... [ 93%] images/clear-custom-status.png[2Kcopying images... [ 94%] images/set-your-availability-dnd.png[2Kcopying images... [ 94%] images/desktop-notification-check.gif[2Kcopying images... [ 94%] images/desktop-server-notification-check.gif[2Kcopying images... [ 94%] images/recipe/prod-vuln-incident1.png[2Kcopying images... [ 94%] images/recipe/prod-vuln-incident2.png[2Kcopying images... [ 94%] images/recipe/prod-vuln-incident3.png[2Kcopying images... [ 95%] images/recipe/prod-vuln-incident4.png[2Kcopying images... [ 95%] images/recipe/prod-vuln-incident5.png[2Kcopying images... [ 95%] images/recipe/prod-vuln-incident6.png[2Kcopying images... [ 95%] images/recipe/prod-vuln-incident7.png[2Kcopying images... [ 95%] images/recipe/prod-vuln-incident8.png[2Kcopying images... [ 95%] images/recipe/prod-vuln-incident9.png[2Kcopying images... [ 96%] images/recipe/prod-vuln-incident10.png[2Kcopying images... [ 96%] images/Retro.gif[2Kcopying images... [ 96%] images/playbook-metrics.png[2Kcopying images... [ 96%] images/task-actions.png[2Kcopying images... [ 96%] images/read-write-storage-performance.png[2Kcopying images... [ 96%] images/perf_monitoring_system_console.png[2Kcopying images... [ 97%] images/mattermost_datasource.png[2Kcopying images... [ 97%] images/architecture_high_availability.png[2Kcopying images... [ 97%] images/perf-1.png[2Kcopying images... [ 97%] images/perf-2.png[2Kcopying images... [ 97%] images/perf-3.png[2Kcopying images... [ 97%] images/perf-4.png[2Kcopying images... [ 98%] images/perf-5.png[2Kcopying images... [ 98%] images/perf-6.png[2Kcopying images... [ 98%] images/perf-7.png[2Kcopying images... [ 98%] images/perf-8.png[2Kcopying images... [ 98%] images/perf-9-b.png[2Kcopying images... [ 98%] images/perf_monitoring_caching_metrics.png[2Kcopying images... [ 99%] images/perf_monitoring_http_metrics.png[2Kcopying images... [ 99%] images/perf_monitoring_messaging_metrics.png[2Kcopying images... [ 99%] images/mattermost_system_server_start_time.png[2Kcopying images... [ 99%] images/mattermost_active_jobs_chart.png[2Kcopying images... [ 99%] images/mattermost_dynamic_range_annotation.png[2Kcopying images... [ 99%] images/perf_monitoring_go_metrics.png[2Kcopying images... [100%] images/push-proxy-delivery-rate.png[2Kcopying images... [100%] images/push-notifications-not-sent-distribution.png[2Kcopying images... [100%] images/push-notification-stats.png[2Kcopying images... [100%] images/total-acked-push-notifications.png
+dumping search index in English (code: en)... done
+dumping object inventory... done
+sphinx-sitemap: sitemap.xml was generated for URL https://docs.mattermost.com/ in /Users/carriewarner/Local/docs/build/html/sitemap.xml
+writing config setting search index... done
+build succeeded, 15 warnings.
+
+The HTML pages are in build/html.
