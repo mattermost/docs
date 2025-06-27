@@ -2940,7 +2940,10 @@ Configure logging by going to **System Console > Environment > Logging**, or by 
 
 .. tip:: 
   
-  You can manage additional logging configuration within the ``config.json`` file specifically for Mattermost notifications under ``NotificationLogSettings``. These settings are equivalent to the configuration settings available under ``LogSettings``.
+  You can configure logging specifically for different Mattermost subsystems using specialized logging settings in the ``config.json`` file. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior for specific subsystems:
+  
+  - **Audit logging**: Use ``AuditLogSettings`` for audit events. See :ref:`Audit logging <configure/environment-configuration-settings:audit logging>` for details.
+  - **Notification logging**: Use ``NotificationLogSettings`` for notification events. See :ref:`Notification logging <configure/environment-configuration-settings:notification logging>` for details.
 
 .. config:setting:: output-logs-to-console
   :displayname: Output logs to console (Logging)
@@ -3242,6 +3245,484 @@ Enable diagnostics and error reporting
 .. note::
 
   See the :ref:`telemetry <manage/telemetry:error and diagnostics reporting feature>` docummentation for details on the information Mattermost collects.
+
+Notification logging
+~~~~~~~~~~~~~~~~~~~~~
+
+Configure logging specifically for Mattermost notifications by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the notification subsystem. Changes to these configuration settings require a server restart before taking effect.
+
+.. tip:: 
+  
+  ``NotificationLogSettings`` configuration options are equivalent to the settings available under ``LogSettings``, but apply specifically to notification-related log events.
+
+.. config:setting:: notifications-output-logs-to-console
+  :displayname: Output notification logs to console (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.EnableConsole
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ENABLECONSOLE
+
+  - **true**: **(Default)** Notification log messages are written to the console based on the `notification console log level <#notification-console-log-level>`__ configuration.
+  - **false**: Notification log messages aren't written to the console.
+
+Output notification logs to console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification     | - System Config path: N/A                                                             |
+| logs to the console.                            | - ``config.json setting``:                                                            |
+|                                                  |   ``".NotificationLogSettings.EnableConsole": true,``                                |
+| - **true**: **(Default)** Notification log      | - Environment variable:                                                                |
+|   messages are written to the console based     |   ``MM_NOTIFICATIONLOGSETTINGS_ENABLECONSOLE``                                        |
+|   on the `notification console log level        |                                                                                        |
+|   <#notification-console-log-level>`__          |                                                                                        |
+|   configuration. The server writes messages     |                                                                                        |
+|   to the standard output stream (stdout).       |                                                                                        |
+| - **false**: Notification log messages aren't   |                                                                                        |
+|   written to the console.                       |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: notification-console-log-level
+  :displayname: Notification console log level (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.ConsoleLevel
+  :environment: MM_NOTIFICATIONLOGSETTINGS_CONSOLELEVEL
+  :description: The level of detail in log events written when Mattermost outputs notification log messages to the console.
+
+  - **DEBUG**: **(Default)** Outputs verbose detail for developers debugging notification issues.
+  - **ERROR**: Outputs only notification error messages.
+  - **INFO**: Outputs notification error messages and information around startup and initialization.
+
+Notification console log level
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| The level of detail in log events written       | - System Config path: N/A                                                             |
+| when Mattermost outputs notification log        | - ``config.json setting``:                                                            |
+| messages to the console.                        |   ``".NotificationLogSettings.ConsoleLevel": DEBUG,``                                |
+|                                                  | - Environment variable:                                                                |
+| - **DEBUG**: **(Default)** Outputs verbose      |   ``MM_NOTIFICATIONLOGSETTINGS_CONSOLELEVEL``                                         |
+|   detail for developers debugging               |                                                                                        |
+|   notification issues.                          |                                                                                        |
+| - **ERROR**: Outputs only notification error    |                                                                                        |
+|   messages.                                     |                                                                                        |
+| - **INFO**: Outputs notification error          |                                                                                        |
+|   messages and information around startup       |                                                                                        |
+|   and initialization.                           |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: output-notification-console-logs-as-json
+  :displayname: Output notification console logs as JSON (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.ConsoleJson
+  :environment: MM_NOTIFICATIONLOGSETTINGS_CONSOLEJSON
+  :description: Configure Mattermost to output notification console logs as JSON.
+
+  - **true**: **(Default)** Notification logged events are written in a machine-readable JSON format.
+  - **false**: Notification logged events are written in plain text.
+
+Output notification console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification     | - System Config path: N/A                                                             |
+| console logs as JSON.                           | - ``config.json setting``:                                                            |
+|                                                  |   ``".NotificationLogSettings.ConsoleJson": true,``                                  |
+| - **true**: **(Default)** Notification logged   | - Environment variable:                                                                |
+|   events are written in a machine-readable      |   ``MM_NOTIFICATIONLOGSETTINGS_CONSOLEJSON``                                          |
+|   JSON format.                                  |                                                                                        |
+| - **false**: Notification logged events are     |                                                                                        |
+|   written in plain text.                       |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+Typically set to **true** in a production environment.
+
+.. config:setting:: colorize-plain-text-notification-console-logs
+  :displayname: Colorize plain text notification console logs (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.EnableColor
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ENABLECOLOR
+  :description: Enables system admins to display plain text notification log level details in color.
+
+  - **true**: When notification logged events are output to the console as plain text, colorize log levels details.
+  - **false**: **(Default)** Plain text notification log details aren't colorized in the console.
+
+Colorize plain text notification console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Enables system admins to display plain text     | - System Config path: N/A                                                             |
+| notification log level details in color.        | - ``config.json setting``:                                                            |
+|                                                  |   ``".NotificationLogSettings.EnableColor": false,``                                 |
+| - **true**: When notification logged events     | - Environment variable:                                                                |
+|   are output to the console as plain text,      |   ``MM_NOTIFICATIONLOGSETTINGS_ENABLECOLOR``                                          |
+|   colorize log levels details.                  |                                                                                        |
+| - **false**: **(Default)** Plain text           |                                                                                        |
+|   notification log details aren't colorized     |                                                                                        |
+|   in the console.                               |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: output-notification-logs-to-file
+  :displayname: Output notification logs to file (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.EnableFile
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ENABLEFILE
+  :description: Configure Mattermost to output notification console logs to a file.
+
+  - **true**: **(Default)** Notification logged events are written based on the `notification file log level <#notification-file-log-level>`__ configuration to a ``mattermost.log`` file located in the directory configured via notification file location.
+  - **false**: Notification logged events aren't written to a file.
+
+Output notification logs to file
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification     | - System Config path: N/A                                                             |
+| console logs to a file.                         | - ``config.json setting``:                                                            |
+|                                                  |   ``".NotificationLogSettings.EnableFile": true,``                                   |
+| - **true**: **(Default)** Notification logged   | - Environment variable:                                                                |
+|   events are written based on the               |   ``MM_NOTIFICATIONLOGSETTINGS_ENABLEFILE``                                           |
+|   `notification file log level                  |                                                                                        |
+|   <#notification-file-log-level>`__             |                                                                                        |
+|   configuration to a ``mattermost.log`` file    |                                                                                        |
+|   located in the directory configured via       |                                                                                        |
+|   ``notification file location``.               |                                                                                        |
+| - **false**: Notification logged events         |                                                                                        |
+|   aren't written to a file.                     |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+  Typically set to **true** in a production environment. When enabled, notification logs are included in the ``mattermost.log`` file you can download locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**. 
+
+.. config:setting:: notification-file-log-level
+  :displayname: Notification file log level (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.FileLevel
+  :environment: MM_NOTIFICATIONLOGSETTINGS_FILELEVEL
+  :description: The level of detail in notification log events when Mattermost outputs notification log messages to a file.
+
+  - **DEBUG**: Outputs verbose detail for developers debugging notification issues.
+  - **ERROR**: Outputs only notification error messages.
+  - **INFO**: **(Default)** Outputs notification error messages and information around startup and initialization.
+
+Notification file log level
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| The level of detail in notification log         | - System Config path: N/A                                                             |
+| events when Mattermost outputs notification     | - ``config.json setting``:                                                            |
+| log messages to a file.                         |   ``".NotificationLogSettings.FileLevel": INFO,``                                    |
+|                                                  | - Environment variable:                                                                |
+| - **DEBUG**: Outputs verbose detail for         |   ``MM_NOTIFICATIONLOGSETTINGS_FILELEVEL``                                            |
+|   developers debugging notification issues.     |                                                                                        |
+| - **ERROR**: Outputs only notification error    |                                                                                        |
+|   messages.                                     |                                                                                        |
+| - **INFO**: **(Default)** Outputs               |                                                                                        |
+|   notification error messages and information   |                                                                                        |
+|   around startup and initialization.            |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: output-notification-file-logs-as-json
+  :displayname: Output notification file logs as JSON (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.FileJson
+  :environment: MM_NOTIFICATIONLOGSETTINGS_FILEJSON
+  :description: Configure Mattermost to output notification file logs as JSON.
+
+  - **true**: **(Default)** Notification logged events are written in a machine-readable JSON format.
+  - **false**: Notification logged events are written in plain text.
+
+Output notification file logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configure Mattermost to output notification     | - System Config path: N/A                                                             |
+| file logs as JSON.                              | - ``config.json setting``:                                                            |
+|                                                  |   ``".NotificationLogSettings.FileJson": true,``                                     |
+| - **true**: **(Default)** Notification logged   | - Environment variable:                                                                |
+|   events are written in a machine-readable      |   ``MM_NOTIFICATIONLOGSETTINGS_FILEJSON``                                             |
+|   JSON format.                                  |                                                                                        |
+| - **false**: Notification logged events are     |                                                                                        |
+|   written in plain text.                       |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+Typically set to **true** in a production environment.
+
+.. config:setting:: notification-file-log-directory
+  :displayname: Notification file log directory (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.FileLocation
+  :environment: MM_NOTIFICATIONLOGSETTINGS_FILELOCATION
+  :description: The location of the notification log files. Default value is **./logs**.
+
+Notification file log directory
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| The location of the notification log files.     | - System Config path: N/A                                                             |
+|                                                  | - ``config.json setting``:                                                            |
+| String input. If left blank, notification log   |   ``".NotificationLogSettings.FileLocation": "",``                                   |
+| files are stored in the ``./logs`` directory.   | - Environment variable:                                                                |
+|                                                  |   ``MM_NOTIFICATIONLOGSETTINGS_FILELOCATION``                                         |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+  The path you configure must exist, and Mattermost must have write permissions for this directory.
+
+.. config:setting:: output-notification-logs-to-multiple-targets
+  :displayname: Output notification logs to multiple targets (Notification Logging)
+  :systemconsole: N/A
+  :configjson: .NotificationLogSettings.AdvancedLoggingJSON
+  :environment: MM_NOTIFICATIONLOGSETTINGS_ADVANCEDLOGGINGJSON
+  :description: Configure Mattermost to allow any combination of console, local file, syslog, and TCP socket targets, and send notification log records to multiple targets.
+
+Output notification logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configure Mattermost to allow any combination   | - System Config path: N/A                                                             |
+| of console, local file, syslog, and TCP         | - ``config.json setting``:                                                            |
+| socket targets, and send notification log       |   ``".NotificationLogSettings.AdvancedLoggingJSON": "",``                            |
+| records to multiple targets.                    | - Environment variable:                                                                |
+|                                                  |   ``MM_NOTIFICATIONLOGSETTINGS_ADVANCEDLOGGINGJSON``                                  |
+| String input can contain a filespec to          |                                                                                        |
+| another configuration file, a database DSN,     |                                                                                        |
+| or JSON.                                        |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+  - See the :doc:`Mattermost logging </manage/logging>` documentation for details on advanced logging configuration. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+  - Notification logs are recorded asynchronously to reduce latency to the caller.
+  - Advanced notification logging supports hot-reloading of logger configuration.
+
+----
+
+Audit logging
+~~~~~~~~~~~~~
+
+Configure logging specifically for Mattermost audit events by editing the ``config.json`` file as described in the following tables. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior specifically for the audit subsystem. Changes to these configuration settings require a server restart before taking effect.
+
+.. tip:: 
+  
+  ``AuditLogSettings`` configuration options are equivalent to the settings available under ``LogSettings``, but apply specifically to audit-related log events.
+
+.. config:setting:: auditlog-enableconsole
+  :displayname: Output audit logs to console (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.EnableConsole
+  :environment: MM_AUDITLOGSETTINGS_ENABLECONSOLE
+  :description: Whether to output audit logs to the console.
+
+  - **true**: Audit log files are written to the console. Server writes messages to the standard output stream (stdout).
+  - **false**: **(Default)** Audit log files aren't written to the console.
+
+Output audit logs to console
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Output audit logs to the console.               | - System Config path: N/A                                                             |
+|                                                  | - ``config.json setting``:                                                            |
+| - **true**: Audit log files are written to      |   ``".AuditLogSettings.EnableConsole": false,``                                      |
+|   the console. Server writes messages to the    | - Environment variable:                                                                |
+|   standard output stream (stdout).              |   ``MM_AUDITLOGSETTINGS_ENABLECONSOLE``                                               |
+| - **false**: **(Default)** Audit log files     |                                                                                        |
+|   aren't written to the console.               |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-consolelevel
+  :displayname: Audit console log level (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.ConsoleLevel
+  :environment: MM_AUDITLOGSETTINGS_CONSOLELEVEL
+  :description: The level of detail at which log events are written when output to the console.
+
+  - **DEBUG**: Outputs verbose detail for developers debugging issues.
+  - **ERROR**: **(Default)** Outputs only error messages.
+  - **INFO**: Outputs error messages and information around startup and initialization.
+
+Audit console log level
+^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| The level of detail at which log events are     | - System Config path: N/A                                                             |
+| written when output to the console.            | - ``config.json setting``:                                                            |
+|                                                  |   ``".AuditLogSettings.ConsoleLevel": "ERROR",``                                     |
+| - **DEBUG**: Outputs verbose detail for         | - Environment variable:                                                                |
+|   developers debugging issues.                  |   ``MM_AUDITLOGSETTINGS_CONSOLELEVEL``                                                |
+| - **ERROR**: **(Default)** Outputs only         |                                                                                        |
+|   error messages.                               |                                                                                        |
+| - **INFO**: Outputs error messages and          |                                                                                        |
+|   information around startup and                |                                                                                        |
+|   initialization.                               |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-consolejson
+  :displayname: Output audit console logs as JSON (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.ConsoleJson
+  :environment: MM_AUDITLOGSETTINGS_CONSOLEJSON
+  :description: Whether audit logs in the console are written in JSON format.
+
+  - **true**: **(Default)** Logged events are written in a machine-readable JSON format.
+  - **false**: Logged events are written in plain text.
+
+Output audit console logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Whether audit logs in the console are           | - System Config path: N/A                                                             |
+| written in JSON format.                        | - ``config.json setting``:                                                            |
+|                                                  |   ``".AuditLogSettings.ConsoleJson": true,``                                         |
+| - **true**: **(Default)** Logged events are    | - Environment variable:                                                                |
+|   written in a machine-readable JSON format.   |   ``MM_AUDITLOGSETTINGS_CONSOLEJSON``                                                 |
+| - **false**: Logged events are written in       |                                                                                        |
+|   plain text.                                  |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-enablecolor
+  :displayname: Colorize plain text audit console logs (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.EnableColor
+  :environment: MM_AUDITLOGSETTINGS_ENABLECOLOR
+  :description: Whether to colorize plain text audit console log level details.
+
+  - **true**: When logged events are output to the console as plain text, colorize log level details.
+  - **false**: **(Default)** Plain text audit logs aren't colorized.
+
+Colorize plain text audit console logs
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Whether to colorize plain text audit console    | - System Config path: N/A                                                             |
+| log level details.                              | - ``config.json setting``:                                                            |
+|                                                  |   ``".AuditLogSettings.EnableColor": false,``                                        |
+| - **true**: When logged events are output to    | - Environment variable:                                                                |
+|   the console as plain text, colorize log       |   ``MM_AUDITLOGSETTINGS_ENABLECOLOR``                                                 |
+|   level details.                                |                                                                                        |
+| - **false**: **(Default)** Plain text audit     |                                                                                        |
+|   logs aren't colorized.                       |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-enablefile
+  :displayname: Output audit logs to file (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.EnableFile
+  :environment: MM_AUDITLOGSETTINGS_ENABLEFILE
+  :description: Whether to write audit log files to disk.
+
+  - **true**: **(Default)** Logged events are written to the ``mattermost.log`` file in the directory specified by the :ref:`audit file log directory <configure/environment-configuration-settings:audit file log directory>` configuration setting.
+  - **false**: Audit log files aren't written.
+
+Output audit logs to file
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Whether to write audit log files to disk.       | - System Config path: N/A                                                             |
+|                                                  | - ``config.json setting``:                                                            |
+| - **true**: **(Default)** Logged events are     |   ``".AuditLogSettings.EnableFile": true,``                                          |
+|   written to the ``mattermost.log`` file in     | - Environment variable:                                                                |
+|   the directory specified by the                |   ``MM_AUDITLOGSETTINGS_ENABLEFILE``                                                  |
+|   :ref:`audit file log directory                |                                                                                        |
+|   <configure/environment-configuration-         |                                                                                        |
+|   settings:audit file log directory>`           |                                                                                        |
+|   configuration setting.                        |                                                                                        |
+| - **false**: Audit log files aren't written.    |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-filelevel
+  :displayname: Audit file log level (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.FileLevel
+  :environment: MM_AUDITLOGSETTINGS_FILELEVEL
+  :description: The level of detail at which log events are written to audit log files.
+
+  - **DEBUG**: Outputs verbose detail for developers debugging issues.
+  - **ERROR**: Outputs only error messages.
+  - **INFO**: **(Default)** Outputs error messages and information around startup and initialization.
+
+Audit file log level
+^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| The level of detail at which log events are     | - System Config path: N/A                                                             |
+| written to audit log files.                    | - ``config.json setting``:                                                            |
+|                                                  |   ``".AuditLogSettings.FileLevel": "INFO",``                                         |
+| - **DEBUG**: Outputs verbose detail for         | - Environment variable:                                                                |
+|   developers debugging issues.                  |   ``MM_AUDITLOGSETTINGS_FILELEVEL``                                                   |
+| - **ERROR**: Outputs only error messages.       |                                                                                        |
+| - **INFO**: **(Default)** Outputs error         |                                                                                        |
+|   messages and information around startup       |                                                                                        |
+|   and initialization.                           |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-filejson
+  :displayname: Output audit file logs as JSON (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.FileJson
+  :environment: MM_AUDITLOGSETTINGS_FILEJSON
+  :description: Whether audit logs written to file are formatted as JSON.
+
+  - **true**: **(Default)** Logged events written to file are formatted as JSON.
+  - **false**: Logged events written to file are formatted as plain text.
+
+Output audit file logs as JSON
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Whether audit logs written to file are          | - System Config path: N/A                                                             |
+| formatted as JSON.                              | - ``config.json setting``:                                                            |
+|                                                  |   ``".AuditLogSettings.FileJson": true,``                                            |
+| - **true**: **(Default)** Logged events        | - Environment variable:                                                                |
+|   written to file are formatted as JSON.       |   ``MM_AUDITLOGSETTINGS_FILEJSON``                                                    |
+| - **false**: Logged events written to file      |                                                                                        |
+|   are formatted as plain text.                 |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-filelocation
+  :displayname: Audit file log directory (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.FileLocation
+  :environment: MM_AUDITLOGSETTINGS_FILELOCATION
+  :description: The location of the audit log files.
+
+Audit file log directory
+^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| The location of the audit log files.            | - System Config path: N/A                                                             |
+|                                                  | - ``config.json setting``:                                                            |
+| When blank, audit log files are stored in       |   ``".AuditLogSettings.FileLocation": "",``                                          |
+| the ``./logs`` directory. The path that you     | - Environment variable:                                                                |
+| set must exist and Mattermost must have         |   ``MM_AUDITLOGSETTINGS_FILELOCATION``                                                |
+| write permissions in it.                        |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. config:setting:: auditlog-advancedloggingjson
+  :displayname: Output audit logs to multiple targets (Logging)
+  :systemconsole: N/A
+  :configjson: .AuditLogSettings.AdvancedLoggingJSON
+  :environment: MM_AUDITLOGSETTINGS_ADVANCEDLOGGINGJSON
+  :description: Configures Mattermost to output audit log records to multiple targets.
+
+Output audit logs to multiple targets
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+| Configures Mattermost to output audit log       | - System Config path: N/A                                                             |
+| records to multiple targets.                    | - ``config.json setting``:                                                            |
+|                                                  |   ``".AuditLogSettings.AdvancedLoggingJSON": {},``                                   |
+| See the :doc:`Mattermost logging                | - Environment variable:                                                                |
+| </manage/logging>` documentation to learn       |   ``MM_AUDITLOGSETTINGS_ADVANCEDLOGGINGJSON``                                         |
+| more about configuring                          |                                                                                        |
+| ``AdvancedLoggingJSON``.                        |                                                                                        |
++--------------------------------------------------+----------------------------------------------------------------------------------------+
+
+.. note::
+
+  - See the :doc:`Mattermost logging </manage/logging>` documentation for details on advanced logging configuration. These targets have been chosen as they support the vast majority of log aggregators, and other log analysis tools, without needing additional software installed.
+  - Audit logs are recorded asynchronously to reduce latency to the caller.
+  - Advanced audit logging supports hot-reloading of logger configuration.
 
 ----
 
