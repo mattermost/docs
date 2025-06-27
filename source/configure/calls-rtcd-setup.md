@@ -107,9 +107,28 @@ There are multiple ways to deploy RTCD, depending on your environment. We recomm
 
 This is the recommended deployment method for non-Kubernetes production environments as it provides the best performance and operational control. For Kubernetes deployments, see the [Calls Deployment on Kubernetes](calls-kubernetes.md) guide.
 
-1. Download the latest release from the [RTCD GitHub repository](https://github.com/mattermost/rtcd/releases)
+1. **Download and install the RTCD binary**:
 
-2. Create a configuration file (`/opt/rtcd/rtcd.toml`) with the following settings:
+   Download the latest release from the [RTCD GitHub repository](https://github.com/mattermost/rtcd/releases):
+
+   ```bash
+   # Create the RTCD directory structure
+   sudo mkdir -p /opt/rtcd
+
+   # Download the latest RTCD binary (adjust URL for your architecture)
+   # For Linux x86_64:
+   wget https://github.com/mattermost/rtcd/releases/latest/download/rtcd-linux-amd64
+   
+   # Make the binary executable and move it to the installation directory
+   chmod +x rtcd-linux-amd64
+   sudo mv rtcd-linux-amd64 /opt/rtcd/rtcd
+   ```
+
+   ```{note}
+   Replace `rtcd-linux-amd64` with the appropriate binary for your system architecture (e.g., `rtcd-linux-arm64` for ARM64 systems). The binary should be placed at `/opt/rtcd/rtcd` as this is the expected location referenced in systemd service files and other documentation.
+   ```
+
+2. **Create a configuration file** (`/opt/rtcd/rtcd.toml`) with the following settings:
 
    ```toml
    [api]
