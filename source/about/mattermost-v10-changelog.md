@@ -3,6 +3,102 @@
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
+(release-v10.10-feature-release)=
+## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Release Day: July 16, 2025**
+
+### Important Upgrade Notes
+ - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+```{Important}
+If you upgrade from a release earlier than v10.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
+ - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
+ - Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
+ - Pre-packaged Boards plugin [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+ - Pre-packaged Agents plugin [v1.2.1](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.1).
+ - Resolved inconsistent styling issues in new integration pages.
+ - Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
+ - Improved screen reader support for autocompletes and channel switcher.
+ - Added an aria-live region for improved accessibility of file preview modal carousel position updates.
+ - Add focusability to react-select remove button in notifications settings.
+ - Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
+ - Enhanced the accessibility of login and password reset functionality.
+ - Stopped the Threads textbox from automatically taking focus when it contained a draft.
+ - Added a display setting for users to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
+ - Added support for the ``from:`` search filter in cross-team searches.
+ - Standardized button styling by consolidating color variables and removing redundant theme definitions.
+ - Ignored email domain in user searches on the client side.
+ - Automatically detected and updated timezone changes without requiring a client refresh.
+
+#### Administration
+ - Added support for group messages in Shared Channels.
+ - Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
+ - Added support for selecting a default team on secure connections for incoming channel invites.
+ - Added an LDAP Wizard with various enhancements, including a **Test Group Attributes** button for feedback on matching group attributes, a **Test Connection** button with improved error reporting, a **Test Attributes** button showing attribute success and matching user count, a **Test Filters** button with failure feedback, and an expandable **User Filters** section with "More info" hover texts.
+ - Organized cluster files into directories for the Support Packet.
+ - Partially sanitized database datasources for the Support Packet.
+ - Added deactivation status to the mmctl user search output.
+ - Hid plugin components in Shared Channels and introduced ``EnableSharedChannelsPlugins`` to re-enable them if needed.
+
+#### Performance
+ - Improved memory performance of post list scrolling.
+ - Improved the performance of sidebar update APIs slightly.
+
+### Bug Fixes
+ - Fixed an issue where a ``MESSAGES`` badge appeared in the search bar after clearing text and closing the search box.
+ - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled.
+ - Fixed indentation issues in Markdown lists containing checkboxes.
+ - Fixed desktop notifications for posts without text content to display "posted a message" instead of "did something new".
+ - Fixed the height of the automatic replies text area to align with proper dimensions.
+ - Fixed various accessibility issues in the User Groups modals.
+ - Fixed accessibility issues in Profile Settings to enhance usability.
+ - Fixed dialog dropdowns to ensure they were not cut off visually.
+ - Fixed an issue where deactivated users still maintained their previous status.
+ - Fixed an issue with plugin dialogs triggering errors upon submission.
+ - Fixed the version number of Support Packet v2.
+ - Fixed an issue with MIME type detection for video files (e.g., MP4, MOV, AVI, WEBM, WMV, MKV, MPG/MPEG) uploaded to S3 storage, enabling inline video playback in browsers.
+ - Fixed Support Packet caching issues.
+ - Fixed the **Threads** textbox changing width when a message was typed on certain screens.
+ - Fixed an issue with log messages including blank "user_id" field when request session was not valid or had a blank user_id.
+ - Fixed an issue where the emoji picker focus did not return to button when not selecting an emoji.
+ - Fixed the label in notification settings for the notification sound combo box.
+ - Fixed an issue where an incorrect username and email were shown for remote users.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``ExperimentalChannelCategorySorting`` configuration setting to add the ability to automatically sort channels into categories upon creation/renaming.
+
+#### Changes to Enterprise plan:
+ - Under ``DataRetentionSettings`` in ``config.json``:
+    - Added ``PreservePinnedPosts`` configuration setting. If it's set to ``true``, pinned posts will not be deleted by data retention. 
+
+#### Changes to Enterprise Advanced plan:
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Added ``MemberSyncBatchSize``, ``SyncUsersOnConnectionOpen``, ``GlobalUserSyncBatchSize`` configuration settings to allow remote users to be discoverable in the Direct/Group Message modal. 
+
+### API Changes
+ - Added property fields and value methods to the plugin API.
+ - Improved the semantics of Groups API errors when invalid parameters were specified.
+
+### Open Source Components
+ - Added ``mholt/archives`` and removed ``code.sajari.com/docconv`` from https://github.com/mattermost/mattermost.
+
+### Go Version
+ - v10.10 is built with Go ``v1.24.3``.
+### Contributors
+ - 
+
+
 (release-v10.9-feature-release)=
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
