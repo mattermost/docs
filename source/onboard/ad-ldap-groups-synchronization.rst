@@ -31,7 +31,7 @@ Pre-installation notes
 
 If you have enabled synchronization with AD/LDAP, all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` will be available to be linked in the groups list view at **System Console > User Management > Groups**.
 
-The group filter is an optional configuration setting available under **System Console > AD/LDAP** and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter; however, it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
+The group filter is an optional configuration setting available in the **User Filters** section of the AD/LDAP wizard (**System Console > Authentication > AD/LDAP**) and allows you to specify the groups that should have access in Mattermost. The **Group** filter is independent of the **User** filter; however, it does leverage the Base DN attribute. You may need to adjust your Base DN to ensure group objects can be searched in your AD/LDAP tree.
 
 The synchronization of groups happens with the synchronization of users, during which Mattermost queries AD/LDAP for updated account information. Please see the :doc:`Active Directory/LDAP Set up documentation </onboard/ad-ldap>`. for more information. The group feature has no effect on users' authentication to Mattermost.
 
@@ -43,7 +43,7 @@ To enable this feature, go to **System Console > User Management > Groups**.
 Synchronize AD/LDAP groups to Mattermost
 ----------------------------------------
 
-To synchronize specific AD/LDAP groups to Mattermost, specify the ``Group ID Attribute`` and the ``Group Display Name Attribute`` (e.g., "cn" for Common Name) under **System Console > Authentication > AD/LDAP**.
+To synchronize specific AD/LDAP groups to Mattermost, specify the ``Group ID Attribute`` and the ``Group Display Name Attribute`` (e.g., "cn" for Common Name) in the **Group Synchronization** section of the AD/LDAP wizard (**System Console > Authentication > AD/LDAP**).
 
 Additionally, you can specify the **Group** filter used to retrieve groups. If the **Group** filter configuration is left blank, then all groups matching the default filter ``(|(objectClass=group)(objectClass=groupOfNames)(objectClass=groupOfUniqueNames))`` are returned. Attribute values for **Group ID** and **Group Display Name** are case-sensitive.
 
@@ -315,7 +315,7 @@ In order for Mattermost to detect group membership correctly, and to automatical
 Why can't my existing users see the teams and channels they have been synced to?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Existing Mattermost users that are members of linked Mattermost groups will be added to teams and channels on the next scheduled synchronization job that is run after teams and channels are added to the Mattermost group. You can manually initiate a synchronization from **System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now**.
+Existing Mattermost users that are members of linked Mattermost groups will be added to teams and channels on the next scheduled synchronization job that is run after teams and channels are added to the Mattermost group. You can manually initiate a synchronization from the **Sync History** section of the AD/LDAP wizard (**System Console > Authentication > AD/LDAP > AD/LDAP Synchronize Now**).
 
 How do nested groups work with AD/LDAP Group Sync?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
