@@ -79,6 +79,28 @@ By default, files are kept forever. If **Hours**, **Days**, or **Years** is chos
 
   From Mattermost v9.5, when a ``FileRetentionHours`` value is configured, the ``FileRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``FileRetentionDays`` value is configured, the ``FileRetentionHours`` value must be ``0``.
 
+.. config:setting:: preserve-pinned-posts
+  :displayname: Preserve pinned posts (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.PreservePinnedPosts
+  :environment: MM_DATARETENTIONSETTINGS_PRESERVEPINNEDPOSTS
+  :description: Controls whether pinned posts are preserved when data retention policies delete messages. Available from Mattermost server v10.10.
+
+Preserve pinned posts
+~~~~~~~~~~~~~~~~~~~~~
+
+*Available from Mattermost server v10.10*
+
+Controls whether pinned posts are preserved when data retention policies delete messages. When enabled, pinned posts will not be deleted by data retention policies, even if they exceed the configured retention period.
+
+**True**: Pinned posts are preserved and will not be deleted by data retention policies.
+
+**False**: **(Default)** Pinned posts are deleted according to the configured data retention policy.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"PreservePinnedPosts": false`` with options ``true`` and ``false``. |
++-----------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: custom-retention-policy
   :displayname: Custom retention policy (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
