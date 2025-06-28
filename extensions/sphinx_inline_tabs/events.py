@@ -212,24 +212,45 @@ def collect_sections(
         f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] secdata.id: {secdata.id}"
     )
 
-    # FIXME: is this still necessary?
-    # parent_node: nodes.Element = (
-    #     node.next_node(nodes.container) if isinstance(node, TabContainer) else node
-    # )
-
-    #for child in parent_node.children:
-    for idx, child in enumerate(node.children):
+    # Handle TabContainer specially - need to look inside the content container for sections
+    if isinstance(node, TabContainer):
         logger.debug(
-            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] child[{idx}]={type(child)}"
+            f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] TabContainer with {len(node.children)} children"
         )
-        if isinstance(child, nodes.section):
-            secdata.children.append(
-                collect_sections(env, document, docname, child, level + 1, tab_counter)
+        # TabContainer structure: child[0] = label, child[1] = content container
+        if len(node.children) >= 2:
+            content_container = node.children[1]  # The content container
+            logger.debug(
+                f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] TabContainer content_container type: {type(content_container)}"
             )
-        elif isinstance(child, TabContainer):
-            secdata.children.append(
-                collect_sections(env, document, docname, child, level + 1, tab_counter + 1)
+            # Look for sections within the content container
+            if hasattr(content_container, 'children'):
+                for idx, child in enumerate(content_container.children):
+                    logger.debug(
+                        f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] TabContainer content child[{idx}]={type(child)}"
+                    )
+                    if isinstance(child, nodes.section):
+                        secdata.children.append(
+                            collect_sections(env, document, docname, child, level + 1, tab_counter)
+                        )
+                    elif isinstance(child, TabContainer):
+                        secdata.children.append(
+                            collect_sections(env, document, docname, child, level + 1, tab_counter + 1)
+                        )
+    else:
+        # For non-TabContainer nodes, process children normally
+        for idx, child in enumerate(node.children):
+            logger.debug(
+                f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] child[{idx}]={type(child)}"
             )
+            if isinstance(child, nodes.section):
+                secdata.children.append(
+                    collect_sections(env, document, docname, child, level + 1, tab_counter)
+                )
+            elif isinstance(child, TabContainer):
+                secdata.children.append(
+                    collect_sections(env, document, docname, child, level + 1, tab_counter + 1)
+                )
 
     return secdata
 
@@ -268,14 +289,38 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     if secdata.is_doc_root:
         logger.debug(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
-            f"({docname}): [{secdata.level}/{secdata.tab_counter}] return sectiondata_to_toc(..., secdata.children[0])"
+            f"({docname}): [{secdata.level}/{secdata.tab_counter}] processing doc root with {len(secdata.children)} children"
         )
-        return sectiondata_to_toc(docname, secdata.children[0])
+        
+        # For doc root, we need to process ALL children, not just the first one
+        if len(secdata.children) == 0:
+            return nodes.list_item()  # Empty if no children
+        
+        # If there's only one child, delegate to it
+        if len(secdata.children) == 1:
+            return sectiondata_to_toc(docname, secdata.children[0])
+        
+        # Multiple children - create a list containing all of them
+        list_item: nodes.list_item = nodes.list_item()
+        bullet_list: nodes.bullet_list = nodes.bullet_list()
+        
+        for idx, child in enumerate(secdata.children):
+            logger.debug(
+                f"{LOG_PREFIX} sectiondata_to_toc(): "
+                f"({docname}): processing doc root child {idx+1}/{len(secdata.children)}: {child.name}"
+            )
+            child_item = sectiondata_to_toc(docname, child)
+            bullet_list.append(child_item)
+        
+        list_item.append(bullet_list)
+        return list_item
 
+    # For non-doc-root sections, create a proper list item
     list_item: nodes.list_item = nodes.list_item()
 
-    if not secdata.is_section_root:
-        # Don't add a reference for the section root since it will be displayed in the ToC
+    # Add a reference for this section (including tabs and regular sections)
+    # Only skip adding reference if this is a section root with no meaningful name
+    if secdata.name and not (secdata.is_section_root and secdata.name == secdata.id):
         logger.debug(
             f"{LOG_PREFIX} sectiondata_to_toc(): "
             f"({docname}): [{secdata.level}/{secdata.tab_counter}] add reference for {secdata.name}<{secdata.id}>"
