@@ -1512,6 +1512,209 @@ Enable LLM trace
 .. note::
   Use this setting for debugging purposes only. When enabled, it may log sensitive conversation data.
 
+.. config:setting:: agent-enable-embedding-search
+  :displayname: Enable Embedding Search (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+
+  - **Composite**: Enables experimental embedding search capabilities for semantic search across Mattermost content.
+  - **Disabled**: **(Default)** Disables embedding search capabilities.
+
+Enable embedding search
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **Composite**: Enables experimental embedding search capabilities for     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+|   semantic search across Mattermost content using pgvector and              | - ``config.json`` setting: N/A                                                                         |
+|   OpenAI-compatible endpoints.                                              | - Environment variable: N/A                                                                            |
+| - **Disabled**: **(Default)** Disables embedding search capabilities.       |                                                                                                        |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Embedding search requires an Enterprise license and is available as an :ref:`experimental <manage/feature-labels:experimental>` feature. You must also enable the ``pgvector`` extension in your PostgreSQL database. Performance may vary with large datasets.
+
+.. config:setting:: agent-embedding-provider
+  :displayname: Embedding Provider (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: Select the provider for generating embeddings for semantic search.
+
+Embedding provider type
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Select the provider for generating embeddings for semantic search.     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| Available options: **OpenAI** and **OpenAI Compatible**.               | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-api-key
+  :displayname: Embedding API Key (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The API key used to authenticate requests to the embedding provider's API.
+
+API Key
+~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The API key used to authenticate requests to the embedding provider's  | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| API. Required for **OpenAI Compatible** embedding providers.           | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input. This value is encrypted when stored.                     |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-model
+  :displayname: Embedding Model (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The specific embedding model to use for generating vector representations of content.
+
+Model
+~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The specific embedding model to use for generating vector              | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| representations of content. Must be compatible with the selected       | - ``config.json`` setting: N/A                                                                         |
+| embedding provider.                                                    | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| String input (model name).                                             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-api-url
+  :displayname: Embedding API URL (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The endpoint URL for the OpenAI-compatible embedding API.
+
+API URL
+~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The endpoint URL for the **OpenAI-compatible** embedding API.          | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+| Required string input (URL format).                                    | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-dimensions
+  :displayname: Embedding Dimensions (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The dimensionality of the embedding vectors, which must match the chosen embedding model.
+
+Dimensions
+~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The dimensionality of the embedding vectors, which must match the      | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| chosen embedding model. Common values include 1536 for OpenAI          | - ``config.json`` setting: N/A                                                                         |
+| text-embedding-ada-002 and 3072 for text-embedding-3-large.           | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input. Common values are 768, 1024, or 1536, depending on the model. |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-chunking-strategy
+  :displayname: Chunking Strategy (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The method used to split content into smaller chunks for embedding generation.
+
+Chunking strategy
+~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The method used to split content into smaller chunks for embedding     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| generation. Available options: **Sentences**, **Paragraphs**,          | - ``config.json`` setting: N/A                                                                         |
+| **Fixed Size**.                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Choose based on your content type and search requirements.             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-chunk-size
+  :displayname: Chunk Size (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The maximum size of each content chunk in tokens.
+
+Chunk size
+~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The maximum size of each content chunk in characters. Recommended      | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| range is 512-1024 tokens. The optimal value varies by chunking         | - ``config.json`` setting: N/A                                                                         |
+| strategy.                                                              | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input.                                                       |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-chunk-overlap
+  :displayname: Chunk Overlap (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The number of tokens that consecutive chunks share for better context continuity.
+
+Chunk overlap
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The number of tokens that consecutive chunks share for better          | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| context continuity. Recommended range is 20-50 characters.             | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input.                                                       |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-minimum-size-ratio
+  :displayname: Minimum Size Ratio (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The minimum ratio for chunk size validation to ensure chunks meet size requirements.
+
+Minimum chunk size ratio
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The minimum ratio for chunk size validation to ensure chunks meet     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| size requirements. Used to filter out chunks that are too small       | - ``config.json`` setting: N/A                                                                         |
+| relative to the configured chunk size.                                | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input (decimal ratio).                                      |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-reindex-all-posts
+  :displayname: Reindex All Posts (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: Trigger a complete reindexing of all posts for embedding search.
+
+Reindex all posts
+~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Trigger a complete reindexing of all posts for embedding search.       | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| Use this control to rebuild the search index when changing embedding   | - ``config.json`` setting: N/A                                                                         |
+| providers, models, or chunking configurations.                         | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Action button. Monitor indexing progress during the reindexing process.|                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  After configuring embedding search settings, run the initial indexing process by using the **Reindex All Posts** control. This is required when initially setting up embedding search or when changing embedding providers, models, or chunking configurations. Monitor the indexing progress to ensure completion before enabling search functionality.
+
 ----
 
 .. config:setting:: gitlab
