@@ -1617,9 +1617,10 @@ Dimensions
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The dimensionality of the embedding vectors, which must match the      | - System Config path: **Plugins > Agents > Embedding Search**                                          |
 | chosen embedding model. Common values include 1536 for OpenAI          | - ``config.json`` setting: N/A                                                                         |
-| text-embedding-ada-002 and 3072 for text-embedding-3-large.           | - Environment variable: N/A                                                                            |
+| text-embedding-ada-002 and 3072 for text-embedding-3-large.            | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
-| Numerical input. Common values are 768, 1024, or 1536, depending on the model. |                                                                                                        |
+| Numerical input. Common values are 768, 1024, or 1536,                 |                                                                                                        |
+| depending on the model.                                                |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: agent-chunking-strategy
@@ -1652,7 +1653,7 @@ Chunk size
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The maximum size of each content chunk in characters. Recommended      | - System Config path: **Plugins > Agents > Embedding Search**                                          |
-| range is 512-1024 tokens. The optimal value varies by chunking         | - ``config.json`` setting: N/A                                                                         |
+| range is 512-1024 characters. The optimal value varies by chunking     | - ``config.json`` setting: N/A                                                                         |
 | strategy.                                                              | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Numerical input.                                                       |                                                                                                        |
@@ -1670,8 +1671,8 @@ Chunk overlap
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 | The number of tokens that consecutive chunks share for better          | - System Config path: **Plugins > Agents > Embedding Search**                                          |
-| context continuity. Recommended range is 20-50 characters.             | - ``config.json`` setting: N/A                                                                         |
-|                                                                        | - Environment variable: N/A                                                                            |
+| context continuity. Recommended range is 20-50 characters for          | - ``config.json`` setting: N/A                                                                         |
+| **Fixed Size** chunking.                                               | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Numerical input.                                                       |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
@@ -1687,11 +1688,11 @@ Minimum chunk size ratio
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The minimum ratio for chunk size validation to ensure chunks meet     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
-| size requirements. Used to filter out chunks that are too small       | - ``config.json`` setting: N/A                                                                         |
-| relative to the configured chunk size.                                | - Environment variable: N/A                                                                            |
+| The minimum ratio for chunk size validation to ensure sentence         | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| and paragraph chunks meet size requirements. Used to filter out        | - ``config.json`` setting: N/A                                                                         |
+| chunks that are too small releative to the configured chunk size.      | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
-| Numerical input (decimal ratio).                                      |                                                                                                        |
+| Numerical input (decimal ratio).                                       |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: agent-reindex-all-posts
@@ -1705,15 +1706,13 @@ Reindex all posts
 ~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Trigger a complete reindexing of all posts for embedding search.       | - System Config path: **Plugins > Agents > Embedding Search**                                          |
-| Use this control to rebuild the search index when changing embedding   | - ``config.json`` setting: N/A                                                                         |
-| providers, models, or chunking configurations.                         | - Environment variable: N/A                                                                            |
+| Select **Reindex Posts** to trigger a complete reindexing of all       | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| posts for embedding search. Use this control to rebuild the search     | - ``config.json`` setting: N/A                                                                         |
+| index when changing embeddingproviders, models, or                     | - Environment variable: N/A                                                                            |
+| chunking configurations.                                               |                                                                                                        |  
 |                                                                        |                                                                                                        |
-| Action button. Monitor indexing progress during the reindexing process.|                                                                                                        |
+| Monitor indexing progress during the reindexing process.               |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-
-.. note::
-  After configuring embedding search settings, run the initial indexing process by using the **Reindex All Posts** control. This is required when initially setting up embedding search or when changing embedding providers, models, or chunking configurations. Monitor the indexing progress to ensure completion before enabling search functionality.
 
 ----
 
