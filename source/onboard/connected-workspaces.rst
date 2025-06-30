@@ -273,7 +273,7 @@ By default, a maximum of 50 messages are synchronized at a time, and :ref:`this 
 
 Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync>`.
 
-Starting from Mattermost server v10.10, connected workspaces also synchronize message priority, message acknowledgements, and persistent notifications between connected servers. This ensures that important message indicators and user interactions are consistently reflected across all connected workspace instances.
+From Mattermost v10.10, connected workspaces also synchronize message priority, message acknowledgements, and persistent notifications between connected servers. This ensures that important message indicators and user interactions are consistently reflected across all connected workspace instances.
 
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
