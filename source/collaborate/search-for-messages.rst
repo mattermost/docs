@@ -29,7 +29,7 @@ Search for message
     .. image:: ../images/search-all-teams.png
       :alt: Select All Teams to search all channels across all teams.
 
-    .. note::
+    .. tip::
       
       From Mattermost v10.10, the ``from:`` search modifier is available for cross-team searches. When searching all teams, you must manually add the ``from:`` modifier as part of your search criteria to search by specific users across teams.
 
