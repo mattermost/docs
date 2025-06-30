@@ -150,7 +150,7 @@ Once a connection is established between two Mattermost servers, system admins c
 
 .. important::
 
-    The ability to create a direct or group message with remote users across connected workspaces is available from Mattermost server v10.10 onward. Remote users from shared channels can be discovered and selected when creating direct and group messages.
+    From Mattermost v10.10, you can create a direct or group message with remote users across connected workspaces.
 
 Manage connections and invitations
 ----------------------------------
