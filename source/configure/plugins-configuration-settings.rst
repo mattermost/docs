@@ -1077,80 +1077,80 @@ AI Agents
 
   Mattermost Agents is formally known as Mattermost Copilot.
 
-Access the following Mattermost Agents configuration settings in the System Console by going to **Plugins > Copilot**.
+Access the following Mattermost Agents configuration settings in the System Console by going to **Plugins > Agents**.
 
-.. config:setting:: enable-copilot-plugin
-  :displayname: Enable plugin (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot
+.. config:setting:: enable-agents-plugin
+  :displayname: Enable plugin (Plugins - Agents)
+  :systemconsole: Plugins > Agents
   :configjson: N/A
   :environment: N/A
 
-  - **true**: Enables the Copilot plugin on your Mattermost workspace.
-  - **false**: **(Default)** Disables the Copilot plugin on your Mattermost workspace.
+  - **true**: Enables the Agents plugin on your Mattermost workspace.
+  - **false**: **(Default)** Disables the Agents plugin on your Mattermost workspace.
 
 Enable plugin
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| - **true**: Enables the Copilot plugin on your Mattermost workspace.   | - System Config path: **Plugins > Copilot**                                                            |
-| - **false**: **(Default)** Disables the Copilot plugin.                | - ``config.json`` setting: N/A                                                                         |
+| - **true**: Enables the Agents plugin on your Mattermost workspace.    | - System Config path: **Plugins > Agents**                                                             |
+| - **false**: **(Default)** Disables the Agents plugin.                 | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-bot-display-name
-  :displayname: Bot display name (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-bot-display-name
+  :displayname: Display name (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
-  :description: The bot's display name in Mattermost used to distinguish the bot from other bots in the system.
+  :description: The bot's display name in Mattermost used to distinguish it from other bots in the system.
 
-Bot display name
+Display name
 ~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The bot's display name in Mattermost used to distinguish the bot       | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| The bot's display name in Mattermost used to distinguish the bot       | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | from other bots in the system.                                         | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 | String input.                                                          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-bot-username
-  :displayname: Bot username (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-bot-username
+  :displayname: Bot username (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
-  :description: The bot's username that can be used to @mention the bot in a channel.
+  :description: The agent's username that can be used to @mention the AI bot in a channel.
 
-Bot username
-~~~~~~~~~~~~
+Agent username
+~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The bot's username that can be used to @mention the bot in a channel.  | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| The bot's username that can be used to @mention the bot in a channel.  | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 |                                                                        | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 | String input.                                                          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-bot-avatar
-  :displayname: Bot avatar (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-bot-avatar
+  :displayname: Bot avatar (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
-  :description: Upload an image to use as the bot's avatar in Mattermost.
+  :description: Upload an image to use as the AI agent's avatar in Mattermost.
 
-Bot avatar
-~~~~~~~~~~
+Agent avatar
+~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Upload an image to use as the bot's avatar in Mattermost.              | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Upload an image to use as the agent's avatar in Mattermost.            | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 |                                                                        | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 | Image upload interface.                                                |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-service-type
-  :displayname: Service (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-service-type
+  :displayname: Service (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: Select the LLM service provider to use for AI assistance.
@@ -1159,52 +1159,50 @@ Service
 ~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Select the LLM service provider to use for AI assistance.              | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Select the LLM service provider to use for AI assistance.              | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 |                                                                        | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 | Available options: **OpenAI**, **OpenAI Compatible**, **Azure**,       |                                                                                                        |
-| **Anthropic**, **Ask Sage**.                                           |                                                                                                        |
+| **Anthropic**, and **Ask Sage**.                                       |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-username
-  :displayname: Username (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-username
+  :displayname: Username (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
-  :description: The username used to authenticate with Ask Sage service.
+  :description: The username used to authenticate with the Ask Sage LLM service.
 
 Username
 ~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The username used to authenticate with Ask Sage service.               | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| Required for **Ask Sage** service.                                     | - ``config.json`` setting: N/A                                                                         |
+| The username used to authenticate with the **Ask Sage** LLM service.   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
-|                                                                        |                                                                                                        |
-| String input.                                                          |                                                                                                        |
+| String input required.                                                 |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-password
-  :displayname: Password (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-password
+  :displayname: Password (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
-  :description: The password used to authenticate with Ask Sage service.
+  :description: The password used to authenticate with the Ask Sage LLM service.
 
 Password
 ~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The password used to authenticate with Ask Sage service.               | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| Required for **Ask Sage** service.                                     | - ``config.json`` setting: N/A                                                                         |
+| The password used to authenticate with the **Ask Sage** LLM service.   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
-|                                                                        |                                                                                                        |
-| String input. This value is encrypted when stored.                     |                                                                                                        |
+| String input required. This value is encrypted when stored.            |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-api-url
-  :displayname: API URL (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-api-url
+  :displayname: API URL (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: The endpoint that Mattermost will use to communicate with the LLM's API.
@@ -1213,34 +1211,34 @@ API URL
 ~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The endpoint that Mattermost will use to communicate with the LLM's    | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| API. Required for **OpenAI Compatible** and **Azure** services.        | - ``config.json`` setting: N/A                                                                         |
+| The endpoint that Mattermost will use to communicate with the LLM's    | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| API. Required for **OpenAI Compatible** and **Azure** LLM services.    | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | String input (URL format).                                             |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-api-key
-  :displayname: API Key (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-api-key
+  :displayname: API Key (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: The key used to authenticate requests to the LLM's API.
 
-API Key
+API key
 ~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The key used to authenticate requests to the LLM's API. Required for   | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| **OpenAI**, **OpenAI Compatible**, and **Anthropic** services.         | - ``config.json`` setting: N/A                                                                         |
+| The key used to authenticate requests to the LLM's API. Required for   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| **OpenAI**, **OpenAI Compatible**, and **Anthropic** LLM services.     | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | String input. This value is encrypted when stored.                     |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-organization-id
-  :displayname: Organization ID (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-organization-id
+  :displayname: Organization ID (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: Ensures that requests are billed and processed under the correct organization, where applicable.
@@ -1249,27 +1247,27 @@ Organization ID
 ~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Ensures that requests are billed and processed under the correct       | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Ensures that requests are billed and processed under the correct       | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | organization, where applicable. Supported for **OpenAI**,              | - ``config.json`` setting: N/A                                                                         |
-| **OpenAI Compatible**, and **Azure** services.                         | - Environment variable: N/A                                                                            |
+| **OpenAI Compatible**, and **Azure** LLM services.                     | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | String input.                                                          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-send-user-id
-  :displayname: Send User ID (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-send-user-id
+  :displayname: Send User ID (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
 
   - **true**: Includes unique user identifiers in API requests to the LLM.
   - **false**: **(Default)** Does not include user identifiers in API requests.
 
-Send User ID
+Send user ID
 ~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| - **true**: Includes unique user identifiers in API requests to the    | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| - **true**: Includes unique user identifiers in API requests to the    | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 |   LLM for analytics, personalization, and auditing purposes.           | - ``config.json`` setting: N/A                                                                         |
 | - **false**: **(Default)** Does not include user identifiers.          | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
@@ -1279,27 +1277,27 @@ Send User ID
 .. note::
   We recommend reviewing LLM data privacy policies to confirm whether transmitting user information is acceptable and secure within your organization's regulatory framework. Do not enable when you need to conform to strict privacy regulations (e.g., GDPR) that limit sharing user-identifiable data with external services.
 
-.. config:setting:: copilot-default-model
-  :displayname: Default Model (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-default-model
+  :displayname: Default Model (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: The specific LLM that will be used to process queries if no other model is explicitly selected.
 
-Default Model
+Default model
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The specific LLM that will be used to process queries if no other      | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| The specific LLM that will be used to process queries if no other      | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | model is explicitly selected. Supported for all LLM services.          | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | String input (model name).                                             |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-input-token-limit
-  :displayname: Input token limit (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-input-token-limit
+  :displayname: Input token limit (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: The maximum number of tokens that the selected LLM can process in a single prompt or request.
@@ -1308,7 +1306,7 @@ Input token limit
 ~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The maximum number of tokens (chunks of text, including words,         | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| The maximum number of tokens (chunks of text, including words,         | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | punctuation, or special characters) that the selected LLM can          | - ``config.json`` setting: N/A                                                                         |
 | process in a single prompt or request.                                 | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
@@ -1316,9 +1314,9 @@ Input token limit
 | can be handled.                                                        |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-output-token-limit
-  :displayname: Output token limit (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-output-token-limit
+  :displayname: Output token limit (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: The maximum number of tokens that the LLM can generate in its response to a query.
@@ -1326,39 +1324,39 @@ Input token limit
 Output token limit
 ~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| The maximum number of tokens (chunks of text, including words,         | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
-| punctuation, or special characters) that the LLM can generate in       | - ``config.json`` setting: N/A                                                                         |
-| its response to a query.                                               | - Environment variable: N/A                                                                            |
-|                                                                        |                                                                                                        |
-| Numerical value. Must be greater than 0 for Anthropic services.        |                                                                                                        |
-+------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The maximum number of tokens (chunks of text, including words,          | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| punctuation, or special characters) that the LLM can generate in        | - ``config.json`` setting: N/A                                                                         |
+| its response to a query.                                                | - Environment variable: N/A                                                                            |
+|                                                                         |                                                                                                        |
+| Numerical value. Must be greater than 0 for **Anthropic** LLM services. |                                                                                                        |
++-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-streaming-timeout
-  :displayname: Streaming Timeout Seconds (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-streaming-timeout
+  :displayname: Streaming Timeout Seconds (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: Determines how long the system will wait for a response from the LLM when using streaming output mode.
 
-Streaming Timeout Seconds
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Streaming timeout
+~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Determines how long the system will wait for a response from the LLM   | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Determines how long the system will wait for a response from the LLM   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | when using streaming (real-time) output mode. Supported for            | - ``config.json`` setting: N/A                                                                         |
-| **OpenAI**, **OpenAI Compatible**, and **Azure** services.             | - Environment variable: N/A                                                                            |
+| **OpenAI**, **OpenAI Compatible**, and **Azure** LLM services.         | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
-| Numerical value (seconds). If the LLM takes longer than the            |                                                                                                        |
+| Numerical value (in seconds). If the LLM takes longer than the         |                                                                                                        |
 | configured timeout, the connection is terminated.                      |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. note::
   Streaming allows LLMs to display the response gradually as it's being generated, creating a smoother and more interactive experience for users.
 
-.. config:setting:: copilot-custom-instructions
-  :displayname: Custom instructions (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-custom-instructions
+  :displayname: Custom instructions (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: Preset specific contextual or behavioral guidance for the LLM to tailor responses to your organization's needs.
@@ -1367,7 +1365,7 @@ Custom instructions
 ~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Preset specific contextual or behavioral guidance for the LLM.         | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Preset specific contextual or behavioral guidance for the LLM.         | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | Helps tailor the model's responses to align with your organization's   | - ``config.json`` setting: N/A                                                                         |
 | needs, tone, or expectations. Supported for all LLM services.          | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
@@ -1378,53 +1376,53 @@ Custom instructions
 .. note::
   Custom instructions can include behavioral guidance, tone preferences, contextual functions, and organizational preferences. This ensures responses adhere to your organization's language and tone guidelines and aligns the model's behavior with specific roles or purposes.
 
-.. config:setting:: copilot-enable-vision
-  :displayname: Enable Vision (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-enable-vision
+  :displayname: Enable Vision (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
 
   - **true**: Enables the LLM to process and generate responses that incorporate image-related input or output.
   - **false**: **(Default)** Disables vision capabilities.
 
-Enable Vision
+Enable vision
 ~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| - **true**: Enables the LLM to process and generate responses that     | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| - **true**: Enables the LLM to process and generate responses that     | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 |   incorporate image-related input or output. Supported for **OpenAI**, | - ``config.json`` setting: N/A                                                                         |
-|   **OpenAI Compatible**, **Azure**, and **Anthropic** services.        | - Environment variable: N/A                                                                            |
+|   **OpenAI Compatible**, **Azure**, and **Anthropic** LLM services.    | - Environment variable: N/A                                                                            |
 | - **false**: **(Default)** Disables vision capabilities.               |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. note::
-  When enabled, the LLM can interact with prompts that include image-related input, such as image analysis, visual-related assistance, and visual outputs, where supported.
+  This feature is in :ref:`Beta <manage/feature-labels:beta>`. When enabled, the LLM can interact with prompts that include image-related input, such as image analysis, visual-related assistance, and visual outputs, where supported.
 
-.. config:setting:: copilot-enable-tools
-  :displayname: Enable Tools (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-enable-tools
+  :displayname: Enable Tools (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
 
   - **true**: Enables the LLM to leverage additional tools or plugins to enhance its capabilities.
   - **false**: **(Default)** Disables tool capabilities.
 
-Enable Tools
+Enable tools
 ~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| - **true**: Enables the LLM to leverage additional tools or plugins    | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| - **true**: Enables the LLM to leverage additional tools or plugins    | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 |   to enhance its capabilities. Supported for **OpenAI**,               | - ``config.json`` setting: N/A                                                                         |
-|   **OpenAI Compatible**, **Azure**, and **Anthropic** services.        | - Environment variable: N/A                                                                            |
+|   **OpenAI Compatible**, **Azure**, and **Anthropic** LLM services.    | - Environment variable: N/A                                                                            |
 | - **false**: **(Default)** Disables tool capabilities.                 |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 .. note::
   When enabled, advanced features beyond basic query processing allow the LLM to perform specialized tasks like retrieving data, integrating with external APIs, or performing computations, where supported.
 
-.. config:setting:: copilot-channel-access
-  :displayname: Channel access (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-channel-access
+  :displayname: Channel access (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: Determines whether the bot can consume the contents of a given channel and provide answers only from content available in the channel.
@@ -1433,17 +1431,17 @@ Channel access
 ~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Determines whether the bot can consume the contents of a given         | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Determines whether the bot can consume the contents of a given         | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | channel and provide answers only from content available in the         | - ``config.json`` setting: N/A                                                                         |
 | channel. Supported for all LLM services.                               | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Available options: **Allow for all channels**, **Allow for selected    |                                                                                                        |
-| channels**, **Block selected channels**, **Block all channels**.       |                                                                                                        |
+| channels**, **Block selected channels**, and **Block all channels**.   |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-user-access
-  :displayname: User access (Plugins - Copilot)
-  :systemconsole: Plugins > Copilot > Add an AI Bot
+.. config:setting:: agent-user-access
+  :displayname: User access (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
   :configjson: N/A
   :environment: N/A
   :description: Determines whether users who chat with this bot can get private assistance about content across all channels the user has access to.
@@ -1452,62 +1450,61 @@ User access
 ~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Determines whether users who chat with this bot can get private        | - System Config path: **Plugins > Copilot > Add an AI Bot**                                            |
+| Determines whether users who chat with this bot can get private        | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
 | assistance about content across all channels the user has access to.   | - ``config.json`` setting: N/A                                                                         |
 | Supported for all LLM services.                                        | - Environment variable: N/A                                                                            |
 |                                                                        |                                                                                                        |
 | Available options: **Allow for all users**, **Allow for selected       |                                                                                                        |
-| users**, **Block selected users**.                                     |                                                                                                        |
+| users**, and **Block selected users**.                                 |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-default-bot
-  :displayname: Default bot (Plugins - Copilot - AI Functions)
-  :systemconsole: Plugins > Copilot > AI Functions
+.. config:setting:: agent-default-bot
+  :displayname: Default bot (Plugins - Agents - AI Functions)
+  :systemconsole: Plugins > Agents > AI Functions
   :configjson: N/A
   :environment: N/A
-  :description: Select the default bot to use for AI functions when multiple bots are configured.
+  :description: Select the default bot to use for AI functions when multiple agents are configured.
 
-Default bot
-~~~~~~~~~~~
+Default agent
+~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Select the default bot to use for AI functions when multiple bots      | - System Config path: **Plugins > Copilot > AI Functions**                                             |
-| are configured. Based on defined bots.                                 | - ``config.json`` setting: N/A                                                                         |
+| Select the default bot to use for AI functions when multiple agents    | - System Config path: **Plugins > Agents > AI Functions**                                              |
+| are configured. Based on defined agents.                               | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
-| Selection based on configured bots.                                    |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-allowed-hostnames
-  :displayname: Allowed Upstream Hostnames (Plugins - Copilot - AI Functions)
-  :systemconsole: Plugins > Copilot > AI Functions
+.. config:setting:: agent-allowed-hostnames
+  :displayname: Allowed Upstream Hostnames (Plugins - Agents - AI Functions)
+  :systemconsole: Plugins > Agents > AI Functions
   :configjson: N/A
   :environment: N/A
   :description: Comma separated list of hostnames that LLMs are allowed to contact when using tools.
 
-Allowed Upstream Hostnames
+Allowed upstream hostnames
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| Comma separated list of hostnames that LLMs are allowed to contact     | - System Config path: **Plugins > Copilot > AI Functions**                                             |
+| Comma-separated list of hostnames that LLMs are allowed to contact     | - System Config path: **Plugins > Agents > AI Functions**                                              |
 | when using tools. Supports wildcards like ``*.mydomain.com``.          | - ``config.json`` setting: N/A                                                                         |
 |                                                                        | - Environment variable: N/A                                                                            |
 | Example: ``mattermost.atlassian.net`` to allow JIRA tool use.          |                                                                                                        |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: copilot-enable-llm-trace
-  :displayname: Enable LLM Trace (Plugins - Copilot - Debug)
-  :systemconsole: Plugins > Copilot > Debug
+.. config:setting:: agent-enable-llm-trace
+  :displayname: Enable LLM Trace (Plugins - Agents - Debug)
+  :systemconsole: Plugins > Agents > Debug
   :configjson: N/A
   :environment: N/A
 
   - **true**: Enables tracing of LLM requests and outputs full conversation data to the logs.
   - **false**: **(Default)** Disables LLM request tracing.
 
-Enable LLM Trace
+Enable LLM trace
 ~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
-| - **true**: Enables tracing of LLM requests and outputs full           | - System Config path: **Plugins > Copilot > Debug**                                                    |
+| - **true**: Enables tracing of LLM requests and outputs full           | - System Config path: **Plugins > Agents > Debug**                                                     |
 |   conversation data to the logs. Supported for all LLM services.       | - ``config.json`` setting: N/A                                                                         |
 | - **false**: **(Default)** Disables LLM request tracing.               | - Environment variable: N/A                                                                            |
 +------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
