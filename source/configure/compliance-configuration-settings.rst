@@ -101,6 +101,13 @@ Controls whether pinned posts are preserved when data retention policies delete 
 | This feature's ``config.json`` setting is ``"PreservePinnedPosts": false`` with options ``true`` and ``false``. |
 +-----------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  - This configuration must be enabled through mmctl using ``DataRetentionSettings.PreservePinnedPosts``.
+  - This is a global setting that applies to team and channel policies as well. It cannot be overridden in those more granular policies.
+  - Files attached to the pinned post are not preserved.
+  - Only the pinned post is preserved. If it's attached to a thread or if it's the root post of a thread, the other threaded messages are not preserved.
+
 .. config:setting:: custom-retention-policy
   :displayname: Custom retention policy (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
