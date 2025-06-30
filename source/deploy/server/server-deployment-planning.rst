@@ -13,6 +13,7 @@ Server deployment planning
     Deploy for Out-of-Band Use </deploy/server/deploy-oob>
     Deploy in Air-Gapped Environments </deploy/server/air-gapped-deployment>
     Reference Architecture </deploy/server/server-architecture>
+    Deployment Solution Programs </deploy/server/orchestration>
     Scale for Enterprise </scale/scaling-for-enterprise>
 
 This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.

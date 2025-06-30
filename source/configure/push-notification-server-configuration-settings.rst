@@ -50,13 +50,13 @@ Mattermost Enterprise, Professional, and Cloud customers can use Mattermost's Ho
 - An explicit `privacy policy <https://mattermost.com/data-processing-addendum/>`__ for the contents of unencrypted messages.
 - Encrypted TLS connections:
 
-  - Between HPNS and Apple Push Notification Services 
-  - Between HPNS and Google’s Firebase Cloud Messaging Service 
+  - Between HPNS and Apple Push Notification Services
+  - Between HPNS and Google’s Firebase Cloud Messaging Service
   - HPNS and your Mattermost Server
 - Production-level uptime expectations.
 - Out-of-box configuration for new servers means nothing is required to enable HPNS for new deployments. HPNS can be `enabled for existing deployments <#enable-hpns-for-existing-deployments>`_.
 
-.. note:: 
+.. note::
   - The HPNS only works with pre-built apps Mattermost deploys through the `Apple App Store <https://www.apple.com/app-store/>`__ and `Google Play Store <https://play.google.com/store/games?hl=en>`__. If you build your own mobile apps, you must also `host your own Mattermost push proxy server <#host-your-own-push-proxy-service>`_.
   - You must ensure that the push proxy can be reached on the correct port. For HPNS, it's port 443 from the Mattermost server.
   - Mattermost doesn't store any notification data. Any data being stored is at the server level only, such as the ``device_id``, since the HPNS needs to know which device the notification must be sent to.
@@ -67,7 +67,7 @@ Test Push Notifications Service (TPNS)
 Non-commercial and self-hosted customers can use Mattermost's free, basic Test Push Notifications Service (TPNS).
 
 .. note::
-  - The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs). 
+  - The TPNS isn’t recommended for use in production environments, and doesn’t offer production-level update service level agreements (SLAs).
   - The TPNS isn't available for Mattermost Cloud deployments.
   - The TPNS only works with the pre-built mobile apps that Mattermost deploys through the `Apple App Store <https://www.apple.com/app-store/>`__ and `Google Play Store <https://play.google.com/store/games?hl=en>`__. If you have built your own mobile apps, you must also `host your own Mattermost push proxy service <#host-your-own-push-proxy-service>`_.
   - You must ensure that the push proxy can be reached on the correct port. For TPNS, it's port 80 from the Mattermost server.
@@ -120,7 +120,7 @@ Push notification server location
   :displayname: Maximum notifications per channel (Push Notifications)
   :systemconsole: Environment > Push Notification Server
   :configjson: .TeamSettings.MaxNotificationsPerChannel
-  :environment: MM_EMAILSETTINGS_MAXNOTIFICATIONSPERCHANNEL
+  :environment: MM_TEAMSETTINGS_MAXNOTIFICATIONSPERCHANNEL
   :description: The maximum total number of users in a channel before @all, @here, and @channel no longer send desktop, email, or mobile push notifications to maximize performance. Default is **1000** users.
 
 Maximum notifications per channel

@@ -2020,6 +2020,8 @@ body:not([data-custom-theme="light"]) img {
 /* All images from _static directory (UI elements, not content) */
 img[src*="_static/images/"],
 img[src*="/_static/images/"],
+/* Specific checkmark icon (appears as _images/ in built HTML) */
+img[src*="check-circle-green.svg"],
 /* Specific classes for globally defined images */
 img.mm-badge-flag,
 img.mm-badge-deployment,
