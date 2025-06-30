@@ -70,6 +70,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Fixed an issue where the emoji picker focus did not return to button when not selecting an emoji.
  - Fixed the label in notification settings for the notification sound combo box.
  - Fixed an issue where an incorrect username and email were shown for remote users.
+ - Fixed an issue with the keyboard navigation in the user settings sidebar.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
