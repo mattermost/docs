@@ -27,7 +27,7 @@ Anyone can create public channels, private channels, direct messages, and group 
     .. image:: ../images/write-dm.png
       :alt: Access recent direct messages and group messages.
 
-  2. Select up to seven users by searching or browsing. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, remote users from shared channels are also available to select for direct and group messages.
+  2. Select up to seven users by searching or browsing. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, you can also select remote users from shared channels for direct and group messages.
 
   .. tip::
 
