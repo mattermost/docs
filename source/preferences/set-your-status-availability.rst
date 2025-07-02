@@ -78,6 +78,10 @@ To set your availability, select your profile picture, then specify your availab
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within direct messages.
 
+.. note::
+
+  Starting from Mattermost server v10.10, when a user account is deactivated by a system administrator, their availability status is automatically set to offline.
+
 Set your availability as Do Not Disturb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

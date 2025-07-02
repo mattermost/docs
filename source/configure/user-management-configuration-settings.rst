@@ -104,6 +104,10 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 
 .. note::
 
+  Starting from Mattermost server v10.10, when a user account is deactivated, their availability status is automatically set to offline to ensure accurate status reporting.
+
+.. note::
+
   LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
