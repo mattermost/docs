@@ -1627,7 +1627,7 @@ Enable channel category sorting
 
 **True**: Users can assign channels to new or existing categories when creating or renaming channels.
 
-**False**: Disables automatic channel category assignment during channel creation and renaming. Users must manually organize channels into categories after creation using the channel sidebar customization options.
+**False**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``. |
