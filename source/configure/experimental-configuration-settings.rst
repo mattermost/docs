@@ -1614,7 +1614,7 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
   :environment: N/A
 
   - **true**: Users can assign channels to new or existing categories when creating or renaming channels.
-  - **false**: **(Default)** Disables automatic channel category assignment during channel creation and renaming.
+  - **false**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
 
 Enable channel category sorting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
