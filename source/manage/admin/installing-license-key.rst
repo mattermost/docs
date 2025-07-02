@@ -41,7 +41,6 @@ You don't need to wait for your current license key to expire before replacing i
 License seat count enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. versionadded:: 10.10
 
 From Mattermost server v10.10 onward, system administrators can configure active enforcement of licensed seat count limits using the :ref:`IsSeatCountEnforced <configure/environment-configuration-settings:enforce license seat count>` setting. When this feature is enabled:
 
