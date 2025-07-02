@@ -22,7 +22,7 @@ To set a global data retention policy:
 2. Select **Edit** from the menu located to the right of the **Global retention policy** table. 
 3. Specify a global retention policy for channel messages and direct messages by selecting a **Channel & direct message retention** option from the dropdown, then set how long to keep those messages in hours, days, or years. When a time is set, messages and file attachments older than the duration you set will be deleted. The minimum retention period is one hour.
 4. Select a **File retention** option from the dropdown. Set the number of hours, days, or years to keep files. When a time is set, uploaded files which are older than the duration you set will be deleted from your file storage system (either from your local disk or your Amazon S3 service as specified in **System Console > Environment > File Storage**). The minimum retention period is one hour. The global file policy deletes all files regardless of whether they're in a direct message, private, or public channel.
-5. *(Available from Mattermost server v10.10)* Optionally enable **Preserve pinned posts** to prevent pinned posts from being deleted by data retention policies, even if they exceed the configured retention period.
+5. From Mattermost v10.10, you can optionally preserve pinned posts when data retention policies delete messages by enabling :ref:`Preserve pinned posts <configure/compliance-configuration-settings:preserve pinned posts>`. Once enabled, pinned posts won't be deleted even if they exceed the configured retention period.
 6. Under the **Policy log** section, select **Edit** to specify the start time of the daily scheduled data retention job. Choose a time when fewer people are using your system. 
 
 Select **Save**. Messages and files older than the duration you set will be deleted at the specified server time, as applicable.
@@ -61,10 +61,6 @@ The message is removed from the Mattermost user interface and deleted from the `
 Replies that did not exceed the message duration are still displayed in the user interface. However, further replies are no longer possible.
 
 If there was a file attached to the message, it will be removed from the user interface only.
-
-.. note::
-  
-  From Mattermost server v10.10, you can optionally preserve pinned posts when data retention policies delete messages by enabling the **Preserve pinned posts** setting in **System Console > Compliance > Data Retention Policies**. When enabled, pinned posts will not be deleted even if they exceed the configured retention period.  
 
 Why can I still see messages that were supposedly deleted?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
