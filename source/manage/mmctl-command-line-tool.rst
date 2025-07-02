@@ -3259,6 +3259,7 @@ Manage imports.
       -  `mmctl import process`_ - Start an import job
       -  `mmctl import upload`_ - Upload import files
       -  `mmctl import validate`_ - Validate an import file
+      -  `mmctl import delete`_ - Delete import files
 
 **Options**
 
@@ -3595,6 +3596,47 @@ Validate an import file.
    -h, --help                  help for validate
    --ignore-attachments        Do not check if the attached files are present in the archive
    --team stringarray          Predefined teams to assume as already present on the destination server. Implies --check-missing-teams. The flag can be repeated
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl import delete
+~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Delete import files from the server.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl import delete [import-name] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl import delete 35uy6cwrqfnhdx3genrhqqznxc_import.zip
+   mmctl import delete import1.zip import2.zip
+
+**Options**
+
+.. code-block:: sh
+
+   --confirm       Confirm you really want to delete the import file(s)
+   -h, --help      help for delete
 
 **Options inherited from parent commands**
 
