@@ -152,7 +152,7 @@ Once a connection is established between two Mattermost servers, system admins c
 
     The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in :ref:`Beta <manage/feature-labels:beta>`, there are some known issues that may impact reliability of direct message delivery across servers.
 
-    From Mattermost server v10.10 onward, when viewing the profile popup of a shared channel user, the direct message button is disabled and unavailable when the ``EnableSharedChannelsDMs`` feature flag is disabled. This ensures that users cannot attempt to initiate direct messages with remote users when the feature is not enabled on their Mattermost instance.
+    From Mattermost v10.10, when viewing the profile popup of a shared channel user, the direct message option is disabled and unavailable when the ``EnableSharedChannelsDMs`` feature flag is disabled. This ensures that users cannot attempt direct messages with remote users when the feature is not enabled on their Mattermost instance.
 
 Manage connections and invitations
 ----------------------------------
