@@ -6985,7 +6985,6 @@ The command returns user details in the following format:
    | 9xt5k2sr4gnbqhx6gzlm9p... | user2            | user2@...  | User      | Two         |
    +---------------------------+------------------+------------+-----------+-------------+
 
-Starting from Mattermost v10.10, deactivated users are clearly indicated in the output to help administrators identify account status.
 
 **Options**
 
