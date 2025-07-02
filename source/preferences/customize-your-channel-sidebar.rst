@@ -36,7 +36,7 @@ Create custom categories to group channels together for quicker and easier navig
 To create categories, select the **+** symbol at the top of the sidebar. Or, select the **More options** |more-icon| icon in the sidebar on any category header, then select **Create New Category**.
 
 .. note::
-  If your system admin has enabled :ref:`channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>`, you can assign channels to new or existing channel categories when :doc:`creating channels </collaborate/create-channels>` and :doc:`renaming channels </collaborate/rename-channels>` workflows.
+  If your system admin has enabled :ref:`channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>`, you can assign channels to new or existing channel categories when :doc:`creating channels </collaborate/create-channels>` and :doc:`renaming channels </collaborate/rename-channels>`.
 
 Next, type a category name, select **Create**, then drag any channels or direct messages into this new category. You can also multi-select channels and direct messages to drag them together as a group by pressing :kbd:`Ctrl` or :kbd:`Shift` and selecting on Windows or Linux, or :kbd:`⌘` or :kbd:`⇧` and selecting on Mac. See the section `drag and drop selections <#drag-and-drop-selections>`__ below for details.
 
