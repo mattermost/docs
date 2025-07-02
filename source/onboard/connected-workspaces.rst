@@ -167,6 +167,12 @@ Edit a connected workspace
     1. Under **Connected Workspaces**, identify the connected workspace you want to change.
     2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
 
+    .. note::
+
+        **Mattermost v10.10 and later**: Removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers.
+
+        **Prior to Mattermost v10.10**: Removing a shared channel from a connected workspace stopped synchronizing the channel with the remote Mattermost server; however, the channel continued to function for local users as expected.
+
 .. tab:: Slash Commands
 
     Run the following slash command to remove all secure connections from the current channel:
@@ -175,7 +181,11 @@ Edit a connected workspace
 
     This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
 
-    Unsharing a shared channel stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users as expected.
+    .. note::
+
+        **Mattermost v10.10 and later**: Unsharing a shared channel removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers.
+
+        **Prior to Mattermost v10.10**: Unsharing a shared channel stopped synchronizing the channel with the remote Mattermost server; however, the channel continued to function for local users as expected.
 
 Delete a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -195,7 +205,13 @@ Delete a connected workspace
 
     ``/share-channel uninvite --connectionID``
 
-    This slash command removes a secure connection from the current channel based on its ``connectionID``. The channel continues to function for local users as expected, and the secure connection may continue to be invited to other shared channels.
+    This slash command removes a secure connection from the current channel based on its ``connectionID``. The secure connection may continue to be invited to other shared channels.
+
+    .. note::
+
+        **Mattermost v10.10 and later**: Removing a secure connection from a shared channel removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers.
+
+        **Prior to Mattermost v10.10**: Removing a secure connection from a shared channel meant the channel continued to function for local users as expected.
     
     Run the following slash command to delete a secure connection:
 
