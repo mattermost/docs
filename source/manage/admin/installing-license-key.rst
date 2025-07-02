@@ -42,7 +42,7 @@ License seat count enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-From Mattermost server v10.10 onward, system administrators can configure active enforcement of licensed seat count limits using the :ref:`IsSeatCountEnforced <configure/environment-configuration-settings:enforce license seat count>` setting. When this feature is enabled:
+From Mattermost v10.10, system admins can enable active enforcement of licensed seat count limits using the :ref:`IsSeatCountEnforced <configure/environment-configuration-settings:enforce license seat count>` configuration setting. When enabled:
 
 - **Active enforcement**: New user registration and activation is blocked when the total number of activated users reaches the licensed seat count.
 - **System admin notifications**: Administrators receive notifications when approaching license limits.
