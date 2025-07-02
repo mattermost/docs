@@ -49,7 +49,7 @@ Anyone can rename the channels they belong to, unless the system admin has :doc:
     - **Purpose:** (Optional) Used to describe the channel's function or goal.
     - **Header:** (Optional) Used to include information relevant to the channel, such as key contacts or document links.
 
-    If your system admin has enabled the :ref:`Enable channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>` experimental feature, you may also see an option to assign the channel to a different category or create a new category.
+    If your system admin has enabled :ref:`channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the renamed channel to a new or existing category. 
 
     Tap on **Save** to save the new channel name.
 
