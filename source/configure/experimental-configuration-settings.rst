@@ -1623,7 +1623,7 @@ Enable channel category sorting
   :start-after: :nosearch:
 
 .. note::
-  From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can select or create custom categories when creating or renaming channels.
+  From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels.
 
 **True**: Users can assign channels to new or existing categories when creating or renaming channels.
 
