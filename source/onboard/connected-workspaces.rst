@@ -167,29 +167,29 @@ System admins can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-c
 Edit a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tab:: System Console
+In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
 
-    In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
-    
-    1. Under **Connected Workspaces**, identify the connected workspace you want to change.
-    2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
+1. Under **Connected Workspaces**, identify the connected workspace you want to change.
+2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
 
-.. tab:: Slash Commands
 
-    Run the following slash command to remove all secure connections from the current channel:
+Remove all connections from the current channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    ``/share-channel unshare``
+Run the following slash command to remove all secure connections from the current channel:
 
-    This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
+``/share-channel unshare``
 
-    Unsharing a shared channel stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users as expected.
+This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
 
 Delete a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tab:: System Console
+Deleting a connected server severs the trust relationship between the local Mattermost server and the remote Mattermost server.
 
-    Deleting a connected server severs the trust relationship between the local Mattermost server and the remote Mattermost server.
+From Mattermost v10.10, removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers. Prior to Mattermost v10.10, removing a shared channel from a connected workspace stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users.
+
+.. tab:: System Console
 
     1. Under **Connected Workspaces**, identify the connected workspace you want to remove.
     2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Delete**.
@@ -202,7 +202,7 @@ Delete a connected workspace
 
     ``/share-channel uninvite --connectionID``
 
-    This slash command removes a secure connection from the current channel based on its ``connectionID``. The channel continues to function for local users as expected, and the secure connection may continue to be invited to other shared channels.
+    This slash command removes a secure connection from the current channel based on its ``connectionID``. The secure connection may continue to be invited to other shared channels.
     
     Run the following slash command to delete a secure connection:
 
