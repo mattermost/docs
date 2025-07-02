@@ -9,6 +9,41 @@ In most cases, you can upgrade Mattermost Server in a few minutes. However, the 
 .. include:: ../_static/badges/academy-tarball-upgrade.rst
   :start-after: :nosearch:
 
+Quick Start for Experienced System Admins
+-------------------------------------------
+
+For experienced system administrators who want a quick overview of the upgrade process, here's a simplified checklist of pre-upgrade requirements and steps:
+
+.. warning::
+   **Critical:** It is your responsibility to have a complete backup of your system before proceeding! This includes both database and application backups.
+
+**Pre-upgrade Checklist:**
+
+1. **System Requirements Check:**
+   
+   - Verify server meets :doc:`basic specifications </deploy/software-hardware-requirements>`
+   - Confirm PostgreSQL version compatibility
+   - Exit if requirements are not met
+
+2. **Preparation Steps:**
+   
+   - Download the latest version compatible with your current version
+   - Extract the new files to temporary location (``/tmp``)
+   - Identify current Mattermost directory (default: ``/opt/mattermost``)
+
+3. **Upgrade Process:**
+   
+   - Stop the Mattermost service: ``sudo systemctl stop mattermost``
+   - Remove old application files (preserve config, data, logs, plugins)
+   - Copy new files to installation directory
+   - Change file ownership: ``sudo chown -R mattermost:mattermost mattermost``
+   - (Optional) Set capabilities for low port usage: ``sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost``
+   - Start the Mattermost service: ``sudo systemctl start mattermost``
+   - Remove temporary upgrade files
+
+.. note::
+   For detailed instructions and additional considerations, see the complete upgrade guide below.
+
 .. _before-you-begin:
 
 Before you begin
