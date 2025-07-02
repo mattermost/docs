@@ -6957,7 +6957,7 @@ mmctl user search
 
 Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status.
 
-Starting from Mattermost v10.10, the output also includes the user's deactivation status to help administrators identify inactive accounts.
+From Mattermost v10.10, output also includes the user's deactivation status to help system admins identify inactive accounts.
 
 **Format**
 
