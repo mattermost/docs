@@ -34,12 +34,12 @@ mmctl commands
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
 - `mmctl export`_ - Exports Management
-- `mmctl extract`_ - Content Extraction Job Management
 - `mmctl group`_ - Group Management
 - `mmctl group channel`_ - Channel Group Management
 - `mmctl group team`_ - Team Group Management
 - `mmctl group user`_ - Custom User Group Management
 - `mmctl import`_ - Import Management
+- `mmctl extract`_ - Content Extraction Job Management
 - `mmctl integrity`_ - (Deprecated) Database Record Integrity
 - `mmctl job`_ - Job Management
 - `mmctl ldap`_ - LDAP Management
@@ -2647,152 +2647,6 @@ List export files. Export files include the job ID in the file name.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl extract
--------------
-
-Manage content extraction jobs.
-
-   Child Commands
-      -  `mmctl extract job`_ - List and show content extraction jobs
-      -  `mmctl extract run`_ - Start a content extraction job
-
-**Options**
-
-.. code-block:: sh
-
-   -h, --help   help for list
-
-mmctl extract job
-~~~~~~~~~~~~~~~~~~
-
-List and show content extraction jobs.
-
-   Child Commands
-      -  `mmctl extract job list`_ - List content extraction jobs
-      -  `mmctl extract job show`_ - Show extract job
-
-mmctl extract job list
-~~~~~~~~~~~~~~~~~~~~~~
-
-**Description**
-
-List content extraction jobs.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl extract job list [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl extract job list
-
-**Options**
-
-.. code-block:: sh
-
-   --all            Fetch all export jobs. --page flag will be ignore if provided
-   -h, --help       help for list
-   --page int       Page number to fetch for the list of export jobs
-   --per-page int   Number of export jobs to be fetched (maximum 200)
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-   --disable-pager                disables paged output
-   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
-   --quiet                        prevent mmctl to generate output for the commands
-   --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
-
-mmctl extract job show
-~~~~~~~~~~~~~~~~~~~~~~
-
-**Description**
-
-Show extract job.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl extract job show [extractJobID] [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl extract job show f3d68qkkm7n8xgsfxwuo498rah
-
-**Options**
-
-.. code-block:: sh
-
-   -h, --help   help for disable
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-   --disable-pager                disables paged output
-   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
-   --quiet                        prevent mmctl to generate output for the commands
-   --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
-
-mmctl extract run
-~~~~~~~~~~~~~~~~~
-
-**Description**
-
-Start a content extraction job.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl extract run [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl extract run
-
-**Options**
-
-.. code-block:: sh
-
-   --from int   The timestamp of the earliest file to extract, expressed in seconds since the unix epoch.
-   -h, --help   help for run
-   --to int     The timestamp of the latest file to extract, expressed in seconds since the unix epoch. Defaults to the current time.
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-   --disable-pager                disables paged output
-   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
-   --quiet                        prevent mmctl to generate output for the commands
-   --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
-
 mmctl group
 -----------
 
@@ -3637,6 +3491,152 @@ Delete import files from the server.
 
    --confirm       Confirm you really want to delete the import file(s)
    -h, --help      help for delete
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract
+-------------
+
+Manage content extraction jobs.
+
+   Child Commands
+      -  `mmctl extract job`_ - List and show content extraction jobs
+      -  `mmctl extract run`_ - Start a content extraction job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for list
+
+mmctl extract job
+~~~~~~~~~~~~~~~~~~
+
+List and show content extraction jobs.
+
+   Child Commands
+      -  `mmctl extract job list`_ - List content extraction jobs
+      -  `mmctl extract job show`_ - Show extract job
+
+mmctl extract job list
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List content extraction jobs.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract job list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl extract job list
+
+**Options**
+
+.. code-block:: sh
+
+   --all            Fetch all export jobs. --page flag will be ignore if provided
+   -h, --help       help for list
+   --page int       Page number to fetch for the list of export jobs
+   --per-page int   Number of export jobs to be fetched (maximum 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract job show
+~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Show extract job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract job show [extractJobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl extract job show f3d68qkkm7n8xgsfxwuo498rah
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for disable
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl extract run
+~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Start a content extraction job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl extract run [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl extract run
+
+**Options**
+
+.. code-block:: sh
+
+   --from int   The timestamp of the earliest file to extract, expressed in seconds since the unix epoch.
+   -h, --help   help for run
+   --to int     The timestamp of the latest file to extract, expressed in seconds since the unix epoch. Defaults to the current time.
 
 **Options inherited from parent commands**
 
