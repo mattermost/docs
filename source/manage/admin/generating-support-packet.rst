@@ -44,9 +44,10 @@ When present, the following information is automatically santized during packet 
 
 .. important::
 
-   - Plugins may not be sanitized during packet generation. 
-     - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
-     - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+   Plugins may not be sanitized during packet generation.
+
+   - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
+   - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
 Share the packet with Mattermost
 --------------------------------
@@ -68,8 +69,8 @@ A Mattermost Support Packet can contain the following files:
 
       From v10.10, support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
 
-      - **Cluster-wide files** (identical across all nodes in a high-availability cluster) remain in the root directory of the support packet
-      - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node
+      - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
+      - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
 
    **Cluster-wide files (root directory):**
 
