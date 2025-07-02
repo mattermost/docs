@@ -160,8 +160,6 @@ System admins can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-c
 Edit a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost v10.10, removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers. Prior to Mattermost v10.10, removing a shared channel from a connected workspace stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users.
-
 .. tab:: System Console
 
     In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
@@ -180,6 +178,8 @@ From Mattermost v10.10, removing a shared channel from a connected workspace rem
 Delete a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+From Mattermost v10.10, removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers. Prior to Mattermost v10.10, removing a shared channel from a connected workspace stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users.
+
 .. tab:: System Console
 
     Deleting a connected server severs the trust relationship between the local Mattermost server and the remote Mattermost server.
@@ -196,12 +196,6 @@ Delete a connected workspace
     ``/share-channel uninvite --connectionID``
 
     This slash command removes a secure connection from the current channel based on its ``connectionID``. The secure connection may continue to be invited to other shared channels.
-
-    .. note::
-
-        **Mattermost v10.10 and later**: Removing a secure connection from a shared channel removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers.
-
-        **Prior to Mattermost v10.10**: Removing a secure connection from a shared channel meant the channel continued to function for local users as expected.
     
     Run the following slash command to delete a secure connection:
 
