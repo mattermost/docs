@@ -20,6 +20,7 @@ Review and manage the following environmental configuration options in the Syste
 - `Performance monitoring <#performance-monitoring>`__
 - `Developer <#developer>`__
 - `Mobile security <#mobile-security>`__ 
+- `License enforcement <#license-enforcement>`__ 
 - `config.json-only settings <#config-json-only-settings>`__
 
 .. tip::
@@ -4082,3 +4083,46 @@ Enable dedicated export filestore target
 
   - When an alternate filestore target is configured, Mattermost Cloud admins can generate an S3 presigned URL for exports using the ``/exportlink [job-id|zip file|latest]`` slash command. See the :ref:`Mattermost data migration <manage/cloud-data-export:create the export>` documentation for details. Alternatively, Cloud and self-hosted admins can use the :ref:`mmctl export generate-presigned-url <manage/mmctl-command-line-tool:mmctl export generate-presigned-url>` command to generate a presigned URL directly from mmctl.
   - Generating an S3 presigned URL requires the feature flag ``EnableExportDirectDownload`` to be set to ``true``,  the storage must be compatible with generating an S3 link, and this experimental configuration setting must be set to ``true``. Presigned URLs for exports aren't supported for systems with shared storage.
+
+License enforcement
+-------------------
+
+.. include:: ../_static/badges/ent-pro-selfhosted.rst
+  :start-after: :nosearch:
+
+.. versionadded:: 10.10
+
+Configure license seat count enforcement by editing the ``config.json`` file as described in the following table. Changes to configuration settings in this section require a server restart before taking effect.
+
+.. config:setting:: license-seat-count-enforced
+  :displayname: Enforce license seat count (License enforcement)
+  :systemconsole: N/A
+  :configjson: .ServiceSettings.IsSeatCountEnforced
+  :environment: MM_SERVICESETTINGS_ISSEATCOUNTENFORCED
+  :description: Controls whether licensed seat count limits are actively enforced on the server.
+
+Enforce license seat count
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+| Controls whether licensed seat count limits are actively     | - System Config path: **N/A**                                            |
+| enforced on the server.                                      | - ``config.json`` setting: ``.ServiceSettings.IsSeatCountEnforced``     |  
+|                                                               | - Environment variable: ``MM_SERVICESETTINGS_ISSEATCOUNTENFORCED``       |
+| - **true**: Licensed seat count limits are actively enforced.|                                                                          |
+|   When the total number of activated users reaches the       |                                                                          |
+|   licensed seat count, new user registration and activation  |                                                                          |
+|   will be blocked until users are deactivated or the license |                                                                          |
+|   is upgraded.                                               |                                                                          |
+| - **false**: **(Default)** Licensed seat count limits are    |                                                                          |
+|   not actively enforced. User count compliance is managed    |                                                                          |
+|   through quarterly true-up reporting processes.             |                                                                          |
+|                                                               |                                                                          |
+| Boolean input.                                                |                                                                          |
++---------------------------------------------------------------+--------------------------------------------------------------------------+
+
+.. note::
+
+  - When seat count enforcement is enabled, system administrators will receive notifications when approaching license limits.
+  - Guest accounts and deactivated users do not count toward the licensed seat count.
+  - This setting requires Mattermost Enterprise or Professional licenses and is available from Mattermost server v10.10 onward.
+  - If enforcement is enabled but no valid license is installed, the server will operate in read-only mode for new user operations.

@@ -43,6 +43,19 @@ When you buy an annual Mattermost subscription, you agree to provide Mattermost 
 
 We'll send you an email notice around the end of the quarter reminding you to send us your report.
 
+License seat count enforcement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 10.10
+
+From Mattermost server v10.10 onward, system administrators can optionally enable active license seat count enforcement as an alternative to the traditional quarterly true-up reporting model. When the :ref:`IsSeatCountEnforced <configure/environment-configuration-settings:enforce license seat count>` setting is enabled:
+
+- **Real-time compliance**: License seat limits are enforced immediately when reached, preventing new user registration and activation.
+- **Proactive notifications**: System administrators receive alerts when approaching license limits.
+- **Automated compliance**: Reduces reliance on manual quarterly reporting processes.
+
+When seat count enforcement is disabled (default), Mattermost continues to use the quarterly true-up reporting model described below for license compliance management.
+
 .. image:: ../images/true-up-schedule.png
    :alt: The timeframes followed for the true-up notifications.
 

@@ -38,6 +38,19 @@ You don't need to wait for your current license key to expire before replacing i
     
     To find the total number of users, go to **System Console > Reporting > Site Statistics**. The total number of users is displayed in the **Total Activated Users** field. The license will be rejected if this value is greater than the value allowed by your license key.
 
+License seat count enforcement
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. versionadded:: 10.10
+
+From Mattermost server v10.10 onward, system administrators can configure active enforcement of licensed seat count limits using the :ref:`IsSeatCountEnforced <configure/environment-configuration-settings:enforce license seat count>` setting. When this feature is enabled:
+
+- **Active enforcement**: New user registration and activation is blocked when the total number of activated users reaches the licensed seat count.
+- **System admin notifications**: Administrators receive notifications when approaching license limits.
+- **Compliance management**: Organizations can enforce license compliance in real-time rather than relying solely on quarterly true-up processes.
+
+When seat count enforcement is disabled (default), Mattermost continues to use the traditional quarterly true-up reporting model for license compliance.
+
 Follow these steps to change your license key:
 
 1. Go to **System Console > About > Edition and License**.
