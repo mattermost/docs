@@ -1613,7 +1613,7 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
   :configjson: ExperimentalEnableChannelCategorySorting
   :environment: N/A
 
-  - **true**: Users can assign channels to new or existing categories when creating or renaming channels.
+  - **true**: Users can assign channels to new or existing channel categories when creating or renaming channels.
   - **false**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
 
 Enable channel category sorting
