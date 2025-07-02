@@ -4,9 +4,9 @@ Secure file storage
 .. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-This document outlines the security measures governing file storage in the Mattermost mobile app for iOS and Android. It describes how files are stored, accessed, and protected within the application container, addressing concerns related to sensitive data—including Controlled Unclassified Information (CUI) and HIPAA-regulated data—on mobile devices. The objective is to ensure that only authorized personnel can view, access, or share such data while preventing exposure to unauthorized parties and ensuring isolation from third-party applications.
+This document outlines the security measures governing file storage in the Mattermost mobile app for iOS and Android. It describes how files are stored, accessed, and protected within the application container, addressing concerns related to sensitive data on mobile devices. The objective is to ensure that only authorized personnel can view, access, or share such data while preventing exposure to unauthorized parties and ensuring isolation from third-party applications.
 
-Mattermost leverages robust sandboxing mechanisms on both iOS and Android to securely store files in its cache folder within the application container, ensuring isolation from unauthorized third-party apps. User-initiated actions (download, share, copy link) are controlled by server-side permissions, allowing administrators to restrict access to sensitive data like CUI or HIPAA-regulated information to authorized personnel only. 
+Mattermost leverages robust sandboxing mechanisms on both iOS and Android to securely store files in its cache folder within the application container, ensuring isolation from unauthorized third-party apps. User-initiated actions (download, share, copy link) are controlled by server-side permissions, allowing administrators to restrict access to sensitive data, like HIPAA-regulated information, to authorized personnel only. 
 
 File storage and app sandbox security
 -------------------------------------
@@ -49,7 +49,7 @@ Android – scoped storage
 
   - `Scoped Storage <https://developer.android.com/about/versions/10/privacy/changes#scoped-storage>`_
 
-Additionally, both platforms may clear cached data automatically (e.g., under low storage conditions or upon user logout), thereby reducing the risk of sensitive information like CUI remaining on the device.
+Additionally, both platforms may clear cached data automatically (e.g., under low storage conditions or upon user logout), thereby reducing the risk of sensitive information remaining on the device.
 
 Differentiating file handling to external applications
 ------------------------------------------------------
@@ -81,7 +81,7 @@ Additionally, administrators have the option to restrict mobile file uploading a
 Layered defense strategies for sensitive eata
 ----------------------------------------------
 
-Mattermost is designed to protect sensitive data—such as CUI and HIPAA-regulated information—by ensuring that only authorized personnel can access or share it. The platform combines secure mobile app features with powerful server-side controls, providing a layered defense that minimizes the risk of data exposure.
+Mattermost is designed to protect sensitive data—such as sensitive information and HIPAA-regulated information—by ensuring that only authorized personnel can access or share it. The platform combines secure mobile app features with powerful server-side controls, providing a layered defense that minimizes the risk of data exposure.
 
 Core defense pillars
 ~~~~~~~~~~~~~~~~~~~~~
@@ -101,7 +101,7 @@ By combining strict authentication, server-side controls, sandbox isolation, and
 Testing procedure to validate file isolation
 ---------------------------------------------
 
-The playbook below aims to test and confirm that files stored in the Mattermost app’s private cache folder—where sensitive data like CUI may reside—are not accessible by unauthorized third-party applications. The tests are designed to show that while public directories, such as Downloads/ can be accessed, the private Mattermost cache remains isolated unless a file is explicitly shared by an authorized user.
+The playbook below aims to test and confirm that files stored in the Mattermost app’s private cache folder—where sensitive data may reside—are not accessible by unauthorized third-party applications. The tests are designed to show that while public directories, such as Downloads/ can be accessed, the private Mattermost cache remains isolated unless a file is explicitly shared by an authorized user.
 
 1. **Preparation**
 

@@ -76,11 +76,8 @@ Create a secure connection
 
 Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
     
-    - You must use a system, other than Mattermost, to share invitation codes and passwords. We strongly recommend sharing invitation codes separately from passwords to ensure that no one has all of the data necessary to take action if the message were compromised.
-    - Ensure the remote Mattermost instance can access your Mattermost workspace URL.
+You must use a system, other than Mattermost, to share invitation codes and passwords. We strongly recommend sharing invitation codes separately from passwords to ensure that no one has all of the data necessary to take action if the message were compromised. Ensure the remote Mattermost instance can access your Mattermost workspace URL.
 
 .. tab:: System Console
 
@@ -148,9 +145,19 @@ Once a connection is established between two Mattermost servers, system admins c
 
         See `Reviewing Secure Connection Status <#review-secure-connection-status>`_ to find the ``connectionID`` for a shared connection.
 
-.. important::
+Direct message delivery
+-----------------------
+  
+From Mattermost v10.10, creating a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. 
 
-    From Mattermost v10.10, you can create a direct or group message with remote users across connected workspaces.
+When ``EnableSharedChannelsDMs`` is disabled, the direct message option on a user's profile is disabled and unavailable to ensure users can't attempt direct messages with remote users when connected workspaces isn't enabled on the other Mattermost instance.
+
+Plugin component interaction
+-----------------------------
+
+From Mattermost v10.10, plugin interactions such as slash commands, interactive buttons, and other plugin-generated components aren't displayed or accessible in shared channels by default to ensure a consistent experience across different Mattermost instances. 
+
+System admins can enable the ``EnableSharedChannelsPlugins`` feature flag to enable these plugin interactions in shared channels. When plugin components are enabled in shared channels, we recommend ensuring that all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors can vary between instances if different plugin versions or configurations are used.
 
 Manage connections and invitations
 ----------------------------------
@@ -160,29 +167,29 @@ System admins can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-c
 Edit a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tab:: System Console
+In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
 
-    In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
-    
-    1. Under **Connected Workspaces**, identify the connected workspace you want to change.
-    2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
+1. Under **Connected Workspaces**, identify the connected workspace you want to change.
+2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
 
-.. tab:: Slash Commands
 
-    Run the following slash command to remove all secure connections from the current channel:
+Remove all connections from the current channel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-    ``/share-channel unshare``
+Run the following slash command to remove all secure connections from the current channel:
 
-    This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
+``/share-channel unshare``
 
-    Unsharing a shared channel stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users as expected.
+This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
 
 Delete a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. tab:: System Console
+Deleting a connected server severs the trust relationship between the local Mattermost server and the remote Mattermost server.
 
-    Deleting a connected server severs the trust relationship between the local Mattermost server and the remote Mattermost server.
+From Mattermost v10.10, removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers. Prior to Mattermost v10.10, removing a shared channel from a connected workspace stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users.
+
+.. tab:: System Console
 
     1. Under **Connected Workspaces**, identify the connected workspace you want to remove.
     2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Delete**.
@@ -195,7 +202,7 @@ Delete a connected workspace
 
     ``/share-channel uninvite --connectionID``
 
-    This slash command removes a secure connection from the current channel based on its ``connectionID``. The channel continues to function for local users as expected, and the secure connection may continue to be invited to other shared channels.
+    This slash command removes a secure connection from the current channel based on its ``connectionID``. The secure connection may continue to be invited to other shared channels.
     
     Run the following slash command to delete a secure connection:
 
