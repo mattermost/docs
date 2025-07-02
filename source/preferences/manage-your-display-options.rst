@@ -200,6 +200,19 @@ By default, you can hover over messages to react using recently-used emojis. You
 
     This option isn't something you can set using the mobile app.
 
+Render emoticons as emojis
+--------------------------
+
+From Mattermost v10.10, you can choose whether to automatically convert text emoticons to emoji characters in your messages. This feature is enabled by default, so that text-based emoticons like ``:)`` or ``:D`` are displayed as their corresponding emoji images. Disable this auto-rendering if you prefer to keep emoticons as text.
+
+.. tab:: Web/Desktop
+
+    Select **Render emoticons as emojis > Edit** to disable automatic conversion of emoticons to emojis in your messages.
+
+.. tab:: Mobile
+
+    This option isn't available in the mobile app.
+
 Language
 --------
 

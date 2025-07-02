@@ -10,7 +10,7 @@ Subscription Overview
    Cloud </about/cloud-subscriptions>
    Non-Profit </about/non-profit-subscriptions>
 
-Mattermost offers the following types of subscriptions:
+Mattermost offers the following types of paid subscriptions:
 
 * :doc:`Self-hosted subscriptions </about/self-hosted-subscriptions>` for secure enterprise collaboration with full control over your data.
 * :doc:`Cloud subscriptions </about/cloud-subscriptions>` for secure, cloud-based collaboration that's private, scaleable, and lower maintenance. 
