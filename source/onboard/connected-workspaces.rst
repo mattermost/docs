@@ -160,18 +160,14 @@ System admins can `edit <#edit-a-connected-workspace>`__ or `delete <#delete-a-c
 Edit a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+From Mattermost v10.10, removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers. Prior to Mattermost v10.10, removing a shared channel from a connected workspace stops synchronizing the channel with the remote Mattermost server; however, the channel continues to function for local users.
+
 .. tab:: System Console
 
     In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
     
     1. Under **Connected Workspaces**, identify the connected workspace you want to change.
     2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
-
-    .. note::
-
-        **Mattermost v10.10 and later**: Removing a shared channel from a connected workspace removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers.
-
-        **Prior to Mattermost v10.10**: Removing a shared channel from a connected workspace stopped synchronizing the channel with the remote Mattermost server; however, the channel continued to function for local users as expected.
 
 .. tab:: Slash Commands
 
@@ -180,12 +176,6 @@ Edit a connected workspace
     ``/share-channel unshare``
 
     This slash command removes all secure connections from the current channel. A System message notifies you that the channel is no longer shared. Secure connections may continue to be invited to other shared channels.
-
-    .. note::
-
-        **Mattermost v10.10 and later**: Unsharing a shared channel removes the channel from all connected workspaces. The channel is deleted from both the local and remote Mattermost servers.
-
-        **Prior to Mattermost v10.10**: Unsharing a shared channel stopped synchronizing the channel with the remote Mattermost server; however, the channel continued to function for local users as expected.
 
 Delete a connected workspace
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
