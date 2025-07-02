@@ -8,6 +8,10 @@ From Mattermost v10.9, system admins in large or complex organizations who requi
 
 Enforcing strict access controls based on user attributes eliminates manual role adjustment processes that can lead to security risks, inefficiencies, or inappropriate access, while maintaining security and compliance by ensuring that only authorized users can access specific Mattermost channels.
 
+.. note::
+  
+  Starting from Mattermost v10.10, channels with attribute-based access controls do not allow guest invitations. This restriction ensures that guest users cannot bypass attribute-based access policies, maintaining the security and integrity of channels protected by ABAC rules.
+
 Before you begin
 ------------------
 
@@ -83,6 +87,10 @@ Assign policies to private channels
 
 Specify the private channel that your access control policy applies to by selecting **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
 
+.. important::
+  
+  Channels with attribute-based access control policies cannot have guest users invited to them (Mattermost v10.10+). Only users who match the defined attribute criteria can be added to ABAC-controlled channels, ensuring strict adherence to access control policies.
+
 Delete policies
 ~~~~~~~~~~~~~~~~
 
@@ -96,6 +104,10 @@ You can assign an existing access control policy to a private channels for more 
 1. In the System Console, go to **User Management > Channels** to select the private channel you want to configure, and select **Edit**.
 2. In the **Channel Management** section, enable the **Enable attribute-based channel access** option.
 3. Under **Access policy**, select **Link to a policy** to select an existing policy.
+
+.. note::
+  
+  Once attribute-based access controls are enabled for a channel, guest users cannot be invited to that channel (Mattermost v10.10+). This restriction maintains the integrity of your attribute-based access policies.
 
 Remove channel policies
 ~~~~~~~~~~~~~~~~~~~~~~~~
