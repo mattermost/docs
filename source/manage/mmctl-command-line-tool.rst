@@ -6955,9 +6955,7 @@ mmctl user search
 
 **Description**
 
-Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status.
-
-From Mattermost v10.10, output also includes the user's deactivation status to help system admins identify inactive accounts.
+Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output also includes the user's deactivation status to help system admins identify inactive accounts.
 
 **Format**
 
@@ -6970,21 +6968,6 @@ From Mattermost v10.10, output also includes the user's deactivation status to h
 .. code-block:: sh
 
    mmctl user search user1@mail.com user2@mail.com
-
-**Output**
-
-The command returns user details in the following format:
-
-.. code-block:: sh
-
-   +---------------------------+------------------+------------+-----------+-------------+
-   | ID                        | USERNAME         | EMAIL      | FIRST     | LAST        |
-   |                           |                  |            | NAME      | NAME        |
-   +---------------------------+------------------+------------+-----------+-------------+
-   | 7xk3j8qr3fnzpgw5fzjm8n... | user1            | user1@...  | User      | One         |
-   | 9xt5k2sr4gnbqhx6gzlm9p... | user2            | user2@...  | User      | Two         |
-   +---------------------------+------------------+------------+-----------+-------------+
-
 
 **Options**
 
