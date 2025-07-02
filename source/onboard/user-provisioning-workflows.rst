@@ -35,7 +35,7 @@ Users in Mattermost can be deactivated in the following ways:
 
 Once deactivated, users still exist in the Mattermost database and their messages can still be viewed in Mattermost. You can use the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl user delete>` tools to delete a user and all of their content.
 
-Starting from Mattermost server v10.10, when a user is deactivated, their availability status is automatically set to offline to ensure accurate status reporting and improve the user experience.
+From Mattermost v10.10, when a user is deactivated, their their :ref:`availability <preferences/set-your-status-availability:set your availability>` is automatically set to offline.
 
 .. note::
 
