@@ -43,7 +43,6 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   Tap |plus| in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to create a private channel, tap the **Make Private** option.
 
-  If your system admin has enabled the :ref:`Enable channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>` experimental feature, you can also assign the channel to a category during creation by selecting an existing category or creating a new one.
 
     .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
       :alt: You can create a new channel by tapping the plus in the top right corner.
