@@ -67,6 +67,9 @@ Mattermost does not support MariaDB. The primary reason for this decision is to 
 
 MariaDB, while compatible with MySQL to a large extent, introduces additional complexity and potential inconsistency, which the Mattermost development team aims to avoid by limiting database support.
 
+Because of these reasons we also don't support migrations directly from MariaDB to PostgreSQL. 
+Oracle provides documentation on [how to migrate from MariaDB to MySQL](https://blogs.oracle.com/mysql/post/how-to-migrate-from-mariadb-to-mysql-80) which can be used as a starting point for the migration to PostgreSQL.
+
 Troubleshooting
 ---------------
 
