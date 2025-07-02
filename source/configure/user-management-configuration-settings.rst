@@ -104,7 +104,7 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 
 .. note::
 
-  Starting from Mattermost server v10.10, when a user account is deactivated, their availability status is automatically set to offline to ensure accurate status reporting.
+  From Mattermost v10.10, when a user account is deactivated, their :ref:`availability <preferences/set-your-status-availability:set your availability>` is automatically set to offline.
 
 .. note::
 
