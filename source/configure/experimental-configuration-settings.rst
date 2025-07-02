@@ -1624,7 +1624,7 @@ Enable channel category sorting
 
 From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels.
 
-**True**: Users can assign channels to new or existing categories when creating or renaming channels.
+**True**: Users can assign channels to new or existing channel categories when creating or renaming channels.
 
 **False**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
 
