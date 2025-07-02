@@ -128,7 +128,7 @@ You can create GitLab issues and manage issue comments directly from Mattermost 
 Create a GitLab issue
 ^^^^^^^^^^^^^^^^^^^^^^
 
-Run the ``/gitlab issue create`` slash command to open an interactive modal where you can create a new GitLab issue. The modal allows you to:
+Run the ``/gitlab issue create`` slash command to open an interactive modal where you can create a new GitLab issue. The modal allows you to perform the following actions:
 
 - Set the issue title and description
 - Assign labels
