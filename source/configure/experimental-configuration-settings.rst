@@ -1630,7 +1630,7 @@ Enable channel category sorting
 **False**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
 
 +------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
 +------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: strict-csrf-token-enforcement
