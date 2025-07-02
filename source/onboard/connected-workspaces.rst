@@ -76,11 +76,8 @@ Create a secure connection
 
 Extend the invitation
 ~~~~~~~~~~~~~~~~~~~~~~
-
-.. important::
     
-    - You must use a system, other than Mattermost, to share invitation codes and passwords. We strongly recommend sharing invitation codes separately from passwords to ensure that no one has all of the data necessary to take action if the message were compromised.
-    - Ensure the remote Mattermost instance can access your Mattermost workspace URL.
+You must use a system, other than Mattermost, to share invitation codes and passwords. We strongly recommend sharing invitation codes separately from passwords to ensure that no one has all of the data necessary to take action if the message were compromised. Ensure the remote Mattermost instance can access your Mattermost workspace URL.
 
 .. tab:: System Console
 
@@ -148,11 +145,19 @@ Once a connection is established between two Mattermost servers, system admins c
 
         See `Reviewing Secure Connection Status <#review-secure-connection-status>`_ to find the ``connectionID`` for a shared connection.
 
-.. important::
+Direct message delivery
+-----------------------
+  
+From Mattermost v10.10, creating a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. 
 
-    The ability to create a direct or group message with remote users across connected workspaces is only available when the feature flag ``EnableSharedChannelsDMs`` is enabled. While this feature is in :ref:`Beta <manage/feature-labels:beta>`, there are some known issues that may impact reliability of direct message delivery across servers.
+When ``EnableSharedChannelsDMs`` is disabled, the direct message option on a user's profile is disabled and unavailable to ensure users can't attempt direct messages with remote users when connected workspaces isn't enabled on the other Mattermost instance.
 
-    From Mattermost v10.10, when viewing the profile popup of a shared channel user, the direct message option is disabled and unavailable when the ``EnableSharedChannelsDMs`` feature flag is disabled. This ensures that users cannot attempt direct messages with remote users when the feature is not enabled on their Mattermost instance.
+Plugin component interaction
+-----------------------------
+
+From Mattermost v10.10, plugin interactions such as slash commands, interactive buttons, and other plugin-generated components aren't displayed or accessible in shared channels by default to ensure a consistent experience across different Mattermost instances. 
+
+System admins can enable the ``EnableSharedChannelsPlugins`` feature flag to enable these plugin interactions in shared channels. When plugin components are enabled in shared channels, we recommend ensuring that all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors can vary between instances if different plugin versions or configurations are used.
 
 Manage connections and invitations
 ----------------------------------
