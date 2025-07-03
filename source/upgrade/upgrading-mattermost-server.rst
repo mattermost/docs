@@ -13,17 +13,15 @@ Experienced system admins looking for a quick overview of the Mattermost upgrade
 
 1. Ensure you have a complete backup of your system before proceeding, including database and application.
 
-2. **System Requirements**
+2. **System requirements**: Verify that your server and PostgreSQL version meets :doc:`Mattermost requirements </deploy/software-hardware-requirements>`.
 
-  - Verify that your server and PostgreSQL version meets :doc:`Mattermost requirements </deploy/software-hardware-requirements>`.
-
-3. **Preparation Steps**
+3. **Preparation steps**
 
   - Download the latest server version.
   - Extract the new files to a temporary location (``/tmp``)
   - Identify the current Mattermost directory (default: ``/opt/mattermost``)
 
-4. **Upgrade Process**
+4. **Upgrade process**
 
   - Stop the Mattermost service: ``sudo systemctl stop mattermost``
   - Remove old application files (preserve config, data, logs, plugins).
