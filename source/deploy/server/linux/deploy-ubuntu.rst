@@ -29,7 +29,7 @@ You can deploy Mattermost server using our ``.deb`` signed packages using the Ma
 
   Alternatively, an **Omnibus Package** deployment bundles together all required components to greatly reduce setup and ongoing maintenance, including Mattermost Server, a PostgreSQL database, NGINX as the application proxy, a custom CLI, and ansible recipes to configure and connect these components.
 
-This Mattermost deployment includes 6 steps: install PostgreSQL database, prepare the database, add the PPA repository, install Mattermost server, configure the server, and update the server.
+This Mattermost deployment includes the following steps: install PostgreSQL database, prepare the database, add the PPA repository, install Mattermost server, configure the server, and update the server.
 
 **Step 1: Install PostgreSQL database or get database connection credentials**
 
