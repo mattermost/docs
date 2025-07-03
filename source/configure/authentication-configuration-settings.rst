@@ -507,7 +507,9 @@ AD/LDAP server
 +--------------------------------------------------------------+-----------------------------------------------------------------------+
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**                    |
 |                                                              | - ``config.json`` setting: ``LdapSettings`` > ``LdapServer``          |
-| String input.                                                | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``                |
+|                                                              | - Environment variable: ``MM_LDAPSETTINGS_LDAPSERVER``                |
+|                                                              |                                                                       |
+| String input.                                                |                                                                       |
 +--------------------------------------------------------------+-----------------------------------------------------------------------+ 
 
 .. note::
@@ -530,7 +532,9 @@ AD/LDAP port
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 | This is the port Mattermost uses to connect to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**                   |
 |                                                                    | - ``config.json`` setting: ``LdapSettings`` > ``LdapPort`` > ``389`` |
-| Numerical input. Default is **389**.                               | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``                 |
+|                                                                    | - Environment variable: ``MM_LDAPSETTINGS_LDAPPORT``                 |
+|                                                                    |                                                                      |
+| Numerical input. Default is **389**.                               |                                                                      |
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: connection-security
