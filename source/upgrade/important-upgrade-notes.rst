@@ -12,6 +12,10 @@ Important Upgrade Notes
   - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
   - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
 
+.. important::
+
+  **SQL Queries in Schema Changes**: The SQL queries shown in the schema changes below are **automatically executed** during the Mattermost upgrade process. **You do not need to run these queries manually**. They are provided for informational purposes only to help you understand what database changes will occur during the upgrade. Running these queries manually is optional and only recommended if you want to reduce downtime by pre-applying schema changes.
+
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
