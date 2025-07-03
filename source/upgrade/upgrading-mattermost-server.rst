@@ -6,48 +6,42 @@ Upgrade Mattermost Server
 
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
-.. include:: ../_static/badges/academy-tarball-upgrade.rst
-  :start-after: :nosearch:
+Quick start
+-----------
 
-Quick Start for Experienced System Admins
--------------------------------------------
+Experienced system admins looking for a quick overview of the Mattermost upgrade process can use the following 4-step checklist below:
 
-For experienced system administrators who want a quick overview of the upgrade process, here's a simplified checklist of pre-upgrade requirements and steps:
+1. Ensure you have a complete backup of your system before proceeding, including database and application.
 
-.. warning::
-   **Critical:** It is your responsibility to have a complete backup of your system before proceeding! This includes both database and application backups.
+2. **System Requirements**
 
-**Pre-upgrade Checklist:**
+  - Verify that your server and PostgreSQL version meets :doc:`Mattermost requirements </deploy/software-hardware-requirements>`.
 
-1. **System Requirements Check:**
-   
-   - Verify server meets :doc:`basic specifications </deploy/software-hardware-requirements>`
-   - Confirm PostgreSQL version compatibility
-   - Exit if requirements are not met
+3. **Preparation Steps**
 
-2. **Preparation Steps:**
-   
-   - Download the latest version compatible with your current version
-   - Extract the new files to temporary location (``/tmp``)
-   - Identify current Mattermost directory (default: ``/opt/mattermost``)
+  - Download the latest server version.
+  - Extract the new files to a temporary location (``/tmp``)
+  - Identify the current Mattermost directory (default: ``/opt/mattermost``)
 
-3. **Upgrade Process:**
-   
-   - Stop the Mattermost service: ``sudo systemctl stop mattermost``
-   - Remove old application files (preserve config, data, logs, plugins)
-   - Copy new files to installation directory
-   - Change file ownership: ``sudo chown -R mattermost:mattermost mattermost``
-   - (Optional) Set capabilities for low port usage: ``sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost``
-   - Start the Mattermost service: ``sudo systemctl start mattermost``
-   - Remove temporary upgrade files
+4. **Upgrade Process**
 
-.. note::
-   For detailed instructions and additional considerations, see the complete upgrade guide below.
+  - Stop the Mattermost service: ``sudo systemctl stop mattermost``
+  - Remove old application files (preserve config, data, logs, plugins).
+  - Copy new files to the install directory.
+  - Change file ownership: ``sudo chown -R mattermost:mattermost mattermost``
+  - Set capabilities for low port usage if needed: ``sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost``
+  - Start the Mattermost service: ``sudo systemctl start mattermost``
+  - Remove temporary upgrade files.
+
+For detailed instructions and additional considerations, see the complete upgrade guide below.
 
 .. _before-you-begin:
 
+Comprehensive upgrade guide
+----------------------------
+
 Before you begin
-----------------
+~~~~~~~~~~~~~~~~~
 
 **Read these instructions carefully from start to finish.** 
 
@@ -73,7 +67,7 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
   Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools:mattermost db migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
 
 Upgrade Mattermost Server
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In a terminal window on the server that hosts Mattermost, change to your home directory. Delete any files and directories that might still exist from a previous download.
 
@@ -233,3 +227,6 @@ Upload a license key
 ---------------------
 
 When Enterprise Edition is running, open **System Console > About > Editions and License** and upload your license key.
+
+.. include:: ../_static/badges/academy-tarball-upgrade.rst
+  :start-after: :nosearch:
