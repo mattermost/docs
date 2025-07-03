@@ -3,6 +3,7 @@
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
+
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
