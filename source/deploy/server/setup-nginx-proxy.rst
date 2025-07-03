@@ -407,7 +407,7 @@ You can use any certificate that you want, but these instructions show you how t
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html.
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
-High-Performance Scaling Configuration
+High-performance scaling configuration
 ---------------------------------------
 
 For high-scale deployments with multiple Mattermost servers and heavy traffic loads, additional NGINX optimizations are recommended. This configuration is based on performance testing with large-scale Mattermost deployments.
@@ -415,7 +415,7 @@ For high-scale deployments with multiple Mattermost servers and heavy traffic lo
 .. note::
   These settings are designed for high-performance environments. For standard deployments, the basic configuration above should be sufficient.
 
-NGINX Main Configuration Optimizations
+NGINX main configuration optimizations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Update your main NGINX configuration file (``/etc/nginx/nginx.conf``) with the following performance optimizations:
@@ -463,7 +463,7 @@ Key optimizations in this configuration:
 - **keepalive_timeout 75s** and **keepalive_requests 16384**: Optimizes connection reuse
 - **Conditional logging**: Reduces log volume by only logging errors and non-2xx/3xx responses
 
-Multi-Node Backend Configuration
+Multi-node backend configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 For deployments with multiple Mattermost application servers, configure your site file (``/etc/nginx/sites-available/mattermost``) with load balancing:
@@ -505,7 +505,7 @@ For deployments with multiple Mattermost application servers, configure your sit
     }
   }
 
-NGINX Proxy Configuration Snippets
+NGINX proxy configuration snippets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Create optimized proxy configuration snippets for reuse across different locations.
@@ -541,31 +541,35 @@ Create ``/etc/nginx/snippets/cache.conf``:
   proxy_cache_use_stale timeout;
   proxy_cache_lock on;
 
-Key Performance Optimizations
+Key performance optimizations
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The high-performance configuration includes several critical optimizations:
 
 **Load Balancing**:
+
 - **max_fails=0**: Prevents servers from being marked as unavailable
 - **keepalive 256**: Maintains persistent connections to backend servers
 - **reuseport**: Allows multiple worker processes to bind to the same port
 
 **Caching Strategy**:
+
 - **User images cached for 24 hours**: Reduces load on application servers for static content
 - **Cache revalidation**: Ensures fresh content while maintaining performance
 - **Cache locking**: Prevents cache stampede scenarios
 
 **Buffer and Timeout Optimization**:
+
 - **proxy_buffers 256 16k**: Handles high-throughput data transfer efficiently
 - **Optimized timeouts**: Balances responsiveness with resource usage
 - **HTTP/1.1 keepalive**: Reduces connection overhead
 
 **Resource Limits**:
+
 - **50M client_max_body_size**: Accommodates large file uploads
 - **Increased file descriptor limits**: Supports high-concurrency scenarios
 
-Implementation Notes
+Implementation notes
 ~~~~~~~~~~~~~~~~~~~~
 
 1. **Replace IP addresses**: Update the backend server IPs (172.27.205.186, 172.27.213.167) with your actual Mattermost server addresses.
