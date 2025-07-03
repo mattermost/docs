@@ -4,56 +4,40 @@ Mattermost logging
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-By default, all Mattermost editions write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format.
+Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
-.. note::
+.. csv-table::
+   :header: "Logging Type", "Captures", "Production Recommendation", "Configuration Priority"
+   :widths: 25, 30, 25, 20
 
-    Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets.
+   "Log Settings", "All general Mattermost server operations, errors, startup/initialization, API calls, and system events.", "Always enabled. Console: INFO, File: INFO", "**High** - Essential for operations"
+   "Audit Log Settings", "Security and compliance events, user actions, API access, authentication events, and administrative changes.", "Enable if compliance is required", "**Medium** - Based on regulatory needs"
+   "Notification Log Settings", "Notification subsystem events, push notifications, email delivery, mobile notification processing.", "Enable for notification troubleshooting", "**Low** - Enable when debugging issues"
+
+By default, all Mattermost plans write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format for log aggregation tools. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets. Audit and notification logging are designed to be asynchronous to minimize performance impact.
 
 System admins can customize the following logging options based on your business practices and needs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly.
-
-.. tip::
-
-    You can configure logging specifically for different Mattermost subsystems using specialized logging settings in the ``config.json`` file. These settings operate independently from the main ``LogSettings`` and allow you to customize logging behavior for specific subsystems:
-    
-    - **General logging**: Use ``LogSettings`` for main application logging with ``AdvancedLoggingJSON`` support
-    - **Audit logging**: Use ``AuditLogSettings`` for audit events. See :ref:`Audit logging <configure/environment-configuration-settings:audit logging>` for details.
-    - **Notification logging**: Use ``NotificationLogSettings`` for notification events. See :ref:`Notification logging <configure/environment-configuration-settings:notification logging>` for details.
 
 Console logs
 ------------
 
-Console logs feature verbose debug level log messages written to the console using the standard output stream (stdout). 
-
-Customize the following console logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
-
-- :ref:`Stop outputting console logs <configure/environment-configuration-settings:output logs to console>`
-- :ref:`Adjust console log level <configure/environment-configuration-settings:console log level>` 
-- :ref:`Output console logs as plain text <configure/environment-configuration-settings:output console logs as json>` & :ref:`Colorize plain text log level details <configure/environment-configuration-settings:colorize plain text console logs>`
-- :ref:`Omit webhook debug messages <configure/environment-configuration-settings:enable webhook debugging>`
+Console logs feature verbose debug level log messages for general and notification activities that are written to the console using the standard output stream (stdout). You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <configure/environment-configuration-settings:logging>` for details.
 
 File logs
 ---------
 
-File logs feature info level log messages including errors and information around startup and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory.
+File logs feature info level log messages for general and notification activities, including errors and information around startup, and initialization and webhook debug messages. The file is stored in ``./logs/mattermost.log``, rotated at 100 MB, and archived to a separate file in the same directory. You can customize file logs for general and notification activities. See the :ref:`Logging configuration settings <configure/environment-configuration-settings:logging>` for details.
 
 .. tip::
 
     You can download the ``mattermost.log`` file locally by going to **System Console > Reporting > Server Logs**, and selecting **Download Logs**.
-
-Customize the following file logs by going to **System Console > Environment > Logging** or by editing the ``config.json`` file directly:
-
-- :ref:`Stop outputting file logs <configure/environment-configuration-settings:output logs to file>`
-- :ref:`Adjust file log level <configure/environment-configuration-settings:file log level>` 
-- :ref:`Output file logs as plain text <configure/environment-configuration-settings:output file logs as json>`
-- :ref:`Change where the file is stored <configure/environment-configuration-settings:file log directory>`
 
 You can optionally output log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 
 Define logging output
 ---------------------
 
-Define logging output in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. You can use the sample JSON below as a starting point.
+Define logging output for general and notification activities in JSON format in the System Console by going to **Environment > Logging > Advanced Logging** or by editing the ``config.json`` file directly. You can use the sample JSON below as a starting point.
 
 .. code-block:: JSON
 
@@ -122,25 +106,19 @@ Audit logging
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost :doc:`workspace </guides/use-mattermost>`, such as access to the Mattermost REST API or mmctl.
+By default, Mattermost doesn’t write audit logs locally to a file on the server. You can enable and customize experimental audit logging in Mattermost to record activities and events performed within a Mattermost :doc:`workspace </guides/use-mattermost>`, such as access to the Mattermost REST API or mmctl. The ability to enable audit logging in Mattermost is currently in :ref:`Beta <manage/feature-labels:beta>`.
 
-.. tip::
-
-    - Logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
-    - During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
-
-You can define :ref:`whether audit events are output to file <configure/experimental-configuration-settings:enable audit logging>`, :ref:`the name and path of the audit logging file <configure/experimental-configuration-settings:file name>`, the :ref:`maximum size of each file <configure/experimental-configuration-settings:max file size>`, the :ref:`maximum number of days before triggering a rotation <configure/experimental-configuration-settings:max file age>`, the :ref:`maximum number of rotated files to keep <configure/experimental-configuration-settings:maximum file backups>`, :ref:`whether files are compressed using GZIP <configure/experimental-configuration-settings:file compression>`, and :ref:`how many audit records can be queued/buffered <configure/experimental-configuration-settings:maximum file queue>` at any point in time when writing to a file.
-
-In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
+- Audit logs are recorded asynchronously to reduce latency to the caller, and are stored separately from general logging.
+- During short spans of inability to write to targets, the audit records buffer in memory with a configurable maximum record cap. Based on typical audit record volumes, it could take many minutes to fill the buffer. After that, the records are dropped, and the record drop event is logged.
+- You can customize console logs for general and notification activities. See the :ref:`Logging configuration settings <configure/environment-configuration-settings:logging>` for details.
+- In addition, you can output audit log records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets, each featuring additional customization. See `Advanced Logging <#advanced-logging>`__ for details.
 
 .. note::
 
-    - The ability to enable audit logging in Mattermost is currently in :ref:`Beta <manage/feature-labels:beta>`.
     - From Mattermost v7.2, experimental audit logging is a breaking change from previous releases in cases where customers looking to parse previous audit logs with the new format.
     - The format and content of an audit log record has changed to become standardized for all events using a :doc:`standard JSON schema </comply/embedded-json-audit-log-schema>`.
     - Existing tools which ingest or parse audit log records may need to be modified.
     - From Mattermost v9.3, you can enable and customize advanced logging for AD/LDAP events separately from other logging.
-
 
 ----
 
@@ -150,7 +128,7 @@ Advanced logging
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-System admins can output log and audit records to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
+System admins can output log and audit records general, audit, and notification activities to any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets. Each output target features additional configuration options you can customize for your Mattermost deployment.
 
 .. tip::
 
@@ -165,14 +143,6 @@ Advanced logging options can be configured to:
 - Capture errors and panics in a separate, monitored file that triggers alerts.
 - Capture production debug and error logs in a separate file with log file rotation to reproduce issues, while enforcing a cap on the amount of disk space the debug logs are allowed to use.
 - Audit every API endpoint accessed during a user workflow.
-
-Configuring advanced logging includes the following steps:
-
-- `Define log output <#define-audit-log-output>`__ as multi-line JSON or a filespec to another configuration file.
-- `Specify destination targets <#specify-destination-targets>`__, including any combination of `console <#console-target-configuration-options>`__, `local file <#file-target-configuration-options>`__, `syslog <#syslog-target-configuration-options>`__, and `TCP socket <#tcp-target-configuration-options>`__ targets.
-- `Configure format preferences <#specify-destination-targets>`__ for `plain <#plain-log-format-configuration-options>`__, `JSON <#json-log-format-configuration-options>`__, or `GELF <#gelf-log-format-configuration-options>`__ output.
-- `Configure log levels & events <#configure-log-levels-and-events>`__
-- `Configure target-specific settings <#configure-target-specific-settings>`__
 
 Define advanced log output
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
