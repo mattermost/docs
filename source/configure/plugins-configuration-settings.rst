@@ -8,6 +8,7 @@ Review and manage the following plugin configuration options in the System Conso
 
 - `Plugin management <#plugin-management>`__
 - `Calls <#calls>`__
+- `AI Agents <#ai-agents>`__
 - `GitLab <#gitlab>`__
 - `GitHub <#github>`__
 - `Jira <#jira>`__
@@ -62,7 +63,7 @@ Enable plugins
   - Faster Load Times: Disabling plugins can lead to faster server startup and lower latency during user interactions, as there are fewer components for the system to initialize and manage.
   - Stability: Some plugins may have bugs or performance issues that can affect the overall performance and stability of the Mattermost instance. Disabling problematic or under-utilized plugins can enhance the stability of the system.
   - Maintenance and Updates: Managing fewer plugins reduces the overhead associated with maintaining and updating them, which can contribute to smoother operation and less downtime
-  - However, plugins are often essential for integrating Mattermost with other services and workflows. It’s important to balance performance improvements with the needs of your organization and users.
+  - However, plugins are often essential for integrating Mattermost with other services and workflows. It's important to balance performance improvements with the needs of your organization and users.
 
 
 .. config:setting:: require-plugin-signature
@@ -190,7 +191,8 @@ Marketplace URL
 +----------------------------------------------------------------------+--------------------------------------------------------------------+
 | This setting stores the URL for the remote Markeplace.               | - System Config path: **Plugins > Plugin Management**              |
 |                                                                      | - ``config.json`` setting: ``PluginSettings`` > ``MarketplaceURL`` |
-| String input. Default is **https://api.integrations.mattermost.com** | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``       |
+|                                                                      | - Environment variable: ``MM_PLUGINSETTINGS_MARKETPLACEURL``       |
+| String input. Default is **https://api.integrations.mattermost.com** |                                                                    |
 +----------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: installed-plugin-state
@@ -206,7 +208,8 @@ Installed plugin state
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting is a list of installed plugins and their status as enabled or disabled.                                                                                                                         | - System Config path: **Plugins > Plugin Management**            |
 |                                                                                                                                                                                                              | - ``config.json`` setting: ``PluginSettings`` > ``PluginStates`` |
-| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``       |
+|                                                                                                                                                                                                              | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINSTATES``       |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains an ``Enable`` key that can be set as ``true`` or ``false``. |                                                                  |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: plugin-settings
@@ -222,7 +225,8 @@ Plugin settings
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 | This setting contains plugin-specific data.                                                                                                                            | - System Config path: **Plugins > Plugin Management**       |
 |                                                                                                                                                                        | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` |
-| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains plugin-specific data. | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINS``       |
+|                                                                                                                                                                        | - Environment variable: ``MM_PLUGINSETTINGS_PLUGINS``       |
+| The ``config.json`` setting is an object. The object keys are plugin IDs, e.g. ``com.mattermost.apps``. Each key maps to an object that contains plugin-specific data. |                                                             |
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
@@ -411,6 +415,7 @@ ICE host override
 | This setting can be used to override the host addresses that get advertised to clients when connecting to calls. The accepted formats are the following:         | - System Config path: **Plugins > Calls**                                                                      |
 |                                                                                                                                                                  | - ``config.json`` setting:  ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostoverride``  |
 |                                                                                                                                                                  | - Environment variable: ``MM_CALLS_ICE_HOST_OVERRIDE``                                                         |
+|                                                                                                                                                                  |                                                                                                                |
 | - A single IP address (e.g. ``10.0.0.1``).                                                                                                                       |                                                                                                                |
 | - A single hostname or FQDN (e.g. ``calls.myserver.tld``).                                                                                                       |                                                                                                                |
 | - (starting in v0.17.0) A comma separated list of externalAddr/internalAddr mappings (e.g. ``10.0.0.1/172.0.0.1,10.0.0.2/172.0.0.2``).                           |                                                                                                                |
@@ -442,9 +447,9 @@ ICE host port override
 | This setting can be used to override the port used in the ICE host candidates that get advertised to clients when connecting to calls.                              | - System Config path: **Plugins > Calls**                                                                                |
 |                                                                                                                                                                     | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``icehostportoverride``         |
 |                                                                                                                                                                     | - Environment variable: ``MM_CALLS_ICE_HOST_PORT_OVERRIDE``                                                              |
+|                                                                                                                                                                     |                                                                                                                          |
 | This can be useful in case there are additional network components (e.g. NLBs) in front of the RTC server that may route the calls traffic through a different port.|                                                                                                                          |
 | Changing this setting requires a plugin restart to take effect.                                                                                                     |                                                                                                                          |
-|                                                                                                                                                                     |                                                                                                                          |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
@@ -467,6 +472,7 @@ RTCD service URL
 | The URL to a running `rtcd <https://github.com/mattermost/rtcd>`__ service instance that will host the calls. | - System Config path: **Plugins > Calls**                                                                                                                 |
 |                                                                                                               | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``rtcdserviceurl``                                               |
 |                                                                                                               | - Environment variable: ``MM_CALLS_RTCD_SERVICE_URL``                                                                                                     |
+|                                                                                                               |                                                                                                                                                           |
 | When set (non empty) all the calls will be handled by this external service.                                  |                                                                                                                                                           |
 |                                                                                                               |                                                                                                                                                           |
 | This is an optional field. Changing this setting requires a plugin restart to take effect.                    |                                                                                                                                                           |
@@ -498,6 +504,7 @@ Max call participants
 | This setting limits the number of participants that can join a single call. | - System Config path: **Plugins > Calls**                                                                       |
 |                                                                             | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``maxcallparticipants``|
 |                                                                             | - Environment variable: ``MM_CALLS_MAX_CALL_PARTICIPANTS``                                                      |
+|                                                                             |                                                                                                                 |
 | Default is **0** (no limit).                                                |                                                                                                                 |
 +-----------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------+
 
@@ -523,6 +530,7 @@ ICE servers configurations
 | This setting stores a list of ICE servers (STUN/TURN) in JSON format to be used by the service.                                                                                                                           | - System Config path: **Plugins > Calls**                                                                          |
 |                                                                                                                                                                                                                           | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``iceserversconfigs``     |
 |                                                                                                                                                                                                                           | - Environment variable: ``MM_CALLS_ICE_SERVERS_CONFIGS``                                                           |
+|                                                                                                                                                                                                                           |                                                                                                                    |
 | This is an optional field. Changing this setting may require a plugin restart to take effect.                                                                                                                             |                                                                                                                    |
 |                                                                                                                                                                                                                           |                                                                                                                    |
 | Default is ``[{"urls": ["stun:stun.global.calls.mattermost.com:3478"]}]``                                                                                                                                                 |                                                                                                                    |
@@ -580,7 +588,8 @@ TURN static auth secret
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | A static secret used to generate short-lived credentials for TURN servers. | - System Config path: **Plugins > Calls**                                                                                        |
 |                                                                            | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turnstaticauthsecret``                |
-| This is an optional field.                                                 | - Environment variable: ``MM_CALLS_TURN_STATIC_AUTH_SECRET``                                                                     |
+|                                                                            | - Environment variable: ``MM_CALLS_TURN_STATIC_AUTH_SECRET``                                                                     |
+| This is an optional field.                                                 |                                                                                                                                  |
 +----------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: turn-credentials-expiration
@@ -600,6 +609,7 @@ TURN credentials expiration
 | The expiration, in minutes, of the short-lived credentials generated for TURN servers. | - System Config path: **Plugins > Calls**                                                                                                    |
 |                                                                                        | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``turncredentialsexpirationminutes``                |
 |                                                                                        | - Environment variable: ``MM_CALLS_TURN_CREDENTIALS_EXPIRATION_MINUTES``                                                                     |
+|                                                                                        |                                                                                                                                              |
 | Default is **1440** (one day).                                                         |                                                                                                                                              |
 +----------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -622,6 +632,7 @@ Server side TURN
 | - **true**: The RTC server will use the configured TURN candidates for server-initiated connections. | - System Config path: **Plugins > Calls**                                                                                  |
 | - **false**: TURN will be used only on the client-side.                                              | - ``config.json`` setting: ``PluginSettings`` > ``Plugins`` > ``com.mattermost.calls`` > ``serversideturn``                |
 |                                                                                                      | - Environment variable: ``MM_CALLS_SERVER_SIDE_TURN``                                                                      |
+|                                                                                                      |                                                                                                                            |
 | Changing this setting requires a plugin restart to take effect.                                      |                                                                                                                            |
 +------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------+
 
@@ -1053,6 +1064,655 @@ Enable DC signaling (Experimental)
 
   - Version v0.18.0 or higher of the |rtcd_service| is required for this functionality to work when hosting calls through the dedicated WebRTC service.
   - Use caution when enabling this experimental configuration setting since it determines how the system handles part of the setup for WebRTC-based calls. Enabling this configuration setting may make the call setup a bit faster or more reliable in certain situations.
+
+----
+
+AI Agents
+----------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+.. note::
+
+  Mattermost Agents is formally known as Mattermost Copilot.
+
+Access the following Mattermost Agents configuration settings in the System Console by going to **Plugins > Agents**.
+
+.. config:setting:: enable-agents-plugin
+  :displayname: Enable plugin (Plugins - Agents)
+  :systemconsole: Plugins > Agents
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the Agents plugin on your Mattermost workspace.
+  - **false**: **(Default)** Disables the Agents plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **true**: Enables the Agents plugin on your Mattermost workspace.    | - System Config path: **Plugins > Agents**                                                             |
+| - **false**: **(Default)** Disables the Agents plugin.                 | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-bot-display-name
+  :displayname: Display name (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The bot's display name in Mattermost used to distinguish it from other bots in the system.
+
+Display name
+~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The bot's display name in Mattermost used to distinguish the bot       | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| from other bots in the system.                                         | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input.                                                          |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-bot-username
+  :displayname: Bot username (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The agent's username that can be used to @mention the AI bot in a channel.
+
+Agent username
+~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The bot's username that can be used to @mention the bot in a channel.  | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input.                                                          |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-bot-avatar
+  :displayname: Bot avatar (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Upload an image to use as the AI agent's avatar in Mattermost.
+
+Agent avatar
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Upload an image to use as the agent's avatar in Mattermost.            | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| Image upload interface.                                                |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-service-type
+  :displayname: Service (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Select the LLM service provider to use for AI assistance.
+
+Service
+~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Select the LLM service provider to use for AI assistance.              | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| Available options: **OpenAI**, **OpenAI Compatible**, **Azure**,       |                                                                                                        |
+| **Anthropic**, and **Ask Sage**.                                       |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-username
+  :displayname: Username (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The username used to authenticate with the Ask Sage LLM service.
+
+Username
+~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The username used to authenticate with the **Ask Sage** LLM service.   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input required.                                                 |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-password
+  :displayname: Password (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The password used to authenticate with the Ask Sage LLM service.
+
+Password
+~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The password used to authenticate with the **Ask Sage** LLM service.   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input required. This value is encrypted when stored.            |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-api-url
+  :displayname: API URL (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The endpoint that Mattermost will use to communicate with the LLM's API.
+
+API URL
+~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The endpoint that Mattermost will use to communicate with the LLM's    | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| API. Required for **OpenAI Compatible** and **Azure** LLM services.    | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| String input (URL format).                                             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-api-key
+  :displayname: API Key (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The key used to authenticate requests to the LLM's API.
+
+API key
+~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The key used to authenticate requests to the LLM's API. Required for   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| **OpenAI**, **OpenAI Compatible**, and **Anthropic** LLM services.     | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| String input. This value is encrypted when stored.                     |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-organization-id
+  :displayname: Organization ID (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Ensures that requests are billed and processed under the correct organization, where applicable.
+
+Organization ID
+~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Ensures that requests are billed and processed under the correct       | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| organization, where applicable. Supported for **OpenAI**,              | - ``config.json`` setting: N/A                                                                         |
+| **OpenAI Compatible**, and **Azure** LLM services.                     | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| String input.                                                          |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-send-user-id
+  :displayname: Send User ID (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Includes unique user identifiers in API requests to the LLM.
+  - **false**: **(Default)** Does not include user identifiers in API requests.
+
+Send user ID
+~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **true**: Includes unique user identifiers in API requests to the    | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|   LLM for analytics, personalization, and auditing purposes.           | - ``config.json`` setting: N/A                                                                         |
+| - **false**: **(Default)** Does not include user identifiers.          | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Review LLM data privacy policies before enabling this setting.         |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  We recommend reviewing LLM data privacy policies to confirm whether transmitting user information is acceptable and secure within your organization's regulatory framework. Do not enable when you need to conform to strict privacy regulations (e.g., GDPR) that limit sharing user-identifiable data with external services.
+
+.. config:setting:: agent-default-model
+  :displayname: Default Model (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The specific LLM that will be used to process queries if no other model is explicitly selected.
+
+Default model
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The specific LLM that will be used to process queries if no other      | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| model is explicitly selected. Supported for all LLM services.          | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| String input (model name).                                             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-input-token-limit
+  :displayname: Input token limit (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The maximum number of tokens that the selected LLM can process in a single prompt or request.
+
+Input token limit
+~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The maximum number of tokens (chunks of text, including words,         | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| punctuation, or special characters) that the selected LLM can          | - ``config.json`` setting: N/A                                                                         |
+| process in a single prompt or request.                                 | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical value. Directly impacts the size of user queries that        |                                                                                                        |
+| can be handled.                                                        |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-output-token-limit
+  :displayname: Output token limit (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: The maximum number of tokens that the LLM can generate in its response to a query.
+
+Output token limit
+~~~~~~~~~~~~~~~~~~
+
++-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The maximum number of tokens (chunks of text, including words,          | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| punctuation, or special characters) that the LLM can generate in        | - ``config.json`` setting: N/A                                                                         |
+| its response to a query.                                                | - Environment variable: N/A                                                                            |
+|                                                                         |                                                                                                        |
+| Numerical value. Must be greater than 0 for **Anthropic** LLM services. |                                                                                                        |
++-------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-streaming-timeout
+  :displayname: Streaming Timeout Seconds (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Determines how long the system will wait for a response from the LLM when using streaming output mode.
+
+Streaming timeout
+~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Determines how long the system will wait for a response from the LLM   | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| when using streaming (real-time) output mode. Supported for            | - ``config.json`` setting: N/A                                                                         |
+| **OpenAI**, **OpenAI Compatible**, and **Azure** LLM services.         | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical value (in seconds). If the LLM takes longer than the         |                                                                                                        |
+| configured timeout, the connection is terminated.                      |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Streaming allows LLMs to display the response gradually as it's being generated, creating a smoother and more interactive experience for users.
+
+.. config:setting:: agent-custom-instructions
+  :displayname: Custom instructions (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Preset specific contextual or behavioral guidance for the LLM to tailor responses to your organization's needs.
+
+Custom instructions
+~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Preset specific contextual or behavioral guidance for the LLM.         | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| Helps tailor the model's responses to align with your organization's   | - ``config.json`` setting: N/A                                                                         |
+| needs, tone, or expectations. Supported for all LLM services.          | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Text input. Instructions that the model will implicitly follow for     |                                                                                                        |
+| every interaction, providing consistency and adaptability.             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Custom instructions can include behavioral guidance, tone preferences, contextual functions, and organizational preferences. This ensures responses adhere to your organization's language and tone guidelines and aligns the model's behavior with specific roles or purposes.
+
+.. config:setting:: agent-enable-vision
+  :displayname: Enable Vision (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the LLM to process and generate responses that incorporate image-related input or output.
+  - **false**: **(Default)** Disables vision capabilities.
+
+Enable vision
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **true**: Enables the LLM to process and generate responses that     | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|   incorporate image-related input or output. Supported for **OpenAI**, | - ``config.json`` setting: N/A                                                                         |
+|   **OpenAI Compatible**, **Azure**, and **Anthropic** LLM services.    | - Environment variable: N/A                                                                            |
+| - **false**: **(Default)** Disables vision capabilities.               |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  This feature is in :ref:`Beta <manage/feature-labels:beta>`. When enabled, the LLM can interact with prompts that include image-related input, such as image analysis, visual-related assistance, and visual outputs, where supported.
+
+.. config:setting:: agent-enable-tools
+  :displayname: Enable Tools (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables the LLM to leverage additional tools or plugins to enhance its capabilities.
+  - **false**: **(Default)** Disables tool capabilities.
+
+Enable tools
+~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **true**: Enables the LLM to leverage additional tools or plugins    | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+|   to enhance its capabilities. Supported for **OpenAI**,               | - ``config.json`` setting: N/A                                                                         |
+|   **OpenAI Compatible**, **Azure**, and **Anthropic** LLM services.    | - Environment variable: N/A                                                                            |
+| - **false**: **(Default)** Disables tool capabilities.                 |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  When enabled, advanced features beyond basic query processing allow the LLM to perform specialized tasks like retrieving data, integrating with external APIs, or performing computations, where supported.
+
+.. config:setting:: agent-channel-access
+  :displayname: Channel access (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Determines whether the bot can consume the contents of a given channel and provide answers only from content available in the channel.
+
+Channel access
+~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Determines whether the bot can consume the contents of a given         | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| channel and provide answers only from content available in the         | - ``config.json`` setting: N/A                                                                         |
+| channel. Supported for all LLM services.                               | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Available options: **Allow for all channels**, **Allow for selected    |                                                                                                        |
+| channels**, **Block selected channels**, and **Block all channels**.   |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-user-access
+  :displayname: User access (Plugins - Agents)
+  :systemconsole: Plugins > Agents > Add an AI Bot
+  :configjson: N/A
+  :environment: N/A
+  :description: Determines whether users who chat with this bot can get private assistance about content across all channels the user has access to.
+
+User access
+~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Determines whether users who chat with this bot can get private        | - System Config path: **Plugins > Agents > Add an AI Bot**                                             |
+| assistance about content across all channels the user has access to.   | - ``config.json`` setting: N/A                                                                         |
+| Supported for all LLM services.                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Available options: **Allow for all users**, **Allow for selected       |                                                                                                        |
+| users**, and **Block selected users**.                                 |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-default-bot
+  :displayname: Default bot (Plugins - Agents - AI Functions)
+  :systemconsole: Plugins > Agents > AI Functions
+  :configjson: N/A
+  :environment: N/A
+  :description: Select the default bot to use for AI functions when multiple agents are configured.
+
+Default agent
+~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Select the default bot to use for AI functions when multiple agents    | - System Config path: **Plugins > Agents > AI Functions**                                              |
+| are configured. Based on defined agents.                               | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-allowed-hostnames
+  :displayname: Allowed Upstream Hostnames (Plugins - Agents - AI Functions)
+  :systemconsole: Plugins > Agents > AI Functions
+  :configjson: N/A
+  :environment: N/A
+  :description: Comma separated list of hostnames that LLMs are allowed to contact when using tools.
+
+Allowed upstream hostnames
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Comma-separated list of hostnames that LLMs are allowed to contact     | - System Config path: **Plugins > Agents > AI Functions**                                              |
+| when using tools. Supports wildcards like ``*.mydomain.com``.          | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| Example: ``mattermost.atlassian.net`` to allow JIRA tool use.          |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-enable-llm-trace
+  :displayname: Enable LLM Trace (Plugins - Agents - Debug)
+  :systemconsole: Plugins > Agents > Debug
+  :configjson: N/A
+  :environment: N/A
+
+  - **true**: Enables tracing of LLM requests and outputs full conversation data to the logs.
+  - **false**: **(Default)** Disables LLM request tracing.
+
+Enable LLM trace
+~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **true**: Enables tracing of LLM requests and outputs full           | - System Config path: **Plugins > Agents > Debug**                                                     |
+|   conversation data to the logs. Supported for all LLM services.       | - ``config.json`` setting: N/A                                                                         |
+| - **false**: **(Default)** Disables LLM request tracing.               | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Use this setting for debugging purposes only. When enabled, it may log sensitive conversation data.
+
+.. config:setting:: agent-enable-embedding-search
+  :displayname: Enable Embedding Search (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+
+  - **Composite**: Enables experimental embedding search capabilities for semantic search across Mattermost content.
+  - **Disabled**: **(Default)** Disables embedding search capabilities.
+
+Enable embedding search
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| - **Composite**: Enables experimental embedding search capabilities for     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+|   semantic search across Mattermost content using pgvector and              | - ``config.json`` setting: N/A                                                                         |
+|   OpenAI-compatible endpoints.                                              | - Environment variable: N/A                                                                            |
+| - **Disabled**: **(Default)** Disables embedding search capabilities.       |                                                                                                        |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Embedding search requires an Enterprise license and is available as an :ref:`experimental <manage/feature-labels:experimental>` feature. You must also enable the ``pgvector`` extension in your PostgreSQL database. Performance may vary with large datasets.
+
+.. config:setting:: agent-embedding-provider
+  :displayname: Embedding Provider (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: Select the provider for generating embeddings for semantic search.
+
+Embedding provider type
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Select the provider for generating embeddings for semantic search.     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| Available options: **OpenAI** and **OpenAI Compatible**.               | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-api-key
+  :displayname: Embedding API Key (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The API key used to authenticate requests to the embedding provider's API.
+
+API Key
+~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The API key used to authenticate requests to the embedding provider's  | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| API. Required for **OpenAI Compatible** embedding providers.           | - ``config.json`` setting: N/A                                                                         |
+|                                                                        | - Environment variable: N/A                                                                            |
+| String input. This value is encrypted when stored.                     |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-model
+  :displayname: Embedding Model (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The specific embedding model to use for generating vector representations of content.
+
+Model
+~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The specific embedding model to use for generating vector              | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| representations of content. Must be compatible with the selected       | - ``config.json`` setting: N/A                                                                         |
+| embedding provider.                                                    | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| String input (model name).                                             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-api-url
+  :displayname: Embedding API URL (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The endpoint URL for the OpenAI-compatible embedding API.
+
+API URL
+~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The endpoint URL for the **OpenAI-compatible** embedding API.          | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+|                                                                        | - ``config.json`` setting: N/A                                                                         |
+| Required string input (URL format).                                    | - Environment variable: N/A                                                                            |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-embedding-dimensions
+  :displayname: Embedding Dimensions (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The dimensionality of the embedding vectors, which must match the chosen embedding model.
+
+Dimensions
+~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The dimensionality of the embedding vectors, which must match the      | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| chosen embedding model. Common values include 1536 for OpenAI          | - ``config.json`` setting: N/A                                                                         |
+| text-embedding-ada-002 and 3072 for text-embedding-3-large.            | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input. Common values are 768, 1024, or 1536,                 |                                                                                                        |
+| depending on the model.                                                |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-chunking-strategy
+  :displayname: Chunking Strategy (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The method used to split content into smaller chunks for embedding generation.
+
+Chunking strategy
+~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The method used to split content into smaller chunks for embedding     | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| generation. Available options: **Sentences**, **Paragraphs**,          | - ``config.json`` setting: N/A                                                                         |
+| **Fixed Size**.                                                        | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Choose based on your content type and search requirements.             |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-chunk-size
+  :displayname: Chunk Size (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The maximum size of each content chunk in tokens.
+
+Chunk size
+~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The maximum size of each content chunk in characters. Recommended      | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| range is 512-1024 characters. The optimal value varies by chunking     | - ``config.json`` setting: N/A                                                                         |
+| strategy.                                                              | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input.                                                       |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-chunk-overlap
+  :displayname: Chunk Overlap (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The number of tokens that consecutive chunks share for better context continuity.
+
+Chunk overlap
+~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The number of tokens that consecutive chunks share for better          | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| context continuity. Recommended range is 20-50 characters for          | - ``config.json`` setting: N/A                                                                         |
+| **Fixed Size** chunking.                                               | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input.                                                       |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-minimum-size-ratio
+  :displayname: Minimum Size Ratio (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: The minimum ratio for chunk size validation to ensure chunks meet size requirements.
+
+Minimum chunk size ratio
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| The minimum ratio for chunk size validation to ensure sentence         | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| and paragraph chunks meet size requirements. Used to filter out        | - ``config.json`` setting: N/A                                                                         |
+| chunks that are too small releative to the configured chunk size.      | - Environment variable: N/A                                                                            |
+|                                                                        |                                                                                                        |
+| Numerical input (decimal ratio).                                       |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: agent-reindex-all-posts
+  :displayname: Reindex All Posts (Plugins - Agents - Embedding Search)
+  :systemconsole: Plugins > Agents > Embedding Search
+  :configjson: N/A
+  :environment: N/A
+  :description: Trigger a complete reindexing of all posts for embedding search.
+
+Reindex all posts
+~~~~~~~~~~~~~~~~~
+
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
+| Select **Reindex Posts** to trigger a complete reindexing of all       | - System Config path: **Plugins > Agents > Embedding Search**                                          |
+| posts for embedding search. Use this control to rebuild the search     | - ``config.json`` setting: N/A                                                                         |
+| index when changing embeddingproviders, models, or                     | - Environment variable: N/A                                                                            |
+| chunking configurations.                                               |                                                                                                        |  
+|                                                                        |                                                                                                        |
+| Monitor indexing progress during the reindexing process.               |                                                                                                        |
++------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------+
 
 ----
 

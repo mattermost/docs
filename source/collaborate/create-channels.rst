@@ -19,6 +19,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   2. Enter a channel name.
   3. Choose whether this is a public or private channel. See the :doc:`channel types </collaborate/channel-types>` documentation to learn more about public and private channels.
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
+  5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If this option isn't available, you can `customize your channel sidebar </preferences/customize-your-channel-sidebar>`.
 
   **To start a direct or group message**
 
@@ -27,7 +28,7 @@ Anyone can create public channels, private channels, direct messages, and group 
     .. image:: ../images/write-dm.png
       :alt: Access recent direct messages and group messages.
 
-  2. Select up to seven users by searching or browsing.
+  2. Select up to seven users by searching or browsing. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, you can also select remote users from shared channels for direct and group messages.
 
   .. tip::
 
@@ -42,6 +43,7 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   Tap |plus| in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to create a private channel, tap the **Make Private** option.
 
+
     .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
       :alt: You can create a new channel by tapping the plus in the top right corner.
       :scale: 30
@@ -52,7 +54,7 @@ Anyone can create public channels, private channels, direct messages, and group 
 
   **To start a direct or group message**
 
-  Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. Tap **Start** to start the conversation.
+  Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, remote users from shared channels are also available to select. Tap **Start** to start the conversation.
 
     .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
       :alt: You can start a direct or group message by tapping the plus in the top right corner.

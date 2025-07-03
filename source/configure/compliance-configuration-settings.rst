@@ -79,6 +79,33 @@ By default, files are kept forever. If **Hours**, **Days**, or **Years** is chos
 
   From Mattermost v9.5, when a ``FileRetentionHours`` value is configured, the ``FileRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``FileRetentionDays`` value is configured, the ``FileRetentionHours`` value must be ``0``.
 
+.. config:setting:: preserve-pinned-posts
+  :displayname: Preserve pinned posts (Data Retention)
+  :systemconsole: Compliance > Data Retention Policies
+  :configjson: .DataRetentionSettings.PreservePinnedPosts
+  :environment: MM_DATARETENTIONSETTINGS_PRESERVEPINNEDPOSTS
+  :description: Controls whether pinned posts are preserved when data retention policies delete messages.
+
+Preserve pinned posts
+~~~~~~~~~~~~~~~~~~~~~
+
+From Mattermost v10.10, controls whether pinned posts are preserved when data retention policies delete messages. When enabled, pinned posts won't be deleted by data retention policies, even if they exceed the configured retention period.
+
+**True**: Pinned posts are preserved and won't be deleted by data retention policies.
+
+**False**: **(Default)** Pinned posts are deleted according to the configured data retention policy.
+
++---------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"DataRetentionSettings.PreservePinnedPosts": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  - This global configuration setting must be enabled with mmctl using the :ref:`mmctl config set <manage/mmctl-command-line-tool:mmctl config set>` command.
+  - This configuration setting applies to team and channel policies as well as data retention, and can't be overridden in those more granular team or channel policies.
+  - Files attached to the pinned message aren't preserved.
+  - Only the pinned post is preserved. If it's attached to a thread or if it's the root post of a thread, the other threaded messages aren't preserved.
+
 .. config:setting:: custom-retention-policy
   :displayname: Custom retention policy (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
