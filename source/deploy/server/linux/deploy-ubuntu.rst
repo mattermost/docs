@@ -25,10 +25,6 @@
 
 You can deploy Mattermost server using our ``.deb`` signed packages using the Mattermost PPA (Personal Package Archive). This is the quickest way to install a Mattermost Server that provides automatic updates. This install method is used for both single and clustered installations, as you can tools like Packer for a clustered deployment.
 
-.. tip::
-
-  Alternatively, an **Omnibus Package** deployment bundles together all required components to greatly reduce setup and ongoing maintenance, including Mattermost Server, a PostgreSQL database, NGINX as the application proxy, a custom CLI, and ansible recipes to configure and connect these components.
-
 This Mattermost deployment includes the following steps: install PostgreSQL database, prepare the database, add the PPA repository, install Mattermost server, configure the server, and update the server.
 
 **Step 1: Install PostgreSQL database or get database connection credentials**
@@ -58,12 +54,6 @@ Follow the :ref:`database preparation <deploy/server/preparations:database prepa
 
   The GPG public key has changed. You can `import the new public key <https://deb.packages.mattermost.com/pubkey.gpg>`_ or run the automatic Mattermost PPA repository setup script provided below. Depending on your setup, additional steps may also be required, particularly for installations that didn't rely on the repository setup script. We recommend deleting the old key from ``/etc/apt/trusted.gpg.d`` before adding the apt repository.
 
-  - For Ubuntu Focal - 20.04 LTS:
-
-    ``sudo apt-key del A1B31D46F0F3A10B02CF2D44F8F2C31744774B28``
-
-    ``curl -sL -o- https://deb.packages.mattermost.com/pubkey.gpg | gpg --dearmor | sudo apt-key add``
-
   - For Ubuntu Jammy - 22.04 LTS and Ubuntu Noble - 24.04 LTS:
 
     ``sudo rm /usr/share/keyrings/mattermost-archive-keyring.gpg``
@@ -76,7 +66,7 @@ In a terminal window, run the following repository setup command to add the Matt
 
   curl -o- https://deb.packages.mattermost.com/repo-setup.sh | sudo bash -s mattermost
 
-This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost Omnibus repository so that you can run the install command.
+This command configures the repositories needed for a PostgreSQL database, configures an NGINX web server to act as a proxy, configures certbot to issue and renew the SSL certificate, and configures the Mattermost repository so that you can run the install command.
 
 **Step 4: Install Mattermost server**
 
