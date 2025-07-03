@@ -31,18 +31,9 @@ This Mattermost deployment includes the following steps: install PostgreSQL data
 
 Mattermost requires a PostgreSQL database. You can either:
 
-- Install PostgreSQL locally on the same server
-- Use an external PostgreSQL database server
-- Use a managed database service
-
-If installing locally, install PostgreSQL:
-
-.. code-block:: sh
-
-   sudo apt update
-   sudo apt install postgresql postgresql-contrib
-
-If using an external database, ensure you have the connection credentials (hostname, port, database name, username, and password).
+- Install PostgreSQL locally on the same server by following the `PostgreSQL installation <https://www.postgresql.org/download/>`_ documentation.
+- Use an external PostgreSQL database server. Ensure you have connection credentials, including hostname, port, database name, username, and password available.
+- Use a managed database service.
 
 **Step 2: Prepare the database**
 
