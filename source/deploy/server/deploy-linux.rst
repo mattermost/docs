@@ -6,9 +6,7 @@ Mattermost Server can be deployed on various Linux distributions, providing a fl
 Prerequisites
 -------------
 
-.. note::
-
-   Your Mattermost Server deployment requires a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
+Your Mattermost Server deployment requires a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
 
 This page covers deployment options for major Linux distributions and installation methods. Choose your preferred platform below for specific deployment instructions:
 
