@@ -87,7 +87,7 @@ Assign policies to private channels
 
 Specify the private channel that your access control policy applies to by selecting **Add channels** to search for and select the channels you want. You can assign the policy to multiple channels at once, or you can `assign it to individual channels <#define-access-controls-per-channel>`__ later. Select **Save** to save your changes.
 
-.. important::
+.. note::
   
   Channels with attribute-based access control policies cannot have guest users invited to them (Mattermost v10.10+). Only users who match the defined attribute criteria can be added to ABAC-controlled channels, ensuring strict adherence to access control policies.
 
