@@ -19,6 +19,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   2. Enter a channel name.
   3. Choose whether this is a public or private channel. See the :doc:`channel types </collaborate/channel-types>` documentation to learn more about public and private channels.
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
+  5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If this option isn't available, you can `customize your channel sidebar </preferences/customize-your-channel-sidebar>`.
 
   **To start a direct or group message**
 
@@ -41,6 +42,7 @@ Anyone can create public channels, private channels, direct messages, and group 
   **To create a public or private channel**
 
   Tap |plus| in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to create a private channel, tap the **Make Private** option.
+
 
     .. image:: ../images/create-channel-or-open-direct-message-on-mobile.jpg
       :alt: You can create a new channel by tapping the plus in the top right corner.
