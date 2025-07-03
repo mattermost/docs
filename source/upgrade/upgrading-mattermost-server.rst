@@ -6,6 +6,8 @@ Upgrade Mattermost Server
 
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
+If this is your first Mattermost upgrade, we recommend that you read the `comprehensive upgrade guide <#comprehensive-upgrade-guide>`__ below. If you're an experienced system admin familiar with the upgrade process, see the `quick start checklist <#quick-start>`__.
+
 Quick start
 -----------
 
