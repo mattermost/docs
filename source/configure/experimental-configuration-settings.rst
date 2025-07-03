@@ -1619,10 +1619,10 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
 Enable channel category sorting
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/ent-selfhosted-only.rst
+.. include:: ../_static/badges/allplans-cloud.rst
   :start-after: :nosearch:
 
-From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels.
+From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels. This configuration setting applies only to cloud-based deployments.
 
 **True**: Users can assign channels to new or existing channel categories when creating or renaming channels.
 
