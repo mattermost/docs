@@ -28,7 +28,7 @@
 
 You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, typically favored by advanced system administrators. 
 
-This Mattermost deployment includes multiple steps: install PostgreSQL database, prepare the database, download the Mattermost server, install the server, and set up the server.
+This Mattermost deployment includes the following steps: install PostgreSQL database, prepare the database, download the Mattermost server, install the server, and set up the server.
 
 **Step 1: Install PostgreSQL database or get database connection credentials**
 
