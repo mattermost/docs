@@ -3,16 +3,6 @@
 ```{Important}
 ```{include} common-esr-support-upgrade.md
 ```
-(release-v10.10-feature-release)=
-## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
-
-- **10.10.0, released TBD**
-  - Original 10.10.0 release.
-
-### Improvements
-
-#### Connected Workspaces
- - Enhanced the connected workspaces feature by adding a default team field to remote cluster entities. System admins can now specify which team shared channels from remote clusters should be added to by default, improving the organization and management of shared channels across connected workspaces.
 
 (release-v10.9-feature-release)=
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
