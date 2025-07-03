@@ -55,7 +55,7 @@ Create a secure connection
     1. Go to **Site Configuration > Connected Workspaces**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Create a connection**.
     3. Specify the **Organization Name** for this connection. The remote system admin must specify this name when accepting a connection invitation.
-    4. Select the **Destination Team** as the default team where shared channels will be added.
+    4. Select the **Destination Team** as the default team where shared channels will be added. This team will be used as the default location for organizing shared channels from this connected workspace.
     5. Select **Save**.
 
     An invitation consisting of a password-protected AES 256-bit encrypted code blob is generated. The connection is labeled as **Connection Pending** until the remote system admin accepts the invitation.
@@ -98,7 +98,7 @@ Accept a connection invitation
     1. Go to **Site Configuration > Connected Workspaces**.
     2. Under **Connected Workspaces**, select **Add a connection**, and then select **Accept an invitation**.
     3. Specify the **Organization Name** for this invitation. This must be the same name specified when creating the connection.
-    4. Select the team where shared channels will be added.
+    4. Select the **Destination Team** where shared channels will be added. This team will serve as the default location for organizing shared channels from this connected workspace.
     5. Paste the encrypted invitation code and password you've been provided to connect with the remote workspace.
     6. Select **Accept**.
 
@@ -162,7 +162,7 @@ Edit a connected workspace
 
 .. tab:: System Console
 
-    In the System Console, system admins can change the **Organization Name**, the **Destination Team**, or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
+    In the System Console, system admins can change the **Organization Name**, the **Destination Team** (which serves as the default location for organizing shared channels from this connected workspace), or channels shared with a remote Mattermost instance as well as channels shared with your local Mattermost instance.
     
     1. Under **Connected Workspaces**, identify the connected workspace you want to change.
     2. Select the **More** |more-icon| icon to the right of the connected workspace, and then select **Edit**.
