@@ -10,7 +10,7 @@ There are different ways for teams to access and interact with collaborative pla
 Permissions are provided using:
 
 * **System Scheme:** Applies permissions universally across all teams, channels, and playbooks.
-* **Team Override Schemes:** Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
+* **Team Override Schemes:** Allow admins to customize permissions for each team.
 
 For more information about System and Team Override Schemes, refer to the :doc:`Advanced Permissions </onboard/advanced-permissions>` documentation.
 

@@ -91,6 +91,21 @@ Run the ``/gitlab subscriptions list`` to review all of your subscriptions.
 
 Run the ``/gitlab subscriptions add group[/project] [features]`` slash command to subscribe a Mattermost channel and receive posts for new merge requests, issues, or other features, from a GitLab project. To unsubscribe and stop receiving posts, run the ``/gitlab subscriptions delete group[/project]`` slash command.
 
+The following features are supported for channel subscriptions:
+
+- ``merges`` - Get notified when merge requests are merged
+- ``issues`` - Get notified when issues are created
+- ``pushes`` - Get notified when commits are pushed to a branch
+- ``issue_comments`` - Get notified when comments are made on issues
+- ``merge_request_comments`` - Get notified when comments are made on merge requests
+- ``tag`` - Get notified when tags are created
+- ``pipeline`` - Get notified about pipeline events
+- ``wiki`` - Get notified about wiki page events
+- ``releases`` - Get notified when releases are created
+- ``deployments`` - Get notified about deployment events
+
+For example, to subscribe to release and deployment events: ``/gitlab subscriptions add group[/project] releases,deployments``
+
 For each project you want to receive notifications for or subscribe to, create a webhook in a channel where you want to watch events sent from GitLab by running the ``/gitlab webhook`` slash command. For example: ``/gitlab webhook add group[/project]``
 
 .. note::
@@ -104,6 +119,27 @@ For each project you want to receive notifications for or subscribe to, create a
     - **Secret Token**: Copy the webhook secret you generated earlier.
     - Select all the events in **Triggers**.
     - Add the webhook.
+
+Create issues and manage comments
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can create GitLab issues and manage issue comments directly from Mattermost using slash commands and interactive modals.
+
+Create a GitLab issue
+^^^^^^^^^^^^^^^^^^^^^^
+
+Run the ``/gitlab issue create`` slash command to open an interactive modal where you can create a new GitLab issue. The modal allows you to perform the following actions:
+
+- Set the issue title and description
+- Assign labels
+- Set the assignee
+- Choose the milestone
+- Select the target project
+
+Attach comments to existing issues
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Run the ``/gitlab issue comment [issue-number]`` slash command to attach a comment to an existing GitLab issue. This opens an interactive modal where you can compose and submit your comment directly from Mattermost.
 
 Update settings
 ~~~~~~~~~~~~~~~

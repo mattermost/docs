@@ -256,7 +256,7 @@ Forgot Password custom link
   :systemconsole: Site Configuration > Customization
   :configjson: .SupportSettings.ReportAProblemType
   :environment: MM_SUPPORTSETTINGS_REPORTAPROBLEMTYPE
-  :description: Specify how the ‘Report a Problem’ option behaves in the Mattermost app via the Help menu.
+  :description: Specify how the Report a Problem option behaves in the Mattermost app via the Help menu.
 
 Report a Problem
 ~~~~~~~~~~~~~~~~~
@@ -264,7 +264,7 @@ Report a Problem
 .. include:: ../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
-Specify how the ‘Report a Problem’ option behaves in the Mattermost app via the **Help** menu:
+Specify how the **Report a Problem** option behaves in the Mattermost app via the **Help** menu:
 
 - **Default link**: Uses the default Mattermost URL to report a problem. For commercial customers, this is the `Mattermost Support Portal <https://support.mattermost.com/hc/en-us/requests/new>`_. Non-commercial customers are directed to `create a new issue on the Mattermost GitHub repository <https://github.com/mattermost/mattermost/issues/new>`_.
 - **Email address**: Enables you to :ref:`enter an email address <configure/site-configuration-settings:report a problem email address>` that users will be prompted to send a message to when they choose **Report a Problem** in Mattermost.
@@ -543,7 +543,7 @@ Available languages
 | Newly supported languages are added automatically.                             | - Environment variable: ``MM_LOCALIZATIONSETTINGS_AVAILABLELOCALES``      |
 | If this field is not blank, it must contain the **Default client language**,   |                                                                           |
 | in addition to any other languages. For example, to limit the language         |                                                                           |
-| choices to US English and Español (es), the string would be ``”en,es”``.       |                                                                           |
+| choices to US English and Español (es), the string would be ``"en,es"``.       |                                                                           |
 |                                                                                |                                                                           |
 | Options: ``"bg"``, ``"de"``, ``"en"``, ``"en-AU"``, ``"es"``, ``"fa"``,        |                                                                           |
 | ``"fr"``, ``"hu"``, ``"it"``, ``"ja"``, ``"ko"``, ``"nl"``, ``"pl"``,          |                                                                           |
@@ -691,8 +691,8 @@ Enable users to open direct message channels with
   :description: This setting determines how names appear in posts and under the **Direct Messages** list.
 
   - **Show username**: **(Default)** Displays usernames. ``config.json`` option: ``"username"``.
-  - **Show nickname if one exists...**: Displays the user’s nickname. ``config.json`` option: ``"nickname_full_name"``.
-  - **Show first and last name**: Displays the user’s full name. ``config.json`` option: ``"full_name"``.
+  - **Show nickname if one exists...**: Displays the user's nickname. ``config.json`` option: ``"nickname_full_name"``.
+  - **Show first and last name**: Displays the user's full name. ``config.json`` option: ``"full_name"``.
 
 Teammate name display
 ~~~~~~~~~~~~~~~~~~~~~
@@ -705,10 +705,10 @@ Teammate name display
 |                                                                                                 |                                                                                      |
 | - **Show username**: **(Default for self-hosted deployments)** Displays usernames.              |                                                                                      |
 |   ``config.json`` option: ``"username"``.                                                       |                                                                                      |
-| - **Show nickname if one exists...**: Displays the user’s nickname. If the user doesn't have a  |                                                                                      |
+| - **Show nickname if one exists...**: Displays the user's nickname. If the user doesn't have a  |                                                                                      |
 |   nickname, their full name is displayed. If the user doesn't have a full name, their username  |                                                                                      |
 |   is displayed. ``config.json`` option: ``"nickname_full_name"``.                               |                                                                                      |
-| - **Show first and last name**: **(Default for Cloud deployments)** Displays user’s full name.  |                                                                                      |
+| - **Show first and last name**: **(Default for Cloud deployments)** Displays user's full name.  |                                                                                      |
 |   If the user doesn't have a full name, their username is displayed. Recommended when using     |                                                                                      |
 |   :doc:`SAML </onboard/sso-saml>` or                                                            |                                                                                      |
 |   :doc:`LDAP </onboard/ad-ldap>` if first name and last name                                    |                                                                                      |
@@ -928,7 +928,7 @@ Enable email notifications
     - **Lowered Network Traffic**: Each email sent contributes to network traffic. Disabling email notifications decreases the amount of data being transmitted, which can lead to better performance, especially in environments with limited bandwidth.
     - **Faster Response Times**: With fewer background tasks (like sending emails) to handle, the application can potentially respond to user requests more quickly, improving perceived performance.
     - **Resource Allocation**: Resources like CPU cycles, memory, and network bandwidth that would have been used for sending emails can be used elsewhere, possibly improving the performance of other critical components of the system.
-    - However, disabling email notifications can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
+    - However, disabling email notifications can negatively impact user experience, communication efficiency, and overall productivity. It's important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: enable-preview-mode-banner
   :displayname: Enable preview mode banner (Notifications)
@@ -1074,13 +1074,13 @@ Notification reply-to address
   :systemconsole: Site Configuration > Notifications
   :configjson: .EmailSettings.FeedbackOrganization
   :environment: MM_EMAILSETTINGS_FEEDBACKORGANIZATION
-  :description: Optional setting to include the organization’s name and mailing address in the footer of email notifications.
+  :description: Optional setting to include the organization's name and mailing address in the footer of email notifications.
 
 Notification footer mailing address
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
-| Optional setting to include the organization’s name and mailing address in the footer of email notifications. If not set, nothing will appear. | - System Config path: **Site Configuration > Notifications**              |
+| Optional setting to include the organization's name and mailing address in the footer of email notifications. If not set, nothing will appear. | - System Config path: **Site Configuration > Notifications**              |
 |                                                                                                                                                | - ``config.json`` setting: ``EmailSettings`` > ``FeedbackOrganization``   |
 | String input.                                                                                                                                  | - Environment variable: ``MM_EMAILSETTINGS_FEEDBACKORGANIZATION``         |
 +------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
@@ -1091,7 +1091,7 @@ Notification footer mailing address
   :configjson: .EmailSettings.PushNotificationContents
   :environment: MM_EMAILSETTINGS_PUSHNOTIFICATIONCONTENTS
 
-  - **Generic description with only sender name**: Push notifications include the sender’s name, but not the channel name or message contents. ``config.json`` setting: ``"generic_no_channel"``
+  - **Generic description with only sender name**: Push notifications include the sender's name, but not the channel name or message contents. ``config.json`` setting: ``"generic_no_channel"``
   - **Generic description with sender and channel names**: **(Default)** Push notifications include the name of the sender and channel, but not the message contents. ``config.json`` setting: ``"generic"``
   - **Full message content sent in the notification payload**: Includes the message contents in the push notification payload. ``config.json`` setting: ``"full"``
   - **Full message content fetched from the server on receipt** (*Available in Mattermost Enterprise*): The notification payload contains no message content; the content is fetched separately. ``config.json`` setting: ``"id_loaded"``
@@ -1100,7 +1100,7 @@ Push notification contents
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
-| - **Generic description with only sender name**: Push notifications include the sender’s name,         | - System Config path: **Site Configuration > Notifications**                |
+| - **Generic description with only sender name**: Push notifications include the sender's name,         | - System Config path: **Site Configuration > Notifications**                |
 |   but not the channel name or message contents. ``config.json`` setting: ``"generic_no_channel"``      | - ``config.json`` setting: ``EmailSettings`` > ``PushNotificationContents`` |
 |                                                                                                        | - Environment variable: ``MM_EMAILSETTINGS_PUSHNOTIFICATIONCONTENTS``       |
 | - **Generic description with sender and channel names**: **(Default)** Push notifications              |                                                                             |
@@ -1109,8 +1109,8 @@ Push notification contents
 |                                                                                                        |                                                                             |
 | - **Full message content sent in the notification payload**: Includes the message                      |                                                                             |
 |   contents in the push notification payload, which may be sent through                                 |                                                                             |
-|   `Apple’s Push Notification service <https://developer.apple.com/documentation/usernotifications>`__  |                                                                             |
-|   or `Google’s Firebase Cloud Messaging <https://firebase.                                             |                                                                             |
+|   `Apple's Push Notification service <https://developer.apple.com/documentation/usernotifications>`__  |                                                                             |
+|   or `Google's Firebase Cloud Messaging <https://firebase.                                             |                                                                             |
 |   google.com/docs/cloud-messaging>`__ .                                                                |                                                                             |
 |   We **highly recommended** this option only be used with an ``https`` protocol to encrypt             |                                                                             |
 |   the connection and protect confidential information. ``config.json`` setting: ``"full"``             |                                                                             |
@@ -1303,7 +1303,7 @@ Enable custom emoji
 +-------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
 
 .. note::
-  While Mattermost supports up to 6000 custom emojis, an increase in custom emojis can slow your server’s performance.
+  While Mattermost supports up to 6000 custom emojis, an increase in custom emojis can slow your server's performance.
 
 ----
 
@@ -1360,7 +1360,7 @@ Threaded discussions
 
 .. important::
 
-  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator’s guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
+  Customers upgrading from a legacy Mattermost release prior to v7.0 must review the `administrator's guide to enabling threaded discussions <https://support.mattermost.com/hc/en-us/articles/6880701948564-Administrator-s-guide-to-enabling-Collapsed-Reply-Threads>`_ (formally known as Collapsed Reply Threads) prior to enabling this functionality.
 
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **Always On**: **(Default)** Enables :doc:`threaded discussions </collaborate/organize-conversations>`      | - System Config path: **Site Configuration > Posts**                      |
@@ -1517,7 +1517,7 @@ Enable website link previews
   - Less Data Processing: Every link shared needs to be processed to extract the necessary preview information. This processing consumes CPU and memory resources, which can otherwise be reserved for other tasks.
   - Decreased Client-Side Rendering Time: On the client side, rendering link previews (adding text, images, and layouts) takes time and resources. Disabling link previews means that clients do not need to render these elements, leading to faster message display.
   - Saved Bandwidth: Link previews often include images and other data from the linked content. By disabling them, you save the bandwidth that would be used to download these additional resources.
-  - However, disabling link previews can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
+  - However, disabling link previews can negatively impact user experience, communication efficiency, and overall productivity. It's important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: disable-link-previews-for-specific-domains
   :displayname: Disable link previews for specific domains (Posts)
@@ -1562,7 +1562,7 @@ Enable message link previews
   - Faster Message Rendering: On the client-side, rendering messages with multimedia previews takes more time compared to plain text messages. Disabling previews can reduce rendering complexity and improve client performance, especially on devices with limited resources.
   - Network Latency: Fetching metadata for link previews may introduce network latency, as the server must reach out to external resources. Disabling this can eliminate these delays, ensuring faster message processing and display.
   - Simplified Message Handling: In the absence of previews, messages are simpler and less resource-intensive to store, retrieve, and display. This can contribute to overall improved system responsiveness and efficiency.
-  - However, disabling permalink previews can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
+  - However, disabling permalink previews can negatively impact user experience, communication efficiency, and overall productivity. It's important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: enable-svgs
   :displayname: Enable SVGs (Posts)
@@ -1719,7 +1719,7 @@ Enable server syncing of message drafts
   - Decreased Client Processing: On the client side, draft management involves monitoring changes, saving drafts periodically, and handling conflict resolution if multiple drafts are edited from different devices. Disabling drafts reduces these client-side processes, thus freeing up memory and CPU resources.
   - Simplified Architecture: Maintaining synced drafts often requires complex backend logic to ensure consistency and avoid data conflicts. Simplifying this architecture by removing draft syncing can lead to more efficient and faster backend operations.
   - Improved User Experience: Users may experience faster load times and reduced latency without the overhead of draft syncing. This can be particularly noticeable in environments with limited or variable internet connectivity.
-  - However, disabling draft synchronization can negatively impact user experience, communication efficiency, and overall productivity. It’s important to balance performance improvements with the needs of your organization and users.
+  - However, disabling draft synchronization can negatively impact user experience, communication efficiency, and overall productivity. It's important to balance performance improvements with the needs of your organization and users.
 
 .. config:setting:: unique-emoji-reaction-limit
   :displayname: Unique emoji reaction limit (Posts)
@@ -1943,7 +1943,7 @@ This feature's two ``config.json`` settings include:
   - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
 
 Disable shared channel status sync
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Disable member status and availability synchronization between connected workspaces.
 
@@ -1953,6 +1953,9 @@ Disable member status and availability synchronization between connected workspa
 |                                                                                                                            | - Environment variable: N/A                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 .. config:setting:: default-maximum-posts-per-sync
   :displayname: Default maximum posts per sync (Connected Workspaces)
@@ -1969,6 +1972,73 @@ Default maximum posts per sync
 |                                                                           | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``DefaultMaxPostsPerSync`` > ``50`` |
 | Default is **50**.                                                        | - Environment variable: N/A                                                                      |
 +---------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
+
+.. config:setting:: sync-users-on-connection-open
+  :displayname: Sync users on connection open (Connected Workspaces)
+  :systemconsole: N/A
+  :configjson: ConnectedWorkspacesSettings.SyncUsersOnConnectionOpen
+  :environment: N/A
+  :description: Automatically synchronize users when a new connection between workspaces is established. Default is true.
+
+  - **true**: **(Default)** Users are automatically synchronized when a new connection is established.
+  - **false**: Users are not automatically synchronized when a new connection is established.
+
+Sync users on connection open
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Automatically synchronize users when a new connection between workspaces is established. This ensures that remote users are immediately discoverable for direct and group messages without requiring them to post in a shared channel first.
+
++----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Users are automatically synchronized when a new connection is established.                       | - System Config path: N/A                                                                                |
+| - **false**: Users are not automatically synchronized when a new connection is established.                                | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``SyncUsersOnConnectionOpen`` > ``true``    |
+|                                                                                                                            | - Environment variable: N/A                                                                              |
++----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
+
+.. config:setting:: global-user-sync-batch-size
+  :displayname: Global user sync batch size (Connected Workspaces)
+  :systemconsole: N/A
+  :configjson: ConnectedWorkspacesSettings.GlobalUserSyncBatchSize
+  :environment: N/A
+  :description: The number of users to sync in each batch when performing global user synchronization. Default is 100.
+
+Global user sync batch size
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| The number of users to sync in each batch when performing global user     | - System Config path: N/A                                                                                  |
+| synchronization between connected workspaces.                             | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``GlobalUserSyncBatchSize`` > ``100``         |
+|                                                                           | - Environment variable: N/A                                                                                |
+| Default is **100**.                                                       |                                                                                                            |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
+
+.. config:setting:: member-sync-batch-size
+  :displayname: Member sync batch size (Connected Workspaces)
+  :systemconsole: N/A
+  :configjson: ConnectedWorkspacesSettings.MemberSyncBatchSize
+  :environment: N/A
+  :description: The number of channel members to sync in each batch when synchronizing channel membership. Default is 100.
+
+Member sync batch size
+~~~~~~~~~~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| The number of channel members to sync in each batch when synchronizing    | - System Config path: N/A                                                                                  |
+| channel membership between connected workspaces.                          | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``MemberSyncBatchSize`` > ``100``             |
+|                                                                           | - Environment variable: N/A                                                                                |
+| Default is **100**.                                                       |                                                                                                            |
++---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 ----
 

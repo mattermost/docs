@@ -78,6 +78,7 @@ To set your availability, select your profile picture, then specify your availab
 
 Other members can see your availability anywhere they can see your name, such as the channel sidebar, within conversations, and within direct messages.
 
+
 Set your availability as Do Not Disturb
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

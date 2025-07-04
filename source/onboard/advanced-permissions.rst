@@ -9,7 +9,7 @@ Mattermost system admins using Mattermost Cloud or Mattermost Server can use Adv
 Two permission schemes are provided in Mattermost:
 
 * **System Scheme**: Applies permissions universally across all teams and channels.
-* **Team Override Schemes**: Allow admins to customize permissions for each team (available in Mattermost Enterprise and Professional).
+* **Team Override Schemes**: Allow admins to customize permissions for each team.
 
 This document describes the types of permissions that can be given to users of Mattermost using schemes as well as channel settings and roles. The :doc:`permissions backend documentation </onboard/advanced-permissions-backend-infrastructure>` provides additional technical details around permissions.
   
@@ -36,9 +36,6 @@ You can access the System Scheme interface by going to **System Console > User M
 
 Team override scheme
 ~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
 
 On systems with multiple :ref:`Mattermost teams <collaborate/organize-using-teams:single team versus multiple teams>`, each team may operate and collaborate in a unique way. Team Override Schemes give Admins the flexibility to tailor permissions to the needs of each team.
 

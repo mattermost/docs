@@ -6,13 +6,42 @@ Upgrade Mattermost Server
 
 In most cases, you can upgrade Mattermost Server in a few minutes. However, the upgrade can take longer depending on several factors, including the size and complexity of your installation, and the version that you're upgrading from.
 
-.. include:: ../_static/badges/academy-tarball-upgrade.rst
-  :start-after: :nosearch:
+If this is your first Mattermost upgrade, we recommend that you read the `comprehensive upgrade guide <#comprehensive-upgrade-guide>`__ below. If you're an experienced system admin familiar with the upgrade process, see the `quick start checklist <#quick-start>`__.
+
+Quick start
+-----------
+
+Experienced system admins looking for a quick overview of the Mattermost upgrade process can use the following 4-step checklist below:
+
+1. Ensure you have a complete backup of your system before proceeding, including database and application.
+
+2. **System requirements**: Verify that your server and PostgreSQL version meets :doc:`Mattermost requirements </deploy/software-hardware-requirements>`.
+
+3. **Preparation steps**
+
+  - Download the latest server version.
+  - Extract the new files to a temporary location (``/tmp``)
+  - Identify the current Mattermost directory (default: ``/opt/mattermost``)
+
+4. **Upgrade process**
+
+  - Stop the Mattermost service: ``sudo systemctl stop mattermost``
+  - Remove old application files (preserve config, data, logs, plugins).
+  - Copy new files to the install directory.
+  - Change file ownership: ``sudo chown -R mattermost:mattermost mattermost``
+  - Set capabilities for low port usage if needed: ``sudo setcap cap_net_bind_service=+ep ./mattermost/bin/mattermost``
+  - Start the Mattermost service: ``sudo systemctl start mattermost``
+  - Remove temporary upgrade files.
+
+For detailed instructions and additional considerations, see the complete upgrade guide below.
 
 .. _before-you-begin:
 
+Comprehensive upgrade guide
+----------------------------
+
 Before you begin
-----------------
+~~~~~~~~~~~~~~~~~
 
 **Read these instructions carefully from start to finish.** 
 
@@ -38,7 +67,7 @@ Make sure that you understand how to :doc:`prepare for your upgrade </upgrade/pr
   Consider generating a migration plan using the :ref:`mattermost db migrate --save-plan <manage/command-line-tools:mattermost db migrate>` CLI command when upgrading to have a detailed record of the changes that will be applied to your database. This can make it easier to revert those changes if you need to downgrade later.
 
 Upgrade Mattermost Server
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. In a terminal window on the server that hosts Mattermost, change to your home directory. Delete any files and directories that might still exist from a previous download.
 
@@ -198,3 +227,6 @@ Upload a license key
 ---------------------
 
 When Enterprise Edition is running, open **System Console > About > Editions and License** and upload your license key.
+
+.. include:: ../_static/badges/academy-tarball-upgrade.rst
+  :start-after: :nosearch:
