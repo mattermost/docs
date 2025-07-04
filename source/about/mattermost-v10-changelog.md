@@ -25,7 +25,7 @@ If you upgrade from a release earlier than v10.9, please read the other [Importa
  - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
  - Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
  - Pre-packaged Boards plugin [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
- - Pre-packaged Agents plugin [v1.2.2](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.2).
+ - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
  - Resolved inconsistent styling issues in new integration pages.
  - Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
  - Improved screen reader support for autocompletes and channel switcher.
