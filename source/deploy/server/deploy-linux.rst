@@ -31,5 +31,4 @@ Configuring TLS and setting up an NGINX proxy ensures secure communication betwe
 
 .. note::
 
-  - Your Mattermost Server deployments requires a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
-  - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
+  See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
