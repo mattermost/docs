@@ -54,6 +54,7 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
   - Branch or Tag creation
   - Branch or Tag deletion
   - Discussions
+  - Discussion comments
   - Issue comments
   - Issues
   - Pull requests
@@ -63,8 +64,6 @@ A Mattermost system admin must perform the following steps in GitHub. Create a w
   - Releases
   - Stars
   - Workflows
-  - Discussions
-  - Discussion comments
 
 6. Select **Add Webhook** to save your changes.
 
