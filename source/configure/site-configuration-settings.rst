@@ -1943,7 +1943,7 @@ This feature's two ``config.json`` settings include:
   - **false**: **(Default)** Channel as well as channel member status and availability is synchronized at regular intervals.
 
 Disable shared channel status sync
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Disable member status and availability synchronization between connected workspaces.
 
@@ -1953,6 +1953,9 @@ Disable member status and availability synchronization between connected workspa
 |                                                                                                                            | - Environment variable: N/A                                                                                    |
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------+
 
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 .. config:setting:: default-maximum-posts-per-sync
   :displayname: Default maximum posts per sync (Connected Workspaces)
@@ -1983,13 +1986,17 @@ Default maximum posts per sync
 Sync users on connection open
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Automatically synchronize users when a new connection between workspaces is established. This ensures that remote users are immediately discoverable in the DM/GM creation modal without requiring them to post in a shared channel first.
+Automatically synchronize users when a new connection between workspaces is established. This ensures that remote users are immediately discoverable for direct and group messages without requiring them to post in a shared channel first.
 
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Users are automatically synchronized when a new connection is established.                       | - System Config path: N/A                                                                                |
-| - **false**: Users are not automatically synchronized when a new connection is established.                                | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``SyncUsersOnConnectionOpen`` > ``true``   |
-|                                                                                                                            | - Environment variable: N/A                                                                             |
+| - **false**: Users are not automatically synchronized when a new connection is established.                                | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``SyncUsersOnConnectionOpen`` > ``true``    |
+|                                                                                                                            | - Environment variable: N/A                                                                              |
 +----------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 .. config:setting:: global-user-sync-batch-size
   :displayname: Global user sync batch size (Connected Workspaces)
@@ -2003,10 +2010,14 @@ Global user sync batch size
 
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 | The number of users to sync in each batch when performing global user     | - System Config path: N/A                                                                                  |
-| synchronization between connected workspaces.                            | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``GlobalUserSyncBatchSize`` > ``100``        |
-|                                                                           | - Environment variable: N/A                                                                               |
+| synchronization between connected workspaces.                             | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``GlobalUserSyncBatchSize`` > ``100``         |
+|                                                                           | - Environment variable: N/A                                                                                |
 | Default is **100**.                                                       |                                                                                                            |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 .. config:setting:: member-sync-batch-size
   :displayname: Member sync batch size (Connected Workspaces)
@@ -2019,11 +2030,15 @@ Member sync batch size
 ~~~~~~~~~~~~~~~~~~~~~~
 
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| The number of channel members to sync in each batch when synchronizing   | - System Config path: N/A                                                                                  |
-| channel membership between connected workspaces.                         | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``MemberSyncBatchSize`` > ``100``            |
-|                                                                           | - Environment variable: N/A                                                                               |
+| The number of channel members to sync in each batch when synchronizing    | - System Config path: N/A                                                                                  |
+| channel membership between connected workspaces.                          | - ``config.json`` setting: ``ConnectedWorkspacesSettings`` > ``MemberSyncBatchSize`` > ``100``             |
+|                                                                           | - Environment variable: N/A                                                                                |
 | Default is **100**.                                                       |                                                                                                            |
 +---------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 ----
 

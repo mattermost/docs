@@ -162,9 +162,7 @@ System admins can enable the ``EnableSharedChannelsPlugins`` feature flag to ena
 Remote user discovery
 ----------------------
 
-From Mattermost v10.10, remote users across connected workspaces can be discovered in the DM/GM creation modal when the feature flag ``EnableSyncAllUsersForRemoteCluster`` is enabled. This feature implements global user synchronization between connected Mattermost instances, making remote users discoverable without requiring them to post in a shared channel first.
-
-When ``EnableSyncAllUsersForRemoteCluster`` is enabled, Mattermost uses cursor-based synchronization to efficiently sync user information between connected instances. The system:
+From Mattermost v10.10, remote users across connected workspaces can be discovered for direct or group messages when the feature flag ``EnableSyncAllUsersForRemoteCluster`` is enabled. This feature implements global user synchronization between connected Mattermost instances, making remote users discoverable without requiring them to post in a shared channel first. When enabled, Mattermost uses cursor-based synchronization to efficiently sync user information between connected instances. The system:
 
 - Synchronizes users in configurable batch sizes to prevent timeouts and reduce memory usage
 - Tracks synchronization progress using timestamps to enable efficient resumption
@@ -174,6 +172,10 @@ When ``EnableSyncAllUsersForRemoteCluster`` is enabled, Mattermost uses cursor-b
 The feature includes configuration options for :ref:`automatically syncing users when connections are established <configure/site-configuration-settings:sync users on connection open>` and :ref:`controlling batch processing sizes <configure/site-configuration-settings:global user sync batch size>` for optimal performance.
 
 When ``EnableSyncAllUsersForRemoteCluster`` is disabled, remote users are only discoverable in the DM/GM creation modal after they have participated in a shared channel.
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 Channel membership synchronization
 ----------------------------------
@@ -190,6 +192,10 @@ When ``EnableSharedChannelsMemberSync`` is enabled:
 The feature includes a configuration option for :ref:`controlling batch processing sizes for member synchronization <configure/site-configuration-settings:member sync batch size>` to ensure optimal performance during large membership changes.
 
 When ``EnableSharedChannelsMemberSync`` is disabled, channel membership changes are not synchronized between connected workspaces, and users must be manually added or removed from shared channels on each workspace.
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 Manage connections and invitations
 ----------------------------------
