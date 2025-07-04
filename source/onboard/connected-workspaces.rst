@@ -8,7 +8,7 @@ Communicate across organizations, as well as external partners and vendors using
 
 Connected workspaces in Mattermost behave like regular public and private channels and offer the same user experience and functionality. All members using secure connections, including local members and remote members, can :doc:`send and receive channel messages </collaborate/send-messages>`, :doc:`use emojis </collaborate/react-with-emojis-gifs>` to react to messages, :doc:`share files </collaborate/share-files-in-messages>`, and :doc:`search message history </collaborate/search-for-messages>`.  Content is synchronized across all participating Mattermost instances.
 
-A channel’s permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
+A channel's permissions and access continues to be governed by each server separately. :ref:`Advanced access control <manage/team-channel-members:advanced access controls>` permissions can be applied to a shared channel, and be in effect on the local Mattermost server while not being in effect on a remote Mattermost server.
 
 Set up connected workspaces
 ---------------------------
@@ -70,7 +70,7 @@ Create a secure connection
 
     For example:
 
-    ``/secure-connection create --name AcmeUS --displayname “AcmeUSA” --password examplepassword``
+    ``/secure-connection create --name AcmeUS --displayname "AcmeUSA" --password examplepassword``
 
     This slash command creates an invitation consisting of a password-protected AES 256-bit encrypted code blob for a remote Mattermost entity known locally as ``AcmeUS`` with a password of ``examplepassword``. Within Mattermost, this shared connection displays to the local system admin based on the ``name`` and ``displayname`` provided.
 
@@ -109,7 +109,7 @@ Accept a connection invitation
 
     For example:
 
-    ``/secure-connection accept --name AcmeUS --displayname “AcmeUSA” --password examplepassword --invite [code-blob]``
+    ``/secure-connection accept --name AcmeUS --displayname "AcmeUSA" --password examplepassword --invite [code-blob]``
 
     This slash command accepts a secure connection invitation from ``AcmeUS``.
 
@@ -133,7 +133,7 @@ Once a connection is established between two Mattermost servers, system admins c
 
     You can extend an invitation that permits remote members to participate in the channel based on their channel and member permissions.
 
-    Alternatively, you can extend a read-only invitation to a secure connection by appending the optional ``--readonly`` parameter to this command. Remote members can’t post or reply to messages within shared read-only channels.
+    Alternatively, you can extend a read-only invitation to a secure connection by appending the optional ``--readonly`` parameter to this command. Remote members can't post or reply to messages within shared read-only channels.
 
     .. tip:: 
 
@@ -158,6 +158,44 @@ Plugin component interaction
 From Mattermost v10.10, plugin interactions such as slash commands, interactive buttons, and other plugin-generated components aren't displayed or accessible in shared channels by default to ensure a consistent experience across different Mattermost instances. 
 
 System admins can enable the ``EnableSharedChannelsPlugins`` feature flag to enable these plugin interactions in shared channels. When plugin components are enabled in shared channels, we recommend ensuring that all connected Mattermost instances have the same plugins installed and configured to avoid inconsistent user experiences. Plugin behaviors can vary between instances if different plugin versions or configurations are used.
+
+Remote user discovery
+----------------------
+
+From Mattermost v10.10, remote users across connected workspaces can be discovered for direct or group messages when the feature flag ``EnableSyncAllUsersForRemoteCluster`` is enabled. This feature implements global user synchronization between connected Mattermost instances, making remote users discoverable without requiring them to post in a shared channel first. When enabled, Mattermost uses cursor-based synchronization to efficiently sync user information between connected instances. The system:
+
+- Synchronizes users in configurable batch sizes to prevent timeouts and reduce memory usage
+- Tracks synchronization progress using timestamps to enable efficient resumption
+- Filters out users from their original cluster to prevent syncing users back to their home instance
+- Only syncs users that have been updated since the last synchronization
+
+The feature includes configuration options for :ref:`automatically syncing users when connections are established <configure/site-configuration-settings:sync users on connection open>` and :ref:`controlling batch processing sizes <configure/site-configuration-settings:global user sync batch size>` for optimal performance.
+
+When ``EnableSyncAllUsersForRemoteCluster`` is disabled, remote users are only discoverable in the DM/GM creation modal after they have participated in a shared channel.
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
+
+Channel membership synchronization
+----------------------------------
+
+From Mattermost v10.10, channel membership synchronization between connected workspaces is controlled by the feature flag ``EnableSharedChannelsMemberSync``. When this feature flag is enabled, channel membership changes are automatically synchronized across all connected workspaces that share the same channel.
+
+When ``EnableSharedChannelsMemberSync`` is enabled:
+
+- Users added to a shared channel on one workspace are automatically added to the corresponding shared channel on all connected workspaces
+- Users removed from a shared channel on one workspace are automatically removed from the corresponding shared channel on all connected workspaces
+- Membership changes are processed in configurable batch sizes to optimize performance and prevent timeouts
+- The system uses cursor-based synchronization to efficiently track and sync membership changes
+
+The feature includes a configuration option for :ref:`controlling batch processing sizes for member synchronization <configure/site-configuration-settings:member sync batch size>` to ensure optimal performance during large membership changes.
+
+When ``EnableSharedChannelsMemberSync`` is disabled, channel membership changes are not synchronized between connected workspaces, and users must be manually added or removed from shared channels on each workspace.
+
+.. note::
+
+  Enabling these features can increase the load on your Mattermost server’s CPU, memory, and database due to frequent updates, database queries, and API communication. Excessive sync frequency and retries can overwhelm system resources, potentially causing performance degradation or instability. Monitor your system carefully when enabling these features.
 
 Manage connections and invitations
 ----------------------------------
@@ -254,7 +292,7 @@ Frequently Asked Questions
 Are special characters supported in secure connection names?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-No. When using slash commands, ``--name`` can include periods, hyphens, and/or underscores. You must surround ``--name`` using quotation marks (“ “) when the value contains spaces.
+No. When using slash commands, ``--name`` can include periods, hyphens, and/or underscores. You must surround ``--name`` using quotation marks (") when the value contains spaces.
 
 What happens if two Mattermost instances contain different emojis?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -279,7 +317,7 @@ By default, a maximum of 50 messages are synchronized at a time, and :ref:`this 
 
 Channel as well as member status and availability synchronization :ref:`can be disabled <configure/site-configuration-settings:disable shared channel status sync>`.
 
-From Mattermost v10.10, channel membership is automatically synchronized between connected workspaces. When a user is added to or removed from a shared channel on one workspace, that membership change is automatically applied to the corresponding shared channel on all connected workspaces. This ensures consistent channel membership across all participating Mattermost instances. Additionally, connected workspaces also synchronize message priority, message acknowledgements, and persistent notifications between connected servers. This ensures that important message indicators and user interactions are consistently reflected across all connected workspace instances.
+From Mattermost v10.10, channel membership can be synchronized between connected workspaces when the feature flag ``EnableSharedChannelsMemberSync`` is enabled. When a user is added to or removed from a shared channel on one workspace, that membership change is automatically applied to the corresponding shared channel on all connected workspaces. This ensures consistent channel membership across all participating Mattermost instances. Additionally, connected workspaces also synchronize message priority, message acknowledgements, and persistent notifications between connected servers. This ensures that important message indicators and user interactions are consistently reflected across all connected workspace instances.
 
 Do connection interruptions affect message synchronization?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
