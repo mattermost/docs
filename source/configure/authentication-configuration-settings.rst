@@ -415,23 +415,23 @@ Access the following configuration settings in the System Console by going to **
 
 The wizard is organized into the following sections:
 
-- **Connection Settings**: Configure server connection details
-- **User Filters**: Set up user identification and filtering
-- **Account Synchronization**: Map AD/LDAP attributes to Mattermost user fields
-- **Group Synchronization**: Configure group settings and group attributes (if using LDAP groups)
-- **Synchronization Performance**: Adjust synchronization timing and performance settings
-- **Synchronization History**: View synchronization status and manually trigger syncs
+- `Connection settings <#connection-settings>`__: Configure server connection details
+- `User filters <#user-filters>`__: Set up user identification and filtering
+- `Account synchronization <#account-synchronization>`__: Map AD/LDAP attributes to Mattermost user fields
+- `Group synchronization <#group-synchronization>`__: Configure group settings and group attributes (if using LDAP groups)
+- `Synchronization performance <#synchronization-performance>`__: Adjust synchronization timing and performance settings
+- `Synchronization history <#synchronization-history>`__: View synchronization status and manually trigger syncs
 
 .. note::
-   Each section includes a test button to verify your configuration incrementally, helping identify and resolve issues early in the setup process.
+  Each section includes a **Test** option you can use to verify your configuration incrementally, helping identify and resolve issues early in the setup process.
 
-Connection Settings
+Connection settings
 ~~~~~~~~~~~~~~~~~~~
 
 Configure your AD/LDAP server connection and basic authentication settings. Use the **Test Connection** button in this section to verify your server connection before proceeding to other configuration steps.
 
 .. config:setting:: enable-sign-in-with-adldap
-  :displayname: Enable sign-in with AD/LDAP (AD/LDAP)
+  :displayname: Enable sign-in with AD/LDAP (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.Enable
   :environment: MM_LDAPSETTINGS_ENABLE
@@ -440,7 +440,7 @@ Configure your AD/LDAP server connection and basic authentication settings. Use 
   - **false**: **(Default)** Disables sign-in with Entrai ID.
 
 Enable sign-in with AD/LDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 | - **true**: Allows sign-in with AD/LDAP.                                      | - System Config path: **Authentication > AD/LDAP**                        |
@@ -449,7 +449,7 @@ Enable sign-in with AD/LDAP
 +-------------------------------------------------------------------------------+---------------------------------------------------------------------------+
 
 .. config:setting:: enable-synchronization-with-adldap
-  :displayname: Enable synchronization with AD/LDAP (AD/LDAP)
+  :displayname: Enable synchronization with AD/LDAP (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EnableSync
   :environment: MM_LDAPSETTINGS_ENABLESYNC
@@ -458,7 +458,7 @@ Enable sign-in with AD/LDAP
   - **false**: **(Default)** Disables AD/LDAP synchronization.
 
 Enable synchronization with AD/LDAP
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | - **true**: Mattermost periodically syncs users from AD/LDAP. | - System Config path: **Authentication > AD/LDAP**                       |
@@ -474,14 +474,14 @@ Enable synchronization with AD/LDAP
   documentation for details.
 
 .. config:setting:: login-field-name
-  :displayname: Login field name (AD/LDAP)
+  :displayname: Login field name (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LoginFieldName
   :environment: MM_LDAPSETTINGS_LOGINFIELDNAME
   :description: This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. Default is ``AD/LDAP Username``.
 
 Login field name
-~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | This setting will display placeholder text in the login field of the sign-in page. This text can remind users to sign-in with their AD/LDAP credentials. | - System Config path: **Authentication > AD/LDAP**               |
@@ -491,14 +491,14 @@ Login field name
 
  
 .. config:setting:: adldap-server
-  :displayname: AD/LDAP server (AD/LDAP)
+  :displayname: AD/LDAP server (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LdapServer
   :environment: MM_LDAPSETTINGS_LDAPSERVER
   :description: This is the domain name or IP address of the AD/LDAP server.
 
 AD/LDAP server
-~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------+-----------------------------------------------------------------------+
 | This is the domain name or IP address of the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**                    |
@@ -509,19 +509,17 @@ AD/LDAP server
 .. note::
   Synchronization with AD/LDAP settings in the System Console can be used to determine the connectivity and
   availability of arbitrary hosts. System admins concerned about this can use custom admin roles to limit access to
-  modifying these settings. See the
-  :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>`
-  documentation for details.
+  modifying these settings. See the :ref:`delegated granular administration <onboard/delegated-granular-administration:edit privileges of admin roles (advanced)>` documentation for details.
 
 .. config:setting:: adldap-port
-  :displayname: AD/LDAP port (AD/LDAP)
+  :displayname: AD/LDAP port (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LdapPort
   :environment: MM_LDAPSETTINGS_LDAPPORT
   :description: This is the port Mattermost uses to connect to the AD/LDAP server. Default is **389**.
 
 AD/LDAP port
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 | This is the port Mattermost uses to connect to the AD/LDAP server. | - System Config path: **Authentication > AD/LDAP**                   |
@@ -530,7 +528,7 @@ AD/LDAP port
 +--------------------------------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: bind-username
-  :displayname: Bind username (AD/LDAP)
+  :displayname: Bind username (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BindUsername
   :environment: MM_LDAPSETTINGS_BINDUSERNAME
@@ -542,7 +540,7 @@ AD/LDAP port
   When using Active Directory, **Bind Username** should specify domain in ``"DOMAIN/username"`` format.
 
 Bind username
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 +------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the username for the account Mattermost utilizes to perform an AD/LDAP search. This should be an account specific to Mattermost. | - System Config path: **Authentication > AD/LDAP**             |
@@ -558,14 +556,14 @@ Bind username
   This field is required. Anonymous bind is not currently supported.
 
 .. config:setting:: bind-password
-  :displayname: Bind password (AD/LDAP)
+  :displayname: Bind password (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BindPassword
   :environment: MM_LDAPSETTINGS_BINDPASSWORD
   :description: This is the password for the username given in the **Bind Username** setting.
 
 Bind password
-~~~~~~~~~~~~~
+^^^^^^^^^^^^^^
 
 +-------------------------------------------------------------------------------+----------------------------------------------------------------+
 | This is the password for the username given in the **Bind Username** setting. | - System Config path: **Authentication > AD/LDAP**             |
@@ -574,7 +572,7 @@ Bind password
 +-------------------------------------------------------------------------------+----------------------------------------------------------------+
 
 .. config:setting:: connection-security
-  :displayname: Connection security (AD/LDAP)
+  :displayname: Connection security (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.ConnectionSecurity
   :environment: MM_LDAPSETTINGS_CONNECTIONSECURITY
@@ -586,7 +584,7 @@ Bind password
   - **STARTTLS**: Attempts to upgrade an existing insecure connection to a secure connection with TLS.
 
 Connection security
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 | This setting controls the type of security Mattermost uses to                | - System Config path: **Authentication > AD/LDAP**                            |
@@ -603,7 +601,7 @@ Connection security
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. config:setting:: skip-certificate-verification
-  :displayname: Skip certificate verification (AD/LDAP)
+  :displayname: Skip certificate verification (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.SkipCertificateVerification
   :environment: MM_LDAPSETTINGS_SKIPCERTIFICATEVERIFICATION
@@ -612,7 +610,7 @@ Connection security
   - **false**: **(Default)** Enables certification verification.
 
 Skip certificate verification
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 | - **true**: Disables the certificate verification step for TLS and STARTTLS connections. Use this option for testing. **Do not use** this option when TLS is required in production. | - System Config path: **Authentication > AD/LDAP**                                        |
@@ -621,14 +619,14 @@ Skip certificate verification
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------+
 
 .. config:setting:: private-key
-  :displayname: Private key (AD/LDAP)
+  :displayname: Private key (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PrivateKeyFile
   :environment: MM_LDAPSETTINGS_PRIVATEKEYFILE
   :description: Use this setting to upload the private key file from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.
 
 Private key
-~~~~~~~~~~~
+^^^^^^^^^^^^
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 | Use this setting to upload the private key file from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.| - System Config path: **Authentication > AD/LDAP**               |
@@ -637,14 +635,14 @@ Private key
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: public-certificate
-  :displayname: Public certificate (AD/LDAP)
+  :displayname: Public certificate (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PublicCertificateFile
   :environment: MM_LDAPSETTINGS_PUBLICCERTIFICATEFILE
   :description: Use this setting to upload the public TLS certificate from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism.
 
 Public certificate
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Use this setting to upload the public TLS certificate from your LDAP authentication provider, if TLS client certificates are the primary authentication mechanism. | - System Config path: **Authentication > AD/LDAP**                      |
@@ -653,20 +651,20 @@ Public certificate
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: maximum-login-attempts-ldap
-  :displayname: Maximum login attempts (AD/LDAP)
+  :displayname: Maximum login attempts (AD/LDAP > Connection Settings)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.MaximumLoginAttempts
   :environment: MM_LDAPSETTINGS_MAXIMUMLOGINATTEMPTS
   :description: This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. Default is **10**.
 
 Maximum login attempts
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
-| This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. | - System Config path: **Authentication > AD/LDAP**                                |
-|                                                                                                                                                             | - ``config.json`` setting: ``LdapSettings`` > ``MaximumLoginAttempts`` > ``10``   |
-| You can unlock the account in System Console on the users page. Setting this value lower than your LDAP maximum login attempts ensures that the users     | - Environment variable: ``MM_LDAPSETTINGS_MAXIMUMLOGINATTEMPTS``                  |
-| won't be locked out of your LDAP server because of failed login attempts in Mattermost.                                                                    |                                                                                    |
+| This setting determines the number of failed sign-in attempts a user can make before being locked out and required to go through a password reset by email. | - System Config path: **Authentication > AD/LDAP**                                 |
+|                                                                                                                                                             | - ``config.json`` setting: ``LdapSettings`` > ``MaximumLoginAttempts`` > ``10``    |
+| You can unlock the account in System Console on the users page. Setting this value lower than your LDAP maximum login attempts ensures that the users       | - Environment variable: ``MM_LDAPSETTINGS_MAXIMUMLOGINATTEMPTS``                   |
+| won't be locked out of your LDAP server because of failed login attempts in Mattermost.                                                                     |                                                                                    |
 |                                                                                                                                                             |                                                                                    |
 | Numerical input. Default is **10**.                                                                                                                         |                                                                                    |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------+
@@ -677,20 +675,20 @@ Maximum login attempts
   - If a user's account is locked, you can unlock it manually by going to **System console > User Management > Users**.
 
 
-User Filters
+User filters
 ~~~~~~~~~~~~
 
 Define how Mattermost identifies and filters users and groups from your AD/LDAP directory. Use the **Test Filters** button in this section to verify your filters work correctly before proceeding to other configuration steps.
 
 .. config:setting:: base-dn
-  :displayname: Base DN (AD/LDAP)
+  :displayname: Base DN (AD/LDAP > User Filters)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.BaseDN
   :environment: MM_LDAPSETTINGS_BASEDN
   :description: This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users.
 
 Base DN
-~~~~~~~
+^^^^^^^^
 
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 | This is the **Base Distinguished Name** of the location in the AD/LDAP tree where Mattermost will start searching for users. | - System Config path: **Authentication > AD/LDAP**       |
@@ -699,14 +697,14 @@ Base DN
 +------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------+
 
 .. config:setting:: user-filter
-  :displayname: User filter (AD/LDAP)
+  :displayname: User filter (AD/LDAP > User Filters)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.UserFilter
   :environment: MM_LDAPSETTINGS_USERFILTER
   :description: This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost.
 
 User filter
-~~~~~~~~~~~
+^^^^^^^^^^^
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------+
 | This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for user objects. Only the users selected by the query can access Mattermost. For example, to filter out disabled users, the filter is: ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.              | - System Config path: **Authentication > AD/LDAP**           |
@@ -720,14 +718,14 @@ User filter
   This filter uses the permissions of the **Bind Username** account to execute the search. This account should be specific to Mattermost and have read-only access to the portion of the AD/LDAP tree specified in the **Base DN** field.
 
 .. config:setting:: group-filter
-  :displayname: Group filter (AD/LDAP)
+  :displayname: Group filter (AD/LDAP > User Filters)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupFilter
   :environment: MM_LDAPSETTINGS_GROUPFILTER
   :description: This setting accepts a `general syntax <https://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm>`__ AD/LDAP filter that is applied when searching for group objects. Only the groups selected by the query can access Mattermost.
 
 Group filter
-~~~~~~~~~~~~
+^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -742,7 +740,7 @@ Group filter
   This filter is only used when AD/LDAP Group Sync is enabled. See :doc:`AD/LDAP Group Sync </onboard/ad-ldap-groups-synchronization>` for more information.
 
 .. config:setting:: enable-admin-filter
-  :displayname: Enable admin filter (AD/LDAP)
+  :displayname: Enable admin filter (AD/LDAP > User Filters)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EnableAdminFilter
   :environment: MM_LDAPSETTINGS_ENABLEADMINFILTER
@@ -751,7 +749,7 @@ Group filter
   - **false**: **(Default)** Disables the **Admin Filter** setting.
 
 Enable admin filter
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------+
 | - **true**: Enables the **Admin Filter** setting that designates system admins using an AD/LDAP filter.                                                                                                                     | - System Config path: **Authentication > AD/LDAP**                              |
@@ -763,14 +761,14 @@ Enable admin filter
   If this setting is ``false``, no additional users are designated as system admins by the filter. Users that were previously designated as system admins retain this role unless the filter is changed or removed.
 
 .. config:setting:: admin-filter
-  :displayname: Admin filter (AD/LDAP)
+  :displayname: Admin filter (AD/LDAP > User Filters)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.AdminFilter
   :environment: MM_LDAPSETTINGS_ADMINFILTER
   :description: This setting accepts an AD/LDAP filter that designates the selected users as system admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync.
 
 Admin filter
-~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting accepts an AD/LDAP filter that designates the selected users as system admins. Users are promoted to this role on their next sign-in or on the next scheduled AD/LDAP sync. | - System Config path: **Authentication > AD/LDAP**            |
@@ -781,14 +779,14 @@ Admin filter
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
 .. config:setting:: guest-filter
-  :displayname: Guest filter (AD/LDAP)
+  :displayname: Guest filter (AD/LDAP > User Filters)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GuestFilter
   :environment: MM_LDAPSETTINGS_GUESTFILTER
   :description: This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests.
 
 Guest filter
-~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 | This setting accepts an AD/LDAP filter to apply when searching for external users with Guest Access to Mattermost. Only users selected by the query can access Mattermost as Guests. | - System Config path: **Authentication > AD/LDAP**            |
@@ -798,20 +796,20 @@ Guest filter
 | String input.                                                                                                                                                                        |                                                               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------+
 
-Account Synchronization
+Account synchronization
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 Map AD/LDAP user attributes to Mattermost user profile fields. Use the **Test Attributes** button in this section to verify correct attribute mapping and data synchronization before proceeding to other configuration steps.
 
 .. config:setting:: id-attribute
-  :displayname: ID attribute (AD/LDAP)
+  :displayname: ID attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.IdAttribute
   :environment: MM_LDAPSETTINGS_IDATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost. The attribute should have a unique value that does not change, such as ``objectGUID`` or ``entryUUID``.
 
 ID attribute
-~~~~~~~~~~~~
+^^^^^^^^^^^^^
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that is serves as a unique user identifier in Mattermost.                                                                                              | - System Config path: **Authentication > AD/LDAP**                                                                               |
@@ -825,14 +823,14 @@ ID attribute
   If a user's ID Attribute changes, a new Mattermost account is created that is not associated with the previous account. If you need to change this field after users have signed-in, use the :ref:`mmctl ldap idmigrate <manage/mmctl-command-line-tool:mmctl ldap idmigrate>` command.
 
 .. config:setting:: login-id-attribute
-  :displayname: Login ID attribute (AD/LDAP)
+  :displayname: Login ID attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LoginIdAttribute
   :environment: MM_LDAPSETTINGS_LOGINIDATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that is used for signing-in to Mattermost. This is normally the same as the **Username Attribute**.
 
 Login ID attribute
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that is used for signing-in to Mattermost. This is normally the same as the **Username Attribute**.                         | - System Config path: **Authentication > AD/LDAP**                 |
@@ -843,14 +841,14 @@ Login ID attribute
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
 .. config:setting:: username-attribute
-  :displayname: Username attribute (AD/LDAP)
+  :displayname: Username attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.UsernameAttribute
   :environment: MM_LDAPSETTINGS_USERNAMEATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that populates the username field in Mattermost. This is normally the same as the **Login ID Attribute**, but it can be mapped to a different attribute.
 
 Username attribute
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the username field in Mattermost.                                                                                                                                                                       | - System Config path: **Authentication > AD/LDAP**                  |
@@ -863,14 +861,14 @@ Username attribute
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: email-attribute
-  :displayname: Email attribute (AD/LDAP)
+  :displayname: Email attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.EmailAttribute
   :environment: MM_LDAPSETTINGS_EMAILATTRIBUTE
   :description: This is the attribute in AD/LDAP server that populates the email address field in Mattermost. Email notifications are sent to this address.
 
 Email attribute
-~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 | This is the attribute in AD/LDAP server that populates the email address field in Mattermost.                                  | - System Config path: **Authentication > AD/LDAP**              |
@@ -881,14 +879,14 @@ Email attribute
 +--------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------+
 
 .. config:setting:: first-name-attribute
-  :displayname: First name attribute (AD/LDAP)
+  :displayname: First name attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.FirstNameAttribute
   :environment: MM_LDAPSETTINGS_FIRSTNAMEATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that populates the first name field in Mattermost. When set, users cannot edit their first name.
 
 First name attribute
-~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the first name field in Mattermost.                     | - System Config path: **Authentication > AD/LDAP**                   |
@@ -901,14 +899,14 @@ First name attribute
 +--------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------+
 
 .. config:setting:: last-name-attribute
-  :displayname: Last name attribute (AD/LDAP)
+  :displayname: Last name attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.LastNameAttribute
   :environment: MM_LDAPSETTINGS_LASTNAMEATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that populates the last name field in Mattermost. When set, users cannot edit their last name.
 
 Last name attribute
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^
 
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the last name field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**                  |
@@ -921,14 +919,14 @@ Last name attribute
 +---------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: nickname-attribute
-  :displayname: Nickname attribute (AD/LDAP)
+  :displayname: Nickname attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.NicknameAttribute
   :environment: MM_LDAPSETTINGS_NICKNAMEATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost. When set, users cannot edit their nickname.
 
 Nickname attribute
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the nickname field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**                  |
@@ -941,14 +939,14 @@ Nickname attribute
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: position-attribute
-  :displayname: Position attribute (AD/LDAP)
+  :displayname: Position attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PositionAttribute
   :environment: MM_LDAPSETTINGS_POSITIONATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that populates the position field in Mattermost. When set, users cannot edit their position.
 
 Position attribute
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that populates the position field in Mattermost.                             | - System Config path: **Authentication > AD/LDAP**                  |
@@ -961,14 +959,14 @@ Position attribute
 +--------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------+
 
 .. config:setting:: profile-picture-attribute
-  :displayname: Profile picture attribute (AD/LDAP)
+  :displayname: Profile picture attribute (AD/LDAP > Account Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.PictureAttribute
   :environment: MM_LDAPSETTINGS_PICTUREATTRIBUTE
   :description: This is the attribute in the AD/LDAP server that syncs and locks the profile picture in Mattermost. The image is updated when users sign-in, not when Mattermost syncs with the AD/LDAP server.
 
 Profile picture attribute
-~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 | This is the attribute in the AD/LDAP server that syncs and locks the profile picture in Mattermost. | - System Config path: **Authentication > AD/LDAP**                 |
@@ -980,20 +978,20 @@ Profile picture attribute
 | String input.                                                                                       |                                                                    |
 +-----------------------------------------------------------------------------------------------------+--------------------------------------------------------------------+
 
-Group Synchronization
+Group synchronization
 ~~~~~~~~~~~~~~~~~~~~~~
 
 Configure group mapping for AD/LDAP group synchronization. Use the **Test Group Attributes** button in this section to verify proper group attribute mapping before proceeding to other configuration steps.
 
 .. config:setting:: group-display-name-attribute
-  :displayname: Group display name attribute (AD/LDAP)
+  :displayname: Group display name attribute (AD/LDAP > Group Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupDisplayNameAttribute
   :environment: MM_LDAPSETTINGS_GROUPDISPLAYNAMEATTRIBUTE
   :description: This is the AD/LDAP Group Display name attribute that populates the Mattermost group name field.
 
 Group display name attribute
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -1008,14 +1006,14 @@ Group display name attribute
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
 
 .. config:setting:: group-id-attribute
-  :displayname: Group ID attribute
+  :displayname: Group ID attribute (AD/LDAP > Group Synchronization)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.GroupIdAttribute
   :environment: MM_LDAPSETTINGS_GROUPIDATTRIBUTE
   :description: This is an AD/LDAP Group ID attribute that sets a unique identifier for groups. This should be a value that does not change, such as ``entryUUID`` or ``objectGUID``.
 
 Group ID attribute
-~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
@@ -1031,20 +1029,20 @@ Group ID attribute
 .. note::
   This attribute is only used when AD/LDAP Group Sync is enabled and it is **required**.  See the :doc:`AD/LDAP Group Sync documentation </onboard/ad-ldap-groups-synchronization>` for more information.
 
-Synchronization Performance
+Synchronization performance
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configure timing and performance settings for AD/LDAP synchronization. These settings control how often Mattermost syncs with your AD/LDAP server.
 
 .. config:setting:: synchronization-interval-minutes
-  :displayname: Synchronization interval (AD/LDAP)
+  :displayname: Synchronization interval (AD/LDAP > Synchronization Performance)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.SyncIntervalMinutes
   :environment: MM_LDAPSETTINGS_SYNCINTERVALMINUTES
   :description: This value determines how often Mattermost syncs with the AD/LDAP server by setting the number of minutes between each sync. Default is **60**.
 
 Synchronization interval (minutes)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------+
 | This value determines how often Mattermost syncs with the AD/LDAP server by setting the number of minutes between each sync. | - System Config path: **Authentication > AD/LDAP**                             |
@@ -1062,14 +1060,14 @@ Synchronization interval (minutes)
   LDAP syncs require a large number of database read queries. Monitor database load and adjust the sync interval to minimize performance degradation.
 
 .. config:setting:: maximum-page-size
-  :displayname: Maximum page size (AD/LDAP)
+  :displayname: Maximum page size (AD/LDAP > Synchronization Performance)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.MaxPageSize
   :environment: MM_LDAPSETTINGS_MAXPAGESIZE
   :description: This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. A page size of **0** disables pagination of results. Default is **0**.
 
 Maximum page size
-~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^
 
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 | This setting paginates the results of AD/LDAP server queries. Use this setting if your AD/LDAP server has a page size limit. | - System Config path: **Authentication > AD/LDAP**                    |
@@ -1082,14 +1080,14 @@ Maximum page size
 +------------------------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------+
 
 .. config:setting:: query-timeout-seconds
-  :displayname: Query timeout (AD/LDAP)
+  :displayname: Query timeout (AD/LDAP > Synchronization Performance)
   :systemconsole: Authentication > AD/LDAP
   :configjson: .LdapSettings.QueryTimeout
   :environment: MM_LDAPSETTINGS_QUERYTIMEOUT
   :description: This setting determines the timeout period, in seconds, for AD/LDAP queries. Default is **60**.
 
 Query timeout (seconds)
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | This setting determines the timeout period, in seconds, for AD/LDAP queries. Increase this value to avoid timeout errors when querying a slow server. | - System Config path: **Authentication > AD/LDAP**                      |
@@ -1097,13 +1095,13 @@ Query timeout (seconds)
 | Numerical input. Default is **60**.                                                                                                                   | - Environment variable: ``MM_LDAPSETTINGS_QUERYTIMEOUT``                |
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-Synchronization History
+Synchronization history
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 View synchronization status and manually trigger AD/LDAP synchronization. This section includes the **AD/LDAP Synchronize Now** button for immediate synchronization.
 
 AD/LDAP synchronize now
-~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 +-----------------------------------------------------------------------------------------------------------+----------------------------------------------------+
 | Use this button to immediately sync with the AD/LDAP server.                                              | - System Config path: **Authentication > AD/LDAP** |
@@ -1117,12 +1115,12 @@ AD/LDAP synchronize now
   If a sync is ``Pending`` and does not complete, check that **Enable Synchronization with AD/LDAP** is set to ``true``.
   
 .. figure:: ../images/ldap-sync-table.png
+  :alt: An example screenshot of an AD/LDAP Synchronization table in the Mattermost System Console.
 
+Config settings not available in the AD/LDAP Wizard
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Config Settings Not Available in the Wizard
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-The following AD/LDAP configuration settings are available in the config.json file but are not part of the AD/LDAP wizard interface in the System Console.
+The following AD/LDAP configuration settings are available in the ``config.json`` file only and aren't available via the AD/LDAP wizard interface in the System Console.
 
 .. config:setting:: re-add-removed-members-on-sync
   :displayname: Re-add removed members on sync (AD/LDAP)
@@ -1132,7 +1130,7 @@ The following AD/LDAP configuration settings are available in the config.json fi
   :description: Enable this setting to re-add members of the LDAP group that were previously removed from group-synchronized teams or channels during LDAP synchronization. Disabled by default.
 
 Re-add removed members on sync
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 +---------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Enable this setting to re-add members of the LDAP group that were   | - System Config path: **Authentication > AD/LDAP**                      |
