@@ -42,23 +42,23 @@ function ready() {
   const tabs = urlParams.getAll("tabs");
 
   for (const label of li) {
-    console.log(`process tab label ${label} (${label.textContent})`);
+    console.log(`sphinx_inline_tabs: process tab label ${label} (${label.textContent})`);
     label.onclick = onLabelClick;
     const text = label.textContent;
     if (!labelsByText[text]) {
-      console.debug(`create new labelsByText entry for ${text}`);
+      console.debug(`sphinx_inline_tabs: create new labelsByText entry for ${text}`);
       labelsByText[text] = [];
     }
     console.debug(`sphinx_inline_tabs: labelsByText[${text}].push(${label})`);
     labelsByText[text].push(label);
 
     const childSpans = label.getElementsByTagName("span");
-    console.debug(`${childSpans.length} child spans`);
+    console.debug(`sphinx_inline_tabs: ${childSpans.length} child spans`);
     if (childSpans.length > 0) {
       const spanId = childSpans[0].getAttribute("id")
-      console.debug(`child span ${spanId}`);
+      console.debug(`sphinx_inline_tabs: child span ${spanId}`);
       if (!labelsByName[spanId]) {
-        console.debug(`create new labelsByName entry for ${spanId}`);
+        console.debug(`sphinx_inline_tabs: create new labelsByName entry for ${spanId}`);
         labelsByName[spanId] = [];
       }
       console.debug(`sphinx_inline_tabs: labelsByName[${spanId}].push(${label})`);
@@ -67,7 +67,7 @@ function ready() {
       console.debug(`sphinx_inline_tabs: tabId=${tabId ? tabId.toString() : 'null'}`);
       if (tabId !== null) {
         if (!labelsById[tabId.tabName]) {
-          console.debug(`create new labelsById entry for ${tabId.tabName}`);
+          console.debug(`sphinx_inline_tabs: create new labelsById entry for ${tabId.tabName}`);
           labelsById[tabId.tabName] = [];
         }
         console.debug(`sphinx_inline_tabs: labelsById[${tabId.tabName}].push(${label})`);
@@ -129,6 +129,16 @@ function onHashchange() {
     if (labelElement) {
       console.debug(`sphinx_inline_tabs: labelsByName[${hash}][0].click()`);
       labelElement.click();
+      // If the TabId contains the name of a parent tab, extract it and click its label
+      let maybeParentId = tabId.tabName.replace(`-${tabId.nodeId}`, "");
+      console.debug(`sphinx_inline_tabs: maybeParentId=${maybeParentId}`);
+      if (maybeParentId !== "" && maybeParentId in labelsById && labelsById[maybeParentId].length > 0) {
+        const parentLabelElement = labelsById[maybeParentId][0];
+        if (parentLabelElement) {
+          console.debug(`sphinx_inline_tabs: labelsById[${maybeParentId}][0].click()`);
+          parentLabelElement.click();
+        }
+      }
       console.debug(`sphinx_inline_tabs: update scroll-current for hash ${hash}`);
       updateScrollCurrentForHash(hash);
       return;
@@ -142,6 +152,16 @@ function onHashchange() {
     if (labelElement) {
       console.debug(`sphinx_inline_tabs: labelsById[${tabId.tabName}][0].click()`);
       labelElement.click();
+      // If the TabId contains the name of a parent tab, extract it and click its label
+      let maybeParentId = tabId.tabName.replace(`-${tabId.nodeId}`, "");
+      console.debug(`sphinx_inline_tabs: maybeParentId=${maybeParentId}`);
+      if (maybeParentId !== "" && maybeParentId in labelsById && labelsById[maybeParentId].length > 0) {
+        const parentLabelElement = labelsById[maybeParentId][0];
+        if (parentLabelElement) {
+          console.debug(`sphinx_inline_tabs: labelsById[${maybeParentId}][0].click()`);
+          parentLabelElement.click();
+        }
+      }
       console.debug(`sphinx_inline_tabs: re-run current window hash`);
       window.location.hash = `${window.location.hash}`;
     }
