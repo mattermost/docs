@@ -1,15 +1,27 @@
 "use strict";
-/** @type {Record<String, Element[]>} */
+/**
+ * A list of label elements keyed by a text string, usually the name of a Tab
+ * @type {Record<String, Element[]>}
+ */
 const labelsByText = {};
-/** @type {Record<String, Element[]>} */
+/**
+ * A list of label elements keyed by Tab name
+ * @type {Record<String, Element[]>}
+ */
 const labelsByName = {};
-/** @type {Record<String, Element[]>} */
+/**
+ * A list of label elements keyed by TabId
+ * @type {Record<String, Element[]>}
+ */
 const labelsById = {};
 
 // Tab ID pattern: "itab--{tab_name}--{level}_{tab_count}-{node_id}"
 const inlinetabRE = new RegExp('itab--([a-zA-Z0-9- ]+)--([0-9]+)_([0-9]+)-(.*)');
 const SCROLL_CURRENT = "scroll-current";
 
+/**
+ * A JavaScript implementation of the TabId Python class in `tab_id.py`
+ */
 class TabId {
   tabName = "";
   level = 0;
@@ -36,6 +48,14 @@ class TabId {
   };
 }
 
+/**
+ * Prepares the tab elements and theme toggling functionality on the page.
+ * This method initializes event listeners for tab interactions and theme toggling,
+ * associates tabs with their respective labels, and ensures proper functionality
+ * based on the current URL parameters and state of the document.
+ *
+ * @return {void} This function does not return a value.
+ */
 function ready() {
   const li = document.getElementsByClassName("tab-label");
   const urlParams = new URLSearchParams(window.location.search);
@@ -100,6 +120,12 @@ function ready() {
   }
 }
 
+/**
+ * Handles the click event on a label. Activates all labels sharing the
+ * same text by checking their corresponding input element.
+ *
+ * @return {void} This function does not return a value.
+ */
 function onLabelClick() {
   // Activate other labels with the same text.
   console.debug(`sphinx_inline_tabs: onLabelClick(); textContent=${this.textContent}`);
@@ -108,6 +134,18 @@ function onLabelClick() {
   }
 }
 
+/**
+ * Handles the `hashchange` event triggered when the URL's hash changes.
+ * This function decodes the current hash, checks if it corresponds to a valid tab identifier,
+ * and updates the UI by activating the appropriate tab and scrolling to its associated content.
+ *
+ * If the hash corresponds to a valid tab identifier (`TabId`), it activates the tab and its
+ * possible parent tab. If the hash is not a `TabId`, it updates the scroll position for the
+ * current hash without interacting with tabs.
+ *
+ * @return {void} No value is returned by this function. The function only performs
+ * side effects such as updating the UI and modifying the scroll position.
+ */
 function onHashchange() {
   const hash = decodeURIComponent(window.location.hash.substring(1));
   console.log(`sphinx_inline_tabs: hash change to inlinetab; ${hash}`);
@@ -171,8 +209,8 @@ function onHashchange() {
 }
 
 /**
- *
- * @param hash {String}
+ * Set the SCROLL_CURRENT CSS class on the label element in the ToC that has a given ID
+ * @param hash {String} The ID of the label element to set the SCROLL_CURRENT CSS class
  */
 function updateScrollCurrentForHash(hash) {
   // set class of <a href="#id"> to "scroll-current"; remove from others
@@ -218,6 +256,18 @@ function setTheme(mode) {
   console.log(`sphinx_inline_tabs: Changed to ${mode} mode.`);
 }
 
+/**
+ * Cycles through the available theme modes (auto, light, dark) once, depending on the current theme mode
+ * and the user's system preference for dark mode.
+ *
+ * The cycling order is:
+ * - Auto (dark) -> Light -> Dark if the system prefers dark mode.
+ * - Auto (light) -> Dark -> Light if the system prefers light mode.
+ *
+ * This method updates the theme preference in the localStorage and applies the chosen theme.
+ *
+ * @return {void} Does not return a value.
+ */
 function cycleThemeOnce() {
   const currentTheme = localStorage.getItem("theme") || "auto";
   const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

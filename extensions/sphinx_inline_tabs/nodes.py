@@ -9,6 +9,7 @@ class TabContainer(nodes.container):
     """
     The initial tree-node for holding tab content.
     """
+
     tab_counter: int = 0
     is_parsed: bool = False
     tab_id: Optional[TabId] = None
@@ -18,17 +19,40 @@ class TabContainer(nodes.container):
         self.tagname = "div"
 
     def tab_identifier(self) -> str:
+        """
+        Determines the tab identifier based on its ID or associated attributes.
+
+        This method ensures that a valid identifier is returned for a tab.
+        It initially uses the ``tab_id`` attribute if available. If ``tab_id``
+        is not provided or is empty, the method checks for a ``tab_name``
+        attribute within the next container node. The resulting value
+        serves as the tab identifier.
+
+        :return: A string representing the tab identifier. Defaults to ``"??"``
+                 if no valid identifier is found.
+        :rtype: str
+        """
         identifier: str = "??"
         if self.tab_id:
             identifier = str(self.tab_id)
         if identifier == "":
             child_container: Optional[nodes.container] = self.next_node(nodes.container)
-            if child_container is not None and child_container.attributes['tab_name']:
-                identifier = child_container.attributes['tab_name']
+            if child_container is not None and child_container.attributes["tab_name"]:
+                identifier = child_container.attributes["tab_name"]
         return identifier
 
 
 class _GeneralHTMLTagElement(nodes.Element, nodes.General):
+    """
+    Represents a general HTML tag element used for creating and formatting HTML content.
+
+    This class is intended for internal use in constructing HTML elements with specific
+    attributes and functionality. It provides static methods to handle how the element
+    is visited and departed when traversing a document tree during rendering.
+
+    :ivar attributes: A dictionary of attributes for the HTML tag element.
+    :type attributes: dict
+    """
 
     _tagname: str = ""
     _endtag: bool = False

@@ -1,6 +1,7 @@
 """
 Sphinx event handler implementation.
 """
+
 from typing import Any, Final, Optional
 
 from docutils import nodes
@@ -144,7 +145,7 @@ def collect_sections(
     tab_counter=0,
 ) -> SectionData:
     """
-    Recursively collect subsection metadata from inline tab content.
+    Recursively collect TabContainer and section metadata from inline tab content.
 
     :param env:
     :param document:
@@ -180,9 +181,6 @@ def collect_sections(
         )
 
     section_id: str = ""
-    #if isinstance(node, TabContainer) and "inline_tab_id" in node.attributes:
-    #    section_id = node.attributes["inline_tab_id"]
-    #else:
     if node.attributes["ids"]:
         logger.debug(
             f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] node ids: {node.attributes['ids']}"
@@ -201,7 +199,9 @@ def collect_sections(
                     )
                     break
                 else:
-                    logger.debug(f"+++ {LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] id {id} is not a TabId")
+                    logger.debug(
+                        f"+++ {LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] id {id} is not a TabId"
+                    )
     if section_id == "":
         section_id = _make_id(secdata.name)
         logger.debug(
@@ -224,18 +224,27 @@ def collect_sections(
                 f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] TabContainer content_container type: {type(content_container)}"
             )
             # Look for sections within the content container
-            if hasattr(content_container, 'children'):
+            if hasattr(content_container, "children"):
                 for idx, child in enumerate(content_container.children):
                     logger.debug(
                         f"{LOG_PREFIX} collect_sections({docname}): [{level}/{tab_counter}] TabContainer content child[{idx}]={type(child)}"
                     )
                     if isinstance(child, nodes.section):
                         secdata.children.append(
-                            collect_sections(env, document, docname, child, level + 1, tab_counter)
+                            collect_sections(
+                                env, document, docname, child, level + 1, tab_counter
+                            )
                         )
                     elif isinstance(child, TabContainer):
                         secdata.children.append(
-                            collect_sections(env, document, docname, child, level + 1, tab_counter + 1)
+                            collect_sections(
+                                env,
+                                document,
+                                docname,
+                                child,
+                                level + 1,
+                                tab_counter + 1,
+                            )
                         )
     else:
         # For non-TabContainer nodes, process children normally
@@ -245,11 +254,15 @@ def collect_sections(
             )
             if isinstance(child, nodes.section):
                 secdata.children.append(
-                    collect_sections(env, document, docname, child, level + 1, tab_counter)
+                    collect_sections(
+                        env, document, docname, child, level + 1, tab_counter
+                    )
                 )
             elif isinstance(child, TabContainer):
                 secdata.children.append(
-                    collect_sections(env, document, docname, child, level + 1, tab_counter + 1)
+                    collect_sections(
+                        env, document, docname, child, level + 1, tab_counter + 1
+                    )
                 )
 
     return secdata
@@ -260,9 +273,8 @@ def dump_sections(docname: str, secdata: SectionData):
     Recursively display subsection metadata collected from inline tab content.
     Useful for extension debugging.
 
-    :param docname:
-    :param secdata:
-    :return:
+    :param docname: The name of the current document
+    :param secdata: The subsection data to display
     """
     logger.debug(
         f"{LOG_PREFIX} dump_sections(): ({docname}) [{secdata.level}/{secdata.tab_counter}] "
@@ -275,11 +287,11 @@ def dump_sections(docname: str, secdata: SectionData):
 
 def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
     """
-    Convert collected subsection metadata into a new Table of Contents for a document
+    Convert collected TabContent and section metadata into a new Table of Contents for a document
     with inline tabs.
 
-    :param docname:
-    :param secdata:
+    :param docname: The name of the current document
+    :param secdata: The subsection data to process
     :return:
     """
     logger.debug(
@@ -291,19 +303,19 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
             f"{LOG_PREFIX} sectiondata_to_toc(): "
             f"({docname}): [{secdata.level}/{secdata.tab_counter}] processing doc root with {len(secdata.children)} children"
         )
-        
+
         # For doc root, we need to process ALL children, not just the first one
         if len(secdata.children) == 0:
             return nodes.list_item()  # Empty if no children
-        
+
         # If there's only one child, delegate to it
         if len(secdata.children) == 1:
             return sectiondata_to_toc(docname, secdata.children[0])
-        
+
         # Multiple children - create a list containing all of them
         list_item: nodes.list_item = nodes.list_item()
         bullet_list: nodes.bullet_list = nodes.bullet_list()
-        
+
         for idx, child in enumerate(secdata.children):
             logger.debug(
                 f"{LOG_PREFIX} sectiondata_to_toc(): "
@@ -311,7 +323,7 @@ def sectiondata_to_toc(docname: str, secdata: SectionData) -> nodes.list_item:
             )
             child_item = sectiondata_to_toc(docname, child)
             bullet_list.append(child_item)
-        
+
         list_item.append(bullet_list)
         return list_item
 
@@ -351,10 +363,10 @@ def make_compact_reference(
     Create a subsection reference node using the Sphinx compact_paragraph
     node.
 
-    :param section_id:
-    :param section_name:
-    :param docname:
-    :return:
+    :param section_id: Node ID of the section to link to
+    :param section_name: Name of the section to link to
+    :param docname: Name of the current document
+    :return: A compact_paragraph node containing a reference to the section
     """
     cpara: addnodes.compact_paragraph = addnodes.compact_paragraph()
     cpara.append(

@@ -4,8 +4,9 @@ from dataclasses import dataclass
 @dataclass(repr=True, slots=True)
 class SectionData:
     """
-    A dataclass to hold metadata on each section of inline tab content.
+    A dataclass to hold metadata on each TabContainer and section of inline tab content.
     """
+
     name: str
     level: int
     tab_counter: int
