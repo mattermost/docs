@@ -42,7 +42,7 @@ Cross-agency, multinational, or coalition collaboration requires sovereignty wit
 **Benefits**
 
 - **Create secure shared workspaces** with :doc:`Connected Workspaces Channels </onboard/connected-workspaces>` that synchronize discussions, reactions, and file sharing across trusted organizations—without exposing internal systems.
-- **Control access across organizations** with :doc:`attribute-based permissions </onboard/advanced-permissions>` and scoped identity policies to ensure mission alignment and CUI segmentation.
+- **Control access across organizations** with :doc:`attribute-based permissions </onboard/advanced-permissions>` and scoped identity policies to ensure mission alignment and sensitive information segmentation.
 - **Deploy sovereign AI and workflow automation** in isolated environments using :doc:`air-gapped AI operations </guides/agents>` and :doc:`Collaborative Playbooks </guides/workflow-automation>`—enabling intelligence and speed without compromising data control.
 - **Upgrade legacy platforms** like Skype for Business with modern, compliant tools for secure messaging, screen sharing, and team coordination. :doc:`See Skype for Business replacement options </about/on-prem-skype-for-business-replacement>`.
 

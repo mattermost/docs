@@ -70,6 +70,9 @@ Create a Mattermost App in Azure
   .. image:: ../images/ms-teams-meetings-grant-admin-consent.png
     :alt: In Azure, grant admin consent permissions for the application.
 
+  .. image:: ../images/ms-teams-meeting-permissions-final-state.png
+    :alt: In Azure, final state of the permissions for the application.
+
 You're all set for configuration in the Azure portal.
 
 Install the Microsoft Calendar Integration

@@ -523,7 +523,7 @@ rst_prolog = """
     :alt: Do Not Disturb availability status icon in Mattermost.
 .. |offline| image:: /images/offline.png
     :alt: Offline availability status icon in Mattermost.
-.. |checkmark| image:: /images/check-circle-green.svg
+.. |checkmark| image:: /_static/images/check-circle-green.svg
     :alt: Green checkmark icon used to indicate that a given feature is included in a specific package, deployment, or plan.
 .. |pinned-messages| image:: /images/pin-outline_F0931.svg
     :alt: Pin icon used to indicate when there are pinned messages in a given channel.
