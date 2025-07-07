@@ -7,22 +7,25 @@ Share files in messages
 With file attachments, you can share additional information that helps your team to visually understand your ideas. Sharing videos, voice recordings, screenshots, and photos can make your messages more effective and clear.
 
 .. tab:: Web/Desktop
+  :parse-titles:
 
   You can share files with other Mattermost users or entire channels by:
 
   - Dragging and dropping files into channels.
   - Selecting the **Attachment** |attachments-icon| icon in the message input box.
   - Pasting from the clipboard.
-  
-  **Share public links**
-      
+
+  Share public links
+  -------------------
+
   Public links allow you to share message attachments with anyone outside your Mattermost :doc:`workspace </guides/use-mattermost>`. To share an attachment, select the thumbnail of an attachment, then select **Get Public Link**.
 
   .. tip::
 
     If **Get Public Link** is not visible in the file previewer, ask your system admin to enable the feature from the System Console under **Site Configuration > Public Links**.
 
-  **Download files**
+  Download files
+  ---------------
 
   You can download an attached file by selecting the **Download** |download-icon| icon next to the file thumbnail.
 
@@ -30,11 +33,13 @@ With file attachments, you can share additional information that helps your team
 
     From Mattermost desktop app v5.2, you can review download status, access downloads, and clear the list of downloads from a new **Downloads** |desktop-download-icon| option located in the top-right corner of the desktop app window.
 
-  **Access files**
+  Access files
+  -------------
 
   Access all files shared in a channel by selecting the **Channel files** |channel-files-icon| icon in the channel header.
 
 .. tab:: Mobile
+  :parse-titles:
 
   You can share files with other Mattermost users or entire channels by tapping the **Attachment** |attachments-icon| icon under the message input box when composing a message.
 
@@ -44,7 +49,8 @@ With file attachments, you can share additional information that helps your team
       :alt: Tap on attachment icon to attach a file and send it in the channel.
       :scale: 50
 
-  **Access files**
+  Access files on mobile
+  -----------------------
 
   1. Tap the channel name at the top of the screen.
 

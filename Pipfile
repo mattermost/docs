@@ -8,16 +8,16 @@ name = "pypi"
 # Amazon AWS Universal CLI environment (https://aws.amazon.com/cli/)
 # Release notes: https://github.com/aws/aws-cli/blob/develop/CHANGELOG.rst
 # Repo: https://github.com/aws/aws-cli
-awscli = "==1.32.8"
+awscli = "==1.40.7"
 #
 # PyTest testing framework (https://docs.pytest.org/en/7.4.x/)
-pytest = "==7.4.2"
+pytest = "==8.3.5"
 #
 # exceptiongroup: Backport of PEP-654 Exception groups to Python <3.11
 exceptiongroup = {version = "*", markers = "python_version < '3.11'"}
 #
 # Black: A Python source formatter
-black = "==24.3.0"
+black = "==25.1.0"
 #
 # Docutils Stubs
 docutils-stubs = "==0.0.22"
@@ -27,35 +27,23 @@ docutils-stubs = "==0.0.22"
 # Sphinx (https://www.sphinx-doc.org)
 # Release notes: https://www.sphinx-doc.org/en/master/changes.html
 # Repo: https://github.com/sphinx-doc/sphinx
-sphinx = "==7.2.6"
+sphinx = "==8.2.3"
 #
 # Furo Theme (https://github.com/pradyunsg/furo)
-furo = "==2023.9.10"
+furo = "==2024.8.6"
 #
 # MyST Parser (https://myst-parser.readthedocs.io/en/latest/)
 # Release notes: https://myst-parser.readthedocs.io/en/latest/develop/_changelog.html
 # Repo: https://github.com/executablebooks/myst-parser
-myst-parser = "==2.0.0"
+myst-parser = "==4.0.1"
 #
 # Sphinx Autobuild (https://github.com/executablebooks/sphinx-autobuild)
 # Repo: https://github.com/executablebooks/sphinx-autobuild
-sphinx-autobuild = "==2021.3.14"
-#
-# Setuptools; used by sphinx-tabs
-# Repo: https://github.com/pypa/setuptools
-setuptools = "==70.0.0"
+sphinx-autobuild = "==2024.10.3"
 #
 # Add a "copy" button to code blocks in Sphinx (https://sphinx-copybutton.readthedocs.io/en/latest/)
 # Repo: https://github.com/executablebooks/sphinx-copybutton
 sphinx-copybutton = "==0.5.2"
-#
-# Python importlib metadata library; used by Sphinx
-# Repo: https://github.com/python/importlib_metadata
-importlib-metadata = "==4.12.0"
-#
-# Tabbed views for Sphinx
-# Repo: https://github.com/pradyunsg/sphinx-inline-tabs
-sphinx-inline-tabs = "==2023.04.21"
 #
 # MermaidJS support for Sphinx
 sphinxcontrib-mermaid = "==1.0.0"
