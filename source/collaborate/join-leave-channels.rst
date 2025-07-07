@@ -74,7 +74,7 @@ When you leave a private channel, you must be re-added by another channel member
 
 .. note::
 
-  All users are added to the **Town Square** channel automatically. This means that users can't :ref:`archive <collaborate/archive-unarchive-channels:archive a channel>`, :ref:`unarchive <collaborate/archive-unarchive-channels:unarchive a channel>`, or leave the **Town Square** channel.
+  All users are added to the **Town Square** channel automatically. This means that users can't :ref:`archive <collaborate/archive-unarchive-channels:archive a channel>`, :ref:`unarchive <collaborate/archive-unarchive-channels:unarchive a channel>`, or leave the **Town Square** channel. However, :doc:`guests </onboard/guest-accounts>` who are manually invited to **Town Square** can leave the channel.
 
 .. tab:: Web/Desktop
 

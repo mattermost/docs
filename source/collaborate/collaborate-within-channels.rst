@@ -12,7 +12,7 @@ You're added to default channels automatically
 Everyone who joins a Mattermost :doc:`workspace </guides/use-mattermost>` is automatically added to the **Town Square** channel. See our :doc:`Channel Types </collaborate/channel-types>` documentation for details.
 
 .. note::
-  The Town Square channel can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` this default channel.
+  The Town Square channel can't be :ref:`archived <collaborate/archive-unarchive-channels:archive a channel>` or :doc:`converted to a private channel </collaborate/convert-public-channels>`, and users can't :ref:`leave <collaborate/join-leave-channels:leave a channel>` this default channel. However, :doc:`guests </onboard/guest-accounts>` who are manually invited to **Town Square** can leave the channel.
 
 Channel sidebar
 ----------------
