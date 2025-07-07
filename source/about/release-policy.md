@@ -11,7 +11,7 @@ To ensure a secure, functional, performant, and efficient Mattermost deployment,
 - keeping both server and client applications updated.
 
 (release-types)=
-## Release types
+## Release Types
 
 Mattermost releases include feature, extended support, and major releases. Each release has a specified life cycle start and end date, and life cycles depend on the release type. 
 
@@ -24,7 +24,7 @@ With multiple release types, you can plan the upgrade path that best suits your 
 See the full list of all Mattermost Server and desktop app releases and life cycles.
 
 (extended-support-releases)=
-## Extended support releases
+## Extended Support Releases
 
 ```{include} ../_static/badges/ent-only.md
 ```
@@ -33,10 +33,11 @@ Mattermost Extended Support Releases (ESRs) are a strategic choice for organizat
 
 Mattermost [server](/about/mattermost-server-releases) and [desktop app](/about/mattermost-desktop-releases) ESRs are released twice a year, every February and August release. Extended releases are supported for 9 months to provide customers with enough time to test and upgrade to the next ESR.
 
-```{Important}
+### ESR Life Cycle Changes
+
 Starting with the August 2025 releases (server v10.11 and desktop app v5.13), Mattermost will adjust the server and desktop app ESR life cycle as follows: 
- - Extended Cadence: The ESR release cycle will change from every 6 months to every 9 months. 
- - Prolonged Support: The support window will increase from 9 months to 12 months. 
+ - **Extended Cadence**: The ESR release cycle will change from every 6 months to every 9 months. 
+ - **Prolonged Support**: The support window will increase from 9 months to 12 months. 
 
 We strongly recommend planning ahead for upgrades before the end of an ESR's life cycle to ensure continuity in receiving security updates.
 
@@ -55,25 +56,28 @@ We highly recommend working with your Mattermost Account Team to plan for a migr
 gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %y
-    tickInterval 2month
 
-    section 2025
-    v10.4                  :done,  2025-01-16, 2025-04-15
-    v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
-    v10.6                  :done, 2025-03-16, 2025-06-15
-    v10.7                  :active, 2025-04-16, 2025-07-15
-    v10.8                  :active, 2025-05-16, 2025-08-15
-    v10.9                  :active, 2025-06-16, 2025-09-15
-    v10.10                 :active, 2025-07-16, 2025-10-15
-    v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
-    v11.0                  :active, 2025-09-16, 2025-12-15
+    section Releases
+    v9.11 ESR           :crit, done, 2024-08-16, 2025-05-15
+    v10.0               :done, 2024-09-16, 2024-12-15
+    v10.1               :done, 2024-10-16, 2025-01-15
+    v10.2               :done, 2024-11-16, 2025-02-15
+    v10.3               :done, 2024-12-16, 2025-03-15
+    v10.4               :done, 2025-01-16, 2025-04-15
+    v10.5 ESR           :crit, 2025-02-16, 2025-11-15
+    v10.6               :active, 2025-03-16, 2025-06-15
+    v10.7               :active, 2025-04-16, 2025-07-15
+    v10.8               :active, 2025-05-16, 2025-08-15
+    v10.9               :active, 2025-06-16, 2025-09-15
+    v10.10              :active, 2025-07-16, 2025-10-15
+    v10.11 ESR          :crit, 2025-08-16, 2026-08-15
+    v11.0               :active, 2025-09-16, 2025-12-15
 ```
 
 **Timeline Legend:**
+The chart above shows both release dates and end-of-life dates for each version. ESRs provide longer-term stability for organizations preferring less frequent updates.
 - 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
 - 🔴 **Red bars**: Extended Support Releases (ESRs) - Released every 6-9 months with extended 9-12 month support
-- The chart shows both release dates and end-of-life dates for each version
-- ESRs provide longer-term stability for organizations preferring less frequent updates
 
 (esr-notifications)=
 ### ESR Notifications
