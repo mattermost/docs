@@ -274,6 +274,27 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 | This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": 25`` with string input. |
 +----------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: message-export-batch-size
+  :displayname: Message export batch size (Compliance Export)
+  :systemconsole: N/A
+  :configjson: .MessageExportSettings.BatchSize
+  :environment: MM_MESSAGEEXPORTSETTINGS_BATCHSIZE
+  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
+
+Message export batch size
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Determines how many new posts are batched together to a compliance export file.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.     |
++---------------------------------------------------------------------------------------------+
+
 Run compliance export job now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
