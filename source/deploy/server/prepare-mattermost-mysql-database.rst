@@ -48,6 +48,7 @@ Upgrade Mattermost
 -------------------
 
 .. tab:: Upgrade to v7.1
+  :parse-titles:
 
   Mattermost v7.1 introduces schema changes in the form of a new column and its index. Our test results for the schema changes include: 12M Posts, 2.5M Reactions - ~1min 34s (instance: PC with 8 cores, 16GB RAM).
 
@@ -64,10 +65,12 @@ Upgrade Mattermost
   If your connection collation and table collations are different, this can result in the error `Illegal mix of collations`. To resolve this error, set the same collation for both the connection and the table. There are different collations at different levels - connection, database, table, column, and database administrators may choose to set different collation levels for different objects.
 
 .. tab:: Upgrade to v7.0
+  :parse-titles:
 
   Self-hosted Mattermost customers using MySQL databases may notice the migration to release v7.0 taking longer than usual when there are a large number of rows in the ``FileInfo`` table. See the :doc:`important upgrade notes </upgrade/important-upgrade-notes>` documentation for details.
 
 .. tab:: Upgrade to v6.7
+  :parse-titles:
 
   Mattermost v6.7 introduces schema changes in the form of a new index. The following notes our test results for the schema changes:
 
@@ -81,6 +84,7 @@ Upgrade Mattermost
   This is fully backwards-compatible and will not acquire any table lock or affect any existing operations on the table.
 
 .. tab:: v6.0 database schema migrations
+  :parse-titles:
 
   The release of v6.0 introduces database schema changes and longer migration times should be expected, especially on MySQL installations. 
 
@@ -100,7 +104,8 @@ Upgrade Mattermost
 
   See the `Mattermost v6.0 DB schema migrations analysis <https://gist.github.com/streamer45/59b3582118913d4fc5e8ff81ea78b055>`__ documentation for test specifications, data sizes, test results, and a complete breakdown of MySQL queries, as well as their impact and duration.
 
-  **MySQL Mitigation Strategies**
+  MySQL Mitigation Strategies
+  ----------------------------
 
   Run combined queries prior to the upgrade. The previous queries can be combined when run prior to the upgrade as follows:
 
