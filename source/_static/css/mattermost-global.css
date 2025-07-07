@@ -1895,109 +1895,180 @@ mark {
 }
 
 .mermaid > svg > g:nth-child(6) > rect.task.crit0 {
-    fill: #c27ba0 !important;
+    fill: #d63031 !important;
+    stroke: #2d3436 !important;
+    stroke-width: 2px !important;
 }
 
 .mermaid > svg > g:nth-child(6) > rect.task.crit1 {
-    fill: #c27ba0 !important;
+    fill: #d63031 !important;
+    stroke: #2d3436 !important;
+    stroke-width: 2px !important;
 }
 
 .mermaid > svg > g:nth-child(6) > rect.task.crit2 {
-    fill: #c27ba0 !important;
+    fill: #d63031 !important;
+    stroke: #2d3436 !important;
+    stroke-width: 2px !important;
 }
 
 .mermaid > svg > g:nth-child(6) > rect.task.crit3 {
-    fill: #c27ba0 !important;
+    fill: #d63031 !important;
+    stroke: #2d3436 !important;
+    stroke-width: 2px !important;
 }
 
 .mermaid > svg > g:nth-child(6) > rect.task {
-    stroke-width: 0 !important;
-    fill: #8e7dc3 !important;
+    stroke-width: 2px !important;
+    stroke: #2d3436 !important;
+    fill: #0984e3 !important;
 }
 
 .mermaid > svg > g:nth-child(6) > text.taskText.taskText0.doneText0 {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
-/*The below lines of CSS from task1 to 20 are a bit hackey buut its the only way it works in the long run*/
+/*Enhanced task text styling for better readability*/
 .mermaid text#task1-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task2-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task3-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task4-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task5-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task6-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task7-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task8-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task9-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task10-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task11-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task12-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task13-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task14-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task15-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task16-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task17-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task18-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task19-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
 }
 
 .mermaid text#task20-text {
     fill: white !important;
+    font-weight: bold !important;
+    font-size: 12px !important;
+}
+
+/* Enhanced axis and grid text styling for better readability */
+.mermaid .xtick text {
+    font-weight: bold !important;
+    font-size: 11px !important;
+    fill: #2d3436 !important;
+}
+
+.mermaid .ytick text {
+    font-weight: bold !important;
+    font-size: 11px !important;
+    fill: #2d3436 !important;
+}
+
+/* Section labels styling */
+.mermaid .section text {
+    font-weight: bold !important;
+    font-size: 14px !important;
+    fill: #2d3436 !important;
 }
 
 /* NESTED TABS */

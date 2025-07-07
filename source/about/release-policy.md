@@ -69,6 +69,12 @@ gantt
     v11.0                  :active, 2025-09-16, 2025-12-15
 ```
 
+**Timeline Legend:**
+- 🔵 **Blue bars**: Regular feature releases (monthly releases with standard support lifecycle)
+- 🔴 **Red bars**: Extended Support Releases (ESRs) - Released every 6-9 months with extended 9-12 month support
+- The chart shows both release dates and end-of-life dates for each version
+- ESRs provide longer-term stability for organizations preferring less frequent updates
+
 (esr-notifications)=
 ### ESR Notifications
 
