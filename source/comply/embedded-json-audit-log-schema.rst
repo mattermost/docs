@@ -68,6 +68,163 @@ Update user preferences
         "error": {}
     }
 
+Create post
+~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "timestamp": "2025-04-30 16:17:44.207 Z",
+        "event_name": "createPost",
+        "status": "success",
+        "actor": {
+            "user_id": "i764hi6h5bbz8p1955ed4ahj6y",
+            "session_id": "t7894ft76igtpb788nkkej1yoy",
+            "client": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+            "ip_address": "172.19.0.8"
+        },
+        "event": {
+            "parameters": {
+                "post": {
+                    "channel_id": "pfis7ycuy78o7m3zebajmxqeuo",
+                    "user_id": "i764hi6h5bbz8p1955ed4ahj6y",
+                    "message": "Sample post content"
+                }
+            },
+            "prior_state": {},
+            "resulting_state": {
+                "channel_id": "pfis7ycuy78o7m3zebajmxqeuo",
+                "create_at": 1746029864145,
+                "id": "xpw97hf6kfncirzhqisb5sym7e",
+                "user_id": "i764hi6h5bbz8p1955ed4ahj6y"
+            },
+            "object_type": "post"
+        },
+        "meta": {
+            "api_path": "/api/v4/posts",
+            "cluster_id": "i5twhjm3ainatcifiy3oksshae"
+        },
+        "error": {}
+    }
+
+System configuration change
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code-block:: json
+
+    {
+        "timestamp": "2025-04-30 16:18:30.803 Z",
+        "event_name": "patchConfig",
+        "status": "success",
+        "actor": {
+            "user_id": "i764hi6h5bbz8p1955ed4ahj6y",
+            "session_id": "t7894ft76igtpb788nkkej1yoy",
+            "client": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/134.0.0.0 Safari/537.36",
+            "ip_address": "172.19.0.8"
+        },
+        "event": {
+            "parameters": {},
+            "prior_state": {
+                "config_diffs": [
+                    {
+                        "actual_val": false,
+                        "base_val": true,
+                        "path": "MetricsSettings.EnableClientMetrics"
+                    }
+                ]
+            },
+            "resulting_state": {},
+            "object_type": "config"
+        },
+        "meta": {
+            "api_path": "/api/v4/config/patch",
+            "cluster_id": "i5twhjm3ainatcifiy3oksshae"
+        },
+        "error": {}
+    }
+
+Audit event types
+-----------------
+
+The following table lists the audit event types (``event_name`` values) that are captured in Mattermost audit logs:
+
+User Management Events
+~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------+-------------------------------------------------------------------+
+| **Event Name**          | **Description**                                                   |
++=========================+===================================================================+
+| ``updatePreferences``   | User preference changes (themes, notifications, etc.)            |
++-------------------------+-------------------------------------------------------------------+
+| ``extendSessionExpiry`` | User session extension activities                                 |
++-------------------------+-------------------------------------------------------------------+
+
+Content and Communication Events
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------+-------------------------------------------------------------------+
+| **Event Name**          | **Description**                                                   |
++=========================+===================================================================+
+| ``createPost``          | Post creation in channels                                         |
++-------------------------+-------------------------------------------------------------------+
+| ``updatePost``          | Post editing and modifications                                    |
++-------------------------+-------------------------------------------------------------------+
+| ``deletePost``          | Post deletion activities                                          |
++-------------------------+-------------------------------------------------------------------+
+
+Channel Management Events
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------+-------------------------------------------------------------------+
+| **Event Name**          | **Description**                                                   |
++=========================+===================================================================+
+| ``createChannel``       | Channel creation activities                                       |
++-------------------------+-------------------------------------------------------------------+
+| ``deleteChannel``       | Channel deletion activities                                       |
++-------------------------+-------------------------------------------------------------------+
+| ``updateChannel``       | Channel setting modifications                                     |
++-------------------------+-------------------------------------------------------------------+
+
+Team Management Events
+~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------+-------------------------------------------------------------------+
+| **Event Name**          | **Description**                                                   |
++=========================+===================================================================+
+| ``createTeam``          | Team creation activities                                          |
++-------------------------+-------------------------------------------------------------------+
+| ``deleteTeam``          | Team deletion activities                                          |
++-------------------------+-------------------------------------------------------------------+
+| ``updateTeam``          | Team setting modifications                                        |
++-------------------------+-------------------------------------------------------------------+
+
+System Configuration Events
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------+-------------------------------------------------------------------+
+| **Event Name**          | **Description**                                                   |
++=========================+===================================================================+
+| ``getConfig``           | System configuration retrieval                                    |
++-------------------------+-------------------------------------------------------------------+
+| ``patchConfig``         | System configuration changes                                      |
++-------------------------+-------------------------------------------------------------------+
+| ``updateConfig``        | System configuration updates                                      |
++-------------------------+-------------------------------------------------------------------+
+
+Administrative Events
+~~~~~~~~~~~~~~~~~~~~~~
+
++-------------------------+-------------------------------------------------------------------+
+| **Event Name**          | **Description**                                                   |
++=========================+===================================================================+
+| ``getLogs``             | System log retrieval activities                                   |
++-------------------------+-------------------------------------------------------------------+
+| ``requestRenewalLink``  | License renewal link requests                                     |
++-------------------------+-------------------------------------------------------------------+
+
+.. note::
+   This list includes the most commonly audited events in Mattermost. Additional events may be logged depending on your Mattermost version, enabled features, and configuration settings. Enterprise features may generate additional audit events not listed here.
+
 JSON data model
 ---------------
 
@@ -89,8 +246,8 @@ JSON data model
 |            |                              |   See the :ref:`GELF log format configuration <manage/logging:gelf log format configuration options>` documentation for             |
 |            |                              |   supported options.                                                                                                                |
 +------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
-| event_name | string                       | Unique name and identifier of the event type taking place (e.g. ``getLogs`` ``requestRenewalLink``,                                 |
-|            |                              | ``createTeam``, ``createChannel``, ``deleteChannel``, or ``extendSessionExpiry``).                                                  |
+| event_name | string                       | Unique name and identifier of the event type taking place. See the :ref:`audit event types <audit event types>` section             |
+|            |                              | for a comprehensive list of all supported event names.                                                                              |
 +------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
 | status     | string                       | Success or failure of the audited event.                                                                                            |
 +------------+------------------------------+-------------------------------------------------------------------------------------------------------------------------------------+
