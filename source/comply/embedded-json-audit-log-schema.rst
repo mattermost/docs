@@ -154,7 +154,7 @@ User Management Events
 +-------------------------+-------------------------------------------------------------------+
 | **Event Name**          | **Description**                                                   |
 +=========================+===================================================================+
-| ``updatePreferences``   | User preference changes (themes, notifications, etc.)            |
+| ``updatePreferences``   | User preference changes (themes, notifications, etc.)             |
 +-------------------------+-------------------------------------------------------------------+
 | ``extendSessionExpiry`` | User session extension activities                                 |
 +-------------------------+-------------------------------------------------------------------+
