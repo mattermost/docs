@@ -19,7 +19,7 @@ If you have any questions, create an account on the [Mattermost Community server
 
 ### Get started
 
-You can edit or create Mattermost documentation directly in GitHub, or by downloading the `mattermost/docs` repository onto your machine and using an IDE such as VS Code. Consult the Mattermost [Documentation Style Guide](https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/documentation-style-guide) and [reStructuredText Markup](https://handbook.mattermost.com/operations/research-and-development/product/technical-writing-team-handbook/documentation-style-guide#using-restructuredtext-markup-rst) section for stylistic and technical guidance.
+You can edit or create Mattermost documentation directly in GitHub, or by downloading the `mattermost/docs` repository onto your machine and using an IDE such as VSCode.
 
 If this is your first time contributing to Mattermost, first read and sign the [Mattermost Contributor Agreement](https://mattermost.com/mattermost-contributor-agreement/), so you can be added to the Mattermost [Approved Contributor List](https://docs.google.com/spreadsheets/d/1NTCeG-iL_VS9bFqtmHSfwETo5f-8MQ7oMDE5IUYJi_Y/pubhtml?gid=0&single=true).
 
@@ -38,12 +38,6 @@ If this is the first time you're contributing, follow these steps:
 3. Check the **Propose file change** button.
 4. Scroll down to compare changes with the original document.
 5. Select **Create pull request**. 
-
-### Use GitHub PR labels
-
-GitHub PR labels are used to track the life cycle and status of a pull request. Using the correct labels helps with managing workflows and ensuring that content is edited, merged and released at the correct time. For example, PRs that include an **Editor Review** label will be processed by an editor on the writing team to ensure the documentation is correctly formatted at https://docs.mattermost.com/ based on guidelines outlined in the style guide.
-
-Take a look at the [Labels](https://developers.mattermost.com/contribute/getting-started/labels/) page for information about how and when to use which labels.
 
 ### Comment on pull requests
 
@@ -97,16 +91,26 @@ The following software is required to build the documentation:
     pip install --user pipenv
     ```
 
-4. Install required Python packages:
-    ```shell
-    pipenv install --dev
-    ```
+4. Install required Python packages. You have two options:
 
-5. Build the documentation set. You have three build commands available at the terminal:
+  Use `pipenv sync --dev` when:
+   - You need exact reproducibility of the production build environment.
+   - You're setting up a CI/CD pipeline.
+   - You want to avoid accidentally updating dependency versions.
+   - You're working in a team where everyone should use identical package versions.
 
-    - Use `make html` to generate HTML files in the `/build` directory. Only file you've modified are re-built.
-    - Use `make clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the LHS navigation pane and want to ensure you're not reviewing cached results.
-    - Use `make livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE.
+  Use `pipenv install --dev` when:
+   - You're setting up a local development environment for the first time.
+   - You want to allow minor package updates within the version constraints.
+   - You're working independently from production and want the most recent compatible versions.
+
+5. Run ``git submodule update --init --recursive`` to ensure that the Git submodules for Mattermost Agents are initialized and updated.
+
+6. Build the documentation set. You have three build commands available at the terminal:
+
+    - Use `gmake html` to generate HTML files in the `/build` directory. Only file you've modified are re-built.
+    - Use `gmake clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the left navigation pane and want to ensure you're not reviewing cached results.
+    - Use `gmake livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE. Always run `gmake clean html` first before reviewing a live preview.
 
 > [!NOTE]
 > Windows users who aren't building the docs in an Ubuntu VM also require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
@@ -119,11 +123,11 @@ The following software is required to build the documentation:
 >
 > When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. This is a limitation of Sphinx on Windows platforms.
 
-6. When working with static build results, navigate to the `build` directory:
+7. When working with static build results, navigate to the `build` directory:
     ```sh
     cd build
     ```
    
-7. Then, preview your changes by opening the `build/html/index.html` file.
+8. Then, preview your changes by opening the `build/html/index.html` file.
 
 Build errors are written to the `build/warnings.log` file. Errors regarding redirects are written to the `build/redirect-warnings.log` file.
