@@ -90,6 +90,69 @@ extensions = [
     "sphinx_inline_tabs",
 ]
 
+# Mermaid configuration - using minimum required version for sphinxcontrib-mermaid 1.0.0
+mermaid_version = "10.3.0"
+mermaid_init_js = """
+// Wait for Mermaid chart to render
+function waitForMermaidChart() {
+    const mermaidChart = document.querySelector('.mermaid svg');
+    if (mermaidChart) {
+        fixMermaidTextColors();
+        setupThemeObserver();
+    } else {
+        setTimeout(waitForMermaidChart, 100);
+    }
+}
+
+function fixMermaidTextColors() {
+    const body = document.body;
+    const isLightTheme = body.getAttribute('data-custom-theme') === 'light';
+    
+    // Apply text colors based on current theme
+    const textElements = document.querySelectorAll('.mermaid text');
+    textElements.forEach(textElement => {
+        if (isLightTheme) {
+            // Light mode: remove any forced white text and let CSS handle it
+            textElement.style.removeProperty('fill');
+            textElement.style.removeProperty('color');
+        } else {
+            // Dark mode: ensure text is white
+            textElement.style.setProperty('fill', '#ffffff', 'important');
+            textElement.style.setProperty('color', '#ffffff', 'important');
+        }
+    });
+}
+
+function setupThemeObserver() {
+    // Watch for theme changes on the body element
+    const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+            if (mutation.type === 'attributes' && mutation.attributeName === 'data-custom-theme') {
+                // Theme changed, update text colors
+                setTimeout(fixMermaidTextColors, 50);
+            }
+        });
+    });
+    
+    observer.observe(document.body, {
+        attributes: true,
+        attributeFilter: ['data-custom-theme']
+    });
+}
+
+// Start the process
+waitForMermaidChart();
+
+// Also fix on page load events
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(fixMermaidTextColors, 100);
+});
+
+window.addEventListener('load', () => {
+    setTimeout(fixMermaidTextColors, 100);
+});
+"""
+
 sphinx_tabs_disable_tab_closing = True
 sphinx_tabs_disable_css_loading = False
 myst_enable_extensions = ["colon_fence"]
