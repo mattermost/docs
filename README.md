@@ -93,16 +93,16 @@ The following software is required to build the documentation:
 
 4. Install required Python packages. You have two options:
 
-  Use `pipenv sync --dev` when:
-   - You need exact reproducibility of the production build environment.
-   - You're setting up a CI/CD pipeline.
-   - You want to avoid accidentally updating dependency versions.
-   - You're working in a team where everyone should use identical package versions.
+   Use `pipenv sync --dev` when:
+    - You need exact reproducibility of the production build environment.
+    - You're setting up a CI/CD pipeline.
+    - You want to avoid accidentally updating dependency versions.
+    - You're working in a team where everyone should use identical package versions.
 
-  Use `pipenv install --dev` when:
-   - You're setting up a local development environment for the first time.
-   - You want to allow minor package updates within the version constraints.
-   - You're working independently from production and want the most recent compatible versions.
+   Use `pipenv install --dev` when:
+    - You're setting up a local development environment for the first time.
+    - You want to allow minor package updates within the version constraints.
+    - You're working independently from production and want the most recent compatible versions.
 
 5. Run ``git submodule update --init --recursive`` to ensure that the Git submodules for Mattermost Agents are initialized and updated.
 
