@@ -26,6 +26,7 @@ Guests can:
 - Mute channels
 - Update their profile
 - Use different authentication methods than other users
+- Leave channels to which they were added (including Town-square). 
 
 Guests cannot:
 
