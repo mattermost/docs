@@ -7,8 +7,10 @@ Create channels
 Anyone can create public channels, private channels, direct messages, and group messages unless the system admin has :doc:`restricted permissions to do so using advanced permissions </onboard/advanced-permissions>`. Enterprise system administrators can also configure channels as :ref:`read-only <onboard/advanced-permissions:read-only channels>`.
 
 .. tab:: Web/Desktop
+  :parse-titles:
 
-  **To create a public or private channel**
+  Create a public or private channel
+  -----------------------------------
 
   1. Select the **Add channels** button in the channel sidebar, then select **Create New Channel**. Alternatively, you can select |plus| at the top of the channel sidebar, then select **Create New Channel**.
 
@@ -21,7 +23,8 @@ Anyone can create public channels, private channels, direct messages, and group 
   4. (Optional) Describe the channel's focus or purpose. This text is visible to all channel members in the channel header.
   5. (Optional) Assign the channel to a category. If your system admin has enabled :ref:`channel category sorting <configure/experimental-configuration-settings:enable channel category sorting>`, you can assign the new channel to a new or existing channel category. If this option isn't available, you can `customize your channel sidebar </preferences/customize-your-channel-sidebar>`.
 
-  **To start a direct or group message**
+  Start a direct or group message
+  --------------------------------
 
   1. Select the |plus| next to the **Direct Messages** category in the channel sidebar.
 
@@ -38,8 +41,10 @@ Anyone can create public channels, private channels, direct messages, and group 
     - If you want to add more than 7 users to a group message, create a private channel instead.
 
 .. tab:: Mobile
+  :parse-titles:
 
-  **To create a public or private channel**
+  Create a public or private channel
+  -----------------------------------
 
   Tap |plus| in the top right corner of the app, then select **Create New Channel**. Channels are created as public by default. If you want to create a private channel, tap the **Make Private** option.
 
@@ -52,7 +57,8 @@ Anyone can create public channels, private channels, direct messages, and group 
       :alt: You can make a channel private by tapping the Make Private option.
       :scale: 30
 
-  **To start a direct or group message**
+  Start a direct or group message
+  --------------------------------
 
   Tap |plus| in the top right corner of the app, then select **Open a Direct Message**. You can select one person for a direct message or up to seven people for a group message. If your organization uses :doc:`connected workspaces </onboard/connected-workspaces>`, remote users from shared channels are also available to select. Tap **Start** to start the conversation.
 

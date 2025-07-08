@@ -14,8 +14,6 @@ Search for message
 
 .. tab:: Web/Desktop
 
-  **Search for messages**
-
   1. Select the Search field, select **Messages**, enter your search criteria.
 
     .. image:: ../images/search-messages.png

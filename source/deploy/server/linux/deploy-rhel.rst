@@ -1,18 +1,13 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
 .. raw:: html
 
-    <div class="mm-badge mm-badge--combo">
-
+  <div class="mm-badge mm-badge--combo">
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
-        <li>Operating System: Enterprise Linux 7+, Oracle Linux  6+, Oracle Linux 7+
+        <li>Operating System: Enterprise Linux 7+, Oracle Linux  6+, Oracle Linux 7+</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
         <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network:
@@ -24,7 +19,6 @@
         </li>
       </ul>
     </div>
-
   </div>
 
 You can deploy Mattermost Server using our ``rpm`` signed packages available through the Mattermost Yum repository.
@@ -70,7 +64,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
       sudo dnf update
       sudo dnf upgrade
 
-2. After any updates, and any system reboots, are complete, install the Mattermost Server by extracting the tarball, creating users and groups, and setting file/folder permissions. 
+2. After any updates, and any system reboots, are complete, install the Mattermost Server by extracting the tarball, creating users and groups, and setting file/folder permissions.
 
   a. First extract the tarball:
 
@@ -116,7 +110,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
     sudo chmod -R g+w /opt/mattermost
 
-You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``. 
+  You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``.
 
 6. Create the systemd unit file:
 
@@ -128,24 +122,24 @@ You will now have the latest Mattermost Server version installed on your system.
 
   .. code-block:: text
 
-      [Unit]
-      Description=Mattermost
-      After=network.target
+    [Unit]
+    Description=Mattermost
+    After=network.target
 
-      [Service]
-      Type=notify
-      ExecStart=/opt/mattermost/bin/mattermost
-      TimeoutStartSec=3600
-      KillMode=mixed
-      Restart=always
-      RestartSec=10
-      WorkingDirectory=/opt/mattermost
-      User=mattermost
-      Group=mattermost
-      LimitNOFILE=49152
+    [Service]
+    Type=notify
+    ExecStart=/opt/mattermost/bin/mattermost
+    TimeoutStartSec=3600
+    KillMode=mixed
+    Restart=always
+    RestartSec=10
+    WorkingDirectory=/opt/mattermost
+    User=mattermost
+    Group=mattermost
+    LimitNOFILE=49152
 
-      [Install]
-      WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
 8. Save the file and reload systemd using ``sudo systemctl daemon-reload``. Mattermost Server is now installed and is ready for setup.
 
@@ -155,7 +149,7 @@ Before you start the Mattermost Server, you need to edit the configuration file.
 
 .. code-block:: sh
 
-  sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
+  sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json
 
 Configure the following properties in this file:
 
@@ -168,10 +162,10 @@ Configure the following properties in this file:
   We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
-	
+
 .. code-block:: sh
 
-    sudo systemctl start mattermost
+  sudo systemctl start mattermost
 
 Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
 
@@ -190,14 +184,13 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
       sudo semanage fcontext -a -t bin_t "/opt/mattermost/bin(/.*)?"
       sudo restorecon -RF /opt/mattermost/bin
 
-    Now, try starting Mattermost again with 
+    Now, try starting Mattermost again with
 
     .. code-block:: sh
 
       sudo systemctl start mattermost
 
     If you don't receive an error, verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that's returned by the Mattermost Server. You're all set!
-
 
     If on starting Mattermost you receive an error, before moving on, check for the existence of a file in ``/opt/mattermost/logs`` - if ``mattermost.log`` exists in that directory, it's more likely you're dealing with a configuration issue in  ``config.json``. Double check the previous steps before continuing
 
@@ -207,8 +200,8 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
       2. Set a safe context by assigning a SELinux type that's compatible with web services or applications by running ``sudo semanage fcontext -a -t httpd_sys_content_t "/opt/mattermost(/.*)?"``. A common one is ``httpd_sys_content_t``, used for serving files. Ensure you match the directory and its contents recursively. Run the ``sudo restorecon -R /opt/mattermost`` to apply the changes.
 
     Allow Mattermost to bind to ports: When Mattermost needs specific ports (e.g., 8065), ensure that SELinux allows it by allowing Mattermost to bind to ports. Run the ``sudo semanage port -l | grep 8065`` command, and if the port's not listed, you'll need to add it by running ``sudo semanage port -a -t http_port_t -p tcp 8065``, replacing the ``8065`` with the required port.
-    
-    Handle custom policies: If Mattermost requires actions that SELinux blocks, you'll need to generate a custom policy. 
+
+    Handle custom policies: If Mattermost requires actions that SELinux blocks, you'll need to generate a custom policy.
 
       1. Check for SELinux denials first in the logs by running ``sudo ausearch -m avc -ts recent``, or by checking the audit log: ``sudo cat /var/log/audit/audit.log | grep denied``.
 
@@ -222,10 +215,10 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
 
     Test the configuration: Restart Mattermost to confirm the configuation works as expected by running ``sudo systemctl restart mattermost``. In the case of failures, revisit the logs to identify other SELinux-related issues.
 
-    Need Mattermost working quickly for testing purposes? 
-    
-    - You can change SELinux to permissive mode by running the ``sudo setenforce 0``. command where policies aren't enforced, only logged. 
-    - This command changes the SELinux mode to "permissive". While in permissive mode, policies aren't enforced, and violations are logged instead of being blocked. This can be helpful for debugging and troubleshooting issues related to SELinux policies. 
+    Need Mattermost working quickly for testing purposes?
+
+    - You can change SELinux to permissive mode by running the ``sudo setenforce 0``. command where policies aren't enforced, only logged.
+    - This command changes the SELinux mode to "permissive". While in permissive mode, policies aren't enforced, and violations are logged instead of being blocked. This can be helpful for debugging and troubleshooting issues related to SELinux policies.
     - Ensure you re-enable enforcing mode once context is working as needed by running the ``sudo setenforce 1`` command.
 
     See the following SELinux resources for additional details:
@@ -240,7 +233,8 @@ The final step, depending on your requirements, is to run sudo ``systemctl enabl
 
 Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
 
-**Remove Mattermost**
+Remove Mattermost
+-----------------
 
 To remove the Mattermost Server, you must stop the Mattermost Server, back up all important files, and then run this command:
 
@@ -250,6 +244,6 @@ To remove the Mattermost Server, you must stop the Mattermost Server, back up al
 
 .. note::
 
-	Depending on your configuration, there are several important folders in ``/opt/mattermost`` to backup. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data``. We strongly recommend you back up these locations before running the ``rm`` command.
+  Depending on your configuration, there are several important folders in ``/opt/mattermost`` to backup. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data``. We strongly recommend you back up these locations before running the ``rm`` command.
 
 You may also remove the Mattermost systemd unit file and the user/group created for running the application.
