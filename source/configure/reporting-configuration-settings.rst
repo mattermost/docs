@@ -73,11 +73,11 @@ Statistics configuration settings
 The following configuration setting controls statistics collection behavior. This setting is not available in the System Console and can only be set in the ``config.json`` file.
 
 .. config:setting:: maximum-users-for-statistics
-  :displayname: Maximum users for statistics
+  :displayname: Maximum users for statistics (Reporting)
   :systemconsole: N/A
   :configjson: MaxUsersForStatistics
   :environment: N/A
-  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. Default is **2500** users.
+  :description: Sets the maximum number of users on the server before statistics for total messages, total hashtag messages, total file messages, messages per day, and activated users with messages per day are disabled. Default is **2500** users.
 
 Maximum users for statistics
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,12 +85,13 @@ Maximum users for statistics
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
+This setting is used to maximize performance for large Enterprise deployments and isn't available in the System Console and can only be set in ``config.json``.
 
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled.
-
-This setting is used to maximize performance for large Enterprise deployments.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
-+---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Set the maximum number of users on the server before          | - System Config path: N/A                                                      |
+| statistics for total messages, total hashtag messages, total  | - ``config.json`` setting: ``"AnalyticsSettings.MaxUsersForStatistics": 2500`` |
+| file messages, messages per day, and activated users with     | - Environment variable: N/A                                                    |
+| messages per day are disabled.                                |                                                                                |
+|                                                               |                                                                                |
+| Numerical input. Default is **2500** users.                   |                                                                                |
++---------------------------------------------------------------+--------------------------------------------------------------------------------+
