@@ -72,7 +72,7 @@ Set how long Mattermost keeps files across all teams and channels. Doesn't apply
 By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
 
 +--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileRetentionHours": 1`` with numerical input.                             |
+| This feature's ``config.json`` setting is ``"FileRetentionHours": 1`` with numerical input.                              |
 +--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
