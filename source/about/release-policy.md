@@ -57,9 +57,7 @@ gantt
     dateFormat  YYYY-MM-DD
     axisFormat  %b %y
 
-    tickInterval 2month
-
-    section 2025
+    section Releases
     v10.4                  :done,  2025-01-16, 2025-04-15
     v10.5 & Desktop App v5.11 Extended Support :crit,    2025-02-16, 2025-11-15
     v10.6                  :done, 2025-03-16, 2025-06-15
