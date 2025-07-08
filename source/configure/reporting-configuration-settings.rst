@@ -9,6 +9,7 @@ View the following statistics for your overall deployment and specific teams, as
 - `Site statistics <#site-statistics>`__
 - `Team statistics <#team-statistics>`__
 - `Server logs <#server-logs>`__
+- `Statistics configuration settings <#statistics-configuration-settings>`__
 
 ----
 
@@ -60,3 +61,37 @@ Server logs
 .. tip::
 
   From Mattermost v10.9, you can toggle between JSON and plain text server logs in the System Console when console log output is configured as :ref:`JSON <configure/environment-configuration-settings:output console logs as json>` by specifying the log format as **JSON** or **Plain text**. This option is located in the top right corner of the page **Server logs** page.
+
+----
+
+Statistics configuration settings
+---------------------------------
+
+.. include:: ../_static/badges/selfhosted-only.rst
+  :start-after: :nosearch:
+
+The following configuration setting controls statistics collection behavior. This setting is not available in the System Console and can only be set in the ``config.json`` file.
+
+.. config:setting:: maximum-users-for-statistics
+  :displayname: Maximum users for statistics (Reporting)
+  :systemconsole: N/A
+  :configjson: MaxUsersForStatistics
+  :environment: N/A
+  :description: Sets the maximum number of users on the server before statistics for total messages, total hashtag messages, total file messages, messages per day, and activated users with messages per day are disabled. Default is **2500** users.
+
+Maximum users for statistics
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-pro-only.rst
+  :start-after: :nosearch:
+
+This setting is used to maximize performance for large Enterprise deployments and isn't available in the System Console and can only be set in ``config.json``.
+
++---------------------------------------------------------------+--------------------------------------------------------------------------------+
+| Set the maximum number of users on the server before          | - System Config path: N/A                                                      |
+| statistics for total messages, total hashtag messages, total  | - ``config.json`` setting: ``"AnalyticsSettings.MaxUsersForStatistics": 2500`` |
+| file messages, messages per day, and activated users with     | - Environment variable: N/A                                                    |
+| messages per day are disabled.                                |                                                                                |
+|                                                               |                                                                                |
+| Numerical input. Default is **2500** users.                   |                                                                                |
++---------------------------------------------------------------+--------------------------------------------------------------------------------+

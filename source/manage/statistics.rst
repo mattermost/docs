@@ -8,7 +8,7 @@ Statistics on users, posts, and channels are tracked for each system and team. E
 
 .. note::
 
-  To maximize performance for large Enterprise deployments, statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. You can re-enable them by changing the ``MaxUsersForStatistics`` value :ref:`in config.json <configure/experimental-configuration-settings:maximum users for statistics>`.
+  To maximize performance for large Enterprise deployments, statistics for total messages, total hashtag messages, total file messages, messages per day, and activated users with messages per day is configurable by changing the ``MaxUsersForStatistics`` value :ref:`in config.json <configure/reporting-configuration-settings:maximum users for statistics>`.
 
 For advanced metrics for Enterprise deployments, :doc:`see performance monitoring documentation to learn more </scale/deploy-prometheus-grafana-for-performance-monitoring>`.
 
