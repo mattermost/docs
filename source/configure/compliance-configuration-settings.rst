@@ -292,7 +292,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 Determines how many new posts are batched together to a compliance export file.
 
 +---------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.     |
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
 +---------------------------------------------------------------------------------------------+
 
 Run compliance export job now
