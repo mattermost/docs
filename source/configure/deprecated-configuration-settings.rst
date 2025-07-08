@@ -7,6 +7,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Elasticsearch settings <#elasticsearch-settings>`__
 - `Service settings <#service-settings>`__
 - `Database settings <#database-settings>`__
+- `Data retention settings <#data-retention-settings>`__
 - `Users and teams settings <#users-and-teams-settings>`__
 - `SAML 2.0 settings <#saml-2-0-settings>`__
 - `Legacy sidebar settings <#legacy-sidebar-settings>`__
@@ -173,6 +174,37 @@ Amazon S3 lowercase bucket
 +---------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"AmazonS3LowercaseBucket": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------+
+
+----
+
+Data retention settings
+-----------------------
+
+MessageRetentionDays
+~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v9.5 release in favor of MessageRetentionHours*
+
+Set how long Mattermost keeps messages across all teams and channels. This setting doesn't apply to custom retention policies. The minimum time is 1 hour.
+
+From Mattermost v9.5, this setting has been replaced by :ref:`MessageRetentionHours <configure/compliance-configuration-settings:global retention policy for messages>` which provides more granular control over message retention periods.
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with numerical input.                                     |
++-------------------------------------------------------------------------------------------------------------------------------------+
+
+FileRetentionDays
+~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v9.5 release in favor of FileRetentionHours*
+
+Set how long Mattermost keeps files across all teams and channels. This setting doesn't apply to custom retention policies. The minimum time is 1 hour.
+
+From Mattermost v9.5, this setting has been replaced by :ref:`FileRetentionHours <configure/compliance-configuration-settings:global retention policy for files>` which provides more granular control over file retention periods.
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"FileRetentionDays": 365`` with numerical input.                                        |
++-------------------------------------------------------------------------------------------------------------------------------------+
 
 ----
 

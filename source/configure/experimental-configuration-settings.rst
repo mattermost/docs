@@ -983,26 +983,6 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-.. config:setting:: batch-size
-  :displayname: Batch size (Experimental)
-  :systemconsole: N/A
-  :configjson: BatchSize
-  :environment: N/A
-  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
-
-Batch size
-~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Determines how many new posts are batched together to a compliance export file.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input. |
-+----------------------------------------------------------------------------------------+
 
 .. config:setting:: file-location
   :displayname: File location (Experimental)
