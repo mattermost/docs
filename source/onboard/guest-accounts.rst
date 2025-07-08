@@ -26,6 +26,7 @@ Guests can:
 - Mute channels
 - Update their profile
 - Use different authentication methods than other users
+- Leave channels to which they were added (including Town Square). 
 
 Guests cannot:
 
@@ -49,7 +50,7 @@ Configure AD/LDAP authentication
 When enabled, the **Guest Filter** in Mattermost identifies external users whose AD/LDAP role is ``guest`` and who are invited to join your Mattermost server. These users will have the ``guest`` role applied immediately upon first login instead of the default member user role. This eliminates having to manually assign the role in the System Console.
 
 1. Go to **System Console > Authentication > Guest Access** to enable guest access.
-2. Go to **System Console > Authentication > AD/LDAP**.
+2. Go to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard, navigate to the **User Filters** section, then expand **Configure additional filters**.
 3. Complete the **Guest Filter** field.
 4. Select **Save**.
 

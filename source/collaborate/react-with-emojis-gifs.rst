@@ -6,7 +6,7 @@ React with emojis and GIFs
 
 Emojis and GIFs are small, digital images, animated images, or icons you can use to communicate or express concepts such as emotions, humor, and physical gestures in your messages.
 
-From Mattermost v10.10, text emoticons (such as ``:)`` or ``:D``) are automatically converted to emoji characters in your messages by default. You can :ref:`disable this auto-rendering <preferences/manage-your-display-options:emoticon rendering>` if you prefer to keep emoticons as text. 
+From Mattermost v10.10, text emoticons (such as ``:)`` or ``:D``) are automatically converted to emoji characters in your messages by default. You can :ref:`disable this auto-rendering <preferences/manage-your-display-options:render emoticons as emojis>` if you prefer to keep emoticons as text. 
 
 Quick emoji reactions
 -----------------------

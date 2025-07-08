@@ -982,49 +982,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: maximum-users-for-statistics
-  :displayname: Maximum users for statistics (Experimental)
-  :systemconsole: N/A
-  :configjson: MaxUsersForStatistics
-  :environment: N/A
-  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. Default is **2500** users.
 
-Maximum users for statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled.
-
-This setting is used to maximize performance for large Enterprise deployments.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
-+---------------------------------------------------------------------------------------------------+
-
-.. config:setting:: batch-size
-  :displayname: Batch size (Experimental)
-  :systemconsole: N/A
-  :configjson: BatchSize
-  :environment: N/A
-  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
-
-Batch size
-~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Determines how many new posts are batched together to a compliance export file.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input. |
-+----------------------------------------------------------------------------------------+
 
 .. config:setting:: file-location
   :displayname: File location (Experimental)
@@ -1606,6 +1564,31 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-channel-category-sorting
+  :displayname: Enable channel category sorting (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalEnableChannelCategorySorting
+  :environment: N/A
+
+  - **true**: Users can assign channels to new or existing channel categories when creating or renaming channels.
+  - **false**: **(Default)** Disables the ability to assign channels to new or existing channel categories when creating or renaming channels.
+
+Enable channel category sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels. This configuration setting applies only to cloud-based deployments.
+
+**True**: Users can assign channels to new or existing channel categories when creating or renaming channels.
+
+**False**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
++------------------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
