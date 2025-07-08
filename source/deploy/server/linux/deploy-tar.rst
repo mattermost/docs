@@ -1,14 +1,9 @@
-.. meta::
-   :name: robots
-   :content: noindex
-
 :orphan:
 :nosearch:
 
 .. raw:: html
 
   <div class="mm-badge mm-badge--combo">
-
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
@@ -23,14 +18,14 @@
         </li>
       </ul>
     </div>
-
   </div>
 
-You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, typically favored by advanced system administrators. 
+You can install the Mattermost Server on any 64-bit Linux system using the tarball. This is the most flexible installation method, but it comes with the highest effort, typically favored by advanced system administrators.
 
 This Mattermost deployment includes 3 steps: download, install Mattermost server, and set up the server.
 
-**Step 1: Download**
+Step 1: Download
+----------------
 
 In a terminal window, ssh onto the system that will host the Mattermost Server. Using ``wget``, download the Mattermost Server release you want to install using one of the following commands. Replace ``amd64`` with the appropriate architecture (e.g., ``arm64`` for ARM-based systems) in the link as needed.
 
@@ -50,9 +45,10 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   If you are looking for an older release, Enterprise and Team Edition releases can be found in our :doc:`version archive </about/version-archive>` documentation.
 
-**Step 2: Install Mattermost server**
+Step 2: Install Mattermost server
+---------------------------------
 
-Install the Mattermost Server by extracting the tarball, creating users and groups, and setting file/folder permissions. 
+Install the Mattermost Server by extracting the tarball, creating users and groups, and setting file/folder permissions.
 
 1. First extract the tarball:
 
@@ -73,7 +69,7 @@ Install the Mattermost Server by extracting the tarball, creating users and grou
 3. Create the default storage folder. By default the Mattermost Server uses ``/opt/mattermost/data`` as the folder for files. This can be changed in the System Console during setup (even using alternative storage such as S3).
 
   .. code-block:: sh
-      
+
       sudo mkdir /opt/mattermost/data
 
 4. Set up a user and group called ``mattermost``:
@@ -98,7 +94,7 @@ Install the Mattermost Server by extracting the tarball, creating users and grou
 
     sudo chmod -R g+w /opt/mattermost
 
-You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``. 
+  You will now have the latest Mattermost Server version installed on your system. Starting and stopping the Mattermost Server is done using ``systemd``.
 
 7. Create the systemd unit file:
 
@@ -110,38 +106,39 @@ You will now have the latest Mattermost Server version installed on your system.
 
   .. code-block:: text
 
-      [Unit]
-      Description=Mattermost
-      After=network.target
+    [Unit]
+    Description=Mattermost
+    After=network.target
 
-      [Service]
-      Type=notify
-      ExecStart=/opt/mattermost/bin/mattermost
-      TimeoutStartSec=3600
-      KillMode=mixed
-      Restart=always
-      RestartSec=10
-      WorkingDirectory=/opt/mattermost
-      User=mattermost
-      Group=mattermost
-      LimitNOFILE=49152
+    [Service]
+    Type=notify
+    ExecStart=/opt/mattermost/bin/mattermost
+    TimeoutStartSec=3600
+    KillMode=mixed
+    Restart=always
+    RestartSec=10
+    WorkingDirectory=/opt/mattermost
+    User=mattermost
+    Group=mattermost
+    LimitNOFILE=49152
 
-      [Install]
-      WantedBy=multi-user.target
+    [Install]
+    WantedBy=multi-user.target
 
-.. note::
+  .. note::
 
-	If you are installing the Mattermost server on the same system as your database, you may want to add both ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section of the systemd unit file.
+    If you are installing the Mattermost server on the same system as your database, you may want to add both ``After=postgresql.service`` and ``BindsTo=postgresql.service`` to the ``[Unit]`` section of the systemd unit file.
 
 9. Save the file and reload systemd using ``sudo systemctl daemon-reload``. Mattermost Server is now installed and is ready for setup.
 
-**Step 3: Set up the server**
+Step 3: Set up the server
+-------------------------
 
 Before you start the Mattermost Server, you need to edit the configuration file. A default configuration file is located at ``/opt/mattermost/config/config.json``. We recommend taking a backup of this default config ahead of making changes:
 
 .. code-block:: sh
 
-  sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json 
+  sudo cp /opt/mattermost/config/config.json /opt/mattermost/config/config.defaults.json
 
 Configure the following properties in this file:
 
@@ -152,29 +149,31 @@ Configure the following properties in this file:
 We recommend configuring the `Support Email <https://docs.mattermost.com/administration/config-settings.html#support-email>`_ under ``SupportSettings``, set ``"SupportEmail"``. This is the email address your users will contact when they need help.
 
 After modifying the ``config.json`` configuration file, you can now start the Mattermost server:
-	
+
 .. code-block:: sh
 
   sudo systemctl start mattermost
 
-Verify that Mattermost is running: curl ``http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
+Verify that Mattermost is running: ``curl http://localhost:8065``. You should see the HTML that’s returned by the Mattermost Server.
 
 The final step, depending on your requirements, is to run sudo ``systemctl enable mattermost.service`` so that Mattermost will start on system boot.
 
-**Step 4: Update the server**
+Step 4: Update the server
+-------------------------
 
 Updating your Mattermost Server installation when using the tarball requires several manual steps. See the :doc:`upgrade Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
 
-**Remove Mattermost**
+Remove Mattermost
+-----------------
 
 To remove the Mattermost Server for any reason, you must stop the Mattermost Server, back up all important files, and then run this command:
 
 .. code-block:: sh
 
-   sudo rm - rf /opt/mattermost
+  sudo rm - rf /opt/mattermost
 
 .. note::
 
-	Depending on your configuration, there are several important folders in ``/opt/mattermost`` to backup. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data``. We strongly recommend you back up these locations before running the ``rm`` command.
+  Depending on your configuration, there are several important folders in ``/opt/mattermost`` to backup. These are ``config``, ``logs``, ``plugins``, ``client/plugins``, and ``data``. We strongly recommend you back up these locations before running the ``rm`` command.
 
 You may also remove the Mattermost systemd unit file and the user/group created for running the application.
