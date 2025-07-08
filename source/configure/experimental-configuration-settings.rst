@@ -982,49 +982,7 @@ Select the themes that can be chosen by users when ``EnableThemeSelection`` is s
 | This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: maximum-users-for-statistics
-  :displayname: Maximum users for statistics (Experimental)
-  :systemconsole: N/A
-  :configjson: MaxUsersForStatistics
-  :environment: N/A
-  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. Default is **2500** users.
 
-Maximum users for statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled.
-
-This setting is used to maximize performance for large Enterprise deployments.
-
-+---------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxUsersForStatistics": 2500`` with numerical input. |
-+---------------------------------------------------------------------------------------------------+
-
-.. config:setting:: batch-size
-  :displayname: Batch size (Experimental)
-  :systemconsole: N/A
-  :configjson: BatchSize
-  :environment: N/A
-  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
-
-Batch size
-~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Determines how many new posts are batched together to a compliance export file.
-
-+----------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input. |
-+----------------------------------------------------------------------------------------+
 
 .. config:setting:: file-location
   :displayname: File location (Experimental)
