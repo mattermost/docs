@@ -983,50 +983,6 @@ Allowed themes
 | String array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.                                                                     |                                                                          |
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-.. config:setting:: maximum-users-for-statistics
-  :displayname: Maximum users for statistics (Experimental)
-  :systemconsole: N/A
-  :configjson: MaxUsersForStatistics
-  :environment: N/A
-  :description: Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. Default is **2500** users.
-
-Maximum users for statistics
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-pro-only.rst
-  :start-after: :nosearch:
-
-+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| This setting isn't available in the System Console and can only be set in ``config.json``.      | - System Config path: N/A                                                |
-|                                                                                                   | - ``config.json`` setting: ``"MaxUsersForStatistics": 2500``           |
-| Sets the maximum number of users on the server before statistics for total posts, total hashtag posts, total file posts, posts per day, and activated users with posts per day are disabled. | - Environment variable: N/A                                              |
-|                                                                                                   |                                                                          |
-| This setting is used to maximize performance for large Enterprise deployments.                    |                                                                          |
-|                                                                                                   |                                                                          |
-| Numerical input. Default is **2500** users.                                                       |                                                                          |
-+---------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-
-.. config:setting:: batch-size
-  :displayname: Batch size (Experimental)
-  :systemconsole: N/A
-  :configjson: BatchSize
-  :environment: N/A
-  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
-
-Batch size
-~~~~~~~~~~
-
-.. include:: ../_static/badges/ent-only.rst
-  :start-after: :nosearch:
-
-+----------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-| This setting isn't available in the System Console and can only be set in ``config.json``. | - System Config path: N/A                                                |
-|                                                                                        | - ``config.json`` setting: ``"BatchSize": 10000``                      |
-| Determines how many new posts are batched together to a compliance export file.        | - Environment variable: N/A                                              |
-|                                                                                        |                                                                          |
-| Numerical input. Default is **10000** posts.                                           |                                                                          |
-+----------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
-
 .. config:setting:: file-location
   :displayname: File location (Experimental)
   :systemconsole: N/A
