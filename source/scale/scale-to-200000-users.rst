@@ -24,26 +24,98 @@ Results show that this architecture supports logging in up to 150,000 users with
 Requirements
 ------------
 
-.. tip::
+.. raw:: html
 
-  Scroll horizontally to see additional columns in the table below.
+   <style>
+   .scale-requirements-table {
+     width: 100% !important;
+     table-layout: fixed !important;
+     border-collapse: collapse;
+     font-size: 0.9em;
+     overflow-wrap: break-word !important;
+     word-wrap: break-word !important;
+   }
+   .scale-requirements-table th, .scale-requirements-table td {
+     border: 1px solid #ddd;
+     padding: 8px;
+     text-align: left;
+     vertical-align: top;
+     word-wrap: break-word;
+     overflow-wrap: break-word;
+   }
+   .scale-requirements-table th {
+     background-color: #f8f9fa;
+     font-weight: bold;
+   }
+   .scale-requirements-table col:nth-child(1) { width: 25%; }
+   .scale-requirements-table col:nth-child(2) { width: 10%; }
+   .scale-requirements-table col:nth-child(3) { width: 18%; }
+   .scale-requirements-table col:nth-child(4) { width: 23%; }
+   .scale-requirements-table col:nth-child(5) { width: 24%; }
+   </style>
 
-+------------------------+-----------+----------------+--------------------+----------------------+
-| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**   | **Azure Instance**   |
-|                        |           | Memory (GiB)** |                    |                      |
-+========================+===========+================+====================+======================+
-| Mattermost Application | 14        | 16/32          | c7i.4xlarge        | F16s v2              |
-+------------------------+-----------+----------------+--------------------+----------------------+
-| RDS Writer             | 1         | 16/128         | db.r7g.4xlarge     | E16as v6             |
-+------------------------+-----------+----------------+--------------------+----------------------+
-| RDS Reader             | 6         | 16/128         | db.r7g.4xlarge     | E16as v6             |
-+------------------------+-----------+----------------+--------------------+----------------------+
-| Elasticsearch cluster  | 4         | 8/64           | r6g.2xlarge.search | E8ads v6             |
-+------------------------+-----------+----------------+--------------------+----------------------+
-| Proxy                  | 4         | 32/128         | m6in.8xlarge       | D32s v6              |
-+------------------------+-----------+----------------+--------------------+----------------------+
-| Redis                  | 1         | 8/32           | cache.m7g.2xlarge  | Azure Cache Redis P3 |
-+------------------------+-----------+----------------+--------------------+----------------------+
+   <table class="scale-requirements-table">
+   <colgroup>
+   <col style="width: 25%">
+   <col style="width: 10%">
+   <col style="width: 18%">
+   <col style="width: 23%">
+   <col style="width: 24%">
+   </colgroup>
+   <thead>
+   <tr>
+   <th>Resource Type</th>
+   <th>Nodes</th>
+   <th>vCPU/Memory (GiB)</th>
+   <th>AWS Instance</th>
+   <th>Azure Instance</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+   <td>Mattermost Application</td>
+   <td>14</td>
+   <td>16/32</td>
+   <td>c7i.4xlarge</td>
+   <td>F16s v2</td>
+   </tr>
+   <tr>
+   <td>RDS Writer</td>
+   <td>1</td>
+   <td>16/128</td>
+   <td>db.r7g.4xlarge</td>
+   <td>E16as v6</td>
+   </tr>
+   <tr>
+   <td>RDS Reader</td>
+   <td>6</td>
+   <td>16/128</td>
+   <td>db.r7g.4xlarge</td>
+   <td>E16as v6</td>
+   </tr>
+   <tr>
+   <td>Elasticsearch cluster</td>
+   <td>4</td>
+   <td>8/64</td>
+   <td>r6g.2xlarge.search</td>
+   <td>E8ads v6</td>
+   </tr>
+   <tr>
+   <td>Proxy</td>
+   <td>4</td>
+   <td>32/128</td>
+   <td>m6in.8xlarge</td>
+   <td>D32s v6</td>
+   </tr>
+   <tr>
+   <td>Redis</td>
+   <td>1</td>
+   <td>8/32</td>
+   <td>cache.m7g.2xlarge</td>
+   <td>Azure Cache Redis P3</td>
+   </tr>
+   </tbody>
+   </table>
 
 Lifetime storage
 ----------------
