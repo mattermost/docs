@@ -15,24 +15,110 @@ This page describes the Mattermost reference architecture designed for a minimum
 Requirements
 ------------
 
-.. tip::
+.. raw:: html
 
-  Scroll horizontally to see additional columns in the table below.
+   <style>
+   .scale-requirements-table {
+     width: 100% !important;
+     table-layout: fixed !important;
+     border-collapse: collapse;
+     font-size: 0.9em;
+     overflow-wrap: break-word !important;
+     word-wrap: break-word !important;
+   }
+   .scale-requirements-table th,
+   .scale-requirements-table td {
+     border: 1px solid #ddd;
+     padding: 8px;
+     vertical-align: top;
+     word-wrap: break-word !important;
+     overflow-wrap: break-word !important;
+   }
+   .scale-requirements-table th {
+     background-color: #f8f9fa;
+     font-weight: bold;
+     text-align: left;
+   }
+   .scale-requirements-table th:nth-child(1) { width: 25%; }
+   .scale-requirements-table th:nth-child(2) { width: 10%; }
+   .scale-requirements-table th:nth-child(3) { width: 18%; }
+   .scale-requirements-table th:nth-child(4) { width: 23%; }
+   .scale-requirements-table th:nth-child(5) { width: 24%; }
+   
+   /* Dark mode support */
+   body:not([data-custom-theme="light"]) .scale-requirements-table {
+     background-color: #2d3748;
+   }
+   body:not([data-custom-theme="light"]) .scale-requirements-table th {
+     background-color: #4a5568 !important;
+     color: #fff;
+     border-color: #718096 !important;
+   }
+   body:not([data-custom-theme="light"]) .scale-requirements-table td {
+     color: #e2e8f0;
+     border-color: #718096 !important;
+   }
+   
+   /* Mobile responsiveness */
+   @media (max-width: 768px) {
+     .scale-requirements-table {
+       font-size: 0.8em;
+     }
+     .scale-requirements-table th,
+     .scale-requirements-table td {
+       padding: 6px 4px;
+     }
+   }
+   </style>
 
-+------------------------+-----------+----------------+-------------------+-------------------+
-| **Resource Type**      | **Nodes** | **vCPU/        | **AWS Instance**  | **Azure Instance**|
-|                        |           | Memory (GiB)** |                   |                   |
-+========================+===========+================+===================+===================+
-| Mattermost Application | 2         | 2/4            | c7i.large         | F2s v2            |
-+------------------------+-----------+----------------+-------------------+-------------------+
-| RDS Writer             | 1         | 2/16           | db.r7g.large      | E2as v6           |
-+------------------------+-----------+----------------+-------------------+-------------------+
-| RDS Reader             | 1         | 2/16           | db.r7g.large      | E2as v6           |
-+------------------------+-----------+----------------+-------------------+-------------------+
-| Elasticsearch Node     | 2         | 4/32           | r6g.xlarge.search | E4ads v6          |
-+------------------------+-----------+----------------+-------------------+-------------------+
-| Proxy                  | 1         | 16/64          | m7i.4xlarge       | D16s v6           |
-+------------------------+-----------+----------------+-------------------+-------------------+
+   <table class="scale-requirements-table">
+   <thead>
+   <tr>
+   <th>Resource Type</th>
+   <th>Nodes</th>
+   <th>vCPU/ Memory (GiB)</th>
+   <th>AWS Instance</th>
+   <th>Azure Instance</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+   <td>Mattermost Application</td>
+   <td>2</td>
+   <td>2/4</td>
+   <td>c7i.large</td>
+   <td>F2s v2</td>
+   </tr>
+   <tr>
+   <td>RDS Writer</td>
+   <td>1</td>
+   <td>2/16</td>
+   <td>db.r7g.large</td>
+   <td>E2as v6</td>
+   </tr>
+   <tr>
+   <td>RDS Reader</td>
+   <td>1</td>
+   <td>2/16</td>
+   <td>db.r7g.large</td>
+   <td>E2as v6</td>
+   </tr>
+   <tr>
+   <td>Elasticsearch Node</td>
+   <td>2</td>
+   <td>4/32</td>
+   <td>r6g.xlarge.search</td>
+   <td>E4ads v6</td>
+   </tr>
+   <tr>
+   <td>Proxy</td>
+   <td>1</td>
+   <td>16/64</td>
+   <td>m7i.4xlarge</td>
+   <td>D16s v6</td>
+   </tr>
+   </tbody>
+   </table>
 
 Lifetime storage
 ----------------
