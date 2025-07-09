@@ -198,7 +198,7 @@ Looking for a way to evaluate Mattermost on a single local machine using Docker?
 
    - This local image is self-contained (i.e., it has an internal database and works out of the box). Dropping a container using this image removes data and configuration as expected. You can see the :doc:`configuration settings </configure/configuration-settings>` documentation to learn more about customizing your trial deployment.
    - **Preview Mode** shouldn't be used in a production environment, as it uses a known password string, contains other non-production configuration settings, has email disabled, keeps no persistent data (all data lives inside the container), and doesn't support upgrades. 
-   - If you are planning to use the calling functionality in **Preview Mode** on a non-local environment, you should ensure that the server is running on a secure (HTTPs) connection and that the :ref:`network requirements <configure/calls-deployment:network>` to run calls are met.
+   - If you are planning to use the calling functionality in **Preview Mode** on a non-local environment, you should ensure that the server is running on a secure (HTTPs) connection and that the :ref:`network requirements <configure/calls-deployment:network requirements>` to run calls are met.
 
 1. Install `Docker <https://www.docker.com/get-started/>`__.
 
