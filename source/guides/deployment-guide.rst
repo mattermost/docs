@@ -6,7 +6,7 @@ Welcome to deployment guidance for Mattermost. This guide is organized into sect
 Whether you're deploying the server application, desktop application, or mobile application, or troubleshooting deployments, this guide has you covered. Use the navigation below to access detailed information about each topic.
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 3
     :hidden:
     :titlesonly:
 
