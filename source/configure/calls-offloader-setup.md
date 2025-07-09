@@ -69,8 +69,8 @@ Call recordings can consume significant storage space:
    http.tls.cert_file = ""
    http.tls.cert_key = ""
    security.allow_self_registration = true
-   security.enable_admin = true
-   security.admin_secret_key = "changeme"
+   security.enable_admin = false
+   security.admin_secret_key = ""
    security.session_cache.expiration_minutes = 1440
 
    [store]
@@ -79,7 +79,7 @@ Call recordings can consume significant storage space:
    [jobs]
    api_type = "docker"
    max_concurrent_jobs = 2
-   failed_jobs_retention_time = "7d"
+   failed_jobs_retention_time = "30d"
    image_registry = "mattermost"
 
    [logger]
@@ -256,7 +256,7 @@ After deploying calls-offloader, validate the installation:
    - Network connectivity between Mattermost and calls-offloader servers
    - calls-offloader service binding configuration (ensure it's not bound to localhost only)
 
-3. **Verify Docker integration** (if using docker api_type):
+3. **Verify Docker service** (if using docker api_type):
 
    ```bash
    # Check that system user running calls-offloader can access Docker
