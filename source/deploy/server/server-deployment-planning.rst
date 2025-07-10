@@ -2,8 +2,7 @@ Server deployment planning
 ==========================
 
 .. toctree::
-    :maxdepth: 1
-    :hidden:
+    :maxdepth: 4
     :titlesonly:
 
     Preparations </deploy/server/preparations>
