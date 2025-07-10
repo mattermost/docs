@@ -82,10 +82,24 @@ def doctree_read(app: Sphinx, doctree: nodes.document):
         and len(app.env.sphinx_tabs[app.env.docname]) > 0
     ):
         logger.debug(f"{LOG_PREFIX} doctree_read: {app.env.docname} has tabs")
+        
+        # Store the original toctree structure before replacing it
+        original_toc = None
+        if (len(app.env.tocs[app.env.docname][0]) > 1 and 
+            app.env.tocs[app.env.docname][0][1] is not None):
+            original_toc = app.env.tocs[app.env.docname][0][1]
+            logger.debug(f"{LOG_PREFIX} doctree_read({app.env.docname}): preserving original toctree")
+        
         updated_tocs: nodes.list_item = sectiondata_to_toc(
             app.env.docname,
             collect_sections(app.env, doctree, app.env.docname, doctree),
         )
+        
+        # If we have an original toctree, use it instead of the tab-based one
+        if original_toc is not None:
+            logger.debug(f"{LOG_PREFIX} doctree_read({app.env.docname}): using original toctree instead of tab-based TOC")
+            updated_tocs = original_toc
+            
         logger.debug(
             f"{LOG_PREFIX} doctree_read({app.env.docname}): updated_tocs[0][1]={updated_tocs}"
         )
