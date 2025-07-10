@@ -33,17 +33,11 @@ Process
 
 .. tab:: Windows
 
-   1. **Install SignTool**
-   
-      Install the Windows SDK to access the ``SignTool`` utility.
+   1. **Install SignTool**: Install the Windows SDK to access the ``SignTool`` utility.
 
-   2. **Obtain a Code Signing Certificate**
-      
-      Purchase or create a certificate (``.pfx`` file) via a CA.
+   2. **Obtain a Code Signing Certificate**: Purchase or create a certificate (``.pfx`` file) via a CA.
 
-   3. **Import the Certificate**
-      
-      Open the ``.pfx`` file and import it into the Windows Certificate Store.
+   3. **Import the Certificate**: Open the ``.pfx`` file and import it into the Windows Certificate Store.
 
    4. **Sign the Executable**
 
@@ -56,23 +50,19 @@ Process
 
 .. tab:: Linux
 
-   1. **Create or Import Your GPG Key**
-
-      If you don't have a GPG key, create one:
+   1. **Create or Import Your GPG Key**: If you don't have a GPG key, create one:
 
       .. code-block:: sh
 
          gpg --full-generate-key
 
-      Import an existing GPG key, if you have one:
+      Alternatively, import an existing GPG key, if you have one:
 
       .. code-block:: sh
 
          gpg --import /path/to/your-key.asc
 
-   2. **Sign the Package**
-
-      Use ``dpkg-sig`` to sign a Debian package:
+   2. **Sign the Package**: Use ``dpkg-sig`` to sign a Debian package:
 
       .. code-block:: sh
 
@@ -84,9 +74,7 @@ Process
 
          rpmsign --addsign your-package.rpm
 
-   3. **Verify the Signature**
-
-      Verify the signature of a ``.deb`` package:
+   3. **Verify the Signature**: Verify the signature of a ``.deb`` package:
 
       .. code-block:: sh
 
@@ -100,25 +88,17 @@ Process
 
 .. tab:: Mac
 
-   1. **Obtain a Code Signing Certificate**
+   1. **Obtain a Code Signing Certificate**: Create a ``Developer ID Application`` certificate in your Apple Developer account and download it.
 
-      Create a ``Developer ID Application`` certificate in your Apple Developer account and download it.
+   2. **Import the Certificate**: Double-click the certificate to import it into the Keychain.
 
-   2. **Import the Certificate**
-
-      Double-click the certificate to import it into the Keychain.
-
-   3. **Sign the Application**
-
-      Use the ``codesign`` tool from Xcode to sign your application:
+   3. **Sign the Application**: Use the ``codesign`` tool from Xcode to sign your application:
 
       .. code-block:: sh
 
          codesign --deep --force --verify --verbose --sign "Developer ID Application: Your Name (TeamID)" /path/to/your.app
 
-   4. [Optional] **Verify the Signature**
-
-      Verify the signature to ensure everything is correctly signed:
+   4. [Optional] **Verify the Signature**: Verify the signature to ensure everything is correctly signed:
 
       .. code-block:: sh
 
