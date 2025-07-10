@@ -10,7 +10,7 @@ Mattermost provides a secure, mission-resilient out-of-band (OOB) collaboration 
 .. image:: /images/secure-out-of-band.png
     :alt: Secure and sovereign out-of-band incident response communication operates independently from compromised enterprise infrastructure.
 
-The following mission-critical OOB collaboration capabilities are available:
+Mattermost supports the following mission-critical OOB collaboration requirements: 
 
 Always-Available Backup Communications
 --------------------------------------
