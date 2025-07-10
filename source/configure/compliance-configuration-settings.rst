@@ -13,10 +13,10 @@ Review and manage the following compliance configuration options in the System C
 
 .. tip::
 
-  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``MessageRetentionDays`` value is under ``DataRetentionSettings``.
+  System admins managing a self-hosted Mattermost deployment can edit the ``config.json`` file as described in the following tables. Each configuration value below includes a JSON path to access the value programmatically in the ``config.json`` file using a JSON-aware tool. For example, the ``MessageRetentionHours`` value is under ``DataRetentionSettings``.
 
-  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.DataRetentionSettings.MessageRetentionDays'``
-  - When working with the ``config.json`` file manually, look for an object such as ``DataRetentionSettings``, then within that object, find the key ``MessageRetentionDays``.
+  - If using a tool such as `jq <https://stedolan.github.io/jq/>`__, you'd enter: ``cat config/config.json | jq '.DataRetentionSettings.MessageRetentionHours'``
+  - When working with the ``config.json`` file manually, look for an object such as ``DataRetentionSettings``, then within that object, find the key ``MessageRetentionHours``.
 
 ----
 
@@ -38,8 +38,8 @@ Access the following configuration settings in the System Console by going to **
 .. config:setting:: global-retention-policy-for-messages
   :displayname: Global retention policy for messages (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
-  :configjson: .DataRetentionSettings.MessageRetentionDays
-  :environment: MM_DATARETENTIONSETTINGS_MESSAGERETENTIONDAYS
+  :configjson: .DataRetentionSettings.MessageRetentionHours
+  :environment: MM_DATARETENTIONSETTINGS_MESSAGERETENTIONHOURS
   :description: Set how long Mattermost keeps messages across all teams and channels. Doesn't apply to custom retention policies. The minimum time is 1 hour.
 
 Global retention policy for messages
@@ -49,19 +49,19 @@ Set how long Mattermost keeps messages across all teams and channels. Doesn't ap
 
 By default, messages are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years messages are kept in Mattermost. Messages older than the duration you set will be deleted nightly. The minimum message retention time is one hour.
 
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` or ``"MessageRetentionDays"`` with numerical input.   |
-+--------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"MessageRetentionHours": 1`` with numerical input.                           |
++--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
-  From Mattermost v9.5, when a ``MessageRetentionHours`` value is configured, the ``MessageRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``MessageRetentionDays`` value is configured, the ``MessageRetentionHours`` value must be ``0``.
+  From Mattermost v9.5, ``MessageRetentionDays`` has been deprecated in favor of ``MessageRetentionHours``. See :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` for details.
 
 .. config:setting:: global-retention-policy-for-files
   :displayname: Global retention policy for files (Data Retention)
   :systemconsole: Compliance > Data Retention Policies
-  :configjson: .DataRetentionSettings.FileRetentionDays
-  :environment: MM_DATARETENTIONSETTINGS_FILERETENTIONDAYS
+  :configjson: .DataRetentionSettings.FileRetentionHours
+  :environment: MM_DATARETENTIONSETTINGS_FILERETENTIONHOURS
   :description: Set how long Mattermost keeps files across all teams and channels. Doesn't apply to custom retention policies. The minimum time is 1 hour.
 
 Global retention policy for files
@@ -72,12 +72,12 @@ Set how long Mattermost keeps files across all teams and channels. Doesn't apply
 By default, files are kept forever. If **Hours**, **Days**, or **Years** is chosen, set how many hours, days, or years files are kept in Mattermost. Files older than the duration you set will be deleted nightly. The minimum file retention time is one hour.
 
 +--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileRetentionHours": ``1`` or ``"FileRetentionDays"`` with numerical input. |
+| This feature's ``config.json`` setting is ``"FileRetentionHours": 1`` with numerical input.                              |
 +--------------------------------------------------------------------------------------------------------------------------+
 
 .. note::
 
-  From Mattermost v9.5, when a ``FileRetentionHours`` value is configured, the ``FileRetentionDays`` value must be 0 in the ``config.json`` file.  Conversely, when a ``FileRetentionDays`` value is configured, the ``FileRetentionHours`` value must be ``0``.
+  From Mattermost v9.5, ``FileRetentionDays`` has been deprecated in favor of ``FileRetentionHours``. See :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` for details.
 
 .. config:setting:: custom-retention-policy
   :displayname: Custom retention policy (Data Retention)
@@ -399,6 +399,27 @@ The SMTP server port that will receive your Global Relay EML file when a `custom
 +----------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``".MessageExportSettings.GlobalRelaySettings.CustomSMTPPort": 25`` with string input. |
 +----------------------------------------------------------------------------------------------------------------------------------+
+
+.. config:setting:: message-export-batch-size
+  :displayname: Message export batch size (Compliance Export)
+  :systemconsole: N/A
+  :configjson: .MessageExportSettings.BatchSize
+  :environment: MM_MESSAGEEXPORTSETTINGS_BATCHSIZE
+  :description: Determines how many new posts are batched together to a compliance export file. Default is **10000** posts.
+
+Message export batch size
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-only.rst
+  :start-after: :nosearch:
+
+This setting isn't available in the System Console and can only be set in ``config.json``.
+
+Determines how many new posts are batched together to a compliance export file.
+
++---------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"BatchSize": 10000`` with numerical input.      |
++---------------------------------------------------------------------------------------------+
 
 Run compliance export job now
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
