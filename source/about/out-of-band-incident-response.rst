@@ -3,8 +3,6 @@ Out-of-Band Incident Response
 
 **Don't let attackers silence your incident response team. Deploy sovereign, encrypted collaboration that operates completely outside your compromised infrastructure.**
 
-`Try Mattermost for Out-of-Band Incident Response <https://mattermost.com/sign-up/?usecase=out-of-band>`_ | 1-hour demo environment.
-
 When cyberattacks, infrastructure failures, or security breaches disrupt primary systems, organizations must maintain the ability to coordinate securely and act decisively. Traditional communication tools often become liabilities under these conditions, prone to compromise, unavailable during outages, or unable to support secure workflows. The operational and financial consequences of downtime can be catastrophic, underscoring the need for an independent collaboration environment.
 
 Mattermost provides a secure, mission-resilient out-of-band (OOB) collaboration platform that operates outside your primary infrastructure. Whether deployed as a self-hosted Kubernetes instance, Linux server in your local data center, or in sovereign hosting environments, the platform ensures real-time coordination remains available during network outages, security incidents, or critical decision windows. Built for security-conscious teams across commercial, government, and regulated industries, Mattermost supports integrated incident workflows and enterprise-level access control to enable business continuity, even under duress.
@@ -53,6 +51,4 @@ Cyber breaches demand swift, coordinated action across affected teams. Every del
 Get Started
 -----------
 
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to build your out-of-band incident response environment. Whether protecting national security, managing global infrastructure, ensuring regulatory compliance, or recovering from outages, Mattermost ensures your teams remain connected, coordinated, and compliant, no matter the crisis.
-
-`Start Your Free 1-Hour Preview Environment <https://mattermost.com/sign-up/?usecase=out-of-band>`_ | Experience out-of-band incident response with pre-configured alerts, channels, and playbooks in a live sandbox environment.
+Whether protecting national security, managing global infrastructure, ensuring regulatory compliance, or recovering from outages, Mattermost ensures your teams remain connected, coordinated, and compliant, no matter the crisis. `Experience out-of-band incident response with pre-configured alerts, channels, and playbooks in a `live sandbox environment <https://mattermost.com/sign-up/?usecase=out-of-band>`_ or `talk to an expert <https://mattermost.com/contact-sales/>`_ to build your out-of-band incident response environment.
