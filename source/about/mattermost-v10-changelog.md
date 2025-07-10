@@ -7,7 +7,11 @@
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-**Release Day: July 16, 2025**
+- **10.10.1, released 2025-07-16**
+  - Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.10.1 contains no database or functional changes.
+- **10.10.0, released 2025-07-16**
+  - Original 10.10.0 release.
 
 ### Important Upgrade Notes
  - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
