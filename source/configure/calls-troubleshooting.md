@@ -320,14 +320,15 @@ If you're running calls-offloader in Docker, use these commands for debugging:
 
 #### Monitor Live Logs
 
-To view real-time logs from calls-offloader containers:
+For easier log management, configure calls-offloader to capture job logs directly in the calls-offloader log file by adding the following to your `calls-offloader.toml`:
 
-```bash
-# Find and follow logs from all calls-related containers
-docker ps --format "{{.ID}} {{.Image}}" | grep "calls" | awk '{print $1}' | xargs -I {} docker logs -f {}
+```toml
+[jobs.docker]
+# Whether to output job logs to the console. Default is false.
+output_logs = true
 ```
 
-This command finds all running containers with "calls" in the image name and follows their logs.
+With this configuration enabled, all job logs will be written to the main calls-offloader log file.
 
 #### View Completed Jobs
 

@@ -59,19 +59,13 @@ For complete configuration options, see the [Calls-Offloader Helm chart document
 
 ### Network Configuration
 
-For Kubernetes deployments, you need to ensure:
+For Kubernetes deployments, you need to ensure specific connectivity paths:
 
-1. UDP traffic is properly routed to RTCD pods (for media)
-2. TCP traffic can reach both the Mattermost pods and RTCD pods
-3. Load balancers are properly configured to handle UDP traffic
-4. Network policies allow the required communications between services
-
-Recommended annotations for AWS environments:
-
-```yaml
-service.beta.kubernetes.io/aws-load-balancer-backend-protocol: udp
-service.beta.kubernetes.io/aws-load-balancer-type: nlb
-```
+1. **Client to RTCD connectivity**: UDP traffic on port 8443 is properly routed from clients to RTCD pods (for media)
+2. **Mattermost to RTCD API connectivity**: TCP traffic on port 8045 must have a clear connectivity path from Mattermost pods to RTCD pods (for API communication)
+3. **Client to RTCD TCP fallback**: TCP traffic on port 8443 can reach RTCD pods (for fallback connections when UDP fails)
+4. **Load balancer configuration**: Load balancers must be properly configured to handle UDP traffic routing to RTCD pods
+5. **Network policies**: Network policies must allow the required communications between Mattermost and RTCD services
 
 ### Resource Requirements
 

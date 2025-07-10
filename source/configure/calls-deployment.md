@@ -103,7 +103,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 <td>RTC (Calls plugin or <code>rtcd</code>)</td>
 <td>8443</td>
 <td>UDP (incoming)</td>
-<td>Mattermost clients (Web/Desktop/Mobile) and calls-offloader</td>
+<td>Mattermost clients (Web/Desktop/Mobile) and ``calls-offloader`` spawned jobs (Recorder, Transcriber)</td>
 <td>Mattermost instance or <code>rtcd</code> service</td>
 <td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).</td>
 </tr>
@@ -111,7 +111,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 <td>RTC (Calls plugin or <code>rtcd</code>)</td>
 <td>8443</td>
 <td>TCP (incoming)</td>
-<td>Mattermost clients (Web/Desktop/Mobile) and calls-offloader</td>
+<td>Mattermost clients (Web/Desktop/Mobile) and ``calls-offloader`` spawned jobs (Recorder, Transcriber)</td>
 <td>Mattermost instance or <code>rtcd</code> service</td>
 <td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires <code>rtcd</code> version >= v0.11 and Calls version >= v0.17.</td>
 </tr>
@@ -185,13 +185,25 @@ RTCD is the only officially supported approach for Kubernetes deployments. For d
 
 ## When to Use RTCD
 
-The dedicated RTCD service (available with Enterprise license) is recommended for:
+This section will help you understand when and why your organization would want to use the dedicated RTCD service.
 
-- **Production environments**: Isolates call traffic from other Mattermost services
-- **Performance optimization**: Dedicated service tuned for real-time media
-- **Scalability**: Add RTCD instances as call volume grows
-- **Call stability**: Calls continue even if Mattermost server needs to restart
-- **Kubernetes deployments**: Required for officially supported Kubernetes deployments
+```{note}
+RTCD is a standalone service, which adds operational complexity, maintenance costs, and requires an Enterprise license. For those who are evaluating Calls, and for many small instances of Mattermost, the integrated SFU (the one included in the Calls plugin) may be sufficient initially.
+```
+
+The RTCD service is the recommended way to host Calls for the following reasons:
+
+- **Performance of the main Mattermost server(s)**: When the Calls plugin runs the SFU, calls traffic is added to the processing load of the server running the rest of your Mattermost services. If Calls traffic spikes, it can negatively affect the responsiveness of these services. Using an RTCD service isolates the calls traffic processing to those RTCD instances, and also reduces costs by minimizing CPU usage spikes.
+
+- **Performance, scalability, and stability of the Calls product**: If Calls traffic spikes, or more overall capacity is needed, RTCD servers can be added to balance the load. As an added benefit, if the Mattermost traffic spikes, or if a Mattermost instance needs to be restarted, those people in a current call will not be affected - current calls won't be dropped.
+
+  Some caveats apply here. WebSocket events (for example: emoji reactions, hand raising, muting/unmuting) will not be transmitted while the main Mattermost server is down. But the call itself will continue while the main server restarts.
+
+- **Kubernetes deployments**: In a Kubernetes deployment, RTCD is strongly recommended; it is currently the only officially supported way to run Calls.
+
+- **Technical benefits**: The dedicated RTCD service has been optimized and tuned at the system/network level for real-time audio/video traffic, where latency is generally more important than throughput.
+
+In general, RTCD is the preferred solution for a performant and scalable deployment. With RTCD, the Mattermost server will be minimally impacted when hosting a high number of calls.
 
 For detailed RTCD setup instructions, see the [RTCD Setup and Configuration](calls-rtcd-setup.md) guide.
 
@@ -219,15 +231,16 @@ Mattermost Calls can function in air-gapped environments. Exposing Calls to the 
 Calls performance primarily depends on:
 
 - **CPU resources**: More participants require more processing power
-- **Network bandwidth**: Both incoming and outgoing traffic increases with participant count
+- **Network bandwidth**: Both incoming and outgoing traffic increases with participant count. Due to the nature of the service, the bottleneck is always going to be the outgoing/egress path
 - **Active speakers**: Unmuted participants require significantly more resources 
+- **Presenters**: Screen sharing participants require even more resources than active speakers 
 
 For detailed performance metrics, benchmarks, and monitoring guidance, see the [Calls Metrics and Monitoring](calls-metrics-monitoring.md) guide.
 
 ## Frequently Asked Questions
 
 **Is calls traffic encrypted?**  
-Yes, using WebRTC security standards (DTLS/SRTP). Traffic is encrypted in transit.
+Media (audio/video) is encrypted using security standards as part of WebRTC. It's mainly a combination of DTLS and SRTP. It's not e2e encrypted in the sense that in the current design all media needs to go through Mattermost which acts as a media router and has complete access to it. Media is then encrypted back to the clients so it's secured during transit. In short: only the participant clients and the Mattermost server have access to unencrypted call data.
 
 **Are there any third-party services involved?**  
 Only a Mattermost STUN server (`stun.global.calls.mattermost.com`) is used by default. This can be removed if you set the ICE Host Override configuration.
