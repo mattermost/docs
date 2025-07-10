@@ -54,6 +54,9 @@ Global retention policy for messages
 | messages are kept in Mattermost. Messages older than the       |                                                                                |
 | duration you set will be deleted nightly. The minimum message  |                                                                                |
 | retention time is one hour.                                    |                                                                                |
+|                                                                |                                                                                |
+| **Default**: ``0`` (messages kept forever)                     |                                                                                |
+| **Constraints**: Must be ≥ 0                                   |                                                                                |
 +----------------------------------------------------------------+--------------------------------------------------------------------------------+
 
 .. note::
@@ -79,6 +82,9 @@ Global retention policy for files
 | files are kept in Mattermost. Files older than the duration   |                                                                             |
 | you set will be deleted nightly. The minimum file retention   |                                                                             |
 | time is 1 hour.                                               |                                                                             |
+|                                                               |                                                                             |
+| **Default**: ``0`` (files kept forever)                       |                                                                             |
+| **Constraints**: Must be ≥ 0                                  |                                                                             |
 +---------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. note::
@@ -119,6 +125,9 @@ Data deletion time
 | be a 24-hour time stamp in the form ``HH:MM``.                | - Environment variable: ``MM_DATARETENTIONSETTINGS_DELETIONJOBSTARTTIME``    |
 |                                                               |                                                                              |
 | This setting is based on the local time of the server.        |                                                                              |
+|                                                               |                                                                              |
+| **Default**: ``"02:00"``                                       |                                                                              |
+| **Format**: ``"HH:MM"`` (24-hour time)                         |                                                                              |
 +---------------------------------------------------------------+------------------------------------------------------------------------------+
 
 Run deletion job now
@@ -161,6 +170,8 @@ Enable compliance export
 |                                                                 |                                                                          |
 | - **False**: **(Default)** Mattermost doesn't generate a        |                                                                          |
 |   compliance export file.                                       |                                                                          |
+|                                                                 |                                                                          |
+| **Default**: ``false``                                           |                                                                          |
 +-----------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: compliance-export-time
@@ -179,6 +190,9 @@ Compliance export time
 | Must be a 24-hour time stamp in the form ``HH:MM``.           | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_DAILYRUNTIME``        |
 |                                                               |                                                                          |
 | This setting is based on the local time of the server.        |                                                                          |
+|                                                               |                                                                          |
+| **Default**: ``"01:00"``                                       |                                                                          |
+| **Format**: ``"HH:MM"`` (24-hour time)                         |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: export-file-format
@@ -200,6 +214,10 @@ Export file format
 |                                                               |                                                                          |
 | If Global Relay is chosen, the following options will be      |                                                                          |
 | presented:                                                    |                                                                          |
+|                                                               |                                                                          |
+| **Default**: ``"actiance"``                                    |                                                                          |
+| **Options**: ``"actiance"``, ``"globalrelay"``,               |                                                                          |
+| ``"globalrelay-zip"``, ``"csv"``                              |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-customer-account
@@ -216,6 +234,8 @@ Global Relay customer account
 | Type of Global Relay customer account your organization has.  | - System Config path: **Compliance > Compliance Export**                                 |
 | Can be one of: ``A9/Type 9``, ``A10/Type 10``, or ``Custom``. | - ``config.json`` setting: ``".MessageExportSettings.GlobalRelaySettings.CustomerType"`` |
 |                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMERTYPE``    |
+| **Default**: ``"A9"``                                          |                                                                                          |
+| **Options**: ``"A9"``, ``"A10"``, ``"CUSTOM"``                |                                                                                          |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-smtp-username
@@ -233,6 +253,8 @@ Global Relay SMTP username
 | server.                                                       | - ``config.json`` setting: ``".MessageExportSettings.GlobalRelaySettings.SmtpUsername"`` |
 |                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPUSERNAME``    |
 | String input.                                                 |                                                                                          |
+|                                                               |                                                                                          |
+| **Default**: ``""`` (empty string)                            |                                                                                          |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-smtp-password
@@ -249,6 +271,8 @@ Global Relay SMTP password
 | The password associated with the Global Relay SMTP username.  | - System Config path: **Compliance > Compliance Export**                                 |
 |                                                               | - ``config.json`` setting: ``".MessageExportSettings.GlobalRelaySettings.SMTPPassword"`` |
 | String input.                                                 | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_SMTPPASSWORD``    |
+|                                                               |                                                                                          |
+| **Default**: ``""`` (empty string)                            |                                                                                          |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-email-address
@@ -266,6 +290,9 @@ Global Relay email address
 | incoming compliance exports.                                  | - ``config.json`` setting: ``".MessageExportSettings.GlobalRelaySettings.EmailAddress"`` |
 |                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_EMAILADDRESS``    |
 | String input.                                                 |                                                                                          |
+|                                                               |                                                                                          |
+| **Default**: ``""`` (empty string)                            |                                                                                          |
+| **Constraints**: Must contain "@"                             |                                                                                          |
 +---------------------------------------------------------------+------------------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-server-name
@@ -285,6 +312,9 @@ SMTP server name
 | is configured.                                                     |                                                                                                  |
 |                                                                    |                                                                                                  |
 | String input.                                                      |                                                                                                  |
+|                                                                    |                                                                                                  |
+| **Default**: ``""`` (empty string)                                  |                                                                                                  |
+| **Required**: When CustomerType is "CUSTOM"                        |                                                                                                  |
 +--------------------------------------------------------------------+--------------------------------------------------------------------------------------------------+
 
 .. config:setting:: smtp-server-port
@@ -303,7 +333,10 @@ SMTP server port
 | `custom customer account type <#global-relay-customer-account>`__   | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_GLOBALRELAYSETTINGS_CUSTOMSMPTPORT``    |
 | is configured.                                                      |                                                                                            |
 |                                                                     |                                                                                            |
-| Numerical input. Default is 25.                                     |                                                                                            |
+| Numerical input.                                                    |                                                                                            |
+|                                                                     |                                                                                            |
+| **Default**: ``"25"``                                                |                                                                                            |
+| **Required**: When CustomerType is "CUSTOM"                         |                                                                                            |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. config:setting:: message-export-batch-size
@@ -323,9 +356,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Determines how many new posts are batched together to a       | - System Config path: N/A                                                |
-| compliance export file.                                       | - ``config.json`` setting: ``".MessageExportSettings.BatchSize": 10000`` |
+| compliance export file.                                       | - ``config.json`` setting: ``".MessageExportSettings.BatchSize"``       |
 |                                                               | - Environment variable: ``MM_MESSAGEEXPORTSETTINGS_BATCHSIZE``           |
-| Numerical input. Default is **10000** posts.                  |                                                                          |
+| Numerical input.                                              |                                                                          |
+|                                                               |                                                                          |
+| **Default**: ``10000`` posts                                  |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Run compliance export job now
@@ -365,6 +400,8 @@ Enable compliance reporting
 | **True**: Compliance reporting is enabled in Mattermost.      | - System Config path: **Compliance > Compliance Monitoring**             |
 |                                                               | - ``config.json`` setting: ``".ComplianceSettings.Enable"``              |
 | **False**: **(Default)** Compliance reporting is disabled.    | - Environment variable: ``MM_COMPLIANCESETTINGS_ENABLE``                 |
+|                                                               |                                                                          |
+| **Default**: ``false``                                        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: compliance-report-directory
@@ -380,7 +417,9 @@ Compliance report directory
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 | Sets the directory where compliance reports are written.      | - System Config path: **Compliance > Compliance Monitoring**             |
 |                                                               | - ``config.json`` setting: ``".ComplianceSettings.Directory"``           |
-| String input. Default is ``./data/``.                         | - Environment variable: ``MM_COMPLIANCESETTINGS_DIRECTORY``              |
+| String input.                                                 | - Environment variable: ``MM_COMPLIANCESETTINGS_DIRECTORY``              |
+|                                                               |                                                                          |
+| **Default**: ``"./data/"``                                    |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-compliance-reportingdaily
@@ -399,6 +438,8 @@ Enable daily report
 | **True**: Mattermost generates a daily compliance report.     | - System Config path: **Compliance > Compliance Monitoring**             |
 |                                                               | - ``config.json`` setting: ``".ComplianceSettings.EnableDaily"``         |
 | **False**: **(Default)** Daily reports are not generated.     | - Environment variable: ``MM_COMPLIANCESETTINGS_ENABLEDAILY``            |
+|                                                               |                                                                          |
+| **Default**: ``false``                                        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: batch-size
@@ -417,7 +458,9 @@ Batch size
 | is currently not available in the System Console and can only | - Environment variable: ``MM_COMPLIANCESETTINGS_BATCHSIZE``              |
 | be set in ``config.json``.                                    |                                                                          |
 |                                                               |                                                                          |
-| Numerical input. Default is **30000**.                        |                                                                          |
+| Numerical input.                                              |                                                                          |
+|                                                               |                                                                          |
+| **Default**: ``30000``                                        |                                                                          |
 +---------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
@@ -453,6 +496,8 @@ Enable custom terms of service
 | **False**: During account creation or login, users can review   |                                                                               |
 | Terms of Service by accessing the link configured via           |                                                                               |
 | **System Console > Legal and Support > Terms of Service link**. |                                                                               |
+|                                                                 |                                                                               |
+| **Default**: ``false``                                          |                                                                               |
 +-----------------------------------------------------------------+-------------------------------------------------------------------------------+
 
 .. note::
@@ -489,6 +534,7 @@ Re-acceptance period
 | The number of days before Terms of Service acceptance expires,  | - System Config path: **Compliance > Custom Terms of Service**                           |
 | and the terms must be re-accepted.                              | - ``config.json`` setting: ``".SupportSettings.CustomTermsOfServiceReAcceptancePeriod"`` |
 |                                                                 | - Environment variable: ``MM_SUPPORTSETTINGS_CUSTOMTERMSOFSERVICEREACCEPTANCEPERIOD``    |
-| Numerical input. Default is 365 days. 0 indicates the terms     |                                                                                          |
-| do not expire.                                                  |                                                                                          |
+| Numerical input. 0 indicates the terms do not expire.          |                                                                                          |
+|                                                                 |                                                                                          |
+| **Default**: ``365`` days                                       |                                                                                          |
 +-----------------------------------------------------------------+------------------------------------------------------------------------------------------+
