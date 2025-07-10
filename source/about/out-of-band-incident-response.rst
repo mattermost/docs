@@ -51,4 +51,4 @@ Cyber breaches demand swift, coordinated action across affected teams. Every del
 Get Started
 -----------
 
-Whether protecting national security, managing global infrastructure, ensuring regulatory compliance, or recovering from outages, Mattermost ensures your teams remain connected, coordinated, and compliant, no matter the crisis. `Experience out-of-band incident response with pre-configured alerts, channels, and playbooks in a `live sandbox environment <https://mattermost.com/sign-up/?usecase=out-of-band>`_ or `talk to an expert <https://mattermost.com/contact-sales/>`_ to build your out-of-band incident response environment.
+Whether protecting national security, managing global infrastructure, ensuring regulatory compliance, or recovering from outages, Mattermost ensures your teams remain connected, coordinated, and compliant, no matter the crisis. Experience out-of-band incident response with pre-configured alerts, channels, and playbooks in a `live sandbox environment <https://mattermost.com/sign-up/?usecase=out-of-band>`_ or `talk to an expert <https://mattermost.com/contact-sales/>`_ to build your out-of-band incident response environment.
