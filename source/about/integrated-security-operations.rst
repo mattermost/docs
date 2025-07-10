@@ -3,8 +3,6 @@ Integrated Security Operations
 
 **Fragmented security operations create the blind spots attackers exploit. Deploy unified collaboration that coordinates your entire security ecosystem in real-time.**
 
-`Try Mattermost for Integrated Security Operations <https://mattermost.com/sign-up/?usecase=integrated-sec-ops>`_ | 1-hour demo environment.
-
 In today's evolving threat landscape, fragmented workflows, isolated teams, and disjointed tools create delays and blind spots in organizational defense. As threats scale across geopolitical, cyber, and supply chain domains, security operations must become more integrated,unifying monitoring, simulation, response, and intelligence into a continuous, coordinated system.
 
 Mattermost provides a secure, extensible platform for integrated security operations,built to support real-time coordination, mission-specific tooling, and sensitive communications. Whether deployed as a self-hosted Kubernetes instance, Linux server in your local data center, or in sovereign hosting environments, Mattermost empowers security teams to accelerate detection, decision-making, and coordinated response while maintaining full operational control. Built for security-conscious teams across commercial, government, and regulated industries, Mattermost supports integrated incident workflows and enterprise-level access control.
@@ -12,7 +10,7 @@ Mattermost provides a secure, extensible platform for integrated security operat
 .. image:: /images/Intelligent-RT-Incident-Response.png
     :alt: Augments security platform investments with collaborative, AI-powered security operations workflow.
 
-The following integrated SecOps capabilities are available:
+Mattermost supports security workflows across:
 
 Security Operations Centers (SOCs)
 ----------------------------------
@@ -55,7 +53,5 @@ Cross-organizational threat intelligence teams,spanning sectors, regions, and pu
 
 Get Started
 -----------
-
-`Talk to an Expert <https://mattermost.com/contact-sales/>`_ to unify your security operations. Whether you're coordinating a global SOC, simulating threats, responding to incidents, or exchanging intelligence across borders, Mattermost ensures your teams are secure, synchronized, and mission-ready.
-
-`Start Your Free 1-Hour Preview Environment <https://mattermost.com/sign-up/?usecase=integrated-security-operations>`_ | Experience integrated security operations with pre-configured alerts, channels, and playbooks in a live sandbox environment.
+Whether you're coordinating a global SOC, simulating threats, responding to incidents, or exchanging intelligence across borders, Mattermost ensures your teams are secure, synchronized, and mission-ready.
+`Experience integrated security operations with pre-configured alerts, channels, and playbooks in a live sandbox environment <https://mattermost.com/sign-up/?usecase=integrated-sec-ops>`_ or `talk to an expert <https://mattermost.com/contact-sales/>`_ to unify your security operations. 
