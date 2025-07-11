@@ -7,13 +7,106 @@
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
-- **10.10.0, released TBD**
+- **10.10.1, released 2025-07-16**
+  - Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.10.1 contains no database or functional changes.
+- **10.10.0, released 2025-07-16**
   - Original 10.10.0 release.
+
+### Important Upgrade Notes
+ - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Added new columns ``RemoteId`` and ``ChannelId`` to the ``PostAcknowledgements`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+ - Added a new column ``LastGlobalUserSyncAt`` to the ``RemoteClusters`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
+
+```{Important}
+If you upgrade from a release earlier than v10.9, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
 
 ### Improvements
 
 #### User Interface (UI)
- - Pre-packaged GitLab plugin version [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
+ - Pre-packaged Calls plugin [v1.9.1](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.1).
+ - Pre-packaged GitLab plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-gitlab/releases/tag/v1.10.0).
+ - Pre-packaged GitHub plugin [v2.4.0](https://github.com/mattermost/mattermost-plugin-github/releases/tag/v2.4.0).
+ - Pre-packaged Boards plugin [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+ - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
+ - Resolved inconsistent styling issues in new integration pages.
+ - Improved the visual styling of blockquotes and comment threads for better readability and a modern appearance.
+ - Improved screen reader support for autocompletes and channel switcher.
+ - Added an aria-live region for improved accessibility of file preview modal carousel position updates.
+ - Add focusability to react-select remove button in notifications settings.
+ - Updated **Profile** settings client-side validation to use more modern/accessible paradigms.
+ - Enhanced the accessibility of login and password reset functionality.
+ - Stopped the Threads textbox from automatically taking focus when it contained a draft.
+ - Added a display setting for users to toggle rendering of emoticons (e.g., :D) as emojis (e.g., 😄).
+ - Added support for the ``from:`` search filter in cross-team searches.
+ - Standardized button styling by consolidating color variables and removing redundant theme definitions.
+ - Ignored email domain in user searches on the client side.
+ - Automatically detected and updated timezone changes without requiring a client refresh.
+
+#### Administration
+ - Added support for group messages in Shared Channels.
+ - Added new feature flags (default off) ``EnableSharedChannelsMemberSync`` and ``EnableSyncAllUsersForRemoteCluster`` for Connected Workspaces.
+ - Hid plugin components in Shared Channels and introduced ``EnableSharedChannelsPlugins`` to re-enable them if needed.
+ - Added an LDAP Wizard with various enhancements, including a **Test Group Attributes** button for feedback on matching group attributes, a **Test Connection** button with improved error reporting, a **Test Attributes** button showing attribute success and matching user count, a **Test Filters** button with failure feedback, an expandable **User Filters** section with "More info" hover texts, and a help text explaining the possible delay when running tests on large LDAP servers.
+ - Added support for licenses that enforce seat counts with a configurable ``ExtraUsers`` field for exact control over allowed overages.
+ - Organized cluster files into directories for the Support Packet.
+ - Partially sanitized database datasources for the Support Packet.
+ - Added deactivation status to the mmctl user search output.
+
+#### Performance
+ - Improved memory performance of post list scrolling.
+ - Improved the performance of sidebar update APIs slightly.
+
+### Bug Fixes
+ - Fixed an issue where a ``MESSAGES`` badge appeared in the search bar after clearing text and closing the search box.
+ - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled.
+ - Fixed indentation issues in Markdown lists containing checkboxes.
+ - Fixed desktop notifications for posts without text content to display "posted a message" instead of "did something new".
+ - Fixed the height of the automatic replies text area to align with proper dimensions.
+ - Fixed various accessibility issues in the User Groups modals.
+ - Fixed accessibility issues in Profile Settings to enhance usability.
+ - Fixed dialog dropdowns to ensure they were not cut off visually.
+ - Fixed an issue where deactivated users still maintained their previous status.
+ - Fixed an issue with plugin dialogs triggering errors upon submission.
+ - Fixed the version number of Support Packet v2.
+ - Fixed an issue with MIME type detection for video files (e.g., MP4, MOV, AVI, WEBM, WMV, MKV, MPG/MPEG) uploaded to S3 storage, enabling inline video playback in browsers.
+ - Fixed Support Packet caching issues.
+ - Fixed the **Threads** textbox changing width when a message was typed on certain screens.
+ - Fixed an issue with log messages including blank "user_id" field when request session was not valid or had a blank user_id.
+ - Fixed an issue where the emoji picker focus did not return to button when not selecting an emoji.
+ - Fixed the label in notification settings for the notification sound combo box.
+ - Fixed an issue where an incorrect username and email were shown for remote users.
+ - Fixed an issue with the keyboard navigation in the user settings sidebar.
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to all plans:
+ - Under ``ExperimentalSettings`` in ``config.json``:
+    - Added ``ExperimentalChannelCategorySorting`` configuration setting to add the ability to automatically sort channels into categories upon creation/renaming.
+
+#### Changes to Enterprise plan:
+ - Under ``DataRetentionSettings`` in ``config.json``:
+    - Added ``PreservePinnedPosts`` configuration setting. If it's set to ``true``, pinned posts will not be deleted by data retention. 
+
+#### Changes to Enterprise Advanced plan:
+ - Under ``ConnectedWorkspacesSettings`` in ``config.json``:
+    - Added ``MemberSyncBatchSize``, ``SyncUsersOnConnectionOpen``, ``GlobalUserSyncBatchSize`` configuration settings to allow remote users to be discoverable in the Direct/Group Message modal. 
+
+### API Changes
+ - Added property fields and value methods to the plugin API.
+ - Improved the semantics of Groups API errors when invalid parameters were specified.
+
+### Open Source Components
+ - Added ``mholt/archives`` and removed ``code.sajari.com/docconv`` from https://github.com/mattermost/mattermost.
+
+### Go Version
+ - v10.10 is built with Go ``v1.24.3``.
+
+### Contributors
+ - [abbas-dependable-naqvi](https://github.com/abbas-dependable-naqvi), [agarciamontoro](https://github.com/agarciamontoro), [agnivade](https://github.com/agnivade), [Akhilbisht798](https://github.com/Akhilbisht798), [amyblais](https://github.com/amyblais), [andrleite](https://github.com/andrleite), [angeloskyratzakos](https://github.com/angeloskyratzakos), [Aryakoste](https://github.com/Aryakoste), [AulakhHarsh](https://github.com/AulakhHarsh), [BenCookie95](https://github.com/BenCookie95), [calebroseland](https://github.com/calebroseland), [Carloswaldo](https://translate.mattermost.com/user/Carloswaldo), [catalintomai](https://github.com/catalintomai), [coltoneshaw](https://github.com/coltoneshaw), [cpoile](https://github.com/cpoile), [crspeller](https://github.com/crspeller), [ctlaltdieliet](https://translate.mattermost.com/user/ctlaltdieliet), [cwarnermm](https://github.com/cwarnermm), [davidkrauser](https://github.com/davidkrauser), [devinbinnie](https://github.com/devinbinnie), [Ekaterine](https://translate.mattermost.com/user/Ekaterine), [EkaterinePapava](https://github.com/EkaterinePapava), [enahum](https://github.com/enahum), [enzowritescode](https://github.com/enzowritescode), [equalsgibson](https://github.com/equalsgibson), [esarafianou](https://github.com/esarafianou), [ewwollesen](https://github.com/ewwollesen), [fmartingr](https://github.com/fmartingr), [frankps](https://translate.mattermost.com/user/frankps), [fsilye](https://github.com/fsilye), [gabrieljackson](https://github.com/gabrieljackson), [hannaparks](https://github.com/hannaparks), [hanzei](https://github.com/hanzei), [harshilsharma63](https://github.com/harshilsharma63), [hmhealey](https://github.com/hmhealey), [iamleson98](https://github.com/iamleson98), [irdi-cloud68](https://translate.mattermost.com/user/irdi-cloud68), [isacikgoz](https://github.com/isacikgoz), [johnsonbrothers](https://github.com/johnsonbrothers), [jprusch](https://github.com/jprusch), [JulienTant](https://github.com/JulienTant), [jwilander](https://github.com/jwilander), [kaakaa](https://github.com/kaakaa), [kasyap1234](https://github.com/kasyap1234), [Kshitij-Katiyar](https://github.com/Kshitij-Katiyar), [larkox](https://github.com/larkox), [ldez](https://github.com/ldez), [lieut-data](https://github.com/lieut-data), [lindalumitchell](https://github.com/lindalumitchell), [M-ZubairAhmed](https://github.com/M-ZubairAhmed), [majo](https://translate.mattermost.com/user/majo), [mansil](https://github.com/mansil), [marianunez](https://github.com/marianunez), [master7](https://translate.mattermost.com/user/master7), [matt-w99](https://github.com/matt-w99), [matthew-w](https://translate.mattermost.com/user/matthew-w), [matthewbirtch](https://github.com/matthewbirtch), [mgdelacroix](https://github.com/mgdelacroix), [Morgansvk](https://github.com/Morgansvk), [neil-karania](https://github.com/neil-karania), [nickmisasi](https://github.com/nickmisasi), [panoramix360](https://github.com/panoramix360), [polinapianina](https://github.com/polinapianina), [pvev](https://github.com/pvev), [rahimrahman](https://github.com/rahimrahman), [Rajat-Dabade](https://github.com/Rajat-Dabade), [Reinkard](https://github.com/Reinkard), [saturninoabril](https://github.com/saturninoabril), [sbishel](https://github.com/sbishel), [Sharuru](https://github.com/Sharuru), [spirosoik](https://github.com/spirosoik), [stafot](https://github.com/stafot), [streamer45](https://github.com/streamer45), [svelle](https://github.com/svelle), [uday-rana](https://github.com/uday-rana), [Victor-Nyagudi](https://github.com/Victor-Nyagudi), [wiersgallak](https://github.com/wiersgallak), [wiggin77](https://github.com/wiggin77), [Willyfrog](https://github.com/Willyfrog), [yasserfaraazkhan](https://github.com/yasserfaraazkhan)
 
 (release-v10.9-feature-release)=
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
