@@ -81,7 +81,7 @@ To monitor Calls metrics, you'll need:
            labels:
              service_name: 'rtcd'
 
-     - job_name: 'calls_offloader-node-exporter'
+     - job_name: 'calls-offloader-node-exporter'
        metrics_path: /metrics
        static_configs:
          - targets: ['CALLS_OFFLOADER_SERVER_IP:9100']
