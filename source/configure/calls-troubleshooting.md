@@ -328,7 +328,7 @@ For easier log management, configure calls-offloader to capture job logs directl
 output_logs = true
 ```
 
-With this configuration enabled, all job logs will be written to the main calls-offloader log file.
+With this configuration enabled, all logs from recorder and transcriber docker containers will be written to the main calls-offloader log file.
 
 #### View Completed Jobs
 
