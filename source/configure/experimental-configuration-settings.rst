@@ -28,7 +28,7 @@ Experimental System Console configuration settings
   :displayname: AD/LDAP login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
-  :environment: N/A
+  :environment: MM_LDAPSETTINGS_LOGINBUTTONCOLOR
   :description: Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button color
@@ -36,17 +36,17 @@ AD/LDAP login button color
 
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the AD/LDAP login button for white labeling purposes.    | - System Config path: **Experimental > Features**                        |
-| Use a hex code with a #-sign before the code.                                 | - ``config.json`` setting: ``"LoginButtonColor": ""``                    |
-| This setting only applies to the mobile app.                                  | - Environment variable: N/A                                              |
+| Use a hex code with a #-sign before the code.                                 | - ``config.json`` setting: ``"LoginButtonColor": "#0000"``               |
+| This setting only applies to the mobile app.                                  | - Environment variable: ``MM_LDAPSETTINGS_LOGINBUTTONCOLOR``             |
 |                                                                               |                                                                          |
-| String input.                                                                 |                                                                          |
+| String input. Default is **#0000**.                                          |                                                                          |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: adldap-login-button-border-color
   :displayname: AD/LDAP login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
-  :environment: N/A
+  :environment: MM_LDAPSETTINGS_LOGINBUTTONBORDERCOLOR
   :description: Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button border color
@@ -57,17 +57,17 @@ AD/LDAP login button border color
 
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Specify the color of the AD/LDAP login button border for white labeling purposes.     | - System Config path: **Experimental > Features**                       |
-| Use a hex code with a #-sign before the code.                                         | - ``config.json`` setting: ``"LoginButtonBorderColor": ""``             |
-| This setting only applies to the mobile app.                                          | - Environment variable: N/A                                             |
+| Use a hex code with a #-sign before the code.                                         | - ``config.json`` setting: ``"LoginButtonBorderColor": "#2389D7"``      |
+| This setting only applies to the mobile app.                                          | - Environment variable: ``MM_LDAPSETTINGS_LOGINBUTTONBORDERCOLOR``      |
 |                                                                                       |                                                                         |
-| String input.                                                                         |                                                                         |
+| String input. Default is **#2389D7**.                                                |                                                                         |
 +---------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: adldap-login-button-text-color
   :displayname: AD/LDAP login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
-  :environment: N/A
+  :environment: MM_LDAPSETTINGS_LOGINBUTTONTEXTCOLOR
   :description: Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button text color
@@ -78,10 +78,10 @@ AD/LDAP login button text color
 
 +--------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the AD/LDAP login button text for white labeling purposes.      | - System Config path: **Experimental > Features**                        |
-| Use a hex code with a #-sign before the code.                                        | - ``config.json`` setting: ``"LoginButtonTextColor": ""``                |
-| This setting only applies to the mobile app.                                         | - Environment variable: N/A                                              |
+| Use a hex code with a #-sign before the code.                                        | - ``config.json`` setting: ``"LoginButtonTextColor": "#2389D7"``         |
+| This setting only applies to the mobile app.                                         | - Environment variable: ``MM_LDAPSETTINGS_LOGINBUTTONTEXTCOLOR``         |
 |                                                                                      |                                                                          |
-| String input.                                                                        |                                                                          |
+| String input. Default is **#2389D7**.                                               |                                                                          |
 +--------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: change-authentication-method
@@ -120,7 +120,7 @@ Link metadata timeout
 +-----------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Adds a configurable timeout for requests made to return link metadata.      | - System Config path: **Experimental > Features**                        |
 | If the metadata is not returned before this timeout expires, the message    | - ``config.json`` setting: ``"LinkMetadataTimeoutMilliseconds": 5000``   |
-| will be posted without requiring metadata. This timeout covers the failure  | - Environment variable: N/A                                              |
+| will be posted without requiring metadata. This timeout covers the failure  | - Environment variable: ``MM_EXPERIMENTALSETTINGS_LINKMETADATATIMEOUTMILLISECONDS`` |
 | cases of broken URLs and bad content types on slow network connections.     |                                                                          |
 |                                                                             |                                                                          |
 | Numerical input. Default is **5000** milliseconds.                          |                                                                          |
@@ -130,7 +130,7 @@ Link metadata timeout
   :displayname: Email batching buffer size (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EmailBatchingBufferSize
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_EMAILBATCHINGBUFFERSIZE
   :description: Specify the maximum number of notifications batched into a single email. Default is **256** notifications.
 
 Email batching buffer size
@@ -139,7 +139,7 @@ Email batching buffer size
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the maximum number of notifications batched into a single email.      | - System Config path: **Experimental > Features**                        |
 |                                                                               | - ``config.json`` setting: ``"EmailBatchingBufferSize": 256``            |
-| Numerical input. Default is **256** notifications.                            | - Environment variable: N/A                                              |
+| Numerical input. Default is **256** notifications.                            | - Environment variable: ``MM_EMAILSETTINGS_EMAILBATCHINGBUFFERSIZE``     |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
@@ -151,7 +151,7 @@ Email batching buffer size
   :displayname: Email batching interval (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EmailBatchingInterval
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_EMAILBATCHINGINTERVAL
   :description: Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Default is **30** seconds.
 
 Email batching interval
@@ -160,7 +160,7 @@ Email batching interval
 +--------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the maximum frequency, in seconds,                   | - System Config path: **Experimental > Features**                        |
 | in which the batching job checks for new notifications.      | - ``config.json`` setting: ``"EmailBatchingInterval": 30``               |
-|                                                              | - Environment variable: N/A                                              |
+|                                                              | - Environment variable: ``MM_EMAILSETTINGS_EMAILBATCHINGINTERVAL``      |
 | Numerical input. Default is **30** seconds.                  |                                                                          |
 +--------------------------------------------------------------+--------------------------------------------------------------------------+
 
@@ -174,7 +174,7 @@ Email batching interval
   :displayname: Email login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_LOGINBUTTONCOLOR
   :description: Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button color
@@ -182,17 +182,17 @@ Email login button color
 
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the email login button for white labeling purposes.      | - System Config path: **Experimental > Features**                        |
-| Use a hex code with a #-sign before the code.                                 | - ``config.json`` setting: ``"LoginButtonColor": ""``                    |
-| This configuration setting only applies to the mobile app.                    | - Environment variable: N/A                                              |
+| Use a hex code with a #-sign before the code.                                 | - ``config.json`` setting: ``"LoginButtonColor": "#0000"``               |
+| This configuration setting only applies to the mobile app.                    | - Environment variable: ``MM_EMAILSETTINGS_LOGINBUTTONCOLOR``            |
 |                                                                               |                                                                          |
-| String input.                                                                 |                                                                          |
+| String input. Default is **#0000**.                                          |                                                                          |
 +-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: email-login-button-border-color
   :displayname: Email login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_LOGINBUTTONBORDERCOLOR
   :description: Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button border color
@@ -200,17 +200,17 @@ Email login button border color
 
 +----------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the email login button border for white labeling purposes.        | - System Config path: **Experimental > Features**                        |
-| Use a hex code with a #-sign before the code.                                          | - ``config.json`` setting: ``"LoginButtonBorderColor": ""``              |
-| This setting only applies to the mobile app.                                           | - Environment variable: N/A                                              |
+| Use a hex code with a #-sign before the code.                                          | - ``config.json`` setting: ``"LoginButtonBorderColor": "#2389D7"``       |
+| This setting only applies to the mobile app.                                           | - Environment variable: ``MM_EMAILSETTINGS_LOGINBUTTONBORDERCOLOR``      |
 |                                                                                        |                                                                          |
-| String input.                                                                          |                                                                          |
+| String input. Default is **#2389D7**.                                                 |                                                                          |
 +----------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: email-login-button-text-color
   :displayname: Email login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_LOGINBUTTONTEXTCOLOR
   :description: Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button text color
@@ -218,17 +218,17 @@ Email login button text color
 
 +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the email login button text for white labeling purposes.       | - System Config path: **Experimental > Features**                        |
-| Use a hex code with a #-sign before the code.                                       | - ``config.json`` setting: ``"LoginButtonTextColor": ""``                |
-| This setting only applies to the mobile app.                                        | - Environment variable: N/A                                              |
+| Use a hex code with a #-sign before the code.                                       | - ``config.json`` setting: ``"LoginButtonTextColor": "#2389D7"``         |
+| This setting only applies to the mobile app.                                        | - Environment variable: ``MM_EMAILSETTINGS_LOGINBUTTONTEXTCOLOR``        |
 |                                                                                     |                                                                          |
-| String input.                                                                       |                                                                          |
+| String input. Default is **#2389D7**.                                              |                                                                          |
 +-------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-account-deactivation
   :displayname: Enable account deactivation (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableUserDeactivation
-  :environment: N/A
+  :environment: MM_TEAMSETTINGS_ENABLEUSERDEACTIVATION
 
   - **true**: Ability for users to deactivate their own account from **Settings > Advanced** is enabled.
   - **false**: **(Default)** Ability for users to deactivate their own account is disabled.
@@ -239,7 +239,7 @@ Enable account deactivation
 +------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This setting controls whether users can deactivate their own accounts from the Account  | - System Config path: **Experimental > Features**                        |
 | Settings menu.                                                                           | - ``config.json`` setting: ``"EnableUserDeactivation": false``           |
-|                                                                                          | - Environment variable: N/A                                              |
+|                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERDEACTIVATION``       |
 | - **True**: Ability for users to deactivate their own account from                       |                                                                          |
 |   **Settings > Advanced > Deactivate Account**. If a user deactivates                    |                                                                          |
 |   their own account, they will get an email notification confirming they                 |                                                                          |
@@ -352,7 +352,7 @@ Changes made when hardened mode is enabled:
   :displayname: Enable theme selection (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableThemeSelection
-  :environment: N/A
+  :environment: MM_THEMESETTINGS_ENABLETHEMESELECTION
 
   - **true**: **(Default)** Enables the **Display > Theme** tab in **Settings** so users can select their theme.
   - **false**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
@@ -366,7 +366,7 @@ Enable theme selection
 +----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This setting controls whether users can select different themes for their Mattermost interface.        | - System Config path: **Experimental > Features**                       |
 |                                                                                                          | - ``config.json`` setting: ``"EnableThemeSelection": true``            |
-| - **true**: **(Default)** Enables the **Display > Theme** tab in **Settings** so users can select     | - Environment variable: N/A                                              |
+| - **true**: **(Default)** Enables the **Display > Theme** tab in **Settings** so users can select     | - Environment variable: ``MM_THEMESETTINGS_ENABLETHEMESELECTION``       |
 |   their theme.                                                                                           |                                                                          |
 | - **false**: Users cannot select a different theme. The **Display > Theme** tab is hidden in          |                                                                          |
 |   **Settings**.                                                                                          |                                                                          |
@@ -376,7 +376,7 @@ Enable theme selection
   :displayname: Allow custom themes (Experimental)
   :systemconsole: Experimental > Features
   :configjson: AllowCustomThemes
-  :environment: N/A
+  :environment: MM_THEMESETTINGS_ALLOWCUSTOMTHEMES
 
   - **true**: **(Default)** Enables the **Display > Theme > Custom Theme** section in **Settings**.
   - **false**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
@@ -390,7 +390,7 @@ Allow custom themes
 +----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This setting controls whether users can create and use custom themes beyond the default theme options. | - System Config path: **Experimental > Features**                       |
 |                                                                                                          | - ``config.json`` setting: ``"AllowCustomThemes": true``               |
-| - **true**: **(Default)** Enables the **Display > Theme > Custom Theme** section in **Settings**.     | - Environment variable: N/A                                              |
+| - **true**: **(Default)** Enables the **Display > Theme > Custom Theme** section in **Settings**.     | - Environment variable: ``MM_THEMESETTINGS_ALLOWCUSTOMTHEMES``          |
 | - **false**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is       |                                                                          |
 |   hidden in **Settings**.                                                                               |                                                                          |
 +----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
@@ -399,7 +399,7 @@ Allow custom themes
   :displayname: Default theme (Experimental)
   :systemconsole: Experimental > Features
   :configjson: DefaultTheme
-  :environment: N/A
+  :environment: MM_THEMESETTINGS_DEFAULTTHEME
   :description: Set a default theme that applies to all new users on the system. Default is **default**.
 
 Default theme
@@ -411,7 +411,7 @@ Default theme
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Set a default theme that applies to all new users on the system.                                                                                                  | - System Config path: **Experimental > Features**                       |
 |                                                                                                                                                                    | - ``config.json`` setting: ``"DefaultTheme": "default"``               |
-| Options: ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``.                                                                          | - Environment variable: N/A                                              |
+| Options: ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``.                                                                          | - Environment variable: ``MM_THEMESETTINGS_DEFAULTTHEME``               |
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-tutorial
@@ -541,7 +541,7 @@ Primary team
   :displayname: SAML login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
-  :environment: N/A
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONCOLOR
   :description: Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button color
@@ -552,15 +552,15 @@ SAML login button color
 
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.             | - System Config path: **Experimental > Features**                       |
-|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonColor": ""``                   |
-| String input.                                                                                                                 | - Environment variable: N/A                                              |
+|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonColor": "#34a28b"``            |
+| String input. Default is **#34a28b**.                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONCOLOR``            |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: saml-login-button-border-color
   :displayname: SAML login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
-  :environment: N/A
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONBORDERCOLOR
   :description: Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button border color
@@ -571,15 +571,15 @@ SAML login button border color
 
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.      | - System Config path: **Experimental > Features**                       |
-|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonBorderColor": ""``             |
-| String input.                                                                                                                 | - Environment variable: N/A                                              |
+|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonBorderColor": "#2389D7"``      |
+| String input. Default is **#2389D7**.                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONBORDERCOLOR``      |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: saml-login-button-text-color
   :displayname: SAML login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
-  :environment: N/A
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONTEXTCOLOR
   :description: Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button text color
@@ -590,8 +590,8 @@ SAML login button text color
 
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.         | - System Config path: **Experimental > Features**                       |
-|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonTextColor": ""``               |
-| String input.                                                                                                                 | - Environment variable: N/A                                              |
+|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonTextColor": "#ffffff"``        |
+| String input. Default is **#ffffff**.                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONTEXTCOLOR``        |
 +-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: use-channel-name-in-email-notifications
