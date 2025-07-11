@@ -35,6 +35,8 @@ Users in Mattermost can be deactivated in the following ways:
 
 Once deactivated, users still exist in the Mattermost database and their messages can still be viewed in Mattermost. You can use the :ref:`mmctl <manage/mmctl-command-line-tool:mmctl user delete>` tools to delete a user and all of their content.
 
+From Mattermost v10.10, when a user is deactivated, the account's :ref:`availability <preferences/set-your-status-availability:set your availability>` is automatically set to offline.
+
 .. note::
 
   As long as the ID attribute selected via AD/LDAP or SAML 2.0 is a unique identifier, the user’s email address or name (along with other attributes) can be updated without breaking the user’s account.

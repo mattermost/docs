@@ -27,6 +27,10 @@ Search for message
     .. image:: ../images/search-all-teams.png
       :alt: Select All Teams to search all channels across all teams.
 
+    .. tip::
+      
+      From Mattermost v10.10, the ``from:`` search modifier is available for cross-team searches. When searching all teams, you must manually add the ``from:`` modifier as part of your search criteria to search by specific users across teams.
+
   3. When message results display in the Search Results pane, select **Jump** to view a full message in context. 
 
     .. image:: ../images/jump-to-message.png
@@ -128,6 +132,7 @@ You can apply search modifiers to any search to reduce the number of results ret
 - Use ``from:`` to find messages or files from specific users. 
 
   * For example, searching ``from:john.smith`` only returns content from your direct message history with John Smith.
+  * From Mattermost v10.10, you can use ``from:`` in cross-team searches to find messages from specific users across all teams you're a member of.
 
 - Use ``in:`` to find messages or files posted in specific public channels, private channels, direct messages, or group messages. You can specify channels by display name or channel ID. 
   

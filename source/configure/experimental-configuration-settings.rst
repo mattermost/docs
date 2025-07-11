@@ -1565,6 +1565,31 @@ This setting applies to the new sidebar only. You must disable the :ref:`Enable 
 | This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
 +-----------------------------------------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: enable-channel-category-sorting
+  :displayname: Enable channel category sorting (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: ExperimentalEnableChannelCategorySorting
+  :environment: N/A
+
+  - **true**: Users can assign channels to new or existing channel categories when creating or renaming channels.
+  - **false**: **(Default)** Disables the ability to assign channels to new or existing channel categories when creating or renaming channels.
+
+Enable channel category sorting
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/allplans-cloud.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:experimental>` feature is enabled, users can assign channels to new or existing channel categories when creating or renaming channels. This configuration setting applies only to cloud-based deployments.
+
+**True**: Users can assign channels to new or existing channel categories when creating or renaming channels.
+
+**False**: **(Default)** Disables the ability to automatically assign channels to new or existing channel categories.
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalEnableChannelCategorySorting": false`` with options ``true`` and ``false``.     |
++------------------------------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
   :systemconsole: N/A

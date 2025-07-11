@@ -143,4 +143,4 @@ We strongly recommend that you review storage utilization at least quarterly to 
 Additional considerations
 -------------------------
 
-Smaller deployments, or deployments using the :doc:`Mattermost Omnibus installer </deploy/server/deploy-linux>`, will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.
+Smaller deployments will need an increase in resources due to the fact the database is hosted on the same server as the Mattermost application.

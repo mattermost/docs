@@ -44,9 +44,10 @@ When present, the following information is automatically santized during packet 
 
 .. important::
 
-   - Plugins may not be sanitized during packet generation. 
-     - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
-     - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
+   Plugins may not be sanitized during packet generation.
+
+   - From Mattermost v10.1, plugins can mark their configuration as hidden. If a plugin marks its configuration as hidden, the configuration is sanitized during packet generation.
+   - Otherwise, ensure you sanitize any additional confidential details in the ``plugin.json`` file before sharing it with Mattermost. Replace details with example strings that contain the same special characters if possible, as special characters are common causes of configuration errors.
 
 Share the packet with Mattermost
 --------------------------------
@@ -62,7 +63,49 @@ Contents of a Support Packet
 
 A Mattermost Support Packet can contain the following files:
 
-.. tab:: v10.5 and later
+.. tab:: v10.10 and later
+
+   .. note::
+
+      From v10.10, support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
+
+      - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
+      - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
+
+   **Cluster-wide files (root directory):**
+
+   - `metadata.yaml <#metadata>`__
+   - ``plugins.json`` (all active and inactive plugins)
+   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
+   - ``stats.yaml`` (Mattermost usage statistics)
+   - ``jobs.yaml`` (last runs of important jobs)
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``permissions.yaml`` (role & scheme information)
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+   - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
+
+   **Cluster-specific files (in node subdirectories):**
+
+   - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
+   - ``<node-id>/audit.log`` (Mattermost audit logs for each node)
+   - ``<node-id>/ldap.log`` (AD/LDAP logs for each node)
+   - ``<node-id>/notifications.log`` (notifications logs for each node)
+   - ``<node-id>/cpu.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+
+   The following additional plugin diagnostic data is included in the generated support packet when the plugin is enabled and operational:
+
+   - GitHub: ``/github/diagnostics.yaml``
+   - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
+   - Jira: ``/jira/diagnostics.yaml``
+   - Calls: ``/com.mattermost.calls/diagnostics.yaml``
+   - Boards: ``/focalboard/diagnostics.yaml``
+   - Playbooks: ``/playbooks/diagnostics.yaml``
+   - MSCalendar: ``/com.mattermost.mscalendar/diagnostics.yaml``
+   - Google Calendar: ``/com.mattermost.gcal/diagnostics.yaml``
+
+.. tab:: v10.5 to v10.9
 
    .. note::
 
@@ -113,7 +156,8 @@ A Mattermost Support Packet can contain the following files:
 
 .. note:: 
 
-   - Each node in the cluster of a :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployment has its own ``mattermost.log`` file and advanced logging files, if present.
+   - From Mattermost v10.10, support packets from :doc:`high availability </scale/high-availability-cluster-based-deployment>` deployments organize cluster-specific files (such as log files) in subdirectories named after each cluster node, while cluster-wide files remain in the root directory.
+   - Prior to v10.10, each node in the cluster of a high availability deployment has its own ``mattermost.log`` file and advanced logging files included directly in the support packet.
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
    - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
