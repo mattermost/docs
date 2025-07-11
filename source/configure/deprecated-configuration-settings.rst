@@ -180,8 +180,8 @@ Amazon S3 lowercase bucket
 Data retention settings
 -----------------------
 
-MessageRetentionDays
-~~~~~~~~~~~~~~~~~~~~
+Message Retention (Days)
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated in Mattermost v9.5 release in favor of MessageRetentionHours*
 
@@ -193,8 +193,8 @@ From Mattermost v9.5, this setting has been replaced by :ref:`MessageRetentionHo
 | This feature's ``config.json`` setting is ``"MessageRetentionDays": 365`` with numerical input.                                     |
 +-------------------------------------------------------------------------------------------------------------------------------------+
 
-FileRetentionDays
-~~~~~~~~~~~~~~~~~
+File Retention (Days)
+~~~~~~~~~~~~~~~~~~~~~
 
 *Deprecated in Mattermost v9.5 release in favor of FileRetentionHours*
 
