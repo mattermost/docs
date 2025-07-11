@@ -103,7 +103,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 <td>RTC (Calls plugin or <code>rtcd</code>)</td>
 <td>8443</td>
 <td>UDP (incoming)</td>
-<td>Mattermost clients (Web/Desktop/Mobile) and ``calls-offloader`` spawned jobs (Recorder, Transcriber)</td>
+<td>Mattermost clients (Web/Desktop/Mobile) and jobs spawned by Calls Offloader (Recorder, Transcriber)</td>
 <td>Mattermost instance or <code>rtcd</code> service</td>
 <td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that UDP traffic is correctly routed both ways (from/to clients).</td>
 </tr>
@@ -111,7 +111,7 @@ Mattermost Calls provides integrated audio calling and screen sharing capabiliti
 <td>RTC (Calls plugin or <code>rtcd</code>)</td>
 <td>8443</td>
 <td>TCP (incoming)</td>
-<td>Mattermost clients (Web/Desktop/Mobile) and ``calls-offloader`` spawned jobs (Recorder, Transcriber)</td>
+<td>Mattermost clients (Web/Desktop/Mobile) and jobs spawned by Calls Offloader (Recorder, Transcriber)</td>
 <td>Mattermost instance or <code>rtcd</code> service</td>
 <td>To allow clients to establish connections that transport calls related media (e.g. audio, video). This should be open on any network component (e.g. NAT, firewalls) in between the instance running the plugin (or <code>rtcd</code>) and the clients joining calls so that TCP traffic is correctly routed both ways (from/to clients). This can be used as a backup channel in case clients are unable to connect using UDP. It requires <code>rtcd</code> version >= v0.11 and Calls version >= v0.17.</td>
 </tr>
