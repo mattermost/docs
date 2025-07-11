@@ -28,23 +28,25 @@ Experimental System Console configuration settings
   :displayname: AD/LDAP login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
-  :environment: N/A
+  :environment: MM_LDAPSETTINGS_LOGINBUTTONCOLOR
   :description: Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the color of the AD/LDAP login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
-+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the AD/LDAP login button for white labeling purposes.    | - System Config path: **Experimental > Features**                        |
+| Use a hex code with a #-sign before the code.                                 | - ``config.json`` setting: ``"LoginButtonColor": "#0000"``               |
+| This setting only applies to the mobile app.                                  | - Environment variable: ``MM_LDAPSETTINGS_LOGINBUTTONCOLOR``             |
+|                                                                               |                                                                          |
+| String input. Default is **#0000**.                                          |                                                                          |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: adldap-login-button-border-color
   :displayname: AD/LDAP login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
-  :environment: N/A
+  :environment: MM_LDAPSETTINGS_LOGINBUTTONBORDERCOLOR
   :description: Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button border color
@@ -53,17 +55,19 @@ AD/LDAP login button border color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-Specify the color of the AD/LDAP login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
-+-------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| Specify the color of the AD/LDAP login button border for white labeling purposes.     | - System Config path: **Experimental > Features**                       |
+| Use a hex code with a #-sign before the code.                                         | - ``config.json`` setting: ``"LoginButtonBorderColor": "#2389D7"``      |
+| This setting only applies to the mobile app.                                          | - Environment variable: ``MM_LDAPSETTINGS_LOGINBUTTONBORDERCOLOR``      |
+|                                                                                       |                                                                         |
+| String input. Default is **#2389D7**.                                                |                                                                         |
++---------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. config:setting:: adldap-login-button-text-color
   :displayname: AD/LDAP login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
-  :environment: N/A
+  :environment: MM_LDAPSETTINGS_LOGINBUTTONTEXTCOLOR
   :description: Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 AD/LDAP login button text color
@@ -72,17 +76,19 @@ AD/LDAP login button text color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-Specify the color of the AD/LDAP login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
-+-------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the AD/LDAP login button text for white labeling purposes.      | - System Config path: **Experimental > Features**                        |
+| Use a hex code with a #-sign before the code.                                        | - ``config.json`` setting: ``"LoginButtonTextColor": "#2389D7"``         |
+| This setting only applies to the mobile app.                                         | - Environment variable: ``MM_LDAPSETTINGS_LOGINBUTTONTEXTCOLOR``         |
+|                                                                                      |                                                                          |
+| String input. Default is **#2389D7**.                                               |                                                                          |
++--------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: change-authentication-method
   :displayname: Change authentication method (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableAuthenticationTransfer
-  :environment: N/A
+  :environment: MM_SERVICESETTINGS_EXPERIMENTALENABLEAUTHENTICATIONTRANSFER
 
   - **true**: **(Default)** Users can change their sign-in method to any that is enabled on the server, either via their Profile or the APIs.
   - **false**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
@@ -93,126 +99,136 @@ Change authentication method
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-**True**: Users can change their sign-in method to any that is enabled on the server, either via their Profile or the APIs.
-
-**False**: Users cannot change their sign-in method, regardless of which authentication options are enabled.
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalEnableAuthenticationTransfer": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
+| - **True**: Users can change their sign-in method to any that is enabled on the server,      | - System Config path: **Experimental > Features**                                |
+|   either via their Profile or the APIs.                                                      | - ``config.json`` setting: ``"ExperimentalEnableAuthenticationTransfer": true``  |
+|                                                                                              | - Environment variable: MM_SERVICESETTINGS_EXPERIMENTALENABLEAUTHENTICATIONTRANSFER                                                      |
+| - **False**: Users can't change their sign-in method, regardless of which authentication     |                                                                                  |
+|   options are enabled.                                                                       |                                                                                  |
++----------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------+
 
 .. config:setting:: link-metadata-timeout
   :displayname: Link metadata timeout (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LinkMetadataTimeoutMilliseconds
-  :environment: N/A
-  :description: Adds a configurable timeout for requests made to return link metadata. Default is **5000** milliseconds.
+  :environment: MM_EXPERIMENTALSETTINGS_LINKMETADATATIMEOUTMILLISECONDS
+  :description: Adds a configurable timeout for requests made to return link metadata. Default is **5000** milliseconds. Must be a value greater than **0**.
 
 Link metadata timeout
 ~~~~~~~~~~~~~~~~~~~~~
 
-Adds a configurable timeout for requests made to return link metadata. If the metadata is not returned before this timeout expires, the message will post without requiring metadata. This timeout covers the failure cases of broken URLs and bad content types on slow network connections.
-
-+---------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LinkMetadataTimeoutMilliseconds``: 5000`` with numerical input.                    |
-+---------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Adds a configurable timeout for requests made to return link metadata.      | - System Config path: **Experimental > Features**                        |
+| If the metadata is not returned before this timeout expires, the message    | - ``config.json`` setting: ``"LinkMetadataTimeoutMilliseconds": 5000``   |
+| will be posted without requiring metadata. This timeout covers the failure  | - Environment variable: ``MM_EXPERIMENTALSETTINGS_LINKMETADATATIMEOUTMILLISECONDS`` |
+| cases of broken URLs and bad content types on slow network connections.     |                                                                          |
+|                                                                             |                                                                          |
+| Numerical input. Default is **5000** milliseconds.                          |                                                                          |
++-----------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: email-batching-buffer-size
   :displayname: Email batching buffer size (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EmailBatchingBufferSize
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_EMAILBATCHINGBUFFERSIZE
   :description: Specify the maximum number of notifications batched into a single email. Default is **256** notifications.
 
 Email batching buffer size
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the maximum number of notifications batched into a single email.
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the maximum number of notifications batched into a single email.      | - System Config path: **Experimental > Features**                        |
+|                                                                               | - ``config.json`` setting: ``"EmailBatchingBufferSize": 256``            |
+| Numerical input. Default is **256** notifications.                            | - Environment variable: ``MM_EMAILSETTINGS_EMAILBATCHINGBUFFERSIZE``     |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
   
   - We recommend increasing the buffer size from the default value if you see the following error in the Mattermost logs: ``Email batching job's receiving buffer was full. Please increase the EmailBatchingBufferSize. Falling back to sending immediate mail.`` Increasing this value will ensure emails are queued up, without impacting server performance.
-  - Notifications will be sent instantly if the queue of emails exceeds the `email batching interval <#id1>`_ configured. 
-
-+--------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EmailBatchingBufferSize``: 256`` with numerical input.                       |
-+--------------------------------------------------------------------------------------------------------------------------+
+  - Notifications will be sent instantly if the queue of emails exceeds the `email batching interval <#email-batching-interval>`__ configured.
 
 .. config:setting:: email-batching-interval
   :displayname: Email batching interval (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EmailBatchingInterval
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_EMAILBATCHINGINTERVAL
   :description: Specify the maximum frequency, in seconds, which the batching job checks for new notifications. Default is **30** seconds.
 
 Email batching interval
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the maximum frequency, in seconds, which the batching job checks for new notifications. 
++--------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the maximum frequency, in seconds,                   | - System Config path: **Experimental > Features**                        |
+| in which the batching job checks for new notifications.      | - ``config.json`` setting: ``"EmailBatchingInterval": 30``               |
+|                                                              | - Environment variable: ``MM_EMAILSETTINGS_EMAILBATCHINGINTERVAL``      |
+| Numerical input. Default is **30** seconds.                  |                                                                          |
++--------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
   - We recommend decreasing the email batching interval from the default value if you see the following error in the Mattermost logs: ``Email batching job's receiving buffer was full. Please increase the EmailBatchingBufferSize. Falling back to sending immediate mail.``. 
   - Longer batching intervals may increase performance.
-  - Notifications will be sent instantly if the `queue of emails <#email-batching-buffer-size>`_ exceeds the email batching interval configured. 
-
-+-----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``EmailBatchingInterval": 30`` with numerical input.                        |
-+-----------------------------------------------------------------------------------------------------------------------+
+  - Notifications will be sent instantly if the `queue of emails <#email-batching-buffer-size>`_ exceeds the email batching interval configured.
 
 .. config:setting:: email-login-button-color
   :displayname: Email login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_LOGINBUTTONCOLOR
   :description: Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button color
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the color of the email login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
-+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the email login button for white labeling purposes.      | - System Config path: **Experimental > Features**                        |
+| Use a hex code with a #-sign before the code.                                 | - ``config.json`` setting: ``"LoginButtonColor": "#0000"``               |
+| This configuration setting only applies to the mobile app.                    | - Environment variable: ``MM_EMAILSETTINGS_LOGINBUTTONCOLOR``            |
+|                                                                               |                                                                          |
+| String input. Default is **#0000**.                                          |                                                                          |
++-------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: email-login-button-border-color
   :displayname: Email login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_LOGINBUTTONBORDERCOLOR
   :description: Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button border color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the color of the email login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
-+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the email login button border for white labeling purposes.        | - System Config path: **Experimental > Features**                        |
+| Use a hex code with a #-sign before the code.                                          | - ``config.json`` setting: ``"LoginButtonBorderColor": "#2389D7"``       |
+| This setting only applies to the mobile app.                                           | - Environment variable: ``MM_EMAILSETTINGS_LOGINBUTTONBORDERCOLOR``      |
+|                                                                                        |                                                                          |
+| String input. Default is **#2389D7**.                                                 |                                                                          |
++----------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: email-login-button-text-color
   :displayname: Email login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
-  :environment: N/A
+  :environment: MM_EMAILSETTINGS_LOGINBUTTONTEXTCOLOR
   :description: Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 Email login button text color
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Specify the color of the email login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
-+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the email login button text for white labeling purposes.       | - System Config path: **Experimental > Features**                        |
+| Use a hex code with a #-sign before the code.                                       | - ``config.json`` setting: ``"LoginButtonTextColor": "#2389D7"``         |
+| This setting only applies to the mobile app.                                        | - Environment variable: ``MM_EMAILSETTINGS_LOGINBUTTONTEXTCOLOR``        |
+|                                                                                     |                                                                          |
+| String input. Default is **#2389D7**.                                              |                                                                          |
++-------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-account-deactivation
   :displayname: Enable account deactivation (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableUserDeactivation
-  :environment: N/A
+  :environment: MM_TEAMSETTINGS_ENABLEUSERDEACTIVATION
 
   - **true**: Ability for users to deactivate their own account from **Settings > Advanced** is enabled.
   - **false**: **(Default)** Ability for users to deactivate their own account is disabled.
@@ -220,13 +236,18 @@ Specify the color of the email login button text for white labeling purposes. Us
 Enable account deactivation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Ability for users to deactivate their own account from **Settings > Advanced > Deactivate Account**. If a user deactivates their own account, they will get an email notification confirming they were deactivated. Available only when authentication is set to use email/password. Not available when authentication uses SAML or AD/LDAP.
-
-**False**: Ability for users to deactivate their own account is disabled.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether users can deactivate their own accounts from the Account  | - System Config path: **Experimental > Features**                        |
+| Settings menu.                                                                           | - ``config.json`` setting: ``"EnableUserDeactivation": false``           |
+|                                                                                          | - Environment variable: ``MM_TEAMSETTINGS_ENABLEUSERDEACTIVATION``       |
+| - **True**: Ability for users to deactivate their own account from                       |                                                                          |
+|   **Settings > Advanced > Deactivate Account**. If a user deactivates                    |                                                                          |
+|   their own account, they will get an email notification confirming they                 |                                                                          |
+|   were deactivated. Available only when authentication is set to use email/password.     |                                                                          |
+|   Not available when authentication uses SAML or AD/LDAP.                                |                                                                          |
+|                                                                                          |                                                                          |
+| - **False**: Ability for users to deactivate their own account is disabled.              |                                                                          |
++------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-automatic-replies
   :displayname: Enable automatic replies
@@ -240,13 +261,16 @@ Enable account deactivation
 Enable automatic replies
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Users can enable Automatic Replies in **Settings > Notifications**. Users set a custom message that will be automatically sent in response to Direct Messages.
-
-**False**: Disables the Automatic Direct Message Replies feature and hides it from **Settings**.
-
-+--------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalEnableAutomaticReplies": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
+| This setting controls whether users can set up automatic replies to direct messages.  | - System Config path: **Experimental > Features**                           |
+|                                                                                        | - ``config.json`` setting: ``"ExperimentalEnableAutomaticReplies": false``  |
+| - **True**: Users can enable Automatic Replies in **Settings > Notifications**.        | - Environment variable: N/A                                                 |
+|   Users set a custom message that will be automatically sent in response to            |                                                                             |
+|   Direct Messages.                                                                     |                                                                             |
+|                                                                                        |                                                                             |
+| - **False**: Disables the Automatic Direct Message Replies feature and                 |                                                                             |
+|   hides it from **Settings**.                                                          |                                                                             |
++----------------------------------------------------------------------------------------+-----------------------------------------------------------------------------+
 
 .. config:setting:: enable-channel-viewed-websocket-messages
   :displayname: Enable channel viewed websocket messages (Experimental)
@@ -258,11 +282,13 @@ Enable automatic replies
 Enable channel viewed websocket messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread notifications across clients and devices.
-
-+------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableChannelViewedMessages": true`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines whether ``channel_viewed WebSocket`` events are sent, which synchronize unread   | - System Config path: **Experimental > Features**                       |
+| notifications across clients and devices.                                                                 | - ``config.json`` setting: ``"EnableChannelViewedMessages": true``     |
+|                                                                                                          | - Environment variable: N/A                                              |
+| - **true**: **(Default)** Channel viewed WebSocket events are sent.                                     |                                                                          |
+| - **false**: Channel viewed WebSocket events are not sent.                                               |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
@@ -278,7 +304,7 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
   :displayname: Enable default channel leave/join system messages (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableDefaultChannelLeaveJoinMessages
-  :environment: N/A
+  :environment: MM_SERVICESETTINGS_EXPERIMENTALENABLEDEFAULTCHANNELLEAVEJOINMESSAGES
   :description: This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
 
   - **true**: **(Default)** Enables leave/join system messages in the default ``town-square`` channel.
@@ -287,21 +313,20 @@ This setting determines whether ``channel_viewed WebSocket`` events are sent, wh
 Enable default channel leave/join system messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether team leave/join system messages are posted in the default ``town-square`` channel.
-
-**True**: Enables leave/join system messages in the default ``town-square`` channel.
-
-**False**: Disables leave/join messages from the default ``town-square`` channel. These system messages won't be added to the database either.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines whether team leave/join system messages are posted in the default               | - System Config path: **Experimental > Features**                       |
+| ``town-square`` channel.                                                                                 | - ``config.json`` setting: ``"ExperimentalEnableDefaultChannelLeaveJoinMessages": true`` |
+|                                                                                                          | - Environment variable: N/A                                              |
+| - **true**: **(Default)** Enables leave/join system messages in the default ``town-square`` channel.   |                                                                          |
+| - **false**: Disables leave/join messages from the default ``town-square`` channel. These system       |                                                                          |
+|   messages won't be added to the database either.                                                       |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-hardened-mode
   :displayname: Enable hardened mode (Experimental)
   :systemconsole: Experimental > Features
   :configjson: ExperimentalEnableHardenedMode
-  :environment: N/A
+  :environment: MM_SERVICESETTINGS_EXPERIMENTALENABLEHARDENEDMODE
 
   - **true**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
   - **false**: **(Default)** Disables hardened mode.
@@ -309,9 +334,11 @@ This setting determines whether team leave/join system messages are posted in th
 Enable hardened mode
 ~~~~~~~~~~~~~~~~~~~~
 
-**True**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the interest of security.
-
-**False**: Disables hardened mode.
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables a hardened mode for Mattermost that makes user experience trade-offs in the        | - System Config path: **Experimental > Features**                       |
+|   interest of security.                                                                                  | - ``config.json`` setting: ``"ExperimentalEnableHardenedMode": false`` |
+| - **false**: **(Default)** Disables hardened mode.                                                     | - Environment variable: MM_SERVICESETTINGS_EXPERIMENTALENABLEHARDENEDMODE |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 Changes made when hardened mode is enabled:
 
@@ -321,15 +348,11 @@ Changes made when hardened mode is enabled:
 - Mattermost sanitizes all 500 errors before returned to the client. Use the supplied ``request_id`` to match user facing errors with the server logs.
 - Standard users authenticated via username and password can't use post props reserved for integrations, such as ``override_username`` or ``override_icon_url``.
 
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalEnableHardenedMode": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: enable-theme-selection
   :displayname: Enable theme selection (Experimental)
   :systemconsole: Experimental > Features
   :configjson: EnableThemeSelection
-  :environment: N/A
+  :environment: MM_THEMESETTINGS_ENABLETHEMESELECTION
 
   - **true**: **(Default)** Enables the **Display > Theme** tab in **Settings** so users can select their theme.
   - **false**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
@@ -340,19 +363,20 @@ Enable theme selection
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-**True**: Enables the **Display > Theme** tab in **Settings** so users can select their theme.
-
-**False**: Users cannot select a different theme. The **Display > Theme** tab is hidden in **Settings**.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableThemeSelection": true`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether users can select different themes for their Mattermost interface.        | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"EnableThemeSelection": true``            |
+| - **true**: **(Default)** Enables the **Display > Theme** tab in **Settings** so users can select     | - Environment variable: ``MM_THEMESETTINGS_ENABLETHEMESELECTION``       |
+|   their theme.                                                                                           |                                                                          |
+| - **false**: Users cannot select a different theme. The **Display > Theme** tab is hidden in          |                                                                          |
+|   **Settings**.                                                                                          |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: allow-custom-themes
   :displayname: Allow custom themes (Experimental)
   :systemconsole: Experimental > Features
   :configjson: AllowCustomThemes
-  :environment: N/A
+  :environment: MM_THEMESETTINGS_ALLOWCUSTOMTHEMES
 
   - **true**: **(Default)** Enables the **Display > Theme > Custom Theme** section in **Settings**.
   - **false**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
@@ -363,19 +387,19 @@ Allow custom themes
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-**True**: Enables the **Display > Theme > Custom Theme** section in **Settings**.
-
-**False**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is hidden in **Settings**.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowCustomThemes": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether users can create and use custom themes beyond the default theme options. | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"AllowCustomThemes": true``               |
+| - **true**: **(Default)** Enables the **Display > Theme > Custom Theme** section in **Settings**.     | - Environment variable: ``MM_THEMESETTINGS_ALLOWCUSTOMTHEMES``          |
+| - **false**: Users cannot use a custom theme. The **Display > Theme > Custom Theme** section is       |                                                                          |
+|   hidden in **Settings**.                                                                               |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: default-theme
   :displayname: Default theme (Experimental)
   :systemconsole: Experimental > Features
   :configjson: DefaultTheme
-  :environment: N/A
+  :environment: MM_THEMESETTINGS_DEFAULTTHEME
   :description: Set a default theme that applies to all new users on the system. Default is **default**.
 
 Default theme
@@ -384,11 +408,11 @@ Default theme
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-Set a default theme that applies to all new users on the system.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"DefaultTheme": "default"`` with options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Set a default theme that applies to all new users on the system.                                                                                                  | - System Config path: **Experimental > Features**                       |
+|                                                                                                                                                                    | - ``config.json`` setting: ``"DefaultTheme": "default"``               |
+| Options: ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``.                                                                          | - Environment variable: ``MM_THEMESETTINGS_DEFAULTTHEME``               |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-tutorial
   :displayname: Enable tutorial (Experimental)
@@ -402,13 +426,14 @@ Set a default theme that applies to all new users on the system.
 Enable tutorial
 ~~~~~~~~~~~~~~~
 
-**True**: Users are prompted with a tutorial when they open Mattermost for the first time after account creation.
-
-**False**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableTutorial": true`` with options ``true`` and ``false``.                  |
-+--------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether new users are shown a tutorial when they first open Mattermost.          | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"ServiceSettings.EnableTutorial": true``  |
+| - **true**: **(Default)** Users are prompted with a tutorial when they open Mattermost for the first   | - Environment variable: N/A                                              |
+|   time after account creation.                                                                            |                                                                          |
+| - **false**: The tutorial is disabled. Users are placed in Town Square when they open Mattermost for   |                                                                          |
+|   the first time after account creation.                                                                  |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-onboarding-flow
   :displayname: Enable onboarding flow (Experimental)
@@ -422,13 +447,14 @@ Enable tutorial
 Enable onboarding flow
 ~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: New Mattermost users are shown key tasks to complete as part of initial onboarding.
-
-**False**: User onboarding tasks are disabled. Users are placed in Town Square when they open Mattermost for the first time after account creation.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.EnableOnboardingFlow": true`` with options ``true`` and ``false``.            |
-+--------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether new users are shown onboarding tasks when they first use Mattermost.     | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"ServiceSettings.EnableOnboardingFlow": true`` |
+| - **true**: **(Default)** New Mattermost users are shown key tasks to complete as part of initial      | - Environment variable: N/A                                              |
+|   onboarding.                                                                                            |                                                                          |
+| - **false**: User onboarding tasks are disabled. Users are placed in Town Square when they open        |                                                                          |
+|   Mattermost for the first time after account creation.                                                 |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-user-typing-messages
   :displayname: Enable user typing messages (Experimental)
@@ -440,11 +466,13 @@ Enable onboarding flow
 Enable user typing messages
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting determines whether "user is typing..." messages are displayed below the message box when using Mattermost in a web browser or the desktop app. 
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserTypingMessages": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines whether "user is typing..." messages are displayed below the message box when   | - System Config path: **Experimental > Features**                       |
+| using Mattermost in a web browser or the desktop app.                                                   | - ``config.json`` setting: ``"EnableUserTypingMessages": true``        |
+|                                                                                                          | - Environment variable: N/A                                              |
+| - **true**: **(Default)** "User is typing..." messages are displayed.                                  |                                                                          |
+| - **false**: "User is typing..." messages are not displayed.                                            |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
@@ -464,27 +492,28 @@ This setting determines whether "user is typing..." messages are displayed below
 User typing timeout
 ~~~~~~~~~~~~~~~~~~~
 
-This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.
-
-+----------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` with numerical input. |
-+----------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting defines how frequently "user is typing..." messages are updated, measured in milliseconds.             | - System Config path: **Experimental > Features**                       |
+|                                                                                                                      | - ``config.json`` setting: ``"TimeBetweenUserTypingUpdatesMilliseconds": 5000`` |
+| Numerical input. Default is **5000** milliseconds.                                                                   | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: users-status-and-profile-fetching-poll-interval
   :displayname: User's status and profile fetching poll interval (Experimental)
   :systemconsole: Experimental > Features
   :configjson: UsersStatusAndProfileFetchingPollIntervalMilliseconds
-  :environment: N/A
-  :description: The number of milliseconds to wait between fetching user statuses and profiles periodically.
+  :environment: MM_EXPERIMENTALSETTINGS_USERSSTATUSANDPROFILEFETCHINGPOLLINTERVALMILLISECONDS
+  :description: The number of milliseconds to wait between fetching user statuses and profiles periodically. Default is **3000** milliseconds.
 
 User's status and profile fetching poll interval
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting configures the number of milliseconds to wait between fetching user statuses and profiles periodically. Set to ``0`` to disable.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting configures the number of milliseconds to wait between fetching user statuses and profiles | - System Config path: **Experimental > Features**                       |
+| periodically. Set to ``0`` to disable.                                                                  | - ``config.json`` setting: ``"ExperimentalSettings.UsersStatusAndProfileFetchingPollIntervalMilliseconds": 3000`` |
+|                                                                                                          | - Environment variable: MM_EXPERIMENTALSETTINGS_USERSSTATUSANDPROFILEFETCHINGPOLLINTERVALMILLISECONDS |
+| Numerical input.                                                                                         |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
@@ -500,19 +529,19 @@ This setting configures the number of milliseconds to wait between fetching user
 Primary team
 ~~~~~~~~~~~~
 
-The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled.
-
-If the team URL of the primary team is ``https://example.mattermost.com/myteam/``, then set the value to ``myteam`` in ``config.json``.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalPrimaryTeam": ""`` with string input.                  |
-+-----------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The primary team of which users on the server are members. When a primary team is set, the options to join other teams or leave the primary team are disabled. | - System Config path: **Experimental > Features**                       |
+|                                                                                                                 | - ``config.json`` setting: ``"ExperimentalPrimaryTeam": ""``            |
+| If the team URL of the primary team is ``https://example.mattermost.com/myteam/``, then set the value to ``myteam`` in ``config.json``. | - Environment variable: N/A                                              |
+|                                                                                                                 |                                                                          |
+| String input.                                                                                                   |                                                                          |
++-----------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: saml-login-button-color
   :displayname: SAML login button color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonColor
-  :environment: N/A
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONCOLOR
   :description: Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button color
@@ -521,17 +550,17 @@ SAML login button color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonColor": ""`` with string input.                                       |
-+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the SAML login button for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.             | - System Config path: **Experimental > Features**                       |
+|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonColor": "#34a28b"``            |
+| String input. Default is **#34a28b**.                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONCOLOR``            |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: saml-login-button-border-color
   :displayname: SAML login button border color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonBorderColor
-  :environment: N/A
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONBORDERCOLOR
   :description: Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button border color
@@ -540,17 +569,17 @@ SAML login button border color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonBorderColor": ""`` with string input.                                 |
-+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the SAML login button border for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.      | - System Config path: **Experimental > Features**                       |
+|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonBorderColor": "#2389D7"``      |
+| String input. Default is **#2389D7**.                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONBORDERCOLOR``      |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: saml-login-button-text-color
   :displayname: SAML login button text color (Experimental)
   :systemconsole: Experimental > Features
   :configjson: LoginButtonTextColor
-  :environment: N/A
+  :environment: MM_SAMLSETTINGS_LOGINBUTTONTEXTCOLOR
   :description: Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code.
 
 SAML login button text color
@@ -559,11 +588,11 @@ SAML login button text color
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"LoginButtonTextColor": ""`` with string input.                                   |
-+-------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the color of the SAML login button text for white labeling purposes. Use a hex code with a #-sign before the code. This setting only applies to the mobile app.         | - System Config path: **Experimental > Features**                       |
+|                                                                                                                               | - ``config.json`` setting: ``"LoginButtonTextColor": "#ffffff"``        |
+| String input. Default is **#ffffff**.                                                                                        | - Environment variable: ``MM_SAMLSETTINGS_LOGINBUTTONTEXTCOLOR``        |
++-------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: use-channel-name-in-email-notifications
   :displayname: Use channel name in email notifications (Experimental)
@@ -577,13 +606,13 @@ Specify the color of the SAML login button text for white labeling purposes. Use
 Use channel name in email notifications
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Channel and team name appears in email notification subject lines. Useful for servers using only one team.
-
-**False**: Only team name appears in email notification subject line.
-
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UseChannelInEmailNotifications": false`` with options ``true`` and ``false``. |
-+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether channel names are included in email notification subject lines.          | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"UseChannelInEmailNotifications": false`` |
+| - **true**: Channel and team name appears in email notification subject lines. Useful for servers      | - Environment variable: N/A                                              |
+|   using only one team.                                                                                  |                                                                          |
+| - **false**: **(Default)** Only team name appears in email notification subject line.                  |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: user-status-away-timeout
   :displayname: User status away timeout (Experimental)
@@ -595,63 +624,70 @@ Use channel name in email notifications
 User status away timeout
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost.
++--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting defines the number of seconds after which the user's status indicator changes to "Away", when they are away from Mattermost. | - System Config path: **Experimental > Features**                       |
+|                                                                                                  | - ``config.json`` setting: ``"UserStatusAwayTimeout": 300``            |
+| Numerical input. Default is **300** seconds.                                                    | - Environment variable: N/A                                              |
++--------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-+--------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"UserStatusAwayTimeout": 300`` with numerical input. |
-+--------------------------------------------------------------------------------------------------+
+metadata missing
 
 Disable data refetching on browser refocus
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting disables re-fetching of channel and channel members on browser focus.
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting disables re-fetching of channel and channel members on browser focus.                     | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` |
+| - **true**: Mattermost won't refetch channels and channel members when the browser regains focus.      | - Environment variable: MM_EXPERIMENTALSETTINGS_DISABLEREFETCHINGONBROWSERFOCUS |
+|   This may result in improved performance for users with many channels and channel members.            |                                                                          |
+| - **false**: **(Default)** Mattermost will refetch channels and channel members when the browser       |                                                                          |
+|   regains focus.                                                                                         |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**True**: Mattermost won't refetch channels and channel members when the browser regains focus. This may result in improved performance for users with many channels and channel members.
-
-**False**: (Default) Mattermost will refetch channels and channel members when the browser regains focus.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableRefetchingOnBrowserFocus": false`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
+metadata missing
 
 Disable wake up reconnect handler
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting disables attempts to detect when the computer has woken up and refetch data.
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting disables attempts to detect when the computer has woken up and refetch data.              | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` |
+| - **true**: Mattermost won't attempt to detect when the computer has woken up and refetch data.        | - Environment variable: MM_EXPERIMENTALSETTINGS_DISABLEWAKEUPRECONNECTHANDLER |
+|   This might reduce the amount of regular network traffic the app is sending.                           |                                                                          |
+| - **false**: **(Default)** Mattermost attempts to detect when the computer has woken up and refreshes  |                                                                          |
+|   data.                                                                                                  |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**True**: Mattermost won't attempt to detect when the computer has woken up and refetch data. This might reduce the amount of regular network traffic the app is sending.
-
-**False**: (**Default**) Mattermost attempts to detect when the computer has woken up and refreshes data.
-
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DisableWakeUpReconnectHandler": false`` with options ``true`` and ``false``.   |
-+--------------------------------------------------------------------------------------------------------------------------------------------------+
+metadata missing
 
 Delay channel autocomplete
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting controls whether or not the channel link autocomplete triggers immediately when after a tilde is typed when composing a message. This setting makes the channel autocomplete, such as ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation. 
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether or not the channel link autocomplete triggers immediately when after a    | - System Config path: **Experimental > Features**                       |
+| tilde is typed when composing a message. This setting makes the channel autocomplete, such as           | - ``config.json`` setting: ``"ExperimentalSettings.DelayChannelAutocomplete": false`` |
+| ``~town-square``, less obtrusive for people who use tildes ``~`` as punctuation.                        | - Environment variable: MM_EXPERIMENTALSETTINGS_DELAYCHANNELAUTOCOMPLETE |
+|                                                                                                          |                                                                          |
+| - **true**: The autocomplete appears after the user types a tilde followed by two or more characters.  |                                                                          |
+|   For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not.                    |                                                                          |
+| - **false**: **(Default)** The autocomplete appears immediately after the user types a tilde.          |                                                                          |
+|   For example, typing ``~`` will show the autocomplete.                                                 |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**True**: The autocomplete appears after the user types a tilde followed by two or more characters. For example, typing ``~to`` will show the autocomplete, but typing ``~`` will not. 
-
-**False**: **(Default)** The autocomplete appears immediately after the user types a tilde. For example, typing ``~`` will show the autocomplete.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.DelayChannelAutocomplete": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
+metadata missing
 
 YouTube referrer policy
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This setting resolves issues where YouTube video previews display as unavailable.
-
-**True**: The referrer policy for embedded YouTube videos is set to ``strict-origin-when-cross-origin``.
-
-**False**: (Default) The referrer policy is set to ``no-referrer`` which enhances user privacy by not disclosing the source URL, but limits the ability to track user engagement and traffic sources in analytics tools.
-
-+-------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` with options ``true`` and ``false``.    |
-+-------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting resolves issues where YouTube video previews display as unavailable.                      | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``"ExperimentalSettings.YoutubeReferrerPolicy": false`` |
+| - **true**: The referrer policy for embedded YouTube videos is set to                                  | - Environment variable: MM_EXPERIMENTALSETTINGS_YOUTUBEREFERRERPOLICY   |
+|   ``strict-origin-when-cross-origin``.                                                                  |                                                                          |
+| - **false**: **(Default)** The referrer policy is set to ``no-referrer`` which enhances user privacy  |                                                                          |
+|   by not disclosing the source URL, but limits the ability to track user engagement and traffic        |                                                                          |
+|   sources in analytics tools.                                                                           |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
@@ -675,13 +711,13 @@ Access the following configuration settings in the System Console by going to **
 Enable Bleve indexing
 ~~~~~~~~~~~~~~~~~~~~~
 
-**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until :ref:`Enable Bleve for search queries <configure/experimental-configuration-settings:enable bleve for search queries>` is enabled.
-
-**False**: The indexing of new posts does not occur automatically.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether Bleve indexing is enabled for posts to support search functionality.     | - System Config path: **Experimental > Bleve**                          |
+|                                                                                                          | - ``config.json`` setting: ``"EnableIndexing": false``                 |
+| - **true**: The indexing of new posts occurs automatically. Search queries will not use bleve search    | - Environment variable: N/A                                              |
+|   until :ref:`Enable Bleve for search queries <configure/experimental-configuration-settings:enable bleve for search queries>` is enabled. |                                                                          |
+| - **false**: **(Default)** The indexing of new posts does not occur automatically.                     |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: index-directory
   :displayname: Index directory (Experimental)
@@ -693,15 +729,15 @@ Enable Bleve indexing
 Index directory
 ~~~~~~~~~~~~~~~
 
-Directory path to use for storing bleve indexes.
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Directory path to use for storing bleve indexes.                                                         | - System Config path: **Experimental > Bleve**                          |
+|                                                                                                           | - ``config.json`` setting: ``"IndexDir": ""``                          |
+| String input.                                                                                             | - Environment variable: N/A                                              |
++-----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. tip::
 
    The bleve index directory path isn't required to exist within the ``mattermost`` directory. When it exists outside of the ``mattermost`` directory, no  additional steps are needed to preserve or reindex these files as part of a Mattermost upgrade. See our :doc:`Upgrading Mattermost Server </upgrade/upgrading-mattermost-server>` documentation for details.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
-+-----------------------------------------------------------------------------------------------------------+
 
 Bulk index now
 ~~~~~~~~~~~~~~
@@ -725,13 +761,13 @@ Select **Purge Index** to remove the contents of the Bleve index directory. Sear
 Enable Bleve for search queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Search queries will use bleve search.
-
-**False**: Search queries will not use bleve search.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether Bleve search engine is used for search queries instead of the default    | - System Config path: **Experimental > Bleve**                          |
+| database search.                                                                                         | - ``config.json`` setting: ``"EnableSearching": false``                |
+|                                                                                                          | - Environment variable: N/A                                              |
+| - **true**: Search queries will use bleve search.                                                       |                                                                          |
+| - **false**: **(Default)** Search queries will not use bleve search.                                   |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-bleve-indexingautocomplete
   :displayname: Enable Bleve for autocomplete queries (Experimental)
@@ -745,13 +781,13 @@ Enable Bleve for search queries
 Enable Bleve for autocomplete queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**True**: Autocomplete queries will use bleve search.
-
-**False**: Autocomplete queries will not use bleve search.
-
-+-----------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
-+-----------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls whether Bleve search engine is used for autocomplete queries instead of the      | - System Config path: **Experimental > Bleve**                          |
+| default database search.                                                                                 | - ``config.json`` setting: ``"EnableAutocomplete": false``             |
+|                                                                                                          | - Environment variable: N/A                                              |
+| - **true**: Autocomplete queries will use bleve search.                                                 |                                                                          |
+| - **false**: **(Default)** Autocomplete queries will not use bleve search.                             |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 ----
 
@@ -783,7 +819,7 @@ Output log and audit records to any combination of console, local file, syslog, 
   :displayname: Enable audit logging (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileEnabled
-  :environment: N/A
+  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEENABLED
   :description: Write audit files locally for a self-hosted deployment.
 
 Enable audit logging
@@ -792,21 +828,22 @@ Enable audit logging
 .. include:: ../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-When audit logging is enabled in a self-hosted instance, you can specify size, backup interval, compression, maximium age to manage file rotation, and timestamps for audit logging, as defined below. You can specify these settings independently for audit events and AD/LDAP events. 
-
-**True**: Audit logging files are enabled, and audit files are written locally to a file for a self-hosted deployment.
-
-**False**: Audit logging files aren't enabled, and audit logs aren't written locally to a file for a self-hosted deployment.
-
-+--------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileEnabled": false",`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| When audit logging is enabled in a self-hosted instance, you can specify size, backup interval,        | - System Config path: **Experimental > Features**                       |
+| compression, maximum age to manage file rotation, and timestamps for audit logging, as defined below.   | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileEnabled: false`` |
+| You can specify these settings independently for audit events and AD/LDAP events.                       | - Environment variable: MM_EXPERIMENTALAUDITSETTINGS_FILEENABLED        |
+|                                                                                                          |                                                                          |
+| - **true**: Audit logging files are enabled, and audit files are written locally to a file for a       |                                                                          |
+|   self-hosted deployment.                                                                                |                                                                          |
+| - **false**: **(Default)** Audit logging files aren't enabled, and audit logs aren't written locally   |                                                                          |
+|   to a file for a self-hosted deployment.                                                               |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: file-name
   :displayname: File name (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileName
-  :environment: N/A
+  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILENAME
   :description: Specify the path to the audit file for a self-hosted deployment.
 
 File name
@@ -815,17 +852,17 @@ File name
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-Specify the path to the audit file for a self-hosted deployment.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileName": ""`` with string input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).         |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Specify the path to the audit file for a self-hosted deployment.                                        | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileName: ""``  |
+| String input consisting of a user-defined path (e.g. ``/var/log/mattermost_audit.log``).               | - Environment variable: MM_EXPERIMENTALAUDITSETTINGS_FILENAME           |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: max-file-size
   :displayname: File max size MB (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxSizeMB
-  :environment: N/A
+  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXSIZEMB
   :description: This is the maximum size (measured in megabytes) that the file can grow before triggering rotation for a self-hosted deployment.. Default is **100** MB.
 
 Max file size
@@ -834,17 +871,17 @@ Max file size
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. The default setting is ``100``.
-
-+---------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxSizeMB": 100`` with numerical input. |
-+---------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This is the maximum size, in megabytes, that the file can grow before triggering rotation for a self-hosted deployment. | - System Config path: **Experimental > Features**                       |
+|                                                                                                                     | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileMaxSizeMB: 100`` |
+| Numerical input. Default is **100** MB.                                                                             | - Environment variable: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXSIZEMB                                              |
++---------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: max-file-age
   :displayname: File max age days (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxAgeDays
-  :environment: N/A
+  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXAGEDAYS
   :description: This is the maximum age in days a file can reach before triggering rotation for a self-hosted deployment.. The default value is **0**, indicating no limit on the age.
 
 Max file age
@@ -853,11 +890,11 @@ Max file age
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment. The default value is ``0``, indicating no limit on the age.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxAgeDays": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This is the maximum age, in days, a file can reach before triggering rotation for a self-hosted deployment.     | - System Config path: **Experimental > Features**                       |
+|                                                                                                                    | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileMaxAgeDays: 0`` |
+| Numerical input. Default is **0** days (no limit).                                                                 | - Environment variable: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXAGEDAYS                                              |
++--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: maximum-file-backups
   :displayname: File max backups (Audit Logging > Self-Hosted)
@@ -872,17 +909,17 @@ Maximum file backups
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first. The default value is ``0``, indicating no limit on the number of backups.
-
-+--------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxBackups": 0`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This is the maximum number of rotated files kept for a self-hosted deployment. The oldest is deleted first.     | - System Config path: **Experimental > Features**                       |
+|                                                                                                                    | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileMaxBackups: 0`` |
+| Numerical input. Default is **0** (no limit).                                                                      | - Environment variable: N/A                                              |
++--------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: file-compression
   :displayname: File compress (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileCompress
-  :environment: N/A
+  :environment:  MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS
   :description: When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment. Default value is **false**.
 
 File compression
@@ -891,17 +928,18 @@ File compression
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.
-
-+-------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileCompress": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| When ``true``, rotated files are compressed using ``gzip`` in a self-hosted deployment.                | - System Config path: **Experimental > Features**                       |
+|                                                                                                          | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileCompress: false`` |
+| - **true**: Rotated files are compressed using ``gzip``.                                                | - Environment variable:  MM_EXPERIMENTALAUDITSETTINGS_FILECOMPRESS      |
+| - **false**: **(Default)** Rotated files are not compressed.                                            |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: maximum-file-queue
   :displayname: File max queue size (Audit Logging > Self-Hosted)
   :systemconsole: Experimental > Features
   :configjson: FileMaxQueueSize
-  :environment: N/A
+  :environment: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE
   :description: This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. Default is **1000** records.
 
 Maximum file queue 
@@ -910,12 +948,15 @@ Maximum file queue
 .. include:: ../_static/badges/ent-selfhosted.rst
   :start-after: :nosearch:
 
-This setting determines how many audit records can be queued/buffered at any point in time when writing to a file for a self-hosted deployment. The default is ``1000`` records.
-This setting can be left as default unless you are seeing audit write failures in the server log and need to adjust the number accordingly.
-
-+-------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``".ExperimentalAuditSettings.FileMaxQueueSize": 1000`` with numerical input. |
-+-------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting determines how many audit records can be queued/buffered at any point in time when        | - System Config path: **Experimental > Features**                       |
+| writing to a file for a self-hosted deployment.                                                         | - ``config.json`` setting: ``.ExperimentalAuditSettings.FileMaxQueueSize: 1000`` |
+|                                                                                                          | - Environment variable: MM_EXPERIMENTALAUDITSETTINGS_FILEMAXQUEUESIZE   |
+| Numerical input. Default is **1000** records.                                                           |                                                                          |
+|                                                                                                          |                                                                          |
+| This setting can be left as default unless you are seeing audit write failures in the server log and  |                                                                          |
+| need to adjust the number accordingly.                                                                  |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: audit-logging-certificate
   :displayname: Audit logging certificate upload (Audit Logging > Cloud Enterprise)
@@ -974,15 +1015,14 @@ Allowed themes
 .. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
-This setting isn't available in the System Console and can only be set in ``config.json``.
-
-Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowedThemes": []`` with string array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``, and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.     |
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting isn't available in the System Console and can only be set in ``config.json``.             | - System Config path: N/A                                                |
+|                                                                                                          | - ``config.json`` setting: ``"AllowedThemes": []``                      |
+| Select the themes that can be chosen by users when ``EnableThemeSelection`` is set to ``true``.        | - Environment variable: N/A                                              |
+|                                                                                                          |                                                                          |
+| String array input consisting of the options ``"default"``, ``"organization"``, ``"mattermostDark"``,  |                                                                          |
+| and ``"windows10"``, such as ``["mattermostDark", "windows10"]``.                                       |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: file-location
   :displayname: File location (Experimental)
@@ -999,11 +1039,12 @@ File Location
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-Set the file location of the compliance exports. By default, they are written to the ``exports`` subdirectory of the configured :ref:`Local Storage directory <configure/environment-configuration-settings:local storage directory>`.
-
-+-------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"FileLocation": "export"`` with string input. |
-+-------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Set the file location of the compliance exports. By default, they are written to the ``exports``       | - System Config path: N/A                                                |
+| subdirectory of the configured :ref:`Local Storage directory <configure/environment-configuration-settings:local storage directory>`. | - ``config.json`` setting: ``"FileLocation": "export"``                |
+|                                                                                                          | - Environment variable: N/A                                              |
+| String input.                                                                                            |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: push-notification-buffer
   :displayname: Push notification buffer (Experimental)
@@ -1019,15 +1060,16 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Used to control the buffer of outstanding Push Notification messages to be sent. If the number of messages exceeds that number, then the request making the Push Notification will be blocked until there's room.
 
-+---------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000"`` with numerical input.                                         |
-+---------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"PushNotificationBuffer": 1000``          |
+| Numerical input.                                                                                                                            | - Environment variable: N/A                                              |
++---------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: restrict-system-admin
   :displayname: File configuration settings
   :systemconsole: N/A
   :configjson: FileEnabled
-  :environment: N/A
+  :environment: MM_EXPERIMENTALSETTINGS_RESTRICTSYSTEMADMIN
   :description: Enable this setting to write audit files locally, specifying size, backup interval, compression, maximum age to manage file rotation, and timestamps. Default value is **false**.
 
 Restrict system admin
@@ -1035,13 +1077,14 @@ Restrict system admin
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: **(Default for Cloud deployments)** Restricts the system admin from viewing and modifying a subset of server configuration settings from the System Console. Not recommended for use in on-prem installations. This is intended to support Mattermost Private Cloud in giving the system admin role to users but restricting certain actions only for Cloud Admins.
-
-**False**: **(Default for self-host deployments)** No restrictions are applied to the system admin role.
-
-+-------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RestrictSystemAdmin": "false"`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default for Cloud deployments)** Restricts the system admin from viewing and modifying  | - System Config path: N/A                                                |
+|   a subset of server configuration settings from the System Console. Not recommended for use in        | - ``config.json`` setting: ``"RestrictSystemAdmin": "false"``          |
+|   on-prem installations. This is intended to support Mattermost Private Cloud in giving the system     | - Environment variable: MM_EXPERIMENTALSETTINGS_RESTRICTSYSTEMADMIN     |
+|   admin role to users but restricting certain actions only for Cloud Admins.                           |                                                                          |
+| - **false**: **(Default for self-host deployments)** No restrictions are applied to the system admin   |                                                                          |
+|   role.                                                                                                  |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
@@ -1052,7 +1095,7 @@ This setting isn't available in the System Console and can only be set in ``conf
   :displayname: Enable client-side certification (Experimental)
   :systemconsole: N/A
   :configjson: ClientSideCertEnable
-  :environment: N/A
+  :environment: MM_EXPERIMENTALSETTINGS_CLIENTSIDECERTENABLE
 
   - **true**: Enables client-side certification for your Mattermost server.
   - **false**: **(Default)** Client-side certification is disabled.
@@ -1063,19 +1106,17 @@ Enable client-side certification
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-**True**: Enables client-side certification for your Mattermost server. See :doc:`the documentation </onboard/certificate-based-authentication>` to learn more.
-
-**False**: Client-side certification is disabled.
-
-+------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClientSideCertEnable": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables client-side certification for your Mattermost server. See :doc:`the documentation  | - System Config path: N/A                                                |
+|   </onboard/certificate-based-authentication>` to learn more.                                           | - ``config.json`` setting: ``"ClientSideCertEnable": false``            |
+| - **false**: **(Default)** Client-side certification is disabled.                                      | - Environment variable: MM_EXPERIMENTALSETTINGS_CLIENTSIDECERTENABLE    |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: client-side-certification-login-method
   :displayname: Client-side certification login method (Experimental)
   :systemconsole: N/A
   :configjson: ClientSideCertCheck
-  :environment: N/A
+  :environment: MM_EXPERIMENTALSETTINGS_CLIENTSIDECERTCHECK
 
   - **primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
   - **secondary**: **(Default)** After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
@@ -1086,15 +1127,16 @@ Client-side certification login method
 .. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-Used in combination with the ``ClientSideCertEnable`` configuration setting.
-
-**Primary**: After the client side certificate is verified, user's email is retrieved from the certificate and is used to log in without a password.
-
-**Secondary**: After the client side certificate is verified, user's email is retrieved from the certificate and matched against the one supplied by the user. If they match, the user logs in with regular email/password credentials.
-
-+----------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ClientSideCertCheck": "secondary"`` with options ``"primary"`` and ``"secondary"``. |
-+----------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls how client-side certificates are used for user authentication. Used in           | - System Config path: N/A                                                |
+| combination with the ``ClientSideCertEnable`` configuration setting.                                    | - ``config.json`` setting: ``"ClientSideCertCheck": "secondary"``       |
+|                                                                                                          | - Environment variable: N/A                                              |
+| - **primary**: After the client side certificate is verified, user's email is retrieved from the       |                                                                          |
+|   certificate and is used to log in without a password.                                                 |                                                                          |
+| - **secondary**: **(Default)** After the client side certificate is verified, user's email is          |                                                                          |
+|   retrieved from the certificate and matched against the one supplied by the user. If they match,       |                                                                          |
+|   the user logs in with regular email/password credentials.                                             |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: export-output-directory
   :displayname: Export output directory (Experimental)
@@ -1110,9 +1152,12 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 The directory where the exported files are stored. The path is relative to the ``FileSettings`` directory. By default, exports are stored under ``./data/export``.
 
-+---------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting under the ``ExportSettings`` section is ``Directory: ./export`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The directory where the exported files are stored. The path is relative to the ``FileSettings``        | - System Config path: N/A                                                |
+| directory. By default, exports are stored under ``./data/export``.                                     | - ``config.json`` setting: ``.ExportSettings.Directory: ./export``     |
+|                                                                                                          | - Environment variable: N/A                                              |
+| String input.                                                                                            |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: export-retention-days
   :displayname: Export retention days (Experimental)
@@ -1128,9 +1173,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 The number of days to retain the exported files before deleting them.
 
-+----------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting under the ``ExportSettings`` section is ``RetentionDays: 30`` with numerical input. |
-+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| The number of days to retain the exported files before deleting them.                                                      | - System Config path: N/A                                                |
+|                                                                                                                            | - ``config.json`` setting: ``.ExportSettings.RetentionDays: 30``       |
+| Numerical input.                                                                                                           | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: maximum-image-resolution
   :displayname: Maximum image resolution (Experimental)
@@ -1146,9 +1193,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Maximum image resolution size for message attachments in pixels.
 
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxImageResolution": 33177600`` with numerical input.     |
-+--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Maximum image resolution size for message attachments in pixels.                                        | - System Config path: N/A                                                |
+|                                                                                                          | - ``config.json`` setting: ``"MaxImageResolution": 33177600``          |
+| Numerical input.                                                                                         | - Environment variable: N/A                                              |
++--------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: maximum-image-decoder-concurrency
   :displayname: Maximum image decoder concurrency (Experimental)
@@ -1170,9 +1219,12 @@ Indicates how many images can be decoded concurrently at once. The default value
   - Therefore, a good rule of thumb to follow is that ``33MB * MaxImageDecoderConcurrency * 24`` should be less than the total memory for the server. 
   - For example, if you have a 4-core server, you should leave aside at least ``33 * 4 * 24 = 3168MB`` memory for image processing. Otherwise, adjust the `MaxImageResolution <#maximum-image-resolution>`_ configuration setting to adjust the amount of memory needed for image processing.
 
-+--------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"MaxImageDecoderConcurrency": "-1"`` with numerical input. |
-+--------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Indicates how many images can be decoded concurrently at once. The default value of ``-1`` configures  | - System Config path: N/A                                                |
+| Mattermost to automatically use the number of CPUs present.                                             | - ``config.json`` setting: ``"MaxImageDecoderConcurrency": "-1"``      |
+|                                                                                                          | - Environment variable: N/A                                              |
+| Numerical input.                                                                                         |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: initial-font
   :displayname: Initial font (Experimental)
@@ -1188,9 +1240,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Font used in auto-generated profile pics with colored backgrounds.
 
-+-----------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"InitialFont": "luximbi.ttf"`` with string input. |
-+-----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| Font used in auto-generated profile pics with colored backgrounds.                             | - System Config path: N/A                                                |
+|                                                                                                 | - ``config.json`` setting: ``"InitialFont": "luximbi.ttf"``            |
+| String input.                                                                                   | - Environment variable: N/A                                              |
++-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: amazon-s3-signature-v2
   :displayname: Amazon S3 signature v2 (Experimental)
@@ -1206,15 +1260,14 @@ Amazon S3 signature v2
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-By default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html.
-
-**True**: Use Signature Version 2 Signing Process.
-
-**False**: Use Signature Version 4 Signing Process.
-
-+------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AmazonS3SignV2": false`` with options ``true`` and ``false``. |
-+------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This setting controls which AWS signature version is used for signing API calls to Amazon S3. By        | - System Config path: N/A                                                |
+| default, Mattermost uses Signature V4 to sign API calls to AWS, but under some circumstances, V2 is     | - ``config.json`` setting: ``"AmazonS3SignV2": false``                 |
+| required. For more information about when to use V2, see https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv.html. | - Environment variable: N/A                                              |
+|                                                                                                            |                                                                          |
+| - **true**: Use Signature Version 2 Signing Process.                                                      |                                                                          |
+| - **false**: **(Default)** Use Signature Version 4 Signing Process.                                      |                                                                          |
++------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: amazon-s3-path
   :displayname: Amazon S3 path (Experimental)
@@ -1230,9 +1283,10 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Allows using the same S3 bucket for multiple deployments.
 
-+------------------------------------------------------------------------------------------------------------+
-| This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix: ""`` with string input.                   |
-+------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| This feature’s ``config.json`` setting is ``"AmazonS3PathPrefix": ""``                |
+| String input.                                                                                              | - Environment variable: N/A                                              |
++------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: gitlab-scope
   :displayname: GitLab scope (Experimental)
@@ -1248,9 +1302,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Standard setting for OAuth to determine the scope of information shared with OAuth client. Not currently supported by GitLab OAuth.
 
-+------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"Scope": ""`` with string input. |
-+------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: global-relay-smtp-server-timeout
   :displayname: Global relay SMTP server timeout (Experimental)
@@ -1269,9 +1323,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 The number of seconds that can elapse before the connection attempt to the SMTP server is abandoned. The default value is 1800 seconds. This setting is currently not available in the System Console and can only be set in ``config.json``.
 
-+-----------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"GlobalRelaySettings.SMTPServerTimeout": "1800"`` with numerical input.   |
-+-----------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: google-scope
   :displayname: Google scope (Experimental)
@@ -1308,9 +1362,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 The directory where the imported files are stored. The path is relative to the ``FileSettings`` directory. By default, imports are stored under ``./data/import``.
 
-+---------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``Directory: ./import`` with string input. |
-+---------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: import-retention-days
   :displayname: Import retention days (Experimental)
@@ -1326,9 +1380,9 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 The number of days to retain the imported files before deleting them.
 
-+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | This feature's ``config.json`` setting under the ``ImportSettings`` section is ``RetentionDays: 30`` with numerical input. |
-+----------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: export-from-timestamp
   :displayname: Export from timestamp (Experimental)
@@ -1411,13 +1465,13 @@ Enable plugin uploads
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables plugin uploads by system admins at **Plugins > Management**. If you do not plan to upload a plugin, set to ``false`` to control which plugins are installed on your server. See `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to learn more.
-
-**False**: Disables plugin uploads on your Mattermost server.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUploads": false`` with options ``true`` and ``false``. |
-+-----------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables plugin uploads by system admins at **Plugins > Management**. If you do not plan    | - System Config path: N/A                                                |
+|   to upload a plugin, set to ``false`` to control which plugins are installed on your server. See     | - ``config.json`` setting: ``"EnableUploads": false``                  |
+|   `documentation <https://developers.mattermost.com/integrate/admin-guide/admin-plugins-beta/>`__ to   | - Environment variable: N/A                                              |
+|   learn more.                                                                                            |                                                                          |
+| - **false**: **(Default)** Disables plugin uploads on your Mattermost server.                          |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: allow-insecure-download-url
   :displayname: Allow insecure download URL (Experimental)
@@ -1433,13 +1487,11 @@ Allow insecure download URL
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables downloading and installing a plugin from a remote URL.
-
-**False**: Disables downloading and installing a plugin from a remote URL.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"AllowInsecureDownloadUrl": false`` with options ``true`` and ``false``.                    |
-+-----------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables downloading and installing a plugin from a remote URL.                              | - System Config path: N/A                                                |
+| - **false**: **(Default)** Disables downloading and installing a plugin from a remote URL.              | - ``config.json`` setting: ``"AllowInsecureDownloadUrl": false``        |
+|                                                                                                          | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: enable-plugin-health-check
   :displayname: Enable plugin health check (Experimental)
@@ -1455,13 +1507,13 @@ Enable plugin health check
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables plugin health check to ensure all plugins are periodically monitored, and restarted or deactivated based on their health status. The health check runs every 30 seconds. If the plugin is detected to fail 3 times within an hour, the Mattermost server attempts to restart it. If the restart fails 3 successive times, it's automatically disabled.
-
-**False**: Disables plugin health check on your Mattermost server.
-
-+--------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableHealthCheck": true`` with options ``true`` and ``false``. |
-+--------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables plugin health check to ensure all plugins are periodically monitored, | - System Config path: N/A                                                |
+|   and restarted or deactivated based on their health status. The health check runs every 30 seconds.   | - ``config.json`` setting: ``"EnableHealthCheck": true``               |
+|   If the plugin is detected to fail 3 times within an hour, the Mattermost server attempts to restart   | - Environment variable: N/A                                              |
+|   it. If the restart fails 3 successive times, it's automatically disabled.                              |                                                                          |
+| - **false**: Disables plugin health check on your Mattermost server.                                    |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: plugin-directory
   :displayname: Plugin directory (Experimental)
@@ -1545,7 +1597,7 @@ Adds the name associated with a user's Scoping Identity Provider ID.
   :displayname: Group unread channels (Experimental)
   :systemconsole: N/A
   :configjson: ExperimentalGroupUnreadChannels
-  :environment: N/A
+  :environment: MM_SERVICESETTINGS_EXPERIMENTALGROUPUNREADCHANNELS
 
   - **default_off**: **(Default)** Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
   - **default_on**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**.
@@ -1557,19 +1609,22 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 This setting applies to the new sidebar only. You must disable the :ref:`Enable Legacy Sidebar <configure/deprecated-configuration-settings:enable legacy sidebar>` configuration setting to see and enable this functionality in the System Console.
 
-**Default Off**: Disables the unread channels sidebar section for all users by default. Users can enable it in **Settings > Sidebar > Group unread channels separately**.
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **default_off**: **(Default)** Disables the unread channels sidebar section for all users by default. | - System Config path: N/A                                                |
+|   Users can enable it in **Settings > Sidebar > Group unread channels separately**.                    | - ``config.json`` setting: ``"ExperimentalGroupUnreadChannels"``        |
+| - **default_on**: Enables the unread channels sidebar section for all users by default. Users can       | - Environment variable: ``MM_SERVICESETTINGS_EXPERIMENTALGROUPUNREADCHANNELS`` |
+|   disable it in **Settings > Sidebar > Group unread channels separately**.                             |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
-**Default On**: Enables the unread channels sidebar section for all users by default. Users can disable it in **Settings > Sidebar > Group unread channels separately**.
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalGroupUnreadChannels": "default_off"`` with options ``"default_off"`` and ``"default_on"``. |
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+based on code:
+Default: "disabled"
+  - Possible Values: "disabled", "default_on", "default_off"
 
 .. config:setting:: strict-csrf-token-enforcement
   :displayname: Strict CSRF token enforcement (Experimental)
   :systemconsole: N/A
   :configjson: ExperimentalStrictCSRFEnforcement
-  :environment: N/A
+  :environment: MM_SERVICESETTINGS_EXPERIMENTALSTRICTCSRFENFORCEMENT
 
   - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
   - **false**: **(Default)** Disables CSRF protection tokens.
@@ -1579,13 +1634,11 @@ Strict CSRF token enforcement
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
-
-**False**: Disables CSRF protection tokens.
-
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used      | - System Config path: N/A                                                |
+|   custom header. When the user logs in, an additional cookie is created with the CSRF token contained.  | - ``config.json`` setting: ``"ExperimentalStrictCSRFEnforcement"``      |
+| - **false**: **(Default)** Disables CSRF protection tokens.                                             | - Environment variable: ``MM_SERVICESETTINGS_EXPERIMENTALSTRICTCSRFENFORCEMENT`` |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)
@@ -1626,9 +1679,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 If this setting is enabled, users can search for messages in their Mattermost instance.
 
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnablePostSearch": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables searching for messages in their Mattermost instance.                 | - System Config path: N/A                                                |
+| - **false**: Disables searching for messages in their Mattermost instance.                             | - ``config.json`` setting: ``"EnablePostSearch": true``                |
+|                                                                                                          | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
@@ -1657,13 +1712,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 
   This experimental configuration setting enables users to search documents attached to messages by filename. To enable users to search documents by their content, you must also enable the ``ExtractContent`` configuration setting. See our :ref:`Enable Document Search by Content <configure/environment-configuration-settings:enable document search by content>` documentation for details. Document content search is available in Mattermost Server from v5.35, with mobile support coming soon.
 
-**True**: Supported document types are searchable by their filename.
-
-**False**: File-based searches are disabled.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableFileSearch": true`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** Supported document types are searchable by their filename.                   | - System Config path: N/A                                                |
+| - **false**: File-based searches are disabled.                                                          | - ``config.json`` setting: ``"EnableFileSearch": true``                |
+|                                                                                                          | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. note::
 
@@ -1688,9 +1741,12 @@ This setting isn't available in the System Console and can only be set in ``conf
 
 Turn status updates off to improve performance. When status updates are off, users appear online only for brief periods when posting a message, and only to members of the channel in which the message is posted.
 
-+---------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableUserStatuses": true`` with options ``true`` and ``false``. |
-+---------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** Enables user status updates.                                                 | - System Config path: N/A                                                |
+| - **false**: Turn status updates off to improve performance. When status updates are off, users appear | - ``config.json`` setting: ``"EnableUserStatuses": true``              |
+|   online only for brief periods when posting a message, and only to members of the channel in which    | - Environment variable: N/A                                              |
+|   the message is posted.                                                                                |                                                                          |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: websocket-secure-port
   :displayname: Websocket secure port (Experimental)
@@ -1749,13 +1805,11 @@ Enable local mode for mmctl
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables local mode for mmctl.
-
-**False**: Prevents local mode for mmctl.
-
-+-------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"EnableLocalMode": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: Enables local mode for mmctl.                                                               | - System Config path: N/A                                                |
+| - **false**: **(Default)** Prevents local mode for mmctl.                                               | - ``config.json`` setting: ``"EnableLocalMode": false``                |
+|                                                                                                          | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. tip::
 
@@ -1835,9 +1889,11 @@ Set whether or not this Mattermost server will handle tasks created by the Sched
 
 When running Mattermost in :doc:`High Availablity mode </scale/high-availability-cluster-based-deployment>`, one or more servers should have this setting enabled. We recommend that your High Availability cluster-based deployment has one or more dedicated Workers with this setting enabled while the remaining Mattermost app servers have it disabled.
 
-+------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RunJobs": true`` with options ``true`` and ``false``.                                 |
-+------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** This Mattermost server will handle tasks created by the Scheduler.           | - System Config path: N/A                                                |
+| - **false**: This Mattermost server will not handle tasks created by the Scheduler.                    | - ``config.json`` setting: ``"RunJobs": true``                         |
+|                                                                                                          | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: run-scheduler
   :displayname: Run scheduler (Experimental)
@@ -1859,9 +1915,11 @@ When running Mattermost in :doc:`High Availablity mode </scale/high-availability
 
    We strongly recommend that you not change this setting from the default setting of ``true`` as this prevents the ``ClusterLeader`` from being able to run the scheduler. As a result, recurring jobs such as LDAP sync, Compliance Export, and data retention will no longer be scheduled. In previous Mattermost Server versions, and this documentation, the instructions stated to run the Job Server with ``RunScheduler: false``. The cluster design has evolved and this is no longer the case.
 
-+-----------------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"RunScheduler": true`` with options ``true`` and ``false``.                                 |
-+-----------------------------------------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+| - **true**: **(Default)** This Mattermost server will schedule tasks that will be completed by a        | - System Config path: N/A                                                |
+|   Worker.                                                                                                | - ``config.json`` setting: ``"RunScheduler": true``                    |
+| - **false**: This Mattermost server will not schedule tasks that will be completed by a Worker.         | - Environment variable: N/A                                              |
++----------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 
 .. config:setting:: clean-up-old-database-jobs
   :displayname: Clean up old database jobs (Experimental)
