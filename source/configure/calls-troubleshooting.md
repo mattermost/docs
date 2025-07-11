@@ -339,7 +339,7 @@ To view completed calls-offloader job containers (useful for debugging failed jo
 docker ps -a --filter "status=exited"
 ```
 
-Look for containers with calls-offloader image names that have exited. You can then examine their logs:
+Look for containers with recorder and transcriber image names that have exited. You can then examine their logs:
 
 ```bash
 # View logs from a specific completed container
