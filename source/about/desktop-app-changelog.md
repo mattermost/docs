@@ -44,7 +44,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Contributors
 
-- [devinbinnie](https://github.com/devinbinnie), 
+- [devinbinnie](https://github.com/devinbinnie), [hmhealey](https://github.com/hmhealey), [toffguy77](https://github.com/toffguy77).
 
 (release-v5-12)=
 ## Release v5.12
