@@ -10,7 +10,7 @@ Upgrade Mattermost
     Prepare to upgrade Mattermost </upgrade/prepare-to-upgrade-mattermost>
     Communicate scheduled maintenance best practices </upgrade/communicate-scheduled-maintenance>
     Upgrade Mattermost Server </upgrade/upgrading-mattermost-server>
-    Upgrade Mattermost in Kubernetes and High Availability environments </upgrade/upgrading-mattermost-kubernetes>
+    Upgrade Mattermost in Kubernetes and High Availability environments </upgrade/upgrade-mattermost-kubernetes-ha>
     Enterprise install and upgrade </upgrade/enterprise-install-upgrade>
     Administrator onboarding tasks </upgrade/admin-onboarding-tasks>
     Enterprise roll-out-checklist </upgrade/enterprise-roll-out-checklist>
