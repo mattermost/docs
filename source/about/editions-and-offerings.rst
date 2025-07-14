@@ -58,7 +58,7 @@ Recommended for:
 - Internal developer platforms
 - Organizations scaling secure software operations
 
-Compare :doc:`Professional features </about/plans>`.
+View a `comparison of all plans <https://mattermost.com/plans/>`_.
 
 Non-Commercial Offering
 -----------------------
@@ -69,5 +69,3 @@ Mattermost Free
 Mattermost Free is a self-hosted edition of our platform, available through our open source and commercial codebases. It provides core collaboration features and is best suited for small teams (up to 50 users) looking for a no-cost solution to get started with Mattermost.
 
 Organizations with more than 50 users or with security and compliance requirements are strongly encouraged to explore our commercial offerings to ensure long-term scalability and support.
-
-View a `comparison of all plans <https://mattermost.com/plans/>`_.
