@@ -10,7 +10,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ```
 
 (release-v5-13)=
-## Release v5.13
+## Release v5.13 (Extended Support Release)
 
 **Release Day: 2025-08-15**
 
