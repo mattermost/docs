@@ -10,6 +10,7 @@ Deploying Mattermost in an air-gapped environment involves detailed preparation 
 - Access to a PostgreSQL database.
 - Object storage or a shared filesystem service for reliability accessing files from multiple Mattermost servers.
 - Other optional supporting services such as:
+
    - SMTP for email functionality.
    - LDAP or SAML for authentication.
    - Elasticsearch for performant post searching.
