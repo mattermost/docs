@@ -9,7 +9,12 @@ Deploying Mattermost in an air-gapped environment involves detailed preparation 
 - Mattermost server packages and dependencies required when deploying directly on Linux servers.
 - Access to a PostgreSQL database.
 - Object storage or a shared filesystem service for reliability accessing files from multiple Mattermost servers.
-- Other supporting services such as LDAP for authentication, Elasticsearch for performant post searching, etc. as required for your scale and performance requirements.
+- Other optional supporting services such as:
+
+   - SMTP for email functionality.
+   - LDAP or SAML for authentication.
+   - Elasticsearch for performant post searching.
+   - Prometheus or other metric scraping services for enhanced observability.
 
 Refer to Mattermost deployment documentation for setting up Mattermost as needed. This guide focuses on the supporting infrastructure needed for an air-gapped deployment which is required before deploying Mattermost in these environments.
 
@@ -381,6 +386,8 @@ Website link previews require a connection to the internet to fetch the content 
 
 Additional considerations
 ---------------------------
+
+Mattermost server plugins may require external connectivity to function. These will need to be reviewed on a case-by-case basis to determine if they provide useful functionality with no external dependencies.
 
 Remember that air-gapped environments require ongoing maintenance to stay secure and up-to-date. Regular updates to the Mattermost server and other components are required to ensure the environment remains secure and up-to-date.
 
