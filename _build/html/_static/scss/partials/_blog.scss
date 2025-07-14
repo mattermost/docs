@@ -1,0 +1,218 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: trade-gothic-next, sans-serif;
+    font-weight: 800;
+}
+
+p .sig-inline,
+p code.literal {
+    background-color: rgba(var(--primary-rgb), 0.10);
+    color: var(--primary);
+    border: none;
+}
+
+#__toc:checked~.page .toc-drawer {
+    top: 60px;
+}
+
+.toc-content-icon {
+    align-items: center;
+}
+
+.admonition {
+    font-size: 16px;
+    padding: 0 16px 12px 16px;
+    border-radius: 4px;
+    background: rgba(54, 58, 69, 0.06);
+    box-shadow: none;
+
+    p.admonition-title {
+        margin: 0 -16px 12px;
+        height: 36px;
+        box-sizing: border-box;
+        font-size: 16px;
+        font-weight: 700;
+        padding-left: 40px;
+
+        &:before {
+            width: 18px;
+            height: 18px;
+            top: 8px;
+            left: 14px;
+        }
+    }
+
+    &.tip,
+    &.important {
+        border: none;
+
+        .admonition-title {
+            background: #339970;
+            color: white;
+
+            &:before {
+                background: white;
+            }
+        }
+    }
+
+    &.note {
+        border: none;
+
+        .admonition-title {
+            background: #1E325C;
+            color: white;
+
+            &:before {
+                background: white;
+            }
+        }
+    }
+}
+
+.tab-set>input:checked+label {
+    color: var(--primary);
+    border-color: currentColor;
+
+    &:hover {
+        border-color: currentColor;
+    }
+}
+
+table.align-default {
+    margin: 0;
+}
+
+blockquote {
+    border: none;
+}
+
+.highlight {
+    background: rgba(var(--black-05), 0.06);
+    padding-right: 32px;
+
+    button.copybtn {
+        background: transparent;
+    }
+}
+
+body:not([data-custom-theme="light"]) {
+    .theme-icon {
+        @include img-invert;
+    }
+
+    .mm-badge .theme-icon {
+        @include img-invert;
+    }
+
+    .admonition {
+        background-color: rgba(255, 255, 255, 0.06);
+    }
+
+    .admonition.note .admonition-title {
+        background: #4A69AB;
+    }
+
+    .tab-set>input:checked+label {
+        color: var(--primary);
+    }
+
+    .highlight {
+        background: rgba(255, 255, 255, 0.04) !important;
+        color: rgba(255, 255, 255, 0.8) !important;
+
+        pre {
+            color: rgba(255, 255, 255, 0.8) !important;
+        }
+    }
+}
+
+.mm-badge__accent-text {
+    color: var(--neutral-600, #767D93);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.7px;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.mm-badge__title {
+    color: var(--neutral-950, #363A45);
+    font-family: var(--font-trade);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    flex: 0 0 auto;
+}
+
+.mm-badge__copy>* {
+    display: block;
+}
+
+.mm-badge--academy {
+    padding: 0;
+    border: 1px solid var(--neutral-100, #E8E9ED);
+    background: var(--neutral-50, #F4F4F6);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    >* {
+        display: inline-block;
+    }
+
+    img {
+        height: 75px;
+        width: auto;
+        margin: 0 !important;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+}
+
+.mm-label-note {
+    font-style: italic;
+    font-size: 12px;
+}
+
+table.align-default {
+    min-width: 500px;
+    overflow: auto;
+}
+
+table.align-default td {
+    min-width: 200px;
+}
+
+
+::-moz-selection {
+    /* Code for Firefox */
+    background: hsla(42, 100%, 56%, 0.2);
+}
+
+::selection {
+    background: hsla(42, 100%, 56%, 0.2);
+}
+
+body:not([data-custom-theme="light"]) {
+    ::-moz-selection {
+        /* Code for Firefox */
+        background: hsla(214, 100%, 46%, 0.4);
+    }
+
+    ::selection {
+        background: hsla(214, 100%, 46%, 0.4);
+    }
+}
+
+
+.bg-white {
+    background: #fff;
+}

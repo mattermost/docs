@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+<script>
+    const DEFAULT_PAGE = "-";
+    const FRAGMENT_REGEX = new RegExp("^([-?/:@._~!$&'()*+,;=a-zA-Z0-9]|%[0-9a-fA-F]{2})*$");
+    const fragment_redirects = Object.freeze({"access-your-workspace":"https://docs.mattermost.com/collaborate/access-your-workspace.html","work-with-messages":"https://docs.mattermost.com/collaborate/communicate-with-messages.html","manage-teams-channels-and-members":"https://docs.mattermost.com/guides/use-mattermost.html","customize-channels":"https://docs.mattermost.com/guides/preferences.html","navigate-channels":"https://docs.mattermost.com/collaborate/collaborate-within-channels.html","extend-mattermost-channels":"https://docs.mattermost.com/guides/integrate-and-extend.html","-":"https://docs.mattermost.com/guides/use-mattermost.html","channels-messages-and-conversations":"https://docs.mattermost.com/guides/collaborate.html","work-with-channels":"https://docs.mattermost.com/collaborate/collaborate-within-channels.html","keyboard-accessibility":"https://docs.mattermost.com/collaborate/keyboard-accessibility.html","extend-channels-functionality":"https://docs.mattermost.com/guides/integrate-and-extend.html"});
+    const url = new URL(window.location.href);
+    let fragment = DEFAULT_PAGE;
+    if (url.hash !== "" && url.hash !== "#") {
+        fragment = url.hash.substring(1);
+    }
+    if (fragment !== DEFAULT_PAGE && !FRAGMENT_REGEX.test(fragment)) {
+        console.error("invalid fragment: " + fragment);
+        fragment = "";
+    }
+    if (fragment !== "" && fragment in fragment_redirects) {
+        let redirecturl = fragment_redirects[fragment];
+        if (redirecturl.startsWith("/")) {
+            redirecturl = window.location.origin + redirecturl;
+        }
+        window.location = redirecturl;
+    } else {
+        if (fragment !== "") {
+            console.error("unknown redirect: " + fragment);
+        }
+        // TODO: redirect the user to a 404 page or some other page
+    }
+</script>
+</body>
+</html>

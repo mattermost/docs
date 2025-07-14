@@ -1,0 +1,39 @@
+.version-filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #dee2e6;
+}
+
+.version-filters select {
+    padding: 8px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ced4da;
+}
+
+.version-filters button {
+    padding: 8px 15px;
+    background-color: #166de0;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.version-filters button:hover {
+    background-color: #145cc5;
+}
+
+.docutils tr.filtered {
+    display: none;
+}
+
+.version-filter-error {
+    color: #e74c3c;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #fadbd8;
+    border-radius: 4px;
+    border-left: 4px solid #e74c3c;
+}

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+<script>
+    const DEFAULT_PAGE = "-";
+    const FRAGMENT_REGEX = new RegExp("^([-?/:@._~!$&'()*+,;=a-zA-Z0-9]|%[0-9a-fA-F]{2})*$");
+    const fragment_redirects = Object.freeze({"-":"https://docs.mattermost.com/scale/deploy-prometheus-grafana-for-performance-monitoring.html","statistics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html","custom-mattermost-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#custom-mattermost-metrics","api-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#api-metrics","caching-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#caching-metrics","cluster-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#cluster-metrics","database-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#database-metrics","database-connection-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#database-connection-metrics","http-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#http-metrics","login-and-session-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#login-and-session-metrics","mattermost-channels-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#mattermost-channels-metrics","process-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#process-metrics","search-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#search-metrics","websocket-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#websocket-metrics","logging-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#logging-metrics","debugging-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#debugging-metrics","standard-go-metrics":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#standard-go-metrics","frequently-asked-questions":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#frequently-asked-questions","why-are-chart-labels-difficult-to-distinguish":"https://docs.mattermost.com/scale/performance-monitoring-metrics.html#why-are-chart-labels-difficult-to-distinguish"});
+    const url = new URL(window.location.href);
+    let fragment = DEFAULT_PAGE;
+    if (url.hash !== "" && url.hash !== "#") {
+        fragment = url.hash.substring(1);
+    }
+    if (fragment !== DEFAULT_PAGE && !FRAGMENT_REGEX.test(fragment)) {
+        console.error("invalid fragment: " + fragment);
+        fragment = "";
+    }
+    if (fragment !== "" && fragment in fragment_redirects) {
+        let redirecturl = fragment_redirects[fragment];
+        if (redirecturl.startsWith("/")) {
+            redirecturl = window.location.origin + redirecturl;
+        }
+        window.location = redirecturl;
+    } else {
+        if (fragment !== "") {
+            console.error("unknown redirect: " + fragment);
+        }
+        // TODO: redirect the user to a 404 page or some other page
+    }
+</script>
+</body>
+</html>

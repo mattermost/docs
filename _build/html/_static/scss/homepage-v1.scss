@@ -1,0 +1,141 @@
+@import "partials/_variables";
+@import "partials/_mixins";
+@import "partials/_header";
+@import "partials/_sidebar";
+@import "partials/_blog";
+@import "partials/_masthead";
+@import "partials/_thermometer";
+@import "partials/_badge";
+
+body {
+    font-family: var(--font-trade);
+    color: var(--body);
+
+    &.with-notification {
+
+        .toc-sticky,
+        .main>.content,
+        .sidebar-sticky {
+            padding-top: 120px;
+        }
+
+        .masthead {
+            padding-top: 160px;
+        }
+
+        .sidebar-sticky {
+            @media (max-width: 770px) {
+                padding-top: 110px;
+            }
+        }
+
+        .mobile-header {
+            top: -15px;
+        }
+
+        header {
+            top: 45px;
+        }
+    }
+}
+
+.toc-sticky,
+.main>.content,
+.sidebar-sticky {
+    padding-top: 75px;
+
+}
+
+.page {
+    .main {
+        display: flex;
+        max-width: 1210px;
+
+        .content {
+            width: 100%;
+            min-width: 0;
+        }
+
+        .toc-drawer {
+            flex: 0 0 300px;
+        }
+    }
+}
+
+a {
+    color: var(--primary);
+}
+
+.page.homepage {
+    .main {
+        max-width: 100%;
+
+        .content {
+            padding: 0;
+            width: 100%;
+        }
+    }
+}
+
+.main {
+    h1 {
+        margin-top: 48px;
+    }
+}
+
+.theme-toggle {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+
+    &:hover {
+        background: rgba(var(--denim), 0.2);
+    }
+}
+
+@media (max-width: 67em) {
+    .page {
+        justify-content: flex-start;
+    }
+
+    .masthead {
+        padding-top: 100px;
+        padding-bottom: 120px;
+    }
+
+    .theme-toggle-header {
+        display: flex;
+        padding: 0;
+        height: 48px;
+        width: 48px;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.content-icon-container {
+    margin-top: 48px;
+    align-items: center;
+}
+
+
+
+.subhead {
+    color: var(--sidebar-text-80, rgba(255, 255, 255, 0.80));
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 33px */
+    margin-top: 0;
+}
+
+
+body:not([data-custom-theme="light"]) {
+    a {
+        color: var(--primary);
+    }
+}

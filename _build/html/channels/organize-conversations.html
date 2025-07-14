@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Redirect</title>
+</head>
+<body>
+<script>
+    const DEFAULT_PAGE = "-";
+    const FRAGMENT_REGEX = new RegExp("^([-?/:@._~!$&'()*+,;=a-zA-Z0-9]|%[0-9a-fA-F]{2})*$");
+    const fragment_redirects = Object.freeze({"enable-collapsed-reply-threads-beta":"https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions","-":"https://docs.mattermost.com/collaborate/organize-conversations.html","start-or-reply-to-threads":"https://docs.mattermost.com/collaborate/organize-conversations.html#start-or-reply-to-threads","follow-threads-and-messages":"https://docs.mattermost.com/collaborate/organize-conversations.html#follow-threads-and-messages","view-all-threads":"https://docs.mattermost.com/collaborate/organize-conversations.html#view-all-threads","enable-collapsed-reply-threads":"https://docs.mattermost.com/collaborate/organize-conversations.html#enable-threaded-discussions","tutorial-video":"https://docs.mattermost.com/collaborate/organize-conversations.html#tutorial-video","known-issues":"https://docs.mattermost.com/collaborate/organize-conversations.html#known-issues"});
+    const url = new URL(window.location.href);
+    let fragment = DEFAULT_PAGE;
+    if (url.hash !== "" && url.hash !== "#") {
+        fragment = url.hash.substring(1);
+    }
+    if (fragment !== DEFAULT_PAGE && !FRAGMENT_REGEX.test(fragment)) {
+        console.error("invalid fragment: " + fragment);
+        fragment = "";
+    }
+    if (fragment !== "" && fragment in fragment_redirects) {
+        let redirecturl = fragment_redirects[fragment];
+        if (redirecturl.startsWith("/")) {
+            redirecturl = window.location.origin + redirecturl;
+        }
+        window.location = redirecturl;
+    } else {
+        if (fragment !== "") {
+            console.error("unknown redirect: " + fragment);
+        }
+        // TODO: redirect the user to a 404 page or some other page
+    }
+</script>
+</body>
+</html>
