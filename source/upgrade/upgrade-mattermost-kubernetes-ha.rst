@@ -58,9 +58,8 @@ Pre-upgrade checklist
 
   .. code-block:: bash
 
-    helm version
     helm repo update
-    helm search repo mattermost/mattermost-operator
+    helm upgrade mattermost-operator mattermost/mattermost-operator -n <OPERATOR_NAMESPACE_HERE> -f <OPTIONAL_CUSTOM_VALUES_HERE>
 
 3. Confirm Mattermost Operator version. Make sure the image version matches the latest supported release from the Helm repository. Use the following command to check the current image version of the Mattermost Operator:
 
