@@ -17,7 +17,7 @@ Mattermost uses :doc:`Kubernetes </deploy/server/deploy-kubernetes>` for contain
 High Availability
 ~~~~~~~~~~~~~~~~~
 
-In High Availability (HA) setups, Mattermost runs multiple application servers in a cluster. This configuration ensures that if one server fails, others can continue to serve requests without downtime. Load balancing is managed using NGINX, HAProxy, or Kubernetes Ingress.
+In High Availability (HA) setups, Mattermost runs multiple application servers in a cluster. This configuration ensures that if one server fails, others can continue to serve requests without downtime. User traffic load balancing is managed with services such as NGINX Ingress or HAProxy.
 
 :ref:`PostgreSQL <deploy/server/preparations:database preparation>` and :ref:`file storage <deploy/server/preparations:file storage preparation>` are deployed with replication for redundancy and failover.
 
