@@ -437,6 +437,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
   - Pre-packaged Calls plugin [v1.9.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.2).
   - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled [MM-63564](https://mattermost.atlassian.net/browse/MM-63564).
+  - Removed redux selector's telemetry [MM-63794](https://mattermost.atlassian.net/browse/MM-63794).
   - Mattermost v10.5.9 contains no database or functional changes.
 - **10.5.8, released 2025-06-18**
   - Mattermost v10.5.8 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
