@@ -14,12 +14,14 @@ Kubernetes-based deployment
 
 Mattermost uses :doc:`Kubernetes </deploy/server/deploy-kubernetes>` for container orchestration, deployed and managed via Helm charts and the :ref:`Mattermost Operator <install-mattermost-operator>`. This model enables scalable, highly available, and automatically managed application lifecycles.
 
+The Mattermost Operator handles the upgrade process automatically, ensuring that pods are updated incrementally and that traffic is routed correctly throughout the upgrade. If an error occurs during the upgrade, the Operator will not apply any changes, allowing you to investigate and resolve the issue or manually roll back without impacting the live environment. See the :doc:`Downgrade Mattermost Server </upgrade/downgrading-mattermost-server>` documentation for rollback details. 
+
+Health monitoring ensures that only healthy pods are replaced, and new pods are brought online only after passing health checks. New pods are deployed with the updated version, while old pods are gracefully terminated.
+
 High Availability
 ~~~~~~~~~~~~~~~~~
 
-In High Availability (HA) setups, Mattermost runs multiple application servers in a cluster. This configuration ensures that if one server fails, others can continue to serve requests without downtime. User traffic load balancing is managed with services such as NGINX Ingress or HAProxy.
-
-:ref:`PostgreSQL <deploy/server/preparations:database preparation>` and :ref:`file storage <deploy/server/preparations:file storage preparation>` are deployed with replication for redundancy and failover.
+In :doc:`High Availability (HA) cluster-based deployments </scale/high-availability-cluster-based-deployment>`, Mattermost runs multiple application servers in a cluster. This configuration ensures that if one server fails, others can continue to serve requests without downtime. User traffic load balancing is managed with services such as NGINX Ingress or HAProxy. :ref:`PostgreSQL <deploy/server/preparations:database preparation>` and :ref:`file storage <deploy/server/preparations:file storage preparation>` are deployed with replication for redundancy and failover.
 
 Active/Active deployments
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -32,7 +34,7 @@ Key benefits for enterprise customers include:
 - **Geographic distribution**: Users connect to the nearest cluster for lower latency and faster response times.
 - **Load distribution**: Workload can be balanced between clusters to improve performance and system scalability.
 
-These deployments require careful configuration management and coordination to ensure data consistency, upgrade safety, and seamless traffic failover. Active/Active configurations consist of multiple Mattermost clusters across regions/availability zones. These clusters must maintain configuration/data consistency and coordinated upgrades. See the :ref:`Active/Active upgrade considerations <active-active-upgrade-considerations>` section for recommendations.
+These deployments require careful configuration management and coordination to ensure data consistency, upgrade safety, and seamless traffic failover. These clusters must maintain configuration/data consistency and require coordinated upgrades. See the :ref:`Active/Active upgrade considerations <active-active-upgrade-considerations>` section for recommendations.
 
 Step 1: Prepare
 -----------------
@@ -78,35 +80,45 @@ Pre-upgrade checklist
 
     Use ``pg_dump`` or volume snapshots to create a full backup to a secure, external location (e.g., S3 or NFS). Validate the backup can be restored. See the :doc:`Backup and Disaster Recovery </deploy/backup-disaster-recovery>` documentation for details.
 
-6. Ensure configuration consistency: Validate that ``values.yaml``, secrets, and other configuration files are version-controlled and consistent across all clusters (required for `Active/Active deployments <#active/active-deployments>`__). Use tools like GitOps or configuration management systems to ensure all clusters have the same configuration.
+6. Ensure configuration consistency: Validate that ``values.yaml``, secrets, and other configuration files are version-controlled and consistent across all clusters (required for `Active/Active deployments <#active-active-upgrade-considerations>`__). Use tools like GitOps or configuration management systems to ensure all clusters have the same configuration.
 
 7. We strongly recommend performing a dry run by testing the upgrade in a staging environment that mirrors production to catch misconfigurations early.
 
 Step 2: Perform the upgrade
 ----------------------------
 
-When you use the Mattermost Operator, the Operator handles the upgrade process automatically, ensuring that pods are updated incrementally and that traffic is routed correctly throughout the upgrade.
+This step involves updating the Mattermost Operator and Mattermost server to a new version. The Operator manages the upgrade process, ensuring that pods are updated incrementally and that traffic is routed correctly throughout the upgrade.
 
-The Mattermost Operator completes the following actions:
+We recommend having a separate Mattermost custom resource. See the :doc:`Deploy Mattermost on Kubernetes </deploy/server/deploy-kubernetes>` documentation for details.
 
-- Performs pre-upgrade compatibility checks. 
-- Halts the upgrade if issues are detected.
-- Rolls out upgrades incrementally across pods.
-- Maintains live traffic routing during pod transitions.
+1. In the separate resource, update the ``version`` field in your ``mattermost-installation.yaml`` file by replacing the ``<new-version-tag>`` with the specific version you are upgrading to:
 
-Failed upgrades don't modify the live cluster and are automatically rolled back, ensuring the cluster remains stable. Health monitoring ensures that only healthy pods are replaced, and new pods are brought online only after passing health checks. New pods are deployed with the updated version, while old pods are gracefully terminated.
+  .. code-block:: yaml
 
-1. Update your Helm ``values.yaml`` with the desired Mattermost version by running the following command:
+    apiVersion: installation.mattermost.com/v1beta1
+    kind: Mattermost
+    metadata:
+      name: <INSTALLATION_NAME_HERE>
+    spec:
+      version: <new-version-tag>  # Update this field
+
+  Alternatively, if you're using Helm ``values.yaml`` directly, update it with the desired Mattermost version:
 
   .. code-block:: yaml
 
     image:
-    repository: mattermost/mattermost-enterprise-edition
-    tag: <new-version-tag>
+      repository: mattermost/mattermost-enterprise-edition
+      tag: <new-version-tag>
 
-  Replace the ``<new-version-tag>`` with the specific version you are upgrading to.
+2. Apply the updated configuration:
 
-2. Upgrade the Mattermost Operator by running the following command:
+  For Mattermost custom resource deployments:
+
+  .. code-block:: bash
+
+    kubectl apply -f mattermost-installation.yaml
+
+  For Helm values deployments:
 
   .. code-block:: bash
 
@@ -149,13 +161,11 @@ Step 4: Validate
 
 After the upgrade:
 
-1. Confirm all pods are running the new version using the following command:
+1. Confirm that all pods are healthy and running the expected version using the following command:
 
   .. code-block:: bash
 
     kubectl get pods -n mattermost -o=jsonpath='{.items[*].spec.containers[*].image}'
-
-   Ensure that all pods are healthy and running the expected version.
 
 3. Perform product smoke tests:
 
@@ -169,7 +179,26 @@ After the upgrade:
 Rollback strategy
 ------------------
 
-In case of upgrade issues, use Helm’s rollback command:
+In case of upgrade issues, rollback should be performed by modifying the custom resource and setting the Mattermost version back to its original value.
+
+For Mattermost custom resource deployments, update the ``version`` field in your ``mattermost-installation.yaml`` file to the previous version:
+
+.. code-block:: yaml
+
+    apiVersion: installation.mattermost.com/v1beta1
+    kind: Mattermost
+    metadata:
+      name: <INSTALLATION_NAME_HERE>
+    spec:
+      version: <previous-version-tag>  # Set back to previous version
+
+Then apply the rollback:
+
+.. code-block:: bash
+
+    kubectl apply -f mattermost-installation.yaml
+
+Alternatively, for Helm values deployments, use Helm's rollback command:
 
 .. code-block:: bash
 
@@ -179,31 +208,6 @@ Restore your PostgreSQL database and file store backups if needed. Refer to the 
 
 Frequently asked questions
 --------------------------
-
-Can I upgrade the Operator and Mattermost server at the same time?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Upgrade the Operator first. Validate it’s stable before upgrading the Mattermost server version.
-
-What if my pods don’t become ready after the upgrade?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Check the Operator logs and pod events using ``kubectl`` to identify and resolve issues. Look for common issues such as resource constraints, configuration errors, or network connectivity problems.
-
-How can I test upgrades in a staging environment first?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-We strongly recommend deploying a separate staging environment that mirrors production, and running a full end-to-end upgrade simulation before upgrading live production clusters.
-
-What version compatibility should I be aware of between the Mattermost Operator and the application server?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Running an older Operator version may not support newer Mattermost features or upgrade flows. Always check the `Helm chart release notes <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ for version compatibility between the Operator and the Mattermost server. 
-
-Do I need to upgrade the database separately?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Mattermost does not upgrade the database schema by default. You must manually apply database schema updates if required by a newer Mattermost version. Review the :doc:`Mattermost Server changelog </about/mattermost-v10-changelog>` for any migration steps.
 
 How can I confirm an upgrade was successful?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,11 +219,6 @@ A successful upgrade is indicated by:
 - Functional smoke tests passing (login, messaging, file upload, etc.)
 - No anomalies in monitoring dashboards
 
-Can I automate this upgrade process using GitOps or CI/CD?
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Yes. You can manage upgrades using tools like ArgoCD or FluxCD to apply Helm changes from version-controlled ``values.yaml`` files. Ensure changes are peer-reviewed and validated in staging before promotion.
-
 What should I monitor post-upgrade?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -229,3 +228,35 @@ We recommend monitoring the following key metrics after an upgrade:
 - Application logs for errors or warnings
 - Database replication health (if HA or Active/Active)
 - Performance metrics (latency, error rate) via Prometheus/Grafana
+
+How can I test upgrades without impacting production?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+We strongly recommend deploying a separate staging environment that mirrors production, and running a full end-to-end upgrade simulation before upgrading live production clusters.
+
+Can I upgrade the Operator and Mattermost server at the same time?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Upgrade the Operator first. Validate it’s stable before upgrading the Mattermost server version.
+
+Do I need to upgrade the database separately?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Mattermost does not upgrade the database schema by default. You must manually apply database schema updates if required by a newer Mattermost version. Review the :doc:`Mattermost Server changelog </about/mattermost-v10-changelog>` for any migration steps.
+
+What if my pods don’t become ready after the upgrade?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Check the Operator logs and pod events using ``kubectl`` to identify and resolve issues. Look for common issues such as resource constraints, configuration errors, or network connectivity problems.
+
+
+
+What version compatibility should I be aware of between the Mattermost Operator and the application server?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Running an older Operator version may not support newer Mattermost features or upgrade flows. Always check the `Helm chart release notes <https://github.com/mattermost/mattermost-helm/tree/master/charts/mattermost-operator>`_ for version compatibility between the Operator and the Mattermost server. 
+
+Can I automate this upgrade process using GitOps or CI/CD?
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Yes. You can manage upgrades using tools like ArgoCD or FluxCD to apply Helm changes from version-controlled ``values.yaml`` files. Ensure changes are peer-reviewed and validated in staging before promotion.
