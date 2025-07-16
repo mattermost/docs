@@ -21,6 +21,7 @@ We strongly recommend using the latest mobile app release available that contain
 
 | **Release** | **Released on** | **Support ends** | **Compatible with** |
 |:---|:---|:---|:---|
+| v2.30 {ref}`FEATURE <release-v2-30-0>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.30.0) \| {ref}`Changelog <release-v2-30-0>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.30.0/sbom-mattermost-mobile-v2.30.0.json) | 2025-07-16 | 2025-08-15 | {ref}`v10.10 <release-v10.10-feature-release>`, {ref}`v10.9 <release-v10.9-feature-release>`, {ref}`v10.8 <release-v10.8-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v2.29 {ref}`FEATURE <release-v2-29-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.29.1) \| {ref}`Changelog <release-v2-29-1>` \| [SBOM download](https://github.com/mattermost/mattermost-mobile/releases/download/v2.29.1/sbom-mattermost-mobile-v2.29.1.json) | 2025-06-16 | 2025-07-15 | {ref}`v10.9 <release-v10.9-feature-release>`, {ref}`v10.8 <release-v10.8-feature-release>`, {ref}`v10.7 <release-v10.7-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v2.28 {ref}`FEATURE <release-v2-28-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.28.1) \| {ref}`Changelog <release-v2-28-1>` | 2025-05-16 | 2025-06-15 | {ref}`v10.8 <release-v10.8-feature-release>`, {ref}`v10.7 <release-v10.7-feature-release>`, {ref}`v10.6 <release-v10.6-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>` |
 | v2.27 {ref}`FEATURE <release-v2-27-1>` [Download](https://github.com/mattermost/mattermost-mobile/releases/tag/v2.27.1) \| {ref}`Changelog <release-v2-27-1>` | 2025-04-16 | 2025-05-15 | {ref}`v10.7 <release-v10.7-feature-release>`, {ref}`v10.6 <release-v10.6-feature-release>`, {ref}`v10.5 <release-v10.5-extended-support-release>`, {ref}`v9.11 <release-v9-11-extended-support-release>` |
@@ -59,9 +60,9 @@ Note that the below versions have not yet been tested. The information below is 
 
 | **Release** | **Releasing on** | **Support ends** | **Compatible with** |
 |:---|:---|:---|:---|
+| v2.36 | 2026-01-16 | 2026-02-15 | v11.4, v11.3, v11.2, v11.1 |
 | v2.35 | 2025-12-16 | 2026-01-15 | v11.3, v11.2, v11.1, v11.0 |
 | v2.34 | 2025-11-16 | 2025-12-15 | v11.2, v11.1, v11.0, v10.11 |
 | v2.33 | 2025-10-16 | 2025-11-15 | v11.1, v11.0, v10.11, v10.5 |
 | v2.32 | 2025-09-16 | 2025-10-15 | v11.0, v10.11, v10.0, v10.5 |
 | v2.31 | 2025-08-16 | 2025-09-15 | v10.11, v10.10, v10.9, v10.5 |
-| v2.30 | 2025-07-16 | 2025-08-15 | v10.10, v10.9, v10.8, v10.5 |

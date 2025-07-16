@@ -412,11 +412,19 @@ To avoid performance regression on ``Posts`` and ``FileInfo`` table access, foll
 
 .. note::
 
-  If any of the entries in your  ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR:  string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes. An example query is given below. If it continue to fail create the index with the substring of the content, consider decreasing the value gradually (Like to ``500000``) until the index is created successfully.
+  If any of the entries in your ``Posts`` and ``FileInfo`` tables exceed the limit mentioned above, index creation query will warn with the ``ERROR: string is too long for tsvector`` log while trying to create these indexes. This means the content that didn't fit into a ``tsvector`` was ignored. If you still want to index the truncated content, you can use ``substring()`` function on the content while creating the indexes.
+
+  Start with a substring length of 1000000 and gradually decrease if the error persists:
 
 .. code-block:: sql
 
-  CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON public.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000))); 
+  -- Start with 1000000
+  CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON public.fileinfo USING gin(to_tsvector('english', substring(content,0,1000000)));
+
+  -- If that fails, try 800000
+  CREATE INDEX IF NOT EXISTS idx_fileinfo_content_txt ON public.fileinfo USING gin(to_tsvector('english', substring(content,0,800000)));
+
+  -- Continue decreasing as needed (e.g., 600000, 500000) until the index creates successfully
 
 Compare the data
 ~~~~~~~~~~~~~~~~
