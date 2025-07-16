@@ -24,11 +24,11 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - Added the ability to delete/edit file attachments on existing posts.
  - Added support to read Playbook runs. 
  - Added an accessibility check to disable animations when required. 
- - Added support for multi/select types and text subtypes. 
+ - Added support for multi/select types and text subtypes for Custom Profile Attributes. 
 
 ### Bug Fixes
  - Fixed the hashtag rendering to work with the minimum hashtag length configuration. 
- - Fixed an error when saving non-editable custom profile attributes. 
+ - Fixed an error when saving non-editable Custom Profile Attributes. 
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
