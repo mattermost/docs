@@ -129,7 +129,7 @@ Only board members with the *Commenter* role or higher can comment on a card. Bo
 Mention people
 --------------
 
-You can include a team member on a card by :doc:`mentioning them on a card </collaborate/mention-people>` the same way you would in Channels. Mentions are supported in the `Comments <comment-on-a-card>`__ and `Description <#card-descriptions>`__ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
+You can include a team member on a card by :doc:`mentioning them on a card </collaborate/mention-people>` the same way you would in Channels. Mentions are supported in the `Comments <#comment-on-a-card>`__ and `Description <#card-descriptions>`__ sections within a card. The team member you mention will receive a direct message notification from the boards bot with a link to the card you mentioned them on. To mention multiple team members, separate each name with a comma.
 
 Receive updates
 ---------------

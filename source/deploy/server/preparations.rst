@@ -93,9 +93,25 @@ PostgreSQL v13+ is required for Mattermost server installations. :doc:`MySQL dat
 
          host all all {mattermost-server-IP}/32 md5
 
+4. Restart the PostgreSQL service to apply the configuration changes:
+
+   .. tab:: Ubuntu/Debian
+
+      .. code-block:: sh
+
+         sudo systemctl restart postgresql
+
+   .. tab:: RHEL/CentOS
+
+      .. code-block:: sh
+
+         sudo systemctl restart postgresql
+
 .. important::
 
   If you are upgrading a major version of Postgres, ensure that ``ANALYZE VERBOSE`` is run on the database post upgrade. This is required to re-populate the ``pg_statistics`` table used to generate optimal query plans. Database performance may suffer if this step is skipped.
+
+Once you've completed the database preparation, return to the :doc:`Linux deployment </deploy/server/deploy-linux>` documentation to continue with your Mattermost server installation.
 
 File storage preparation
 -------------------------
