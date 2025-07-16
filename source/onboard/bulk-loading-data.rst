@@ -71,9 +71,9 @@ Not using mmctl local mode
 
 If you're not running mmctl commands in local mode:
 
-1. Upload the ZIP file to the database by running the :ref:`mmctl import upload <manage/mmctl-command-line-tool:mmctl import upload>` command. For example: ``mmctl import upload data.zip``. 
+1. Upload the ZIP file to the database by running the :ref:`mmctl import upload <manage/mmctl-command-line-tool:mmctl import upload>` command. For example: ``mmctl import upload data.zip``. After uploading, two IDs are returned: the first line contains the upload session ID, and the second line contains the filename.
 2. Confirm that the file is uploaded and ready for use by running the :ref:`mmctl import list available <manage/mmctl-command-line-tool:mmctl import list available>` command. 
-3. Import your uploaded file by running the :ref:`mmctl import process <manage/mmctl-command-line-tool:mmctl import process>` command. For example: ``mmctl import process <importedid>_data.zip`` (use the name of the uploaded file from :ref:`mmctl import list available <manage/mmctl-command-line-tool:mmctl import list available>` command).
+3. Import your uploaded file by running the :ref:`mmctl import process <manage/mmctl-command-line-tool:mmctl import process>` command using the upload session ID (not the filename). For example: ``mmctl import process <upload_session_id>_data.zip`` where ``<upload_session_id>`` is the upload session ID returned from the upload command.
 
 Data format
 -----------
