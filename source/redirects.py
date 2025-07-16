@@ -1438,13 +1438,13 @@ redirects_map: dict[str, str] = {
 "configure/configuration-settings.html#enable-shared-channels":
         "https://docs.mattermost.com/configure/site-configuration-settings.html#enable-connected-workspaces",
 "configure/configuration-settings.html#enable-bleve-indexing":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-indexing",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-bleve-indexing",
 "configure/configuration-settings.html#index-directory":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#index-directory",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#index-directory",
 "configure/configuration-settings.html#enable-bleve-for-search-queries":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-for-search-queries",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-bleve-for-search-queries",
 "configure/configuration-settings.html#enable-bleve-for-autocomplete-queries":
-        "https://docs.mattermost.com/configure/experimental-configuration-settings.html#enable-bleve-for-autocomplete-queries",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#enable-bleve-for-autocomplete-queries",
 "configure/configuration-settings.html#allowed-themes":
         "https://docs.mattermost.com/configure/experimental-configuration-settings.html#allowed-themes",
 "configure/configuration-settings.html#maximum-users-for-statistics":
@@ -1831,7 +1831,9 @@ redirects_map: dict[str, str] = {
 "deploy/mobile-apps-faq.html":
         "https://docs.mattermost.com/deploy/mobile/mobile-faq.html",
 "deploy/bleve-search.html":
-        "https://docs.mattermost.com/configure/bleve-search.html",
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#bleve-settings",
+"configure/bleve-search.html":
+        "https://docs.mattermost.com/configure/deprecated-configuration-settings.html#bleve-settings",
 "deploy/image-proxy.html":
         "https://docs.mattermost.com/deploy/server/image-proxy.html",
 "deploy/consider-mobile-vpn-options.html":

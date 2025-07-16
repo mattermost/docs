@@ -29,6 +29,8 @@ The following Mattermost configuration settings are deprecated and are no longer
 Bleve settings
 --------------
 
+*Bleve search has been deprecated in Mattermost v11.0. We recommend using* :doc:`Elasticsearch or OpenSearch </scale/enterprise-search>` *instead for enterprise search capabilities.*
+
 Bulk Indexing Time Window Seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -41,6 +43,56 @@ Determines the maximum time window for a batch of posts being indexed by the Bul
 +-------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"BulkIndexingTimeWindowSeconds": 3600`` with numerical input.   |
 +-------------------------------------------------------------------------------------------------------------+
+
+Enable Bleve indexing
+~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0*
+
+**True**: The indexing of new posts occurs automatically. Search queries will not use bleve search until Enable Bleve for search queries is enabled.
+
+**False**: The indexing of new posts does not occur automatically.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Index directory
+~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0*
+
+Directory path to use for storing bleve indexes.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for search queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0*
+
+**True**: Search queries will use bleve search.
+
+**False**: Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for autocomplete queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0*
+
+**True**: Autocomplete queries will use bleve search.
+
+**False**: Autocomplete queries will not use bleve search.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
 
 ----
 

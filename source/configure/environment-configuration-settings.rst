@@ -956,9 +956,12 @@ Disable database search
 Search behavior in Mattermost depends on which search engines are enabled:
 
 - When :doc:`Elasticsearch </scale/elasticsearch-setup>` or :doc:`AWS OpenSearch </scale/opensearch-setup>` is enabled, Mattermost will try to use it first.
-- If Elasticsearch fails or is disabled, Mattermost will attempt to use :doc:`Bleve </configure/bleve-search>`, if enabled. If this occurs, you will see the warning ``Encountered error on SearchPostsInTeamForUser``.
-- If these fail or are disabled, Mattermost tries to search the database directly, if this is enabled.
+- If Elasticsearch/OpenSearch fails or is disabled, Mattermost tries to search the database directly, if this is enabled.
 - If all of the above methods fail or are disabled, the search results will be empty.
+
+.. note::
+   
+   Bleve search has been deprecated in Mattermost v11.0. We recommend using :doc:`Elasticsearch or OpenSearch </scale/enterprise-search>` instead for enterprise search capabilities.
 
 .. note::
 
@@ -987,7 +990,7 @@ A list of all migrations that have been applied to the data store based on the v
 Active Search Backend
 ~~~~~~~~~~~~~~~~~~~~~
 
-Read-only display of the currently active backend used for search. Values can include ``none``, ``database``, ``elasticsearch``, or ``bleve``.
+Read-only display of the currently active backend used for search. Values can include ``none``, ``database``, ``elasticsearch``, or ``opensearch``.
 
 .. config:setting:: read-replicas
   :displayname: Read replicas (Database)
