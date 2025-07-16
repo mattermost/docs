@@ -34,7 +34,6 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Improved database connection spikes on user disconnect by processing status updates in batches. 
  - Improved the efficiency of getting sidebar categories from the database. 
  - Added a database schema dump to the Support Packet.
- - Enabled **System Console** user interface for ``AuditSettings`` by default. 
 
 #### mmctl Changes
  - Added ``AuthData`` to mmctl user search output. 
