@@ -11,6 +11,8 @@ Mattermost offers “Same Sign-On” with Microsoft AD/LDAP (formally known as A
 
 AD/LDAP is a service that stores authentication and authorization details of users on your organization's network. When you integrate your AD/LDAP system with Mattermost, users can log into Mattermost without having to create new credentials. User accounts are managed in AD/LDAP, and changes are synchronized with Mattermost.
 
+Mattermost provides a step-by-step AD/LDAP setup wizard in the System Console that guides you through the configuration process with sections and incremental testing to ensure each part of your setup works correctly before proceeding to the next step.
+
 Benefits of integrating AD/LDAP with Mattermost include:
 
 - **Single sign-on.** Users can log in to Mattermost with their AD/LDAP credentials.
@@ -46,10 +48,10 @@ Getting started
 
 There are two ways to set up AD/LDAP:
 
-1. **Configure AD/LDAP using the System Console user interface**
+1. **Configure AD/LDAP using the System Console setup wizard**
 
   - Log in to your workspace and create a new account using email and password. This is assigned the system admin role as the first user created.
-  - Next, configure AD/LDAP and then convert your system admin account to use the AD/LDAP login method.
+  - Next, use the AD/LDAP setup wizard to configure AD/LDAP step-by-step, testing each section as you go, and then convert your system admin account to use the AD/LDAP login method.
 
 2. **Configure AD/LDAP by editing ``config.json``**
 
@@ -62,13 +64,22 @@ Configure AD/LDAP login
 
   - Create a new workspace and create an account using email and password, which is automatically assigned the **system admin** role since it is the first account created. You may also assign the role to another account.
 
-2. **Configure AD/LDAP.**
+2. **Configure AD/LDAP using the setup wizard.**
 
-  - Go to **System Console > Authentication > AD/LDAP** and fill in AD/LDAP settings based on the :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap>`.
+  - Go to **System Console > Authentication > AD/LDAP** to open the AD/LDAP setup wizard. The wizard is organized into sections that you can navigate through using the sidebar:
+  
+    - **Connection Settings**: Configure server connection details
+    - **User Filters**: Set up user identification and filtering
+    - **Account sync**: Map AD/LDAP attributes to Mattermost user fields
+    - **Group Synchronization**: Configure group settings and group attributes (if using LDAP groups)
+    - **Sync Performance**: Adjust synchronization timing and performance settings
+    - **Sync History**: View synchronization status and manually trigger syncs
+  
+  - Each section includes a test button that allows you to verify your configuration before proceeding to the next step. This incremental testing helps identify and resolve issues early in the setup process.
 
 3. **Confirm that AD/LDAP sign-on is enabled.**
 
-  - After AD/LDAP has been enabled, confirm that users can log in using AD/LDAP credentials.
+  - After configuring AD/LDAP through the wizard, confirm that users can log in using AD/LDAP credentials.
 
 4. **Switch your system admin account from email to AD/LDAP authentication.**
 
@@ -98,11 +109,11 @@ When Mattermost is configured to use AD/LDAP for user authentication, the follow
 
 To configure AD/LDAP synchronization with AD/LDAP sign-in:
 
-1. Go to **System Console > Authentication > AD/LDAP** and set **Enable Synchronization with AD/LDAP** to **true**.
+1. Go to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard and navigate to the **Connection Settings** section. Set **Enable Synchronization with AD/LDAP** to **true**.
 
-2. Scroll down to **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
+2. Navigate to the **Sync Performance** section and configure the **Synchronization Interval (minutes)** to specify how often Mattermost accounts synchronize attributes with AD/LDAP. The default setting is 60 minutes. The profile picture attribute is only synchronized when the user logs in.
 
-  - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in **System Console > AD/LDAP**.
+  - If you want to synchronize immediately after disabling an account, use the **AD/LDAP Synchronize Now** button in the **Sync History** section of the wizard.
   - To configure AD/LDAP synchronization with SAML sign-in, see the :doc:`SAML documentation </onboard/sso-saml>`.
 
 .. note::
@@ -119,16 +130,17 @@ To configure AD/LDAP synchronization with AD/LDAP sign-in:
 Configure AD/LDAP sign-in using filters
 ----------------------------------------
 
-Using filters assigns roles to specified users on login. To access AD/LDAP filter settings navigate to **System Console > AD/LDAP**.
+Using filters assigns roles to specified users on login. To access AD/LDAP filter settings, navigate to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard and go to the **User Filters** section.
 
 User filter
 ~~~~~~~~~~~
 
 (Optional) Enter an AD/LDAP filter to use when searching for user objects. Only the users selected by the query will be able to access Mattermost. For AD/LDAP, the query to filter out disabled users is ``(&(objectCategory=Person)(!(UserAccountControl:1.2.840.113556.1.4.803:=2)))``.
 
-1. Navigate to **System Console > Authentication > AD/LDAP**.
-2. Complete the **User Filter** field.
-3. Choose **Save**.
+1. Navigate to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard.
+2. Go to the **User Filters** section and complete the **User Filter** field.
+3. Use the **Test Filters** button to verify your filter works correctly.
+4. Choose **Save**.
 
 When the user accesses Mattermost, they log in with same username and password that they use for organizational logins.
 
@@ -142,9 +154,11 @@ Guest filter
 If this filter is removed/changed, active guests will not be promoted to a member and will retain their Guest role. Guests can be promoted in **System Console > User Management**.
 
 1. Navigate to **System Console > Authentication > Guest Access** and set Guest Access to ``true``.
-2. Navigate to **System Console > Authentication > AD/LDAP**.
-3. Complete the **Guest Filter** field.
-4. Choose **Save**.
+2. Navigate to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard.
+3. Go to the **User Filters** section and expand **Configure additional filters**.
+4. Complete the **Guest Filter** field.
+5. Use the **Test Filters** button to verify your filter works correctly.
+6. Choose **Save**.
 
 When a guest logs in for the first time they are presented with a default landing page until they are added to channels.
 
@@ -157,10 +171,12 @@ Admin filter
 
 The next login is based upon Session lengths set in **System Console > Session Lengths**. It is recommended that users are demoted to members manually in **System Console > User Management** to ensure access is restricted immediately.
 
-1. Navigate to **System Console > Authentication > AD/LDAP**.
-2. Set **Admin Filter** to **true**.
-3. Complete the **Admin Filter** field.
-4. Choose **Save**.
+1. Navigate to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard.
+2. Go to the **User Filters** section and expand **Configure additional filters**.
+3. Set **Enable Admin Filter** to **true**.
+4. Complete the **Admin Filter** field.
+5. Use the **Test Filters** button to verify your filter works correctly.
+6. Choose **Save**.
 
 .. note::
 
@@ -185,7 +201,7 @@ Troubleshooting/FAQ
 
 The following are frequently asked questions and troubleshooting suggestions on common error messages and issues. It is recommended that you check your logs for errors as they can provide an idea of what the issue is.
 
-If the **AD/LDAP Test** button fails, how can I troubleshoot the connection?
+If the **Test Connection** button fails, how can I troubleshoot the connection?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Check that your AD/LDAP connection settings are correct by running an AD/LDAP user query in an external system. See `LDAP Connection Test Example <https://ldaptool.sourceforge.net/>`__. If the AD/LDAP connection is verified to be working outside of Mattermost, try the following:
@@ -204,9 +220,9 @@ No, each user is created on their first login.
 When I try to synchronize AD/LDAP, why does the status show as ``Pending`` and not complete?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Go to **System Console > AD/LDAP** and make sure that the **Enable Synchronization with AD/LDAP** setting is set to **true**.
+Go to **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard, navigate to the **Connection Settings** section, and make sure that the **Enable Synchronization with AD/LDAP** setting is set to **true**.
 
-If the issue persists, try performing a sync with the **User Filter** field blank. If the sync completes in this scenario, then the general syntax was formatted incorrectly. Refer to this :ref:`document <configure/authentication-configuration-settings:user filter>` for guidance on setting a correct syntax format.
+If the issue persists, try selecting the **Test Filters** button to test that the User Filter is correctly formatted. Refer to this :ref:`document <configure/authentication-configuration-settings:user filter>` for guidance on setting a correct syntax format.
 
 Make sure that you also have at least one AD/LDAP user in Mattermost or the synchronization will not complete.
 
@@ -307,4 +323,4 @@ Yes it can, but make sure that:
 How do I know if an AD/LDAP sync job fails?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Mattermost provides the status of each AD/LDAP sync job in **System Console > Authentication > AD/LDAP**. Here you can see the number of users updated and if the job succeeded or failed.
+Mattermost provides the status of each AD/LDAP sync job in the **Sync History** section of the AD/LDAP wizard (**System Console > Authentication > AD/LDAP**). Here you can see the number of users updated and if the job succeeded or failed.

@@ -79,7 +79,7 @@ On boards with team access, board members with **Editor** or **Commenter** roles
 Channel role groups
 ~~~~~~~~~~~~~~~~~~~
 
-Board admins can add a channel to a board to grant all its members Editor access. To do this, select **Share** in the top-right corner of the board, search for the channel name, and add it to the board as a user. The default role is Editor. Doing so also `links the board back to the channel </boards/navigate-boards.html#link-a-board-to-a-channel>`_, where the board will appear on the channel RHS.
+Board admins can add a channel to a board to grant all its members Editor access. To do this, select **Share** in the top-right corner of the board, search for the channel name, and add it to the board as a user. The default role is Editor. Doing so also :ref:`links the board back to the channel <boards/navigate-boards:link a board to a channel>`, where the board will appear on the channel RHS.
 
 To unlink the channel from the board, open the **Share** dialog, select the role dropdown next to the channel’s name, then select **Unlink**.
 
