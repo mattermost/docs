@@ -4,6 +4,75 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.11-extended-support-release)=
+## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+**Released 2025-08-15**
+
+```{Important}
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### User Interface (UI)
+ - Improved the date and time picker usability across **Custom Status**, **Scheduled Messages**, **Do Not Disturb**, and **Reminder** modals. The entire input area is now clickable, keyboard navigation works properly in time selection menus, and consistent relative date formatting is used throughout. 
+ - Improved the **Permissions** table expand/collapse animation and prevented text from overflowing. 
+ - Added an aria-label to the file preview back/forward buttons. 
+ - Modified the input to have the minimum/maximum length validation work the same as the validation around ``required``, and replaced **Create Team** input with an **Input** component. 
+ - Improved the YouTube video preview user interface. 
+ - Removed the minimum-width for the right-hand side when the window size is <400px. 
+ - Added a status region for the channel filter dropdown. 
+ - Removed the NPS plugin from pre-packaged plugins. 
+
+#### Administration
+ - Signatures are now always validated for pre-packaged plugins. 
+ - Disabled the **Add a license** button when the license is set by an environment variable. 
+ - Improved database connection spikes on user disconnect by processing status updates in batches. 
+ - Improved the efficiency of getting sidebar categories from the database. 
+ - Added a schema dump to the Support Packet.
+
+#### mmctl Changes
+ - ``mmctl deleteUsersCmdF`` now returns an error instead of logging err. 
+ - Added ``AuthData`` to mmctl user search output. 
+ - mmctl: Added ``compliance export list`` command. 
+ - mmctl: Added ``compliance export show`` and ``cancel`` commands. 
+ - mmctl: Added ``compliance export download`` command. 
+ - mmctl: Added ``compliance export create`` command. 
+
+### Bug Fixes
+ - Fixed an issue with the onboarding checklist being cut off when on multiple teams. 
+ - Fixed an issue where the **Thread Menu** would not have its actions read by a screen reader. 
+ - Fixed an issue where some users would not get a warning when joining a private channel. 
+ - Fixed an issue with the overflow formatting on the suggestion list. 
+ - Fixed an issue with the **Delete** button aria-label on **User Groups** list modal. 
+ - Fixed some semantic HTML issues with the use of ``header``. 
+ - Fixed various accessibility issues for the **Create Channel** modal. 
+ - Fixed more accessibility issues around search. 
+ - Fixed **Create User Group** modal accessibility issues. 
+ - Fixed mobile view accessibility issues. 
+ - Fix an issue with accents. 
+ - Fixed an issue with rendering of remote user at-mentions in the web app. 
+ - Fixed a potential panic when running the ``mmctl ldap job show`` without the required argument. 
+ - Fixed an issue in the LDAP sync, such that user with an updated attribute were being accidentally added to the groups of another LDAP record, if that LDAP record had a blank ID. 
+ - Fixed an issue with the ``in:`` filter not showing an autocomplete on small screens. 
+
+### config.json
+New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
+
+#### Changes to Enterprise plans:
+ - 
+
+### API Changes
+ - Introduced new Plugin APIs to support audit logging. 
+ - Updated the patch channel API doc to include channel banners. 
+
+### Go Version
+ - v10.11 is built with Go ``v1.24.3``.
+
+### Contributors
+ - 
+
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
