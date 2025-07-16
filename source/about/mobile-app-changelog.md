@@ -20,7 +20,8 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
  - iPhone 6s devices and later with iOS 15.1+ are required.
 
 ### Improvements
- - Enhanced Secure Previews: Introduced a more secure way to preview supported images, videos, and PDF files while restricting other file types, downloads, and sharing. Requires an Enterprise Advanced license. 
+ - Enhanced Secure Previews: Introduced a more secure way to preview supported images, videos, and PDF files while restricting other file types, downloads, and sharing. Requires an Enterprise Advanced license.
+ - Added the ability to delete/edit file attachments on existing posts.
  - Added support to read Playbook runs. 
  - Added an accessibility check to disable animations when required. 
  - Added support for multi/select types and text subtypes. 
