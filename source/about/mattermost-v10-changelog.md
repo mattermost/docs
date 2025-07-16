@@ -13,6 +13,9 @@
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
 ```
 
+### Highlights
+ - Enabled **System Console** user interface for ``AuditSettings`` by default. 
+
 ### Improvements
 
 #### User Interface (UI)
@@ -30,11 +33,10 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Disabled the **Add a license** button when the license is set by an environment variable. 
  - Improved database connection spikes on user disconnect by processing status updates in batches. 
  - Improved the efficiency of getting sidebar categories from the database. 
- - Added a schema dump to the Support Packet.
+ - Added a database schema dump to the Support Packet.
  - Enabled **System Console** user interface for ``AuditSettings`` by default. 
 
 #### mmctl Changes
- - ``mmctl deleteUsersCmdF`` now returns an error instead of logging err. 
  - Added ``AuthData`` to mmctl user search output. 
  - mmctl: Added ``compliance export list`` command. 
  - mmctl: Added ``compliance export show`` and ``cancel`` commands. 
