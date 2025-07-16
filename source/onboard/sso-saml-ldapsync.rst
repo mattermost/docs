@@ -16,14 +16,14 @@ In addition to configuring SAML sign-in, you can optionally configure synchroniz
 To configure SAML synchronization with AD/LDAP:
 
 1. Go to **System Console > Authentication > SAML 2.0**, then set **Enable Synchronizing SAML Accounts With AD/LDAP** to **true**.
-2. Go to  **System Console > Authentication > AD/LDAP**, then set **Enable Synchronization with AD/LDAP** to **true**.
+2. Go to  **System Console > Authentication > AD/LDAP** to open the AD/LDAP wizard, navigate to the **Connection Settings** section, then set **Enable Synchronization with AD/LDAP** to **true**.
 3. To ignore guest users when sychronizing, go to **System Console > Authentication > SAML 2.0**, then set **Ignore Guest Users when Synchronizing with AD/LDAP** to **true**. 
 4. Set the rest of the AD/LDAP settings based on :ref:`configuration settings documentation <configure/authentication-configuration-settings:ad/ldap>` to connect Mattermost with your AD/LDAP server.
 
- - If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP**, then set **Enable sign-in with AD/LDAP** to **false**.
+ - If you don't want to enable AD/LDAP sign-in, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Connection Settings** section, then set **Enable sign-in with AD/LDAP** to **false**.
 
-5. To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to **System Console > Authentication > AD/LDAP**, then set a **Synchronization Interval** in minutes. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, select **AD/LDAP Synchronize Now**.
-6. To confirm that Mattermost can successfully connect to your AD/LDAP server, go to **System Console > Authentication > AD/LDAP**, then select **AD/LDAP Test**.
+5. To specify how often Mattermost synchronizes SAML user accounts with AD/LDAP, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Sync Performance** section, then set a **Synchronization Interval** in minutes. The default setting is 60 minutes. If you want to synchronize immediately after disabling an account, go to the **Sync History** section and select **AD/LDAP Synchronize Now**.
+6. To confirm that Mattermost can successfully connect to your AD/LDAP server, go to **System Console > Authentication > AD/LDAP** wizard, navigate to the **Connection Settings** section, then select **Test Connection**.
 
 Once the synchronization with AD/LDAP is enabled, user attributes are synchronized with AD/LDAP based on their email address. If a user with a given email address doesn't have an AD/LDAP account, they will be deactivated in Mattermost on the next AD/LDAP sync. 
 
@@ -31,7 +31,7 @@ To re-activate the account:
 
 1. Add the user to your AD/LDAP server.
 2. Purge all caches in Mattermost by going to **System Console > Environment > Web Server**, then select **Purge All Caches**.
-3. Run AD/LDAP synchronization by going to **System Console > Authentication > AD/LDAP**, then select **AD/LDAP Synchronize Now**.
+3. Run AD/LDAP synchronization by going to **System Console > Authentication > AD/LDAP** wizard, navigating to the **Sync History** section, then select **AD/LDAP Synchronize Now**.
 4. Purge all caches again in Mattermost by going to **System Console > Environment > Web Server**, then select **Purge All Caches** again. This re-activates the account in Mattermost.
 
   .. note::
@@ -58,4 +58,4 @@ To ensure existing user accounts do not get disabled in this process, ensure the
 1. Set the SAML ``Id Attribute`` by going to **System Console > Authentication > SAML 2.0 > Id Attribute**.
 2. Set **System Console > Authentication > SAML 2.0 > Override SAML bind data with AD/LDAP information** to **true**.
 3. Set **System Console > Authentication > SAML 2.0 > Enable Synchronizing SAML Accounts With AD/LDAP** to **true**.
-4. Run AD/LDAP sync by going to **System Console > Authentication > AD/LDAP**, then select **AD/LDAP Synchronize Now**.
+4. Run AD/LDAP sync by going to **System Console > Authentication > AD/LDAP** wizard, navigating to the **Sync History** section, then select **AD/LDAP Synchronize Now**.
