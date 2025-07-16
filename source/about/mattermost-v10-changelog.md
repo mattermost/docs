@@ -31,6 +31,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Improved database connection spikes on user disconnect by processing status updates in batches. 
  - Improved the efficiency of getting sidebar categories from the database. 
  - Added a schema dump to the Support Packet.
+ - Enabled **System Console** user interface for ``AuditSettings`` by default. 
 
 #### mmctl Changes
  - ``mmctl deleteUsersCmdF`` now returns an error instead of logging err. 
@@ -60,8 +61,18 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
 
-#### Changes to Enterprise plans:
- - 
+#### Changes to all plans:
+ - Under ``ServiceSettings`` in ``config.json``:
+   - Added ``DeleteAccountLink`` configuration setting to add a configurable account deletion link. 
+ - Under ``ClusterSettings`` in ``config.json``:
+   - Added ``EnableGossipEncryption`` to replace ``EnableExperimentalGossipEncryption`` to transition Gossip Encryption functionality to Generally Available. For new installations, the setting will now default to ``on``. Any existing values will still be preserved. 
+
+#### Changes to Professional and Enterprise plans: 
+ - Added a ``ContentFlaggingSettings`` configuration section.
+
+#### Changes to Enterprise Advanced plan: 
+ - Under ``NativeAppSettings`` in ``config.json``:
+   - Added two new configuration settings ``MobileEnableSecureFilePreview`` and ``MobileAllowPdfLinkNavigation`` available on Enterprise Advanced to further lock down files on mobile. 
 
 ### API Changes
  - Introduced new Plugin APIs to support audit logging. 
