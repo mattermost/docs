@@ -22,7 +22,7 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Improvements
  - Enhanced Secure Previews: Introduced a more secure way to preview supported images, videos, and PDF files while restricting other file types, downloads, and sharing. Requires an Enterprise Advanced license.
  - Added the ability to delete/edit file attachments on existing posts.
- - Added support to read Playbook runs. 
+ - Playbooks Support: Initial version integrating with Playbooks with the ability to view runs and check/uncheck tasks in checklists. 
  - Added an accessibility check to disable animations when required. 
  - Added support for multi/select types and text subtypes for Custom Profile Attributes. 
 
