@@ -63,7 +63,7 @@ Pre-upgrade checklist
     helm repo update
     helm upgrade mattermost-operator mattermost/mattermost-operator -n <OPERATOR_NAMESPACE_HERE> -f <OPTIONAL_CUSTOM_VALUES_HERE>
 
-3. Confirm Mattermost Operator version. Make sure the image version matches the latest supported release from the Helm repository. Use the following command to check the current image version of the Mattermost Operator:
+3. **Confirm Mattermost Operator version**: Make sure the image version matches the latest supported release from the Helm repository. Use the following command to check the current image version of the Mattermost Operator:
 
   .. code-block:: bash
 
@@ -80,7 +80,7 @@ Pre-upgrade checklist
 
     Use ``pg_dump`` or volume snapshots to create a full backup to a secure, external location (e.g., S3 or NFS). Validate the backup can be restored. See the :doc:`Backup and Disaster Recovery </deploy/backup-disaster-recovery>` documentation for details.
 
-6. Ensure configuration consistency: Validate that ``values.yaml``, secrets, and other configuration files are version-controlled and consistent across all clusters (required for `Active/Active deployments <#active-active-upgrade-considerations>`__). Use tools like GitOps or configuration management systems to ensure all clusters have the same configuration.
+6. **Ensure configuration consistency**: Validate that ``values.yaml``, secrets, and other configuration files are version-controlled and consistent across all clusters (required for `Active/Active deployments <#active-active-upgrade-considerations>`__). Use tools like GitOps or configuration management systems to ensure all clusters have the same configuration.
 
 7. We strongly recommend performing a dry run by testing the upgrade in a staging environment that mirrors production to catch misconfigurations early.
 
