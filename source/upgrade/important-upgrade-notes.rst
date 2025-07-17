@@ -3,19 +3,57 @@ Important Upgrade Notes
 
 .. include:: ../about/common-esr-support-rst.rst
 
-
-.. note::
-
-  - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
-  - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
-  - Keybase has stopped serving our Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our docs: https://docs.mattermost.com/deploy/server/deploy-linux.
-  - MySQL 8.0.22 contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`__ changing string values to integers which is preventing Mattermost from working properly. Users are advised to avoid this database version.
-  - When upgrading to 7.x from a 5.x release please make sure to upgrade to 5.37.10 first for the upgrade to complete successfully.
+We recommend reviewing the `additional upgrade notes <#additional-upgrade-notes>`__ at the bottom of this page.
 
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | If you’re upgrading                                | Then...                                                                                                                                                          |
 | from a version earlier than...                     |                                                                                                                                                                  |
 +====================================================+==================================================================================================================================================================+
+| v10.10                                             | Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a      |
+|                                                    | channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. The migrations are fully backwards-compatible and no table locks or         |
+|                                                    | existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are:           |
+|                                                    |                                                                                                                                                                  |
+|                                                    | PostgreSQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000138_add_default_category_name_to_channel.down.sql and |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000138_add_default_category_name_to_channel.up.sql                   |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000138_add_default_category_name_to_channel.down.sql and         |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000138_add_default_category_name_to_channel.up.sql                      |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added new columns ``RemoteId`` and ``ChannelId`` to the ``PostAcknowledgements`` table. This is nullable, and stores the remote ID (if available) and channel ID |
+|                                                    | to which the post was made when acknowledgements to posts were set. The migrations are fully backwards-compatible and no table locks or                          |
+|                                                    | existing operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are:           |
+|                                                    |                                                                                                                                                                  |
+|                                                    | PostgreSQL:                                                                                                                                                      |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.down.sql and  |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000141_add_remoteid_channelid_to_post_acknowledgements.up.sql        |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000141_add_remoteid_channelid_to_post_acknowledgements.down.sql  |
+|                                                    | and https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000141_add_remoteid_channelid_to_post_acknowledgements.up.sql       |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. This is nullable,   |
+|                                                    | and stores the ``LastMembersSyncAt`` timestamp (if available) which tracks the last time channel membership data was synchronized between the local cluster and  |
+|                                                    | each remote cluster. ``LastMembershipSyncAt`` timestamp tracks the last time a specific user's channel membership status was synchronized with a specific remote |
+|                                                    | cluster. The migrations are fully backwards-compatible and no table locks or existing operations on the table are impacted by this upgrade. Zero downtime is     |
+|                                                    | expected when upgrading to this release. The SQL queries included are:                                                                                           |
+|                                                    |                                                                                                                                                                  |
+|                                                    | PostgreSQL:                                                                                                                                                      |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000140_add_lastmemberssyncat_to_sharedchannelremotes.down.sql and    |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000140_add_lastmemberssyncat_to_sharedchannelremotes.up.sql          |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000140_add_lastmemberssyncat_to_sharedchannelremotes.down.sql    |
+|                                                    | and https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000140_add_lastmemberssyncat_to_sharedchannelremotes.up.sql         |
+|                                                    +------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+|                                                    | Added a new column ``LastGlobalUserSyncAt`` to the ``RemoteClusters`` table. This is nullable, and ``LastGlobalUserSyncAt`` tracks the timestamp of the last     |
+|                                                    | successful global user sync for each remote cluster, enabling incremental syncing. The migrations are fully backwards-compatible and no table locks or existing  |
+|                                                    | operations on the table are impacted by this upgrade. Zero downtime is expected when upgrading to this release. The SQL queries included are:                    |
+|                                                    |                                                                                                                                                                  |
+|                                                    | PostgreSQL:                                                                                                                                                      |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000139_remoteclusters_add_last_global_user_sync_at.down.sql and      |
+|                                                    | https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/postgres/000139_remoteclusters_add_last_global_user_sync_at.up.sql            |
+|                                                    |                                                                                                                                                                  |
+|                                                    | MySQL: https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000139_remoteclusters_add_last_global_user_sync_at.down.sql      |
+|                                                    | and https://github.com/mattermost/mattermost/blob/master/server/channels/db/migrations/mysql/000139_remoteclusters_add_last_global_user_sync_at.up.sql           |
++----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | v10.9                                              | A new index to the ``CategoryId`` column in ``SidebarChannels`` table was added to improve query performance. No database downtime is expected for this upgrade. |
 |                                                    | For PostgreSQL, it takes around 2s to add the index on a table with 1.2M rows with an instance size of 8 cores and 16GB RAM. For MySQL, it takes around 5s on a  |
 |                                                    | table with 300K rows on an instance size of 8 cores and 16GB RAM. The migrations are fully backwards-compatible and no table locks or existing operations on the |
@@ -1511,3 +1549,15 @@ Important Upgrade Notes
 | v3.4.0                                             | If public links are enabled, existing public links will no longer be valid. This is because in earlier versions, existing public links were not invalidated      |
 |                                                    | when the Public Link Salt was regenerated. You must update any place where you have published these links.                                                       |
 +----------------------------------------------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+Additional upgrade notes
+------------------------
+
+.. note::
+
+  - Upgrading the Microsoft Teams Calling plugin to v2.0.0 requires users to reconnect their accounts.
+  - Mattermost plugins built with Go versions 1.22.0 and 1.22.1 do not work. Plugin developers should use Go 1.22.2 or newer instead.
+  - Keybase has stopped serving Mattermost's Ubuntu repository signing key. If you were using it, update your installation scripts to retrieve the key as mentioned in our :doc:`Linux deployment documentation </deploy/server/deploy-linux>`.
+  - We recommend avoiding the use of MySQL 8.0.22 as it contains an `issue with JSON column types <https://bugs.mysql.com/bug.php?id=101284>`_ changing string values to integers which is preventing Mattermost from working properly.
+  - When upgrading to Mattermost 7.x from a 5.x release, upgrade to 5.37.10 first before attempting the v7.x upgrade.
+  - SQL queries for related schema changes below are **automatically executed** during the Mattermost server upgrade process. **You don't need to run these queries manually**. These SQL queries are provided to help you understand what database changes will occur during the upgrade, and for cases where you prefer to reduce downtime by pre-applying schema changes.
