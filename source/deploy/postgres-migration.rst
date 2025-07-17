@@ -202,7 +202,7 @@ After migrating from MySQL to PostgreSQL, incoming webhooks that previously work
 
   GetChannelByName: Channel does not exist.
 
-This occurs because Mattermost doesn't allow the creation of channels with uppercase characters. All new channels must only contain lowercase characters names.
+This occurs because Mattermost doesn't allow the creation of channels with uppercase characters. All new channels names must only contain lowercase characters.
 Additionally, MySQL is case-insensitive when matching channel names, while PostgreSQL is case-sensitive. This means that webhook payloads that worked with MySQL's forgiving case-insensitive matching will fail with PostgreSQL's strict case-sensitive matching.
 In rare cases, older channels may still exist with mixed-case names in your database. These channels are considered invalid and may cause issues when performing operations like updating channel headers.
 
