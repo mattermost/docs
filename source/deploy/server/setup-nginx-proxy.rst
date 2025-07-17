@@ -407,6 +407,190 @@ You can use any certificate that you want, but these instructions show you how t
   * Test the SSL certificate by visiting a site such as https://www.ssllabs.com/ssltest/index.html.
   * If there’s an error about the missing chain or certificate path, there is likely an intermediate certificate missing that needs to be included.
 
+High-performance scaling configuration
+---------------------------------------
+
+For high-scale deployments with multiple Mattermost servers and heavy traffic loads, additional NGINX optimizations are recommended. This configuration is based on performance testing with large-scale Mattermost deployments.
+
+.. note::
+  These settings are designed for high-performance environments. For standard deployments, the basic configuration above should be sufficient.
+
+NGINX main configuration optimizations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Update your main NGINX configuration file (``/etc/nginx/nginx.conf``) with the following performance optimizations:
+
+.. code-block:: text
+
+  user www-data;
+  worker_processes auto;
+  worker_rlimit_nofile 100000;
+  pid /run/nginx.pid;
+  include /etc/nginx/modules-enabled/*.conf;
+
+  events {
+    worker_connections 20000;
+    use epoll;
+  }
+
+  http {
+    map $status $loggable {
+      ~^[23] 0;
+      default 1;
+    }
+
+    sendfile on;
+    tcp_nopush on;
+    tcp_nodelay off;
+    keepalive_timeout 75s;
+    keepalive_requests 16384;
+    types_hash_max_size 2048;
+    include /etc/nginx/mime.types;
+    default_type application/octet-stream;
+    ssl_prefer_server_ciphers on;
+    access_log /var/log/nginx/access.log combined if=$loggable;
+    error_log /var/log/nginx/error.log;
+    gzip on;
+    include /etc/nginx/sites-enabled/*;
+  }
+
+Key optimizations in this configuration:
+
+- **worker_processes auto**: Automatically sets worker processes based on CPU cores
+- **worker_rlimit_nofile 100000**: Increases file descriptor limit for high-concurrency
+- **worker_connections 20000**: Allows each worker to handle more concurrent connections
+- **use epoll**: Enables efficient connection handling on Linux
+- **keepalive_timeout 75s** and **keepalive_requests 16384**: Optimizes connection reuse
+- **Conditional logging**: Reduces log volume by only logging errors and non-2xx/3xx responses
+
+Multi-node backend configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+For deployments with multiple Mattermost application servers, configure your site file (``/etc/nginx/sites-available/mattermost``) with load balancing:
+
+.. code-block:: text
+
+  upstream backend {
+    server 172.27.205.186:8065 max_fails=0;
+    server 172.27.213.167:8065 max_fails=0;
+    # Add additional Mattermost servers as needed
+    
+    keepalive 256;
+  }
+
+  proxy_cache_path /var/cache/nginx levels=1:2 keys_zone=mattermost_cache:10m max_size=3g inactive=60m use_temp_path=off;
+
+  server {
+    listen 80 reuseport;
+    server_name _;
+
+    location ~ /api/v[0-9]+/(users/)?websocket$ {
+      proxy_set_header Upgrade $http_upgrade;
+      proxy_set_header Connection "upgrade";
+      include /etc/nginx/snippets/proxy.conf;
+    }
+
+    location ~ /api/v[0-9]+/users/[a-z0-9]+/image$ {
+      proxy_set_header Connection "";
+      include /etc/nginx/snippets/proxy.conf;
+      include /etc/nginx/snippets/cache.conf;
+      proxy_ignore_headers Cache-Control Expires;
+      proxy_cache_valid 200 24h;
+    }
+
+    location / {
+      proxy_set_header Connection "";
+      include /etc/nginx/snippets/proxy.conf;
+      include /etc/nginx/snippets/cache.conf;
+    }
+  }
+
+NGINX proxy configuration snippets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Create optimized proxy configuration snippets for reuse across different locations.
+
+Create ``/etc/nginx/snippets/proxy.conf``:
+
+.. code-block:: text
+
+  client_max_body_size 50M;
+  proxy_set_header Host $http_host;
+  proxy_set_header X-Real-IP $remote_addr;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $scheme;
+  proxy_set_header X-Frame-Options SAMEORIGIN;
+  proxy_buffers 256 16k;
+  proxy_buffer_size 16k;
+  client_body_timeout 60s;
+  send_timeout 300s;
+  lingering_timeout 5s;
+  proxy_connect_timeout 30s;
+  proxy_send_timeout 90s;
+  proxy_read_timeout 90s;
+  proxy_http_version 1.1;
+  proxy_pass http://backend;
+
+Create ``/etc/nginx/snippets/cache.conf``:
+
+.. code-block:: text
+
+  proxy_cache mattermost_cache;
+  proxy_cache_revalidate on;
+  proxy_cache_min_uses 2;
+  proxy_cache_use_stale timeout;
+  proxy_cache_lock on;
+
+Key performance optimizations
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The high-performance configuration includes several critical optimizations:
+
+**Load Balancing**:
+
+- **max_fails=0**: Prevents servers from being marked as unavailable
+- **keepalive 256**: Maintains persistent connections to backend servers
+- **reuseport**: Allows multiple worker processes to bind to the same port
+
+**Caching Strategy**:
+
+- **User images cached for 24 hours**: Reduces load on application servers for static content
+- **Cache revalidation**: Ensures fresh content while maintaining performance
+- **Cache locking**: Prevents cache stampede scenarios
+
+**Buffer and Timeout Optimization**:
+
+- **proxy_buffers 256 16k**: Handles high-throughput data transfer efficiently
+- **Optimized timeouts**: Balances responsiveness with resource usage
+- **HTTP/1.1 keepalive**: Reduces connection overhead
+
+**Resource Limits**:
+
+- **50M client_max_body_size**: Accommodates large file uploads
+- **Increased file descriptor limits**: Supports high-concurrency scenarios
+
+Implementation notes
+~~~~~~~~~~~~~~~~~~~~
+
+1. **Replace IP addresses**: Update the backend server IPs (172.27.205.186, 172.27.213.167) with your actual Mattermost server addresses.
+
+2. **Create cache directory**: Ensure the cache directory exists and has proper permissions:
+
+   .. code-block:: sh
+
+     sudo mkdir -p /var/cache/nginx
+     sudo chown -R www-data:www-data /var/cache/nginx
+
+3. **Test configuration**: Always test your configuration before applying:
+
+   .. code-block:: sh
+
+     sudo nginx -t
+
+4. **Monitor performance**: Use NGINX access logs and monitoring tools to verify the performance improvements.
+
+5. **Scale incrementally**: Apply these optimizations gradually and monitor their impact on your specific deployment.
+
 NGINX configuration FAQ
 -----------------------
 

@@ -23,12 +23,6 @@ This page covers deployment options for major Linux distributions and installati
   .. include:: linux/deploy-rhel.rst
     :start-after: :nosearch:
 
-.. tab:: Omnibus Package
-  :parse-titles:
-
-  .. include:: linux/deploy-omnibus.rst
-    :start-after: :nosearch:
-
 Secure your Mattermost deployment
 ---------------------------------
 
@@ -40,5 +34,4 @@ Configuring TLS and setting up an NGINX proxy ensures secure communication betwe
 
 .. note::
 
-  - Your Mattermost Server deployments requires a PostgreSQL database. See the :ref:`database preparation <deploy/server/preparations:database preparation>` documentation for details on this prerequisite.
-  - See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.
+  See the :doc:`deployment troubleshooting </guides/deployment-troubleshooting>` documentation for resolutions to common deployment issues.

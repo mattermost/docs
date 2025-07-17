@@ -148,16 +148,28 @@ If you are facing an issue where Mattermost can't connect to the PostgreSQL data
 
 Also ensure that the database user has the necessary settings to have default access to the ``public`` schema. You can do this by running the following commands:
 
-.. code-block:: sql
+1. Set the search_path for the mmuser:
 
-  ALTER USER <user> SET SEARCH_PATH TO 'public';
-  SELECT pg_catalog.set_config('search_path', '"$user", public', false); -- should give access for the session
+   .. code-block:: sql
 
-You can check for the default ``search_path`` by running the following command:
+      ALTER USER mmuser SET search_path TO "$user", public;
 
-.. code-block:: sql
 
-  SELECT boot_val FROM pg_settings WHERE name='search_path';
+2. Terminate the connection and connect again to your psql server.
+
+3. Verify the search_path is set correctly:
+
+   .. code-block:: sh
+
+      SHOW search_path;
+
+   This should return ``"$user", public``.
+
+4. If the issue persists, also run:
+
+   .. code-block:: sql
+
+      SELECT pg_catalog.set_config('search_path', '"$user", public', false);
 
 Permission issues when accessing the schema in PostgreSQL
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -180,6 +192,33 @@ Ensure that the ``mmuser`` user in PostgreSQL is the owner of the schema.
       GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
 Then, re-run the command from step 2.
+
+Incoming webhook channel names become case-sensitive after migration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After migrating from MySQL to PostgreSQL, incoming webhooks that previously worked with mixed-case channel names (e.g., ``"Tech-Talk"``) will fail with the following error:
+
+.. code-block:: text
+
+  GetChannelByName: Channel does not exist.
+
+This occurs because Mattermost doesn't allow the creation of channels with uppercase characters. All new channels names must only contain lowercase characters.
+Additionally, MySQL is case-insensitive when matching channel names, while PostgreSQL is case-sensitive. This means that webhook payloads that worked with MySQL's forgiving case-insensitive matching will fail with PostgreSQL's strict case-sensitive matching.
+In rare cases, older channels may still exist with mixed-case names in your database. These channels are considered invalid and may cause issues when performing operations like updating channel headers.
+
+**Solution:**
+
+Update all webhook payloads to use only lowercase channel names.
+
+**Prevention:**
+
+Before migrating to PostgreSQL:
+
+1. Audit your incoming webhooks and update any that use mixed-case channel names in their payloads.
+2. Check for any legacy channels with mixed-case names that may have been created in earlier versions.
+3. Consider renaming any mixed-case channels to lowercase to prevent issues.
+
+This is expected behavior with PostgreSQL and reflects Mattermost's channel naming requirements.
 
 Contact Support
 ---------------
