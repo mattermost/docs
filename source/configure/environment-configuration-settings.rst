@@ -2938,8 +2938,8 @@ Logging
 Mattermost provides 3 independent logging systems that can be configured separately with separate log files and rotation policies to meet different operational and compliance needs:
 
 - `Log Settings <#log-settings>`__
-- `Audit Log Settings <#audit-log-settings>`__
-- `Notification Log Settings <#notification-log-settings>`__
+- `Notification Log Settings <#notification-logging>`__
+- `Audit Log Settings <#audit-logging>`__
 
 By default, all Mattermost editions write logs to both the console and to the ``mattermost.log`` file in a machine-readable JSON format. Mattermost Enterprise and Professional customers can additionally log directly to syslog and TCP socket destination targets.
 
