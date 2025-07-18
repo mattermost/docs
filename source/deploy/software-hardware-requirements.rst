@@ -152,7 +152,12 @@ Search limitations on PostgreSQL:
 
 MySQL Support
 ::::::::::::::::::::
-:doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
+**MySQL Support Deprecation Notice**
+
+- **New deployments:** Starting with Mattermost v10, new installations only support PostgreSQL. MySQL is no longer supported for new deployments.
+- **Existing deployments:** MySQL support will end completely in Mattermost v11. All existing MySQL databases must be migrated to PostgreSQL before upgrading to v11.
+
+:doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
 - Search limitations on MySQL: Hashtags or recent mentions of usernames containing a dot do not return search results.
 - The migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.

@@ -1,6 +1,14 @@
 MySQL installation troubleshooting
 ==================================
 
+.. important::
+    
+  **MySQL Support Deprecation Notice**
+
+  - **New deployments:** Starting with Mattermost v10, new installations only support PostgreSQL. MySQL is no longer supported for new deployments.
+  - **Existing deployments:** MySQL support will end completely in Mattermost v11. All existing MySQL databases must be migrated to PostgreSQL before upgrading to v11.
+  - **Migration required:** See the :doc:`Migrate from MySQL to PostgreSQL </deploy/postgres-migration>` documentation for detailed migration instructions and tools.
+
 Before you can run the Mattermost server, you must first install and configure a database. You can start Mattermost by navigating to the ``/opt/mattermost`` directory and entering the command ``sudo -u mattermost bin/mattermost``. If the Mattermost server can't connect to the database, it will fail to start. This section deals with MySQL database issues that you may encounter when you start up Mattermost for the first time.
 
 .. note::
