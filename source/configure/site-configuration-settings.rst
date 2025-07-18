@@ -759,6 +759,34 @@ Allow users to view archived channels
 .. note::
   Cloud admins can't modify this configuration setting.
 
+.. deprecated:: 11.0
+  This setting is deprecated and will be removed in a future version. Use the **Allow users to browse archived public channels** setting instead.
+
+.. config:setting:: allow-users-to-browse-archived-public-channels
+  :displayname: Allow users to browse archived public channels (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .TeamSettings.BrowseArchivedPublicChannels
+  :environment: MM_TEAMSETTINGS_BROWSEARCHIVEDPUBLICCHANNELS
+
+  - **true**: **(Default)** Allows users to browse and access archived public channels.
+  - **false**: Users are unable to browse archived public channels.
+
+Allow users to browse archived public channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to browse and access archived public channels.                        | - System Config path: **Site Configuration > Users and Teams**                                |
+| - **false**: Users are unable to browse archived public channels.                                             | - ``config.json`` setting: ``TeamSettings`` > ``BrowseArchivedPublicChannels`` > ``true``     |
+|                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_BROWSEARCHIVEDPUBLICCHANNELS``                      |
++----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
+
+.. note::
+  - Cloud admins can't modify this configuration setting.
+  - This setting replaces the deprecated ``TeamSettings.ExperimentalViewArchivedChannels`` setting from Mattermost v11.0.
+  - Users can always access archived channels where they are members, regardless of this setting.
+  - Users can leave archived channels if they no longer wish to see them in the channel sidebar.
+  - To prevent users from accessing specific channels (archived or not), system administrators should remove affected users from the channel and ensure the channel is made private.
+
 .. config:setting:: show-email-address
   :displayname: Show email address (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams

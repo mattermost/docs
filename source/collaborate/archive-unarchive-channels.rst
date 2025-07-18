@@ -11,7 +11,7 @@ Delete :ref:`public channels <collaborate/channel-types:public channels>` and :r
 
 .. tip::
 
-  You can continue to access archived channels, unless your system admin has :ref:`disabled <configure/site-configuration-settings:allow users to view archived channels>` your ability to do so.
+  You can continue to access archived channels where you are a member, unless your system admin has :ref:`disabled <configure/site-configuration-settings:allow users to view archived channels>` your ability to do so. From Mattermost v11, system administrators can control whether users can :ref:`browse archived public channels <configure/site-configuration-settings:allow users to browse archived public channels>` they are not members of.
 
 .. tab:: Web/Desktop
 
@@ -108,3 +108,27 @@ System admins and Team admins can restore archived channels. When a channel is u
 .. tip::
 
   Alternatively, system admins can unarchive channels :ref:`via the mmctl <manage/mmctl-command-line-tool:mmctl channel unarchive>`, and Team admins can unarchive channels `via the API <https://api.mattermost.com/#operation/RestoreChannel>`__.
+
+Leave archived channels
+-----------------------
+
+Users can leave archived channels if they no longer wish to see them in the channel sidebar. This is useful when you want to clean up your channel list while still maintaining access to the channel content when needed.
+
+.. tab:: Web/Desktop
+
+  To leave an archived channel, select the channel name at the top of the center pane to access the drop-down menu, then select **Leave Channel**.
+
+.. tab:: Mobile
+
+  To leave an archived channel:
+  
+  1. Tap the archived channel you want to leave.
+  2. Tap the **More** |more-icon-vertical| icon located in the top right corner of the app.
+  3. Tap **View info**.
+  4. Tap **Leave Channel**.
+  5. Tap **Yes** to confirm.
+
+.. note::
+
+  - Leaving an archived channel removes it from your channel sidebar, but you can still access it through the channel browser if your system admin has enabled browsing of archived channels.
+  - System administrators can prevent users from accessing specific archived channels by removing them from the channel and ensuring the channel is made private.
