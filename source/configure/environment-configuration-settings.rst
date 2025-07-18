@@ -3990,6 +3990,8 @@ Enable performance monitoring
 |   performance monitoring is disabled.         |                                                                     |
 +-----------------------------------------------+---------------------------------------------------------------------+
 
+> Note: for Kubernetes deployments, this setting defaults to **true** and the corresponding port is reflected in the mattermost service.
+
 See the :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` documentation to learn more.
 
 .. config:setting:: enable-client-performance-monitoring
@@ -4040,7 +4042,7 @@ Client side user ids
   :systemconsole: Environment > Performance Monitoring
   :configjson: .MetricsSettings.ListenAddress
   :environment: MM_METRICSSETTINGS_LISTENADDRESS
-  :description: The port the Mattermost server will listen on to expose performance metrics, when enabled. Default is port **8067**.
+  :description: The port the Mattermost server will listen on to expose performance metrics, when enabled. Default is port **:8067**.
 
 Listen address
 ~~~~~~~~~~~~~~~
@@ -4049,7 +4051,7 @@ Listen address
 | The port the Mattermost server will listen on to expose       | - System Config path: **Environment > Performance Monitoring**          |
 | performance metrics, when enabled.                            | - ``config.json setting``: ``".MetricsSettings.ListenAddress": 8067",`` |
 |                                                               | - Environment variable: ``MM_METRICSSETTINGS_LISTENADDRESS``            |
-| Numerical input. Default is **8067**.                         |                                                                         |
+| Numerical input. Default is **:8067**.                         |                                                                         |
 +---------------------------------------------------------------+-------------------------------------------------------------------------+
 
 ----
