@@ -29,7 +29,6 @@ System admins for both self-hosted and Cloud Mattermost deployments can manage M
     Compliance configuration settings </configure/compliance-configuration-settings>
     Experimental configuration settings </configure/experimental-configuration-settings>
     Deprecated configuration settings </configure/deprecated-configuration-settings>
-    Bleve search </configure/bleve-search>
 
 Mattermost configuration settings are organized into the following categories within the System Console:
 
@@ -46,7 +45,6 @@ Mattermost configuration settings are organized into the following categories wi
 - :doc:`Compliance configuration settings </configure/compliance-configuration-settings>`
 - :doc:`Experimental configuration settings </configure/experimental-configuration-settings>`
 - :doc:`Deprecated configuration settings </configure/deprecated-configuration-settings>`
-- :doc:`Bleve search </configure/bleve-search>`
 
 Configuration in database
 --------------------------

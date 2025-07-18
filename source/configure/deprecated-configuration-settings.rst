@@ -29,6 +29,66 @@ The following Mattermost configuration settings are deprecated and are no longer
 Bleve settings
 --------------
 
+*Bleve search has been deprecated in Mattermost v11.0. We recommend using Elasticsearch or OpenSearch for enterprise search capabilities.*
+
+Enable Bleve indexing
+~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0 release*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: The indexing of new posts occurs automatically.
+
+**False**: The indexing of new posts does not occur automatically.
+
++------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableIndexing": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------+
+
+Index directory
+~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0 release*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+Directory path to use for storing bleve indexes.
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"IndexDir": ""`` with string input.                           |
++-----------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for search queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0 release*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: Search queries will use bleve search.
+
+**False**: Search queries will not use bleve search.
+
++--------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableSearching": false`` with options ``true`` and ``false``.  |
++--------------------------------------------------------------------------------------------------------------+
+
+Enable Bleve for autocomplete queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in Mattermost v11.0 release*
+
+This setting was available in the System Console by going to **Experimental > Bleve**, or by editing the ``config.json`` file.
+
+**True**: Autocomplete queries will use bleve search.
+
+**False**: Autocomplete queries will not use bleve search.
+
++-----------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableAutocomplete": false`` with options ``true`` and ``false``.  |
++-----------------------------------------------------------------------------------------------------------------+
+
 Bulk Indexing Time Window Seconds
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 

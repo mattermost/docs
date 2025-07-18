@@ -160,11 +160,15 @@ Upgrade Mattermost Server
 
           sudo find mattermost/ mattermost/client/ -mindepth 1 -maxdepth 1 \! \( -type d \( -path mattermost/client -o -path mattermost/client/plugins -o -path mattermost/config -o -path mattermost/logs -o -path mattermost/plugins -o -path mattermost/data -o -path  mattermost/yourFolderHere \) -prune \) | sort
 
-     d. If you're using :doc:`Bleve search </configure/bleve-search>`, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
+     d. If you're using Bleve search, and the directory exists *within* the ``mattermost`` directory, the index directory path won't be preserved using the command above. 
 
         - You can either move the bleve index directory out from the ``mattermost`` directory before upgrading or, following an upgrade, you can copy the contents of the bleve index directory from the ``backup`` directory. 
         - You can then store that directory or re-index as preferred. 
-        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :ref:`Configuration Settings <configure/experimental-configuration-settings:experimental bleve configuration settings>` documentation for details on configuring the bleve index directory.
+        - The bleve indexes can be migrated without reindexing between Mattermost versions. See our :doc:`deprecated configuration settings </configure/deprecated-configuration-settings>` documentation for details on configuring the bleve index directory.
+        
+        .. note::
+        
+           **Bleve search has been deprecated in Mattermost v11.0.** We recommend using Elasticsearch or OpenSearch for enterprise search capabilities. See our :doc:`Enterprise Search </scale/enterprise-search>` documentation for details.
 
      Once you've completed all of the steps above (where applicable), you're ready to execute the full command that includes ``xargs rm -r`` to delete the files. Note that the following example includes ``-o -path mattermost/yourFolderHere``:
 
