@@ -1596,21 +1596,21 @@ From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:expe
   :configjson: ExperimentalStrictCSRFEnforcement
   :environment: N/A
 
-  - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
-  - **false**: **(Default)** Disables CSRF protection tokens.
+  - **true**: **(Default from v11)** Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
+  - **false**: Disables CSRF protection tokens and enables legacy X-Requested-With header fallback.
 
 Strict CSRF token enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
-**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained.
+**True**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header. When the user logs in, an additional cookie is created with the CSRF token contained. This is the default for new deployments from Mattermost Server v11.
 
-**False**: Disables CSRF protection tokens.
+**False**: Disables CSRF protection tokens and enables legacy X-Requested-With header fallback. This provides backward compatibility for systems that rely on the previous CSRF protection method.
 
-+-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
-+-------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": true`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------------------+
 
 .. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)
