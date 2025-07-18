@@ -19,12 +19,17 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 ### Compatibility
 
 - Desktop App is supported on any currently supported [Mattermost server version](https://docs.mattermost.com/about/mattermost-desktop-releases.html#latest-releases).
+- Updated Chromium minimum supported version to 138+.
 
 ### Improvements
 
 #### All Platforms
 
 - Enhanced ``mattermost://`` protocol handling to open in-app links within the desktop application instead of external protocol dialogs. 
+
+### Architectural Changes
+
+- Major version upgrade of Electron to 37.2.2. Electron is the underlying technology used to build the Desktop App.
 
 ### Bug Fixes
 
