@@ -14,6 +14,7 @@ Mattermost Server v11.0.0
 - Mattermost v11 will retire experimental Bleve Search functionality as it no longer aligns with our vision for streamlined search solutions. See more details in `this forum post <https://forum.mattermost.com/t/transitioning-from-bleve-search-in-mattermost-v11/22982>`__.
 - End of support for MySQL is targeted for Mattermost v11. See more details in `this forum post <https://forum.mattermost.com/t/transition-to-postgresql/19551>`__.
 - Starting in Mattermost v11, the default value of the ``ExperimentalStrictCSRFEnforcement`` setting will be changed to ``true``. The legacy ``X-Requested-With`` header fallback will still be supported but only when explicitly disabled by setting ``ExperimentalStrictCSRFEnforcement`` to ``false``. See more details in `this forum post <https://forum.mattermost.com/t/default-value-of-the-experimental-strict-csrf-enforcement-setting-to-be-changed-to-true-v11/23139>`__.
+- Removed deprecated :doc:`mmctl </manage/mmctl-command-line-tool>` commands that were previously marked as deprecated including ``mmctl integrity``, ``mmctl channel make-private``, ``mmctl channel restore``, and ``mmctl command delete``. Use their newer replacements: ``mmctl channel modify --private`` for channel privacy changes, ``mmctl channel unarchive`` for restoring archived channels, and ``mmctl command archive`` for archiving commands.
 
 Removed features by Mattermost version
 ----------------------------------------

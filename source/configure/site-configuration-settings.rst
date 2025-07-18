@@ -739,25 +739,28 @@ Lock teammate name display for all users
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
 .. config:setting:: allow-users-to-view-archived-channels
-  :displayname: Allow users to view archived channels (Users and Teams)
+  :displayname: Allow users to browse archived public channels (Users and Teams)
   :systemconsole: Site Configuration > Users and Teams
-  :configjson: .TeamSettings.ExperimentalViewArchivedChannels
-  :environment: MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS
+  :configjson: .TeamSettings.BrowseArchivedPublicChannels
+  :environment: MM_TEAMSETTINGS_BROWSEARCHIVEDPUBLICCHANNELS
 
-  - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member.
-  - **false**: Users are unable to access content in archived channels.
+  - **true**: **(Default)** Allows users to access the content of archived public channels of which they were a member.
+  - **false**: Users are unable to access content in archived public channels.
 
-Allow users to view archived channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Allow users to browse archived public channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
-| - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member. | - System Config path: **Site Configuration > Users and Teams**                                |
-| - **false**: Users are unable to access content in archived channels.                                          | - ``config.json`` setting: ``TeamSettings`` > ``ExperimentalViewArchivedChannels`` > ``true`` |
-|                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS``                  |
+| - **true**: **(Default)** Allows users to access the content of archived public channels of which they were a member. | - System Config path: **Site Configuration > Users and Teams**                                |
+| - **false**: Users are unable to access content in archived public channels.                                          | - ``config.json`` setting: ``TeamSettings`` > ``BrowseArchivedPublicChannels`` > ``true`` |
+|                                                                                                                | - Environment variable: ``MM_TEAMSETTINGS_BROWSEARCHIVEDPUBLICCHANNELS``                  |
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 
 .. note::
   Cloud admins can't modify this configuration setting.
+
+.. note::
+  The ``TeamSettings.ExperimentalViewArchivedChannels`` setting is deprecated as of Mattermost v11.0 and replaced by ``TeamSettings.BrowseArchivedPublicChannels``.
 
 .. config:setting:: show-email-address
   :displayname: Show email address (Users and Teams)

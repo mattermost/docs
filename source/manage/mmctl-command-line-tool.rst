@@ -40,7 +40,6 @@ mmctl commands
 - `mmctl group user`_ - Custom User Group Management
 - `mmctl import`_ - Import Management
 - `mmctl extract`_ - Content Extraction Job Management
-- `mmctl integrity`_ - (Deprecated) Database Record Integrity
 - `mmctl job`_ - Job Management
 - `mmctl ldap`_ - LDAP Management
 - `mmctl license`_ - License Management
@@ -834,11 +833,10 @@ Manage channels.
       -  `mmctl channel create`_ - Create a channel
       -  `mmctl channel delete`_ - Delete a channel
       -  `mmctl channel list`_ - List all channels on specified teams
-      -  `mmctl channel make-private`_ - (Deprecated) Set a channel's type to "private" 
+ 
       -  `mmctl channel modify`_ - Modify a channel's type (private/public)
       -  `mmctl channel move`_ - Move channels to the specified team
       -  `mmctl channel rename`_ - Rename a channel
-      -  `mmctl channel restore`_ - (Deprecated) Restore a channel from the archive
       -  `mmctl channel search`_ - Search a channel by name
       -  `mmctl channel unarchive`_ - Unarchive a channel
       -  `mmctl channel users`_ - Manage channel users
@@ -1018,46 +1016,6 @@ List all Public, Private, and archived channels on specified teams. Archived cha
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl channel make-private
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-This command is deprecated in favour of :ref:`mmctl channel modify <manage/mmctl-command-line-tool:mmctl channel modify>` and the ``--private`` flag.
-
-**Description**
-
-Set the type of a channel from Public to Private. Channel can be specified by ``[team]:[channel]`` (e.g., ``myteam:mychannel``), or by channel ID.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl channel make-private [channel] [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl channel make-private myteam:mychannel
-
-**Options**
-
-.. code-block:: sh
-
-   -h, --help   help for make-private
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-   --disable-pager                disables paged output
-   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
-   --quiet                        prevent mmctl to generate output for the commands
-   --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
 
 mmctl channel modify
 ~~~~~~~~~~~~~~~~~~~~
@@ -1184,41 +1142,6 @@ Rename an existing channel.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl channel restore
-~~~~~~~~~~~~~~~~~~~~~
-
-This command is deprecated in favor of `mmctl channel unarchive`_. Not used in Mattermost Server version v5.26 and later.
-
-**Description**
-
-Restore a previously deleted channel. Channels can be specified by ``[team]:[channel]`` (e.g., ``myteam:mychannel``), or by channel ID.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl channel restore [channels] [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl channel restore myteam:mychannel
-
-**Options**
-
-.. code-block:: sh
-
-   -h, --help   help for restore
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl channel search
 ~~~~~~~~~~~~~~~~~~~~
@@ -1416,7 +1339,6 @@ Manage slash commands.
    Child Commands
       -  `mmctl command archive`_ - Archive a slash command
       -  `mmctl command create`_ - Create a custom command
-      -  `mmctl command delete`_ - (Deprecated) Delete a specified slash command
       -  `mmctl command list`_ - List slash commands on specified teams
       -  `mmctl command modify`_ - Modify a slash command
       -  `mmctl command move`_ - Move a slash command to a different team
@@ -1517,41 +1439,6 @@ Create a custom slash command for the specified team.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl command delete
-~~~~~~~~~~~~~~~~~~~~
-
-This command is deprecated in favor of `mmctl command archive`_.
-
-**Description**
-
-Delete a slash command. Commands can be specified by command ID.
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl command delete [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl command delete commandID
-
-**Options**
-
-.. code-block:: sh
-
-   -h, --help   help for delete
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --format string               the format of the command output [plain, json] (default "plain")
-   --insecure-sha1-intermediate  allows the use of insecure TLS protocols, such as SHA-1
-   --local                       allows communicating with the server through a unix socket
-   --strict                      will only run commands if the mmctl version matches the server one
 
 mmctl command list
 ~~~~~~~~~~~~~~~~~~~
@@ -3652,40 +3539,6 @@ Validate an import file.
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl integrity
----------------
-
-**Description**
-
-This command is deprecated from Mattermost v9.3. Performs a relational integrity check which returns information about any orphaned record found. This command can only be run using `local mode <#local-mode>`__. 
-
-**Format**
-
-.. code-block:: sh
-
-   mmctl integrity [flags]
-
-**Options**
-
-.. code-block:: sh
-
-   --confirm       Confirm you really want to run a complete integrity check that may temporarily harm system performance
-   -h, --help      help for integrity
-   -v, --verbose   Show detailed information on integrity check results
-
-**Options inherited from parent commands**
-
-.. code-block:: sh
-
-   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
-   --disable-pager                disables paged output
-   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
-   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
-   --json                         the output format will be in json format
-   --local                        allows communicating with the server through a unix socket
-   --quiet                        prevent mmctl to generate output for the commands
-   --strict                       will only run commands if the mmctl version matches the server one
-   --suppress-warnings            disables printing warning messages
 
 mmctl job
 ---------

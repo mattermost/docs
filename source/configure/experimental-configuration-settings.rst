@@ -1596,8 +1596,8 @@ From Mattermost v10.10, when this :ref:`experimental <manage/feature-labels:expe
   :configjson: ExperimentalStrictCSRFEnforcement
   :environment: N/A
 
-  - **true**: Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
-  - **false**: **(Default)** Disables CSRF protection tokens.
+  - **true**: **(Default starting in v11)** Enables CSRF protection tokens for additional hardening compared to the currently used custom header.
+  - **false**: **(Default prior to v11)** Disables CSRF protection tokens.
 
 Strict CSRF token enforcement
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -1609,8 +1609,11 @@ This setting isn't available in the System Console and can only be set in ``conf
 **False**: Disables CSRF protection tokens.
 
 +-------------------------------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": false`` with options ``true`` and ``false``. |
+| This feature's ``config.json`` setting is ``"ExperimentalStrictCSRFEnforcement": true`` with options ``true`` and ``false``. |
 +-------------------------------------------------------------------------------------------------------------------------------+
+
+.. note::
+  Starting in Mattermost v11.0, the default value of this setting changes from ``false`` to ``true``. The legacy ``X-Requested-With`` header fallback will still be supported but only when explicitly disabled by setting ``ExperimentalStrictCSRFEnforcement`` to ``false``.
 
 .. config:setting:: developer-flags
   :displayname: Developer flags (Experimental)
