@@ -800,17 +800,35 @@ Mattermost doesn't need to manage this. See the :ref:`high availablility databas
   :systemconsole: Environment > Database
   :configjson: .SqlSettings.MaxOpenConns
   :environment: MM_SQLSETTINGS_MAXOPENCONNS
-  :description: The maximum number of idle connections held open to the database. Default is **300**.
+  :description: The maximum number of open connections to the database. Default is **100**.
 
 Maximum open connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------+------------------------------------------------------------------+
 | The maximum number of open connections to the          | - System Config path: **Environment > Database**                 |
-| database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 300,`` |
+| database.                                              | - ``config.json`` setting: ``".SqlSettings.MaxOpenConns": 100,`` |
 |                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXOPENCONNS``          |
-| Numerical input. Default is **300** for self-hosted    |                                                                  |
-| deployments, and **100** for Cloud deployments.        |                                                                  |
+| Numerical input. Default is **100**.                   |                                                                  |
+| A 2:1 ratio with MaxIdleConns is recommended.          |                                                                  |
++--------------------------------------------------------+------------------------------------------------------------------+
+
+.. config:setting:: maximum-idle-connections
+  :displayname: Maximum idle connections (Database)
+  :systemconsole: Environment > Database
+  :configjson: .SqlSettings.MaxIdleConns
+  :environment: MM_SQLSETTINGS_MAXIDLECONNS
+  :description: The maximum number of idle connections held open to the database. Default is **50**.
+
+Maximum idle connections
+~~~~~~~~~~~~~~~~~~~~~~~~
+
++--------------------------------------------------------+------------------------------------------------------------------+
+| The maximum number of idle connections held open to    | - System Config path: **Environment > Database**                 |
+| the database.                                          | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``  |
+|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
+| Numerical input. Default is **50**.                    |                                                                  |
+| A 2:1 ratio with MaxOpenConns is recommended.          |                                                                  |
 +--------------------------------------------------------+------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
