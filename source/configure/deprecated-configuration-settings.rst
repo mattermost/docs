@@ -23,6 +23,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Experimental API endpoint settings <#experimental-api-endpoint-settings>`__
 - `Shared channels settings <#shared-channels-settings>`__
 - `Other deprecated settings <#other-deprecated-settings>`__
+- `Deprecated API parameters <#deprecated-api-parameters>`__
 
 ----
 
@@ -915,4 +916,22 @@ By default, in order to avoid leaking sensitive information, no method parameter
 
 +---------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"EnableOpenTracing": false`` with options ``true`` and ``false``. |
++---------------------------------------------------------------------------------------------------------------+
+
+----
+
+Deprecated API parameters
+-------------------------
+
+include_removed_members (LDAP sync)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+*Deprecated in v11.0.0*
+
+The ``include_removed_members`` parameter in the ``/api/v4/ldap/sync`` REST API endpoint and the ``--include-removed-members`` flag in the ``mmctl ldap sync`` command are deprecated and will be removed in a future version.
+
+This parameter was used to include members who left or were removed from a group-synced team/channel. It was useful in cases where synchronized groups are unlinked/re-linked for testing purposes, when LDAP users are deactivated and reactivated, or when a user leaves a team in error.
+
++---------------------------------------------------------------------------------------------------------------+
+| This API parameter is ``"include_removed_members": false`` with options ``true`` and ``false``.             |
 +---------------------------------------------------------------------------------------------------------------+
