@@ -84,8 +84,12 @@ Server software
 Mattermost server operating system
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 7+, Oracle Linux 6+, Oracle Linux 7+.
+- Ubuntu, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 9+, Oracle Linux 6+, Oracle Linux 7+.
 - Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
+
+.. important::
+
+    Starting with Mattermost v10.10, the minimum supported RedHat Enterprise Linux version is RHEL9 due to the upgrade to Go 1.24, which requires Linux kernel 3.2 or later. Customers running RHEL8 or earlier should upgrade to RHEL9 or later before upgrading to Mattermost v10.10 or later. Note that Extended Update Support for RHEL8 ended on May 31, 2025.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
