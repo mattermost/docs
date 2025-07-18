@@ -738,8 +738,30 @@ Lock teammate name display for all users
 | - **false**: **(Default)** Users can change the Teammate Name Display setting.                                |                                                                                       |
 +---------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------+
 
+.. config:setting:: allow-users-to-browse-archived-public-channels
+  :displayname: Allow users to browse archived public channels (Users and Teams)
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: .TeamSettings.BrowseArchivedPublicChannels
+  :environment: MM_TEAMSETTINGS_BROWSEARCHIVEDPUBLICCHANNELS
+
+  - **true**: **(Default)** Allows users to browse and access archived public channels. Users can always access archived channels where they are members.
+  - **false**: Users can only access archived channels where they are members, but cannot browse or join other archived public channels.
+
+Allow users to browse archived public channels
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+| - **true**: **(Default)** Allows users to browse and access archived public channels. Users can always access archived channels | - System Config path: **Site Configuration > Users and Teams**                              |
+|   where they are members.                                                                                                        | - ``config.json`` setting: ``TeamSettings`` > ``BrowseArchivedPublicChannels`` > ``true`` |
+| - **false**: Users can only access archived channels where they are members, but cannot browse or join other archived public    | - Environment variable: ``MM_TEAMSETTINGS_BROWSEARCHIVEDPUBLICCHANNELS``                   |
+|   channels.                                                                                                                      |                                                                                             |
++----------------------------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------+
+
+.. note::
+  Cloud admins can't modify this configuration setting.
+
 .. config:setting:: allow-users-to-view-archived-channels
-  :displayname: Allow users to view archived channels (Users and Teams)
+  :displayname: Allow users to view archived channels (Users and Teams) - DEPRECATED
   :systemconsole: Site Configuration > Users and Teams
   :configjson: .TeamSettings.ExperimentalViewArchivedChannels
   :environment: MM_TEAMSETTINGS_EXPERIMENTALVIEWARCHIVEDCHANNELS
@@ -747,8 +769,11 @@ Lock teammate name display for all users
   - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member.
   - **false**: Users are unable to access content in archived channels.
 
-Allow users to view archived channels
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Allow users to view archived channels - DEPRECATED
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. warning::
+  This setting is deprecated as of Mattermost v11.0 and will be removed in a future release. Use :ref:`Allow users to browse archived public channels <configure/site-configuration-settings:allow users to browse archived public channels>` instead.
 
 +----------------------------------------------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Allows users to access the content of archived channels of which they were a member. | - System Config path: **Site Configuration > Users and Teams**                                |
