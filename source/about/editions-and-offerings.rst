@@ -134,6 +134,8 @@ Mattermost Free is available to our self-hosted community through both our open 
     
     For teams larger than 50 users, it's strongly advised to deploy Mattermost with `Mattermost Enterprise <#mattermost-enterprise>`__ or `Mattermost Professional <#mattermost-professional>`__ to deliver a more secure, reliable, scalable, and resilient service.
 
+    Not recommended for government or sensitive commerical workloads.
+
 Features include:
 
 - Teams and channels for one-to-one and group messaging, file sharing, and unlimited search history with threaded messaging, emoji, and custom emoji.
