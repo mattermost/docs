@@ -37,6 +37,10 @@ For detailed instructions and additional considerations, see the complete upgrad
 
 .. _before-you-begin:
 
+.. tip::
+
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+
 Comprehensive upgrade guide
 ----------------------------
 
