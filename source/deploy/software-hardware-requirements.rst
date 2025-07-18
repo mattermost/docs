@@ -27,7 +27,7 @@ Desktop apps
     "Mac", "macOS 12+", "macOS 12+"
     "Linux", "Ubuntu LTS releases 22.04 or later", "Ubuntu LTS releases 22.04 or later"
 
-Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 7+.
+Though not officially supported, the Linux desktop app also runs on RHEL/CentOS 9+.
 
 .. note::
 
@@ -84,7 +84,7 @@ Server software
 Mattermost server operating system
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-- Ubuntu, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 9+, Oracle Linux 6+, Oracle Linux 7+.
+- Ubuntu, Debian Buster, CentOS 6+, CentOS 7+, RedHat Enterprise Linux 9+, Oracle Linux 9+.
 - Using the Mattermost `Docker deployment <https://github.com/mattermost/docker>`__ on a Docker-compatible operating system (Linux-based OS) is still recommended.
 
 .. important::
