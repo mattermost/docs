@@ -2771,8 +2771,8 @@ Use IP address
 |   hostname.                                                                  |                                                                        |
 +------------------------------------------------------------------------------+------------------------------------------------------------------------+
 
-.. config:setting:: enable-experimental-gossip-encryption
-  :displayname: Use gossip (High Availability)
+.. config:setting:: enable-gossip-encryption
+  :displayname: Enable gossip encryption (High Availability)
   :systemconsole: Environment > High Availability
   :configjson: .ClusterSettings.UseExperimentalGossip
   :environment: MM_CLUSTERSETTINGS_USEEXPERIMENTALGOSSIP
@@ -2780,13 +2780,23 @@ Use IP address
   - **true**: **(Default)** The server attempts to communicate via the gossip protocol over the gossip port specified.
   - **false**: The server attempts to communicate over the streaming port.
 
-Enable experimental gossip encryption
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Enable gossip encryption
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------------------------------------------+----------------------------------------------------------------------------------------------+
-| Gossip encryption uses AES-256 by default, and this value isn’t | - System Config path: **Environment > High Availability**                                    |
-| configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableExperimentalGossipEncryption: false”,`` |
+| Gossip encryption uses AES-256 by default, and this value isn't | - System Config path: **Environment > High Availability**                                    |
+| configurable by design.                                         | - ``config.json`` setting: ``".ClusterSettings.EnableExperimentalGossipEncryption: false",`` |
 |                                                                 | - Environment variable: ``MM_CLUSTERSETTINGS_ENABLEEXPERIMENTALGOSSIPENCRYPTION``            |
+|                                                                 |                                                                                              |
+| Starting from Mattermost v10.11:                               |                                                                                              |
+| - **true**: **(Default for new deployments)**                   |                                                                                              |
+|   All communication through the cluster using the gossip        |                                                                                              |
+|   protocol will be encrypted.                                   |                                                                                              |
+| - **false**: Existing deployments maintain their current        |                                                                                              |
+|   configuration. All communication using gossip protocol        |                                                                                              |
+|   remains unencrypted.                                         |                                                                                              |
+|                                                                 |                                                                                              |
+| Prior to Mattermost v10.11:                                    |                                                                                              |
 | - **true**: **(Default for Cloud deployments)**                 |                                                                                              |
 |   All communication through the cluster using the gossip        |                                                                                              |
 |   protocol will be encrypted.                                   |                                                                                              |
