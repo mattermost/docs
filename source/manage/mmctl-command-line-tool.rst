@@ -31,6 +31,7 @@ mmctl commands
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
+- `mmctl compliance_export`_ - Compliance export job management
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
 - `mmctl export`_ - Exports Management
@@ -1802,6 +1803,113 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 .. code-block:: sh
 
    -h, --help   help for zsh
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export
+-----------------------
+
+Manage compliance export jobs.
+
+   Child Commands
+      -  `mmctl compliance_export cancel`_ - Cancel compliance export job
+      -  `mmctl compliance_export show`_ - Show compliance export job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for compliance_export
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export cancel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Cancel a compliance export job.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl compliance_export cancel [complianceExportJobID] [flags]
+
+**Example**
+
+.. code-block:: sh
+
+  mmctl compliance_export cancel o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for cancel
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export show
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Show compliance export job details.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl compliance_export show [complianceExportJobID] [flags]
+
+**Example**
+
+.. code-block:: sh
+
+  mmctl compliance_export show o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for show
 
 **Options inherited from parent commands**
 
