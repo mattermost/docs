@@ -228,6 +228,34 @@ Enable account deactivation
 | This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
+.. config:setting:: enable-account-deletion
+  :displayname: Enable account deletion (Experimental)
+  :systemconsole: Experimental > Features
+  :configjson: EnableUserDeletion
+  :environment: N/A
+
+  - **true**: Ability for users to permanently delete their own account from **Settings > Advanced** is enabled.
+  - **false**: **(Default)** Ability for users to permanently delete their own account is disabled.
+
+Enable account deletion
+~~~~~~~~~~~~~~~~~~~~~~~
+
+**True**: Ability for users to permanently delete their own account from **Settings > Advanced > Delete Account**. When a user deletes their account, all their personal data, messages, and file uploads are permanently removed and cannot be recovered. Available only when authentication is set to use email/password. Not available when authentication uses SAML or AD/LDAP.
+
+**False**: Ability for users to permanently delete their own account is disabled.
+
+.. warning::
+
+  Account deletion is permanent and irreversible. Once deleted, all user data including messages, files, and account information cannot be recovered. This action will also remove the user from all teams and channels.
+
+.. note::
+
+  This feature is available in Mattermost Server v10.11 and later.
+
++------------------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"EnableUserDeletion": false`` with options ``true`` and ``false``. |
++------------------------------------------------------------------------------------------------------------------+
+
 .. config:setting:: enable-automatic-replies
   :displayname: Enable automatic replies
   :systemconsole: Experimental > Features

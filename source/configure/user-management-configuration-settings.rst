@@ -135,6 +135,47 @@ What happens to deactivated user integrations?
   - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
   - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
+Delete users
+~~~~~~~~~~~~~
+
+*Available in Mattermost Server v10.11 and later.*
+
+When the :ref:`account deletion feature <configure/experimental-configuration-settings:enable account deletion>` is enabled, users can permanently delete their own accounts through **Settings > Advanced > Delete Account**. As a system administrator, you should understand the implications of account deletion:
+
+.. important::
+
+  - **Account deletion is permanent and cannot be undone.** Unlike deactivation, deleted accounts cannot be reactivated.
+  - The user's profile information and account data are permanently removed from the system.
+  - The user's message history and file uploads remain in channels but display as "Deleted User" instead of showing the user's name.
+  - The user is automatically removed from all teams and channels.
+  - Any integrations tied to the deleted user account will stop working (similar to deactivation consequences listed above).
+
+What data is removed when a user deletes their account?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a user deletes their account, the following data is permanently removed:
+
+- User profile information (name, email, username)
+- User preferences and settings
+- User authentication credentials
+- Direct message channel memberships
+- Team and channel memberships
+- User session data
+
+What data is retained when a user deletes their account?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following data remains in the system after account deletion:
+
+- Message content in public and private channels (displayed as "Deleted User")
+- File uploads and attachments shared in channels
+- Channel and team audit logs that reference the user's actions
+- Integration logs and webhook history
+
+.. note::
+
+  This feature is only available when users authenticate with email/password. Users who authenticate via SAML or AD/LDAP cannot delete their own accounts through the user interface and must contact system administrators for account deletion.
+
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
 
