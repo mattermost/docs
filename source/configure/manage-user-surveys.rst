@@ -4,7 +4,9 @@ Manage user surveys
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In your self-hosted Mattermost deployment, use the Mattermost User Survey integration to gather direct feedback from your Mattermost users to identify what's working well and what's not with your Mattermost instance. All user responses are stored in and remain within your self-hosted deployment, and no telemetry data is sent back to Mattermost. You can export a CSV report of NPS scores and user responses for further analysis, or to share your feedback data with Mattermost.
+In your self-hosted Mattermost deployment, use the Mattermost User Survey integration to gather direct feedback from your Mattermost users to identify what's working well and what's not with your Mattermost instance. 
+
+**Starting from Mattermost Server v10.11**, this integration is the recommended approach for user surveys, replacing the deprecated User Satisfaction Survey Plugin for new deployments. All user responses are stored in and remain within your self-hosted deployment, and no telemetry data is sent back to Mattermost. You can export a CSV report of NPS scores and user responses for further analysis, or to share your feedback data with Mattermost.
 
 You can schedule when each survey begins, define how long each survey lasts, specify teams excluded from the survey, as well as customize both a welcome message and a user question you want feedback on.
 
@@ -25,7 +27,9 @@ Install
 
 .. important::
 
-  Mattermost offers an additonal :doc:`User Satisfaction Surveys </manage/user-satisfaction-surveys>` option with limited customization options within the **Plugins** list where surveys are enabled by default. We recommend :ref:`disabling the User Satisfaction Surveys functionality <manage/user-satisfaction-surveys:how can surveys be disabled?>` when using this user survey integration.
+  **For Mattermost Server v10.11+**: The User Satisfaction Survey Plugin is deprecated for new deployments. This User Survey integration is the recommended replacement.
+
+  **For earlier versions**: Mattermost offers an additional :doc:`User Satisfaction Surveys </manage/user-satisfaction-surveys>` option with limited customization options within the **Plugins** list where surveys are enabled by default. We recommend :ref:`disabling the User Satisfaction Surveys functionality <manage/user-satisfaction-surveys:how can surveys be disabled?>` when using this user survey integration.
 
 1. Log in to your Mattermost :doc:`workspace </guides/use-mattermost>` as a system administrator.
 2. In Mattermost, from the Product menu |product-list|, select **App Marketplace**.

@@ -2108,6 +2108,10 @@ User satisfaction surveys
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. important::
+
+   **Deprecated as of Mattermost Server v10.11**: This plugin is no longer included as a pre-packaged plugin for new Mattermost deployments. For new installations, we recommend using the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` instead.
+
 This plugin enables Mattermost to send user satisfaction surveys to gather feedback and improve product quality directly from your Mattermost users. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
 
 Access the following configuration settings in the System Console by going to **Plugins > User Satisfaction Surveys**.

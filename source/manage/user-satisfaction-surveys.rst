@@ -4,11 +4,15 @@ User satisfaction surveys
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+.. important::
+
+   **Deprecated as of Mattermost Server v10.11**: The User Satisfaction Survey Plugin is no longer included as a pre-packaged plugin for new Mattermost deployments starting from v10.11. Existing deployments that have this plugin enabled will continue to work, but we strongly recommend migrating to the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` for enhanced customization options, local data storage, and no telemetry data transmission back to Mattermost.
+
 Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for more information on the collection and use of information received through our services.
 
 .. tip::
 
-   If you're looking for survey functionality for your self-hosted Mattermost instance that offers more customization options, stores results data locally on your Mattermost server, and doesn't send telemetry data back to Mattermost, we recommend using the :doc:`User Survey integration </configure/manage-user-surveys>` instead, and `disabling the user satisfaction survey <#how-can-surveys-be-disabled>`__
+   For new deployments on v10.11+, we recommend using the :doc:`User Survey integration </configure/manage-user-surveys>` which offers more customization options, stores results data locally on your Mattermost server, and doesn't send telemetry data back to Mattermost.
 
 Administration
 --------------
@@ -16,7 +20,9 @@ Administration
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers. However, the plugin will not be activated on any servers that have :doc:`Error and Diagnostic Reporting </manage/telemetry>` disabled, meaning no surveys or data collection occurs.
+**For Mattermost Server versions prior to v10.11**: The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers. However, the plugin will not be activated on any servers that have :doc:`Error and Diagnostic Reporting </manage/telemetry>` disabled, meaning no surveys or data collection occurs.
+
+**For Mattermost Server v10.11 and later**: The User Satisfaction Survey Plugin is no longer included as a pre-packaged plugin for new deployments. We recommend using the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` instead.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
