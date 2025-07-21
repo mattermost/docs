@@ -24,6 +24,21 @@ Available slash commands include:
 - ``/playbook settings digest [on/off]`` - Turn daily digest on/off.
 - ``/playbook settings weekly-digest [on/off]`` - Turn weekly digest on/off.
 
+Mobile read-only support
+------------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Starting with Mattermost server v10.11, users can view playbook runs in read-only mode on mobile devices. This enables mobile users to:
+
+- View active and completed playbook run details
+- Review run progress and task completion status  
+- Access run timelines and retrospectives
+- Monitor key metrics and status updates
+
+Mobile users can participate in playbook run channels for discussion and collaboration, but playbook run management actions (such as starting runs, editing tasks, or updating run details) remain available only on desktop and web clients.
+
 API documentation
 -----------------
 
