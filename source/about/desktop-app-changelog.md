@@ -38,6 +38,10 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 - Fixed an issue with URL preview stealing focus from the app.
 - Fixed an issue with the zoom-in keyboard shortcut.
 
+### Open Source Components
+
+- Added ``@types/winreg``, ``electron-devtools-installer`` and ``registry-js``, and removed ``electron-connect`` and ``electron-extension-installer`` from https://github.com/mattermost/desktop/.
+
 ### Known Issues
 
 - Sometimes the app will not restart after an auto-update. This is normal, and if this occurs the app can be safely launched manually.
