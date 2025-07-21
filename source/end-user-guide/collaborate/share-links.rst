@@ -58,6 +58,14 @@ A Mattermost deep link is a URL that directs users to a specific location within
 .. tip::
 
   Deep links can also be used, in combination with bots, scripts, and integrations, to trigger specific actions within Mattermost.
+
+Desktop app behavior (Mattermost v10.11+)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In the desktop app, ``mattermost://`` deep links provide an enhanced user experience:
+
+- **Channel bookmarks**: When you click bookmarks with ``mattermost://`` URLs, they open directly within the desktop app using internal deep linking
+- **Seamless navigation**: No external protocol dialogs are shown, providing uninterrupted workflow
+- **Previous versions**: Earlier versions prompted users with external application dialogs when clicking ``mattermost://`` links
   
 Format deep links
 ~~~~~~~~~~~~~~~~~
