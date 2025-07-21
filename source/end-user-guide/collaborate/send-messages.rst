@@ -93,6 +93,10 @@ All users can edit their own sent messages, unless the system admin has :doc:`re
     :alt: Type the updated message and tap save to save the edited message.
     :scale: 30
 
+  .. tip::
+
+    From Mattermost server v10.11, when editing messages on mobile, you can also view, delete, and save message attachments. This provides the same attachment management capabilities available on web and desktop platforms.
+
 Delete messages
 ----------------
 
