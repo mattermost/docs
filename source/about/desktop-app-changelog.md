@@ -37,6 +37,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 - Fixed an issue with URL preview stealing focus from the app.
 - Fixed an issue with the zoom-in keyboard shortcut.
+- Fixed an issue where the **Enter** key would not confirm most modals.
 
 ### Open Source Components
 
