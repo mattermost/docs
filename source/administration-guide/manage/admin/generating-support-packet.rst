@@ -63,7 +63,52 @@ Contents of a Support Packet
 
 A Mattermost Support Packet can contain the following files:
 
-.. tab:: v10.10 and later
+.. tab:: v10.11 and later
+
+   .. note::
+
+      From v10.11, support packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
+
+      From v10.10, support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
+
+      - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
+      - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
+
+   **Cluster-wide files (root directory):**
+
+   - `metadata.yaml <#metadata>`__
+   - ``plugins.json`` (all active and inactive plugins)
+   - ``sanitized_config.json`` (sanitized copy of the Mattermost configuration)
+   - ``stats.yaml`` (Mattermost usage statistics)
+   - ``jobs.yaml`` (last runs of important jobs)
+   - ``diagnostics.yaml`` (core plugin diagnostics data)
+   - ``permissions.yaml`` (role & scheme information)
+   - ``postgres_schema_dump.sql`` (PostgreSQL database schema information including tables, indexes, constraints, and other database metadata to assist with database configuration diagnosis)
+   - ``warning.txt`` (present when issues are encountered during packet generation)
+   - ``tsdb_dump.tar.gz`` (present when the Metrics plugin is installed and the **Performance metrics** option is selected when generating the Support Packet)
+
+   **Cluster-specific files (in node subdirectories):**
+
+   - ``<node-id>/mattermost.log`` (Mattermost logs for each node)
+   - ``<node-id>/audit.log`` (Mattermost audit logs for each node)
+   - ``<node-id>/ldap.log`` (AD/LDAP logs for each node)
+   - ``<node-id>/notifications.log`` (notifications logs for each node)
+   - ``<node-id>/cpu.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+   - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
+
+   The following additional plugin diagnostic data is included in the generated support packet when the plugin is enabled and operational:
+
+   - GitHub: ``/github/diagnostics.yaml``
+   - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
+   - Jira: ``/jira/diagnostics.yaml``
+   - Calls: ``/com.mattermost.calls/diagnostics.yaml``
+   - Boards: ``/focalboard/diagnostics.yaml``
+   - Playbooks: ``/playbooks/diagnostics.yaml``
+   - MSCalendar: ``/com.mattermost.mscalendar/diagnostics.yaml``
+   - Google Calendar: ``/com.mattermost.gcal/diagnostics.yaml``
+
+.. tab:: v10.10
 
    .. note::
 
