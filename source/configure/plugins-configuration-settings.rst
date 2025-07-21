@@ -88,7 +88,9 @@ Require plugin signature
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
-  - Pre-packaged plugins are not subject to signature validation. Plugins installed through the Marketplace are always subject to signature validation at the time of download.
+  - **Mattermost server v10.11 and later**: Pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via ``PluginSettings.SignaturePublicKeyFiles`` to validate their signatures.
+  - **Mattermost server v10.10 and earlier**: Pre-packaged plugins are not subject to signature validation.
+  - Plugins installed through the Marketplace are always subject to signature validation at the time of download.
   - Enabling this configuration will result in `plugin file uploads <#upload-plugin>`__ being disabled in the System Console.
 
 .. config:setting:: automatic-prepackaged-plugins
@@ -2206,6 +2208,9 @@ Signature public key files
 This setting isn't available in the System Console and can only be set in ``config.json``.
 
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
+
+.. important::
+  Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins **must** configure this setting with their custom public keys to ensure proper validation of their signed plugins.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
