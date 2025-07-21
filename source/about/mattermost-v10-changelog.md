@@ -19,6 +19,7 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
 ### Improvements
 
 #### User Interface (UI)
+ - Pre-packaged Calls plugin [v1.10.0](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.10.0).
  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
  - Improved the date and time picker usability across **Custom Status**, **Scheduled Messages**, **Do Not Disturb**, and **Reminder** modals. The entire input area is now clickable, keyboard navigation works properly in time selection menus, and consistent relative date formatting is used throughout. 
  - Improved the **Permissions** table expand/collapse animation and prevented text from overflowing. 
