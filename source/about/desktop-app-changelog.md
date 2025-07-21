@@ -41,7 +41,7 @@ This changelog summarizes updates to Mattermost desktop app releases for [Matter
 
 ### Open Source Components
 
-- Added ``@types/winreg``, ``electron-devtools-installer`` and ``registry-js``, and removed ``electron-connect`` and ``electron-extension-installer`` from https://github.com/mattermost/desktop/.
+- Added ``electron-devtools-installer`` and ``registry-js``, and removed ``electron-connect`` and ``electron-extension-installer`` from https://github.com/mattermost/desktop/.
 
 ### Known Issues
 
