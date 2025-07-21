@@ -24,6 +24,34 @@ Before you begin
 
 If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <administration-guide/configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
 
+Mobile support
+~~~~~~~~~~~~~~~
+
+From Mattermost v10.11 and mobile app v2.25.0 onward, user attributes are fully supported on mobile devices. Mobile users can both view and edit all attribute types including multi-select, select, and text attributes directly from the mobile app.
+
+**Mobile compatibility requirements:**
+
+- Mattermost server v10.5 or later
+- Mattermost mobile app v2.25.0 or later (for viewing attributes)
+- Mattermost mobile app v2.27.0 or later (for editing attributes)
+- Enterprise license
+- User attributes feature enabled (enabled by default from v10.9)
+
+**Mobile attribute functionality:**
+
+- **View attributes**: Users can view custom profile attributes in user profiles on mobile devices
+- **Edit attributes**: Users can edit their own custom profile attributes through **Settings > Edit Profile** in the mobile app  
+- **All attribute types supported**: Multi-select, select, text, phone, and URL attribute types are fully functional on mobile
+- **Attribute synchronization**: Attributes synchronized from AD/LDAP or SAML identity providers are automatically available on mobile
+
+**Known limitations:**
+
+- Samsung Galaxy S22 devices may experience display issues with custom profile attributes
+
+.. note::
+   
+   Mobile attribute support requires the same server-side configuration as web and desktop clients. No additional mobile-specific setup is required.
+
 Add attributes
 ~~~~~~~~~~~~~~
 
