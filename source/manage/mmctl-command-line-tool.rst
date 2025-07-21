@@ -30,6 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
+- `mmctl compliance_export`_ - Compliance Export Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
@@ -1705,6 +1706,63 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 .. code-block:: sh
 
    -h, --help   help for show
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export
+------------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+Manage compliance export jobs.
+
+   Child Commands
+      -  `mmctl compliance_export download`_ - Download compliance export job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for compliance_export
+
+mmctl compliance_export download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Download a compliance export job by job ID. Available from Mattermost Server v10.11.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl compliance_export download [jobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Download a compliance export job by job ID
+   $ mmctl compliance_export download j1k9s8d7f6g5h4j3k2l1m9n8
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for download
 
 **Options inherited from parent commands**
 
