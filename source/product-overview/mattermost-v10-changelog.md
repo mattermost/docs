@@ -4,6 +4,24 @@
 ```{include} common-esr-support-upgrade.md
 ```
 
+(release-v10.11-feature-release)=
+## Release v10.11 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
+
+- **10.11.0, released TBD**
+  - Original 10.11.0 release.
+
+### Important Upgrade Notes
+- **Plugin Signature Requirements**: Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via `PluginSettings.SignaturePublicKeyFiles` to validate their signatures. See the [plugins configuration settings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#signature-public-key-files) for more details.
+
+```{Important}
+If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
+```
+
+### Improvements
+
+#### Administration
+- Pre-packaged plugins now require signature validation on startup, enhancing security by ensuring all plugins are properly signed and validated.
+
 (release-v10.10-feature-release)=
 ## Release v10.10 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
