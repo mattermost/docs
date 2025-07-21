@@ -31,6 +31,7 @@ mmctl commands
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
+- `mmctl compliance_export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
 - `mmctl export`_ - Exports Management
@@ -1802,6 +1803,82 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 .. code-block:: sh
 
    -h, --help   help for zsh
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export
+-----------------------
+
+.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+.. versionadded:: 10.11
+   
+   Available in Mattermost Server v10.11+
+
+Manage compliance export jobs for archiving channel data to third-party compliance systems.
+
+   Child Commands
+      -  `mmctl compliance_export create`_ - Create a new compliance export job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for compliance_export
+
+mmctl compliance_export create
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Create a new compliance export job to archive channel messages, direct messages, file uploads, and posts from plugins/bots/webhooks. Supported export formats include CSV, Actiance XML, and Global Relay EML for integration with third-party compliance systems.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl compliance_export create [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Create a CSV compliance export job
+   mmctl compliance_export create --format csv
+
+   # Create an Actiance XML compliance export job
+   mmctl compliance_export create --format actiance
+
+   # Create a Global Relay EML compliance export job  
+   mmctl compliance_export create --format global-relay-eml
+
+   # Create an export job starting from a specific timestamp
+   mmctl compliance_export create --format csv --start-time 1609459200
+
+   # Create an export job with a specific end time
+   mmctl compliance_export create --format csv --start-time 1609459200 --end-time 1609545600
+
+**Options**
+
+.. code-block:: sh
+
+   --format string         Export format: csv, actiance, or global-relay-eml (required)
+   --start-time string     Start time for export as Unix timestamp (optional, defaults to last export)
+   --end-time string       End time for export as Unix timestamp (optional, defaults to current time)
+   -h, --help              help for create
 
 **Options inherited from parent commands**
 
