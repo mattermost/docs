@@ -4214,6 +4214,66 @@ Prevent screen capture
 |   blocking is disabled.                       |                                                                                         |
 +-----------------------------------------------+-----------------------------------------------------------------------------------------+
 
+.. config:setting:: mobile-enable-secure-file-preview
+  :displayname: Enable Secure File Preview
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileEnableSecureFilePreview
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEENABLESECUREFILEPREVIEW
+  :description: Enable the secure file preview feature on mobile devices. When enabled, only supported images, videos, and PDFs are previewed. All other file types are restricted from preview, and downloads and sharing are disabled across all file types.
+    - **true**: Secure file preview is enabled.
+    - **false**: **(Default)** Secure file preview is disabled.
+
+Enable secure file preview
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------+--------------------------------------------------------------------------------------------+
+| Enable the secure file preview feature on     | - System Config path: **Environment > Mobile Security**                                    |
+| mobile devices. When enabled, only supported  | - ``config.json setting``: ``".NativeAppSettings.MobileEnableSecureFilePreview": false",`` |
+| images, videos, and PDFs are previewed.       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEENABLESECUREFILEPREVIEW``             |
+| All other file types are restricted from      |                                                                                            |
+| preview, and downloads and sharing are        |                                                                                            |
+| disabled across all file types.               |                                                                                            |
+|                                               |                                                                                            |
+| - **true**: Secure file preview is enabled.   |                                                                                            |
+| - **false**: **(Default)** Secure file        |                                                                                            |
+|   preview is disabled.                        |                                                                                            |
++-----------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+  This feature enables the secure PDF viewer for Enterprise Advanced customers. When enabled, PDF documents can be viewed securely inline within the app with enhanced content protection and controlled access.
+
+.. config:setting:: mobile-allow-pdf-link-navigation
+  :displayname: Allow PDF Link Navigation  
+  :systemconsole: Environment > Mobile Security
+  :configjson: .NativeAppSettings.MobileAllowPdfLinkNavigation
+  :environment: MM_NATIVEAPPSETTINGS_MOBILEALLOWPDFLINKNAVIGATION
+  :description: Allow navigation of internal links within PDF documents when using the secure PDF viewer. External links are blocked for security reasons.
+    - **true**: PDF link navigation is enabled.
+    - **false**: **(Default)** PDF link navigation is disabled.
+
+Allow PDF link navigation
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
+
++-----------------------------------------------+--------------------------------------------------------------------------------------------+
+| Allow navigation of internal links within PDF | - System Config path: **Environment > Mobile Security**                                    |
+| documents when using the secure PDF viewer.   | - ``config.json setting``: ``".NativeAppSettings.MobileAllowPdfLinkNavigation": false",`` |
+| External links are blocked for security       | - Environment variable: ``MM_NATIVEAPPSETTINGS_MOBILEALLOWPDFLINKNAVIGATION``             |
+| reasons.                                       |                                                                                            |
+|                                               |                                                                                            |
+| - **true**: PDF link navigation is enabled.   |                                                                                            |
+| - **false**: **(Default)** PDF link           |                                                                                            |
+|   navigation is disabled.                     |                                                                                            |
++-----------------------------------------------+--------------------------------------------------------------------------------------------+
+
+.. note::
+  This setting only applies when the secure file preview feature is enabled. It allows users to navigate internal PDF links while maintaining security by blocking external links that could lead to potentially unsafe websites.
+
 config.json-only settings
 -------------------------
 

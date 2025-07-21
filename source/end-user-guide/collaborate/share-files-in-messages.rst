@@ -105,3 +105,19 @@ The following media formats are supported on most browsers:
 -  Files: PDF, TXT
 
 Other document previews (such as Word, Excel, or PPT) are not yet supported.
+
+Secure PDF viewer on mobile
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. include:: ../_static/badges/ent-adv-only.rst
+  :start-after: :nosearch:
+
+From Mattermost v10.11 onward, Enterprise Advanced customers have access to a secure PDF viewer on mobile devices. When enabled by your system administrator, this feature provides enhanced security for viewing PDF documents:
+
+- **Secure inline viewing:** View password-protected and regular PDF files directly within the mobile app without external applications
+- **Content protection:** Advanced security measures prevent unauthorized sharing, extraction, or copying of PDF content
+- **Controlled navigation:** Navigate internal PDF links when permitted, while external links are blocked for security
+- **Restricted file access:** When the secure file preview feature is active, only images, videos, and PDFs are available for preview; all other file types are restricted
+
+.. note::
+   The secure PDF viewer is designed for high-security environments where strict content control and data loss prevention are required. Contact your system administrator to enable this feature.

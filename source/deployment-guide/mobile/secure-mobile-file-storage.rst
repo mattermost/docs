@@ -22,9 +22,19 @@ iOS – app sandbox
 
 - **Secure file viewing:**
 
-  - Non-image and non-video files are rendered using secure frameworks such as QLPreviewController. This controller displays file previews within the app’s sandbox, ensuring that raw file data isn’t exposed to external processes.
+  - Non-image and non-video files are rendered using secure frameworks such as QLPreviewController. This controller displays file previews within the app's sandbox, ensuring that raw file data isn't exposed to external processes.
   - Supported image and video files are previewed directly within the app, with the files downloaded to the app's cache folder located within its secure sandbox. For unsupported image and video formats, the Mattermost mobile app uses the QLPreviewController framework, just as it does for other file types.
   - If the file format is also unsupported by QLPreviewController and :ref:`mobile downloads are enabled <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>` on the server, users can download the file to a location of their choosing. However, if mobile downloads are disabled, these files become unavailable to the user.
+
+- **Secure PDF viewer (Mattermost v10.11+):**
+
+  Available for Enterprise Advanced customers, the secure PDF viewer provides enhanced security for viewing PDF documents within the mobile app:
+
+  - **Inline PDF viewing:** Password-protected and regular PDF documents can be viewed securely inline within the app without requiring external applications.
+  - **Content protection:** Prevents unauthorized sharing, extraction, or copying of PDF content through advanced security measures.
+  - **Link navigation control:** When enabled via server configuration, users can navigate internal PDF links while external links are blocked for security reasons.
+  - **Restricted file access:** When the secure file preview feature is enabled, only supported images, videos, and PDFs are previewed. All other file types are restricted from preview, and downloads/sharing are disabled across all file types.
+  - **Enterprise security:** Designed specifically for high-security use cases requiring strict content control and data loss prevention.
 
 - **Official references:**
 
@@ -41,9 +51,19 @@ Android – scoped storage
 
 - **Secure file viewing:**
 
-  - When users attempt to view non-image/video files, Mattermost uses an ``Intent.ACTION_VIEW`` to open the file. This intent delegates rendering to an external app only if the user explicitly triggers the action, while the file remains securely stored within Mattermost’s cache folder.
-  - Viewing non-image/video files is available only if :ref:`mobile downloads are enabled <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>` on the server.
+  - When users attempt to view non-image/video files, Mattermost uses an ``Intent.ACTION_VIEW`` to open the file. This intent delegates rendering to an external app only if the user explicitly triggers the action, while the file remains securely stored within Mattermost's cache folder.
+  - Viewing non-image/video files is available only if :ref:`mobile downloads are enabled <configure/site-configuration-settings:allow file downloads on mobile>` on the server.
   - Image and video files with supported formats are previewed directly within the app, with the files downloaded to the app's cache folder located within its secure sandbox. For unsupported image and video formats, the Mattermost mobile app uses ``Intent.ACTION_VIEW`` to open the file with an external application, just as it does for other file types.
+
+- **Secure PDF viewer (Mattermost v10.11+):**
+
+  Available for Enterprise Advanced customers, the secure PDF viewer provides enhanced security for viewing PDF documents within the mobile app:
+
+  - **Inline PDF viewing:** Password-protected and regular PDF documents can be viewed securely inline within the app without delegating to external applications.
+  - **Content protection:** Prevents unauthorized sharing, extraction, or copying of PDF content through advanced security measures.
+  - **Link navigation control:** When enabled via server configuration, users can navigate internal PDF links while external links are blocked for security reasons.
+  - **Restricted file access:** When the secure file preview feature is enabled, only supported images, videos, and PDFs are previewed. All other file types are restricted from preview, and downloads/sharing are disabled across all file types.
+  - **Enterprise security:** Designed specifically for high-security use cases requiring strict content control and data loss prevention.
 
 - **Official reference:**
 
