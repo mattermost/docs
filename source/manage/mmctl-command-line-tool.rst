@@ -1853,9 +1853,6 @@ mmctl compliance_export list
 
 List compliance export jobs with optional pagination support.
 
-.. note::
-   
-   Available from Mattermost server v10.11 onward.
 
 **Format**
 
