@@ -49,7 +49,7 @@ In a terminal window, ssh onto the system that will host the Mattermost Server. 
 
   .. code-block:: sh
 
-    wget https://releases.mattermost.com/10.5.8/mattermost-10.5.8-linux-amd64.tar.gz
+    wget https://releases.mattermost.com/10.5.9/mattermost-10.5.9-linux-amd64.tar.gz
 
 .. tab:: Older releases
 
