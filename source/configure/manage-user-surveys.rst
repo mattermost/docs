@@ -4,11 +4,11 @@ Manage user surveys
 .. include:: ../_static/badges/allplans-selfhosted.rst
   :start-after: :nosearch:
 
-In your self-hosted Mattermost deployment, use the Mattermost User Survey integration to gather direct feedback from your Mattermost users to identify what's working well and what's not with your Mattermost instance. 
+In a self-hosted Mattermost deployment, you can use the Mattermost User Survey integration to gather direct feedback from your Mattermost users to identify what's working well and what's not with your Mattermost instance.
 
-**Starting from Mattermost Server v10.11**, this integration is the recommended approach for user surveys, replacing the deprecated User Satisfaction Survey Plugin for new deployments. All user responses are stored in and remain within your self-hosted deployment, and no telemetry data is sent back to Mattermost. You can export a CSV report of NPS scores and user responses for further analysis, or to share your feedback data with Mattermost.
+All user responses are stored in and remain within your self-hosted deployment, and no telemetry data is sent back to Mattermost. You can export a CSV report of NPS scores and user responses for further analysis, or to share your feedback data with Mattermost. You can schedule when each survey begins, define how long each survey lasts, specify teams excluded from the survey, as well as customize both a welcome message and a user question you want feedback on.
 
-You can schedule when each survey begins, define how long each survey lasts, specify teams excluded from the survey, as well as customize both a welcome message and a user question you want feedback on.
+From Mattermost v10.11, user surveys are the recommended approach for gathering user feedback, replacing the deprecated :doc:`User Satisfaction Survey Plugin </manage/user-satisfaction-surveys>` for new deployments. 
 
 Setup
 ------

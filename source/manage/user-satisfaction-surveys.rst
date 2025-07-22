@@ -4,15 +4,11 @@ User satisfaction surveys
 .. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
+Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for information on the collection and use of information received through our services.
+
 .. important::
 
-   **Deprecated as of Mattermost Server v10.11**: The User Satisfaction Survey Plugin is no longer included as a pre-packaged plugin for new Mattermost deployments starting from v10.11. Existing deployments that have this plugin enabled will continue to work, but we strongly recommend migrating to the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` for enhanced customization options, local data storage, and no telemetry data transmission back to Mattermost.
-
-Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for more information on the collection and use of information received through our services.
-
-.. tip::
-
-   For new deployments on v10.11+, we recommend using the :doc:`User Survey integration </configure/manage-user-surveys>` which offers more customization options, stores results data locally on your Mattermost server, and doesn't send telemetry data back to Mattermost.
+   **Mattermost User Satisfaction Surveys are deprecated from Mattermost v10.11** and are no longer included as a pre-packaged plugin for new Mattermost deployments. Existing deployments that have this plugin enabled will continue to work, but we strongly recommend migrating to :doc:`user surveys </configure/manage-user-surveys>` for enhanced customization options, and local data storage, without telemetry data transmission back to Mattermost.
 
 Administration
 --------------
