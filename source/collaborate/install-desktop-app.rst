@@ -1,7 +1,7 @@
 Install the Mattermost desktop app
 ==================================
 
-Download and install the Mattermost desktop app from the App Store (macOS), Microsoft Store (Windows), or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`. When new desktop app releases become available, your desktop app is automatically updated.
+Download and install the Mattermost desktop app `for macOS from the App Store <https://apps.apple.com/us/app/mattermost-desktop/id1614666244?mt=12>`_, `for Windows from the Microsoft Store <https://apps.microsoft.com/detail/xp8br8mh3lpklt?hl=en-US&gl=US>`_, or by :doc:`using a package manager (Linux) </deploy/desktop/linux-desktop-install>`. When new desktop app releases become available, your desktop app is automatically updated.
 
 We strongly recommend installing the desktop app on a local drive. Network shares aren't supported. 
 
