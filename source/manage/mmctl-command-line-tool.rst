@@ -1724,8 +1724,6 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
 mmctl compliance_export
 ------------------------
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
 
 Manage compliance export jobs.
 
