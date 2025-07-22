@@ -14,6 +14,7 @@
   - Original 10.10.0 release.
 
 ### Important Upgrade Notes
+ - **System Requirements Update**: Minimum supported RedHat Enterprise Linux version has been updated to RHEL9+ due to GLIBC version requirements (GLIBC >=2.34). This also affects Oracle Linux and Enterprise Linux, which now require version 9+. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added a new column ``DefaultCategoryName`` to the ``Channels`` table. This is nullable and stores a category name to be added/created when new users join a channel. This is only used if the ``ExperimentalChannelCategorySetting`` is enabled. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added new columns ``RemoteId`` and ``ChannelId`` to the ``PostAcknowledgements`` table. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
  - Added a new column ``LastMembersSyncAt`` to the ``SharedChannelRemotes`` table and added ``LastMembershipSyncAt`` to ``SharedChannelUsers``. No database downtime is expected for this upgrade. See the [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html) for more details.
