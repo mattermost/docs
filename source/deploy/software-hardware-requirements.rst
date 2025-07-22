@@ -89,7 +89,7 @@ Mattermost server operating system
 
 .. important::
 
-    Starting with Mattermost v10.10, the minimum supported RedHat Enterprise Linux version is RHEL9 due to the upgrade to Go 1.24, which requires Linux kernel 3.2 or later. Customers running RHEL8 or earlier should upgrade to RHEL9 or later before upgrading to Mattermost v10.10 or later. Note that Extended Update Support for RHEL8 ended on May 31, 2025.
+    Starting with Mattermost v10.10, the minimum supported RedHat Enterprise Linux version is RHEL9 due to GLIBC version requirements (GLIBC >=2.34). Customers running RHEL8 or earlier should upgrade to RHEL9 or later before upgrading to Mattermost v10.10 or later. Note that Extended Update Support for RHEL8 ended on May 31, 2025.
 
 While community support exists for Fedora, FreeBSD, and Arch Linux, Mattermost does not currently include production support for these platforms.
 
