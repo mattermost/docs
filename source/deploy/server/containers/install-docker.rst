@@ -154,6 +154,10 @@ Install a different version of Mattermost
 
 3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
 
+   .. important::
+
+      **For production environments**, we recommend using specific version tags such as ``MATTERMOST_IMAGE_TAG=release-10.5`` rather than generic tags like ``MATTERMOST_IMAGE_TAG=release-10``. Generic ``release-x`` tags are intended for development use only and do not automatically receive new patch releases within that major version. Using specific version tags ensures a more reproducible and deterministic environment for your production deployment.
+
 4. Redeploy Mattermost.
 
 Troubleshooting
