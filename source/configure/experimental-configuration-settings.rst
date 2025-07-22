@@ -228,27 +228,6 @@ Enable account deactivation
 | This feature's ``config.json`` setting is ``"EnableUserDeactivation": false`` with options ``true`` and ``false``. |
 +--------------------------------------------------------------------------------------------------------------------+
 
-.. config:setting:: delete-account-link
-  :displayname: Delete account link
-  :systemconsole: Site Configuration > Users and Teams
-  :configjson: DeleteAccountLink
-  :environment: N/A
-
-Delete account link
-~~~~~~~~~~~~~~~~~~~~~~~
-
-Define the URL for a Delete Account link that users can access by going to their profile and selecting **Security > Delete Your Account**. Leave this field blank to hide the the abiltiy for users to delete their account. 
-
-.. important::
-
-  - This feature is available from Mattermost v10.11.
-  - When a user deletes their account, all their personal data, messages, and file uploads are permanently removed and cannot be recovered. This action will also remove the user from all teams and channels they're a member of.
-  - Available only when authentication is set to use email/password. Not available when authentication uses SAML or AD/LDAP.
-
-+-----------------------------------------------------------------------------------------------------------+
-| This feature's ``config.json`` setting is ``"ServiceSettings.DeleteAccountLink": ""`` with string input.  |
-+-----------------------------------------------------------------------------------------------------------+
-
 .. config:setting:: enable-automatic-replies
   :displayname: Enable automatic replies
   :systemconsole: Experimental > Features
