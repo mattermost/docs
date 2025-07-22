@@ -1743,7 +1743,7 @@ mmctl compliance_export download
 
 **Description**
 
-Download a compliance export job by job ID. Available from Mattermost Server v10.11.
+Download a compliance export job by job ID.
 
 **Format**
 
