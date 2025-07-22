@@ -75,7 +75,9 @@ New setting options were added to ``config.json``. Below is a list of the additi
 
 #### Changes to Enterprise Advanced plan: 
  - Under ``NativeAppSettings`` in ``config.json``:
-   - Added two new configuration settings ``MobileEnableSecureFilePreview`` and ``MobileAllowPdfLinkNavigation`` available on Enterprise Advanced to further lock down files on mobile. 
+   - Added two new configuration settings ``MobileEnableSecureFilePreview`` and ``MobileAllowPdfLinkNavigation`` available on Enterprise Advanced to further lock down files on mobile.
+ - Under ``AccessControlSettings`` in ``config.json``:
+   - Added ``EnableUserManagedAttributes`` configuration setting to allow using user-editable attributes. These attributes are not allowed by default.
 
 ### API Changes
  - Introduced new Plugin APIs to support audit logging. 
