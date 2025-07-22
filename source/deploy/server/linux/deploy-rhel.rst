@@ -7,7 +7,7 @@
     <div class="mm-badge__reqs">
       <h3>Minimum system requirements:</h3>
       <ul>
-        <li>Operating System: Red Hat Enterprise Linux 9+, Oracle Linux 9+</li>
+        <li>Operating System: RedHat Enterprise Linux 9+, Oracle Linux 9+</li>
         <li>Hardware: 1 vCPU/core with 2GB RAM (support for up to 1,000 users)</li>
         <li>Database: <a href="https://docs.mattermost.com/deploy/postgres-migration.html">PostgreSQL v13+</a></li>
         <li>Network:
