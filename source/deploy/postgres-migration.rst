@@ -140,7 +140,7 @@ It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`__ with p
 Mattermost can't connect to the PostgreSQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an issue where Mattermost can't connect to the PostgreSQL database, ensure that the PostgreSQL server is running and that the database is accessible. If there were errors during the execution of the ``pgloader`` command, it can fail to revert schema name back to ``public`` or potentially restoring the ``search_path``. You can manually revert the schema name back to ``public`` and restore the ``search_path`` by running the following commands:
+If you are facing an issue where Mattermost can't connect to the PostgreSQL database, ensure that the PostgreSQL server is running and that the database is accessible. If there were errors during the execution of the ``pgloader`` command, it can fail to revert the schema name back to ``public`` or potentially restoring the ``search_path``. You can manually revert the schema name back to ``public`` and restore the ``search_path`` by running the following commands:
 
 1. Connect to PostgreSQL using ``sudo -u postgres psql``.
 2. Select the ``mattermost`` database using ``\c mattermost``. Verify you are using the right database by running ``SELECT current_database();``. The command should output ``mattermost``.
