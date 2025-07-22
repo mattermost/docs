@@ -487,6 +487,10 @@ Upgrade guide
 
 An update is an incremental change to Mattermost server that fixes bugs or performance issues. An upgrade adds new or improved functionality to the server.
 
+.. tip::
+
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+
 Update configuration changes while operating continuously
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
