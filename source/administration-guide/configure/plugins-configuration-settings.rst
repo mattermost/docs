@@ -111,6 +111,9 @@ Automatic prepackaged plugins
 |                                                                                                                                                                                 | - Environment variable: ``MM_PLUGINSETTINGS_AUTOMATICPREPACKAGEDPLUGINS``                  |
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
+.. note::
+  **Prepackaged Plugin Installation Behavior**: When system administrators drop plugin files (with their ``.sig`` signature files) into the ``prepackaged_plugins`` directory, the plugins won't install automatically. Prepackaging makes the plugin available for "offline" installation. The plugin will automatically install only when the system administrator pre-configures the ``config.json`` with that plugin enabled.
+
 .. config:setting:: upload-plugin
   :displayname: Upload Plugin (Plugins - Management)
   :systemconsole: Plugins > Plugin Management
@@ -2210,7 +2213,12 @@ This setting isn't available in the System Console and can only be set in ``conf
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
 .. important::
-  Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins **must** configure this setting with their custom public keys to ensure proper validation of their signed plugins.
+  Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins **must** configure this setting with their custom public keys to ensure proper validation of their signed plugins. Use ``PluginSettings.SignaturePublicKeyFiles`` to define custom plugin signing keys.
+
+  When bundling custom plugins:
+  
+  - Drop both the plugin files and their corresponding ``.sig`` signature files into the ``prepackaged_plugins`` directory
+  - Add your custom public key using this configuration setting to validate the signatures
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
