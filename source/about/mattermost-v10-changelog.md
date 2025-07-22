@@ -11,7 +11,11 @@
   - Original 10.11.0 release.
 
 ### Important Upgrade Notes
-- **Plugin Signature Requirements**: Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via `PluginSettings.SignaturePublicKeyFiles` to validate their signatures. See the [plugins configuration settings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#signature-public-key-files) for more details.
+- **Plugin Signature Requirements**: Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must:
+  - Drop both plugin files and their corresponding `.sig` signature files into the `prepackaged_plugins` directory
+  - Configure custom public keys via `PluginSettings.SignaturePublicKeyFiles` to validate their signatures
+  
+  See the [plugins configuration settings](https://docs.mattermost.com/configure/plugins-configuration-settings.html#signature-public-key-files) for more details.
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/upgrade/important-upgrade-notes.html).
