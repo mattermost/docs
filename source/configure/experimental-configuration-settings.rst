@@ -762,7 +762,7 @@ Enable the following settings to output audit events in the System Console by go
 
 .. note::
 
-  The ability to enable and configure audit logging is currently in :ref:`Beta <manage/feature-labels:beta>` and requires the feature flag ``ExperimentalAuditSettingsSystemConsoleUI`` to be set to ``true``. 
+  The ability to enable and configure audit logging is currently in :ref:`Beta <manage/feature-labels:beta>`. 
 
 .. config:setting:: advanced-logging
   :displayname: Advanced Logging (Audit Logging > Cloud)
