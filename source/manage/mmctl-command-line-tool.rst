@@ -6998,7 +6998,7 @@ mmctl user search
 
 **Description**
 
-Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output also includes the user's deactivation status to help system admins identify inactive accounts. From Mattermost v10.11, output also includes the user's AuthData field to help system admins verify authentication sources such as LDAP or SAML.
+Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output includes the user's deactivation status to help system admins identify inactive accounts. From Mattermost v10.11, output includes the user's AuthData field to help system admins verify authentication sources such as LDAP or SAML.
 
 **Format**
 
