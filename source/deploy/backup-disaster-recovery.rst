@@ -53,6 +53,10 @@ Enterprise customers who use Mattermost for mission-critical operations must ens
 
 This section details the steps needed to set up Mattermost in a disaster recovery mode, and how to fail over from one data center to another.
 
+.. tip::
+
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability and Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+
 Set up in one data center
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 

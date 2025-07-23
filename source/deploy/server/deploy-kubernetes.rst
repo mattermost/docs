@@ -6,6 +6,10 @@ Deploy Mattermost on Kubernetes
 
 Mattermost server can be deployed on various Kubernetes platforms, providing a scalable and robust infrastructure for your team communication needs. This guide covers deployment options for major cloud providers and general Kubernetes installations.
 
+.. tip::
+
+  To learn how to safely upgrade your deployment in Kubernetes for High Availability with Active/Active support, see the :doc:`Upgrading Mattermost in Kubernetes and High Availability Environments </upgrade/upgrade-mattermost-kubernetes-ha>` documenation.
+
 Platform
 --------
 

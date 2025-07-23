@@ -1,7 +1,7 @@
 Install the Mattermost iOS mobile app
 =====================================
 
-Take Mattermost wherever you go by installing the Mattermost mobile app on your iOS mobile device running iOS 12.1 or later.
+Take Mattermost wherever you go by `installing the Mattermost mobile app <https://apps.apple.com/us/app/mattermost/id1257222717>`_ on your iOS mobile device running iOS 12.1 or later.
 
 1. On your device, visit the App Store. 
 2. Search for "Mattermost" and select **GET** to download the app.

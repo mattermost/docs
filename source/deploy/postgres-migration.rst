@@ -140,7 +140,11 @@ It is a `known issue <https://github.com/dimitri/pgloader/issues/1183>`__ with p
 Mattermost can't connect to the PostgreSQL database
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you are facing an issue where Mattermost can't connect to the PostgreSQL database, ensure that the PostgreSQL server is running and that the database is accessible. If there were errors during the execution of the ``pgloader`` command, it can fail to revert shcema name back to ``public`` or potentially restoring the ``search_path``. You can manually revert the schema name back to ``public`` and restore the ``search_path`` by running the following commands:
+If you are facing an issue where Mattermost can't connect to the PostgreSQL database, ensure that the PostgreSQL server is running and that the database is accessible. If there were errors during the execution of the ``pgloader`` command, it can fail to revert the schema name back to ``public``, or potentially fail to restore the ``search_path``. You can manually revert the schema name back to ``public`` and restore the ``search_path`` by running the following commands:
+
+1. Connect to PostgreSQL using ``sudo -u postgres psql``.
+2. Select the ``mattermost`` database using ``\c mattermost``. Verify you are using the right database by running ``SELECT current_database();``. The command should output ``mattermost``.
+3. Revert the schema name change (optional)
 
 .. code-block:: sql
 
@@ -148,16 +152,16 @@ If you are facing an issue where Mattermost can't connect to the PostgreSQL data
 
 Also ensure that the database user has the necessary settings to have default access to the ``public`` schema. You can do this by running the following commands:
 
-1. Set the search_path for the mmuser:
+4. Set the search_path for the mmuser:
 
    .. code-block:: sql
 
       ALTER USER mmuser SET search_path TO "$user", public;
 
 
-2. Terminate the connection and connect again to your psql server.
+5. Terminate the connection and connect again to your psql server.
 
-3. Verify the search_path is set correctly:
+6. Verify the search_path is set correctly:
 
    .. code-block:: sh
 
@@ -165,7 +169,7 @@ Also ensure that the database user has the necessary settings to have default ac
 
    This should return ``"$user", public``.
 
-4. If the issue persists, also run:
+7. If the issue persists, also run:
 
    .. code-block:: sql
 
@@ -192,6 +196,33 @@ Ensure that the ``mmuser`` user in PostgreSQL is the owner of the schema.
       GRANT USAGE, CREATE ON SCHEMA public TO mmuser;
 
 Then, re-run the command from step 2.
+
+Incoming webhook channel names become case-sensitive after migration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+After migrating from MySQL to PostgreSQL, incoming webhooks that previously worked with mixed-case channel names (e.g., ``"Tech-Talk"``) will fail with the following error:
+
+.. code-block:: text
+
+  GetChannelByName: Channel does not exist.
+
+This occurs because Mattermost doesn't allow the creation of channels with uppercase characters. All new channels names must only contain lowercase characters.
+Additionally, MySQL is case-insensitive when matching channel names, while PostgreSQL is case-sensitive. This means that webhook payloads that worked with MySQL's forgiving case-insensitive matching will fail with PostgreSQL's strict case-sensitive matching.
+In rare cases, older channels may still exist with mixed-case names in your database. These channels are considered invalid and may cause issues when performing operations like updating channel headers.
+
+**Solution:**
+
+Update all webhook payloads to use only lowercase channel names.
+
+**Prevention:**
+
+Before migrating to PostgreSQL:
+
+1. Audit your incoming webhooks and update any that use mixed-case channel names in their payloads.
+2. Check for any legacy channels with mixed-case names that may have been created in earlier versions.
+3. Consider renaming any mixed-case channels to lowercase to prevent issues.
+
+This is expected behavior with PostgreSQL and reflects Mattermost's channel naming requirements.
 
 Contact Support
 ---------------
