@@ -145,6 +145,7 @@ If you are facing an issue where Mattermost can't connect to the PostgreSQL data
 1. Connect to PostgreSQL using ``sudo -u postgres psql``.
 2. Select the ``mattermost`` database using ``\c mattermost``. Verify you are using the right database by running ``SELECT current_database();``. The command should output ``mattermost``.
 3. Revert the schema name change (optional)
+
 .. code-block:: sql
 
   ALTER SCHEMA <schema_name> RENAME TO public;
