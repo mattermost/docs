@@ -1981,7 +1981,7 @@ redirects_map: dict[str, str] = {
 "deployment/desktop-app-deployment.html":
 	"https://docs.mattermost.com/deploy/desktop-app.html",
 "deployment/elasticsearch.html":
-	"https://docs.mattermost.com/scale/elasticsearch.html",
+	"https://docs.mattermost.com/scale/elasticsearch-setup.html",
 "deployment/enterprise-deployment-guide.html":
         "https://docs.mattermost.com/scale/scaling-for-enterprise.html",
 "deployment/guest-accounts.html":
@@ -3670,6 +3670,8 @@ redirects_map: dict[str, str] = {
         "https://docs.mattermost.com/scale/scale-to-80000-users.html",
 "scale/scale-to-88000-users.html":
         "https://docs.mattermost.com/scale/scale-to-90000-users.html",
+"scale/elasticsearch.html":
+        "https://docs.mattermost.com/scale/elasticsearch-setup.html",
 
 # Upgrade redirects
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
