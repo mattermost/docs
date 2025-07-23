@@ -758,7 +758,7 @@ Enable Bleve for autocomplete queries
 Experimental audit logging configuration settings
 --------------------------------------------------------
 
-Enable the following settings to output audit events in the System Console by going to **Experimental > Features**, or in the ``config.json`` file. 
+Enable the following settings to output audit events in the System Console by going to **Compliance > Audit Logging**, or in the ``config.json`` file. 
 
 .. note::
 

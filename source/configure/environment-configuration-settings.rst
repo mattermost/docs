@@ -3560,11 +3560,12 @@ Audit file name
 ^^^^^^^^^^^^^^^
 
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
-| The name of the audit log files.                | - System Config path: **Compliance > Audit Logging**                                 |
-|                                                  | - ``config.json setting``: ``".ExperimentalAuditSettings.FileName": "./logs/audit.log",``  |
-| The path that you set to the audit file must    | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILENAME``                     |
-| exist and Mattermost must have write            |                                                                                        |
-| permissions in it.                               |                                                                                        |
+| The name of the audit log files.                | - System Config path: **Compliance > Audit Logging**                 |
+|                                 | - ``config.json setting``: ``".ExperimentalAuditSettings.FileName": "",``  |
+| The path that you set to the audit file must    | - Environment variable: ``MM_EXPERIMENTALAUDITSETTINGS_FILENAME``   |
+| exist and Mattermost must have write            |                                                  |
+| permissions in it.    |                              |
+| **Example:** ``/var/log/mattermost_audit.log``    |                              |
 +--------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
