@@ -36,7 +36,22 @@ Install a different version of Mattermost
 
 3. Adjust the ``MATTERMOST_IMAGE_TAG`` in the ``.env`` file to point your desired `enterprise <https://hub.docker.com/r/mattermost/mattermost-enterprise-edition/tags?page=1&ordering=last_updated>`__ or `team <https://hub.docker.com/r/mattermost/mattermost-team-edition/tags?page=1&ordering=last_updated>`__ image version.
 
+   .. important::
+
+      **For production environments**, we recommend using specific version tags such as ``MATTERMOST_IMAGE_TAG=release-10.5`` rather than generic tags like ``MATTERMOST_IMAGE_TAG=release-10``. Generic ``release-x`` tags are intended for development use only and do not automatically receive new patch releases within that major version. Using specific version tags ensures a more reproducible and deterministic environment for your production deployment.
+
 4. Redeploy Mattermost.
+
+Unintentional version downgrades
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+If you experience an unintentional downgrade when using generic ``MATTERMOST_IMAGE_TAG=release-x`` tags, this is because these tags are designed for development use and may not point to the latest patch release within that major version.
+
+**Solution**: Use a more specific version tag for your Docker image, such as ``MATTERMOST_IMAGE_TAG=release-10.5``, to avoid unexpected version changes and ensure consistent deployments.
+
+.. note::
+
+   A `pipeline improvement <https://github.com/mattermost/mattermost/issues/30656>`__ is in progress to ensure that generic ``release-x`` tags are updated to the latest version from the corresponding release branch. Once this improvement is implemented, the behavior of these tags will be more predictable.
 
 Upgrading from ``mattermost-docker``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
