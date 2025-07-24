@@ -27,8 +27,8 @@ Install Prometheus
 
       # my global config
       global:
-         scrape_interval:     60s # By default, scrape targets every 15 seconds.
-         evaluation_interval: 60s # By default, scrape targets every 15 seconds.
+         scrape_interval:     5s # Set to 5 seconds for optimal performance monitoring.
+         evaluation_interval: 5s # Set to 5 seconds for optimal performance monitoring.
          # scrape_timeout is set to the global default (10s).
 
          # Attach these labels to any time series or alerts when communicating with
@@ -47,7 +47,7 @@ Install Prometheus
          # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
          - job_name: 'prometheus'
 
-         # Override the global default and scrape targets from this job every five seconds.
+         # The scrape_interval can be overridden per job if needed (5s matches the global default).
          # scrape_interval: 5s
 
          # metrics_path defaults to '/metrics'
