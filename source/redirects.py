@@ -3841,7 +3841,43 @@ redirects_map: dict[str, str] = {
 "welcome/sign-in.html#reset-your-password":
         "https://docs.mattermost.com/collaborate/access-your-workspace.html#reset-your-password",
 "welcome/sign-in.html#single-sign-on-sso":
-        "https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso"
+        "https://docs.mattermost.com/collaborate/access-your-workspace.html#single-sign-on-sso",
+
+# URL restructuring redirects - moved files to new guide directories
+"about/use-cases.html":
+        "https://docs.mattermost.com/use-cases/index.html",
+"about/integrated-security-operations.html":
+        "https://docs.mattermost.com/use-cases/integrated-security-operations.html",
+"about/maximize-microsoft-investments.html":
+        "https://docs.mattermost.com/use-cases/maximize-microsoft-investments.html",
+"about/mission-ready-mobile.html":
+        "https://docs.mattermost.com/use-cases/mission-ready-mobile.html",
+"about/on-prem-skype-for-business-replacement.html":
+        "https://docs.mattermost.com/use-cases/on-prem-skype-for-business-replacement.html",
+"about/out-of-band-incident-response.html":
+        "https://docs.mattermost.com/use-cases/out-of-band-incident-response.html",
+"about/purpose-built-collaboration.html":
+        "https://docs.mattermost.com/use-cases/purpose-built-collaboration.html",
+"about/devops-collaboration.html":
+        "https://docs.mattermost.com/use-cases/devops-collaboration.html",
+"about/secure-command-and-control.html":
+        "https://docs.mattermost.com/use-cases/secure-command-and-control.html",
+"about/self-sovereign-collaboration.html":
+        "https://docs.mattermost.com/use-cases/self-sovereign-collaboration.html",
+"guides/get-help.html":
+        "https://docs.mattermost.com/get-help/index.html",
+"guides/community-chat.html":
+        "https://docs.mattermost.com/get-help/community-chat.html",
+"guides/community-for-mattermost.html":
+        "https://docs.mattermost.com/get-help/community-for-mattermost.html",
+"guides/contribute-to-documentation.html":
+        "https://docs.mattermost.com/get-help/contribute-to-documentation.html",
+"about/integrations.html":
+        "https://docs.mattermost.com/integrations-guide/index.html",
+"guides/pre-built-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/pre-built-integrations.html",
+"guides/microsoft-integrations.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-integrations.html"
 
 # End of redirects. The last redirect above should NOT end in a comma.
 

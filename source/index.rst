@@ -13,13 +13,13 @@ Mattermost's purpose is to accelerate the world's mission critical work by devel
    :titlesonly:
 
    /about/product.rst
-   /about/use-cases.rst
+   /use-cases/index.rst
    /guides/deployment-guide.rst
    /guides/administration-guide.rst
    /about/security.rst
    /guides/use-mattermost.rst
-   /about/integrations.rst
-   /guides/get-help.rst
+   /integrations-guide/index.rst
+   /get-help/index.rst
 
 Capabilities
 -------------
@@ -39,13 +39,13 @@ Guides
 Visit the following pages and guides to learn more about Mattermost.
 
 * :doc:`Product Overview </about/product>` - Learn about Mattermost capabilities and features.
-* :doc:`Use Case Guide </about/use-cases>` - Learn about Mattermost use cases for mission critical operations.
+* :doc:`Use Case Guide </use-cases/index>` - Learn about Mattermost use cases for mission critical operations.
 * :doc:`Deployment Guide </guides/deployment-guide>` - Learn about the Mattermost deployment process, including system requirements, installation, and configuration.
 * :doc:`Administration Guide </guides/administration-guide>` - Learn about the Mattermost administration process, including user management, security settings, and system maintenance.
 * :doc:`Security Guide </about/security>` - Mattermost can meet the strictest security requirements and provides the highest level of control over user data.
 * :doc:`End User Guide </guides/use-mattermost>` - Learn how to use Mattermost to collaborate with your teammates.
-* :doc:`Integrations Guide </about/integrations>` - Learn how Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
-* :doc:`Training and Support </guides/get-help>` - Learn about Mattermost training and support options.
+* :doc:`Integrations Guide </integrations-guide/index>` - Learn how Mattermost is extensible by design and supports a rich ecosystem of third-party apps and integrations.
+* :doc:`Training and Support </get-help/index>` - Learn about Mattermost training and support options.
 
 About Mattermost
 ------------------
