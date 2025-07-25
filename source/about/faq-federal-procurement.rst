@@ -4,7 +4,7 @@ U.S. Federal Procurement FAQ
 Is Mattermost FedRAMP authorized (High or Moderate)?
 ----------------------------------------------------
 
-Yes. Mattermost is currently FedRAMP High authorized via partner FedHIVE and listed on the `FedRAMP Marketplace <https://marketplace.fedramp.gov/products/FR1802451335>`_. (Please refresh browser to fix formatting issues in linked page).
+Yes. Mattermost is currently FedRAMP High authorized via partner FedHIVE and listed on the `FedRAMP Marketplace <https://marketplace.fedramp.gov/products/FR1802451335>`_. 
 
 Has it been granted a DoD ATO (Authority to Operate)?
 -----------------------------------------------------
