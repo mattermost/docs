@@ -11,7 +11,7 @@ Frequently Asked Questions
     Video, Audio, and Screen Sharing <faq-video-audio-screensharing>
     Enterprise <faq-enterprise>
     License <faq-license>
-    U.S Federal Procurement <faq-federal-procurement>
+    U.S. Federal Procurement <faq-federal-procurement>
     Mattermost Source Available License <faq-mattermost-source-available-license>
     Integrations <faq-integrations>
     Use Cases <faq-use-cases>
