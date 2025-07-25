@@ -1,9 +1,12 @@
 Server deployment planning
 ==========================
 
+This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale. Use the navigation below to learn more about how Mattermost supports a wide range of deployment options, from single-server installations to complex, distributed architectures:
+
 .. toctree::
-    :maxdepth: 4
-    :titlesonly:
+   :maxdepth: 1
+   :titlesonly:
+   :hidden:
 
     Preparations </deploy/server/preparations>
     Deploy with Kubernetes </deploy/server/deploy-kubernetes>
@@ -15,7 +18,16 @@ Server deployment planning
     Deployment Solution Programs </deploy/server/orchestration>
     Scale for Enterprise </scale/scaling-for-enterprise>
 
-This section provides comprehensive guidance on deploying and managing your Mattermost server. Mattermost is a flexible, high-performance messaging platform built with Go and React, designed to provide secure team collaboration at scale.
+* :doc:`Preparations </deploy/server/preparations>` - Software and hardware requirements, proxy setup, TLS configuration, and other pre-deployment tasks.
+* :doc:`Deploy with Kubernetes </deploy/server/deploy-kubernetes>` - Scalable deployment on various Kubernetes platforms with high availability support.
+* :doc:`Deploy with Linux </deploy/server/deploy-linux>` - Direct installation on Linux servers for full control over the deployment.
+* :doc:`Deploy with Containers </deploy/server/deploy-containers>` - Docker-based deployment suitable for smaller installations.
+* :doc:`Deploy for Out-of-Band Use </deploy/server/deploy-oob>` - Secure deployment for mission-critical, air-gapped environments.
+* :doc:`Deploy in Air-Gapped Environments </deploy/server/air-gapped-deployment>` - Complete isolation deployment for maximum security.
+* :doc:`Reference Architecture </deploy/server/server-architecture>` - Recommended architecture patterns and infrastructure design.
+* :doc:`Deployment Solution Programs </deploy/server/orchestration>` - Automated deployment tools and orchestration solutions.
+* :doc:`Scale for Enterprise </scale/scaling-for-enterprise>` - High availability, clustering, and enterprise-scale deployment guidance.
+
 
 Core technology stack
 ----------------------
