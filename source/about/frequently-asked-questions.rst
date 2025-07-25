@@ -29,7 +29,7 @@ The following pages will answer many of your frequently asked questions about Ma
 * :doc:`Video, audio, and screen sharing <faq-video-audio-screensharing>` - What's available for video and audio calling and screen sharing?
 * :doc:`Enterprise <faq-enterprise>` - Learn about Mattermost Enterprise Edition.
 * :doc:`License <faq-license>` - Learn more about Mattermost licenses.
-* :doc: `U.S. Federal Procurement <faq-federal-procurement> - Common questions when procuring Mattermost for U.S. Federal use cases.
+* :doc:`U.S. Federal Procurement <faq-federal-procurement>` - Common questions when procuring Mattermost for U.S. Federal use cases.
 * :doc:`Mattermost source available license <faq-mattermost-source-available-license>` - Learn what the Mattermost source available license offers.
 * :doc:`Integration <faq-integrations>` - Can messaging functionality be added to a propietary SaaS service? 
 * :doc:`Use cases <faq-use-cases>` - Learn how Mattermost supports various use cases.
