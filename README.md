@@ -6,14 +6,14 @@ If you have any questions, create an account on the [Mattermost Community server
 
 # Table of Contents
 
- * [Contributing](#contribute-to-mattermost-product-documentation)
-     * [Get started](#get-started)
-     * [Edit content directly on GitHub](#edit-content-directly-on-github)
-     * [Create documentation PRs](#create-documentation-pull-requests)
-     * [Use GitHub PR Labels](#use-github-pr-labels)
-     * [Comment on Pull Requests](#comment-on-pull-requests)
-     * [Review Pull Requests](#review-pull-requests)
- * [Build locally](#build-locally)
+- [Contributing](#contribute-to-mattermost-product-documentation)
+  - [Get started](#get-started)
+  - [Edit content directly on GitHub](#edit-content-directly-on-github)
+  - [Create documentation PRs](#create-documentation-pull-requests)
+  - [Use GitHub PR Labels](#use-github-pr-labels)
+  - [Comment on Pull Requests](#comment-on-pull-requests)
+  - [Review Pull Requests](#review-pull-requests)
+- [Build locally](#build-locally)
 
 ## Contribute to Mattermost product documentation
 
@@ -27,7 +27,8 @@ If this is your first time contributing to Mattermost, first read and sign the [
 
 The quickest way to begin is editing directly on GitHub on your fork of the Mattermost docs repo. Select the **Edit** icon on the top right corner of the page you want to edit in the Mattermost documentation.
 
-If this is the first time you're contributing, follow these steps: 
+If this is the first time you're contributing, follow these steps:
+
 1. Select **Fork** in the top-right corner of the GitHub repository page to fork the current repository.
 2. Navigate to file you want to edit, then select the Pencil icon (**Edit the file**) to open the editing interface.
 
@@ -37,7 +38,7 @@ If this is the first time you're contributing, follow these steps:
 2. Select **Create a new branch for this commit and start a pull request**.
 3. Check the **Propose file change** button.
 4. Scroll down to compare changes with the original document.
-5. Select **Create pull request**. 
+5. Select **Create pull request**.
 
 ### Comment on pull requests
 
@@ -45,9 +46,9 @@ Once a pull request is submitted, multiple committers may comment on it and prov
 
 ### Review pull requests
 
-Once a pull request has been submitted and the correct label assigned, the review process begins. This includes aligning the content with the Style Guide, validating processes, and tagging any other relevant committers. Read more about the review process and expectations [in the Mattermost Developer documentation](https://developers.mattermost.com/contribute/getting-started/code-review/). 
+Once a pull request has been submitted and the correct label assigned, the review process begins. This includes aligning the content with the Style Guide, validating processes, and tagging any other relevant committers. Read more about the review process and expectations [in the Mattermost Developer documentation](https://developers.mattermost.com/contribute/getting-started/code-review/).
 
-Once the review process is complete, and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with a future release. The branch is then deleted. 
+Once the review process is complete, and depending on the type of issue it is (e.g., a typo fix vs. a new feature), the change is either merged into master and pushed immediately or merged into the release branch and pushed in alignment with a future release. The branch is then deleted.
 
 ## Build locally
 
@@ -55,62 +56,68 @@ If you've downloaded the `mattermost/docs` repository to edit Mattermost documen
 
 > [!NOTE]
 > You can generate the docs on Linux, Mac, and Windows (using PowerShell); however, builds on Windows are considerably slower because only a single processing core is used.
-> 
+>
 > For faster local docs builds on Windows, we strongly recommend [installing WSL](https://learn.microsoft.com/en-us/windows/wsl/install) to create an Ubuntu virtual machine (VM), where you'll configure the following prerequisites. An Ubuntu VM will use all available processing cores, resulting in faster local builds.
 
-### Build prerequisites
+### 🛠️ Build Prerequisites
 
-The following software is required to build the documentation:
+To build the documentation locally, please ensure the following tools are installed:
 
-- Git [[download]](https://git-scm.com/downloads)
-- Python 3.11 or later [[download]](https://www.python.org/downloads)
-- Pipenv [[download]](https://pipenv.pypa.io)
-- GNU Make 3.82 or later
+- [Git](https://git-scm.com/downloads)
+- [Python 3.11 or later](https://www.python.org/downloads)
+- [Pipenv](https://pipenv.pypa.io)
+- GNU Make 3.82 or later (Install via your system's package manager)
 
 ### Build instructions
 
 1. Open a native or VM terminal window, then clone a forked copy of the documentation repository:
-    ```shell
-    git clone https://github.com/mattermost/docs.git
-    ```
+
+   ```shell
+   git clone https://github.com/mattermost/docs.git
+   ```
 
 2. In the terminal window, navigate into the cloned repository:
-    ```shell
-    cd docs
-    ```
+
+   ```shell
+   cd docs
+   ```
 
 3. Install [pipenv](https://docs.pipenv.org/) by using one of the following commands based on your operating system:
 
-    For Mac users and Ubuntu VM users where Homebrew is installed:
-    ```shell
-    brew install pipenv
-    ```
+   For Mac users and Ubuntu VM users where Homebrew is installed:
 
-    For other operating systems:
-    ```shell
-    pip install --user pipenv
-    ```
+   ```shell
+   brew install pipenv
+   ```
+
+   For other operating systems:
+
+   ```shell
+   pip install --user pipenv
+   ```
 
 4. Install required Python packages. You have two options:
 
    Use `pipenv sync --dev` when:
-    - You need exact reproducibility of the production build environment.
-    - You're setting up a CI/CD pipeline.
-    - You want to avoid accidentally updating dependency versions.
-    - You're working in a team where everyone should use identical package versions.
+
+   - You need exact reproducibility of the production build environment.
+   - You're setting up a CI/CD pipeline.
+   - You want to avoid accidentally updating dependency versions.
+   - You're working in a team where everyone should use identical package versions.
 
    Use `pipenv install --dev` when:
-    - You're setting up a local development environment for the first time.
-    - You want to allow minor package updates within the version constraints.
-    - You're working independently from production and want the most recent compatible versions.
 
-5. Run ``git submodule update --init --recursive`` to ensure that the Git submodules for Mattermost Agents are initialized and updated.
+   - You're setting up a local development environment for the first time.
+   - You want to allow minor package updates within the version constraints.
+   - You're working independently from production and want the most recent compatible versions.
+
+5. Run `git submodule update --init --recursive` to ensure that the Git submodules for Mattermost Agents are initialized and updated.
 
 6. Build the documentation set. You have three build commands available at the terminal:
 
-    - Use `gmake html` to generate HTML files in the `/build` directory. Only file you've modified are re-built.
-    - Use `gmake clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the left navigation pane and want to ensure you're not reviewing cached results.
-    - Use `gmake livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE. Always run `gmake clean html` first before reviewing a live preview.
+   - Use `gmake html` to generate HTML files in the `/build` directory. Only file you've modified are re-built.
+   - Use `gmake clean html` to delete all static HTML output in the `/build` directory and re-build all files. This command is particularly useful when you're making changes to the left navigation pane and want to ensure you're not reviewing cached results.
+   - Use `gmake livehtml` to review a live preview published to `http://127.0.0.1:8000` that automatically updates as new changes are saved in your local IDE. Always run `gmake clean html` first before reviewing a live preview.
 
 > [!NOTE]
 > Windows users who aren't building the docs in an Ubuntu VM also require `make` installed for the build commands above to work correctly. To install `make` via Chocolatey:
@@ -124,10 +131,14 @@ The following software is required to build the documentation:
 > When building the Mattermost Product Documentation locally, Windows users will see slower build speeds because only a single processing core is used to build the docs. Mac & Linux users will see faster build speeds because multiple cores are used to build. This is a limitation of Sphinx on Windows platforms.
 
 7. When working with static build results, navigate to the `build` directory:
-    ```sh
-    cd build
-    ```
-   
+   ```sh
+   cd build
+   ```
 8. Then, preview your changes by opening the `build/html/index.html` file.
 
 Build errors are written to the `build/warnings.log` file. Errors regarding redirects are written to the `build/redirect-warnings.log` file.
+
+---
+
+💡 **Tip for new contributors**  
+If you're contributing for the first time or have any questions, feel free to [open an issue](https://github.com/mattermost/mattermost-developer-documentation/issues). We're happy to help!
