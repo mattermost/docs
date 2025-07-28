@@ -27,33 +27,33 @@ Install Prometheus
 
       # my global config
       global:
-         scrape_interval:     60s # By default, scrape targets every 15 seconds.
-         evaluation_interval: 60s # By default, scrape targets every 15 seconds.
-         # scrape_timeout is set to the global default (10s).
+        scrape_interval:     60s # By default, scrape targets every 15 seconds.
+        evaluation_interval: 60s # By default, scrape targets every 15 seconds.
+        # scrape_timeout is set to the global default (10s).
 
-         # Attach these labels to any time series or alerts when communicating with
-         # external systems (federation, remote storage, Alertmanager).
-         external_labels:
-            monitor: 'mattermost-monitor'
+        # Attach these labels to any time series or alerts when communicating with
+        # external systems (federation, remote storage, Alertmanager).
+        external_labels:
+          monitor: 'mattermost-monitor'
 
       # Load rules once and periodically evaluate them according to the global 'evaluation_interval'.
       rule_files:
-         # - "first.rules"
-         # - "second.rules"
+        # - "first.rules"
+        # - "second.rules"
 
       # A scrape configuration containing exactly one endpoint to scrape:
       # Here it's Prometheus itself.
       scrape_configs:
-         # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
-         - job_name: 'prometheus'
+        # The job name is added as a label `job=<job_name>` to any timeseries scraped from this config.
+        - job_name: 'prometheus'
 
-         # Override the global default and scrape targets from this job every five seconds.
-         # scrape_interval: 5s
+        # Override the global default and scrape targets from this job every five seconds.
+        # scrape_interval: 5s
 
-         # metrics_path defaults to '/metrics'
-         # scheme defaults to 'http'.
+        # metrics_path defaults to '/metrics'
+        # scheme defaults to 'http'.
 
-         static_configs:
+          static_configs:
             - targets: ["<hostname1>:<port>", "<hostname2>:<port>"]
 
 3. Replace the ``<hostname1>:<port>`` parameter with your Mattermost host IP address and port to scrape the data. It connects to ``/metrics`` using HTTP. 
