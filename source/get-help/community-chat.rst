@@ -16,7 +16,7 @@ General channels
 Technical support channels
 --------------------------
 
-To familiarize yourself with our community support process, start by reading the :doc:`Get Help </guides/get-help>` documentation page.
+To familiarize yourself with our community support process, start by reading the :doc:`Get Help </get-help/get-help-index>` documentation page.
 
 - `Ask Anything <https://community.mattermost.com/core/channels/ask-anything>`__
 - `Bugs <https://community.mattermost.com/core/channels/bugs>`__
@@ -39,6 +39,6 @@ To familiarize yourself with our community contribution process, start by explor
 - `QA: Contributors <https://community.mattermost.com/core/channels/qa-contributors>`__
 - `Thank you! <https://community.mattermost.com/core/channels/thank-you>`__
 
-There are many channels that specialize in different areas of the Mattermost platform. To find and join them, search "**Developers:**" in the `LHS <https://handbook.mattermost.com/company/about-mattermost/list-of-terms#lhs>`__ "🔍 Find channel" search bar on the community server.
+There are many channels that specialize in different areas of the Mattermost platform. To find and join them, search “**Developers:**” in the `LHS <https://handbook.mattermost.com/company/about-mattermost/list-of-terms#lhs>`__ “🔍 Find channel” search bar on the community server.
 
 We hold a public developer community meeting every Wednesday at 8:30 AM Palo Alto time. ☎️ The meeting is held via an audio call in `Developers: Meeting <https://community.mattermost.com/core/channels/developers-meeting>`__ and everyone is welcome. This weekly meeting is a great opportunity to ask questions about the project and get involved.
