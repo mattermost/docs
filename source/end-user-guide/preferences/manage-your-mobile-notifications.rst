@@ -4,7 +4,7 @@ Manage your mobile notifications
 .. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-.. |numbered-badge| image:: ../images/numbered-badge.png
+.. |numbered-badge| image:: ../../images/numbered-badge.png
   :alt: A numbered badge means you have at least 1 unread message, @mention, or one of your keywords has triggered a notification.
   :width: 50px
 

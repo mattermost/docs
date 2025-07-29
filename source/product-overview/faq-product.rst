@@ -134,9 +134,9 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 |                                            **Feature**                                                          |   **Web**   | **Desktop** |    **Mobile**   |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Slash commands <end-user-guide/repeatable-processes/interact-with-playbooks:slash commands>`                             | |checkmark| | |checkmark| | Partial Support |
+| :ref:`Slash commands <end-user-guide/repeatable-processes/interact-with-playbooks:slash commands>`              | |checkmark| | |checkmark| | Partial Support |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :doc:`Server-side plugins </integrations-guide/pre-built-integrations>`                                                     | |checkmark| | |checkmark| | |checkmark|     |
+| :doc:`Server-side plugins </integrations-guide/pre-built-integrations>`                                         | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | `Interactive dialogs <https://developers.mattermost.com/integrate/plugins/interactive-dialogs/>`_               | |checkmark| | |checkmark| |                 |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
@@ -163,17 +163,18 @@ Authentication
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                     **Feature**                                           |   **Web**   | **Desktop** |  **Mobile** |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Email password login <end-user-guide/collaborate/access-your-workspace:email address or username>` | |checkmark| | |checkmark| | |checkmark| |
+| :ref:`Email password login                                                                |             |             |             |
+| <end-user-guide/collaborate/access-your-workspace:email address or username>`             | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`AD/LDAP </administration-guide/onboard/ad-ldap>`                                                         | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`AD/LDAP </administration-guide/onboard/ad-ldap>`                                    | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`SAML SSO </administration-guide/onboard/sso-saml>`                                                       | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`SAML SSO </administration-guide/onboard/sso-saml>`                                  | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`GitLab SSO </administration-guide/onboard/sso-gitlab>`                                                   | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`GitLab SSO </administration-guide/onboard/sso-gitlab>`                              | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Entra ID SSO </administration-guide/onboard/sso-entraid>`                                                | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Entra ID SSO </administration-guide/onboard/sso-entraid>`                           | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Google SSO </administration-guide/onboard/sso-google>`                                                   | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Google SSO </administration-guide/onboard/sso-google>`                              | |checkmark| | |checkmark| | |checkmark| |
 +-------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 Other
@@ -182,13 +183,17 @@ Other
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 |                                                 **Feature**                                            |   **Web**   | **Desktop** |  **Mobile** |
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Localization for 22 languages <end-user-guide/preferences/manage-your-display-options:language>`                | |checkmark| | |checkmark| | |checkmark| |
+| :ref:`Localization for 22 languages                                                                    |             |             |             |
+| <end-user-guide/preferences/manage-your-display-options:language>`                                     | |checkmark| | |checkmark| | |checkmark| |
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`Custom user interface themes <end-user-guide/preferences/customize-your-theme:customize your mattermost theme>` | |checkmark| | |checkmark| | |checkmark| |
+| :ref:`Custom user interface themes                                                                     |             |             |             |
+| <end-user-guide/preferences/customize-your-theme:customize your mattermost theme>`                     | |checkmark| | |checkmark| | |checkmark| |
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :ref:`User profile settings <end-user-guide/preferences/manage-your-profile:manage your mattermost profile>`          | |checkmark| | |checkmark| | |checkmark| |
+| :ref:`User profile settings                                                                            |             |             |             |
+| <end-user-guide/preferences/manage-your-profile:manage your mattermost profile>`                       | |checkmark| | |checkmark| | |checkmark| |
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
-| :doc:`Channel notification settings </end-user-guide/preferences/manage-your-channel-specific-notifications>`         | |checkmark| | |checkmark| | |checkmark| |
+| :doc:`Channel notification settings                                                                    |             |             |             |
+| </end-user-guide/preferences/manage-your-channel-specific-notifications>`                              | |checkmark| | |checkmark| | |checkmark| |
 +--------------------------------------------------------------------------------------------------------+-------------+-------------+-------------+
 
 What feature quality levels does Mattermost have?

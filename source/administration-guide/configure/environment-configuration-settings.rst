@@ -151,7 +151,7 @@ Web server connection security
 |   clients and your server.                                            |                                                                       |
 +-----------------------------------------------------------------------+-----------------------------------------------------------------------+
 
-See the :doc:`configuring TLS on Mattermost </administration-guide/configure/configuring-tls>` and :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>` for details.
+See the :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>` for details.
 
 .. config:setting:: tls-certificate-file
   :displayname: TLS certificate file (Web Server)
@@ -202,10 +202,8 @@ Use Let's Encrypt
 
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
 | Enable the automatic retrieval of certificates from Let’s Encrypt.                            | - System Config path: **Environment > Web Server**                       |
-| See the :doc:`configuring TLS on Mattermost </administration-guide/configure/configuring-tls> | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
-| Mattermost documentation </deployment-guide/server/setup-tls>`                                | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
-| for more details on setting up Let’s Encrypt.                                                 |                                                                          |
-|                                                                                               |                                                                          |
+|                                                                                               | - ``config.json`` setting: ``".ServiceSettings.UseLetsEncrypt: false",`` |
+|                                                                                               | - Environment variable: ``MM_SERVICESETTINGS_USELETSENCRYPT``            |
 | - **true**: The certificate will be retrieved when a client                                   |                                                                          |
 |   attempts to connect from a new domain. This will work with                                  |                                                                          |
 |   multiple domains.                                                                           |                                                                          |
@@ -213,6 +211,8 @@ Use Let's Encrypt
 |   based on the TLS Certificate File and TLS Key File specified                                |                                                                          |
 |   above.                                                                                      |                                                                          |
 +-----------------------------------------------------------------------------------------------+--------------------------------------------------------------------------+
+
+See the :doc:`setting up TLS for Mattermost </deployment-guide/server/setup-tls>` for details on setting up Let's Encrypt.
 
 .. config:setting:: lets-encrypt-certificate-cache-file
   :displayname: Let's Encrypt certificate cache file (Web Server)
@@ -4495,7 +4495,7 @@ Enable webhub channel iteration
 Enable dedicated export filestore target
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 | Enables the ability to specify an alternate filestore                                | - System Config path: **N/A**                                           |
 | target for Mattermost                                                                | - ``config.json setting``: ``FileSettings`` > ``DedicatedExportStore``  |
 | :doc:`bulk exports </administration-guide/manage/bulk-export-tool>` and              | - Environment variable: ``MM_FILESETTINGS_DEDICATEDEXPORTSTORE``        |

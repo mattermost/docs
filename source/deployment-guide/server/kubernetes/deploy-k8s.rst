@@ -27,8 +27,6 @@ Step 1: Install the NGINX Ingress Controller
 
 Follow the instructions in the `Kubernetes deployment documentation <https://kubernetes.github.io/ingress-nginx/deployment-guide/>`_ to install the NGINX ingress controller on your Kubernetes cluster. Mattermost recommends installing the Nginx Operator via helm, regardless of platform you are installing to.
 
-.. _install-mattermost-operator:
-
 Step 2: Install the Mattermost Operator
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 

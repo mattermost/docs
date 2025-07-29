@@ -121,7 +121,7 @@ Custom brand text
 |                                                                                                                   |                                                                   |
 | String input. Maximum 500 characters. `Enable custom branding <#enable-custom-branding>`__                        |                                                                   |
 | must be set to **true** to display the text.                                                                      |                                                                   |
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: enable-ask-community-link
   :displayname: Enable Ask Community link (Customization)

@@ -15,6 +15,8 @@ Platform
 
 Choose your preferred platform below for specific deployment instructions:
 
+.. _install-mattermost-operator:
+
 .. tab:: Mattermost Operator
   :parse-titles:
 
