@@ -15,10 +15,10 @@ Using collaborative playbooks, development teams can orchestrate prescribed work
 
 Each playbook represents a recurring outcome or specific goal that your teams collaborate on to achieve, such as service outage recovery or customer onboarding. Collaborative playbooks are made up of:
 
-- :ref:`Checklists <end-user-guide/repeatable-processes/work-with-playbooks:make checklists>`: The list of tasks to be completed for the run. Can be edited ad-hoc during a run.
-- :ref:`Templates <end-user-guide/repeatable-processes/work-with-playbooks:templates>`: Used for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
-- :ref:`Automation actions <end-user-guide/repeatable-processes/work-with-tasks:task actions>`: Used for inviting members, creating webhooks, editing welcome messages, and more.
-- :doc:`Permissions</end-user-guide/repeatable-processes/share-and-collaborate>`: Manage permissions at the channel and at the playbook level.
+- :ref:`Checklists <end-user-guide/workflow-automation/work-with-playbooks:make checklists>`: The list of tasks to be completed for the run. Can be edited ad-hoc during a run.
+- :ref:`Templates <end-user-guide/workflow-automation/work-with-playbooks:templates>`: Used for frequently-used actions such as updates and reminders. You can create your own templates or use default ones.
+- :ref:`Automation actions <end-user-guide/workflow-automation/work-with-tasks:task actions>`: Used for inviting members, creating webhooks, editing welcome messages, and more.
+- :doc:`Permissions</end-user-guide/workflow-automation/share-and-collaborate>`: Manage permissions at the channel and at the playbook level.
 
 Teams run a playbook every time they want to orchestrate people, tools, and data to achieve that outcome as quickly as possible while providing visibility to stakeholders. 
 

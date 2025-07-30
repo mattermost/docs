@@ -52,7 +52,7 @@ Boards supports a wide range of fully customizable property types:
 - **Email** and **Phone** can be used to record contact information.
 - **URL** can be used to provide a link to a pull request or relevant website. Clicking on the box of a URL property will automatically open the link in a new tab on your browser. Hover over the box to surface options to copy or edit the URL.
 - **Select** and **Multi-select** allows you to create a predefined list of options that can be color-coded and displayed as badges on the card to indicate things like status and priority.
-- **Dates** are useful to set and track due dates or milestones. Use the date property to make a card appear on the :ref:`Calendar view <end-user-guide/boards/work-with-views:calendar view>`. Set a single date or toggle on the **End date** to set a date range.
+- **Dates** are useful to set and track due dates or milestones. Use the date property to make a card appear on the :ref:`Calendar view <end-user-guide/project-management/work-with-views:calendar view>`. Set a single date or toggle on the **End date** to set a date range.
 - **Person** and **Multi-person** provides a quick way to capture user assignments.
 - **Checkbox** is a toggle property that can be used for assigning simple binary options on a card such as True/False or Yes/No.
 - **Created time/Created by/Last updated time/Last updated by** are predefined system properties to help you audit changes on a card. The names of these properties are customizable, but the values are not.

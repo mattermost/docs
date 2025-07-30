@@ -8,7 +8,7 @@ A collaborative playbook is a checklist of the tasks that make up your processes
 
 .. tip::
 
-  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>` to learn about the key features and functionality to look for in your incident response tooling.
+  Watch this `on-demand webinar on securing your mission-critical work <https://mattermost.com/webinar/cybersecurity-incident-response/>`_ to learn about the key features and functionality to look for in your incident response tooling.
 
 There are other parts of a playbook, such as automation settings, and metrics. Playbook configuration applies both to the execution of the playbook as well as to its management and improvement.
 

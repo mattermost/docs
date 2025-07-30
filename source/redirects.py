@@ -52,6 +52,27 @@ redirects_map: dict[str, str] = {
         "https://docs.mattermost.com/product-overview/non-profit-subscriptions.html",
 
 
+# Boards redirects
+"boards/boards-settings.html":
+        "https://docs.mattermost.com/project-management/boards-settings.html",
+"boards/calculations.html":
+        "https://docs.mattermost.com/project-management/calculations.html",
+"boards/groups-filter-sort.html":
+        "https://docs.mattermost.com/project-management/groups-filter-sort.html",
+"boards/migrate-to-boards.html":
+        "https://docs.mattermost.com/project-management/migrate-to-boards.html",
+"boards/navigate-boards.html":
+        "https://docs.mattermost.com/project-management/navigate-boards.html",
+"boards/share-and-collaborate.html":
+        "https://docs.mattermost.com/project-management/share-and-collaborate.html",
+"boards/work-with-boards.html":
+        "https://docs.mattermost.com/project-management/work-with-boards.html",
+"boards/work-with-cards.html":
+        "https://docs.mattermost.com/project-management/work-with-cards.html",
+"boards/work-with-views.html":
+        "https://docs.mattermost.com/project-management/work-with-views.html",
+
+
 # Administration redirects
 "administration/announcement-banner.html":
         "https://docs.mattermost.com/administration-guide/manage/system-wide-notifications.html",
@@ -2081,7 +2102,7 @@ redirects_map: dict[str, str] = {
 "guides/channels.html#extend-channels-functionality":
         "https://docs.mattermost.com/end-user-guide/integrate-and-extend.html",
 "guides/playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "guides/welcome-to-mattermost.html":
         "https://docs.mattermost.com/end-user-guide/use-mattermost.html",
 "guides/welcome-to-mattermost.html#access-your-mattermost-workspace":
@@ -2191,21 +2212,21 @@ redirects_map: dict[str, str] = {
 
 # Incident Collaboration redirects resulting from organization's branding shift from Incident Collaboration to Playbooks.
 "incident-collaboration/getting-started.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html",
 "incident-collaboration/launching-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "incident-collaboration/overview.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html",
 "incident-collaboration/playbook-planning.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "incident-collaboration/review-and-refine.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html",
 "incident-collaboration/running-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "incident-collaboration/refining-and-improving.html":
-         "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html",
+         "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html",
 "incident-collaboration/setting-up-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 
 # Install redirects
 "install/config-cloudfront.html":
@@ -3232,114 +3253,114 @@ redirects_map: dict[str, str] = {
 
 # Playbooks redirects
 "playbooks/getting-started.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html",
 "playbooks/navigating-mattermost-playbooks.html":
         "https://docs.mattermost.com/product-overview/mattermost-v9-changelog.html",
 "playbooks/setting-up-playbooks.html":
-	"https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+	"https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "playbooks/running-playbooks.html":
-	"https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+	"https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "playbooks/refining-and-improving.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html",
 "playbooks/customize-a-playbook.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "playbooks/customize-a-run.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-runs.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html",
 "playbooks/reusing-and-sharing-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html",
 "playbooks/playbook-permissions.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html#playbooks-permissions",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html#playbooks-permissions",
 # Important Note: The following guide files were reorg'd in FY23 Q3.
 "playbooks/overview.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html",
 "playbooks/overview.html#what-s-a-playbook":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html",
 "playbooks/overview.html#what-s-a-run":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html#what-s-a-run",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html#what-s-a-run",
 "playbooks/overview.html#keywords":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html#keywords",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html#keywords",
 "playbooks/overview.html#welcome-message":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html#welcome-message",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html#welcome-message",
 "playbooks/overview.html#tasks-and-checklists":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html#tasks-and-checklists",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html#tasks-and-checklists",
 "playbooks/overview.html#status-updates":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html#status-updates",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html#status-updates",
 "playbooks/overview.html#retrospective":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/learn-about-playbooks.html#retrospective",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html#retrospective",
 "playbooks/work-with-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html",
 "playbooks/work-with-playbooks.html#templates":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#templates",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#templates",
 "playbooks/work-with-playbooks.html#edit-a-playbook":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#edit-a-playbook",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#edit-a-playbook",
 "playbooks/work-with-playbooks.html#make-checklists":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#make-checklists",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#make-checklists",
 "playbooks/work-with-playbooks.html#multiple-runs-in-a-channel":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#multiple-runs-in-a-channel",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#multiple-runs-in-a-channel",
 "playbooks/work-with-playbooks.html#status-updates":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#status-updates",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#status-updates",
 "playbooks/work-with-playbooks.html#keywords":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#keywords",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#keywords",
 "playbooks/work-with-playbooks.html#actions":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#actions",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#actions",
 "playbooks/work-with-playbooks.html#run-metrics":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#run-metrics",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#run-metrics",
 "playbooks/work-with-playbooks.html#webhooks":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#webhooks",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#webhooks",
 "playbooks/work-with-runs.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-runs.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html",
 "playbooks/work-with-runs.html#follow-and-participate":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-runs.html#follow-and-participate",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html#follow-and-participate",
 "playbooks/work-with-runs.html#view-run-details":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-runs.html#view-run-details",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html#view-run-details",
 "playbooks/work-with-runs.html#runs-and-channel-behavior":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-runs.html#runs-and-channel-behavior",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html#runs-and-channel-behavior",
 "playbooks/work-with-runs.html#send-outgoing-webhooks":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-runs.html#send-outgoing-webhooks",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html#send-outgoing-webhooks",
 "playbooks/work-with-tasks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-tasks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html",
 "playbooks/work-with-tasks.html#tasks-and-due-dates":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-tasks.html#tasks-and-due-dates",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#tasks-and-due-dates",
 "playbooks/work-with-tasks.html#task-actions":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-tasks.html#task-actions",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#task-actions",
 "playbooks/work-with-tasks.html#task-inbox":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-tasks.html#task-inbox",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html#task-inbox",
 "playbooks/notifications-and-updates.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html",
 "playbooks/notifications-and-updates.html#status-updates":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html#status-updates",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html#status-updates",
 "playbooks/notifications-and-updates.html#request-an-update":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html#request-an-update",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html#request-an-update",
 "playbooks/notifications-and-updates.html#follow-runs-and-playbooks":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html#follow-runs-and-playbooks",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html#follow-runs-and-playbooks",
 "playbooks/notifications-and-updates.html#daily-digest":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html#daily-digest",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html#daily-digest",
 "playbooks/notifications-and-updates.html#playbook-to-do":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html#playbook-to-do",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html#playbook-to-do",
 "playbooks/metrics-and-goals.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html",
 "playbooks/metrics-and-goals.html#configure-retrospectives-before-a-run":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html#configure-retrospectives-before-a-run",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html#configure-retrospectives-before-a-run",
 "playbooks/metrics-and-goals.html#metrics":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html#metrics",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html#metrics",
 "playbooks/share-and-collaborate.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html",
 "playbooks/share-and-collaborate.html#playbook-roles":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html#playbook-roles",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html#playbook-roles",
 "playbooks/share-and-collaborate.html#playbooks-permissions":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html#playbooks-permissions",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html#playbooks-permissions",
 "playbooks/share-and-collaborate.html#channel-export":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html#channel-export",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html#channel-export",
 "playbooks/interact-with-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/interact-with-playbooks.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/interact-with-playbooks.html",
 "playbooks/interact-with-playbooks.html#slash-commands":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/interact-with-playbooks.html#slash-commands",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/interact-with-playbooks.html#slash-commands",
 "playbooks/interact-with-playbooks.html#api-documentation":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes/interact-with-playbooks.html#api-documentation",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/interact-with-playbooks.html#api-documentation",
 "playbooks/work-with-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 "playbooks/get-started-with-playbooks.html":
-        "https://docs.mattermost.com/end-user-guide/repeatable-processes.html",
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
 
 # Preference redirects
 "preferences/manage-your-calls-preferences.html":

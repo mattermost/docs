@@ -19,7 +19,7 @@ Install the plugin
 
 A Mattermost system admin must perform the following steps in Mattermost.
 
-1. Download the latest Mattermost Boards plugin binary file from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-end-user-guide/boards/releases>`_ page.
+1. Download the latest Mattermost Boards plugin binary file from the `Mattermost Boards Releases <https://github.com/mattermost/mattermost-plugin-end-user-guide/project-management/releases>`_ page.
 2. Log in to your Mattermost System Console as a system admin.
 3. Go to **Plugins > Plugin Management**.
 4. Select **Upload Plugin** to upload the Boards plugin binary file you downloaded from the Mattermost Releases page.
@@ -35,7 +35,7 @@ Mattermost configuration
 Access
 -------
 
-See the :doc:`navigate boards </end-user-guide/boards/navigate-boards>` documentation to learn how to create and access boards.
+See the :doc:`navigate boards </end-user-guide/project-management/navigate-boards>` documentation to learn how to create and access boards.
 
 Work with boards
 -----------------

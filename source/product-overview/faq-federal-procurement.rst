@@ -19,12 +19,12 @@ Mattermost has been deployed in IL4, IL5, and IL6 environments, as well as in JW
 Are there any export restrictions (e.g., ITAR, EAR) that would limit sharing with foreign partners?
 ---------------------------------------------------------------------------------------------------
 
-Our software is classified as ECCN 5D002 with License Exception ENC. Additional :ref:`export compliance details <about/certifications-and-compliance:u.s. export compliance overview>` are available. As of July 21, 2025, no export-control limitations affect sharing the Mattermost Professional, Enterprise, or Enterprise Advanced software with foreign entities.
+Our software is classified as ECCN 5D002 with License Exception ENC. Additional :ref:`export compliance details <product-overview/certifications-and-compliance:u.s. export compliance overview>` are available. As of July 21, 2025, no export-control limitations affect sharing the Mattermost Professional, Enterprise, or Enterprise Advanced software with foreign entities.
 
 Can external partner users be added under a U.S. license (i.e., shared licensing model)?
 ----------------------------------------------------------------------------------------
 
-Yes. External partners can be added as :doc:`guest or standard end user accounts </collaborate/learn-about-roles>`. They count towards licensing and are billed at the standard end user rate under the buyer’s subscription.
+Yes. External partners can be added as :doc:`guest or standard end user accounts </end-user-guide/collaborate/learn-about-roles>`. They count towards licensing and are billed at the standard end user rate under the buyer’s subscription.
 
 Does it support FOIA and records compliance (e.g., message retention, audit logs, eDiscovery)?
 ----------------------------------------------------------------------------------------------
@@ -34,22 +34,22 @@ Yes. Mattermost supports configurable retention policies, audit logs, legal hold
 Do you support air-gapped or self-hosted deployments?
 -----------------------------------------------------
 
-Yes. Mattermost can be deployed on-premises, in private clouds, or air-gapped networks, ensuring data sovereignty and control. See the :doc:`server deployment planning </deploy/server/server-deployment-planning>` guide for more information.
+Yes. Mattermost can be deployed on-premises, in private clouds, or air-gapped networks, ensuring data sovereignty and control. See the :doc:`server deployment planning </deployment-guide/server/server-deployment-planning>` guide for more information.
 
 Is CAC/SAML/LDAP integration available?
 ---------------------------------------
 
-Yes. Mattermost supports :ref:`SAML 2.0 <onboard/sso-saml:saml single sign-on>` (compatible with Okta, ADFS, OneLogin, Azure AD, PingFederate, etc.), CAC via SAML integration (configuration details may vary), and :doc:`AD/LDAP integration </onboard/ad-ldap>` for centralized identity, user provisioning, and group sync in Enterprise editions.
+Yes. Mattermost supports :ref:`SAML 2.0 <administration-guide/onboard/sso-saml:saml single sign-on>` (compatible with Okta, ADFS, OneLogin, Azure AD, PingFederate, etc.), CAC via SAML integration (configuration details may vary), and :doc:`AD/LDAP integration </administration-guide/onboard/ad-ldap>` for centralized identity, user provisioning, and group sync in Enterprise editions.
 
 Can it be used securely on BYOD mobile?
 ---------------------------------------
 
-Yes. Mattermost supports :doc:`mobile security controls </about/security/mobile-security>` like restricting file downloads, screen capture, and external sharing.
+Yes. Mattermost supports :doc:`mobile security controls </security-guide/security/mobile-security>` like restricting file downloads, screen capture, and external sharing.
 
 Can it be used securely on mobile with MDM controls?
 ----------------------------------------------------
 
-Yes. Mattermost supports :doc:`mobile device management (MDM) policies </about/security/mobile-security>`, while also including :doc:`mobile security controls </about/security/mobile-security>` like restricting file downloads, screen capture, and external sharing.
+Yes. Mattermost supports :doc:`mobile device management (MDM) policies </security-guide/security/mobile-security>`, while also including :doc:`mobile security controls </security-guide/security/mobile-security>` like restricting file downloads, screen capture, and external sharing.
 
 Do you have existing STIGs or documentation to support RMF/ATO efforts?
 -----------------------------------------------------------------------
@@ -80,7 +80,7 @@ What is the entity name, address and CAGE code Mattermost Federal, Inc?
 - Address: 1900 Reston Metro Plaza, Suite #613, Reston, VA, 20190-5952, USA
 - CAGE Code: 9TG37
 
-What is my question is not answered here?
+What if my question is not answered here?
 -----------------------------------------
 
 For any questions you have not answered here, please `contact us <https://mattermost.com/contact/>`_.

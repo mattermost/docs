@@ -104,7 +104,7 @@ Collaborative playbooks
 |                                                        **Feature**            |    **Web**  | **Desktop** | **Mobile** |
 +--------------------------+----------------------------------------------------+-------------+-------------+------------+
 | :doc:`Collaborative playbooks                                                 |             |             |            |
-| </end-user-guide/repeatable-processes/work-with-playbooks>`                   | |checkmark| | |checkmark| |            |
+| </end-user-guide/workflow-automation/work-with-playbooks>`                    | |checkmark| | |checkmark| |            |
 +--------------------------+----------------------------------------------------+-------------+-------------+------------+
 
 Calls
@@ -134,7 +134,7 @@ Integrations
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 |                                            **Feature**                                                          |   **Web**   | **Desktop** |    **Mobile**   |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
-| :ref:`Slash commands <end-user-guide/repeatable-processes/interact-with-playbooks:slash commands>`              | |checkmark| | |checkmark| | Partial Support |
+| :ref:`Slash commands <end-user-guide/workflow-automation/interact-with-playbooks:slash commands>`               | |checkmark| | |checkmark| | Partial Support |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+
 | :doc:`Server-side plugins </integrations-guide/pre-built-integrations>`                                         | |checkmark| | |checkmark| | |checkmark|     |
 +-----------------------------------------------------------------------------------------------------------------+-------------+-------------+-----------------+

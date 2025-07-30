@@ -57,11 +57,11 @@ Workflow automation
 
 :doc:`Mattermost Playbooks </end-user-guide/workflow-automation>` standardizes and automates mission workflows such as incident response, shift changeovers, and operational checklists—reducing human error and improving procedural consistency. Playbooks feature: 
 
-- Structured :ref:`checklists <end-user-guide/repeatable-processes/work-with-playbooks:make checklists>` with assigned :ref:`tasks and due dates <end-user-guide/repeatable-processes/work-with-tasks:tasks and due dates>` to operationalize standard and incident or emergency operating procedures.
-- Automated :doc:`status updates and real-time notifications </end-user-guide/repeatable-processes/notifications-and-updates>` in linked channels to keep stakeholders informed of workflow progress or blockers.
-- Embedded :ref:`actions , assignments, and guidance <end-user-guide/repeatable-processes/work-with-playbooks:actions>` for repeatable execution to ensure operational consistency.
-- Timeline, :ref:`retrospectives <end-user-guide/repeatable-processes/learn-about-playbooks:retrospective>`, and :ref:`metric tracking <end-user-guide/repeatable-processes/metrics-and-goals:metrics>` for after-action reviews and accountability.
-- Integration :ref:`triggers <end-user-guide/repeatable-processes/work-with-runs:send outgoing webhooks>` (e.g., alerts from monitoring tools) to launch workflows automatically and decrease time to execution.
+- Structured :ref:`checklists <end-user-guide/workflow-automation/work-with-playbooks:make checklists>` with assigned :ref:`tasks and due dates <end-user-guide/workflow-automation/work-with-tasks:tasks and due dates>` to operationalize standard and incident or emergency operating procedures.
+- Automated :doc:`status updates and real-time notifications </end-user-guide/workflow-automation/notifications-and-updates>` in linked channels to keep stakeholders informed of workflow progress or blockers.
+- Embedded :ref:`actions , assignments, and guidance <end-user-guide/workflow-automation/work-with-playbooks:actions>` for repeatable execution to ensure operational consistency.
+- Timeline, :ref:`retrospectives <end-user-guide/workflow-automation/learn-about-playbooks:retrospective>`, and :ref:`metric tracking <end-user-guide/workflow-automation/metrics-and-goals:metrics>` for after-action reviews and accountability.
+- Integration :ref:`triggers <end-user-guide/workflow-automation/work-with-runs:send outgoing webhooks>` (e.g., alerts from monitoring tools) to launch workflows automatically and decrease time to execution.
 
 .. image:: /images/playbooks.png
    :alt: An image showing Mattermost playbooks, highlighting the ability to create structured checklists with tasks and due dates, automate status updates, and track metrics for operational workflows.
@@ -85,11 +85,11 @@ Project and task management
 
 :doc:`Mattermost Boards </end-user-guide/project-task-management>` enables you to coordinate operational work with Kanban-style planning that integrates directly into messaging workflows—enabling transparency, prioritization, and accountability across teams with the following capabilities: 
 
-- Provides visual task :doc:`boards </end-user-guide/boards/work-with-boards>` with drag-and-drop :doc:`cards </end-user-guide/boards/work-with-cards>` and customizable workflows, supporting contextual awareness and :ref:`role-based task visibility <end-user-guide/boards/share-and-collaborate:board permissions>`.
-- Delivers real-time updates and synchronization with :ref:`linked Mattermost channels <end-user-guide/boards/navigate-boards:link a board to a channel>`.
-- Supports :ref:`card-level assignments, checklists, labels, and due dates <end-user-guide/boards/work-with-cards:card properties>` for operational clarity.
-- Enables :ref:`filtering <end-user-guide/boards/groups-filter-sort:filters>` and :ref:`sorting <end-user-guide/boards/groups-filter-sort:sorting cards>` to manage backlogs, priorities, and forward planning.
-- Maintains :ref:`project visibility <end-user-guide/boards/navigate-boards:sidebar categories>` without requiring users to switch away from primary communication channels.
+- Provides visual task :doc:`boards </end-user-guide/project-management/work-with-boards>` with drag-and-drop :doc:`cards </end-user-guide/project-management/work-with-cards>` and customizable workflows, supporting contextual awareness and :ref:`role-based task visibility <end-user-guide/project-management/share-and-collaborate:board permissions>`.
+- Delivers real-time updates and synchronization with :ref:`linked Mattermost channels <end-user-guide/project-management/navigate-boards:link a board to a channel>`.
+- Supports :ref:`card-level assignments, checklists, labels, and due dates <end-user-guide/project-management/work-with-cards:card properties>` for operational clarity.
+- Enables :ref:`filtering <end-user-guide/project-management/groups-filter-sort:filters>` and :ref:`sorting <end-user-guide/project-management/groups-filter-sort:sorting cards>` to manage backlogs, priorities, and forward planning.
+- Maintains :ref:`project visibility <end-user-guide/project-management/navigate-boards:sidebar categories>` without requiring users to switch away from primary communication channels.
 
 .. image:: /images/boards-kanban.png
    :alt: An image showing a Kanban board in Mattermost, highlighting the ability to manage tasks and projects visually with drag-and-drop functionality, customizable workflows, and real-time updates.

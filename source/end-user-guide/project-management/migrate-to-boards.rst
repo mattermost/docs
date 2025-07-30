@@ -11,7 +11,7 @@ If you’d like to back up your board or re-use it on another team or channel wo
 
 To do this, select the options menu |more-icon| to the left of the **New** button at the top of the board. Then select **Export board archive**. Download the archive file. Navigate to the team or channel workspace where you’d like to add the exported board. Select the Gear icon next to your profile picture, then choose **Import archive**. The board you exported will be added to this team or channel workspace.
 
-The **Import archive** option will import the board to your current team. Use :ref:`board permissions <end-user-guide/boards/share-and-collaborate:board permissions>` to control access to your imported board. The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
+The **Import archive** option will import the board to your current team. Use :ref:`board permissions <end-user-guide/project-management/share-and-collaborate:board permissions>` to control access to your imported board. The previous ``.focalboard`` format will be deprecated in a future release, but will support importing until then. Currently, the import dialog looks for ``.boardarchive``. Use **Select all files** to select ``.focalboard`` files to import.
 
 Export to CSV
 -------------

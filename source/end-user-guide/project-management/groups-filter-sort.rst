@@ -4,7 +4,7 @@ Work with groups, filter, and sort
 .. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
 
-Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with :ref:`saved views <end-user-guide/boards/work-with-views:work with saved views>`, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
+Your board can be grouped, filtered, and sorted into different views using a range of properties. This gives you a powerful way to track work from various perspectives. When used in conjunction with :ref:`saved views <end-user-guide/project-management/work-with-views:work with saved views>`, you can create multiple views with different groupings and filters for quick access without having to reapply the groupings and filters every time.
 
 For example, easily find tasks assigned to you or a team member using the person or multi-person filters, and keep track of upcoming tasks with date filters.
 
@@ -18,8 +18,8 @@ Apply a group
 
 To apply a group, select the **Group by** option at the top of the board, then select any available **Select** or **Person** property to group your cards by.
 
-- In the :ref:`boards view <end-user-guide/boards/work-with-views:board view>`, cards are automatically grouped into columns by the values from the specified property.
-- In the `table view <end-user-guide/boards/work-with-views:board view>`, grouped cards will appear in individual sections based on the values from the specified property. Select the arrow to the left of the group name to expand or collapse cards in the group.
+- In the :ref:`boards view <end-user-guide/project-management/work-with-views:board view>`, cards are automatically grouped into columns by the values from the specified property.
+- In the `table view <end-user-guide/project-management/work-with-views:board view>`, grouped cards will appear in individual sections based on the values from the specified property. Select the arrow to the left of the group name to expand or collapse cards in the group.
 
 Hide and unhide groups
 ~~~~~~~~~~~~~~~~~~~~~~

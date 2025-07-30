@@ -76,9 +76,9 @@ This offering includes all the features of `Mattermost Professional <#mattermost
 - :doc:`Advanced legal controls with customizable end-user terms of service and re-acceptance duration </administration-guide/comply/custom-terms-of-service>`.
 - :ref:`Private mobility with ID-only push notifications <administration-guide/configure/site-configuration-settings:push notification contents>`.
 - :doc:`Enhanced compliance with global and custom retention policies for messages and files </administration-guide/comply/data-retention-policy>`.
-- :doc:`Collaborative playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </end-user-guide/repeatable-processes/learn-about-playbooks>`.
+- :doc:`Collaborative playbooks with ad hoc add/remove tasks, automated triggers, and stakeholders dashboard </end-user-guide/workflow-automation/learn-about-playbooks>`.
 - :doc:`Deleted granular administrative control </administration-guide/onboard/delegated-granular-administration>`.
-- :doc:`Advanced configuration of playbook permissions, and analytics dashboards </end-user-guide/repeatable-processes/share-and-collaborate>`
+- :doc:`Advanced configuration of playbook permissions, and analytics dashboards </end-user-guide/workflow-automation/share-and-collaborate>`
 - :doc:`Channel export </administration-guide/comply/export-mattermost-channel-data>`
 - :ref:`Enhanced compliance controls and granular audit logs with data export <administration-guide/manage/logging:audit logging>`.
 - :doc:`Advanced collaboration with connected workspaces across Mattermost instances </administration-guide/onboard/connected-workspaces>`.

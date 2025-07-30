@@ -66,7 +66,7 @@ Access control and permissions
 Ensure precise and role-based access to sensitive resources in order to minimize the risk of unauthorized access and potential data breaches:
 
 - `Advanced Access Controls <https://docs.mattermost.com/administration-guide/manage/team-channel-members.html#advanced-access-controls>`_: Enforces specific permissions configurations to restrict access based on roles.
-- `Playbook-Specific Permissions <https://docs.mattermost.com/end-user-guide/repeatable-processes/share-and-collaborate.html>`_: Controls access to sensitive workflows, ensuring resources are available only to authorized team members.
+- `Playbook-Specific Permissions <https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html>`_: Controls access to sensitive workflows, ensuring resources are available only to authorized team members.
 
 Organizational design and user management
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -124,12 +124,12 @@ Incident response ensures that organizations can effectively detect, investigate
 
 Mattermost Playbooks reduce the time to respond to threats and ensure compliancy-aligned documentation through automated incident notifications by empowering organizations to predefine and automate incident response workflows, ensuring that responses are consistent, documented, and transparent:
 
-- `Incident-Specific Channels for Secure Collaboration <https://docs.mattermost.com/end-user-guide/repeatable-processes/work-with-playbooks.html#actions>`_: Maintains secure collaboration workflows across broader incident response workflows involving external tools, enforcing a centralized control model for operational continuity during incidents. Incident-specific channels reduce the time to assemble expert response teams, ensuring faster mitigation of active threats like phishing or ransomware attacks.
-- `Automated Incident Notifications <https://docs.mattermost.com/end-user-guide/repeatable-processes/notifications-and-updates.html>`_: Streamlines response workflows with authenticated alerts.
+- `Incident-Specific Channels for Secure Collaboration <https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html#actions>`_: Maintains secure collaboration workflows across broader incident response workflows involving external tools, enforcing a centralized control model for operational continuity during incidents. Incident-specific channels reduce the time to assemble expert response teams, ensuring faster mitigation of active threats like phishing or ransomware attacks.
+- `Automated Incident Notifications <https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html>`_: Streamlines response workflows with authenticated alerts.
 
 Enhance learning from incidents, ensure historical accountability, reduce future attack surfaces, and meet compliance expectations by securely centralizing documentation to improve future response processes:
 
-- `Post-Incident Documentation <https://docs.mattermost.com/end-user-guide/repeatable-processes/metrics-and-goals.html>`_: Enables secure storage and access for learnings, ensuring compliance with attack surface minimization principles.
+- `Post-Incident Documentation <https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html>`_: Enables secure storage and access for learnings, ensuring compliance with attack surface minimization principles.
 
 By embedding Zero Trust principles across access, monitoring, data management, and incident response, Mattermost equips organizations with the tools needed to safeguard collaboration workflows in today's evolving threat landscape. 
 

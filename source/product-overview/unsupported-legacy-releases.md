@@ -728,7 +728,7 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
 #### Boards
  - Added support for person, multi-person, and date property filters in Boards.
  - Added support for person property groups in Boards.
- - See [the docs](https://docs.mattermost.com/boards/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
+ - See [the docs](https://docs.mattermost.com/project-management/groups-filter-sort.html#work-with-groups-filter-and-sort) for more details.
 
 ### Improvements
 
@@ -887,9 +887,9 @@ If you upgrade from a release earlier than v7.5, please read the other [Importan
  - Please see [the docs](https://docs.mattermost.com/configure/plugins-configuration-settings.html#calls) for additional details on configuration setting updates.
 
 #### Boards
- - Boards now supports [file attachments](https://docs.mattermost.com/boards/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
- - Users can now [drag and drop boards and categories](https://docs.mattermost.com/boards/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
- - The [template picker](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
+ - Boards now supports [file attachments](https://docs.mattermost.com/project-management/work-with-cards.html#attach-files), including PDFs, images, videos, and any other file types.
+ - Users can now [drag and drop boards and categories](https://docs.mattermost.com/project-management/navigate-boards.html#manage-boards-on-the-sidebar) on the sidebar and organize them in any order they prefer.
+ - The [template picker](https://docs.mattermost.com/project-management/work-with-boards.html#choose-a-board-template) has been improved to make it easier for users to find the best template for their project.
  
 #### Playbooks
  - Added an option to [run playbooks](https://docs.mattermost.com/playbooks/work-with-playbooks.html#runs-and-channel-behavior) without creating a new channel every time in order to reduce the unnecessary overhead.
@@ -1078,8 +1078,8 @@ If you upgrade from a release earlier than v7.4, please read the other [Importan
  - Added new message threads with emoji reactions and @mentions to calls. After joining a call, expand the widget to the window mode, and then select the comment button to access the real-time message thread in the right-hand sidebar.
 
 #### Boards
- - Added additional standard [board templates](https://docs.mattermost.com/boards/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
- - Filters now support all [text properties](https://docs.mattermost.com/boards/work-with-cards.html#work-with-property-types).
+ - Added additional standard [board templates](https://docs.mattermost.com/project-management/work-with-boards.html#choose-a-board-template) to help users kick-off their next projects.
+ - Filters now support all [text properties](https://docs.mattermost.com/project-management/work-with-cards.html#work-with-property-types).
  - Added two new tiles for System Console [Boards metrics](https://docs.mattermost.com/configure/reporting-configuration-settings.html#site-statistics) under **System Console > Site Statistics**.
  
 #### Last active status
@@ -1199,12 +1199,12 @@ Mattermost v7.4.0 contains a medium severity level security fix. [Upgrading](htt
 ### Highlights
 
 #### Boards
- - Added new [board roles](https://docs.mattermost.com/boards/share-and-collaborate.html#roles), **Commenter** and **Viewer**.
- - Added [minimum default board roles](https://docs.mattermost.com/boards/share-and-collaborate.html#manage-team-access) to reduce permissioning ambiguity and to prevent security loopholes.
+ - Added new [board roles](https://docs.mattermost.com/project-management/share-and-collaborate.html#roles), **Commenter** and **Viewer**.
+ - Added [minimum default board roles](https://docs.mattermost.com/project-management/share-and-collaborate.html#manage-team-access) to reduce permissioning ambiguity and to prevent security loopholes.
  - Added support for [guest accounts](https://docs.mattermost.com/onboard/guest-accounts.html).
- - Added the ability to add a team member to a board by selecting their name from [an autocomplete list](https://docs.mattermost.com/boards/work-with-cards.html#mention-people).
+ - Added the ability to add a team member to a board by selecting their name from [an autocomplete list](https://docs.mattermost.com/project-management/work-with-cards.html#mention-people).
  - Added channel notifications for linked boards.
- - Added a new [multi-person property](https://docs.mattermost.com/boards/work-with-cards.html#work-with-property-types) to easily set multiple assignees or owners on a card.
+ - Added a new [multi-person property](https://docs.mattermost.com/project-management/work-with-cards.html#work-with-property-types) to easily set multiple assignees or owners on a card.
 
 #### Calls
  - Added new [keyboard shortcuts for Calls](https://docs.mattermost.com/channels/keyboard-shortcuts-for-channels.html#calls-shortcuts).
