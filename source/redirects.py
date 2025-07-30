@@ -1,5 +1,5 @@
 # A map of page redirects from doc to HTTPS link
-redirects_map: dict[str, str] = {
+redirects_map = {
 
 # How to add redirects for docs.mattermost.com:
 # A redirect is required when an existing product documentation page is moved to a new sub-directory, to another information site altogether, OR when the file # is archived because it's no longer needed. Redirects defined here ensure that existing links to these changed pages take the user to the correct destination # page. Many of the links below are the result of the information architecture overhaul completed in FY22 Q2.
@@ -12,16 +12,134 @@ redirects_map: dict[str, str] = {
 # Ensure that all redirects end in a comma, except for the very last redirect.
 
 # About redirects
-"about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities":
-        "https://docs.mattermost.com/product-overview/subscription.html#mattermost-nonprofit-license-program",
+"about/accessibility-compliance-policy.html":
+        "https://docs.mattermost.com/product-overview/accessibility-compliance-policy.html",
+"about/cloud-supported-integrations.html":
+        "https://docs.mattermost.com/product-overview/cloud-supported-integrations.html",
+"about/common-esr-support-rst.html":
+        "https://docs.mattermost.com/product-overview/common-esr-support-rst.html",
+"about/desktop.html":
+        "https://docs.mattermost.com/product-overview/desktop.html",
+"about/frequently-asked-questions.html":
+        "https://docs.mattermost.com/product-overview/frequently-asked-questions.html",
+"about/mobile.html":
+        "https://docs.mattermost.com/product-overview/mobile.html",
+"about/security/zero-trust.html":
+        "https://docs.mattermost.com/security-guide/security/zero-trust.html",
+"about/certifications-and-compliance.html":
+        "https://docs.mattermost.com/product-overview/certifications-and-compliance.html",
+"about/cloud-dedicated.html":
+        "https://docs.mattermost.com/product-overview/cloud-dedicated.html",
+"about/cloud-shared.html":
+        "https://docs.mattermost.com/product-overview/cloud-shared.html",
+"about/cloud-subscriptions.html":
+        "https://docs.mattermost.com/product-overview/cloud-subscriptions.html",
+"about/cloud-vpc-private-connectivity.html":
+        "https://docs.mattermost.com/product-overview/cloud-vpc-private-connectivity.html",
+"about/common-esr-support-upgrade.html":
+        "https://docs.mattermost.com/product-overview/common-esr-support-upgrade.html",
+"about/common-esr-support.html":
+        "https://docs.mattermost.com/product-overview/common-esr-support.html",
+"about/corporate-directory-integration.html":
+        "https://docs.mattermost.com/product-overview/corporate-directory-integration.html",
+"about/deprecated-features.html":
+        "https://docs.mattermost.com/product-overview/deprecated-features.html",
 "about/deployments-and-editions.html":
         "https://docs.mattermost.com/product-overview/editions-and-offerings.html",
+"about/desktop-app-changelog.html":
+        "https://docs.mattermost.com/product-overview/desktop-app-changelog.html",
+"about/devops-collaboration.html":
+        "https://docs.mattermost.com/use-case-guide/devops-collaboration.html",
+"about/editions-and-offerings.html":
+        "https://docs.mattermost.com/product-overview/editions-and-offerings.html",
+"about/faq-business.html":
+        "https://docs.mattermost.com/product-overview/faq-business.html",
 "about/faq-business.html#copyright-and-licensing-of-mattermost-server-open-source-code":
 	"https://docs.mattermost.com/product-overview/faq-license.html#open-source-derivative-work-of-mattermost",
+"about/faq-community.html":
+        "https://docs.mattermost.com/product-overview/faq-community.html",
+"about/faq-design-decisions.html":
+        "https://docs.mattermost.com/product-overview/faq-design-decisions.html",
+"about/faq-enterprise.html":
+        "https://docs.mattermost.com/product-overview/faq-enterprise.html",
 "about/faq-enterprise.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy":
 	"https://docs.mattermost.com/product-overview/faq-license.html#what-are-mattermost-s-policies-around-licensing-terms-of-use-and-privacy",
+"about/faq-federal-procurement.html":
+        "https://docs.mattermost.com/product-overview/faq-federal-procurement.html",
+"about/faq-general.html":
+        "https://docs.mattermost.com/product-overview/faq-general.html",
+"about/faq-high-trust.html":
+        "https://docs.mattermost.com/product-overview/faq-high-trust.html",
+"about/faq-illicit-use.html":
+        "https://docs.mattermost.com/product-overview/faq-illicit-use.html",
+"about/faq-integrations.html":
+        "https://docs.mattermost.com/product-overview/faq-integrations.html",
+"about/faq-license.html":
+        "https://docs.mattermost.com/product-overview/faq-license.html",
 "about/faq-mattermost-source-available-license.html":
-	"https://docs.mattermost.com/product-overview/faq-license.html#source-available-licensing",
+        "https://docs.mattermost.com/product-overview/faq-mattermost-source-available-license.html",
+"about/faq-notifications.html":
+        "https://docs.mattermost.com/product-overview/faq-notifications.html",
+"about/faq-product.html":
+        "https://docs.mattermost.com/product-overview/faq-product.html",
+"about/faq-use-cases.html":
+        "https://docs.mattermost.com/product-overview/faq-use-cases.html",
+"about/faq-video-audio-screensharing.html":
+        "https://docs.mattermost.com/product-overview/faq-video-audio-screensharing.html",
+"about/integrated-security-operations.html":
+        "https://docs.mattermost.com/use-case-guide/integrated-security-operations.html",
+"about/license-and-subscription.html#do-you-have-a-program-for-official-non-profits-open-source-projects-and-charities":
+        "https://docs.mattermost.com/product-overview/subscription.html#mattermost-nonprofit-license-program",
+"about/mattermost-desktop-releases.html":
+        "https://docs.mattermost.com/product-overview/mattermost-desktop-releases.html",
+"about/mattermost-mobile-releases.html":
+        "https://docs.mattermost.com/product-overview/mattermost-mobile-releases.html",
+"about/mattermost-server-releases.html":
+        "https://docs.mattermost.com/product-overview/mattermost-server-releases.html",
+"about/mattermost-v10-changelog.html":
+        "https://docs.mattermost.com/product-overview/mattermost-v10-changelog.html",
+"about/mattermost-v9-changelog.html":
+        "https://docs.mattermost.com/product-overview/mattermost-v9-changelog.html",
+"about/maximize-microsoft-investments.html":
+        "https://docs.mattermost.com/use-case-guide/maximize-microsoft-investments.html",
+"about/mission-ready-mobile.html":
+        "https://docs.mattermost.com/use-case-guide/mission-ready-mobile.html",
+"about/mobile-app-changelog.html":
+        "https://docs.mattermost.com/product-overview/mobile-app-changelog.html",
+"about/non-profit-subscriptions.html":
+        "https://docs.mattermost.com/product-overview/non-profit-subscriptions.html",
+"about/on-prem-skype-for-business-replacement.html":
+        "https://docs.mattermost.com/use-case-guide/on-prem-skype-for-business-replacement.html",
+"about/out-of-band-incident-response.html":
+        "https://docs.mattermost.com/use-case-guide/out-of-band-incident-response.html",
+"about/plans.html":
+        "https://docs.mattermost.com/product-overview/plans.html",
+"about/purpose-built-collaboration.html":
+        "https://docs.mattermost.com/use-case-guide/purpose-built-collaboration.html",
+"about/release-policy.html":
+        "https://docs.mattermost.com/product-overview/release-policy.html",
+"about/releases-lifecycle.html":
+        "https://docs.mattermost.com/product-overview/releases-lifecycle.html",
+"about/secure-command-and-control.html":
+        "https://docs.mattermost.com/use-case-guide/secure-command-and-control.html",
+"about/security.html":
+        "https://docs.mattermost.com/security-guide/security-guide-index.html",
+"about/security/dependency-vulnerability-analysis.html":
+        "https://docs.mattermost.com/security-guide/security/dependency-vulnerability-analysis.html",
+"about/security/mobile-security.html":
+        "https://docs.mattermost.com/security-guide/security/mobile-security.html",
+"about/self-hosted-subscriptions.html":
+        "https://docs.mattermost.com/product-overview/self-hosted-subscriptions.html",
+"about/self-sovereign-collaboration.html":
+        "https://docs.mattermost.com/use-case-guide/self-sovereign-collaboration.html",
+"about/server.html":
+        "https://docs.mattermost.com/product-overview/server.html",
+"about/subscription.html":
+        "https://docs.mattermost.com/product-overview/subscription.html",
+"about/unsupported-legacy-releases.html":
+        "https://docs.mattermost.com/product-overview/unsupported-legacy-releases.html",
+"about/version-archive.html":
+        "https://docs.mattermost.com/product-overview/version-archive.html",
 "about/mattermost-customizable-chatgpt-bot-framework.html":
         "https://github.com/mattermost/openops#readme",
 "about/mattermost-customizable-ai-bot-framework.html":
@@ -54,23 +172,134 @@ redirects_map: dict[str, str] = {
 
 # Boards redirects
 "boards/boards-settings.html":
-        "https://docs.mattermost.com/project-management/boards-settings.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/boards-settings.html",
 "boards/calculations.html":
-        "https://docs.mattermost.com/project-management/calculations.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/calculations.html",
 "boards/groups-filter-sort.html":
-        "https://docs.mattermost.com/project-management/groups-filter-sort.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/groups-filter-sort.html",
 "boards/migrate-to-boards.html":
-        "https://docs.mattermost.com/project-management/migrate-to-boards.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/migrate-to-boards.html",
 "boards/navigate-boards.html":
-        "https://docs.mattermost.com/project-management/navigate-boards.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/navigate-boards.html",
 "boards/share-and-collaborate.html":
-        "https://docs.mattermost.com/project-management/share-and-collaborate.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/share-and-collaborate.html",
 "boards/work-with-boards.html":
-        "https://docs.mattermost.com/project-management/work-with-boards.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/work-with-boards.html",
 "boards/work-with-cards.html":
-        "https://docs.mattermost.com/project-management/work-with-cards.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/work-with-cards.html",
 "boards/work-with-views.html":
-        "https://docs.mattermost.com/project-management/work-with-views.html",
+        "https://docs.mattermost.com/end-user-guide/project-management/work-with-views.html",
+
+
+# Collaborate redirects
+"collaborate/access-your-workspace.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/access-your-workspace.html",
+"collaborate/agents-context-management.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/agents-context-management.html",
+"collaborate/archive-unarchive-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/archive-unarchive-channels.html",
+"collaborate/audio-and-screensharing.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/audio-and-screensharing.html",
+"collaborate/browse-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/browse-channels.html",
+"collaborate/built-in-slash-commands.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/built-in-slash-commands.html",
+"collaborate/channel-header-purpose.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/channel-header-purpose.html",
+"collaborate/channel-naming-conventions.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/channel-naming-conventions.html",
+"collaborate/channel-types.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html",
+"collaborate/collaborate-within-connected-microsoft-teams.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/collaborate-within-connected-microsoft-teams.html",
+"collaborate/convert-group-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/convert-group-messages.html",
+"collaborate/convert-public-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/convert-public-channels.html",
+"collaborate/create-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/create-channels.html",
+"collaborate/display-channel-banners.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/display-channel-banners.html",
+"collaborate/extend-mattermost-with-integrations.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/extend-mattermost-with-integrations.html",
+"collaborate/favorite-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/favorite-channels.html",
+"collaborate/format-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/format-messages.html",
+"collaborate/forward-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/forward-messages.html",
+"collaborate/install-android-app.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/install-android-app.html",
+"collaborate/install-desktop-app.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/install-desktop-app.html",
+"collaborate/install-ios-app.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/install-ios-app.html",
+"collaborate/invite-people.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/invite-people.html",
+"collaborate/join-leave-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/join-leave-channels.html",
+"collaborate/keyboard-accessibility.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/keyboard-accessibility.html",
+"collaborate/keyboard-shortcuts.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/keyboard-shortcuts.html",
+"collaborate/learn-about-roles.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/learn-about-roles.html",
+"collaborate/log-out.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/log-out.html",
+"collaborate/make-calls.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/make-calls.html",
+"collaborate/manage-channel-bookmarks.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-bookmarks.html",
+"collaborate/manage-channel-members.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/manage-channel-members.html",
+"collaborate/mark-channels-unread.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/mark-channels-unread.html",
+"collaborate/mark-messages-unread.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/mark-messages-unread.html",
+"collaborate/mention-people.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/mention-people.html",
+"collaborate/message-priority.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/message-priority.html",
+"collaborate/message-reminders.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/message-reminders.html",
+"collaborate/navigate-between-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/navigate-between-channels.html",
+"collaborate/organize-conversations.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/organize-conversations.html",
+"collaborate/organize-using-custom-user-groups.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/organize-using-custom-user-groups.html",
+"collaborate/organize-using-teams.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/organize-using-teams.html",
+"collaborate/react-with-emojis-gifs.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/react-with-emojis-gifs.html",
+"collaborate/rename-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/rename-channels.html",
+"collaborate/reply-to-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/reply-to-messages.html",
+"collaborate/run-slash-commands.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/run-slash-commands.html",
+"collaborate/save-pin-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/save-pin-messages.html",
+"collaborate/schedule-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/schedule-messages.html",
+"collaborate/search-for-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/search-for-messages.html",
+"collaborate/collaborate-within-channels.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/collaborate-within-channels.html",
+"collaborate/communicate-with-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/communicate-with-messages.html",
+"collaborate/send-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/send-messages.html",
+"collaborate/share-files-in-messages.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/share-files-in-messages.html",
+"collaborate/share-links.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/share-links.html",
+"collaborate/team-keyboard-shortcuts.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/team-keyboard-shortcuts.html",
+"collaborate/team-settings.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/team-settings.html",
+"collaborate/view-system-information.html":
+        "https://docs.mattermost.com/end-user-guide/collaborate/view-system-information.html",
 
 
 # Administration redirects
@@ -671,24 +900,40 @@ redirects_map: dict[str, str] = {
         "https://docs.mattermost.com/end-user-guide/collaborate/channel-types.html#group-message-channels",
 
 # Compliance redirects
-"comply/compliance-reporting-oversight":
-        "https://docs.mattermost.com/administration-guide/comply/compliance-monitoring.html",
-"comply/cloud-data-retention-policy.html":
-	"https://docs.mattermost.com/administration-guide/comply/data-retention-policy.html",
 "comply/audit-log.html":
         "https://docs.mattermost.com/administration-guide/manage/logging.html",
+"comply/cloud-data-retention-policy.html":
+	"https://docs.mattermost.com/administration-guide/comply/data-retention-policy.html",
+"comply/compliance-export.html":
+        "https://docs.mattermost.com/administration-guide/comply/compliance-export.html",
+"comply/compliance-monitoring.html":
+        "https://docs.mattermost.com/administration-guide/comply/compliance-monitoring.html",
+"comply/compliance-reporting-oversight":
+        "https://docs.mattermost.com/administration-guide/comply/compliance-monitoring.html",
+"comply/custom-terms-of-service.html":
+        "https://docs.mattermost.com/administration-guide/comply/custom-terms-of-service.html",
+"comply/data-retention-policy.html":
+        "https://docs.mattermost.com/administration-guide/comply/data-retention-policy.html",
+"comply/electronic-discovery.html":
+        "https://docs.mattermost.com/administration-guide/comply/electronic-discovery.html",
+"comply/embedded-json-audit-log-schema.html":
+        "https://docs.mattermost.com/administration-guide/comply/embedded-json-audit-log-schema.html",
+"comply/export-mattermost-channel-data.html":
+        "https://docs.mattermost.com/administration-guide/comply/export-mattermost-channel-data.html",
+"comply/legal-hold.html":
+        "https://docs.mattermost.com/administration-guide/comply/legal-hold.html",
 
 # Configure redirects
-"configure/config-ssl-http2-apache2.html":
-	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
-"configure/customizing-mattermost.html":
-        "https://docs.mattermost.com/administration-guide/configure/customize-mattermost.html",
-"configure/configuring-apache2.html":
-        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
-"configure/enable-ai-copilot.html":
-        "https://docs.mattermost.com/administration-guide/configure/enable-copilot.html",
-"configure/common-config-settings-notation.html":
+"configure/agents-admin-guide.html":
+        "https://docs.mattermost.com/administration-guide/configure/agents-admin-guide.html",
+"configure/authentication-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/authentication-configuration-settings.html",
+"configure/calls-rtcd-ent-only.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-rtcd-ent-only.html",
+"configure/configuration-settings.html":
         "https://docs.mattermost.com/administration-guide/configure/configuration-settings.html",
+"configure/bleve-search.html":
+        "https://docs.mattermost.com/administration-guide/configure/bleve-search.html",
 "configure/bulk-loading-about.html":
         "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
 "configure/bulk-loading-common-issues.html":
@@ -697,8 +942,70 @@ redirects_map: dict[str, str] = {
         "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
 "configure/bulk-loading-troubleshooting.html":
         "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
+"configure/calls-deployment.html":
+        "https://docs.mattermost.com/administration-guide/configure/calls-deployment.html",
+"configure/cloud-billing-account-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/cloud-billing-account-settings.html",
+"configure/common-config-settings-notation.html":
+        "https://docs.mattermost.com/administration-guide/configure/configuration-settings.html",
+"configure/compliance-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/compliance-configuration-settings.html",
+"configure/config-proxy-apache2.html":
+        "https://docs.mattermost.com/administration-guide/configure/config-proxy-apache2.html",
+"configure/config-ssl-http2-apache2.html":
+	"https://forum.mattermost.com/t/configuring-apache2-with-ssl-and-http-2/11939",
+"configure/configuration-in-your-database.html":
+        "https://docs.mattermost.com/administration-guide/configure/configuration-in-your-database.html",
+"configure/configuring-apache2.html":
+        "https://forum.mattermost.com/t/configuring-apache2-as-a-proxy-for-mattermost-server/11938",
+"configure/custom-branding-tools.html":
+        "https://docs.mattermost.com/administration-guide/configure/custom-branding-tools.html",
+"configure/customize-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/configure/customize-mattermost.html",
+"configure/customizing-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/configure/customize-mattermost.html",
+"configure/deprecated-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/deprecated-configuration-settings.html",
+"configure/email-templates.html":
+        "https://docs.mattermost.com/administration-guide/configure/email-templates.html",
+"configure/enable-ai-copilot.html":
+        "https://docs.mattermost.com/administration-guide/configure/enable-copilot.html",
+"configure/enabling-chinese-japanese-korean-search.html":
+        "https://docs.mattermost.com/administration-guide/configure/enabling-chinese-japanese-korean-search.html",
+"configure/environment-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/environment-configuration-settings.html",
+"configure/environment-variables.html":
+        "https://docs.mattermost.com/administration-guide/configure/environment-variables.html",
+"configure/experimental-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/experimental-configuration-settings.html",
+"configure/install-boards.html":
+        "https://docs.mattermost.com/administration-guide/configure/install-boards.html",
+"configure/integrations-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/integrations-configuration-settings.html",
+"configure/manage-user-surveys.html":
+        "https://docs.mattermost.com/administration-guide/configure/manage-user-surveys.html",
+"configure/optimize-your-workspace.html":
+        "https://docs.mattermost.com/administration-guide/configure/optimize-your-workspace.html",
+"configure/plugins-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/plugins-configuration-settings.html",
+"configure/push-notification-server-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/push-notification-server-configuration-settings.html",
+"configure/rate-limiting-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/rate-limiting-configuration-settings.html",
+"configure/reporting-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/reporting-configuration-settings.html",
 "configure/run-bulk-loading-command.html":
         "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
+"configure/self-hosted-account-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/self-hosted-account-settings.html",
+"configure/site-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/site-configuration-settings.html",
+"configure/smtp-email.html":
+        "https://docs.mattermost.com/administration-guide/configure/smtp-email.html",
+"configure/system-attributes.html":
+        "https://docs.mattermost.com/administration-guide/configure/system-attributes.html",
+"configure/user-management-configuration-settings.html":
+        "https://docs.mattermost.com/administration-guide/configure/user-management-configuration-settings.html",
 
 # Configuration settings redirects
 "configure/configuration-in-mattermost-database.html":
@@ -1700,24 +2007,66 @@ redirects_map: dict[str, str] = {
 
 
 # Deploy redirects
-"deploy/mobile-apps-faq.html":
-        "https://docs.mattermost.com/deployment-guide/mobile/mobile-faq.html",
+"deploy/application-architecture.html":
+        "https://docs.mattermost.com/deployment-guide/application-architecture.html",
+"deploy/backup-disaster-recovery.html":
+        "https://docs.mattermost.com/deployment-guide/backup-disaster-recovery.html",
 "deploy/bleve-search.html":
         "https://docs.mattermost.com/administration-guide/configure/bleve-search.html",
-"deploy/image-proxy.html":
-        "https://docs.mattermost.com/deployment-guide/server/image-proxy.html",
-"deploy/consider-mobile-vpn-options.html":
-        "https://docs.mattermost.com/deployment-guide/mobile/consider-mobile-vpn-options.html",
-"deploy/mobile-appconfig.html":
-        "https://docs.mattermost.com/deployment-guide/mobile/deploy-mobile-apps-using-emm-provider.html",
-"deploy/mobile-faq.html":
-        "https://docs.mattermost.com/deployment-guide/mobile/mobile-faq.html",
 "deploy/build-custom-mobile-apps.html":
         "https://docs.mattermost.com/deployment-guide/mobile/distribute-custom-mobile-apps.html",
 "deploy/client-side-data.html":
         "https://docs.mattermost.com/deployment-guide/mobile/mobile-app-deployment.html",
+"deploy/consider-mobile-vpn-options.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/consider-mobile-vpn-options.html",
 "deploy/deploy-mobile-apps-using-emm-provider.html":
         "https://docs.mattermost.com/deployment-guide/mobile/deploy-mobile-apps-using-emm-provider.html",
+"deploy/desktop/desktop-app-deployment.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/desktop-app-deployment.html",
+"deploy/desktop/desktop-app-managed-resources.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/desktop-app-managed-resources.html",
+"deploy/mobile/mobile-app-deployment.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/mobile-app-deployment.html",
+"deploy/desktop/desktop-custom-dictionaries.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/desktop-custom-dictionaries.html",
+"deploy/desktop/desktop-msi-installer-and-group-policy-install.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/desktop-msi-installer-and-group-policy-install.html",
+"deploy/desktop/desktop-troubleshooting.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/desktop-troubleshooting.html",
+"deploy/desktop/distribute-a-custom-desktop-app.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/distribute-a-custom-desktop-app.html",
+"deploy/desktop/linux-desktop-install.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/linux-desktop-install.html",
+"deploy/desktop/silent-windows-desktop-distribution.html":
+        "https://docs.mattermost.com/deployment-guide/desktop/silent-windows-desktop-distribution.html",
+"deploy/encryption-options.html":
+        "https://docs.mattermost.com/deployment-guide/encryption-options.html",
+"deploy/image-proxy.html":
+        "https://docs.mattermost.com/deployment-guide/server/image-proxy.html",
+"deploy/manual-postgres-migration.html":
+        "https://docs.mattermost.com/deployment-guide/manual-postgres-migration.html",
+"deploy/mobile-appconfig.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/deploy-mobile-apps-using-emm-provider.html",
+"deploy/mobile-apps-faq.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/mobile-faq.html",
+"deploy/mobile/consider-mobile-vpn-options.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/consider-mobile-vpn-options.html",
+"deploy/mobile/deploy-mobile-apps-using-emm-provider.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/deploy-mobile-apps-using-emm-provider.html",
+"deploy/mobile/distribute-custom-mobile-apps.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/distribute-custom-mobile-apps.html",
+"deploy/mobile/host-your-own-push-proxy-service.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/host-your-own-push-proxy-service.html",
+"deploy/mobile/mobile-faq.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/mobile-faq.html",
+"deploy/mobile/mobile-security-features.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/mobile-security-features.html",
+"deploy/mobile/mobile-troubleshooting.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html",
+"deploy/mobile/secure-mobile-file-storage.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/secure-mobile-file-storage.html",
+"deploy/mobile-faq.html":
+        "https://docs.mattermost.com/deployment-guide/mobile/mobile-faq.html",
 "deploy/mobile-hpns.html":
         "https://docs.mattermost.com/deployment-guide/mobile/host-your-own-push-proxy-service.html",
 "deploy/mobile-overview.html":
@@ -1726,6 +2075,66 @@ redirects_map: dict[str, str] = {
         "https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html",
 "deploy/mobile-troubleshoot.html":
         "https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html",
+"deploy/postgres-migration-assist-tool.html":
+        "https://docs.mattermost.com/deployment-guide/postgres-migration-assist-tool.html",
+"deploy/postgres-migration.html":
+        "https://docs.mattermost.com/deployment-guide/postgres-migration.html",
+"deploy/quick-start-evaluation.html":
+        "https://docs.mattermost.com/deployment-guide/quick-start-evaluation.html",
+"deploy/server/air-gapped-deployment.html":
+        "https://docs.mattermost.com/deployment-guide/server/air-gapped-deployment.html",
+"deploy/server/containers/install-aws-beanstalk.html":
+        "https://docs.mattermost.com/deployment-guide/server/containers/install-aws-beanstalk.html",
+"deploy/server/containers/install-docker.html":
+        "https://docs.mattermost.com/deployment-guide/server/containers/install-docker.html",
+"deploy/server/deploy-containers.html":
+        "https://docs.mattermost.com/deployment-guide/server/deploy-containers.html",
+"deploy/server/deploy-kubernetes.html":
+        "https://docs.mattermost.com/deployment-guide/server/deploy-kubernetes.html",
+"deploy/server/deploy-linux.html":
+        "https://docs.mattermost.com/deployment-guide/server/deploy-linux.html",
+"deploy/server/deploy-oob.html":
+        "https://docs.mattermost.com/deployment-guide/server/deploy-oob.html",
+"deploy/server/docker-troubleshooting.html":
+        "https://docs.mattermost.com/deployment-guide/server/docker-troubleshooting.html",
+"deploy/server/image-proxy.html":
+        "https://docs.mattermost.com/deployment-guide/server/image-proxy.html",
+"deploy/server/kubernetes/deploy-k8s-aks.html":
+        "https://docs.mattermost.com/deployment-guide/server/kubernetes/deploy-k8s-aks.html",
+"deploy/server/kubernetes/deploy-k8s-oke.html":
+        "https://docs.mattermost.com/deployment-guide/server/kubernetes/deploy-k8s-oke.html",
+"deploy/server/kubernetes/deploy-k8s.html":
+        "https://docs.mattermost.com/deployment-guide/server/kubernetes/deploy-k8s.html",
+"deploy/server/linux/deploy-rhel.html":
+        "https://docs.mattermost.com/deployment-guide/server/linux/deploy-rhel.html",
+"deploy/server/linux/deploy-tar.html":
+        "https://docs.mattermost.com/deployment-guide/server/linux/deploy-tar.html",
+"deploy/server/linux/deploy-ubuntu.html":
+        "https://docs.mattermost.com/deployment-guide/server/linux/deploy-ubuntu.html",
+"deploy/server/orchestration.html":
+        "https://docs.mattermost.com/deployment-guide/server/orchestration.html",
+"deploy/server/preparations.html":
+        "https://docs.mattermost.com/deployment-guide/server/preparations.html",
+"deploy/server/prepare-mattermost-mysql-database.html":
+        "https://docs.mattermost.com/deployment-guide/server/prepare-mattermost-mysql-database.html",
+"deploy/server/server-architecture.html":
+        "https://docs.mattermost.com/deployment-guide/server/server-architecture.html",
+"deploy/server/server-deployment-planning.html":
+        "https://docs.mattermost.com/deployment-guide/server/server-deployment-planning.html",
+"deploy/server/setup-nginx-proxy.html":
+        "https://docs.mattermost.com/deployment-guide/server/setup-nginx-proxy.html",
+"deploy/server/setup-tls.html":
+        "https://docs.mattermost.com/deployment-guide/server/setup-tls.html",
+"deploy/server/trouble-postgres.html":
+        "https://docs.mattermost.com/deployment-guide/server/trouble-postgres.html",
+"deploy/server/trouble_mysql.html":
+        "https://docs.mattermost.com/deployment-guide/server/trouble_mysql.html",
+"deploy/server/troubleshooting.html":
+        "https://docs.mattermost.com/deployment-guide/server/troubleshooting.html",
+"deploy/software-hardware-requirements.html":
+        "https://docs.mattermost.com/deployment-guide/software-hardware-requirements.html",
+"deploy/transport-encryption.html":
+        "https://docs.mattermost.com/deployment-guide/transport-encryption.html",
 "deploy/use-prebuilt-mobile-apps.html":
         "https://docs.mattermost.com/deployment-guide/mobile/mobile-app-deployment.html",
 "deploy/desktop-app.html":
@@ -2500,8 +2909,26 @@ redirects_map: dict[str, str] = {
 
 # Integrations redirects.
 # The integrations directory and its contents have been archived in FY23 Q2 and all applicable content has been moved from docs.mm.com to developers.mm.com.
+"integrate/github.html":
+        "https://docs.mattermost.com/integrations-guide/github.html",
+"integrate/gitlab.html":
+        "https://docs.mattermost.com/integrations-guide/gitlab.html",
+"integrate/jira.html":
+        "https://docs.mattermost.com/integrations-guide/jira.html",
+"integrate/mattermost-mission-collaboration-for-m365.html":
+        "https://docs.mattermost.com/integrations-guide/mattermost-mission-collaboration-for-m365.html",
+"integrate/microsoft-calendar.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-calendar.html",
+"integrate/microsoft-teams-meetings.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-teams-meetings.html",
+"integrate/microsoft-teams-sync.html":
+        "https://docs.mattermost.com/integrations-guide/microsoft-teams-sync.html",
 "integrate/ms-teams-interoperability.html":
         "https://docs.mattermost.com/integrate/microsoft-teams-interoperability.html",
+"integrate/servicenow.html":
+        "https://docs.mattermost.com/integrations-guide/servicenow.html",
+"integrate/zoom.html":
+        "https://docs.mattermost.com/integrations-guide/zoom.html",
 "integrations/cloud-incoming-webhooks.html":
         "https://developers.mattermost.com/integrate/admin-guide/",
 "integrations/cloud-outgoing-webhooks.html":
@@ -2528,14 +2955,78 @@ redirects_map: dict[str, str] = {
         "https://developers.mattermost.com/integrate/slash-commands/",
 
 # Manage redirects
-"manage/scripts.html":
-        "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
+"manage/admin/attribute-based-access-control.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/attribute-based-access-control.html",
+"manage/admin/error-codes.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/error-codes.html",
+"manage/admin/generating-support-packet.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/generating-support-packet.html",
+"manage/admin/installing-license-key.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/installing-license-key.html",
+"manage/admin/self-hosted-billing.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/self-hosted-billing.html",
+"manage/admin/customize-branding.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/customize-branding.html",
+"manage/admin/migration.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/migration.html",
+"manage/admin/monitoring-and-performance.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/monitoring-and-performance.html",
+"manage/admin/server-configuration.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/server-configuration.html",
+"manage/admin/server-maintenance.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/server-maintenance.html",
+"manage/admin/user-attributes.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/user-attributes.html",
+"manage/admin/user-management.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/user-management.html",
+"manage/admin/user-provisioning.html":
+        "https://docs.mattermost.com/administration-guide/manage/admin/user-provisioning.html",
+"manage/bulk-export-tool.html":
+        "https://docs.mattermost.com/administration-guide/manage/bulk-export-tool.html",
+"manage/cloud-byok.html":
+        "https://docs.mattermost.com/administration-guide/manage/cloud-byok.html",
+"manage/cloud-data-export.html":
+        "https://docs.mattermost.com/administration-guide/manage/cloud-data-export.html",
+"manage/cloud-data-residency.html":
+        "https://docs.mattermost.com/administration-guide/manage/cloud-data-residency.html",
+"manage/cloud-ip-filtering.html":
+        "https://docs.mattermost.com/administration-guide/manage/cloud-ip-filtering.html",
+"manage/code-signing-custom-builds.html":
+        "https://docs.mattermost.com/administration-guide/manage/code-signing-custom-builds.html",
+"manage/command-line-tools.html":
+        "https://docs.mattermost.com/administration-guide/manage/command-line-tools.html",
+"manage/configure-health-check-probes.html":
+        "https://docs.mattermost.com/administration-guide/manage/configure-health-check-probes.html",
 "manage/error-codes.html":
         "https://docs.mattermost.com/administration-guide/manage/admin/error-codes.html",
+"manage/feature-labels.html":
+        "https://docs.mattermost.com/administration-guide/manage/feature-labels.html",
 "manage/generating-support-packet.html":
         "https://docs.mattermost.com/administration-guide/manage/admin/generating-support-packet.html",
+"manage/in-product-notices.html":
+        "https://docs.mattermost.com/administration-guide/manage/in-product-notices.html",
+"manage/logging.html":
+        "https://docs.mattermost.com/administration-guide/manage/logging.html",
+"manage/mmctl-command-line-tool.html":
+        "https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html",
+"manage/request-server-health-check.html":
+        "https://docs.mattermost.com/administration-guide/manage/request-server-health-check.html",
+"manage/scripts.html":
+        "https://forum.mattermost.com/t/scripts-for-performing-discreet-tasks/13527",
 "manage/self-hosted-billing.html":
         "https://docs.mattermost.com/administration-guide/manage/admin/self-hosted-billing.html",
+"manage/statistics.html":
+        "https://docs.mattermost.com/administration-guide/manage/statistics.html",
+"manage/system-wide-notifications.html":
+        "https://docs.mattermost.com/administration-guide/manage/system-wide-notifications.html",
+"manage/team-channel-members.html":
+        "https://docs.mattermost.com/administration-guide/manage/team-channel-members.html",
+"manage/telemetry.html":
+        "https://docs.mattermost.com/administration-guide/manage/telemetry.html",
+"manage/product-limits.html":
+        "https://docs.mattermost.com/administration-guide/manage/product-limits.html",
+"manage/user-satisfaction-surveys.html":
+        "https://docs.mattermost.com/administration-guide/manage/user-satisfaction-surveys.html",
 "manage/command-line-tools.html#mattermost-channel":
         "https://docs.mattermost.com/administration-guide/manage/mmctl-command-line-tool.html#mmctl-channel",
 "manage/command-line-tools.html#mattermost-channel-add":
@@ -3148,8 +3639,68 @@ redirects_map: dict[str, str] = {
 	"https://docs.mattermost.com/deployment-guide/mobile/mobile-troubleshooting.html",
 
 # Onboard redirects
+"onboard/ad-ldap-groups-synchronization.html":
+        "https://docs.mattermost.com/administration-guide/onboard/ad-ldap-groups-synchronization.html",
+"onboard/ad-ldap.html":
+        "https://docs.mattermost.com/administration-guide/onboard/ad-ldap.html",
 "onboard/ad-ldap.html#active-directory-ldap-setup-e10-e20":
         "https://docs.mattermost.com/administration-guide/onboard/ad-ldap.html#active-directory-ldap-setup",
+"onboard/advanced-permissions-backend-infrastructure.html":
+        "https://docs.mattermost.com/administration-guide/onboard/advanced-permissions-backend-infrastructure.html",
+"onboard/advanced-permissions.html":
+        "https://docs.mattermost.com/administration-guide/onboard/advanced-permissions.html",
+"onboard/bulk-loading-data.html":
+        "https://docs.mattermost.com/administration-guide/onboard/bulk-loading-data.html",
+"onboard/certificate-based-authentication.html":
+        "https://docs.mattermost.com/administration-guide/onboard/certificate-based-authentication.html",
+"onboard/common-converting-oauth-to-openidconnect.html":
+        "https://docs.mattermost.com/administration-guide/onboard/common-converting-oauth-to-openidconnect.html",
+"onboard/connected-workspaces.html":
+        "https://docs.mattermost.com/administration-guide/onboard/connected-workspaces.html",
+"onboard/convert-oauth20-service-providers-to-openidconnect.html":
+        "https://docs.mattermost.com/administration-guide/onboard/convert-oauth20-service-providers-to-openidconnect.html",
+"onboard/delegated-granular-administration.html":
+        "https://docs.mattermost.com/administration-guide/onboard/delegated-granular-administration.html",
+"onboard/guest-accounts.html":
+        "https://docs.mattermost.com/administration-guide/onboard/guest-accounts.html",
+"onboard/managing-team-channel-membership-using-ad-ldap-sync-groups.html":
+        "https://docs.mattermost.com/administration-guide/onboard/managing-team-channel-membership-using-ad-ldap-sync-groups.html",
+"onboard/migrate-from-slack.html":
+        "https://docs.mattermost.com/administration-guide/onboard/migrate-from-slack.html",
+"onboard/migrating-to-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html",
+"onboard/migration-announcement-email.html":
+        "https://docs.mattermost.com/administration-guide/onboard/migration-announcement-email.html",
+"onboard/multi-factor-authentication.html":
+        "https://docs.mattermost.com/administration-guide/onboard/multi-factor-authentication.html",
+"onboard/ssl-client-certificate.html":
+        "https://docs.mattermost.com/administration-guide/onboard/ssl-client-certificate.html",
+"onboard/sso-entraid.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-entraid.html",
+"onboard/sso-gitlab.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-gitlab.html",
+"onboard/sso-google.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-google.html",
+"onboard/sso-openidconnect.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-openidconnect.html",
+"onboard/sso-saml-adfs-msws2016.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-adfs-msws2016.html",
+"onboard/sso-saml-adfs.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-adfs.html",
+"onboard/sso-saml-keycloak.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-keycloak.html",
+"onboard/sso-saml-ldapsync.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-ldapsync.html",
+"onboard/sso-saml-okta.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-okta.html",
+"onboard/sso-saml-onelogin.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-onelogin.html",
+"onboard/sso-saml-technical.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml-technical.html",
+"onboard/sso-saml.html":
+        "https://docs.mattermost.com/administration-guide/onboard/sso-saml.html",
+"onboard/user-provisioning-workflows.html":
+        "https://docs.mattermost.com/administration-guide/onboard/user-provisioning-workflows.html",
 "onboard/migrating-from-hipchat-to-mattermost.html":
         "https://docs.mattermost.com/administration-guide/onboard/migrating-to-mattermost.html#migrating-from-slack",
 "onboard/ad-ldap-groups-synchronization.html#enabling-ad-ldap-group-synchronization":
@@ -3467,9 +4018,121 @@ redirects_map: dict[str, str] = {
 "process/working-at-mattermost.html":
 	"https://handbook.mattermost.com/operations/workplace/people/working-at-mattermost/onboarding/engineer-onboarding",
 
+# Preferences redirects
+"preferences/connect-multiple-workspaces.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/connect-multiple-workspaces.html",
+"preferences/customize-desktop-app-experience.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/customize-desktop-app-experience.html",
+"preferences/customize-your-channel-sidebar.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/customize-your-channel-sidebar.html",
+"preferences/customize-your-theme.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/customize-your-theme.html",
+"preferences/manage-advanced-options.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-advanced-options.html",
+"preferences/manage-your-channel-specific-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-channel-specific-notifications.html",
+"preferences/manage-your-desktop-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-desktop-notifications.html",
+"preferences/manage-your-display-options.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-display-options.html",
+"preferences/manage-your-mentions-keywords-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-mentions-keywords-notifications.html",
+"preferences/manage-your-mobile-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-mobile-notifications.html",
+"preferences/manage-your-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-notifications.html",
+"preferences/manage-your-plugin-preferences.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-plugin-preferences.html",
+"preferences/manage-your-security-preferences.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-security-preferences.html",
+"preferences/manage-your-sidebar-options.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-sidebar-options.html",
+"preferences/manage-your-thread-reply-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-thread-reply-notifications.html",
+"preferences/manage-your-web-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-web-notifications.html",
+"preferences/set-your-status-availability.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/set-your-status-availability.html",
+"preferences/manage-your-profile.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/manage-your-profile.html",
+"preferences/troubleshoot-notifications.html":
+        "https://docs.mattermost.com/end-user-guide/preferences/troubleshoot-notifications.html",
+
+
+# Repeatable-processes redirects
+"repeatable-processes/interact-with-playbooks.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/interact-with-playbooks.html",
+"repeatable-processes/learn-about-playbooks.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/learn-about-playbooks.html",
+"repeatable-processes/metrics-and-goals.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/metrics-and-goals.html",
+"repeatable-processes/notifications-and-updates.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/notifications-and-updates.html",
+"repeatable-processes/share-and-collaborate.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/share-and-collaborate.html",
+"repeatable-processes/work-with-playbooks.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-playbooks.html",
+"repeatable-processes/work-with-runs.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-runs.html",
+"repeatable-processes/work-with-tasks.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation/work-with-tasks.html",
+
+
 # Scale redirects
+"scale/additional-ha-considerations.html":
+        "https://docs.mattermost.com/administration-guide/scale/additional-ha-considerations.html",
+"scale/backing-storage-benchmarks.html":
+        "https://docs.mattermost.com/administration-guide/scale/backing-storage-benchmarks.html",
+"scale/collect-performance-metrics.html":
+        "https://docs.mattermost.com/administration-guide/scale/collect-performance-metrics.html",
+"scale/common-configure-mattermost-for-enterprise-search.html":
+        "https://docs.mattermost.com/administration-guide/scale/common-configure-mattermost-for-enterprise-search.html",
+"scale/deploy-prometheus-grafana-for-performance-monitoring.html":
+        "https://docs.mattermost.com/administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring.html",
+"scale/elasticsearch-setup.html":
+        "https://docs.mattermost.com/administration-guide/scale/elasticsearch-setup.html",
+"scale/ensuring-releases-perform-at-scale.html":
+        "https://docs.mattermost.com/administration-guide/scale/ensuring-releases-perform-at-scale.html",
+"scale/enterprise-search.html":
+        "https://docs.mattermost.com/administration-guide/scale/enterprise-search.html",
+"scale/estimated-storage-per-user-per-month.html":
+        "https://docs.mattermost.com/administration-guide/scale/estimated-storage-per-user-per-month.html",
+"scale/high-availability-cluster-based-deployment.html":
+        "https://docs.mattermost.com/administration-guide/scale/high-availability-cluster-based-deployment.html",
+"scale/lifetime-storage.html":
+        "https://docs.mattermost.com/administration-guide/scale/lifetime-storage.html",
+"scale/opensearch-setup.html":
+        "https://docs.mattermost.com/administration-guide/scale/opensearch-setup.html",
+"scale/performance-alerting.html":
+        "https://docs.mattermost.com/administration-guide/scale/performance-alerting.html",
 "scale/performance-monitoring.html":
         "https://docs.mattermost.com/administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring.html",
+"scale/performance-monitoring-metrics.html":
+        "https://docs.mattermost.com/administration-guide/scale/performance-monitoring-metrics.html",
+"scale/push-notification-health-targets.html":
+        "https://docs.mattermost.com/administration-guide/scale/push-notification-health-targets.html",
+"scale/redis.html":
+        "https://docs.mattermost.com/administration-guide/scale/redis.html",
+"scale/scale-to-100000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-100000-users.html",
+"scale/scale-to-15000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-15000-users.html",
+"scale/scale-to-200-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-200-users.html",
+"scale/scale-to-2000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-2000-users.html",
+"scale/scale-to-200000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-200000-users.html",
+"scale/scale-to-30000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-30000-users.html",
+"scale/scale-to-50000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-50000-users.html",
+"scale/scale-to-80000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-80000-users.html",
+"scale/scale-to-90000-users.html":
+        "https://docs.mattermost.com/administration-guide/scale/scale-to-90000-users.html",
+"scale/scaling-for-enterprise.html":
+        "https://docs.mattermost.com/administration-guide/scale/scaling-for-enterprise.html",
 "scale/performance-monitoring.html#statistics":
         "https://docs.mattermost.com/administration-guide/scale/performance-monitoring-metrics.html",
 "scale/performance-monitoring.html#custom-mattermost-metrics":
@@ -3523,9 +4186,58 @@ redirects_map: dict[str, str] = {
 "scale/elasticsearch.html":
         "https://docs.mattermost.com/administration-guide/scale/elasticsearch-setup.html",
 
+# Guides redirects
+"guides/agents.html":
+        "https://docs.mattermost.com/end-user-guide/agents.html",
+"guides/cloud-workspace-management.html":
+        "https://docs.mattermost.com/administration-guide/cloud-workspace-management.html",
+"guides/compliance-with-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/compliance-with-mattermost.html",
+"guides/deployment-troubleshooting.html":
+        "https://docs.mattermost.com/deployment-guide/deployment-troubleshooting.html",
+"guides/messaging-collaboration.html":
+        "https://docs.mattermost.com/end-user-guide/messaging-collaboration.html",
+"guides/preferences.html":
+        "https://docs.mattermost.com/end-user-guide/preferences.html",
+"guides/project-task-management.html":
+        "https://docs.mattermost.com/end-user-guide/project-task-management.html",
+"guides/secure-mattermost.html":
+        "https://docs.mattermost.com/security-guide/secure-mattermost.html",
+"guides/upgrade-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/upgrade-mattermost.html",
+"guides/workflow-automation.html":
+        "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
+
+
 # Upgrade redirects
+"upgrade/admin-onboarding-tasks.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/admin-onboarding-tasks.html",
+"upgrade/communicate-scheduled-maintenance.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/communicate-scheduled-maintenance.html",
+"upgrade/downgrading-mattermost-server.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/downgrading-mattermost-server.html",
+"upgrade/enterprise-install-upgrade.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/enterprise-install-upgrade.html",
+"upgrade/enterprise-roll-out-checklist.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/enterprise-roll-out-checklist.html",
+"upgrade/important-upgrade-notes.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html",
+"upgrade/notify-admin.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/notify-admin.html",
+"upgrade/open-source-components.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/open-source-components.html",
+"upgrade/prepare-to-upgrade-mattermost.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/prepare-to-upgrade-mattermost.html",
+"upgrade/upgrade-mattermost-kubernetes-ha.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/upgrade-mattermost-kubernetes-ha.html",
+"upgrade/upgrade_mattermost.sh":
+        "https://docs.mattermost.com/administration-guide/upgrade/upgrade_mattermost.sh",
+"upgrade/upgrading-mattermost-server.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/upgrading-mattermost-server.html",
 "upgrade/upgrading-mattermost-server.html#prepare-to-upgrade-to-the-latest-version":
         "https://docs.mattermost.com/administration-guide/upgrade/prepare-to-upgrade-mattermost.html",
+"upgrade/welcome-email-to-end-users.html":
+        "https://docs.mattermost.com/administration-guide/upgrade/welcome-email-to-end-users.html",
 "upgrade/installing-license-key.html":
         "https://docs.mattermost.com/administration-guide/manage/admin/installing-license-key.html",
 "upgrade/upgrading-mattermost-server.html#upgrade-to-mattermost-v7-0":
