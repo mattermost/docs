@@ -314,8 +314,8 @@ Here's an example ``SqlSettings`` block for one master and two read replicas:
         "DataSource": "master_user:master_password@tcp(master.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s",
         "DataSourceReplicas": ["slave_user:slave_password@tcp(replica1.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s","slave_user:slave_password@tcp(replica2.server)/mattermost?charset=utf8mb4,utf8\u0026readTimeout=30s\u0026writeTimeout=30s"],
         "DataSourceSearchReplicas": [],
-        "MaxIdleConns": 20,
-        "MaxOpenConns": 300,
+        "MaxIdleConns": 50,
+        "MaxOpenConns": 100,
         "Trace": false,
         "AtRestEncryptKey": "",
         "QueryTimeout": 30
