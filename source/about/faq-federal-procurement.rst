@@ -80,7 +80,7 @@ What is the entity name, address and CAGE code Mattermost Federal, Inc?
 - Address: 1900 Reston Metro Plaza, Suite #613, Reston, VA, 20190-5952, USA
 - CAGE Code: 9TG37
 
-What is my question is not answered here?
+What if my question is not answered here?
 -----------------------------------------
 
 For any questions you have not answered here, please `contact us <https://mattermost.com/contact/>`_.
