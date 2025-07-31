@@ -72,6 +72,8 @@ What is the entity name, address and CAGE code for Mattermost, Inc.?
 - Entity Name: Mattermost, Inc.
 - Address: 2100 Geng Road, Suite 210, Office 243, Palo Alto, CA, 94303, USA
 - CAGE Code: 7ZTZ9
+- NAICS Code: 513210
+- SAM.gov Unique Entity ID: J7QLN24NAEN7
 
 What is the entity name, address and CAGE code Mattermost Federal, Inc?
 ------------------------------------------------------------------------
@@ -79,8 +81,10 @@ What is the entity name, address and CAGE code Mattermost Federal, Inc?
 - Entity Name: Mattermost Federal, Inc.
 - Address: 1900 Reston Metro Plaza, Suite #613, Reston, VA, 20190-5952, USA
 - CAGE Code: 9TG37
+- NAICS Code: 513210
+- SAM.gov Unique Entity ID: RN3UJ3CK94Q3
 
 What if my question is not answered here?
 -----------------------------------------
 
-For any questions you have not answered here, please `contact us <https://mattermost.com/contact/>`_.
+For any questions not answered here, please `contact us <https://mattermost.com/contact/>`_.
