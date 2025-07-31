@@ -4207,7 +4207,12 @@ redirects_map = {
         "https://docs.mattermost.com/administration-guide/upgrade-mattermost.html",
 "guides/workflow-automation.html":
         "https://docs.mattermost.com/end-user-guide/workflow-automation.html",
+"guides/about-mattermost.html":
+        "https://docs.mattermost.com/product-overview/product-overview-index.html",
 
+# Overview redirects
+"overview/index.html":
+        "https://docs.mattermost.com/product-overview/product-overview-index.html",
 
 # Upgrade redirects
 "upgrade/admin-onboarding-tasks.html":
