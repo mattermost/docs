@@ -62,7 +62,8 @@ gantt
     v10.9                  :active, 2025-06-16, 2025-09-15
     v10.10                 :active, 2025-07-16, 2025-10-15
     v10.11 & Desktop App v5.13 Extended Support :crit,    2025-08-16, 2026-08-15
-    v11.0                  :active, 2025-09-16, 2025-12-15
+    v10.12                 :active, 2025-09-16, 2025-12-15
+    v11.0                  :active, 2025-10-16, 2026-01-15
 ```
 
 **Timeline Legend:**
