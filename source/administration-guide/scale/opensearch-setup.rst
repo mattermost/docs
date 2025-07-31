@@ -6,7 +6,7 @@ AWS OpenSearch server setup
 
 AWS OpenSearch Service allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. The indexing process can be managed from the System Console after setting up and connecting an OpenSearch server. The post index is stored on the OpenSearch server and updated constantly after new posts are made. In order to index existing posts, a bulk index of the entire post database must be generated.
 
-Deploying AWS OpenSearch includes the following two steps: `setting up AWS OpenSearch <#set-up-aws-opensearch>`__, and `configuring Mattermost <#configure-mattermost>`_. 
+Deploying AWS OpenSearch includes the following two steps: `setting up AWS OpenSearch <#set-up-aws-opensearch>`__, and `configuring Mattermost <#configure-mattermost>`_.
 
 Set up AWS OpenSearch
 ----------------------
@@ -174,8 +174,8 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
 
       curl https://mattermost-os-xxxxxxxxxxx.us-east-1.es.amazonaws.com
 
-  AWS Terraform Example
-  ----------------------
+AWS Terraform Example
+----------------------
 
   .. code-block:: sh
 
