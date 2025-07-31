@@ -825,12 +825,12 @@ Maximum idle connections
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 +--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open      | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **50**.                   |                                                                  |
-|                                                        |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
+| The maximum number of idle connections held open      | - System Config path: **Environment > Database**                  |
+| to the database.                                      | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 50,``   |
+|                                                       | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``           |
+| Numerical input. Default is **50**.                   |                                                                   |
+|                                                       |                                                                   |
++-------------------------------------------------------+-------------------------------------------------------------------+
 
 .. config:setting:: query-timeout
   :displayname: Query timeout (Database)
