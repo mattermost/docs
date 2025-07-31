@@ -136,7 +136,9 @@ We highly recommend that you set up an AWS OpenSearch server on a separate machi
     - master nodes: 2
     - storage: EBS gp3 (1536 GiB, 4608 IOPS, 250 MiB/s)
 
-  4. Specify the network for: VPC with 2 subnets, and a security group allowing Mattermost IPs on port ``9200``.
+  4. Specify the network for: VPC with 2 subnets, and a security group allowing Mattermost IPs on port ``443``.
+.. note::
+   Port 9200 is commonly used for local or on-premise OpenSearch. AWS OpenSearch domain only supports HTTPS over port 443
 
   5. Configure the access policy (JSON):
 
