@@ -23,6 +23,7 @@ IME integrates secure messaging, workflow automation, task management, agentic A
 
 .. image:: /images/ime.png
    :alt: Infographic titled "Mattermost: The Intelligent Mission Environment", showcasing Mattermost as an AI-powered, self-hosted collaboration platform for defense, security, and critical enterprises. It highlights use cases in Cyber Defense, Development, Security, and Operations (DevSecOps), and Mission Operations; a secure collaborative workflow with messaging, automation, audio/screenshare, project tracking, and AI tools; an integration platform with extensible architecture; and a deployment solution with Kubernetes-based, cyber-resilient scalability.
+   :target: https://docs.mattermost.com/_images/ime.png
 
 It is designed to meet the evolving needs of national security, defense, intelligence, cybersecurity, and critical infrastructure sectors for mission-critical workflows, including:
 
