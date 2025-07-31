@@ -56,12 +56,12 @@ If you upgrade from a release earlier than v10.10, please read the other [Import
  - Fixed more accessibility issues around search. 
  - Fixed **Create User Group** modal accessibility issues. 
  - Fixed mobile view accessibility issues. 
- - Fix an issue with accents. 
+ - Fixed an issue with accents. 
  - Fixed an issue with rendering of remote user at-mentions in the web app. 
  - Fixed a potential panic when running the ``mmctl ldap job show`` without the required argument. 
- - Fixed an issue in the LDAP sync, such that user with an updated attribute were being accidentally added to the groups of another LDAP record, if that LDAP record had a blank ID. 
+ - Fixed an issue in the LDAP sync, such that users with an updated attribute were being accidentally added to the groups of another LDAP record, if that LDAP record had a blank ID. 
  - Fixed an issue with the ``in:`` filter not showing an autocomplete on small screens.
- - Fixed an issue with the colour of borders in **Browse Channels** and **Direct Message** modals.
+ - Fixed an issue with the color of borders in **Browse Channels** and **Direct Message** modals.
 
 ### config.json
 New setting options were added to ``config.json``. Below is a list of the additions and their default values on install. The settings can be modified in ``config.json``, or the System Console when available.
