@@ -75,3 +75,7 @@ source/developer/localization.md
 *.doctree
 _build/
 build/
+
+# weasyprint PDFs
+venv/
+__pycache__/

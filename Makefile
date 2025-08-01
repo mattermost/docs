@@ -115,3 +115,16 @@ else
 	@mkdir -p "$(BUILDDIR)"
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS2) $(O) -w "$(WARNINGSFILE)"
 endif
+
+.PHONY: pdf cleanpdf
+
+pdf:
+	@echo "Building HTML docs using pipenv..."
+	@pipenv run sphinx-build -M clean source build
+	@pipenv run sphinx-build -M html source build
+	@echo "Generating clean PDF guides using venv..."
+	@venv/bin/python generate_pdfs.py
+
+cleanpdf:
+	@echo "Cleaning up generated PDFs..."
+	@rm -rf pdfs
