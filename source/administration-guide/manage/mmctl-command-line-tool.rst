@@ -30,7 +30,9 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
+- `mmctl compliance_export`_ - Compliance Export Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
+- `mmctl compliance_export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
 - `mmctl export`_ - Exports Management
@@ -465,6 +467,7 @@ And now we can run commands normally:
    last_name: Doe
    email: john.doe@example.com
    auth_service:
+   auth_data:
 
 Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1720,6 +1723,61 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl compliance_export
+------------------------
+
+
+Manage compliance export jobs.
+
+   Child Commands
+      -  `mmctl compliance_export download`_ - Download compliance export job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for compliance_export
+
+mmctl compliance_export download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Download a compliance export job by job ID.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl compliance_export download [jobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Download a compliance export job by job ID
+   $ mmctl compliance_export download j1k9s8d7f6g5h4j3k2l1m9n8
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for download
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl completion
 ----------------
 
@@ -1802,6 +1860,84 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
 .. code-block:: sh
 
    -h, --help   help for zsh
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export
+-----------------------
+
+Manage compliance exports.
+
+   Child Commands
+      -  `mmctl compliance_export list`_ - List compliance export jobs
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for compliance_export
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance_export list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+List compliance export jobs with optional pagination support.
+
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl compliance_export list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # List all compliance export jobs
+   mmctl compliance_export list
+
+   # List compliance export jobs with pagination
+   mmctl compliance_export list --page 2 --per-page 20
+
+   # List all compliance export jobs (ignoring pagination)
+   mmctl compliance_export list --all
+
+**Options**
+
+.. code-block:: sh
+
+   --all            Fetch all compliance export jobs. --page flag will be ignored if provided
+   -h, --help       help for list
+   --page int       Page number to fetch for the list of compliance export jobs
+   --per-page int   Number of compliance export jobs to be fetched (maximum 200)
 
 **Options inherited from parent commands**
 
@@ -6997,7 +7133,7 @@ mmctl user search
 
 **Description**
 
-Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output also includes the user's deactivation status to help system admins identify inactive accounts.
+Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output includes the user's deactivation status to help system admins identify inactive accounts. From Mattermost v10.11, output includes the user's AuthData field to help system admins verify authentication sources such as LDAP or SAML.
 
 **Format**
 

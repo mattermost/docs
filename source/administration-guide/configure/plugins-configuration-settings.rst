@@ -2102,6 +2102,8 @@ Enable experimental features
 
 ----
 
+<<<<<<< HEAD:source/configure/plugins-configuration-settings.rst
+=======
 User satisfaction surveys
 -------------------------
 
@@ -2152,6 +2154,7 @@ Enable user satisfaction survey
 
 ----
 
+>>>>>>> master:source/administration-guide/configure/plugins-configuration-settings.rst
 .. config:setting:: servicenow
   :displayname: ServiceNow interoperability (Plugins)
   :systemconsole: Plugins > ServiceNow
