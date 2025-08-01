@@ -9,6 +9,7 @@ The following open source components are used to provide the full benefits of Ma
 Desktop
 --------
 
+- Mattermost Desktop v5.13.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-5.13/NOTICE.txt>`__.
 - Mattermost Desktop v5.12.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-5.12/NOTICE.txt>`__.
 - Mattermost Desktop v5.11.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-5.11/NOTICE.txt>`__.
 - Mattermost Desktop v5.10.0 - `View Open Source Components <https://github.com/mattermost/desktop/blob/release-5.10/NOTICE.txt>`__.
@@ -35,6 +36,7 @@ Desktop
 Mobile
 -------
 
+- Mattermost Mobile v2.31.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.31/NOTICE.txt>`__.
 - Mattermost Mobile v2.30.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.30/NOTICE.txt>`__.
 - Mattermost Mobile v2.29.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.29/NOTICE.txt>`__.
 - Mattermost Mobile v2.28.0 - `View Open Source Components <https://github.com/mattermost/mattermost-mobile/blob/release-2.28/NOTICE.txt>`__.
@@ -126,6 +128,7 @@ Mobile
 Server
 ------------------------------
 
+- Mattermost Enterprise Edition v10.11.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.11/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v10.10.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.10/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v10.9.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.9/NOTICE.txt>`__.
 - Mattermost Enterprise Edition v10.8.0 - `View Open Source Components <https://github.com/mattermost/mattermost-server/blob/release-10.8/NOTICE.txt>`__.
