@@ -1,0 +1,8 @@
+:orphan:
+:nosearch:
+
+.. This page intentionally not accessible via the LHS navigation pane because it's included in other pages
+
+`Elasticsearch <https://www.elastic.co>`__ provides enterprise-scale deployments with optimized search performance and prevents performance degradation and timeouts. Elasticsearch allows you to search large volumes of data quickly, in near real-time, by creating and managing an index of post data. Mattermost’s implementation uses `Elasticsearch <https://www.elastic.co>`_ as a distributed, RESTful search engine supporting highly efficient database searches in a :doc:`cluster environment </administration-guide/scale/high-availability-cluster-based-deployment>`. Visit the :doc:`Mattermost Elasticsearch product documentation </administration-guide/scale/elasticsearch-setup>` for deployment and configuration details.
+
+Performance monitoring support enables a Mattermost server to track system health for large Enterprise deployments through integrations with `Prometheus <https://prometheus.io/>`__ and `Grafana <https://grafana.com/>`__. These integrations support data collection from several Mattermost servers, which is particularly useful if you’re running Mattermost :doc:`in high availability mode </administration-guide/scale/high-availability-cluster-based-deployment>`. Once you’re tracking system health, you can :doc:`set up performance alerts </administration-guide/scale/performance-alerting>` on your Grafana dashboard. Visit the :doc:`Mattermost Performance Monitoring product documentation </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` for installation details.
