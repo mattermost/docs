@@ -224,6 +224,37 @@ Before migrating to PostgreSQL:
 
 This is expected behavior with PostgreSQL and reflects Mattermost's channel naming requirements.
 
+Legacy Boards tables causing migration errors
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+During database migration from MySQL to PostgreSQL, while using schema comparison tools (such as dbcmp) you may encounter the following error:
+
+.. code-block:: text
+
+  error during comparison: no pk defined for table: focalboard_file_info
+
+This typically relates to legacy tables from older versions of Boards that are no longer in use. If you're using Boards version 8.0.0 or later, these tables are no longer required and can be ignored in the migration process.
+
+**Applies To:**
+
+* Boards version 8.0.0 and above
+* All staging, UAT, QA, or production environments
+
+.. note::
+  Does not apply to standalone Boards versions prior to v8.0.0
+
+**Solution:**
+
+If you're using Boards version 8.0.0 or higher, the following legacy tables which were used only in the standalone version and can be safely ignored:
+
+* ``focalboard_file_info`` - Used in standalone version; no longer relevant in plugin and later versions. Stores uploaded files and attachments for boards.
+* ``focalboard_sessions`` - Used in standalone version. Tracks user login sessions for boards.
+* ``focalboard_teams`` - Used in standalone version. Legacy team mapping not used in later versions. Stores team board settings and permissions.
+* ``focalboard_users`` - Used in standalone version. Stores user preferences and settings for boards.
+
+These tables may be empty or unused in your current environment. If so, they do not need to be migrated to PostgreSQL.
+
+
 Contact Support
 ---------------
 
