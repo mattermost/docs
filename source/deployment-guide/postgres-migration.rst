@@ -250,7 +250,7 @@ If you're using Boards version 8.0.0 or higher, the following legacy tables whic
 * ``focalboard_file_info`` - Used in standalone version; no longer relevant in plugin and later versions. Stores uploaded files and attachments for boards.
 * ``focalboard_sessions`` - Used in standalone version. Tracks user login sessions for boards.
 * ``focalboard_teams`` - Used in standalone version. Legacy team mapping not used in later versions. Stores team board settings and permissions.
-* ``focalboard_users`` - Used in standalone version. Stores user preferences and settings for boards
+* ``focalboard_users`` - Used in standalone version. Stores user preferences and settings for boards.
 
 These tables may be empty or unused in your current environment. If so, they do not need to be migrated to PostgreSQL.
 
