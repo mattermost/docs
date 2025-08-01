@@ -247,7 +247,7 @@ This typically relates to legacy tables from older versions of Boards that are n
 
 If you're using Boards version 8.0.0 or higher, the following legacy tables which were used only in the standalone version and can be safely ignored:
 
-* ``focalboard_file_info`` - Used in standalone version; no longer relevant in plugin and later versions. Stores uploaded files and attachments for boards
+* ``focalboard_file_info`` - Used in standalone version; no longer relevant in plugin and later versions. Stores uploaded files and attachments for boards.
 * ``focalboard_sessions`` - Used in standalone version. Tracks user login sessions for boards.
 * ``focalboard_teams`` - Used in standalone version. Legacy team mapping not used in later versions. Stores team board settings and permissions.
 * ``focalboard_users`` - Used in standalone version. Stores user preferences and settings for boards
