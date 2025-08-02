@@ -391,17 +391,6 @@ The port used for streaming data between servers.
 | This feature's ``config.json`` setting is ``"StreamingPort": ":8075"`` with string input. |
 +-------------------------------------------------------------------------------------------+
 
-Maximum idle database connections
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-*Deprecated. Not used in Mattermost v7.0 and later*
-
-+--------------------------------------------------------+------------------------------------------------------------------+
-| The maximum number of idle connections held open       | - System Config path: **Environment > Database**                 |
-| to the database.                                       | - ``config.json`` setting: ``".SqlSettings.MaxIdleConns": 20,``  |
-|                                                        | - Environment variable: ``MM_SQLSETTINGS_MAXIDLECONNS``          |
-| Numerical input. Default is **20**.                    |                                                                  |
-+--------------------------------------------------------+------------------------------------------------------------------+
 
 Maximum idle connections for high availability
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
