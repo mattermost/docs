@@ -1,4 +1,5 @@
 /* Mattermost documentation feedback widget */
+/* Modified to remove Rudderstack integration and freeform feedback modal */
 
 // Adapted from https://youmightnotneedjquery.com/#on
 const jqueryOn = (el, eventName, eventHandler, selector) => {
@@ -20,24 +21,7 @@ const jqueryOn = (el, eventName, eventHandler, selector) => {
         return wrappedHandler;
     }
 };
-// Adapted from https://youmightnotneedjquery.com/#parents
-const jqueryParents = (el, selector) => {
-    const parents = [];
-    while ((el = el.parentNode) && el !== document) {
-        if (!selector || el.matches(selector)) parents.push(el);
-    }
-    return parents;
-};
-// Adapted from https://youmightnotneedjquery.com/#val
-const jqueryVal = (el) => {
-    if (el.options && el.multiple) {
-        return el.options
-            .filter((option) => option.selected)
-            .map((option) => option.value);
-    } else {
-        return el.value;
-    }
-};
+
 // Adapted from https://youmightnotneedjquery.com/#ready
 const jqueryReady = (fn) => {
     if (document.readyState !== 'loading') {
@@ -51,23 +35,15 @@ jqueryReady(() => {
     let eventValue = 0;
     let rating = '';
 
+    // Handle rating selection - now sends analytics immediately
     jqueryOn(
         document.body,
         'click',
         (evt) => {
             if (evt.target) {
-                console.debug('set selected from emoji anchor');
-                evt.target.classList.add('selected');
-            }
-        },
-        '.c-thermometer__emojis a'
-    );
-
-    jqueryOn(
-        document.body,
-        'click',
-        (evt) => {
-            if (evt.target) {
+                // Prevent default anchor behavior (jumping to top of page)
+                evt.preventDefault();
+                
                 let targetEl = evt.target;
                 console.debug('clicked a rating');
                 if (
@@ -76,7 +52,15 @@ jqueryReady(() => {
                 ) {
                     targetEl = targetEl.parentElement;
                 }
+                
+                // Remove previous selection
+                document.querySelectorAll('a.rate-this-page-action').forEach((elt) => {
+                    elt.classList.remove('selected');
+                });
+                
+                // Add selection to current element
                 targetEl.classList.add('selected');
+                
                 const dataRating = targetEl.getAttribute('data-rating');
                 if (dataRating !== null) {
                     rating = dataRating;
@@ -92,150 +76,42 @@ jqueryReady(() => {
                             eventValue = 1;
                             break;
                     }
+                    
+                    // Send Google Analytics event immediately (no modal required)
+                    if (eventValue > 0) {
+                        console.debug(`Sending GA event: ${rating} (${eventValue})`);
+                        const dataLayer = window.dataLayer || [];
+                        dataLayer.push({
+                            event: 'rateThisPage',
+                            eventLabel: rating,
+                            eventValue: eventValue,
+                            // No eventFeedback since freeform feedback is disabled
+                        });
+                    }
+                    
+                    // Show thank you popup
+                    document.querySelectorAll('.c-thermometer-popup').forEach((elt) => {
+                        console.debug('show popup');
+                        elt.style.display = 'block';
+                    });
+                    
+                    // Hide popup after 3 seconds
+                    setTimeout(() => {
+                        document.querySelectorAll('.c-thermometer-popup').forEach((elt) => {
+                            console.debug('hide popup');
+                            elt.style.display = 'none';
+                        });
+                    }, 3000);
                 } else {
                     eventValue = 0;
                     console.debug('dataRating was null');
                 }
-                document
-                    .querySelectorAll('.c-thermometer-modal__container')
-                    .forEach((elt) => {
-                        console.debug('show container');
-                        elt.style.visibility = 'visible';
-                    });
             }
         },
         '.c-thermometer__emojis a.rate-this-page-action'
     );
 
-    jqueryOn(
-        document.body,
-        'click',
-        (evt) => {
-            if (evt.target) {
-                if (evt.target.classList.contains('btn-link')) {
-                    console.debug('target has class "btn-link"');
-                    jqueryParents(
-                        evt.target,
-                        '.c-thermometer-modal__container'
-                    ).forEach((parentElt) => {
-                        console.debug('hide container');
-                        parentElt.style.visibility = 'hidden';
-                    });
-                    document
-                        .querySelectorAll('a.rate-this-page-action')
-                        .forEach((elt) => {
-                            console.debug('remove selected from links');
-                            elt.classList.remove('selected');
-                        });
-                    document
-                        .querySelectorAll(
-                            '.c-thermometer-modal__container textarea'
-                        )
-                        .forEach((elt) => {
-                            console.debug('set value to empty');
-                            elt.value = '';
-                        });
-                    document
-                        .querySelectorAll('.c-thermometer-modal__counter span')
-                        .forEach((elt) => {
-                            elt.innerHTML = '0';
-                        });
-                    return;
-                }
-                let currentValue = '';
-                const textareas = document.querySelectorAll(
-                    '.c-thermometer-modal__container textarea'
-                );
-                if (textareas && textareas[0]) {
-                    currentValue = jqueryVal(textareas[0]);
-                }
-                console.debug(
-                    `eventValue=${eventValue}, currentValue=${currentValue}`
-                );
-                if (currentValue !== '' && eventValue > 0) {
-                    // Google Analytics event
-                    const dataLayer = window.dataLayer || [];
-                    dataLayer.push({
-                        event: 'rateThisPage',
-                        eventLabel: rating,
-                        eventValue: eventValue,
-                        eventFeedback: currentValue,
-                    });
-                    // Rudderstack event
-                    if (typeof rudderanalytics !== 'undefined') {
-                        rudderanalytics.track('feedback_submitted', {
-                            label: rating,
-                            rating: eventValue,
-                            feedback: currentValue,
-                        });
-                    }
-                }
-                jqueryParents(
-                    evt.target,
-                    '.c-thermometer-modal__container'
-                ).forEach((parentElt) => {
-                    console.debug('hide container');
-                    parentElt.style.visibility = 'hidden';
-                });
-                document
-                    .querySelectorAll(
-                        '.c-thermometer-modal__container textarea'
-                    )
-                    .forEach((elt) => {
-                        console.debug('set value to empty');
-                        elt.value = '';
-                    });
-                document
-                    .querySelectorAll('.c-thermometer-modal__counter span')
-                    .forEach((elt) => {
-                        elt.innerHTML = '0';
-                    });
-                document
-                    .querySelectorAll('a.rate-this-page-action')
-                    .forEach((elt) => {
-                        console.debug('remove selected from links');
-                        elt.classList.remove('selected');
-                    });
-                document
-                    .querySelectorAll('.c-thermometer-popup')
-                    .forEach((elt) => {
-                        console.debug('show popup');
-                        elt.style.display = 'block';
-                    });
-                setTimeout(() => {
-                    document
-                        .querySelectorAll('.c-thermometer-popup')
-                        .forEach((elt) => {
-                            console.debug('hide popup');
-                            elt.style.display = 'none';
-                        });
-                }, 3000);
-            }
-        },
-        '.c-thermometer-modal__footer .btn'
-    );
-
-    document
-        .querySelectorAll('.c-thermometer-modal__container textarea')
-        .forEach((elt) => {
-            jqueryOn(elt, 'keyup', (evt) => {
-                if (evt.target) {
-                    const currentVal = String(jqueryVal(evt.target));
-                    document
-                        .querySelectorAll('.c-thermometer-modal__counter span')
-                        .forEach((elt) => {
-                            elt.innerHTML = currentVal.length.toString();
-                        });
-                }
-            });
-        });
-
-    // document.body.addEventListener('click', evt => {
-    //     document.querySelectorAll('.c-thermometer-popup').forEach(elt => {
-    //         console.debug('hide popup from body click');
-    //         elt.style.visibility = 'hidden';
-    //     });
-    // });
+    // All modal-related code removed due to Rudderstack decommissioning
 
     jqueryOn(
         document.body,
@@ -249,6 +125,7 @@ jqueryReady(() => {
         '.c-thermometer-popup__close'
     );
 
+    // Prevent event propagation for popup
     jqueryOn(
         document.body,
         'click',
@@ -256,9 +133,10 @@ jqueryReady(() => {
             console.debug('stop event prop from popup');
             evt.stopImmediatePropagation();
         },
-        '.c-thermometer__popup'
+        '.c-thermometer-popup'
     );
 
+    // Prevent event propagation for trigger
     jqueryOn(
         document.body,
         'click',
@@ -269,5 +147,5 @@ jqueryReady(() => {
         '.c-thermometer__trigger'
     );
 
-    console.debug('jqueryReady finished');
+    console.debug('thermometer.js loaded - freeform feedback disabled, GA-only ratings enabled');
 });
