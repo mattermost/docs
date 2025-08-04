@@ -5,7 +5,7 @@ This page provides guidance on installing the desktop app MSI and use Group Poli
 
 .. tip::
 
-   Want to :doc:`distribute the official Windows desktop app silently </deploy/desktop/silent-windows-desktop-distribution>` to your end users instead?
+   Want to :doc:`distribute the official Windows desktop app silently </deployment-guide/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
 Download group policy and MSI installer files
 ----------------------------------------------
