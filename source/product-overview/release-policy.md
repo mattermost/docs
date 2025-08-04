@@ -39,7 +39,7 @@ We strongly recommend planning ahead for upgrades before the end of an ESR's lif
 
 ESRs don’t include changes to product functionality or new features. ESRs are intended for organizations who value stability over having the newest features and improvements, or who have a long internal testing and certification process to undergo when upgrading. Consider using ESRs for more stable and long-term deployments, especially in environments where frequent updates are challenging. If your organization prefers to have the newest features and improvements, Extended Support Releases may not be the best fit for you.
 
-To install extended support releases, follow our [install](/guides/deployment-guide) or [upgrade](/upgrade/upgrading-mattermost-server) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](/about/mattermost-server-releases).
+To install extended support releases, follow our [install and upgrade](https://docs.mattermost.com/administration-guide/upgrade/enterprise-install-upgrade.html) documentation. To restore a previous ESR, restore the database and previous version if you need to revert an upgrade. Previous ESR versions continue remain subject to a [life cycle end date](https://docs.mattermost.com/product-overview/mattermost-server-releases.html#latest-releases).
 
 ```{Important}
 - We strongly recommend reviewing [upgrade best practices](https://docs.mattermost.com/upgrade/prepare-to-upgrade-mattermost.html#upgrade-best-practices) for upgrading, and [important upgrade notes](/upgrade/important-upgrade-notes) for all the versions beyond the current ESR version you have currently installed. See the [Mattermost v9 changelog](https://docs.mattermost.com/about/mattermost-v9-changelog.html) for a list of database, API, and `config.json` updates for all v9.x releases.
@@ -79,7 +79,7 @@ The chart above shows both release dates and end-of-life dates for each version.
 
 When an ESR is at the end of its life cycle, there will be announcements ahead of time to provide time for people to test, certify, and deploy a newer ESR version before support ends. After a release reaches its end-of-life, no further updates will be provided for that version. 
 
-To receive updates about Extended Support Releases, sign up for [our mailing list](https://eepurl.com/dCKn2P).
+To receive updates about Extended Support Releases, sign up for [our mailing list](https://mattermost.com/newsletter/).
 
 For a new upcoming ESR, an email is sent out 3 months before the end of support for an ESR version. This email includes a note about the new ESR that was just published. A second email is sent out during the month when an ESR version is reaching the end of support.
 
