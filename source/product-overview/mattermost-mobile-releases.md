@@ -11,10 +11,10 @@
 
 Mattermost releases a new mobile app version every month.
 
-See the [Mobile app changelog](/about/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
+See the [Mobile app changelog](/product-overview/mobile-app-changelog) for release details, and see the [iOS mobile app](/collaborate/install-ios-app) and the [Android mobile app](/collaborate/install-android-app) documentation for installation details. 
 
 ```{Important}
-We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are compatible with and tested against [supported Mattermost server and extended support releases](https://docs.mattermost.com/about/mattermost-server-releases.html#latest-releases).
+We strongly recommend using the latest mobile app release available that contains the latest security fixes and user experience enhancements. Mobile app releases are compatible with and tested against [supported Mattermost server and extended support releases](https://docs.mattermost.com/product-overview/mattermost-server-releases.html#latest-releases).
 ```
 
 ## Latest releases
