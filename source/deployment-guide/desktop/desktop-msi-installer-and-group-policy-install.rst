@@ -1,11 +1,11 @@
 Desktop MSI installer and group policy guide
 =============================================
 
-This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v5.12.1>`_. 
+This page provides guidance on installing the desktop app MSI and use Group Policies in Windows for Mattermost Enterprise or Professional. The MSI installer package can be downloaded `here <https://github.com/mattermost/desktop/releases/tag/v5.13.0>`_. 
 
 .. tip::
 
-   Want to :doc:`distribute the official Windows desktop app silently </deployment-guide/desktop/silent-windows-desktop-distribution>` to your end users instead?
+   Want to :doc:`distribute the official Windows desktop app silently </deploy/desktop/silent-windows-desktop-distribution>` to your end users instead?
 
 Download group policy and MSI installer files
 ----------------------------------------------
@@ -20,9 +20,9 @@ Download group policy and MSI installer files
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00002.png
       :alt: Go to the mattermost/desktop repository on GitHub.
 
-3. Navigate to the release page for `version v5.12.1 <https://github.com/mattermost/desktop/releases/tag/v5.12.1>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
+3. Navigate to the release page for `version v5.13.0 <https://github.com/mattermost/desktop/releases/tag/v5.13.0>`__ and download the appropriate installer for your version of Windows (32-bit vs. 64-bit).
 
-4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.12.1.zip>`__ file as well to extract group policy files.
+4. Download the `source.zip <https://github.com/mattermost/desktop/archive/v5.13.0.zip>`__ file as well to extract group policy files.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00003.png
       :alt: In the mattermost/desktop repository on GitHub, go to the release page for the latest desktop release, then download the installer for your version of Windows. Download the source.zip file as well to extract group policy files.
@@ -43,12 +43,12 @@ The following group policies are available supporting a state option of Not Conf
   | Automatic Updates        | If disabled, automatic desktop app updates are disabled.   | v5.1 or later        | ``EnableAutoUpdates``      |
   +--------------------------+------------------------------------------------------------+----------------------+----------------------------+
 
-1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.12.1.zip`` file in place.
+1. Browse to the folder the above files were downloaded to and unzip the ``desktop-5.13.0.zip`` file in place.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00004.png
       :alt: Go to the install download directory on your machine and unzip the ZIP file.
 
-2. Navigate to the unzipped ``desktop-5.12.1\resources\windows\gpo`` folder and copy the contents.
+2. Navigate to the unzipped ``desktop-5.13.0\resources\windows\gpo`` folder and copy the contents.
 
    .. image:: ../../images/desktop/msi_gpo/msi_gpo_installation_test_00005.png 
       :alt: Go to the \resources\windows\gpo directory and copy its contents.
@@ -168,7 +168,7 @@ Perform a silent installation of the MSI by running the following command:
 
 Perform a silent installation of MSI by running the following command:
 
-``msiexec /i mattermost-desktop-v5.12.1-x64.msi /qn``
+``msiexec /i mattermost-desktop-v5.13.0-x64.msi /qn``
 
 .. note::
    - You'll need to update the version details in this command as new versions of the Mattermost desktop app are released.
@@ -180,7 +180,7 @@ Install for all users
 
 Use the ``ALLUSERS`` parameter to install the MSI for all users:
 
-``msiexec /i mattermost-desktop-v5.12.1-x64.msi ALLUSERS=1``
+``msiexec /i mattermost-desktop-v5.13.0-x64.msi ALLUSERS=1``
 
 .. note::
    - Installing the MSI for all users disables automatic updates for the desktop app on Windows.
@@ -191,6 +191,6 @@ Specify an install directory
 
 Use the ``APPLICATIONFOLDER`` parameter to specify an installation directory for the MSI installation:
 
-``msiexec /i mattermost-desktop-v5.12.1-x64.msi APPLICATIONFOLDER=<install directory>``
+``msiexec /i mattermost-desktop-v5.13.0-x64.msi APPLICATIONFOLDER=<install directory>``
 
 Change this command as new versions of the Mattermost Desktop App are released.
