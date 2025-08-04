@@ -9,7 +9,7 @@ This guide outlines minimum software and hardware requirements for deploying Mat
 Deployment overview
 -------------------
 
-Please see the :doc:`Application architecture </deploy/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
+Please see the :doc:`Application architecture </deployment-guide/application-architecture>` documentation for a summary of software systems and components whose requirements are described in this document.
 
 Software requirements
 ---------------------
@@ -110,7 +110,7 @@ This policy change takes effect from Mattermost v10.6, where the minimum Postgre
 
 .. note::
 
-  Mattermost v10.6 is not an :ref:`Extended Support Release (ESR) <about/release-policy:extended support releases>`. Going forward, this database version support policy will only apply to ESR releases.
+  Mattermost v10.6 is not an :ref:`Extended Support Release (ESR) <product-overview/release-policy:extended support releases>`. Going forward, this database version support policy will only apply to ESR releases.
 
 When a PostgreSQL version reaches its end of life (EOL), Mattermost will require a newer version starting with the next scheduled ESR release. This means the following future PostgreSQL minimum version increases as follows:
 
@@ -148,11 +148,11 @@ Search limitations on PostgreSQL:
 
   - One of them is: ``The length of a tsvector (lexemes + positions) must be less than 1 megabyte``, which means that, based on the file content, even files with content less than 1 MB won't be searchable if they hit the ``tsvector`` limit of 1 MB.
 
-- If any of the above is an issue, you can :doc:`set up and enable enterprise search </scale/enterprise-search>`.
+- If any of the above is an issue, you can :doc:`set up and enable enterprise search </administration-guide/scale/enterprise-search>`.
 
 MySQL Support
 ::::::::::::::::::::
-:doc:`MySQL database support </deploy/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deploy/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
+:doc:`MySQL database support </deployment-guide/server/prepare-mattermost-mysql-database>` is being deprecated starting with Mattermost v11. See the :doc:`PostgreSQL migration </deployment-guide/postgres-migration>` documentation for guidance on migrating from MySQL to PostgreSQL.
 
 - Search limitations on MySQL: Hashtags or recent mentions of usernames containing a dot do not return search results.
 - The migration system requires the MySQL database user to have additional `EXECUTE`, `CREATE ROUTINE`, `ALTER ROUTINE` and `REFERENCES` privileges to run schema migrations.
@@ -187,7 +187,7 @@ Hardware requirements
 
 Usage of CPU, RAM, and storage space can vary significantly based on user behavior. These hardware recommendations are based on traditional deployments and may grow or shrink depending on how active your users are.
 
-Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be :ref:`adjusted from the System Console <configure/environment-configuration-settings:maximum file size>`. Changing this number may change memory requirements.
+Moreover, memory requirements can be driven by peak file sharing activity. Recommendation is based on default 50 MB maximum file size, which can be :ref:`adjusted from the System Console <administration-guide/configure/environment-configuration-settings:maximum file size>`. Changing this number may change memory requirements.
 
 For deployments larger than 2,000 users, it is recommended to use the Mattermost open source load testing framework to simulate usage of your system at full scale: `https://github.com/mattermost/mattermost-load-test-ng <https://github.com/mattermost/mattermost-load-test-ng>`__.
 
@@ -209,18 +209,18 @@ Hardware requirements for enterprise deployments (multi-server)
 Scale requirements
 ^^^^^^^^^^^^^^^^^^
 
-For Enterprise Edition deployments with a multi-server setup, see :doc:`our scaling guide </scale/scaling-for-enterprise>`.
+For Enterprise Edition deployments with a multi-server setup, see :doc:`our scaling guide </administration-guide/scale/scaling-for-enterprise>`.
 
 It is highly recommended that pilots are run before enterprise-wide deployments in order to estimate full scale usage based on your specific organizational needs. You can use the Mattermost open source load testing framework to simulate usage of your system: `https://github.com/mattermost/mattermost-load-test-ng <https://github.com/mattermost/mattermost-load-test-ng>`__.
 
-Mattermost's :doc:`performance monitoring </scale/deploy-prometheus-grafana-for-performance-monitoring>` tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
+Mattermost's :doc:`performance monitoring </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` tools can be used for detailed performance measurements and to inspect the running system to ensure sizing and installation is correct.
 
 System requirements
 ^^^^^^^^^^^^^^^^^^^
 
 For Enterprise Edition deployments with a multi-server setup, we highly recommend the following systems to support your Mattermost deployment:
 
-- Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
-- Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
-- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </scale/enterprise-search>`.
-- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <configure/environment-configuration-settings:file storage>`.
+- Prometheus to track system health of your Mattermost deployment, through :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>` available in Mattermost Enterprise.
+- Grafana to visualize the system health metrics collected by Prometheus with the :doc:`performance monitoring feature </administration-guide/scale/deploy-prometheus-grafana-for-performance-monitoring>`. Grafana 5.0.0 and later is recommended.
+- Elasticsearch to support highly efficient database searches in a cluster environment. Elasticsearch v7.17+ is supported, and Elasticsearch v8.x or AWS OpenSearch is recommended from Mattermost v9.11. :doc:`Learn more </administration-guide/scale/enterprise-search>`.
+- MinIO or AWS S3. Mattermost is compatible with object storage systems which implement the S3 API. Other S3-compatible systems may work, but are not officially supported. Learn more about file storage configuration options :ref:`in our documentation <administration-guide/configure/environment-configuration-settings:file storage>`.
