@@ -22,13 +22,16 @@ This changelog summarizes updates to Mattermost mobile apps releases for [Matter
 ### Improvements
  - Enhanced Secure Previews: Introduced a more secure way to preview supported images, videos, and PDF files while restricting other file types, downloads, and sharing. Requires an Enterprise Advanced license.
  - Added the ability to delete/edit file attachments on existing posts.
- - Playbooks Support: Initial version integrating with Playbooks with the ability to view runs and check/uncheck tasks in checklists. 
- - Added an accessibility check to disable animations when required. 
- - Added support for multi/select types and text subtypes for Custom Profile Attributes. 
+ - Playbooks Support: Initial version integrating with Playbooks with the ability to view runs and check/uncheck tasks in checklists.
+ - Added an accessibility check to disable animations when required.
+ - Added support for multi/select types and text subtypes for Custom Profile Attributes.
 
 ### Bug Fixes
- - Fixed the hashtag rendering to work with the minimum hashtag length configuration. 
- - Fixed an error when saving non-editable Custom Profile Attributes. 
+ - Fixed the hashtag rendering to work with the minimum hashtag length configuration.
+ - Fixed an error when saving non-editable Custom Profile Attributes.
+
+### Open Source Components
+ - Added ``@mattermost/secure-pdf-viewer`` to https://github.com/mattermost/mattermost-mobile.
 
 ### Known Issues
  - Users are unable to adjust the font size via the OS font size setting.
