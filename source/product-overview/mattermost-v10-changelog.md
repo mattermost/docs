@@ -7,7 +7,11 @@
 (release-v10.11-extended-support-release)=
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
-**Released 2025-08-15**
+- **10.11.1, released 2025-08-15**
+  - 
+  - Mattermost v10.11.1 contains no database or functional changes.
+- **10.11.0, released 2025-08-15**
+  - Original 10.11.0 release.
 
 ```{Important}
 If you upgrade from a release earlier than v10.10, please read the other [Important Upgrade Notes](https://docs.mattermost.com/administration-guide/upgrade/important-upgrade-notes.html).
