@@ -213,7 +213,7 @@ Upgrade Mattermost Server
 
     .. code-block:: sh
 
-      sudo rm -r /tmp/mattermost-administration-guide/upgrade/
+      sudo rm -r /tmp/mattermost-upgrade/
       sudo rm -i /tmp/mattermost*.gz
 
 13. If you're using a :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployment, you need to apply the steps above on every node in your cluster. Once complete, the **Config File MD5** columns in the high availability section of the System Console should be green. If they're yellow, please ensure that all nodes have the same server version and the same configuration.
