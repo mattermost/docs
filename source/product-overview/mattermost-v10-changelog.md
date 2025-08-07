@@ -544,7 +544,7 @@ New setting options were added to ``config.json``. Below is a list of the additi
   - Removed redux selector's telemetry [MM-63794](https://mattermost.atlassian.net/browse/MM-63794).
   - Mattermost v10.5.9 contains no database or functional changes.
 - **10.5.8, released 2025-06-18**
-  - Mattermost v10.5.8 contains a high severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.5.8 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
   - Fixed an issue where unreads from deleted teams would display in the titlebar/Desktop App [MM-63933](https://mattermost.atlassian.net/browse/MM-63933).
   - Pre-packaged Playbooks plugin [v1.41.1](https://github.com/mattermost/mattermost-plugin-playbooks/releases/tag/v1.41.1).
   - Pre-packaged Boards plugin version [v9.1.3](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.3).
