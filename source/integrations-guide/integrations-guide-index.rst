@@ -8,29 +8,17 @@ Integrations Guide
 
    pre-built-integrations
    microsoft-integrations
+   webhook-integrations
 
 Mattermost provides a variety of methods to add functionality and customize the end-user experience to suit your organization's needs, whether you want to add new user capabilities with slash commands, build an advanced chatbot, or completely change the functionality of your server.
 
-Learn about the :doc:`pre-built integrations <pre-built-integrations>` that come with your Mattermost deployment and :doc:`integrations specific to the Microsoft ecosystem <microsoft-integrations>`.
+Learn about the :doc:`pre-built integrations <pre-built-integrations>` that come with your Mattermost deployment, :doc:`integrations specific to the Microsoft ecosystem <microsoft-integrations>`, and :doc:`webhook integrations <webhook-integrations>`.
 
 In addition, a wide array of open source integrations are available and ready to use from Mattermost and our community. To see a list of open source integrations available, please see the `Mattermost Marketplace <https://mattermost.com/marketplace/>`_.
 
 For self-hosted deployments in small setups, you might host integrations on the same server on which Mattermost is installed. For larger deployments, you can set up a separate server for integrations, or add them to the server on which the external application is hosted. For example, if you're self-hosting a Jira server, you could deploy a Jira integration on the Jira server itself. When self-hosting restrictions are less strict, AWS, Heroku, and other public cloud options can also be used.
 
 You can customize Mattermost with the following capabilities and frameworks.
-
-Webhooks
---------
-
-A webhook is a way for one app to send real-time data to another app. In Mattermost, `incoming webhooks <https://developers.mattermost.com/integrate/webhooks/incoming/>`_ receive data from external applications and make a post in a specified channel. They're great for setting up notifications when something happens in an external application.
-
-`Outgoing webhooks <https://developers.mattermost.com/integrate/webhooks/outgoing/>`_ take data from Mattermost, and send it to an external application. Then the outgoing webhook can post a response back in Mattermost. They're great for listening in on channels, and then notifying external applications when a trigger word is used.
-
-.. tip::
-
-    Mattermost webhooks are "Slack-compatible". This means that Mattermost accepts integrations that have a payload in the same format as Slack. In an application that already supports Slack webhooks, you can replace the Slack webhook URL with a Mattermost webhook URL and the integration will "just work". 
-    
-    If you have an integration that outputs a payload in a different format, you need to write an intermediate application to act as a translation layer to change it to the format Mattermost uses. Since there's currently no general standard for webhook formatting, this is unavoidable and just a part of how webhooks work.
 
 Custom slash commands
 ---------------------
