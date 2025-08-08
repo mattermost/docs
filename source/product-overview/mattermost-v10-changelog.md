@@ -8,6 +8,7 @@
 ## Release v10.11 - [Extended Support Release](https://docs.mattermost.com/product-overview/release-policy.html#release-types)
 
 - **10.11.1, released 2025-08-15**
+  - Fixed an issue with login being kept in a web view instead of redirecting to the mobile app when using OAuth for login [MM-65015](https://mattermost.atlassian.net/browse/MM-65015).
   - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
   - Mattermost v10.11.1 contains no database or functional changes.
 - **10.11.0, released 2025-08-15**
