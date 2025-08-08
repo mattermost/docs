@@ -180,7 +180,7 @@ Upgrade Mattermost Server
 
    .. code-block:: sh
 
-     sudo cp -an /tmp/mattermost-administration-guide/upgrade/. mattermost/
+     sudo cp -an /tmp/mattermost-upgrade/. mattermost/
 
    .. note::
 
