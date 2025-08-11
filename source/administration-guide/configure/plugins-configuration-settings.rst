@@ -88,7 +88,7 @@ Require plugin signature
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------+
 
 .. note::
-  - **Mattermost server v10.11 and later**: Pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via ``PluginSettings.SignaturePublicKeyFiles`` to validate their signatures.
+  From Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins must configure custom public keys via ``PluginSettings.SignaturePublicKeyFiles`` to validate their signatures.
   - **Mattermost server v10.10 and earlier**: Pre-packaged plugins are not subject to signature validation.
   - Plugins installed through the Marketplace are always subject to signature validation at the time of download.
   - Enabling this configuration will result in `plugin file uploads <#upload-plugin>`__ being disabled in the System Console.
