@@ -97,7 +97,7 @@ A Mattermost Support Packet can contain the following files:
    - ``<node-id>/heap.prof`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
    - ``<node-id>/goroutines`` (`Go performance metrics <#go-performance-metrics>`__ for each node)
 
-   The following additional plugin diagnostic data is included in the generated support packet when the plugin is enabled and operational:
+   The following additional plugin diagnostic data is included in the generated Support Packet when the plugin is enabled and operational:
 
    - GitHub: ``/github/diagnostics.yaml``
    - GitLab: ``/com.github.manland.mattermost-plugin-gitlab/diagnostics.yaml``
