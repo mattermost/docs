@@ -61,18 +61,13 @@ Add the generated Support Packet to a `standard support request <https://support
 Contents of a Support Packet
 ----------------------------
 
-A Mattermost Support Packet can contain the following files:
+The contents of a Mattermost Support Packet can differ by server version. Select the tab that corresponds to your Mattermost version to see the files included in the Support Packet.
 
 .. tab:: v10.11 and later
 
    .. note::
 
       From v10.11, Support Packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
-
-      From v10.10, Support Packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
-
-      - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </scale/high-availability-cluster-based-deployment>`) remain in the root directory of the Support Packet.
-      - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
 
    **Cluster-wide files (root directory):**
 
@@ -112,7 +107,9 @@ A Mattermost Support Packet can contain the following files:
 
    .. note::
 
-      From v10.10, support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
+      From Mattermost v10.10, Support Packets from :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments organize cluster-specific files (such as log files) in subdirectories named after each cluster node, while cluster-wide files remain in the root directory. 
+      
+      Support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
 
       - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </administration-guide/scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
       - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
@@ -152,9 +149,11 @@ A Mattermost Support Packet can contain the following files:
 
 .. tab:: v10.5 to v10.9
 
+   Prior to v10.10, each node in the cluster of a high availability deployment has its own ``mattermost.log`` file and advanced logging files included directly in the Support Packet.
+
    .. note::
 
-      From v10.5, the following support packet data has changed:
+      From v10.5, the following Support Packet data has changed:
 
       - The ``support_packet.yaml`` file has been removed and split into ``diagnostics.yaml`` and ``stats.yaml`` files.
       - All fields in ``diagnostics.yaml`` have been moved into their own objects for improved readability.
@@ -190,6 +189,8 @@ A Mattermost Support Packet can contain the following files:
 
 .. tab:: Prior to v10.5
 
+   From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
+
    - `metadata.yaml <#metadata>`__
    - ``mattermost.log``
    - ``plugins.json``
@@ -201,11 +202,8 @@ A Mattermost Support Packet can contain the following files:
 
 .. note:: 
 
-   - From Mattermost v10.10, support packets from :doc:`high availability </administration-guide/scale/high-availability-cluster-based-deployment>` deployments organize cluster-specific files (such as log files) in subdirectories named after each cluster node, while cluster-wide files remain in the root directory.
-   - Prior to v10.10, each node in the cluster of a high availability deployment has its own ``mattermost.log`` file and advanced logging files included directly in the support packet.
    - LDAP groups are not included during Support Packet generation. Only ``LDAP Version`` and ``LDAP Vendor`` are included when present. These values are included in the ``support_packet.yaml`` file. 
    - From Mattermost v9.11, ``LDAP Vendor`` errors are included in the Support Packet. If fetching the LDAP Vendor name fails, the Support Packet generation includes the error in ``warning.txt``. If no LDAP Vendor name is found, the Support Packet lists them as ``unknown``.
-   - From Mattermost v10.4, a new ``diagnostics.yaml`` file includes Mattermost Calls diagostics data, including plugin version, calls and active session counts, as well as average duration and participant counts.
 
 Metadata
 ---------
@@ -278,6 +276,4 @@ Use ``go tool pprof -web X`` to open a visualization of the profile in your brow
 Load metric
 ------------
 
-Mattermost v10.10 introduces an additional diagnostic data point under the **Product Menu > About Mattermost** popup.
-
-The Load Metric field displays monthly active users relative to the total number of licensed users, giving Mattermost support teams a contextual reference point for understanding deployment active usage for troubleshooting and guidance. It isn’t a comprehensive performance monitoring tool or health indicator, but serves as a supplementary data point when traditional diagnostic methods aren’t available.
+From Mattermost v10.10, the **Load Metric** field under **Product Menu > About Mattermost** displays monthly active users relative to the total number of licensed users. This value gives Mattermost support teams a contextual reference point for understanding deployment active usage for troubleshooting and guidance. It isn’t a comprehensive performance monitoring tool or health indicator, but serves as a supplementary data point when traditional diagnostic methods aren’t available. 
