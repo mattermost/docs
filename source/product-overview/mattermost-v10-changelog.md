@@ -118,7 +118,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.9 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.9.4, released 2025-07-22**
-  - Mattermost v10.9.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Mattermost v10.9.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Mattermost v10.9.4 contains no database or functional changes.
 - **10.9.3, released 2025-07-08**
   - Mattermost v10.9.3 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -238,8 +239,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.8 - [Feature Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.8.4, released 2025-07-22**
-  - Mattermost v10.8.4 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin version [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+  - Mattermost v10.8.4 contains medium to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Mattermost v10.8.4 contains no database or functional changes.
 - **10.8.3, released 2025-06-18**
   - Mattermost v10.8.3 contains a medium severity level security fix. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
@@ -542,8 +543,8 @@ New setting options were added to ``config.json``. Below is a list of the additi
 ## Release v10.5 - [Extended Support Release](https://docs.mattermost.com/about/release-policy.html#release-types)
 
 - **10.5.9, released 2025-07-22**
-  - Mattermost v10.5.9 contains low to medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
-  - Pre-packaged Boards plugin version [v9.1.4](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.4).
+  - Mattermost v10.5.9 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin version [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
   - Pre-packaged Agents plugin [v1.2.4](https://github.com/mattermost/mattermost-plugin-agents/releases/tag/v1.2.4).
   - Pre-packaged Calls plugin [v1.9.2](https://github.com/mattermost/mattermost-plugin-calls/releases/tag/v1.9.2).
   - Fixed an issue where overridden webhook usernames did not appear in replies when Threaded Discussions were disabled [MM-63564](https://mattermost.atlassian.net/browse/MM-63564).
