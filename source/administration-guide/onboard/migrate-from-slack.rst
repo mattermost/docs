@@ -180,9 +180,9 @@ The email verification process during Slack import depends on who performs the i
 
 **System administrator imports:**
 
-* Email addresses are automatically verified during the import process
-* Users can immediately use the Password Reset feature to set their password
-* No email verification step required before password reset
+* Email addresses are automatically verified during the import process.
+* Users can immediately use the Password Reset feature to set their password.
+* No email verification steps are required before password reset.
 
 **Non-administrator imports:**
 
