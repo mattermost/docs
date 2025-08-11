@@ -2218,7 +2218,7 @@ In addition to the Mattermost plugin signing key built into the server, each pub
   When bundling custom plugins:
   
   - Drop both the plugin files and their corresponding ``.sig`` signature files into the ``prepackaged_plugins`` directory.
-  - Add your custom public key using this configuration setting to validate the signatures
+  - Add your custom public key using this configuration setting to validate the signatures.
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"SignaturePublicKeyFiles": {}`` with string array input consisting of contents that are relative or absolute paths to signature files.              |
