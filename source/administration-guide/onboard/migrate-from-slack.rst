@@ -186,9 +186,9 @@ The email verification process during Slack import depends on who performs the i
 
 **Non-administrator imports:**
 
-* Email addresses remain unverified after import
-* Users must first verify their email addresses before they can reset their password
-* Additional email verification step required before account access
+* Email addresses remain unverified after import.
+* Users must first verify their email addresses before they can reset their password.
+* Additional email verification steps are required before account access.
 
 Account activation
 ~~~~~~~~~~~~~~~~~~
