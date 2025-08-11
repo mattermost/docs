@@ -112,7 +112,7 @@ Automatic prepackaged plugins
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------+
 
 .. note::
-  **Prepackaged Plugin Installation Behavior**: When system administrators drop plugin files (with their ``.sig`` signature files) into the ``prepackaged_plugins`` directory, the plugins won't install automatically. Prepackaging makes the plugin available for "offline" installation. The plugin will automatically install only when the system administrator pre-configures the ``config.json`` with that plugin enabled.
+  **Prepackaged Plugin Installation Behavior**: When system administrators drop plugin files (with their ``.sig`` signature files) into the ``prepackaged_plugins`` directory, the plugins won't install automatically. Prepackaging makes the plugin available for "offline" installation. The plugin will automatically install only when a system admin pre-configures the ``config.json`` with that plugin enabled.
 
 .. config:setting:: upload-plugin
   :displayname: Upload Plugin (Plugins - Management)
