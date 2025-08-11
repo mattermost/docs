@@ -69,7 +69,7 @@ A Mattermost Support Packet can contain the following files:
 
       From v10.11, Support Packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
 
-      From v10.10, support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
+      From v10.10, Support Packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
 
       - **Cluster-wide files** (identical across all nodes in a :doc:`high-availability cluster </scale/high-availability-cluster-based-deployment>`) remain in the root directory of the support packet.
       - **Cluster-specific files** (unique per node) are now organized in subdirectories named after each cluster node.
