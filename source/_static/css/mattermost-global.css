@@ -103,6 +103,22 @@ section[id] {
     }
 }
 
+/* SBOM details styling (keeps table markup minimal) */
+details.mm-sbom {
+    display: inline-block;
+}
+details.mm-sbom > summary {
+    cursor: pointer;
+}
+details.mm-sbom > ul {
+    margin: 0.25em 0 0 1.25em;
+    padding: 0;
+    list-style: none;
+}
+details.mm-sbom > ul > li {
+    margin: 0;
+}
+
 /* NAV */
 
 @media (min-width: 991.98px) {
