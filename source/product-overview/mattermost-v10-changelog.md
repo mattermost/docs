@@ -9,6 +9,9 @@
 
 - **10.10.2, released **
   - Mattermost v10.10.2 contains low to high severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release is recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
+  - Pre-packaged Boards plugin [v9.1.5](https://github.com/mattermost/mattermost-plugin-boards/releases/tag/v9.1.5).
+  - Fixed an issue with the onboarding checklist being cut off when on multiple teams [MM-64919](https://mattermost.atlassian.net/browse/MM-64919).
+  - Upgraded to go1.24.5, and reverted to bullseye to maintain glibc <2.34 compatibility for older deployment environments [MM-64865](https://mattermost.atlassian.net/browse/MM-64865).
   - Mattermost v10.10.2 contains no database or functional changes.
 - **10.10.1, released 2025-07-16**
   - Mattermost v10.10.1 contains medium severity level security fixes. [Upgrading](https://docs.mattermost.com/upgrade/upgrading-mattermost-server.html) to this release as soon as possible is highly recommended. Details will be posted on our [security updates page](https://mattermost.com/security-updates/) 30 days after release as per the [Mattermost Responsible Disclosure Policy](https://mattermost.com/security-vulnerability-report/).
