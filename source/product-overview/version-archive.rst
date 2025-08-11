@@ -442,11 +442,11 @@ If you want to check that the version of Mattermost you are installing is the of
 
   We generally recommend installing Enterprise Edition, even if you don't currently need a license. This provides the flexibility to seamlessly unlock Enterprise features should you need them. However, if you only want to install software with a fully open source code base, then Team Edition is the best choice for you.
 
-  Mattermost Team Edition v10.10.1 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.1/mattermost-team-10.10.1-linux-amd64.tar.gz?src=arc>`__
-    - ``https://releases.mattermost.com/10.10.1/mattermost-team-10.10.1-linux-amd64.tar.gz``
+  Mattermost Team Edition v10.10.2 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-10-feature-release>`__ - `Download <https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz?src=arc>`__
+    - ``https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``1a8108227cd7c79c66f7f45c52a06a255c327f7607bc65da9276200713f9e5b2``
-    - GPG Signature: https://releases.mattermost.com/10.10.1/mattermost-team-10.10.1-linux-amd64.tar.gz.sig
-    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.10.1/sbom-mattermost-v10.10.1.json
+    - GPG Signature: https://releases.mattermost.com/10.10.2/mattermost-team-10.10.2-linux-amd64.tar.gz.sig
+    - SBOM Download Link: https://github.com/mattermost/mattermost/releases/download/v10.10.2/sbom-mattermost-v10.10.2.json
   Mattermost Team Edition v10.9.4 - `View Changelog <https://docs.mattermost.com/about/mattermost-v10-changelog.html#release-v10-9-feature-release>`__ - `Download <https://releases.mattermost.com/10.9.4/mattermost-team-10.9.4-linux-amd64.tar.gz?src=arc>`__
     - ``https://releases.mattermost.com/10.9.4/mattermost-team-10.9.4-linux-amd64.tar.gz``
     - SHA-256 Checksum: ``5be51fa2cf679d7d87012ba7a04f7fc984b157741cbee5d0d09da2a68b4aa124``
