@@ -195,8 +195,8 @@ Account activation
 
 * Slack users activate their new Mattermost accounts by using Mattermost's **Password Reset** screen with their email addresses from Slack to set new passwords for their Mattermost accounts.
 
-  * For imports performed by system administrators: Users can immediately use the Password Reset feature (no email verification required)
-  * For imports performed by non-administrators: Users must first verify their email addresses, then use the Password Reset feature
+  * For imports performed by system administrators: Users can immediately use the **Password Reset** feature (no email verification is required).
+  * For imports performed by non-administrators: Users must first verify their email addresses, then use the **Password Reset** feature.
 
 * Once logged in, Mattermost users will have access to previous Slack messages in the public channels imported from Slack.
 * Instructions on how to migrate user authenticatation to LDAP or SAML can be found :ref:`here <administration-guide/manage/mmctl-command-line-tool:mmctl user migrate-auth>`.
