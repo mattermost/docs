@@ -17,7 +17,7 @@ Opening a channel bookmark works the same way as selecting a file link or attach
 
 .. note::
 
-   **Desktop app users** (Mattermost v10.11+): When you click bookmarks with ``mattermost://`` URLs in the desktop app, they open directly within the app using internal deep linking. This provides a seamless experience without external protocol prompts that were shown in earlier versions.
+   From Mattermost v10.11, when you select bookmarks with ``mattermost://`` URLs in the desktop app, those links open directly within the desktop app using internal deep linking.
 
 Add a bookmark
 --------------
