@@ -15,7 +15,7 @@ Open a bookmark
 
 Opening a channel bookmark works the same way as selecting a file link or attachment in a message. Select or tap a bookmark to view the file or link.
 
-.. note::
+.. tip::
 
    From Mattermost v10.11, when you select bookmarks with ``mattermost://`` URLs in the desktop app, those links open directly within the desktop app using internal deep linking.
 
