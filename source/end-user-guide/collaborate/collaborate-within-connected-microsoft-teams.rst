@@ -43,7 +43,7 @@ Manage your Mattermost notification settings for the Microsoft Teams integration
 
 .. tip::
 
-  You can run the following :ref:`slash commands <end-user-guide/collaborate/run-slash-commands:run slash commands>` to manage your integration settings by typing the commands into the Mattermost message text box, and selecting **Send**:
+  You can run the following :ref:`slash commands <integrations-guide/run-slash-commands:run slash commands>` to manage your integration settings by typing the commands into the Mattermost message text box, and selecting **Send**:
 
   - ``/msteams connect``: Connect your Mattermost account to Microsoft Teams account.
   - ``/msteams disconnect``: Disconnect your Mattermost account from Microsoft Teams account.

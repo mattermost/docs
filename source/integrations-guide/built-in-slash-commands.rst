@@ -1,7 +1,7 @@
 Use built-in slash commands
 ============================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 You can interact with Mattermost users, channels, conversations, and more using `built-in slash commands <#slash-commands>`_, or interact with the data model programmatically using `API endpoints <https://api.mattermost.com/>`__.

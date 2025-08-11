@@ -3,7 +3,7 @@ Interactive Dialogs
 
 Interactive dialogs are used by applications that integrate with the Mattermost server. They are a method for integrations to receive form-styled input from users. Use them to gather structured information from the end user to perform an action or a request.
 
-Integrations can open dialogs when users :doc:`click message buttons or select an option from a menu </integrations-guide/interactive-messages>`, or use a :doc:`custom slash command </end-user-guide/collaborate/run-slash-commands>`. Plugins can also trigger a dialog based on user actions. For instance, if a plugin adds a button in the channel header, clicking that button may open a dialog.
+Integrations can open dialogs when users :doc:`click message buttons or select an option from a menu </integrations-guide/interactive-messages>`, or use a :doc:`custom slash command </integrations-guide/run-slash-commands>`. Plugins can also trigger a dialog based on user actions. For instance, if a plugin adds a button in the channel header, clicking that button may open a dialog.
 
 Here is an example of what a dialog looks like for creating a Jira issue within the Mattermost user interface:
 

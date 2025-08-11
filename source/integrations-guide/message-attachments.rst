@@ -1,7 +1,7 @@
 Message Attachments
 ===================
 
-In addition to standard Markdown formatting, integrations can use message attachments to send richly formatted messages. Attachments can be included in posts sent from webhooks, slash commands, and the REST API.
+In addition to standard Markdown formatting, integrations can use message attachments to send richly formatted messages. Attachments can be included in posts sent from :doc:`webhooks </integrations-guide/webhook-integrations>`, :doc:`slash commands </integrations-guide/run-slash-commands>`, and the `REST API <https://developers.mattermost.com/api-documentation/>`_.
 
 You can also include :doc:`interactive messages </integrations-guide/interactive-messages>` with buttons and menus as part of an attachment to create more engaging workflows.
 
@@ -84,6 +84,7 @@ Fields are displayed in a table format within the attachment. They are specified
 
 .. image:: ../images/attachments-fields.png
    :alt: Example of fields in an attachment.
+   :width: 400
 
 Images
 ~~~~~~
@@ -101,6 +102,7 @@ Images
 
 .. image:: ../images/attachments-image.png
    :alt: Example of an image in an attachment.
+   :width: 400
 
 Footer
 ~~~~~~
@@ -118,6 +120,7 @@ Footer
 
 .. image:: ../images/attachments-footer.png
    :alt: Example of a footer in an attachment.
+   :width: 400
 
 Example Message Attachment
 --------------------------
@@ -165,6 +168,7 @@ This is how it renders in Mattermost:
 
 .. image:: ../images/attachments-example.png
    :alt: Example of a complete message attachment.
+   :width: 400
 
 Known Issues
 ------------
@@ -180,15 +184,17 @@ Frequently Asked Questions
 Yes, you can use the `Create Post RESTful API <https://api.mattermost.com/#operation/CreatePost>`_. Add an ``attachments`` key to the post’s ``props`` JSON field. The value should be an array of message attachment objects.
 
 Example ``curl`` command:
+
 .. code-block:: bash
 
-    curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<your_channel_id>", "message":"Test message", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}' https://{your-mattermost-site}/api/v4/posts
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"channel_id":"<your_channel_id>", "message":"Test message", "props":{"attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}}' https://{your-mattermost-site}/api/v4/posts
 
 **Can I post a message attachment using a webhook?**
 
 Yes, you can use an :doc:`incoming webhook </integrations-guide/incoming-webhooks>`. Add an ``attachments`` key to the JSON payload.
 
 Example ``curl`` command:
+
 .. code-block:: bash
 
-    curl -i -X POST -H 'Content-Type: application/json' -d '{"text":"Test message", "attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}' https://{your-mattermost-site}/hooks/{your-webhook-id}
+  curl -i -X POST -H 'Content-Type: application/json' -d '{"text":"Test message", "attachments": [{"pretext": "This is the attachment pretext.","text": "This is the attachment text."}]}' https://{your-mattermost-site}/hooks/{your-webhook-id}

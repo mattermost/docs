@@ -3,29 +3,38 @@ Incoming Webhooks
 
 Incoming webhooks allow external applications to post messages into Mattermost channels and direct messages. They are a simple way to receive notifications and data from other services in real-time.
 
-All webhook posts will display a ``BOT`` indicator next to the username in Mattermost clients to help prevent against phishing attacks.
+You can create an incoming webhook in Mattermost, which generates a unique URL. External systems send HTTP POST requests to that URL with a JSON payload containing the message text and optional formatting (attachments, images, links, etc.) 
+
+For example, your monitoring tool detects high CPU usage and sends an alert message directly into your **#devops-alerts** channel. All webhook posts will display a ``BOT`` indicator next to the username in Mattermost clients to help prevent against phishing attacks.
 
 Create an Incoming Webhook
 --------------------------
 
-1.  In Mattermost, go to **Product Menu > Integrations > Incoming Webhooks**.
+1.  In Mattermost, go to **Product Menu > Integrations**. If you don't have the **Integrations** option, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. A System Admin can enable them from **System Console > Integrations > Integration Management**.
 
-    .. note::
-       If you don't have the **Integrations** option, incoming webhooks may not be enabled on your Mattermost server or may be disabled for non-admins. A System Admin can enable them from **System Console > Integrations > Integration Management**.
+  .. image:: ../images/product-menu-integrations.png
+    :alt: Mattermost menu options showing the ability to work with integrations.
 
-2.  Select **Add Incoming Webhook** and add a name and description for the webhook.
-3.  Select the channel to receive webhook payloads, then select **Add** to create the webhook.
+2. From the Integrations page, select **Incoming Webhooks**.
 
-This will generate a unique webhook URL, which will look something like this:
-``https://your-mattermost-server.com/hooks/xxx-generatedkey-xxx``
+  .. image:: /images/manage-webhooks.png
+    :alt: Dialog box showing the option to add an incoming webhook.
 
-.. warning::
-   Treat this URL as a secret. Anyone who has it will be able to post messages to your Mattermost instance.
+3. Select **Add Incoming Webhook**.
 
-Here's an example of a simple message created with an incoming webhook:
+  .. image:: ../images/select-add-incoming-webhook.png
+    :alt: Dialog box showing the option to add an incoming webhook.
 
-.. image:: ../images/incoming_webhooks_create_simple.png
-   :alt: An incoming webhook message saying "Hello, this is some text. This is some more text."
+4. Enter a name and description for the webhook, and then select the channel. You can optionally limit bot posts to a specific channel by selecting **Lock to this channel**, or you can allow the webhook to post to any public channel or private channel the incoming webhook creator is a member of. Select **Save**.
+
+  .. image:: ../images/create-incoming-webhook-details.png
+    :alt: Dialog box showing the incoming webhook details.
+
+5. Select **Done** to confirm. Mattermost generates a unique webhook URL, which will look something like this:
+``https://your-mattermost-server.com/hooks/xxx-generatedkey-xxx``. Treat this URL as a secret. Anyone who has it will be able to post messages to your Mattermost instance.
+
+  .. image:: ../images/incoming-webhook-created.png
+    :alt: Dialog box showing the incoming webhook URL.
 
 Use an Incoming Webhook
 ------------------------
@@ -39,6 +48,31 @@ To post a message, your application needs to send an HTTP POST request to the we
 A successful request will receive an HTTP 200 response with `ok` in the response body.
 
 For compatibility with Slack incoming webhooks, if no ``Content-Type`` header is set, the request body must be prefixed with ``payload=``.
+
+Post examples from incoming webhooks
+--------------------------------------
+
+Here are some examples of simple messages posted using incoming webhooks:
+
+.. image:: ../images/github-incoming-webhook.png
+  :alt: Example of a GitHub notification posted to Mattermost using an incoming webhook.
+  :width: 400
+
+.. image:: ../images/jira-incoming-webhook.png
+  :alt: Example of a Jira notification posted to Mattermost using an incoming webhook.
+  :width: 400
+
+.. image:: ../images/mattermost-incoming-webhook.png
+  :alt: Example of a Mattermost notification posted to Mattermost using an incoming webhook.
+  :width: 400
+
+.. image:: ../images/fastlane-incoming-webhook.png
+  :alt: Example of a Fastlane notification posted to Mattermost using an incoming webhook.
+  :width: 400
+
+.. image:: ../images/weblate-incoming-webhook.png
+  :alt: Example of a Weblate notification posted to Mattermost using an incoming webhook.
+  :width: 400
 
 Parameters
 ----------
@@ -96,6 +130,7 @@ This renders as:
 
 .. image:: ../images/incoming_webhooks_full_example.png
    :alt: Example of a webhook post with a custom username, icon, and formatted text.
+   :width: 400
 
 Example with Card Prop
 ~~~~~~~~~~~~~~~~~~~~~~
@@ -125,6 +160,7 @@ Translating Slack's Data Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Mattermost automatically translates JSON payloads from Slack format:
+
 - ``<https://mattermost.com/>`` is rendered as a link.
 - ``<https://mattermost.com/|Click here>`` is rendered as linked text.
 - ``<userid>`` triggers a user mention.
@@ -136,6 +172,7 @@ Using Mattermost Webhooks in GitLab
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You can use GitLab's built-in Slack integration to send notifications to Mattermost:
+
 1. In GitLab, go to **Settings > Services** and select **Slack**.
 2. Paste the Mattermost incoming webhook URL.
 3. Optionally, set a **Username**. Leave the **Channel** field blank.
@@ -155,6 +192,7 @@ Troubleshooting
 To debug incoming webhooks, a System Admin can enable **Webhook Debugging** and set the **Console Log Level** to **DEBUG** in **System Console > Logging**.
 
 Common error messages include:
+
 - **Couldn't find the channel**: The channel specified in the ``channel`` parameter does not exist.
 - **Couldn't find the user**: The user specified does not exist.
 - **Unable to parse incoming data**: The JSON payload is malformed.
