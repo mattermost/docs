@@ -2213,7 +2213,7 @@ This setting isn't available in the System Console and can only be set in ``conf
 In addition to the Mattermost plugin signing key built into the server, each public key specified here is trusted to validate plugin signatures.
 
 .. important::
-  Starting with Mattermost server v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins **must** configure this setting with their custom public keys to ensure proper validation of their signed plugins. Use ``PluginSettings.SignaturePublicKeyFiles`` to define custom plugin signing keys.
+  From Mattermost v10.11, pre-packaged plugins require signature validation on startup. Distributions that bundle custom pre-packaged plugins **must** configure this setting with their custom public keys to ensure proper validation of their signed plugins. Use ``PluginSettings.SignaturePublicKeyFiles`` to define custom plugin signing keys.
 
   When bundling custom plugins:
   
