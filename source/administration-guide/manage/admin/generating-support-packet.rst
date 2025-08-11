@@ -67,7 +67,7 @@ A Mattermost Support Packet can contain the following files:
 
    .. note::
 
-      From v10.11, support packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
+      From v10.11, Support Packets include PostgreSQL database schema dump information that provides comprehensive metadata to help diagnose database configuration issues, performance problems, collation mismatches, and other database-related issues.
 
       From v10.10, support packet file organization has been improved to make it easier to identify cluster-wide versus cluster-specific files:
 
