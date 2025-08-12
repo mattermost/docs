@@ -22,6 +22,7 @@ The following Mattermost configuration settings are deprecated and are no longer
 - `Experimental display settings <#experimental-display-settings>`__
 - `Experimental API endpoint settings <#experimental-api-endpoint-settings>`__
 - `Shared channels settings <#shared-channels-settings>`__
+- `User satisfaction survey plugin settings <#user-satisfaction-surveys-plugin-settings>`__
 - `Other deprecated settings <#other-deprecated-settings>`__
 
 ----
@@ -852,6 +853,60 @@ Enable the ability to establish secure connections between Mattermost instances,
 +---------------------------------------------------------------------------------------------------------------------------------------+
 | This feature's ``config.json`` setting is ``"ExperimentalSettings.EnableSharedChannels": false`` with options ``true`` and ``false``. |
 +---------------------------------------------------------------------------------------------------------------------------------------+
+
+----
+
+User satisfaction surveys plugin settings
+-----------------------------------------
+
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+  :start-after: :nosearch:
+
+.. important::
+
+   This plugin is deprecated from Mattermost v10.11, and is no longer included as a pre-packaged plugin for new Mattermost deployments. For new installations, we strongly recommend using the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` instead.
+
+This plugin enables Mattermost to send user satisfaction surveys to gather feedback and improve product quality directly from your Mattermost users. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
+
+Access the following configuration settings in the System Console by going to **Plugins > User Satisfaction Surveys**.
+
+.. config:setting:: enable-plugin
+  :displayname: Enable plugin (Plugins - User Satisfaction Surveys)
+  :systemconsole: Plugins > User Satisfaction Surveys
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
+  :environment: N/A
+
+  - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
+  - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.
+
+Enable plugin
+~~~~~~~~~~~~~
+
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+| - **true**: (Default) Enables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.   | - System Config path: **Plugins > User Satisfaction Surveys**                                |
+| - **false**: Disables the Mattermost User Satisfaction Surveys plugin on your Mattermost workspace.           | - ``config.json`` setting: ``PluginSettings.PluginStates.com.mattermost.user-survey.Enable`` |
+|                                                                                                               | - Environment variable: N/A                                                                  |
++---------------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------+
+
+.. config:setting:: enable-pluginsend
+  :displayname: Enable user satisfaction survey (Plugins - User Satisfaction Surveys)
+  :systemconsole: Plugins > User Satisfaction Surveys
+  :configjson: PluginSettings.PluginStates.com.mattermost.user-survey.Enable
+  :environment: N/A
+
+  - **true**: A user satisfaction survey is sent to all users every quarter.
+  - **false**: (Default) User satisfaction surveys are disabled.
+
+Enable user satisfaction survey
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| - **true**: A survey is sent to all users every quarter. Results are used by Mattermost, Inc. to improve the product.       | - System Config path: **Plugins > User Satisfaction Surveys**                                                      |
+| - **false**: (Default) User satisfaction surveys are disabled.                                                              | - ``config.json`` setting: ``PluginSettings.Plugins.com.mattermost.user-survey.systemconsolesetting.EnableSurvey`` |
+|                                                                                                                             | - Environment variable: N/A                                                                                        |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
+| **Note**: See the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information by Mattermost.                                                                            |
++-----------------------------------------------------------------------------------------------------------------------------+--------------------------------------------------------------------------------------------------------------------+
 
 ----
 

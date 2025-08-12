@@ -1,7 +1,7 @@
 User management configuration settings
 ======================================
 
-.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Review and manage the following in the System Console by selecting the **Product** |product-list| menu, selecting **System Console**, and then selecting **User Management**:
@@ -23,12 +23,12 @@ Mattermost system admins can provision and manage user accounts, team membership
 Provision users
 ~~~~~~~~~~~~~~~
 
-Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost deployment. A Mattermost admin can :doc:`provision Mattermost users </administration-guide/onboard/user-provisioning-workflows>` using one or more of the following methods:
+Getting people set up with a Mattermost account is typically something that system admins do when deploying and configuring the Mattermost deployment. A Mattermost admin can :doc:`provision Mattermost users </onboard/user-provisioning-workflows>` using one or more of the following methods:
 
-- :ref:`Enable account creation <administration-guide/configure/authentication-configuration-settings:enable account creation>`.
-- Use :ref:`mmctl user create <administration-guide/manage/mmctl-command-line-tool:mmctl user create>` or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
-- :ref:`Migrate user accounts <administration-guide/onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </administration-guide/onboard/bulk-loading-data>` that user data into Mattermost.
-- Connect an authentication service to assist with user provisioning, such as :doc:`AD/LDAP authentication </administration-guide/onboard/ad-ldap>` or :doc:`SAML authentication </administration-guide/onboard/sso-saml>`.
+- :ref:`Enable account creation <configure/authentication-configuration-settings:enable account creation>`.
+- Use :ref:`mmctl user create <manage/mmctl-command-line-tool:mmctl user create>` or Mattermost `APIs <https://api.mattermost.com/#tag/users>`__ to create user accounts.
+- :ref:`Migrate user accounts <onboard/migrating-to-mattermost:migration guide>` from other collaboration systems and :doc:`bulk load </onboard/bulk-loading-data>` that user data into Mattermost.
+- Connect an authentication service to assist with user provisioning, such as :doc:`AD/LDAP authentication </onboard/ad-ldap>` or :doc:`SAML authentication </onboard/sso-saml>`.
 
 Review user data
 ~~~~~~~~~~~~~~~~
@@ -38,7 +38,7 @@ From Mattermost v9.6, you can review the following user data in the System Conso
 - **Email**: The user's email address.
 - **Member since**: The number of days since the user joined the Mattermost server.
 - **Last login**: The date of the user's last successful login to the server.
-- **Last activity**: The total number of days since the user was last active on the server, which is typically based on the :ref:`user's availability <end-user-guide/preferences/set-your-status-availability:set your availability>`.
+- **Last activity**: The total number of days since the user was last active on the server, which is typically based on the :ref:`user's availability <preferences/set-your-status-availability:set your availability>`.
 - **Last post**: The total number of days since the user's last sent message on the server.
 - **Days active**: (PostgreSQL only) The total number of days in which the user has sent a message in Mattermost.
 - **Messages posted**: (PostgreSQL only) The total number of messages the user has sent on the server.
@@ -56,7 +56,7 @@ Find a user using the System Console.
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Search for specific users by entering a partial or full username, user ID, first name, last name, or email address in the **Search** field and pressing :kbd:`Enter`.
 
-.. image:: ../../images/find-users.png
+.. image:: ../images/find-users.png
   :alt: Find a Mattermost user using the System Console.
 
 Filter user searches
@@ -68,7 +68,7 @@ Filter System Console user searches to narrow down results based on the team mem
 2. Select **Filters** located to the right of the **Search users** field to access available filter options.
 3. Select **Apply** to filter user search results.
 
-.. image:: ../../images/user-search-filters.png
+.. image:: ../images/user-search-filters.png
   :alt: Filter the user list based on team membership, role, and user status using the System Console.
 
 Identify a user's ID
@@ -80,7 +80,7 @@ Identify a user's ID using the System Console, the Mattermost API, or mmctl.
 1. Go to **System Console > User Management > Users** to access all user accounts. 
 2. Select a **User** to review their ID in the User Configuration page. 
 
-.. image:: ../../images/user-id.png
+.. image:: ../images/user-id.png
   :alt: Find the User ID under User Management using the System Console.
 
 Alternatively, identify a user's ID using the Mattermost API or mmctl:
@@ -97,6 +97,12 @@ From Mattermost v9.6, Mattermost Enterprise and Professional customers can expor
 2. `Filter <#filter-user-searches>`__ the user data as needed.
 3. Select **Export** located in the top right corner of the System Console interface, and then select **Export data**. You'll receive the report in CSV format as a direct message in Mattermost.
 
+.. config:setting:: deactivate-users
+  :displayname: Deactivate users
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: N/A
+  :environment: N/A
+
 Deactivate users
 ~~~~~~~~~~~~~~~~~
 
@@ -104,18 +110,15 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 
 .. note::
 
-  From Mattermost v10.10, when a user account is deactivated, the account's :ref:`availability <end-user-guide/preferences/set-your-status-availability:set your availability>` is automatically set to offline.
-
-.. note::
-
-  LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
+  - From Mattermost v10.10, when a user account is deactivated, the account's :ref:`availability <preferences/set-your-status-availability:set your availability>` is automatically set to offline.
+  - LDAP-managed users must be deactivated through LDAP, and can't be deactivated using the System Console or the API.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select a **User** that you wish to activate or deactivate.
 3. If the selected user is currently active, you can find the **Deactivate** button in the **User Configuration** page.
-4. Select **Deactivate**, and confirm the deactivation.
+4. Select **Deactivate**, and confirm the deactivation. You can re-activate a deactivated user by selecting **Activate**.
 
-.. image:: ../../images/deactivate-user.png
+.. image:: ../images/deactivate-user.png
   :alt: Deactivate a user in Mattermost using the System Console.
 
 .. tip::
@@ -125,15 +128,59 @@ To delete a user from your Mattermost deployment, you can deactivate the user's 
 What happens to deactivated user integrations?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. important::
+If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
 
-  If you deactivate a Mattermost user who has integrations tied to their user account, consider the following consequences and recommendations based on the integration type:
+- **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
+- **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
+- **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
+- **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
+- **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
 
-  - **Slash commands** will continue to work after user deactivation. Consider deleting the existing slash command and creating a new slash command associated with a different user account to decouple sensitive token data from the deactivated user account. Alternatively, consider regenerating the token of the existing slash command. Check that the deactivated user doesn't have access to the slash command **Request URL** which is the callback URL to receive the HTTP POST or GET event request when the slash command is run.
-  - **Outgoing webhooks** will continue to work after user deactivation. Consider regenerating the webhook token and check that the deactivated user no longer has access to the callback URLs, as having access would result in the deactivating user receiving the outgoing webhooks.
-  - **Incoming webhooks** will continue to work after user deactivation. Because the `URL produced <https://developers.mattermost.com/integrate/webhooks/incoming/#create-an-incoming-webhook>`_ includes ``xxx-generatedkey-xxx``, anyone who has the URL can post messages to the Mattermost instance. We recommend removing the incoming webhook and creating a new one associated with a different user account. 
-  - **Bot accounts** won't continue to work after user deactivation when the :ref:`disable bot accounts when owner is deactivated <administration-guide/configure/integrations-configuration-settings:disable bot accounts when owner is deactivated>` is enabled. This configuration setting is enabled by default.
-  - **OAuth apps** won't continue to work after user deactivation, and associated tokens are deleted. Manual action is needed to keep these integrations running.
+Delete users
+~~~~~~~~~~~~~
+
+*Available from Mattermost Server v10.11*
+
+When using email/password for authentication, you can enable users to permanently delete their own accounts, or you can delete user accounts as a system administrator.
+
+.. config:setting:: delete-users
+  :displayname: Delete users
+  :systemconsole: Site Configuration > Users and Teams
+  :configjson: DeleteAccountLink
+  :environment: N/A
+
+Enable account deletion
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Define the URL for a **Delete Account Link** that users can access by going to their profile and selecting **Security > Delete Your Account**. Leave this field blank to hide the abiltiy for users to delete their account. 
+
++-----------------------------------------------------------------------------------------------------------+
+| This feature's ``config.json`` setting is ``"ServiceSettings.DeleteAccountLink": ""`` with string input.  |
++-----------------------------------------------------------------------------------------------------------+
+
+When a user deletes their account, deleted accounts cannot be reactivated, and the user is automatically removed from all teams and channels.
+
+What data is removed?
+^^^^^^^^^^^^^^^^^^^^^
+
+When a user deletes their account, the following data is permanently removed:
+
+- User profile information (name, email, username)
+- User preferences and settings
+- User authentication credentials
+- Direct message channel memberships
+- Team and channel memberships
+- User session data
+
+What data is retained?
+^^^^^^^^^^^^^^^^^^^^^^^
+
+The following data remains in the system after account deletion:
+
+- Message content in public and private channels (displayed as **Deleted User**)
+- File uploads and attachments shared in channels
+- Channel and team audit logs that reference the user's actions
+- Integration logs and webhook history
 
 Manage user's roles
 ~~~~~~~~~~~~~~~~~~~~
@@ -144,7 +191,7 @@ Apply roles to users using the System Console. The current available roles are *
 2. Under **Actions**, select **Manage roles**.
 3. Specify whether the user has the role of **System admin** or **Member**, and then select **Save**.
 
-.. image:: ../../images/manage-roles.png
+.. image:: ../images/manage-roles.png
   :alt: Manage a user's Mattermost role using the System Console.
 
 Manage user's teams
@@ -156,12 +203,12 @@ Add or remove users from teams using the System Console.
 2. Select the user you want to manage.
 3. You can include the user in one new team or a group of teams. Select **Add Team**, select one or more teams, and then select **Add**.
 
-.. image:: ../../images/add-user-to-team.png
+.. image:: ../images/add-user-to-team.png
   :alt: Add a user to a Mattermost team using the System Console.
 
 4. To remove the user from a specific team, select **More** |more-icon| next to the team name, and select **Remove from team**.
 
-.. image:: ../../images/remove-user-from-team.png
+.. image:: ../images/remove-user-from-team.png
   :alt: Remove a user from a Mattermost team using the System Console.
 
 .. tip::
@@ -170,10 +217,10 @@ Add or remove users from teams using the System Console.
 Manage user's settings
 ~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../../_static/badges/ent-only.rst
+.. include:: ../_static/badges/ent-only.rst
   :start-after: :nosearch:
 
-From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </end-user-guide/preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
+From Mattermost v9.11, system admins can help end users customize their Mattermost notifications by editing the user's :doc:`notification settings </preferences/manage-your-notifications>` on the user's behalf within the System Console. Users can view, modify, and override their own settings at any time.
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user you want to manage.
@@ -190,7 +237,7 @@ If a user, whose account details are synchronized with AD/LDAP, can't access the
 
 .. note::
 
-  To adjust the maximum login attempts allowed for all users, go to **System Console > Authentication > AD/LDAP > Maximum Login Attempts**. Lowering this :ref:`configuration setting <administration-guide/configure/authentication-configuration-settings:maximum login attempts>` value below the maximum threshhold allowed on your AD/LDAP server will ensure that your users won’t get locked out of AD/LDAP due to failed login attempts in Mattermost.
+  To adjust the maximum login attempts allowed for all users, go to **System Console > Authentication > AD/LDAP > Maximum Login Attempts**. Lowering this :ref:`configuration setting <configure/authentication-configuration-settings:maximum login attempts>` value below the maximum threshhold allowed on your AD/LDAP server will ensure that your users won’t get locked out of AD/LDAP due to failed login attempts in Mattermost.
 
 Update user's email
 ~~~~~~~~~~~~~~~~~~~
@@ -199,14 +246,14 @@ Update the emails of users using the System Console.
 
 .. note::
 
-  From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <administration-guide/manage/mmctl-command-line-tool:mmctl user email>`.
+  From Mattermost v10.9, email addresses enclosed in angle brackets (e.g., ``<billy@example.com>``) will be rejected. To avoid issues, ensure all user emails comply with the plain address format (e.g., ``billy@example.com``). In addition, we strongly recommend taking proactive steps to audit and update Mattermost user data to align with this product change, as impacted users may face issues accessing Mattermost or managing their user profile. You can update these user emails manually using :ref:`mmctl user email <manage/mmctl-command-line-tool:mmctl user email>`.
 
 
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user, and enter a new email in the **Email** field.
 3. Select **Save**.
 
-.. image:: ../../images/user-email-update.png
+.. image:: ../images/user-email-update.png
   :alt: Update the email of a Mattermost user using the System Console.
 
 .. tip::
@@ -221,7 +268,7 @@ Reset a user's password using the System Console.
 2. Select the user from the list, and then select **Reset Password**.
 3. Enter a new password and select **Reset**.
 
-.. image:: ../../images/user-password-reset.png
+.. image:: ../images/user-password-reset.png
   :alt: In System Console, Reset the password of a User under User Management.
 
 You can also reset the password using the **Actions** column for the specific user on the **Users** page. Select **Reset password** from the **Actions** column dropdown, enter the new password in the pop-up dialog box and select **Reset**.
@@ -235,7 +282,7 @@ Revoke the user sessions in case of an emergency to secure the user account usin
 2. Under the **Actions** column for the specific user, select **Remove sessions**.
 3. Select **Revoke** to remove all sessions for that user.
 
-.. image:: ../../images/revoke-user-session.png
+.. image:: ../images/revoke-user-session.png
   :alt: Revoke the sessions of a user using the System Console.
 
 Review user profile details
@@ -246,7 +293,7 @@ View user profile details using the System Console. Gather information including
 1. Go to **System Console > User Management > Users** to access all user accounts.
 2. Select the user from the list, and browse user details.
 
-.. image:: ../../images/user-profile-details.png
+.. image:: ../images/user-profile-details.png
   :alt: Review user details using the System Console
 
 ----
@@ -259,8 +306,9 @@ Groups
 | to Mattermost groups.                                         | - ``config.json setting``: N/A                              |
 |                                                               | - Environment variable: N/A                                 |
 +---------------------------------------------------------------+-------------------------------------------------------------+
-
-See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` documentation for details.
+| See the :doc:`AD/LDAP groups </onboard/ad-ldap-groups-synchronization>` documentation for                                   |
+| details.                                                                                                                    |
++---------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -275,7 +323,7 @@ You can find existing teams in your Mattermost instance using the System Console
 1. Go to **System Console > User Management > Teams** to access all available teams.
 2. Enter the team name in the **Search** box.
 
-.. image:: ../../images/find-teams.png
+.. image:: ../images/find-teams.png
   :alt: Find a Mattermost team using the System Console.
 
 .. tip::
@@ -291,7 +339,7 @@ Filter your team search to narrow down results based on the team management type
 2. Select **Filters** located to the right of the **Search** field to access available filter options.
 3. Choose any filter and select **Apply** to filter team search results.
 
-.. image:: ../../images/team-search-filters.png
+.. image:: ../images/team-search-filters.png
   :alt: Filter the teams based on team membership types using the System Console.
 
 Review team configuration
@@ -302,7 +350,7 @@ View team configuration details using the System Console. Gather information inc
 1. Go to **System Console > User Management > Teams** to access all available teams.
 2. Select the team from the list to view its configuration page.
 
-.. image:: ../../images/team-configuration-details.png
+.. image:: ../images/team-configuration-details.png
   :alt: Review team configuration details using the System Console
 
 Manage team membership
@@ -320,7 +368,7 @@ Add members
 5. Select **Add** to add the user or bot.
 6. Select **Save**.
 
-.. image:: ../../images/add-members-to-a-team.png
+.. image:: ../images/add-members-to-a-team.png
   :alt: Add a member to the team using the System Console.
 
 Remove members
@@ -331,20 +379,20 @@ Remove members
 3. In the **Members** section, select **Remove** for the user or bot that you want to remove.
 4. Select **Save**.
 
-.. image:: ../../images/remove-members-from-a-team.png
+.. image:: ../images/remove-members-from-a-team.png
   :alt: Remove a member from the team using the System Console.
 
 Sync group members
 ^^^^^^^^^^^^^^^^^^
 
-When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <administration-guide/onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
+When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Teams** to access all available teams.
 2. Select the team from the list to view its configuration page.
 3. In the **Team Management** section, enable the **Sync Group Members** option.
 4. Select **Save**.
 
-.. image:: ../../images/sync-group-members-in-a-team.png
+.. image:: ../images/sync-group-members-in-a-team.png
   :alt: Enable Sync Group Members for a team using the System Console.
 
 Anyone can join this team
@@ -357,7 +405,7 @@ This team can be discovered allowing anyone with an account to join this team.
 3. In the **Team Management** section, enable the **Anyone can join this team** option.
 4. Select **Save**.
 
-.. image:: ../../images/anyone-can-join-a-team.png
+.. image:: ../images/anyone-can-join-a-team.png
   :alt: Enable Anyone can join this team option for a team using the System Console.
 
 Only specific email domains can join this team
@@ -370,13 +418,13 @@ Users can only join the team if their email matches one of the specified domains
 3. In the **Team Management** section, enable the **Only specific email domains can join this team** option and add the specific domains.
 4. Select **Save**.
 
-.. image:: ../../images/specific-email-domains-can-join-a-team.png
+.. image:: ../images/specific-email-domains-can-join-a-team.png
   :alt: Enable Only specific email domains can join this team option for a team using the System Console.
 
 Synchronize team members
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Admins can choose between inviting members to a team manually or synchronizing members automatically from AD/LDAP groups. See the :ref:`using AD/LDAP synchronized groups  <administration-guide/onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
+Admins can choose between inviting members to a team manually or synchronizing members automatically from AD/LDAP groups. See the :ref:`using AD/LDAP synchronized groups  <onboard/ad-ldap-groups-synchronization:synchronize ad/ldap groups to mattermost>` documentation for details on managing team or private channel membership.
 
 Archive the team
 ~~~~~~~~~~~~~~~~
@@ -386,7 +434,7 @@ Archive the team
 3. In the **Team Profile** section, select **Archive Team**.
 4. Select **Save**.
 
-.. image:: ../../images/archive-a-team.png
+.. image:: ../images/archive-a-team.png
   :alt: Archive a team using the System Console.
 
 ----
@@ -402,7 +450,7 @@ Find existing channels in your Mattermost instance using the System Console.
 1. Go to **System Console > User Management > Channels** to access all available channels.
 2. Enter the channel name in the **Search** box.
 
-.. image:: ../../images/find-channels.png
+.. image:: ../images/find-channels.png
   :alt: Find a Mattermost channel using the System Console.
 
 Filter channel searches
@@ -414,7 +462,7 @@ Filter your channel search to narrow down results based on the channel type (as 
 2. Select **Filters** located to the right of the **Search** field to access available filter options.
 3. Choose any filter and select **Apply** to filter channel search results.
 
-.. image:: ../../images/channel-search-filters.png
+.. image:: ../images/channel-search-filters.png
   :alt: Filter the channels based on channel type, channel membership types or they team that they belong to using the System Console.
 
 
@@ -426,7 +474,7 @@ View channel configuration details using the System Console. Gather information 
 1. Go to **System Console > User Management > Channels** to access all available channels.
 2. Select a channel from the list to review its channel configuration details.
 
-.. image:: ../../images/channel-configuration-details.png
+.. image:: ../images/channel-configuration-details.png
   :alt: Review channel configuration details using the System Console
 
 Advanced Access Control
@@ -443,7 +491,7 @@ The ability for members and guests to create posts in the channel.
 3. In the **Create Posts** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to post messages in the channel.
 4. Select **Save**.
 
-.. image:: ../../images/allow-create-posts-for-a-channel.png
+.. image:: ../images/allow-create-posts-for-a-channel.png
   :alt: Add Members and Guests to post to the channel using the System Console.
 
 Post Reactions
@@ -455,7 +503,7 @@ The ability for members and guests to react with emojis on messages in the chann
 3. In the **Post Reactions** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to react with emojis on messages posted to the channel.
 4. Select **Save**.
 
-.. image:: ../../images/allow-post-reactions-for-a-channel.png
+.. image:: ../images/allow-post-reactions-for-a-channel.png
   :alt: Add Members and Guests to post reactions to the channel using the System Console.
 
 Manage Members
@@ -467,7 +515,7 @@ The ability for members to add and remove people from the channels. Guests can't
 3. In the **Manage Members** section under the **Advanced Access Control** tab, select **Members** to enable those users to manage members for the channel.
 4. Select **Save**.
 
-.. image:: ../../images/allow-manage-members-for-a-channel.png
+.. image:: ../images/allow-manage-members-for-a-channel.png
   :alt: Allow Members to add or remove people from the channel using the System Console.
 
 Channel Mentions
@@ -479,7 +527,7 @@ The ability for members and guests to use channel mentions, including **@all**, 
 3. In the **Channel Mentions** section under the **Advanced Access Control** tab, select the option for **Guests**, **Members**, or both to enable those users to use channel mentions.
 4. Select **Save**.
 
-.. image:: ../../images/allow-mentions-for-a-channel.png
+.. image:: ../images/allow-mentions-for-a-channel.png
   :alt: Add Members and Guests to use mentions in a channel using the System Console.
 
 .. tip::                                                                                                                                                                
@@ -494,7 +542,7 @@ The ability for members to add, delete, and sort bookmarks. Guests can't add, re
 3. In the **Manage Bookmarks** section under the **Advanced Access Control** tab, select **Members** to enable those users to add, sort, or remove bookmarks for the channel.
 4. Select **Save**.
 
-.. image:: ../../images/allow-manage-bookmarks-for-a-channel.png
+.. image:: ../images/allow-manage-bookmarks-for-a-channel.png
   :alt: Allow Members to manage bookmarks for the channel using the System Console.
 
 .. tip::                                                                                                                                                                
@@ -507,14 +555,14 @@ Choose between inviting members manually or sychronizing members automatically f
 
 Sync Group Members
 ^^^^^^^^^^^^^^^^^^
-When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <administration-guide/onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
+When enabled, adding and removing users from groups will add or remove them from this team. The only way of inviting members to this team is by adding the groups they belong to. See the :ref:`Synchronize teams and channels <onboard/ad-ldap-groups-synchronization:synchronize teams and channels>` documentation for further details.
 
 1. Go to **System Console > User Management > Channels** to access all available channels.
 2. Select the channel from the list to view its configuration page.
 3. In the **Channel Management** tab, enable the **Sync Group Members** option.
 4. Select **Save**.
 
-.. image:: ../../images/sync-group-members-in-a-channel.png
+.. image:: ../images/sync-group-members-in-a-channel.png
   :alt: Enable Sync Group Members for a channel using the System Console.
 
 Public channel or private channel
@@ -526,7 +574,7 @@ Public channels are discoverable and any user can join. Private channels require
 3. In the **Public channel or private channel** section under the **Channel Management** tab, toggle between **Public** or **Private** to change channel visibility.
 4. Select **Save**.
 
-.. image:: ../../images/set-a-channel-to-public-or-private.png
+.. image:: ../images/set-a-channel-to-public-or-private.png
   :alt: Set the channel visibility to either Public or Private using the System Console.
 
 .. tip::                                                                                                                                                                
@@ -547,7 +595,7 @@ Add members
 5. Select **Add** to add the user or group as a **Member**.
 6. Select **Save**.
 
-.. image:: ../../images/add-members-to-a-channel.png
+.. image:: ../images/add-members-to-a-channel.png
   :alt: Add a member to the channel using the System Console.
 
 Remove members
@@ -558,7 +606,7 @@ Remove members
 3. In the **Members** section, select **Remove** for the user that you want to remove.
 4. Select **Save**.
 
-.. image:: ../../images/remove-members-from-a-channel.png
+.. image:: ../images/remove-members-from-a-channel.png
   :alt: Remove a member from the channel using the System Console.
 
 Archive a channel
@@ -569,19 +617,18 @@ Archive a channel
 3. In the **Channel Profile** section, select **Archive Channel**.
 4. Select **Save**.
 
-.. image:: ../../images/archive-a-channel.png
+.. image:: ../images/archive-a-channel.png
   :alt: Archive a channel using the System Console.
 
-.. tip::
-
-  Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <administration-guide/manage/mmctl-command-line-tool:mmctl channel delete>` tool.
+.. tip::                                                                                                                                                                
+  Channels can be deleted with all content, including posts in the database, using the :ref:`mmctl channel delete <manage/mmctl-command-line-tool:mmctl channel delete>` tool.
 
 ----
 
 Permissions
 -----------
 
-.. include:: ../../_static/badges/ent-pro-only.rst
+.. include:: ../_static/badges/ent-pro-only.rst
   :start-after: :nosearch:
 
 +---------------------------------------------------------------------+-------------------------------------------------------------+
@@ -589,8 +636,8 @@ Permissions
 |                                                                     | - ``config.json setting``: N/A                              |
 |                                                                     | - Environment variable: N/A                                 |
 +---------------------------------------------------------------------+-------------------------------------------------------------+
-
-See :doc:`advanced permissions </administration-guide/onboard/advanced-permissions>` documentation for details.
+| See :doc:`advanced permissions </onboard/advanced-permissions>` documentation for details                                         |
++---------------------------------------------------------------------+-------------------------------------------------------------+
 
 ----
 
@@ -602,5 +649,5 @@ System roles
 |                                                                      | - ``config.json setting``: N/A                             |
 |                                                                      | - Environment variable: N/A                                |
 +----------------------------------------------------------------------+------------------------------------------------------------+
-
-See the :doc:`delegated granular administration </administration-guide/onboard/delegated-granular-administration>` documentation for details.
+| See the :doc:`delegated granular administration </onboard/delegated-granular-administration>` documentation for details           |
++----------------------------------------------------------------------+------------------------------------------------------------+

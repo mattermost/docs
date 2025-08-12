@@ -30,6 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
+- `mmctl compliance_export`_ - Compliance Export Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
@@ -466,6 +467,7 @@ And now we can run commands normally:
    last_name: Doe
    email: john.doe@example.com
    auth_service:
+   auth_data:
 
 Installing shell completions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1721,6 +1723,61 @@ Show a custom slash command. Commands can be specified by command ID. Returns co
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
+mmctl compliance_export
+------------------------
+
+
+Manage compliance export jobs.
+
+   Child Commands
+      -  `mmctl compliance_export download`_ - Download compliance export job
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for compliance_export
+
+mmctl compliance_export download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Download a compliance export job by job ID.
+
+**Format**
+
+.. code-block:: sh
+
+  mmctl compliance_export download [jobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   # Download a compliance export job by job ID
+   $ mmctl compliance_export download j1k9s8d7f6g5h4j3k2l1m9n8
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for download
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
 mmctl completion
 ----------------
 
@@ -1827,7 +1884,11 @@ mmctl compliance-export
 Manage compliance export jobs for archiving channel data to third-party compliance systems.
 
    Child Commands
+      -  `mmctl compliance-export cancel` - Cancel a compliance export job
       -  `mmctl compliance-export create`_ - Create a new compliance export job
+      -  `mmctl compliance-export download` - Download a compliance export file
+      -  `mmctl compliance-export list` - List compliance export jobs, sorted by creation date descending (newest first)
+      -  `mmctl compliance-export show` - Show compliance export job
 
 **Options**
 
@@ -1858,7 +1919,7 @@ Cancel an ongoing compliance export job.
 
 .. code-block:: sh
 
-   -h, --help   help for cancel
+   -h, --help              help for cancel
 
 **Options inherited from parent commands**
 
@@ -1879,41 +1940,33 @@ mmctl compliance-export create
 
 **Description**
 
-Create a new compliance export job to archive channel messages, direct messages, file uploads, and posts from plugins/bots/webhooks. Supported export formats include CSV, Actiance XML, and Global Relay EML for integration with third-party compliance systems.
+Create a new compliance export job to archive channel messages, direct messages, file uploads, and posts from plugins, bots, or webhooks. Supported export formats include CSV, Actiance XML, and Global Relay EML for integration with third-party compliance systems.
+
+.. note::
+
+- If ``--date`` is set, the job will run for one day, from 12am to 12am (minus one millisecond) inclusively.
+- Running a compliance export job from mmctl will NOT affect the next scheduled job's ``batch_start_time``. This means that if you run a compliance export job from mmctl, the next scheduled job will run from the ``batch_end_time`` of the previous scheduled job, as usual.
 
 **Format**
 
 .. code-block:: sh
 
-   mmctl compliance-export create [flags]
+   mmctl compliance-export create [complianceExportType] --date "2025-03-27 -0400" [flags]
 
-**Examples**
+**Example**
 
 .. code-block:: sh
 
-   # Create a CSV compliance export job
-   mmctl compliance-export create --format csv
-
-   # Create an Actiance XML compliance export job
-   mmctl compliance-export create --format actiance
-
-   # Create a Global Relay EML compliance export job  
-   mmctl compliance-export create --format global-relay-eml
-
-   # Create an export job starting from a specific timestamp
-   mmctl compliance-export create --format csv --start-time 1609459200
-
-   # Create an export job with a specific end time
-   mmctl compliance-export create --format csv --start-time 1609459200 --end-time 1609545600
+   compliance-export create csv --date "2025-03-27 -0400"
 
 **Options**
 
 .. code-block:: sh
 
-   --format string         Export format: csv, actiance, or global-relay-eml (required)
-   --start-time string     Start time for export as Unix timestamp (optional, defaults to last export)
-   --end-time string       End time for export as Unix timestamp (optional, defaults to current time)
-   -h, --help              help for create
+   --date "YYYY-MM-DD -0000"   Run the export for one day, from 12am to 12am (minus one millisecond) inclusively, in the format with timezone offset: ``YYYY-MM-DD -0000``. E.g., ``2024-10-21 -0400`` for Oct 21, 2024 EDT timezone. ``2023-11-01 +0000`` for Nov 01, 2023 UTC. If set, the ``start`` and ``end`` flags will be ignored.
+   --end 1743134400000         The end timestamp in unix milliseconds. Posts with updateAt <= end will be exported. If set, ``start`` must be set as well. eg, ``1743134400000`` for 2025-03-28 EDT.
+   -h, --help                  help for create
+   --start 1743048000000       The start timestamp in unix milliseconds. Posts with updateAt >= start will be exported. If set, ``end`` must be set as well. eg, ``1743048000000`` for 2025-03-27 EDT.
 
 **Options inherited from parent commands**
 
@@ -1979,12 +2032,6 @@ Lists all compliance export jobs, sorted by creation date descending (newest fir
 .. code-block:: sh
 
    mmctl compliance-export list [flags]
-
-**Examples**
-
-.. code-block:: sh
-
-   mmctl compliance-export list
 
 **Options**
 
@@ -7226,7 +7273,7 @@ mmctl user search
 
 **Description**
 
-Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output also includes the user's deactivation status to help system admins identify inactive accounts.
+Search for users based on username, email, or user ID. The command returns user information including usernames, email addresses, first and last names, and account status. From Mattermost v10.10, output includes the user's deactivation status to help system admins identify inactive accounts. From Mattermost v10.11, output includes the user's AuthData field to help system admins verify authentication sources such as LDAP or SAML.
 
 **Format**
 
