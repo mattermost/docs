@@ -31,7 +31,7 @@ mmctl commands
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
-- `mmctl compliance_export`_ - Compliance Export Management
+- `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
 - `mmctl docs`_ - Generate mmctl documentation
 - `mmctl export`_ - Exports Management
@@ -1818,28 +1818,63 @@ To configure your ``zsh`` shell to load completions for each session, add the ab
    --strict                       will only run commands if the mmctl version matches the server one
    --suppress-warnings            disables printing warning messages
 
-mmctl compliance_export
+mmctl compliance-export
 -----------------------
 
-.. include:: ../_static/badges/ent-cloud-selfhosted.rst
+.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
-
-.. versionadded:: 10.11
-   
-   Available in Mattermost Server v10.11+
 
 Manage compliance export jobs for archiving channel data to third-party compliance systems.
 
    Child Commands
-      -  `mmctl compliance_export create`_ - Create a new compliance export job
+      -  `mmctl compliance-export create`_ - Create a new compliance export job
 
 **Options**
 
 .. code-block:: sh
 
-   -h, --help   help for compliance_export
+   -h, --help   help for compliance-export
 
-mmctl compliance_export create
+mmctl compliance-export cancel
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Cancel an ongoing compliance export job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl compliance-export cancel [complianceExportJobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl compliance-export cancel o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for cancel
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance-export create
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **Description**
@@ -1850,26 +1885,26 @@ Create a new compliance export job to archive channel messages, direct messages,
 
 .. code-block:: sh
 
-   mmctl compliance_export create [flags]
+   mmctl compliance-export create [flags]
 
 **Examples**
 
 .. code-block:: sh
 
    # Create a CSV compliance export job
-   mmctl compliance_export create --format csv
+   mmctl compliance-export create --format csv
 
    # Create an Actiance XML compliance export job
-   mmctl compliance_export create --format actiance
+   mmctl compliance-export create --format actiance
 
    # Create a Global Relay EML compliance export job  
-   mmctl compliance_export create --format global-relay-eml
+   mmctl compliance-export create --format global-relay-eml
 
    # Create an export job starting from a specific timestamp
-   mmctl compliance_export create --format csv --start-time 1609459200
+   mmctl compliance-export create --format csv --start-time 1609459200
 
    # Create an export job with a specific end time
-   mmctl compliance_export create --format csv --start-time 1609459200 --end-time 1609545600
+   mmctl compliance-export create --format csv --start-time 1609459200 --end-time 1609545600
 
 **Options**
 
@@ -1879,6 +1914,123 @@ Create a new compliance export job to archive channel messages, direct messages,
    --start-time string     Start time for export as Unix timestamp (optional, defaults to last export)
    --end-time string       End time for export as Unix timestamp (optional, defaults to current time)
    -h, --help              help for create
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance-export download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+**Description**
+
+Download the results of a completed compliance export job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl compliance-export download [complianceExportJobID] [output filepath (optional)] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl compliance-export download o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help          help for download
+   --num-retries int   Number of retries if the download fails (default 5)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance-export list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Lists all compliance export jobs, sorted by creation date descending (newest first).
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl compliance-export list [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl compliance-export list
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help       help for list
+   --all            Fetch all compliance export jobs. --page flag will be ignored if provided
+   --page int       Page number to fetch for the list of compliance export jobs
+   --per-page int   Number of compliance export jobs to be fetched (default 200)
+
+**Options inherited from parent commands**
+
+.. code-block:: sh
+
+   --config string                path to the configuration file (default "$XDG_CONFIG_HOME/mmctl/config")
+   --disable-pager                disables paged output
+   --insecure-sha1-intermediate   allows to use insecure TLS protocols, such as SHA-1
+   --insecure-tls-version         allows to use TLS versions 1.0 and 1.1
+   --json                         the output format will be in json format
+   --local                        allows communicating with the server through a unix socket
+   --quiet                        prevent mmctl to generate output for the commands
+   --strict                       will only run commands if the mmctl version matches the server one
+   --suppress-warnings            disables printing warning messages
+
+mmctl compliance-export show
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Show compliance export job.
+
+**Format**
+
+.. code-block:: sh
+
+   mmctl compliance-export show [complianceExportJobID] [flags]
+
+**Examples**
+
+.. code-block:: sh
+
+   mmctl compliance-export show o98rj3ur83dp5dppfyk5yk6osy
+
+**Options**
+
+.. code-block:: sh
+
+   -h, --help   help for show
 
 **Options inherited from parent commands**
 
