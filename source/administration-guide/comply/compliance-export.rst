@@ -192,7 +192,7 @@ Run the ``export`` :doc:`command line tool <../manage/command-line-tools>`. You 
 How do I download compliance export jobs using mmctl?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-From Mattermost Server v10.11, system administrators can download compliance export jobs using the :ref:`mmctl compliance_export download <manage/mmctl-command-line-tool:mmctl compliance_export download>` command. This provides a command-line interface for retrieving completed compliance export jobs by job ID.
+From Mattermost Server v10.11, system administrators can download compliance export jobs using the :ref:`mmctl compliance_export download <administration-guide/manage/mmctl-command-line-tool:mmctl compliance-export download>` command. This provides a command-line interface for retrieving completed compliance export jobs by job ID.
 
 What happens if I export data manually?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -1,14 +1,14 @@
 User satisfaction surveys
 =========================
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 Feedback is used to measure user satisfaction and improve product quality by hearing directly from users. Please refer to our `privacy policy <https://mattermost.com/privacy-policy/>`_ for information on the collection and use of information received through our services.
 
 .. important::
 
-   **Mattermost User Satisfaction Surveys are deprecated from Mattermost v10.11** and are no longer included as a pre-packaged plugin for new Mattermost deployments. Existing deployments that have this plugin enabled will continue to work, but we strongly recommend migrating to :doc:`user surveys </configure/manage-user-surveys>` for enhanced customization options, and local data storage, without telemetry data transmission back to Mattermost.
+   **Mattermost User Satisfaction Surveys are deprecated from Mattermost v10.11** and are no longer included as a pre-packaged plugin for new Mattermost deployments. Existing deployments that have this plugin enabled will continue to work, but we strongly recommend migrating to :doc:`user surveys </administration-guide/configure/manage-user-surveys>` for enhanced customization options, and local data storage, without telemetry data transmission back to Mattermost.
 
 Administration
 --------------
@@ -16,9 +16,9 @@ Administration
 Is the survey enabled by default?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**For Mattermost Server versions prior to v10.11**: The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers. However, the plugin will not be activated on any servers that have :doc:`Error and Diagnostic Reporting </manage/telemetry>` disabled, meaning no surveys or data collection occurs.
+**For Mattermost Server versions prior to v10.11**: The user satisfaction survey is a pre-packaged plugin, and surveys are enabled by default on all servers. However, the plugin will not be activated on any servers that have :doc:`Error and Diagnostic Reporting </administration-guide/manage/telemetry>` disabled, meaning no surveys or data collection occurs.
 
-**For Mattermost Server v10.11 and later**: The User Satisfaction Survey Plugin is no longer included as a pre-packaged plugin for new deployments. We recommend using the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` instead.
+**For Mattermost Server v10.11 and later**: The User Satisfaction Survey Plugin is no longer included as a pre-packaged plugin for new deployments. We recommend using the :doc:`Mattermost User Survey integration </administration-guide/configure/manage-user-surveys>` instead.
 
 How can surveys be disabled?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -49,7 +49,7 @@ How will I be notified when a survey is scheduled?
 
 System admins will receive an email notification and in-product direct message from "Surveybot" mentioning the scheduled date the survey will be triggered.
 
-.. image:: ../images/nps-admin.png
+.. image:: ../../images/nps-admin.png
    :alt: When user satisfaction surveys are enabled in the System Console, Mattermost sends out user satisfaction surveys following every server upgrade. System admins are notified about upcoming surveys by email notification and through an in-product message from a system bot.
 
 Survey Data
@@ -62,7 +62,7 @@ Once the survey is triggered on the server, all users will receive an in-product
 
 Users can optionally select a 0-10 score on how likely they are to recommend Mattermost and then provide written feedback about their experience. Selecting a score and providing feedback are optional, and the survey can be ignored without interrupting usage of Mattermost.
 
-.. image:: ../images/nps-survey.png
+.. image:: ../../images/nps-survey.png
    :alt: Once Mattermost sends out a user satisfaction survey, all users receive an in-product message from a system bot the next time they log in or refresh Mattermost. The in-product message asks users to rate how likely they'd recommend Mattermost.
 
 What data is collected?
@@ -88,7 +88,7 @@ Data is only collected when a user selects a score or provides written feedback 
 Will this data be sent through my firewall?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. include:: ../_static/badges/selfhosted-only.rst
+.. include:: ../../_static/badges/selfhosted-only.rst
   :start-after: :nosearch:
 
 If Mattermost is hosted in a private network with firewall then data from the User Satisfaction Surveys plugin is not sent unless outbound connections are allowed or specifically configured for this plugin.

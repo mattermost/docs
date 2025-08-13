@@ -30,7 +30,7 @@ mmctl commands
 - `mmctl bot`_ - Bot Management
 - `mmctl channel`_ - Channel Management
 - `mmctl command`_ - Command Management
-- `mmctl compliance_export`_ - Compliance Export Management
+- `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl completion`_ - Generate autocompletion scripts for bash and zsh
 - `mmctl compliance-export`_ - Compliance Export Management
 - `mmctl config`_ - Configuration Management
@@ -1889,8 +1889,8 @@ Create a new compliance export job to archive channel messages, direct messages,
 
 .. note::
 
-- If ``--date`` is set, the job will run for one day, from 12am to 12am (minus one millisecond) inclusively.
-- Running a compliance export job from mmctl will NOT affect the next scheduled job's ``batch_start_time``. This means that if you run a compliance export job from mmctl, the next scheduled job will run from the ``batch_end_time`` of the previous scheduled job, as usual.
+   - If ``--date`` is set, the job will run for one day, from 12am to 12am (minus one millisecond) inclusively.
+   - Running a compliance export job from mmctl will NOT affect the next scheduled job's ``batch_start_time``. This means that if you run a compliance export job from mmctl, the next scheduled job will run from the ``batch_end_time`` of the previous scheduled job, as usual.
 
 **Format**
 
