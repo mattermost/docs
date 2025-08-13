@@ -63,17 +63,15 @@ Environments with strict data loss prevention (DLP) policies or where sensitive 
 
 Disabling file uploads adds an additional layer of security by reducing the risk of malware or malicious files being introduced into the system, ensuring tighter control over sensitive corporate data, and preventing accidental leaks from unsecure mobile networks. 
 
-Similarly, by disabling downloads, Mattermost ensures that files cannot be saved locally on the device, reducing the risk of unauthorized access or data leakage. Learn more about :ref:`disabling mobile uploads <configure/site-configuration-settings:allow file downloads on mobile>` and :ref:`disabling mobile downloads <configure/site-configuration-settings:allow file uploads on mobile>` in the Mattermost mobile app.
+Similarly, by disabling downloads, Mattermost ensures that files cannot be saved locally on the device, reducing the risk of unauthorized access or data leakage. Learn more about :ref:`disabling mobile uploads <administration-guide/configure/site-configuration-settings:allow file downloads on mobile>` and :ref:`disabling mobile downloads <administration-guide/configure/site-configuration-settings:allow file uploads on mobile>` in the Mattermost mobile app.
 
 Secure file preview
 -------------------
 
-*Available in Mattermost server v10.11 and later.*
-
-For organizations requiring even stricter control over file access on mobile devices, Mattermost provides secure file preview capabilities. This advanced security feature allows administrators to prevent file downloads, previews, and sharing for most file types while still enabling in-app viewing of essential content such as PDFs, videos, and images.
+For organizations requiring even stricter control over file access on mobile devices, Mattermost provides secure file preview capabilities from Mattermost v10.11. This advanced security feature allows administrators to prevent file downloads, previews, and sharing for most file types while still enabling in-app viewing of essential content such as PDFs, videos, and images.
 
 When secure file preview is enabled, files are stored temporarily in the app's cache and cannot be exported or shared externally. This approach provides a balance between security and usability, ensuring that users can view necessary content without creating potential data leakage pathways.
 
 Additionally, administrators can control link navigation within PDF files when secure file preview mode is active, allowing links to open in the device browser or supported applications as needed.
 
-Learn more about :ref:`enabling secure file preview <configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <configure/site-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
+Learn more about :ref:`enabling secure file preview <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <administration-guide/configure/site-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
