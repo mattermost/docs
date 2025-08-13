@@ -859,12 +859,12 @@ Enable the ability to establish secure connections between Mattermost instances,
 User satisfaction surveys plugin settings
 -----------------------------------------
 
-.. include:: ../_static/badges/allplans-cloud-selfhosted.rst
+.. include:: ../../_static/badges/allplans-cloud-selfhosted.rst
   :start-after: :nosearch:
 
 .. important::
 
-   This plugin is deprecated from Mattermost v10.11, and is no longer included as a pre-packaged plugin for new Mattermost deployments. For new installations, we strongly recommend using the :doc:`Mattermost User Survey integration </configure/manage-user-surveys>` instead.
+   This plugin is deprecated from Mattermost v10.11, and is no longer included as a pre-packaged plugin for new Mattermost deployments. For new installations, we strongly recommend using the :doc:`Mattermost User Survey integration </administration-guide/configure/manage-user-surveys>` instead.
 
 This plugin enables Mattermost to send user satisfaction surveys to gather feedback and improve product quality directly from your Mattermost users. Please refer to the `Mattermost Privacy Policy <https://mattermost.com/privacy-policy/>`__ for more information on the collection and use of information received through Mattermost services.
 

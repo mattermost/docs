@@ -76,14 +76,14 @@ Delete account
 
 *Available from Mattermost Server v10.11.*
 
-You can permanently delete your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <configure/user-management-configuration-settings:delete users>`. Deleting your account permanently removes your user account and profile information from Mattermost. This action cannot be undone.
+You can permanently delete your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configure/user-management-configuration-settings:delete users>`. Deleting your account permanently removes your user account and profile information from Mattermost. This action cannot be undone.
 
 .. important::
 
     - **Account deletion is permanent and cannot be undone.** Once deleted, your account and profile data cannot be recovered.
     - Your message history and file uploads will remain in channels but will show as "Deleted User" instead of your name.
     - If you access Mattermost using another authentication method, such as AD/LDAP or SAML, this option may not be available. Contact your system admin for account deletion.
-    - Consider :ref:`deactivating your account <preferences/manage-advanced-options:deactivate account>` instead if you might want to reactivate it in the future.
+    - Consider :ref:`deactivating your account <end-user-guide/preferences/manage-advanced-options:deactivate account>` instead if you might want to reactivate it in the future.
 
 .. tab:: Web/Desktop
 
