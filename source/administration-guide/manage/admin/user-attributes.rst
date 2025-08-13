@@ -14,43 +14,19 @@ System attributes enable you to customize user profile attributes to match your 
 Before you begin
 ~~~~~~~~~~~~~~~~~
 
-.. tab:: Mattermost Enterprise v10.9 or later
+.. tab:: Mattermost v10.11 or later
+
+  From Mattermost Enterprise v10.11 and mobile app v2.25.0, user attributes are fully supported on mobile devices. Mobile users can both view and manage profile attributes directly from the mobile app. Mobile attribute support requires the same server-side configuration, and no additional mobile-specific setup is required.
+
+.. tab:: Mattermost v10.9 or later
 
   From Mattermost Enterprise v10.9, the ability to create and manage system properties as a Mattermost system admin requires no manual setup. 
 
-.. tab:: Mattermost Enterprise v10.8
+.. tab:: Mattermost v10.8
 
-  You'll need Mattermost Enterprise v10.8 or later deployment, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
+  You'll need Mattermost Enterprise v10.8 or later, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
 
 If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <administration-guide/configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
-
-Mobile support
-~~~~~~~~~~~~~~~
-
-From Mattermost v10.11 and mobile app v2.25.0 onward, user attributes are fully supported on mobile devices. Mobile users can both view and edit all attribute types including multi-select, select, and text attributes directly from the mobile app.
-
-**Mobile compatibility requirements:**
-
-- Mattermost server v10.5 or later
-- Mattermost mobile app v2.25.0 or later (for viewing attributes)
-- Mattermost mobile app v2.27.0 or later (for editing attributes)
-- Enterprise license
-- User attributes feature enabled (enabled by default from v10.9)
-
-**Mobile attribute functionality:**
-
-- **View attributes**: Users can view custom profile attributes in user profiles on mobile devices
-- **Edit attributes**: Users can edit their own custom profile attributes through **Settings > Edit Profile** in the mobile app  
-- **All attribute types supported**: Multi-select, select, text, phone, and URL attribute types are fully functional on mobile
-- **Attribute synchronization**: Attributes synchronized from AD/LDAP or SAML identity providers are automatically available on mobile
-
-**Known limitations:**
-
-- Samsung Galaxy S22 devices may experience display issues with custom profile attributes
-
-.. note::
-   
-   Mobile attribute support requires the same server-side configuration as web and desktop clients. No additional mobile-specific setup is required.
 
 Add attributes
 ~~~~~~~~~~~~~~
