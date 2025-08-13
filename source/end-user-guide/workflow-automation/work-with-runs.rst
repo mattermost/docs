@@ -24,8 +24,7 @@ When you're in a channel with an active run, select the **Toggle Run Details** i
 Some run actions can be edited while the run is in progress. This increases visibility into the run's progress and can improve accountability.
 
 .. note::
-
-  Starting with Mattermost server v10.11, mobile users can view playbook run details in read-only mode. This includes accessing run timelines, task completion status, and retrospectives. However, run management actions (such as editing tasks or updating run details) are only available on desktop and web clients.
+   Starting from Mattermost server v10.11, mobile users can view playbook run details in read-only mode. While viewing and monitoring capabilities are available on mobile devices, editing actions require the desktop or web application.
 
 Runs and channel behavior
 -------------------------
