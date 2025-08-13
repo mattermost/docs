@@ -1808,9 +1808,6 @@ Allow file downloads on mobile
 |                                                                                                                | - Environment variable: ``MM_FILESETTINGS_ENABLEMOBILEDOWNLOAD``                    |
 +----------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------+
 
-.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
-  :start-after: :nosearch:
-
 .. config:setting:: mobile-enable-secure-file-preview
   :displayname: Enable secure file preview on mobile (File sharing)
   :systemconsole: Site Configuration > File sharing and downloads
@@ -1822,6 +1819,9 @@ Allow file downloads on mobile
 
 Enable secure file preview on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 This setting improves an organization's mobile security posture by restricting file access while still allowing essential file viewing capabilities. 
 
@@ -1845,6 +1845,9 @@ This setting improves an organization's mobile security posture by restricting f
 
 Allow PDF link navigation on mobile
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. include:: ../../_static/badges/ent-adv-cloud-selfhosted.rst
+  :start-after: :nosearch:
 
 +---------------------------------------------------------------------------+-----------------------------------------------------------------------------------------------+
 | - **true**: **(Default)** Enables tapping links inside PDFs               | - System Config path: **Site Configuration > File sharing and downloads**                     |

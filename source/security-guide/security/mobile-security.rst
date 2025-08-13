@@ -74,4 +74,4 @@ When secure file preview is enabled, files are stored temporarily in the app's c
 
 Additionally, administrators can control link navigation within PDF files when secure file preview mode is active, allowing links to open in the device browser or supported applications as needed.
 
-Learn more about :ref:`enabling secure file preview <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`managing PDF link navigation <administration-guide/configure/site-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
+Learn more about :ref:`enabling secure file preview on mobile <administration-guide/configure/site-configuration-settings:enable secure file preview on mobile>` and :ref:`allow PDF link navigation on mobile <administration-guide/configure/site-configuration-settings:allow pdf link navigation on mobile>` in the Mattermost mobile app.
