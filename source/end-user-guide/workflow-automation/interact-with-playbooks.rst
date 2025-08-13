@@ -27,23 +27,15 @@ Available slash commands include:
 Mobile read-only support
 -------------------------
 
-.. include:: ../../_static/badges/ent-cloud-selfhosted.rst
-  :start-after: :nosearch:
+Starting from Mattermost server v10.11, mobile users can view playbook runs in read-only mode. This allows you to:
 
-Starting with Mattermost server v10.11, Playbooks offers read-only support for mobile devices. Mobile users can view and monitor playbook runs, but management actions remain available only on desktop and web clients.
-
-**Mobile capabilities include:**
-
-- View playbook run details and progress
-- Monitor run timelines and updates  
+- View run details, progress, and status updates
+- Monitor playbook run timelines and activity
 - Access retrospectives and run summaries
-- Follow run developments in real-time
+- Follow run progress while on mobile devices
 
-**Limitations:**
-
-- Creating, editing, or managing playbook runs requires desktop/web access
-- Checklist management and run actions are not available on mobile
-- Administrative functions remain desktop/web only
+.. note::
+   Mobile users can view and monitor playbook runs, but management actions (such as starting runs, updating checklists, or editing run details) require the desktop or web application.
 
 API documentation
 -----------------
