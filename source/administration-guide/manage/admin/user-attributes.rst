@@ -1,5 +1,5 @@
 User attributes
-=======================
+=================
 
 .. include:: ../../../_static/badges/ent-cloud-selfhosted.rst
   :start-after: :nosearch:
@@ -14,9 +14,16 @@ System attributes enable you to customize user profile attributes to match your 
 Before you begin
 ~~~~~~~~~~~~~~~~~
 
-.. tab:: Mattermost v10.11 or later
+If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <administration-guide/configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
 
-  From Mattermost Enterprise v10.11 and mobile app v2.31.0, user attributes are fully supported on mobile devices. Mobile users can both view and manage profile attributes directly from the mobile app. Mobile attribute support requires the same server-side configuration, and no additional mobile-specific setup is required.
+.. tab:: Mattermost v10.11 or later
+  
+  From Mattermost v10.11, user-managed attributes are excluded from ABAC rules for security reasons. If your organization uses ABAC (which requires Enterprise Edition Advanced), a system admin can explicitly enable user-managed attributes for ABAC by setting ``EnableUserManagedAttributes`` in ``config.json`` or via an environment variable as noted below. This configuration setting isn't managed using the System Console, and is disabled by default to ensure that access control policies remain secure and can’t be circumvented by users modifying their own profile attributes.
+
+  - ``config.json`` setting: ``".AccessControlSettings.EnableUserManagedAttributes: false”,`` with options ``true`` and ``false``.
+  - Environment variable: ``MM_ACCESSCONTROLSETTINGS_ENABLEUSERMANAGEDATTRIBUTES``
+
+  Additionally, from mobile app v2.31.0, user attributes are fully supported on mobile devices. Mobile users can both view and manage profile attributes directly from the mobile app. Mobile attribute support requires the same server-side configuration, and no additional mobile-specific setup is required.
 
 .. tab:: Mattermost v10.9 or later
 
@@ -25,8 +32,6 @@ Before you begin
 .. tab:: Mattermost v10.8
 
   You'll need Mattermost Enterprise v10.8 or later, and be a Mattermost system admin to enable the system properties feature flag, ``MM_FEATUREFLAGS_CUSTOMPROFILEATTRIBUTES`` to create and manage system properties. See the Mattermost developer documentation for details on `enabling feature flags in a self-hosted deployment <https://developers.mattermost.com/contribute/more-info/server/feature-flags/#self-hosted-and-local-development>`_. Mattermost Cloud customers can request this feature flag be enabled by contacting their Mattermost Account Manager or by `creating a support ticket <https://support.mattermost.com/hc/en-us/requests/new?ticket_form_id=11184911962004>`_ request.
-
-If you plan to synchronize system properties with your AD/LDAP or SAML identity provider, ensure AD/LDAP or SAML synchronization is already enabled and configured. See the :doc:`AD/LDAP groups </administration-guide/onboard/ad-ldap-groups-synchronization>` product documentation or :ref:`SAML 2.0 <administration-guide/configure/authentication-configuration-settings:saml 2.0>` configuration settings documentation for details.
 
 Add attributes
 ~~~~~~~~~~~~~~
@@ -65,6 +70,8 @@ Manage attributes
 - **Order**: Control the order you want attributes to appear in user profiles by dragging and dropping them in the list.
 
 - **Delete**: Delete attributes you no longer need or want by selecting **More** |more-icon| and selecting **Delete property**.
+
+- **User Edit Permissions** *(v10.11+)*: By default, attributes used in ABAC policies cannot be edited by users. To allow user editing for specific attributes, administrators can enable this through the **More** |more-icon| menu and selecting **Allow user editing**. This should only be enabled for attributes that do not impact security access controls.
 
 In cases where multiple system admins manage system attributes, refresh your web browser instance to see real-time updates to system attributes made by other admins.
 
