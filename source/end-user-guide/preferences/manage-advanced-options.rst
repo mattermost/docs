@@ -74,9 +74,7 @@ You can deactivate your account if you access Mattermost using an email address 
 Delete account
 --------------
 
-*Available from Mattermost Server v10.11.*
-
-You can permanently delete your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configure/user-management-configuration-settings:delete users>`. Deleting your account permanently removes your user account and profile information from Mattermost. This action cannot be undone.
+From Mattermost v10.11, you can permanently delete your account if you access Mattermost using an email address and password, and when your system admin has :ref:`enabled your ability to do so <administration-guide/configure/user-management-configuration-settings:delete users>`. Deleting your account permanently removes your user account and profile information from Mattermost. This action cannot be undone.
 
 .. important::
 
